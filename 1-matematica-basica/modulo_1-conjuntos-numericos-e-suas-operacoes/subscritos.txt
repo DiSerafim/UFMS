@@ -1,0 +1,60 @@
+₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋
+≥
+
+sobrescrito:
+ᵃ ⁻ ᵇ ⁻ ᶜ⁻ ᵈ ⁻ ᵉ⁻ ᶠ ⁻ ᵍ ⁻ ʰ ⁻ ⁱ ⁻ ʲ ⁻ ᵏ ⁻ ˡ ⁻ ᵐ ⁻ ⁿ ⁻ ᴼ ⁻ ᵖ ⁻ q ⁻ ʳ ⁻ ˢ ⁻ ᵗ ⁻ ᶸ ⁻ ᵛ ⁻ ʷ ⁻ ˣ ⁻ ʸ ⁻ z
+
+superscrito:
+ₐ ₋ b ₋ c₋ d ₋ ₑ₋ f ₋ g ₋ ₕ ₋ ᵢ ₋ ⱼ ₋ ₖ ₋ ₗ ₋ ₘ ₋ ₙ ₋ ₒ ₋ ₚ ₋ q ₋ ᵣ ₋ ₛ ₋ ₜ ₋ ᵤ ₋ ᵥ ₋ w ₋ ₓ ₋ y ₋ z
+
+≠
+
+Símbolos matemáticos
++	mais; positivo
+–	menos; negativo
+±	mais ou menos
+.	multiplicado por
+=	igual a;
+≠	diferente de;
+< 	menor que
+> 	maior que
+≤ 	menor ou igual
+≥ 	maior ou igual
+≅	aproximadamente igual
+≡	equivalente a
+[ ]	colchetes
+( )	parênteses
+{ }	chaves
+√	raiz quadrada
+∛	raiz cúbica
+r	raio de um círculo
+∞	infinito
+∈	pertence
+∉	não pertence
+​{ } conjunto vazio
+∩	interseção
+∪	união
+⊃	contém
+⊂	está contido
+⊄	não está contido
+⇒	implica
+loge
+log10
+x2	xis ao quadrado
+x3	xis ao cubo
+x4	xis à quarta potência
+|x|	valor absoluto de xis
+π	pi = 3,14159
+°	grau
+’	minuto
+”	segundo
+n!	n fatorial
+dx	diferencial
+⎥⎢	paralelo a
+∑	somatória
+sen	seno
+cos	cosseno
+tg tangente
+cotg cotangente
+sec	secante
+cosec co-ssecante
