@@ -7,7 +7,7 @@ sobrescrito:
 superscrito:
 ₐ ₋ b ₋ c₋ d ₋ ₑ₋ f ₋ g ₋ ₕ ₋ ᵢ ₋ ⱼ ₋ ₖ ₋ ₗ ₋ ₘ ₋ ₙ ₋ ₒ ₋ ₚ ₋ q ₋ ᵣ ₋ ₛ ₋ ₜ ₋ ᵤ ₋ ᵥ ₋ w ₋ ₓ ₋ y ₋ z
 
-≠
+└─>
 
 Símbolos matemáticos
 +	mais; positivo
