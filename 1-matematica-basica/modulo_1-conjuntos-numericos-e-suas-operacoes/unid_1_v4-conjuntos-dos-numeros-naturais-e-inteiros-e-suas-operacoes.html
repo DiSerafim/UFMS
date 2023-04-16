@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade 1 - Conjuntos dos números naturais e inteiros e suas operações</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Unidade 1 - Conjuntos dos números naturais e inteiros e suas operações <br>
+            Vídeo 3 - Divisão <br>
+            <a href="https://www.youtube.com/watch?v=EdFhJFVdcR4">Aqui</a>
+        </h1>
+    </header>
+
+    <h1>Número primo</h1>
+    <h3>Dizemos que um número natural p > 1 é um número primo, se os únicos divisores de p forem 1 e o próprio p. Exemplo:</h3>
+    <p>
+        1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, ...
+    </p>
+
+    <h3>Conjunto dos divisores</h3>
+    <h4>Quais são os divisores do número 36</h4>
+    <p>
+        1 é divisor, pois 36 = 36·1 <br>
+        2 é divisor, pois 36 = 36·2 <br>
+        3 é divisor, pois 36 = 36·3 <br>
+        4 é divisor, pois 36 = 36·4 <br>
+        6 é divisor, pois 36 = 36·6
+    </p>
+    <p>D(36) = {1, 2, 3, 4, 6, 9, 12, 18, 36}</p>
+
+    <h3>Critérios de DIvisibilidade</h3>
+    <h4>Um número é divisível por:</h4>
+    <p>
+        2- Terminar em 0, 2, 4, 6, ou 8. <br>
+        3- A soma de seus algarismos for múltiplo de 3. <br>
+        5- Terminar em 0 ou 5. <br>
+        6- Se for divisível por 2 e 3. <br>
+        9- A soma de seus algarismos for múltiplo de 9. <br>
+        10- Terminar em 0.
+    </p>
+
+    <h4>Exemplo: 1736 é divisível por 7?</h4>
+    <p>
+        Multiplique por 2 o último algarismo. <br>
+        2·6 = 12 <br>
+        Subtraia este valor do número inicial sem o último algarismo. <br>
+        173 - 12 = 161 <br>
+        Oresultado deve ser múltiplo de 7. <br>
+        161 é múltiplo de 7? <br>
+        Repita o processo com o resultado 161. <br>
+        Multiplique por 2 o último algorismo.
+        2·1 = 2 <br>
+        Subtraia este valor do número inicial sem o último algarismo. <br>
+        16 - 2 = 14 <br>
+        O resultado deve ser múltiplo de 7. <br>
+        (14 = 2·7) <br>
+        Logo 1736 é divisível por 7. <br>
+    </p>
+
+    <h3>Máximo divisor comum (MDC)</h3>
+    <h4>Encontre o MDC dos números 36 e 54.</h4>
+    <p>
+        1º modo: <br>
+        D(36) = {1, 2, 3, 4, 6, 9, 12, 18, 36} <br>
+        D(54) = {1, 2, 3, 6, 9, 18, 27, 54} <br>
+        MDC(36; 54) = 18
+    </p>
+    <p>
+        2º modo: <br>
+        36 54 | 2 <br>
+        18 27 | 2 <br>
+        09 27 | 3 <br>
+        03 09 | 3 <br>
+        01 03 | 3 <br>
+        01 01 | <br>
+        MDC (36; 54) = 2·3·3 = 18
+    </p>
+    <p>
+        3º modo: <br>
+        Quociente => &nbsp; &nbsp; &nbsp; &nbsp; | 01 | 02 <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;───|──|──|─── <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;54 &nbsp; &nbsp;| 36 | 18 | 0 <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;───|──|──|─── <br>
+        Resto => &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 18 | 0 <br>
+        MDC (54; 36) = 18
+    </p>
+    
+    <h3>Números primos entre si</h3>
+    <h4>Dizemos que um conjunto finito de números naturais são primos entre si, se o MDC destes números for 1, Exemplo;</h4>
+    <p>
+        15 e 16 são primos entre si, pois  <br>
+        2, 3 e 9 são primos entre si.
+    </p>
+
+    <h3>Mínimo Multiplo Comum (MMC)</h3>
+    <p>Encontre o MMC dos números 4 e 6.</p>
+    <p>
+        1º modo: <br>
+        M(4) = {0, 4, 8, 12, 16, 20, 24, ...} <br>
+        M(6) = {0, 6, 12, 18, 24, ...} <br>
+        MMC(4; 6) = 12
+    </p>
+    <p>
+        2º modo: <br>
+        4 6 | 2 <br>
+        2 3 | 2 <br>
+        1 3 | 3 <br>
+        1 1 |  <br>
+        MMC (4; 6) = 2·2·3 = 12
+    </p>
+
+    <h4>Exemplo</h4>
+    <p>
+        3·7 = 21 <br>
+        (-2)·(-8) = 16 <br>
+        (-4)·3 = -12
+    </p>
+
+    <h1>Equação Diofantina</h1>
+    <h3>Determine números inteiros a e b, tais que 8a + 5b = 1</h3>
+    <p>Se a = 1 a equação 8 + 5b = 1 => 5b = -7, não tem solução inteira, pois -7 não é multiplo de 5.</p>
+    <p>Se a = 2 a equação 16 + 5b = 1 => 5b = -15, tem como solução b = -3.</p>
+    <p>
+        Assim temos nossa primeira solução que é: <br>
+        a = 2 e b = -3 <br>
+        a = 2 - 5k k ∈ Z <br>
+        b = -3 + 8k k ∈ Z <br>
+    </p>
+    <p>
+        Para k = 1 => a = -3 e b = 5
+        Para k = 2 => a = -8 e b = 13
+        Para k = -1 => a = 7 e b = -11
+    </p>
+</body>
+</html>
