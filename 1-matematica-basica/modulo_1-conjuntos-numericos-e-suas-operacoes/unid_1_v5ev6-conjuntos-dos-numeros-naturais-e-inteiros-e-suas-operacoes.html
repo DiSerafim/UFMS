@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade 1 - Conjuntos dos números naturais e inteiros e suas operações</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Unidade 1 - Conjuntos dos números naturais e inteiros e suas operações <br>
+            Vídeo 5 - MDC & Vídeo 6 - MMC <br>
+            <a href="https://www.youtube.com/watch?v=8Ygmq398AfY">Aula 5 Aqui</a>
+            <a href="https://www.youtube.com/watch?v=0xrfG45Vh30">Aula 6 Aqui</a>
+        </h1>
+    </header>
+
+    <h1>MDC - Máximo Divisor Comum</h1>
+    <h3>MDC (60, 36). Exemplo:</h3>
+    <p>
+        1º modo: <br>
+        D(36) = {1, 2, 3, 4, 6, 9, 12, 18, 36} <br>
+        D(60) = {1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60} <br>
+        D(36; 60) = {1, 2, 3, 4, 6, 12} <br> 
+        MDC(36; 54) = 12
+    </p>
+    <p>
+        2º modo: <br>
+        Quociente => &nbsp; &nbsp; &nbsp; &nbsp; | 01 | 01 | 02 <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;───|──|──|─── <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;60 &nbsp; &nbsp;| 36 | 24 | 12 <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;───|──|──|─── <br>
+        Resto => &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 24 | 12 | 0 <br>
+        MDC (60; 36) = 12
+    </p>
+
+    <h3>MDC (180, 280, 300). Exemplo:</h3>
+    <h4>desconsidere o 0 antes dos números</h4>
+    <p>
+        180, 280, 300 | 2, 2, 2 <br>
+        090, 140, 150 | 2, 2, 2 <br>
+        045, 070, 075 | 3, 2, 3 <br>
+        015, 035, 025 | 3, 5, 5 <br>
+        005, 007, 005 | 5, 7, 5 <br>
+        001, 001, 001 | <br><br>
+
+        MDC (180, 280, 300) = 2·2·5 = 20
+    </p>
+
+    <h1>MMC - Mínimo Multiplo Comum</h1>
+    <h3>MMC (9, 6). Exemplo:</h3>
+    <p>
+        1º modo: <br>
+        M(9) = {0, 9, 18, 27, 36, 45, 54, 63, ...} <br>
+        M(6) = {0, 6, 12, 18, 24, 30, 36, 42, ...} <br>
+        M(9; 6) = {0, 18, 36, ...} <br> 
+        MMC(9; 6) = 18
+    </p>
+    <p>
+        2º modo: <br>
+        6, 9 | 2 <br>
+        3, 9 | 3 <br>
+        1, 3 | 3 <br>
+        1, 1 |  <br>
+
+        MMC (6, 9) = 2·3·3 = 18
+    </p>
+
+    <h3>Exercício</h3>
+    <h4>
+        Ana, Berta e Catarina são médicas que dão plantão em um certo hospital de 6 em 6 dias, de 8 em 8 dias, de 10 em 10 dias respectivamente. <br>
+        Hoje elas deram plantão juntas, daqui a quantos dias elas darão plantão juntas novamente?
+    </h4>
+    <p>
+       A => 6, <br>
+       B => 8, <br>
+       C => 10, <br> <br>
+
+       2º modo: <br>
+       6, 8, 10 | 2 <br>
+       3, 4, 05 | 2 <br>
+       3, 2, 05 | 2 <br>
+       3, 1, 05 | 3 <br>
+       1, 1, 05 | 5 <br>
+       1, 1, 01 |  <br><br>
+   
+       MMC (6, 8, 10) = 2·2·2·3·5 = 120, irão dara aulas juntas daqui a 120 dias<br>
+    </p>
+</body>
+</html>
