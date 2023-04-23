@@ -1,4 +1,4 @@
-₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋
+₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ °¹²³⁴⁵₊ ₋
 ≥
 
 sobrescrito:
@@ -27,6 +27,7 @@ Símbolos matemáticos
 { }	chaves
 √	raiz quadrada
 ∛	raiz cúbica
+∜	radiciação (raiz quarta)
 r	raio de um círculo
 ∞	infinito
 ∈	pertence
@@ -34,9 +35,11 @@ r	raio de um círculo
 ​{ } conjunto vazio
 ∩	interseção
 ∪	união
+⊆	é subconjunto de
 ⊃	contém
 ⊂	está contido
 ⊄	não está contido
+∅ ou {}	conjunto vazio
 ⇒	implica
 loge
 log10
