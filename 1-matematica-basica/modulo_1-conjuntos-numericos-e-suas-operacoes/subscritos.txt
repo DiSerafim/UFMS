@@ -1,14 +1,25 @@
-₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ °¹²³⁴⁵₊ ₋
-≥
+Números Subscritos:
+₀, ₁, ₂, ₃, ₄, ₅, ₆, ₇, ₈, ₉
 
-sobrescrito:
-ᵃ ⁻ ᵇ ⁻ ᶜ⁻ ᵈ ⁻ ᵉ⁻ ᶠ ⁻ ᵍ ⁻ ʰ ⁻ ⁱ ⁻ ʲ ⁻ ᵏ ⁻ ˡ ⁻ ᵐ ⁻ ⁿ ⁻ ᴼ ⁻ ᵖ ⁻ q ⁻ ʳ ⁻ ˢ ⁻ ᵗ ⁻ ᶸ ⁻ ᵛ ⁻ ʷ ⁻ ˣ ⁻ ʸ ⁻ z
+Números Sobrescrito:
+⁰, ¹, ², ³, ⁴, ⁵, ⁶, ⁷, ⁸, ⁹
 
-superscrito:
-ₐ ₋ b ₋ c₋ d ₋ ₑ₋ f ₋ g ₋ ₕ ₋ ᵢ ₋ ⱼ ₋ ₖ ₋ ₗ ₋ ₘ ₋ ₙ ₋ ₒ ₋ ₚ ₋ q ₋ ᵣ ₋ ₛ ₋ ₜ ₋ ᵤ ₋ ᵥ ₋ w ₋ ₓ ₋ y ₋ z
+Alfabeto sobrescrito:
+ᴬ, ᴮ, ᶜ, ᴰ, ᴱ, ᶠ, ᴳ, ᴴ, ᴵ, ᴶ, ᴷ, ᴸ, ᴹ, ᴺ, ᴼ, ᴾ, ᵟ, ᴿ, ˢ, ᵀ, ᵁ, ⱽ, ᵂ, ˣ, ʸ, ᶻ
+
+Formato de subscrito:
+ₐ, ₑ, ₕ, ᵢ, ⱼ, ₖ, ₗ, ₘ, ₙ, ₒ, ₚ, ᵣ, ₛ, ₜ, ᵤ, ᵥ, ₓ
+
+Caracteres especiais sobrescrito:
+
+⁺, ⁻, ⁼, ⁽, ⁾, ᶜ, ᵀ, ᵁ, ₓ, ⁄, ⫽, ⁄
+
+Caracteres especiais subscrito:
+₊, ₋, ₌, ₍, ₎
 
 └─>
 
+[{¬}[{³}²¢¹]]
 Símbolos matemáticos
 +	mais; positivo
 –	menos; negativo
@@ -25,6 +36,7 @@ Símbolos matemáticos
 [ ]	colchetes
 ( )	parênteses
 { }	chaves
+β, ᵝ, ᵦ   beta
 √	raiz quadrada
 ∛	raiz cúbica
 ∜	radiciação (raiz quarta)
@@ -41,6 +53,7 @@ r	raio de um círculo
 ⊄	não está contido
 ∅ ou {}	conjunto vazio
 ⇒	implica
+φ   ouro
 loge
 log10
 x2	xis ao quadrado
