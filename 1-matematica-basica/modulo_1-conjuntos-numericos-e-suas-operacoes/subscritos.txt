@@ -36,6 +36,12 @@ Símbolos matemáticos
 [ ]	colchetes
 ( )	parênteses
 { }	chaves
+ℕ   números naturais
+ℤ   números inteiros
+ℚ   números racionais
+ℝ - ℚ números irracionais
+ℝ   números reais
+ℂ   números complexos
 β, ᵝ, ᵦ   beta
 √	raiz quadrada
 ∛	raiz cúbica
