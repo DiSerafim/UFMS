@@ -25,6 +25,7 @@ Símbolos matemáticos
 –	menos; negativo
 ±	mais ou menos
 .	multiplicado por
+÷, :, /,    divisão
 =	igual a;
 ≠	diferente de;
 < 	menor que
