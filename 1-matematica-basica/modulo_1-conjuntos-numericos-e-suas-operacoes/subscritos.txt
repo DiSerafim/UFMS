@@ -81,3 +81,4 @@ tg tangente
 cotg cotangente
 sec	secante
 cosec co-ssecante
+↓ ↑
