@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Pensamento Computacional e Prática de Algoritmos</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 - Unidade 2 - Pensamento Computacional e Prática de Algoritmos <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=mnObRYYuqO8">Vídeo 1 - Representação dos Algoritmos</a>
+        </h1>
+    </header>
+
+    <h3>Descrição Narrativa</h3>
+    <h4>
+        * Os algotitmos são expressos na linguagem que usamos naturalmente para se comunicar - linguagem natural. <br>
+        * Desvantagem: pode causar ambiguidade e imprescisões. <br>
+        Exemplo: Livro de receitas.
+    </h4>
+
+    <h3>Pseudocódigo</h3>
+    <h4>
+        * Não é uma Linguagem de Programação, é uma maneira simples de descrever um conjunto de instruções que não precisa usar sintaxe especifica. <br>
+        * Semelhante a escrever em uma linguagem de programação <br>
+        * Conhecido também como Português Estruturado ou Portugol. <br>
+        * Normalmente, as instruções são escritas em maiúscula, as variáveis em minúsculas e as mensagens em maiúsculas.
+    </h4>
+    <p>
+        Vantagens: <br>
+        - Usa o português como base <br>
+        - Pode-se definir quais e como os dados vão estar Estruturados <br>
+        - Passagem quase quase imediata do algoritmo para uma linguagem de programação <br>
+        <br>
+
+        Desvantagem:
+        - Exige a definição de uma linguagem não real para trabalho; <br>
+        - Não padronizado.
+    </p>
+
+    <h4>Regras para escrita do pseudocódigo</h4>
+    <p>
+        1. Usar somente um verbo por frase e no imperativo. <br>
+        2. Usar sentenças fáceis de serem entendidas por pessoas leigas no assunto <br>
+        3. Usar frases simples e curtas. <br>
+        4. Ser direto e objetivo. <br>
+        5. Usar palavras que não tenham sentido duplo.
+    </p>
+
+    <h3>Pseudocódigo - Sintaxe</h3>
+    <h4>
+        <declaração_de_variáveis>;
+            início
+                <corpo do algoritmo>
+            Fim
+    </h4>
+    <p>
+        <nome_do_algoritmo>: <br>
+            - É um nome simbólico dado ao algoritmo com a finalidade de distingui-lo dos demais. <br>
+        <declaração_de_variáveis>: <br>
+            - Consiste no campo de declaração das variáveis utilizadas no algoritmo. <br>
+        Início e Fim: <br>
+            - Palavras que delimitam o começo e o término do conjunto de instruções do corpo do algoritmo.
+    </p>
+
+    <h3>Pseudocódigo - Calcular Média</h3>
+    <p>
+        Programa Calcular_Media <br>
+        Inicio <br>
+            ESCREVA "Digite a nota1:" <br>
+            LEIA nota1 <br>
+            ESCREVA "Digite a nota2:" <br>
+            LEIA nota2 <br>
+            media = (nota1 + nota2)/2 <br>
+            ESCREVA "Sua média foi:" <br>
+            ESCREVA média <br>
+            SE media >= 7 ENTÃO <br>
+                ESCREVA "APROVADO" <br>
+            Senão ESCREVA "REPROVADO" <br>
+        FIM
+    </p>
+
+    <h3>Fluxograma ou Diagrama de Blocos</h3>
+    <h4>
+        * É um diagrama que representa um conjunto de instruções. <br>
+        * É uma representação gráfica onde os símbolos (formas geométricas) representam as diferentes ações (instruções, comandos). <br>
+        * Facilita o entendimento dos algoritmos e a visualização dos passos. <br>
+        * Podem ser divididos em várias etapas para fornecer mais detalhes sobre exatamente o que está acontecendo. <br>
+        * Podem ser simplificados para que várias etapas acorram em apenas uma etapa.
+    </h4>
+
+    <h3>Fluxograma Simbologia</h3>
+    <p>
+        <pre>╔═════════════╗    </pre>
+        <pre>║    Início   ║    </pre>
+        <pre>╚═════════════╝    </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>+-------+          </pre>
+        <pre>| Fluxo |          </pre>
+        <pre>+-------+          </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>+-----------------+  </pre>
+        <pre>|  Processamento  |  </pre>
+        <pre>+-----------------+  </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>+---------------+  </pre>
+        <pre>| Saída de Dados|  </pre>
+        <pre>+---------------+  </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>+--------------+   </pre>
+        <pre>|  Entrada de  |   </pre>
+        <pre>|    Dados     |   </pre>
+        <pre>+--------------+   </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>+---------+        </pre>
+        <pre>| Decisão |        </pre>
+        <pre>+---------+        </pre>
+        <pre> /    |   \        </pre>
+        <pre>v     v    v       </pre>
+        <pre>+---------+        </pre>
+        <pre>| Conector|        </pre>
+        <pre>+---------+        </pre>
+        <pre>    |              </pre>
+        <pre>    v              </pre>
+        <pre>╔═════════════╗    </pre>
+        <pre>║     Fim     ║    </pre>
+        <pre>╚═════════════╝    </pre>
+    </p>
+
+    <h4>Ordem de Execução do Fluxo</h4>
+    <p>
+        <strong>
+            O fluxograma permite três ordens distintas de execução:
+        </strong>
+        <br>
+        * Sequencial: <br>
+        - as atividade são executadas uma após a outra. <br>
+        * Por seleção: <br>
+        - Ocorre quando uma via de processamento é escolhida em um ponto de bifurcação, de forma que cada via condux a um processamento distinto. <br>
+        * Por repetição: <br>
+        - Faz com que a execução ocorra em ciclos de processamento até atingirem uma condição de finalização
+    </p>
+</body>
+</html>
