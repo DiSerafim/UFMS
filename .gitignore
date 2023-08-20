@@ -1,0 +1,38 @@
+# Arquivos e diretórios que devem ser ignorados pelo Git
+
+# Arquivos de configuração
+*.config
+
+# Arquivos de build
+build/
+dist/
+out/
+
+# Dependências geradas
+node_modules/
+vendor/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Logs e arquivos de debug
+logs/
+*.log
+debug.log
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+
+# Arquivos de cache
+.cache/
+.cached/
+
+# Arquivos gerados pelo sistema operacional
+Thumbs.db
+.DS_Store
+
+# Arquivos de backup
+*.bak
+*.backup
