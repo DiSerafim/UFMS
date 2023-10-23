@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I <br>
+            Unidade 1 - Expressões aritméticas, lógicas e seus operadores <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=YcFEm180Wk8">Vídeo 2 - Algoritmos e Programação de Computadores I - Expressões lógicas e operadores</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Expressões lógicas e operadores</h4>
+    <p>
+        São expressões onde os operadores são lógicos ou relacionais e cujos operandos são relações, ou variáveis/constantes do tipo lógico.
+    </p>
+    <p>
+        Operadores relacionais: <br>
+        == Igual <br>
+        != Diferente <br>
+        > Maior que <br>
+        < Menor que <br>
+        <= Menor ou igual> <br>
+        >= Maior ou igual <br>
+        ** Potência
+    </p>
+
+    <h4>Exemplos:</h4>
+    <p>
+        >>> 2 == 2 <br>
+        True <br>
+        >>> 2 == 3 <br>
+        False <br>
+        >>> 3 != 3 <br>
+        False <br>
+        >>> 3 != 2 <br>
+        True <br>
+        >>> 3 >= 1 <br>
+        True <br>
+        >>> 3 >= 3 <br>
+        True <br>
+        >>> 3 >= 4 <br>
+        False
+    </p>
+
+    <p>
+        <strong>Operadores lógicos: and, not e or</strong>: <br>
+        >>> 1 > 3 or 1 + 3 > 2 <br>
+        True <br>
+        >>> 1 > 3 and 1 + 3 > 2 <br>
+        False <br>
+        >>> not 1 > 3 and 1 + 3 > 2 <br>
+        True
+    </p>
+
+    <p>
+        <strong>Outros operadores lógicos</strong> <br>
+        Pertence/não pertence: in, not in <br>
+        >>> 4 in [5, 6, 4, 1] <br>
+        True <br>
+        >>> 5 not in [1, 2, 3, 4, 5] <br>
+        False <br>
+        <br>
+        Identidade: is, not is <br>
+        >>> 4 is not 1  <br>
+        <stdin>:1: SyntaxWarning: "is not" with a literal. Did you mean "!="? <br>
+        True <br>
+        >>> 5.0 is int(5) <br>
+        <stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="? <br>
+        False
+    </p>
+
+    <h4>Precedência de Operadores</h4>
+    <p>
+        Precedência entre operadores lógicos: <br>
+        ↓ not <br>
+        ↓ or and <br> <br>
+
+        Precedência entre todos os operadores: <br>
+        Parênteses mais internos: () <br>
+        Operadores aritméticos: + - * / ** <br>
+        Operadores relacionais: ==, !=, >, < <br>
+        Operadores lógicos: not, or, and, is, in <br>
+        <br>
+        Precedência: <br>
+        ↓ ** <br>
+        ↓ + - <br>
+        ↓ * / % // <br>
+        ↓ + - <br>
+        ↓ <= < > >= <br>
+        ↓ == != <br>
+        ↓ = %= /= //= -= += *= **= <br>
+        ↓ is is not <br>
+        ↓ in not in <br>
+        ↓ not or and <br>
+        ------------→
+    </p>
+    <h4>Exemplos</h4>
+    <p>
+        >>> 3 ** 2 * 2 <br>
+        18 <br>
+        >>> 5 <= 6 and 7 != 8 <br>
+        True <br>
+        >>> 9 > 5 and not 3.0 is int(3) <br>
+        <stdin>:1: SyntaxWarning: "is not" with a literal. Did you mean "!="? <br>
+        True <br>
+        >>> 7 * 2 + 5 > 3 * 10 <br>
+        False
+    </p>
+</body>
+</html>
