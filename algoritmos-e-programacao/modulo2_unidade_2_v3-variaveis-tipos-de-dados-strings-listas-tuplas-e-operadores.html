@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I <br>
+            Unidade 2 - Variáveis, tipos de dados, strings, listas, tuplas e operadores<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=jIvDyTz5xDk&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=9">Vídeo 3 - Algoritmos e Programação de Computadores I - Listas, tuplas e operadores</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Listas, tuplas e operadores</h4>
+    <p>
+        <strong>Listas</strong><br>
+        Uma lista é uma sequência de objetos. <br>
+        Objetos podem ser de diferentes tipos: <br>
+        - números. <br>
+        - string. <br>
+        - outras listas. Etc. <br>
+        Em python, uma lista é representada por objetos separados por vírgula, envoltos por colchetes []. <br>
+        Exemplos: <br>
+        >>> pets = ['cão', 'gato', 'peixe'] <br>
+        >>> pets <br>
+        ['cão', 'gato', 'peixe'] <br>
+        >>> l = [1, 'abc', [], [1, 2]] <br>
+        >>> l <br>
+        [1, 'abc', [], [1, 2]]  
+    </p>
+
+    <p>
+        <strong>Listas são Mutáveis</strong>
+        Uma diferença importante entre listas e strings é que listas são mutáveis, isto é, seu conteúdo pode variar. <br>
+        Exemplo: <br>
+        >>> pets <br>
+        ['cão', 'gato', 'peixe'] <br>
+        >>> pets[1] = 'galinha' <br>
+        >>> pets <br>
+        ['cão', 'galinha', 'peixe'] <br>
+    </p>
+
+    <p>
+        <strong>Tuplas são Imutáveis</strong> <br>
+        Tuplas são iguais listas, mas imutáveis. <br>
+        Usamos parênteses (()) ao invés de colchetes ([]) para criá-las. <br>
+        Exemplo: <br>
+        >>> dias = ('seg', 'ter', 'qua') <br>
+        >>> dias <br>
+        ('seg', 'ter', 'qua') <br>
+        >>> dias[2] = 'qui' <br>
+        TypeError: 'tuple' object does not support item assignment
+    </p>
+
+    <p>
+        Listas em Python possuem métodos que podem ser chamados a partir de uma lista já criada: <br>
+        >>> pets <br>
+        ['cão', 'galinha', 'peixe'] <br>
+        >>> pets.append('gato') <br>
+        >>> pets <br>
+        ['cão', 'galinha', 'peixe', 'gato'] <br>
+        <br>
+        Outros métodos: <br>
+        count(), confere os elementos <br>
+        index(), retorna o elemento conforme a posição passada <br>
+        insert(), inserir elementos <br>
+        pop(), <br>
+        remove(), <br>
+        reverse(), <br>
+        sort() <br>
+ <br>
+        Exemplos: <br>
+        my_list = [2, 4, 1, 3, 4, 5] <br>
+ <br>
+        # Exemplo de uso dos métodos <br>
+        my_list.count(4)  # Conta quantas vezes o número 4 aparece <br>
+        my_list.index(3)  # Encontra o índice do número 3 <br>
+        my_list.insert(0, 6)        # Insere o número 6 no início da lista <br>
+        my_list.pop(2)  # Remove o elemento no índice 2 <br>
+        my_list.remove(4)            # Remove a primeira ocorrência do número 4 <br>
+        my_list.reverse()            # Inverte a ordem dos elementos <br>
+        my_list.sort()               # Classifica a lista em ordem crescente <br>
+    </p>
+</body>
+</html>
