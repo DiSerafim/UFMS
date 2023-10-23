@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I <br>
+            Unidade 2 - Variáveis, tipos de dados, strings, listas, tuplas e operadores<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=0u27gmeqJZU&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=8&t=7s">Vídeo 2 - Algoritmos e Programação de Computadores I - Strings</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Strings</h4>
+    <p>
+        Além de variáveis do tipo numérico (int e float), e do tipo lógico (bool), Python permite definir variáveis de tipos mais complexos. <br>
+        <br>
+        O tipo 'str' é usado para representar e manipular texto ou uma sequência de caracteres, incluindo espaço em branco, pontuação e símbolos diferentes.
+    </p>
+    <p>
+        Uma string é criada como uma sequência de caracteres envolvida por aspas (simples ou dupla): <br>
+        >>> a = 'Algoritmos e ' <br>
+        >>> A = "Programação" <br>
+        >>> a, A <br>
+        ('Algoritmos e ', 'Programação')
+    </p>
+    <p>
+        É possível usar alguns operadores já vistos com strings. <br>
+        >>> s == 'abc' <br>
+        True <br>
+        >>> t = 'def' <br>
+        >>> s < t <br>
+        True <br>
+        >>> s + t <br>
+        'abcdef' <br>
+        >>> s * t <br>
+        Traceback (most recent call last): <br>
+        File "<stdin>", line 1, in <module> <br>
+        TypeError: can't multiply sequence by non-int of type 'str' <br>
+        >>> s * 2 <br>
+        'abcabc' <br>
+        >>> ch = 'b' <br>
+        >>> ch in s <br>
+        True <br>
+        >>> ch is str('b') <br>
+        True
+    </p>
+
+    <p>
+        operadores comuns que não funcionam com strings: <br>
+        -, /, //, %, **
+    </p>
+
+    <p>
+        <strong>Operadores importantes</strong> <br>
+        len() → retorna o tamanho da string. <br>
+        [] → operador de indexação.
+    </p>
+
+    <p>
+        Exemplos: <br>
+        >>> s = 'abcd' <br>
+        >>> len(s) <br>
+        4 <br>
+        >>> s[0] <br>
+        'a' <br>
+        >>> s[3] <br>
+        'd' <br>
+        >>> s[len(s)] <br>
+        Traceback (most recent call last): <br>
+        File "<stdin>", line 1, in <module> <br>
+        IndexError: string index out of range
+    </p>
+
+    <p>
+        <strong>Indexação</strong> <br>
+        Apesar do índice variar de 0 até o tamanho da string-1, é possível usar índices negativos. <br>
+        Índices negativos acessam os caracteres do lado direito da string. <br>
+        Exemplos: <br>
+        >>> s = 'abcd' <br>
+        >>> s[-1] <br>
+        'd' <br>
+        >>> s[-2] <br>
+        'c' <br>
+        >>> s[len(s[-1])] <br>
+        'b'
+    </p>
+
+    <p>
+        É possível usar também substrings por meio da indexação: <br>
+        >>> s = 'abcd' <br>
+        >>> s[0:2] <br>
+        'ab' <br>
+        >>> s[-4:2] <br>
+        'ab' <br>
+        >>> s[:3] <br>
+        'abc' <br>
+        >>> s[-1] <br>
+        'd'
+    </p>
+
+    <p>
+        <strong>Métodos</strong>
+        >>> s.find(a) <br>
+        -1 <br>
+        >>> s.count(a) <br>
+        0 <br>
+        >>> s.upper() <br>
+        'ABCD <br>
+        >>> s = s.lower() <br>
+        >>> s <br>
+        'abcd' <br>
+        >>> s.capitalize() <br>
+        'Abcd'
+    </p>
+</body>
+</html>
