@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 - ALGORITMOS E PROGRAMAÇÃO I <br>
+            Unidade 2 - Variáveis, tipos de dados, strings, listas, tuplas e operadores<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=M8B_fvO6SaA&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=10">Vídeo 5 - Algoritmos e Programação de Computadores I - Tipos de dados</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Tipos de dados</h4>
+    <p>
+        int, <br>
+        float, <br>
+        bool, <br>
+        str, <br>
+        list, <br>
+        tuple, <br>
+        <br>
+        Cada dado é armazenado na memória na forma de objeto. <br>
+        Todo objeto possui um tipo e um valor. <br>
+        <br>
+        type: int (3) <br>
+        type: floa (3.0) <br>
+        type: str ('Helo Word') <br>
+        type: list ([1, 2, 3, 5, 8])
+    </p>
+    <p>
+        O tipo de um objeto indica quais valores ele pode armazenar e quais operações podem ser executadas. <br>
+        A função <strong>type()</strong> pode ser usada para verificar o tipo de um objeto: <br>
+        >>> type(3) <br>
+        class 'int' <br>
+        >>> type(3.0) <br>
+        class 'float' <br>
+        >>> type('Helo Word') <br>
+        class 'str' <br>
+        >>> type([1, 2, 3, 5, 8]) <br>
+        class 'list'
+    </p>
+
+    <p>
+        Dado o tipo do objeto, há um conjunto de valores que esse objeto pode armazenar. <br>
+        Inteiros podem conter valores arbitrariamente altos(depende da memoria do computador): <br>
+        >>> 2 ** 1024 <br>
+        4632874162346257239429834385234973 <br>
+        Já o tipo float tem um limite atual de 64 bits: <br>
+        >>> 2.0 ** 1024 <br>
+        → ERROR
+    </p>
+
+    <p>
+        Para criar um objeto int com valor 3, fazemos: <br>
+        >>> x = 3 <br>
+        Ou então: <br>
+        >>> x = int(3) <br>
+        >>> x <br>
+        3 <br>
+        A função int() é chamada de construtor, e é usada para instanciar um objeto int explicitamente. <br>
+        <br>
+        Este exemplo serve também para os outros construtores: <br>
+        float, <br>
+        str, <br>
+        list, <br>
+    </p>
+
+    <h4>Conversão Implícita</h4>
+    <p>
+        Se em uma expressão há operandos de diferentes tipos, Python irá converter cada operando para o tipo que contém os outros: <br>
+        Ex.: <br>
+        >>> True + 5 <br>
+        6 <br>
+        >>> 3 + 0,35 <br>
+        (3, 35)
+    </p>
+</body>
+</html>
