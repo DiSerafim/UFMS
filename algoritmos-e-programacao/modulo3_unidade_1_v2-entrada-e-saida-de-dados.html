@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Entrada, saída de dados e modularização</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 - Entrada, saída de dados e modularização <br>
+            Unidade 1 - Entrada e saída de dados <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=Dow-n6hqX-0&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=13">Vídeo 2 - Algoritmos e Programação de Computadores I - print(), input() e eval()</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h3>print(), input() e eval()</h3>
+
+    <h4>print()</h4>
+    <p>
+        É usada para imprimir aquilo que é enviado no argumento (entre parênteses).
+    </p>
+    <p>
+        Ex.:  <br>
+        >>> print(0) <br>
+        0 <br>
+        >>> x = 2 <br>
+        >>> print(x) <br>
+        2 <br>
+        >>> print([1, 2, 3]) <br>
+        [1, 2, 3] <br>
+        >>> print('Olá') <br>
+        Olá <br>
+        <br>
+        É possível também passar mais de um argumento para a função. <br>
+        Ex.: <br>
+        >>> h = 13 <br>
+        >>> print('Agora são', h, 'horas') <br>
+        Agora são 13 horas <br>
+        <br>
+        Outros argumentos da função print(); <br>
+        >>> dia = 1 <br>
+        >>> mes = 12 <br>
+        >>> ano = 1990 <br>
+        >>> print(dia, mes, ano, sep='/') <br>
+        1/12/1990 <br>
+        >>> print(dia, mes, ano, sep='/', end='.\n') <br>
+        1/12/1990. <br>
+        <br>
+        >>> x = 2 <br>
+        >>> y = 3 <br>
+        >>> print("x = ", x, "y = ", y) <br>
+        x =  2 y =  3 <br>
+        >>> print('x = ', x, 'y = ', y, sep='|') <br>
+        x = |2|y = |3 <br>
+    </p>
+
+    <h4>input()</h4>
+    <p>
+        É usado para solicitar dados do usuário no shell. <br>
+        A função input sempre retorna uma string, independente do valor digitado pelo usuário.
+    </p>
+    <p>
+        Ex.: <br>
+        >>> nome = input('Digite seu nome') <br>
+        Digite seu nome Diego Serafim <br>
+        >>> nome <br>
+        ' Diego Serafim' <br>
+        <br>
+        >>> x = input('Digite o valor de x: ') <br>
+        Digite o valor de x: 6 <br>
+        >>> x <br>
+        '6' <br>
+        >>> type(x) <br>
+        class 'str'
+    </p>
+
+    <h4>eval()</h4>
+    <p>
+        É possível explicitamente instruir a linguagem para avaliar uma string como uma expressão Python.
+    </p>
+    <p>
+        Ex.: <br>
+        >>> eval('3') <br>
+        3 <br>
+        >>> eval('3 + 4') <br>
+        7 <br>
+        >>> eval('len([1, 2, 3])') <br>
+        3 <br>
+        >>> eval('3 > 4') <br>
+        False <br>
+        >>> x = input('Valor: ') <br>
+        Valor: 6 <br>
+        >>> eval(x) <br>
+        6 <br>
+        >>> eval('x') <br>
+        '6' <br>
+    </p>
+
+    <p>Exercício</p>
+    <p>
+        Fazer um programa em Python em que o usuário informa uma temperatura em Celsius, e o programa emite a temperatura em Fahrenheit. <br>
+        Usar a fórmula: F = 1.8 * C + 32.
+    </p>
+    <p>
+        c = input('Digite a temperatura em Celsius: ') <br>
+        c_temp = eval(c) <br>
+        f = 1.8 * c_temp + 32 <br>
+        print(f, 'Graus Fahrenheit.')
+    </p>
+    <p>
+        └─$ python3 0-modulo3_unidade_1_v2-exercicio.py <br>
+        Digite a temperatura em Celsius: 24 <br>
+        75.2 Graus Fahrenheit.
+    </p>
+</body>
+</html>
