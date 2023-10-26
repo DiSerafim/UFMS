@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Entrada, saída de dados e modularização</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 - Entrada, saída de dados e modularização <br>
+            Unidade 2 - Modularização <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=t3frZSXDS3I">Vídeo 2 - 25 - Curso de Python - Funções - Introdução</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Bóson Treinamentos            
+        </p>
+    </header>
+
+    <h4>Funções - Introdução</h4>
+    <p>
+        Uma função é um agrupamento de instruções que podem ser executadas mais de uma vez em um programa. <br>
+        É possível passar a uma função parâmetros de entrada, que podem ser diferentes a cada vez que a função é executada.
+    </p>
+
+    <h4>Finalidade das funções</h4>
+    <p>
+        Criamos funções por dois motivos: <br>
+        - Reutilização de código.
+        - Modularização.
+    </p>
+
+    <h4>Tipos de funções</h4>
+    <p>
+        Funções internas (builtin). Já definidas pelo Python <br>
+        Funções definidas pelo usuário.
+    </p>
+
+    <h4>Criando funções em Python</h4>
+    <p>
+        Definimos uma nova função usando a instrução <strong>def</strong>, de acordo com a sintaxe a seguir: <br>
+        def &lt;nome_função&gt;(argumento): <br>
+        &lt;instruções&gt; <br>
+        <br>
+        Ex.: função para exibir uma mensagem: <br>
+        def mensagem(): <br>
+            print("Bóson Treinamentos em Tecnologia!") <br>
+        <br>
+        A instrução <strong>def</strong> cria um objeto e atribui um nome a ele.
+    </p>
+
+    <h4>Criando função em Python com argumentos</h4>
+    <p>
+        Definimos uma nova função usando a instrução <strong>def</strong>, de acordo com a sintaxe a seguir: <br>
+        def &lt;nome_função&gt;(argumento): <br>
+        &lt;instruções&gt; <br>
+        Ex.: função para somar dois números: <br>
+        def soma(a, b): <br>
+            return a + b <br>
+        --- <br>
+        >>> def soma(a, b): <br>
+        ...    return a + b  <br>
+        >>> soma(9, 9) <br>
+        18
+    </p>
+    <p>
+        Ex.1: <br>
+        valores = [1, 2, 3, 4, 5] <br>
+        def quadrado(valores): <br>
+            quadrados = [] <br>
+            for x in valores: <br>
+                quadrados.append(x ** 2) <br>
+            return quadrados <br>
+        <br>
+        resultados = quadrado(valores) <br>
+        for y in resultados: <br>
+            print(y) <br>
+         <br>
+    </p>
+    <p>
+        Resultado: <br>
+        >>> valores = [1, 2, 3, 4, 5] <br>
+        >>> def quadrado(valores): <br>
+        ...             quadrados = [] <br>
+        ...             for x in valores: <br>
+        ...                 quadrados.append(x ** 2) <br>
+        ...             return quadrados <br>
+        >>> resultados = quadrado(valores) <br>
+        >>> for y in resultados: <br>
+        ...             print(y) <br>
+        ...  <br>
+        1 <br>
+        4 <br>
+        9 <br>
+        16 <br>
+        25 <br>
+    </p>
+</body>
+</html>
