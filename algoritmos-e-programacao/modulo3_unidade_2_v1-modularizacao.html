@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Entrada, saída de dados e modularização</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 - Entrada, saída de dados e modularização <br>
+            Unidade 1 - Modularização <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=qCabcDN0LYI&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=14">Vídeo 1 - Algoritmos e Programação de Computadores I - Definição de funções</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Definição de funções</h4>
+    <p>
+        Python permite que o programador crie suas próprias funções. <br>
+        É útil quando precisamos executar uma sequência de instruções várias vezes, em diferentes partes do programa. <br>
+        Permite modularizar o programa, facilitando o reúso e manutenção.
+    </p>
+    <p>
+        <strong>Primeira função</strong> <br>
+        Suponha que queremos definir uma função que calcula f(x): <br>
+        f(x) = x² + 1 <br>
+        Podemos definir a função como segue: <br>
+        def f(x): <br>
+            res = x**2 + 1 <br>
+            return res <br>
+        <br>
+        >>> def f(x): <br>
+        ...res = x**2 + 1 <br>
+        ...return res <br>
+        >>> f(4) <br>
+        17
+    </p>
+
+    <h4>Formato</h4>
+    <p>
+        O formato geral para definição de funções em python é: <br>
+        def &lt;nome da função&gt;(&lt;parâmetros&gt;): <br>
+        &lt;instruções com indentação &gt; <br>
+        ... <br>
+        return &lt;valor&gt; (opcional)
+    </p>
+
+    <h4>Função com vários parâmetros</h4>
+    <p>
+        Função que calcula o preço de um produto atualizado pela taxa de juros: <br>
+        <br>
+        def juros(preco, juros): <br>
+            res = preco * (1 + (juros / 100)) <br>
+            return res <br>
+        <br>
+        >>> def juros(preco, juros): <br>
+        ...     res = preco * (1 + (juros / 100)) <br>
+        ...     return res <br>
+        >>> juros(650, 60) <br>
+        1040.0 <br>
+    </p>
+
+    <h4>
+        print() e return() <br>
+        Qual a diferença entre as duas funções a baixo?
+    </h4>
+    <p>
+        Ex1.: <br>
+        def f(x): <br>
+            res = x ** 2 + 1 <br>
+            return res <br>
+         <br>
+        >>> def f(x): <br>
+        ...    res = x ** 2 + 1 <br>
+        ...    return res <br>
+        >>> f(81) <br>
+        6562 <br>
+        <br>
+        return é uma instrução usada dentro de funções para retornar um valor a quem chamou a função. <br>
+
+        É usado para passar um valor de volta ao ponto de chamada da função, permitindo que esse valor seja armazenado em uma variável ou usado em expressões. <br>
+
+        O valor retornado por return é frequentemente usado para resultados de cálculos ou para tomar decisões com base em valores calculados dentro de uma função. <br>
+    </p>
+    <p>
+        Ex2.: <br>
+        def f(x): <br>
+            res = x ** 2 + 1 <br>
+            print(res) <br>
+         <br>
+        >>> def f(x): <br>
+        ...    res = x ** 2 + 1 <br>
+        ...    print(res) <br>
+        >>> f(81) <br>
+        6562 <br>
+        <br>
+
+        print() é uma função em Python usada para exibir informações na saída padrão, que geralmente é a tela do computador. <br>
+
+        É usado para mostrar valores, mensagens ou resultados de cálculos na tela para que o usuário possa vê-los. <br>
+
+        print() não retorna um valor para ser usado em cálculos ou operações posteriores. Sua função é puramente de saída. <br>
+    </p>
+
+    <h4>Ordem de definição</h4>
+    <p>
+        Ao definir uma função em Python, é importante sempre defini-la antes de executar, na ordem sequencial de cima para baixo no arquivo. <br> <br>
+
+        Ex. erro: <br>
+        print(j(3)) <br>
+        def j(x): <br>
+            return x ** 2 + 1 <br>
+        <br>
+        print(j(3)) <br>
+        Traceback (most recent call last): <br>
+            File "<stdin>", line 1, in <module> <br>
+        NameError: name 'j' is not defined <br>
+        >>>         def j(x): <br>
+            File "<stdin>", line 1 <br>
+            def j(x): <br>
+        IndentationError: unexpected indent <br>
+        <br>
+        Ex. Sem erro com função definidas sem executá-las: <br>
+        def l(x): <br>
+            return m(x) <br>
+        <br>
+        def n(x): <br>
+        return x ** 2 + 1 <br>
+        <br>
+        >>> def l(x): <br>
+        ...    return m(x) <br>
+        ...  <br>
+        >>> def n(x): <br>
+        ...    return x ** 2 + 1 <br>
+        ...  <br>
+    </p>
+</body>
+</html>
