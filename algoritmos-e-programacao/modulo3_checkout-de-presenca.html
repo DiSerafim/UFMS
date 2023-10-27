@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença Módulo 3</title>
+</head>
+<body>
+    <header>
+        <h3>
+            📍 [Checkout de Presença] Módulo 3 – Entrada, saída de dados e modularização<br>
+        </h3>
+        <p>Nome completo: <strong>Diego Serafim de Sousa</strong></p>
+
+        <p>Nome do/a Professor/a Tutor/a: <strong>Said Sadique Adi</strong></p>
+
+        <p>Título da atividade: <strong>ALGORITMOS E PROGRAMAÇÃO I-T01-2023-2</strong></p>
+        <p>Vencimento: sábado, 2 dez 2023, 23:59</p>
+    </header>
+
+    <h1>Essa atividade vale presença</h1>
+
+    <h3>
+        chegou a hora de você escrever um programa de verdade. <br>
+        Nessa atividade, seu objetivo é escrever um programa que resolve o problema definido na atividade do Módulo 1. <br>
+        Para isso, utilize as variáveis que você definiu no último exercício da atividade do Módulo 2, leia os valores associados ao tempo gasto pelo veículo, à sua velocidade média e consumo médio.
+        <br><br>
+        Lidas essas informações, realize os cálculos necessários e imprima o valor da quantidade de combustível gasto. Lembre-se que na atividade do Módulo 1 você já codificou esse programa utilizando uma linguagem mais próxima ao português. Seu objetivo agora é traduzir essa codificação para a linguagem Python. 
+        <br><br>
+        Uma observação importante: o cálculo da quantidade de combustível deve ser feito por meio de uma função que recebe os valores, da distância percorrida e consumo médio do veículo, e devolve a quantidade de combustível gasto.
+    </h3>
+
+    <h4>
+        As entradas e saídas do algoritmo devem corresponder exatamente aos valores das variáveis descritas no enunciado, não é necessário a impressão de textos ou pontuações adicionais ao que foi solicitado. Abaixo é apresentado um exemplo de entradas e saída esperada. <br>
+        <br>
+        Exemplo: <br>
+        input=12 <br>
+        50 <br>
+        15 <br>
+        output=40.0 <br>
+    </h4>
+    <p>
+        <!-- Função --> ## Função <br>
+        def calcular_combustivel(tempo_gasto, velocidade_media, consumo_medio): <br>
+            distancia = tempo_gasto * velocidade_media <br>
+            quantidade_combustivel = distancia / consumo_medio <br>
+            return quantidade_combustivel <br>
+        <br>
+        <!-- Entradas --> ## Entradas <br>
+        tempo_gasto = float(input()) <br>
+        velocidade_media = float(input()) <br>
+        consumo_medio = float(input()) <br>
+        <br>
+        <!-- Execução --> ## Execução <br>
+        quantidade_combustivel = calcular_combustivel(tempo_gasto, velocidade_media, consumo_medio) <br>
+        <br>
+        <!-- Resultado --> ## Resultado
+        print(quantidade_combustivel)
+    </p>
+
+    <h4>Teste terminal Python</h4>
+    <pre>
+        >>> def calcular_combustivel(tempo_gasto, velocidade_media, consumo_medio):
+        ...     distancia = tempo_gasto * velocidade_media
+        ...     quantidade_combustivel = distancia / consumo_medio
+        ...     return quantidade_combustivel
+        ... 
+        >>> tempo_gasto = float(input())
+        12
+        >>> velocidade_media = float(input())
+        50
+        >>> consumo_medio = float(input())
+        15
+        >>> quantidade_combustivel = calcular_combustivel(tempo_gasto, velocidade_media, consumo_medio)
+        >>> print(quantidade_combustivel)
+        40.0           
+    </pre>
+
+    <h4>Teste .py</h4>
+    <pre>
+        └─$ python3 0-modulo3_checkout-de-presenca.py
+        Qual o tempo gasto? 12
+        Qual a velocidade média? 50
+        Qual o consumo médio? 15
+        A quantidade de combustível gasta é: 40.0 litros
+    </pre>
+
+    <h4>Avaliação AVA</h4>
+    <p>
+        Enviado em quinta, 26 out 2023, 21:24 ( Baixar) <br>
+        Avaliação automática  [-] <br>
+        Nota proposta: 9 / 9 <br>
+         <br>
+        Comentários  [-] <br>
+        [-]Summary of tests <br>
+        +------------------------------+ <br>
+        |  5 tests run/ 5 tests passed | <br>
+        +------------------------------+        
+    </p>
+</body>
+</html>
