@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Estruturas condicionais</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade 1 - Estruturas condicionais <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=shoFjracm08&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=16">Vídeo 1 - Algoritmos e Programação de Computadores I - Estruturas de condição de uma ou duas vias</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Estruturas de condição de uma ou duas vias</h4>
+    <p>
+        Permite escolher um conjunto de ações - bloco. <br>
+        Blocos são delimitados por indentação. <br>
+        - A escolha depende de uma condição ser ou não satisfeita. <br>
+        - A condição é representada por expressões lógicas ou relacionais.
+    </p>
+
+    <p>
+        As estruturas de seleção podem ser: <br>
+        - Seleção de uma via. <br>
+        - Seleção de duas vias. <br>
+        - Seleção de três vias. 
+    </p>
+
+    <h4>Seleção de uma via</h4>
+    <p>
+        Objetivo: testar uma condição antes de executar uma instrução.
+    </p>
+    <pre>
+        if &lt;condição&gt;:
+            &lt;bloco de instruções indentado&gt;
+        &lt;bloco de instruções não indentado&gt;
+    </pre>
+
+    <h4>Seleção de duas vias</h4>
+    <p>
+        Dois blocos alternativos dependendo da condição:
+    </p>
+    <pre>
+        if &lt;condição&gt;:
+            &lt;bloco 1 de instruções indentado&gt;
+        else:
+            &lt;bloco 2 de instruções indentado&gt;
+        &lt;bloco de instruções não indentado&gt;
+    </pre>
+    <h4>Exemplo</h4>
+    <p>
+        Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um programa em Python que calcule seu peso ideal, utilizando para isso as seguintes fórmulas: <br>
+        - Para homens: (72,7 * altura) - 58
+        - Para mulheres: (62.1 * altura) - 44.7
+    </p>
+    <pre>
+        altura = input('Digite sua altura: ')
+        sexo = input('Digite h para homens e m para mulheres: ')
+        convert_altura = eval(altura)
+
+        if sexo == 'h':
+            peso = (72.7 * convert_altura) - 58
+        else:
+            peso = (62.1 * convert_altura) - 44.7
+
+        print('Seu peso ideal é: ', peso)
+    </pre>
+</body>
+</html>
