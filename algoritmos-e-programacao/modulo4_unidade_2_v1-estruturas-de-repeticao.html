@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Estruturas de repetição</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade 1 - Estruturas de repetição <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=lBeAoYop1JE&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=18">Vídeo 1 - Algoritmos e Programação de Computadores I - Estruturas de repetição - for</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Estruturas de repetição - for</h4>
+    <p>
+        Estruturas de controle de fluxo que permite repetir uma sequência de comandos. <br>
+        Número de repetições pode ser indeterminado, porém deve ser finito.
+    </p>
+    
+    <h4>Comando FOR</h4>
+    <p>
+        for &lt;variável&gt; in &lt;sequência&gt;: <br>
+            &lt;bloco de código indentado&gt; <br>
+        &lt;bloco de código não indentado&gt; <br>
+        <br>
+        A variável &lt;sequência&gt; deve ser um objeto do tipo string, lis, range ou qualquer outro tipo que possa ser iterado. <br>
+
+        Valores sucessivos de &lt;sequência&gt; são atribuídos a &lt;variável&gt;, executando &lt;blocos de código indentado&gt; para cada valor de &lt;variável&gt;.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            l = ['cão', 'gato', 'coelho']
+            for i in l:
+                print(i)
+        </pre>
+        <pre>
+            s = 'algoritmos'
+            for c in s:
+                if c in 'aeiou':
+                    print(c)
+        </pre>
+    </p>
+    <p>
+        Função range(). Formato: <br>
+        range(start, stop, step) <br>
+        <pre>
+            for x in range(10):
+                print(x)
+        </pre>
+        <pre>
+            for y in range(1, 20, 2):
+                print(y)
+        </pre>
+        <pre>
+            l = ['a', 'b', 'c']
+            for i in range(len(l)):
+                print(l[i])
+        </pre>
+    </p>
+
+    <h4>Acumuladores</h4>
+    <p>
+        Exemplo: <br>
+        Como calcular a soma de todos os números pares de 1 a 100? <br>
+
+        <pre>
+            acum = 0
+            for x in range(1, 101):
+                if x % 2 == 0:
+                    acum = acum + x
+            print(acum)
+        </pre>
+    </p>
+
+    <h4>Loops Aninhados</h4>
+    <p>
+        Exemplo: <br>
+        Dada uma lista de strings como segue: <br>
+        
+        str_list = ['João', 'Roberto', 'Rafael'] <br>
+
+        Retornar todas as vogais que ocorrem nos elementos acima. <br>
+        Resp.: o, o, o, e, o, a, a, e
+
+        <pre>
+            str_list = ['João', 'Roberto', 'Rafael']
+
+            for nome in str_list:
+                for c in nome:
+                    if c in 'aeiou':
+                        print(c)
+        </pre>
+    </p>
+</body>
+</html>
