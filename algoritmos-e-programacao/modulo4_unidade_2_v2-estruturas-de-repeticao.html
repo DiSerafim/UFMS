@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Estruturas de repetição</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade 1 - Estruturas de repetição <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=1YaGMruipOk&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=19">Vídeo 2 - Algoritmos e Programação de Computadores I - Estruturas de repetição - while</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Estruturas de repetição - while</h4>
+    <p>
+        O comando <strong>while</strong> tem uma estrutura parecida com o teste condicional de uma via: <br>
+        <pre>
+            if &lt;condição&gt;:
+                &lt;bloco de instruções indentado&gt;
+            &lt;bloco de instruções não indentado&gt;
+
+
+            while &lt;condição&gt;:
+                &lt;bloco de instruções indentado&gt;
+            &lt;bloco de instruções não indentado&gt;
+        </pre>
+    </p>
+    
+    <p><strong>Fluxograma:</strong></p>
+    <pre>
+
+        [INÍCIO] --> [Iniciar While]
+                    ↓
+                [Condição Verdadeira?]
+                    |
+                    ↓ (Não)
+                [Fim do Loop] --> [FIM]
+
+        |
+        ↓ (Sim)
+        
+        [Executar Código]
+        ↓
+        [Verificar Condição]
+    </pre>
+    <p>
+        Explicação: <br><br>
+
+        1. O fluxograma começa no "Início". <br>
+        2. Ele entra no loop while. <br>
+        3. Dentro do loop, a condição é verificada. Se a condição for verdadeira, ele executará o código dentro do loop. <br>
+        4. Após a execução do código, a condição é verificada novamente. <br>
+        5. Se a condição for falsa, o loop while é encerrado e o fluxo segue para o "Fim do Loop" e, eventualmente, para o "Fim". <br>
+        6. Se a condição for verdadeira, o loop continuará a executar o código e a verificar a condição até que a condição se torne falsa, momento em que o loop será encerrado.
+    </p>
+    <p>
+        O comando while é útil quando não sabemos quantas vezes um bloco deverá ser repetido. <br>
+        Exemplo: <br>
+        Encontre o maior valor de n tal que n! < L. <br>
+        Se L = 20, então o maior valor de n é 3, <br>
+        já que 3! = 6 e 4! = 24.
+        <pre>
+            >>> def nfat(L):
+            ...     n = 0
+            ...     fat = 1
+            ...     while fat <= L:
+            ...             n += 1
+            ...             fat *= n
+            ...     return n-1
+        </pre>
+    </p>
+    <h4>Exemplo:</h4>
+    <p>
+        1. Pedir para o usuário digitar um número inteiro positivo. Caso contrário, emitir uma mensagem e pedir novamente.
+    </p>
+    <pre>
+        num = eval(input('Digite um número positivo: '))
+        while num < 0:
+            num = eval(input('Digite um número positivo: '))
+        print('Valeu *^*')
+    </pre>
+
+    <p>
+        2. Armazenar nomes de pessoas em uma lista enquanto o usuário digitar strings diferentes de vazio.
+    </p>
+    <pre>
+        l = []
+        nome = input('Digite um nome: ')
+        while nome != '':
+            l.append(nome)
+            nome = input('Digite um nome: ')
+
+        for i in l:
+            print(i)
+    </pre>
+
+    <h4>Loop Infinito</h4>
+    <p>
+        É aquele  que é executado "Para sempre!":
+        <pre>
+            while True:
+                &lt;bloco de instruções indentado&gt;
+        </pre>
+        São úteis quando o programa deve fornecer um serviço indefinitivamente. <br>
+        Para sair do loop, deve-se digitar Ctrl+C no teclado.
+    </p>
+</body>
+</html>
