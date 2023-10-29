@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Estruturas de repetição</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade 2 - Estruturas de repetição <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=KeefJErKf9I&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=21&t=548s">Vídeo 4 - Algoritmos e Programação de Computadores I - Listas Multidimensionais</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Listas Multidimensionais</h4>
+    <p>
+        No caso  de duas dimensões, podemos criar uma lista de listas:
+        <pre>
+            m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        </pre>
+        Assim,<br>
+        m[0] corresponde à primeira linha (lista [1, 2, 3]), <br>
+        m[1] à segunda linha (lista [4, 5, 6]) e <br>
+        m[2] à terceira linha (lista [7, 8, 9]).
+    </p>
+    <p>
+        Usar um segundo índice permite acessar uma coluna:
+        <pre>
+            >>> m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+            >>> m[0][0]
+            1
+            >>> m[1][2]
+            6
+        </pre>
+    </p>
+    
+    <h4>Exemplo:</h4>
+    <p>
+        Implementar uma função em Python que verifica se uma matriz bidimensional é simétrica ou não.
+    </p>
+    <pre>
+        >>> m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        >>> def simetrica(m):
+        ...     nlinhas = len(m)
+        ...     ncolunas = len(m[0])
+        ...     for i in range(nlinhas):
+        ...         for j in range(i+1, ncolunas):
+        ...             if m[i][j] != m[j][i]:
+        ...                 return False
+        ...     return True
+        ... 
+        >>> simetrica(m)
+        False
+        >>> simetrica([[1, 2, 3], [2, 4, 5], [3, 5, 3]])
+        True
+    </pre>
+</body>
+</html>
