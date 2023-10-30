@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 4</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A4] – Avaliação do Módulo 4 – Estruturas de programação<br>
+        </h1>
+        <p>
+            Iniciado em	domingo, 29 out 2023, 19:30 <br>
+            Estado	Finalizada <br>
+            Concluída em	domingo, 29 out 2023, 20:30 <br>
+            Tempo empregado	1 hora <br>
+            Avaliar	8,54 de um máximo de 10,00(85,42%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h3>
+        O trecho de código abaixo, escrito em Python, só imprimirá a palavra "Fim" quando o usuário digitar um número positivo. <br>
+        <br>
+        num = eval(input("Digite um número: ")) <br>
+        <br>
+        while num > 0: <br>
+        num = eval(input("Digite um número: ")) <br>
+        print("Fim")
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        As estruturas de:
+    </h3>
+    <h4>
+        ........ permitem a ........ de um conjunto de ações, também denominados ........, delimitadas por ........, e essa escolha depende de uma ........, representada por expressões ........ ou ........, ser ou não ......... <br>
+        Opções: <br>
+        condição | lógicas | blocos | indentação | escolha | racionais | satisfeita | blocos
+    </h4>
+    <p>
+        <strong>condição</strong>❌ permitem a <strong>escolha</strong>✅ de um conjunto de ações, também denominados <strong>blocos</strong>,✅ delimitadas por <strong>indentação</strong>,✅ e essa escolha depende de uma <strong>condição</strong>,✅ representada por expressões <strong>lógicas</strong>✅ ou <strong>racionais</strong>,✅ ser ou não <strong>satisfeita</strong>.✅
+    </p>
+
+    <h1>Questão 3</h1>
+    <h3>
+        Projete e implemente um programa em Python que leia um número inteiro positivo e verifique se esse número possui dois dígitos consecutivos iguais. <br>
+        <br>
+        A entrada consiste de um número inteiro e a saída deve ser igual a "sim" ou "não" caso o número possua dois dígitos consecutivos iguais ou não, respectivamente.
+    </h3>
+    <h4>
+        Por exemplo:
+        
+        <pre>Entrada	Resultado</pre>
+        <pre>5          não</pre>
+        <pre>231        não</pre>
+        <pre>34134223   sim</pre>
+        Resposta:(regime de penalidade: 0%) <br>
+        O editor Ace não está pronto. Talvez recarregar a página? <br>
+        Retornando à área de texto bruto.        
+    </h4>
+    <p>
+        def digitos_iguais(n):
+            numero = str(n)
+            for i in range(len(numero) - 1):
+                if numero[i] == numero[i + 1]:
+                    return "sim"
+            return "não"
+
+        n = int(input())
+        resultado = digitos_iguais(n)
+        print(resultado)
+    </p>
+
+    <h1>Questão 4</h1>
+    <h3>
+        Em todas as estruturas de seleção, seja ela de uma, duas, três ou mais vias, no máximo um bloco de instruções indentado é executado.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso❌ <br>
+        Verdadeiro ✅
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        Dizemos que um número natural com pelo menos 2 algarismos é palíndromo se o seu primeiro algarismo é igual ao seu último algarismo; o seu segundo algarismo é igual ao penúltimo algarismo; e assim sucessivamente. Projete e implemente um programa em Python que leia um número natural e verifique se ele é palíndromo ou não. <br>
+        <br>
+        A entrada consiste de um número natural e a saída deve ser igual a "sim" ou "não" caso o número seja palíndromo ou não, respectivamente.
+    </h3>
+    <h4>
+        Por exemplo:
+        
+        <pre>Entrada	Resultado</pre>
+        <pre>39093       sim</pre>
+        <pre>123321      sim</pre>
+        <pre>34134223    não</pre>
+    </h4>
+    <p>
+        >>> def palindromo(n):
+        ...     numero = str(n)
+        ...     return numero == numero[::-1]
+        ... 
+        >>> n = int(input('Digite um número: '))
+        Digite um número: 9
+        >>> resultado = "sim" if palindromo(n) else "não"
+        >>> print(resultado)
+        sim
+    </p>
+
+    <h1>Questão 6</h1>
+    <h3>
+        A função range() do Python possui a sintaxe range(início, fim, passo) permitindo especificar o início de uma sequência, o passo (ou pulo) e o valor final.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 7</h1>
+    <h3>
+        Dada a matriz M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] em Python, o trecho de código a seguir calcula e imprime a soma dos elementos de M. <br>
+        <br>
+        valor = 0 <br>
+        for i in range(3): <br>
+        for j in range(3): <br>
+        valor = valor + M[i][j] <br>
+        valor = valor / 9 <br>
+        print(valor)
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+
+    <h1>Questão 8</h1>
+    <h4>
+        Relacione os tipos de estruturas de seleção com o seu significado.
+        <br><br>
+        várias condições são verificadas e, de acordo com a veracidade de uma delas, o bloco correspondente será executado........... <br>
+
+        executa um bloco caso uma dada condição seja satisfeita .......... <br>
+
+        executa um bloco caso uma dada condição seja satisfeita ou outro bloco casa a mesma condição não seja satisfeita .......... <br>
+         <br>
+        Opções: <br>
+        
+        Seleção de três ou mais vias | Seleção de uma via | Seleção de duas vias
+    </h4>
+    <p>
+        várias condições são verificadas e, de acordo com a veracidade de uma delas, o bloco correspondente será executado <strong>Seleção de três ou mais vias</strong> <br>
+
+        executa um bloco caso uma dada condição seja satisfeita <strong>Seleção de uma via</strong> <br>
+
+        executa um bloco caso uma dada condição seja satisfeita ou outro bloco casa a mesma condição não seja satisfeita <strong>Seleção de duas vias</strong>
+    </p>
+
+    <h1>Questão 9</h1>
+    <h3>
+        Dado o pedaço de código abaixo, escrito em Python, podemos afirmar que: <br>
+        <br>
+        lista_nomes = ["Maria", "Eduardo", "Joca"] <br>
+        <br>
+        for nome in lista_nomes: <br>
+        for c in nome: <br>
+        if c in "aeiou": <br>
+        print(c) <br>
+        <br>
+        Escolha uma ou mais:
+    </h3>
+    <h4>
+        a. Ele imprimirá o caracteres o duas vezes <br>
+        b. Ele não executará já que o Python não permite a existência de um laço dentro de outro <br>
+        c. Ele imprimirá os caracteres i e u uma vez cada <br>
+        d. Ele imprimirá o caractere e zero vezes <br>
+        e. Ele imprimirá o caractere a três vezes
+    </h4>
+    <p>
+        a. Ele imprimirá o caracteres o duas vezes <br>
+        c. Ele imprimirá os caracteres i e u uma vez cada
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Projete e implemente um programa em Python que leia dois números inteiros, chamados aqui de início e fim, e calcule a soma dos números inteiros maiores ou iguais a início e menores ou iguais fim. <br>
+        <br>
+        A entrada consiste em um par de números inteiros, sendo um número em cada linha, e a saída corresponde à soma dos inteiros maiores ou iguais ao início e menores ou iguais a fim. <br>
+        <br>
+        Por exemplo:
+    </h3>
+    <h4>
+        <pre>Entrada	Resultado </pre>
+        <pre>1             5050   </pre>
+        <pre>100           5050   </pre>
+        <pre>3             4947   </pre>
+        <pre>99            4947   </pre>
+        
+    </h4>
+    <pre>
+        inicio = int(input())
+        fim = int(input())
+        soma = 0
+
+        for n in range(inicio, fim + 1):
+            soma += n
+
+        print(soma)
+    </pre>
+</body>
+</html>
