@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5 - Documentação de programas</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade 1 - Documentação de programas <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=Kn-ekrQxvb8&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=15">Vídeo 1 - Algoritmos e Programação de Computadores I - Documentação de programas</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Marcelo Manzato
+        </p>
+    </header>
+
+    <h4>Documentação</h4>
+    <p>
+        A documentação de programas permite: <br>
+        - que usuários entendam o que o programa faz. <br>
+        - que desenvolvedores entendam como o programa funciona <br>
+        <br>
+        É importante documentar programas até para o próprio autor daquele código, já que  à medida em que o programa se torna complexo, o desenvolvedor pode se esquecer daquele trecho que implementou anteriormente.
+    </p>
+
+    <p>
+        Documentar um código em Python normalmente é realizado pr meio de comentários. <br>
+
+        Um comentário é um texto que precede o caractere '#'. <br>
+        Exemplo:
+        <pre>
+            >>> def f(x):              # calcula x ** 2 + 1 e armazena o
+            ...     res = x ** 2 + 1   # resultado em res
+            ...     return res         # retorna o resultado de res
+            ...                        
+            >>> f(7)                   # chama a função com o valor passado
+            50                         # resultado
+        </pre>
+    </p>
+    <p>
+        Caso o comentário ocupe várias linhas, pode-se delimitá-lo por três aspas simples ou duplas: <br>
+        """ <br>
+            Calcula x ** 2 + 1 <br>
+            Retorna o resultado <br>
+        """ <br>
+        <pre>
+            >>> def f(x):
+            ...     res = x ** 2 + 1
+            ...     return res
+            ... 
+            >>> f(7)
+            50
+        </pre>
+    </p>
+
+    <p>
+        É importante saber balancear entre comentários e legibilidade de código.
+        <br>
+        Comentários podem ser usados para explicar partes complexas do programa.
+        <br>
+        Variáveis com nomes significativos podem ser usadas para tornar o código autoexplicativo.
+    </p>
+
+    <h4>Docstrings</h4>
+    <p>
+        A documentação de funções também é importante para auxiliar no seu entendimento.
+        <br>
+        Funções previamente definidas possuem documentação que pode ser acessada por meio da função help():
+        <pre>
+            >>> help(min)
+
+            Help on built-in function min in module builtins:
+
+            min(...)
+                min(iterable, *[, default=obj, key=func]) -> value
+                min(arg1, arg2, *args, *[, key=func]) -> value
+                
+                With a single iterable argument, return its smallest item. The
+                default keyword-only argument specifies an object to return if
+                the provided iterable is empty.
+                With two or more arguments, return the smallest argument.
+            (END)
+        </pre>
+    </p>
+
+    <p>
+        No caso de funções definidas pelo usuário, se usarmos help() para obter a documentação, teremos uma descrição genérica da função:
+        <pre>
+            >>> help(f)
+
+            Help on function f in module __main__:
+
+            f(x)
+            (END)
+        </pre>
+    </p>
+</body>
+</html>
