@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença Módulo 4</title>
+</head>
+<body>
+    <header>
+        <h3>
+            📍 [Checkout de Presença] Módulo 5 – Documentação e testes de programa<br>
+        </h3>
+        <p>Nome completo: <strong>Diego Serafim de Sousa</strong></p>
+
+        <p>Nome do/a Professor/a Tutor/a: <strong>Said Sadique Adi</strong></p>
+
+        <p>Título da atividade: <strong>ALGORITMOS E PROGRAMAÇÃO I-T01-2023-2</strong></p>
+        <p>Vencimento: segunda, 16 out 2023, 23:59</p>
+    </header>
+
+    <h1>Essa atividade vale presença</h1>
+
+    <h3>
+        Por isso, sua função aqui é comentar, de forma bem detalhada, o código que você desenvolveu na atividade realizada no Módulo 4. <br>
+        <br>
+        Os comentários de uma única linha devem ser utilizados para documentar linhas individuais do seu código, enquanto que aqueles com mais do que uma linha devem ser utilizados para comentar as funções que você desenvolveu dentro do seu programa.
+    </h3>
+    Para a construção desta atividade, produza um arquivo código-fonte, no formato .py, utilizando o código produzido na atividade do Módulo 4, e inclua tanto comentários de uma única linha, quanto comentários de mais do que uma linha. Não economize nesses comentários. Quanto mais comentários, melhor!
+    <h4>
+        
+    </h4>
+    <pre>
+        """
+        Função para cadastrar produtos e preços.
+        Armazena os produtos e preços em uma lista.
+        Retorna a lista de produtos.
+        """
+        def cadastra_produtos():
+            n = int(input()) # Solicita um número inteiro n, para a quantidade de produtos.
+            produtos = {} # Armazena os produtos e preços em uma lista.
+
+            for _ in range(n): # Cria um loop para cadastrar os produtos.
+                nome = input() # Solicita o nome do produto.
+                preco = float(input()) # Solicita o preço do produto.
+                if nome.lower() not in produtos: # Verifica se o produto já está cadastrado.
+                    produtos[nome.lower()] = preco # Adiciona o produto e preço na lista
+                else:
+                    print("Produto já cadastrado") # Se o produto já estiver cadastrado, exibe a mensagem.
+
+            return produtos # retorna a lista de produtos
+
+        """
+        Função para buscar preços dos produtos.
+        Permite inserir o nome do produto e obter seu preço.
+        Permite encerrar quando o usuário escrever 'Fim'
+        """
+        def busca_preco(produtos):
+            while True: # Loop para buscar preços
+                produto = input() # Solicita o nome do produto buscado
+                if produto == "Fim": # Verifica se deseja encerrar
+                    break
+                preco = produtos.get(produto.lower(), "Produto não cadastrado") # Procura o preço do produto na lista.
+                print(preco) # exibe o preço do produto ou a mensagem 'Produto não cadastrado'
+
+        """
+        Função principal que chama as funções;
+        cadastra_produtos,
+        busca_preco
+        """
+        def checagem():
+            produtos = cadastra_produtos() # Chama a função cadastra_produtos
+            busca_preco(produtos) # Chama a função busca_preco
+
+        """
+        Verifica se está sendo executado como função principal
+        """
+        if __name__ == "__main__":
+            checagem() # Chama a função principal
+    </pre>
+</body>
+</html>
