@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5 - Depuração de programas</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade 2 - Depuração de programas <br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=A0ER2JyLcZ0">Vídeo 2 - Depuração (Debug) de um Programa Python - PyCharm IDE - Parte 1/2</a>
+        </h1>
+        <p>
+            Professor: Said Sadique Adi <br>
+            Professor: Ygor Amaral
+        </p>
+    </header>
+
+    <h4>Depuração PyCharm IDE - Parte 1/2</h4>
+    <pre>
+        def fatorial_recursivo(n):
+            if n == 0 or n == 1:
+                return 1
+            else:
+                return n * fatorial_recursivo(n - 1)
+            
+        def fatorial_iterativo(n):
+            fat = n
+            i = n - 1
+            while i >= 1:
+                fat *= i
+                i -= 1
+
+        número = input('Digite um número para descobrir o seu fatorial: ')
+
+        print('O fatorial de {} é {} - método recursivo'. format(número, fatorial_recursivo(número)))
+        print('O fatorial de {} é {} - método iterativo'. format(número, fatorial_iterativo(número)))
+    </pre>
+</body>
+</html>
