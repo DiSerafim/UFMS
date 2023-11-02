@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Noções de gerenciamento de memória e listas lineares sequenciais (homogêneas e heterogêneas)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=PEQmkZxM0bU">Vídeo 2 - Algoritmos e Programação de Computadores II - Listas</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h4>Listas</h4>
+    <p>
+        Dependendo do caso, será necessário escolher diferentes implementações para melhorar a performance da aplicação.
+    </p>
+
+    <h4>Tipos de listas</h4>
+    <p>
+        Há basicamente 4 maneiras de se implementar listas: <br>
+        - Sequencial vs. Encadeada. <br>
+        - Estática vs. Dinâmica.
+    </p>
+
+    <h4>Sequencial vs. Encadeada.</h4>
+    <p>
+        Na alocação sequencial os elementos são inseridos em sequência na memória, i.e. sequência física. <br>
+        Permite acesso aos elementos por meio de índices.
+    </p>
+    <p>
+        Na alocação encadeada os elementos não estão necessariamente em posições adjacentes de memória, i.e. possuem uma sequência lógica. <br>
+        Usa-se um ponteiro para o primeiro elemento, e cada elemento possui um ponteiro para o próximo.
+    </p>
+    <p>
+        Quando utilizar sequencial ou encadeada? <br>
+        - Na abordagem sequencial a vantagem é poder acessar os elementos por meio dos índices, porém a memória pode ser mal utilizada. <br>
+        - Na abordagem encadeada há otimização de memória, mas perde-se o acesso direto aos elementos intermediários da lista.
+        <br><br>
+        Obs. a linguagem Python implementa listas usando a abordagem sequencial.
+    </p>
+
+    <h4>Estática vs. Dinâmica.</h4>
+    <p>
+        Variação quanto ao tipo de alocação de memória utilizado. <br><br>
+
+        Na alocação estática toda memória é alocada mesmo sem ser utilizada. <br><br>
+
+        Na alocação dinâmica a memória é alocada sob demanda, à medida que a lista cresce.
+    </p>
+    <p>
+        Quando utilizar a alocação estática ou dinâmica? <br><br>
+        - A alocação dinâmica permite gerenciar melhor a memória, sendo útil quando não sabemos de antemão quantos elementos iremos armazenar na lista. <br>
+        - A alocação estática é mais simples, pois a alocação é feita apenas uma vez. Porém, pode ser que a memória seja alocada mesmo sem uso. <br><br>
+
+        Obs. a linguagem Python implementa listas usando a abordagem dinâmica.
+    </p>
+
+    <h4>Outras variações</h4>
+    <p>
+        Listas podem variar também em outros aspectos: <br>
+        - Ordenada vs. não ordenada. <br>
+        - Linear vs. não linear. <br>
+        - homogênea vs. heterogênea.
+    </p>
+</body>
+</html>
