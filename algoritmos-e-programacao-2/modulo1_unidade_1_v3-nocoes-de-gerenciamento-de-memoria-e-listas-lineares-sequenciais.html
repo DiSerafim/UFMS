@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Noções de gerenciamento de memória e listas lineares sequenciais (homogêneas e heterogêneas)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=4jZCbZpw6wU">Vídeo 3 - Estruturas de Dados - Listas Encadeadas</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino
+            Professor: Ulisses Martins Dias
+        </p>
+    </header>
+
+    <h4>Listas Encadeadas</h4>
+    <p>
+        Roteiro. <br>
+        - Listas Lineares. <br>
+        - Listas Encadeadas. <br>
+        - Pilhas com Listas Encadeadas. <br>
+        - Filas com Listas Encadeadas. <br>
+    </p>
+
+    <h4>Listas Lineares.</h4>
+    <p>
+        Estrutura de dados na qual cada elemento é <strong>precedido</strong> por um elemento e <strong>sucedido</strong> por outro, com exceção do primeiro que não tem predecessor e do último que não tem sucessor. <br><br>
+
+        Isso gera uma ordem nos elementos, que pode ser a ordem de inclusão. <br>
+        As estruturas <strong>Pilha</strong> e <strong>Fila</strong> são <strong>Listas Lineares.</strong>
+    </p>
+    <p>
+        implementamos a <strong>Pilha</strong> e a <strong>Fila</strong>, como <strong>Listas Lineares Sequenciais</strong>.
+        <br><br>
+        Em <strong>Listas Lineares Sequenciais</strong> a <strong>ordem lógica</strong> dos elementos (ordem "vista" pelo usuário) é a mesma da <strong>ordem física</strong>. Isto é, elementos vizinhos na lista estão em posições vizinhas de memória.
+        <br><br>
+        Essa organização confere acesso em tempo constante a qualquer elemento, dado o índice do elemento.
+    </p>
+    <p>
+        O acesso em <strong>tempo constante, dado o índice</strong>, permite obter elementos em um <strong>vetor ordenado</strong> em tempo <strong>O(log(n))</strong> com <strong>busca binária</strong>. <br>
+        <pre>
+            Buscar 23 <br>
+            O elemento do meio é 23? ⤵️
+            
+                Elemento: 16  22  23  25  33  35  37  45  53
+                Índice:    0   1   2   3   4   5   6   7   8
+
+                    ↓ Não, então busca na metade em que ele pode estar.
+            
+            O elemento do meio é 23? ⤵️
+
+                Elemento: 16  22  23  25 
+                Índice:    0   1   2   3   4   5   6   7   8
+
+                    ↓ Não, então busca na metade em que ele pode estar, e assim por diante
+
+                Elemento:         23  25 
+                Índice:    0   1   2   3   4   5   6   7   8
+        </pre>
+    </p>
+    <p>
+        Entretanto, <strong>Listas Lineares Sequenciais</strong> possuem desvantagens: <br>
+        - Precisamos alocar espaço suficiente para todos pos elementos de uma só vez. <br>
+        -- Caso falte algum espaço, seria oneroso mover todos os elementos para uma nova posição de memória com mais espaço. <br><br>
+
+        - Para manter a ordem, talvez sejam necessários muitos deslocamentos em memória. <br>
+        -- <strong>Array ordenado:</strong> precisamos deslocar vários elementos para <strong>manter o array ordenado</strong> após <strong>inserções</strong> ou <strong>remoções</strong>
+
+        <pre>
+                        Inserir 27  ⤵️
+            
+            Elemento: 16  22  23  25  33  35  37  45  53  55    
+            Índice:    0   1   2   3   4   5   6   7   8   9  10  11  12
+
+               Elementos a Deslocar ⤴️-----------------------⤴️
+            
+               Remover 22 ⤵️
+
+                    Elemento: 16  22  23  25 
+                    Índice:    0   1   2   3   4   5   6   7   8   9  10  11  12
+
+            Elementos a Deslocar   ⤴️-------------------------------⤴️
+        </pre>
+    </p>
+
+    <h4>Listas Encadeadas.</h4>
+    <p>
+        Lista linear em que a ordem lógica dos elementos <strong>não</strong> é a mesma da ordem física. Como é uma lista linear, cada elemento tem um <strong>sucessor</strong> e um <strong>predecessor</strong> <br>
+
+        Elementos estão espalhados na memória. <br>
+
+        Cada elemento precisa indicar em que endereço o seu sucessor pode ser encontrado de modo a manter a ordem lógica.
+    </p>
+    <p>
+        Essa organização <strong>retira a grande vantagem das Listas Lineares Sequenciais</strong>, o acesso em tempo constante a qualquer elemento, dado o índice do elemento.
+        <pre>
+            Lista Sequencial
+                1  10  15  19  22  25  33
+        </pre>
+        <pre>
+            Lista encadeada
+            (1) ⤵️ (15) ⤵️ (22) ⤵️ (33)
+               (10) ⤴️ (19) ⤴️ (25) ⤴️
+        </pre>
+        Para encontrar um dado elemento na lista, precisamos percorrer todos os elementos predecessores, de um por um.
+    </p>
+    <p>
+        Como consequência, a <strong>busca binária deixa de fazer sentido</strong>, dado que não acessamos o elemento do meio de um array em tempo constante.
+        - A busca por uma chave pode exigir a comparação com todos os elementos da estrutura, mesmo com array ordenado. <br><br>
+
+        Entretanto, esta nova estrutura possui vantagens. <br>
+        - Número de elementos pode aumentar ou diminuir durante a execução do programa. <br>
+        - A manutenção da ordem lógica não exigirá deslocamento de elementos.
+    </p>
+
+    <h4>Pilhas com Listas Encadeadas.</h4>
+    <p>
+        Como pilhas são estruturas lineares, podemos implementá-las como listas encadeadas. <br>
+        - O primeiro elemento a entrar na estrutura tem que ser o último a sair. O último elemento a entrar tem que ser o primeiro a sair. <br>
+        
+        - As inserções e remoções ocorrem na cabeça da pilha. <br>
+        
+        - Inserções e remoções devem ocorrer em tempo constante. Em outras palavras, independem do número de elementos na estrutura.
+        <pre>
+            (topo)insere→(topo)insere→(topo)insere→(topo)remove→(topo)
+              1             10          15           19           15
+                             1          10           15           10
+                                         1           10            1
+        </pre>
+    </p>
+
+    <h4>Filas com Listas Encadeadas.</h4>
+    <p>
+        Como filas são estruturas lineares, podemos implementa-las como listas encadeadas. <br>
+        - Estrutura de dados em que o primeiro elemento a entrar é o primeiro a sair. <br>
+
+        - Se Pedro enviou um documento para a impressora antes de Paulo, então o documento de Pedro será impresso antes do documento de Paulo. <br>
+
+        - Inserções e remoções devem ocorrer em tempo constante. Em outras palavras, independem do número de elementos na estrutura.
+        <pre>
+            (frente)insere→(frente)insere→(frente)insere→(frente)remove→(frente)remove→(frente)
+                A             B               C              D             D               D
+                |             |               |              |             C               C
+               (B)           (C)             (D)           None            B          
+                |             |               |                                      
+               (C)           (D)            None
+                |             |     
+               (D)          None
+                |
+               None
+          </pre>          
+    </p>
+</body>
+</html>
