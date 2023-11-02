@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Noções de gerenciamento de memória e listas lineares sequenciais (homogêneas e heterogêneas)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=_Eu9M15STbI">Vídeo 1 - [UFMS Digital] Algoritmos e Programação II - Módulo 1 - Unidade 1</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino
+        </p>
+    </header>
+
+    <h1>Listas lineares encadeadas</h1>
+
+    <h4>Listas lineares</h4>
+    <p>
+        É um conjunto de n >= 0 <strong>nós/elementos</strong> organizados de acordo com as suas <strong>posições</strong> dentro da lista.
+    </p>
+    <pre>
+        | "Alberto" | 10 | 10.5 | João | 45 |
+        |     0     |  1 |   2  |   3  |  4 |
+    </pre>
+    <p>
+        Principais operações em uma lista linear. <br>
+        - Busca. <br>
+        - Inserção. <br>
+        - Remoção.
+    </p>
+    <p>
+        Custo dessas operações depende da implementação da linear. <br>
+        - Lista linear com <strong>alocação sequencial</strong> <br>
+        - Lista linear com <strong>alocação encadeada</strong>
+    </p>
+
+    <h4>Lista linear com alocação encadeada</h4>
+    <p>
+        - Alocar as posições da lista <strong>sob demanda</strong> e de maneira <strong>esparsa</strong> na memória física. <br>
+        - Dada um lista linear <strong>L</strong> com alocação encadeada, os seus elementos estão <strong>espalhados</strong> na memória física.
+    </p>
+
+    <h4>Lista simplesmente encadeada</h4>
+    <p>
+        Uma posição de uma lista simplesmente encadeada é chamada de <strong>nó</strong>. <br>
+        
+        Cada <strong>nó</strong> contém: <br>
+        - Conteúdo (chave). <br>
+        - Endereço da próxima posição (prox). <br>
+
+        Um <strong>nó</strong> é uma <strong>variável simples heterogênea</strong>
+    </p>
+    <p>
+        Exemplo:
+        Lista simplesmente encadeada <strong>L</strong> com 3 elementos.
+        L = []
+        L.append(10)
+        L.append(20)
+        L.append(30)
+        <pre>
+            Endereço | Conteúdo
+                0           10
+                1           
+                2           20
+                3           
+                4           
+                5           30
+        </pre>
+    </p>
+    <p>
+        Como esperamos uma lista na memória?
+        <pre>
+                  Cabeça                                                          Fim
+             _______↓______________________________________________________________↓________
+            |       Nó        | |        Nó        | |        Nó        | |        Nó       |
+            |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+            |   -1   |        |→|    10   |        |→|    20   |        |→|    30   |  none |
+        </pre>
+    </p>
+    <p>
+        Declarando um nó.
+        <pre>
+            class No:
+                def __init__(self, conteudo, proximo):
+                    self.conteudo = conteudo
+                    self.proximo = proximo
+
+
+                        |       Nó        |
+                        |Conteúdo|Próximo |
+                        |        |        |
+                        -------------------
+        </pre>
+    </p>
+    <p>
+        Declarando uma lista simplesmente encadeada.
+        <pre>
+            class Lista:
+                def __init__(self):
+                    self.cabeca = No(-1, Nome)
+                    self.fim = self.cabeca
+
+
+                    Cabeça     Fim
+                    _________________
+                   |        Nó       |
+                   |Conteúdo|Próximo |
+                   |   -1   |  none  |
+        </pre>
+    </p>
+    <p>
+        Considere as seguintes operações em uma lista linear <strong>L</strong> com alocação encadeada: <br>
+        - <strong>Imprimir</strong> o conteúdo da lista. <br>
+        - <strong>Inserir</strong> um elemento <strong>x</strong> no final da lista. <br>
+        - <strong>Buscar</strong> um elemento <strong>x</strong> <br>
+        - <strong>Remover</strong> um elemento <strong>x</strong>
+    </p>
+    <p>-----------------------</p>
+    <p>
+        <strong>Imprimir</strong> o conteúdo da lista.
+        <pre>
+                  Cabeça                                                          Fim
+             _______↓______________________________________________________________↓________
+            |       Nó        | |        Nó        | |        Nó        | |        Nó       |
+            |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+            |   -1   |        |→|    10   |        |→|    20   |        |→|    30   |  none |
+        </pre>
+
+        <pre>
+                atual = self.cabeca.proximo
+
+                        atual
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    10   |        |→
+        </pre>
+        <pre>
+            class Lista:
+            ...
+                def imprime(self):
+                    atual = self.cabeca.proximo
+                    while(atual != None):
+                        print(atual.conteudo)
+                        atual = atual.proximo
+        </pre>
+    </p>
+    <p>-----------------------</p>
+    <p>
+
+        <strong>Inserir</strong> um elemento <strong>x</strong> no final da lista.
+        <pre>
+                  Cabeça                                                          Fim
+             _______↓______________________________________________________________↓________
+            |       Nó        | |        Nó        | |        Nó        | |        Nó       |
+            |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+            |   -1   |        |→|    10   |        |→|    20   |        |→|    30   |  none |
+        </pre>
+
+        <pre>
+                novo = No(x, None)
+                self.fim.proximo = novo
+                self.fim = novo
+
+
+                        novo
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    x    |  None  |
+        </pre>
+        <pre>
+            class Lista:
+            ...
+                def insereNoFim(self, x):
+                    novo = No(x, None)
+                    self.fim.proximo = novo
+                    self.fim = novo
+        </pre>
+    </p>
+    <p>-----------------------</p>
+    <p>
+        <strong>Buscar</strong> um elemento <strong>x</strong>
+        <pre>
+                  Cabeça                                                          Fim
+             _______↓______________________________________________________________↓________
+            |       Nó        | |        Nó        | |        Nó        | |        Nó       |
+            |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+            |   -1   |        |→|    10   |        |→|    20   |        |→|    30   |  none |
+        </pre>
+
+        <pre>
+                atual = self.cabeca.proximo
+
+                        atual
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    10   |        |→
+
+                atual.conteudo == x ? 👎
+                atual = self.cabeca.proximo
+                atual = atual.proximo
+
+                        atual
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    20   |        |→
+
+                atual.conteudo == x ? 👍😃
+
+        </pre>
+        <pre>
+            class Lista:
+            ...
+                def buscar(self, x):
+                    atual = self.cabeca.proximo
+                    while(atual != None):
+                        if atual.conteudo == x:
+                            return True
+                        atual = atual.proximo
+                    return False
+        </pre>
+    </p>
+    <p>-----------------------</p>
+    <p>
+        <strong>Remover</strong> um elemento <strong>x (20)</strong>
+        <pre>
+                  Cabeça                                                          Fim
+             _______↓______________________________________________________________↓________
+            |       Nó        | |        Nó        | |        Nó        | |        Nó       |
+            |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+            |   -1   |        |→|    10   |        |→|    20   |        |→|    30   |  none |
+        </pre>
+
+        <pre>
+                atual = self.cabeca.proximo
+
+                        atual
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    10   |        |→
+
+                atual.conteudo == x ? 👎
+                atual = atual.proximo
+
+                        atual
+                __________↓________
+                |        Nó        | 
+                | Conteúdo|Próximo | 
+                |    20   |        |→
+
+                atual.conteudo == x ? 👍😃
+                anterior.proximo = atual.proximo
+                atual.proximo = None
+
+
+            <pre>
+                    Cabeça                anterior               Fim
+                _______↓_____________________↓____________________↓________
+                |       Nó        | |        Nó        | |        Nó       |
+                |Conteúdo|Próximo | | Conteúdo|Próximo | | Conteúdo|Próximo|
+                |   -1   |        |→|    10   |        |→|    30   |  none |
+            </pre>
+        </pre>
+        <pre>
+            class Lista:
+            ...
+                anterior = self.cabeca
+                atual = self.cabeca.proximo
+
+                while(atual != None):
+                    if atual.conteudo == x:
+                    anterior.proximo = atual.proximo
+                    atual.proximo = None
+                    break
+
+                    anterior = atual
+                    atual = atual.proximo
+
+                if self.fim.coteudo == x:
+                    self.fim = anterior
+        </pre>
+    </p>
+
+    <h4>Resumo</h4>
+    <p>
+        Lista simplesmente encadeada <br>
+        - Impressão <br>
+        - Inserção <br>
+        - Busca <br>
+        - Remoção <br>
+        <br>
+        Vantages e desvantagens
+    </p>
+</body>
+</html>
