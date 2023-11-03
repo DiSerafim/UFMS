@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Listas lineares encadeadas (homogêneas e heterogêneas)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=jE5OCqumyUw">Vídeo 1 - [UFMS Digital] Algoritmos e Programação II - Módulo 1 - Unidade 2</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino
+        </p>
+    </header>
+
+    <h1>Variáveis compostas heterogêneas</h1>
+
+    <h4>Roteiro</h4>
+    <p>
+        Variável simples heterogêneas. <br>
+        - Criando um tipo heterogêneo. <br>
+        - Declarando e acessando uma variável heterogênea. <br>
+        - Ponteiro <br>
+        <br>
+        Variável composta heterogênea
+    </p>
+
+    <h4>Variável <strong>simples</strong> heterogêneas.</h4>
+    <p>
+        Capaz de armazenar um única informação. <br>
+        Podem ser de dois tipos: <br>
+        - Homogênea. <br>
+        - Heterogênea.
+    </p>
+    <p>
+        - Capaz de armazenar uma única informação, que pode ser dividida em "pedaços" de diferentes tipos. <br>
+        - Antes de declarar uma variável simples heterogênea, necessário definir quais serão os "pedaços" dessa variável.
+    </p>
+
+    <h4>Criando um tipo Heterogêneo</h4>
+    <p>
+        Em Python, para criarmos uma variável simples heterogênea precisamos criar uma <strong>classe</strong>. <br>
+        <strong>Classe:</strong> <br>
+        - Define quais os "pedaços" da sua variável heterogênea.
+        <br>
+        Exemplo: <br>
+        - Uma variável chamada n que precisa armazenar o nome, a nota 1 e a nota 2 de um aluno. <br>
+        - Criaremos uma classe para definir o que a variável n deve conter.
+        <pre>
+            >>> class Nota:
+            ...     def __init__(self, nome, nota1, nota2):
+            ...         self.nome = nome
+            ...         self.nota1 = nota1
+            ...         self.nota2 = nota2
+        </pre>
+        <strong>Nota</strong> - Nome da classe. Deve sempre aparecer após a palavra chave 'class'. <br>
+
+        <strong>def __init__</strong> - Define um método(equivalente a uma função) que dirá quais os "pedaços" da variável nota. <br>
+
+        <strong>self</strong> - Deve sempre ser o primeiro parâmetro de qualquer método. <br>
+
+        <strong>nome, nota1, nota2</strong> - Os nomes dos "pedaços" da sua variável, separados por vírgula.
+        - Esses pedaços são chamados de atributos.
+    </p>
+    <p>
+        Essas três linhas "declaram" os atributos de uma Nota. <br>
+    </p>
+
+    <h4>Declarando e acessando uma Variável Heterogênea</h4>
+    <p>
+        <pre>
+            self.nota1 = nota1
+            ...         self.nota2 = nota2
+            ... 
+            >>> n = Nota("Jamily", 10.0, 5.5)
+            >>> n2 = Nota("Rosa Maria", 6.0, 7.0)
+            >>> print(n.nome)
+            Jamily
+            >>> print(n2.nota1)
+            6.0
+        </pre>
+    </p>
+    <p>
+        <strong>Alterar Nome</strong> <br>
+        <pre>
+            >>> class Nota:
+            ...     def __init__(self, nome, nota1, nota2):
+            ...         self.nota2 = nota2
+            ...         self.nome = nome
+            ...         self.nota1 = nota1
+            ...     def alteraNome(self, nome):
+            ...         self.nome = nome
+            ... 
+            >>> n = Nota("Wallace", 10.0, 5.5)
+            >>> n.alteraNome("Wallace2")
+            >>> print(n.nome)
+            Wallace2
+        </pre>
+    </p>
+
+    <h4>Ponteiro</h4>
+    <p>
+        O que acontece quando declaramos uma variável de um tipo heterogêneo. <br>
+        Exemplo: <br>
+        n = Nota("Ziguifrido", 3.0, 4.5) <br>
+        O que a variável n armazena?
+    </p>
+    <p>
+        Toda variável heterogênea armazena o <strong>endereço</strong> dos seus atributos na memória. <br>
+        Uma variável que armazena um endereço é chamada de <strong>ponteiro</strong>.
+        Exemplo: <br>
+        n = Nota("Ziguifrido", 3.0, 4.5) <br>
+        <pre>
+            Variável n ---> [Instância de Nota]
+                            |   Nome: "Ziguifrido"
+                            |   Nota 1: 3.0
+                            |   Nota 2: 4.5
+        </pre>
+    </p>
+
+    <a href="https://pythontutor.com/render.html#mode=display" target="_blank" rel="noopener noreferrer">pythontutor</a>
+
+    <h4>Variável <strong>composta</strong> heterogênea</h4>
+    <p>
+        Variável capaz de armazenar um <strong>conjunto</strong> de informações. <br>
+        Exemplo: <br>
+        Vetores de inteiros.
+        <pre>
+            >>> v = []
+            >>> v.append(10)
+            >>> v.append(15)
+            >>> v.append(8)
+            >>> print(v)
+            [10, 15, 8]
+        </pre>
+
+        Vetores de notas.
+        <pre>
+            >>> v = []
+            >>> v.append(Nota("Samuel", 6, 7))
+            >>> v.append(Nota("Wallace", 7, 8))
+            >>> print(v)
+        </pre>
+    </p>
+
+    <h4>Resumo</h4>
+    <p>
+        Variáveis compostas heterogêneas são conjuntos de variáveis heterogêneas. <br>
+        Uma variável composta (vetor) também é um ponteiro. <br>
+        Uma variável composta heterogênea armazena um conjunto de ponteiros.
+    </p>
+</body>
+</html>
