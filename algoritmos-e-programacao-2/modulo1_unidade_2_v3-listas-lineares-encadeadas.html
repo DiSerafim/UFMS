@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Listas lineares encadeadas (homogêneas e heterogêneas)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=C6WOW0L1XO4">Vídeo 3 - Estrutura de Dados - Aula 6 - Lista ligada (implementação dinâmica)</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor ministrante: Luciano A. Digiampietri
+        </p>
+    </header>
+
+    <h4>Lista ligada</h4>
+    <p>
+        Realizamos o que chamamos de implementação estática, utilizamos um arranjo para armazenar nossos registros. <br>
+
+        Hoje aprenderemos a <strong>implementação dinâmica</strong>, isto é, alocaremos e desalocaremos a memória para os elementos <strong>sob demanda</strong>. <br>
+
+        Vantagens: <br>
+        Não precisamos <strong>gastar memória</strong> que não estamos usando e não precisamos gerenciar uma lista de <strong>elementos disponíveis</strong>.
+    </p>
+
+    <h4>Lista ligada (ideia geral)</h4>
+    <p>
+        <pre>
+            Início→ ←1→ ←2→ ←3 → ←None
+        </pre>
+
+        Temos um ponteiro para o primeiro elemento. <br>
+        Cada elemento indica o seu sucessor. <br>
+        como excluímos o elemento 8? <br>
+        Lista ligada original: <br>
+        <pre>
+            5 -> 8 -> 12 -> 17 -> None
+
+            Lista ligada após excluir o elemento 8:
+            5 -> 12 -> 17 -> None
+        </pre>
+        como inserimos o elemento 1? <br>
+        Lista ligada original:
+        <pre>
+            2 -> 4 -> 6 -> 8 -> None
+
+            Lista ligada após inserir o elemento 1:
+            1 -> 2 -> 4 -> 6 -> 8 -> None
+        </pre>
+    </p>
+
+    <h4>Modelagem</h4>
+    <pre>
+        #include <stdio.h>
+        #include <malloc.h>
+                                        
+        typedef int bool;
+        typedef int TIPOCHAVE;
+    
+        typedef struct {
+            TIPOCHAVE chave;
+            // outros campos...
+        } REGISTRO;
+
+        typedef struct aux {
+            REGISTRO reg;
+            struct aux* prox;
+        } ELEMENTO;
+
+        typedef ELEMENTO* PONT;
+
+        typedef struct {
+            PONT inicio;
+        } LISTA;
+    </pre>
+
+    <h4>Funções de gerenciamento</h4>
+    <p>
+        Implementaremos funções para: <br>
+        - Inicializar a estrutura. <br>
+        - Retornar a quantidade de elementos válidos. <br>
+        - Exibir os elementos da estrutura. <br>
+        - Buscar por um elemento na estrutura. <br>
+        - Inserir elementos na estrutura. <br>
+        - Excluir elementos da estrutura. <br>
+        - Reiniciar a estrutura.
+    </p>
+
+    <h4>INICIALIZAÇÃO - Inicializar a estrutura.</h4>
+    <p>
+        Para inicializarmos nossa lista ligada, <strong>precisamos:</strong> <br>
+        - Colocar o valor <strong>Null</strong> na variável <strong>inicio</strong>.
+        <pre>
+            void inicializarLista(LISTA* 1) {
+                1 → inicio = NULL;
+            }
+        </pre>
+    </p>
+
+    <h4>Retornar a quantidade de elementos válidos.</h4>
+    <p>
+        Já que optamos por não criar um campo com o número de elementos na lista, precisaremos <strong>percorrer todos os elementos</strong> para contar quantos são.
+        <pre>
+            int tamanho(LISTA* 1) {
+                PONT end = 1 → inicio;
+                int tam = 0;
+
+                while (end != NULL) {
+                    tam++;
+                    end = end→prox;
+                }
+                return tam;
+            }
+        </pre>
+    </p>
+
+    <h4>Exibir os elementos da estrutura / Impressão.</h4>
+    <p>
+        Para exibir os elementos da estrutura precisaremos iterar pelos <strong>elementos</strong> e, por exemplo, <strong>imprimir suas chaves</strong>.
+        <pre>
+            void exibirLista(LISTA* 1) {
+                PONT end = 1 → inicio;
+                printf("Listas: \" ");
+                while (end != NULL) {
+                    printf("%i ", end→reg.chave);
+                    end = end→prox;
+                }
+                printf("\"\n");
+            }
+        </pre>
+    </p>
+
+    <h4>Buscar por um elemento na estrutura.</h4>
+    <p>
+        A função de busca deverá: <br>
+        - Receber uma chave do usuário. <br>
+        - Retornar o endereço em que este elemento se encontra (caso seja encontrado). <br>
+        - Retornar NULL caso não seja encontrado com essa chave na lista.
+    </p>
+
+    <h4>Inserir elementos na estrutura.</h4>
+    <p>
+        O usuário passa como parâmetro um registro a ser inserido na lista: <br>
+        - Realizaremos a inserção <strong>ordenada pelo valor da chave</strong> do registro passado e não permitiremos a inserção de <strong>elementos repetidos</strong>; <br>
+        - Na inserção precisamos identificar <strong>entre quais elementos</strong> o novo elemento será inserido; <br>
+        - Alocaremos memória para o novo elemento. <br>
+        - Precisamos saber quem será o predecessor do elemento.
+    </p>
+    <p>
+        Desenvolveremos uma <strong>função auxiliar</strong> para procurar por uma dada chave e nos informar: <br>
+        - O endereço desse elemento se ele existir; <br>
+        - O endereço de quem seria o predecessor desse elemento (independente de ele existir ou não). <br>
+        Como a função irá nos passar dois endereços diferentes?
+        <pre>
+            #include <stdio.h>
+
+            int funcaoQuadradoCubo(int x, int* y) {
+                *y = x*x*x;
+                return x*x;
+            }
+
+            int main() {
+                int a = 30;
+                int cubo;
+                int quadrado = funcaoQuadradoCubo(a, &cubo);
+                printf("a: %i; a*a %i; a*a*a: %i\n", a, quadrado, cubo);
+            }
+        </pre>
+    </p>
+
+    <h4>Excluir elementos da estrutura.</h4>
+    <p>
+        O usuário passa a chave do elemento que ele quer excluir: <br>
+        - Se houver um elemento com esta chave na lista, exclui este elemento da lista, acerta os ponteiros envolvidos e retorna True. <br>
+        - Caso contrário, retorna False.
+        <pre>
+            bool excluirElemLista(LISTA* 1, TIPOCHAVE ch) {
+                PONT ant, i;
+                i = buscaSequencialExc(1, ch, &ant);
+                if (i == NULL) return false;
+                if (ant == NUL) 1→inicio = i→prox;
+                else ant→prox = i→prox;
+                fee(i);
+                return true;
+            }
+        </pre>
+    </p>
+
+    <h4>Reiniciar a estrutura.</h4>
+    <p>
+        Para reinicializar a estrutura, precisamos excluir todos os elementos e atualizar o campo inicio para NULL.
+        <pre>
+            void reinicializarLista(LISTA* 1) {
+                PONT end = 1 → inicio;
+                while (end != NULL) {
+                    PONT apagar = end;
+                    end = end→prox;
+                    free(apagar);
+                }
+                1→inicio = NULL;
+            }
+        </pre>
+    </p>
+</body>
+</html>
