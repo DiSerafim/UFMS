@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 <br>
+            Unidade 1 - Pilhas, filas e arquivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=cwUOrfbtaeI">Vídeo 1 - Algoritmos e Programação de Computadores II - Pilhas</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h3>Pilhas</h3>
+
+    <h4>Chamada de funções</h4>
+    <pre>
+        Função A    |  Função B     |  Função C     |  Função D
+        1 print "A"   1 call C        1 print "C"     1 print "D"
+        2 call C      2 print "B"     2 call D        2 return
+        3 call B      3 call D        3 return
+        4 call D      4 call C                
+        5 return      5 return                
+    </pre>
+    <p>
+        - Qual o resultado da execução da função A? <br>
+        <pre>
+            print "A"
+            call C
+            print "C"
+            call D
+            print "D"
+        </pre>
+        - Qual a dificuldade para se fazer esse cálculo? <br>
+        <pre>
+            - O que estava sendo executado quando uma função foi interrompida? <br>
+            - Para onde voltar agora que se chegou ao fim de uma função?
+        </pre>
+        - Possíveis soluções?
+        <pre>
+            - A cada chamada da função, armazenar o endereço de retorno (e.g. função e número da linha). <br>
+            - Como armazenar o endereço de retorno de chamadas sucessivas? Solução: pilha!
+        </pre>
+    </p>
+    <p>
+        Pilha <br>
+        Definição: <br>
+        Estrutura para armazenar um conjunto de elementos, que funciona da seguinte forma: <br>
+        - Novos elementos sempre entram no 'topo' da pilha. <br>
+        - O único elemento que se pode retirar da pilha em um dado momento é o elemento do topo. <br><br>
+
+        Principais usos: <br>
+        Modelagem de situações onde é preciso 'guardar para mais tarde' vários elementos e lembrar sempre do último elemento armazenado.
+    </p>
+    <p>
+        A cada comando call. <br>
+        - Empilha (push) o endereço para retornar depois. <br>
+        - Passa a executar a nova função. <br>
+        A cada comando return. <br>
+        - Desempilha (pop) o ultimo endereço armazenado. <br>
+        - Passa a executar a partir do endereço desempilhado.
+    </p>
+    <pre>
+        Passo 1:
+        Função A          |  Função B           |  Função C           |  Função D
+        1. print "A"         1. call C            1. print "C"          1. print "D"
+        2. call C            2. print "B"         2. call D             2. return
+        3. call B            3. call D            3. return
+        4. call D            4. call C                
+        5. return            5. return                
+
+        Passo 2:
+        Função A          |  Função B           |  Função C           |  Função D
+        1. print "A"         1. call C            1. print "C"          1. print "D"
+        2. call C            2. print "B"         2. call D             2. return
+        3. call B            3. call D            3. return
+        4. call D            4. call C                
+        5. return            5. return                
+
+        Passo 3:
+        Função A          |  Função B           |  Função C           |  Função D
+        1. print "A"         1. call C            1. print "C"          1. print "D"
+        2. call C            2. print "B"         2. call D             2. return
+        3. call B            3. call D            3. return
+        4. call D            4. call C                
+        5. return            5. return                
+
+        Passo 4:
+        Função A          |  Função B           |  Função C           |  Função D
+        1. print "A"         1. call C            1. print "C"          1. print "D"
+        2. call C            2. print "B"         2. call D             2. return
+        3. call B            3. call D            3. return
+        4. call D            4. call C                
+        5. return            5. return                
+
+        Passo 5:
+        Função A          |  Função B           |  Função C           |  Função D
+        1. print "A"         1. call C            1. print "C"          1. print "D"
+        2. call C            2. print "B"         2. call D             2. return
+        3. call B            3. call D            3. return
+        4. call D            4. call C                
+        5. return            5. return                
+    </pre>
+    <p>
+        Operações usuais: <br>
+        - Push (Empilhar): Adicionar um elemento ao topo da pilha. <br>
+        - Pop (Desempilhar): Remover e retornar o elemento do topo da pilha. <br>
+        - Top (Topo): Acessar o elemento no topo da pilha sem removê-lo. <br>
+        - Empty (Vazia): Verificar se a pilha está vazia.
+    </p>
+    <p>
+        Exemplo: <br>
+        Implemente um programa em Python que realiza a conversão decimal para binário usando pilha.
+        <pre>
+            class Pilha:
+                def __init__(self):
+                    self.items = []
+
+                def push(self, item):
+                    self.items.append(item)
+
+                def pop(self):
+                    if not self.is_empty():
+                        return self.items.pop()
+                    else:
+                        return None
+                    
+                def is_empty(self):
+                    return len(self.items) == 0
+                
+            def deciaml_para_binario(decimal):
+                pilha = Pilha()
+
+                while decimal > 0:
+                    resto = decimal % 2
+                    pilha.push(resto)
+                    decimal = decimal // 2
+
+                binario = ""
+                while not pilha.is_empty():
+                    binario += str(pilha.pop())
+
+                return binario
+                
+            numero_decimal = int(input("Digite um número decimal: "))
+            binario = deciaml_para_binario(numero_decimal)
+            print(f"A representação binária de {numero_decimal} é {binario}.")
+        </pre>
+    </p>
+</body>
+</html>
