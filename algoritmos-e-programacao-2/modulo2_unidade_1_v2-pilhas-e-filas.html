@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 <br>
+            Unidade 1 - Pilhas, filas e arquivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=RnCOgoadbrg">Vídeo 2 - Algoritmos e Programação de Computadores II - Filas</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h3>Filas</h3>
+    
+    <p>
+        Quais operações possíveis? <br>
+        - Entrar na fila: quem entra, entra aonde? <br>
+        - Sair da fila: quem sai, sai de onde? <br>
+        - Avançar na fila.
+    </p>
+    <p>
+        Definição: <br>
+        Estrutura para armazenar um conjunto de elementos, que funciona da seguinte forma: <br>
+        - Novos elementos sempre entram no fim da fila. <br>
+        - O único elemento que pode ser retirado da fila, em um determinado momento, é seu primeiro elemento.
+    </p>
+    <p>
+        Para que serve? <br>
+        Modelar situações em que é preciso armazenar um conjunto ordenado de elementos, no qual o primeiro elemento a entrar no conjunto será o primeiro elemento a sair.
+    </p>
+    <p>
+        Operações usuais: <br>
+        - inserir(): insere um elemento no fim da fila. <br>
+        - remover(): remove o primeiro elemento da fila. <br>
+        - empty(): verifica se a fila está vazia.
+    </p>
+    <p>
+        Exercício 1:
+        <pre>
+            class Fila():
+                def __init__(self):
+                    self.data = []
+
+                def inserir(self, x):
+                    self.data.append(x)
+                    print(f"Valor inserido: {x}")
+
+                def remover(self):
+                    if len(self.data) > 0:
+                        item = self.data.pop(0)
+                        print(f"Item excluído: {item}")
+                    else:
+                        print("A lista está vazia.")
+
+                def top(self):
+                    if len(self.data) > 0:
+                        return self.data[0]
+
+                def empty(self):
+                    return not self.data
+
+            f = Fila()
+            f.inserir(1)
+            f.inserir(2)
+            f.inserir(3)
+            f.inserir(6)
+            f.remover()
+            f.remover()
+            f.remover()
+            f.remover()
+            f.remover()
+        </pre>
+    </p>
+    <p>
+        Exercício 2: <br>
+        Implementar um programa de gerenciamento de duas filas em um banco: prioritária e normal. <br>
+        Seu programa deverá permitir que pessoas sejam inseridas no fim de cada fila,
+        dependendo da idade de cada uma (acima de 60 anos entra na fila prioritária). <br>
+        A saída de pessoas de fila deve ocorrer da seguinte forma: a cada duas pessoas que saem da fila prioritária, uma sai da fila normal.
+        <pre>
+            # Definição da classe Banco para gerenciamento de filas
+            class Banco:
+                def __init__(self):
+                    # Inicialização das filas prioritárias e normais
+                    self.fila_prioritaria = []  # Fila prioritária
+                    self.fila_normal = []       # Fila normal
+
+                def entrar_na_fila(self, nome, idade):
+                    # Método para adicionar pessoas às filas com base na idade
+                    if idade > 60:
+                        # Se a idade for maior que 60, a pessoa entra na fila prioritária
+                        self.fila_prioritaria.append((nome, idade))
+                    else:
+                        # Caso contrário, a pessoa entra na fila normal
+                        self.fila_normal.append((nome, idade))
+
+                def sair_da_fila(self):
+                    # Método para simular a saída de pessoas das filas
+                    if self.fila_prioritaria:
+                        # Verifica se há pessoas na fila prioritária
+                        pessoa = self.fila_prioritaria.pop(0)
+                        # Remove a primeira pessoa da fila prioritária
+                        print(f"{pessoa[0]} (idade {pessoa[1]}) saiu da fila Prioritária.")
+                        if len(self.fila_prioritaria) % 2 == 0:
+                            # Se o tamanho da fila prioritária for par após a saída, verifica se há pessoas na fila normal
+                            if self.fila_normal:
+                                pessoa_normal = self.fila_normal.pop(0)
+                                # Remove a primeira pessoa da fila normal
+                                print(f"{pessoa_normal[0]} (idade {pessoa_normal[1]}) saiu da fila normal.")
+
+                def status_filas(self):
+                    # Método para exibir o status atual das filas
+                    print(f"Fila Prioritária: {[p[0] for p in self.fila_prioritaria]}")
+                    print(f"Fila Normal: {[p[0] for p in self.fila_normal]}")
+
+            # Exemplo de uso:
+            banco = Banco()
+
+            # Inserindo pessoas nas filas
+            banco.entrar_na_fila("João", 65)
+            banco.entrar_na_fila("Maria", 55)
+            banco.entrar_na_fila("Pedrio", 70)
+            banco.entrar_na_fila("Ana", 50)
+            banco.entrar_na_fila("Rose", 50)
+            banco.entrar_na_fila("Jamily", 50)
+
+            # Exibindo status das filas
+            banco.status_filas()
+
+            # Simulando a saída de pessoas
+            banco.sair_da_fila()
+            banco.sair_da_fila()
+            banco.sair_da_fila()
+
+            # Exibindo status das filas após a saída
+            banco.status_filas()
+
+        </pre>
+    </p>
+</body>
+</html>
