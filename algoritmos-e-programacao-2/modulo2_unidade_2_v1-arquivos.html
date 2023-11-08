@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 <br>
+            Unidade 2 - Pilhas, filas e arquivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=Ax5zQjF1rs0">Vídeo 1 - *Introdução à Ciência de Dados - Arquivos</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: José Eduardo Santarem Segundo
+        </p>
+    </header>
+
+    <h3>Arquivos</h3>
+
+    <h4>Carga de Dados</h4>
+    <p>
+        - Projeto de DS precisam de dados! <br>
+        - Parte da tarefa de um DS é carregar, limpar, organizar e transformar dados. <br>
+        - Dados vem em formas variadas de arquivos e precisam ser carregados para dentro do projeto. <br>
+        - Dados analisados e tratados, em algumas situações precisam ser devolvidos para o contexto externo do projeto, nos mais variados formatos.
+    </p>
+
+    <h4>Tipos de Arquivos</h4>
+    <p>
+        - CSV, XLS, XML, JSON e os próprios arquivos em formato de texto. <br>
+        - O contexto de DS e BigData apresenta alguns outros formatos: <br>
+        -- Arquivos binários, MessagePack, picKle, dados do sistema SAS, arquivos HDF, dados binários Feather, arquivos STATA, entre outros.        
+    </p>
+
+    <h4>Pandas</h4>
+    <p>
+        Biblioteca que oferece funcionalidades para lidar com arquivos: <br>
+        - read_csv; <br>
+        - read_excel; <br>
+        - read_html; <br>
+        - read_json; <br>
+
+        Veja mais em sua documentação.
+    </p>
+
+    <h4>Fontes de Dados</h4>
+    <p>
+        <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer">Kaggle</a> <br>
+        <a href="https://dados.gov.br/home" target="_blank" rel="noopener noreferrer">Governo do Brasil</a> <br>
+        <a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener noreferrer">Machine Learning</a> <br>
+        <a href="https://github.com/awesomedata/awesome-public-datasets" target="_blank" rel="noopener noreferrer">Awesome Public</a> <br>
+        <a href="Google Dataset" target="_blank" rel="noopener noreferrer">Google Dataset</a>
+    </p>
+
+    <h4>Gravar Dados / Demonstração</h4>
+    <p>
+        Há funções para realizar gravações que a própria  biblioteca Pandas faz.
+    </p>
+    <pre>
+        import pandas as pd
+        import csv
+        import matplotlib.pyplot as plt
+        import json
+        import requests
+
+        # Abre o documento de texto ------------------------------- TXT
+        arquivo = open('0-modulo2_unidade_2_v1-arquivos.txt', 'r')
+
+        # Ler as linhas do arquivo
+        conteudo = arquivo.readlines()
+        arquivo.close()
+
+        print(conteudo)
+
+        # exibe linha por linha
+        for linha in conteudo:
+            print(linha)
+
+        x = ''
+        for linha in conteudo:
+            if linha != '':
+                x += linha
+
+        print(x)
+
+        # altera as palavras
+        x = x.replace('Gravar Dados / Demonstração', 'Demonstração / Gravar Dados')
+        print('----------')
+        print(x)
+
+        # Grava e gera um novo arquivo
+        arquivo_novo = open('0-modulo2_unidade_2_v1-arquivos2.txt', 'w')
+        arquivo_novo.writelines(x)
+        arquivo_novo.close()
+
+        # Abrindo arquivo CSV ------------------------------- CSV
+        with open('0-modulo2_unidade_2_v1-arquivos.csv', 'r') as f:
+            leitor = csv.reader(f, delimiter = ',')
+            for linha in leitor:
+                data = linha[0]
+                fechamento = linha[4]
+                volume = linha[5]
+                print('Data: ', data, '--Fechamento: ', fechamento, '--Volume: ', volume)
+
+        # Plotar gráficos em Python, uma das bibliotecas mais populares é o matplotlib
+        # Dados de exemplo
+        x = [1, 2, 3, 4, 5]
+        y = [10, 8, 6, 4, 2]
+
+        # Cria o gráfico de dispersão
+        plt.scatter(x, y)
+
+        # Adiciona rótulos aos eixos
+        plt.xlabel('Eixo X')
+        plt.ylabel('Eixo Y')
+
+        # Título do gráfico
+        plt.title('Gráfico de Dispersão')
+
+        # Mostra o gráfico
+        plt.show()
+
+        # Plotar Python
+        # Abra o arquivo para leitura
+        with open("0-modulo2_unidade_2_v1-arquivos.txt", "r") as arquivo:
+            # Use o método readlines() para ler todas as linhas do arquivo em uma lista
+            linhas = arquivo.readlines()
+
+        # Use a função len() para contar as linhas
+        numero_de_linhas = len(linhas)
+
+        # Imprima o número de linhas
+        print(f"O arquivo tem {numero_de_linhas} linhas.")
+
+        # Abrindo arquivo JSON ------------------------------- JSON
+        resposta = requests.get('https://storage.googleapis.com/kagglesdsdata/datasets/2394309/4042051/Data.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20231108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231108T005815Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=2ed165dcae6e34831cd428b58dc539428dabb5a3a6d52d52ce1c40acbcbd2960d10a1fd8feecf83bae58914d4d56ed46b3bf4f812346448b42f14ae980b97e0548e1752c815e88097ff504a4e74c686d5ef2e1ed009c04197d28912c0d3f85ed87c87d7f2ea2434e1624bd9483bfc3eb880ddb9db8a9d1580671ccb2acdb49a77d238dfdc78e8e6bf347b39ee0a741643acc5e7af1899ad4317e74de0d3e34cb3e696731e6ef4f5d83bdbc6bea72872befd92fd15966b69a8d8c091238bed3ab16bdcead85e7d7743147a46bbc1e6c77797cbd8f554844a19c459054cdb1b38c5e3dd193a5e95071de318dde8dbbf2f9b06b288e39c309c1a5b1e1792ad03237')
+        # resposta = '0-modulo2_unidade_2_v1-arquivos.json'
+        dados = json.loads(resposta.text)
+        print(dados['XMax'][1][3])
+    </pre>
+</body>
+</html>

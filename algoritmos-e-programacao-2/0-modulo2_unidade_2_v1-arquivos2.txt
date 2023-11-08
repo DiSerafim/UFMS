@@ -1,0 +1,36 @@
+Módulo 2
+Unidade 2 - Pilhas, filas e arquivos
+
+Vídeo 1 - *Introdução à Ciência de Dados - Arquivos
+Professor: Samuel Benjoino Ferraz Aquino
+Professor: José Eduardo Santarem Segundo
+
+Arquivos
+Carga de Dados
+- Projeto de DS precisam de dados!
+- Parte da tarefa de um DS é carregar, limpar, organizar e transformar dados.
+- Dados vem em formas variadas de arquivos e precisam ser carregados para dentro do projeto.
+- Dados analisados e tratados, em algumas situações precisam ser devolvidos para o contexto externo do projeto, nos mais variados formatos.
+
+Tipos de Arquivos
+- CSV, XLS, XML, JSON e os próprios arquivos em formato de texto.
+- O contexto de DS e BigData apresenta alguns outros formatos:
+-- Arquivos binários, MessagePack, picKle, dados do sistema SAS, arquivos HDF, dados binários Feather, arquivos STATA, entre outros.
+
+Pandas
+Biblioteca que oferece funcionalidades para lidar com arquivos:
+- read_csv;
+- read_excel;
+- read_html;
+- read_json;
+Veja mais em sua documentação.
+
+Fontes de Dados
+Kaggle
+Governo do Brasil
+Machine Learning
+Awesome Public
+Google Dataset
+
+Demonstração / Gravar Dados
+Há funções para realizar gravações que a própria biblioteca Pandas faz.
