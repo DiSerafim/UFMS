@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 1 - Recursão e algoritmos recursivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=Q6lqtu-1Jac">Vídeo 1 - Algoritmos e Programação de Computadores II - Recursão I</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h4>Recursão I</h4>
+    <p>
+        Uma função é recursiva quando é definida em seus próprios termos, direta ou indiretamente.
+        Ex.:
+        <pre>
+            Normal                          Recursiva
+
+            def imprime(l):                 def imprime_recursiva(l, i = 0):
+                for i in range(len()): →        if i < len(l):
+                print(l[i])                         print(l[i])
+                                                    imprime_recursiva(l, i + 1)
+        </pre>
+        Na versão recursiva, a função utiliza a recursão para percorrer a lista, imprimindo cada elemento. Isso significa que a função se chama repetidamente até que a condição de parada (quando i é maior ou igual ao comprimento da lista) seja atendida.
+    </p>
+    <pre>
+        >>> def imprime_recursiva(l, i = 0):
+        ...     if i < len(l):
+        ...         print(l[i])
+        ...         imprime_recursiva(l, i + 1)
+        ... 
+        >>> l = [1, 2, 3]
+        >>> imprime_recursiva(l)
+        1
+        2
+        3
+    </pre>
+    <h4>Efeitos da recursão</h4>
+    <p>
+        A cada chamada: <br>
+        - Empilham-se na memória ps dados locais(variáveis e parâmetros) e o endereço de retorno. <br>
+        -- A função corrente só termina quando a função chamada termina. <br>
+        - Executa-se a nova chamada (que também pode ser recursiva). <br>
+        - Ao retornar, desempilham-se os dados da memória, restaurando o estado antes da chamada recursiva.
+    </p>
+    <p>
+        <strong>Vantagens:</strong> <br>
+        - Simplicidade e Clareza: Em alguns casos, a recursão pode tornar o código mais claro e conciso. Problemas complexos podem ser decompostos em subproblemas mais simples. <br>
+        <br>
+        - Abstração: A recursão permite que você abstraia a lógica de um problema em uma função que se chama a si mesma, facilitando a compreensão do código. <br>
+        <br>
+        - Tratamento de Estruturas Aninhadas: Recursão é útil para lidar com estruturas de dados aninhadas, como árvores e listas encadeadas. <br>
+        <br>
+        <strong>Desafios:</strong> <br>
+        - Desempenho: Em comparação com iterações (loops), a recursão pode ser menos eficiente em termos de desempenho. Cada chamada recursiva adiciona uma nova camada à pilha de chamadas, e um grande número de chamadas pode levar a estouro de pilha. <br>
+        <br>
+        - Complexidade de Rastreamento: A execução de funções recursivas pode ser mais difícil de rastrear, especialmente em problemas complexos. O rastreamento de chamadas recursivas pode ser desafiador. <br>
+        <br>
+        - Estouro de Pilha: Em linguagens que não otimizam a recursão de cauda (como Python), chamadas recursivas profundas podem levar a estouro de pilha, resultando em falha de execução. <br>
+        <br>
+        <strong>Casos de Uso Ideais:</strong> <br>
+        - Estruturas de Dados Recursivas: Problemas envolvendo estruturas de dados recursivas, como árvores e listas encadeadas, são candidatos naturais para abordagens recursivas. <br>
+        <br>
+        - Divisão e Conquista: Algoritmos de divisão e conquista muitas vezes se beneficiam da recursão, pois eles quebram um problema grande em subproblemas menores. <br>
+
+        - Problemas Matemáticos Recursivos: Algumas soluções para problemas matemáticos são naturalmente expressas de forma recursiva.
+    </p>
+    <h4>Exemplos</h4>
+    <p>
+        Exemplo 1: Cálculo de Fatorial Recursivo.
+        <pre>
+            >>> def fatorial(n):
+            ...     if n == 0 or n == 1:
+            ...         return 1
+            ...     else:
+            ...         return n * fatorial(n - 1)
+            ... 
+            >>> resultado = fatorial(5)
+            >>> print(resultado)
+            120
+        </pre>
+        A função fatorial é definida de forma recursiva para calcular o fatorial de um número.
+    </p>
+    <p>
+        Exemplo 2: Soma de Números Recursiva.
+        <pre>
+            >>> def soma_recursiva(n):
+            ...     if n == 1:
+            ...         return 1
+            ...     else:
+            ...         return n + soma_recursiva(n - 1)
+            ... 
+            >>> resultado_soma = soma_recursiva(5)
+            >>> print(resultado_soma)
+            15
+        </pre>
+        Soma_recursiva calcula a soma dos números de 1 a n de forma recursiva.
+    </p>
+    <p>
+        Exemplo 3: Impressão Recursiva de Elementos de uma Lista.
+        <pre>
+            >>> def imprime_recursiva(lista, i = 0):
+            ...     if i < len(lista):
+            ...         print(lista[i])
+            ...         imprime_recursiva(lista, i + 1)
+            ... 
+            >>> minha_lista = [1, 2, 3, 4, 5]
+            >>> imprime_recursiva(minha_lista)
+            1
+            2
+            3
+            4
+            5
+        </pre>
+        Imprime_recursiva imprime os elementos de uma lista de forma recursiva.
+    </p>
+    <p>
+        Exemplo 4: Uma função chama outra de forma recursiva:
+        <pre>
+            def soma_recursiva(n):
+                if n == 0:
+                    return 0
+                else:
+                    return n + multiplicacao_recursiva(n - 1)
+
+            def multiplicacao_recursiva(n):
+                if n == 1:
+                    return 1
+                else:
+                    return n * multiplicacao_recursiva(n - 1)
+
+            resultado = multiplicacao_recursiva(4)
+            print(resultado)  # Saída: 24
+        </pre>
+    </p>
+
+    <h4>Quando usar?</h4>
+    <p>
+        Problemas Divisíveis: <br>
+        - Situações em que um problema pode ser dividido em subproblemas menores que são essencialmente iguais ao problema original. Exemplos incluem algoritmos de ordenação (merge sort, quicksort) e busca binária.
+        <br><br>
+        Estruturas de Dados Recursivas: <br>
+        - Muitas estruturas de dados são naturalmente recursivas, como árvores e listas encadeadas. Operações nessas estruturas frequentemente se beneficiam de uma abordagem recursiva.
+        <br><br>
+        Algoritmos de Backtracking: <br>
+        - Problemas que envolvem a exploração sistemática de todas as soluções possíveis, geralmente usando uma abordagem de tentativa e erro. Sudoku, problemas de combinação e permutação são exemplos comuns.
+        <br><br>
+        Definição Matemática Recursiva: <br>
+        - Algoritmos que seguem uma definição matemática recursiva, como a sequência de Fibonacci ou cálculos de fatorial.
+        <br><br>
+        Problemas que Envolvem Árvores de Decisão: <br>
+        - Algoritmos que exploram árvores de decisão, como em jogos (minimax em jogos de tabuleiro).
+        <br><br>
+        Substituição de Loop com Recursão: <br>
+        - Em alguns casos, a recursão pode ser uma alternativa elegante para loops, simplificando o código e tornando-o mais legível.
+    </p>
+
+    <h4>Exercício</h4>
+    <p>
+        Implementar uma função recursiva para calcular o n-ésimo termo da sequência de Fibonacci. <br>
+        Considere os três pontos definidos para o problema: <br>
+        1) f(0) = 0, f(1) = 1, f(n) = f(n - 1) + f(n - 2) p / n >= 2. <br>
+        2) n = 0 ou n = 1. <br>
+        3) n deve ser decrementado a cada chamada. 
+    </p>
+    <pre>
+        
+    </pre>
+</body>
+</html>
