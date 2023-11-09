@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A2] – Avaliação do Módulo 2 - Pilhas, filas e arquivos<br>
+        </h1>
+        <p>
+            Iniciado em	quarta, 8 nov 2023, 21:13 <br>
+            Estado	Finalizada <br>
+            Concluída em	quarta, 8 nov 2023, 22:33 <br>
+            Tempo empregado	1 hora 19 minutos <br>
+            Avaliar	9,00 de um máximo de 10,00(90%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h4>
+        A função .......... <br>
+        realiza a .......... <br>
+
+        de um arquivo deve ser invocada no início de um programa que deseja manipular um arquivo. A função .......... <br>
+
+        realiza o .......... <br>
+
+        de um arquivo e deve ser invocada quando o programa terminou de manipular o arquivo. A função .......... <br>
+
+        lê todas as linhas de um arquivo de uma só vez, enquanto a função .......... <br>
+
+        permite a escrita de várias linhas em um arquivo de uma só vez. <br>
+        
+        Opções: <br>
+        open, close, fechamento, readlines, writelines, abertura.
+    </h4>
+    <p>
+        A função <strong>open</strong> <br>
+        realiza a <strong>abertura</strong> <br>
+
+        de um arquivo deve ser invocada no início de um programa que deseja manipular um arquivo. A função <strong>close</strong> <br>
+
+        realiza o <strong>fechamento</strong> <br>
+
+        de um arquivo e deve ser invocada quando o programa terminou de manipular o arquivo. A função <strong>readlines</strong> <br>
+
+        lê todas as linhas de um arquivo de uma só vez, enquanto a função <strong>writelines</strong> <br>
+
+        permite a escrita de várias linhas em um arquivo de uma só vez.
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        Projete e implemente um programa em Python que permitirá as operações empilhar e desempilhar em uma pilha P de caracteres. Seu programa receberá entradas que terão um dos três formatos a seguir:
+    </h3>
+    <h4>
+        E X, onde E representa o caractere “E” e X representa um caractere qualquer. Essa operação deve empilhar o caractere X na pilha P;
+        D, onde D representa o caractere “D”. Essa operação deve executar um desempilhamento em P;
+        S, onde S representa o caractere “S”. Seu programa deve esvaziar a pilha, imprimir seu conteúdo e encerrar.
+        Para realizar a leitura de uma linha de entrada, você pode usar o código a seguir:
+        
+        linha = input()
+        valores = linha.split(“ “)
+        Por exemplo, se o conteúdo digitado na variável linha for E T, a variável valores será um vetor cuja primeira posição será “E” e o segundo valor será “T”. Se o conteúdo digitado na variável linha for D, a variável valores será um vetor com apenas uma posição contendo o valor “D”.
+        
+        Por exemplo:
+        <pre>
+            Teste                       Entrada	    Resultado
+            Caso de teste 1 (Exemplo):    E T         A T
+                                          E E
+                                          E O
+                                          D
+                                          D
+                                          E A
+                                          S    
+        </pre>
+        Resposta:(regime de penalidade: 0%) <br>
+        O editor Ace não está pronto. Talvez recarregar a página? <br>
+        Retornando à área de texto bruto.
+    </h4>
+    <pre>❌
+        class Pilha:
+            def __init__(self):
+                self.itens = []
+
+            def empilhar(self, item):
+                self.itens.append(item)
+
+            def desempilhar(self):
+                if not self.vazia():
+                    return self.itens.pop()
+                else:
+                    return None
+
+            def vazia(self):
+                return len(self.itens) == 0
+
+            def esvaziar(self):
+                self.itens = []
+
+        # Função para imprimir o conteúdo da pilha
+        def imprimir_pilha(p):
+            while not p.vazia():
+                print(p.desempilhar(), end=' ')
+            print()
+
+        # Função principal
+        def main():
+            pilha = Pilha()
+
+            while True:
+                entrada = input()
+                valores = entrada.split(' ')
+
+                if valores[0] == 'E':
+                    pilha.empilhar(valores[1])
+                elif valores[0] == 'D':
+                    pilha.desempilhar()
+                elif valores[0] == 'S':
+                    imprimir_pilha(pilha)
+                    break
+
+        if __name__ == '__main__':
+            main()
+    </pre>
+
+    <h1>Questão 3</h1>
+    <h3>
+        Os conceitos de pilhas e filas só podem ser implementados utilizando listas lineares com alocação sequencial.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+
+    <h1>Questão 4</h1>
+    <h3>
+        A hipótese de overflow acontece em uma pilha quando:
+    </h3>
+    <h4>
+        a. Ela é implementada usando lista linear duplamente encadeada. <br>
+        b. Ela está vazia. <br>
+        c. Ela excede o tempo de resposta. <br>
+        d. Uma operação de desempilhar é chamada logo após a operação de empilhar. <br>
+        e. Ela está no seu limite de espaço e um novo elemento é inserido.
+    </h4>
+    <p>
+        e. Ela está no seu limite de espaço e um novo elemento é inserido.
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        Considerando o código abaixo (escrito na linguagem Python), escolha a alternativa que apresenta uma afirmação correta. <br>
+        <br>
+        Soma = 0 <br>
+        Cont = 0 <br>
+        arq = open(“Inteiros.txt”, “r”) <br>
+        S = arq.readline() <br>
+        while S != “”: <br>
+        N = int(S) <br>
+        Soma = Soma + N <br>
+        Cont = Cont + 1 <br>
+        print(“Elemento {0} = {1}”.format(Cont, N)) <br>
+        S = arq.readline() <br>
+        arq.close() <br>
+        print(“\nSoma = {0}”.format(Soma))
+    </h3>
+    <h4>
+        a. Esse programa lê um arquivo e totaliza os valores encontrados. Essa é a única maneira de implementar um programa com esse objetivo. <br><br>
+        
+        b. O programa lê um arquivo binário contendo uma sequência de valores binários em cada linha. <br><br>
+        
+        c. Esse programa lê um arquivo e totaliza os valores encontrados. Seria possível implementar um programa com o mesmo objetivo utilizando o conceito de iterador de arquivo. <br><br>
+        
+        d. A implementação desse mesmo código utilizando um iterador de arquivo ficaria mais enxuta. Entretanto, códigos enxutos não fazem parte do estilo de programação em Python. <br><br>
+        
+        e. Se esse mesmo código fosse implementado usando um iterador de arquivo, o programa ficaria menos enxuto e mais pesado.
+    </h4>
+    <p>
+        c. Esse programa lê um arquivo e totaliza os valores encontrados. Seria possível implementar um programa com o mesmo objetivo utilizando o conceito de iterador de arquivo.
+    </p>
+
+    <h1>Questão 6</h1>
+    <h3>
+        Uma fila só pode ser implementada utilizando listas lineares encadeadas.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+
+    <h1>Questão 7</h1>
+    <h3>
+        Considerando o código abaixo (escrito na linguagem Python), escolha a alternativa que apresenta uma afirmação correta. <br>
+        <br>
+        arqreais = open(“ValsReais.txt”, “w”) <br>
+        x = float(input(“Digite um númeor real”)) <br>
+        while x != 0: <br>
+        arqreais.write(“{0:.3f}\n”.format(x)) <br>
+        x = float(input(“Digite um número real”)) <br>
+        arqreais.close()
+    </h3>
+    <h4>
+        a. Seria impossível reescrever esse programa utilizando a função writelines. <br>
+        
+        b. O caractere “\n” é necessário para garantir o correto fechamento do arquivo. <br>
+        
+        c. O arquivo foi aberto no formato de leitura. <br>
+        
+        d. A conversão utilizando float é desnecessária, pois a função input já lê a informação do teclado como um valor numérico. <br>
+        
+        e. O programa escreve números reais em um arquivo até que o número 0 seja digitado.
+    </h4>
+    <p>
+        e. O programa escreve números reais em um arquivo até que o número 0 seja digitado.
+    </p>
+
+    <h1>Questão 8</h1>
+    <h3>
+        Suponha que você precisa implementar as operações básicas de uma fila e que, para isso, tem à sua disposição duas variáveis do tipo pilha. Considerando esse cenário, escolha a sentença que contenha uma afirmação correta.
+    </h3>
+    <h4>
+        a. Pilhas e filas são conceitos que nunca podem ser usados juntos. <br>
+        
+        b. Pilhas e filas possuem as mesmas funções, portanto, podem ser usadas uma no lugar da outra de maneira direta. <br>
+        
+        c. Não é possível implementar uma fila usando várias pilhas. <br>
+        
+        d. É possível implementar uma fila usando duas pilhas, mas as operações de enfileirar e desenfileirar serão implementadas através de várias operações de empilhamento e desempilhamento. <br>
+        
+        e. O uso de pilhas para implementar uma fila aumenta as chances de overflow/underflow.
+    </h4>
+    <p>
+        d. É possível implementar uma fila usando duas pilhas, mas as operações de enfileirar e desenfileirar serão implementadas através de várias operações de empilhamento e desempilhamento.
+    </p>
+
+    <h1>Questão 9</h1>
+    <h3>
+        A hipótese de underflow acontece em uma pilha quando:
+    </h3>
+    <h4>
+        a. Ela está com dois elementos. <br>
+        
+        b. A operação desempilha é invocada quando a pilha está vazia. <br>
+        c. Um elemento negativo é inserido na pilha. <br>
+        
+        d. Duas operações de desempilha são invocadas sucessivamente. <br>
+        
+        e. Essa possibilidade não existe em pilhas.
+    </h4>
+    <p>
+        b. A operação desempilha é invocada quando a pilha está vazia.
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Em relação à abertura de arquivos em Python, escolha a sentença que apresenta uma afirmação correta.
+    </h3>
+    <h4>
+        a. É possível passar informações referentes à codificação do arquivo durante sua abertura. <br>
+        
+        b. Os modos de abertura de um arquivo são limitados a “w” e “r”. <br>
+        
+        c. Um mesmo arquivo só pode ser aberto uma única vez durante toda a execução de um código Python. <br>
+        
+        d. Caso um programador queira criar um arquivo em uma pasta específica, a função open descobrirá automaticamente o caminho completo do arquivo. <br>
+        
+        e. A função open não permite a abertura de arquivos binários.
+    </h4>
+    <p>
+        a. É possível passar informações referentes à codificação do arquivo durante sua abertura.
+    </p>
+</body>
+</html>
