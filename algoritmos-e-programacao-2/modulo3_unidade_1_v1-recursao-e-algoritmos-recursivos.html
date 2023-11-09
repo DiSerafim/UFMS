@@ -176,7 +176,16 @@
         3) n deve ser decrementado a cada chamada. 
     </p>
     <pre>
-        
+        def fibonacci(n):
+            if n == 0:
+                return 0
+            elif n == 1:
+                return 1
+            else:
+                return fibonacci(n - 1) + fibonacci(n - 2)
+
+        resultado = fibonacci(6)
+        print(resultado)
     </pre>
 </body>
 </html>
