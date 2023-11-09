@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 <br>
+            Unidade 2 - Pilhas, filas e arquivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=J2YsEksMOLw">Vídeo 2 - Algoritmos e Programação de Computadores II - Arquivos</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: José Eduardo Santarem Segundo
+        </p>
+    </header>
+
+    <h4>Arquivos</h4>
+    <p>
+        Um arquivo é uma sequência de bytes armazenada em memória secundária. <br>
+        Existem dois tipos de arquivos: <br>
+        - Arquivo texto (.txt, .html, .py, etc.). <br>
+        - Arquivo binário (.exe, .mp3, .jpg, etc.).
+    </p>
+
+    <h4>Sistema de Arquivos</h4>
+    <p>
+        Componente do computador que organiza os arquivos e provê meios para criá-los, acessá-los e modificá-los. <br>
+
+        Fornecer uma visão uniforme dos arquivos, embora possam estar armazenados em diferentes dispositivos. <br>
+
+        Arquivos são agrupados em pastas ou diretórios.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            Meus Documentos
+            │
+            ├── Trabalhos
+            │   ├── Projeto A
+            │   ├── Projeto B
+            │   └── Relatórios
+            │
+            ├── Fotos
+            │   ├── Férias
+            │   ├── Aniversário
+            │   └── Casamento
+            │
+            └── Música
+                ├── Pop
+                ├── Rock
+                └── Jazz
+        </pre>
+        O diretório raiz é "Meus Documentos". <br>
+        "Trabalhos", "Fotos" e "Música" são subdiretórios dentro de "Meus Documentos". <br>
+        "Projeto A", "Projeto B" e "Relatórios" são subdiretórios de "Trabalhos". <br>
+        "Férias", "Aniversário" e "Casamento" são subdiretórios de "Fotos". <br>
+        "Pop", "Rock" e "Jazz" são subdiretórios de "Música".
+    </p>
+
+    <h4>Acessando Arquivos</h4>
+    <p>
+        Função open():
+        <pre>
+            >>> open('example.txt', 'r')
+        </pre>
+        'r' é o modo de abertura.
+    </p>
+
+    <h4>Modo de abertura</h4>
+    <p>
+        Modos de Leitura:
+        <pre>
+            'r': Modo padrão para leitura. Abre o arquivo para leitura.
+            'rb': Modo de leitura binária. Abre o arquivo para leitura em formato binário.
+            'r+: Modo de leitura e escrita. Abre o arquivo para leitura e escrita.
+
+            Ex.1:
+
+            def ler_arquivo_texto(nome_arquivo):
+                try:
+                    with open(nome_arquivo, "r") as arquivo:
+                        conteudo = arquivo.read()
+                    return conteudo
+                except FileNotFoundError:
+                    return "O arquivo não foi encontrado."
+
+            Ex.2:
+
+            def ler_arquivo_binario(nome_arquivo):
+                try:
+                    with open(nome_arquivo, "rb") as arquivo:
+                        conteudo = arquivo.read()
+                    return conteudo
+                except FileNotFoundError:
+                    return "O arquivo não foi encontrado."
+        </pre>
+
+        Modos de Escrita:
+        <pre>
+            'w': Modo padrão para escrita. Abre o arquivo para escrita (cria um novo arquivo ou substitui o conteúdo existente).
+            'wb': Modo de escrita binária. Abre o arquivo para escrita binária.
+            'w+': Modo de leitura e escrita. Abre o arquivo para leitura e escrita, criando um novo arquivo se não existir.
+            'a': Modo de anexação. Abre o arquivo para escrita, mas adiciona conteúdo ao final do arquivo em vez de substituí-lo.
+            'ab': Modo de anexação binária. Abre o arquivo para escrita binária, anexando conteúdo no final.
+
+            Ex.1:
+
+            def escrever_arquivo_texto(nome_arquivo, conteudo):
+                with open(nome_arquivo, "w") as arquivo:
+                    arquivo.write(conteudo)
+
+            Ex.2:
+
+            def escrever_arquivo_binario(nome_arquivo, conteudo):
+                with open(nome_arquivo, "wb") as arquivo:
+                    arquivo.write(conteudo)    
+        </pre>
+
+        Modos Combinados:
+        <pre>
+            'x': Cria um novo arquivo para escrita, mas falha se o arquivo já existir.
+            'x+': Cria um novo arquivo para leitura e escrita, falhando se o arquivo já existir.
+
+            Ex.:
+
+            def ler_ou_criar_arquivo(nome_arquivo):
+                try:
+                    with open(nome_arquivo, "x+") as arquivo:
+                        print("Arquivo criado com sucesso.")
+                except FileExistsError:
+                    with open(nome_arquivo, "r+") as arquivo:
+                        conteudo = arquivo.read()
+                        print("Conteúdo do arquivo:")
+                        print(conteudo)
+
+            # Exemplo de uso
+            nome_arquivo = "meu_arquivo.txt"
+            ler_ou_criar_arquivo(nome_arquivo)
+        </pre>
+        
+        Modos de Texto vs. Binário:
+        <pre>
+            Em cada um dos modos listados acima, você pode adicionar 't' para indicar que o arquivo está sendo tratado como texto. Por exemplo, 'rt' ou 'w+t'.
+        </pre>
+    </p>
+    FORMAÇÃO DE PROFESSORES
+    <h4>Fechando um Arquivo</h4>
+    <p>
+        close(). <br>
+        Significa avisar o sistema para liberar os recursos/informações sobre o arquivo aberto. <br>
+        Ex.:
+        <pre>
+            def ler_arquivo_texto(nome_arquivo):
+                try:
+                    arquivo = open(nome_arquivo, "rt")
+                    conteudo = arquivo.read()
+                    arquivo.close()  # Fechamento explícito
+                    return conteudo
+                except FileNotFoundError:
+                    return "O arquivo não foi encontrado."
+
+            def escrever_arquivo_texto(nome_arquivo, conteudo):
+                arquivo = open(nome_arquivo, "wt")
+                arquivo.write(conteudo)
+                arquivo.close()  # Fechamento explícito
+
+            # Exemplo de uso
+            nome_arquivo = "exemplo.txt"
+            conteudo = ler_arquivo_texto(nome_arquivo)
+            print(conteudo)
+
+            conteudo_novo = "Este é um novo conteúdo."
+            escrever_arquivo_texto(nome_arquivo, conteudo_novo)
+        </pre>
+    </p>
+</body>
+</html>
