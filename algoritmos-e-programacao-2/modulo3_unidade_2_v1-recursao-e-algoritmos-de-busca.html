@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 2 - Algoritmos de busca<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=Q6lqtu-1Jac">Vídeo 1 - 2 - Algoritmos de busca</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h4>Busca</h4>
+    <p>
+        Ordenar um conjunto antes de realizar a busca permite melhorar o desempenho do algoritmo.
+    </p>
+
+    <h4>Busca Linear</h4>
+    <p>
+        Em Python, a busca por um elemento em uma lista pode ser feita de duas formas:
+        <pre>
+            Com o in:               Com o index():
+            >>> l = [7, 6, 3, 4]    >>> l = [7, 6, 3, 4]
+            >>> 3 in l              >>> l.index(3)
+            True                    2
+            >>> 8 in l              >>> l.index(5)
+            False                   ValueError: 5 is not in list
+        </pre>
+    </p>
+    <p>
+        Se a lista não estiver ordenada, a única maneira de implementar o operador <strong>in</strong> e o método <strong>index()</strong> é por meio de uma <strong>varredura</strong> item a item na lista até encontrá-lo
+    </p>
+
+    <h4>Busca Binária</h4>
+    <p>
+        Se os elementos na lista são comparáveis é possível ordená-los inicialmente, usando algum método de ordenação(e.g. método sort()):
+        <pre>
+            >>> l = [7, 6, 3, 4]
+            >>> l.sort()
+            >>> l
+            [3, 4, 6, 7]
+        </pre>
+    </p>
+    <p>
+        Ao invés de comparar inicialmente o elemento desejado com o primeiro elemento (índice 0), suponha que o comparamos com o elemento armazenado num índice <strong>i</strong> qualquer. <br>
+        Temos 3 possibilidades:
+        <pre>
+            l[i] == elemento desejado → finaliza busca.
+            l[i] > elemento desejado → elemento pode estar à esquerda.
+            l[i] < elemento desejado → elemento pode estar à direita.
+        </pre>
+    </p>
+    <p>
+        Exemplo: <br>
+        Selecionar o meio da lista. <br>
+        Elemento procurado: 12.
+        <pre>
+            >>> l = [1, 2, 3, 4, 6, 9, 10, 12, 15]
+
+            Número de comparações:
+            - Busca Linear: 8
+            - Busca Binária: 3
+        </pre>
+    </p>
+    <pre>
+        import random
+
+        def busca_binaria(l, x, inicio, fim):
+            meio = (inicio + fim) // 2
+
+            if x == l[meio]:
+                return meio
+            
+            if x < l[meio]:
+                return busca_binaria(l, x, inicio, meio - 1)
+            
+            if x > l[meio]:
+                return busca_binaria(l, x, meio + 1, fim)
+            
+        l = random.sample(range(100), 20)
+        print("Lista não ordenada: ", l)
+
+        l.sort()
+        print("Lista ordenada: ", l)
+
+        resultado = busca_binaria(l, 24, 0, 19)
+        print(resultado)
+
+        if resultado != -1:
+            print(f'O número 24 está na posição {resultado} da lista.')
+        else:
+            print(f'O número 24 não está na lista.')
+    </pre>
+</body>
+</html>
