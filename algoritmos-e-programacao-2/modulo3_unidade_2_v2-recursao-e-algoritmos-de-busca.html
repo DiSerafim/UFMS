@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 2 - Algoritmos de busca<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=8weGr_G3Pqo">Vídeo 2 - Programação de Computadores - Aula 23 - Busca Sequencial e Binária</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Luciano Digiampietri
+        </p>
+    </header>
+
+    <h1>Busca Sequencial e Binária</h1>
+
+    <h3>Busca em Arranjo</h3>
+    <p>
+        Suponha que temos um arranjo de inteiros.
+        Como fazemos para verificar se um determinado número está lá?
+        - Varremos o arranjo, da esquerda para a direita. Se acharmos, então ele está no arranjo. Se chegarmos ao final do arranjo e não acharmos, ele não está.
+        <pre>
+            arranjo = [2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91]
+        </pre>
+    </p>
+    <p>
+        Exemplo Sequencial:
+        <pre>
+            # Busca sequencial
+            def busca_sequencial(arranjo, alvo):
+                for i in range(len(arranjo)):
+                    if arranjo[i] == alvo:
+                        return i # Retorna o índice onde o alvo foi encontrado
+                
+                return -1 # Retorna -1 se o alvo não for encontrado
+
+            # Execução
+            arranjo = [2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91]
+            print("Arranjo: ", arranjo)
+
+            alvo = 23
+            print("Alvo: ", alvo)
+
+            # Busca sequencial
+            indice_sequencial = busca_sequencial(arranjo, alvo)
+            if indice_sequencial != -1:
+                print(f"Busca Sequencial: O número {alvo} foi encontrado no índice {indice_sequencial}.")
+            else:
+                print(f"Busca Sequencial: O número não foi encontrado no arranjo.")
+        </pre>
+    </p>
+    <p>
+        Exemplo Binária:
+        <pre>
+            # Busca Binária (assumindo que o arranjo está ordenado)
+            def busca_binaria(arranjo, alvo):
+                esquerda, direita = 0, len(arranjo) - 1
+
+                while esquerda <= direita:
+                    meio = (esquerda + direita) // 2
+                    if arranjo[meio] == alvo:
+                        return meio # Retorna o índice onde o alvo foi encontrado
+                    elif arranjo[meio] < alvo:
+                        esquerda = meio + 1
+                    else:
+                        direita = meio - 1
+
+                return -1 # Retorna -1 se o alvo não for encontrado
+
+            # Execução
+            arranjo = [2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91]
+            print("Arranjo: ", arranjo)
+
+            alvo = 23
+            print("Alvo: ", alvo)
+
+            # Busca Binária
+            indice_binaria = busca_binaria(arranjo, alvo)
+            if indice_binaria != -1:
+                print(f"Busca Binária: O número {alvo} foi encontrado no índice {indice_binaria}.")
+            else:
+                print(f"Busca Binária: O número não foi encontrado no arranjo.")
+        </pre>
+    </p>
+    <p>
+        Como ficaria a busca com objetos? <br>
+        Exemplo:
+        <pre>
+            class Livro:
+                def __init__(self, titulo, autor):
+                    self.titulo = titulo
+                    self.autor = autor
+
+            # Criando uma lista de objetos
+            lista_livros = [
+                Livro("Dom Quixote", "Miguel de Cervantes"),
+                Livro("1984", "George Orwell"),
+                Livro("O Grande Gatsby", "F. Scott Fitzgerald"),
+                Livro("Cem Anos de Solidão", "Gabriel García Márquez"),
+                Livro("O Pequeno Príncipe", "Antoine de Saint-Exupéry"),
+            ]
+
+            # Função para buscar um livro por título
+            def busca_livro_por_titulo(lista, titulo_alvo):
+                for livro in lista:
+                    if livro.titulo == titulo_alvo:
+                        return livro # Retorna o objeto Livro se o titulo corresponder
+                    
+                return None # Retorna None se o título não for encontrado
+
+            # Título do livro que queremos buscar
+            titulo_alvo = "1984"
+
+            # Realiza a busca
+            livro_encontrado = busca_livro_por_titulo(lista_livros, titulo_alvo)
+
+            # Verifica se o livro foi encontrado
+            if livro_encontrado is not None:
+                print(f"O livro '{titulo_alvo}' foi encontrado. Autor: {livro_encontrado.autor}")
+            else:
+                print(f"O livro '{titulo_alvo}' não foi encontrado na lista de livros.")
+        </pre>
+    </p>
+    <p>
+        Busca Sequencial: <br>
+
+        Use busca sequencial quando a lista não estiver ordenada. A busca sequencial pode ser usada em qualquer tipo de lista, independentemente da ordenação. <br>
+        <br>
+        Use busca sequencial quando você não espera que haja muitos elementos na lista. Em listas pequenas, a diferença de desempenho entre a busca sequencial e a busca binária é insignificante. <br>
+        <br>
+        A busca sequencial é útil quando você precisa procurar uma correspondência parcial ou aproximada, como encontrar palavras em um texto ou elementos em uma lista não ordenada.
+    </p>
+    <p>
+        Busca Binária: <br>
+
+        Use busca binária quando a lista estiver ordenada. A busca binária é altamente eficiente em listas ordenadas, pois reduz pela metade o espaço de busca em cada etapa. <br><br>
+
+        A busca binária é ideal para listas muito grandes, pois reduz drasticamente o número de comparações necessárias para encontrar um elemento. <br><br>
+
+        Se a lista não for frequentemente atualizada, ou seja, as operações de inserção e remoção são raras, a busca binária é uma escolha eficaz para localizar elementos.
+    </p>
+</body>
+</html>
