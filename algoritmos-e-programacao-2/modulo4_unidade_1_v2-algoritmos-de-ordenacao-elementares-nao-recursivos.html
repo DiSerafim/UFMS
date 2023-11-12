@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade  1 - Algoritmos de ordenação elementares (não recursivos)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=sPSgOukahyY">Vídeo 2 - Pensamento Computacional - Tarefas de ordenação e estratégias de solução: Selection Sort</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Maria da Graça Campos Pimentel
+        </p>
+    </header>
+
+    <h4>Selection Sort</h4>
+    <p>
+        A ideia básica do Selection Sort é dividir a lista em duas partes: uma parte ordenada, que começa vazia, e uma parte não ordenada, que contém todos os elementos. Em cada passo, o algoritmo encontra o elemento mínimo (ou máximo) na parte não ordenada e o move para a parte ordenada, trocando-o com o elemento na posição atual na parte não ordenada.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            def selection_sort(arr):
+                for i in range(len(arr)):
+                    # Encontra o índice do elemento mínimo na parte não ordenada
+                    min_index = i
+                    for j in range(i + 1, len(arr)):
+                        if arr[j] < arr[min_index]:
+                            min_index = j
+
+                    # troca o elemento mínimo com o elemento na posição atual
+                    arr[i], arr[min_index] = arr[min_index], arr[i]
+
+            # Execução
+            arr = [64, 25, 12, 22, 11]
+            print("Array não ordenado: ", arr)
+            print("")
+
+            selection_sort(arr)
+            print("Array ordenado: ", arr)
+        </pre>
+    </p>
+    <p>
+        Como funciona:
+        <pre>
+            Passo 1:
+            Começamos com a lista não ordenada completa e a lista ordenada vazia. O primeiro elemento (64) é considerado o mínimo até que seja encontrado um valor menor.
+
+            Lista ordenada: []
+            Lista não ordenada: [64, 25, 12, 22, 11]
+            Passo 2:
+            Encontramos o elemento mínimo na lista não ordenada, que é 11, e trocamos com o primeiro elemento da lista não ordenada (64).
+
+            Lista ordenada: [11]
+            Lista não ordenada: [25, 12, 22, 64]
+            Passo 3:
+            Continuamos o processo. Encontramos o próximo mínimo, que é 12, e o trocamos com o segundo elemento da lista não ordenada (25).
+
+            Lista ordenada: [11, 12]
+            Lista não ordenada: [25, 22, 64]
+            Passo 4:
+            Encontramos o próximo mínimo, que é 22, e o trocamos com o terceiro elemento da lista não ordenada (25).
+
+            Lista ordenada: [11, 12, 22]
+            Lista não ordenada: [25, 64]
+            Passo 5:
+            Encontramos o próximo mínimo, que é 25, e o trocamos com o quarto elemento da lista não ordenada (64).
+
+            Lista ordenada: [11, 12, 22, 25]
+            Lista não ordenada: [64]
+            Passo 6:
+            Finalmente, só resta um elemento na lista não ordenada, que é 64. Não precisamos fazer mais nada, pois ele é automaticamente colocado na posição correta.
+
+            Lista ordenada: [11, 12, 22, 25, 64]
+            Lista não ordenada: []
+            Agora a lista está completamente ordenada em ordem crescente.
+        </pre>
+    </p>
+</body>
+</html>
