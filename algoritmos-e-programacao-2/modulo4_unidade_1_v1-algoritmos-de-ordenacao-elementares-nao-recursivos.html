@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade  1 - Algoritmos de ordenação elementares (não recursivos)<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=a64VDyKjnwA">Vídeo 1 - Algoritmos e Programação de Computadores II - Algoritmos clássicos de ordenação I</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Marcelo G. Manzato
+        </p>
+    </header>
+
+    <h3>Algoritmos clássicos de ordenação I</h3>
+
+    <h4>Ordenação</h4>
+    <p>
+        Ordenação é largamente utilizada. <br>
+        - Listas telefônicas e dicionários. <br>
+        - Grandes sistemas de BD e processamento de dados. <br>
+        - Etc.
+    </p>
+    <p>
+        Algoritmos de ordenação são ilustrativos. <br>
+        - Como resolver problemas computacionais. <br>
+        - Como lidar com estruturas de dados. <br>
+        - Como desenvolver algoritmos elegantes e como analisar e comparar seus desempenhos.
+    </p>
+    <p>
+        Definição: <br>
+        Organizar uma sequência de elementos de modo que os mesmos estabeleçam alguma relação de ordem. <br>
+        Diz-se que os elementos k₁, ..., kₙ estarão dispostos de modo que k₁ <= k₂ <= ... <= kₙ.
+    </p>
+    <p>
+        Dá menos trabalho buscar um elemento em um conjunto desordenado do que ordenar primeiro e depois buscar. <br><br>
+
+        Se a busca for uma operação frequente, vale a pena ordenar. <br>
+        Depende das circunstâncias!
+    </p>
+
+    <h4>Terminologia</h4>
+    <p>
+        Ordenação de registros, em que cada registro é ordenado por sua chave. <br><br>
+
+        Ordenação interna vs. esterna: <br>
+        - Interna: se todos os registros cabem na memória principal. <br>
+        - Externa: se os dados não cabem na memória principal, precisando ser armazenados em disco. <br><br>
+
+        Ordenação estável: ordem original de registros com chaves iguais é preservada após a ordenação.
+    </p>
+
+    <h4>Bubble sort</h4>
+    <p>
+        Um dos métodos mais conhecidos e intuitivos. <br>
+
+        Ideia básica: <br>
+        - Percorrer o conjunto várias vezes.
+        - A cada iteração, compara cada elemento com seu sucessor (v[i] com v[i+1]) e trocá-los de lugar caso estejam na ordem incorreta.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            Suponha que temos a seguinte lista de números a serem ordenados:
+
+            arr = [5, 3, 1, 4, 2]
+            Passo 1:
+            Começamos percorrendo a lista do início.
+
+            [5, 3, 1, 4, 2]
+            Comparamos o primeiro elemento (5) com o próximo (3). Eles estão fora de ordem, então trocamos os elementos.
+
+            [3, 5, 1, 4, 2]
+            Passo 2:
+            Continuamos percorrendo a lista e comparando pares adjacentes.
+
+            [3, 5, 1, 4, 2]
+            Agora, comparamos 5 e 1. Eles também estão fora de ordem, então trocamos.
+
+            [3, 1, 5, 4, 2]
+            Passo 3:
+            Continuamos o processo.
+
+            [3, 1, 5, 4, 2]
+            Comparamos 5 e 4. Mais uma vez, eles estão fora de ordem, então trocamos.
+
+            [3, 1, 4, 5, 2]
+            Passo 4:
+            Continuamos.
+
+            [3, 1, 4, 5, 2]
+            Comparamos 5 e 2. Fora de ordem, trocamos.
+
+            [3, 1, 4, 2, 5]
+            Passo 5:
+            Terminamos a primeira iteração. Agora, o maior elemento (5) está no lugar certo (último).
+
+            Reiniciamos o processo da próxima iteração, mas desta vez excluindo o último elemento.
+
+            Passo 6:
+
+            [3, 1, 4, 2, 5]
+            Comparamos 3 e 1. Trocamos.
+
+            [1, 3, 4, 2, 5]
+            Passo 7:
+
+            [1, 3, 4, 2, 5]
+            Comparamos 3 e 4. Em ordem.
+
+            Passo 8:
+
+            [1, 3, 4, 2, 5]
+            Comparamos 4 e 2. Trocamos.
+
+            [1, 3, 2, 4, 5]
+            Passo 9:
+
+            [1, 3, 2, 4, 5]
+            Comparamos 4 e 5. Em ordem.
+
+            Passo 10:
+            Terminamos a segunda iteração. O segundo maior elemento (4) está no lugar certo (penúltimo).
+
+            Continuamos esse processo até que nenhum elemento precise mais ser trocado em uma iteração completa. A lista estará totalmente ordenada.
+        </pre>
+    </p>
+    <p>
+        Implementação:
+        <pre>
+            def bubble_sort(arr):
+                n = len(arr)
+
+                for i in range(n):
+                    # Índice final i é ignorado, pois os maiores elementos já estão no lugar certo.
+                    for j in range(0, n - i - 1):
+                        if arr[j] > arr[j + 1]:
+                            # Troca os elementos se estiverem fora de ordem
+                            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+            # Execução
+            arr = [5, 3, 1, 4, 2]
+            bubble_sort(arr)
+            print("Array ordenado: ", arr)
+        </pre>
+    </p>
+
+    <h4>Insertion sort</h4>
+    <p>
+        Ideia básica: <br>
+        - Ordenar conjunto inserindo os elementos em um subconjunto já ordenado. <br>
+        - No i-ésimo passo, inseri o i-ésimo elemento na posição correta entre x[0], ..., x[i-1], que já estão em ordem. <br>
+        -- Realocar elementos.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            Suponha que temos a seguinte lista de números a serem ordenados:
+
+            arr = [5, 3, 1, 4, 2]
+            Passo 1:
+            Começamos com um subconjunto de um único elemento, que é a primeira posição do array. O primeiro elemento (5) é considerado como um subconjunto ordenado.
+
+            [5]   (Subconjunto ordenado)
+            [3, 1, 4, 2]   (Subconjunto não ordenado)
+            Passo 2:
+            Agora, movemos para o segundo elemento (3) no subconjunto não ordenado.
+
+            [5]   (Subconjunto ordenado)
+            [3, 1, 4, 2]   (Subconjunto não ordenado)
+            Comparamos o elemento 3 com o elemento 5 no subconjunto ordenado. Como 3 é menor que 5, movemos o 5 para a direita e inserimos o 3 na primeira posição do subconjunto ordenado.
+
+            [3, 5]   (Subconjunto ordenado)
+            [1, 4, 2]   (Subconjunto não ordenado)
+            Passo 3:
+            Continuamos com o próximo elemento (1) no subconjunto não ordenado.
+
+            [3, 5]   (Subconjunto ordenado)
+            [1, 4, 2]   (Subconjunto não ordenado)
+            Comparamos o elemento 1 com os elementos no subconjunto ordenado. Como 1 é menor que 3 e 5, movemos 3 e 5 para a direita e inserimos o 1 na primeira posição do subconjunto ordenado.
+
+            [1, 3, 5]   (Subconjunto ordenado)
+            [4, 2]   (Subconjunto não ordenado)
+            Passo 4:
+            Continuamos com o próximo elemento (4) no subconjunto não ordenado.
+
+            [1, 3, 5]   (Subconjunto ordenado)
+            [4, 2]   (Subconjunto não ordenado)
+            Comparamos o elemento 4 com os elementos no subconjunto ordenado. Como 4 é menor que 5, movemos o 5 para a direita e inserimos o 4 na segunda posição do subconjunto ordenado.
+
+            [1, 3, 4, 5]   (Subconjunto ordenado)
+            [2]   (Subconjunto não ordenado)
+            Passo 5:
+            Finalmente, tratamos o último elemento (2) no subconjunto não ordenado.
+
+            [1, 3, 4, 5]   (Subconjunto ordenado)
+            [2]   (Subconjunto não ordenado)
+            Comparamos o elemento 2 com os elementos no subconjunto ordenado. Como 2 é menor que todos os elementos, movemos 3, 4 e 5 para a direita e inserimos o 2 na primeira posição do subconjunto ordenado.
+
+            [1, 2, 3, 4, 5]   (Subconjunto ordenado)
+            []   (Subconjunto não ordenado vazio)
+            Passo 6:
+            Terminamos a ordenação. O array está totalmente ordenado.
+        </pre>
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            def insertion_sort(arr):
+                for i in range(1, len(arr)):
+                    chave = arr[i]
+                    j = i - 1
+
+                    # Move os elementos do subconjunto ordenado para a direita.
+                    # até encontrar a posição correta para a chave
+                    while j >= 0 and chave < arr[j]:
+                        arr[j + 1] = arr[j]
+                        j -= 1
+
+                    # Insere a chave na posição correta
+                    arr[j + 1] = chave
+
+            # Execução
+            arr = [5, 3, 1, 4, 2]
+            insertion_sort(arr)
+            print("Array ordenado: ", arr)
+        </pre>
+    </p>
+</body>
+</html>
+₀, ₁, ₂, ₃, ₄, ₅, ₆, ₇, ₈, ₉

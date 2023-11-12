@@ -1,0 +1,84 @@
+Números Subscritos:
+₀, ₁, ₂, ₃, ₄, ₅, ₆, ₇, ₈, ₉
+
+Números Sobrescrito:
+⁰, ¹, ², ³, ⁴, ⁵, ⁶, ⁷, ⁸, ⁹
+
+Alfabeto sobrescrito:
+ᴬ, ᴮ, ᶜ, ᴰ, ᴱ, ᶠ, ᴳ, ᴴ, ᴵ, ᴶ, ᴷ, ᴸ, ᴹ, ᴺ, ᴼ, ᴾ, ᵟ, ᴿ, ˢ, ᵀ, ᵁ, ⱽ, ᵂ, ˣ, ʸ, ᶻ
+
+Formato de subscrito:
+ₐ, ₑ, ₕ, ᵢ, ⱼ, ₖ, ₗ, ₘ, ₙ, ₒ, ₚ, ᵣ, ₛ, ₜ, ᵤ, ᵥ, ₓ
+
+Caracteres especiais sobrescrito:
+
+⁺, ⁻, ⁼, ⁽, ⁾, ᶜ, ᵀ, ᵁ, ₓ, ⁄, ⫽, ⁄
+
+Caracteres especiais subscrito:
+₊, ₋, ₌, ₍, ₎
+
+└─>
+
+[{¬}[{³}²¢¹]]
+Símbolos matemáticos
++	mais; positivo
+–	menos; negativo
+±	mais ou menos
+.	multiplicado por
+÷, :, /,    divisão
+=	igual a;
+≠	diferente de;
+< 	menor que
+> 	maior que
+≤ 	menor ou igual
+≥ 	maior ou igual
+≅	aproximadamente igual
+≡	equivalente a
+[ ]	colchetes
+( )	parênteses
+{ }	chaves
+ℕ   números naturais
+ℤ   números inteiros
+ℚ   números racionais
+ℝ - ℚ números irracionais
+ℝ   números reais
+ℂ   números complexos
+β, ᵝ, ᵦ   beta
+√	raiz quadrada
+∛	raiz cúbica
+∜	radiciação (raiz quarta)
+r	raio de um círculo
+∞	infinito
+∈	pertence
+∉	não pertence
+​{ } conjunto vazio
+∩	interseção
+∪	união
+⊆	é subconjunto de
+⊃	contém
+⊂	está contido
+⊄	não está contido
+∅ ou {}	conjunto vazio
+⇒	implica
+φ   ouro
+loge
+log10
+x2	xis ao quadrado
+x3	xis ao cubo
+x4	xis à quarta potência
+|x|	valor absoluto de xis
+π	pi = 3,14159
+°	grau
+’	minuto
+”	segundo
+n!	n fatorial
+dx	diferencial
+⎥⎢	paralelo a
+∑	somatória
+sen	seno
+cos	cosseno
+tg tangente
+cotg cotangente
+sec	secante
+cosec co-ssecante
+↓ ↑
