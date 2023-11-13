@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 4 <br>
+            Unidade  2 - Algoritmos de ordenação recursivos<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=wgjj5X4U54A">Vídeo 2 - Pensamento Computacional -Tarefas de busca e estratégias de solução: Merge Sort</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Maria da Graça Campos Pimentel
+        </p>
+    </header>
+
+    <h3>Algoritmos clássicos de ordenação II</h3>
+
+    <h4>Merge sort</h4>
+    <p>
+        Também chamado de ordenação por intercalação. <br>
+        Ideia básica: dividir para conquistar. <br>
+        - Um vetor v é dividido em duas partes, recursivamente. <br>
+        - Cada metade é ordenada e ambas são intercaladas formando o vetor ordenado. <br>
+        - Usa um vetor auxiliar para intercalar.
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            Passo 1 - Divisão Inicial:
+
+            Dividimos a lista [38, 27, 43, 3, 9, 82, 10] em duas metades aproximadamente iguais:
+            esquerda: [38, 27, 43]             direita: [3, 9, 82, 10]
+
+            Passo 2 - Divisão Recursiva:
+
+            Recursivamente, continuamos dividindo as metades até que cada submetade contenha apenas um elemento:
+            esquerda:                  direita:
+                            
+            [38]                         [3]
+            [27]                         [9]
+            [43]                         [82]
+                                         [10]
+            Passo 3 - Intercalação:
+
+            Começamos a intercalar as submetades ordenadas. Por exemplo, intercalamos.
+            [38] e [27] para obter [27, 38].
+            
+            Repetimos esse processo para todas as submetades.
+            Passo 4 - Intercalação Final:
+
+            Finalmente, intercalamos as duas submetades maiores (a metade esquerda e a metade direita) para criar a lista final ordenada:
+            
+            [27, 38, 43] e [3, 9, 10, 82]
+            
+            são intercalados para obter
+            
+            [3, 9, 10, 27, 38, 43, 82].
+
+            Agora, a lista está completamente ordenada em ordem crescente.
+        </pre>
+    </p>
+    <p>
+        Exemplo:
+        <pre>
+            def merge_sort(arr):
+                if len(arr) > 1:
+                    meio = len(arr) // 2
+                    metade_esquerda = arr[:meio]
+                    metade_direita = arr[meio:]
+
+                    # Chamada recursiva para dividir e ordenar as metades
+                    merge_sort(metade_esquerda)
+                    merge_sort(metade_direita)
+
+                    i = j = k = 0
+
+                    # Intercalação das metades ordenadas
+                    while i < len(metade_esquerda) and j < len(metade_direita):
+                        if metade_esquerda[i] < metade_direita[j]:
+                            arr[k] = metade_esquerda[i]
+                            i += 1
+                        else:
+                            arr[k] = metade_direita[j]
+                            j += 1
+                        k += 1
+
+                    # Verifica se há elementos restantes em ambas as metades
+                    while i < len(metade_esquerda):
+                        arr[k] = metade_esquerda[i]
+                        i += 1
+                        k += 1
+
+                    while j < len(metade_direita):
+                        arr[k] = metade_direita[j]
+                        j += 1
+                        k += 1
+
+            # Execução
+            arr = [38, 27, 23, 3, 9, 82, 10]
+            print("Array nã ordenado: ", arr)
+            print("")
+
+            merge_sort(arr)
+            print("Array ordenado: ", arr)
+        </pre>
+    </p>
+</body>
+</html>

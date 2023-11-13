@@ -3,9 +3,13 @@ def quick_sort(arr):
         return arr
     
     pivot = arr[len(arr) // 2]
+    print("Pivô", pivot)
     left = [x for x in arr if x < pivot]
+    print("Esquerda", left)
     middle = [x for x in arr if x == pivot]
+    print("Meio", middle)
     right = [x for x in arr if x > pivot]
+    print("Direita", right)
 
     return quick_sort(left) + middle + quick_sort(right)
 
