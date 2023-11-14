@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 4</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A4] – Avaliação do Módulo 4 - Algoritmos de ordenação elementares não recursivos e recursivos<br>
+        </h1>
+        <p>
+            Iniciado em	segunda, 13 nov 2023, 21:07 <br>
+            Estado	Finalizada <br>
+            Concluída em	segunda, 13 nov 2023, 21:44 <br>
+            Tempo empregado	37 minutos 19 segundos <br>
+            Avaliar	7,00 de um máximo de 10,00(70%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h3>
+        Em relação aos algoritmos de ordenação por intercalação e ordenação rápida, escolha uma alternativa que contenha uma sentença correta.
+    </h3>
+    <h4>
+        a. Intercalar duas listas já ordenadas é um procedimento similar ao algoritmo de particionamento utilizado na ordenação rápida. <br><br>
+        
+        b. A ideia básica do algoritmo de ordenação por intercalação é intercalar as duas metades de uma lista quando essas duas metades estão desordenadas. <br><br>
+        
+        c. O algoritmo de ordenação por intercalação divide a lista em dois pedaços de tamanhos aleatórios. <br><br>
+        
+        d. Tanto a ordenação por intercalação quanto a ordenação rápida são versões modificadas do algoritmo de ordenação por bolha. <br><br>
+        
+        e. O algoritmo de ordenação rápida descobrirá um pivô para dividir a lista em dois pedaços, mas não há garantias de que esse pivô será o elemento no centro da lista (mediana).
+    </h4>
+    <p>
+        e. O algoritmo de ordenação rápida descobrirá um pivô para dividir a lista em dois pedaços, mas não há garantias de que esse pivô será o elemento no centro da lista (mediana).
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        Dado um vetor V de inteiros que já está ordenado, os algoritmos de ordenação por bolha, por inserção e por seleção detectarão que o vetor já está ordenado e não realizarão nenhuma comparação.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+
+    <h1>Questão 3</h1>
+    <h3>
+        Dados valores i, j e k tais que V[i..j] e V[j+1..k] são dois subvetores válidos de um vetor V, o procedimento de intercalação dos subvetores V[i..j] e V[j+1..k] (utilizado no algoritmo de ordenação por intercalação) fará com que o vetor V[i..k] esteja ordenado. A intercalação só produzirá o resultado esperado se os vetores V[i..j] e V[j+1..k] estiverem ordenados.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 4</h1>
+    <h3>
+        Em relação ao algoritmo de ordenação rápida, escolha uma afirmação que contenha uma sentença correta.
+    </h3>
+    <h4>
+        a. O algoritmo que escolhe o pivô do vetor sempre escolhe um pivô que fica no final do vetor. <br><br>
+
+        b. O algoritmo que escolhe o pivô do vetor sempre escolhe um pivô que fica na metade do vetor. <br><br>
+        
+        c. O pivô pode ficar em qualquer posição do vetor. <br><br>
+        
+        d. É possível que um valor escolhido como pivô não possa ser utilizado para dividir o vetor. <br><br>
+        
+        e. O algoritmo que escolhe o pivô do vetor sempre escolhe um pivô que fica no início do vetor.
+    </h4>
+    <p>
+        c. O pivô pode ficar em qualquer posição do vetor.
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        O algoritmo abaixo apresenta um pseudocódigo da ordenação por seleção. O algoritmo recebe um vetor V de valores inteiros e os coloca em ordem não decrescente. <br>
+        <br>
+        i = 0 <br>
+        enquanto i < n <br>
+        aux_i = V[i] <br>
+        k = i <br>
+        j = i <br>
+        enquanto j < n <br>
+        se V[j] < aux_i <br>
+        aux_i = V[j] <br>
+        k = j <br>
+        j = j + 1 <br>
+        V[k] = V[i] <br>
+        V[i] = aux_i <br>
+        i = i + 1 <br>
+        <br>
+        Em relação ao algoritmo acima, escolha uma afirmação que contenha uma sentença correta.
+    </h3>
+    <h4>
+        a. A atribuição V[k] = V[i] coloca o elemento V[i] já na sua posição final. <br>
+        
+        b. Após uma iteração do laço externo (enquanto i < n), o elemento V[i] será colocado na sua posição final. <br>
+        
+        c. As variáveis k e j são usadas com o mesmo propósito, portanto, são redundantes. <br>
+        
+        d. A variável k armazena o conteúdo da menor posição encontrada até o momento. <br>
+        
+        e. Nenhuma das alternativas anteriores.
+    </h4>
+    <p>
+        d. A variável k armazena o conteúdo da menor posição encontrada até o momento. ❌
+    </p>
+
+    <h1>Questão 6</h1>
+    <h3>
+        O algoritmo abaixo apresenta o pseudocódigo de uma versão otimizada de um algoritmo de ordenação não recursivo. Esse algoritmo recebe um vetor V de números inteiros e os coloca em ordem não decrescente. <br>
+        <br>
+        m = VERDADEIRO <br>
+        n’ = n <br>
+        g = n <br>
+        enquanto m faça <br>
+        m = FALSO; <br>
+        j = 1; <br>
+        enquanto j < n’ faça <br>
+        se V[j] > V[j+1] então <br>
+        trocar(V[j],V[j+1]) <br>
+        m = VERDADEIRO <br>
+        g = j <br>
+        j = j + 1 <br>
+        n’ = g <br>
+        <br>
+        Considere as seguintes afirmações sobre o algoritmo acima. <br>
+        <br>
+        O algoritmo é uma versão otimizada do algoritmo de ordenação por bolha. <br>
+        O algoritmo apresenta pequenas melhorias em relação ao algoritmo de ordenação por bolha, mas o seu desempenho será o mesmo em relação ao algoritmo original, independente do conteúdo de V. <br>
+        A variável g pode auxiliar na redução da quantidade de comparações. <br>
+        A variável m permite que o algoritmo pare quando nenhuma troca foi realizada. <br>
+        Escolha uma alternativa que contenha TODAS as sentenças verdadeiras. <br><br>
+
+        a. Sempre prefira soluções iterativas a soluções recursivas, independente de qualquer outro critério. <br>
+        
+        b. Considere uma solução recursiva somente quando uma solução iterativa simples não for possível. <br>
+        
+        c. As soluções recursivas são sempre mais complexas e com mais linhas de código. <br>
+        
+        d. Utilize uma solução recursiva, independente do consumo de memória da solução. <br>
+        
+        e. Como a recursividade sempre leva a um maior consumo de memória e a códigos mais complexos, ela nunca deve ser escolhida.
+    </h3>
+    <h4>
+        a. 1, 3 e 4. <br>
+        b. 1, 2 e 3. <br>
+        c. 2 e 4. <br>
+        d. 1 e 3. <br>
+        e. 3 e 4.
+    </h4>
+    <p>
+        a. 1, 3 e 4.
+    </p>
+
+    <h1>Questão 7</h1>
+    <h3>
+        Em relação aos algoritmos de ordenação, considere as afirmações abaixo: <br>
+        <br>
+        Os algoritmos de ordenação recursivos são melhores que os algoritmos de ordenação não recursivos em qualquer situação. <br>
+        O algoritmo de ordenação por bolha utiliza da recursividade para trocar elementos sucessivos, até que o vetor esteja totalmente ordenado. <br>
+        O algoritmo de ordenação por intercalação utiliza, além da recursividade, um método iterativo para “misturar” os subproblemas. <br>
+        O algoritmo de ordenação rápida (quick sort) é o que ordena qualquer vetor da maneira mais rápida possível, independente do conteúdo da entrada. <br>
+        Escolha a alternativa que contenha apenas as afirmações verdadeiras.
+    </h3>
+    <h4>
+        a. 2 e 3. <br>
+        b. 1 e 2. <br>
+        c. 3. <br>
+        d. 1 e 3 <br>
+        e. 3 e 4.
+    </h4>
+    <p>
+        a. 2 e 3. ❌ 
+    </p>
+
+    <h1>Questão 8</h1>
+    <h3>
+        Os algoritmos de ordenação rápida e ordenação por intercalação podem sofrer variações de desempenho dependendo da organização do vetor de entrada fornecido.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 9</h1>
+    <h3>
+        Suponha duas listas L1 e L2. Em relação ao custo do algoritmo de intercalação utilizado no algoritmo de ordenação por intercalação, escolha uma sentença que contenha uma afirmação correta.
+    </h3>
+    <h4>
+        a. A intercalação já funcionará corretamente se L1 ou L2 estiverem ordenadas. <br><br>
+        
+        b. Se L1 ou L2 não estiverem ordenados, o algoritmo ordenará os dois vetores antes de realizar a intercalação. <br><br>
+        
+        c. O algoritmo de intercalação pode ser substituído pelo algoritmo de partição, pois os dois têm o mesmo propósito. <br><br>
+        
+        d. Se o algoritmo de intercalação não conseguir intercalar os dois vetores, as chamadas recursivas do algoritmo de ordenação por intercalação realizarão a ordenação. <br><br>
+        
+        e. Nenhuma das alternativas anteriores.
+    </h4>
+    <p>
+        b. Se L1 ou L2 não estiverem ordenados, o algoritmo ordenará os dois vetores antes de realizar a intercalação. ❌ 
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Quando um algoritmo de ordenação é invocado para um vetor que já está ordenado, o algoritmo em questão ordenará o vetor na ordem inversa. Ou seja, se o vetor estava em ordem não decrescente, o algoritmo fará com que o vetor fique em ordem não crescente.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Falso
+    </p>
+</body>
+</html>
