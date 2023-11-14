@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade  1 - Noções de eficiência de algoritmos: pior caso e melhor caso<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=SbXIuERQlLo">Vídeo 1 - Fundamentos Matemáticos para Computação - Ordem de Grandeza</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Claudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h3>Ordem de Grandeza</h3>
+    <p>
+        A ordem de grandeza é uma maneira de comparar a taxa de crescimento de funções diferentes.
+    </p>
+
+    <h4>Funções</h4>
+    <p>
+        Sejam f e g funções em ℝ*+ → ℝ*+ (reais não negativos). <br>
+        A função f tem a mesma ordem de grandeza do que g, denotado por f = θ(g), se existem constantes positivas n₀₂ c₁ e c₂ tais que, se x >= n₀₂ então c₁g(x) >= f(x) >= c₂g(x)
+    </p>
+    <p>
+        Relação Binária: <br>
+        f ρ g <br>
+        Se existe constantes positivas n₀, c₁ e c₂ tais que para todo x >= n₀, c₁g(x) <= f(x) <= c₂g(x) (f= θ(g)) <br>
+        <br>
+        - A relação ρ é uma <strong>relação de equivalência</strong>. <br>
+        - ρ estabelece <strong>classes de equivalência</strong>. <br>
+        - f = θ(g) quer dizer na verdade f ∈ [g]
+    </p>
+    <pre>≤ ≥
+        Se x ≥ n₀, então c₁g(x) ≥ f(x) ≥ c₂g(x).
+        Seja f(x) = 3x² e g(x) = 200x² + 140x + 7.
+        c₁(200x² + 140x + 7) ≥ 3x² ≥ c₂(200x² + 140x + 7)
+        (1) (200x² + 140x + 7) ≥ 3x² ≥ (1/100) (200x² + 140x + 7)
+        200x² + 140x + 7 ≥ 3x² ≥ 2x² + 1,4x + 0,07
+        c₁ = 1 e c₂ = 1/100
+        Porém, x = 1 3(1)² >/ 2.(1)² + 1.4(1) + 0,07 Falso!
+               x = 2 3(2)² > 2.(2)² + 1.4(2) + 0,07 Verdadeiro!
+        Logo, x ≥ 2 ⇒ n₀ = 2 com c₁ = 1 e c₂ = 1/100
+    </pre>
+    <p>
+        Exemplo: <br>
+        Prove f = θ(x²) não ocorre para f(x) = x <br>
+        Lembre-se: Se x ≥ n₀, então c₁g(x) ≥ f(x) ≥ c₂g(x). <br>
+        <br>
+        Por absurdo, suponha que f = θ(x²) ocorra! <br>
+        Temos c₁x² ≥ x ⇒ c₁ x ≥ 1 e <br>
+            x ≥ c₂x² ⇒ 1 ≥ c₂x <br>
+            ⇒ c₁x ≥ 1 ≥ c₂x para x ≥ n₀ <br>
+        Porém, 1 ≥ c₂x ⇒ 1/c₂ ≥ x. Absurdo!! <br>
+        Teremos x suficientemente grande tal que x ≥ 1/c₂
+    </p>
+
+    <h4>Análise de Algoritmo</h4>
+    <p>
+        - A ordem de grandeza é importante na análise de algoritmos. <br>
+        - A análise de algoritmo identifica as tarefas importantes executadas por ele. <br>
+        - O número de vezes que tais tarefas serão executadas geralmente depende do tamanho dos dados de entrada. <br>
+        - As funções que expressam a quantidade de trabalho vão ter domínio ℕ.
+    </p>
+    <p>
+        Exemplo1: Ordenar 10 milhões de números. <br>
+        Suponha que o computador A execute 1 bilhão de tarefas por segundo. <br>
+        Um excelente programador implementa o algoritmo x para solucionar instâncias de tamanho n de um problema. <br>
+        Esse programador utiliza linguagem de máquina no computador A e obtém uma performance de 2n².
+        <pre>
+            A: 2.(10⁷)²/10⁹ = 20000 (5,5h)
+        </pre>
+    </p>
+    <p>↓↑ 17 vezes superior</p>
+    <p>
+        Exemplo2: Ordenar 10 milhões de números. <br>
+        Suponha que o computador com nível mediano implementa o algoritmo Y para solucionar o problema. Ele utiliza linguagem C em um computador B que executa 10 milhões de tarefas por segundo. Essa implementação consegue solucionar as mesmas instâncias do problema com uma performance de 50nlogn.
+        <pre>
+            B: 50.10⁷(log₂10⁷)/10⁷ ≅ 1163 (<20min)
+        </pre>
+        ≅	aproximadamente igual
+    </p>
+    <p>
+        Exemplo:
+        T(b): função de complexidade
+        b: número de vezes que teremos de multiplicar a base para obter a exponenciação.
+        <pre>
+            def exp1(a, b):                     
+                if b == 1:                      # Comparação
+                    return a                    # Retorno
+                else:                           
+                    return a * exp1(a, b - 1)   # Produto
+                                                # Chamada recursiva T(b-1)
+            # Exemplo de uso:                   
+            resultado = exp1(2, 3)              
+            print(resultado)                    
+        </pre>
+    </p>
+</body>
+</html>
