@@ -127,8 +127,6 @@
         <pre>
             Suponha que você tenha a seguinte lista como entrada:
 
-            csharp
-            Copy code
             [34, 7, 23, 32, 5, 62, 1, 3]
             Passo 1 - Escolha do Pivô:
 
@@ -138,8 +136,6 @@
 
             Agora, o objetivo é rearranjar os elementos de forma que os elementos menores que o pivô (3) fiquem à esquerda e os elementos maiores fiquem à direita. Para fazer isso, percorremos o vetor da esquerda para a direita até encontrarmos um elemento maior ou igual a 3 (o pivô) e da direita para a esquerda até encontrarmos um elemento menor ou igual a 3.
 
-            csharp
-            Copy code
             [34, 7, 23, 32, 5, 62, 1, 3]  # Início
             [1, 7, 23, 32, 5, 62, 34, 3]  # Trocamos 1 e 34
             [1, 7, 23, 32, 5, 62, 34, 3]  # Nada a trocar
@@ -155,22 +151,16 @@
 
             Repetimos os mesmos passos para a metade esquerda:
 
-            csharp
-            Copy code
             [1, 7, 3]  # Escolhemos 3 como pivô
             [1, 3, 7]  # O array está ordenado
             E também para a metade direita:
 
-            csharp
-            Copy code
             [32, 5, 62, 34, 23]  # Escolhemos 23 como pivô
             [5, 23, 32, 34, 62]  # O array está ordenado
             Passo 4 - Combinando:
 
             Combinamos as metades ordenadas da esquerda e da direita para obter o array completamente ordenado:
 
-            csharp
-            Copy code
             [1, 3, 7, 5, 23, 32, 34, 62]
             Agora, a lista está completamente ordenada em ordem crescente.
         </pre>
