@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade  2 - Complexidade assintótica<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=ojCAnD7vrOY">Vídeo 1 - Projeto e Análise de Algoritmos - Aula 02 - Análise assintótica: ordens O, Ω e Θ - Parte I</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professora: Karina Valdivia Delgado
+        </p>
+    </header>
+
+    <h3>Análise assintótica: ordens O, Ω e Θ</h3>
+    <p>
+        No pior caso, o tempo cresce na proporção do quadrado do tamanho da sequência. <br>
+        Podemos formalizar estes conceitos com as notações O, Ω e Θ, que permitem fazer uma comparação assintótica de funções.
+    </p>
+
+    <h4>Comparação assintótica de funções</h4>
+    <pre>
+        n⁶                    n + 100000
+                    (3n²+7n-8)/2
+        3n⁵+3n-3            83n³+3n-3       log n
+                    2ᴺ+3n-3             √n
+                    
+        Para x enorme, qual função cresce mais?
+        Cresce mais rápido:
+        2ᴺ+3n, n⁶, 3n⁵+3n-3, 83n³+3n-3, (3n²+7n-8)/2, n + 100000, √n, log n
+    </pre>
+    <p>
+        Três tipos de comparação assintótica¹:
+        - Comparação com sabor de "≤" (O)
+        - Comparação com sabor de "≥" (Ω)
+        - Comparação com sabor de "=" (Θ)
+    </p>
+
+    <h4>Notação O</h4>
+    <p>
+        O(f(n)) intuitivamente são funções que não crescem mais rápido que f(n) <br>
+        n² + 3n - 3, (3n² + 7n - 8)/2 e c₂n² + c₁n + c₀ são O(n²) <br>
+        n² + 3n - 3 é O(n²), isto é, n² +3n - 3 não cresce mais rápido que n² <br>
+        (3n² + 7n - 8)/2 é O(n²), isto é, (3n² + 7n - 8)/2 não cresce mais rápido que n² <br>
+        c₂n² + c₁n + c₀ é O(n²), isto é, c₂n² + c₁n + c₀ não cresce mais rápido que n²
+    </p>
+    <p>
+        Sejam  T(n) e f(n) funções dos inteiros nos reais. Dizemos que T(n) é O(f(n)) se existem constantes positivas c e n₀ tais que: <br>
+        T(n) ≤ c f(n) para todo n ≥ n₀ <br>
+        Exemplo: <br>
+        Demonstrar que n² + 800 é O(n²) <br>
+        Prova: <br>
+        n²+800 ≤ n²+800*n² = 801 n² para todo n≥1 => c=801 e n₀=1 <br>
+        Prova alternativa: <br>
+        n²+800 ≤ n²+n*n = 2n² para todo n ≥ 800 => c=2 e n₀=800
+    </p>
+    <p>
+        Sejam T(n) e f(n) funções dos inteiros nos reais. Dizemos que T(n) é O(f(n)) se existem constantes positivas c e n₀ tais que: <br>
+        T(n) ≤ c f(n) para todo n ≥ n₀ <br>
+        Exemplo:
+        Demonstrar que 10n³-3n²+27 é O(n³)
+        Prova:
+        10n³-3n²+27 ≤ 10n³ se (3n²-27) >= 0 ou Seja
+        10n³-3n²+27 ≤ 10n³ para todo  n ≥ 3 => c=10 e n₀=3
+    </p>
+    <p>
+        <strong>O(1)</strong> - Constante: Independentemente do tamanho do problema, o tempo ou espaço necessário permanece constante. <br>
+        <br>
+        <strong>O(log n)</strong> - Logarítmica: O tempo ou espaço de execução cresce de forma logarítmica em relação ao tamanho da entrada. Exemplos comuns são algoritmos de busca binária. <br>
+        <br>
+        <strong>O(n)</strong> - Linear: A complexidade aumenta linearmente com o tamanho da entrada. Quanto maior a entrada, proporcionalmente maior é o tempo ou espaço necessário para o algoritmo. <br>
+        <br>
+        <strong>O(n log n)</strong> - Linearítmica: Têm um desempenho melhor do que os puramente lineares, mas pior que os logarítmicos. Exemplos incluem algoritmos de ordenação eficientes como o Quicksort e o Mergesort. <br>
+        <br>
+        <strong>O(n^2), O(n^3), ...</strong> - Quadrática, Cúbica, e assim por diante: Representam algoritmos cuja complexidade cresce exponencialmente com o tamanho da entrada. Bubble Sort ou Selection Sort têm complexidade quadrática (n^2). <br>
+        <br>
+        <strong>O(2^n), O(n!), ...</strong> - Exponencial e Fatorial: São algoritmos com crescimento extremamente rápido à medida que o tamanho da entrada aumenta. São ineficientes para entradas grandes.
+    </p>
+
+    <h4>Ordenar por inserção</h4>
+    <pre>
+        Ordenar-por-inserção(A, n)
+            para j ← a até n faça                       O(n)
+                chave ← A[j]                            O(n)
+                i ← j - 1                               O(n)
+                enquanto i ≥ 1 e A[i] > chave faça      nO(n) = O(n²)
+                    A[i + 1] ← A[i]                     nO(n) = O(n²)
+                    i ← i - 1                           nO(n) = O(n²)
+                A[i + 1] ← chave                        O(n)
+                                                        O(3n²+4n) = O(n2)
+    </pre>
+    <p>
+        A linha 4 é executada um número de vezes menor que n em cada iteração de j. Assim, ela consome nO(n) <br>
+        O algoritmo consome O(n²) unidades de tempo.
+    </p>
+</body>
+</html>
