@@ -82,3 +82,5 @@ cotg cotangente
 sec	secante
 cosec co-ssecante
 ↓ ↑
+ρ (rho) Função Densidade ou Distância Radial ρ pode ser usado para representar a função densidade de probabilidade
+θ (theta): Ângulo comumente usado para representar um ângulo em matemática

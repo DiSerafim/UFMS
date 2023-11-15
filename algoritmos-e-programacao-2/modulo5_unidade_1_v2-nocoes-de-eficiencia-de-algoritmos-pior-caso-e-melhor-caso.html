@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade  1 - Noções de eficiência de algoritmos: pior caso e melhor caso<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=SbXIuERQlLo">Vídeo 2 - Projeto e Análise de Algoritmos - Aula 01 - Introdução ao projeto e análise de algoritmos</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professor: Karina Valdivia Delgado
+        </p>
+    </header>
+
+    <h3>Introdução ao projeto e análise de algoritmos</h3>
+
+    <h4>Algoritmo</h4>
+    <p>
+        Algoritmo é um procedimento computacional bem definido, que recebe um conjunto de valores como entrada e reproduz um conjunto de valores com saída. <br>
+
+        É uma ferramenta para resolver problemas computacionais.
+    </p>
+
+    <h4>Problema e instância</h4>
+    <p>
+        Um problema é definido por: <br>
+        - Uma descrição dos parâmetros. <br>
+        - Uma descrição sobre as propriedades que a resposta deve satisfazer. <br>
+        <br>
+        Uma instância de um problema é obtida ao fixar valores para todos os parâmetros do problema.
+    </p>
+    <p>
+        Problema: <br>
+        Ordenar uma sequência a₁, a₂, ..., aₙ de maneira crescent. <br>
+        Entrada: a₁, a₂, ..., aₙ <br>
+        Saída: a'₁, a'₂, ..., a'ₙ <br>
+        Propriedades: a'₁, a'₂, ..., a'ₙ é uma permutação de a₁, a₂, ..., aₙ tal que a'₁ ≤ a'₂ ≤ ... ≤ a'ₙ <br>
+        Instância: 10 20 5 40 4 <br>
+        ........... 4 5 10 20 40
+    </p>
+
+    <h4>Corretude do algoritmo</h4>
+    <p>
+        O primeiro passo é mostrar que o algoritmo de fato resolve o problema, isto é, mostrar que ele faz o que promete.
+    </p>
+    <p>
+        Prova de correção do algoritmo: <br>
+        - Para algoritmos iterativos é usada a técnica dos invariantes do laço. <br>
+        - Para algoritmos recursivos é usada a indução matemática no tamanho das instâncias.
+        <pre>
+            maximoRec(A, n)
+                se n =1
+                    então devolva A[1]
+                senão x = maximoRec(A, n - 1) # x é o máximo de A[1...n-1]
+                    se x > A[n]
+                        então devolva x
+                        senão devolva A[n]
+        </pre>
+    </p>
+
+    <h4>Ordenação</h4>
+    <p>
+        Problema: <br>
+        Ordenar um vetor A[1, ..., n] de maneira crescente. <br>
+        Entrada: <br>
+        23 20 21 28 27 22 25 24 29 <br>
+        Saída: <br>
+        20 21 22 23 24 25 27 28 29
+    </p>
+</body>
+</html>
