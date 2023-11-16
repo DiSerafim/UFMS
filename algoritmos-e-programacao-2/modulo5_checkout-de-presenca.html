@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença Módulo 5</title>
+</head>
+<body>
+    <header>
+        <h3>
+            📍 [Checkout de Presença] Módulo 5 – Noções de eficiência e complexidade de algoritmos<br>
+        </h3>
+        <p>Nome completo: <strong>Diego Serafim de Sousa</strong></p>
+
+        <p>Nome do/a Professor/a Tutor/a: <strong>Samuel Benjoino Ferraz Aquino</strong></p>
+
+        <p>Título da atividade: <strong>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</strong></p>
+        <p>Vencimento: segunda, 27 nov 2023, 23:59</p>
+    </header>
+    
+    <h3>
+        Nesta atividade você demonstrará, na prática, os impactos de desempenho causados pela complexidade de um algoritmo. <br>
+
+        Para isso, você deve implementar em Python os dois algoritmos a seguir <br>(representados em pseudocódigo):
+    </h3>
+    <pre>
+        Algoritmo 1: complexidade O(n²)
+        soma = 0
+        recebe um valor inteiro n
+        laço de 1 até n
+            laço de 1 até n
+                aleatorio = valor aleatório entre 1 e 1000
+                soma = soma + aleatorio
+
+
+        Algoritmo 2: complexidade O(n³)
+        soma = 0
+        recebe um valor inteiro n
+        laço de 1 até n
+            laço de 1 até n
+                laço de 1 até n
+                aleatorio = valor aleatório entre 1 e 1000
+                soma = soma + aleatorio
+    </pre>
+    <h4>
+        Uma vez implementados esses algoritmos, execute-os utilizando os seguintes valores de n: <br>
+        <br>
+        n = 10 <br>
+        n = 100 <br>
+        n = 1000 (não interrompa a execução)
+    </h4>
+    <h4>
+        Para cada valor de n utilizado, meça o tempo gasto de cada algoritmo utilizando a função time do Python. <br>
+        <br>
+        ⇰ O link a seguir apresenta um exemplo de como utilizar a função time: <a href="https://horadecodar.com.br/2020/05/29/medir-tempo-de-execucao-de-uma-funcao-python/" target="_blank" rel="noopener noreferrer">>>></a> <br>
+        <br>
+        Em um editor de texto, construa uma tabela que mostre o tempo de execução de cada algoritmo para cada valor de n.  <br>
+        <br>
+        No mesmo arquivo, indique quais conclusões você obteve em relação ao impacto da complexidade de um algoritmo no seu desempenho final.  <br>
+
+        Exporte o arquivo para PDF e envie no espaço da tarefa.
+    </h4>
+    
+    <h4>Algoritmo 1</h4>
+    <pre>
+        import random # Gera números aleatórios
+        import time # Usado para medir o tempo gasto
+
+        def algoritmo_1(n):
+            soma = 0
+            for i in range(1, n + 1): # Loop de 1 até n
+                for j in range(1, n + 1): # Loop de interno 1 até n
+                    aleatorio = random.randint(1, 1000) # Gera número inteiro aleatório entre
+                    soma = soma + aleatorio # Soma o nº aleatório + a variável
+            return soma # Retorna a soma total
+
+        valores_de_n = [10, 100, 1000]
+
+        for n in valores_de_n:
+            inicia_time = time.time() # Início da contagem de tempo
+            resultado = algoritmo_1(n) # Chama o algoritmo
+            fim_time = time.time() # Fim da contagem
+            tempo_algoritmo = fim_time - inicia_time # Calcula o tempo de execução
+
+            print(f"n = {n}")
+            print(f"Tempo de execução do Algoritmo 1: complexidade O(n²): {tempo_algoritmo} segundos")
+
+
+        """
+        Resultado da Saída
+        └─$ python3 0-modulo5_checkout-de-presenca1.py
+            n = 10
+            Tempo de execução do Algoritmo 1: complexidade O(n²): 8.893013000488281e-05 segundos
+            n = 100
+            Tempo de execução do Algoritmo 1: complexidade O(n²): 0.006061077117919922 segundos
+            n = 1000
+            Tempo de execução do Algoritmo 1: complexidade O(n²): 0.5249819755554199 segundos
+        """
+    </pre>
+    
+    <h4>Algoritmo 2</h4>
+    <pre>
+        import random # Gera números aleatórios
+        import time # Usado para medir o tempo gasto
+
+        def algoritmo_2(n):
+            soma = 0
+            for i in range(1, n + 1): # Loop de 1 até n
+                for j in range(1, n + 1): # Loop de interno 1 até n
+                    for k in range(1, n + 1): # Loop de interno 1 até n
+                        aleatorio = random.randint(1, 1000) # Gera número inteiro aleatório entre
+                        soma = soma + aleatorio # Soma o nº aleatório + a variável
+            return soma # Retorna a soma total
+
+        valores_de_n = [10, 100, 1000]
+
+        for n in valores_de_n:
+            inicia_time = time.time() # Início da contagem de tempo
+            resultado = algoritmo_2(n) # Chama o algoritmo
+            fim_time = time.time() # Fim da contagem
+            tempo_algoritmo = fim_time - inicia_time # Calcula o tempo de execução
+
+            print(f"n = {n}") # Exibe o valor de valores_de_n
+            print(f"Tempo de execução do Algoritmo 2: complexidade O(n³): {tempo_algoritmo} segundos")
+
+        """
+        Resultado da Saída
+        └─$ python3 0-modulo5_checkout-de-presenca2.py
+            n = 10
+            Tempo de execução do Algoritmo 2: complexidade O(n³): 0.0006062984466552734 segundos
+            n = 100
+            Tempo de execução do Algoritmo 2: complexidade O(n³): 0.4692845344543457 segundos
+            n = 1000
+            Tempo de execução do Algoritmo 2: complexidade O(n³): 526.4349241256714 segundos
+        """
+    </pre>
+</body>
+</html>
