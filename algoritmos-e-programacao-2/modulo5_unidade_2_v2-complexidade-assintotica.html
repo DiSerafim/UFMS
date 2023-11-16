@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 5 <br>
+            Unidade  2 - Complexidade assintótica<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=DNX4sTlrfwo">Vídeo 1 - Projeto e Análise de Algoritmos - Aula 02 - Análise assintótica: ordens O, Ω e Θ - Parte II</a>
+        </h1>
+        <p>
+            Professor: Samuel Benjoino Ferraz Aquino <br>
+            Professora: Karina Valdivia Delgado
+        </p>
+    </header>
+
+    <h3>Análise assintótica: ordens O, Ω e Θ</h3>
+    <p>
+        No pior caso, o tempo cresce na proporção do quadrado do tamanho da sequência. <br>
+        Podemos formalizar estes conceitos com as notações O, Ω e Θ, que permitem fazer uma comparação assintótica de funções.
+    </p>
+
+    <h4>Notação Ω</h4>
+    <p>
+        Dizemos que T(n) é Ω(f(n)) se existem constantes positivas c e n₀ tais que: <br>
+        T(n) ≥ c f(n) para todo n ≥ n₀.
+    </p>
+    <pre>
+        Exemplo 1:
+            Demonstrar que 6n+5 é Ω(n)
+        Prova:
+            6n+5 ≥ 6n para todo n ≥ 0 => c=6 e n₀=0
+    </pre>
+    <pre>
+        Exemplo 2:
+            Demonstrar que n²-2 é Ω(n²)
+        Prova:
+            n²-2 = n²/2+(n²/2-2) ≥ n²/2 se (n²/2-2) ≥ 0, isto é, para todo n ≥ 2 => c=1/2 e n₀=2.
+    </pre>
+    <pre>
+        Exemplo 3:
+            Demonstrar que nlgn é Ω(n)
+        Prova:
+            lg n ≥ 1 para todo n ≥ 2 e portanto nlg n ≥ n => c=1 e n₀=2
+    </pre>
+
+    <h4>Notação Θ</h4>
+    <p>
+        Dizemos que T(n) é Θ(f(n)) se existem constantes positivas c₁ e c₂ e n₀ tais que: <br>
+        c₁f(n) ≤ T(n) ≤ c₂f(n) para todo n ≥ n₀.
+    </p>
+    <pre>
+        Exemplo 1:
+            Demonstrar que n²-2 é Θ(n²)
+        Prova:
+            n²-2 ≥ n²/2+(n²/2-2) ≥ n²/2 se (n²/2-2) ≥ 0, isto é, para todo n ≥ 2 => c₁=¹/₂ e n₀₁=2
+
+            n²-2 ≤ n² para todo n ≥ 0 => c₂=1 e n₀₂=0.
+
+            n²/2 ≤ n²-2 ≤ n², c₁=¹/₂, c₂=1, n₀=max{n₀₁,n₀₂} = 2
+    </pre>
+    <p>
+        <strong>Θ(1)</strong> - Constante: A função ou algoritmo tem tempo de execução constante, independentemente do tamanho. <br><br>
+
+        <strong>Θ(log n)</strong> - Logarítmica: O tempo de execução cresce de forma logarítmica à medida que o tamanho da entrada aumenta. <br><br>
+
+        <strong>Θ(n)</strong> - Linear: O tempo de execução aumenta linearmente com o tamanho da entrada. <br><br>
+
+        <strong>Θ(n log n)</strong> - Linearítmica: Têm um tempo de execução proporcional ao tamanho da entrada multiplicado pelo logaritmo desse tamanho. <br><br>
+
+        <strong>Θ(n²), Θ(n²), ...</strong> - Quadrática, Cúbica, e por diante: O tempo de execução aumenta quadrática, cúbica, ou em graus superiores conforme a entrada aumenta. <br><br>
+
+        <strong>Θ(2ᴺ), Θ(n!), ...</strong> - Exponencial e Fatorial: Têm um tempo de execução que cresce exponencialmente ou de forma fatorial em relação ao tamanho da entrada. <br><br>
+    </p>
+
+    <h4>Propriedades</h4>
+    <p>
+        Transitividade: <br>
+         <br>
+        T(n) é Θ(f(n)) e f(n) é Θ(g(n)) então T(n) é Θ(g(n)) <br>
+        T(n) é O(f(n)) e f(n) é O(g(n)) então T(n) é O(g(n)) <br>
+        T(n) é Ω(f(n)) e f(n) é Ω(g(n)) então T(n) é Ω(g(n))
+    </p>
+    <p>
+        Reflexividade: <br>
+         <br>
+        T(n) é Θ(T(n)) <br>
+        T(n) é O(T(n)) <br>
+        T(n) é Ω(T(n))
+    </p>
+    <p>
+        Simétrica: <br>
+         <br>
+        T(n) é Θ(f(n)) então f(n) é Θ(T(n))
+    </p>
+    <p>
+        Antissimétrica: <br>
+         <br>
+        T(n) é O(f(n)) então f(n) é Ω(T(n)) <br>
+        T(n) é Ω(f(n)) então f(n) é O(T(n))
+    </p>
+
+    <h4>Revisão de matemática</h4>
+    <pre>
+        Expoentes:
+        xᴺ * xᴹ = xᴺ⁺ᴹ
+        xᴺ / xᴹ = xᴺ⁻ᴹ
+        (xᴺ)ᴹ = xᴺ*ᴹ
+        xᴺ+xᴺ = 2xᴺ
+
+        Logaritmos:
+        logₐ(b*c) = logₐb + logₐc
+        logₐ(b/c) = logₐb - logₐc
+        logₐbᴹ = m * logₐb
+        logₐb = logₑb / logₑa
+    </pre>
+    
+    <pre>
+        Somatórias:
+         ₙ
+         ∑i = 1 + 2 + 3 + ... + n = n(n+1)/2
+        ᴵ⁼¹
+         ₙ
+         ∑i² = 1² + 2² + 3² + ... + n² = n(n+1)(2n+1)/6
+        ᴵ⁼¹
+         ₙ
+         ∑i³ = 1³ + 2³ + 3³ + ... + n³ = (n(n+1)/2)²
+        ᴵ⁼¹
+         ₙ
+         ∑xᴵ = xᴹ + xᴹ⁺¹ + xᴹ⁺² + ... + xᴺ = x(xᴺ - xᴹ⁻¹)/x-1 
+        ᴵ⁼¹
+    </pre>
+</body>
+</html>
