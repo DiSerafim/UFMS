@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Sistemas de Numeração e Representação de Dados<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=uIG1SIOqn9s">Vídeo 1 - Introdução a Conceitos de Computação - Representação de Dados</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Dados-Informação-Conhecimento. <br>
+        - Dados analógicos. <br>
+        - Codificação Binária.
+    </p>
+
+    <h4>Dados-Informação-Conhecimento.</h4>
+    <p>
+        Dados: <br>
+        - Elementos conhecidos de um problema. <br>
+        - Desprovidos de significado, se considerados isoladamente. <br> <br>
+
+        Informação: <br>
+        - Um conjunto estruturado de dados. <br>
+        - Possuem utilidades e podem gerar ações. <br><br>
+
+        Conhecimento: <br>
+        - Síntese de múltiplas fontes de informação. <br>
+        - Possui elevado significado e utilidade para o suporte à tomada de decisões. <br><br>
+
+        <pre>
+             /\ ______ Conhecimento
+            /  \
+           /____\_____ Informação
+          /      \
+         /________\___ Dados
+         
+        </pre>
+    </p>
+
+    <h4>Dados analógicos.</h4>
+    <p>
+        Dispositivos analógicos utilizam representação contínua, medindo quantitativamente fenômenos da natureza e grandezas analógicas ou continuas como temperatura, pressão, distância, som. <br><br>
+
+        Dispositivos Digitais representam e operam sobre dados discretos ou dígitos. <br><br>
+
+        Bit - BInary digiT: <br>
+        Representar dois estados possíveis.
+        <pre>
+            +---------------------------------------+
+            |          Estado 0       Estado 1      |
+            |         (0 - Off)      (1 - On)       |
+            +---------------------------------------+
+        </pre>
+    </p>
+
+    <h4>Codificação Binária.</h4>
+    <p>
+        Codificações de bits permitem armazenar um número maior de estados.
+        <pre>
+            | Número de Bits | Número de Valores Possíveis | Valores Binários            |
+            |----------------|-----------------------------|-----------------------------|
+            | 1              | 2                           | 0, 1                        |
+            | 2              | 4                           | 00, 01, 10, 11              |
+            | 3              | 8                           | 000, 001, 010, 011, 100, 101|
+            | 4              | 16                          | 0000, 0001, 0010, 0011, 0100|
+        </pre>
+    </p>
+    <p>
+        Bite - BinarY TErm: <br>
+        Unidade básica de armazenamento em memória e disco usada pelos computadores e formada por 8 bits. <br><br>
+
+        Palavras são combinações que podem ser formadas por um grupo de 2, 4, 6 e até 8 bytes(equivalente a 64 bits)
+        <pre>
+            +---------------------------------------+
+            |              Grupo de Bits            |
+            |   0101 1100 1010 0011 1111 0000       |
+            |                                       |
+            |   Bite - BinarY TErm (Agrupamento)    |
+            +---------------------------------------+         
+        </pre>
+    </p>
+    <p>
+        Formatos: <br>
+        EBCDIC (Código Extendido Binário Codificado Decimal Interchangeable Code): <br>
+        - O caractere 'A' em EBCDIC é representado como 0xC1. <br>
+        <br>
+        ASCII (American Standard Code for Information Interchange): <br>
+        - O caractere 'A' em ASCII é representado como 0x41. <br>
+        <br>
+        UTF-8 (Unicode Transformation Format - 8 bits): <br>
+        - O caractere 'A' em UTF-8 é representado como 0x41, o mesmo valor que em ASCII para caracteres comuns. <br>
+        <br>
+        ISO 8859-1 (Latin-1): <br>
+        - O caractere 'A' em ISO 8859-1 é representado como 0x41, assim como em ASCII e UTF-8. <br>
+        <br>
+        Unicode: <br>
+        - O caractere 'A' em Unicode pode ser representado por várias codificações, mas a representação comum é U+0041.
+    </p>
+    <pre>
+        | Caractere | ASCII (decimal) | Binário   |
+        |-----------|-----------------|-----------|
+        | A         | 65              | 01000001  |
+        | B         | 66              | 01000010  |
+        | a         | 97              | 01100001  |
+        | b         | 98              | 01100010  |
+        | 0         | 48              | 00110000  |
+        | 1         | 49              | 00110001  |
+        | !         | 33              | 00100001  |
+        | @         | 64              | 01000000  |
+        | #         | 35              | 00100011  |
+        | $         | 36              | 00100100  |
+        | %         | 37              | 00100101  |
+        | &         | 38              | 00100110  |
+        | *         | 42              | 00101010  |
+        | espaço    | 32              | 00100000  |
+    </pre>
+    <p>
+        Pixel simples em preto e branco, onde cada ponto da imagem é representado por um único bit (0 ou 1):
+        <pre>
+            | Pixel | Cor      | Binário |
+            |-------|----------|---------|
+            | 1     | Branco   | 1       |
+            | 0     | Preto    | 0       |
+        </pre>
+    </p>
+    <p>
+        RGB em 8 bits por componente pode ser representado como:
+        <pre>
+            | Pixel | Vermelho | Verde    | Azul     |
+            |-------|----------|-------   |--------  |
+            | 1     | 10101010 | 11110000 | 01010101 |
+        </pre>
+        
+        Bitmap - Coleção de pixels de uma imagem.
+        <pre>
+            | 1 | 0 | 1 |
+            | 0 | 1 | 0 |
+            | 1 | 0 | 1 |
+        </pre>
+
+        Pixel - Menor componente de uma imagem digital.
+        <pre>
+            111
+            010
+            101
+        </pre>
+
+        GIF - animação de um objeto se movendo para a direita: <br>
+        - É uma coleção de frames, e cada frame é semelhante a um bitmap, representando uma imagem individual na sequência que compõe a animação.
+        <pre>
+            Quadro 1:
+            | 0 | 0 | 0 |
+            | 0 | 0 | 0 |
+            | 1 | 0 | 0 |
+
+            Quadro 2:
+            | 0 | 0 | 0 |
+            | 0 | 0 | 1 |
+            | 0 | 0 | 0 |
+
+            Quadro 3:
+            | 0 | 0 | 0 |
+            | 0 | 1 | 0 |
+            | 0 | 0 | 0 |
+        </pre>
+    </p>
+</body>
+</html>
