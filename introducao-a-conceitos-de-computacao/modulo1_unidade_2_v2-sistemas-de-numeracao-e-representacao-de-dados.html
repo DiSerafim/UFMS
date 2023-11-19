@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Sistemas de Numeração e Representação de Dados<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=5Fcbp4nRWsk">Vídeo 2 - Introdução a Conceitos de Computação - Sistemas de numeração e conversão de bases</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Sistemas de numeração em computação. <br>
+        - Conversão entre bases. <br>
+        - Codificação Binária - Números.
+    </p>
+
+    <h4>Sistemas de numeração em computação.</h4>
+    <p>
+        → Decimal: Base 10, usando dígitos de 0 a 9. É o sistema que usamos no dia a dia. <br>
+
+        → Binário: Base 2, utilizando apenas 0 e 1. Fundamental para computadores, pois a eletrônica digital trabalha com sinais binários. <br>
+
+        → Octal: Base 8, com dígitos de 0 a 7. Não tão comum atualmente, mas já foi usado em algumas aplicações. <br>
+
+        → Hexadecimal: Base 16, utilizando dígitos de 0 a 9 e letras de A a F para representar valores de 10 a 15. É útil na programação e representação de cores.
+    </p>
+    <p>
+        Sistemas de Numeração: <br>
+        → Representação estruturada e dentro de um contexto de uma coleção de números através de numerais. <br>
+        → Representação para o número 10: <br>
+        十 - Chines. <br>
+        X - Romano. <br>
+        ∩ - Egípcio.
+    </p>
+    <p>
+        Sistema numérico na computação: <br>
+        1. Binário (Base 2): <br>
+        → Usa apenas dois dígitos: 0 e 1. <br>
+        → Fundamental para a computação digital, onde a eletrônica manipula sinais binários. <br>
+        → Todos os dados são representados internamente em zeros e uns, desde textos até imagens e instruções de programas. <br> <br>
+
+        2. Decimal (Base 10): <br>
+        → O sistema numérico padrão que usamos no cotidiano. <br>
+        → Apesar de não ser o sistema fundamental para a computação, é usado em alguns contextos, especialmente na interação com usuários. <br><br>
+
+        3. Octal (Base 8) e Hexadecimal (Base 16): <br>
+        → Octal usa 8 dígitos: 0 a 7. <br>
+        → Hexadecimal usa 16 dígitos: 0 a 9 e A a F (representando os valores de 10 a 15). <br>
+        → São usados na programação, pois fornecem uma maneira conveniente de representar números binários longos de maneira compacta e legível. <br><br>
+
+        4. ASCII e Unicode: <br>
+        → Não são sistemas numéricos, mas são importantes para a computação. <br>
+        → ASCII (American Standard Code for Information Interchange) atribui valores numéricos a caracteres (letras, números, símbolos). <br>
+        → Unicode é uma codificação de caracteres mais abrangente, permitindo a representação de um conjunto muito maior de caracteres, incluindo vários idiomas e símbolos.
+
+        <pre>
+            | Sistema    | Base |
+            |------------|------|
+            | Binário    | 2    |
+            | Decimal    | 10   |
+            | Octal      | 8    |
+            | Hexadecimal| 16   |
+        </pre>
+    </p>
+    <p>
+        Sistemas numéricos mais comuns na computação com suas respectivas bases e os dígitos que cada sistema utiliza:
+        <pre>
+            | Sistema       | Base | Dígitos                                        |
+            |---------------|------|----------------------                          |
+            | Binário       | 2    | 0, 1                                           |
+            | Ternário      | 3    | 0, 1, 2                                        |
+            | Quaternário   | 4    | 0, 1, 2, 3                                     |
+            | Quinário      | 5    | 0, 1, 2, 3, 4                                  |
+            | Senário       | 6    | 0, 1, 2, 3, 4, 5                               |
+            | Octal         | 8    | 0, 1, 2, 3, 4, 5, 6, 7                         |
+            | Decimal       | 10   | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9                   |
+            | Duodecimal    | 12   | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B             |
+            | Hexadecimal   | 16   | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F |
+        </pre>
+    </p>
+
+    <h4>Conversão entre bases.</h4>
+    <p>
+        → Decimal para Binário: Divisões sucessivas por 2 e coleta dos restos de cada divisão. Exemplo: 23 em binário é 10111.
+        <pre>
+            23 ÷ 2 = 11 com resto 1
+            11 ÷ 2 = 5 com resto 1
+            5 ÷ 2 = 2 com resto 1
+            2 ÷ 2 = 1 com resto 0
+            1 ÷ 2 = 0 com resto 1
+
+            Os restos lidos de baixo para cima são 10111, logo 23 em binário é 10111.
+        </pre>
+
+        → Binário para Decimal: Cada dígito binário é multiplicado pela potência de 2 correspondente à sua posição e somado. Exemplo: 10111 em decimal é 23.
+        <pre>
+            1 * 2^4 + 0 * 2^3 + 1 * 2^2 + 1 * 2^1 + 1 * 2^0 = 16 + 0 + 4 + 2 + 1 = 23
+        </pre>
+
+        → Decimal para Hexadecimal e Octal: Primeiro converta para binário e depois agrupe os dígitos em conjuntos de 4 para hexadecimal ou de 3 para octal.
+        <pre>
+            23 ÷ 2 = 11 com resto 1
+            11 ÷ 2 = 5 com resto 1
+            5 ÷ 2 = 2 com resto 1
+            2 ÷ 2 = 1 com resto 0
+            1 ÷ 2 = 0 com resto 1
+
+            23 em binário é 10111.
+
+            Agrupar em conjuntos de 4 (para hexadecimal):
+            0010 1111
+
+            Converter os grupos de 4 dígitos para hexadecimal:
+            2 em hexadecimal é 2
+            1111 em hexadecimal é F
+            
+            23 em hexadecimal é 17.
+        </pre>
+
+        → Hexadecimal/Octal para Decimal: Converta para binário e depois para decimal. <br>
+
+        → Hexadecimal para Binário e vice-versa: Use tabelas de conversão ou faça a conversão indireta passando por decimal.
+    </p>
+    <p>
+        Exemplos: <br>
+        (1011)ₚ = 1·2³ + 0·2² + 1·2¹ + 1·2° <br>
+        (1011)ₚ = 1·8 + 0·4 + 1·2 + 1·1 = 11 <br><br>
+
+        (230, 4)₈ = 2·8² + 3·8¹ + 0·8° + 4·8⁻¹
+    </p>
+
+    <h4>Codificação Binária - Números.</h4>
+    <p>
+        → 1010 em binário é 10 em decimal (12^3 + 02^2 + 12^1 + 02^0).
+        → 1111 em binário é 15 em decimal (12^3 + 12^2 + 12^1 + 12^0).
+    </p>
+    <p>
+        Exemplo: <br>
+        Número binário: 10101 <br>
+        <br>
+        Para converter este número binário para decimal, usamos a seguinte fórmula: <br>
+        (1 * 2^4) + (0 * 2^3) + (1 * 2^2) + (0 * 2^1) + (1 * 2^0) <br>
+        <br>
+        Realizando as operações: <br>
+        (1 * 16) + (0 * 8) + (1 * 4) + (0 * 2) + (1 * 1) <br>
+        = 16 + 0 + 4 + 0 + 1 <br>
+        = 21 <br>
+        Portanto, o número binário 10101 é igual a 21 em decimal.
+    </p>
+</body>
+</html>
