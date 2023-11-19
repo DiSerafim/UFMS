@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Sistemas de Numeração e Representação de Dados<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=KuFIDwF5y9M">Vídeo 3 - Introdução a Conceitos de Computação - Notação de ponto flutuante e operações aritméticas binárias</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        Ponto Flutuante. <br>
+        → Representação decimal <br>
+        → Representação binária <br><br>
+        Operações aritméticas binária. <br>
+        → Soma <br>
+        → Subtração <br>
+        → Multiplicação <br>
+        → Divisão
+    </p>
+
+    <h4>Ponto Flutuante.</h4>
+    <p>
+        Valores Reais:
+        <pre>
+                            Mantissa ↓
+            número = (sinal)0,d₁d₂d₃...dₘ x Bᴱˣᴾ
+            -2,187 =    -   0,2187        x 10¹
+        </pre>
+        Mantissa m: quantidade de dígitos na parte significativa do número. <br>
+        Base B: conjunto de símbolos (ou algarismos). <br>
+        Expoente exp: valor inteiro dentro de um intervalo[min, max].
+    </p>
+    <p>
+        Exemplo: <br>
+        Uma calculadora opera na base 10 com 4 digitos na mantissa e expoente assumindo valores {-3, -2, -1, 0, 1, 2, 3}. <br>
+        <pre>
+                            ↓ Mantissa ↓
+            numero  = (sinal)0,d₁d₂d₃d₄ x Bᴱˣᴾ
+            -17,945 =    -   0, 1 7 9 4 x 10²
+                    =    - 0,1794 x 10⁻²
+                         TRUNCAMENTO!
+        </pre>
+        <pre>
+            Maior Número
+             (sinal)0,d₁d₂d₃d₄ x Bᴱˣᴾ
+                +   0,9 9 9 9  x 10³ = 999,9
+            
+            Menor Número positivo
+             0,d₁d₂d₃d₄ x Bᴱˣᴾ
+             0,0 0 0 1  x 10° = 1x10⁻⁴
+        </pre>
+    </p>
+    <p>
+        Valores Binários <br>
+        Ex.: <br>
+        Vamos representar -17,945 usando uma palavra com 16 bits e a seguinte estrutura: <br>
+        <pre>
+            | Sinal | Parte Inteira | Ponto | Parte Decimal |
+            |   1   |     0111      |   0   | 1111011000    |
+        </pre>
+        <pre>
+            Converter o valor absoluto para binário (17 para binário):
+            17 ÷ 2 = 8 com resto 1
+            8 ÷ 2 = 4 com resto 0
+            4 ÷ 2 = 2 com resto 0
+            2 ÷ 2 = 1 com resto 0
+            1 ÷ 2 = 0 com resto 1
+
+            Ao ler os restos de baixo para cima, temos: 10001.
+            Inverter os bits para obter o complemento de um:
+            10001 (binário original)
+            01110 (complemento de um)
+
+            Adicionar 1 para obter o complemento de dois:
+            01110 (complemento de um)
+            + 1
+            -----
+            01111 (complemento de dois)
+        </pre>
+    </p>
+
+    <h4>Operações aritméticas binária.</h4>
+    <p>
+        adição e subtração de dois números binários de 4 bits.
+
+        <pre>
+            Número A	Número B	Adição (A + B)	Subtração (A - B)
+            0101	    0011	    1000	        010
+            1110	    0111	    10101       	0111
+            1001	    0100	    1101	        0101
+            0110	    0010	    1000	        0100
+        </pre>
+    </p>
+    <p>
+        Exemplos de Adição Binária:
+
+        <pre>
+            Adição de 0101 e 0011:
+            0101
+          + 0011
+            ______
+            1000
+    
+            Adição de 1110 e 0111:
+            1110
+          + 0111
+            ______
+            10101
+        </pre>
+    </p>
+    <p>
+        Exemplos de Subtração Binária:
+        <pre>
+            Subtração de 0101 por 0011:
+            markdown
+            Copy code
+            0101
+          - 0011
+            ______
+            010
+            Subtração de 1001 por 0100:
+            yaml
+            Copy code
+            1001
+          - 0100
+            ______
+            0101
+        </pre>
+    </p>
+</body>
+</html>
