@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Operações Lógicas e Tabela-Verdade<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=xfSxw6DjfZQ">Vídeo 2 - Introdução a Conceitos de Computação - Portas lógicas e expressões booleanas</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Computadores e eletricidade. <br>
+        - Transistores e portas. <br>
+        - Portas lógicas. <br>
+        - Construindo portas.
+    </p>
+
+    <h4>Computadores e eletricidade</h4>
+    <p>
+        Nível de voltagem de 0 a 2 volts é considerado "baixo". <br>
+        Nível na faixa de 2 a 5 volts é considerado "alto". <br>
+        Sinais em um computador estão condicionados a estar em uma faixa (0) ou em uma outra (1).
+    </p>
+    <p>
+        Porta: <br>
+        - É um dispositivo que executa uma operação elementar sobre sinais elétricos, aceitando um ou mais sinais de entrada, produzindo um único sinal de saída. <br>
+        Circuito: <br>
+        - É uma combinação de portas que interagem, projetada para realizar uma função lógica específica.
+    </p>
+    <p>
+        Álgebra booleana: <br>
+        - É uma notação matemática para expressar funções lógicas baseadas em dois valores. <br>
+        Diagrama lógico: <br>
+        - É uma representação gráfica de um circuito; cada tipo de porta tem seu próprio símbolo.
+    </p>
+    <p>
+        Usando caracteres ASCII. Vamos criar um diagrama simples de uma porta AND e uma porta OR:
+        <pre>
+            Porta AND:
+            +-----+
+            A--|     |
+            | AND |--Out
+            B--|     |
+            +-----+
+
+            Porta OR:
+            +-----+
+            A--|     |
+            |  OR |--Out
+            B--|     |
+            +-----+
+        </pre>
+        - Nesses diagramas, A e B são as entradas da porta lógica, e "Out" é a saída. Isso representa graficamente o funcionamento básico das portas lógicas AND e OR, mas é uma representação simplificada.
+    </p>
+
+    <h4>Transistores e portas</h4>
+    <p>
+        <strong>Transistor</strong>: <br>
+        Dispositivo que atua como um fio ou resistor, dependendo da voltagem do sinal de entrada.
+    </p>
+    <img src="img/transistor.webp" alt="transistor" style="width: 300px;">
+    <p>
+        Para representar graficamente um transistor de forma simplificada:
+        <pre>
+            E
+            |
+            --|>--
+            |
+            B
+            |
+            C
+        </pre>
+        Neste diagrama, "E" representa o emissor, "B" a base e "C" o coletor. Um transistor é um dispositivo semicondutor que pode controlar o fluxo de corrente entre o coletor e o emissor com base no sinal aplicado à base.
+        <br><br>
+        Uma representação simplificada de uma porta lógica AND usando transistores:
+        Porta lógica AND:
+        <pre>
+                    VCC
+                    |
+            A----|>---|\
+                    | AND--Out
+            B----|>---|/
+                    |
+                    GND
+        </pre>
+        Neste diagrama simplificado, "A" e "B" são as entradas da porta lógica AND, e "Out" é a saída. A operação AND é realizada usando dois transistores e uma carga resistiva (representada aqui por VCC e GND), onde a saída só será alta (próxima de VCC) se ambas as entradas estiverem altas.
+    </p>
+    <p>
+        <strong>Fio de Controle</strong>: Este é um condutor usado para transmitir um sinal elétrico que controla o funcionamento de um dispositivo. Ele pode ser uma linha de alimentação ou um sinal de controle que influencia o comportamento de um componente. <br><br>
+
+        <strong>Eletrodos</strong>: Eletrodos são superfícies condutoras usadas para fazer contato com substâncias não metálicas ou para conduzir corrente elétrica através de um meio (como um eletrólito ou gás). Eles desempenham um papel importante em muitos dispositivos eletroquímicos, sensores e sistemas elétricos. <br><br>
+
+        <strong>Coletor</strong> (em um transistor): O coletor é uma das regiões de um transistor bipolar. Em um transistor bipolar NPN, por exemplo, o coletor é a região que coleta os portadores de carga (elétrons na região do coletor). Ele está localizado entre a base e o emissor e desempenha um papel crucial no funcionamento do transistor.
+        <pre>
+                    |
+            Fio de Controle (sinal de entrada)
+                    |
+                    |
+                    V
+                  Eletrodo (Base do Transistor)
+                    |
+                    |
+                    | 
+                    V
+                  Coletor (Região do Transistor)            
+        </pre>
+        "Fio de Controle" é o sinal de entrada que chega ao "Eletrodo" (que pode ser a base de um transistor, por exemplo) e, em seguida, influencia o comportamento da "Região do Coletor" do transistor. Isso mostra como um sinal de controle pode afetar um componente eletrônico, como um transistor.
+    </p>
+    <p>
+        Uma situação simples de entrada e saída de corrente em um circuito.
+        <pre>
+            Entrada de Corrente ---> Componentes/Dispositivos no Circuito ---> Saída de Corrente
+        </pre>
+        - "Entrada de Corrente" representa a fonte de alimentação ou a origem da corrente elétrica que entra no circuito. Essa corrente percorre os "Componentes/Dispositivos no Circuito", que podem ser resistores, capacitores, transistores, entre outros, e então a corrente resultante é direcionada para a "Saída de Corrente"
+    </p>
+
+    <h4>Portas lógicas</h4>
+    <p>
+        Porta lógica E: <br>
+        - A porta lógica AND é uma porta que retorna 1 (ou verdadeiro) somente quando ambas as entradas são 1.
+        <pre>
+            |   A   |   B   |  Saída  |
+            |-------|-------|---------|
+            |   0   |   0   |    0    |
+            |   0   |   1   |    0    |
+            |   1   |   0   |    0    |
+            |   1   |   1   |    1    |
+        </pre>
+    </p>
+    <p>
+        Porta lógica NÃO: <br>
+        - A porta lógica NOT, ou inversor, inverte o estado de entrada, ou seja, se a entrada for 0, a saída será 1, e se a entrada for 1, a saída será 0.
+        <pre>
+            |   A   |  Saída  |
+            |-------|---------|
+            |   0   |    1    |
+            |   1   |    0    |
+        </pre>
+    </p>
+    <p>
+        Porta lógica OU: <br>
+        - A porta lógica OR (OU) retorna verdadeiro (1) se pelo menos uma das entradas (ou ambas) for verdadeira (1). <br>
+        AvB, A+B
+        <pre>
+            |   A   |   B   |  A OR B  |
+            |-------|-------|----------|
+            |   0   |   0   |    0     |
+            |   0   |   1   |    1     |
+            |   1   |   0   |    1     |
+            |   1   |   1   |    1     |
+        </pre>
+        Expressões Booleanas: <br>
+        A OR B <br>
+        A + B <br>
+        Ambas as expressões representam a operação de "OU" entre A e B, indicando que a saída é verdadeira (1) se pelo menos uma das entradas (ou ambas) for verdadeira.
+    </p>
+    <p>
+        Porta lógica Não-E: <br>
+        ¬(A/\B) (A.B)' <br>
+        - A porta lógica NOT-AND (Não-E) é a negação da operação lógica AND. Ela retorna verdadeiro (1) se pelo menos uma das entradas for falsa (0).
+        <pre>
+            |   A   |   B   |  ¬(A∧B)  |  (A.B)'  |
+            |-------|-------|--------- |----------|
+            |   0   |   0   |    1     |    1     |
+            |   0   |   1   |    1     |    1     |
+            |   1   |   0   |    1     |    1     |
+            |   1   |   1   |    0     |    0     |
+        </pre>
+        Expressões Booleanas: <br>
+        ¬(A∧B) (Negando a operação lógica AND entre A e B) <br>
+        (A.B)' (A negado E B negado) <br>
+        Ambas as expressões representam a operação NOT-AND, indicando que a saída é verdadeira (1) quando pelo menos uma das entradas for falsa (0).
+    </p>
+    <p>
+        Porta lógica: Ou Exclusivo (XOR): <br>
+        A⊕B <br>
+        - A porta lógica XOR (OU exclusivo) retorna verdadeiro (1) se e somente se uma das entradas for verdadeira (1), mas não ambas.
+        <pre>
+            |   A   |   B   |  A ⊕ B  |
+            |-------|-------|---------|
+            |   0   |   0   |    0    |
+            |   0   |   1   |    1    |
+            |   1   |   0   |    1    |
+            |   1   |   1   |    0    |
+        </pre>
+        - Expressão Booleana: <br>
+        A ⊕ B <br>
+        Essa expressão representa a operação lógica XOR, indicando que a saída é verdadeira (1) apenas quando uma das entradas for verdadeira (1), mas não ambas.
+    </p>
+
+    <h4>Construindo portas</h4>
+    <p>
+        Transistor para Não-E ¬(A/\B) <br>
+        - A operação lógica NOT-AND (¬(A/\B)), a saída será o oposto da operação lógica AND entre as entradas A e B.
+        <pre>
+            |   A   |   B   |  A /\ B  |  ¬(A /\ B)  |
+            |-------|-------|--------- |------------ |
+            |   0   |   0   |    0     |      1      |
+            |   0   |   1   |    0     |      1      |
+            |   1   |   0   |    0     |      1      |
+            |   1   |   1   |    1     |      0      |
+
+            ...
+
+                        VCC
+                        |
+                        |
+            A --------|--------\       
+                                >-- Saída
+            B --------|--------/       
+                        |
+                        |
+                    GND
+        </pre>
+        -  A saída é 1 (ou verdadeira) apenas quando a operação lógica AND entre as entradas A e B é falsa (0). Ou seja, quando pelo menos uma das entradas A ou B é 0, a saída será 1; caso contrário, quando ambas forem 1, a saída será 0.
+    </p>
+    <p>
+        Construindo portas <br>
+        Transistor para Não-Ou ¬(AvB) <br>
+        A porta NOT-OR inverte o resultado da operação lógica OR. A saída será 1 apenas se nenhuma das entradas (A ou B) estiver em 1.
+        <pre>
+            |   A   |   B   |  A ∨ B  |  ¬(A ∨ B)  |
+            |-------|-------|---------|------------|
+            |   0   |   0   |    0    |      1     |
+            |   0   |   1   |    1    |      0     |
+            |   1   |   0   |    1    |      0     |
+            |   1   |   1   |    1    |      0     |
+
+            .....
+
+                        VCC
+                        |
+                        |
+            A ----------|-----------.
+                        |           |
+                        \           /
+                        /           \
+                        \           /
+                        |           |
+            B ----------|-----------|-------- Saída
+                        |           |
+                        \           /
+                        /           \
+                        \           /
+                        |           |
+                       GND         GND
+        </pre>
+        - Na operação lógica NOT-OR, a saída é 1 apenas quando a operação lógica OR entre as entradas A e B é falsa (0). Isso ocorre somente quando ambas as entradas são 0, e caso contrário, a saída é 0.
+    </p>
+</body>
+</html>
