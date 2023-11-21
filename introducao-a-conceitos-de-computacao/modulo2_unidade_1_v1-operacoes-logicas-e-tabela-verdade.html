@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Operações Lógicas e Tabela-Verdade<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=D-qWmw38P_4">Vídeo 1 - Introdução a Conceitos de Computação - Operações lógicas e tabela-verdade</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Um pouco de história. <br>
+        - Lógica Proposicional. <br>
+        - Operadores e Tabela Verdade <br>
+        - Tautologia e Contradição
+    </p>
+
+    <h4>Um pouco de história</h4>
+    <p>
+        Lógica, segundo dicionário Merriam-Webster:
+        - "Uma ciência que lida com os princípios e critérios de validade da inferência e demonstração: a ciência dos princípios formais do raciocínio". <br>
+        - "O arranjo dos elementos do circuito (como em um computador) necessário para o cálculo".
+    </p>
+    <p>
+        → A lógica proposicional deriva da filosofia na Grécia antiga com Sócrates e Aristóteles em particular. <br><br>
+
+        → A lógica booleana aparece com o trabalho do matemático inglês George Boole (1815-1864). <br><br>
+
+        → Apenas na década de 30 do século XX, Claude Shannon identifica a importância da álgebra booleana para os circuitos.
+    </p>
+    <p>
+        <strong>Proposição</strong>: sentença que é falsa ou verdadeira. <br>
+        20 > 100 = Falsa. <br>
+        A terra não é plana. = Verdadeira. <br>
+        Ela é alta. = Não é proposição. <br>
+        Qual foi o resultado. = Não é proposição. <br>
+        <pre>
+            | P (20 > 100 = Falsa.) | Q (A Terra não é plana.) |
+            |-----------------------|--------------------------|
+            | F                     | V                        |
+        </pre>
+        - Uma proposição é uma declaração que pode ser considerada verdadeira ou falsa, mas não ambas ao mesmo tempo.
+    </p>
+    <p>
+        <strong>Conjunção</strong> /\ - E <br>
+        João é professor e joga futebol. <br>
+        A: João é professor. <br>
+        B: João joga futebol. <br>
+        (A /\ B) <br>
+        A, B: elementos ou fatores.
+        <pre>
+            | A (João é professor) | B (João joga futebol) | A /\ B (A e B)     |
+            |--------------------- |-----------------------|------------------- |
+            | V                    | V                     | V (Verdadeiro)     |
+            | V                    | F                     | F (Falso)          |
+            | F                    | V                     | F (Falso)          |
+            | F                    | F                     | F (Falso)          |
+        </pre>
+        - A expressão é verdadeira (V) apenas quando ambas as proposições A e B são verdadeiras. Nos outros casos, a expressão é falsa (F).
+    </p>
+    <p>
+        <strong>Negação</strong>: ¬ <br>
+        João é professor. <br>
+        A: João é professor. <br>
+        ¬ A: João não é professor. <br>
+        <pre>
+            | A (João é professor) | ¬A (João não é professor) |
+            |----------------------|---------------------------|
+            | V (Verdadeiro)       | F (Falso)                 |
+            | F (Falso)            | V (Verdadeiro)            |
+        </pre>
+        - Quando A é verdadeiro (V), a negação ¬A é falsa (F), e quando A é falso (F), a negação ¬A é verdadeira (V).
+    </p>
+    <p>
+        <strong>Implicação</strong> → <br>
+        Se maria acordar cedo, então ela chegará no horário ao trabalho. <br>
+        A: Maria acorda cedo. <br>
+        B: Maria chega no horário. <br>
+        (A → B)
+        <pre>
+            | A (Maria acorda cedo) | B (Maria chega no horário) | A → B (Implicação) |
+            |-----------------------|----------------------------|------------------- |
+            | V (Verdadeiro)        | V (Verdadeiro)             | V (Verdadeiro)     |
+            | V (Verdadeiro)        | F (Falso)                  | F (Falso)          |
+            | F (Falso)             | V (Verdadeiro)             | V (Verdadeiro)     |
+            | F (Falso)             | F (Falso)                  | V (Verdadeiro)     |
+        </pre>
+        - A implicação é verdadeira (V) em todas as situações, exceto quando Maria acorda cedo (A é verdadeiro) e não chega no horário (B é falso).
+    </p>
+
+    <h4>Lógica Proposicional</h4>
+    <p>
+        <strong>Bicondição:</strong> ←→ <br>
+        Maria acorda cedo se, e somente se, chega no horário ao trabalho. <br>
+        A: Maria acorda cedo. <br>
+        B: Maria chega no horário. <br>
+        A ←→ B: (A → B) /\ (B → A)
+        <pre>
+            | A (Maria acorda cedo) | B (Maria chega no horário) | A → B | B → A | A ←→ B (Bicondição) |
+            |-----------------------|----------------------------|------ |------ |---------------------|
+            | V (Verdadeiro)        | V (Verdadeiro)             | V     | V     | V                   |
+            | V (Verdadeiro)        | F (Falso)                  | F     | V     | F                   |
+            | F (Falso)             | V (Verdadeiro)             | V     | F     | F                   |
+            | F (Falso)             | F (Falso)                  | V     | V     | V                   |
+        </pre>
+        - Na bicondição, ela é verdadeira (V) apenas quando ambas as condições de implicação são verdadeiras ou ambas são falsas.
+    </p>
+
+    <h4>Operadores e Tabela Verdade</h4>
+    <p>
+        ...
+    </p>
+
+    <h4>Tautologia e Contradição</h4>
+    <p>        
+        Lei de Morgan: ¬(A\/ B) ←→ (¬A/\ ¬B) - <strong>TAUTOLOGIA</strong>.
+        <pre>
+            | A | B | A \/ B | ¬(A \/ B) | ¬A | ¬B | ¬A /\ ¬B | ¬(A \/ B) ↔ ¬A /\ ¬B |
+            |---|---|--------|-----------|----|----|--------- |--------------------- |
+            | V | V |   V    |     F     | F  | F  |    F     |          V           |
+            | V | F |   V    |     F     | F  | V  |    V     |          V           |
+            | F | V |   V    |     F     | V  | F  |    V     |          V           |
+            | F | F |   F    |     V     | V  | V  |    V     |          V           |
+        </pre>
+        - Na última coluna da tabela verdade, a expressão ¬(A / B) ↔ ¬A /\ ¬B sempre resulta em V (Verdadeiro) para todas as combinações de verdadeiro (V) e falso (F) de A e B. Confirmando que ¬(A / B) ↔ ¬A /\ ¬B é uma tautologia, pois é sempre verdadeira em qualquer situação.
+    </p>
+    <p>
+        <strong>CONTRADIÇÃO</strong> - (Av ¬A) → (B/\ ¬B)
+        <pre>
+            | A | B | ¬A | A v ¬A | B /\ ¬B | (A v ¬A) → (B /\ ¬B) |
+            |---|---|----|------- |-------- |----------------------|
+            | V | V |  F |   V    |   F     |          F           |
+            | V | F |  F |   V    |   F     |          F           |
+            | F | V |  V |   V    |   F     |          F           |
+            | F | F |  V |   V    |   F     |          F           |
+        </pre>
+        - Na última coluna da tabela verdade, a expressão lógica (A v ¬A) → (B /\ ¬B) resulta sempre em F (Falso) para todas as combinações de verdadeiro (V) e falso (F) de A e B.
+    </p>
+
+    <p>Exemplo:</p>
+    <pre>
+        SE ((PressãoInicial > PressãoFinal) E
+            NÃO((PressãoInicial > PressãoFinal) E (Temperatura > 20))
+                FAÇA comando1;
+            SENÃO
+                FAÇA comando 2
+
+            A: PressãoInicial > PressãoFinal)
+            B: Temperatura > 20
+
+            Temos: A/\¬(A/\ B)
+    </pre>
+    <p>Tabela verdade e a simplificação da expressão A∧¬(A∧B):</p>
+    <pre>
+        | A | B | ¬B | A ∧ ¬(A ∧ B)|
+        |---|---|----|------------ |
+        | V | V |  F |      F      |
+        | V | F |  V |      V      |
+        | F | V |  F |      F      |
+        | F | F |  V |      V      |
+    </pre>
+    <p>
+        - A expressão A ∧ ¬(A ∧ B) é simplificada para ¬B. <br>
+        Esta tabela verdade mostra as diferentes combinações de verdadeiro (V) e falso (F) para as proposições A e B, bem como o resultado da expressão A∧¬(A∧B). A expressão simplificada é ¬B.
+    </p>
+</body>
+</html>
