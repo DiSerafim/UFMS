@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Operações Lógicas e Tabela-Verdade<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=P9rntfMqmjA">Vídeo 2 - Introdução a Conceitos de Computação - Circuito como Memória e expressões booleanas</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Circuito. <br>
+        - Circuito Combinacionais. <br>
+        - Circuito como Memória. <br>
+    </p>
+
+    <h4>Circuito</h4>
+    <p>
+        - É uma combinação de portas que interagem, projetada para realizar uma função lógica específica. <br>
+        - No circuito combinacional a saída é unicamente determinada pelos valores de entrada. <br>
+        - No circuito sequencial a saída é função de seus valores de entrada e do estado corrente do circuito.
+    </p>
+
+    <h4>Circuito Combinacionais</h4>
+    <p>
+        - Portas são combinadas em circuitos usando a saída de uma porta como entrada de outra. <br><br>
+        Circuito simples que executa a operação lógica AND entre duas entradas A, B, C, D, E representam as entradas do circuito, enquanto as portas lógicas AND e OR estão representadas por estruturas retangulares. As linhas mostram a conexão entre as entradas e as portas lógicas até a saída final do circuito.
+        <pre>
+            +------+    +------+
+            A o----| AND  |    | OR   |
+                   |      o----|      |---- Saída
+            B o----|      |    |      |
+                   +------+    +------+
+                           \    /
+                            \  /
+                             \/
+                             /\
+            C o--------------o o
+                             /\
+            D o--------------o o
+                             /\
+            E o--------------o o            
+        </pre>
+        - As linhas representam os fios que carregam os sinais (A, B, C), os círculos representam as portas lógicas (AND e OR), e as setas indicam a direção do fluxo de sinal, da entrada para a saída.
+
+        <pre>
+            |   A   |   B   |   C   |   D   |   E   |  Saída  |
+            |-------|-------|-------|-------|-------|---------|
+            |   0   |   1   |   1   |   0   |   0   |    0    |
+            |   0   |   1   |   1   |   0   |   1   |    0    |
+            |   0   |   1   |   1   |   1   |   0   |    0    |
+            |   0   |   1   |   1   |   1   |   1   |    1    |
+            |   1   |   0   |   0   |   0   |   0   |    0    |
+            |   1   |   0   |   0   |   0   |   1   |    0    |
+            |   1   |   0   |   0   |   1   |   0   |    0    |
+            |   1   |   0   |   0   |   1   |   1   |    1    |
+            |   1   |   0   |   1   |   0   |   0   |    0    |
+        </pre>
+    </p>
+    <p>
+        Considere a seguinte proposição: A/\(BvC) <br>
+        - Equivalência de circuitos ocorre quando temos a mesma saída para cada correspondente entrada de dois circuitos. <br>
+        - A expressão lógica A∧(B∨C) representa a conjunção entre A e a disjunção entre B e C. Isso significa que a proposição será verdadeira somente se A for verdadeira e, simultaneamente, pelo menos uma das proposições B ou C for verdadeira.
+        <pre>
+            |   A   |   B   |   C   |  (B v C)  |  A /\ (B v C)  |
+            |-------|-------|-------|-----------|--------------- |
+            |   0   |   0   |   0   |     0     |        0       |
+            |   0   |   0   |   1   |     1     |        0       |
+            |   0   |   1   |   0   |     1     |        0       |
+            |   0   |   1   |   1   |     1     |        0       |
+            |   1   |   0   |   0   |     0     |        0       |
+            |   1   |   0   |   1   |     1     |        1       |
+            |   1   |   1   |   0   |     1     |        1       |
+            |   1   |   1   |   1   |     1     |        1       |
+        </pre>
+        - Essa tabela verdade mostra todas as possíveis combinações de valores para A, B e C e o resultado correspondente da expressão A∧(B∨C). Note que a proposição final é verdadeira somente quando A é verdadeira e pelo menos uma das proposições B ou C é verdadeira.
+    </p>
+    <p>
+        Somador: <br>
+        É um circuito eletrônico que realiza a operação de adição com valores binários. <br>
+        <pre>
+            |  a  |  b  |  Soma  |  Vai um  |
+            |-----|-----|--------|----------|
+            |  0  |  0  |   0    |    0     |  # Quando ambos os bits são 0, a soma é 0 e não há carry.
+            |  0  |  1  |   1    |    0     |  # Quando um bit é 0 e o outro é 1, a soma é 1 e não há carry.
+            |  1  |  0  |   1    |    0     |  # O mesmo ocorre quando um bit é 1 e o outro é 0.
+            |  1  |  1  |   0    |    1     |  # Quando ambos os bits são 1, a soma é 0 e há um carry de 1 para a próxima posição.
+        </pre>
+        - Nesta tabela, "a" e "b" são os bits de entrada que estão sendo somados. "Soma" é o resultado da adição binária de "a" e "b". "Vai um" indica se há carry para a próxima posição na adição.
+    </p>
+    <p>
+        Semissomador: <br>
+        É um circuito que calcula a soma de dois bits e gera o bit apropriado de vai um, A⊕B.
+        <pre>
+            | Entrada A | Entrada B | Soma (A ⊕ B) | Carry-Out (vai-um) |
+            |-----------|-----------|--------------|--------------------|
+            |    0      |    0      |       0      |         0          |
+            |    0      |    1      |       1      |         0          |
+            |    1      |    0      |       1      |         0          |
+            |    1      |    1      |       0      |         1          |
+        </pre>
+        - Esse é o esquema do funcionamento de um semissomador, mostrando as entradas A e B, a soma dos bits (A ⊕ B) e o bit de vai-um gerado (Carry-Out).
+    </p>
+    <p>
+        Somador completo: <br>
+        É um circuito que calcula a soma de dois bits, levando em conta a entrada de um bit de vai-um. <br><br>
+
+        - O somador completo tem três entradas: dois bits para serem somados (A e B) e um bit de vai-um (carry-in, representado como Cin). Ele fornece duas saídas: a soma dos bits de entrada (S) e um bit de vai-um de saída (carry-out, representado como Cout).
+        <pre>
+            A   B   Cin | S   Cout
+            0   0   0   | 0    0
+            0   0   1   | 1    0
+            0   1   0   | 1    0
+            0   1   1   | 0    1
+            1   0   0   | 1    0
+            1   0   1   | 0    1
+            1   1   0   | 0    1
+            1   1   1   | 1    1
+        </pre>
+        - (A, B e Cin) e as saídas correspondentes (S e Cout) para cada combinação possível. Cada linha representa uma combinação de entrada e as saídas associadas para a soma e o vai-um de saída.
+    </p>
+
+    <h4>Circuito como Memória</h4>
+    <p>
+        Um dos circuitos mais simples que pode ser considerado como "memória" é o flip-flop, que pode armazenar um único bit de informação (0 ou 1) até que seja alterado por uma entrada. <br><br>
+
+        Vamos usar 'Q' para representar o estado atual e 'D' para a entrada de dados. Assumindo que a saída 'Q' representa o estado atual e que 'D' representa a entrada de dados, um flip-flop tipo D pode ser representado assim:
+        <pre>
+            Estado Atual (Q) | Próximo Estado (Q+1)
+                  0          |        0 ou 1
+                  1          |        0 ou 1
+        </pre>
+        - Essencialmente, um flip-flop tipo D é um circuito de memória onde o estado atual (Q) muda para o próximo estado (Q+1) dependendo da entrada de dados (D) e do sinal de clock.
+    </p>
+    <p>
+        Registrador (latch) S-R armazena um único dígito binário (1 ou 0) e pode ser projetado usando uma variedade de portas. <br>
+        - Um Latch S-R possui duas entradas principais: S (set) e R (reset). Dependendo da combinação dessas entradas, o latch mantém ou altera seu estado
+        <pre>
+            S   R   Q(t+1)
+            0   0   No Change (Hold)
+            0   1   0 (Reset)
+            1   0   1 (Set)
+            1   1   Indefinido (Undesired State)
+        </pre>
+        - Um estado indefinido pode ocorrer quando tanto S quanto R são 1, o que pode ser evitado utilizando uma versão complementar chamada de Latch S-R com Habilitação de Nível Alto (Enable), onde é adicionada uma entrada de habilitação (E ou EN). Isso resolve o estado indesejado, pois o latch só é ativado quando a entrada de habilitação está ativa (geralmente nível alto).        
+    </p>
+</body>
+</html>
