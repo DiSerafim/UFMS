@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum de Discussão</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 2 - 💬 Fórum de Discussão<br>
+            <br>
+            💬 Operações Lógicas e Hardware
+        </h1>
+    </header>
+
+    <h3>
+        Na aula sobre operações lógicas e tabela-verdade vimos como operações podem ser aplicadas a variáveis binárias (aquelas que aceitam apenas 1 ou 0) e como representar todas as possibilidades de valores para entradas e saídas utilizando a tabela-verdade. Na aula sobre Conceitos de Arquitetura de Computadores estudamos os principais componentes da UCP (ou CPU) e, especialmente, como as instruções de um programa são executadas utilizando os ciclos de busca-decodificação e execução. <br><br>
+
+        Nesse fórum vamos discutir/compartilhar alguns pontos:
+    </h3>
+
+    <h4>
+        1. Pelo que estudamos no tópico sobre operações lógicas e tabelas-verdade, há relação entre a quantidade de bits das variáveis de entrada e o tamanho (número de linhas) da tabela-verdade? Se temos, por exemplo, as entradas A e B, cada uma com 4 bits, qual é o tamanho da tabela-verdade?
+    </h4>
+    <p>
+        - 16 linhas, são as possíveis combinações (2⁴ = 16)
+    </p>
+
+    <h4>
+        2. Qual é a diferença conceitual entre circuitos combinacionais e sequenciais? Os registradores e a ULA existentes na UCP (ou CPU) são exemplos de quais tipos de circuitos?
+    </h4>
+    <p>
+        - Combinacionais, executam operações baseadas nas entradas atuais (registradores), em operações de adição, os valores são armazenados temporariamente nos registradores. <br>
+        - Sequenciais, as saídas dependem das entradas e do estado anterior (ULA e CPU), são exemplos de de circuitos sequenciais, têm elementos de memória e estado interno.
+    </p>
+
+    <h4>
+        3. Os processadores (ou CPUs) modernos possuem vários núcleos (cores) disponíveis para execução das instruções de diferentes programas. Pesquise as informações sobre o número de núcleos disponíveis do computador que você utiliza. Esse computador é paralelo? Ele realiza processamento paralelo em nível de instrução e/ou dados?
+    </h4>
+    <p>
+        - Intel Xeon E5-2620 v3 com 12 núcleos físicos e suporte a Hyper-Threading, o que permite dois threads por núcleo. O sistema pode lidar com até 24 threads simultaneamente. <br>
+        - Processamento Paralelo em Nível de Instrução e Dados: Pode realizar processamento paralelo em nível de dados e instruções. Os múltiplos núcleos físicos permitem que várias instruções sejam executadas ao mesmo tempo em diferentes núcleos, enquanto o suporte a Hyper-Threading proporciona a capacidade de processar múltiplos conjuntos de dados simultaneamente em cada núcleo.
+    </p>
+</body>
+</html>
