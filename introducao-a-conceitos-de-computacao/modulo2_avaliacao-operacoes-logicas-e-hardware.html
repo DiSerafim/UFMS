@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A2] – Avaliação do Módulo 2 – Operações Lógicas e Hardware<br>
+        </h1>
+        <p>
+            Iniciado em	quinta, 23 nov 2023, 15:56 <br>
+            Estado	Finalizada <br>
+            Concluída em	quinta, 23 nov 2023, 18:21 <br>
+            Tempo empregado	2 horas 25 minutos <br>
+            Avaliar	4,50 de um máximo de 10,00(45%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h3>
+        Relacione os elementos de hardware a suas funcionalidades:
+    </h3>
+    <h4>
+        Responsável pela execução das instruções...... <br>
+        Armazena o endereço da próxima instrução a ser executada...... <br>
+        Armazena a instrução atual do programa que está executando...... <br>
+        Responsável pelos sinais de controle que possibilitam a execução das instruções...... <br>
+        Opções: <br>
+        Unidade de Controle, Registrador CP, Unidade de Lógica e Aritmética, Registrador RI
+    </h4>
+    <p>
+        Responsável pela execução das instruções <strong>Unidade de Controle</strong>❌ <br>
+        Armazena o endereço da próxima instrução a ser executada <strong>Registrador CP</strong>✅ <br>
+        Armazena a instrução atual do programa que está executando <strong>Registrador RI</strong>✅ <br>
+        Responsável pelos sinais de controle que possibilitam a execução das instruções <strong>Unidade de Lógica e Aritmética</strong>❌
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        O circuito a seguir deve decodiﬁcar o número binário A3=0, A2=0, A1=1, A0=1, da seguinte forma: se a entrada corresponde ao número 0011 , a saída X deve ser 0. Senão, a saída X deve ser 1. Responda qual porta lógica (responda apenas com o nome da porta lógica) está faltando nesse circuito para fornecer a saída conforme a especificação?
+    </h3>
+    <pre>
+        A₀ -------------┐
+                        |
+        A₁ ------------ ? ---- X
+                        ||
+        A₂ -🔺⭕--------┘|
+                         |
+        A₃ -🔺⭕---------┘
+    </pre>
+    <p>
+        AND ❌ <br>
+    </p>
+
+    <h1>Questão 3</h1>
+    <h4>
+        Para que uma instrução possa ser ......, <br>
+        é necessário que ela (a instrução) seja primeiramente ...... <br>
+        na memória, ...... <br>
+        pela ......, <br>
+        para, somente após a ......, <br>
+        ser  executada na ...... <br>
+        ou outra unidade funcional do processador. <br>
+        Opções: <br>
+        executada, decodificada, buscada, Unidade de Controle, decodificação, Unidade de Lógica e Aritmética
+    </h4>
+    <p>
+        Para que uma instrução possa ser <strong>executada</strong>, <br>
+        é necessário que ela (a instrução) seja primeiramente <strong>buscada</strong> <br>
+        na memória, <strong>decodificada</strong> <br>
+        pela <strong>Unidade de Controle</strong>, <br>
+        para, somente após a <strong>decodificação</strong>, <br>
+        ser  executada na <strong>Unidade de Lógica e Aritmética</strong> <br>
+        ou outra unidade funcional do processador.
+    </p>
+
+    <h1>Questão 4</h1>    
+    <h3>
+        Indique a expressão lógica booleana que corresponde ao seguinte circuito lógico digital. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+        <pre>
+            ------      ------
+        A --|     |     |     |
+            |  •--|-----|     |--- Saída
+            ------| NOT |-----
+                  |
+            ------|
+        B --|     |
+            |  •--|
+            ------|
+        C --------|
+        </pre>
+    </h3>
+    <h4>
+        a. ( (A’ •C’)’ • A • B’ ) + ( A • B • C ) <br>
+        b. ( (A’ •C’) • A • B’ ) + ( A • B • C ) <br>
+        c. ( (A •C) • A • B) +  A • B • C <br>
+        d. ( (A • C)’ • A • B ) + ( A • B • C ) <br>
+        e. A’ •C’ • A • B’  + ( A • B • C )
+    </h4>
+    <p>
+        c. ( (A •C) • A • B) +  A • B • C ❌ 
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        Em um microcomputador, o microprocessador (MPU) está sempre se comunicando com os seguintes dispositivos: <br>
+        (1) memória de acesso aleatório (random-access memory - RAM), que armazena programas e dados que podem ser facilmente alterados; <br>
+        (2) memória apenas de leitura (read-only memory - ROM), que armazena programas e dados que nunca são alterados; <br>
+        (3) dispositivos externos de entrada/saída (input/output - I/O), tais como: teclados, monitores de vídeo, impressoras e unidades de disco. <br>
+        Enquanto executa um programa, o MPU gera um código de endereço que seleciona com qual dispositivo (RAM, ROM ou I/O) ele quer se comunicar. A Figura a seguir mostra uma configuração  típica na qual o MPU gera um código de endereço de oito bits, de A15 a A8. O código de endereço é aplicado a um circuito lógico usado para gerar os sinais de seleção para os dispositivos RAM, ROM e I/O. Quais são os valores de A15 a A12 (nessa ordem) que determinam a saída RAM=1?
+        <pre>
+                  MPU (A15-A8)
+                  |
+                  |___ A15
+                  |___ A14
+                  |___ A13
+                  |___ A12
+                  |___ A11
+                  |___ A10
+                  |___ A9
+                  |___ A8
+                  |
+                  /\
+                 /  \
+                /    \
+            RAM       I/O
+                      ROM      
+        </pre>
+    </h3>
+    <h4>
+        a. 0001 <br>
+        b. 1110 <br>
+        c. 1010 <br>
+        d. 0000 <br>
+        e. 1111
+    </h4>
+    <p>
+        a. 0001 ❌
+    </p>
+
+    <h1>Questão 6</h1>
+    <h4>
+        O diagrama a seguir representa um  circuito digital de 4 bits que realiza soma (somador) e subtração (subtrator). Se Op = 0, S = A + B e se Op = 1, S = A − B. Qual é o valor de S se A=0011, B=0011 e Op=0.
+        <pre>
+            A    0  0  1  1
+            B  + 0  0  1  1
+            ---------------
+            S  = 0  1  1  0        
+        </pre>
+    </h4>
+    <p>
+        A=0011, B=0011 e Op=0, o valor de S é 0110 em binário, o que é equivalente a 6 em decimal.
+    </p>
+
+    <h1>Questão 7</h1>
+    <h3>
+        No circuito a seguir, as entradas A e B representam valores (sem sinal) de 4 bits. O sinal de saída S será 1 se:
+        <pre>
+            |  A  |  B  | A < B |
+            |-----|-----|-------|
+            | 0000| 0000|   0   |
+            | 0000| 0001|   1   |
+            | 0000| 0010|   1   |
+            ...
+            | 1111| 1110|   0   |
+            | 1111| 1111|   0   |
+        </pre>
+    </h3>
+    <h4>
+        a. A < B <br>
+        b. A <= B (A menor ou igual a B) <br>
+        c. A = B <br>
+        d. A > B <br>
+        e. A >= B (A maior ou igual a B)
+    </h4>
+    <p>
+        d. A > B ❌
+    </p>
+
+    <h1>Questão 8</h1>
+    <h3>
+        Indique a expressão lógica booleana que corresponde ao seguinte circuito lógico digital. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+        <pre>
+            A---------- D- y
+            B-🔺⭕-┌--- D- y
+            C------└--- D- y           
+        </pre>
+    </h3>
+    <h4>
+        a. A  + ( B • C )’ <br>
+        b. A  • ( B’ + C ) <br>
+        c. A  +  B’ • C <br>
+        d. A  •  B’ + C <br>
+        e. A  + ( B’ • C )
+    </h4>
+    <p>
+        c. A  +  B’ • C ❌ 
+    </p>
+
+    <h1>Questão 9</h1>
+    <h4>
+        Dada a expressão booleana a seguir (os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E): <br>
+        S = A • B • (C’ • D’ + C’ • D) + A’ + B + (C’ • D + C’ • D) + A • B’ • C’ • D
+        <br><br>
+        Qual o valor de S considerando as seguintes entradas: A=0, B=0, C=0, D=0?
+    </h4>
+    <p>
+        Vamos avaliar cada parte separadamente: <br>
+        <br>
+        1. 0 • 0 = 0 <br>
+        2. ((0’ • 0’ + 0’ • 0) = (1 • 1 + 1 • 0) = (1 + 0) = 1 <br>
+        3. 0’ + 0 = 1 <br>
+        4. (0’ • 0 + 0’ • 0) = (1 • 0 + 1 • 0) = (0 + 0) = 0 <br>
+        5. 0 • 1 • 0’ • 0 = 0 <br>
+        <br>
+        Agora, vamos substituir esses resultados na expressão S: <br>
+        S = 0 • 1 + 1 + 0 + 0 <br>
+        S = 1 + 1 + 0 <br>
+        S = 1 <br>
+        <br>
+        Portanto, com A=0, B=0, C=0, D=0, o valor de S é 1.
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Em um microcomputador, o microprocessador (MPU) está sempre se comunicando com os seguintes dispositivos: (1) memória de acesso aleatório (random-access memory - RAM), que armazena programas e dados que podem ser facilmente alterados; (2) memória apenas de leitura (read-only memory - ROM), que armazena programas e dados que nunca são alterados; (3) dispositivos externos de entrada/saída (input/output - I/O), tais como: teclados, monitores de vídeo, impressoras e unidades de disco. Enquanto executa um programa, o MPU gera um código de endereço que seleciona com qual dispositivo (RAM, ROM ou I/O) ele quer se comunicar. A Figura a seguir mostra uma configuração  típica na qual o MPU gera um código de endereço de oito bits, de A15 a A8. O código de endereço é aplicado a um circuito lógico usado para gerar os sinais de seleção para os dispositivos RAM, ROM e I/O. Quais são os valores de A15 a A8 (nessa ordem) que determinam a saída I/O=0?
+        <pre>
+            A15 -|--- RAM
+            A14 -|--- RAM
+            A13 -|--- RAM
+            A12 -|--- RAM
+            A11 -|--- ROM
+            A10 -|--- ROM
+             A9 -|--- ROM
+             A8 -|--- ROM
+                 |
+                 |--- I/O
+        </pre>
+    </h3>
+    <h4>
+        a. 11111111 <br>
+        b. 01010101 <br>
+        c. 00000000 <br>
+        d. 11110000 <br>
+        e. 00001111
+    </h4>
+    <p>
+        d. 11110000
+    </p>
+</body>
+</html>
