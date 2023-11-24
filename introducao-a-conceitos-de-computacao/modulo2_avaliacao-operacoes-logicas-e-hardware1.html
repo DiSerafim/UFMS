@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A2] – Avaliação do Módulo 2 – Operações Lógicas e Hardware<br>
+        </h1>
+        <p>
+            Iniciado em	quinta, 23 nov 2023, 18:30 <br>
+            Estado	Finalizada <br>
+            Concluída em	quinta, 23 nov 2023, 20:11 <br>
+            Tempo empregado	1 hora 40 minutos <br>
+            Avaliar	2,83 de um máximo de 10,00(28,33%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h4>
+        Dada a expressão booleana a seguir (os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E): <br>
+        S = A • B • (C’ • D’ + C’ • D) + A’ + B + (C’ • D + C’ • D) + A • B’ • C’ • D <br>
+        <br>
+        Qual o valor de S considerando as seguintes entradas: A=1, B=0, C=0, D=1?
+    </h4>
+    <p>
+        Substituindo os valores A=1, B=0, C=0, D=1: <br>
+        S = 1 • 0 • (0' • 1' + 0' • 1) + 1' + 0 + (0' • 1 + 0' • 1) + 1 • 1' • 0' • 1 <br>
+        S = 0 • (1 + 0) + 0 + 0 + (0 + 0) + 0 <br>
+        S = 0 • 1 + 0 + 0 + 0 + 0 <br>
+        S = 0 + 0 + 0 + 0 <br>
+        S = 0 <br><br>
+
+        Portanto, o valor de S considerando A=1, B=0, C=0, D=1 é 0. ❌ 
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        No circuito a seguir, as entradas A e B representam valores (sem sinal) de 4 bits. O sinal de saída S será 0 se (escolha todas as alternativas que se aplicam):
+        <pre>
+            A₀-----┐-⭕---------┐
+                  ||            |
+            B₀-----┘            |
+            A₁-----┐-⭕--------┐|
+                  ||           ||
+            B₁-----┘           ||
+            A₂-----┐-⭕-------┐||
+                  ||          |||
+            B₂-----┘          └ D---- S
+            A₃-----┐-⭕---------┘
+                  ||
+            B₃-----┘
+        </pre>
+        Escolha uma ou mais:
+    </h3>
+    <h4>
+        a. A < B <br>
+        b. A = B <br>
+        c. A >= B (A maior ou igual a B) <br>
+        d. A > B <br>
+        e. A <= B (A menor ou igual a B)
+    </h4>
+    <p>
+        a. A < B ✅
+    </p>
+
+    <h1>Questão 3</h1>
+    <h3>
+        Considerando o circuito digital a seguir, escolha a opção que determina o valor de x=1
+        <pre>
+            A•-----┐
+                  |D----------D--• x
+            B•--•--┘  ┌-------┘|
+                |     |        |
+                └ |D-•┘        |
+            C•--•--┘           |
+                |              |
+                └--------------┘
+        </pre>
+    </h3>
+    <h4>
+        a. A=1, B=1, C=1 <br>
+        b. A=0, B=0, C=0 <br>
+        c. A=0, B=0, C=0 <br>
+        d. A=1, B=1, C=0 <br>
+        e. A=0, B=1, C=1
+    </h4>
+    <p>
+        d. A=1, B=1, C=0 ❌
+    </p>
+
+    <h1>Questão 4</h1>    
+    <h3>
+        A partir da tabela-verdade a seguir, indique a expressão lógica booleana que representa a saída S. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+        <pre>
+            A   B   C   |   S
+            -----------------
+            0   0   0   |   0
+            0   0   1   |   1
+            0   1   0   |   0
+            0   1   1   |   1
+            1   0   0   |   0
+            1   0   1   |   1
+            1   1   0   |   0
+            1   1   1   |   1
+        </pre>
+    </h3>
+    <h4>
+        a. A• B • C + A’• B • C + (A • B’ • C) + A• B • C <br>
+        b. A’• B’ • C + A’• B • C + A • B’ • C + A• B • C <br>
+        c. A’• B’ • C’ + A• B • C + A’ • B’ • C + A• B • C <br>
+        d. A’• B’ • (C + A’) • B • (C + A) • B’ • (C + A) • B • C <br>
+        e. (A’• B’ • C) + A’• B • C + A • B’ • C + (A’• B’ • C’)
+    </h4>
+    <p>
+        b. A’• B’ • C + A’• B • C + A • B’ • C + A• B • C ✅
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        A partir da tabela-verdade a seguir, indique a expressão lógica booleana que representa a saída F. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+        <pre>
+            Entradas    |  Saída
+            -----------------
+            A   B   C   |   F
+            0   0   0   |   0
+            0   0   1   |   0
+            0   1   0   |   0
+            0   1   1   |   1
+            1   0   0   |   1
+            1   0   1   |   0
+            1   1   0   |   0
+            1   1   1   |   0
+        </pre>
+    </h3>
+    <h4>
+        a. A’ • B  • C + A’  • B’  • C’ <br>
+        b. (A • B’  • C) + (A  • B’  • C’) <br>
+        c. (A’ • B  • C) + (A  • B’  • C’) <br>
+        d. A’ • B  • (C + A)  • B’  • C’ <br>
+        e. A • B  • C + (A  • B’  • C’)
+    </h4>
+    <p>
+        c. (A’ • B  • C) + (A  • B’  • C’) ✅
+    </p>
+
+    <h1>Questão 6</h1>
+    <h3>
+        Indique a expressão lógica booleana que corresponde ao seguinte circuito lógico digital. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+        <pre>
+            A--🔺•--┐       
+                    ➡️--P--➡️-Q---┐
+            B--🔺•--┘  ┌--┘     |
+                       |        └➡️--S--┐
+                       |        |      └---┐
+            C----------┘        |          └➡️•---- x
+            D--🔺•--┐           |          |
+                    ➡️--R--------┘          |
+            E--🔺•--┘                      |
+            F------------------------------┘
+        </pre>
+    </h3>
+    <h4>
+        a. ((A’ + B’) • C) • (D’ • E’)  • F’ <br>
+        b. (((A’ • B’) + C) + (D’ + E’)’)  + F’ <br>
+        c. ((((A’ + B’) • C) + (D’ + E’)’)  + F)’ <br>
+        d. ((A’ + B’ • C) + (D’ • E’)  + F)’ <br>
+        e. A’ + B’ + C + D’ + E’  + F’
+    </h4>
+    <p>
+        a. ((A’ + B’) • C) • (D’ • E’)  • F’ ❌ 
+    </p>
+
+    <h1>Questão 7</h1>
+    <h4>
+        O diagrama a seguir representa um  circuito digital de 4 bits que realiza soma (somador) e subtração (subtrator). Se Op = 0, S = A + B e se Op = 1, S = A − B. Qual é o valor de S se A=0011, B=0011 e Op=1.
+        <pre>
+             
+            A  | B  | Op  | S (Resultado)
+            0  | 0  |  1  |     0
+            0  | 0  |  1  |     0
+            1  | 1  |  1  |     0
+            1  | 1  |  1  |     0
+        </pre>
+    </h4>
+    <p>
+        0 ❌
+    </p>
+
+    <h1>Questão 8</h1>
+    <h3>
+        Considerando o circuito digital a seguir, escolha a opção que determina o valor de x=0
+        <pre>
+            A•-----┐       
+                  |➡️------------┐
+            B•--•--┘            |
+                |              ┌└➡️----• x
+                |              | |     
+                └|➡️•-----------┘ |     
+            C•--•┘               |
+                └----------------┘
+        </pre>
+        Escolha uma ou mais:
+    </h3>
+    <h4>
+        a. A=0, B=1, C=1 <br>
+        b. A=0, B=0, C=0 <br>
+        c. A=1, B=1, C=1 <br>
+        d. A=0, B=0, C=1 <br>
+        e. Nenhuma das anteriores
+    </h4>
+    <p>
+        b. A=0, B=0, C=0 ✅
+    </p>
+
+    <h1>Questão 9</h1>
+    <h4>
+        O circuito a seguir deve decodiﬁcar o número binário A3=0, A2=0, A1=1, A0=1, da seguinte forma: se a entrada corresponde ao número 0011, a saída X deve ser 1. Senão, a saída X deve ser 0. Responda qual porta lógica (responda apenas com o nome da porta lógica) está faltando nesse circuito para fornecer a saída conforme a especificação?
+        <pre>
+            A₀ -------------┐
+                            |
+            A₁ ------------ ?----- X
+                            ||
+            A₂ -🔺⭕--------┘|
+                             |
+            A₃ -🔺⭕---------┘
+        </pre>
+    </h4>
+    <p>
+        XOR ❌
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Indique a expressão lógica booleana que corresponde ao seguinte circuito lógico digital. Considere que os símbolos ’, +, •, correspondem aos operadores NÃO, OU, E.
+    </h3>
+    <h4>
+        a. A + (A’ • B’ • C’)  + (A’ •  B’ •  C •  D’) <br>
+        b. A + (A’ • B’ • C’)  + A •  B’ •  C •  D’ <br>
+        c. A + (A • B • C)  + A •  B •  C •  D <br>
+        d. A + (A’ • B’ • C’)  + (A •  B’ •  C •  D’) <br>
+        e. A’ + A’ • B’ • C’  + A’ •  B’ •  C •  D’
+    </h4>
+    <p>
+        c. A + (A • B • C)  + A •  B •  C •  D ❌ 
+    </p>
+</body>
+</html>
