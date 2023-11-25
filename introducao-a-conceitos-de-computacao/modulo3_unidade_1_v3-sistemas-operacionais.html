@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 1 - Dispositivos e Sistemas<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=ZxbiITSC-bg">Vídeo 2 - Introdução a Conceitos de Computação - Sistema Operacional</a>
+        </h1>
+        <p>
+            Professor:  Ricardo Ribeiro dos Santos <br>
+            Professor:  Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Sistemas de Arquivos. <br>
+        - Tipos de Arquivos e Acessos. <br>
+        - Diretórios. <br>
+        - Escalonamento de Disco
+    </p>
+
+    <h4>Sistemas de Arquivos</h4>
+    <p>
+        <strong>Memória Principal (RAM):</strong> <br>
+        - Programas ativos e dados são mantidos enquanto estiverem em uso. <br>
+        - Volátil. <br><br>
+
+        <strong>Memória Secundária (Disco Rígido, SSD):</strong> <br>
+        - Não volátil. <br>
+        - Armazenamento permanente de dados.
+    </p>
+    <p>
+        <strong>Arquivo</strong><br>
+        - Um arquivo é uma unidade de armazenamento de dados ou informações relacionadas a um determinado contexto. Pode conter texto, imagens, programas ou qualquer tipo de informação. <br><br>
+
+        Características: <br>
+        Pode ser criado, modificado, lido ou excluído. <br>
+        Possui um nome e uma extensão que indica o tipo de conteúdo ou formato. <br>
+        É a menor unidade de armazenamento em um sistema de arquivos. <br><br>
+
+        Exemplo: <br>
+        Um arquivo de texto chamado "documento.txt" que contém notas ou um arquivo de imagem "foto.jpg". <br><br>
+
+        <strong>Sistema de arquivos</strong><br>
+        - O sistema de arquivos é uma estrutura organizada de armazenamento usada para gerenciar a forma como os dados são armazenados, acessados e manipulados em um dispositivo de armazenamento, como um disco rígido. <br><br>
+
+        Características: <br>
+        Define a organização e a estrutura dos arquivos no dispositivo de armazenamento. <br>
+        Permite a criação, leitura, gravação e exclusão de arquivos. <br>
+        Geralmente inclui metadados para cada arquivo, como nome, tipo, tamanho, permissões etc. <br><br>
+
+        Exemplo: O sistema de arquivos NTFS (New Technology File System) usado em sistemas Windows ou o sistema de arquivos ext4 comumente usado em sistemas Linux. <br><br>
+        
+        <strong>Diretório</strong><br>
+        - Um diretório é uma estrutura usada para organizar e armazenar arquivos de forma hierárquica. Ele contém uma lista de arquivos e subdiretórios. <br><br>
+
+        Características: <br>
+        Pode conter arquivos e outros diretórios (subdiretórios). <br>
+        Permite uma organização lógica dos arquivos, facilitando a localização e a gestão. <br>
+        Pode ter permissões específicas de acesso. <br><br>
+
+        Exemplo: Uma pasta chamada "Documentos" que contém arquivos relacionados a trabalhos ou estudos, ou um diretório "Imagens" que armazena fotos e imagens diversas. <br>
+         <br>
+        Esses três elementos são fundamentais para a organização e o armazenamento de dados em um sistema de computador, permitindo a criação, manipulação e localização eficiente de informações.
+    </p>
+
+    <h4>Tipos de Arquivos e Acessos</h4>
+    <p>
+        <strong>Tipos de Arquivos:</strong> <br> <br>
+        1. <strong>Arquivos de Texto:</strong> Contêm dados legíveis por humanos e são frequentemente usados para documentos, códigos fonte, scripts, etc. <br>
+        <br>
+        2. <strong>Arquivos Binários:</strong> Contêm dados que não são diretamente legíveis por humanos, como programas executáveis, imagens, vídeos, áudio, entre outros. <br>
+        <br>
+        3. <strong>Arquivos de Dados Estruturados:</strong> Armazenam dados em um formato estruturado, como arquivos CSV (Comma-Separated Values), JSON (JavaScript Object Notation), XML (eXtensible Markup Language), bancos de dados, etc. <br>
+        <br>
+        4. <strong>Arquivos de Sistema:</strong> São arquivos essenciais para o funcionamento do sistema operacional, como bibliotecas do sistema, arquivos de configuração, etc. <br>
+        <br>
+        <strong>Tipos de Acessos:</strong> <br> <br>
+        1. <strong>Leitura (Read):</strong> Permite apenas a visualização do conteúdo do arquivo, sem a capacidade de modificá-lo. <br>
+        <br>
+        2. <strong>Escrita (Write):</strong> Permite a modificação do conteúdo de um arquivo. <br>
+        <br>
+        3. <strong>Execução (Execute):</strong> Especifica se um arquivo pode ser executado como um programa ou script. <br>
+        <br>
+        4. <strong>Criação (Create):</strong> Permite a criação de novos arquivos. <br>
+        <br>
+        5. <strong>Exclusão (Delete):</strong> Permite a remoção de um arquivo do sistema. <br>
+        <br>
+        6. <strong>Renomeação (Rename):</strong> Permite a alteração do nome de um arquivo.
+    </p>
+
+    <h4>Diretórios</h4>
+    <p>
+        <strong>Árvore de diretórios:</strong>
+        <p>
+            <pre>
+                Raiz
+                ├── Pasta1
+                │   ├── Arquivo1.txt
+                │   ├── Subpasta1
+                │   │   └── Arquivo2.txt
+                │   └── Subpasta2
+                │       └── Arquivo3.txt
+                └── Pasta2
+                    ├── Arquivo4.txt
+                    └── Subpasta3
+                        ├── Arquivo5.txt
+                        └── Arquivo6.txt
+            </pre>
+
+            - Raiz: Representa o diretório raiz.
+            - Pasta1 e Pasta2: São diretórios de nível superior.
+            - Subpastas (Subpasta1, Subpasta2, Subpasta3): São subdiretórios dentro de suas respectivas pastas.
+            - Arquivos (Arquivo1.txt, Arquivo2.txt, Arquivo3.txt, Arquivo4.txt, Arquivo5.txt, Arquivo6.txt): São arquivos contidos nos diretórios.
+        </p>
+
+        <strong>Diretório raiz:</strong> <br>
+        <p>
+            O diretório raiz é o diretório principal ou o nível superior na hierarquia de diretórios de um sistema de arquivos. Geralmente é representado pelo símbolo "/" em sistemas Unix e Linux e pela letra "C:" ou "D:" em sistemas Windows. <br>
+            <br>
+            Características: <br>
+            <br>
+            Todos os outros diretórios e arquivos estão contidos ou são acessíveis a partir do diretório raiz. <br>
+            Ele não possui um diretório pai, pois está no topo da hierarquia. <br><br>
+            Exemplo: <br>
+            Em sistemas Unix ou Linux, a estrutura de diretório raiz pode ser representada da seguinte forma:
+        </p>
+        <pre>
+            /
+            ├── home
+            │   ├── user1
+            │   ├── user2
+            │   └── ...
+            ├── etc
+            │   ├── config
+            │   └── ...
+            ├── var
+            │   ├── logs
+            │   └── ...
+            ├── usr
+            │   ├── bin
+            │   ├── lib
+            │   └── ...
+            └── ...
+        </pre>
+
+        - No exemplo acima, o diretório raiz "/" contém vários outros diretórios, como "home", "etc", "var", "usr", entre outros. Esses diretórios subsequentes contêm mais subdiretórios e arquivos, formando uma árvore de diretórios com o diretório raiz como ponto inicial.
+    </p>
+    <p>
+        <strong>Caminho Absoluto:</strong> <br> <br>
+
+        Um caminho absoluto descreve o local de um arquivo ou diretório a partir do diretório raiz do sistema de arquivos. <br><br>
+
+        Exemplo (Unix/Linux): /home/usuario/documentos/arquivo.txt <br>
+
+        Exemplo (Windows): C:\Users\Usuario\Documentos\arquivo.txt <br><br>
+
+        No caminho absoluto, o diretório raiz é especificado primeiro (como "/" em sistemas Unix/Linux ou a letra da unidade em sistemas Windows), seguido por todos os diretórios subsequentes até o arquivo ou diretório desejado. Esse tipo de caminho sempre aponta para o mesmo local, independentemente do diretório atual em que você está. <br><br>
+
+        <strong>Caminho Relativo:</strong> <br> <br>
+
+        Um caminho relativo descreve o local de um arquivo ou diretório em relação ao diretório atual em que se encontra. <br><br>
+
+        Exemplo: Se você estiver no diretório /home/usuario/, o caminho relativo para o arquivo documentos/arquivo.txt é documentos/arquivo.txt. <br><br>
+
+        No caminho relativo, a localização é descrita em relação ao diretório atual. Se você estiver em um diretório específico, pode especificar o caminho para um arquivo ou diretório em relação a esse diretório atual, sem precisar começar do diretório raiz. <br><br>
+
+        Comparação: <br><br>
+
+        Caminho Absoluto: Sempre começa a partir do diretório raiz e fornece o caminho completo para o arquivo ou diretório, independente do diretório atual. <br><br>
+
+        Caminho Relativo: É especificado em relação ao diretório atual e é mais curto, já que não precisa incluir todo o caminho desde o diretório raiz. <br><br>
+
+        Por exemplo, se o arquivo arquivo.txt estiver localizado em /home/usuario/documentos/, o caminho absoluto seria /home/usuario/documentos/arquivo.txt e o caminho relativo a partir do diretório /home/usuario/ seria documentos/arquivo.txt.
+    </p>
+
+    <h4>Escalonamento de Disco</h4>
+    <p>
+        O escalonamento de disco é o processo pelo qual o sistema operacional gerencia a solicitação de acesso ao disco rígido por parte dos processos em execução. Ele controla a ordem em que as solicitações de leitura e gravação são atendidas pelo disco. <br>
+        <br>
+        Características: <br>
+        <br>
+        Visa otimizar o desempenho, minimizando o tempo de busca e latência do disco. <br>
+        Existem diferentes algoritmos de escalonamento, como FCFS (First-Come, First-Served), SSTF (Shortest Seek Time First), SCAN, C-SCAN, entre outros.
+    </p>
+    <p>
+        <strong>Sistemas de arquivos</strong> <br>
+        <p>
+            Um sistema de arquivos é uma estrutura organizada que define como os dados são armazenados, nomeados, organizados e acessados em um dispositivo de armazenamento. <br>
+            <br>
+            Características: <br>
+            <br>
+            Define a estrutura de diretórios, arquivos e metadados. <br>
+            Fornece métodos para leitura, escrita e manipulação de arquivos. <br>
+            Pode ter sistemas de arquivos diferentes, como NTFS, FAT32, ext4, entre outros, cada um com suas próprias características e otimizações.
+        </p>
+        
+        <strong>Interação entre Escalonamento de Disco e Sistemas de Arquivos:</strong> <br>
+        <p>
+            O escalonamento de disco influencia diretamente o desempenho de acesso aos dados armazenados nos sistemas de arquivos. Algoritmos eficientes de escalonamento podem reduzir o tempo de espera e melhorar a taxa de transferência de dados, beneficiando as operações de leitura e gravação nos sistemas de arquivos. <br>
+            <br>
+            Por exemplo, o algoritmo SSTF busca otimizar o tempo de busca minimizando o tempo necessário para posicionar o braço de leitura/gravação do disco na trilha desejada, o que afeta diretamente a eficiência da leitura e gravação de dados nos sistemas de arquivos. <br>
+            <br>
+            Assim, a interação entre o escalonamento de disco e os sistemas de arquivos é crucial para garantir um desempenho eficiente no acesso e na manipulação de dados armazenados em discos rígidos ou outros dispositivos de armazenamento.
+        </p>
+        <pre>
+            +-----------------------------------------+
+            |           Sistema de Arquivos           |
+            |                                         |
+            |   +---------------------------+         |
+            |   |   Arquivos e Diretórios   |         |
+            |   |                           |         |
+            |   |   Leitura, Escrita,       |         |
+            |   |   Manipulação de Dados    |         |
+            |   +---------------------------+         |
+            |                                         |
+            |    |                               |    |
+            |    |                               |    |
+            |    |     Escalonamento de Disco    |    |
+            |    |                               |    |
+            |    |   Algoritmo de FCFS, SSTF,    |    |
+            |    |   SCAN, C-SCAN, etc.          |    |
+            |    |                               |    |
+            |    +-------------------------------+    |
+            |                                         |
+            |   Disco / Dispositivo de Armazenamento  |
+            |                                         |
+            +-----------------------------------------+
+        </pre>
+    </p>
+    <p>
+        <strong>Escalonamento por varredura de disco</strong> <br>
+
+        O escalonamento por varredura de disco (SCAN) é um algoritmo de escalonamento de disco que também é conhecido como "elevador" (elevator) devido à sua abordagem de movimento semelhante ao de um elevador, percorrendo o disco da maneira que um elevador percorreria um prédio, indo de um lado ao outro e atendendo às solicitações no caminho. <br>
+        <br>
+        Funcionamento do SCAN: <br>
+        Movimento do Braço do Disco: O braço de leitura/gravação percorre o disco do início até o fim ou do fim até o início, atendendo às solicitações à medida que passa por elas. <br>
+        <br>
+        Direção do Movimento: O movimento do braço é unidirecional, ou seja, ele se move em uma direção até atingir o final do disco e, em seguida, volta para a direção oposta, sem retornar para atender a solicitações que já foram passadas. <br>
+        <br>
+        Minimização do Tempo de Busca: O objetivo do SCAN é minimizar o tempo de busca ao reduzir o número de vezes que o braço de leitura/gravação precisa inverter sua direção, o que pode ocorrer ao atingir o limite do disco e precisar voltar para atender a solicitações não atendidas. <br>
+        <br>
+        Exemplo: <br>
+        Imagine um disco com solicitações de leitura/gravação em setores específicos, e o braço de leitura/gravação começa do lado esquerdo:
+
+        <pre>
+            |  60 |  45 |  90 |  100 |  12 |  35 |
+            <--                              -->
+            Movimento do braço de leitura/gravação
+            Direção do movimento (esquerda para direita)
+
+            - O braço de leitura/gravação começa a ler do setor 60 e vai em direção à direita, atendendo às solicitações nos setores 45, 90, 100.
+            - Quando alcança o limite direito, ele inverte sua direção e vai para a esquerda, atendendo às solicitações nos setores 12, 35.
+        </pre>
+        Esse movimento do braço de leitura/gravação em um único sentido e sem retroceder reduz o tempo de busca, já que evita inúmeras trocas de direção. Porém, solicitações no início e no final do disco podem enfrentar maiores tempos de espera.
+    </p>
+</body>
+</html>
