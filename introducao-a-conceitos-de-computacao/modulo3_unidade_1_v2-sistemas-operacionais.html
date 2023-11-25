@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 1 - Dispositivos e Sistemas<br>
+            <br>
+            <a href="https: //www.youtube.com/watch?v=ZxbiITSC-bg">Vídeo 2 - Introdução a Conceitos de Computação - Sistema Operacional</a>
+        </h1>
+        <p>
+            Professor:  Ricardo Ribeiro dos Santos <br>
+            Professor:  Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Papel do Sistema Operacional. <br>
+        - Gerenciamento de Memória. <br>
+        - Gerenciamento de Processo. <br>
+    </p>
+
+    <h4>Papel do Sistema Operacional</h4>
+    <p>
+        Programas que gerenciam um sistema computacional e interagem com hardware.
+    </p>
+    <p>
+        Software de sistema que gerencia recursos computacionais e fornece uma interface para interação com o sistema:  <br>
+        - Aplicativos. <br>
+        - Programas de Sistema. <br>
+        - Hardware. <br>
+    </p> 
+    <p>
+        <strong>Dois papéis principais:</strong>  <br>
+        - Máquina estendida (top-down)
+        <pre>
+            <strong>Execução de Aplicativos:</strong> 
+            Por exemplo, um processador de texto utiliza o sistema operacional para salvar arquivos no disco rígido.
+
+            <strong>Interface com o Usuário:</strong> 
+            O Windows, macOS e diversas distribuições de Linux oferecem interfaces amigáveis para os usuários.
+        </pre>
+
+        - Gerenciador de recursos (bottom-up)
+        <pre>
+            <strong>Gerenciamento de Memória:</strong> 
+            Por exemplo, quando você abre vários programas ao mesmo tempo, o sistema operacional gerencia como cada um deles utiliza a memória disponível.
+
+            <strong>Escalonamento de Processos:</strong> 
+            Ele gerencia a execução dos processos, garantindo que múltiplos programas possam ser executados simultaneamente em um único processador.
+
+            <strong>Gerenciamento de Dispositivos:</strong> 
+            Por exemplo, quando você conecta um dispositivo USB, o sistema operacional lida com a detecção desse dispositivo e fornece os drivers necessários para que ele funcione corretamente.
+
+            <strong>Sistema de Arquivos:</strong> 
+            O sistema de arquivos determina como os dados são estruturados e acessados.
+
+            <strong>Segurança do Sistema:</strong> 
+            Protege o sistema contra ameaças, controlando o acesso de usuários, aplicativos e processos a recursos importantes do sistema.
+        </pre>
+    </p>
+
+    <h4>Gerenciamento de Memória</h4>
+    <p>
+        <strong>Gerenciamento de Memória Contígua Única:</strong>  <br>
+        <br>
+        Neste método, a memória física é considerada como um único bloco contíguo. Quando um processo é carregado na memória, ele ocupa uma região contígua de memória. <br>
+        <br>
+        - **<strong>Alocação Contígua:</strong> ** Cada processo é alocado em um único bloco de memória, ocupando posições contíguas. Isso facilita a gestão da memória, pois não há fragmentação interna. <br>
+        <br>
+        - **<strong>Limitações de Fragmentação:</strong> ** No entanto, a fragmentação externa pode ocorrer, especialmente à medida que os processos são carregados e removidos. Isso pode resultar em blocos de memória livres espalhados, que podem ser insuficientes para alocar novos processos. <br>
+        <br>
+        - **<strong>Requisitos de Memória:</strong> ** Todos os processos precisam ser carregados na memória simultaneamente, o que pode limitar a quantidade de memória disponível para processos maiores ou mais numerosos. <br>
+        <br>
+        - **<strong>Eficiência de Utilização:</strong> ** Pode ser menos eficiente em termos de uso da memória, já que mesmo pequenos espaços de memória podem ficar inutilizáveis devido à fragmentação externa. <br>
+        <br>
+        O gerenciamento de memória contígua única é direto, mas pode ser limitante em sistemas onde a fragmentação externa pode reduzir a eficiência na alocação de memória para novos processos. <br>
+        Ex.:  
+        <pre>
+            Processo 1 (P1):  Requer 30 unidades de memória.
+            Processo 2 (P2):  Requer 20 unidades de memória.
+            Processo 3 (P3):  Requer 25 unidades de memória.
+
+            Com o gerenciamento de memória contígua única: 
+
+            <strong>1. Alocação Inicial:</strong> 
+                [P1 ocupando as unidades de 0 a 29]
+                [Espaço livre de 30 a 99]
+            
+            <strong>2. Carregamento do P2:</strong> 
+                [P1 ocupando as unidades de 0 a 29]
+                [P2 ocupando as unidades de 30 a 49]
+                [Espaço livre de 50 a 99]
+            
+            <strong>3. Tentativa de Carregamento do P3 (Possível Fragmentação):</strong> 
+                [P1 ocupando as unidades de 0 a 29]
+                [P2 ocupando as unidades de 30 a 49]
+                [Espaço livre de 50 a 74]
+                [P3 ocupando as unidades de 75 a 99]
+        </pre>
+    </p>
+    <p>
+        O gerenciamento de memória particionada envolve dividir a memória física em várias partições, alocando diferentes processos em partições separadas. Existem duas abordagens principais:  <strong>particionamento fixo</strong> e <strong>particionamento variável</strong>. <br><br>
+
+        <strong>Particionamento Fixo:</strong>  <br><br>
+        
+        Neste método, a memória é dividida em partições de tamanho fixo. Cada partição pode conter exatamente um processo, e se um processo não cabe em uma partição, ele não pode ser carregado. <br><br>
+
+        <strong>Exemplo de Particionamento Fixo:</strong>  <br>
+        Considere uma memória de 100 unidades dividida em partições de tamanho fixo de 20 unidades cada.
+        <pre>
+            1. Alocação Inicial:  
+                [Partição 1:  0-19]
+                [Partição 2:  20-39]
+                [Partição 3:  40-59]
+                [Partição 4:  60-79]
+                [Partição 5:  80-99]
+        </pre>
+
+        2. Carregamento dos Processos:  <br>
+        - Processo A (20 unidades):  Pode ser alocado na Partição 2. <br>
+        - Processo B (15 unidades):  Pode ser alocado na Partição 1. <br>
+        - Processo C (30 unidades):  Não pode ser alocado em nenhuma partição devido ao tamanho. <br><br>
+
+        <strong>Particionamento Variável:</strong>  <br><br>
+        Neste método, as partições têm tamanhos variáveis e são ajustadas dinamicamente para acomodar diferentes tamanhos de processos. Isso reduz o desperdício de memória, mas pode levar à fragmentação interna. <br><br>
+
+        <strong>Exemplo de Particionamento Variável:</strong>  <br>
+        Considere uma memória inicialmente sem partições e processos de tamanhos variados: 
+        <pre>
+            1. Alocação Inicial:  
+                [Memória livre:  0-99]
+        </pre>
+        
+        2. Carregamento dos Processos:  <br>
+        - Processo X (20 unidades):  Alocado de 0 a 19. <br>
+        - Processo Y (35 unidades):  Alocado de 20 a 54. <br>
+        - Processo Z (15 unidades):  Alocado de 55 a 69. <br>
+        - Processo W (25 unidades):  Não há espaço contíguo suficiente.
+    </p>
+    <p>
+        <strong>1. Alocação de Memória:</strong>  <br>
+        - Espaço de Endereçamento:  Isola espaços de memória para cada processo, garantindo segurança e privacidade entre eles. <br>
+        - Alocação Dinâmica:  Atribui e libera memória conforme necessário durante a execução dos programas, usando técnicas como alocação estática ou dinâmica. <br>
+        <br>
+        <strong>2. Gerenciamento Físico:</strong>  <br>
+        - Mapeamento:  Conecta endereços virtuais utilizados pelos programas à memória física disponível no hardware. Isso é feito por meio de tabelas de páginas ou segmentação. <br>
+        - Divisão de Memória:  Organiza a memória em unidades menores, como páginas ou segmentos, para facilitar o controle e alocar partes do processo conforme necessário. <br>
+        <br>
+        <strong>3. Memória Virtual:</strong>  <br>
+        - Uso do Disco:  Usa parte do disco rígido como memória adicional quando a RAM está sobrecarregada, mantendo os programas em execução. <br>
+        - Swap:  Move dados entre a RAM e o disco para liberar espaço na memória física, permitindo que diferentes partes dos programas sejam temporariamente armazenadas no disco. <br>
+        <br>
+        <strong>4. Fragmentação de Memória:</strong>  <br>
+        - <strong>Fragmentação Interna:</strong>  Ocorre quando há desperdício de espaço dentro de blocos alocados, resultando em espaço não utilizado. <br>
+        - <strong>Fragmentação Externa:</strong>  Surge quando há espaço livre, porém não contíguo, tornando difícil alocar um bloco de memória desejado. Estratégias são usadas para minimizar esse problema. <br>
+        <br>
+        O gerenciamento de memória é essencial para garantir que os recursos de memória sejam utilizados de maneira eficiente e que os programas sejam executados sem problemas, minimizando a possibilidade de falhas por falta de memória ou conflitos de acesso.
+    </p>
+    <p>
+        Os registradores de base e de limites são componentes cruciais no controle e na proteção do acesso à memória em sistemas de computadores. Eles são utilizados em conjunto para definir as áreas acessíveis de memória para um processo. <br><br>
+
+        <strong>Registrador Base:</strong>  Armazena o endereço base, indicando onde começa o espaço de memória disponível para um processo. Esse endereço é usado como ponto de referência para calcular todos os outros endereços acessíveis ao processo. <br><br>
+
+        <strong>Registrador de Limites:</strong>  Indica o tamanho máximo da área de memória acessível para um processo. Especifica a extensão da memória que o processo pode acessar a partir do endereço base definido pelo registrador base. <br><br>
+
+        Juntos, esses registradores controlam e restringem o acesso do processo à memória, garantindo que ele não acesse áreas indevidas e não ultrapasse os limites estabelecidos. <br><br>
+
+        Exemplo:  <br>
+        Imagine um sistema com uma memória de 0 a 255 unidades. <br><br>
+
+        Registrador Base do Processo A:  50 <br>
+        Registrador de Limites do Processo A:  100 <br><br>
+
+        Isso significa que o Processo A pode acessar a memória a partir da posição 50 até a posição 150 (50 + 100). Qualquer tentativa de acessar uma posição de memória abaixo de 50 ou acima de 150 seria considerada um acesso inválido, protegendo outras áreas de memória no sistema. <br><br>
+
+        Esse mecanismo ajuda a garantir a segurança e a integridade do sistema, evitando que um processo acesse a memória de outros processos ou do sistema operacional, limitando-o apenas à sua área de memória autorizada.
+    </p>
+    <p>
+        Técnica de memória paginada é uma abordagem de gerenciamento de memória usada em sistemas operacionais. Ela divide a memória física e virtual em pequenas partes chamadas "páginas". Cada página na memória virtual tem um correspondente na memória física, chamado de "quadro". A tabela de mapeamento de páginas (TMP) mantém o controle dessa correspondência entre páginas virtuais e quadros físicos. <br>
+        <br>
+        - <strong>Página:</strong>  É uma pequena unidade de dados na memória virtual, geralmente de tamanho fixo, como 4KB. O sistema operacional divide os processos em páginas para facilitar o gerenciamento. <br>
+        <br>
+        - <strong>Quadro:</strong>  É a contraparte física da página na memória física. Assim como as páginas, os quadros têm o mesmo tamanho fixo e são usados para armazenar as páginas na memória física. <br>
+        <br>
+        - <strong>Tabela de Mapeamento de Páginas (TMP):</strong>  É uma estrutura de dados mantida pelo sistema operacional para mapear cada página virtual do processo para o seu correspondente quadro na memória física. Geralmente, essa tabela contém entradas que indicam onde cada página está armazenada no espaço físico. <br>
+        <br>
+        <strong>Aqui está um exemplo simplificado:</strong>  <br>
+        <br>
+        Suponha que temos um processo com 16 páginas virtuais e um sistema com 8 quadros de memória física. <br>
+        <br>
+        - Páginas Virtuais:  P1, P2, ..., P16 <br>
+        - Quadros Físicos:  Q1, Q2, ..., Q8 <br> <br>
+        A tabela de mapeamento de páginas pode parecer algo assim: 
+
+        <pre>
+            TMP: 
+            Página Virtual | Quadro Físico
+            ------------------------------
+            P1             | Q5
+            P2             | Q1
+            P3             | Q7
+            ...            | ...
+            P16            | Q2
+        </pre>
+
+        Neste exemplo simplificado, a TMP indica onde cada página do processo está armazenada na memória física. Quando o processo tenta acessar uma página virtual, o sistema operacional usa essa tabela para traduzir o endereço virtual para o endereço físico correspondente na memória física, permitindo o acesso aos dados contidos naquela página. <br><br>
+
+        Essa técnica de memória paginada permite a utilização eficiente da memória, reduzindo o desperdício e facilitando o compartilhamento e a troca de dados entre processos, já que eles podem usar a memória de forma fragmentada e não contígua.
+    </p>
+
+    <h4>Gerenciamento de Processo</h4>
+    <p>
+        <strong>Criação de Processos:</strong>  O sistema operacional cria processos por solicitação do usuário ou do próprio sistema para executar programas. <br><br>
+
+        <strong>Escalonamento de Processos:</strong>  Decide quais processos devem ser executados e por quanto tempo, usando algoritmos de escalonamento para maximizar a utilização da CPU. <br><br>
+
+        <strong>Sincronização e Comunicação:</strong>  Gerencia a comunicação entre processos e garante que eles cooperem corretamente. <br><br>
+
+        <strong>Terminação de Processos:</strong>  Libera recursos alocados e finaliza processos quando eles terminam a execução. <br><br>
+
+        <strong>Processos CPU-bound (orientados à CPU):</strong>  <br>
+        São processos que passam a maior parte do tempo realizando cálculos intensivos na CPU, exigindo muito processamento e geralmente interagem menos com operações de entrada/saída. <br>
+        <br>
+        Exemplo:  <br>
+        Um algoritmo de cálculo intensivo, como um programa de renderização 3D, que passa a maior parte do tempo realizando cálculos matemáticos complexos. <br> <br>
+
+        <strong>Processos I/O-bound (orientados à E/S):</strong>  <br>
+        São processos que passam a maior parte do tempo realizando operações de entrada/saída, como leitura e escrita em disco, entrada de usuário ou comunicação de rede. Eles dependem mais de operações de entrada/saída do que de processamento na CPU. <br>
+        <br>
+        Exemplo:  <br>
+        Um programa de processamento de arquivos que lê dados de um disco, processa esses dados e, em seguida, escreve os resultados de volta no disco. <br>
+        <br>
+        Essas distinções são importantes para o gerenciamento de processos, pois afetam a forma como os recursos do sistema são alocados. Processos CPU-bound podem beneficiar-se de um escalonamento que priorize a alocação de tempo de CPU, enquanto processos I/O-bound podem ser gerenciados de maneira diferente, dando mais atenção à espera por operações de entrada/saída.
+        <pre>
+            .--------------------------------------------------------------.
+            | Passo 1:  Criação do Processo                                 |
+            |                                                              |
+            | .-----------------------.                                    |
+            | | Novo                  |                                    |
+            | | Estado do Processo    |                                    |
+            | '-----------------------'                                    |
+            |     |                                                        |
+            |     v                                                        |
+            |                                                              |
+            .--------------------------------------------------------------.
+            | Passo 2:  Execução do Processo                                |
+            |                                                              |
+            | .-----------------------.          .----------------------.  |
+            | | Executando            | -------->| Finalizado           |  |
+            | | Estado do Processo    |          | Estado do Processo   |  |
+            | '-----------------------'          '----------------------'  |
+            |     |                             ^     |                    |
+            |     v                             |     |                    |
+            |                                   |     |                    |
+            |     .-----------------------.     |     |                    |
+            |     | Bloqueado (I/O)       |<----'     |                    |
+            |     | Estado do Processo    |<----------'                    |
+            |     '-----------------------'                                |
+            |                                                              |
+            '--------------------------------------------------------------'
+        </pre>
+        
+        <strong>Criação do Processo:</strong>  O processo é criado pelo sistema operacional ou por outro processo. No início, ele está no estado "Novo". <br>
+         <br>
+        <strong>Execução do Processo:</strong>  O processo começa a ser executado e está no estado "Executando". Pode transitar para um estado "Bloqueado" se aguardar por operações de entrada/saída (I/O) ou para "Finalizado" quando termina sua execução.
+    </p>
+    <p>
+        <pre>
+            .----------------------------------------------------------.
+            | Estado do Processo:  Executando                           |
+            |                                                          |
+            | .------------------.                                     |
+            | | Processo          |                                    |
+            | | Em execução       |                                    |
+            | '------------------'                                     |
+            |                                                          |
+            .----------------------------------------------------------.
+            | Estado do Processo:  Esperando                            |
+            |                                                          |
+            | .------------------.                                     |
+            | | Processo          |                                    |
+            | | Esperando I/O     |                                    |
+            | '------------------'                                     |
+            |                                                          |
+            .----------------------------------------------------------.
+            | Estado do Processo:  Pronto                               |
+            |                                                          |
+            | .------------------.                                     |
+            | | Processo          |                                    |
+            | | Pronto para       |                                    |
+            | | ser executado     |                                    |
+            | '------------------'                                     |
+            |                                                          |
+            '----------------------------------------------------------'
+        </pre>
+
+        - <strong>Executando:</strong>  O processo está na CPU, executando suas instruções ativamente. <br><br>
+
+        - <strong>Esperando:</strong>  O processo está aguardando uma operação de entrada/saída (I/O) ser concluída antes de prosseguir. <br><br>
+
+        - <strong>Pronto:</strong>  O processo está pronto para ser executado e aguarda sua vez na fila de processos prontos para a CPU.
+    </p>
+</body>
+</html>
