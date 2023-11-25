@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 1 - Dispositivos e Sistemas<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=T1uCySESuZc">Vídeo 1 - Introdução a Conceitos de Computação - Software</a>
+        </h1>
+        <p>
+            Professor: Ricardo Ribeiro dos Santos <br>
+            Professor: Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Software, Programa e Algoritmo. <br>
+        - Tipos de Software. <br>
+        - Algoritmos. <br>
+        - Linguagem de Programação. <br>
+        - Ciclo de Vida do Software.
+    </p>
+
+    <h4>Software, Programa e Algoritmo</h4>
+    <p>
+        - Um <strong>algoritmo</strong> descreve a sequência de passos de um programa em uma linguagem próxima de um idioma. <br>
+        Ex.:
+        <pre>
+            Algoritmo para dividir dois valores numéricos.
+
+            1 - Receba o dividendo.
+            2 - Receba o divisor.
+            3 - Se divisor vale zero:
+                3.1 - Exibir menagem:
+                    "Divisão por zero não é possível".
+                3.2 - Terminar a execução.
+            4 - Calcular a divisão:
+                divisão = dividendo/divisor
+            5 - Exibir mensagem "Resultado = divisão"
+            6 - Terminar a execução.
+        </pre>        
+    </p>
+    <p>
+        - Um <strong>programa</strong> é uma sequência de instruções descritas por um algoritmo que permitem com que o computador realize uma tarefa. <br>
+        Ex.:
+        <pre>
+            # Programa para dividir dois valores numéricos
+
+            # Passo 1: Receber o dividendo
+            dividendo = float(input("Digite o dividendo: "))
+
+            # Passo 2: Receber o divisor
+            divisor = float(input("Digite o divisor: "))
+
+            # Passo 3: Verificar se o divisor é zero
+            if divisor == 0:
+                print("Divisão por zero não é possível")
+                exit()  # Terminar a execução do programa
+
+            # Passo 4: Calcular a divisão
+            resultado = dividendo / divisor
+
+            # Passo 5: Exibir o resultado
+            print("Resultado =", resultado)
+
+            # Passo 6: Terminar a execução
+        </pre>
+    </p>
+    <p>
+        - Um <strong>software</strong> é formado por um ou mais programas e estruturas de dados escritos para realizar alguma tarefa que resolva um problema ou torne mais fácil e segura a vida de pessoas ou de organizações. <br>
+        Ex.:
+        <pre>
+            Uma calculadora é um software que consiste em vários programas e estruturas de dados para realizar várias operações matemáticas, incluindo a divisão.
+
+            Imagine um software de calculadora que inclui a função de divisão juntamente com outras operações matemáticas, como adição, subtração e multiplicação.
+            Este software teria uma interface onde o usuário pode inserir os números e selecionar a operação desejada.
+            Cada operação seria realizada por um programa específico dentro do software.
+        </pre>
+    </p>
+
+    <h4>Tipos de Software</h4>
+    <p>
+        Software básico ou de sistema: <br>
+        - Coleção de programas escritos para apoiar outros programas. Possui contato mais direto com o hardware, gerenciando a execução de outro software. <br>
+        Ex.:
+        <pre>
+            Sistema Operacional Windows: Desenvolvido pela Microsoft, é um dos sistemas operacionais mais populares para PCs e laptops.
+
+            Sistema Operacional macOS: Desenvolvido pela Apple, é o sistema operacional usado nos computadores Mac.
+
+            Sistema Operacional Linux: Existem várias distribuições de Linux, como Ubuntu, Fedora e Debian, que são sistemas operacionais de código aberto utilizados em computadores pessoais, servidores e dispositivos integrados.
+
+            BIOS (Basic Input/Output System): É um software básico que inicializa o hardware durante a inicialização de um computador e fornece a interface entre o hardware e o sistema operacional.
+
+            Firmware de Dispositivos: Isso inclui firmware embutido em dispositivos como roteadores, impressoras, câmeras digitais, entre outros, que controla seu funcionamento básico.
+
+            Drivers de Dispositivos: São programas que permitem que o sistema operacional comunique-se com hardware específico, como placas de vídeo, impressoras, teclados, etc.
+        </pre>
+    </p>
+    <p>
+        Software utilitário: <br>
+        - Programas úteis ao bom funcionamento do sistema computacional. <br><br>
+        Ex.:
+        <pre>
+            Antivírus
+
+            Ferramentas de Limpeza do Sistema
+
+            Gerenciadores de Partição
+
+            Utilitários de Backup
+
+            Ferramentas de Otimização de Internet
+        </pre>
+
+        Software de aplicação: <br>
+        - Programas que ajudam o usuário a realizar uma dada tarefa.
+        Ex.:
+        <pre>
+            Navegador Web
+
+            Processador de Texto
+
+            Planilha Eletrônica
+
+            Aplicativos de Edição de Imagem
+
+            Softwares de Gerenciamento de Projeto
+        </pre>    
+    </p>
+    <p>
+        plug-in: <br>
+        - Código que adiciona características específicas a outro software. <br>
+        Ex.:
+        <pre>
+            Adobe Flash Player (anteriormente)
+
+            Plugins de Navegadores
+
+            Extensões de Navegador
+        </pre>
+
+        Software embarcado: <br>
+        - Frequentemente é um firmware dentro de sistemas embarcados ou de dispositivos de uso específico. <br>
+        Ex.:
+        <pre>
+            Firmware de Dispositivos IoT (Internet das Coisas)
+
+            Sistemas Embarcados em Carros
+
+            Firmware de Dispositivos de Armazenamento
+        </pre>
+    </p>
+
+    <h4>Algoritmos</h4>
+    <p>
+        Conjunto finito de regras, bem definido (sem ambiguidades), voltado à solução de um problema em tempo finito.
+        Deve possuir 3 qualidades:
+        1. Cada passo do algoritmo deve ser uma instrução que possa ser realizada. <br>
+        2. A ordem dos passos deve ser precisamente determinada. <br>
+        3. O algoritmo deve ter fim.
+    </p>
+    <p>
+        Dois aspectos devem ser levados em consideração no projeto de algoritmos: <br>
+        Corretude: <br>
+        - Para cada entrada possível, o algoritmo terá fim e produzirá a resposta desejada; <br>
+        Eficiência: <br>
+        - A quantidade de recursos (tempo e armazenamento) sonsumidos na execução do algoritmo. <br>
+        Ex.:
+        <pre>
+            Algoritmo para Troca de Pneu de um Carro:
+
+            Reúna as Ferramentas:
+            - Certifique-se de ter uma chave de roda, macaco, chave de porca e estepe disponíveis.
+
+            Estacione o Carro em Local Seguro:
+            - Escolha um local plano, longe do tráfego, e acione o freio de estacionamento.
+
+            Ligue as Luzes de Emergência:
+            - Para alertar outros motoristas sobre a situação.
+            
+            Retire a Tampa da Roda e Desaperte as Porcas:
+            - Use a chave de roda para soltar as porcas da roda antes de levantar o carro.
+            
+            Posicione o Macaco:
+            - Encontre o ponto de elevação recomendado no chassi do carro e posicione o macaco.
+            
+            Levante o Carro:
+            - Use o macaco para levantar o carro do chão até que a roda esteja desobstruída.
+            
+            Remova as Porcas e a Roda Danificada:
+            - Utilize a chave de roda para remover completamente as porcas e retire a roda danificada.
+            
+            Coloque a Estepe:
+            - Posicione a estepe no lugar, alinhando os furos com os pinos de fixação.
+            
+            Aperte as Porcas Manualmente:
+            - Aperte as porcas manualmente para fixar a roda no lugar.
+            
+            Baixe o Carro com Cuidado:
+            - Use o macaco para abaixar lentamente o carro até o chão.
+            
+            Aperte as Porcas com a Chave de Roda:
+            - Aperte as porcas completamente com a chave de roda.
+            
+            Substitua a Tampa da Roda:
+            - Coloque a tampa na roda substituída.
+            
+            Guarde as Ferramentas:
+            - Guarde todas as ferramentas usadas no porta-malas.
+            
+            Verifique a Pressão do Pneu Substituído:
+            - Use um medidor de pressão para garantir que o pneu substituído tenha a pressão adequada.
+        </pre>
+        <pre>
+            +-------------+
+            | Início      |
+            +------|------+
+                |
+                v
+            +-----------------------------------+
+            | Preparação das Ferramentas       |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Estacionar o Carro em Local Seguro|
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Ligar as Luzes de Emergência      |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Desapertar as Porcas e           |
+            | Retirar a Tampa da Roda           |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Posicionar o Macaco               |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Levantar o Carro                  |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Remover as Porcas e a Roda        |
+            | Danificada                        |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Colocar a Estepe                  |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Baixar o Carro com Cuidado        |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Apertar as Porcas com a           |
+            | Chave de Roda                     |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Substituir a Tampa da Roda         |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Guarde as Ferramentas             |
+            +---------------|-------------------+
+                            |
+                            v
+            +-----------------------------------+
+            | Verificar a Pressão do Pneu       |
+            | Substituído                        |
+            +-----------------------------------+
+                            |
+                            v
+            +---------------+
+            | Fim           |
+            +---------------+
+        </pre>
+    </p>
+    <p>
+        Pseudocódigo:
+        - É uma forma simples de escrever um algoritmo através de uma linguagem simples. <br>
+        - Pode seguir algumas regras predefinidas na sua escrita. <br>
+        - Facilita o mapeamento para uma linguagem de programação. <br>
+        Ex.:
+        <pre>
+            função trocarPneu():
+                se ferramentasDisponiveis():
+                    estacionarCarro()
+                    ligarLuzesEmergencia()
+                    desapertarPorcasERetirarTampa()
+                    posicionarMacaco()
+                    levantarCarro()
+                    removerPorcasERodaDanificada()
+                    colocarEstepe()
+                    baixarCarroComCuidado()
+                    apertarPorcasComChave()
+                    substituirTampaRoda()
+                    guardarFerramentas()
+                    verificarPressaoPneu()
+                senão:
+                    exibirMensagem("Ferramentas necessárias não disponíveis.")
+                fimSe
+            fimFunção
+        </pre>
+    </p>
+
+    <h4>Linguagem de Programação</h4>
+    <p>        
+        - Permite descrever, de forma compreensível para o computador, os passos a serem por ele realizados na execução de uma tarefa. <br>
+        - Toda linguagem de programação possui um conjunto limitado de símbolos, estruturas de dados e comandos utilizados para criar os programas.
+    </p>
+    <p>
+        Linguagem de máquina - primeira geração. <br>
+        Linguagem de montagem - segunda geração. <br>
+        Linguagens de auto nível - terceira geração. <br>
+        Linguagens de muito auto nível - quarta geração. <br>
+    </p>
+    <p>
+        Paradigmas: <br>
+        - Imperativo. Ex.:
+        <pre>C, Pascal, Fortran.</pre>
+
+        - Funcional. Ex.:
+        <pre>Haskell, Lisp, Scala.</pre>
+
+        - Lógico.Ex.:
+        <pre>Prolog, Datalog.</pre>
+
+        - Orientado a objetos. Ex.:
+        <pre>Java, Python, C++</pre>
+    </p>
+
+    <h4>Ciclo de Vida do Software.</h4>
+    <p>
+        <strong>Requisitos:</strong> <br>
+        - Compreensão e documentação dos requisitos do software, ou seja, o que o software deve fazer e quais problemas deve resolver. <br>
+        <br>
+        <strong>Análise:</strong> <br>
+        - Análise detalhada dos requisitos para identificar possíveis desafios, riscos e soluções. Isso pode incluir modelagem de dados e processos. <br>
+        <br>
+        <strong>Projeto:</strong> <br>
+        - Criação da arquitetura do software com base nos requisitos e análises. Isso inclui decisões sobre linguagem de programação, estrutura de dados, interfaces de usuário, etc. <br>
+        <br>
+        <strong>Implementação/Desenvolvimento:</strong> <br>
+        - O desenvolvimento real do software acontece nesta fase. Os programadores codificam o software conforme as especificações do projeto. <br>
+        <br>
+        <strong>Testes:</strong> <br>
+        - Verificação e validação do software para garantir que ele atenda aos requisitos. Isso inclui testes de unidade, integração, sistema e aceitação do usuário. <br>
+        <br>
+        <strong>Implantação/Instalação:</strong> <br>
+        - O software é disponibilizado ao usuário final. Pode envolver a instalação em sistemas específicos, treinamento de usuários e configurações adicionais. <br>
+        <br>
+        <strong>Manutenção:</strong> <br>
+        - Após a implantação, o software pode passar por manutenções corretivas, evolutivas ou adaptativas para corrigir bugs, adicionar novos recursos ou ajustar a funcionalidade conforme necessário. <br>
+        <br>
+        <strong>Aposentadoria/Descontinuação:</strong> <br>
+        - Em algum momento, o software pode ser retirado de uso devido a obsolescência, mudanças de requisitos ou por ser substituído por versões mais atualizadas.
+    </p>
+</body>
+</html>
