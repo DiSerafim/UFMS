@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 2 - Redes de ComputadoresURL<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=WooeNq2xfQE">Vídeo 1 - Introdução a Conceitos de Computação - Redes de Computadores</a>
+        </h1>
+        <p>
+            Professor:  Ricardo Ribeiro dos Santos <br>
+            Professor:  Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Apresentando Redes. <br>
+        - Meio de Transmissão. <br>
+        - Topologia. <br>
+        - Extensão de uma Rede. <br>
+        - Comunicação.
+    </p>
+
+    <h4>Apresentando Redes</h4>
+    <p>
+        <strong>Telecomunicações</strong> <br>
+        Comunicação ou envio de informação à distância, usando um meio tecnológico: <br>
+        - Redes de telefonia. <br>
+        - Redes de Computadores. <br>
+        - Internet.
+    </p>
+    <p>
+        <strong>Redes de Computadores.</strong> <br>
+        - Conjunto de computadores interligados. <br>
+        - Permitem disponibilizar informações e recursos de um computador a outros de forma simples, conveniente e eficaz.
+    </p>
+    <p>
+        <strong>Caracterização de redes de computadores:</strong> <br>
+        - Meio de transmissão. <br>
+        - Topologia. <br>
+        - Extensão. <br>
+        - Comunicação.
+    </p>
+
+    <h4>Meio de Transmissão</h4>
+    <p>
+        <strong>Meios de Transmissão Físicos:</strong> <br><br>
+
+        <strong>Cabos de Cobre:</strong> <br>
+        Utilizados em redes cabeadas, como cabos Ethernet. <br>
+        Oferecem boa transmissão de dados e são amplamente utilizados em LANs. <br><br>
+        Exemplos: Cabos UTP (par trançado não blindado), STP (par trançado blindado), cabo coaxial. <br><br>
+
+        <strong>Cabos de Par Trançado:</strong> <br>
+        Cabos compostos por pares de fios de cobre isolados e torcidos entre si. <br>
+        Amplamente utilizados em redes locais (LANs) para conexões com fio em residências, escritórios e data centers. <br><br>
+
+        <strong>Cabos Coaxiais:</strong> <br>
+        Cabos com um condutor central cercado por um escudo metálico. <br>
+        Usados em redes de televisão a cabo, oferecem boa transmissão de dados. <br><br>
+
+        <strong>Transmissão sem Fio (Wireless):</strong> <br>
+        Transmissão de dados sem a necessidade de fios físicos. <br>
+        Inclui Wi-Fi (802.11), Bluetooth, redes celulares (3G, 4G, 5G), oferecendo mobilidade em redes locais e comunicação móvel.
+
+        <strong>Fibra Óptica:</strong> <br>
+        Usa feixes de luz para transmitir dados. <br>
+        Alta capacidade de transmissão, imune a interferências eletromagnéticas. <br><br>
+        Exemplos: Cabos de fibra monomodo e multimodo. <br>
+        Transmissão sem Fio (Wireless): <br>
+
+        Transmissão de dados sem a necessidade de fios físicos. <br>
+        Oferece mobilidade, usada em redes locais e móveis. <br><br>
+
+        Exemplos: Wi-Fi (802.11), Bluetooth, redes celulares (3G, 4G, 5G). <br><br>
+
+        <strong>Meios de Transmissão Lógicos:</strong> <br><br>
+
+        <strong>Satélites:</strong> <br>
+        Utilizados para transmissão de dados em longas distâncias. <br>
+        Permitem cobertura global, mas podem ter atrasos na transmissão (latência). <br><br>
+
+        <strong>Redes de Telefonia:</strong> <br>
+        Utiliza infraestrutura de redes de telefonia para transmissão de dados. <br>
+        Usadas em sistemas de comunicação tradicionais, com taxas de transmissão variáveis. <br><br>
+
+        A escolha do meio de transmissão depende das necessidades da rede, como a distância a ser coberta, a largura de banda necessária, a resistência a interferências, entre outros fatores. Cada meio possui vantagens e desvantagens, e muitas vezes uma rede pode usar uma combinação de vários tipos para atender às suas necessidades específicas.
+    </p>
+
+    <h4>Topologia</h4>
+    <p>
+        - Topologia em barra. <br>
+        - Configuração em estrela. <br>
+        - Hub. <br>
+        - Switch. <br>
+        - Configuração em anel. <br>
+        - Redes em arvore. <br>
+        - Combinar topologias.
+    </p>
+    <p>
+        <strong>Topologia em Barra (Bus Topology):</strong> <br>
+
+        Nesta topologia, todos os dispositivos são conectados a um único cabo (backbone) compartilhado. <br><br>
+
+        Cada dispositivo se conecta diretamente ao cabo principal. <br>
+
+        Os dados são transmitidos de um extremo para o outro do cabo. <br><br>
+
+        <strong>Configuração em Estrela (Star Topology):</strong> <br>
+
+        Todos os dispositivos são conectados a um ponto central (como um switch ou hub). <br><br>
+
+        Cada dispositivo se conecta ao ponto central. <br>
+
+        Os dados são enviados através do ponto central para o dispositivo de destino. <br><br>
+
+        <strong>Hub:</strong> <br>
+
+        Dispositivo utilizado em topologias de estrela para conectar vários dispositivos em uma rede. <br><br>
+
+        Funciona como um concentrador, retransmitindo os dados recebidos para todos os dispositivos na rede. <br>
+
+        Menos inteligente que um switch, pode causar tráfego desnecessário na rede. <br><br>
+
+        <strong>Switch:</strong> <br>
+
+        Dispositivo utilizado em topologias de estrela para conectar vários dispositivos em uma rede. <br><br>
+
+        Examina os dados recebidos e os envia apenas ao dispositivo de destino, reduzindo o tráfego desnecessário na rede. <br>
+
+        Mais inteligente que um hub, oferece melhor desempenho e segurança. <br><br>
+
+        <strong>Configuração em Anel (Ring Topology):</strong> <br>
+
+        Os dispositivos são conectados formando um loop fechado, onde cada dispositivo está conectado ao dispositivo vizinho. <br><br>
+
+        Os dados circulam no anel até atingirem seu destino. <br>
+
+        Menos propenso a colisões de dados, mas a falha em um dispositivo pode interromper toda a rede. <br><br>
+
+        <strong>Redes em Árvore (Tree Topology):</strong> <br>
+
+        Assemelha-se a uma combinação de várias topologias em forma de árvore. <br><br>
+
+        Possui hierarquia, com sub-redes interconectadas. <br>
+
+        Pode ser escalável e oferecer redundância se configurada adequadamente. <br><br>
+
+        <strong>Combinar Topologias:</strong> <br>
+
+        É possível combinar diferentes topologias para atender às necessidades específicas de uma rede. <br>
+
+        Exemplo: Uma rede pode usar uma topologia de estrela em diferentes departamentos de uma empresa, enquanto interconecta essas estrelas através de uma topologia em barramento ou árvore.
+    </p>
+
+    <h4>Extensão de uma Rede</h4>
+    <p>
+        A extensão de uma rede se refere ao alcance geográfico ou à área coberta pela infraestrutura de comunicação. Existem três tipos principais de extensões de redes: <br><br>
+
+        <strong>LAN (Local Area Network):</strong> <br>
+        Cobertura limitada a uma área local, como um escritório, edifício ou campus. <br>
+         <br>
+        Geralmente conecta dispositivos dentro de um espaço físico restrito. <br>
+        Alta velocidade e baixa latência. <br>
+        Exemplos: Redes de escritório, redes domésticas. <br> <br>
+
+        <strong>MAN (Metropolitan Area Network):</strong> <br>
+        Cobertura em uma área metropolitana ou cidade. <br>
+         <br>
+        Conecta várias LANs dentro de uma região geográfica mais ampla. <br>
+        Maior alcance que uma LAN, mas menor que uma WAN. <br>
+        Exemplos: Redes de campus universitários, redes de transporte público. <br> <br>
+        <strong>WAN (Wide Area Network):</strong> <br>
+        Cobertura em uma ampla área geográfica, como um país ou além. <br>
+         <br>
+        Conecta LANs e MANs em distâncias maiores. <br>
+        Pode usar tecnologias como linhas alugadas, satélites, redes de telefonia, internet. <br>
+        Maior alcance geográfico, mas com menor largura de banda e maior latência em comparação com LANs e MANs. <br><br>
+
+        Exemplos: Internet, intranets corporativas globais. <br>
+        A escolha da extensão da rede depende das necessidades da organização em termos de alcance geográfico, largura de banda, latência, custos de infraestrutura e segurança. Redes menores, como LANs e MANs, são mais rápidas e oferecem menor latência, enquanto WANs possibilitam a interconexão em escala global, mas com desempenho um pouco mais limitado devido às distâncias envolvidas.
+    </p>
+
+    <h4>Comunicação.</h4>
+    <p>
+        A comunicação em redes de computadores é a troca de informações entre dispositivos conectados, permitindo a transferência de dados, mensagens e recursos entre eles. Aqui estão alguns pontos importantes sobre a comunicação em redes: <br>
+        <br>
+        <strong>Protocolos de Comunicação:</strong><br>
+        - Conjunto de regras e convenções que definem como os dados são formatados e transmitidos em uma rede. <br>
+        - Exemplos: TCP/IP, HTTP, FTP, SMTP. <br><br>
+
+        <strong>Transmissão de Dados:</strong><br>
+        <strong>Modos de Transmissão:</strong> <br>
+        - Simplex: A comunicação ocorre em apenas uma direção. <br>
+        - Half-Duplex: A comunicação ocorre em ambas as direções, mas não simultaneamente. <br>
+        - Full-Duplex: A comunicação ocorre em ambas as direções simultaneamente. <br><br>
+
+        <strong>Componentes de Comunicação em Rede:</strong><br>
+        - Dispositivos de Rede: Computadores, servidores, roteadores, switches. <br>
+        - Meios de Transmissão: Cabos, fibras ópticas, wireless. <br><br>
+
+        <strong>Tipos de Comunicação:</strong><br>
+        - Comunicação Ponto a Ponto: Entre dois dispositivos específicos. <br>
+        - Comunicação de Grupo/Multicast: Entre um dispositivo e vários dispositivos selecionados. <br>
+        - Comunicação Broadcast: De um dispositivo para todos os dispositivos na rede. <br><br>
+
+        <strong>Modelos de Referência:</strong><br>
+        - Modelo OSI (Open Systems Interconnection): Define sete camadas para a comunicação de rede, abordando desde a aplicação até a camada física. <br>
+        - Modelo TCP/IP: Mais comumente usado na internet, possui quatro camadas (aplicação, transporte, internet, acesso à rede). <br><br>
+
+        <strong>Segurança na Comunicação:</strong><br>
+        - Criptografia: Protege os dados transmitidos, garantindo que apenas o destinatário correto possa decifrá-los. <br>
+        - Firewalls e Segurança de Rede: Protegem contra ameaças externas, controlando o tráfego de dados. <br><br>
+        
+        <strong>Comunicação na Internet:</strong><br>
+        - Email, Browsing, Transferência de Arquivos: Alguns exemplos de comunicação na internet. <br>
+        - Redes Sociais e Aplicações de Mensagens: Permitem a comunicação entre indivíduos e grupos em tempo real. <br><br>
+
+        A comunicação em redes é um processo complexo, mas essencial para permitir a troca de informações e o funcionamento adequado de sistemas conectados. Protocolos, segurança e diferentes modos de transmissão são elementos críticos para garantir uma comunicação eficiente e segura.
+    </p>
+</body>
+</html>
