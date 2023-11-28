@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença Módulo 2</title>
+</head>
+<body>
+    <header>
+        <h3>
+            📍 [Checkout de Presença] Módulo 3 – Dispositivos e Sistemas<br>
+        </h3>
+        <p>Nome completo: <strong>Diego Serafim de Sousa</strong></p>
+
+        <p>Nome do/a Professor/a Tutor/a: <strong>Ricardo Ribeiro dos Santos</strong></p>
+
+        <p>Título da atividade: <strong>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</strong></p>
+        <p>Vencimento: segunda, 2 out 2023, 23:59</p>
+    </header>
+    
+    <h3>
+        Nesta atividade propõe-se uma pesquisa sobre as funções de um Sistema Operacional. Em específico, você deve pesquisar sobre as atribuições de um Sistema Operacional com relação à: <br>
+        <br>
+        1. Algoritmo para Escalonamento de Processos e/ou Threads: Round-Robin <br>
+        2. Algoritmo para Substituição de Páginas na Memória:  FIFO <br>
+        <br>
+        Você deve revisar o conteúdo estudado nesse módulo, assim como realizar pesquisas na Internet para saber sobre os algoritmos Round-Robin (escalonamento de processos ou threads) e FIFO (escalonamento de páginas na memória). Espera-se que elabore um texto de, no máximo, uma página, explicando sobre:
+    </h3>
+    <p>
+        a) o que é o escalonamento de processos ou  threads; <br>
+        b) algoritmo Round-Robin para escalonamento de processos ou threads; <br>
+        c) o que é a atividade de substituição de páginas na memória principal; <br>
+        d) algoritmo FIFO para substituição de páginas na memória principal.  <br>
+        <br>
+        Para concluir a atividade, realize os seguintes passos: <br>
+        <br>
+
+        1. Revise o conteúdo sobre Sistemas Operacionais e pesquisa na Internet sobre os itens 1) e 2); <br><br>
+
+        2. Elabore um relatório textual contendo todos os itens de a) até d); <br><br>
+
+        3. Na formatação de seu texto, recomendo adotar o formato “Modelo para Publicação de Artigos” da Sociedade Brasileira de Computação: <a href="https://www.sbc.org.br/documentos-da-sbc/category/169-templates-para-artigos-e-capitulos-de-livros" target="_blank" rel="noopener noreferrer">>></a> <br>
+        3.1 Observação: você pode inserir elementos gráficos (figuras, fotos, imagens, tabelas) em seu texto. <br><br>
+
+        4. Ao finalizar a preparação de seu texto, converta o arquivo para o formato PDF e envie (enviar apenas o arquivo pdf do texto) no espaço da tarefa no AVA-UFMS.  <br>
+    </p>
+
+    <p>
+        a) o que é o escalonamento de processos ou  threads;
+        <pre>
+            É a atividade do Sistema Operacional que gerencia a ordem de execução de processos ou threads no processador.
+            No caso do meu computador com processador:
+            Intel Xeon E5-2620 v3,
+            que possui 12 núcleos físicos e 24 threads (2 por núcleo),
+            o Sistema Operacional é responsável por distribuir esses processos ou threads de forma eficiente entre os núcleos para otimizar o uso do hardware.
+
+            <img 
+                src="img/escalonamento-de-processo.png" 
+                alt="escalonamento-de-processo.png" 
+                style="width: 300px; transition: width 0.3s ease-in-out;" 
+                onmouseover="this.style.width='70%'" 
+                onmouseout="this.style.width='300px'"
+            >
+        </pre>
+
+        b) algoritmo Round-Robin para escalonamento de processos ou threads;
+        <pre>
+            Round-Robin:
+            - Funciona no contexto de escalonamento de processos ou threads, utilizando o processador como referência.
+
+            - uma abordagem de escalonamento, que atribui a cada processo ou thread um intervalo de tempo de CPU chamado 'quantum'.
+
+            - O sistema operacional garante que todos os processos ou threads sejam executados evitando que um único processo monopolize o processador por muito tempo.
+
+            <img 
+                src="img/diagrama-de-execucao-round-robin.png"
+                alt="escalonamento-de-processo.png"
+                style="width: 300px; transition: width 0.3s ease-in-out;"
+                onmouseover="this.style.width='70%'"
+                onmouseout="this.style.width='300px'"
+            >
+        </pre>
+
+        c) o que é a atividade de substituição de páginas na memória principal;
+        <pre>
+            - A substituição de páginas é uma técnica usada pelo Sistema Operacional para gerenciar a memória quando está cheia.
+            - A memória pode se tornar um recurso crítico em situações de alta demanda.
+
+            - O algoritmo FIFO (First-In, First-Out) é um método de substituição de páginas que opera na memória principal.
+
+            <img 
+                src="img/diagrama-de-substituicao-de-paginas-na-memoria.jpeg"
+                alt="diagrama-de-substituicao-de-paginas-na-memoria.jpeg"
+                style="width: 300px; transition: width 0.3s ease-in-out;"
+                onmouseover="this.style.width='70%'"
+                onmouseout="this.style.width='300px'"
+            >
+        </pre>
+
+        d) algoritmo FIFO para substituição de páginas na memória principal. 
+        <pre>
+            - Método de substituição de páginas que opera na memória principal.
+            - Remove a página que está na memória há mais tempo, funcionando como uma fila onde a primeira página a entrar é a primeira página a sair quando há necessidade de liberar espaço na memória principal.
+
+            - Essa técnica é um dos métodos utilizados pelo Sistema Operacional para gerenciar eficientemente a memória RAW do sistema, garantindo a continuidade do funcionamento dos processos, mesmo com a limitação física da memória.
+
+            <img 
+                src="img/diagrama-fifo-de-substituicao-de-paginas-na-memoria.jpg"
+                alt="diagrama-fifo-de-substituicao-de-paginas-na-memoria.jpg"
+                style="width: 300px; transition: width 0.3s ease-in-out;"
+                onmouseover="this.style.width='70%'"
+                onmouseout="this.style.width='300px'"
+            >
+        </pre>
+    </p>
+</body>
+</html>
