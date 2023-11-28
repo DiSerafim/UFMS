@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMOS E PROGRAMAÇÃO II-T01-2023-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Módulo 3 <br>
+            Unidade 2 - Redes de ComputadoresURL<br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=OztOs28tsno">Vídeo 2 - Introdução a Conceitos de Computação - Internet: Computação em Nuvem</a>
+        </h1>
+        <p>
+            Professor:  Ricardo Ribeiro dos Santos <br>
+            Professor:  Cláudio Fabiano Motta Toledo
+        </p>
+    </header>
+
+    <h4>Sumário</h4>
+    <p>
+        - Internet. <br>
+        - História da Internet. <br>
+        - Funcionamento. <br>
+        - Serviços. <br>
+        - Computação em Nuvem.
+    </p>
+
+    <h4>Internet</h4>
+    <p>
+        Rede de redes que fornece infraestrutura para troca de informações e uso de recursos computacionais.
+        <pre>
+            - Abreviação de internetwork.
+            - WAN que cobre todo o planeta.
+            - WWW: Word Wide Web.
+        </pre>
+    </p>
+
+    <h4>História da Internet</h4>
+    <img src="img/jcl2.jpeg" alt="J. Licklider, 1962, Conceito de Rede Galáctica" style="width: 10%;">
+    <p>
+        J. Licklider, 1962, Conceito de Rede Galáctica
+    </p>
+    <p>
+        Previsão de um conjunto de computadores globalmente conectados, onde qualquer pessoa poderia ter acesso rápido a dados e programas de qualquer local, semelhante ao que é a Internet.
+    </p>
+    <p>
+        - Projeto do governo americano que lançou a ARPANET em 1967. <br>
+        - ARPA (Advanced Research Project Agency), criada em 1957 pelo departamento de defesa americano. <br>
+        - Liga centros de pesquisa e universidades americanas e uma rede. <br>
+        - Criar uma rede sem centro, ao contrário da topologia estrela.
+    </p>
+    <p>
+        - O desenvolvimento da NSFNET foi iniciado em 1986 pela National Science Foundation, tornando-se o principal meio de comunicação para a internet (backbone). <br>
+        - ARPANET foi desativada em 1990. <br>
+        - www é proposto em 1989 para a distribuição de informação no formato de hipertextos pelo CERN (European Laboratory for Particle Physics). <br>
+        - Mosaic, navegador gráfico disponibilizado em 1993 que popularizou a internet.
+    </p>
+    <p>
+        - FAPESP e LNCC conectaram-se às instituições americanas e estimularam instituições brasileiras a utilizarem a rede em 1987. <br>
+        - Criação da Rede Nacional Pesquisa em 1992 para disseminar a utilização da Internet no país. <br>
+        - A utilização comercial da internet brasileira começou em 1995.
+    </p>
+
+    <h4>Funcionamento</h4>
+    <p>
+        Protocolos TCP/IP são utilizados para garantir a troca de recursos e comunicação entre nós interligados. <br>
+        - TCP (Transmission Control Protocol): <br>
+        → Controla o fluxo de dados entre eles e garante o recebimento desses dados. <br>
+        - IP (Internet Protocol): <br>
+        → Determina o formato da informação transferida e como ocorre sua quebra em pacotes.
+    </p>
+    <p>
+        UDP - (User Datagram Protocol):
+        → Diferente do TCP, apenas usa os serviços de IP para entrega de dados entre aplicações.
+        <pre>
+            UDP → Skipe
+            TCP → E-mail
+        </pre>
+    </p>
+    <p>
+        O protocolo IP estabelece um endereço IP único para identificar cada dispositivo em uma rede TCP/IP. <br><br>
+
+        O endereço IP é utilizado como endereço de destino quando do envio de mensagens para um dispositivo.
+        <pre>
+            +-------------------------+       +-------------------------+
+            |                         |       |                         |
+            |         Aplicação       |       |         Aplicação       |
+            |                         |       |                         |
+            +-------------------------+       +-------------------------+
+                        |                               |
+                        |                               |
+                    +----------+                  +----------+
+                    |  TCP     |                  |   UDP    |
+                    |Protocolo |                  |Protocolo |
+                    +----------+                  +----------+
+                    |  Controle |                  |  Entrega |
+                    |  de Fluxo |                  |  Rápida  |
+                    +----------+                  +----------+
+                        |                               |
+                        |                               |
+                    +----------+                  +----------+
+                    |    IP    |                  |    IP    |
+                    |Protocolo |                  |Protocolo |
+                    +----------+                  +----------+
+                        |                               |
+                        |                               |
+                    +-------------------------------------+
+                    |               Rede                  |
+                    +-------------------------------------+
+        </pre>
+    </p>
+    <p>
+        - Nomes de domínio associados aos endereços facilitam o acesso das pessoas a dispositivos na Internet. <br>
+        - Um sistema chamado DNS (Domain Name System) traduz um nome de domínio para o endereço de IP correspondente.
+        <pre>
+            +----------------------------------+
+            |            Usuário               |
+            +----------------------------------+
+                        |
+                Consulta por nome de domínio    
+                (ex: www.exemplo.com)           
+                        v                       
+            +----------------------------------+
+            |          Servidor DNS            |
+            |  (Domain Name System)            |
+            +----------------------------------+
+                        |                       
+               Consulta por endereço IP         
+               correspondente ao nome de domínio
+                        v                       
+            +----------------------------------+
+            |        Banco de Dados DNS        |
+            |                                  |
+            | www.exemplo.com == 192.168.1.100 |
+            +----------------------------------+
+                        |                       
+              Resposta com o endereço IP        
+              associado ao nome de domínio      
+                        v                       
+            +----------------------------------+
+            |        Usuário Recebe            |
+            |       Endereço IP do             |
+            |     Nome de Domínio              |
+            +----------------------------------+
+        </pre>
+    </p>
+    <p>
+        URL (Uniform Resources Locator): <br>
+        → Define o endereço ou o caminho para acessar um recurso de uma página na web. <br><br>
+
+        Também usados para transferência de arquivos (ftp:), <br>
+        envio de e-mails (mailto:) e <br>
+        números de telefone (tel:).
+    </p>
+    <p>
+        HTTP (Hyper Transfer Protocol): <br>
+        - Protocolo que define como arquivos são transferidos na web. <br><br>
+
+        → Base da comunicação que existe em toda a Internet em que os sites e conteúdos que tragam hiperlinks possam ser encontrados. <br><br>
+
+        - Hiperlink: <br>
+        → Texto ou imagem dentro de um arquivo digital onde você clica para ter acesso a outro documento ou imagem.
+    </p>
+
+    <h4>Serviços</h4>
+    <p>
+        www: <br>
+        - Principal serviço disponibilizado pela Internet, sendo muitas vezes confundida com a própria Internet. <br>
+        → A www permite que diferentes tipos de informação sejam acessados utilizando uma interface comum. <br>
+        → Páginas web, e-mails, wikis.
+    </p>
+    <p>
+        FTP (File Transference Protocol):
+        - Permite a recuperação de arquivos armazenados em computadores remotos e o envio de arquivos.
+
+        SSH (Secure Shell):
+        - Utiliza criptografia para tornar mais segura a comunicação com outros computadores.
+
+        SFTP (Secure File Transfer Protocol):
+        - Utiliza criptografia para permitir FTP sobre um canal seguro.
+
+        VPN (Virtual Private Network):
+        - Rede de comunicação privada construída sobre uma rede de comunicação pública, como a internet.
+    </p>
+
+    <h4>Computação em Nuvem.</h4>
+    <p>
+        Definição do NST (National Institute of Standards and Technology) dos EUA. <br><br>
+        - Modelo para permitir acesso de rede onipresente (ubiquitous), conveniente e sob demanda a um conjunto compartilhado de recursos de computação configuráveis (redes, servidores, armazenamento, aplicativos e serviços) que podem ser provisionados e liberados rapidamente com o mínimo de esforço de gerenciamento ou interação com o provedor de serviços.
+    </p>
+    <p>
+        - Também chamada de 'computação por demanda'. <br>
+        - Substitui a compra e manutenção de computadores, principalmente servidores. <br>
+        - Viabilizado pelo uso gratuito ou pago de recursos de armazenamento e de processamento compartilhados
+    </p>
+    <p>
+        - Permite o uso coletivo de recursos computacionais em equipamentos sem a necessidade de possuí-los e sem que estejam geograficamente próximos. <br>
+        - Computadores com diferentes capacidades de memória e de processamento podem participar de uma nuvem.
+    </p>
+    <p>
+        Os serviços fornecidos pela nuvem podem ser separados em três categorias:
+        - Infraestrutura como serviço - infrastructure as a service (IaaS)
+        - Plataforma como serviço - Platform as a service (PaaS)
+        - Software como serviço - Software as a service (SaaS)
+    </p>
+</body>
+</html>
