@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Inequações <br>
+
+            <a href="https://www.youtube.com/watch?v=MW7A08TirRY">Vídeo 1 - Matemática - Aula 21 - Inequações produto e inequações quociente</a>
+        </h1>
+        <p>
+            Professor: Ronaldo Correia <br>
+            Professor ministrante: Claudio Possani
+        </p>
+    </header>
+
+    <h3>Inequações Produto e Inequações Quociente</h3>
+
+    <h4>Inequações Produto e Quociente</h4>
+    <pre>
+        P(x) > 0
+
+        P(x) > 0 / Q(x) > 0
+
+        Com P(x) e Q(x) polinomiais
+    </pre>
+
+    <p>Exemplo</p>
+    <pre>
+        x⁵ - 5x⁴ + 7x³ - 5x² + 6x / -x -3 <= 0
+    </pre>
+
+    <h4>Preliminares:</h4>
+    <p>
+        1) Todo polinômio P(x) pode ser fatorado como produto de polinômio de grau <= 2
+    </p>
+    <p>
+        2) Se α é a raiz de um polinômio P(x), isto é, P(α) = 0, então P(x) pode ser fatorado como: <br>
+        P(x) = (x - α)· Q(x)
+    </p>
+
+    <pre>
+        O polinômio P(x) = x⁵ - 5x⁴ + 7x³ - 5x² + 6x
+        Pode ser fatorado como
+        P(x) = x·(x² + 1)·(x² - 5x + 6)
+        
+        P(x) = x·(x² + 1)·(x - 2)(x - 3)
+
+        Cada termo da composição é chamado de "Irredutível"
+
+        Irredutíveis: x, x²+1, x-2, x-3
+    </pre>
+
+    <p>Resolver a inequação</p>
+    <pre>
+        x⁵ - 5x⁴ + 7x³ - 5x² + 6x > 0
+        x·(x² + 1)·(x - 2)(x - 3) > 0
+
+        x           -- | +
+                       0
+        x² + 1      +     +
+        x - 2           -- | +
+                           2
+        x - 3               -- | +
+                               3
+    </pre>
+    <pre>
+        | Intervalo | x   | x² + 1 | x - 2 | x - 3 |
+        |-----------|-----|--------|-------|-------|
+        | x < 0     | -   | +      | -     | -     |
+        | 0 < x < 2 | +   | +      | -     | -     |
+        | 2 < x < 3 | +   | +      | +     | -     |
+        | x > 3     | +   | +      | +     | +     |
+    </pre>
+    <pre>
+        S = {x ∈ ℝ | 0 < x < 2 ou 3 < x}
+        S = ]0,2[∪]3, ∞[
+    </pre>
+
+    <p>Resolver a inequação quociente</p>
+    <pre>
+        x⁵ - 5x⁴ + 7x³ - 5x² + 6x / x - 3 <= 0
+        
+        Condições de existência (Domínio):
+        -x -3 ≠ 0 ⇔ x ≠ -3
+        ℝ \{-3}
+    </pre>
+
+    <p>Estudo de Sinal de -x - 3:</p>    
+    <pre>
+        Intervalos  | -x - 3
+        ------------|-------
+        x < -3      | Positivo (+)
+        -3 < x      | Negativo (-)
+        x > -3      | Negativo (-)
+
+        Ao considerar o estudo de sinal do denominador −x−3 e a continuidade dos termos do numerador, observamos que a expressão original será negativa quando x>−3.
+        Contudo, devemos lembrar que x=3 é um ponto de descontinuidade devido à divisão por zero.
+
+        Portanto, a solução para a inequação é
+        x ∈ (−∞,−3)∪(3,+∞), excluindo o ponto de descontinuidade
+        x=3.
+    </pre>
+</body>
+</html>
