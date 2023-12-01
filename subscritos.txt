@@ -44,6 +44,8 @@ Símbolos matemáticos
 ℝ   números reais
 ℂ   números complexos
 β, ᵝ, ᵦ   beta
+α   alfa
+∞   Conceito matemático de um valor que é maior do que qualquer número real possível.
 √	raiz quadrada
 ∛	raiz cúbica
 ∜	radiciação (raiz quarta)
@@ -82,5 +84,6 @@ cotg cotangente
 sec	secante
 cosec co-ssecante
 ↓ ↑
+⇔   se e somente se
 ρ (rho) Função Densidade ou Distância Radial ρ pode ser usado para representar a função densidade de probabilidade
 θ (theta): Ângulo comumente usado para representar um ângulo em matemática
