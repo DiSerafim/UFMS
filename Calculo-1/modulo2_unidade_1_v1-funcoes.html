@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Intervalos Numéricos <br>
+
+            <a href="https://www.youtube.com/watch?v=ot8n4I64A38">Vídeo 1 - Cálculo I - Aula 2 - Funções 1: Noções básicas</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Funções 1: Noções básicas</h3>
+    <p>
+        É um trio composto por um conjunto de saída (domínio X), um conjunto de chegada (contra-domínio Y) e um tipo de relação entre esses conjuntos.
+        <pre>
+            f:X → Y
+            x → y = s(x)
+        </pre>
+        Cada (e todo) x em X tem um único correspondente y em Y
+    </p>
+    
+    <pre>
+        X                 Y
+        +---+            +---+
+        |   |            |   |
+        | x | ---------->| y |
+        |   |            |   |
+        +---+            +---+
+        
+        X representa o conjunto de saída.
+        Y representa o conjunto de chegada.
+        x é um elemento em X.
+        y é o correspondente de x em Y, ou seja, y=f(x).
+    </pre>
+
+    <p>
+        Exemplo: <br>
+        Uma partícula em queda livre, sem resistência tem a sua altura 'h' como uma função do tempo 't'.
+        <pre>
+            h:T → Y
+            t → y = h(t) = 3 - 5t²
+            t >= 0
+
+            (t, 3 - 5t²), t >= 0
+        </pre>
+    </p>
+
+    <p>
+        Exemplo: <br>
+        Uma elipse completa não é o gráfico de uma função. <br>
+        Um pedaço (arco) apropriado da elipse pode ser uma função. <br>
+        Tenha claro quais são os conjuntos: <br>
+        - Domínio. <br>
+        - Contra-domínio. <br>
+        - Imagem de uma função.
+
+        <pre>
+             1 |          ***
+               |        *       *
+               |      *           *
+               |     *             *
+               |    *               *
+               |    *               *
+               |     *             *
+             0 |      *           *
+               |        *       *
+               |           ***
+            -1 +-----------------------
+            -2    -1     0     1     2
+
+            Suponha a elipse com o eixo horizontal (eixo x) variando de -2 a 2 e o eixo vertical (eixo y) variando de -1 a 1. Vamos considerar o quarto superior direito da elipse.
+
+            Neste caso:
+
+            - O domínio seria o intervalo de valores ao longo do eixo horizontal (x) que cobre a seção da elipse que estamos considerando.
+            - O contra-domínio seria o intervalo de valores ao longo do eixo vertical (y).
+            - O conjunto imagem seria a seção da elipse que corresponde a todos os valores possíveis de y para os valores de x no domínio especificado.
+
+            Embora essa representação gráfica mostre uma seção da elipse, ela ainda não é o gráfico de uma função, pois para cada valor de x nessa seção, ainda existem múltiplos valores possíveis de y, o que viola a definição de função, onde cada valor de x deve estar associado a no máximo um valor de y.
+        </pre>
+    </p>
+    
+    <p>
+        Sequência como funções. <br>
+        Domínio dos Naturais (contador) <br>
+        Exemplo:
+        <pre>
+                            ┌   
+            f : N → N       |   n/2             se n é par
+                            |   
+            n → m = f(n) = <    (3n + 1) / 2    Se n é ímpar
+                            |   
+                            |   
+                            └   
+        </pre>
+        <pre>
+            ^
+            |
+           6|                             *
+           5|                         *       *
+           4|                     *               *
+           3|                 *                       *
+           2|             *                               *
+           1|         *                                       *
+            +----------------------------------------------------> n (Números Naturais)
+                1    2    3    4    5    6    7    8    9   ...    
+        </pre>
+    </p>
+</body>
+</html>
