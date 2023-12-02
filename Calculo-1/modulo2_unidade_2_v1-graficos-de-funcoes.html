@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 2 <br>
+            Unidade 2 - Intervalos Numéricos <br>
+
+            <a href="https://ava.ufms.br/course/view.php?id=51398">Vídeo 1 - Cálculo I - Aula 4 - Funções 3: Construção e definição de novas funções</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Construção e definição de novas funções</h3>
+    <p>
+        <strong>Função Módulo (valor absoluto)</strong>
+        <pre>
+                  ┌   
+                  | x  se  x >= 0
+            |x| = <    
+                  | -x  se  x < 0
+                  └   
+        </pre>
+
+        Também pode ser escrita como:
+        <pre>
+            |x| = √x²    Para todo x real
+        </pre>
+        Obs:
+        Esta forma é muito útil para facilitar cálculos envolvendo módulo.
+    </p>
+
+    <p>
+        <pre>
+            |
+            |       /|
+            |      / |
+            |     /  |   x
+            |    /   |
+            |   /    |
+            |  /     |  x
+            | /      |
+            |/_______|__________
+                    -1     0     1             
+        </pre>
+        Neste gráfico: <br>
+        <br>
+        - No eixo horizontal (x), temos os valores reais. <br>
+        - No eixo vertical, temos os valores correspondentes de ∣x∣ (o valor absoluto de x). <br>
+        - A função ∣x∣ retorna x se x for maior ou igual a zero e retorna −x se x for menor que zero. <br>
+        - Isso cria a forma de "V" que representa a função módulo, onde a linha cruza a origem (0,0) e reflete o valor negativo para o seu correspondente positivo.
+    </p>
+
+    <p>
+        Gráfico da função cosseno (cos(x)) ao longo de um ciclo é uma curva que oscila entre -1 e 1. Aqui está o gráfico do cosseno ao longo de um ciclo (0 a 2π):
+        <pre>
+               |
+             1 |              *********
+               |           ***           ***
+               |        **                   **
+             0 |      *                         *
+               |    *                             *
+               |  **                               **
+            -1 | *                                   *
+               +---------------------------------------
+               0    π/2    π     3π/2    2π
+        </pre>
+
+        Neste gráfico: <br>
+        <br>
+        - No eixo horizontal, temos os valores de x de 0 a 2π (um ciclo completo). <br>
+        - No eixo vertical, temos os valores correspondentes de cos(x), variando de -1 a 1. <br>
+        - A função cosseno oscila entre -1 e 1, formando uma curva suave, indicada pelos asteriscos (*) ao longo do gráfico.
+    </p>
+
+    <p>
+        <strong>Função Exponencial</strong> <br>
+        <pre>
+            f(x) = aˣ onde a > 0 e a ≠ 1
+            se a > 1, a função é crescente
+            se a < 1, a função é decrescente
+            Dom(f) = ℝ e Im(f) = (0, + ∞)
+        </pre>
+        O número a é chamado de base da função exponencial.
+    </p>
+    <p>
+        <strong>Função Exponencial</strong> (base f(x) = eˣ) <br>
+        A base é o Número Neperiano e = 2,71828..... <br><br>
+
+        Este número é um dos mais importantes da matemática e é a base dos Logaritmos Neperianos. <br>
+        Ele pode ser obtido, ou representado de várias maneiras. <br>
+        Ex.: <br>
+        Através do limite: <br>
+        e = limₙ→∞   (1 + 1/n)ᴺ
+        <pre>
+            |   n   |        e (aproximado)           |
+            |-------|---------------------------------|
+            |    1  |          (1 + 1/1)¹ = 2.000000  |
+            |    2  |          (1 + 1/2)² = 2.250000  |
+            |    5  |          (1 + 1/5)⁵ = 2.488320  |
+            |   10  |        (1 + 1/10)¹° = 2.593742  |
+            |   50  |        (1 + 1/50)⁵° = 2.691588  |
+            |  100  |      (1 + 1/100)¹°° = 2.704814  |
+            |  500  |      (1 + 1/500)⁵°° = 2.716924  |
+            | 1000  |    (1 + 1/1000)¹°°° = 2.717868  |
+            | 5000  |    (1 + 1/5000)⁵°°° = 2.718146  |
+            |10000  |  (1 + 1/10000)¹°°°° = 2.718268  |
+        </pre>
+        <pre>
+            |
+            |              *
+            |             *
+            |            *
+            |           *
+            |          *
+            |         *
+            |        *
+            |       *
+            |      *
+            |     *
+            |    *
+            |   *
+            |  *
+            | *
+            +-------------------
+              1   2   3   4 ...        
+        </pre>
+    </p>
+
+    <p>
+        <strong>Função Logarítmica</strong> <br>
+        Definida como função inversa da <strong>Função Exponencial</strong>
+        <pre>
+            Se y = f(x) = aˣ então x = f⁻¹(y) = logₐy
+        </pre>
+
+        Nas mesmas variáveis do sistema cartesiano da função original podemos escrever:
+        <pre>
+            y = g(x) = logₐx
+        </pre>
+
+        <pre>
+            Dom(g) = (0, + ∞) e Im(g) = ℝ
+        </pre>
+        Se a = e obtemos a função Logarítmica Neperiana e denota-se como y = ln x
+    </p>
+    <p>
+        vamos considerar a função logarítmica na base a como y=logₐx, onde a é a base do logaritmo. <br><br>
+
+        Vamos representar o gráfico da função logarítmica na base a em um sistema cartesiano:
+        <pre>
+            ^
+            |  *  
+            |    *  
+            |      *
+            |        *  
+            |         *
+            |           *
+            |             *
+            |               *
+            |                 *
+            |                   *
+            |                     *
+            |                       *
+            |                         *
+            |                           *
+            +--------------------------------->
+                0   1   2   3   4   5   6   7 ...
+        </pre>
+        Neste gráfico: <br>
+        <br>
+        - No eixo horizontal, temos valores positivos de x. <br>
+        - No eixo vertical, temos os valores correspondentes de logₐx. <br>
+        - O gráfico da função logarítmica mostra como os valores crescem de forma mais lenta à medida que x aumenta.
+    </p>
+
+    <p>
+        <strong>Funções Trigonométricas</strong> (periódicas) <br>
+        <pre>
+            y = f(x) = sen(x)
+            Dom(f) = ℝ
+            Im(f) = [-1, 1]
+                        
+            y = g(x) = cos(x)
+            Dom(g) = ℝ
+            Im(g) = [-1, 1]
+        </pre>
+    </p>
+    <p>
+        funções trigonométricas y=sin(x) e y=cos(x), que são funções periódicas.
+        <pre>
+                ^
+             1.0|                   *************
+                |               ****             ****
+                |           ****                     ****
+             0.0|        ***                             ***
+                |      **                                   **
+                |    **                                       **
+            -1.0|  **                                           **
+                +------------------------------------------------->
+                0    π/2    π      3π/2     2π    5π/2    3π ...
+        </pre>
+        Neste gráfico: <br>
+        <br>
+        - No eixo horizontal, estão os valores de x em radianos. <br>
+        - No eixo vertical, estão os valores correspondentes de y para as funções sin(x) e cos(x). <br>
+        - A função sin(x) (seno) oscila entre -1 e 1, tendo um padrão periódico. <br>
+        - A função cos(x) (cosseno) também oscila entre -1 e 1, começando a partir de x=0 com y=1, formando uma onda periódica. <br><br>
+
+        Esses gráficos representam o comportamento periódico das funções trigonométricas seno e cosseno ao longo do intervalo de 0 a 2π (um ciclo completo) em radianos.
+    </p>
+
+    <p>
+        <strong>Funções Tangente e Cotangente</strong>
+        <pre>
+            y = f(x) = tan(x)       y = f(x) = cot(x)
+            Dom(f) = ℝ - {xₙ = (2n + 1)π/2, n ∈ ℤ}
+            Im(f) = ℝ   Para ambas as funções.
+        </pre>
+    </p>
+    <p>
+        gráfico que representa as funções y=tan(x) e y=cot(x), que são funções trigonométricas.
+        <pre>
+            ^
+            | ***********       ***********
+            |           **   ***
+            |             **
+            |              *            ***********
+            |               **        **
+            |                 **    **
+            |                   ****
+            |                    * 
+            |                      *        ***********
+            |                       **    **
+            |                         ** **
+            |                           **
+            +--------------------------------------------->
+            -π/2      -π       0        π       π/2
+        </pre>
+        Neste gráfico: <br>
+        <br>
+        - No eixo horizontal, estão os valores de x em radianos. <br>
+        - No eixo vertical, estão os valores correspondentes de y para as funções y=tan(x) e y=cot(x). <br>
+        - A função y=tan(x) (tangente) tem assíntotas verticais em x=(2n+1) π/2 para n pertencente aos números inteiros (ℤ). <br>
+        - A função y=cot(x) (cotangente) tem comportamento semelhante com assíntotas verticais em x=nπ para n pertencente aos números inteiros (ℤ). <br>
+        <br>
+        Esses gráficos representam o comportamento das funções tangente e cotangente ao longo do intervalo de −π/2 a π/2 em radianos.
+    </p>
+
+    <p>
+        <strong>Funções Secante e Cossecante</strong>
+        <pre>
+            y = f(x) = sec(x)                       y = f(x) = cot(x)
+            Dom(f) = ℝ - {xₙ = 2nπ/2, n ∈ ℤ}        Dom(f) = ℝ - {xₙ = 2πn/2, n ∈ ℤ}
+            Im(f) = (-∞, 1]∪[1, ∞)                  Im(f) = (-∞, 1]∪[1, ∞)
+        </pre>
+    </p>
+
+    <p>
+        <strong>Classificação de funções</strong> <br>
+        - Injetoras, sobrejetoras, bijetoras. <br>
+        - Crescente ou decrescente. <br>
+        - Contínuas ou descontinuas (por partes) - com saltos finito ou não. <br>
+        - Limitadas ou não limitadas. <br>
+        - Diferenciável ou não. <br>
+        - Integrável ou não.
+    </p>
+</body>
+</html>
