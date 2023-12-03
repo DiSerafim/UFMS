@@ -25,7 +25,7 @@ Símbolos matemáticos
 –	menos; negativo
 ±	mais ou menos
 .	multiplicado por
-÷, :, /,    divisão
+÷ : /    divisão
 =	igual a;
 ≠	diferente de;
 < 	menor que
@@ -40,12 +40,11 @@ Símbolos matemáticos
 ℕ   números naturais
 ℤ   números inteiros
 ℚ   números racionais
-ℝ - ℚ números irracionais
+ℝ-ℚ números irracionais
 ℝ   números reais
 ℂ   números complexos
-β, ᵝ, ᵦ   beta
+β ᵝ ᵦ  beta
 α   alfa
-∞   Conceito matemático de um valor que é maior do que qualquer número real possível.
 √	raiz quadrada
 ∛	raiz cúbica
 ∜	radiciação (raiz quarta)
@@ -53,21 +52,23 @@ r	raio de um círculo
 ∞	infinito
 ∈	pertence
 ∉	não pertence
-​{ } conjunto vazio
+​{}  conjunto vazio
 ∩	interseção
 ∪	união
 ⊆	é subconjunto de
 ⊃	contém
 ⊂	está contido
 ⊄	não está contido
-∅ ou {}	conjunto vazio
+∅ {} conjunto vazio
 ⇒	implica
 φ   ouro
 loge
 log10
-x2	xis ao quadrado
-x3	xis ao cubo
-x4	xis à quarta potência
+ϵ   (epsilon) proximidade entre dois valores é 
+δ   (delta) variação ou diferença 
+x²	quadrado
+x³	cubo
+x⁴	quarta potência
 |x|	valor absoluto de xis
 π	pi = 3,14159
 °	grau
@@ -79,11 +80,11 @@ dx	diferencial
 ∑	somatória
 sen	seno
 cos	cosseno
-tg tangente
+tg  tangente
 cotg cotangente
 sec	secante
 cosec co-ssecante
 ↓ ↑
 ⇔   se e somente se
-ρ (rho) Função Densidade ou Distância Radial ρ pode ser usado para representar a função densidade de probabilidade
-θ (theta): Ângulo comumente usado para representar um ângulo em matemática
+ρ   (rho) Função Densidade ou Distância Radial ρ pode ser usado para representar a função densidade de probabilidade
+θ   (theta): Ângulo comumente usado para representar um ângulo em matemática

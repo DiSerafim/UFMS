@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Definição de limite <br>
+
+            <a href="https://www.youtube.com/watch?v=o94j-PVi9gA">Vídeo 1 - Cálculo I - Aula 5 - Limites de funções: Conceito</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Limites de funções: Conceito Intuitivo</h3>
+    <p>
+        Dada uma função 
+        <pre>f:A ⊆ ℝ ⇒ ℝ</pre>
+        e um ponto <pre>x₀ ∈ A</pre>
+        queremos saber o <strong>Comportamento</strong> da função <pre>f(x)</pre>
+        quando <pre>x</pre>
+        se aproxima do ponto <pre>x₀</pre>
+        Dizemos que estamos interessados no <strong>Limite</strong> da função <pre>f(x)</pre>
+        quando <pre>x</pre>
+        <strong>Tende</strong> para <pre>f(x)</pre>
+        Formalmente se escreve isto como 
+        <pre>
+            lim f(x) = ?
+            x ⇒ x₀
+        </pre>
+        <pre>
+                ^
+                |   
+            4 --•-- Traço de f(x) = x²
+                |             |
+                |             |     
+                +-------------+----> x
+                |
+                | Traço de aproximação de x para x_0 = 2
+                |
+                ^
+                |
+            4 --•-- Ponto (2, 4) = f(2)
+                |             
+                |           
+                +--------> f(x)        
+        </pre>
+    </p>
+
+    <p>
+        lim f(x) = +∞ <br>
+        x ⇒ 0+
+        <pre>
+              ^
+              |
+            + |  Traço de f(x) tendendo a infinito positivo
+              |
+              +-----------------> x
+              |
+              | Aproximação de x para 0+ 
+              |
+              ^
+              |
+            ∞ |  Limite de f(x) indo para o infinito positivo
+              |
+              +-------------> f(x)     
+        </pre>
+    </p>
+
+    <p>
+        lim f(x) = -∞ <br>
+        x ⇒ 0-
+
+        <pre>
+             ^
+             |
+           - |  Traço de f(x) tendendo a -∞
+             |
+             +-----------------> x
+             |
+             | Aproximação de x para 0-
+             |
+             ^
+             |
+           -∞|  Limite de f(x) indo para -∞
+             |
+             +-------------> f(x)
+        </pre>
+    </p>
+
+    <p>
+        lim f(x) = 0 <br>
+        x ⇒ +∞
+
+        <pre>
+              ^
+              |
+            0 |  Traço de f(x) tendendo a 0
+              |
+              +-----------------> x
+              |
+              | Aproximação de x para +∞
+              |
+              ^
+              |
+            0 |  Limite de f(x) indo para 0
+              |
+              +-------------> f(x)
+        </pre>
+    </p>
+
+    <p>
+        lim f(x) = 0 <br>
+        x ⇒ -∞
+
+        <pre>
+              ^
+              |
+            0 |  Traço de f(x) tendendo a 0
+              |
+              +-----------------> x
+              |
+              | Aproximação de x para -∞
+              |
+              ^
+              |
+            0 |  Limite de f(x) indo para 0
+              |
+              +-------------> f(x)
+        </pre>
+    </p>
+    
+    <p>
+        Neste caso, o ponto limite x₀ = 0 ∉ Dom(f)        
+    </p>
+
+    <p>
+        <strong>Limites Laterais Finitos e Diferentes: Salto finito</strong>
+        <pre>
+            f(x) = { x², se x <= 1 e 6 - x, se x > 1 }
+        </pre>
+        
+        O ponto de interesse é x₀ = 1
+
+        <pre>
+            lim f(x) = 1
+            x ⇒ 1-
+        </pre>
+        <pre>
+            lim f(x) = 5
+            x ⇒ 1+
+        </pre>
+        <pre>
+            f(1) = 1
+
+                      f(x)
+                      |
+                6 - x |            /
+                      |          /
+                      |        /
+                      |      /
+                      |    / 
+                      |  /  
+                x²    |/
+            ----------+---------- x
+                      |1
+        </pre>
+    </p>
+
+    <p>
+        <strong>Vizinhança(V) aberta de um ponto</strong>
+        <pre>x₀ ∈ ℝ</pre>
+
+        e denota-se <pre>V(x₀)</pre>
+        é qualquer intervalo aberto de <pre>ℝ</pre>
+        que contem <pre>x₀</pre>
+
+        Exemplo 1: <br>
+        Os intervalos <pre>(1.9999, 2.0001), (-1.9, 207.4), (√2, 5)</pre>
+        
+        São todos vizinhanças abertas de <pre>x₀ = 1</pre>
+
+        Exemplo 2: <br>
+        Dado um ponto <pre>a ∈ ℝ</pre>
+        e um número <pre>ϵ > 0</pre>
+        (em geral pequeno), o intervalo <pre>(a - ϵ, a + ϵ)</pre>
+        é uma vizinhança aberta de <pre>a</pre>
+        <pre>
+                    |       a - ϵ       a       a + ϵ
+                    |         |           |         |
+                    |         |           |         |
+                    |         |           |         |
+                    |         |           |         |
+                    |         |           |         |
+                    |         |           |         |
+                    |         |           |         |
+            --------+---------+-----------+---------+------ x
+                    |                                         
+        </pre>
+    </p>
+    <p>
+        <strong>Definição FORMAL de Limite (Topológica)</strong>. <br>
+        Seja <pre>f: A ⊆ ℝ ⇒ ℝ</pre>
+        e um ponto <pre>x₀ ∈ A</pre>
+        <pre>
+            lim f(x) = L
+            x ⇒ x₀
+        </pre>
+        se, dada uma vizinhança <pre>V(L)</pre>
+        existe uma vizinhança <pre>U(x₀)</pre>
+        tal que <pre>f(U(x₀)) ⊆ U(L)</pre>
+        isto é: <pre>x ∈ U(x₀) ⇒ f(x) ∈ V(L)</pre>
+
+        A definição é mais intuitiva mas não é fácil para fazer contas.
+        <pre>
+                        V(L)
+                        |
+                        |
+                        |
+                        |    
+                        |   
+                        |  
+            f(x)        |   
+                        |   
+                        |   
+            ------------+----------------- x
+                        | U(x₀)
+                        |
+        </pre>
+    </p>
+
+    <p>
+        <strong>Definição de limite com</strong> <pre>ϵ e δ</pre>
+        <pre>
+            lim f(x) = L
+            x ⇒ x₀
+        </pre>
+        se, dado <pre>ϵ > 0</pre>
+        existe <pre>δ > 0</pre>
+        tal que se
+        <pre>
+            |x - x₀| < δ } x ∈ U(x₀)
+        </pre>
+        então
+        <pre>
+            |f(x) - L| < ∈ } f(x) ∈V (L)
+        </pre>
+        Desta maneira temos aqui <pre>U(x₀) = (x₀ - δ, x₀ + δ)</pre>
+        <pre>V(L) = (L - ϵ, L + ϵ)</pre>
+        e <pre>f(U(x₀)) ⊆ U(L)</pre>
+        <pre>
+                        |         L + ϵ
+                        |        /
+                        |       /
+                        |      /    
+                        |     /  
+                        |    / 
+            f(x)        |   /
+                        |  /  
+                        | /  
+                        |/
+            ------------+----------------- x
+                        | x₀ - δ       x₀       x₀ + δ
+                        |
+        </pre>
+    </p>
+    <p>
+        <strong>Exemplo 1:</strong>
+        <pre>
+            lim x² = 0
+            x ⇒ 0
+        </pre>
+        Seja <pre>ϵ > 0</pre>
+        Precisamos provar que existe <pre>δ > 0</pre>
+        tal que <pre>|x - 0| < δ ⇒ |x² - 0| < ϵ</pre>
+        <pre>|x²| < ϵ ⇒ |x| < √ϵ = δ</pre>
+        Por exemplo, para <pre>ϵ = 0,01</pre>
+        basta tomarmos <pre>δ <= √0,01 = 0,1</pre>
+        e temos <pre>x ∈ (-0.1, +0.1) ⇒ f(x) = x² ∈(-0.01, +0.01)</pre>
+        <pre>
+                |       f(x) = x² < ϵ = 0.01
+                |        |
+                |        |
+                |        |      
+                |        |     
+                |        |   
+                |        |   
+                |        |   
+            ----+--------+------ x
+                |        |
+                |   δ = √ϵ = 0.1        
+        </pre>
+    </p>
+    <p>
+        <strong>Exemplo 2:</strong>
+        <pre>
+            lim x² = 2
+            x ⇒ 2
+        </pre>
+        Seja <pre>ϵ > 0</pre>
+        Precisamos provar que existe <pre>δ > 0</pre>
+        tal que <pre>|x - 2| < δ ⇒ |x² - 4| < ϵᴹ</pre>
+        <pre>|x² - 4| = |x - 2||x + 2|</pre>
+        Podemos supor <pre>δ < 1</pre>
+        e obtemos <pre>|x + 2| = |(x - 2) + 4| <= |x - 2| + 4 < 5</pre>
+        Basta então tomarmos <pre>δ = min{1, ϵ/5}</pre>
+        e temos <pre>|x - 2| < δ ⇒ |x² - 4| < ϵ</pre>
+        Por exemplo, para <pre>ϵ = 0.005</pre>
+        podemos tomar <pre>δ = 0.005/5 = 0.001</pre>
+        e obtemos que <pre>x ∈ (1.9999, 2.0001) ⇒ f(x) = x² ∈ (3.995, 4.005)</pre>
+
+        <pre>
+                |    f(x) = x² - 4 < ϵ_M = 0.005
+                |         |
+                |         |
+                |         |      
+                |         |     
+                |         |   
+                |         |   
+                |         |   
+            ----+---------+------ x
+                |         |
+                |  δ = min{1, ϵ/5} = 0.001        
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites laterais</strong> <br>
+        Limite Lateral à direita: <pre>x > x₀</pre>
+        <pre>
+            lim f(x) = L
+            x ⇒ x⁺₀
+        </pre>
+        se <pre>x - x₀ < δ ⇒ |f(x) - L| < ϵ</pre>
+        Limite Lateral à esquerda: <pre>x < x₀</pre>
+        <pre>
+            lim f(x) = L
+            x ⇒ x⁻₀
+        </pre>
+        se <pre>x₀ - x < δ ⇒ |f(x) - L| < ϵ</pre>
+    </p>
+</body>
+</html>
