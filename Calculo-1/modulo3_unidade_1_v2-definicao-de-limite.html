@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Definição de limite <br>
+
+            <a href="https://www.youtube.com/watch?v=K-2FrRIkbss">Vídeo 2 - Cálculo I - Aula 11 - Continuidade 2: Teoremas Básicos</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Teoremas Básicos</h3>
+
+    <p>
+        <strong>Teorema do Valor Intermediário</strong> <br>
+        No experimento do vazamento lateral do líquido.
+        O recipiente estava cheio e ficou vazio;
+        Entre o início e o final, havia uma quantidade intermediária de liquido no recipiente.
+        <pre>
+            _____________
+            |           |
+            |           |
+            |    ___    |
+            |   |   |   |
+            |___|___|___|          
+        </pre>
+
+        Porque o volume de líquido, nesse contexto, é uma função contínua do tempo.
+    </p>
+
+    <p>
+        <strong>Teorema do Valor Intermediário I</strong> <br>
+
+        Considere uma função contínua <pre>f : [a, b] ⇒ ℝ</pre>
+        em que o domínio <pre>[a, b]</pre>
+        é um intervalo fechado dos reais com <pre>f(a) < f(b)</pre>
+        Então, dado um número qualquer <pre>u ∈ (f(a)·f(b))</pre>
+        existe um ponto <pre>c ∈ (a, b)</pre>
+        tal que <pre>u = f(c)</pre>
+    </p>
+    <p>
+        Observações: <br>
+        - No intervalo fechado <pre>[a, b] ⊂ ℝ</pre>
+        assumimos que <pre>a < b</pre>
+        - Se <pre>f(a) = f(b)</pre>
+        o teorema não se aplica.
+        - Como <pre>f(a) e f(b) ∈ ℝ e f(a) ≠ f(b)</pre>
+        então um vai ser menor do que o outro. <br><br>
+        
+        Escolhemos, sem perda de generalidade, <pre>f(a) < f(b)</pre>
+    </p>
+
+    <p>
+        <strong>Teorema do Valor Intermediário II</strong> <br>
+
+        Considere uma função contínua <pre>f : [a, b] ⇒ ℝ</pre>
+        em que o domínio <pre>[a, b]</pre>
+        é um intervalo fechado com <pre>f(a) < f(b)</pre>
+        Então, dado um número qualquer <pre>u tal que f(a) <= u <= f(b)</pre>
+        existe um ponto <pre>c em que a < c < b tal que u = f(c)</pre>
+        tal que <pre>u = f(c)</pre>
+    </p>
+    <p>
+        <strong>Demonstração</strong>. <pre>f(a) < u < f(b)</pre>
+        Seja <pre>S = {x ∈ [a, b] | f(x) <= u}</pre>
+        É claro que <pre>a ∈ S e S é ...</pre>
+        limitado por <pre>b</pre>
+        Então <pre>S ≠ ∅</pre>
+        é um conjunto não vazio de números reais com um limite superior e como tal, existe o extremo superior desses números, digamos <pre>c = sup S</pre>
+        isto é, <pre>c</pre>
+        é o menor número que ainda o mantém maior do que todos os demais de <pre>S</pre>
+    </p>
+
+    <p>
+        <strong>Teorema do Valor Intermediário III</strong> <br>
+
+        Considere uma função contínua <pre>f : [a, b] ⇒ ℝ</pre>
+        em que o domínio <pre>[a, b]</pre>
+        é um intervalo fechado com <pre>f(a) < f(b)</pre>
+        Então, dado um número qualquer <pre>u tal que f(a) <= u <= f(b)</pre>
+        existe um ponto <pre>c em que a < c < b tal que u = f(c)</pre>
+    </p>
+    <p>
+        <strong>Demonstração</strong>. <pre>f(a) < u < f(b);</pre>
+        <pre>S = {x ∈ [a, b]|f(x) <= u};</pre>
+        <pre>c = sup S</pre>
+        Vamos provar que <pre>f(c) = u</pre>
+        Como <pre>f</pre>
+        é contínua <pre>∀ϵ > 0 |f(x) - f(c)| < ϵ então ∃δ > 0</pre>
+        em que <pre>|x - c| < δ</pre>
+        Assim <pre>∃x ∈ S com x ∈ (c - δ, c) |</pre>
+        <pre>f(c) < f(x) + ϵ <= u + ϵ</pre>
+        pela construção de <pre>S</pre>
+        Mas <pre>x ∈ (c, c + δ) ⇒ x ∉ S e f(c) > f(x) - ϵ > u - ϵ</pre>
+        Isto é: <pre>u - ϵ < f(c) < u + ϵ  ∀ϵ > 0 ⇒ f(c) = u</pre>
+    </p>
+
+    <p>
+        <strong>Teorema do Ponto Fixo</strong> <br>
+        Se a função é sobrejetora então vai existir um ponto fixo <pre>f(x) x</pre>
+        Em outras palavras: <br>
+        Se <pre>f : [a, b] ⇒ [a, b]</pre>
+        é contínua então existe <pre>c ∈ [a, b] | f(c) = c</pre>
+
+        <strong>Exemplo</strong>
+        <pre>f : ℝ₊ ⇒ ℝ₊ com x ⇒  f(x) = 1 + 1/x</pre>
+        Alias, o ponto fixo nesse caso é único e pode ser encontrado a partir da equação <pre>f(x) = x</pre>:
+
+        <pre>
+            x = 1 + 1/x, x > 0
+            x² - x - 1 = 0
+            x = (1 + √5)/2
+        </pre>
+
+        que é o número de ouro.
+    </p>
+
+    <p>
+        <strong>Teorema do Máximo e Mínimo I</strong> <br>
+        Se <pre>f : [a, b] ⇒ ℝ</pre>
+        é contínua, então existe um ponto de máximo:
+        <pre>c ∈ [a, b] tal que f(x) <= f(c)</pre>
+        e existe um ponto de mínimo:
+        <pre>d ∈ [a, b] tal que f(d) <= f(x), ∀x ∈ [a, b]</pre>
+    </p>
+    <p>
+        <strong>Observação</strong>: <br>
+        - O domínio de <pre>f</pre> é um intervalo fechado em <pre>ℝ</pre>
+        - Existe pelo menos um ponto de cada estremo.
+        <pre>f(d) <= f(x) <= f(c), ∀x ∈ [a, b]</pre>
+    </p>
+
+    <p>
+        <strong>Teorema do Máximo e Mínimo II</strong> <br>
+        Se <pre>f : [a, b] ⇒ ℝ</pre>
+        é contínua, então existe um ponto de máximo:
+        <pre>c ∈ [a, b]</pre>
+        e existe um ponto de mínimo:
+        <pre>d ∈ [a, b] tais que f(d) <= f(x) <= f(c), ∀x ∈ [a, b]</pre>
+    </p>
+    <p>
+        <strong>Observação</strong>: <br>
+        - Esses pontos extremos (mínimo ou máximo) são os absolutos ou globais. <br>
+        - Algumas funções descontínuas podem ter esses extremos. <br>
+        - O teorema não diz como encontrar esses extremos em geral. <br>
+        - O modo gráfico é poderoso, mas pode enganar.
+    </p>
+</body>
+</html>

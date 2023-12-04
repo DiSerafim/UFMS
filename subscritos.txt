@@ -52,14 +52,14 @@ r	raio de um círculo
 ∞	infinito
 ∈	pertence
 ∉	não pertence
-​{}  conjunto vazio
 ∩	interseção
 ∪	união
 ⊆	é subconjunto de
 ⊃	contém
 ⊂	está contido
 ⊄	não está contido
-∅ {} conjunto vazio
+​{}  conjunto vazio
+∅   conjunto vazio
 ⇒	implica
 φ   ouro
 loge
@@ -70,6 +70,8 @@ x²	quadrado
 x³	cubo
 x⁴	quarta potência
 |x|	valor absoluto de xis
+∀   para todo
+∃   existencial
 π	pi = 3,14159
 °	grau
 ’	minuto
