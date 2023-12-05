@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - LimitesURL <br>
+
+            <a href="https://www.youtube.com/watch?v=wDltsMh8CCw">Vídeo 1 - Cálculo I - Aula 6 - Cálculo de Limites</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Cálculo de Limites</h3>
+
+    <p>
+        <strong>Limites Infinitos</strong>
+        <pre>
+            lim f(x) = +∞
+            x ⇒ x⁺₀
+        </pre>
+        <pre>
+            lim f(x) = -∞
+            x ⇒ x⁺₀
+        </pre>
+        <pre>
+            lim f(x) = +∞
+            x ⇒ x⁻₀
+        </pre>
+        <pre>
+            lim f(x) = -∞
+            x ⇒ x⁻₀
+        </pre>
+
+        A reta <pre>x = x₀</pre> é assíntota
+    </p>
+
+    <p>
+        <strong>Limites no Infinito</strong>
+        <pre>
+            lim f(x) = L
+            x ⇒ ±∞
+        </pre>
+        <pre>
+            lim f(x) = ±∞
+            x ⇒ ±∞
+        </pre>
+
+        A reta <pre>y = L</pre> é assíntota horizontal
+    </p>
+
+    <p>
+        <strong>Limites Infinitos e Limites Infinitos</strong> <br>
+        Exemplo 1
+        <pre>f(x) = 1/x</pre>
+
+        <pre>
+            lim 1/x = +∞
+            x ⇒ 0⁺ x
+        </pre>
+        <pre>
+            lim 1/x = -∞
+            x ⇒ 0⁻ x
+        </pre>
+        <pre>
+            lim 1/x = 0
+            x ⇒ ±∞ x
+        </pre>
+
+        <pre>x = 0</pre> é assíntota e <pre>y = 0</pre> é assíntota horizontal
+
+        <pre>
+                |           +       -       0       +       -
+                |           ∞       ∞       0       0       -∞
+            ----±----------|-------|-------|-------|-------|----
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |           |       |       |       |       |
+                |___________|_______|_______|_______|_______|
+                                0    -∞      0⁻       0⁺      0        
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites Infinitos e Limites Infinitos</strong> <br>
+        Exemplo 2: <br>
+        Se <pre>0 < a < 1</pre>
+        <pre>
+            lim logₐ x = +∞
+            x ⇒ 0⁺
+        </pre>
+
+        Se <pre>a > 1</pre>
+        <pre>
+            lim logₐ x = -∞
+            x ⇒ 0⁺
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites Importantes (básicos)</strong>
+        <pre>
+            lim 1/x = +∞      e     lim 1/x = 0
+            x ⇒ 0⁺⁻ x               x ⇒ ±∞
+        </pre>
+
+        <pre>
+            lim c = c   para c = constante
+            x ⇒ a
+        </pre>
+
+        <pre>
+            lim xᴺ = aᴺ, n ∈ ℕ
+            x ⇒ a
+        </pre>
+
+        <pre>
+            lim aˣ = 0    e    lim a⁻ˣ = 0   para a > 1
+            x ⇒ -∞             x ⇒ +∞
+        </pre>
+
+        <pre>
+            lim logₐ x = -∞, se a > 1
+            x ⇒ 0⁺
+        </pre>
+    </p>
+
+    <p>
+        <strong>Propriedade Básicas de Limites</strong>
+        <pre>
+            lim[f(x) ± g(x)] = lim f(x) ± lim g(x)
+            x ⇒ a              x ⇒ a      x ⇒ a
+        </pre>
+
+        <pre>
+            lim[f(x)·g(x)] = lim f(x)·lim g(x)
+            x ⇒ a            x ⇒ a    x ⇒ a
+        </pre>
+
+        <pre>
+            lim f(x)/g(x)] = lim f(x)/lim g(x)    desde que lim g(x) ≠ 0
+            x ⇒ a            x ⇒ a    x ⇒ a       x ⇒ a
+        </pre>
+
+        se
+        <pre>
+            lim f(x) = ±∞   então   lim 1/f(x) = 0
+            x ⇒ a                   x ⇒ a
+        </pre>
+    </p>
+
+    <p>
+        <strong>Exemplos</strong>
+
+        <pre>
+            lim(3x² + 1) / (x³ + 4) = lim (3x² + 1) / lim(x³ + 4) = 4/5
+            x ⇒ 1                     x ⇒ 1           x ⇒ 1
+        </pre>
+
+        <pre>
+            lim P(x)/P(a)       para qualquer polinômio     P(x)
+            x ⇒ a
+        </pre>
+
+        <pre>
+            lim P(x) / Q(x) = lim P(x) / lim Q(x) = P(a)/Q(a), se Q(a) ≠ 0
+            x ⇒ a             x ⇒ a      x ⇒ a
+        </pre>
+    </p>
+
+    <p>
+        <strong>Formas Indeterminadas</strong> <br>
+        Muitos limites interessantes caem nos seguintes casos que são indeterminados à primeira vista. <br>
+        Ex.:
+        <pre>
+            lim x²-1/x²+1 = lim x²-1/x²+1 = +∞/+∞
+            x ⇒ +∞          x ⇒ +∞
+        </pre>
+
+        Outras formas indeterminadas
+        <pre>
+            0/0, ∞/∞, ∞-∞, 0°, 1^∞, ∞° e 0.∞ e ∞.0
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites no Infinito de Funções Racionais</strong> <br>
+        Exemplos:
+
+        <pre>
+            lim x²-1/x²+1 = lim (1 - 1/x²) / lim (1 + 1/x²) = 1/1 = 1
+            x ⇒ +∞          x ⇒ +∞           x ⇒ +∞
+        </pre>
+
+        <pre>
+            lim x-1/x²+1 = lim (1/x - 1/x²) / lim (1 + 1/x²) = 0
+            x ⇒ -∞         x ⇒ -∞             x ⇒ -∞
+        </pre>
+
+        <pre>
+            lim (x³ - 1)/(x² + 1) = lim (x - 1/x²) / lim (1 + 1/x²) = -∞
+            x ⇒ -∞                  x ⇒ -∞           x ⇒ -∞
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites no Infinito de Funções Racionais (Geral)</strong> <br>
+        Dados dois polinômios <pre>P(x) e Q(x)</pre>
+
+        <pre>
+            grau(P) < grau(Q) ⇒ lim P(x)/Q(x) = 0
+                                x ⇒ ±∞ 
+        </pre>
+
+        <pre>
+            grau(P) > grau(Q) ⇒ lim P(x)/Q(x) = ±∞
+                                x ⇒ ±∞ 
+            Obs: Neste caso o sinal deve ser observado cuidadosamente.
+        </pre>
+    </p>
+</body>
+</html>
