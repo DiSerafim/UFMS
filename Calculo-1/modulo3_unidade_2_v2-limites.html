@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - LimitesURL <br>
+
+            <a href="https://www.youtube.com/watch?v=MRdxIZYykJk">Vídeo 2 - Cálculo I - Aula 7 - Cálculo de Limites 2</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Cálculo de Limites</h3>
+
+    <p>
+        <strong>Teorema do Confronto (Sanduíche)</strong>
+        Se: <pre>f(x) <= g(x) <= h(x)</pre> em um intervalo aberto:
+        <pre>I ∈ ℝ</pre> e: <pre>x₀ ∈ I</pre>
+        e se:
+        <pre>
+            lim f(x) = lim h(x) = L
+            x ⇒ x₀     x ⇒ x₀
+        </pre>
+        então também:
+        <pre>
+            lim g(x) = L
+            x ⇒ x₀
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limites Fundamental</strong>
+        <pre>
+            lim (sin x)/x = 1   → A prova usa o Teorema do Confronto
+            x ⇒ 0
+        </pre>
+
+        Do circulo trigonométrico podemos ver que:
+        <pre>sin x < x < tan x</pre>
+
+        e dividido por <pre>sin x</pre> temos:
+        <pre>
+            1 < (x/sin x) < 1/(cos x)
+        </pre>
+
+        Como:
+        <pre>
+            lim (1/cons x) = 1
+            x ⇒ 0
+        </pre>
+
+        Temos:
+        <pre>
+            lim (x/sin x) = 1
+        </pre>
+
+        e daí
+        <pre>
+            lim (sin x/ x) = 1
+            x ⇒ 0
+        </pre>
+    </p>
+
+    <p>
+        <strong>O teorema do confronto com limites no infinito</strong> <br>
+        Exemplo 1:
+        <pre>
+            lim (sin x)/x = 0
+            x ⇒ +∞
+        </pre>
+
+        Basta observar que: <pre>0 < |(sin x)/x| = (|sin x|)/|x| < 1/|x|</pre>
+
+        Como:
+        <pre>
+            lim  1/|x| = 0      lim  |sin x/x| = 0
+            x ⇒ +∞              x ⇒ +∞
+        </pre>
+
+        e daí:
+        <pre>
+            lim  sin x/x = 0
+            x ⇒ +∞
+        </pre>
+
+        Pois a Função  Módulo é contínua!
+    </p>
+
+    <p>
+        <strong>Multiplicação de termo conveniente</strong> <br>
+        
+        <pre>
+            lim (cos x -1)/x = 0    Indeterminação do tipo 0/0
+            x ⇒ 0
+        </pre>
+
+        Multiplicamos o numerador e denominador por <pre>(cos x + 1)</pre>
+
+        Com um pouco de algebra trigonométrica obtemos:
+        <pre>
+            lim (cos x -1)/x = lim ((sin x)/x) · lim (-sin x -1)/(cos x +1) = 1·0 = 0
+            x ⇒ 0              x ⇒ 0             x ⇒ 0
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limite para Funções Limitadas</strong> <br>
+        Dadas <pre>f(x) e g(x)</pre>
+
+        Definidas em um intervalo: <pre>I ⊆ ℝ</pre>
+
+        Se:
+        <pre>
+            lim f(x) = 0  e  |g(x)| < M
+            x ⇒ a
+        </pre>
+
+        então:
+        <pre>
+            lim [f(x)·g(x)] = 0
+            x ⇒ a
+        </pre>
+
+        pois: <pre>0 < |f(x)·g(x)| = |f(x)||g(x)| < |f(x)| M</pre>
+
+        e:
+        <pre>
+            lim |f(x)] = 0
+            x ⇒ a
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limite com Funções Contínuas</strong> <br>
+        Sejam: <pre>f : I ⊆ ℝ e a ∈ I</pre>
+
+        A função <pre>f</pre> é contínua no ponto <pre>a</pre>
+
+        se:
+        <pre>
+            lim f(x) = lim f(x) = f(a)
+            x ⇒ a⁺     x ⇒ a⁻
+        </pre>
+
+        ou seja:
+        <pre>
+            lim f(x) = L = f(a)
+            x ⇒ a
+        </pre>
+    </p>
+
+    <p>
+        <strong>Quais funções são contínuas e em quais pontos?</strong> <br>
+
+        1. Todas as funções polinomiais em ℝ
+        2. Todas as funções trigonométricas e suas inversas em seu domínio de definição.
+        3. Todas as funções potências em ℝ
+        4. Todos os logaritmos em qualquer base em (0,∞)
+        5. Outras: módulo, raízes e-nesimas no seu domínio, etc.
+    </p>
+
+    <p>
+        <strong>Limite com Funções Contínuas: Teorema</strong>
+        Se:
+        <pre>
+            lim f(x) = L e g(x) é contínua L
+            x ⇒ a
+        </pre>
+
+        então:
+        <pre>
+            lim(g o f)(x) = lim g(f(x)) = g(lim f(x)) = g(L)
+            x ⇒ a           x ⇒ a           x ⇒ a
+        </pre>
+
+        O Teorema vale para Limites no infinito, ou seja se:
+        <pre>
+            lim f(x) = L
+            x ⇒ ∞
+        </pre>
+
+        então
+        <pre>
+            lim(g o f)(x) = lim g(f(x)) = g(lim f(x)) = g(L)
+            x ⇒ ∞           x ⇒ ∞           x ⇒ ∞
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limite com Funções Contínuas: Teorema</strong>
+        Se:
+        <pre>
+            lim f(x) = L e g(x) é contínua L
+            x ⇒ a
+        </pre>
+
+        então:
+        <pre>
+            lim(g o f)(x) = lim g(f(x)) = g(lim f(x)) = g(L)
+            x ⇒ a           x ⇒ a           x ⇒ a
+        </pre>
+
+        O Teorema vale para Limites no infinito, ou seja se:
+        <pre>
+            lim f(x) = L
+            x ⇒ ∞
+        </pre>
+
+        então
+        <pre>
+            lim(g o f)(x) = lim g(f(x)) = g(lim f(x)) = g(L)
+            x ⇒ ∞           x ⇒ ∞           x ⇒ ∞
+        </pre>
+    </p>
+
+    <p>
+        <strong>Limite com Funções Contínuas: Exemplos</strong>
+        1.
+        <pre>
+            lim |f(x)| = |lim f(x)|
+            x ⇒ a         x ⇒ a
+            
+            lim ln(√x² + 1) = ln (lim √x² + 1)
+            x ⇒ 0                 x ⇒ 0
+            
+            mas
+
+            lim √x² + 1 = √lim(x² + 1) = √1 = 1
+            x ⇒ 0          x ⇒ 0
+
+            E daí nós temos que
+            
+            lim ln(√x² + 1) = 1
+            x ⇒ 0
+        </pre>
+    </p>
+</body>
+</html>
