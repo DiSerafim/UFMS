@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Limites <br>
+
+            <a href="https://www.youtube.com/watch?v=NkMxKPjuKxU">Vídeo 3 - Disciplina Cálculo Diferencial e Integral I - Resolução de exercício continuidade</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Resolução de exercício</h3>
+
+    <p>
+        Sendo a e b constantes, o valor de a + b de modo que a função f definida por:
+
+        <pre>
+                   ╭
+                   │ sen(3x)/x + b  se x < 0
+            f(x) = { 5a             se x = 0
+                   │ (x + 2)³ - 3   se x > 0
+                   ╰            
+        </pre>
+
+        seja contínua em x=0, é igual a: <br>
+
+        Solução:
+        <pre>            
+            lim f(x) = f(0)
+            x ⇒ 0
+            
+            lim f(x) = lim [sen(3x)/x + b] = lim sen(3x)/x + lim b = 3 + b
+            x ⇒ 0⁻     x ⇒ 0⁻                x ⇒ 0⁻         x ⇒ 0⁻
+
+            <strong>Quanto x tende a 0 pela esquerda o seu limite é 3 + b</strong>
+        </pre>
+
+        <pre>            
+            lim f(x) = f(0)
+            x ⇒ 0
+            
+            lim f(x) = lim [(x + 2)³ -3] = 8 - 3 = 5
+            x ⇒ 0⁺     x ⇒ 0⁺
+
+            <strong>Quanto x tende a 0 pela direita o seu limite é 5</strong>
+        </pre>
+
+        <pre>            
+            lim f(x) = lim f(x) ⇒ 3 + b = 5 ⇒ b = 2
+            x ⇒ 0⁻     x ⇒ 0⁺
+
+            <strong>b = 2</strong>
+        </pre>
+
+        <pre>
+            lim f(x) = f(0) = 5a ⇒ a = 1
+            x ⇒ 0
+
+            <strong>a + b = 1 + 2 = 3</strong>
+        </pre>
+    </p>
+</body>
+</html>
