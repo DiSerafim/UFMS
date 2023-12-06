@@ -30,6 +30,8 @@ Símbolos matemáticos
 ≠	diferente de;
 < 	menor que
 > 	maior que
+v
+^
 ≤ 	menor ou igual
 ≥ 	maior ou igual
 ≅	aproximadamente igual
