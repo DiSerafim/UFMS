@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Definição de derivada e Teoremas de Derivação <br>
+
+            <a href="https://www.youtube.com/watch?v=S0i-tNQsJjQ">Vídeo 1 - Disciplina Cálculo Diferencial e Integral I - Regras de derivação Parte 01</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Regras de derivação</h3>
+
+    <p>
+        <strong>Regra da Derivada da Soma</strong>
+        <pre>
+            1.  (f ± g)' = f' ± g'
+
+            Ob. g → -g
+                (f + (-g)²) = f' + (-g)' = f' - g'
+                (kf)' = k·f'; k = -1
+        </pre>
+    </p>
+
+    <p>
+        <strong>Regra da Derivada do Produto</strong>
+        <pre>
+            2. (f·g)' = f'·g + f·g'
+        </pre>
+    </p>
+
+    <p>
+        <strong>Regra da Derivada do Quociente</strong>
+        <pre>
+            3. (f/g)' = (f'·g - f·g')/g²
+        </pre>
+    </p>
+
+    <p>
+        <strong>Regra da Derivada de Potência</strong>
+        <pre>
+            4. (xᴺ)' = n·xᴺ⁻¹
+        </pre>
+    </p>
+
+    <p>
+        <strong>Regra da Derivada do Seno</strong>
+        <pre>
+            5. (sen x)' = cos x
+        </pre>
+    </p>
+
+    <p>
+        <strong>Determine a derivada da função</strong>
+        <pre>f(x) = (x³ sen x)/x⁵ - x</pre>
+
+        Solução:
+        <pre>
+            f'(x) = ((x³ sen x)'·(x⁵ - x) - (x³ sen x)·(x⁵ - x)')/(x⁵ - x)²
+            = ([(x³)'sen x + x³(sen x)']·(x⁵ - x)-(x³ sen x)·(5x⁴ - 1))/(x⁵ - x)²
+            = [(3x²)sen x + x³(cos x)]·(x⁵ - x)-(x³ sen x)·(5x⁴ - 1)/(x⁵ - x)²
+            Simplifica:
+            = ([3 sen x + x cos x]·(x⁵ - x) - x sen x(5x⁴ - 1))/(x⁴ - 1)²
+        </pre>
+    </p>
+</body>
+</html>
