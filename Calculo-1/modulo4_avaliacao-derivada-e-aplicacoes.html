@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Módulo 4</title>
+</head>
+<body>
+    <header>
+        <h1>
+            ❌ ✅ [A4] – Avaliação do Módulo 4 - Derivada e aplicações<br>
+        </h1>
+        <p>
+            Iniciado em	sábado, 9 dez 2023, 16:53 <br>
+            Estado	Finalizada <br>
+            Concluída em	sábado, 9 dez 2023, 19:02 <br>
+            Tempo empregado	2 horas 9 minutos <br>
+            Avaliar	8,00 de um máximo de 10,00(80%)
+        </p>
+    </header>
+
+    <!-- Perguntas e respostas -->
+    <h1>Questão 1</h1>
+    <h3>
+        Considere a função f(x) = x³ - 6x² + 4x - 10 dizemos que f é côncava para baixo no intervalo −∞, 2 e côncava para cima no intervalo 2, +∞, isto é verdadeiro ou falso?
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        <strong>Primeira derivada</strong>
+        <pre>
+            f(x) = x³ - 6x² + 4x - 10
+            f'(x) = (d/dx)[x³] - (d/dx)[6x²] + (d/dx)[4x] - (d/dx)[10]
+            f'(x) = 3x² - 12x + 4
+        </pre>
+        
+        <strong>Segunda derivada</strong>
+        <pre>
+            f''(x) = (d/dx)[3x²] - (d/dx)[12x] + (d/dx)[4]
+            f''(x) = 6x - 12
+        </pre>
+
+        <strong>Análise dos intervalos</strong>
+        f''(x) = 6x - 12
+        <pre>
+            Pontos críticos, igualamos f''(x) a zero:
+            6x - 12 = 0
+            6x = 12
+            x = 2
+            Isso nos indica que a mudança de concavidade ocorre no ponto x = 2
+    
+            Para x < 2, ex.: x = 0
+            f''(0) = 6(0) - 12 = -12
+            como 
+            f''(0) < 0, a função é côncava para baixo no intervalo −∞ a 2
+    
+            Para x > 2, ex.: x = 3
+            f''(3) = 6(3) - 12 = 6
+            como 
+            f''(3) > 0, a função é côncava para baixo no intervalo 2 a + ∞
+        </pre>
+
+        Resposta: <br>
+        Verdadeira 
+    </p>
+
+    <h1>Questão 2</h1>
+    <h3>
+        Verifique se está correto o resultado da derivada da função f(x)= (6x + 4) (2x - 3), onde f'(x) = 24x − 14
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        <pre>
+            f(x) = (6x + 4)(2x - 3), onde f'(x) = 24x − 14
+            
+            Com a regra do produto.
+            (uv)' = u'v + uv':
+            
+            f'(x) = (6x + 4)'(2x - 3) + (6x + 4)(2x - 3)'
+            → a derivada de 6x + 4 é 6 e de 2x - 3 é 2
+            f'(x) = (6·1)(2x - 3) + (6x + 4)(2·1)
+            f'(x) = 12x - 18 + 12x + 8
+            → soma dos termos semelhantes
+            f'(x) = 24x - 10
+        </pre>
+        
+        Análise:
+        <pre>
+            f'(x) = 24x - 10
+            → compara com a questão
+            f'(x) = 24x - 14
+            → não coincidem            
+        </pre>
+
+        Resposta: <br>
+        Falsa
+    </p>
+
+    <h1>Questão 3</h1>
+    <h3>
+        A derivada da função f(x) = 4x³ + 3x² + 5x + 1 é f'(x) = 12x² + 6x + 5.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        <pre>
+            <strong>Derivada</strong>
+            f(x) = 4x³ + 3x² + 5x + 1
+            
+            f'(x) = (d/dx)[4x³] + (d/dx)[3x²] + (d/dx)[5x] + (d/dx)[1]
+            f'(x) = 12x² + 6x + 5
+    
+            <strong>Análise</strong>
+            f'(x) = 12x² + 6x + 5
+        </pre>
+
+        Resposta: <br>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 4</h1>
+    <h3>
+        Calcule a derivada da função f(x) (x² + 1)³
+    </h3>
+    <h4>
+        a. (2x)³ <br>
+        b. (x² + 1)⁴/4 <br>
+        c. 6x (x² + 1)² <br>
+        d. 3x (x² + 1)² <br>
+        e. 3 (x² + 1)²
+    </h4>
+    <p>
+        Aplicamos a regra de cadeia para derivar, <pre>f(x) = uᴺ</pre>
+        onde <pre>u = x² + 1 e n = 3</pre>
+        <pre>
+            (d/dx)[uᴺ] = n·uᴺ⁻¹·(du/dx)
+            → Derivando
+            u = x² + 1
+            du/dx = 2x (derivada de x² + 1)
+            → Regra de cadeia
+            (d/dx)[(x² + 1)³] = 3·(x² + 1)³⁻¹·2x
+            → Simplifica
+            (d/dx)[(x² + 1)³] = 6x·(x² + 1)²
+        </pre>
+        
+        Resposta: <br>
+        c. 6x (x² + 1)²
+    </p>
+
+    <h1>Questão 5</h1>
+    <h3>
+        A derivada da função f(x) = 3 sen(x²) é f'(x) = 6x.cos(x²).
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Usando regra de cadeia sin(x²)
+        <pre>
+            u = x²
+            (d/dx)(sin u) = cos u·(du/dx)
+
+            → Derivando sin(x²)
+            (d/dx)(sin(x²)) = cos(x²)·(d/dx)(x²) = cos(x²)·2x
+
+            A derivada de 3 sin(x²) é 6x cos(x²)
+        </pre>
+
+        Resposta: <br>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 6</h1>
+    <h3>
+        A derivada da função f(x) = x³ + x² + x + 1 é f'(x) = 3x² + 2x + 1.
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        <pre>
+            f(x) = x³ + x² + x + 1
+
+            (d/dx)(x³) = 3x²
+            (d/dx)(x²) = 2x
+            (d/dx)(x) = 1
+            (d/dx)(1) = 0
+
+            → Derivada
+            f'(x) = 3x² + 2x + 1
+        </pre>
+
+        Resposta: <br>
+        Verdadeiro
+    </p>
+
+    <h1>Questão 7</h1>
+    <h3>
+        Obtenha a derivada de f(x) = 3x⁵ – 2x³ + 5 – 3x e assinale a alternativa CORRETA.
+    </h3>
+    <h4>
+        a. 15x⁴ – 6x² + 5 <br>
+        b. 3x⁴ – 2x² – 2 <br>
+        c. – 2x³ + 5 <br>
+        d. x² – 3 <br>
+        e. 15x⁴ – 6x² – 3
+    </h4>
+    <p>
+        <pre>
+            (d/dx)(3x⁵) = 15x⁴
+            (d/dx)(-2x³) = -6x²
+            (d/dx)(5) = 0
+            (d/dx)(-3x) = -3
+
+            → soma os valores
+            f'(x) = 15x⁴ - 6x² - 3
+        </pre>
+
+        Resposta: <br>
+        e. 15x⁴ – 6x² – 3
+    </p>
+
+    <h1>Questão 8</h1>
+    <h3>
+        A derivada da função f(x) = (3x² + 1)³ é f'(x) = 3 (3x² + 1)³ (6x + 1).
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Regra de cadeia
+        <pre>
+            f'(x) = 3(3x² + 1)²·6x
+            f'(x) = 18x(3x² + 1)²
+        </pre>
+
+        Resposta: <br>
+        Falso
+    </p>
+
+    <h1>Questão 9</h1>
+    <h3>
+        Verifique se é verdadeiro ou falso o resultado da derivada da função f(x) = (x² + x + 1)⁴ onde f'(x) = (8x + 4) (x² + x + 1)³
+    </h3>
+    <h4>
+        Escolha uma opção: <br>
+        Verdadeiro <br>
+        Falso
+    </h4>
+    <p>
+        Regra de cadeia
+        <pre>
+            f'(x) = 4(x² + x + 1)³·(2x + 1)
+        </pre>
+
+        Resposta: <br>
+        Falso ❌ <br>
+        Verdadeiro ✅
+    </p>
+
+    <h1>Questão 10</h1>
+    <h3>
+        Determine os pontos de inflexão da curva y = x⁴ − 4x³ representada no gráfico a seguir.
+    </h3>
+    <h4>
+        a. (0, 0) e (2, −16) <br>
+        b. (2,-16) e (4,0) <br>
+        c. (0,0) e (4,0) <br>
+        d. (+∞, 0 e (0,0) <br>        
+        e. apenas (1,2)
+    </h4>
+    <p>
+        c. (0,0) e (4,0) ❌ 
+    </p>
+</body>
+</html>
