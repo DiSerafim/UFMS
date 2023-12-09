@@ -74,6 +74,7 @@ x⁴	quarta potência
 |x|	valor absoluto de xis
 ∀   para todo
 ∃   existencial
+∄   não existe
 π	pi = 3,14159
 °	grau
 ’	minuto

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Aplicações <br>
+
+            <a href="https://www.youtube.com/watch?v=DFMDQ9lTx4g">Vídeo 2 - Cálculo I - Aula 17 - Aplicações de Derivadas: Crescimento e Decrescimento, Extremos Relativo</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Crescimento e Decrescimento, Extremos Relativo</h3>
+
+    <p>
+        <strong>Derivadas e Taxas de Crescimento de Funções</strong> <br>
+        Teorema: Seja <pre>f : I → ℝ</pre> diferenciável
+
+        <pre>
+            a) f'(x) > 0 em I → f(x) é crescente em I
+
+            b) f'(x) < 0 em I → f(x) é decrescente em I
+        </pre>
+
+        <strong>Demonstração de (a): Usa o TVM.</strong> <br>
+        Sejam dois pontos
+        <pre>x₁ < x₂ em I → x₂ - x₁ > 0</pre>
+        Pelo TVM 
+        <pre>∃c ∈ (x₁, x₂)</pre>
+        tal que
+        <pre>f(x₂)-f(x₁) = f'(c)(x₂-x₁)</pre>
+        <pre>f'(x) > 0, ∀x ∈ I → f'(c) > 0</pre>
+        O que implica
+        <pre>f(x₁) < f(x2) → f é crescente</pre>
+
+        obs: Demonstração de (b) similar é similar
+    </p>
+
+    <p>
+        Exemplo 1:
+        <pre>
+            f(x) = sin x
+            f'(x) = cos c > 0, ∀x ∈ (-(π/2),(π/2))
+
+            f é crescente para
+            ∀x ∈ (-(π/2),(π/2))
+            
+            f'(x) = cos x < 0,
+            ∀x ∈ (-(π/2),(3π/2))
+        </pre>
+    </p>
+
+    <p>
+        Exemplo 2:
+        <pre>
+            f(x) = actan x
+            Dom(f) = ℝ
+            (df/dx)(x) = 1/(1+x2) > 0, ∀x ∈ ℝ
+
+            A função é crescente em todo o seu domínio ℝ
+        </pre>
+    </p>
+
+    <p>
+        <strong>Pontos Críticos de uma função</strong> <br>
+        Def 1: Seja <pre>f : I → ℝ</pre>
+        Um ponto <pre>c ∈ I</pre>
+        é dito ponto crítico, se:
+        <pre>
+            f'(c) = 0 ou ∄f'(c)
+        </pre>
+
+        Def 2: Um ponto <pre>c ∈ I</pre> é um máximo local se existe uma vizinhança:
+        <pre>
+            V = (c - e, c + e)
+            tal que
+            f(x) <= f(c), ∀x ∈ V
+        </pre>
+
+        Um ponto <pre>c ∈ I</pre> é um mínimo local se existe uma vizinhança:
+        <pre>
+            V = (c - e, c + e)
+            tal que
+            f(x) >= f(c), ∀x ∈ V
+        </pre>
+        Af'(c
+        <strong>Exemplo: Considere a função</strong>:
+        <pre>
+            f(x) = x²
+            f'(x) = 2x
+            f'(0) = 0
+            f'(x) < 0, ∀x < 0
+            f'(x) > 0, ∀x > 0
+            x = 0
+
+            é ponto de mínimo local de
+            f(x) = x²
+        </pre>
+    </p>
+
+    <p>
+        <strong>Teorema de Fermat</strong> <br>
+        Se f tem um máximo ou mínimo local em <pre>c ∈ I</pre>
+        e se <pre>f'(c)</pre> existir, então:
+        <pre>f'(c) = 0  (Ponto crítico)</pre> <br>
+
+        Obs: a inversa não é verdadeira, podemos ter <pre>f'(c) = 0</pre>
+        mas c não é ponto de máximo nem de mínimo. <br><br>
+
+        Exemplo 1:
+        <pre>
+            f(x) = x³
+            f'(x) = 3x²
+            f'(0) = 0   (Ponto crítico)
+        </pre>
+        
+        c = 0 não é ponto de máximo nem de mínimo, é um Ponto de Inflexão.
+        <pre>f'(x) >0, ∀x ≠ 0</pre>
+        função crescente. <br><br>
+
+        Exemplo 2: <br>
+        Um caso em que <pre>f'(c)</pre> não existe <pre>f(x) = |x|</pre>
+        <pre>
+            f'(0) = lim (|0 + h|-|0|)/h = lim |h|/h
+                    h→0                   h→0
+
+            lim |h|/h = 1,  lim |h|/h = -1
+            h→0             h→0
+
+            c = 0 é o ponto crítico pois ∄f'(0)
+        </pre>
+    </p>
+
+    <p>
+        <strong>Teste da Derivada Primeira</strong> <br>
+        Se c um ponto crítico de <pre>f(x)</pre>
+        <pre>
+            Máximo local.
+            f'(x) > 0 se x < c
+            f'(x) < 0 se x > c
+            
+            Mínimo local.
+            f'(x) < 0 se x < c
+            f'(x) > 0 se x > c
+        </pre>
+    </p>
+</body>
+</html>
