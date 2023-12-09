@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULO I-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 2 - Aplicações <br>
+
+            <a href="https://www.youtube.com/watch?v=wvW1txFfqJg">Vídeo 1 - Cálculo I - Aula 16 - Teoremas importantes e suas interpretações geométricas</a>
+        </h1>
+        <p>
+            Professor: Magda Cristina Junqueira Godinho Mongelli <br>
+            Professor ministrante: Samuel Rocha de Oliveira e Adolfo Maia Jr.
+        </p>
+    </header>
+
+    <h3>Teoremas importantes e suas interpretações geométricas</h3>
+
+    <p>
+        <strong>Teorema do Máximo e Mínimo Absolutos para Funções Contínuas</strong> <br>
+        Seja f uma função contínua em <pre>[a, b] ⊂ ℝ</pre>
+        Então existe pontos <pre>c, d ∈ [a, b]</pre>
+        tal que:
+        <pre>
+            f(d) <= f(x) <= f(c), ∀x ∈ [a, b]
+
+            d é o ponto mínimo absoluto
+            c é o ponto máximo absoluto
+        </pre>
+
+        <strong>Função Limitada</strong> <br>
+        Uma  consequência imediata é que se f é contínua em <pre>[a, b]</pre>
+        então ela é limitada, isto é <pre>M > 0</pre>
+        tal que:
+        <pre>
+            |f(x)| <= M, ∀x ∈ [a, b]
+            f(x) = 1/x
+            limitada em
+            [a, b] se 0 ∉ [a,b]
+        </pre>
+    </p>
+
+    <p>
+        <strong>Teorema de Rolle</strong> <br>
+        Seja f uma função contínua <pre>[a, b] ⊂ ℝ</pre>
+        e derivável em (a, b). Se <pre>f(a) = f(b)</pre>
+        então <pre>∃c ∈ (a, b) tal que f'(c) = 0</pre>
+        
+        Obs: Podem existir mais de um ponto satisfazendo o teorema
+        
+        <strong>Teorema de Rolle: Prova</strong> <br>
+        Caso 1
+        <pre>
+            f(x) = k, ∀x ∈ [a, b]
+            f'(x) = 0, ∀x ∈ (a, b)
+        </pre>
+
+        Qualquer <pre>c ∈ (a, b)</pre>
+        satisfaz o teorema.
+
+        Caso 2
+        <pre>
+            ∃x ∈ (a, b), com f(x) > f(a)
+        </pre>
+
+        f tem máximo absoluto em [a, b], mas <pre>f(a) = f(b)</pre>
+        daí este máximo está em algum ponto <pre>c ∈ (a, b)</pre>
+        ou seja, é um máximo local e daí <pre>f'(c) = 0</pre>
+    </p>
+
+    <p>
+        <strong>Teorema do Valor Médio para Derivados (TVM)</strong> <br>
+        Seja f uma função contínua em <pre>[a, b] ⊂ ℝ</pre>
+        e derivável em (a, b).
+        Então <pre>∃c ∈ (a, b) tal que f(c) - f(a)/b -a = f'(c)</pre>
+        
+        <strong>Teorema do Valor Médio: Prova</strong> <br>
+        Reta passando pelos pontos:
+        <pre>
+            (a, f(a)) e (b, f(b))
+            g(x) = f(a) + (f(b)-f(a)/b-a)·(x - a)
+        </pre>
+        
+        Considere a função
+        <pre>
+            h(x) = f(x)-g(x) = f(x)-f(a)-(f(b)-f(a)/b-a)·(x-a) 
+            h(a) = h(b) = 0     - Pelo Teorema de Rolle
+            ∃c ∈ (a, b) com h'(c) = 0
+            h'(x) = f'(x)-(f(b)-f(a)/b-a)
+
+            Substituindo em x = c
+            0 = h'(c) = f'(c) - (f(b)-f(a)/b-a)
+            e daí
+            f'(c) = (f(b)-f(a))/b-a
+        </pre>
+
+        Exemplo 1:
+        <pre>
+            Se f'(x) é limitada em [a, b] ⊂ ℝ então, pelo TVM, para quaisquer pontos x1, x2 ∈ [a, b]
+
+            ∃c ∈ (x₁, x₂) tal que
+            |f(x₂)-f(x₁)| = |f'(c)||x₂ - x₁|
+            como f'(x) é limitada
+            ∃M > 0 ⇒ |f'(x)| < M, ∀x ∈ [a, b] Daí
+            |f'(c)| < M ⇒ |f(x₂)-f(x₁)| < M |x₂ - x₁|
+        </pre>
+
+        Exemplo 2:
+        <pre>
+            Teorema: f'(x) = 0, ∀x ∈ (a, b) ⇒ f(x) = k = const
+            Prova: x₁, x₂ ∈ (a, b) com x₁ < x₂
+
+            Como f é diferenciável em (a, b) então é diferenciável em (x₁, x₂)
+            e contínua [x₁, x₂]
+            Pelo TVM
+            ∃c ∈ (x₁, x₂) ⇒ f(x₂)-f(x₁) = f'(c)(x₂-x₁)
+
+            Daí, pela hipótese do teorema temos que f'(c) = 0 e então f(x₂) = f(x₁)
+            Como x₁, x₂ ∈ (a, b) são arbitrários, então todos os valores de f são iguais, ou seja
+            f(x) = k = cte
+        </pre>
+    </p>
+</body>
+</html>
