@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNDAMENTOS DE WEB-T01-2023-2</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+            Módulo 1 <br>
+            Unidade 1 - Redes e protocolos de comunicação <br>
+
+            <a href="https://www.youtube.com/watch?v=se-icVQucuQ&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=3">Vídeo 1 - Fundamentos de Internet e Web - Introdução às Redes de Computadores</a>
+        </h1>
+        <p>
+            Professor: Luciano Édipo Pereira da Silva <br>
+            Professor: Júlio Cezar Estrellalla
+        </p>
+    </header>
+
+    <h3>Introdução às Redes de Computadores</h3>
+    
+    <p>
+        <strong>Roteiro</strong> <br>
+        - Redes de Computadores e suas características. <br>
+        - Arquitetura em Camadas. <br>
+        - Modelos de Camadas. <br>
+        - A Internet. <br>
+        - Aplicações da Internet. <br>
+        - Internet e WWW.
+    </p>
+    
+    <h4>Redes de Computadores e suas características.</h4>
+    <p>
+
+    </p>
+
+    <h4>Arquitetura em Camadas.</h4>
+    <p>
+        As redes de computadores foram criadas com o intuito de permitir que: <br>
+        - Dois ou mais elementos computacionais pudessem se comunicar. <br>
+        - Para compartilhar recursos <br>
+        → Áudio, vídeo, imagens, acessar aplicações, para operar máquinas remotamente. <br>
+        <br>
+        As redes atuais permitem que centenas de milhares de aplicações possam trocar dados. <br>
+        - Pessoas com pessoas. <br>
+        - Pessoas com com empresas. <br>
+        - Empresas com empresas. <br>
+        - Dispositivos com outros dispositivos sem a intervenção humana. <br>
+        <br>
+        As redes de computadores são formadas por diversos elementos que envolvem inúmeros blocos: <br>
+        - Usuários e aplicações. <br>
+        - Roteadores. <br>
+        - Switches. <br>
+        - Servidores. <br>
+        - Meio físico cabeado, meio físico aéreo. <br>
+        → Links de comunicação. <br>
+        - Celulares, tablets, desktops. <br>
+        <br>
+        Diferentes tecnologias de comunicação. <br>
+        Diversos protocolos para garantir que a comunicação ocorra. <br>
+        <br>
+        Para um elemento computacional ser conectado a uma rede de dados é preciso: <br>
+        - Uma placa de rede. <br>
+        - E que esta placa de rede esteja ligada por algum link a um elemento de comutação. <br>
+        <br>
+        É por meio da placa de rede que todos os sinais são transmitidos pelo cabo, ou pelo ar. <br>
+        <br>
+        Em seguida, esses sinais são interpretados tanto pelo emissor quanto pelo  receptor para que as informações possam ser apresentadas aos usuários das aplicações. <br>
+        <br>
+        Denominamos de elemento de comutação, no contexto de uma rede local, aquele que: <br>
+        - Vai receber dados em algum formato de um emissor, e vai comuta-lo e encaminhar o mesmo para o receptor da informação, estando ele ou não na mesma rede do emissor. <br>
+        Ex.: <br>
+        - Suponha que o emissor A queira enviar um arquivo para o emissor B e que ambos estejam na mesma rede (rede local). O repasse dos dados de forma bastante simplista será feita por um elemento chamado SWITCH <br>
+        → Se A estiver em uma rede e B estiver em outra, será preciso que o outro elemento denominado Roteador se encarregue de encaminhar os dados /pacotes entre eles.
+
+        <pre>
+                        Internet
+                           |
+                        (Nuvem)
+                           |       
+                +----------|----------+
+                |                     |
+            Roteador 1            Roteador 2
+                |                      |
+                +----+----+      +-----+-----+
+                |         |      |           |
+            Dispositivo  Dispositivo  Dispositivo
+            (PC)         (Laptop)     (Smartphone)
+
+        </pre>
+    </p>
+
+    <h4>Modelos de Camadas.</h4>
+    <p>
+        <strong>Modelo OSI e Modelo TCP/IP</strong> <br>
+        <br>
+        Modelo OSI(Open System Interconnection): é conhecido por ser um modelo de referência, que não foi implementado na prática. Ele possui as camadas descritas a seguir: <br>
+        7. Aplicação. <br>
+        6. Apresentação. <br>
+        5. Sessão. <br>
+        4. Transporte. <br>
+        3. Rede. <br>
+        2. Enlace de dados. <br>
+        1. Física. <br>
+        <br>
+        Modelo TCP/IP é o padrão de comunicação na maioria das redes, sendo utilizado na prática por inúmeros elementos de comunicação em redes locais ou remotas. Diferentemente do modelo OSI, o TCP/IP possui 4 camadas: <br>
+        - Aplicação. <br>
+        - Transporte. <br>
+        - Internet. <br>
+        - Acesso à rede. <br>
+        <br>
+        Funções de cada camada do modelo TCP/IP: <br>
+        - Aplicação { <br>
+            → Processo de rede para aplicações. <br>
+            → Representação das mensagens. <br>
+            → Formatação das mensagens. <br>
+        }. <br>
+        - Transporte { <br>
+            → Conexão ponto a ponto entre processos que executa em hosts diferentes <br>
+        }. <br>
+        - Internet { <br>
+            → Endereçamento lógico dos hosts. <br>
+            → Roteamento. <br>
+        }. <br>
+        - Acesso à rede { <br>
+            → Acesso ao meio físico. <br>
+            → Transmissão binária. <br>
+            → Codificação/Decodificação de sinais. <br>
+        }.
+    </p>
+
+    <h4>A Internet.</h4>
+    <p>
+        Pc. <br>
+        Servidor. <br>
+        Laptop sem fio. <br>
+        Celular. <br>
+        <br>
+        Milhões de dispositivos de computação conectados: <br>
+        - hospedeiros = sistemas finais. <br>
+        → Executando aplicações de rede. <br>
+        <br>
+        - Rede móvel. <br>
+        - Rede doméstica. <br>
+        - Rede institucional. <br>
+        - ISP global. <br>
+        - ISP regional.
+    </p>
+
+    <h4>Aplicações da Internet.</h4>
+    <p>
+        Inúmeras são as aplicações que "rodam" na Internet. <br>
+        - Serviços de e-mail. <br>
+        - Serviços de streaming de áudio e vídeo. <br>
+        - Serviços de compartilhamento de arquivos. <br>
+        - Serviços e pagamentos on-line. <br>
+        - Aplicação para acesso seguro a dados sigilosos. <br>
+        <br>
+        Algumas das aplicações podem ser executadas fora do que chamamos de Web, ou WWW, pois são anteriores à Web como ela é conhecida hoje.
+    </p>
+</body>
+</html>
