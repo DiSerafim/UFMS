@@ -71,7 +71,7 @@ h2 {
 }
 
 #materiais li a:hover {
-  color: #666;
+  text-decoration: line-through;
 }
 
 .material-icon {
@@ -79,7 +79,7 @@ h2 {
   margin-right: 5px;
 }
 
-/* Anotações */
+/* Conteúdo */
 #conteudo {
   margin-bottom: 20px;
 }

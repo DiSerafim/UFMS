@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceitos introdutórios e formas de representação de dados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Conceitos introdutórios e formas de representação de dados</h1>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status em-andamento">Em Andamento</span>
+                    </p>
+                </li>
+            <!-- <li><a href="disciplina2.html">Estatística e Probabilidade <span class="status concluida">Concluída</span></a></li> -->
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <!-- <a href="#">Material 1 (PDF) <i class="material-icon">&#xE24D;</i></a> -->
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=8ORL744-mog&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=13&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 2) - Estatística - Aula 12 - Exercícios amostragem<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios Amostragem</h3>
+
+            <strong>População e amostra</strong>
+            <p>Análise de algumas situações cotidianas.</p>
+            <p>Qual a população, qual a amostra?</p>
+            <p>a) Avaliação da eficácia de uma campanha de vacinação em crianças com idade entre 1 e 2 anos. 192 mães com filhos nesta idade foram pesquisadas sobre a última vez que vacinaram seus filhos.</p>
+            <ul>
+                <li>População: Todas as mães de crianças com idade entre 1 e 2 anos.</li>
+                <li>Amostra: 192 mães entrevistadas na pesquisa.</li>
+            </ul>
+            <p>b) Para verificar a audiência de um programa do canal 32, alguns telespectadores foram entrevistados com relação ao canal em que estavam sintonizados no horário do programa.</p>
+            <ul>
+                <li>População: Todas as pessoas que estavam  assistindo TV na hora em que o programa foi transmitido.</li>
+                <li>Amostra: Os telespectadores entrevistados na pesquisa.</li>
+            </ul>
+            <p>c) A fim de avaliar a intenção de voto para a eleição presidencial de 2010 no Brasil, 4.205 eleitores foram entrevistados em todas as unidades da federação.</p>
+            <ul>
+                <li>População: Todos os eleitores votantes no Brasil.</li>
+                <li>Amostra: 4.205 eleitores selecionados para a pesquisa em todas as unidades da federação.</li>
+            </ul>
+
+            <strong>Tipos de Amostragem</strong>
+            <p>Análise de algumas situações cotidianas.</p>
+            <p>Qual o tipo de amostragem?</p>
+
+            <p>a) Ao escalar uma comissão para atuar em determinado projeto, uma Instituição de Pesquisa decidiu selecionar aleatoriamente 4 pessoas brancas, 3 pardas e 4 negras.</p>
+            <ul>
+                <li>Amostragem estratificada.</li>
+            </ul>
+
+            <p>b) Um diretor escreve o nome de todos os seus colaboradores em pedaços de papel e coloca em uma caixa. Depois de misturá-los, sorteia 10 nomes.</p>
+            <ul>
+                <li>Amostragem aleatória.</li>
+            </ul>
+
+            <p>c) Um fabricante verifica a qualidade dos parafusos produzidos testando um parafuso a cada 100 parafusos produzidos na sua linha de produção.</p>
+            <ul>
+                <li>Amostragem sistemática</li>
+            </ul>
+
+            <p>d) Seleção de uma amostra de produtos em um armazém. Os corredores estão identificadas pelas letras A a F. As colunas de cada corredor estão identificadas pelo número e pelo andar. Primeiro foram sorteados dois corredores (B e F) e depois foram selecionados ao acaso 50% dos produtos de cada corredor.</p>
+            <ul>
+                <li>Amostragem por conglomerados & amostragem aleatória.</li>
+            </ul>
+
+            <strong>Hábitos de consumo</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th></th>
+                        <th></th>
+                        <th>N° Salários Mínimos</th>
+                        <th>Renda Mensal</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Classe A</td>
+                            <td></td>
+                            <td></td>
+                            <td>Acima De 20</td>
+                            <td>Mais que R$ 15.760,00</td>
+                        </tr>
+                        <tr>
+                            <td>Classe B</td>
+                            <td></td>
+                            <td></td>
+                            <td>De 10 a 20</td>
+                            <td>Entre R$ 7880,00 e R$ 15.759</td>
+                        </tr>
+                        <tr>
+                            <td>Classe C</td>
+                            <td></td>
+                            <td></td>
+                            <td>De 4 a 10</td>
+                            <td>Entre R$ 3.152,00 e R$ 7.879,00</td>
+                        </tr>
+                        <tr>
+                            <td>Classe D</td>
+                            <td></td>
+                            <td></td>
+                            <td>De 2 a 4</td>
+                            <td>Entre R$ 1.576,00 e R$ 3.151,00</td>
+                        </tr>
+                        <tr>
+                            <td>Classe E</td>
+                            <td></td>
+                            <td></td>
+                            <td>Até 2</td>
+                            <td>Menos que R$ 1.575,00</td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+
+            <p></p>
+
+            <strong>População - Moradores de uma comunidade.</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th></th>
+                        <th>Número de Famílias</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Classe A</td>
+                            <td></td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Classe B</td>
+                            <td></td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Classe C</td>
+                            <td></td>
+                            <td>120</td>
+                        </tr>
+                        <tr>
+                            <td>Classe D</td>
+                            <td></td>
+                            <td>150</td>
+                        </tr>
+                        <tr>
+                            <td>Classe E</td>
+                            <td></td>
+                            <td>130</td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+
+            <p></p>
+            <p></p>
+            <p>Secretaria do governo deseja conhecer os hábitos das famílias para analisar o comportamento de consumo dessa população</p>
+            <p>Amostra: 100 unidades.</p>
+            <p>Quantas unidades amostrais devem ser retiradas de cada classe?</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th></th>
+                        <th>Número de Famílias</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Total</td>
+                            <td></td>
+                            <td>550</td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+            <ul>
+                <li>Fator = 100/550</li>
+                <li>Fator = 0,182</li>
+            </ul>
+
+            <strong>Multiplica-se o número de famílias pelo Fator</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th></th>
+                        <th>Fator</th>
+                        <th></th>
+                        <th>Número de Famílias</th>
+                        <th>Amostra</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Classe A</td>
+                            <td></td>
+                            <td>0,182</td>
+                            <td>x</td>
+                            <td>60</td>
+                            <td>11</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Classe B</td>
+                            <td></td>
+                            <td>0,182</td>
+                            <td>x</td>
+                            <td>90</td>
+                            <td>16</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Classe C</td>
+                            <td></td>
+                            <td>0,182</td>
+                            <td>x</td>
+                            <td>120</td>
+                            <td>22</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Classe D</td>
+                            <td></td>
+                            <td>0,182</td>
+                            <td>x</td>
+                            <td>150</td>
+                            <td>27</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Classe E</td>
+                            <td></td>
+                            <td>0,182</td>
+                            <td>x</td>
+                            <td>130</td>
+                            <td>24</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>550</td>
+                            <td>100</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
