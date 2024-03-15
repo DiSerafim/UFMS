@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceitos introdutórios e formas de representação de dados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Conceitos introdutórios e formas de representação de dados</h1>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status em-andamento">em-andamento</span>
+                    </p>
+                </li>
+            <!-- <li><a href="disciplina2.html">Estatística e Probabilidade <span class="status concluida">Concluída</span></a></li> -->
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <!-- <a href="#">Material 1 (PDF) <i class="material-icon">&#xE24D;</i></a> -->
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=Ol6NpWnsU-c&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=15&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 4) - Estatística - Aula 14 - Exercícios - Distribuição de frequências<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios Distribuição de frequência</h3>
+
+            <strong>Exercício Comentado</strong>
+            <p></p>
+            <strong>Controle Estatístico de Processo:</strong>
+            <p>Ferramenta da qualidade com foco no controle dos processos produtivos (Produtos e serviços)</p>
+            <p>Fornece informações para diagnóstico na prevenção e detecção de defeitos e problemas.</p>
+            <p>Evita desperdícios de matéria-prima, de insumos, de produtos.</p>
+            <p>Viabiliza o aprimoramento contínuo (PDCA)</p>
+            <p>Auxilia no aumento da produtividade.</p>
+            <p>Melhora os resultados da empresa.</p>
+
+            <img src="./img/processo-previsivel-e-inprevisivel.png" />
+            
+            <p>Altura das peças produzidas (mm):</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>212</th>
+                        <td>213</td>
+                        <td>198</td>
+                        <td>216</td>
+                        <td>219</td>
+                        <td>204</td>
+                        <td>220</td>
+                        <td>216</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>214</th>
+                        <td>215</td>
+                        <td>209</td>
+                        <td>225</td>
+                        <td>205</td>
+                        <td>213</td>
+                        <td>221</td>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>220</th>
+                        <td>207</td>
+                        <td>226</td>
+                        <td>207</td>
+                        <td>207</td>
+                        <td>215</td>
+                        <td>208</td>
+                        <td>208</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>210</th>
+                        <td>208</td>
+                        <td>213</td>
+                        <td>215</td>
+                        <td>214</td>
+                        <td>228</td>
+                        <td>200</td>
+                        <td>218</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>216</th>
+                        <td>219</td>
+                        <td>202</td>
+                        <td>220</td>
+                        <td>222</td>
+                        <td>215</td>
+                        <td>212</td>
+                        <td>214</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Pede-se:</p>
+            <ul>
+                <li>classes.</li>
+                <li>frequência absoluta.</li>
+                <li>frequência relativa.</li>
+                <li>frequência acumulada.</li>
+                <li>frequência relativa acumulada.</li>
+                <li>ponto médio das classes.</li>
+            </ul>
+            
+            <p>Reordenando...</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>198</td>
+                        <td>207</td>
+                        <td>208</td>
+                        <td>213</td>
+                        <td>214</td>
+                        <td>216</td>
+                        <td>219</td>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>200</td>
+                        <td>207</td>
+                        <td>209</td>
+                        <td>213</td>
+                        <td>215</td>
+                        <td>216</td>
+                        <td>220</td>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>202</td>
+                        <td>207</td>
+                        <td>210</td>
+                        <td>213</td>
+                        <td>215</td>
+                        <td>216</td>
+                        <td>220</td>
+                        <td>225</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>204</td>
+                        <td>208</td>
+                        <td>212</td>
+                        <td>214</td>
+                        <td>215</td>
+                        <td>218</td>
+                        <td>220</td>
+                        <td>226</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>205</td>
+                        <td>208</td>
+                        <td>212</td>
+                        <td>214</td>
+                        <td>215</td>
+                        <td>219</td>
+                        <td>221</td>
+                        <td>228</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Frequências</p>
+            <ul>
+                <li>N = 40, é a quantidade de elementos da tabela à cima.</li>
+                <li>K = √N</li>
+                <li>K = √40</li>
+                <li>K = 6,32</li>
+            </ul>
+            <ul>
+                <li>H = A/K = 30/6,32 ≅ 4,74</li>
+                <li>H = 4,74 → H = 5</li>
+                <li>K = 6,32 → K = 7</li>
+                <li>A = 30 e 7.5 = 35 OK</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Frequência Absoluta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>195,5 → 200,5</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>200,5 → 205,5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>205,5 → 210,5</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>210,5 → 215,5</td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>215,5 → 220,5</td>
+                        <td>9</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>220,5 → 225,5</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>225,5 → 230,5</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <th>40</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Explicação:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Frequência Absoluta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>195,5 → 200,5 ... Entre esses valores eu terei → </td>
+                        <td>2 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>200,5 → 205,5 ... Entre esses valores eu terei → </td>
+                        <td>3 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>205,5 → 210,5 ... Entre esses valores eu terei → </td>
+                        <td>8 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>210,5 → 215,5 ... Entre esses valores eu terei → </td>
+                        <td>12 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>215,5 → 220,5 ... Entre esses valores eu terei → </td>
+                        <td>9 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>220,5 → 225,5 ... Entre esses valores eu terei → </td>
+                        <td>4 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>225,5 → 230,5 ... Entre esses valores eu terei → </td>
+                        <td>2 valores</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <th>40 valores</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>198</th>
+                        <th>207</th>
+                        <th>208</th>
+                        <td>213</td>
+                        <td>214</td>
+                        <th>216</th>
+                        <th>219</th>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>200</th>
+                        <th>207</th>
+                        <th>209</th>
+                        <td>213</td>
+                        <td>215</td>
+                        <th>216</th>
+                        <th>220</th>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>202</td>
+                        <th>207</th>
+                        <th>210</th>
+                        <td>213</td>
+                        <td>215</td>
+                        <th>216</th>
+                        <th>220</th>
+                        <td>225</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>204</td>
+                        <th>208</th>
+                        <td>212</td>
+                        <td>214</td>
+                        <td>215</td>
+                        <th>218</th>
+                        <th>220</th>
+                        <th>226</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>205</td>
+                        <th>208</th>
+                        <td>212</td>
+                        <td>214</td>
+                        <td>215</td>
+                        <th>219</th>
+                        <td>221</td>
+                        <th>228</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Na <strong>Frequência Acumulada</strong>, somamos o valor anterior com o valor da próxima classe.</p>
+            <ul>
+                <li>Ex: repete o 2 e soma com 3 que retorna 5 ...</li>
+            </ul>
+            <p>Na <strong>Frequência Relativa</strong>, dividimos o numero de elementos da classe pelo numero total de elementos.</p>
+            <ul>
+                <li>Ex: 2/40 = 0,05 * 100 = 5 ...</li>
+            </ul>
+            <p>Na <strong>Frequência Relativa Acumulada</strong>, somamos o valor percentual anterior com o valor da próxima classe..</p>
+            <ul>
+                <li>Ex: repete o 5,0 e soma com 7,50 que retorna 12,50 ...</li>
+            </ul>
+            <p>No <strong>Ponto Médio</strong>, somamos os dois valores e dividimos por 2</p>
+            <ul>
+                <li>Ex: 195,5 + 200,5 = 396/2 = 198  ...</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Frequência Absoluta</th>
+                        <th>Frequência Relativa (%)</th>
+                        <th>Frequência Acumulada</th>
+                        <th>Frequência Relativa Acumulada</th>
+                        <th>Ponto Médio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>195,5 → 200,5</td>
+                        <td>2</td>
+                        <td>5,00</td>
+                        <td>2</td>
+                        <td>5,0</td>
+                        <td>198</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>200,5 → 205,5</td>
+                        <td>3</td>
+                        <td>7,50</td>
+                        <td>5</td>
+                        <td>12,50</td>
+                        <td>203</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>205,5 → 210,5</td>
+                        <td>8</td>
+                        <td>20,00</td>
+                        <td>13</td>
+                        <td>32,50</td>
+                        <td>208</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>210,5 → 215,5</td>
+                        <td>12</td>
+                        <td>30,00</td>
+                        <td>25</td>
+                        <td>62,50</td>
+                        <td>213</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>215,5 → 220,5</td>
+                        <td>9</td>
+                        <td>22,50</td>
+                        <td>34</td>
+                        <td>85,00</td>
+                        <td>218</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>220,5 → 225,5</td>
+                        <td>4</td>
+                        <td>10,00</td>
+                        <td>38</td>
+                        <td>95,00</td>
+                        <td>223</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>225,5 → 230,5</td>
+                        <td>2</td>
+                        <td>5,00</td>
+                        <td>40</td>
+                        <td>100,00</td>
+                        <td>228</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <th>40</th>
+                        <td>100,00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+            <strong>Histograma</strong>
+            <p>Processo de envasamento de água mineral.</p>
+            <p>Volume esperado: 500ml.</p>
+            <p>50 amostras selecionadas (amostragem sistemática)</p>
+            <p></p>
+
+            <p>Volumes:</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>493</td>
+                        <td>497</td>
+                        <td>485</td>
+                        <td>512</td>
+                        <td>498</td>
+                        <td>495</td>
+                        <td>506</td>
+                        <td>500</td>
+                        <td>505</td>
+                        <td>511</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>494</td>
+                        <td>498</td>
+                        <td>491</td>
+                        <td>488</td>
+                        <td>497</td>
+                        <td>492</td>
+                        <td>513</td>
+                        <td>499</td>
+                        <td>487</td>
+                        <td>502</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>495</td>
+                        <td>499</td>
+                        <td>507</td>
+                        <td>503</td>
+                        <td>489</td>
+                        <td>503</td>
+                        <td>512</td>
+                        <td>490</td>
+                        <td>495</td>
+                        <td>503</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>496</td>
+                        <td>500</td>
+                        <td>505</td>
+                        <td>501</td>
+                        <td>502</td>
+                        <td>508</td>
+                        <td>509</td>
+                        <td>496</td>
+                        <td>486</td>
+                        <td>500</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>497</td>
+                        <td>501</td>
+                        <td>503</td>
+                        <td>502</td>
+                        <td>501</td>
+                        <td>514</td>
+                        <td>510</td>
+                        <td>515</td>
+                        <td>490</td>
+                        <td>499</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Volumes reordenados:</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>485</th>
+                        <td>490</td>
+                        <th>494</th>
+                        <th>496</th>
+                        <td>498</td>
+                        <td>500</td>
+                        <td>502</td>
+                        <th>503</th>
+                        <th>507</th>
+                        <td>512</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>486</th>
+                        <td>490</td>
+                        <th>495</th>
+                        <th>497</th>
+                        <td>499</td>
+                        <td>500</td>
+                        <td>502</td>
+                        <th>503</th>
+                        <td>508</td>
+                        <td>512</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>487</th>
+                        <td>491</td>
+                        <th>495</th>
+                        <th>497</th>
+                        <td>499</td>
+                        <td>501</td>
+                        <td>502</td>
+                        <th>505</th>
+                        <td>509</td>
+                        <th>513</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>488</td>
+                        <td>492</td>
+                        <th>495</th>
+                        <th>497</th>
+                        <td>499</td>
+                        <td>501</td>
+                        <th>503</th>
+                        <th>505</th>
+                        <td>510</td>
+                        <th>514</th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>489</td>
+                        <th>493</th>
+                        <th>496</th>
+                        <td>498</td>
+                        <td>500</td>
+                        <td>501</td>
+                        <th>503</th>
+                        <th>506</th>
+                        <td>511</td>
+                        <th>515</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+            <ul>
+                <li>N = 50</li>
+                <li>K = √N</li>
+                <li>K = √50</li>
+                <li>K = 7,07</li>
+            </ul>
+
+            <p><strong>Amplitude</strong> - é a diferença entre o maior valor e o menor valor (485 e 515)</p>
+            <ul>
+                <li>H = A/K = 30/7 ≅ 4,3</li>
+                <li>H = 4,3 → H = 4</li>
+                <li>K = 7,07 → K = 7</li>
+                <li>A = 30 e 7·4 = 28 X, o valor não bate, então teremos que arredondar H para cima.</li>
+            </ul>
+            <ul>
+                <li>H = 4,3 → H = 5</li>
+                <li>K = 7,07 → K = 7</li>
+                <li>A = 30 e 7·5 = 35 OK</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Frequência Absoluta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>482,5 → 487,5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>487,5 → 492,5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>492,5 → 497,5</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>497,5 → 502,5</td>
+                        <td>14</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>502,5 → 507,5</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>507,5 → 512,5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>512,5 → 517,5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <th>50</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Ponto Médio</p>
+            <ul>
+                <li>Soma os 2 valores (482,5 + 487,5 = 970)</li>
+                <li>Divide por 2 (970 / 2 = 485)... e assim por diante.</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Frequência Absoluta</th>
+                        <th>Ponto Médio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>482,5 → 487,5</td>
+                        <td>3</td>
+                        <td>485</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>487,5 → 492,5</td>
+                        <td>6</td>
+                        <td>490</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>492,5 → 497,5</td>
+                        <td>10</td>
+                        <td>495</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>497,5 → 502,5</td>
+                        <td>14</td>
+                        <td>500</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>502,5 → 507,5</td>
+                        <td>8</td>
+                        <td>505</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>507,5 → 512,5</td>
+                        <td>6</td>
+                        <td>510</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>512,5 → 517,5</td>
+                        <td>3</td>
+                        <td>515</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total</th>
+                        <th>50</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p></p>
+            <p>Vamos resolver o mesmo exercício utilizando o <strong>Google Docs:</strong></p>
+            <a href="https://docs.google.com/spreadsheets/d/1vDdvvJcZDkIP67z5lWgajjNytW0vOwNT66ZWt5-75bI/edit#gid=0" target="_blank">Aqui!</a>
+            <img src="./img/exercicio-4.png" alt="exercicio 4">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
