@@ -6,9 +6,15 @@ Números Sobrescrito:
 
 Alfabeto sobrescrito:
 ᴬ, ᴮ, ᶜ, ᴰ, ᴱ, ᶠ, ᴳ, ᴴ, ᴵ, ᴶ, ᴷ, ᴸ, ᴹ, ᴺ, ᴼ, ᴾ, ᵟ, ᴿ, ˢ, ᵀ, ᵁ, ⱽ, ᵂ, ˣ, ʸ, ᶻ
+ᵃ, ᵇ, ᶜ, ᵈ, ᵉ, ᶠ, ᵍ, ᶦ, ʲ, ᵏ, ˡ, ᵐ, ⁿ, ᵒ, ᵖ, ʳ, ˢ, ᵗ, ᵘ, ᵛ, ˣ, ᶻ, ʷ, ʸ, ᵏ, 
 
 Formato de subscrito:
-ₐ, ₑ, ₕ, ᵢ, ⱼ, ₖ, ₗ, ₘ, ₙ, ₒ, ₚ, ᵣ, ₛ, ₜ, ᵤ, ᵥ, ₓ
+ₐ, ᵈ, ₑ, ₕ, ᵢ, ⱼ, ₖ, ₗ, ₘ, ₙ, ₒ, ₚ, ᵣ, ₛ, ₜ, ᵤ, ᵥ, ₓ
+
+Símbolos LaTeX para letras subscritas:
+Simbolismo:
+
+
 
 Caracteres especiais sobrescrito:
 
@@ -72,6 +78,8 @@ x²	quadrado
 x³	cubo
 x⁴	quarta potência
 |x|	valor absoluto de xis
+x̄   média amostral
+xp̄
 ∀   para todo
 ∃   existencial
 ∄   não existe

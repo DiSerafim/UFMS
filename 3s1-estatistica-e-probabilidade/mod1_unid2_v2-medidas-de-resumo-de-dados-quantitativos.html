@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise exploratória de dados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Análise exploratória de dados</h1>
+        <h2>Medidas de resumo de dados quantitativos</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=0YG-J_7c13w&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=17&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 2) - Estatística - Aula 16 - Exercícios medidas de posição e dispersão<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios medidas de posição e dispersão</h3>
+
+            <strong>Pesquisa de Inovação - PINTEC</strong>
+            <p>Estatística Descritiva</p>
+            <ul>
+                <li>1. Definição do problema.</li>
+                <ul>
+                    <li>Compreensão do contexto em análise (contexto, geração, difusão e incorporação).</li>
+                    <li>Identificação dos principais parâmetros de interesse.</li>
+                    <ul>
+                        <li>Características das empresas.</li>
+                        <li>Produtos novos ou substancialmente aprimorados.</li>
+                        <li>Processos novos ou substancialmente aprimorados.</li>
+                        <li>Atividades inovativas.</li>
+                        <li>Impacto das inovações.</li>
+                        <li>Problemas e obstáculos à inovação.</li>
+                        <li>Uso de biotecnologia e nanotecnologia.</li>
+                    </ul>
+                    <li>Formulação correta do problema.</li>
+                    <ul>
+                        <li>Ampliar o conhecimento sobre a inovação nas organizações para subsidiar as políticas públicas e estratégicas corporativas.</li>
+                    </ul>
+                </ul>
+                <li>2. Planejamento da pesquisa.</li>
+                <ul>
+                    <li>Quais dados devem ser obtidos.</li>
+                    <ul>
+                        <li>Inovação de produto e/ou processo: novo para a empresa mas existente no mercado nacional; novo para o mercado nacional mas existente no mercado internacional; novo para o mercado internacional.</li>
+                        <li>Atividades Inovativas: P&D interno, P&D externo, aquisição de conhecimentos, de software, de máquinas, treinamento.</li>
+                    </ul>
+                    <li>Como estes dados serão obtidos.</li>
+                    <ul>
+                        <li>Treinamento de 8 supervisores e 80 agentes de pesquisa.</li>
+                        <li>Identificação do informante profissional da empresa capaz de responder à pesquisa.</li>
+                        <li>Entrevistas telefônicas assistidas conduzidas por agentes de pesquisa.</li>
+                        <li>Sistema CATI - Computer Assisted Telephone Interview.</li>
+                    </ul>
+                    <li>Qual tipo de levantamento será realizado.</li>
+                    <ul>
+                        <li>População alvo: empresas com atividades inovativas.</li>
+                        <li>Três Estratos:</li>
+                        <li>Cadastradas (CEMPRE - censitário) - certo</li>
+                        <li>Prováveis (bancos de patentes, cadastro FINEP, ...) - forte potencial de inovação.</li>
+                        <li>Unidade da Federação : >1%PIB</li>
+                    </ul>
+                    <li>Qual o cronograma de atividades.</li>
+                    <li>Qual o cronograma da pesquisa.</li>
+                    <ul>
+                        <li>Cronograma: realização em 2011 e publicação em 2013.</li>
+                        <li>Custo: reduzido com utilização de telefone, que também viabilizou mais agilidade, qualidade e flexibilidade.</li>
+                    </ul>
+                </ul>
+                <li>3. Coleta dos dados.</li>
+                <li>4. Apuração dos dados.</li>
+                <li>5. Apresentação dos dados.</li>
+                <li>6. Análise e interpretação dos resultados obtidos.</li>
+            </ul>
+
+            <strong>Análise e Síntese</strong>
+            <ul>
+                <li>Serviços de tecnologia de informação inovam mais em produtos e processos.</li>
+                <li>Metalurgia inova mais em processos produtivos.</li>
+                <li>Fabricação de máquinas e equipamentos inova em produtos.</li>
+            </ul>
+
+            <strong>Exercício Comentado 2</strong>
+            <p>Parâmetro e Decisões</p>
+            <ul>
+                <li>a. Média.</li>
+                <li>b. Variância.</li>
+                <li>c. Moda.</li>
+                <li>d. Mediana.</li>
+            </ul>
+            
+            <p>Conjunto de Dados</p>
+            <table>
+                <thead>
+                    <th>Amostra A</th>
+                    <th>Amostra B</th>
+                </thead>
+                <tbody>
+                    <td>76</td>
+                    <td>64</td>
+                </tbody>
+                <tbody>
+                    <td>46</td>
+                    <td>70</td>
+                </tbody>
+                <tbody>
+                    <td>71</td>
+                    <td>73</td>
+                </tbody>
+                <tbody>
+                    <td>51</td>
+                    <td>55</td>
+                </tbody>
+                <tbody>
+                    <td>68</td>
+                    <td>53</td>
+                </tbody>
+                <tbody>
+                    <td>82</td>
+                    <td>63</td>
+                </tbody>
+                <tbody>
+                    <td>77</td>
+                    <td>60</td>
+                </tbody>
+                <tbody>
+                    <td>80</td>
+                    <td>60</td>
+                </tbody>
+                <tbody>
+                    <td>46</td>
+                    <td>61</td>
+                </tbody>
+                <tbody>
+                    <td>39</td>
+                    <td>71</td>
+                </tbody>
+                <tbody>
+                    <td>73</td>
+                    <td>66</td>
+                </tbody>
+                <tbody>
+                    <td>54</td>
+                    <td>61</td>
+                </tbody>
+                <tbody>
+                    <td>54</td>
+                    <td>56</td>
+                </tbody>
+                <tbody>
+                    <td>74</td>
+                    <td>68</td>
+                </tbody>
+                <tbody>
+                    <td>76</td>
+                    <td>58</td>
+                </tbody>
+                <tbody>
+                    <td>82</td>
+                    <td>49</td>
+                </tbody>
+                <tbody>
+                    <td>58</td>
+                    <td>64</td>
+                </tbody>
+                <tbody>
+                    <td>83</td>
+                    <td>67</td>
+                </tbody>
+            </table>
+            <p>Parâmetros e Decisões</p>
+            <ul>
+                <li>1. Mercado Financeiro.</li>
+                <p>Qual o melhor parâmetro para decisão?</p>
+                <ul>
+                    <li>Melhor Parâmetro: <strong>Média</strong>.</li>
+                </ul>
+                <pre>
+                    x̄ᴬ = ∑ᴺxₐᵢ/nₐ = 1190/18 = 66,11
+                          ᴵ⁼¹
+                    x̄ᴮ = ∑ᴺxᴮᵢ/nᴮ = 1109/18 = 61,61
+                          ᴵ⁼¹
+                </pre>
+
+                <li>2. Processo Industrial.</li>
+                <p>Qual o melhor parâmetro para decisão?</p>
+                <ul>
+                    <li>Melhor Parâmetro: <strong>Variância</strong>.</li>
+                </ul>
+                <pre>
+                    S²(xₐ) = (∑ᴺ(xₐᵢ-x̄ₐ)²)/nₐ-1 = 3565,78/17 = 209,75
+                             ᴵ⁼¹
+                    S²(xᴮ) = (∑ᴺxᴮᵢ-x̄ᴮ)²/nᴮ-1 = 650,28/17 = 38,25
+                             ᴵ⁼¹
+                </pre>
+
+                <li>3. Projeto de Produto.</li>
+                <p>Qual o melhor parâmetro para decisão?</p>
+                <ul>
+                    <li>Melhor Parâmetro: <strong>Moda</strong>.</li>
+                    <li>Moda (A): 68.</li>
+                    <li>Moda (B): 49.</li>
+                    <li>São os valores que aparecem mais vezes.</li>
+                </ul>
+                <pre>
+                    x̄ᴬ = ∑ᴺxₐᵢ/nₐ = 1190/18 = 66,11
+                          ᴵ⁼¹
+                    x̄ᴮ = ∑ᴺxᴮᵢ/nᴮ = 1109/18 = 61,61
+                          ᴵ⁼¹
+                </pre>
+
+                <li>4. Avaliação da Aprendizagem.</li>
+                <p>Qual o melhor parâmetro para decisão?</p>
+                <ul>
+                    <li>Melhor Parâmetro: <strong>Mediana</strong>.</li>
+                </ul>
+                <pre>
+                    mdₐ = (68+71)/2 = 69,5
+                    mdᴮ = (60+61)/2 = 60,5
+                </pre>
+            </ul>
+
+            <p></p>
+            <strong>Exercício Comentado 3</strong>
+            <p>Ferramentas da Qualidade.</p>
+            <ul>
+                <li>Técnicas para definir, mensurar, analisar e propor soluções para problemas nos processos das organizações.</li>
+                <li>1. Fluxograma.</li>
+                <ul>
+                    <li>Início -> Operação 1 -> Decisão 1 -> Operação 2 -> Operação 3 -> Fim</li>
+                </ul>
+
+                <li>2. Diagrama de Ishikawa (espinha de peixe).</li>
+                <pre>
+                Problema: Baixa produtividade
+
+                Causas principais:
+                    * Mão de obra:
+                        * Falta de treinamento
+                        * Baixa motivação
+                        * Alta rotatividade
+                    * Máquinas:
+                        * Equipamentos antigos
+                        * Falta de manutenção
+                        * Defeitos frequentes
+                    * Materiais:
+                        * Baixa qualidade
+                        * Atraso nas entregas
+                        * Estoque insuficiente
+                    * Métodos:
+                        * Processos ineficientes
+                        * Falta de padronização
+                        * Controle de qualidade deficiente
+                </pre>
+
+                <li>3. Folhas de Verificação.</li>
+                <ul>
+                    <li>Crie uma tabela com colunas para:</li>
+                        <ul>
+                            <li>* Data/hora</li>
+                            <li>* Ocorrência</li>
+                            <li>* Descrição</li>
+                            <li>* Localização</li>
+                            <li>* Responsável</li>
+                            <li>* Ação corretiva</li>
+                        </ul>
+                    <li>Registre as informações relevantes sobre cada problema.</li>
+                    <pre>
+                    Data/hora | Ocorrência | Descrição          | Localização        | Responsável                                      | Ação corretiva
+                    --------- | ---------- | ---------          | -----------        | -----------                                      | --------
+                    2023-11-14| 10:00      | Produto com defeito| Linha de produção 1| Operador A                                       | Substituir o produto
+                    2023-11-14| 12:00      | Atraso na entrega  | Fornecedor X       | Contatar o fornecedor e solicitar agilização     |
+                    2023-11-15| 14:00      | Erro no processo   | Departamento Y     | Revisar o procedimento e treinar os colaboradores|
+                    </pre>
+                </ul>
+
+                <li>4. Diagrama de Pareto.</li>
+                <pre>
+                    Problema   | Frequência | Porcentagem
+                    -------    | ---------- | --------
+                    Problema A | 80         | 80%
+                    Problema B | 15         | 95%
+                    Problema C | 5          | 100%
+                </pre>
+                
+                <li>5. Histograma.</li>
+                <pre>
+                    Classe | Frequência
+                    -------| --------
+                    0-10   | 5
+                    11-20  | 10
+                    21-30  | 15
+                    31-40  | 5
+                </pre>
+                
+                <li>6. Diagrama de Dispersão.</li>
+                <pre>
+                    Variável X | Variável Y
+                    -------    | --------
+                    1          | 2
+                    3          | 4
+                    5          | 6
+                    7          | 8
+                </pre>
+                
+                <li>7. Cartas de Controle.</li>
+                <pre>
+                    Data       | Valor | Limite superior | Limite inferior
+                    -------    | ----- | --------        | --------
+                    2023-11-01 | 10    | 12              | 8
+                    2023-11-02 | 11    | 12              | 8
+                    2023-11-03 | 13    | 12              | 8
+                    20
+                </pre>
+            </ul>
+
+            <p></p>
+            <table>
+                <thead>
+                    <th></th>
+                    <th>Fluxograma (%)</th>
+                    <th>Diagrama de Pareto (%)</th>
+                    <th>Diagrama de Ishikawa (%)</th>
+                    <th>Folhas de Verificação (%)</th>
+                    <th>Histograma (%)</th>
+                    <th>Diagrama de Dispersão (%)</th>
+                    <th>Carta de Controle (%)</th>
+                </thead>
+                <tbody>
+                    <td>Alimentos</td>
+                    <td>86,5</td>
+                    <td>80,2</td>
+                    <td>18,1</td>
+                    <td>78,1</td>
+                    <td>40,5</td>
+                    <td>56,9</td>
+                    <td>43,5</td>
+                </tbody>
+                <tbody>
+                    <td>Têxtil</td>
+                    <td>82,8</td>
+                    <td>81,9</td>
+                    <td>14,9</td>
+                    <td>82,7</td>
+                    <td>45,3</td>
+                    <td>67,4</td>
+                    <td>87,5</td>
+                </tbody>
+                <tbody>
+                    <td>Químico</td>
+                    <td>86,3</td>
+                    <td>92,7</td>
+                    <td>27,5</td>
+                    <td>81,8</td>
+                    <td>53,6</td>
+                    <td>78,3</td>
+                    <td>90,1</td>
+                </tbody>
+                <tbody>
+                    <td>Mecânico</td>
+                    <td>97,6</td>
+                    <td>92,8</td>
+                    <td>9,6</td>
+                    <td>98,1</td>
+                    <td>45,0</td>
+                    <td>87,4</td>
+                    <td>67,5</td>
+                </tbody>
+                <tbody>
+                    <td>Constr.Civil</td>
+                    <td>81,5</td>
+                    <td>84,0</td>
+                    <td>31,7</td>
+                    <td>81,9</td>
+                    <td>49,7</td>
+                    <td>34,6</td>
+                    <td>45,6</td>
+                </tbody>
+                <tbody>
+                    <th>Média</th>
+                    <th>86,94</th>
+                    <th>86,32</th>
+                    <th>20,36</th>
+                    <th>84,52</th>
+                    <th>46,82</th>
+                    <th>64,92</th>
+                    <th>66,84</th>
+                </tbody>
+            </table>
+            <p>Qual a variância?</p>
+            <pre>
+            Variância Amostral:
+            Amostra     S² = ∑ᴺ(xᵢ-x̄)²/n-1
+                                ᴵ⁼¹
+            </pre>
+            <img src="img/variancia.png" />
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
