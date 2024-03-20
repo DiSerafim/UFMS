@@ -118,6 +118,20 @@ th, td {
   border: 1px solid #ddd;
 }
 
+#conteudo > .question {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 4vmax;
+}
+
+#conteudo > .question > h3 {
+  background-color: #81a8ca;
+  color: white;
+  padding: 0.7vmax;
+  width: 20%;
+  border-radius: 4px;
+  font-size: 600;
+}
+
 /* Footer */
 footer {
   margin-top: 20px;
