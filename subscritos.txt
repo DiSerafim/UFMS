@@ -80,6 +80,7 @@ x⁴	quarta potência
 |x|	valor absoluto de xis
 x̄   média amostral
 xp̄
+Ā
 ∀   para todo
 ∃   existencial
 ∄   não existe
