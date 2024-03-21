@@ -50,6 +50,12 @@ h2 {
   color: #fff;
 }
 
+.question > .answer {
+  border: 1px solid #f0ad4e;
+  padding: 1vmax;
+  border-radius: 4px;
+}
+
 .status.concluida {
   background-color: #4caf50;
   color: #fff;
