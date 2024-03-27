@@ -53,6 +53,8 @@ v
 ℂ   números complexos
 β ᵝ ᵦ  beta
 α   alfa
+γ   Gama
+ɥ
 √	raiz quadrada
 ∛	raiz cúbica
 ∜	radiciação (raiz quarta)
@@ -92,6 +94,7 @@ n!	n fatorial
 dx	diferencial
 ⎥⎢	paralelo a
 ∑	somatória
+∫   Integral
 sen	seno
 cos	cosseno
 tg  tangente
