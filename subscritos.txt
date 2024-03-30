@@ -54,7 +54,8 @@ v
 β ᵝ ᵦ  beta
 α   alfa
 γ   Gama
-ɥ
+λ   lambda
+μ   média aritmética
 √	raiz quadrada
 ∛	raiz cúbica
 ∜	radiciação (raiz quarta)
@@ -75,7 +76,8 @@ r	raio de um círculo
 loge
 log10
 ϵ   (epsilon) proximidade entre dois valores é 
-δ   (delta) variação ou diferença 
+δ   (delta) variação ou diferença
+σ   variância
 x²	quadrado
 x³	cubo
 x⁴	quarta potência
