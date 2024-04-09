@@ -84,6 +84,7 @@ x⁴	quarta potência
 |x|	valor absoluto de xis
 x̄   média amostral
 xp̄
+p̂   Probabilidade complementar
 Ā
 ∀   para todo
 ∃   existencial
