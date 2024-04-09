@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas de inferência estatística</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Técnicas de inferência estatística</h1>
+        <h2>Unidade 1 - Estimação e intervalo de confiança</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=08wNJSnUx4o&list=PLxI8Can9yAHfGeWW2TS_o4bAueT_ySiqG&index=25&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 4) - Estatística - Aula 24 - Exercícios sobre intervalo de confiança para proporção.<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios sobre intervalo de confiança para proporção.</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Apresentar aplicações dos cálculos de intervalos de confiança para a Proporção.</li>
+            </ul>
+            <p></p>
+        </section>
+
+        <section>
+            <b>Exercício 1: Pesquisa de mercado:</b>
+            <p>Ferramenta para auxiliar no desenvolvimento de novos negócios, de novos produtos e serviços ou no aprimoramento de produtos e serviços já existentes.</p>
+
+            <p>Objetivo:</p>
+            <ul>
+                <li>Avaliar o que os consumidores desejam e o grau de satisfação de um produto ou serviço.</li>
+            </ul>
+            
+            <p>Execução:</p>
+            <ul>
+                <li>Perguntar aos consumidores, atuais ou potenciais, sua opinião a respeito de um produto ou serviço.</li>
+            </ul>
+
+            <p>Caso:</p>
+            <p>Um empreendedor deseja lançar um novo produto e contrata uma empresa para realizar uma pesquisa de mercado com 500 pessoas. Entre as 500 pessoas, 157 manifestam interesse em comprar o produto.</p>
+            <p>Construa um intervalo de confiança com 92% para a probabilidade de uma pessoa adquirir o referido produto.</p>
+
+            <ul>
+                <li>p̂ = 157/500 = 0,314</li>
+                <li>1 - α = 92% → α = 8% → α/2 = 4% = 0,04</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5-a/2.</li>
+                <li>0,5-a/2 = 0,5-0,04 = 0,46</li>
+                <li>Z(α/2) = 1,75.</li>
+            </ul>
+
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 1,75√(0,314(1-0,314))/2500
+            e₀ = 0,036
+            </pre>
+            
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,314 - 0,036 ≤ π ≤ 0,314 + 0,036) = 1 - 0,08</li>
+                <li>P(0,278 ≤ π ≤ 0,350) = 0,92 = 92%</li>
+            </ul>
+            
+            <p>Conclusão:</p>
+            <p>Em 92% das vezes em que forem selecionadas 500 pessoas para avaliar o produto a proporção de pessoas interessadas em adquirir o produto se situará entre 0,278 e 0,350.</p>
+        </section>
+
+        <section>
+            <b>Exercício 2: Pesquisa de mercado II:</b>
+            
+            <p>Caso:</p>
+            <p>Considere que i empreendedor do caso anterior deseje lançar seu produto no mercado apenas se as evidências trazidas pela pesquisa forem fortes o suficiente para garantir que ao menos 25% das pessoas tem interesse no produto.</p>
+
+            <p>Levando em conta as informações anteriores, o empreendedor deve lançar seu produto no mercado?</p>
+
+            <p>Considerando "99%" como um intervalo seguro:</p>
+
+            <ul>
+                <li>1 - α = 99% → α = 1% → α/2 = 0,5% = 0,005</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5-a/2.</li>
+                <li>0,5-a/2 = 0,5-0,005 = 0,495</li>
+                <li>Z(α/2) = 2,575.</li>
+            </ul>
+
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 2,575√(0,314(1-0,314))/2500
+            e₀ = 0,053
+            </pre>
+            
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,314 - 0,053 ≤ π ≤ 0,314 + 0,053) = 1 - 0,01</li>
+                <li>P(0,261 ≤ π ≤ 0,367) = 0,99 = 99%</li>
+            </ul>
+            
+            <p>Conclusão:</p>
+            <p>Como o intervalo de confiança considerando 1-α = 99% situa-se entre 26,1% e 36,7% o empreendedor pode considerar que ao menos 25% dos consumidores adquirirão seu produto em pelo menos 99% das ocasiões.</p>
+        </section>
+
+        <section>
+            <b>Exercício 3: Pesquisa Eleitoral:</b>
+            
+            <p>Considere uma pesquisa eleitoral realizada em dois bairros, A e B.</p>
+
+            <p>No bairro A, um bairro central, foram entrevistados 500 eleitores, sendo que 100 deles declaram que iriam votar no Candidato X.</p>
+
+            <p>No bairro B, um bairro de periferia, dos 1.000 eleitores entrevistados, 300 declararam a intenção de votar no Candidato X.</p>
+
+            <p>a) Construa um intervalo de confiança para a intenção de voto no candidato X no bairro A, considerando um nível de confiança de 95%.</p>
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 1,96√(0,2(1-0,2))/500
+            e₀ = 0,035
+            </pre>
+
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,2 - 0,035 ≤ π ≤ 0,2 + 0,035) = 1 - 0,05</li>
+                <li>P(0,165 ≤ π ≤ 0,235) = 0,95 = 95%</li>
+            </ul>
+
+            <p>b) Faça o mesmo para o bairro B.</p>
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 1,96√(0,3(1-0,3))/1000
+            e₀ = 0,028
+            </pre>
+            
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,3 - 0,0,28 ≤ π ≤ 0,3 + 0,0,28) = 1 - 0,05</li>
+                <li>P(0,272 ≤ π ≤ 0,328) = 0,95 = 95%</li>
+            </ul>
+
+            <p>c) Calcule um intervalo de confiança para a diferença entre as probabilidades de intenção de voto no candidato X nos bairros A e B, considerando = 5%.</p>
+            <ul>
+                <li>W = A - B</li>
+                <li>W ~ N (PA - PB; (PA((1 - PA)/nA) + PB((1 - PB)/nB)))</li>
+                <li>p̂ = PA - PB = 0,2 - 0,3 = -0,1</li>
+                <li></li>
+            </ul>
+            <pre>
+            e₀ = z(α/2)√(PA(1-PA))/nA + (PB(1-PB))/nB
+            e₀ = 1,96√(0,2(1-0,2))/500 + (0,3(1-0,3))/1000
+            e₀ = 0,045
+            </pre>
+            
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(-0,1 - 0,045 ≤ π ≤ -0,1 + 0,045) = 1 - 0,01</li>
+                <li>P(0,145 ≤ π ≤ 0,055) = 0,95 = 95%</li>
+            </ul>
+
+            <p>Resolução:</p>
+            <ul>
+                <li>p̂A = 100/500 = 0,2.</li>
+                <li>p̂B = 300/1000 = 0,3.</li>
+                <li>1 - α = 95% → α = 5% → α/2 = 2,5% = 0,025</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5-a/2.</li>
+                <li>0,5-a/2 = 0,5-0,025 = 0,4750</li>
+                <li>Z(α/2) = 1,96.</li>
+            </ul>
+            
+            <p>Conclusão:</p>
+            <p>Como o intervalo de confiança considerando α = 95% situa-se entre -0,145% e -0,055% e não inclui o valor "0" então pode-se afirmar que existe diferença entre as intenções de voto no Bairro A e mo Bairro B.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
