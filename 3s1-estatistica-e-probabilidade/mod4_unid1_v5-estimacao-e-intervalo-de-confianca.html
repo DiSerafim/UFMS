@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas de inferência estatística</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Técnicas de inferência estatística</h1>
+        <h2>Unidade 1 - Estimação e intervalo de confiança</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=aCu4Ibc5dWU&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=19&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 5) - Estatística - Aula 19 - Intervalo de confiança para proporção e média com variância desco.<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios sobre intervalo de confiança para proporção.</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Conceituar intervalos de confiança relativos a variável aleatória "Proporção" e "Medida com Variância Desconhecida".</li>
+            </ul>
+            <p></p>
+        </section>
+
+        <section>
+            <b>Ex: Distribuição de Bernoulli:</b>
+            <ul>
+                <li>2 possibilidades de resultados apenas.</li>
+                <li>Probabilidade de sucesso = constante.</li>
+                <li>Sucesso: ✅</li>
+                <li>Fracasso: ⛔️</li>
+            </ul>
+            
+            <p>Distribuição de Frequência Relativa ou Proporção Amostral.</p>
+            <p>p = f/n</p>
+            <ul>
+                <li>p = frequência relativa ou proporção.</li>
+                <li>f = frequência absoluta.</li>
+                <li>n = tamanho da amostra.</li>
+            </ul>
+            <pre>
+            μ(p) = μ(f/n) = (1/n)μ(f) = (1/n)nπ = π
+            σ²(p) = σ²(f/n) = (1/n²)σ²(f) =
+            (1/n²)nπ(1-π) = (π(1-π))/n
+            </pre>
+
+            <p>np̂ ≥ 5</p>
+            <p>n(1-p̂) ≥ 5</p>
+            <p>σ(p) = √(p̂(1-p̂))/n</p>
+            <p>μ(p) = p̂</p>
+        </section>
+
+        <section>
+            <b>Caso: Teste de Vazamento</b>
+            <p>Considere testes de vazamento realizados em dois municípios, A e B, buscando identificar o percentual de edifícios que possuem alguma falha na tubulação.</p>
+
+            <p>No município A foram examinadas 500 edifícios, sendo que 100 deles apresentam falhas na tubulação. No município B dos 1.000 edifícios examinadas, 300 apresentaram falhas.</p>
+
+            <p>Resolução:</p>
+            <ul>
+                <li>p̂A = 100/500 = 0,2.</li>
+                <li>p̂B = 300/1000 = 0,3.</li>
+                <li>1 - α = 95% → α = 5% → α/2 = 2,5% = 0,025</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5-a/2.</li>
+                <li>0,5-a/2 = 0,5-0,025 = 0,4750</li>
+                <li>Z(α/2) = 1,96.</li>
+            </ul>
+
+            <p>a) Construa um intervalo de confiança para o percentual de edifícios com falhas na tubulação do município A considerando um nível de confiança de 95%.</p>
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 1,96√(0,2(1-0,2))/500
+            e₀ = 0,035
+            </pre>
+    
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,2 - 0,035 ≤ π ≤ 0,2 + 0,035) = 1 - 0,05</li>
+                <li>P(0,165 ≤ π ≤ 0,235) = 0,95 = 95%</li>
+            </ul>
+
+            <p>b) Faça o mesmo para o município B.</p>
+            <pre>
+            e₀ = z(α/2)√(p̂(1-p̂))/n
+            e₀ = 1,96√(0,3(1-0,3))/1000
+            e₀ = 0,028
+            </pre>
+            
+            <p>Intervalo de confiança:</p>
+            <ul>
+                <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
+                <li>P(0,3 - 0,0,28 ≤ π ≤ 0,3 + 0,0,28) = 1 - 0,05</li>
+                <li>P(0,272 ≤ π ≤ 0,328) = 0,95 = 95%</li>
+            </ul>
+        </section>
+
+        <section>
+            <b>Intervalo de Confiança para Média:</b>
+            <p>(Variância Desconhecida).</p>
+
+            <p>Utilização de S.</p>
+            <pre>
+            Sₓ = √∑ⁿ(xᵢ-x̄)²/(n-1)
+                  ᵢ₌₁
+            </pre>
+            
+            <p>Distribuição t de Student:</p>
+            <ul>
+                <li>tₙ-₁,ₚ = Zₚ · σ/S</li>
+            </ul>
+
+            <p>Fórmula:</p>
+            <ul>
+                <li>P(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>Onde:</li>
+                <li>e₀ = tₐ/₂ · S/√n</li>
+            </ul>
+        </section>
+
+        <section>
+            <b>Caso: Linha de montagem:</b>
+            <p>Tempo de montagem (segundos).</p>
+            <table>
+                <tbody>
+                    <td>1470</td>
+                    <td>2200</td>
+                </tbody>
+                <tbody>
+                    <td>1510</td>
+                    <td>2290</td>
+                </tbody>
+                <tbody>
+                    <td>1690</td>
+                    <td>2380</td>
+                </tbody>
+                <tbody>
+                    <td>1740</td>
+                    <td>2390</td>
+                </tbody>
+                <tbody>
+                    <td>1900</td>
+                    <td>2480</td>
+                </tbody>
+                <tbody>
+                    <td>2000</td>
+                    <td>2500</td>
+                </tbody>
+                <tbody>
+                    <td>2030</td>
+                    <td>2580</td>
+                </tbody>
+                <tbody>
+                    <td>2100</td>
+                    <td>2700</td>
+                </tbody>
+                <tbody>
+                    <td>2190</td>
+                    <td></td>
+                </tbody>
+            </table>
+
+            <p>Construa um intervalo de confiança de 95% para o tempo médio de realização da tarefa.</p>
+
+            <p>Tempo médio:</p>
+            <pre>
+            x̄ = √∑¹⁷(xᵢ/n)
+                ᵢ₌₁
+            x̄ = √∑¹⁷(xᵢ/n) = 36150/17 = 2126,47 segundos.
+                ᵢ₌₁
+            </pre>
+
+            <p>Variância da amostra:</p>
+            <pre>
+            S² = √∑¹⁷x²-(∑¹⁷x)² / n-1
+                 ᵢ₌₁    ᵢ₌₁
+            S² = (79069100 - (36150²/17))/16
+            S² = (79069100 - 76871911,76)/16 = 137324,3 segundos².
+            </pre>
+
+            <p>Buscar o valor na tabela:</p>
+            <ul>
+                <li>α = 5%</li>
+                <li>α/2 = 2,5%</li>
+                <li>g.l. = n-1 = 17 - 1 = 16</li>
+                <li>t·a/2; n-1 = t0,025; 16</li>
+                <li>t0,025; 16 = 2,120.</li>
+            </ul>
+
+            <p>Amplitude:</p>
+            <ul>
+                <li>e₀ = t(α/2)√S²/n = 2,120 · √137.324,3/17</li>
+                <li>e₀ = 2,120 · √8077,9 = 198,63</li>
+            </ul>
+
+            <p>Intervalo:</p>
+            <ul>
+                <li>P(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>P(2.126,47 - 198,63 ≤ μ ≤ 2.126,47 + 198,63) = 1 - 0,05</li>
+                <li>P(1.927,43 ≤ μ ≤ 2.325,10) = 95%</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
