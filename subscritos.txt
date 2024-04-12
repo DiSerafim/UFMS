@@ -38,6 +38,7 @@ Símbolos matemáticos
 > 	maior que
 v
 ^
+△
 ≤ 	menor ou igual
 ≥ 	maior ou igual
 ≅	aproximadamente igual
