@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTATÍSTICA E PROBABILIDADE-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTATÍSTICA E PROBABILIDADE-T01-2024-1</h1>
+        <h2>[Checkout de Presença] Módulo 3 – Variáveis aleatórias e modelos probabilísticos</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Como atividade de checkout de presença, foi organizada uma lista de atividades para praticar o que você aprendeu até aqui.</p>
+            <ul>
+                <li>Prof. Rogers</li>
+                <li>Nota para aprovação: 7,33 de 10,00</li>
+                <li>Iniciado em	terça, 2 abr 2024, 17:00</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	terça, 2 abr 2024, 19:01</li>
+                <li>Tempo empregado	2 horas 1 minuto</li>
+                <li>Notas	3,67/5,00</li>
+                <li>Avaliar	7,33 de um máximo de 10,00(73,33%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <article class="question">
+                <h3>Pergunta 1</h3>
+                <p>Associe corretamente:</p>
+                <p>A) Considere um dado honesto. O dado é lançado sucessivamente, de forma independente, até ocorrer a face 6. Estamos interessados em quantos lançamentos forem necessários. (...)</p>
+                <p>B) Considere um dado honesto. O dado é lançado três vezes, mas a face ocorrida num lançamento é retirada para o próximo lançamento. Estamos interessados no número de faces ímpares obtidas. (...)</p>
+                <p>C) Considere um dado honesto. O dado é lançado três vezes, de forma independente. Estamos interessados no número de vezes que ocorreu a face 1. (...)</p>
+
+                <p>Escolha:</p>
+                <ul>
+                    <li>Distribuição Binomial.</li>
+                    <li>Distribuição Geométrica.</li>
+                    <li>Distribuição Hipergeométrica.</li>
+                </ul>
+                
+                <b class="answer">Resposta:
+                        A) Distribuição Geométrica.✅ / B) Distribuição Binomial. ❌ / C) Distribuição Binomial.✅
+                </b>
+            </article>
+
+            <article class="question">
+                <h3>Pergunta 2</h3>
+                <p>Seja a distribuição de probabilidades da variável aleatória X, assinale a alternativa que representa as condições sobre a e b para que g(x) seja uma função de probabilidade.</p>
+
+                <p>Figura 1: Distribuição de X</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>x</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>g(x)</td>
+                            <td>-(a-b)</td>
+                            <td>b</td>
+                            <td>a</td>
+                            <td>a+b</td>
+                            <td>b-a</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <li>a. 0 <= a <= 1/3 e b = 1</li>
+                    <li>b. 0 <= b <= 1/4 e a = 1/4</li>
+                    <li>c. 0 <= a <= 1/4 e b = 1/4</li>
+                    <li>d. a <= 1/2 e b = 1/3</li>
+                    <li>e. 0 <= b <= 3/7 e a = 1/2</li>
+                </ul>
+
+                <b class="answer">Resposta: b. 0 <= b <= 1/4 e a = 1/4. ❌</b>
+
+                <ul>
+                    <li>0 <= b <= 1/4 e a = 1/4</li>
+                    <li>g(-2) = -(a-b) = -(1/4 - b)</li>
+                    <li>g(-1) = b</li>
+                    <li>g(0) = a = 1/4</li>
+                    <li>g(1) = a + b = 1/4 + b</li>
+                    <li>g(2) = b - a = b - 1/4</li>
+                    <li>Todas as probabilidades são não negativas para os valores de a e b especificados e a soma de todas as probabilidades é igual a 1.</li>
+                </ul>
+            </article>
+
+            <article class="question">
+                <h3>Pergunta 3</h3>
+                <p>Um dado de seis faces é jogado três vezes. A probabilidade de sair exatamente um 6 é 25/72.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <ul>
+                    <li>Binomial: P(x = k) = (n/k)·pᵏ·(1-p)ⁿ⁻ᵏ</li>
+                    <li>n = 3</li>
+                    <li>k = 1</li>
+                    <li>p = 1/6</li>
+                    <li>P(x = 1) = (3/1)·(1/6)¹·(1 - 1/6)³⁻¹</li>
+                    <li>P(x = 1) = 3 · 1/6 · (5/6)²</li>
+                    <li>P(x = 1) = 3 · 1/6 · 25/36</li>
+                    <li>P(x = 1) = 25/72</li>
+                </ul>
+            </article>
+
+            <article class="question">
+                <h3>Pergunta 4</h3>
+                <p>Os pesos dos fardos recebidos por um depósito têm média de 200kg e um desvio padrão de 30kg. Qual a probabilidade de 36 fardos recebidos ao acaso e carregados em um elevador não excederem o limite específico de segurança deste último, que é de 7668kg?</p>
+                <ul>
+                    <li>a. Entre 70% e 80%</li>
+                    <li>b. Entre 90% e 100%</li>
+                    <li>c. Entre 50% e 60%</li>
+                    <li>d. Entre 80% e 90%</li>
+                    <li>e. Entre 60% e 70%</li>
+                </ul>
+                
+                <b class="answer">Resposta: b. Entre 90% e 100%. ✅</b>
+                <ul>
+                    <li>Desvio padrão = Desvio padrão original/√n = 30/√36 = 5</li>
+                    <li>Z = (7668 - 200 · 36)/5</li>
+                    <li>Z = (7668 - 7200)/5</li>
+                    <li>Z = 468/5</li>
+                    <li>Z = 93,6</li>
+                </ul>
+            </article>
+
+            <article class="question">
+                <h3>Pergunta 5</h3>
+                <p>Chamadas telefônicas chegam à razão de 48 por hora no balcão de reservas da Catar Airlines. A probabilidade de chegarem 3 chamadas em um intervalo de tempo de cinco minutos é um valor entre 10% e 15%.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <ul>
+                    <li>(λ) = 48/60 = 0.8</li>
+                    <li>P(X = k) = (e⁻λ·λᵏ)/k!</li>
+                    <li>P(X = 3) = (e⁻λ·λ³)/3!</li>
+                    <li>P(X = 3) = (e⁻°,⁸ · 0,8³)/3!</li>
+                    <li>P(X = 3) = (e⁻°,⁸ · 0,512)/6</li>
+                    <li>P(X = 3) ≃ 0,0751 = 7,51%</li>
+                </ul>
+            </article>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

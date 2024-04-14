@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variáveis aleatórias e modelos probabilísticos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Variáveis aleatórias e modelos probabilísticos</h1>
+        <h2>Unidade 2 - Modelos contínuosURL</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=s28ss1X8W6Q&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=11&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 2) - Estatística - Aula 10 - Exercícios sobre distribuições de probabilidade<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios sobre distribuições de probabilidade</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Apresentar aplicações dos conceitos de distribuições de probabilidade.</li>
+            </ul>
+
+            <b>Exercício 1.</b>
+            <p>Bernoulli Binomial.</p>
+
+            <p>Consumidores de chocolate:</p>
+            <ul>
+                <li>60% preferem marca A.</li>
+                <li>40% preferem marca B.</li>
+                <li>6 consumidores escolhidos ao acaso.</li>
+                <li>a) Probabilidade de exatamente 3 preferirem A?</li>
+                <li>b) Probabilidade de pelo menos 3 preferirem A?</li>
+                <li>c) Probabilidade de no máximo 1 preferir A?</li>
+                <li>d) Média de desvio padrão?</li>
+            </ul>
+
+            <p>Binomial</p>
+            <ul>
+                <li>P(x = k) = (n/k)·pᵏ·qⁿ⁻ᵏ</li>
+                <li>N = 6</li>
+                <li>p = 0,6</li>
+                <li>q = 0,4</li>
+                <li>a) k = 3</li>
+                <ul>
+                    <li>P(k = 3) = (6/3)·0,6³·0,4³ = 0,2765 = 27,65%„</li>
+                </ul>
+                <li>b) k ≥ 3</li>
+                <ul>
+                    <li>P(k≥3) = P(k=3) + P(k=4) + P(k=5) + P(k=6)</li>
+
+                    <li>P(k=3) + (6/3)·0,6³·0,4³ = 0,2765 = 27,65%„</li>
+
+                    <li>P(k=4) + (6/4)·0,6⁴·0,4² = 0,3110 = 31,10%„</li>
+
+                    <li>P(k=5) + (6/5)·0,6⁵·0,4¹ = 0,1866 = 18,66%„</li>
+
+                    <li>P(k=6) + (6/6)·0,6⁶·0,4° = 0,0467 = 4,67%„</li>
+
+                    <li>P(k≥3) = 0,8208</li>
+                </ul>
+                <li>c) k ≤ 1</li>
+                <ul>
+                    <li>P(k ≤ 1) = P(k=0) + P(k=1)</li>
+                    <li>P(k = 0) = (6/0)·0,6°·0,4⁶ = 0,0040 = 0,40%</li>
+                    <li>P(k = 1) = (6/6)·0,6¹·0,4⁵ = 0,0369 = 3,69%</li>
+                    <li>P(k ≤ 1) = 0,04096 = 4,1%</li>
+                </ul>
+                <li>d) μ(x) = n·p</li>
+                <ul>
+                    <li>σ²(x) = n·p·(1-p)</li>
+                    <li>μ = 6·0,6 = 3,6</li>
+                    <li>σ² = 6·0,6·0,4 = 1,44</li>
+                </ul>
+            </ul>
+
+            <b>Exercício 2.</b>
+            <p>Poisson.</p>
+
+            <p>Livro de Estatística:</p>
+            <ul>
+                <li>400 páginas.</li>
+                <li>25 erros.</li>
+            </ul>
+
+            <p>Qual a probabilidade de:</p>
+            <ul>
+                <li>a) Uma página conter exatamente um erro?</li>
+                <li>b) A soma das erros em duas páginas ser 2?</li>
+                <li>c) Na primeira página não haver erro e na última página haver exatamente um erro?</li>
+                <li>Calcule o número médio de erros por página.</li>
+                <li>Os eventos são independentes.</li>
+                <li>λ é constante.</li>
+                <li>Distribuição de Poisson.</li>
+            </ul>
+            <p>Média:</p>
+            <ul>
+                <li>λ = 25/400(erros/páginas) = 1/16</li>
+                <li>Probabilidade:</li>
+                <li>P(X = k) = (e⁻λᵗ·(λt)ᵏ)/k!</li>
+                <li>...</li>
+                <li>a) P(x=1)</li>
+                <ul>
+                    <li>P(X = 1) = (e⁻⁽¹⁄¹⁶⁾·¹((1/16)·1)¹)/1! ≃ 0,0587 = 5,87%</li>
+                </ul>
+                <li>b) P(x=2)</li>
+                <ul>
+                    <li>P(X = 2) = (e⁻⁽¹⁄¹⁶⁾·²((1/16)·2)²)/2! ≃ 0,00689 = 0,69%</li>
+                </ul>
+                <li>c) P(1ª não E 400ª sim)?</li>
+                <ul>
+                    <li>P(1ªñ ∩ 400ªs) = P(1ªñ)·P(400ªs)</li>
+                    <li>P(1ªñ ∩ 400ªs) = ((e⁻⁽¹⁄¹⁶⁾·1·((1/16)·1)°)/0!) · (e⁻⁽¹⁄¹⁶⁾·¹·((1/16)·1)¹)/1!</li>
+                    <li>P(1ªñ ∩ 400ªs) ≃ 0,0552 = 5,52%</li>                    
+                </ul>
+            </ul>
+
+            <b>Exercício 3.</b>
+            <p>Guindaste.</p>
+
+            <p>Resistência ao peso →</p>
+            <ul>
+                <li>μₓ = 300kg</li>
+                <li>σₓ = 10kg</li>
+                <li>Quatro caixas.</li>
+                <li>μᵤ = 70kg</li>
+                <li>σᵤ = 13kg</li>
+            </ul>
+
+            <p>Qual a probabilidade de acionar o sistema de emergência?</p>
+            <ul>
+                <li>Soma de variáveis.</li>
+                <li>μ(w) = μ(y+y+y+y) =</li>
+                <li>4μ(y) = 4·70 = 280kg</li>
+                <li>σ(w) = σ(y+y+y+y) =</li>
+                <li>σ(y)+σ(y)+σ(y)+σ(y) =</li>
+                <li>4σ(y) = 4·13² = 676kg²</li>
+                <li>σ(w) = √σ(w) = √676 = 26kg</li>
+            </ul>
+            <pre>
+                Resistência     Carga total
+                μₓ = 300kg      μ(w) = 280kg
+                σₓ = 10kg       σ(w) = 26kg
+                          T(W-X) 
+            </pre>
+            <ul>
+                <li>μ(T) = μ(w-x) = μ(w)-μ(x)=</li>
+                <li>280 - 300 = -20„</li>
+                <li>σ(T)+σ(w-v) = σ(w)+σ(x) =</li>
+                <li>676 + 100 = 776kg²</li>
+                <li>σ(T) = √σ(T) = √776 ≃ 27,9kg</li>
+            </ul>
+
+            <p>Resolução:</p>
+            <ul>
+                <li>μ(T) = -20kg</li>
+                <li>σ(T) = 776kg²</li>
+                <li>σ(T) = 27,9kg</li>
+                <li>P(T) > 0?</li>
+                <ul>
+                    <li>z = t-μ/σ</li>
+                    <li>z = 0-(-20)/27,9</li>
+                    <li>z ≃ 0,72</li>
+                </ul>
+            </ul>
+
+            <p>Probabilidade de parar num transporte qualquer.</p>
+            <ul>
+                <li>P(T) > 0 = 0,2354 ≃ 23,5%</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

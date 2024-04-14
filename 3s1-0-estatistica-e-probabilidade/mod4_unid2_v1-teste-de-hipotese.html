@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas de inferência estatística</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Técnicas de inferência estatística</h1>
+        <h2>Unidade 2 - Teste de Hipótese.</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=9zMREPL93WA&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=21&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 1) - Estatística - Aula 21 - Teste de Hipóteses para Média.<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Teste de Hipóteses para Média.</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Conceituar os testes de hipóteses.</li>
+                <li>Apresentar o método estatístico para teste de hipóteses.</li>
+                <li>Conceituar os erros Tipo I e Tipo II.</li>
+            </ul>
+            <p></p>
+        </section>
+
+        <section>
+            <b>Parâmetros Populacionais.</b>
+            <ul>
+                <li>População:</li>
+                <ul>
+                    <li>μ - Média da população</li>
+                    <li>σ² - Variância da população</li>
+                    <li>π - Proporção da população</li>
+
+                    <li>Amostra:</li>
+                    <ul>
+                        <li>x̄ - Média amostral</li>
+                        <li>S² - Variância amostral</li>
+                        <li>p - Proporção amostral</li>
+                    </ul>
+                </ul>
+            </ul>
+            
+            <p>Teste de Hipóteses.</p>
+            <p>Conceito:</p>
+            <ul>
+                <li>H₀ → Hipótese a ser testada (Verdadeira até provar em contrário).</li>
+                <li>H₁ → Hipótese alternativa.</li>
+            </ul>
+            
+            <p>Método Estatístico:</p>
+            <ul>
+                <li>1. Determinar o parâmetro de interesse (média, proporção ou variância).</li>
+                <li>2. Definir a hipótese a ser testada H0.</li>
+                <li>3. Definir a hipótese alternativa H1</li>
+                <li>4. Calcular o valor a ser comparado utilizando a estatística de teste apropriada.</li>
+                <li>5. Delimitar a região de rejeição, valor crítico para comparar o  valor anterior.</li>
+                <li>6. Comparar os valores obtidos.</li>
+                <li>7. Decidir pela rejeição ou aceitação da hipótese H0.</li>
+                <li>8. Concluir, baseando-se na aceitação ou na rejeição da hipótese H0.</li>
+            </ul>
+
+            <p>Ex 1; Certificação de Produtos.</p>
+            <ul>
+                <li>Necessária para produtos que apresentam riscos à segurança do consumidor, ao meio ambiente ou quando seu desempenho possa trazer prejuízos econômicos à sociedade.</li>
+                <li>Regulamentada pelo INMETRO.</li>
+                <li>Produtos são comercializados com o Selo de Identificação.</li>
+            </ul>
+
+            <p>Parafusos de Segurança:</p>
+            <ul>
+                <li>População.</li>
+                <ul>
+                    <li>Largura média μ = 10mm.</li>
+                    <li>Desvio padrão σ = 2mm.</li>
+                </ul>
+
+                <li>Amostra.</li>
+                <ul>
+                    <li>N = 15.</li>
+                    <li>Largura média x̄ = 8,5mm.</li>
+                    <li>Nível de confiança de 95%.</li>
+                </ul>
+
+                <li>Aceitar o lote?</li>
+            </ul>
+
+            <li>1. Determinar o parâmetro de interesse.</li>
+            <ul>
+                <li>Largura média do lote de parafusos.</li>
+            </ul>
+
+            <li>2. Definir a hipótese inicial.</li>
+            <ul>
+                <li>H₀:μ = 10mm.</li>
+            </ul>
+
+            <li>3. Definir a hipótese alternativa.</li>
+            <ul>
+                <li>H₁:μ ≠ 10mm</li>
+            </ul>
+
+            <li>4. Definição da estatística de teste.</li>
+            <ul>
+                <li>Zᶜₐₗᶜ = (x̄ - μ)/(σ/√n)</li>
+            </ul>
+
+            <li>5. Delimitar a região de rejeição.</li>
+            <ul>
+                <li>α/2 | 1-α | α/2</li>
+                <li>0,025 | 0,95 | 0,025</li>
+                <li>0,5 - 0,25 = 0,4750</li>
+                <li>0,4750 na tabela é = 1,96</li>
+            </ul>
+
+            <li>6. Aplicação da estatística de teste.</li>
+            <ul>
+                <li>Zᶜₐₗᶜ = (x̄-μ)/(σ/√n)</li>
+                <li>Zᶜₐₗᶜ = (8,5 - 10)/(2/√15)</li>
+                <li>Zᶜₐₗᶜ = -1,5/0,52</li>
+                <li>Zᶜₐₗᶜ = -2,90</li>
+            </ul>
+
+            <li>7. Decidir pela rejeição ou aceitação da hipótese H0.</li>
+            <ul>
+                <li>Zᶜₐₗᶜ = -2,90.</li>
+                <li>Rejeitar H0.</li>
+            </ul>
+
+            <li>8. Concluir pela aceitação ou na rejeição da hipótese H0.</li>
+            <ul>
+                <li>Rejeito H0.</li>
+                <li>O lote não pode ser certificado.</li>
+            </ul>
+
+            <p>No exemplo acima foi feito um "Teste Bicaudal".</p>
+            <pre>
+            H₀:μ = μ₀
+            H₁:μ ≠ μ₀
+            Se -Zcalc < -Zcrit
+            ou Zcalc > Zcrit
+            Rejeito H0.
+            </pre>
+
+            <p>Erro Tipo I e Erro Tipo II</p>
+            <pre>
+            |             |   H₀ Verdadeira |     H₀ Falsa     |
+            | ------------|-----------------|------------------|
+            | Aceitar H₀  | Decisão correta | Erro tipo II (β) |
+            | Rejeitar H₀ | Erro tipo I (α) | Decisão correta  |
+            </pre>
+
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

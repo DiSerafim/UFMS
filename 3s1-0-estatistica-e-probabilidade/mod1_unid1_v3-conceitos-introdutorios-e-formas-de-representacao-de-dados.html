@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise exploratória de dados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Análise exploratória de dados</h1>
+        <h2>Unidade 1 - Conceitos introdutórios e formas de representação de dados</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            <!-- <li><a href="disciplina2.html">Estatística e Probabilidade <span class="status concluida">Concluída</span></a></li> -->
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <!-- <a href="#">Material 1 (PDF) <i class="material-icon">&#xE24D;</i></a> -->
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=JI7Qg6-vkKM&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=14&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 3) - Estatística - Aula 13 - Distribuição de frequência<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Distribuição de frequência</h3>
+            <ul>
+                <li>Apresentar os conceitos de distribuição de frequência.</li>
+                <li>Apresentar os elementos das distribuições de frequência.</li>
+                <li>Apresentar o gráfico Histograma.</li>
+            </ul>
+
+            <strong>Apresentação dos dados</strong>
+            <p>Método Estatístico - Apuração dos dados.</p>
+            <ul>
+                <li>Como descrever os dados estatísticos resultantes de variáveis quantitativas obtidas a partir da amostra?</li>
+            </ul>
+            
+            <p>Método Estatístico - Análise e Interpretação.</p>
+            <ul>
+                <li>Qualidade da decisão dependente da habilidade em compreender as informações contidas nesses dados.</li>
+            </ul>
+            
+            <p>Método Estatístico - Apresentação dos dados.</p>
+            <p>Distribuição de frequências e histogramas:</p>
+            <ul>
+                <li>Organização, apresentação e análise gráfica de uma série de dados.</li>
+                <li>Matéria prima das análises e interpretações estatísticas.</li>
+            </ul>
+
+            <strong>Dados brutos</strong>
+            <p>Dados originais, ainda não prontos para análise.</p>
+            <p>Exemplo: quantidade de defeitos por lote.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lote</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th>16</th>
+                        <th>17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Defeitos</th>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+            <p>Rol: (Conjunto ordenado dos valores obtidos)</p>
+            <p>Dados brutos organizados em ordem crescente ou decrescente.</p>
+            <p>Exemplo: quantidade de defeitos por lote.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Defeitos</th>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Exemplo: número de reclamações de uma loja em site especializado.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>J</th>
+                        <th>F</th>
+                        <th>M</th>
+                        <th>A</th>
+                        <th>M</th>
+                        <th>J</th>
+                        <th>J</th>
+                        <th>A</th>
+                        <th>S</th>
+                        <th>O</th>
+                        <th>N</th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2012</th>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>2013</th>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>2014</th>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>2015</th>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rol: (Conjunto ordenado dos valores obtidos)</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Frequência de uma observação.</p>
+            <ul>
+                <li>Número de repetições dessa observação, quantas vezes determinado fenômeno acontece.</li>
+                <li>Exemplo: número de falhas críticas de um sistema por dia.</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Falhas/dia</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>f(classe)</td>
+                        <td>25</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+            <strong>Conceitos</strong>
+
+            <p>Distribuição de frequência <strong>sem intervalos de classe</strong>.</p>
+            <ul>
+                <li>Valores contados conforme repetição.</li>
+                <li>Funciona com poucos valores.</li>
+            </ul>
+            <p>Exemplo: número de prontos numa prova com 10 questões.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nota</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Número de Alunos</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>13</td>
+                        <td>22</td>
+                        <td>16</td>
+                        <td>9</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Distribuição de frequência <strong>com intervalos de classe</strong>.</p>
+            <ul>
+                <li>Agrupamento dos valores em vários intervalos de classe.</li>
+                <li>Funciona quando existem muitos valores.</li>
+            </ul>
+            <p>Exemplo: largura média de peça usinada.</p>
+            <ul>
+                <li>O símbolo → representa um intervalo fechado à esquerda e aberto à direita.</li>
+                <li>Significa que o número à esquerda pertence à classe e o número à direita não pertence.</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Largura(mm)</th>
+                        <th>Número de Peças</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>147 → 148</td>
+                        <td>18</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>148 → 149</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>149 → 150</td>
+                        <td>192</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>150 → 151</td>
+                        <td>182</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>151 → 152</td>
+                        <td>56</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>152 → 153</td>
+                        <td>14</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Dados discretos</p>
+            <p>Exemplos:</p>
+            <ul>
+                <li>Número de erros num programa de computador: 0, 1, 2, 3, 4, ...</li>
+                <li>Número de lotes produzidos: 112, 315, 761, ...</li>
+                <li>Quantidade de acidentes em determinada industria: 4, 10, 12, 15, ...</li>
+            </ul>
+            <pre>
+                |--|--|--|--|---->
+                0  1  2  3  4  
+            </pre>
+
+            <p>Dados contínuos</p>
+            <ul>
+                <li>A variável assume valores em intervalos da reta real.</li>
+            </ul>
+            <pre>
+                |-**-|--|--|--|---->
+                0    1  2  3  4  
+            </pre>
+            
+            <p>Exemplos:</p>
+            <ul>
+                <li>Peso das peças: 55,5kg; 56,1kg; 53,9kg; 54,2kg; ...</li>
+                <li>Distância entre cidades: 35,5km; 48,6km; 100,10km; ...</li>
+                <li>Tempo de atravessamento: 509,4min; 121,4min; 98,6min; ...</li>
+            </ul>
+            <pre>
+                |-**-|--|--|--->
+                0    1  2  3
+            </pre>
+
+            <p>Amplitude</p>
+            <ul>
+                <li>É a diferença entre o maior e o menor número do ROL.</li>
+            </ul>
+            <pre>
+                Amplitude
+                    ^
+                    |   Eixo Y:
+                    |   |
+                    |   | * |
+                    |   |---------------------------------------
+                    |   Eixo X: ROL 1  ROL 2  ROL 3  ROL 4  ROL 5
+                    |
+                    +------------------------> Conjunto de dados
+            </pre>
+
+            <p>Exemplo: número de reclamações de uma loja em site especializado.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Amplitude A = 6 - 0 = 6</li>
+            </ul>
+
+            <p></p>
+            <strong>Classes</strong>
+            <ul>
+                <li>Intervalos de variação da variável.</li>
+                <li>Representadas simbolicamente por i, sendo i = 1, 2, 3, ..., k</li>
+                <li>Por sua vez k é o número total de classes da distribuição.</li>
+            </ul>
+            <p>Exemplo: largura média de peças usinada.</p>
+            <ul>
+                <li>∑ apresenta a soma dos valores.</li>
+                <li>Intervalo 149 → 150 define a classe i = 3.</li>
+                <li>Total de classes (i) = 6.</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Largura(mm)</th>
+                        <th>Número de Peças</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>147 → 148</td>
+                        <td>18</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>148 → 149</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>149 → 150</td>
+                        <td>192</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>150 → 151</td>
+                        <td>182</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>151 → 152</td>
+                        <td>56</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>152 → 153</td>
+                        <td>14</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Total</td>
+                        <td>537</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Número de Classes em uma Distribuição</p>
+            <ul>
+                <li>N: número de elementos numa amostra.</li>
+                <li>K: número de classes.</li>
+                <li>K = √N</li>
+            </ul>
+            <p>Exemplo:</p>
+            <ul>
+                <li>N = 40</li>
+                <li>K = √40 = 6,3</li>
+                <li>Arredondando para baixo K ≅ 6</li>
+            </ul>
+            
+            <p>Amplitude de um intervalo de classe h.</p>
+            <ul>
+                <li>A: amplitude.</li>
+                <li>K: número de classes.</li>
+                <li>H = A/K</li>
+            </ul>
+            <p>Exemplo:</p>
+            <ul>
+                <li>N = 40</li>
+                <li>K = 6</li>
+                <li>H = A/K = 40/6 = 6,67</li>
+                <li>Arredondando para cima H = 7</li>   
+            </ul>
+
+            <p></p>
+            <p>Exemplo: computadores produzidos por mês num posto de trabalho.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>61</td>
+                        <td>65</td>
+                        <td>43</td>
+                        <td>53</td>
+                        <td>55</td>
+                        <td>51</td>
+                        <td>58</td>
+                        <td>55</td>
+                        <td>59</td>
+                        <td>56</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>52</td>
+                        <td>53</td>
+                        <td>62</td>
+                        <td>49</td>
+                        <td>68</td>
+                        <td>51</td>
+                        <td>50</td>
+                        <td>67</td>
+                        <td>62</td>
+                        <td>64</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>53</td>
+                        <td>56</td>
+                        <td>48</td>
+                        <td>50</td>
+                        <td>61</td>
+                        <td>44</td>
+                        <td>64</td>
+                        <td>53</td>
+                        <td>54</td>
+                        <td>55</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>48</td>
+                        <td>54</td>
+                        <td>57</td>
+                        <td>40</td>
+                        <td>54</td>
+                        <td>71</td>
+                        <td>57</td>
+                        <td>53</td>
+                        <td>46</td>
+                        <td>48</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55</td>
+                        <td>46</td>
+                        <td>57</td>
+                        <td>54</td>
+                        <td>48</td>
+                        <td>63</td>
+                        <td>49</td>
+                        <td>55</td>
+                        <td>52</td>
+                        <td>51</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Exemplo: computadores produzidos.</p>
+            <ul>
+                <li>40 é o menor valor</li>
+                <li>70 é o maior valor</li>
+                <li>50 é o número de meses</li>
+            </ul>
+            <ul>
+                <li>N = 50</li>
+                <li>K = √50 = 7,07 ≅ 7</li>
+                <li>H = A/K = (71 - 40)/7 = 31/7 ≅ 4,43</li>
+                <li>Usaremos H = 5</li>
+            </ul>
+
+            <p>Verificação:</p>
+            <ul>
+                <li>K = 7</li>
+                <li>H = 5</li>
+                <li>P₀ = 40</li>
+                <li>Pₙ = 71</li>
+                <li>P₀ + K . H > Pₙ</li>
+                <li>40 + 7 . 5 = 75 > 71 </li>
+            </ul>
+
+            <p>Limites Aparentes</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>40 → 45</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>45 → 50</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>50 → 55</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55 → 60</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>60 → 65</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>65 → 70</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>70 → 75</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Limites Reais</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>39,5 → 44,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>44,5 → 49,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>49,5 → 54,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>54,5 → 59,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>59,5 → 64,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>64,5 → 69,5</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>69,5 → 74,5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Usar sempre a precisão dos limites da classe como metade da precisão dos dados.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Limites Aparentes</th>
+                        <th>Limites Reais</th>
+                        <th>Frequência</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>40 → 45</td>
+                        <td>39,5 → 44,5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>45 → 50</td>
+                        <td>44,5 → 49,5</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>50 → 55</td>
+                        <td>49,5 → 54,5</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55 → 60</td>
+                        <td>54,5 → 59,5</td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>60 → 65</td>
+                        <td>59,5 → 64,5</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>65 → 70</td>
+                        <td>64,5 → 69,5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>70 → 75</td>
+                        <td>69,5 → 74,5</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Frequências Relativas</p>
+            <ul>
+                <li>Razão entre as frequências simples e o número total de dados.</li>
+                <li>fi = Ni/N</li>
+            </ul>
+            <p>Exemplo:</p>
+            <ul>
+                <li>f₄ = 12/50 = 0,24</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Limites Aparentes</th>
+                        <th>Limites Reais</th>
+                        <th>Frequência</th>
+                        <th>Frequência Relativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>40 → 45</td>
+                        <td>39,5 → 44,5</td>
+                        <td>3</td>
+                        <td>0,06</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>45 → 50</td>
+                        <td>44,5 → 49,5</td>
+                        <td>8</td>
+                        <td>0,16</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>50 → 55</td>
+                        <td>49,5 → 54,5</td>
+                        <td>16</td>
+                        <td>0,32</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55 → 60</td>
+                        <td>54,5 → 59,5</td>
+                        <td>12</td>
+                        <td>0,24</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>60 → 65</td>
+                        <td>59,5 → 64,5</td>
+                        <td>7</td>
+                        <td>0,14</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>65 → 70</td>
+                        <td>64,5 → 69,5</td>
+                        <td>3</td>
+                        <td>0,06</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>70 → 75</td>
+                        <td>69,5 → 74,5</td>
+                        <td>1</td>
+                        <td>0,02</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>50</td>
+                        <td>1,00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Ponto Médio da Classe</p>
+            <ul>
+                <li>Ponto que divide o intervalo de classe em duas partes iguais.</li>
+                <li>xᵢ = (Lᵢₘᶠ + Lₛᵤₚ)/2</li>
+            </ul>
+            <p>Exemplo:</p>
+            <ul>
+                <li>x₅ = (59,5 + 64,5)/2 = 62</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Limites Aparentes</th>
+                        <th>Limites Reais</th>
+                        <th>xᵢ</th>
+                        <th>Frequência</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>40 → 45</td>
+                        <td>39,5 → 44,5</td>
+                        <td>42</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>45 → 50</td>
+                        <td>44,5 → 49,5</td>
+                        <td>47</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>50 → 55</td>
+                        <td>49,5 → 54,5</td>
+                        <td>52</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55 → 60</td>
+                        <td>54,5 → 59,5</td>
+                        <td>57</td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>60 → 65</td>
+                        <td>59,5 → 64,5</td>
+                        <td>62</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>65 → 70</td>
+                        <td>64,5 → 69,5</td>
+                        <td>67</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>70 → 75</td>
+                        <td>69,5 → 74,5</td>
+                        <td>72</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Frequência Acumulada</p>
+            <ul>
+                <li>Total das frequências dos valores inferiores ao limite superior de uma classe</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Limites Aparentes</th>
+                        <th>Limites Reais</th>
+                        <th>Frequência Relativa</th>
+                        <th>Frequência Acumulada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>40 → 45</td>
+                        <td>39,5 → 44,5</td>
+                        <td>0,06</td>
+                        <td>0,06</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>45 → 50</td>
+                        <td>44,5 → 49,5</td>
+                        <td>0,16</td>
+                        <td>0,22</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>50 → 55</td>
+                        <td>49,5 → 54,5</td>
+                        <td>0,32</td>
+                        <td>0,54</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>55 → 60</td>
+                        <td>54,5 → 59,5</td>
+                        <td>0,24</td>
+                        <td>0,78</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>60 → 65</td>
+                        <td>59,5 → 64,5</td>
+                        <td>0,14</td>
+                        <td>0,92</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>65 → 70</td>
+                        <td>64,5 → 69,5</td>
+                        <td>0,06</td>
+                        <td>0,98</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>70 → 75</td>
+                        <td>69,5 → 74,5</td>
+                        <td>0,02</td>
+                        <td>1,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Neste caso, basta somar o valor anterior com o valor atual.</p>
+            <ul>
+                <li>0,06 se repete</li>
+                <li>0,06 + 0,16 = 0,22</li>
+                <li>0,22 + 0,32 = 0,54 ...</li>
+            </ul>
+
+            <strong>Histograma</strong>
+            <p>Definição</p>
+            <ul>
+                <li>Conjunto de retângulos justapostos.</li>
+                <li>Bases se localizam sobre o eixo horizontal.</li>
+                <li>Pontos médios coincidem com pontos médios.</li>
+                <li>Larguras dos retângulos iguais às amplitudes dos intervalos.</li>
+                <li>Alturas dos retângulos devem ser proporcionais às frequências das classes.</li>
+            </ul>
+            <pre>
+                Eixo Y:
+                |
+                | * |
+                | * |
+                | * |
+                |   |
+                |---|---|---|---|
+                Eixo X: 0,5 - 1,5  1,5 - 2,5  2,5 - 3,5  3,5 - 4,5
+            </pre>
+            <img src="img/histograma.png" />
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

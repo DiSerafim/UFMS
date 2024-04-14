@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas de inferência estatística</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Técnicas de inferência estatística</h1>
+        <h2>Unidade 1 - Estimação e intervalo de confiança</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=cDriIcDVeL4&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 2) - Estatística - Aula 18 - Exercícios sobre intervalo de confiança para média<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios sobre intervalo de confiança para média - Aula 18</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Apresentar aplicações dos cálculos de intervalos de confiança para a média da população.</li>
+            </ul>
+            <img src="img/tabela-normal-padrao-de-0-a-z.png" alt="Tabela normal de a a z">
+            <p></p>
+
+            <b>Exercício 1:</b>
+            <p>Caso: Linha de Montagem.</p>
+            <ul>
+                <li>Criada por Henry Ford.</li>
+                <li>Nova forma de produzir.</li>
+                <li>Maior produtividade.</li>
+                <li>Menor custo de produção.</li>
+            </ul>
+
+            <p>Estudos detalhados indicam que a variância do tempo de produção de um veículo é conhecida e igual a 16 dias².</p>
+            
+            <p>Uma amostra de 64 veículos produzidos foi selecionada aleatoriamente e obteve-se tempo médio de produção de 5,0 dias.</p>
+
+            <p>Deseja-se construir um intervalo de confiança para o verdadeiro tempo médio de produção com nível de 95% de confiança.</p>
+            
+            <ul>
+                <li>Nível de confiança:</li>
+                <li>1 - α = 95% → α = 5% → α/2 = 2,5% = 0,025</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5 - a/2</li>
+                <li>0,5 - a/2 = 0,5 - 0,025 = 0,4750</li>
+                <li>Z(α/2) = 1,96</li>
+
+                <li>...</li>
+                <li>(α/2) = 2,5%</li>
+                <li>Z(α/2) = 1,96</li>
+
+                <li>Contexto:</li>
+                <li>e₀ = Z(α/2)·√σ/n</li>
+                <li>e₀ = 1,96·√16/64 = 0,98</li>
+
+                <li>Intervalo de confiança:</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(5 - 0,98 ≤ μ ≤ 5 + 0,98) = 1 - 0,05</li>
+                <li>p(4,02 ≤ μ ≤ 5,98) = 0,95 = 95%</li>
+                <li>Conclusão:</li>
+                <li>Em 95% das vezes em que forem selecionadas amostras de 64 veículos produzidos o tempo médio de produção se situará entre 4,02 e 5,98 dias.</li>
+            </ul>
+
+            <b>Exercício 2:</b>
+            <p>Caso: Medições com Multímetros.</p>
+            <p>Aparelhos de medição bastante populares.</p>
+            
+            <p>Multímetros analógicos utilizam galvanômetro, bobina elétrica montada em um anel ao redor de um imã.</p>
+
+            <p>Indústria Brasileira  que projeta, desenvolve e fabrica equipamentos de teste de medição.</p>
+
+            <p>Historicamente o desvio padrão é de 3,0 μV</p>
+
+            <p>Lote de 18 amostras para verificação da qualidade resultou em medição de 4,7 μV</p>
+
+            <p>a) Elabore um intervalo de confiança para sensitividade média desta população considerando nível de 98% de confiança.</p>
+            <ul>
+                <li>Nível de confiança:</li>
+                <li>1 - α = 98% → α = 2% → α/2 = 1% = 0,01</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5 - a/2</li>
+                <li>0,5 - α/2 = 0,5 - 0,01 = 0,49</li>
+                <li>Z(α/2) ≃ 2,33</li>
+
+                <li>...</li>
+                <li>(α/2) = 1%</li>
+                <li>Z(α/2) = 2,33</li>
+
+                <li>Contexto (Intervalo):</li>
+                <li>e₀ = Z(α/2)·σ/√n</li>
+                <li>e₀ = 2,33·3√18 = 1,65</li>
+
+                <li>Intervalo de confiança (Fórmula):</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(4,7 - 1,65 ≤ μ ≤ 4,7 + 1,65) = 1 - 0,02</li>
+                <li>p(3,5 ≤ μ ≤ 6,35) = 0,98 = 98%</li>
+
+                <li>Conclusão:</li>
+                <li>Para 98% (3,5μV e 6,35μV) medição.</li>
+            </ul>
+
+            <p>b) Elabore um intervalo de confiança para sensitividade média desta população considerando nível de 90% de confiança.</p>
+            <ul>
+                <li>Nível de confiança:</li>
+                <li>1 - α = 90% → α = 10% → α/2 = 5% = 0,05</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5 - a/2</li>
+                <li>0,5 - α/2 = 0,5 - 0,05 = 0,45</li>
+                <li>Z(α/2) ≃ 1,645</li>
+
+                <li>...</li>
+                <li>(α/2) = 1%</li>
+                <li>Z(α/2) = 1,645</li>
+
+                <li>Contexto (Intervalo):</li>
+                <li>e₀ = Z(α/2)·σ/√n</li>
+                <li>e₀ = 1,645·3√18 = 1,16</li>
+
+                <li>Intervalo de confiança (Fórmula):</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(4,7 - 1,65 ≤ μ ≤ 4,7 + 1,65) = 1 - 0,1</li>
+                <li>p(3,54 ≤ μ ≤ 5,86) = 0,90 = 90%</li>
+
+                <li>Conclusão:</li>
+                <li>Para 90% (3,54μV e 5,86μV) medição.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

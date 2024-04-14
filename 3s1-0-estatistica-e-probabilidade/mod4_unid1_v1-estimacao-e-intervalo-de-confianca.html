@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas de inferência estatística</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Técnicas de inferência estatística</h1>
+        <h2>Unidade 1 - Estimação e intervalo de confiança</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=unNyFOmbovo&list=PLxI8Can9yAHfGeWW2TS_o4bAueT_ySiqG&index=23&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 1) - Estatística - Aula 22 - Exercícios sobre intervalo de confiança para média<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Exercícios sobre intervalo de confiança para média - Aula 22</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Apresentar aplicações dos cálculos de intervalos de confiança para a média da população.</li>
+            </ul>
+            <img src="img/tabela-normal-padrao-de-0-a-z.png" alt="Tabela normal de a a z">
+            <p></p>
+
+            <b>Exercício 1:</b>
+            <p>Caso: Notas da Prova.</p>
+            <p>A nota da prova numa determinada prova de estatística é tal que seu desvio padrão é conhecido e igual a 5,0 pontos</p>
+            
+            <p>Uma amostra de 100 provas realizadas pelos alunos foi selecionada aleatoriamente e obteve-se nota média amostral de 7,0 pontos.</p>
+
+            <p>Deseja-se construir um intervalo de confiança para a verdadeira nota média desta prova com nível de 95% de confiança</p>
+            
+            <p>1 - α = 95% → α = 5% → α/2 = 2,5% = 0,025</p>
+            <ul>
+                <li>Z(α/2) = ?</li>
+                <li>Na tabela normal busca-se o valor de 0,5 - a/2</li>
+                <li>0,5 - a/2 = 0,5 - 0,025 = 0,4750</li>
+                <li>Z(α/2) = 1,96</li>
+                <li>...</li>
+                <li>(α/2) = 2,5%</li>
+                <li>Z(α/2) = 1,96</li>
+                <li>Contexto:</li>
+                <li>e₀ = Z(α/2) σ/√n</li>
+                <li>e₀ = 1,96·5/√100 = 0,98</li>
+                <li>Intervalo de confiança:</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(7 - 0,98 ≤ μ ≤ 7 + 0,98) = 1 - 0,05</li>
+                <li>p(6,02 ≤ μ ≤ 7,98) = 0,95 = 95%</li>
+                <li>Conclusão:</li>
+                <li>A nota média obtida se situará entre 6,02 e 7,98 pontos.</li>
+            </ul>
+
+            <b>Exercício 2:</b>
+            <p>Caso: Número de Residentes.</p>
+            <p>Uma pesquisa con intuito de conhecer a realidade dos alunos da rede de ensino registrou que 3,2 pessoas residiam em média entre os 18 diferentes domicílios pesquisados nesta amostra selecionada aleatoriamente.</p>
+            
+            <p>O IBGE possui registro de que desvio padrão da população associava à variável "número de residentes por domicílio" é igual a "2 residentes por domicílio".</p>
+            <p>a) Elabore um intervalo de confiança para o número de residentes por domicílio desta população considerando nível de 98% de confiança.</p>
+            <ul>
+                <li>1 - α = 98% → α = 2% → α/2 = 1% = 0,01</li>
+                <li>Z(α/2) = ?</li>
+
+                <li>Na tabela normal busca-se o valor de 0,5 - α/2</li>
+                <li>0,5 - α/2 = 0,5 - 0,01 = 0,49</li>
+                <li>Z(α/2) ≃ 2,33</li>
+
+                <li>Contexto:</li>
+                <li>e₀ = Z(α/2) σ/√n</li>
+                <li>e₀ = 2,33·2/√18 = 1,09</li>
+
+                <li>Intervalo de confiança:</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(3,2 - 1,09 ≤ μ ≤ 3,2 + 1,09) = 1 - 0,02</li>
+                <li>p(2,11 ≤ μ ≤ 4,29) = 98%</li>
+
+                <li>Conclusão:</li>
+                <li>Média de 2,11 a 4,29.</li>
+            </ul>
+
+            <p>b) Elabore um intervalo de confiança para o número de residentes por domicílio desta população considerando nível de 90% de confiança.</p>
+            <ul>
+                <li>1 - α = 90% → α = 10% → α/2 = 5% = 0,05</li>
+                <li>Z(α/2) = ?</li>
+                
+                <li>Na tabela normal busca-se o valor de 0,5 - α/2</li>
+                <li>0,5 - α/2 = 0,5 - 0,05 = 0,45</li>
+                <li>Z(α/2) ≃ 1,645</li>
+
+                <li>Contexto:</li>
+                <li>e₀ = Z(α/2) σ/√n</li>
+                <li>e₀ = 1,645·2/√18 = 0,77</li>
+
+                <li>Intervalo de confiança:</li>
+                <li>p(x̄ - e₀ ≤ μ ≤ x̄ + e₀) = 1 - α</li>
+                <li>p(3,2 - 0,77 ≤ μ ≤ 3,2 + 0,77) = 1 - 0,1</li>
+                <li>p(2,43 ≤ μ ≤ 3,97) = 90%</li>
+
+                <li>Conclusão:</li>
+                <li>a) Para 98%: 2,11 a 4,29 residentes.</li>
+                <li>b) Para 90%: 2,43 a 3,97 residentes.</li>
+            </ul>
+
+            <b>Exercício 3:</b>
+            <p>Caso: Quantidade de açúcar.</p>
+            <p>Considere uma padaria que produz doces com média de açúcar de 100 mg/doce e um desvio padrão de 10 mg/doce.</p>
+            <p>A distribuição desses valores nessa produção da padaria tem distribuição normal.</p>
+            <p>Encontre a probabilidade de uma amostra aleatória de n = 5 doces, retirada aleatoriamente pela equipe de controle da padaria, ter uma média de açúcar menor que 97 mg/doce.</p>
+            <ul>
+                <li>Média:</li>
+                <li>μ₍ₓ₎ = 100 mg/pão</li>
+
+                <li>Variância:</li>
+                <li>σ₍ₓ₎ = σ/n = 10/5 = 2 mg/pão</li>
+
+                <li>Fórmula:</li>
+                <li>Z₍ᵃ⁄₂₎ = (x̄ - μ)/(σ/n)</li>
+                <li>Z = (x̄ - μ)/(σ₍ₓ₎) = (97-100)/2 = -1,5.</li>
+
+                <li>Na tabela normal busca-se o valor de |Z| = 1,50:</li>
+                <li>P(z) = 0,4332</li>
+                <li>Z = -1,50</li>
+
+                <li>Intervalo de confiança:</li>
+                <li>p(x < 97) = p(x < -1,50) = 0,5 - 0,4332 = 0,0668</li>
+                <li>p(x < 97) = 6,68%</li>
+
+                <li>Conclusão:</li>
+                <li>A probabilidade da amosta contendo 5 doces ter média amostral inferior a 97 mg/doce é de 6,68%.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

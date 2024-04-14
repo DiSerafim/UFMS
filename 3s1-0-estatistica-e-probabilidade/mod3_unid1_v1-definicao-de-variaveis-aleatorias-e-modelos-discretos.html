@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variáveis aleatórias e modelos probabilísticos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Variáveis aleatórias e modelos probabilísticos</h1>
+        <h2>Unidade 1 - Definição de variáveis aleatórias e modelos discretos</h2>
+        <p>Professor Especialista: Rogers Barros de Paula</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Estatística e Probabilidade
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=K1MXYc_89D8&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=8&ab_channel=UNIVESP" target="_blank">
+                        (Vídeo 1) - Estatística - Aula 07 - Variáveis aleatórias<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: André Fleury (Univesp)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Variáveis aleatórias</h3>
+
+            <p>Objetivos:</p>
+            <ul>
+                <li>Apresentar os conceitos de distribuições de probabilidade.</li>
+                <li>Apresentar os principais parâmetros das distribuições de probabilidade.</li>
+            </ul>
+
+            <b>Variável Aleatória:</b>
+            <p>Atribuir descrição numérica aos resultados dos experimentos.</p>
+
+            <pre>
+                A  | a      Evento  Probabilidade
+            -------|-----   
+            A   AA | Aa     {AA}      P(AA) = 1/4
+            -------|-----   
+            a   aA | aa     {Aa}      P(Aa) = 1/2
+                            {aa}      P(aa) = 1/4
+            </pre>
+            
+            <p>Descrever o valor que corresponde ao resultado de determinado experimento.</p>
+            <pre>
+            🪙🪙        V.A.    Probabilidade
+            🪙🪙 x 2    X = 0   P₍ₖₖ₎ = 1/4
+            🪙🪙        X = 1   P₍ₖᶜ₎ = 1/2
+                       X = 2   P₍ᶜᶜ₎ = 1/4
+            </pre>
+            
+            <p>Qual a função que associa os diferentes valores da V.A. aos resultados possíveis?</p>
+            <ul>
+                <li>Central de relacionamento com clientes com 6 atendentes.</li>
+                <li>Probabilidade de estar atendendo: 0,6.</li>
+                <li>Qual função descreve a probabilidade de estarem em atendimento?</li>
+                <li>x = Número de atendentes ocupados.</li>
+                <li>x = 0, 1, 2, 3, 4, 5, 6.</li>
+                <li>P(x=0) = 0,4⁶ = 0,0041</li>
+                <li>P(x=1) = 6 · 0,6 · 0,4⁵ = 0,0369</li>
+                <li>P(x=2) = 15 · 0,6² · 0,4⁴ = 0,1382</li>
+                <li>P(x=3) = 20 · 0,6³ · 0,4³ = 0,2765</li>
+                <li>P(x=4) = 15 · 0,6⁴ · 0,4² = 0,3110</li>
+                <li>P(x=5) = 6 · 0,6⁵ · 0,4 = 0,1866</li>
+                <li>P(x=6) = 0,6⁶ = 0,0467</li>
+            </ul>
+
+            <b>Função Probabilidade - Formato tabela:</b>
+            <table>
+                <tbody>
+                    <th>x</th>
+                    <th>P(x)</th>
+                </tbody>
+                <tbody>
+                    <td>0</td>
+                    <td>0,0041</td>
+                </tbody>
+                <tbody>
+                    <td>1</td>
+                    <td>0,0369</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>0,1382</td>
+                </tbody>
+                <tbody>
+                    <td>3</td>
+                    <td>0,2765</td>
+                </tbody>
+                <tbody>
+                    <td>4</td>
+                    <td>0,3110</td>
+                </tbody>
+                <tbody>
+                    <td>5</td>
+                    <td>0,1866</td>
+                </tbody>
+                <tbody>
+                    <td>6</td>
+                    <td>0,0467</td>
+                </tbody>
+            </table>
+
+            <p> . </p>
+            <b>Função Probabilidade - Formato gráfico:</b> <br>
+            <img src="img/funcao-probabilidade-formato-grafico.png" alt="Função Probabilidade - Formato gráfico"> <br>
+
+            <b>Função Probabilidade - Formato expressão:</b>
+            <li>P(X = k) = (6/k) · 0,6ᵏ · 0,4⁶⁻ᵏ</li>
+            <p> </p>
+
+            <b>Variável Aleatória Discreta:</b>
+            <p>Admite um número finito de valores ou tem uma quantidade enumerável de valores.</p>
+            <ul>
+                <li>Exemplo:</li>
+                <li>Dado.</li>
+                <li>Moeda.</li>
+                <li>a) P(X = x₀) ≥ 0</li>
+                <li>b) ∑P(X = x₀) = 1</li>
+            </ul>
+
+            <b>Variável Aleatória Contínua:</b>
+            <p>Pode tomar um número infinito de valores e esses valores podem ser associados a mensurações em uma escala continua.</p>
+            <ul>
+                <li>Copo</li>
+                <li>Fita métrica para medir o copo.</li>
+                <li>P(X = 0,2000000...m) = 0</li>
+                <li>a) f(x) ≥ 0</li>
+                <li>b) ᵇₐ∫ f(x)dx = P(a < x ≤ b), b > a</li>
+                <li>c) ∫₋⁺∞ f(x) dx = 1</li>
+            </ul>
+
+            <b>Propriedade das Distribuições de Probabilidade.</b>
+            <ul>
+                <li>Esperança matemática (média).</li>
+                <li>Variância.</li>
+                <li>Desvio Padrão.</li>
+            </ul>
+
+            <b>Esperança matemática (média).</b>
+
+            <p>γ = E₍ₓ₎ = ∑xᵢ·P(xᵢ)</p>
+            <ul>
+                <li>Exemplo: lançamento de um dado.</li>
+                <li>γ = (1/6)·1 + (1/6)·2 + (1/6)·3 + (1/6)·4 + (1/6)·5 + (1/6)·6 =</li>
+                <li>γ = (1/6) + (2/6) + (3/6) + (4/6) + (5/6) + (6/6) = 21/6 = 7/2</li>
+            </ul>
+            <table>
+                <tbody>
+                    <th>xᵢ</th>
+                    <th>P(xᵢ)</th>
+                </tbody>
+                <tbody>
+                    <td>1</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>3</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>4</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>5</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>6</td>
+                    <td>1/6</td>
+                </tbody>
+            </table>
+            
+            <p>Variável continua:</p>
+            <p>γ = E₍ₓ₎ = ∑xᵢ·P(xᵢ)</p>
+            <li>γ = E₍ₓ₎ =∫₋⁺∞ xf(x) dx</li>
+            <ul>
+                <li>Exemplo: lançamento de um dado.</li>
+                <li>γ = (1/6)·1 + (1/6)·2 + (1/6)·3 + (1/6)·4 + (1/6)·5 + (1/6)·6 =</li>
+                <li>γ = (1/6) + (2/6) + (3/6) + (4/6) + (5/6) + (6/6) = 21/6 = 7/2</li>
+            </ul>
+            <table>
+                <tbody>
+                    <th>xᵢ</th>
+                    <th>P(xᵢ)</th>
+                </tbody>
+                <tbody>
+                    <td>1</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>3</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>4</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>5</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>6</td>
+                    <td>1/6</td>
+                </tbody>
+            </table>
+
+            <p> </p>
+            <b>Variância - VAR (X)</b>
+            <p>Grau de dispersão de probabilidade em torno da média. ⚽</p>
+            <li>δ² = ∑(xᵢ-γ)²·P(xᵢ) = E[(x-γ)²]</li>
+            <li>δ² = [∑x²·P(x)]-γ² = E(x²)-[E(x)]²</li>
+            <ul>
+                <li>Exemplo: lançamento de um dado.</li>
+                <li>δ² = (1 - 7/2)²·1/6 + (2 - 7/2)²·1/6 + (3 - 7/2)²·1/6 + (4 - 7/2)²·1/6 + (5 - 7/2)²·1/6 + (6 - 7/2)²·1/6 =</li>
+                <li>δ² = (2/2 - 7/2)²·1/6 + (4/2 - 7/2)²·1/6 + (6/2 - 7/2)²·1/6 + (8/2 - 7/2)²·1/6 + (10/2 - 7/2)²·1/6 + (12/2 - 7/2)²·1/6 =</li>
+                <li>δ² = (- 5/2)²·1/6 + (- 3/2)²·1/6 + (- 1/2)²·1/6 + (1/2)²·1/6 + (3/2)²·1/6 + (5/2)²·1/6 =</li>
+                <li>δ² = 25/4 · 1/6 + 9/4 · 1/6 + 1/4 · 1/6 + 1/4 · 1/6 + 9/4 · 1/6 + 25/4 · 1/6 =</li>
+                <li>δ² = 25/24 + 9/24 + 1/24 + 1/24 + 9/24 + 25/24 =</li>
+                <li>δ² = (25 + 9 + 1 + 1 + 9 + 25) /24</li>
+                <li>δ² = 70/24 = 35/12 = 2,9</li>
+            </ul>
+            <table>
+                <tbody>
+                    <th>xᵢ</th>
+                    <th>P(xᵢ)</th>
+                </tbody>
+                <tbody>
+                    <td>1</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>2</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>3</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>4</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>5</td>
+                    <td>1/6</td>
+                </tbody>
+                <tbody>
+                    <td>6</td>
+                    <td>1/6</td>
+                </tbody>
+            </table>
+            <p>Propriedade da média:</p>
+            <ul>
+                <li>E(k) = k, se k é constante.</li>
+                <li>E(x·k) = k·E(x)</li>
+                <li>E(x+y) = E(x)+E(y)</li>
+                <li>E(x-y) = E(x)-E(y)</li>
+                <li>E(x·y) = E(x)·E(y) se x e y independentes.</li>
+            </ul>
+
+            <b>Desvio Padrão.</b>
+            <p>Variância - Var(x)</p>
+            <p>Desvio padrão = √variância</p>
+            
+            <p>Mediana:</p>
+            <ul>
+                <li>Valor numérico que separa o conjunto pela metade.</li>
+                <li>Conjunto {3, 3, 5, 7, 9}</li>
+                <li>Md = 5</li>
+            </ul>
+            
+            <p>Moda:</p>
+            <ul>
+                <li>Valor numérico de maior frequência.</li>
+                <li>Conjunto {3, 3, 5, 7, 9}</li>
+                <li>Mo = 3</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
