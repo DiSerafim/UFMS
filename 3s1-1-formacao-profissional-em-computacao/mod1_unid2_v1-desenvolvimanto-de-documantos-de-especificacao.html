@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Proposta de projetos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Proposta de projetos.</h1>
+        <h2>💡 Unidade 2 - Desenvolvimento de Documentos de Especificação.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Formação Profissional em Computação
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=L7h19j3C-Q4&ab_channel=AGEADUFMS" target="_blank">
+                        (Vídeo 1) - [UFMS Digital] Formação Profissional em Computação - Módulo 1 - Unidade 2.<i class="material-icon">&#xE03C;</i>
+                    </a>
+                </li>
+                <li>
+                    <p>Professor ministrante: Luciano Édipo Pereira da Silva</p>
+                </li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <h3>Desenvolvimento de Documentos de Especificação.</h3>
+        </section>
+
+        <section id="documentos-especificacao">
+                <h2>Documentos de Especificação</h2>
+                <p>Especificação de Requisitos de Software</p>
+                <ul>
+                    <li>Requisitos de Negócio</li>
+                    <li>Regras de Negócio</li>
+                    <li>Requisitos de Usuário</li>
+                    <li>Atributos de Qualidade</li>
+                    <li>Requisitos Funcionais</li>
+                    <li>Requisitos de Sistema</li>
+                    <li>Interfaces Externas</li>
+                    <li>Restrições</li>
+                    <li>Documento de Visão e Escopo</li>
+                    <li>Documento de Requisitos de Usuário</li>
+                </ul>
+        </section>
+
+        <!-- Especificação de Requisitos de Software -->
+        <section id="especificacao-requisitos-software">
+            <h2>Especificação de Requisitos de Software (ERS)</h2>
+            <ul>
+                <li>Resultado final da etapa de desenvolvimento de requisitos</li>
+                <li>Acordo entre os stakeholders sobre o produto a ser construído</li>
+                <li>Armazena requisitos funcionais e não funcionais</li>
+                <li>Descreve o comportamento, características e restrições do sistema</li>
+                <li>Documentado pelo analista de negócios</li>
+                <li>Base para etapas de Projeto (Design) e Desenvolvimento (Implementação)
+                    <ul>
+                        <li>Mas não contém detalhes de Projeto e Desenvolvimento</li>
+                    </ul>
+                </li>
+                <li>Outros nomes: especificação funcional, documento de requisitos, etc</li>
+            </ul>
+        </section>
+
+        <!-- Um simples documento não basta -->
+        <section id="simples-documento-nao-basta">
+            <h2>Um simples documento não basta…</h2>
+            <ul>
+                <li>Diferentes pessoas —> diferentes necessidades</li>
+                <li>Visão dos objetivos de negócio: Documento de Visão e Escopo (Requisitos de negócio)</li>
+                <li>Perspectiva dos usuários: Documento de Requisitos de Usuário (Requisitos de usuário)</li>
+                <li>Todos os detalhes: Especificação de Requisitos de Software (Requisitos funcionais e não funcionais)</li>
+            </ul>
+        </section>
+
+        <!-- Interessados -->
+        <section id="interessados">
+            <h2>Interessados</h2>
+            <ul>
+                <li>Clientes, marketing, etc precisam saber qual produto será entregue</li>
+                <li>Gerentes precisam estimar cronograma, esforço e recursos</li>
+                <li>Desenvolvedores precisam saber o que construir</li>
+                <li>Testadores precisam desenvolver testes baseados em requisitos</li>
+            </ul>
+        </section>
+
+        <!-- Características Gerais -->
+        <section id="caracteristicas-gerais">
+            <h2>Características Gerais</h2>
+            <ul>
+                <li>Se uma qualidade desejável do sistema não for encontrada no ERS, ela não será implementada</li>
+                <li>Representa acordo entre os diversos stakeholders</li>
+                <li>Deve ser desenvolvido de forma incremental, antes de cada incremento do sistema</li>
+                <li>Cada requisito deve conter id único
+                    <ul>
+                        <li>Facilita solicitações de mudanças, histórico, rastreabilidade</li>
+                        <li>Facilita reuso de requisitos em múltiplos projetos</li>
+                        <li>Ex: UC-1, UC-2, FR-1, FR-2, etc
+                            <ul>
+                                <li>UC = referência a Use Case</li>
+                                <li>FR = referência a Functional Requirement</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Especificação de Requisitos de Software - Estrutura -->
+        <section id="especificacao-requisitos-software">
+            <h2>Especificação de Requisitos de Software (ERS)</h2>
+            <ol>
+                <li><b>Introdução</b>
+                    <ol>
+                        <li>Finalidade</li>
+                        <li>Escopo</li>
+                        <li>Referências</li>
+                    </ol>
+                </li>
+                <li><b>Descrição Geral</b>
+                    <ol>
+                        <li>Perspectiva do produto</li>
+                        <li>Classes de usuários e características</li>
+                        <li>Ambiente operacional</li>
+                        <li>Restrições de projeto e implementação</li>
+                    </ol>
+                </li>
+                <li><b>Funcionalidades</b>
+                    <ol>
+                        <li>Funcionalidade X
+                            <ol>
+                                <li>Descrição</li>
+                                <li>Requisitos funcionais</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li><b>Requisitos de Dados</b>
+                    <ol>
+                        <li>Modelo lógico</li>
+                        <li>Dicionário de dados</li>
+                        <li>Relatórios</li>
+                    </ol>
+                </li>
+                <li><b>Interfaces Externas</b>
+                    <ol>
+                        <li>Interfaces de usuário</li>
+                        <li>Interfaces de software</li>
+                        <li>Interfaces de hardware</li>
+                    </ol>
+                </li>
+                <li><b>Atributos de Qualidade</b>
+                    <ol>
+                        <li>Usabilidade</li>
+                        <li>Desempenho</li>
+                        <li>Segurança</li>
+                    </ol>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Introdução - Finalidade -->
+        <section id="introducao-finalidade">
+            <h2>Introdução: 1.1 Finalidade</h2>
+            <ul>
+                <li>Identifica o produto cujos requisitos estão descritos no documento, incluindo revisão/release</li>
+                <li>Descreve os diferentes tipos de leitores a quem o documento é destinado</li>
+            </ul>
+            <p>Finalidade: Este documento descreve os requisitos funcionais e não funcionais da release 1.0 do Sistema de Encomenda de Almoço. Este documento é destinado aos membros do projeto que irão implementar e verificar o correto funcionamento do sistema.</p>
+        </section>
+
+        <!-- Introdução - Escopo -->
+        <section id="introducao-escopo">
+            <h2>Introdução: 1.2 Escopo</h2>
+            <ul>
+                <li>Descrição curta do produto especificado</li>
+                <li>Se necessário, referenciar outros documentos</li>
+            </ul>
+            <p>Escopo: O Sistema de Encomenda de Almoço permitirá aos funcionários da empresa X pedir almoço online. Uma descrição detalhada é encontrada no Documento de Visão e Escopo [1], juntamente com todas as funcionalidades planejadas.</p>
+        </section>
+
+        <!-- Introdução - Referências -->
+        <section id="introducao-referencias">
+            <h2>Introdução: 1.3 Referências</h2>
+            <p>Lista outros documentos ou recursos referenciados no ERS</p>
+            <p>Ex: contratos, padrões, visão e escopo, etc</p>
+            <p>Referências:</p>
+            <ol>
+                <li>Documento de Visão e Escopo do Sistema de Encomenda de Almoço</li>
+                <li>Process Impact Internet Application User Interface Standard, Version 2.0 <a href="www.processimpact.com/corporate/standards/PI Internet UI Standard.pdf">(Link)</a></li>
+                <!-- Outras referências mantidas -->
+            </ol>
+        </section>
+        
+        <section id="descricao-geral-perspectiva-produto">
+            <h2>Descrição Geral: 2.1 Perspectiva do produto</h2>
+            <li>Descreve o contexto e origem do produto</li>
+            <p>Perspectiva do Produto: O Sistema de Encomenda de Almoço é um novo sistema que substitui o atual processo manual e por telefone para pedir almoço…</p>
+        </section>
+        
+        <section id="descricao-geral-classes-usuarios-caracteristicas">
+            <h2>Descrição Geral: 2.2 Classes de usuários e características</h2>
+            <ul>
+                <li>Identifica as classes de usuários do produto e descreve suas características</li>
+                <li>Se um catálogo de usuários está disponível: referenciar e não
+                    duplicar</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>Classe</th>
+                    <th>Característica</th>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Funcionários da empresa X que solicitam o almoço a ser entregue. Existem 600 potenciais clientes, dos quais 300 devem utilizar o sistema 5 vezes por semana</td>
+                </tr>
+                <tr>
+                    <td>Empregados do Restaurante</td>
+                    <td>Empregados do restaurante que recebem os pedidos do sistema,</td>
+                </tr>
+                <tr>
+                    <td>Gerente de Menu</td>
+                    <td>Empregado do restaurante que cria e mantém menus diários dos itens disponíveis para almoço, e define os pratos especiais. Edita os menus diariamente.</td>
+                </tr>
+                <tr>
+                    <td>Entregador</td>
+                    <td>Funcionário do restaurante responsável pelas entregas dos almoços. Coleta as encomendas e entrega aos clientes.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section id="descricao-geral-ambiente-operacional">
+            <h2>Descrição Geral: 2.3 Ambiente operacional</h2>
+            <p>Descreve o ambiente onde o software irá operar, incluindo plataformas de hardware, sistemas operacionais, versões, servidores e bancos de dados</p>
+
+            <p>Ambiente operacional</p>
+            <ul>
+                <li>AO-1: O sistema deve operar corretamente nos navegadores: Internet Explorer (versões 9, 10 e 11), Firefox (versões 55 a 70), Google Chrome (todas as versões) e Safari (versões 8 a 12)</li>
+                <li>AO-2: O sistema deve rodar no Linux e no servidor Apache HTTP Server</li>
+                <li>AO-3: O sistema deve permitir acesso através da intranet da empresa X, e aplicativos Android e iOS.</li>
+            </ul>
+        </section>
+        
+        <section id="descricao-geral-restricoes-projeto-implementacao">
+            <h2>Descrição Geral: 2.4 Restrições de projeto e implementação</h2>
+            <p>Restrições de linguagem de programação, biblioteca, padrão de codificação, etc</p>
+            <p>Restrições de projeto e implementação</p>
+            <ul>
+                <li>RE-1: A documentação do projeto, codificação e manutenção do sistema deve estar de acordo com o padrão de documentação da empresa [10]</li>
+                <li>RE-2: Todos os códigos HTML devem estar no padrão HTML 5.0</li>
+                <li>RE-3: O sistema deve ser implementado na linguagem Java</li>
+            </ul>
+        </section>
+        
+        <section id="referencias">
+            <h2>Referências</h2>
+            <p>WIEGERS, K. E.; BEATTY, J. Software Requirements. 3. Ed. Microsoft Press, 2013.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
