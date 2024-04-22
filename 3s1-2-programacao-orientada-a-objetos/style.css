@@ -1,0 +1,195 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Seções */
+section {
+  margin: 20px 0;
+  padding: 0 20px 20px 20px;
+  border: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+/* Disciplinas */
+#disciplinas ul {
+  list-style: none;
+  padding: 0;
+}
+
+#disciplinas li {
+  margin-bottom: 10px;
+}
+
+#disciplinas li a {
+  text-decoration: none;
+  color: #444;
+}
+
+#disciplinas li a:hover {
+  color: #666;
+}
+
+.status {
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.status.em-andamento {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.question > .answer {
+  border: 1px solid #f0ad4e;
+  padding: 1vmax;
+  border-radius: 4px;
+}
+
+.status.concluida {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Materiais */
+#materiais ul {
+  list-style: none;
+  padding: 0;
+}
+
+#materiais li {
+  margin-bottom: 10px;
+}
+
+#materiais li a {
+  text-decoration: none;
+  color: #065fc5;
+}
+
+#materiais li a:hover {
+  text-decoration: line-through;
+}
+
+.material-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* Conteúdo */
+#conteudo {
+  margin-bottom: 20px;
+}
+
+#conteudo h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#conteudo strong {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* Exercícios e Avaliações */
+#exercicios-avaliacoes ul {
+  list-style: none;
+  padding: 0;
+}
+
+#exercicios-avaliacoes li {
+  margin-bottom: 10px;
+}
+
+#exercicios-avaliacoes li input {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+#conteudo > .question {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 4vmax;
+}
+
+#conteudo > .question > h3 {
+  background-color: #81a8ca;
+  color: white;
+  padding: 0.7vmax;
+  width: 20%;
+  border-radius: 4px;
+  font-size: 600;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* css do button inicio */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  background-color: rgb(38, 166, 154);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #2CBBAD;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 0.65;
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity, transform;
+  transition: all 0.3s ease-out;
+}
+/* css do button fim */
