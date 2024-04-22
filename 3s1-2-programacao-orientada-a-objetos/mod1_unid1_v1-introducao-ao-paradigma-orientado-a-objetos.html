@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 1 - Introdução ao Paradigma Orientado a Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=bZJ_uDyNBcY&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Introdução ao Paradigma Orientado a Objetos.</h3>
+        </section>
+
+        <section>
+            <h2>Programação Orientada a Objetos (POO)</h2>
+            <ul>
+                <li>Criada por Alan Kay em 1969, através da linguagem Smalltalk;</li>
+                <li>Utiliza o conceito da criação de objetos e do relacionamento entre eles;</li>
+                <li>Provê características para o desenvolvimento rápido de software;</li>
+                <li>É o paradigma de programação mais utilizado atualmente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Introdução à POO</h2>
+            <ul>
+                <li>O mundo à nossa volta não está cheio de objetos?</li>
+                <ul>
+                    <li>Carros, construções, sapatos, pessoas, dispositivos...</li>
+                </ul>
+                <li>Cada um destes objetos têm a capacidade de executar ações:</li>
+                <ul>
+                    <li>Acelerar, correr, ligar, enviar mensagem;</li>
+                    <li>Uma ação pode afetar outros objetos.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conceitos Básicos</h2>
+            <p>Classes X Objetos</p>
+            <b>Estruturada X Orientada a Objetos</b>
+
+            <p>Programação Estruturada:</p>
+            <ul>
+                <li>O programa é representado como uma estrutura lógica;</li>
+                <li>O fluxo de execução da programação é dependente da estrutura do programa;</li>
+                <li>O código recebe mais importância;</li>
+                <li>Lidar com programas moderadamente complexos;</li>
+                <li>Menos segurança de dados;</li>
+                <li>Menos reutilização de código;</li>
+                <li>Flexibilidade e abstração menos importantes;</li>
+                <li>Esta é uma abordagem de top-down.</li>
+            </ul>
+        
+            <p>Programação Orientada a Objetos:</p>
+            <ul>
+                <li>O programa é escrito como uma coleção de objetos que se comunicam entre si;</li>
+                <li>A entidade básica é objeto.</li>
+                <ul>
+                    <li>Cada cálculo é realizado usando apenas os objetos;</li>
+                </ul>
+                <li>Os dados recebem mais importância;</li>
+                <li>Lida com programas muito complexos;</li>
+                <li>Mais segurança de dados;</li>
+                <li>Mais reutilização;</li>
+                <li>Flexibilidade e Abstração mais importantes;</li>
+                <li>Esta é a abordagem de bottom-up.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mais sobre POO</h2>
+            <ul>
+                <li>Exemplos de linguagens de programação orientadas a objetos:</li>
+                <ul>
+                    <li>C++, C#, VB.NET, Java, Object Pascal, Objective-C, Python, SuperCollider, Ruby e Smalltalk.</li>
+                </ul>
+                <li>Desvantagens?</li>
+                <ul>
+                    <li>Pode se tornar muito complexa para problemas mais simples;</li>
+                    <li>Modelagem pode ser complexa;</li>
+                    <ul>
+                        <li>Depende de experiência.</li>
+                    </ul>
+                    <li>Ênfase grande em design e modelagem de software, em detrimento de outros aspectos (como a computação/algoritmos).;</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Regras de Negócio</h2>
+            <p>Incluem políticas da organização, regulamentos do governo, padrões da indústria e algoritmos. Não são requisitos de software pois existem independente de qualquer software específico. Influenciam requisitos de negócio, de usuário e funcionais, além de atributos de qualidade.</p>
+        </section>
+
+        <section>
+            <h2>Exemplo de Regras de Negócio</h2>
+            <ul>
+                <li>O cliente do banco pode sacar, no máximo, R$1000,00 por dia de sua conta.</li>
+                <li>Funcionário tem direito a 30 dias de férias após 1 ano de trabalho.</li>
+                <li>O professor deve lançar a nota da prova em até 10 dias úteis.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Requisitos Não Funcionais</h2>
+            <p>Uma propriedade ou característica que um sistema deve ter ou uma restrição que deve respeitar. Atributos de qualidade descrevem as características do sistema em várias dimensões, que são importantes para usuários e desenvolvedores.</p>
+            <p>Exemplos incluem usabilidade, segurança, desempenho, portabilidade, compatibilidade, disponibilidade, interfaces externas e restrições de design e implementação.</p>
+        </section>
+
+        <section>
+            <h2>Engenharia de Requisitos</h2>
+            <p>É o processo de encontrar, analisar, documentar, verificar, validar e gerenciar requisitos e restrições.</p>
+        </section>
+
+        <section>
+            <h2>Fases da Engenharia de Requisitos</h2>
+            <p><b>Desenvolvimento de Requisitos</b></p>
+            <ul>
+                <li>Elicitação: explora os requisitos</li>
+                <li>Análise: avalia os requisitos</li>
+                <li>Especificação: documenta os requisitos</li>
+                <li>Validação: confirma os requisitos</li>
+            </ul>
+            <p><b>Gerenciamento de Requisitos:</b> define acordo, avaliar impacto de mudanças, rastreia requisitos, controla status…</p>
+        </section>
+
+        <section>
+            <h2>Desenvolvimento: Elicitação</h2>
+            <p>Atividades relacionadas à descoberta de requisitos: entrevistas, workshops, análise de documentos, prototipagem, etc</p>
+            <p>Principais atividades:</p>
+            <ul>
+                <li>Identificar classes de usuários e outros stakeholders</li>
+                <li>Entender os objetivos de negócio e tarefas dos usuários</li>
+                <li>Aprender sobre o ambiente onde o novo produto será utilizado</li>
+                <li>Trabalhar com membros de cada classe de usuário para entender suas necessidades e expectativas</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Desenvolvimento: Análise</h2>
+            <p>Busca um entendimento mais preciso dos requisitos</p>
+            <p>Principais atividades:</p>
+            <ul>
+                <li>Analisar a informação recebida do usuário para diferenciar os diversos tipos de requisitos</li>
+                <li>Decompor requisitos de alto-nível</li>
+                <li>Derivar requisitos funcionais</li>
+                <li>Entender os atributos de qualidade</li>
+                <li>Alocar requisitos para componentes</li>
+                <li>Negociar prioridades</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Desenvolvimento: Especificação</h2>
+            <p>Representa e armazena o conhecimento sobre os requisitos de modo persistente e organizado</p>
+            <p>Principal atividade: traduzir as necessidades dos usuários em requisitos escritos e diagramas</p>
+        </section>
+
+        <section>
+            <h2>Desenvolvimento: Validação</h2>
+            <p>Confirma que requisitos estão corretos e permitirão a construção de uma solução para satisfazer os objetivos de negócio</p>
+            <p>Principais atividades:</p>
+            <ul>
+                <li>Revisar a documentação de requisitos para corrigir problemas antes que o desenvolvimento inicie</li>
+                <li>Desenvolver testes e critérios de aceitação para confirmar que o produto satisfaz as necessidades dos usuários e objetivos de negócio</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gerenciamento de Requisitos</h2>
+            <p>Principais atividades:</p>
+            <ul>
+                <li>Definir a baseline dos requisitos (ponto que representa acordo entre stakeholders para release ou iteração)</li>
+                <li>Avaliar o impacto de mudanças de requisitos</li>
+                <li>Definir os relacionamentos e dependências</li>
+                <li>Rastrear requisitos</li>
+                <li>Controlar o status e mudanças dos requisitos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Benefícios da Engenharia de Requisitos</h2>
+            <ul>
+                <li>Os processos de requisitos enfatizam uma abordagem colaborativa do desenvolvimento de produtos.</li>
+                <li>Um processo efetivo de mudanças minimiza o impacto de alterações nos requisitos.</li>
+                <li>Requisitos documentados e claros facilitam os testes.</li>
+            </ul>
+            <p>Consequências:</p>
+            <ul>
+                <li>Menos defeitos nos requisitos e no produto</li>
+                <li>Menos retrabalho</li>
+                <li>Desenvolvimento mais rápido</li>
+                <li>Menos funcionalidades desnecessárias</li>
+                <li>Menos erros de comunicação</li>
+                <li>Maior satisfação do cliente e do time de desenvolvimento</li>
+                <li>Produtos fazem o esperado</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+            <ul>
+                <li>SOMMERVILLE, Ian; SAWYER, Pete. Requirements engineering: a good practice guide. 1997. England: John Willey & Son Ltd.</li>
+                <li>WIEGERS, K. E.; BEATTY, J. Software Requirements. 3. Ed. Microsoft Press, 2013.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+
+        <section>
+            <b>Slide:</b>
+            <embed src="mod1-unid1-apresentacao.pdf" type="application/pdf" width="100%" height="600px" />
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
