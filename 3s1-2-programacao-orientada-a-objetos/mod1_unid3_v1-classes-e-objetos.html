@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 3 - Classes e Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=IV3EY8rU80k&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 3. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Classes e Objetos.</h3>
+        </section>
+
+        <section>
+            <h2>Classes.</h2>
+            <ul>
+                <li>São modelos (templates) usados para criar objetos, definindo:</li>
+                <ul>
+                    <li>O comportamento de seus objetos através de métodos;</li>
+                    <li>As informações destes objetos através de atributos.</li>
+                </ul>
+                <li>É uma entidade lógica que abstrai um conjunto de objetos com características similares</li>
+            </ul>
+
+            <b>Auxiliam no Reuso:</b>
+            <p>Exemplos:</p>
+            <ul>
+                <li>Ao desenhar uma planta de uma casa, um arquiteto pode usar a
+                mesma planta para construir várias casas iguais;</li>
+                <li>Um formulário impressão/copiado e distribuído para várias pessoas preencherem, o formulário é um só (molde) mas as cópias preenchidas são diferentes (objetos)</li>
+            </ul>
+            <p>Reusar classes existentes, poupa tempo e esforço.</p>
+        </section>
+
+        <section>
+            <h2>Responsabilidade de uma Classe.</h2>
+            <ul>
+                <li>Ao construir uma classe, temos que definir quais são as suas responsabilidades</li>
+                <ul>
+                    <li>O que ela faz? Quais são suas características?</li>
+                    <li>Com quais classes ela se relaciona (colabora)?</li>
+                    <li>Ela não pode fazer algo fora das suas responsabilidades</li>
+                </ul>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>Classe ContaCorrente</li>
+                    <ul>
+                        <li>Apresentar o saldo</li>
+                        <li>Possibilitar um saque</li>
+                        <li>Possibilitar um depósito</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Membros Internos.</h2>
+            <ul>
+                <li>São partes que compõem a classe;</li>
+                <li>Atributos (ou Propriedades):</li>
+                <ul>
+                    <li>São variáveis declaradas dentro da classe, mas fora de qualquer método.</li>
+                </ul>
+                <li>Métodos (ou comportamentos):</li>
+                <ul>
+                    <li>São métodos internos da classe que correspondem a comportamentos associados à classe.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Objetos.</h2>
+            <ul>
+                <li>São criados a partir de classes:</li>
+                <ul>
+                    <li>São instâncias de uma classe;</li>
+                    <li>Vários objetos podem ser instanciados a partir de uma classe.</li>
+                </ul>
+                <li>A classe é o molde e o objeto é o produto moldado pela classe. Exemplos:</li>
+                <ul>
+                    <li>A classe pode ser imaginada como a planta de uma casa e a casa construída (física) é o objeto criado;</li>
+                    <li>Formulário de inscrição é o molde (classe) e as cópias preenchidas são os objetos.</li>
+                </ul>
+                <li>Pode representar um objeto do mundo real ou uma abstração:</li>
+                <ul>
+                    <li>Ex.: Casa, Conta bancária</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo 1.</h2>
+            <ul>
+                <li>Classe Smartphone:</li>
+                <ul>
+                    <li>Atributos (propriedades):</li>
+                    <ul>
+                        <li>Número de processadores, memória, tamanho da tela, marca...</li>
+                    </ul>
+                    <li>Comportamentos (métodos):</li>
+                    <ul>
+                        <li>Ligar, mandar mensagem, conectar na internet, ...</li>
+                    </ul>
+                </ul>
+                <li>Objetos (instâncias):</li>
+                <ul>
+                    <li>IPhone 6, Samsung Galaxy 5, Sony Xperia Z3, LG Nexus 5, ...</li>
+                </ul>
+            </ul>
+
+            <pre>
+            package exemplo;
+
+            class Smartphone {
+                int numeroDeProCS;   |       
+                double memoriaRam;   |>  Atributos (Propriedades)
+                double tamanhoTela;  |       
+                String marca;        |   
+
+
+                void mandarMsg (String numero, String msg) {   |    
+                    //...                                      |                        
+                }                                              |>  Métodos (comportamentos)
+                                                               |
+                void ligar (String numero) {                   |        
+                    //...                                                               
+                }
+            }
+            </pre>
+            <p>Objeto Iphone 6</p>
+            <ul>
+                <li>numeroDeProcs = 2</li>
+                <li>memoriaRam = 1</li>
+                <li>tamanhoTela = 4.7</li>
+                <li>marca = Apple</li>
+            </ul>
+            <p>Objeto Nexus 5</p>
+            <ul>
+                <li>numeroDeProcs = 4</li>
+                <li>memoriaRam = 2</li>
+                <li>tamanhoTela = 4.95</li>
+                <li>marca = LG</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ciclo de Vida de um Objeto.</h2>
+            <ul>
+                <li>Um objeto é criado usando a palavra reservada new (instanciação):</li>
+                <ul>
+                    <li>Pessoa pes = new Pessoa();</li>
+                    <ul>
+                        <li>A JVM busca o arquivo Pessoa.class no disco e o carrega para a memória;</li>
+                        <li>A JVM cria um espaço na memória do tamanho do objeto e aponta uma referência (chamada de pes) para o objeto criado;</li>
+                    </ul>
+                </ul>
+                <li>Não é possível destruir objetos diretamente da memória em Java:</li>
+                <ul>
+                    <li>Eles são removidos automaticamente da memória (pelo Garbage Collector):</li>
+                    <ul>
+                        <li>Como por exemplo, quando nenhuma referência apontar para o objeto.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Resumindo…</h2>
+            <pre>
+            Pessoa pes                  =   new Pessoa();
+                ↓                       ↓        ↓
+            1 Referência chamada 'pes'  ↓   2 Instanciação de um objeto Pessoa
+                                        ↓   (chamada ao construtor padrão da classe Pessoa)
+                                        ↓
+            3 Atribui à variável de referência a posição na memória do objeto recém criado
+
+            -----------------------------------------------------------------------------------
+
+            class Pessoa {              |           Pessoa ↓
+                int idade;              |            nome:    |  ← pes
+                String nome;            |Memória →   idade:   |
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Operador . (Ponto)</h2>
+            <p>Possibilita o acesso a membros internos de uma classe</p>
+            <li>Mas nem sempre isso é possível, depende do modificador de acesso* de cada membro</li>
+
+            <p>Exemplo:</p>
+            <pre>
+            Pessoa p = new Pessoa();     |              |  Pessoa
+            p.nome = "João";             |              |   nome: João  |   ← P
+            p.idade = 35;                | Memória →    |   idade: 35   |
+            p.falar();
+
+            *mais tarde...
+            </pre>
+        </section>
+
+        <section>
+            <h2>Variáveis.</h2>
+            <ul>
+                <li>Variáveis servem para armazenar valores;</li>
+                <li>Existem dois tipos de variáveis:</li>
+                <ul>
+                    <li>Tipos Primitivos:</li>
+                    <ul>
+                        <li>char, boolean, byte, short, int, long, double ou float.</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Variáveis de Referência:</li>
+                    <ul>
+                        <li>Usadas para se referir (apontar para) e acessar um objeto.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Atributos.</h2>
+            <ul>
+                <li>São variáveis declaradas dentro da classe, mas fora de qualquer método;</li>
+                <li>Possuem valores padrão de inicialização;</li>
+                <li>Pode ser da Instância ou da Classe:</li>
+                <li>Atributo da Instância (do Objeto):</li>
+                <ul>
+                    <li>Não possui o modificador static;</li>
+                    <li>Um valor para cada objeto.</li>
+                </ul>
+                <li>Atributo da Classe:</li>
+                <ul>
+                    <li>Possui o modificador static;</li>
+                    <li>Um valor único para todos os objetos/instâncias.</li>
+                </ul>
+                
+                <p>Atributos - Exemplo</p>
+                <li>Classe Pessoa, com os atributos nome e idade;</li>
+                <pre>
+                class Pessoa {
+                    String nome;
+                    int idade;
+                    public static void main(String[] args) {
+                        Pessoa p = new Pessoa();
+                        p.nome = "João";
+                        p.idade = 35;
+                        System.out.println(p.nome + p.idade);
+                    }
+                }
+                </pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Métodos.</h2>
+            <ul>
+                <li>São blocos de código separados que pertencem a um programa e tem por finalidade realizar uma tarefa específica.</li>                
+                <li>Geralmente correspondem à uma ação:</li>
+                <ul>
+                    <li>somar, correr, imprimir, ler Arquivo, …</li>
+                </ul>
+                <li>Podem retornar um valor ao código chamador;</li>
+                <li>O tipo do valor de retorno é definido antes do nome do método:</li>
+                <ul>
+                    <li>A palavra-chave void indica a ausência de retorno. Serve para definir um método que não retorna dado algum.</li>
+                </ul>
+                <li>Evitar reescrever código para uma mesma ação toda vez que se desejar executá-la;</li>
+                <li>Podem ser declaradas em qualquer posição no código:</li>
+                <ul>
+                    <li>Diferentemente de outras linguagens que obrigam que a declaração ocorra antes da sua chamada/utilização.</li>
+                </ul>
+                <li>Sinônimos:</li>
+                <ul>
+                    <li>Procedimento, Função, Sub-rotina, Subprograma, ...</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Declaração de um Método</h2>
+            <ul>
+                <li>Definir as características, tipo de retorno, nome e parâmetros;</li>
+                <li>Sintaxe geral:</li>
+            </ul>
+            <pre>
+            [características] tipo_retorno nome(parâmetros){
+                // código do método
+            }
+            </pre>
+            <p>Exemplo:</p>
+            <pre>
+                               Assinatura do método
+                               ___________________
+            public static void main(String[] args) {
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Retorno de um Método</h2>
+            <ul>
+                <li>O retorno dentro do método é realizado através da palavra reservada return:</li>
+                <ul>
+                    <li>O return pára a execução do método corrente e devolve o valor de retorno ao método chamador.</li>
+                </ul>
+            </ul>
+            <pre>
+            public boolean ehPar(int a) {
+                return a % 2 == 0;
+            }
+            public String imprimeAltura(double altura) {
+                return "Minha altura é: " + altura;
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Parâmetros</h2>
+            <ul>
+                <li>É a sequência de definições de variáveis separadas por vírgulas entre os parênteses na assinatura do método;</li>
+                <li>O código interno ao método pode usar as variáveis com valores passados no código chamador;</li>
+                <li>Um método pode ter nenhum, um ou mais parâmetros.</li>
+            </ul>
+
+            <p>Exemplo - Classe Pessoa</p>
+            <pre>
+            class Pessoa {
+                String nome;
+                int idade;
+
+                public void imprimirData(int dia){
+                    System.out.println("Eu tenho " + idade + " anos. Nasci no dia: " + dia);
+                }
+                public void imprimirNome() {
+                    System.out.println(nome);
+                }
+            </pre>
+
+            <p>Exemplo (2) - método main</p>
+            <pre>
+                public static void main(String[] args) {
+                    Pessoa p = new Pessoa();
+                    p.nome = "João";
+                    p.idade = 35;
+                    p.imprimirNome();
+                    p.imprimirData(25);
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
