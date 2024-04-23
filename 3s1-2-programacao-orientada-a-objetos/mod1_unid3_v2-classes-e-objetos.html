@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 3 - Classes e Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=GHLFEhdk7Ys&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Programação Orientada a Objetos - Classes e Objetos. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Júlio Cezar Estrella.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Classes e Objetos.</h3>
+            <p>Roteiro:</p>
+            <ul>
+                <li>Conceitos Básicos</li>
+                <ul>
+                    <li>Objetos.</li>
+                    <li>Classes.</li>
+                    <li>Tipos de Acessos.</li>
+                    <li>Pilares da POO.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Objetos.</h2>
+            <ul>
+                <li>Trata-se de entidade que é capaz de salvar estado (informação) e que oferece um conjunto de operações (comportamentos) para verificar ou alterar esse estado</li>
+                <li>Em um modelo de sistema orientado a objetos:</li>
+                <ul>
+                    <li>Os componentes dos sistemas são representados por objetos</li>
+                    <li>Objetos representam entidades reais</li>
+                </ul>
+                <li>Associamos aos objetos:</li>
+                <ul>
+                    <li><b>Estado:</b> É definido pelas propriedades, ou seja, os atributos que ele possui e pelos valores que tais propriedades assumem</li>
+                    <li><b>Comportamento:</b> É definido pela forma como o objeto reage, quando seu estado muda e também o relacionamento com os outros objetos.</li>
+                    <li><b>Identidade:</b> cada objeto é único.</li>
+                </ul>
+                <li>Os objetos indicam o quão capaz é o sistema de guardar informações sobre o que está sendo abstraído e em seguida interagir com ele.</li>
+                <li>São entidades mais próximas do mundo real, ou seja o que conseguimos visualizar.</li>
+                <ul>
+                    <li>Os objetos são uma forma de diminuir o gap semântico.</li>
+                </ul>
+            </ul>
+
+            <p>Quando falamos de objetos um conceito importante é o encapsulamento.</p>
+            <ul>
+                <li>Ele traz modularidade e ocultação da informação (information hiding).</li>
+                <li>O encapsulamento cria um pacote de software cujos métodos e variáveis são relacionados.</li>
+                <li>A information hiding indica que, a única parte do objeto que pode ser acessada pelo mundo externo, deve ser feita por meio de operações.</li>
+            </ul>
+
+            <p>Exemplos:</p>
+            <ul>
+                <li>Lâmpada</li>
+                <ul>
+                    <li>Atributos: ligada/desligada</li>
+                    <li>Métodos: ligar/desligar</li>
+                </ul>
+                <li>Pessoa</li>
+                <ul>
+                    <li>Atributos: nome, idade, altura</li>
+                    <li>Métodos: falar, comer, morder, dormir</li>
+                </ul>
+                <li>Carro</li>
+                <ul>
+                    <li>Atributos: cor, tamanho, velocidade</li>
+                    <li>Métodos: ligar, desligar, acelerar, frear</li>
+                </ul>
+            </ul>
+
+            <p>Resumindo ...</p>
+            <li>Objeto é uma instância de uma classe.</li>
+
+            <p>Exemplo:</p>
+            <ul>
+                <li>Um molde de um quadro de pintura</li>
+                <ul>
+                    <li>Ele é a nossa classe ou tipo e define o formato, o tamanho, as cores e outras características dos objetos fabricados, ou seja, os quadros</li>
+                    <li>A classe é um molde para os objetos</li>
+                </ul>
+                <li>O molde é sempre o mesmo, mas os objetos gerados por ele são diferentes, tendo características variadas, embora respeite a estrutura do molde (classe)</li>
+            </ul>
+
+            <p>Imaginem um molde de um quadro de 30 cm x 30 cm</p>
+            <ul>
+                <li>O Quadro1 pode ser azul</li>
+                <li>O Quadro2 pode ser branco com verde</li>
+            </ul>
+
+            <p>Tanto o quadro1 quanto o quadro2 são objetos do tipo quadro.</p>
+            <ul>
+                <li>Os quadros se diferenciam neste exemplo pela característica cor</li>
+                <li>Poderiam se diferenciar também pelo material (madeira, plástico, alumínio)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes</h2>
+            <ul>
+                <li>As classes são moldes que permitem a criação de novos objetos e descrevem as características comuns de vários objetos</li>
+                <li>Importante mencionar o termo instância, muito utilizado em POO</li>
+                <li><b>Instâncias</b></li>
+                <ul>
+                    <li>Objetos que pertencem a uma classe. Eles são chamados de instâncias de classes</li>
+                </ul>
+            </ul>
+            <p></p>
+            <ul>
+                <li>Uma classe descreve um conjunto de objetos semelhantes.</li>
+                <li>Classe x Objeto</li>
+                <ul>
+                    <li>Classe: é apenas uma abstração</li>
+                    <li>Objeto: é uma entidade concreta</li>
+                </ul>
+                <li>No contexto da programação:</li>
+                <li>Quando falamos em definir uma classe significa:</li>
+                <ul>
+                    <li>Tornar formal um tipo de dado e todas as operações que têm associação a este tipo</li>
+                </ul>
+                <li>Quando falamos em definir um objeto significa: criar variáveis do tipo definido</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes e Objetos.</h2>
+            <p>Classe:</p>
+            <img src="img/classe.jpeg" alt="classe.jpeg">
+            <p>Objeto:</p>
+            <img src="img/objeto.jpeg" alt="objeto.jpeg">
+
+            <ul>
+                <li>Métodos.</li>
+                <ul>
+                    <li>Operações que podem ser executadas pelos objetos.</li>
+                </ul>
+                <li>Valores dos Atributos.</li>
+                <ul>
+                    <li>São acessados (em geral) por meio dos métodos definidos pela classe.</li>
+                </ul>
+                <li>Construtores.</li>
+                <ul>
+                    <li>Métodos com o mesmo nome da classe e não possui retorno.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de Acessos.</h2>
+            <ul>
+                <li>Os atributos e métodos são membros de uma classe.</li>
+                <li>Para definir o tipo de acesso aos seus membros, utilizamos os modificadores de acesso:</li>
+                <ul>
+                    <li><b>Public:</b> Atributo ou método da classe que pode ser acessado por todas as entidades do sistema.</li>
+                    <li><b>Protected:</b> Atributo ou método que pode ser acessado somente por classes da mesma hierarquia e mesmo pacote.</li>
+                    <li><b>Private:</b> Atributo ou método da classe que pode ser acessado somente por métodos da própria classe.</li>
+                </ul>
+            </ul>
+
+            <p>Importante: Escolher os tipos de acesso acabar por definir o escopo dos métodos e atributos.</p>
+            <ul>
+                <li>Frequentemente os atributos são private. Desta forma, os métodos da própria classe é que são responsáveis por modificar e recuperar o estado dos atributos.</li>
+                <ul>
+                    <li>Tais métodos são públicos (como os setters e getters).</li>
+                    <li>Isso ajuda na estabilidade e segurança no acesso ao atributo, além de ocultá-lo (information hiding).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pilares da POO.</h2>
+            <p>São princípios básicos que precisamos seguir:</p>
+            <ul>
+                <li>Abstração.</li>
+                <li>Encapsulamento.</li>
+                <li>Herança.</li>
+                <li>Polimorfismo.</li>
+                <li>Mensagens.</li>
+            </ul>
+
+            <p>Abstração:</p>
+            <li>Ignora o que não é relevante e concentra-se apenas nos aspectos principais do problema. Classes são abstrações de conceitos.</li>
+            
+            <p>Encapsulamento:</p>
+            <li>Capacidade de implementar dados e procedimentos que se correlacionam numa mesma entidade. A ideia é não depender do funcionamento interno, mas sim da sua interface.</li>
+            <p>Herança:</p>
+            <li>Caracteriza-se pela hierarquização das classes em um sistema.</li>
+
+            <p>Polimorfismo:</p>
+            <ul>
+                <li>É um princípio em que um organismo pode surgir de formas distintas (conceito oriundo da Biologia). Indivíduos da mesma espécie possuem características similares.</li>
+                <li>Em POO, a mesma operação (método) comporta-se de modo diferente nas diferentes classes de uma hierarquia.</li>
+            </ul>
+
+            <p>Mensagens:</p>
+            <ul>
+                <li>Quando um objeto emissor transmite uma requisição para um objeto receptor para que este execute um comportamento (método) desejado.</li>
+                <ul>
+                    <li>O objeto receptor precisa já ter os métodos definidos.</li>
+                    <li>Os métodos respondem a um retorno à chamada.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            
+            <p>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição</p>
+            <p>2. Java Como Programar: Paul Deitel & Harvey Deitel - 8ª Edição</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
