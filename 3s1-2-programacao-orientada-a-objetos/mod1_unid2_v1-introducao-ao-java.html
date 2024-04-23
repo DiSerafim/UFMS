@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 2 - Introdução ao Java.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=PBLM9WFNH_g&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Introdução ao Java.</h3>
+        </section>
+
+        <section>
+            <h2>Características.</h2>
+            <ul>
+                <li>Portabilidade;</li>
+                <li>Robustez;</li>
+                <li>Segurança;</li>
+                <li>Orientada a Objetos;</li>
+                <li>Dinâmica;</li>
+                <li>Alto desempenho.</li>
+            </ul>
+            <img src="img/java.png" alt="java.png">
+            <p>Fonte:</p>
+            <p>https://www.oracle.com/java/</p>
+        </section>
+
+        <section>
+            <h2>Linguagem Híbrida.</h2>
+            <p>Compilada e Interpretada.</p>
+            <pre>
+            <b>Programa .java ↓ </b>
+                    É compilado por ↓ 
+                            <b>Compilador Java ↓ </b>
+                                            Gera ↓ 
+                            <b>Programa. class (bytecode) ↓ </b>
+                                            Interpretado por ↓ 
+                                                            <b>JVM ↓ </b>
+                                                                000100101 ↓ 
+                                                                        <b>Program</b>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Ambiente Java Típico.</h2>
+            <ul>
+                <li>Fase 1 - Editor</li>
+                <ul>
+                    <li>O programa é criado no editor e armazenado em disco (.java).</li>
+                </ul>
+                <li>Fase 2 - Compilador</li>
+                <ul>
+                    <li>O compilador cria o arquivo bytecode (.class).</li>
+                </ul>
+                <li>Fase 3 - Carregador de Classe</li>
+                <ul>
+                    <li>Carrega o arquivo bytecode (.class) na memória.</li>
+                </ul>
+                <li>Fase 4 - Verificador de Bytecode</li>
+                <ul>
+                    <li>Confirma se os dados do arquivo são válidos.</li>
+                </ul>
+                <li>Fase 5 - Interpretador</li>
+                <ul>
+                    <li>A JVM lê e traduz para uma linguagem que o computador pode entender.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Plataforma Java.</h2>
+            <ul>
+                <li>A plataforma Java tem dois componentes:</li>
+                <ul>
+                    <li>Java Virtual Machine (Java VM ou JVM);</li>
+                    <li>Java Application Programming Interface (Java API).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Executando em Linha de Comando.</h2>
+            <ul>
+                <li>Compilar</li>
+                <ul>
+                    <li>javac HelloWorld.java</li>
+                    <ul>
+                        <li>(JVM vai gerar um arquivo.class com o bytecode através do seu compilador)</li>
+                    </ul>
+                </ul>
+                <li>Executar</li>
+                <ul>
+                    <li>java HelloWorld</li>
+                    <ul>
+                        <li>(JVM vai executar o código bytecode através do seu interpretador)</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo - Hello World.</h2>
+            <p>Código Executado:</p>
+            <pre>
+            public class HelloWorld{
+                public static void main(String[] args) {
+                    System.out.println("Hello World!");
+                }
+            }
+            </pre>
+
+            <p>Código Gerado:</p>
+            <pre>
+            <b>Java x Bytecode</b>
+            
+            Compiled from "HelloWorld.java"
+            public class HelloWorld {
+                public HelloWorld();
+                    Code:
+                    0: aload 0
+                    1: invokespecial #238 // Method java/lang/Object."<init>":()V
+                    4: return
+
+                public static void main(java.lang.String[]);
+                    Code:
+                        0: getstatic #16 // Field
+                java/lang/System.out: Ljava/io/PrintStream;
+                        3: ldc #22 // String Hello World
+                        5: invokevirtual #24 // Method
+                java/io/PrintStream.println: (Ljava/lang/String;) V
+                        8: return
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Características da Linguagem Java</h2>
+            <ul>
+                <li>Letras minúsculas e maiúsculas são diferentes;</li>
+                <li>Não há distinção de onde começar a digitar o programa</li>
+                <ul>
+                    <li>É possível adicionar espaços em pontos estratégicos para facilitar a leitura do programa (recuo ou indentação);</li>
+                </ul>
+                <li>A maioria das instruções devem terminar com ponto e vírgula (;);</li>
+                <li>Chaves são utilizadas para definir códigos internos ({});</li>
+                <li>Comentários:</li>
+                <ul>
+                    <li>// comentário em uma linha</li>
+                    <li>/* comentário em múltiplas linhas*/</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Palavras Reservadas</h2>
+            <table>
+                <tr>
+                    <td>abstract</td>
+                    <td>continue</td>
+                    <td>for</td>
+                    <td>new</td>
+                    <td>switch</td>
+                </tr>
+                <tr>
+                    <td>assert***</td>
+                    <td>default</td>
+                    <td>goto*</td>
+                    <td>package</td>
+                    <td>synchronized</td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>do</td>
+                    <td>if</td>
+                    <td>private</td>
+                    <td>this</td>
+                </tr>
+                <tr>
+                    <td>break</td>
+                    <td>double</td>
+                    <td>implements</td>
+                    <td>protected</td>
+                    <td>throw</td>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>else</td>
+                    <td>import</td>
+                    <td>public</td>
+                    <td>throws</td>
+                </tr>
+                <tr>
+                    <td>case</td>
+                    <td>enum</td>
+                    <td>instanceof</td>
+                    <td>return</td>
+                    <td>transient</td>
+                </tr>
+                <tr>
+                    <td>catch</td>
+                    <td>extends</td>
+                    <td>int</td>
+                    <td>short</td>
+                    <td>try</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>final</td>
+                    <td>interface</td>
+                    <td>static</td>
+                    <td>void</td>
+                </tr>
+                <tr>
+                    <td>class</td>
+                    <td>finally</td>
+                    <td>long</td>
+                    <td>strictfp**</td>
+                    <td>volatile</td>
+                </tr>
+                <tr>
+                    <td>const</td>
+                    <td>float</td>
+                    <td>native</td>
+                    <td>super</td>
+                    <td>while</td>
+                </tr>
+            </table>
+            <p></p>
+            <table>
+                <tr>
+                    <td>*</td>
+                    <td>not used</td>
+                    <td>***</td>
+                    <td>added in 1.4</td>
+                </tr>
+                <tr>
+                    <td>**</td>
+                    <td>added in 1.2</td>
+                    <td>****</td>
+                    <td>added in 5.0</td>
+                </tr>
+            </table>
+            
+            
+            
+            
+            
+            
+            
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,9 +1,21 @@
-/* Estilo geral */
+* {
+  margin: 0;
+  padding: 0;    
+}
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: linear-gradient(to left, rgb(236, 228, 228), white, white, white, white, white, white, white, white, rgb(236, 228, 228));
+}
+
+html {
+  background: linear-gradient(to left, #245, red, #245);
 }
 
 /* Seções */
