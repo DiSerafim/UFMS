@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 4 - Programando em Java.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=lSMV13cyXrY&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 4. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Programando em Java.</h3>
+        </section>
+
+        <section>
+            <h2>Controle de Fluxo.</h2>
+            <ul>
+                <li>São comandos que possuem características especiais que alteram a execução do código;</li>
+                <li>Seleção: <b>if-else, switch-case</b>.</li>
+                <li>Repetição: <b>for, while, do-while</b>.</li>
+                <li>Desvios (somente em estruturas de repetição): <b>continue, break, rótulos</b>.</li>
+                <li>Não existe comando <b>goto</b>, porém, é uma palavra-reservada do Java.</li>
+        </section>
+
+        <section>
+            <h2>if / if else / if else if.</h2>
+            <p>Sintaxe:</p>
+            <pre>
+            if (expressão booleana)    |    if (expressão booleana) {
+                instrução_simples;     |        instruções
+                                       |    } else if (expressão booleana) {
+            if (expressão booleana) {  |        instruções
+                instruções             |    } else {
+            }                          |        instruções
+                                       |    }
+            </pre>
+
+            <p>Exemplo:</p>
+            <pre>
+            if (ano < 0) {                       
+                System.out.println("Não é um ano!");                       
+            } else if ( (ano%4==0 && ano%100!=0) || (ano%400==0)) {       
+                System.out.println("É bissexto!");                           
+            } else {               
+                System.out.println("Não é bissexto!"); 
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Laço for.</h2>
+                <p>Sintaxe:</p>
+                <pre>
+                for(instrução/inicialização; expressão booleana; instrução/passo de repetição){
+                    //instruções
+                }
+                </pre>
+
+                <p>Todas as três partes do laço são opcionais.</p>
+
+                <p>Exemplos:</p>
+                <pre>
+                for(int i=0; i<10; i++){    | int cont = 0;                                      
+                    x = i * 5;              |                           
+                }                           | for(cont=10; cont>10; cont-=2){              
+                                            |     System.out.println(cont);          
+                                            | }
+                </pre>
+        </section>
+
+        <section>
+            <h2>Laço while.</h2>
+            <p>Sintaxe.</p>
+            <pre>
+            while(expressão booleana){
+                //instruções
+            }
+            </pre>
+
+            <p>Exemplos:</p>
+            <pre>
+            int i=0;                        | boolean b = true;
+            while(i<10){                    | int x = 40;
+                System.out.println(i);      | while(b && 10 < x)
+                i++;                        |    System.out.println("De novo!");
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Operadores.</h2>
+
+            <table>
+                <tr>
+                    <th>Operator Type</th>
+                    <th>Category</th>
+                    <th>Precedence</th>
+                </tr>
+                <tr>
+                    <td>Unary</td>
+                    <td>postfix</td>
+                    <td>a++, a-</td>
+                </tr>
+                <tr>
+                    <td>Unary</td>
+                    <td>prefix</td>
+                    <td>++a, -a, -a, -a, -, !</td>
+                </tr>
+                <tr>
+                    <td>Arithmetic</td>
+                    <td>Multiplication</td>
+                    <td>*,/,%</td>
+                </tr>
+                <tr>
+                    <td>Arithmetic</td>
+                    <td>Addition</td>
+                    <td>+,-</td>
+                </tr>
+                <tr>
+                    <td>Shift</td>
+                    <td>Shift</td>
+                    <td><<, >>, >>></td>
+                </tr>
+                <tr>
+                    <td>Relational</td>
+                    <td>Comparison</td>
+                    <td><, >, <=, >=, instance Of</td>
+                </tr>
+                <tr>
+                    <td>Relational</td>
+                    <td>equality</td>
+                    <td>==, !=</td>
+                </tr>
+                <tr>
+                    <td>Bitwise</td>
+                    <td>Bitwise AND</td>
+                    <td>&</td>
+                </tr>
+                <tr>
+                    <td>Bitwise</td>
+                    <td>Bitwise exclusive OR</td>
+                    <td>^</td>
+                </tr>
+                <tr>
+                    <td>Bitwise</td>
+                    <td>Bitwise inclusive OR</td>
+                    <td>|</td>
+                </tr>
+                <tr>
+                    <td>Logical</td>
+                    <td>Logical AND</td>
+                    <td>&&</td>
+                </tr>
+                <tr>
+                    <td>Logical</td>
+                    <td>Logical OR</td>
+                    <td>||</td>
+                </tr>
+                <tr>
+                    <td>Ternary</td>
+                    <td>Ternary</td>
+                    <td>?:</td>
+                </tr>
+                <tr>
+                    <td>Assignment</td>
+                    <td>assignment</td>
+                    <td>=, +,-,*,/=, %, &, ^=, =, <<=, >>=, >>>=</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de abril de 2024</p>
+    </footer>
+</body>
+</html>
