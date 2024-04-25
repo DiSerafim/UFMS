@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
+        <h2>💡 Unidade 4 - Programando em Java.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=S6im199l6pg&ab_channel=Robotec" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                [Aula de Java - Conceito e prática] POO - Programação Orientada a Objeto com Java. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Canal Robotec.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Programando em Java.</h3>
+            <p>OrienJava - Pasta com os arquivos.</p>
+        </section>
+
+        <section>
+            <h2>Arquivo Principal.</h2>
+            <pre>
+            package OrienJava;
+
+            public class OrienJava{
+                
+                public static void main(String[] args) {
+                    Caneta c1 = new Caneta();
+                    c1.cor = "Azul";
+                    c1.marca = "Bic";
+                    c1.tampada = false;
+                    c1.tampar();
+                    c1.escrever();
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Classe Java.</h2>
+            <pre>
+            package OrienJava;
+
+            public class Caneta {
+                // atributos
+                boolean tampada;
+                String marca;
+                String cor;
+                
+                // métodos
+                public void tampar() {
+                    tampada = true;
+                }
+            
+                public void destampar() {
+                    tampada = false;
+                }
+            
+                public void escrever() {
+                    if (tampada == true) {
+                        System.out.println("Erro, não foi possível escrever com a caneta tampada!");
+                    } else {
+                        System.out.println("Agora você pode escrever com a caneta!");
+                    }
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de abril de 2024</p>
+    </footer>
+</body>
+</html>
