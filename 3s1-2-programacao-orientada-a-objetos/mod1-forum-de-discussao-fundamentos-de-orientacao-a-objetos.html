@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 1 - Fundamentos de Orientação a Objetos</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve uma introdução à Programação Orientada a Objetos, à linguagem Java e seus conceitos iniciais.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <h3>Vamos discutir/compartilhar alguns pontos:</h3>
+            <ol>
+                <li>Quais os principais benefícios do Paradigma de Programação Orientado a Objetos?</li>
+                <li>Qual é a relação entre Classe e Objeto? O que significa o termo instanciação?</li>
+                <li>Recupere um código-fonte simples feito por você em Python em alguma disciplina de Algoritmos e  programe o código Java correspondente. Quais foram suas maiores dificuldades? Quais são as principais diferenças na sintaxe?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>1. Quais os principais benefícios do Paradigma de Programação Orientado a Objetos?</h2>
+            <p>A reutilização do código, dividir o programa em classes e objetos, facilidade em desenvolver e entender o código.</p>
+        </section>
+
+        <section>
+            <h2>2. Qual é a relação entre Classe e Objeto? O que significa o termo instanciação?</h2>
+            <p>Uma classe é um modelo ou protótipo para criar objetos, onde define variáveis e funções.</p>
+            <p>Um objeto é uma instância de uma classe, possui seus próprios valores para os atributos definidos na classe e pode invocar os métodos definidos na classe.</p>
+            <p>Instanciação é o processo de criação de um objeto a partir da classe.</p>
+        </section>
+
+        <section>
+            <h2>3. Recupere um código-fonte simples feito por você em Python em alguma disciplina de Algoritmos e  programe o código Java correspondente. Quais foram suas maiores dificuldades? Quais são as principais diferenças na sintaxe?</h2>
+
+            <b>Código em Python (AreaCirculo.py):</b>
+            <pre>
+            # Entrada de dados
+            raio = float(input("Informe o raio da circunferência: "))
+            # Valor da constante pi
+            pi = 3.14159265
+            # Cálculo da área
+            area = pi * raio**2
+            # Saída de dados
+            print(f"A área da circunferência é: {area}")                
+            </pre>
+
+            <b>Código em Java (AreaCirculo.java):</b>
+            <pre>
+            import java.util.Scanner;
+
+            public class AreaCirculo {
+                public static void main(String[] args) {
+                    // Declaração de variáveis
+                    double raio, area;
+                    final double PI = 3.14159265;
+            
+                    // Entrada de dados
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.print("Informe o raio da circunferência: ");
+                    raio = scanner.nextDouble();
+                    
+                    // Cálculo da área
+                    area = PI * raio * raio;
+                    
+                    // Saída de dados
+                    System.out.println("A área da circunferência é: " + area);
+                    
+                    // Fechar o scanner
+                    scanner.close();
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de abril de 2024</p>
+    </footer>
+</body>
+</html>
