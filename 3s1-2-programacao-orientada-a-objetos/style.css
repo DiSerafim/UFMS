@@ -69,11 +69,6 @@ h2 {
 }
 
 /* Materiais */
-#materiais ul {
-  list-style: none;
-  padding: 0;
-}
-
 #materiais li {
   margin-bottom: 10px;
 }

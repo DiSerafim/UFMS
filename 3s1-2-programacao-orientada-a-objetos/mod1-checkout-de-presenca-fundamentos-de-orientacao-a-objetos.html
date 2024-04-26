@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 1 - Fundamentos de Orientação a Objetos</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+        <p>Fecha: segunda, 25 mar 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Formação Profissional em Computação
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve uma introdução à Programação Orientada a Objetos, à linguagem Java e seus conceitos iniciais. Devido à importância desses conceitos, é fundamental praticar o uso de cada um deles.</p>
+            <p>Para realizar essa atividade, você precisa seguir os seguintes passos:</p>
+            <ul>
+                <li>Gravar um vídeo de, no máximo, dois minutos  em que responda: </li>
+                <ul>
+                    <li>Os pontos positivos do Paradigma de Programação Orientado a Objetos;</li>
+                    <li>O que é uma classe; </li>
+                    <li>O que é um objeto;</li>
+                </ul>
+                <li>Para completar a tarefa: </li>
+                <ul>
+                    <li>Cite  um exemplo de classe e objeto;</li>
+                    <li>Mostre o código de exemplo em tela da classe e objeto;</li>
+                </ul>
+                <li>Colar o link do vídeo no espaço da tarefa.</li>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>(Apresentação) Introdução à Programação Orientada a Objetos, à linguagem Java e seus conceitos iniciais.</h2>
+    
+
+            <b>Introdução:</b>
+            <p>Apresentação pessoal:</p>
+            <ul>
+                <li>Olá, meu nome é Diego Serafim, e estou aqui para falar sobre Programação Orientada a Objetos.</li>
+                <ul>
+                    <li>Neste vídeo, vou explorar os pontos positivos do paradigma de programação orientada a objetos, entender o conceito de classe e objeto, e ver um exemplo prático em código."</li>
+                </ul>
+            </ul>
+
+            <b>Os pontos positivos do Paradigma de Programação Orientado a Objetos;</b>
+            <li>A reutilização do código, dividir o programa em classes e objetos, facilidade em desenvolver e entender o código e sua manutenção.</li>
+            <p></p>
+            
+            <b>O que é uma classe;</b>
+            <ul> 
+                <li>Uma classe é uma estrutura que define o comportamento e os atributos de objetos relacionados. Ela serve como um modelo para a criação de objetos.</li>
+                <li>Por exemplo, uma classe "Carro" pode ter atributos como cor, modelo e ano, e métodos como ligar(), desligar() e acelerar().</li>
+            </ul>
+            <p></p>
+
+            <b>O que é um objeto;</b>
+            <ul>
+                <li>Um objeto é uma instância específica de uma classe. Ele representa uma entidade ou conceito do mundo real e tem seus próprios atributos e métodos.</li>
+                <li>No exemplo da classe "Carro", um objeto seria um carro específico com uma cor, modelo e ano específicos.</li>
+            </ul>
+            <p></p>
+
+            <b>Um exemplo de classe e objeto;</b>
+            <p>Uma classe é uma estrutura que define o comportamento e as propriedades de um objeto. Ela serve como um "molde" para criar objetos.</p>
+            <p>Dentro da classe Carro, definimos três atributos: cor, modelo e ano, que representam as características de um carro.</p>
+
+            <i>Em seguida, temos o método exibirInfo(), que é responsável por exibir as informações do carro na tela.</i>
+
+            <p>Para criar um objeto a partir desta classe, utilizamos o seguinte trecho de código:</p>
+            <pre>
+            Carro meuCarro = new Carro();
+            </pre>
+            <p>meuCarro é uma variável que representa um objeto do tipo Carro. Utilizamos o operador new para criar uma nova instância da classe Carro.</p>
+            <p></p>
+
+            <b>Código de exemplo em tela da classe e objeto;</b>
+            <pre>
+            // Definição da classe Carro
+            class Carro {
+                // Atributos
+                String cor;
+                String modelo;
+                int ano;
+
+                // Método para exibir informações do carro
+                void exibirInfo() {
+                    System.out.println("Cor: " + cor + ", Modelo: " + modelo + ", Ano: " + ano);
+                }
+            }
+
+            // Criando e utilizando um objeto da classe Carro
+            public class Main {
+                public static void main(String[] args) {
+                    // Instanciando um objeto da classe Carro
+                    Carro meuCarro = new Carro();
+
+                    // Definindo os atributos do objeto
+                    meuCarro.cor = "Vermelho";
+                    meuCarro.modelo = "Gol";
+                    meuCarro.ano = 2020;
+
+                    // Exibindo informações do carro
+                    meuCarro.exibirInfo();
+                }
+            }
+            </pre>
+
+            <p>Vídeo apresentação</p>
+            <a href="https://drive.google.com/file/d/1J6HEji9aRriAcZyOfCf8k_9lcrpd-7qa/view" target="_blank" rel="noopener noreferrer">Aqui.</a>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de aril de 2024</p>
+    </footer>
+</body>
+</html>
