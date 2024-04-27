@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Aprofundando na Orientação a Objetos.</h1>
+        <h2>💡 Unidade 1 - Vetores (Arrays).</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=ouhr3Dol0bs&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 2 - Unidade 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Vetores (Arrays).</h3>
+        </section>
+
+        <section>
+            <h2>Arrays.</h2>
+            <ul>
+                <li>Em Java, arrays ou vetores, são objetos que armazenam diversas variáveis do mesmo tipo.</li>
+                <li>Eles são Variáveis de referência (objetos).</li>
+                <li>Qualquer tipo permitido em Java pode ser armazenado em um array:</li>
+                <ul>
+                    <li>Tipos primitivos;</li>
+                    <li>Referências de objetos;</li>
+                    <li>Outros arrays.</li>
+                </ul>
+                <li>O tamanho de um array precisa ser definido na criação;
+                <li>Cada item em um array é chamado de elemento, e cada elemento é acessado pela posição numérica (índice);
+                <li>As posições são numeradas a partir do zero;
+                <li>Exemplo: O nono elemento, por exemplo, é acessado na posição 8.
+            </ul>
+            <pre>
+            +---+---+---+---+---+---+---+---+---+---+
+            | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+            +---+---+---+---+---+---+---+---+---+---+
+              |   |   |   |   |   |   |   |   |   |
+              |   |   |   |   |   |   |   |   |   +--→ Índice 9 (décimo elemento)
+              |   |   |   |   |   |   |   |   +------→ Índice 8 (nono elemento)
+              |   |   |   |   |   |   |   +----------→ Índice 7
+              |   |   |   |   |   |   +--------------→ Índice 6
+              |   |   |   |   |   +------------------→ Índice 5
+              |   |   |   |   +----------------------→ Índice 4
+              |   |   |   +--------------------------→ Índice 3
+              |   |   +------------------------------→ Índice 2
+              |   +----------------------------------→ Índice 1
+              +--------------------------------------→ Índice 0 (primeiro elemento)                
+            </pre>
+        </section>
+
+        <section>
+            <h2>Utilizando os Arrays</h2>
+            <ul>
+                <li>Para utilizar um array é necessário seguir os três passos abaixo:</li>
+                <ul>
+                    <li>Declaração</li>
+                    <ul>
+                        <li>A declaração de um array diz ao compilador o nome do array e o tipo de elemento que será armazenado</li>
+                    </ul>
+                    <li>Construção</li>
+                    <li>Inicialização</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Declarando um Array.</h2>
+            <ul>
+                <li>Regra:</li>
+                <ul>
+                    <li>'<'tipo_do_array>[] '<'nome_da_variável></li>
+                    <ul>
+                        <li>Ou '<'tipo_do_array> '<'nome_da_variável>[]</li>
+                    </ul>
+                </ul>
+                <li>Exemplos:</li>
+                <ul>
+                    <li>Declarando um array de tipos primitivos:</li>
+                    <ul>
+                        <li>int[] array ou int array[]</li>
+                    </ul>
+                    <li>Declarando um array que armazena variáveis de referência:</li>
+                    <ul>
+                        <li>User[] users;</li>
+                    </ul>
+                </ul>
+                <li>Nenhuma memória é alocada no momento da declaração</li>
+                <ul>
+                    <li>Não faz sentido incluir o tamanho do array na declaração:</li>
+                    <ul>
+                        <li>Exemplo: int[5] pontos; </li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Construindo um Array.</h2>
+            <ul>
+                <li>Para criar um array, o Java terá que saber quanto espaço alocar:</li>
+                <ul>
+                    <li>É preciso especificar o tamanho do array no momento da construção;</li>
+                    <li>O tamanho será igual a quantidade máxima de elementos que</li>
+                    <li>array poderá armazenar</li>
+                    <li>Uma vez definido o tamanho do array este não pode mais ser alterado</li>
+                </ul>
+                <li>Quando o array é de referências para objetos, somente a memória ocupada pela referência é alocada</li>
+            </ul>
+            <pre>
+            int[] intArray;         //Declarando array unidimensional
+            intArray = new int[4];      //Construindo
+            String [][] stringMatrix = new String[10][20];      //Declarando e construindo um array bidimensional
+
+            Como o array aparece na memória:
+            Variável de referência do array →   1 2 3 4   ← Índices
+            <i>intArray[]</i>               →   A B C D   ← Valores
+            </pre>
+
+            <li>Quando um array é construído, seus valores são automaticamente inicializados para valores padrão;</li>
+            <li>Similar aos valores padrão para variáveis de instância</li>
+
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Valor Inicial/Padrão</th>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>0L</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>0.0f</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>0.0d</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>‘\u0000’</td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Referência/objeto</td>
+                    <td>null</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Inicializando um Array</h2>
+            <ul>
+                <li>Inicializar um array significa atribuir (inserir) itens a ele</li>
+                <li>O menor índice do array é sempre 0 (zero)</li>
+                <li>O maior índice do array é obtido usando array.length - 1</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Declarando, construindo e inicializando um array 1-D</h2>
+            <pre>
+            int[] umArray;      // declarando
+            umArray = new int[10];      // construindo
+            for (int i = 0; i < umArray.length; i++) {
+                umArray[i] = i;         // inicializando (atribuindo)
+                System.out.print(umArray[i] + " ");
+            } 
+            </pre>
+        </section>
+
+        <section>
+            <h2>Percorrendo um Vetor.</h2>
+            <i>int[] v = new int[10];</i>
+
+            <li>Com for:</li>
+            <pre>
+            for (int i = 0; i < v.length; i++) {
+            int z = v[i];
+                System.out.print(z + " ");
+            }
+            </pre>
+
+            <li>Com “for-each”:</li>
+            <pre>
+            for (int z: v) {
+                System.out.print(z + " ");
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Declarando e Inicializando de uma só vez.</h2>
+    
+            <i>int[] vet = {2,4,6,8,10};</i>
+            <p>É equivalente a:</p>
+            <pre>
+            int[] vet = new int[5];
+            vet[0]=2;
+            vet[1]=4;
+            vet[2]=6;
+            vet[3]=8;
+            vet[4]=10;
+            </pre>
+            <p>Outros exemplos:</p>
+            <pre>
+            Object [] objArray = {"Objeto1", "Objeto2"};
+            boolean[] answers = {true, false, true, true};
+            double[][] mat = {{ 1, 2, 3 }, { 1, 2, 3 }};
+            </pre>
+        </section>
+
+        <section>
+            <h2>Matrizes x Vetores.</h2>
+            <p>Na verdade, matrizes são vetores dentro de vetores:</p>
+            <pre>
+                int[][] vet = new int[3][3];
+                vet[0][0]=2;
+                vet[0][1]=4;
+                vet[0][2]=6;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Uma matriz não é bem uma matriz...</h2>
+
+            <pre>
+            int[][] meuArray = new int[2][];    // variável de referência do array 2D
+            meuArray[0] = new int [2];          //o primeiro elemento do array tem um array de int de 2 elem
+            meuArray[0] [0] = 6;
+            meuArray[0] [1] = 7;
+            meuArray[1] = new int [3];          //o segundo elemento do array tem um array de int de 3 elem
+            meuArray[1] [0] = 9;
+            meuArray[1] [1] = 8;
+            meuArray[1] [2] = 5;
+            </pre>
+
+            <img src="img/array.png" alt="array.png" style="width: 500px;">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>

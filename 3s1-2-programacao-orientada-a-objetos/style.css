@@ -69,16 +69,22 @@ h2 {
 }
 
 /* Materiais */
-#materiais li {
+#materiais {
   margin-bottom: 10px;
 }
 
-#materiais li a {
-  text-decoration: none;
-  color: #065fc5;
+.material-icons.right {
+  vertical-align: middle;
 }
 
-#materiais li a:hover {
+#materiais a {
+  text-decoration: none;
+  color: white;
+  max-width: 95%;
+  text-overflow: ellipsis;
+}
+
+#materiais a:hover {
   text-decoration: line-through;
 }
 
