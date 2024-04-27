@@ -15,9 +15,10 @@ html {
 
 /* Seções */
 section {
-  margin: 20px 0;
+  margin: 40px 0;
   padding: 0 20px 20px 20px;
   border: 1px solid #ddd;
+  box-shadow: rgba(0, 0, 0, 0.03) 5px 5px;
 }
 
 h2 {
