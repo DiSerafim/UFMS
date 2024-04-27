@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Aprofundando na Orientação a Objetos.</h1>
+        <h2>💡 Unidade 1 - Vetores (Arrays).</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=58mMJT-QB0g&ab_channel=DannLuciano" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Vetores - 01
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Dann Luciano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Vetores (Arrays).</h3>
+        </section>
+
+        <section>
+            <h2>Exemplo:</h2>
+            <p>→ Arquivo criado em (Vetores.java)</p>
+            <pre>
+                public class Vetores {
+                    public static void main(String[] args) {
+                        <i>// declarando um vetor com até 10 valores (tamanho do vetor)</i>
+                        int[] numeros = new int[10];
+                        
+                        <i>// declarando um vetor com 4 valores (tamanho do vetor)</i>
+                        int[] idades = {18, 21, 33, 45};
+                
+                        <i>// Armazenar elementos dentro de um vetor</i>
+                        numeros[0] = 10;
+                        numeros[1] = 20;
+                        numeros[5] = 60;
+                
+                        <i>// Pegar elementos dentro do vetor</i>
+                        System.out.println(numeros[0]);
+                        System.out.println(numeros[1]);
+                        System.out.println(numeros[5]);
+                
+                        int num = numeros[0];
+                        System.out.println(num);
+                
+                        System.out.println(idades + "" + "");
+                
+                        <i>// Estrutura de repetição</i>
+                        for (int i = 0; i < numeros.length; i++) {
+                            System.out.println("Posição " + i);
+                            System.out.println(" Valor " + numeros[i]);
+                            // System.out.println(numeros[i]);
+                        }
+                
+                        <i>// Tentando incluir além do que já está programado.</i>
+                        System.out.println(numeros[1000]);
+                        System.out.println("Exception in thread main java.lang.ArrayIndexOutOfBoundsException: Index 1000 out of bounds for length 10 at Vetores.main(Vetores.java:32)");
+                    }
+                }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 27 de abril de 2024</p>
+    </footer>
+</body>
+</html>
