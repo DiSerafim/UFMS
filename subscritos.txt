@@ -23,7 +23,7 @@ Caracteres especiais sobrescrito:
 Caracteres especiais subscrito:
 ₊, ₋, ₌, ₍, ₎
 
-└─>
+└─> ↳ ↲ ↰ ↱ ↵ ↴ ☇ ↶ ↷ ⮌ ⮍ ⮎ ⮏ ⤻ ⤸ ⤾ ⤿ ⤺ ⤼ ⤽ ⤹ 🗘 ⮔ ⤶ ⤷
 
 [{¬}[{³}²¢¹]]
 Símbolos matemáticos

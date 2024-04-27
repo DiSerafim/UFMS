@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Aprofundando na Orientação a Objetos.</h1>
+        <h2>💡 Unidade 2 - Métodos, Classes e objetos: uma visão mais aprofundada.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=58mMJT-QB0g&ab_channel=DannLuciano" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 2 - Unidade 2.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Dann Luciano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Métodos, Classes e objetos: uma visão mais
+                aprofundada.</h3>
+        </section>
+
+        <section>
+            <h2>Declaração de Variáveis.</h2>
+            <ul>
+                <li>Variáveis servem para armazenar valores</li>
+                <li>Existem dois tipos de variáveis:</li>
+                <ul>
+                    <li>Tipos Primitivos:</li>
+                    <ul>
+                        <li>char, boolean, byte, short, int, long, double ou float.</li>
+                    </ul>
+                    <li>Variáveis de Referência:</li>
+                    <ul>
+                        <li>Usadas para se referir e acessar um objeto.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Variáveis.</h2>
+            <ul>
+                <li>Tanto tipos primitivos quanto variáveis de referência podem ser declaradas como Atributos, Variáveis locais e Parâmetros.</li>
+                <li>Atributos:</li>
+                <ul>
+                    <li>São variáveis declaradas dentro da classe, mas fora de qualquer método. Possuem valores padrão de inicialização;</li>
+                    <li>Podem ser Atributo da Classe ou Atributo da Instância (do Objeto).</li>
+                </ul>
+                <li>Variáveis locais:</li>
+                <ul>
+                    <li>Variáveis declaradas dentro de um método/bloco de código;</li>
+                    <li>É obrigatório inicializá-las antes de usar.</li>
+                </ul>
+                <li>Parâmetros:</li>
+                <ul>
+                    <li>São variáveis declaradas dentro da assinatura de um método;</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Variáveis Locais.</h2>
+            <ul>
+                <li>São aquelas declaradas e inicializadas dentro de um método/escopo;</li>
+                <ul>
+                    <li>E destruídas dentro do método/escopo;</li>
+                </ul>
+                <li>Com isso, não podem ser acessadas em um código fora de onde foram declaradas;</li>
+                <li>Embora o valor da variável local possa ser passado para outro método, armazenando seu valor em uma variável de instância, a variável propriamente dita só vive dentro do escopo do método.</li>
+            </ul>
+            <p>Variável Local - Exemplos.</p>
+            <pre>
+                class Teste {
+                    int valor;
+
+                    void foo() {
+                        int contador = 10;
+                            foo2(contador);
+                    }
+                    void foo2(int c) {
+                        valor = c;
+                    }
+                    void doo(int i) {
+                        contador = i; /* não vai funcionar, pois não é possível acessar contador de fora do método foo() */
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Valores Padrão para Variáveis de Instância.</h2>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Valor Inicial/Padrão</th>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>0l</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>\u0000</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>0f</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>0d</td>
+                </tr>
+                <tr>
+                    <td>Object</td>
+                    <td>null</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Variáveis de Classe.</h2>
+            <ul>
+                <li>São definidas dentro da classe, mas fora de qualquer método;</li>
+                <li>Devem ser precedidas pelo modificador static;</li>
+                <li>Pertencem à classe onde foram declaradas, consequentemente a todos os objetos instanciados a partir daquela classe:</li>
+                <ul>
+                    <li>Podem ser utilizadas sem ter que instanciar a classe.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Métodos de Classe.</h2>
+            <ul>
+                <li>São métodos que estão associados diretamente com a classe e não com cada instância:</li>
+                <ul>
+                    <li>Podem ser utilizados sem ter que instanciar a classe.</li>
+                </ul>
+                <li>Devem ser precedidos pelo modificador static</li>
+                <li>E o método main??</li>
+                <li>IMPORTANTE: Métodos e atributos da classe (static) não podem acessar métodos e atributos da instância</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Escopo de uma Variável.</h2>
+            <ul>
+                <li>Por quanto tempo uma variável existe?</li>
+                <ul>
+                    <li>As variáveis static têm vida mais longa. São criadas quando a classe é carregada;</li>
+                    <li>As variáveis de instância são criadas quando uma nova instância é criada;</li>
+                    <li>As variáveis locais existem durante o tempo em que o seu método permanecer na pilha de chamadas;</li>
+                    <li>As variáveis de bloco só existem durante o tempo em que o bloco de código está sendo executado;</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Método Construtor.</h2>
+            <ul>
+                <li>Toda vez que a palavra reservada new for usada, um método construtor vai ser chamado:</li>
+                <ul>
+                    <li>Ele não “constrói” o objeto;</li>
+                    <li>Serve como um método qualquer, mas em geral, serve para inicializar os atributos do objeto recém-criado;</li>
+                    <ul>
+                        <li>Mas ele não inicializa os atributos automaticamente, você tem que fazer</li>
+                    </ul>
+                    <li>Pode ter parâmetros</li>
+                </ul>
+                <li>Se uma classe não possuir um construtor, a JVM cria um construtor padrão (sem parâmetros) para a classe automaticamente</li>
+            </ul>
+
+            <b>Exemplo 1:</b>
+            <pre>
+            class Pessoa {
+                String nome;
+                int idade;
+
+                Pessoa() {
+                    //Construtor "Padrão"
+                }
+
+                Pessoa(String novoNome, int novaIdade) {
+                    nome = novoNome;
+                    idade = novaIdade;
+                        //Qualquer outro código
+                }
+            }
+            </pre>
+
+            <b>Exemplo 2:</b>
+            <pre>
+            class Pessoa2 {
+                String nome = "Fulano";    |→ Executado antes
+                int idade = 15;            |→ do construtor!
+
+                Pessoa2(String novoNome, int novaIdade) {
+                    nome = novoNome;
+                    idade = novaIdade;
+                }
+
+                public static void main(String[] args) {
+                    Pessoa2 p = new Pessoa2("Sicrano", 32);
+                    System.out.println(p.nome + p.idade);
+                }
+            }
+
+            O que é impresso?
+            </pre>
+        </section>
+
+        <section>
+            <h2>Como Comparar Elementos?</h2>
+            <pre>
+            intA = 10
+            intB = 10
+            "intA == intB" evaluates to true
+
+            c1 → ○
+            c2 → ○
+            "c1 == c2" evaluates to false
+
+            c1  ↴
+            c2 → ● 
+            "c1 == c2" evaluates to true
+            </pre>
+        </section>
+
+        <section>
+            <h2>Comparando.</h2>
+
+            <b>Operador ==</b>
+            <ul>
+                <li>Compara os valores em variáveis de tipos primitivos</li>
+                <li>Em objetos, serve para comparar referências, inclusive com null</li>
+                <ul>
+                    <li>Retorna true se as variáveis de referências apontam para o mesmo objeto</li>
+                </ul>
+            </ul>
+
+            <b>MÉTODO equals</b>
+            <ul>
+                <li>É um método da superclasse Object</li>
+                <li>Deve-se sobrescrever o método equals para proceder de acordo com a regra de igualdade</li>
+                <ul>
+                    <li>Por exemplo, na classe String, o equals é sobrescrito para comparar caractere por caractere, verificando se ambas as strings têm todos caracteres iguais</li>
+                </ul>
+                <li>Se não for definido pela classe, funciona exatamente igual o operador ==</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 27 de abril de 2024</p>
+    </footer>
+</body>
+</html>
