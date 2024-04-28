@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 2 - Aprofundando na Orientação a Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprofundou seus conhecimentos sobre Orientação a Objetos.</p>
+            <p>Neste fórum, você pode aprofundar nas práticas para programação orientada a objetos em Java.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <b>Vamos discutir/compartilhar alguns pontos:</b>
+            <ol>
+                <li>Por que ao programar um código-fonte que faz uso de vetores (arrays) conseguimos acessar membros da classe Object da API Java?</li>
+                <li>Quando um objeto não tem mais referências para ele, o que acontece com ele?</li>
+                <li>Qual é a função dos Pacotes? Como é melhor usá-los?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>1. Por que ao programar um código-fonte que faz uso de vetores (arrays) conseguimos acessar membros da classe Object da API Java?</h2>
+            <p>Em Java, todos os arrays são objetos. Como resultado, os arrays herdam métodos da classe Objeto, como <i>toString(), equals() e hashCode()</i>. Isso significa que você pode acessar os métodos da classe Object em arrays, porque eles são objetos.</p>
+        </section>
+
+        <section>
+            <h2>2. Quando um objeto não tem mais referências para ele, o que acontece com ele?</h2>
+            <p>Significa que ele não pode mais ser acessado pelo programa. Em Java, o <i>garbage collector</i> é responsável por identificar e liberar a memória ocupada por objetos que não tem mais referência para eles.</p>
+            <p>O <i>Garbage Collector</i> executa em segundo plano e libera memória ocupada por esses objetos não utilizados, tornando-a disponível outros objetos.</p>
+        </section>
+
+        <section>
+            <h2>3. Qual é a função dos Pacotes? Como é melhor usá-los?</h2>
+            <p>Os pacotes em Java são usados para organizar classes relacionadas em um único local.</p>
+            <p>Eles ajudam a evitar conflitos de nomeação entre classes de diferentes bibliotecas ou projetos.</p>
+            <p>Além disso, os pacotes fornecem controle de acesso, permitindo que você especifique quais classes são acessíveis de fora do pacote.</p>
+            <p>para usar um pacote em Java é preciso importá-lo em seu código usando declaração <i>import</i>. Isso permite que você use classes do pacote em seu código sem ter que qualificar o nome da classe com o nome do pacote toda vez que você utiliza.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de abril de 2024</p>
+    </footer>
+</body>
+</html>
