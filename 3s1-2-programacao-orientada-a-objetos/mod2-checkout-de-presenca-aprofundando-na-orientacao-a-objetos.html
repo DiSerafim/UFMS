@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 2 - Aprofundando na Orientação a Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+        <p>Fecha: segunda, 15 abr 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>Formação Profissional em Computação
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprofundou conhecimentos sobre Orientação a Objetos. Agora, vamos testar o que você aprendeu?</p>
+            <p>Para isso, siga os passos abaixo:</p>
+            <ol>
+                <li>Abra seu ambiente de desenvolvimento (IDE) preferido;</li>
+                <li>Crie um novo projeto;</li>
+                <li>Crie uma Classe chamada ContaCorrente que possua:</li>
+                <ul>
+                    <li>Uma variável de ponto flutuante juros que indique a porcentagem do rendimento da conta. Defina o valor inicial em 0,01;</li>
+                    <li>Uma variável de ponto flutuante que indique o saldo;</li>
+                    <li>Um método depósito;</li>
+                    <li>Uma variável chamada limiteChequeEspecial em ponto flutuante, iniciada com o valor -200;</li>
+                    <li>Um método saque, que verifica se o saque pode ser realizado de acordo com o saldo atual e o limiteChequeEspecial. Caso não tenha mais limite, escrever no console "Limite insuficiente!";</li>
+                    <li>Um método rendimento que usa o valor do juros para fazer o saldo crescer caso o saldo não seja negativo;</li>
+                    <li>Um método para exibir o saldo;</li>
+                    <li>Uma variável de texto para o primeiro nome do cliente;</li>
+                    <li>Uma variável de texto para o sobrenome do cliente; </li>
+                    <li>Método getNome que retorne o nome do cliente completo;</li>
+                    <li>Uma variável para o número da conta corrente (do tipo primitivo long);</li>
+                    <li>Método getNumero que dê como resultado o número da conta do cliente;</li>
+                    <li>Método main, com uma instância da classe ContaCorrente e faça um depósito de R$100, um saque de R$125, execute a função rendimento e imprimir o saldo;</li>
+                </ul>
+                <li>Use o modificador de acesso “public” para todos os métodos e nenhum modificador (“package private”) para os atributos da classe.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Abra seu ambiente de desenvolvimento (IDE) preferido;</h2>
+            <p>Vs Code.</p>
+        </section>
+
+        <section>
+            <h2>Crie um novo projeto;</h2>
+            <p>ContaCorrente.</p>
+        </section>
+
+        <section>
+            <h2>ContaCorrente (código execução)</h2>
+            <p>ContaCorrente.java</p>
+            <pre>
+                public class ContaCorrente {
+                    <i>// Variável de ponto flutuante juros que indique a porcentagem do rendimento da conta. Defina o valor inicial em 0,01;</i>
+                    public float juros = 0.01f; // https://stackoverflow.com/questions/14513597/cannot-convert-from-double-to-float
+                    <i>// Variável de ponto flutuante que indique o saldo;</i>
+                    public float saldo = 0;
+                    <i>// Variável chamada limiteChequeEspecial em ponto flutuante, iniciada com o valor -200;</i>
+                    public float limiteChequeEspecial = -200;
+                    <i>// Variável de texto para o primeiro nome do cliente;</i>
+                    public String primeiroNomeCliente;
+                    <i>// Variável de texto para o sobrenome do cliente;</i>
+                    public String sobrenomeCliente;
+                    <i>// Variável para o número da conta corrente (do tipo primitivo long);</i>
+                    private long numeroConta;
+                
+                    <i>// Método depósito;</i>
+                    public void deposito(float valor) {
+                        saldo += valor;
+                        System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
+                    }
+                
+                    <i>// Método saque, que verifica se o saque pode ser realizado de acordo com o saldo atual e o limiteChequeEspecial.</i>
+                    public void saque(float valor) {
+                        if (saldo - valor >= limiteChequeEspecial) {
+                            saldo -= valor;
+                            System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
+                        } else {
+                            System.out.println("Limite insuficiente!");
+                        }
+                    }
+                
+                    <i>// Método rendimento que usa o valor do juros para fazer o saldo crescer caso o saldo não seja negativo;</i>
+                    public void rendimento() {
+                        if (saldo > 0) {
+                            saldo *= (1 + juros);
+                            System.out.println("Rendimento aplicado. Saldo atual: R$ " + saldo);
+                        }
+                    }
+                
+                    <i>// Método para exibir o saldo;</i>
+                    public void exibirSaldo() {
+                        System.out.println("Seu saldo é de: R$ " + saldo);
+                    }
+                
+                    <i>// Método getNome que retorne o nome do cliente completo;</i>
+                    public String getNome() {
+                        return primeiroNomeCliente + " " + sobrenomeCliente;
+                    }
+                
+                    <i>// Método getNumero que dê como resultado o número da conta do cliente;</i>
+                    public long getNumero() {
+                        return numeroConta;
+                    }
+                
+                    <i>// Método main, com uma instância da classe ContaCorrente e faça um depósito de R$100, um saque de R$125, execute a função rendimento e imprimir o saldo;</i>
+                    public static void main(String[] args) {
+                        ContaCorrente conta = new ContaCorrente();
+                        conta.deposito(100);
+                        conta.saque(125);
+                        conta.rendimento();
+                        conta.exibirSaldo();
+                    }
+                }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 29 de aril de 2024</p>
+    </footer>
+</body>
+</html>
