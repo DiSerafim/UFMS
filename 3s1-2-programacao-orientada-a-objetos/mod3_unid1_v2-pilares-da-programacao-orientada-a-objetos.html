@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 1 - Herança e Polimorfismo.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=cmxIBX44Uws&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Programação Orientada a Objetos - Herança e Polimorfismo – Parte 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Júlio Cezar Estrella.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Herança e Polimorfismo.</h3>
+            <p>Roteiro:</p>
+            <ul>
+                <li>Herança.</li>
+                <li>Polimorfismo.</li>
+                <li>Classes e Métodos Final.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Herança.</h2>
+            <ul>
+                <li>No mundo real, podemos herdar algumas características de nossos familiares</li>
+                <ul>
+                    <li>Atributos: cor da pele, cor dos olhos, etc.</li>
+                    <li>E até mesmo comportamentos</li>
+                </ul>
+                <li>Também em POO as classes podem herdar</li>
+                <ul>
+                    <li>Atributos (propriedades)</li>
+                    <li>Métodos (comportamento)</li>
+                    <li>Este processo de herdar características denomina-se herança</li>
+                </ul>
+            </ul>
+
+            <pre>
+                                |     Pessoa       |
+              Ge ⇧ 2 atributos  |   nome | endereço|    superclasse                ↓Es
+              ne ⇧ 2 operações  |comer() | dormir  |  (mais genérica)              ↓pe
+              ra ⇧                    ⬀    ⬁                                      ↓ci
+              li ⇧                 ⬀         ⬁                                    ↓a 
+              za ⇧ |        Estudante       |       |       Empregado          |   ↓li
+              ção⇧ |anoEscolar              |       | categoria | função       |   ↓za
+                 ⇧ |matricular() | estudar()|       |trabalhar()| picarCartão()|   ↓ção
+                   |estudar()               |
+
+            subclasse(mais específica)      subclasse(mais específica)
+            * 3 atributos                   * 4 atributos
+            * 4 operações                   * 4 operações
+            </pre>
+
+            <p>Outro aspecto interessante é que a herança pode ser repetida em cascata, como mostra o exemplo a seguir:</p>
+            <pre>
+                        Animal      →→→→→ superclasse
+                        🡿  🢆
+                Selvagem    Doméstico →→→ subclasse
+                              🡿  🢆
+                          Gato     Cachorro
+                                      🡿 🢆
+                            ComPedigree  SemPedigree
+            </pre>
+
+            <ul>
+                <li><b>Herança.</b></li>
+                <li>Em Java a herança usamos o conceito de herança por meio de classes mãe e classes filha</li>
+                <li>Classe mãe super classe = classe base</li>
+                <li>Classe filha = subclasse = classe derivada</li>
+                <li><b>Classe Mãe.</b></li>
+                <li>É mais geral e de onde outras classes herdam métodos e atributos (membros)</li>
+                <li><b>Classe Filha.</b></li>
+                <li>É a mais especializada e que herda os membros da classe mãe</li>
+            </ul>
+
+            <p>Exemplo de Herança em POO:</p>
+            <pre>
+                              <b>Classe Mãe</b>
+
+                             Conta Bancária
+                              🢅    🢁    🢄
+                ContaCorrente   Poupança   Aplicação
+                
+                            <i>Classes Filhas</i>
+            </pre>
+
+            <p>Em Java, utilizamos a palavra extends para lidar com a aplicação do conceito de herança.</p>
+            <pre>
+                public class Animal {
+                    //
+                }
+
+                public class Cachorro extends Animal {
+                    //
+                }
+            </pre>
+
+            <ul>
+                <li>Vantagens da Herança:</li>
+                <ul>
+                    <li>Permite o reuso de software.</li>
+                    <li>Sem a necessidade de escrever o mesmo código novamente.</li>
+                    <li>Pode especializar soluções gerais já existentes.</li>
+                </ul>
+                <li>Todo objeto da subclasse é um objeto da superclasse (classe mãe).</li>
+                <ul>
+                    <li>O contrário não é válido.</li>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>A classe filha herda todos os membros da classe mãe:</li>
+                <ul>
+                    <li>Membros privados: são ocultos na classe filha.</li>
+                    <li>Membros públicos: são acessíveis pela classe filha.</li>
+                    <li>Membros protegidos: são acessíveis na subclasse (e outras do mesmo pacote).</li>
+                </ul>
+                <li>Construtores não são membros da classe.</li>
+                <ul>
+                    <li>Mas as classes filhas podem chamar um construtor da classe mãe.</li>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>Podemos declarar um campo na classe filha com o mesmo nome da classe mãe, mesmo que os tipos sejam diferentes.</li>
+                <li>Podemos sobrescrever um método da classe mãe, declarando um método com a mesma assinatura, o que chamamos de polimorfismo.</li>
+                <li>Também podemos declarar novos métodos e campos na classe filha, o que denomina-se de especialização.</li>
+            </ul>
+
+            <p>Exemplo:</p>
+            <p>Imagine que temos que modelar uma escola, na figura de professores, alunos e funcionários. Considere que todos são pessoas. Neste caso, Pessoa seria nossa classe mãe e Professores, Funcionários e Alunos seriam nossas classes filhas.</p>
+            <pre>
+            public class Pessoa {
+                public String nome;
+                public String cpf;
+                public Date data_nascimento;
+
+                public Pessoa(String_nome, String_cpf, Date_data) {
+                    this.nome_nome;
+                    this.cpf = _cpf;
+                    this.data_nascimento = data;
+                }
+            }
+            </pre>
+            <pre>
+            public class Aluno extends Pessoa {
+                public Aluno(String nome, String_cpf, Date_data) {
+                    super(nome, cpf, data);
+                }
+                public String matricula;
+            }
+                
+            public class Professor extends Pessoa {
+                public Professor(String_nome, String_cpf, Date_data) {
+                    super(nome, cpf, data);
+                }
+                public double salario;
+                public String disciplina;
+            }
+                
+            public class Funcionario extends Pessoa {
+                public Funcionario(String nome, String cpf, Date_data) {
+                    super(nome, cpf, data);
+                }
+                public double salario;
+                public Date data admissao;
+                public String cargo;
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Polimorfismo.</h2>
+            <ul>
+                <li><b>Poli</b> = Muitas; <b>Morfo</b> = Formas</li>
+                <li>É a capacidade de um objeto poder ter muitas formas</li>
+                <li>Está fortemente associada à herança</li>
+                <li>A subclasse pode definir seu próprio comportamento único e ainda compartilhar as mesmas funcionalidades de seu pai</li>
+                <li>Mas uma classe pai não pode ter o comportamento da sua subclasse</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Tipos.</h2>
+            <ul>
+                <li>Funciona somente sobre métodos</li>
+                <ul>
+                    <li>Não serve para atributos</li>
+                </ul>
+                <li>Tipos:</li>
+                <ul>
+                    <li>Sobrecarga</li>
+                    <li>Sobrescrita</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Sobrecarga.</h2>
+            <ul>
+                <li>Ter vários métodos dentro de uma classe com o mesmo nome, mas com assinaturas diferentes</li>
+                <li>Também chamado de compile time polymorphism ou static binding</li>
+                <li>É possível:</li>
+                <ul>
+                    <li>Ter um número diferente de parâmetros</li>
+                    <li>Ter tipos diferentes para os parâmetros</li>
+                </ul>
+                <li>Não é possível:</li>
+                <ul>
+                    <li>Ter somente o tipo de retorno diferente*</li>
+                    <ul>
+                        <li>Claro, o tipo de retorno não faz parte da assinatura do método</li>
+                    </ul>
+                    <li>Mudar apenas os nomes dos parâmetros</li>
+                    <ul>
+                        <li>Se for de pai pra filho, vira sobrescrita</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo – Sobrecarga - Exemplos:</h2>
+            <p>Não são possíveis usar Sobrecarga:</p>
+            <pre>
+                //compiler error - can't overload based on the type returned
+                //(one method returns int, the other returns a float)
+                int changeDate(int year) {...};
+                float changeDate(int year) {...};
+
+                //compiler error - can't overload by changing just
+                //the name of the parameter (from year to month)
+                int changeDate(int year) {...};
+                int changeDate(int month) {...}; 
+            </pre>
+
+            <p>É possível usar sobrecarga:</p>
+            <pre>
+                // valid case of overloading, since the methods
+                // have different number of parameters
+                int changeDate(int year, int month) {...};
+                int changeDate(int year) {...};
+
+                // also a valid case of overloading, since the
+                // parameters are of different types
+                int changeDate(float year) {...};
+                int changeDate(int year) {...};
+
+                //also a valid case of overloading, since the
+                //parameters AND return type are different
+                int changeDate(float year) {...};
+                double changeDate(double var) {...};
+            </pre>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Sobrescrita.</h2>
+            <ul>
+                <li>Provê uma nova implementação para um método existente e visível da classe pai.</li>
+                <li>Depende da Herança.</li>
+                <li>Também chamado de Runtime polymorphism ou dynamic binding.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+                class Animal {
+                    public void makeNoise(){
+                        System.out.println("Some sound");
+                    }
+                }
+                
+                class Dog extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Bark");
+                    }
+                }
+                
+                class Cat extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Meawoo");
+                    }
+                }
+            </pre>
+
+            <p>Polimorfismo – Exemplo Sobrescrita e Super.</p>
+            <pre>
+
+                public class CellPhone {
+                    public void print() {
+                        System.out.println("I'm a cellphone");
+                    }
+                }
+                
+                public class TouchPhone extends CellPhone {
+                    public void print() {
+                        super.print();
+                        System.out.println("I'm a touch screen cellphone");
+                    }
+
+                    public static void main (String[] args) {
+                        TouchPhone p = new TouchPhone();
+                        p.print();
+                    }
+                }
+            </pre>
+            <p>Exemplo:</p>
+            <pre>
+                class PersianCat extends Cat{
+                    public void makeNoise(){
+                sysout("Meawooooooo");
+                    }
+                }
+                   
+                class Test{
+                    public static void main(String[] args){
+                        Animal an1 = new Dog();
+                        Animal an2 = new PersianCat();
+                        Cat cat = (Cat)an2;
+
+                        an1.makeNoise();
+                        cat.makeNoise();
+                    }
+                }
+
+                As variáveis de referência an1 e an2 apontam para os campos visíveis da classe Animal para a instância criada (Dog).
+                A variável de referência cat aponta para os campos visíveis da classe Cat para a instância (PersianCat) criada.
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
+    </footer>
+</body>
+</html>
