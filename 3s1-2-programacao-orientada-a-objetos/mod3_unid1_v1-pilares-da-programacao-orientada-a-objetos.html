@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 1 - Herança e Polimorfismo.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=ok-7fR7FqB8&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Herança e Polimorfismo.</h3>
+        </section>
+
+        <section>
+            <h2>Herança.</h2>
+            <ul>
+                <li>A habilidade de criar uma nova classe a partir de uma classe existente;</li>
+                <li>É uma forma de reutilização de código na qual uma nova classe é criada, absorvendo membros de uma classe existente:</li>
+                <ul>
+                    <li>Podendo ser aprimorada com novos membros ou modificar os existentes;</li>
+                </ul>
+                <li>Economiza tempo no desenvolvimento;</li>
+                <li>Aumenta a qualidade do código.</li>
+                <li>Ao declarar uma classe, em Java é possível definir UMA classe para herdar seus membros internos;</li>
+                <li>A classe existente é chamada de superclasse (ou classe pai):</li>
+                <ul>
+                    <li>Superclasse direta: Primeira na hierarquia;</li>
+                    <li>Superclasse indireta: Qualquer outra classe na hierarquia (classe pai da classe pai, ...).</li>
+                </ul>
+                <li>A nova classe sendo criada é chamada de subclasse (ou classe filha):</li>
+                <ul>
+                    <li>A subclasse é mais específica que a superclasse e representa um grupo mais especializado de objetos</li>
+                </ul>
+            </ul>
+            <p>Exemplo 1:</p>
+            <pre>
+                        Superclasse
+                        ☇
+                          Funcionário
+                       ⬀       ⇧        ⬁
+                Gerente    Secretária   Telefonista
+                        ⬂     ↓       ⬃
+                           Subclasses
+            </pre>
+
+            <p>Exemplo 2:</p>
+            <pre>
+                           Veículo
+                       🡿      🡻       🢆
+                Carro     Motocicleta    Caminhão
+                🡿 🢆           🡻             🡻
+            Van     SUV     Esportiva     Guincho
+            </pre>
+
+            <b>Sintaxe</b>
+            <ul>
+                <li>Superclasse</li>
+                <pre>
+                    class Esporte{
+                        String nome;
+                    }
+                </pre>
+                <li>Subclasse</li>
+                <ul>
+                    <li>A cláusula opcional extends indica a superclasse de onde os membros vão ser herdados</li>
+                </ul>
+                <pre>
+                    class EsporteAquatico extends Esporte {}
+                </pre>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+                public class CellPhone {
+                    public void print() {
+                        System.out.println("I'm a cellphone");
+                    }
+                }
+
+                public class TouchPhone extends CellPhone {
+                    public void printTouch() {
+                        super.print();
+                        System.out.println("I'm a touch screen cellphone");
+                    }
+
+                    public static void main (String[] args) {
+                        TouchPhone p = new TouchPhone();
+                        p.printTouch();
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>A Classe Object.</h2>
+            <ul>
+                <li>A classe Object é a classe pai de todos as classes definidas</li>
+                <ul>
+                    <li>Mesmo que você não tenha definido isso (através da palavra reservada extends).</li>
+                </ul>
+                <li>Ou seja, todas as classes que criar serão filhas de Object</li>
+                <ul>
+                    <li>Com isso, a sua classe tem acesso aos membros internos visíveis da classe Object;</li>
+                    <li>Inclusive vetores.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Métodos da Classe Object.</h2>
+            <ul>
+                <li>boolean equals(Object obj)</li>
+                <li>void finalize() throws Throwable</li>
+                <li>int hashCode()</li>
+                <li>String toString()</li>
+                <li>Etc…</li>
+            </ul>
+
+            <p>Exemplo:</p>
+            <pre>
+                Object o1 = new Object();
+                    //Uma variável de referência do tipo Object pode
+                    //referenciar qualquer outro tipo
+                Object o2 = new String();
+                Object o3 = new Pessoa();
+
+                
+                Neste exemplo a variável de referência o3
+                só irá conseguir enxergar a parte referente
+                a classe Object da instância criada.
+
+                (Memória(Pessoa(Object)))
+            </pre>
+        </section>
+
+        <section>
+            <h2>Polimorfismo.</h2>
+            <ul>
+                <li><b>Poli</b> = Muitas; <b>Morfo</b> = Formas</li>
+                <li>É a capacidade de um objeto poder ter muitas formas</li>
+                <li>Está fortemente associada à herança</li>
+                <li>A subclasse pode definir seu próprio comportamento único e ainda compartilhar as mesmas funcionalidades de seu pai</li>
+                <li>Mas uma classe pai não pode ter o comportamento da sua subclasse</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Tipos.</h2>
+            <ul>
+                <li>Funciona somente sobre métodos</li>
+                <ul>
+                    <li>Não serve para atributos</li>
+                </ul>
+                <li>Tipos:</li>
+                <ul>
+                    <li>Sobrecarga</li>
+                    <li>Sobrescrita</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Sobrecarga.</h2>
+            <ul>
+                <li>Ter vários métodos dentro de uma classe com o mesmo nome, mas com assinaturas diferentes</li>
+                <li>Também chamado de compile time polymorphism ou static binding</li>
+                <li>É possível:</li>
+                <ul>
+                    <li>Ter um número diferente de parâmetros</li>
+                    <li>Ter tipos diferentes para os parâmetros</li>
+                </ul>
+                <li>Não é possível:</li>
+                <ul>
+                    <li>Ter somente o tipo de retorno diferente*</li>
+                    <ul>
+                        <li>Claro, o tipo de retorno não faz parte da assinatura do método</li>
+                    </ul>
+                    <li>Mudar apenas os nomes dos parâmetros</li>
+                    <ul>
+                        <li>Se for de pai pra filho, vira sobrescrita</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Polimorfismo – Sobrecarga - Exemplos:</h2>
+            <p>Não são possíveis usar Sobrecarga:</p>
+            <pre>
+                //compiler error - can't overload based on the type returned
+                //(one method returns int, the other returns a float)
+                int changeDate(int year) {...};
+                float changeDate(int year) {...};
+
+                //compiler error - can't overload by changing just
+                //the name of the parameter (from year to month)
+                int changeDate(int year) {...};
+                int changeDate(int month) {...}; 
+            </pre>
+
+            <p>É possível usar sobrecarga:</p>
+            <pre>
+                // valid case of overloading, since the methods
+                // have different number of parameters
+                int changeDate(int year, int month) {...};
+                int changeDate(int year) {...};
+
+                // also a valid case of overloading, since the
+                // parameters are of different types
+                int changeDate(float year) {...};
+                int changeDate(int year) {...};
+
+                //also a valid case of overloading, since the
+                //parameters AND return type are different
+                int changeDate(float year) {...};
+                double changeDate(double var) {...};
+            </pre>
+        </section>
+
+        <section>
+            <h2>Polimorfismo - Sobrescrita.</h2>
+            <ul>
+                <li>Provê uma nova implementação para um método existente e visível da classe pai.</li>
+                <li>Depende da Herança.</li>
+                <li>Também chamado de Runtime polymorphism ou dynamic binding.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+                class Animal {
+                    public void makeNoise(){
+                        System.out.println("Some sound");
+                    }
+                }
+                
+                class Dog extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Bark");
+                    }
+                }
+                
+                class Cat extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Meawoo");
+                    }
+                }
+            </pre>
+
+            <p>Polimorfismo – Exemplo Sobrescrita e Super.</p>
+            <pre>
+
+                public class CellPhone {
+                    public void print() {
+                        System.out.println("I'm a cellphone");
+                    }
+                }
+                
+                public class TouchPhone extends CellPhone {
+                    public void print() {
+                        super.print();
+                        System.out.println("I'm a touch screen cellphone");
+                    }
+
+                    public static void main (String[] args) {
+                        TouchPhone p = new TouchPhone();
+                        p.print();
+                    }
+                }
+            </pre>
+            <p>Exemplo:</p>
+            <pre>
+                class PersianCat extends Cat{
+                    public void makeNoise(){
+                sysout("Meawooooooo");
+                    }
+                }
+                   
+                class Test{
+                    public static void main(String[] args){
+                        Animal an1 = new Dog();
+                        Animal an2 = new PersianCat();
+                        Cat cat = (Cat)an2;
+
+                        an1.makeNoise();
+                        cat.makeNoise();
+                    }
+                }
+
+                As variáveis de referência an1 e an2 apontam para os campos visíveis da classe Animal para a instância criada (Dog).
+                A variável de referência cat aponta para os campos visíveis da classe Cat para a instância (PersianCat) criada.
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
+    </footer>
+</body>
+</html>
