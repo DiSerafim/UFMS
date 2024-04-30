@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</h1>
+        <h2>✅ [A2] Avaliação do Módulo 2 - Aprofundando na Orientação a Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof. Anderson Viçoso de Araújo.</li>
+                <li>Iniciado em	segunda, 29 abr 2024, 19:01</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	segunda, 29 abr 2024, 21:15</li>
+                <li>Tempo empregado	2 horas 13 minutos</li>
+                <li>Avaliar	8,00 de um máximo de 10,00(80%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Escolha a opção que explique a função do método “finalize()” de cada objeto na coleta de lixo:</p>
+                <ul>
+                    <li>a. Esse método não existe na classe Object da API Java, consequentemente não é possível ser chamado por qualquer objeto.</li>
+                    
+                    <li>b. O método “finalize()” não é importante para a coleta de lixo, pois ele está relacionado com com o fechamento da escrita de informações em um arquivo.</li>
+                    
+                    <li>c. O método "finalize()" é um método especial que é chamado pelo coletor de lixo antes de um objeto ser removido da memória. A função do método é permitir que o objeto faça algumas tarefas de limpeza antes de ser destruído, como liberar recursos que ele estava utilizando.</li>
+                    
+                    <li>d. O método “finalize()” juntamente com o método “System.gc()” travam a execução do sistema, causando demora no sistema para responder.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>Resolução:</p>
+                <li>O método finalize() é utilizado para realizar tarefas de limpeza ou liberação de recursos antes que um objeto seja destruído e removido da memória pelo coletor de lixo. Isso pode incluir a liberação de recursos como arquivos abertos, conexões de banco de dados, entre outros, que o objeto estava utilizando.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>O código a seguir possui um erro. Assinale a alternativa que contenha o código que corrija o código:</p>
+                <pre>
+                    public static void main(String[] args) {
+                        Rectangle myRect;
+                        myRect.width = 40;
+                        myRect.height = 50;
+                        System.out.println("myRect's area is " + myRect.area());
+                    }
+                </pre>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Rectangle myRect = Rectangle();</li>
+                    <li>b. Rect myRect = new Rect();</li>
+                    <li>c. myRect Rectangle = new Rectangle();</li>
+                    <li>d. Rectangle myRect = new Rectangle();</li>
+                </ul>
+
+                <b class="answer">Resposta: d. Rectangle myRect = new Rectangle(); ✅</b>
+                <p>Resolução:</p>
+                <li>Para corrigir o erro no código, é necessário instanciar o objeto myRect da classe Rectangle utilizando o operador new. A sintaxe correta para criar uma nova instância de um objeto é utilizando o operador new seguido do construtor da classe.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>O que é um pacote em Java?</p>
+                <ul>
+                    <li>a. Um conjunto de arquivos de código-fonte Java.</li>
+                    <li>b. Um arquivo de biblioteca contendo classes e outros recursos Java.</li>
+                    <li>c. Uma pasta que contém classes Java relacionadas.</li>
+                    <li>d. Uma pasta que contém arquivos de configuração Java.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. Uma pasta que contém classes Java relacionadas. ✅</b>
+                <p>Resolução:</p>
+                <li>Em Java, um pacote é uma maneira de organizar e agrupar classes relacionadas. Um pacote é representado por uma pasta no sistema de arquivos que contém os arquivos de código-fonte das classes Java pertencentes a esse pacote. Organizar classes em pacotes ajuda a evitar conflitos de nomes e facilita a reutilização de código.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Selecione a opção que define em uma linha um vetor unidimensional de valores numéricos de ponto flutuante de precisão simples para armazenar as notas de uma prova de uma turma de cinquenta alunos.</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. float[] notas = new float[50];</li>
+                    <li>b. float[50] notas = new float[50];</li>
+                    <li>c. double[50] notas = new double[];</li>
+                    <li>d. double[] notas = new double[50];</li>
+                </ul>
+                
+                <b class="answer">Resposta: a. float[] notas = new float[50]; ✅</b>
+
+                <p>Resolução:</p>
+                <li>Para definir um vetor unidimensional de valores numéricos de ponto flutuante de precisão simples para armazenar as notas de uma prova de cinquenta alunos, usamos a sintaxe <i>float[] notas = new float[50];</i>. Isso cria um vetor chamado "notas" com 50 elementos do tipo float.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual é a convenção de nomenclatura para pacotes em Java?</p>
+                <ul>
+                    <li>a. Todas as letras maiúsculas.</li>
+                    <li>b. CamelCase.</li>
+                    <li>c. Todas as letras minúsculas.</li>
+                    <li>d. snake_case.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. Todas as letras minúsculas. ❌</b>
+
+                <p>Resolução:</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Partindo da classe Rectangle:</p>
+                <pre>
+                    class Rectangle {
+                        int width = 0;
+                        int height = 0;
+                        Point origin;
+                        
+                        // construtores
+                        Rectangle() {
+                            origin = new Point(0, 0);
+                        }
+                        Rectangle(Point p) {
+                            origin = p;
+                        }
+                        Rectangle(int w, int h) {
+                            this(new Point(0, 0), w, h);
+                        }
+                        Rectangle(Point p, int w, int h){
+                            origin = p;
+                            width = w;
+                            height = h;
+                        }
+
+                        // move o retângulo de posição
+                        void move(int x, int y) {
+                            origin.x = x;
+                            origin.y = y;
+                        }
+
+                        // retorna a área do retângulo
+                        int area() {
+                            return width * height;
+                        }
+                    }
+                </pre>
+                <ul>
+                    <li>Dado o código a seguir, indique o número da linha com o código errado.</li>
+                    <ul>
+                        <li>1. public static void main(String[] args) {</li>
+                        <li>2. Rectangle myRect;</li>
+                        <li>3.  myRect.width = 40;</li>
+                        <li>4.  myRect.height = 50;</li>
+                        <li>5.   System.out.println("myRect's area is " + myRect.area());</li>
+                        <li>6.}</li>
+                    </ul>
+                </ul>
+
+                <b class="answer">Resposta: 2. Rectangle myRect; ✅</b>
+
+                <p>Resolução:</p>
+                <li>a variável myRect é declarada, mas não é inicializada. Isso resultará em um erro de compilação porque myRect é uma referência a um objeto da classe Rectangle, e não está sendo inicializada com um objeto usando o operador new. Para corrigir isso, a variável myRect precisa ser inicializada com uma instância da classe Rectangle, como na linha 2:</li>
+                <i>Rectangle myRect = new Rectangle();</i>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Crie uma classe JAVA que faça a leitura de dez notas de alunos (números inteiros), escreva na saída padrão a média das notas (valor truncado) e imprima quais notas estão acima da média, sem repetição, separadas por caractere de espaço simples. A impressão dos números de saída deve ser feita de acordo com a ordem de leitura das notas.</p>
+                <p>Por exemplo:</p>
+                <pre>
+                Entrada	    Resultado
+                4           Média: 2
+                3           Notas acima da média: 4 3 5
+                2
+                1
+                1
+                5
+                4
+                2
+                1
+                3
+                
+                7           Média: 7
+                8           Notas acima da média: 8 9
+                6
+                9
+                9
+                8
+                6
+                7
+                7
+                6
+                </pre>
+
+                <b class="answer">Resposta: . ✅ ❌</b>
+
+                <p>Resolução:</p>
+                <p>Notas.java</p>
+                <pre>
+                    import java.util.Scanner;
+                    import java.util.HashSet;
+
+                    public class Notas {
+                        public static void main(String[] args) {
+                            // input de entrada
+                            Scanner scanner = new Scanner(System.in);
+                            // Array que armazena as notas
+                            int[] notas = new int[10];
+                            
+                            // Ler as notas e soma
+                            int soma = 0;
+                            for (int i = 0; i < 10; i++) {
+                                notas[i] = scanner.nextInt();
+                                soma += notas[i];
+                            }
+
+                            // Valor médio
+                            int media = soma / 10;
+
+                            // Resultado da média
+                            System.out.println("Média: " + media);
+
+                            // Recebe notas acima da média
+                            HashSet<Integer> notasAcimaMedia = new HashSet<>();
+
+                            // Guarda notas acima da média
+                            for (int i = 0; i < 10; i++) {
+                                if (notas[i] > media) {
+                                    notasAcimaMedia.add(notas[i]);
+                                }
+                            }
+
+                            // Mostra as notas acima da média
+                            System.out.print("Notas acima da média: ");
+                            for (int nota : notasAcimaMedia) {
+                                System.out.print(nota + " ");
+                            }
+                            System.out.println(); // Imprime uma nova linha
+                            
+                            // Fechar o scanner
+                            scanner.close();
+                        }
+                    }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>O código a seguir mostra uma classe Java com um método main que lê um vetor de inteiros do console usando Scanner e imprime o índice dos valores inteiros lidos inicialmente?</p>
+                <pre>
+                    class Simple{  
+                        public static void main(String args[]){  
+                            Scanner s = new Scanner(System.in);
+                            int[] v = new int[10];
+                            int sum = 0;
+                            for (int i = 0; i < v.length; i++) {
+                    v[i] = s.nextInt();
+                    sum += v[i];
+                            }
+                            System.out.println("Média:" + (sum / v.length));
+                        }
+                    }
+                </pre>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <li>O código apresentado não imprime os índices dos valores inteiros lidos inicialmente. Ele apenas calcula a média dos valores lidos e a imprime. Para imprimir os índices, seria necessário adicionar uma instrução para isso dentro do loop for.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Preencha os espaços vazios do algoritmo a seguir que retorne a soma de todos os elementos em uma matriz de inteiros n x n.</p>
+                <pre>
+                    int soma(int[][] mat1) {
+                        int soma = 0;
+                        for (int i = 0; i < (....); i++) {
+                            for (int j = 0; j <(....); j++) {
+                                (....)
+                            }
+                        }
+                        (....)
+                    }
+                </pre>
+                <p>Opções:</p>
+                <li>return soma;, soma+= mat1[i][j];, mat1.length, mat1[i].length</li>
+                
+                <b class="answer">Resposta: . ✅</b>
+                <p>Resolução:</p>
+                <pre>
+                    int soma(int[][] mat1) {
+                        int soma = 0;
+                        for (int i = 0; i < <b>mat1.length</b>; i++) {
+                            for (int j = 0; j <<b>mat1[i].length</b>; j++) {
+                                <b>soma+= mat1[i][j];</b>
+                            }
+                        }
+                        <b>return soma;</b>
+                    }
+                </pre>
+                <ol>
+                    <li><b>mat1.length</b> para obter o tamanho da matriz no eixo das linhas.</li>
+                    <li><b>mat1[i].length</b> para obter o tamanho da linha atual da matriz.</li>
+                    <li><b>soma += mat1[i][j];</b> para adicionar o valor do elemento atual à soma total.</li>
+                    <li><b>return soma;</b> para retornar a soma total depois de iterar sobre todos os elementos da matriz.</li>
+                </ol>
+
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Sobre o coletor de lixo em Java, indique se verdadeiro ou falso:</p>
+                <p>O coletor de lixo em Java é importante porque ele gerencia a memória do programa automaticamente.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <p>O coletor de lixo em Java é uma parte essencial da máquina virtual Java (JVM), pois é responsável por gerenciar a memória do programa automaticamente, liberando a memória alocada para objetos que não são mais referenciados pelo programa. Isso ajuda a evitar vazamentos de memória e simplifica o processo de desenvolvimento, já que os desenvolvedores não precisam gerenciar explicitamente a alocação e liberação de memória.</p>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de março de 2024</p>
+    </footer>
+</body>
+</html>
