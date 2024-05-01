@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 3 - Interfaces e Abstração.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=cfEXV6fedt8&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 3. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Interfaces e Abstração.</h3>
+        </section>
+
+        <section>
+            <h2>Abstração.</h2>
+            <ul>
+                <li>Habilidade de expor comportamentos essenciais de uma classe enquanto se esconde os detalhes de implementação.</li>
+                <li>Por que usar abstração?</li>
+                <ul>
+                    <li>Reduz a complexidade do código.</li>
+                    <li>Organiza o projeto/código.</li>
+                </ul>
+                <li>Tornar uma classe abstrata (ou seja, uma classe que não pode ser instanciada) ou implementar uma interface.</li>
+                <li><i>Abstraction is more about ‘What‘ a class can do. [Idea]</i>.</li>
+                <li>A definição da abstração ocorre durante a fase de planejamento/definição das classes.</li>
+                <li>Se uma classe é abstrata e não pode ser instanciada, a classe não tem muita utilidade, a não ser que seja estendida (herança).</li>
+                <li>A classe pai contém a funcionalidade comum de uma coleção de classes filhas (como na herança simples) mas não tem função sozinha.</li>
+                <li>Na classe abstrata é possível ter métodos normais e ter métodos abstratos também.</li>
+                <li>Modificadores de classe:</li>
+                <ul>
+                    <li><b>final</b>: nenhuma classe pode estender (herdar) da classe final</li>
+                    <li><b>abstract</b>: a classe não pode ser instanciada</li>
+                </ul>
+                <li>Modificador de método:</li>
+                <ul>
+                    <li><b>abstract</b>: o método não vai ser instanciado na classe abstrata, mas deve ser obrigatoriamente implementado em suas subclasses concretas</li>
+                </ul>
+            </ul>
+            <p>Exemplo - Abstração</p>
+            <pre>
+                abstract class Instrumento {
+                    protected double peso;
+                    public abstract void tocar();
+                }
+
+                public final class Guitarra extends InstrumentoDeCordas {
+                    public Guitarra () {
+                        peso = 3.5;
+                        numeroDeCordas = 6;
+                    }
+
+                    public void tocar(){
+                        //...
+                    }
+                }
+
+                abstract class InstrumentoDeCordas extends Instrumento {
+                    protected int numeroDeCordas;
+                }
+            </pre>
+
+            <p>Exemplo da aula anterior.</p>
+            <pre>
+                abstract class Animal {
+                    public abstract void makeNoise();
+                }
+
+                class Dog extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Bark");
+                    }
+                }
+
+                class Cat extends Animal{
+                    public void makeNoise(){
+                        System.out.println("Meawoo");
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Interface.</h2>
+            <ul>
+                
+                <li>É uma lista de declaração de métodos e constantes:</li>
+                <ul>
+                    <li>Não implementa os métodos, só declara*;</li>
+                    <li>Não tem construtores.</li>
+                </ul>
+                <li>Não é uma classe;</li>
+                <li>Não pode ser instanciada.</li>
+                <li><i>* Menos em Java 8 (métodos default)</i></li>
+                <li>Interfaces representam “serviços de suporte” para as classes que as implementam (contrato):</li>
+                <ul>
+                    <li>Em geral, estão associados com capacidades a serem dadas às classes;</li>
+                    <li>Ou a um papel que a classe pode representar;</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Membros Internos de uma Interface.</h2>
+            <ul>
+                <li>Todos os atributos são implicitamente public, static e final:</li>
+                <ul>
+                    <li>Ou seja, CONSTANTES!</li>
+                </ul>
+                <li>Métodos de uma interface são implicitamente public e abstract;</li>
+                <ul>
+                    <li>Já que são abstract, não podem ser marcados como final.</li>
+                </ul>
+                <li>Os métodos de interfaces não podem ser static*;</li>
+                <li>Uma interface SOMENTE pode estender interfaces (uma ou mais interfaces diferentes):</li>
+                <ul>
+                    <li>Herança Múltipla!</li>
+                    <li>Separadas por uma vírgula na definição.</li>
+                </ul>
+                <li><li>*Menos em Java 8 (métodos static em interfaces)</li></li>
+            </ul>
+                <b>Membros Internos - Exemplo:</b>
+                <p>O que é declarado:</p>
+                <pre>
+                    interface MinhaInterface{
+                        int x = 10;
+
+                        void metodo1();
+                        void metodo2(String str);
+                    }
+                </pre>
+                
+                <p>O que é visto pelo compilador:</p>
+                <pre>
+                    interface MinhaInterface{
+                        public static final int x = 10;
+                        public abstract void metodo1();
+                        public abstract void metodo2(String str);
+                    }
+                </pre>
+        </section>
+
+        <section>
+            <h2>Exemplo de Uso de Interface - ADTs (Abstract Data Types).</h2>
+            <ul>
+               <li>Pilha, Fila, String, Grafo…</li>
+               <li>Um ADT pode ser implementado de diversas maneiras:</li>
+               <li>Uma pilha, por exemplo, pode ser implementada em um vetor ou em uma lista ligada.</li>
+               <li>Para ser uma pilha, o que a classe obrigatoriamente tem que ter?</li>
+            </ul>
+            <b>Exemplo:</b>
+            <pre>
+                interface Pilha{
+                    int pop();
+                    void push(int x);
+                    int size();
+                    int top();
+                }
+            </pre>
+            <ul>
+                <li>A classe <b>PilhaVetor</b> compromete-se a ser tratada como Pilha, sendo obrigada a ter os métodos necessários, definidos no “contrato”;</li>
+                <li>Faz sentido algum desses métodos da interface não serem públicos?</li>
+            </ul>
+            <pre>
+                class PilhaVetor implements Pilha{
+                    int[] v = new int[100];
+                    public int pop(){
+                
+                    }
+                
+                    public void push(int x){
+                
+                    }
+                    ...
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Declaração de Interfaces.</h2>
+            <ul>
+                <li>A interface especifica quais operações podem ser realizadas, mas não especifica como essas operações são realizadas.</li>
+                <li>Os modificadores de acesso de interfaces são os mesmos que de classes:</li>
+                <ul>
+                    <li>public</li>
+                    <li>package-private (sem modificador)</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Implementando Métodos da Interface.</h2>
+            <ul>
+                <li>Uma classe que implementa uma interface deve implementar todos os métodos definidos por aquela interface;</li>
+                <li>Se um ou mais métodos não for implementado, o compilador Java gerará um erro;</li>
+                <li>Subclasses (filhos) automaticamente implementam todas as interfaces que as suas superclasses (pais) implementam.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Subinterfaces.</h2>
+            <ul>
+                <li>Interfaces podem ser estendidas (herança):</li>
+                <ul>
+                    <li>A hierarquia de uma interface é independente da hierarquia da classe;</li>
+                    <li>A interface que estende outra interface herda todos os seus métodos.</li>
+                    <ul>
+                        <li>A classe concreta que implementa uma interface filha de outra, tem que obrigatoriamente implementar os métodos de ambas as interfaces;</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Subinterfaces - Exemplo 1:</b>
+            <pre>
+                interface Readable{
+                    byte readByte();
+                }
+
+                interface Writable{
+                    void writeByte(byte b);
+                }
+                                                <i>Herança múltipla.</i>
+                                                  🡿  🢆
+                interface ReadWrite extends Readable, Writable {
+                    void seek(int position);
+                }
+            </pre>
+
+            <b>Subinterfaces - Exemplo 1 (2).</b>
+            <pre>
+                class File implements ReadWrite{
+                    byte readByte(){...}
+
+                    void writeByte(byte b){...}
+
+                    void seek(int position){...}
+                }
+            </pre>
+
+            <b>Exemplo 2:</b>
+            <pre>
+                public interface Drawable{
+                    //implicitly public,
+                    //static and final
+                    double PI = 3.1415;
+                
+                    //implicitly abstract
+                    //and public
+                    void draw();
+                }
+            </pre>
+            <pre>
+                public class Circle implements Drawable{
+                    private double radius;
+
+                    public Circle(double r){
+                        radius = r;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing a circle");
+                    }
+
+                    public double getArea(){
+                        return PI * radius * radius;
+                    }
+
+                    public double getRadius(){
+                        return radius;
+                    }
+                }
+            </pre>
+
+            <b>Exemplo 2 (2):</b>
+            <pre>
+                public class Rectangle implements Drawable{
+                    private double width;
+                    private double height;
+                
+                    public Rectangle(double w, double h){
+                        width = w;
+                        height = h;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing a rectangle");
+                    }
+
+                    public double getArea() {
+                        return height * width;
+                    }
+                }
+            </pre>
+
+            <b>Exemplo 3:</b>
+            <pre>
+                abstract class Shape {
+                    private String color = "blue";
+                    public abstract double getArea();
+
+                    public void setColor(String color){
+                        this.color = color;
+                    }
+
+                    public String getColor() {
+                        return this.color;
+                    }
+                }
+            </pre>
+            <pre>
+                public class Rectangle extends Shape implements Drawable{
+                    private double width;
+                    private double height;
+
+                    public Rectangle(double w, double h){
+                        width = w;
+                        height = h;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing Rectangle");
+                    }
+
+                    public double getArea() {
+                        return height * width;
+                    }
+                }                
+            </pre>
+        </section>
+
+        <section>
+            <h2>Vantagens.</h2>
+            <ul>
+                <li>Permite um maior controle sobre como os objetos são usados;</li>
+                <li>Aumenta o desacoplamento entre os códigos:</li>
+                <li>Fácil de alterar o código sem “quebrar”.</li>
+                <li>Aumenta a reusabilidade de código:</li>
+                <li>YES!.</li>
+            </ul>
+
+            <table>
+                <tr>
+                    <th>Abstract class</th>
+                    <th>Interface</th>
+                </tr>
+                <tr>
+                    <td>1) A classe abstrata pode ter métodos abstratos e não abstratos.</td>
+                    <td>A interface pode ter apenas métodos abstratos.</td>
+                </tr>
+                <tr>
+                    <td>2) A classe abstrata não suporta herança múltipla.</td>
+                    <td>A interface suporta herança múltipla.</td>
+                </tr>
+                <tr>
+                    <td>3) A classe abstrata pode ter variáveis ​​finais, não finais, estáticas e não estáticas.</td>
+                    <td>A interface possui apenas variáveis ​​estáticas e finais.</td>
+                </tr>
+                <tr>
+                    <td>4) A classe abstrata pode ter métodos estáticos, método principal e construtor.</td>
+                    <td>A interface não pode ter métodos estáticos, método principal ou construtor.</td>
+                </tr>
+                <tr>
+                    <td>5) A classe abstrata pode fornecer a implementação da interface.</td>
+                    <td>A interface não pode fornecer a implementação de uma classe abstrata.</td>
+                </tr>
+                <tr>
+                    <td>6) A palavra-chave abstract é usada para declarar a classe abstrata.</td>
+                    <td>A palavra-chave interface é usada para declarar a interface.</td>
+                </tr>
+                <tr>
+                    <td>7) 0-100% de abstração</td>
+                    <td>100% de abstração</td>
+                </tr>
+                <tr>
+                    <td>
+                <pre>
+                8) Example:
+                public abstract class Shape{
+                    public abstract void draw();
+                }
+                </pre>
+                    </td>
+                    <td>
+                <pre>
+                Example:
+                public interface Drawable{
+                    void draw();
+                }
+                </pre>
+                    </td>
+                </tr>
+            </table>
+            
+            
+             
+            
+            
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
+    </footer>
+</body>
+</html>
