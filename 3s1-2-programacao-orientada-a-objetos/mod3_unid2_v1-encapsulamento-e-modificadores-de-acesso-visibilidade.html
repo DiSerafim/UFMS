@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 2 - Encapsulamento e Modificadores de acesso/visibilidade.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=IE274m4O7kA&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Encapsulamento e Modificadores de acesso/visibilidade.</h3>
+        </section>
+
+        <section>
+            <h2>Declarações de Classe e Modificadores de Acesso.</h2>
+            <ul>
+                <li>Declaração de classe simples:</li>
+                <li><i>modificador_acesso class MinhaClasse { }</i></li>
+                <li>Modificadores de acesso de classe possíveis:</li>
+                <ul>
+                    <li>public: acessada de qualquer classe;</li>
+                    <li>Sem Modificador (package-private ou padrão): acessada dentro do mesmo pacote.</li>
+                </ul>
+            </ul>
+            <table>
+                <tr>
+                    <th>Modificador</th>
+                    <th>Pacote</th>
+                    <th>Qualquer lugar</th>
+                </tr>
+                <tr>
+                    <td>public</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                </tr>
+                <tr>
+                    <td>Sem modificador (package-private)</td>
+                    <td>Y</td>
+                    <td>N</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Declarações de Membros Internos e Modificadores de Acesso.</h2>
+            <ul>
+                <li>Declaração de membros internos:</li>
+                <li><i>modificador_acesso String nome;</i></li>
+                <li><i>modificador_acesso void executar(){}</i></li>
+                <li>Modificadores de acesso:</li>
+                <ul>
+                    <li>public: acessado de qualquer classe</li>
+                    <li>protected: acessado por classes filhas e do mesmo pacote</li>
+                    <li>Sem Modificador (package-private ou padrão): acessado dentro do mesmo pacote (filha ou não).</li>
+                    <li>private: acessado dentro da mesma classe</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modificadores de Acesso.</h2>
+            <ul>
+                <li>Existem duas questões relativas a acesso que devem ser entendidas:</li>
+                <ul>
+                    <li>O código de um método em uma classe pode acessar um membro de outra classe?</li>
+                    <li>Uma subclasse pode herdar um membro da sua superclasse?</li>
+                </ul>
+                <li>O que significa o fato do código em uma classe ter acesso a um membro de outra classe?</li>
+                <ul>
+                    <li>Se a classe A tiver acesso a um membro da classe B, significa que o membro da classe B está visível para a classe A.</li>
+                </ul>
+                <li>Uma subclasse herda quais membros da sua superclasse?</li>
+                <ul>
+                    <li>A SUBCLASSE herda todos os membros da SUPERCLASSE</li>
+                    <ul>
+                        <li>E se ele estiver visível é exatamente como se a SUBCLASSE tivesse declarado o membro nela mesma</li>
+                    </ul>
+                    <li>Não é uma questão de se herdar ou não, mas se é visível ou não.</li>
+                    <ul>
+                        <li>Ou seja, quais membros de uma SUPERCLASSE podem ser acessados por uma SUBCLASSE por meio da herança</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Membros public.</h2>
+            <p>Quando um membro é declarado public, significa que
+            todas as outras classes, independente do pacote ao qual
+            pertençam, podem acessar o membro em questão.</p>
+            <li>Assumindo que a própria classe esteja visível.</li>
+        </section>
+
+        <section>
+            <h2>Membros protected.</h2>
+            <ul>
+                <li>Pode ser acessado (através de herança) por uma subclasse, mesmo se a subclasse estiver em um pacote diferente:</li>
+                <ul>
+                    <li>Depois que a subclasse de fora do pacote herda o membro protected, ele torna-se private para qualquer código de fora da subclasse, com exceção das subclasses da subclasse.</li>
+                </ul>
+                <li>Pode ser acessado por classes do mesmo pacote também:</li>
+                <ul>
+                    <li>Diferentemente de C++, C# e outras linguagens OO.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Membros package-private.</h2>
+            <ul>
+                <li>Sem modificador (package-private);</li>
+                <li>Só pode ser acessado se a classe que o estiver acessando pertencer ao mesmo pacote.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Membros private.</h2>
+            <ul>
+                <li>Membros marcados como private não podem ser acessados por nenhuma outra classe, a não ser aquela na qual o membro private foi declarado.</li>
+                <ul>
+                    <li>Obs.: Isso caracteriza o conceito OO chamado Encapsulamento.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Encapsulamento.</h2>
+            <ul>
+                <li>Técnica para fazer com que os campos de uma classe sejam escondidos e acessá-los via métodos públicos.</li>
+                <ul>
+                    <li>Se um campo é declarado privado, ele não pode ser acessado fora da classe, escondendo, assim, os campos dentro da classe.</li>
+                </ul>
+                <li>Pode ser descrito como uma barreira protetora que impede que o código e os dados sejam acessados por outro código definido fora da classe.</li>
+                <li>Provê fácil manutenção, flexibilidade e extensibilidade para o código.</li>
+                <li>Também conhecido como Data Hiding.</li>
+                <li>A forma mais comum de uso do Encapsulamento é através dos getters e setters.</li>
+            </ul>
+            <p>Encapsulamento - Exemplo 1:</p>
+            <pre>
+                public class Car{
+                    public float speed = 0;
+                    public boolean started = false;
+                    public boolean reverse = false;
+                }
+
+                public class Test{
+                    public static void main(String[] args){
+                        Car car = new Car();
+                        car.started = true;
+                        car.speed = 100;
+                        car.speed = 0;
+                        car.speed = 200;
+                        car.reverse = true;
+                        car.started = false;
+                    }
+                }
+            </pre>
+
+            <p>Encapsulamento – Exemplo 2:</p>
+            <pre>
+                class Car {
+                    private float speed = 0;
+                    private boolean reverse = false;
+                    private boolean started = false;
+                    
+                    public void start() {
+                        if (started) {
+                            // the car is already started
+                        } else {
+                            started = true;
+                        }
+                    }
+                    public void accelerate() {
+                        if (started) {
+                            speed += 10;
+                        } else {
+                            // car is not started yet
+                        }
+                    }
+                    public void break() {
+                        if (started) {
+                            speed -= 10;
+                        } else {
+                            // car is not started yet
+                        }
+                    }
+                    public void off() {
+                        if (started) {
+                            started = false;
+                        } else {
+                            // car is already off
+                        }
+                    }
+                }
+            </pre>
+            <p>Encapsulamento – Exemplo 3:</p>
+            <pre>
+                class Test{
+                    public static void main(String[] a){
+                        Car car = new Car();
+                        car.off(); //car is already off
+                        car.start();
+                        car.accelerate();
+                        car.accelerate();
+                        car.accelerate();
+                        car.break();
+                        car.break();
+                        car.break();
+                        car.off();
+                    }
+                }
+            </pre>
+            <p>Qualquer classe que queira acessar os atributos “escondidos” deve fazê-lo através dos métodos públicos.</p>
+        </section>
+
+        <section>
+            <h2>Combinações de Acesso e Visibilidade.</h2>
+            <table>
+                <tr>
+                    <th>Visibilidade</th>
+                    <th>PUBLIC</th>
+                    <th>PROTECTED</th>
+                    <th>Sem Modificador (package- private)</th>
+                    <th>PRIVATE</th>
+                </tr>
+                <tr>
+                    <td>A partir da mesma classe.</td>
+                    <td>Sim.</td>
+                    <td>Sim.</td>
+                    <td>Sim.</td>
+                    <td>Sim.</td>
+                </tr>
+                <tr>
+                    <td>A partir de qualquer classe do mesmo pacote</td>
+                    <td>Sim</td>
+                    <td>Sim*</td>
+                    <td>Sim</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td>A partir de uma subclasse do mesmo pacote</td>
+                    <td>Sim</td>
+                    <td>Sim</td>
+                    <td>Sim</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td>A partir de uma subclasse de fora do mesmo pacote</td>
+                    <td>Sim</td>
+                    <td>Sim, através da herança</td>
+                    <td>Não</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td>A partir de qualquer classe que não seja uma subclasse e esteja fora do pacote</td>
+                    <td>Sim</td>
+                    <td>Não</td>
+                    <td>Não</td>
+                    <td>Não</td>
+                </tr>
+            </table>
+            <p>*Diferente de C++, C# ...</p>
+        </section>
+
+        <section>
+            <h2>Outros Modificadores de Atributos.</h2>
+            <li>final: o valor do atributo não pode ser alterado;</li>
+            <ul>
+                <li><i>private final String nome = ″João″;</i></li>
+            </ul>
+            <li>static: só vai ter uma instância/valor do atributo para todas as instâncias da classe. Se torna um atributo da classe e não da instância;</li>
+            <li>Outros que vamos ver mais tarde…</li>
+        </section>
+
+        <section>
+            <h2>Constantes.</h2>
+            <ul>
+                <li>São definidas através do uso de duas palavras reservadas da linguagem Java: static e final</li>
+                <ul>
+                    <li>static: indica que a variável é da classe, ou seja, existe um só valor para classe e todos os objetos criados a partir dela;</li>
+                    <li>final: indica que o valor de uma variável não pode ser alterado.</li>
+                </ul>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>static final double PI = 3.141592653589793;</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Outros Modificadores de Métodos.</h2>
+            <ul>
+                <li>final: nenhum outro método pode sobrescrever o método;</li>
+                <li>static: se torna um método da classe e não da instância;</li>
+                <li>abstract: não vai ser implementado na classe corrente, somente em um de seus filhos;</li>
+                <li>Outros que vamos ver mais tarde…</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
+    </footer>
+</body>
+</html>
