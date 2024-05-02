@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 4 - Classes e Métodos Genéricos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=BxttjQYkghg&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 4.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Classes e Métodos Genéricos.</h3>
+        </section>
+
+        <section>
+            <h2>Pilha de Inteiros.</h2>
+            <pre>
+                class PilhaVInt{
+                    int[] v = new int[100];
+                    int top = 0;
+                    
+                    void push(int x) {
+                        v[top++]=x;
+                    }
+
+                    int pop(){
+                        return v[--top];
+                    }
+
+                    //outros códigos...
+                    public static void main(String[] s){
+                        PilhaVIntp = new PilhaVInt();
+                        p.push(10);
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Pilha de Strings.</h2>
+            <pre>
+                class PilhaVStr{
+                    String[] v = new String[100];
+                    int top = 0;
+
+                    void push(String x) {
+                        v[top++]=x;
+                    }
+                    
+                    String pop(){
+                        return v[--top];
+                    }                
+                
+                    //outros códigos...
+                    public static void main(String[] s){
+                        PilhaVStr p = new PilhaVStr();
+                        p.push("asdf");
+                    }
+                }
+        </section>
+
+        <section>
+            <h2>Criando suas Classes usando Generics.</h2>
+            <ul>
+                <li>É possível criar a sua própria classe e adicionar elementos genéricos, que só vão ter seu tipo definido em <b>runtime</b>;</li>
+                <li>Só definir os tipos genéricos entre <> separados por vírgula após a definição da classe;</li>
+                <li>Ainda é possível definir se o tipo é filho de alguma classe específica usando a palavra <b>extends</b> para cada tipo definido ou <b>implements</b> para uma interface.</li>
+            </ul>
+
+            <p>Exemplo 1:</p>
+            <pre>
+            class PilhaVetor<T>{
+                T[] v = (T[])new Object[100];
+                int top = 0;
+                
+                void push(T x) {
+                    v[top++]=x;
+                }
+
+                T pop(){
+                    return v[--top];
+                }
+
+                //outros códigos...
+                public static void main(String[] args) {
+                    PilhaVetor String  p = new PilhaVetor String();
+                    p.push("Texto");
+                    PilhaVetor Integer p = new PilhaVetor Integer();
+                    p.push(10);
+                }
+            }
+            </pre>
+
+            <p>Exemplo 2:</p>
+            <pre>
+                class MyClass T extends Number, C> {
+                    T a;
+                    C b;
+
+                    public MyClass(T a, C b) {
+                        this.a = a;
+                        this.b = b;
+                    }
+
+                    void print() {
+                        System.out.println(a);
+                        System.out.println(b);
+                    }
+
+                    public static void main(String[] s) {
+                        MyClass Double, String> m = new MyClass<>(.1, "asdf");
+                        m.print();
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Exemplo de Uso de Interface - ADTs (Abstract Data Types).</h2>
+            <ul>
+               <li>Pilha, Fila, String, Grafo…</li>
+               <li>Um ADT pode ser implementado de diversas maneiras:</li>
+               <li>Uma pilha, por exemplo, pode ser implementada em um vetor ou em uma lista ligada.</li>
+               <li>Para ser uma pilha, o que a classe obrigatoriamente tem que ter?</li>
+            </ul>
+            <b>Exemplo:</b>
+            <pre>
+                interface Pilha{
+                    int pop();
+                    void push(int x);
+                    int size();
+                    int top();
+                }
+            </pre>
+            <ul>
+                <li>A classe <b>PilhaVetor</b> compromete-se a ser tratada como Pilha, sendo obrigada a ter os métodos necessários, definidos no “contrato”;</li>
+                <li>Faz sentido algum desses métodos da interface não serem públicos?</li>
+            </ul>
+            <pre>
+                class PilhaVetor implements Pilha{
+                    int[] v = new int[100];
+                    public int pop(){
+                
+                    }
+                
+                    public void push(int x){
+                
+                    }
+                    ...
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Declaração de Interfaces.</h2>
+            <ul>
+                <li>A interface especifica quais operações podem ser realizadas, mas não especifica como essas operações são realizadas.</li>
+                <li>Os modificadores de acesso de interfaces são os mesmos que de classes:</li>
+                <ul>
+                    <li>public</li>
+                    <li>package-private (sem modificador)</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Implementando Métodos da Interface.</h2>
+            <ul>
+                <li>Uma classe que implementa uma interface deve implementar todos os métodos definidos por aquela interface;</li>
+                <li>Se um ou mais métodos não for implementado, o compilador Java gerará um erro;</li>
+                <li>Subclasses (filhos) automaticamente implementam todas as interfaces que as suas superclasses (pais) implementam.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Subinterfaces.</h2>
+            <ul>
+                <li>Interfaces podem ser estendidas (herança):</li>
+                <ul>
+                    <li>A hierarquia de uma interface é independente da hierarquia da classe;</li>
+                    <li>A interface que estende outra interface herda todos os seus métodos.</li>
+                    <ul>
+                        <li>A classe concreta que implementa uma interface filha de outra, tem que obrigatoriamente implementar os métodos de ambas as interfaces;</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Subinterfaces - Exemplo 1:</b>
+            <pre>
+                interface Readable{
+                    byte readByte();
+                }
+
+                interface Writable{
+                    void writeByte(byte b);
+                }
+                                                <i>Herança múltipla.</i>
+                                                  🡿  🢆
+                interface ReadWrite extends Readable, Writable {
+                    void seek(int position);
+                }
+            </pre>
+
+            <b>Subinterfaces - Exemplo 1 (2).</b>
+            <pre>
+                class File implements ReadWrite{
+                    byte readByte(){...}
+
+                    void writeByte(byte b){...}
+
+                    void seek(int position){...}
+                }
+            </pre>
+
+            <b>Exemplo 2:</b>
+            <pre>
+                public interface Drawable{
+                    //implicitly public,
+                    //static and final
+                    double PI = 3.1415;
+                
+                    //implicitly abstract
+                    //and public
+                    void draw();
+                }
+            </pre>
+            <pre>
+                public class Circle implements Drawable{
+                    private double radius;
+
+                    public Circle(double r){
+                        radius = r;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing a circle");
+                    }
+
+                    public double getArea(){
+                        return PI * radius * radius;
+                    }
+
+                    public double getRadius(){
+                        return radius;
+                    }
+                }
+            </pre>
+
+            <b>Exemplo 2 (2):</b>
+            <pre>
+                public class Rectangle implements Drawable{
+                    private double width;
+                    private double height;
+                
+                    public Rectangle(double w, double h){
+                        width = w;
+                        height = h;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing a rectangle");
+                    }
+
+                    public double getArea() {
+                        return height * width;
+                    }
+                }
+            </pre>
+
+            <b>Exemplo 3:</b>
+            <pre>
+                abstract class Shape {
+                    private String color = "blue";
+                    public abstract double getArea();
+
+                    public void setColor(String color){
+                        this.color = color;
+                    }
+
+                    public String getColor() {
+                        return this.color;
+                    }
+                }
+            </pre>
+            <pre>
+                public class Rectangle extends Shape implements Drawable{
+                    private double width;
+                    private double height;
+
+                    public Rectangle(double w, double h){
+                        width = w;
+                        height = h;
+                    }
+
+                    public void draw() {
+                        System.out.println("Drawing Rectangle");
+                    }
+
+                    public double getArea() {
+                        return height * width;
+                    }
+                }                
+            </pre>
+        </section>
+
+        <section>
+            <h2>Vantagens.</h2>
+            <ul>
+                <li>Permite um maior controle sobre como os objetos são usados;</li>
+                <li>Aumenta o desacoplamento entre os códigos:</li>
+                <li>Fácil de alterar o código sem “quebrar”.</li>
+                <li>Aumenta a reusabilidade de código:</li>
+                <li>YES!.</li>
+            </ul>
+
+            <table>
+                <tr>
+                    <th>Abstract class</th>
+                    <th>Interface</th>
+                </tr>
+                <tr>
+                    <td>1) A classe abstrata pode ter métodos abstratos e não abstratos.</td>
+                    <td>A interface pode ter apenas métodos abstratos.</td>
+                </tr>
+                <tr>
+                    <td>2) A classe abstrata não suporta herança múltipla.</td>
+                    <td>A interface suporta herança múltipla.</td>
+                </tr>
+                <tr>
+                    <td>3) A classe abstrata pode ter variáveis ​​finais, não finais, estáticas e não estáticas.</td>
+                    <td>A interface possui apenas variáveis ​​estáticas e finais.</td>
+                </tr>
+                <tr>
+                    <td>4) A classe abstrata pode ter métodos estáticos, método principal e construtor.</td>
+                    <td>A interface não pode ter métodos estáticos, método principal ou construtor.</td>
+                </tr>
+                <tr>
+                    <td>5) A classe abstrata pode fornecer a implementação da interface.</td>
+                    <td>A interface não pode fornecer a implementação de uma classe abstrata.</td>
+                </tr>
+                <tr>
+                    <td>6) A palavra-chave abstract é usada para declarar a classe abstrata.</td>
+                    <td>A palavra-chave interface é usada para declarar a interface.</td>
+                </tr>
+                <tr>
+                    <td>7) 0-100% de abstração</td>
+                    <td>100% de abstração</td>
+                </tr>
+                <tr>
+                    <td>
+                <pre>
+                8) Example:
+                public abstract class Shape{
+                    public abstract void draw();
+                }
+                </pre>
+                    </td>
+                    <td>
+                <pre>
+                Example:
+                public interface Drawable{
+                    void draw();
+                }
+                </pre>
+                    </td>
+                </tr>
+            </table>
+            
+            
+             
+            
+            
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 1 de maio de 2024</p>
+    </footer>
+</body>
+</html>
