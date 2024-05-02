@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 3 - Interfaces e Abstração.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=bOZQ9q7WhaY&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Programação Orientada a Objetos - Interfaces e Classes Abstratas. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Júlio Cezar Estrella.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Interfaces e Classes Abstratas.</h3>
+            <p>ROTEIRO:</p>
+            <ul>
+                <li>O que é interface.</li>
+                <li>Interfaces em Java.</li>
+                <li>Classes Abstratas.</li>
+                <li>Classes Abstratas x Interfaces Abstratas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O que é interface?</h2>
+            <ul>
+                <li>O conceito principal de interface tem por objetivo criar um contrato em que a classe que a implementa deve obrigatoriamente obedecer.</li>
+                <ul>
+                    <li>Em Java para lidar com interfaces, utilizamos a palavra reservada <b>interface</b>.</li>
+                    <li>No contexto de interface, quando programamos um software não importa como a implementação será feita, pois:</li>
+                    <ul>
+                        <li>O importante é saber a definição do contrato.</li>
+                        <li>Garantir que o software desenvolvido por um grupo se comunica com o outro por meio deste contrato.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interfaces em Java.</h2>
+            <ul>
+                <li>Um exemplo funcional no mundo real é o padrão USB (Universal Serial Bus).</li>
+                <ul>
+                    <li>Está em inúmeros dispositivos computacionais.</li>
+                    <li>Empresas que criam dispositivos precisam apenas conhecer o protocolo de uma conexão USB.</li>
+                    <li>Dispositivos que usam USB:</li>
+                    <ul>
+                        <li>Teclados.</li>
+                        <li>Mouses.</li>
+                        <li>HDs.</li>
+                        <li>Fones de ouvido.</li>
+                        <li>Webcam.</li>
+                        <li>Pendrive.</li>
+                    </ul>
+                </ul>
+                <li>Embora seja uma classe abstrata, uma interface é uma classe abstrata especial, pois somente possui métodos abstratos e nenhuma implementação.</li>
+                <li>Como declarar uma interface?</li>
+                <li>Usar a palavra reservada interface</li>
+                <li>Vejamos a seguir um exemplo de uma interface de uma classe</li>
+            </ul>
+            <p>Exemplo de uma interface simples:</p>
+            <pre>
+                public interface Minha Primeiralnterface {
+                    public void metodo1();
+                    public int metodo2();
+                    public String metodo3(String parametro1);
+                }
+            </pre>
+            <ul>
+                <li>Vejam que não há implementação, só o cabeçalho dos métodos.</li>
+                <li>Os métodos acima, obrigatoriamente devem ser implementados pela classe que implementar esta interface</li>
+                <li>No exemplo anterior, os métodos na interface apresentam apenas uma assinatura, ou seja, não possuem corpo.</li>
+                <li>Este é um contrato que deve ser seguido no caso da implementação.</li>
+                <li>A seguir, uma classe que implementa a Interface do exemplo.</li>
+            </ul>
+            <pre>
+                public class Primeira Classe implements Minha Primeiralnterface {
+                    public void metodo1() {
+
+                    }
+
+                    public int metodo2() {
+                        return 10;
+                    }
+
+                    public String metodo3(String parametro1) {
+                        return null;
+                    }
+
+                    public static void main(String[] args) {
+                        System.out.println("Implementação da primeira interface...");
+                    }
+                }
+            </pre>
+
+            <ul>
+                <li>E a implementação da interface?</li>
+                <li>Devemos utilizar a palavra reservada <b>implements</b></li>
+                <li>Nada adianta ter uma classe abstrata se ela não for implementada.</li>
+                <li>Para essas tarefas serem resolvidas, é necessário implementá-las.</li>
+                <li>Neste contexto que entra a parte do código Java, em que você vai realmente programar tudo que foi pedido.</li>
+                <li>A sintaxe se assemelha àquela da Herança com a diferença que lá, a palavra reservada para herdar é <b>extends</b>.</li>
+            </ul>
+
+            <ul>
+                <li>Com a criação da classe "PrimeiraClasse".</li>
+                <ul>
+                    <li>Você pode definir novas variáveis, novos métodos (como setters e getters) e fazer tudo o que quiser, com a condição de que tudo que estiver na interface, tem que estar, obrigatoriamente, em sua implementação.</li>
+                    <ul>
+                        <li>Ou seja, se na interface tem um método que recebe argumentos específicos e retorna um tipo específico, sua implementação tem que obedecer esta mesma regra: receber os mesmos argumentos específicos e retornar o tipo lá descrito.</li>
+                    </ul>
+                </ul>
+                <li>As interfaces podem ser definidas como public ou package-private.</li>
+            </ul>
+
+            <ul>
+                <li>Uma classe pode implementar várias interfaces.</li>
+                <ul>
+                    <li><i>public MinhaClasse implements Interface0, Interface2.</i></li>
+                </ul>
+                <li>Uma interface pode herdar várias outras.</li>
+                <ul>
+                    <li><i>public interface Interface0 extends Interface1, Interface2.</i></li>
+                </ul>
+                <li>O uso de interfaces desde o início em um projeto pode poupar muito tempo no futuro.</li>
+                <li>Criar uma interface para os métodos principais de uma classe e utilizar esta interface para acessá-los torna mais fácil o processo de manutenção de código caso esta classe precise ser substituída posteriormente.</li>
+                <li>As interfaces deixam também o código mais reutilizável, já que uma única classe pode trabalhar com várias outras por meio de uma única interface.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes Abstratas.</h2>
+            <ul>
+                <li>Usamos classes abstratas quando desejamos definir uma classe mais geral, representando objetos de modo mais genérico, porém, sem instanciá-los.</li>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>Considere uma classe Veículo com os métodos: freia(), acelera().</li>
+                    <li>Considere também os veículos: carro, ônibus, avião, jipe, carroça.</li>
+                    <li>Todo Veículo será sempre de alguns subtipos (subclasses de Veículo).</li>
+                    <ul>
+                        <li>Carro.</li>
+                        <li>Ônibus.</li>
+                        <li>Avião.</li>
+                        <li>Jipe.</li>
+                        <li>Carroça.</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>Outro ponto importante é que métodos abstratos também podem ser definidos em uma classe. Para isso, a classe precisa ser abstrata.</li>
+                <li>Isso complementa o que vimos anteriormente, em que:</li>
+                <ul>
+                    <li>Métodos de uma interface são de forma implícita, abstratos (não possuem implementação, estabelece contrato, mas não comportamentos e obrigam as classes implementarem).</li>
+                </ul>
+                <li>Classes Abstratas podem:</li>
+                <ul>
+                    <li>Conter métodos abstratos e não abstratos.</li>
+                    <li>Conter campos como qualquer outra classe.</li>
+                    <li>Não pode ser instanciada.</li>
+                    <li>Pode ser herdada.</li>
+                </ul>
+            </ul>
+            <p>Exemplo - Abstração:</p>
+            <pre>
+                abstract class Conta {
+                    private double saldo;
+                    public void setSaldo(double saldo) {
+                        this.saldo = saldo;
+                    }
+
+                    public double getSaldo() {
+                        return saldo;
+                    }
+
+                    public abstract void imprimeExtrato();
+                }
+            </pre>
+
+            <p>Exemplo - Implementação.</p>
+            <pre>
+                import java.text. SimpleDateFormat;
+                import java.util.Date;
+
+                public class ContaCorrente extends Conta {
+                    @Override
+                    public void imprimeExtrato() {
+                        System.out.println("Extrato da Conta Corrente");
+
+                        SimpleDateFormat data = new SimpleDateFormat("dd/MM/aaaa HH:mm:ss");
+                        Date date=new Date();
+
+                        System.out.println("Saldo: "+this.getSaldo());
+                        System.out.println("Data: "+data.format(date));
+                    }
+                }
+            </pre>
+            <ul>
+                <li>Continuação do Exemplo.</li>
+                <ul>
+                    <li>Vejam que o método imprimeExtrato() possui a palavra @Override, pois estamos sobrescrevendo o método da superclasse.</li>
+                    <li>Na classe abstrata Conta, métodos abstratos possuem comportamento diferente, e por isso não são implementados.</li>
+                    <li>As subclasses que herdam necessitam deste método, porém de forma mais específica e com suas particularidades.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes Abstratas x Interfaces.</h2>
+            <ul>
+                <li>Ambas não podem ser instanciadas.</li>
+                <li>Classes abstratas podem apresentar campos que não são <b>public static final</b> (constantes).</li>
+                <li>Métodos concretos em classes abstratas podem ter definido seu modificador de acesso.</li>
+                <li>Em interfaces, qualquer método sempre é <b>public</b>.</li>
+                <li>Quando utilizar uma ou outra?.</li>
+                <ul>
+                    <li>Para classes que não têm relação entre si, ou seja, não há uma relação forte (herança), usa-se <b>interfaces</b>.</li>
+                    <li>Se é preciso oferecer atributos, é melhor usar <b>classes abstratas</b>, uma vez que com herança os atributos serão herdados..</li>
+                </ul>
+            </ul>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Objetos</th>
+                    <th>Herança</th>
+                    <th>Métodos</th>
+                    <th>Atributos</th>
+                    <th>Construtor</th>
+                </tr>
+                <tr>
+                    <td>Interface</td>
+                    <td>Não instanciável</td>
+                    <td>Uma classe pode implementar várias</td>
+                    <td>Métodos abstratos, default e static</td>
+                    <td>Apenas constantes</td>
+                    <td>Não pode apresentar</td>
+                </tr>
+                <tr>
+                    <td>Classe Abstrata</td>
+                    <td>Não instanciável</td>
+                    <td>Uma classe pode estender apenas uma</td>
+                    <td>Métodos concretos e abstratos</td>
+                    <td>Constantes e atributos</td>
+                    <td>Pode apresentar</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+            <ul>
+                <li>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição</li>
+                <li>2. Java Como Programar: Paul Deitel & Harvey Deitel - 8ª Edição</li>
+                <li><a href="https://www.devmedia.com.br/polimorfismo-clas ses-abstratas-e-interfaces-fundamentos-da-poo- em-java/26387" target="_blank" rel="noopener noreferrer">3. Devemedia - Polimorfismo, Classes abstratas e Interfaces: Fundamentos da POO em Java</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de maio de 2024</p>
+    </footer>
+</body>
+</html>
