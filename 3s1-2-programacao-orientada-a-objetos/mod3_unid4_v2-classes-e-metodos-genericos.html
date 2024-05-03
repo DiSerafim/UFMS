@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
+        <h2>💡 Unidade 4 - Classes e Métodos Genéricos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=ufJkkwdw1C4&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 4.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Classes e Métodos Genéricos.</h3>
+            <p>ROTEIRO.</p>
+            <ul>
+                <li>Generics.</li>
+                <li>Classes e Métodos Genéricos.</li>
+                <li>Herança de Classes Genéricas.</li>
+                <li>Limitações de Generics.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Generics.</h2>
+            <ul>
+                <li>Trata-se de um recurso bem parecido com os templates em C++.</li>
+                <li>Este conceito permite que tipos (classes e interfaces) sejam parâmetros na definição de classes, interfaces e métodos.</li>
+                <li>Podemos reusar código para diferentes tipos.</li>
+                <li>Evita o uso de casting.</li>
+            </ul>
+
+            <ul>
+                <li>Tipos Genéricos.</li>
+                <ul>
+                    <li>É uma classe ou interface parametrizada sobre tipos.</li>
+                    <li>Em uma classe que não usa Generics, qualquer objeto pode ser utilizado.</li>
+                    <li>O problema é que em tempo de compilação não é possível saber que tipo de objeto será passado ou retornado.</li>
+                </ul>
+                <li>Para demonstrar como é um código Java sem Generics, vamos considerar o seguinte exemplo:</li>
+                <ul>
+                    <li>Tipos Genéricos;</li>
+                    <pre>
+                    String result = (String) list.get(0);
+                    System.out.println(result);
+                    </pre>
+                    <li>Veja que ao recuperar valores de uma lista era necessário realizar o <b>cast</b> para um determinado tipo.</li>
+                    <ul>
+                        <li>Isso ocorre porque a interface <b>List</b> recebia um Object como parâmetro em seu método add.</li>
+                        <li>Lembre-se que em Java todos os tipos estendem Object.</li>
+                    </ul>
+                    <li>O código acima compila corretamente. Agora vejamos o próximo exemplo.</li>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>Tipos Genéricos;</li>
+                <pre>
+                    List list = new ArrayList();
+                    list.add(1);
+                    list.add("2");
+                    list.add("3");
+                    String result = (String) list.get(0);
+                    System.out.println(result);
+                </pre>
+                <li>O que ocorre no código acima?</li>
+                <ul>
+                    <li>Não é possível ter segurança de qual tipo será retornado pela lista em tempo de compilação e o erro somente será percebido em tempo de execução, como o apresentado abaixo</li>
+                </ul>
+                <i>
+                    out- Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+                </i>
+            </ul>
+
+            <ul>
+                <li>Felizmente com uso de Generics, vamos economizar as escritas de códigos e torná-los mais limpos e com possibilidade de reutilização.</li>
+                <li>A vantagem é que o Generics vai servir como parâmetro para a classe em questão e assim podemos utilizar esta "variável" em todo o escopo da classe.</li>
+            </ul>
+
+            <ul>
+                <li>Declaração e Instanciação de um tipo genérico.</li>
+                <ul>
+                    <li>Deve especificar qual o tipo desejado.</li>
+                    <li>É parecido à chamada de um método ou construtor, para qual passamos parâmetros.</li>
+                    <ul>
+                        <li>Mas em Generics, o parâmetro é um tipo (classe ou interface).</li>
+                    </ul>
+                    <li>Tipos genéricos não podem receber tipos primitivos.</li>
+                    <ul>
+                        <li>Para isso Java possui classes que representam os tipos primitivos.</li>
+                        <ul>
+                            <li>int Integer.</li>
+                            <li>double Double.</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <pre>
+                    Caixa Integer> integerCaixa = new Caixa Integer>();
+                    integerCaixa.set(10);
+                </pre>
+            </ul>
+
+            <p>Exemplo:</p>
+            <li>Uma classe genérica pode ter muitos parâmetros.</li>
+            <pre>
+                public interface Par(K, V) {
+                    public K getKey();
+                    public V getValue();
+                }
+
+                public class ParaOrdenado(K, V) Par(K, V) {
+                    implements private K key;
+                    private V value;
+
+                    public ParaOrdenado (K key, Vvalue) { this.key = key;
+                            this.value = value;
+                    }
+
+                    public K getKey() { return key; }
+                    public V getValue() { return value; }
+                }
+            </pre>
+
+            <ul>
+                <li>Convenções.</li>
+                <ul>
+                    <li>Um parâmetro de tipo pode ser especificado por qualquer palavra não-chave.</li>
+                    <li>Porém, por convenção, tipos são definidos com uma única letra.</li>
+                    <ul>
+                        <li>Element (Java Collections).</li>
+                        <li>Key K.</li>
+                        <li>N - Number.</li>
+                        <li>T-Type.</li>
+                        <li>V - Value.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes e Métodos Genéricos.</h2>
+            <ul>
+                <li>Para resolver o problema anterior, o que precisamos fazer?</li>
+                <ul>
+                    <li>Incluir um parâmetro entre colchetes angulares logo após o nome da classe</li>
+                    <li>O tipo T pode ser qualquer tipo não primitivo</li>
+                </ul>
+                <li>Então, o exemplo ficaria assim:</li>
+            </ul>
+
+            <p>Exemplo:</p>
+            <pre>
+                public class MinhaLista<T> {
+                    private Object] elementos = new Object[0];
+
+                    public T get(int indice) {
+                        return (T) elementos[indice];
+                    }
+
+                    public void adiciona(T elemento) {
+                        int posicao = elementos.length + 1;
+                        elementos = Arrays.copyOf(elementos, posicao);
+                        elementos[posicao] = elemento;
+                    }
+                }
+            </pre>
+
+            <ul>
+                <li>No exemplo anterior, ao longo da classe o tipo T estará disponível e poderá ser utilizado na criação de:</li>
+                <ul>
+                    <li>Variáveis</li>
+                    <li>Retorno de métodos (ex: get)</li>
+                    <li>Em parâmetros de métodos (ex: add)</li>
+                </ul>
+                <li>Isso faz com que MinhaLista possa ser utilizada com qualquer tipo, mas somente um tipo nos elementos, uma vez que a lista tenha sido instanciada</li>
+            </ul>
+
+            <p>Exemplo:</p>
+            <pre>
+                MinhaLista(String) lista = new MinhaLista<>();
+                lista.add("1");
+                lista.add("2");
+
+                //Não precisa de cast, pois o compilador sabe que é uma String
+                String resultado = lista.get(0);
+                System.out.println(resultado);
+            </pre>
+
+            <ul>
+                <li>Não são somente as classes e interfaces que possuem a flexibilidade dos Generics, também podemos criar métodos genéricos.</li>
+                <li>Métodos Genéricos;</li>
+                <ul>
+                    <li>Conceito de Generics pode ser amplamante aplicado em métodos, sem que a classe seja genérica (métodos estáticos, construtores, não estáticos)</li>
+                    <li>A lista de parâmetros de tipo deve aparecer antes do tipo de retorno.</li>
+                </ul>
+            </ul>
+            <pre>
+                public class ParTeste {
+                    public static (K, p1, V) boolean compare (Par(K, V)
+                    p1,
+                    Par(K, V) p2) {
+                        return pl.getKey().equals(p2.getKey()) 
+                        &&
+                        pl.getvalue().equals(p2.getValue());
+                    }
+                }
+            </pre>
+
+            <ul>
+                <li>Métodos Genéricos.</li>
+                <li>Utilização.</li>
+            </ul>
+            <pre>
+                Par(Integer, String> p1 = new Par<>(1, "laranja");
+                Par(Integer, String> p2 = new Par<>(2, "uva");
+                boolean x = ParTeste. (Integer, String>compare (p1, p2);
+            </pre>
+            <pre>
+                Par(Integer, String> p1 = new Par(1, "laranja");
+                Par(Integer, String> p2 = new Par(2, "uva");
+                boolean x = ParTeste. (Integer, String>compare (p1, p2);
+            </pre>
+            <pre>
+                Par(Integer, String> pl = new Par(1, "laranja");
+                Par(Integer, String> p2 = new Par(2, "uava");
+                boolean x = ParUtil.compare (p1, p2);
+            </pre>
+
+            <ul>
+                <li>É importante frisar que quando utilizado em métodos, o tipo genérico pertence ao escopo daquele método.</li>
+                <li>Não é possível utilizar o tipo em outros métodos.</li>
+                <ul>
+                    <li>Se a classe também é genérica e possui um identificador de tipo igual ao do método, o do método vai sobrescrever o da classe.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Herança de Classes Genéricas.</h2>
+            <ul>
+                <li>Quando criamos por exemplo, uma caixa de números, qualquer tipo numérico poderá ser armazenado.</li>
+                <pre>
+                    Caixa(Number> caixa = new Caixa(Number>();
+                    caixa.add(new Integer(10)); // OK
+                    caixa.add(new Double (10.1)); // ΟΚ
+                </pre>
+                <li>No entanto, no método a seguir.</li>
+                <pre>
+                    public void caixaTest (Caixa<Number> n) {
+                        /* ... */
+                    }
+                </pre>
+                <li>Como não há relação de herança entre as classes não podemos passar Caixa<Integer> ou Caixa (Double>.</li>
+            </ul>
+
+            <ul>
+                <li>É possível herdar ou implementar classes genéricas.</li>
+                <ul>
+                    <li>Classe filha pode ou não ser genérica.</li>
+                    <li>Toda a relação entre os tipos genéricos da classe mãe e da filha é definida na declaração de classe.</li>
+                </ul>
+                <li>Por exemplo:</li>
+                <ul>
+                    <li>ArrayList(E> implementa List(E>.</li>
+                    <li>List(E> herda de Collection(E>.</li>
+                </ul>
+                <li>A relação de herança somente quando os tipos são iguais.</li>
+            </ul>
+
+            <pre>
+                Collection(String>
+                    🢁
+                List(String>
+                    🢁
+                ArrayList(String>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Limitações de Generics.</h2>
+            <ul>
+                <li>Não é possível instanciar um tipo genérico utilizando tipos primitivos.</li>
+                <pre>
+                    Par(int, char> p = new Par<>(2, 'b'); // erro de compilação
+                    Par(Integer, Character> p = new Par<>(2, 'b'); // OK
+                </pre>
+                <li>Não é possível criar instâncias de parâmetros genéricos.</li>
+                <pre>
+                    public static <E> void append(List(E> list) {
+                        E elem = new E(); // erro de compilação
+                        list.add(elem);
+                    }
+                </pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição.</p>
+            <p>2. Java Como Programar: Paul Deitel & Harvey Deitel - 8ª Edição.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de maio de 2024</p>
+    </footer>
+</body>
+</html>
