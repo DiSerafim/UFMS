@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 3 - Pilares da Programação Orientada a Objetos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre os quatro conceitos chamados de “Pilares da POO”:</p>
+            <li>Polimorfismo, Abstração, Encapsulamento e Herança.</li>
+            <p>Neste fórum, você pode aprofundar nas práticas para programação orientada a objetos em Java.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+
+            <b>Vamos tentar definir com as nossas próprias palavras e exemplificar como cada um dos conceitos abaixo podem ser utilizados em exemplos reais:</b>
+            <ol>
+                <li>Herança</li>
+                <li>Polimorfismo</li>
+                <li>Abstração </li>
+                <li>Encapsulamento</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>1. Herança:</h2>
+            <p>Herança é o mecanismo que permite que uma classe possa herdar atributos e métodos de outra classe. A classe que herda é chamada de <i>"subclasse ou classe filha"</i>, e a classe que é herdada é chamada de <i>"superclasse ou classe pai"</i>.</p>
+            <p>Exemplo:</p>
+            <!-- Funcionario com atributos como nome, idade e salario. Podemos criar uma subclasse chamada Gerente que herda os atributos da classe Funcionario e adiciona alguns atributos específicos, como departamento e bonificacao. -->
+            <pre>
+                // classe pai 
+                class Funcionario {
+                    String nome;
+                    int idade;
+                    double salario;
+
+                    // construtor
+                    Funcionario(String nome, int idade, double salario) {
+                        this.nome; = nome;
+                        this.idade = idade;
+                        this.salario = salario
+                    }
+
+                    // método para calcular salário
+                    double calcularSalario() {
+                        // 
+                        return salario;
+                    }
+                }
+
+                // subclasse que herda da classe Funcionario
+                class Gerente extends Funcionario {
+                    String departamento;
+
+                    // construtor
+                    Gerente(String nome, int idade, double salario, String departamento) {
+                        // chama o construto da classe pai
+                        super(nome, idade, salario);
+                        this.departamento = departamento;
+                    }
+
+                    void realizarReuniao() {
+                        System.out.println("O gerente " + nome + " está em reunião.")
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>2. Polimorfismo:</h2>
+            <p>O polimorfismo permite que um método tenha comportamento diferente em classes diferentes. Permitindo usar o mesmo nome para métodos em classes diferentes e as classes podem implementar esse método de forma diferente.</p>
+            <p>Exemplo:</p>
+            <!-- Interface Animal com um método fazerSom(). Implementamos essa interface em classes como Cachorro e Gato. Ambos têm seu próprio comportamento fazerSom(), onde um late e o outro mia. -->
+            <pre>
+                // interface Animal
+                interface Animal {
+                    void fazerSom();
+                }
+
+                // implementação da interface Cachorro
+                class Cachorro implements Animal {
+                    public void fazerSom() {
+                        System.out.println("Au au.");
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>3. Abstração:</h2>
+            <p>Abstração é o processo de identificar as características essenciais de um objeto ou sistema e ignorar os detalhes não essenciais. Criar uma classe que representa apenas os aspectos importantes de um objeto.</p>
+            <p>Exemplo:</p>
+            <!-- classe Veiculo pode ser uma abstração para carros, motos, caminhões, etc. Ela pode ter atributos como velocidade e métodos como acelerar() e frear(), sem se preocupar com os detalhes específicos de cada tipo de veículo. -->
+            <pre>
+                // classe abstrata Veiculo
+                abstract class Veiculo {
+                    int velocidade;
+
+                    // metodo abstrato acelerar/frear
+                    abstract void acelerar();
+                    abstract void frear();
+                }
+
+                // class Carro extends Veiculo {
+                    void acelerar() {
+                        System.out.println("Velocidade aumentando...");
+                    }
+
+                    void frear() {
+                        System.out.println("Reduzindo a velocidade...");
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>4. Encapsulamento:</h2>
+            <p>É o conceito de ocultar detalhes internos de um objeto e expor somente o necessário para seu uso externo. Feito usando modificadores de acesso como <i>"public, private e protected".</i></p>
+            <p>Exemplo:</p>
+            <!-- Em uma classe ContaBancaria, os atributos como saldo e numeroConta podem ser privados para evitar que sejam modificados diretamente por outras classes. Em vez disso, métodos públicos como depositar() e sacar() podem ser fornecidos para interagir com esses atributos de maneira controlada. -->
+            <pre>
+                // class ContaBancaria encapsulada
+                class ContaBancaria {
+                    private double saldo;
+                    private String numeroConta;
+
+                    // método para depositar dinheiro
+                    public void depositar(double valor) {
+                        saldo += valor;
+                    }
+
+                    // método para sacar dinheiro
+                    public void sacar(double valor) {
+                        saldo += valor;
+                    }
+
+                    // método para saber o saldo
+                    public double getSaldo() {
+                        return saldo;
+                    }
+
+                    // método para definir número da conta
+                    public void setNumeroConta(String numeroConta) {
+                        this.numeroConta = numeroConta;
+                    }
+                }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de abril de 2024</p>
+    </footer>
+</body>
+</html>
