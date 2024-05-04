@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 1 - Coleções.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=vr581qxQ4SE&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Programação Orientada a Objetos - Coleções – Parte 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Júlio Cezar Estrella.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Coleções.</h3>
+            <p>Roteiro:</p>
+            <ul>
+                <li>O que são collections?</li>
+                <li>Interface Collections.</li>
+                <li>Classes Concretas Collections.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O que são collections?</h2>
+            <ul>
+                <li>Coleções são objetos que agrupam vários elementos.</li>
+                <li>O framework Collections de Java permite trabalhar com:</li>
+                <ul>
+                    <li><b>Interfaces</b>: Definição abstrata de coleções.</li>
+                    <li><b>Implementações</b>: Objetos concretos.</li>
+                    <li><b>Algoritmos</b>: Vários métodos para trabalhar com coleções.</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Com as Collections utilizamos estruturas de dados existentes, sem nos preocuparmos com a maneira como são implementadas.</li>
+                <li>Java possui uma interface raiz chamada de Collections.</li>
+                <li>Elas são dinâmicas, isto é, podem crescer conforme a necessidade de expansão, diferente de arrays.</li>
+                <li>Nós estudamos Generics antes, pois Collections utiliza Generics.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interface Collections.</h2>
+            <ul>
+                <li>Collection é o topo da API Collections, sendo disponível no pacote java.util.</li>
+                <li>Collections é a API que oferece diversas coleções (interfaces e classes concretas).</li>
+                <li>Interfaces e classes concretas que implementam a interface Collection, terão obrigatoriamente que fazer a implementação de diversos métodos que manipulam coleções de dados, tais como adicionar e remover elementos.</li>
+            </ul>
+            <ul>
+                <li>As Collections podem ser organizadas e/ou Ordenadas.</li>
+                <ul>
+                    <li>Quando organizadas: garante que as coleções serão percorridas na mesma ordem em que os elementos foram inseridos.</li>
+                    <ul>
+                        <li>Exemplos:</li>
+                        <ul>
+                            <li><b>Organizada</b>: LinkedHashSet, ArrayList, Vector, LinkedList, LinkedHashMap.</li>
+                            <li><b>Não-Organizada</b>: HashSet, TreeSet, PriorityQueue, HashMap, HashTable, TreeMap.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>Nós estudamos Generics antes, pois Collections utiliza Generics.</li>
+                <li>O padrão Generics é aceitar qualquer tipo de elemento, incluindo elementos distintos (String, Double, Integer).</li>
+                <ul>
+                    <li>Também é possível especificar o tipo a ser aceito.</li>
+                </ul>
+            </ul>
+            <pre>
+                              Collections
+                                    |
+                          ┌─────────┴──────┐
+                          |                |
+                         Set              List
+                          |                |
+            ┌─────────────┴──────────────┐ |
+            |                            | |
+        SortedSet                       Queue
+            |                            |
+     ┌──────┴───────┐              ┌─────┴─────┐
+     |              |              |           |
+     HashSet      LinkedHashSet  Vector     PriorityQueue
+                  (Organizada)               (Organizada)
+             ┌──────┴───────┐
+             |              |
+             TreeSet      ArrayList
+           (Organizada)  (Não-Organizada)
+            </pre>
+
+            <ul>
+                <li><b>Set</b>.</li>
+                <ul>
+                    <li>Não permite elementos duplicados.</li>
+                </ul>
+                <li><b>SortedSet</b>.</li>
+                <ul>
+                    <li>Igual a Set.</li>
+                    <li>Mantém os elementos ordenados.</li>
+                </ul>
+                <li><b>List</b>.</li>
+                <ul>
+                    <li>Coleção de elementos ordenada.</li>
+                    <li>Pode ter elementos duplicados.</li>
+                    <li>Precisão da posição de cada elemento (indexação).</li>
+                </ul>
+                <li><b>Queue</b>.</li>
+                <ul>
+                    <li>Representa uma fila genérica.</li>
+                    <li>Utiliza a regra FIFO.</li>
+                </ul>
+                <li><b>Deque</b>.</li>
+                <ul>
+                    <li>Semelhante a Queue.</li>
+                    <li>Inserções e remoções podem ser feitas em qualquer extremidade.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Classes Concretas Collections.</h2>
+            <ul>
+
+                <li><b>Set</b>.</li>
+                <ul>
+                    <li><b>HashSet</b>: Armazena elemento numa tabela Hash e sem garantias de ordem dos elementos.</li>
+                    <li><b>TreeSet</b>: Utiliza uma estrutura de árvore para armazenar os elementos. Mantém a ordem dos elementos.</li>
+                    <li><b>LinkedHashSet</b>: Utiliza a tabela hash como uma lista ligada. Mantém a ordem de inserções dos elementos.</li>
+                </ul>
+                <li><b>List</b>.</li>
+                <ul>
+                    <li><b>ArrayList</b>: implementação indexada dos elementos.</li>
+                    <li><b>LinkedList</b>: Utiliza uma lista duplamente encadeada para armazenar os elementos.</li>
+                </ul>
+                <li><b>Queue</b>.</li>
+                <ul>
+                    <li>Métodos como:</li>
+                    <ul>
+                        <li><b>add e offer</b>: inserem um elemento na fila.</li>
+                        <li><b>remove e pool</b>: removem e retornam o elemento do início.</li>
+                        <li><b>element e peek</b>: retornam, porém não removem, o elemento do início.</li>
+                    </ul>
+                </ul>
+                <li><b>Deque</b>.</li>
+                <ul>
+                    <li>Métodos:</li>
+                    <ul>
+                        <li><b>Inserção</b>: addFirst. offerFirst, addLast, offerLast.</li>
+                        <li><b>Remoção</b>: removeFirst, poolFirst, removeLast, poolLast.</li>
+                    </ul>
+                </ul>
+            </ul>
+            </ul>
+
+            <b>Exemplo de Collections com Generics.</b>
+            <ul>
+                <li>Para mostrar um exemplo prático de uso de Collections, é importante discutir o For-each e o Iterator.</li>
+                <ul>
+                    <li>For-each: Trata-se de um ciclo for, embora adaptado para ser utilizado em Collections. Server para percorrer todos os elementos de qualquer Collection contida na API Collections.</li>
+                    <li>Iterator: É uma interface presente no java.útil que permite percorrer coleções da API Collection, desde que implementam a Collection.</li>
+                    <ul>
+                        <li>Fornece métodos como.</li>
+                        <ul>
+                            <li>next(), hashnext(), remove().</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <p>For-each</p>
+            <pre>
+                Sintaxe:
+                for(tipo elemento:tipo)
+
+                Exemplo:
+
+                List<Integer> myList = new ArrayList<Integer>();
+                    myList.add(1);
+                    myList.add(2);
+                
+                    for (Integer listElements: myList) {
+                        System.out.println(listElements);
+                    }
+            </pre>
+
+            <p>Iterator</p>
+            <pre>
+
+                Exemplo:
+
+                List<Integer> myList = new ArrayList<Integer>();
+                    myList.add(1);
+                    myList.add(2);
+                    Iterator iMyList = myList.iterator();
+                    
+                    for(Integer listElements: myList){
+                        System.out.println(iMyList.next());
+                    }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+
+            <p>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição</p>
+            <p>2. Java Como Programar: Paul Deitel & Harvey Deitel 8ª Edição</p>
+            <a href="https://www.devmedia.com.br/api-collections-em-ja va-fundamentos-e-implementacao-basica/28445" target="_blank" rel="noopener noreferrer">3. Devemedia</a>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de maio de 2024</p>
+    </footer>
+</body>
+</html>
