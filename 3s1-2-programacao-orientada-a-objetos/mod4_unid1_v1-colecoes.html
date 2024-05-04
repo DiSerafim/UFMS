@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 1 - Coleções.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=MqWv-6A7ksk&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 4 - Unidade 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+
+            <h3>Coleções.</h3>
+        </section>
+
+        <section>
+            <h2>Introdução.</h2>
+            <ul>
+                <li>Java tem uma API específica para manipulação de objetos, denominada <b>Collections</b>;</li>
+                <li>É uma solução flexível para armazenar objetos, o que facilita bastante a vida do desenvolvedor;</li>
+                <li>A API Collections provê interfaces e classes para coleções;</li>
+                <li>Numa coleção, a quantidade armazenada de objetos não é fixa, como ocorre com arrays;</li>
+                <ul>
+                    <li>Seu tamanho pode aumentar automaticamente conforme são adicionados mais elementos.</li>
+                </ul>
+                <li>Por meio destas coleções, é possível representar diferentes tipos de estruturas, como: listas, pilhas, filas, conjuntos e mapas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hierarquia das Collections (interfaces).</h2>
+            <pre>
+            Object
+            └── AbstractCollection
+                ├── Collection
+                │   ├── AbstractSet
+                │   │   ├── Set
+                │   │   │   ├── HashSet
+                │   │   │   └── TreeSet
+                │   │   └── SortedSet
+                │   ├── AbstractList
+                │   │   ├── List
+                │   │   │   ├── LinkedList
+                │   │   │   ├── ArrayList
+                │   │   │   └── Vector
+                │   │   └── AbstractSequentialList
+                │   └── Queue
+                └── List                
+            </pre>
+
+            <ul>
+                <li><b>Object</b>: Classe base de todas as classes em Java.</li>
+                <li><b>AbstractCollection</b>: Classe abstrata que fornece uma implementação base para a interface Collection.</li>
+                <li><b>Collection</b>: Interface que representa uma coleção de objetos, que pode ser uma lista, conjunto ou fila.</li>
+                <li><b>AbstractSet</b>: Classe abstrata que fornece uma implementação base para a interface Set.</li>
+                <li><b>Set</b>: Interface que representa um conjunto de elementos únicos, sem duplicatas.</li>
+                <li><b>HashSet</b>: Implementação de Set que armazena elementos em uma tabela de dispersão, sem garantia de ordem.</li>
+                <li><b>TreeSet</b>: Implementação de Set que mantém os elementos ordenados, geralmente em ordem natural ou usando um comparador personalizado.</li>
+                <li><b>SortedSet</b>: Interface que estende Set e mantém os elementos ordenados.</li>
+                <li><b>AbstractList</b>: Classe abstrata que fornece uma implementação base para a interface List.</li>
+                <li><b>List</b>: Interface que representa uma lista ordenada de elementos.</li>
+                <li><b>LinkedList</b>: Implementação de List que armazena os elementos em uma lista encadeada.</li>
+                <li><b>ArrayList</b>: Implementação de List que armazena os elementos em um array redimensionável.</li>
+                <li><b>Vector</b>: Implementação legada de List, semelhante a ArrayList, mas sincronizada.</li>
+                <li><b>AbstractSequentialList</b>: Classe abstrata que fornece uma implementação base para listas sequenciais.</li>
+                <li><b>Queue</b>: Interface que representa uma fila, seguindo o princípio FIFO (First-In-First-Out).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hierarquia dos Maps (interfaces).</h2>
+            <pre>
+            Object
+            └── AbstractMap
+                ├── Map
+                │   ├── HashMap
+                │   ├── HashTable
+                │   ├── TreeMap
+                │   └── SortedMap
+                │       └── N/A
+            </pre>
+            <p>Observe que um Map não é uma Collection (hierarquia - herança).</p>
+            <ul>
+                <li><b>Object</b> é a classe base de todas as classes em Java.</li>
+                <li><b>AbstractMap</b> fornece uma implementação base para a interface Map.</li>
+                <li><b>Map</b> é a interface que mapeia chaves para valores únicos.</li>
+                <li><b>HashMap</b> é uma implementação de Map que usa uma tabela de dispersão para armazenar os pares chave-valor.</li>
+                <li><b>HashTable</b> é uma implementação legada de Map, semelhante ao HashMap, mas sincronizada.</li>
+                <li><b>TreeMap</b> é uma implementação de Map que mantém as chaves em ordem natural ou por meio de um comparador personalizado.</li>
+                <li><b>SortedMap</b> é uma subinterface de Map que mantém as chaves ordenadas e oferece métodos adicionais de consulta baseados em ordenação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A Interface List.</h2>
+            <ul>
+                <li>Uma lista é uma coleção de elementos arrumados em uma ordem linear:</li>
+                <ul>
+                    <li>É uma coleção em ordem (algumas vezes chamada de sequência);</li>
+                    <li>Em geral, na ordem em que foram adicionados à lista;</li>
+                </ul>
+                <li>Isto é, cada elemento tem um antecessor (exceto o primeiro) e um sucessor (exceto o último);</li>
+                <li>Normalmente implementada como Array ou Lista Encadeada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>List - Implementações.</h2>
+            <ul>
+                <li><b>ArrayList:</b></li>
+                <ul>
+                    <li>A implementação mais utilizada da interface;</li>
+                    <li>É implementada sobre um vetor:</li>
+                    <ul>
+                        <li>Logo tem as vantagens e desvantagens associadas: acesso randômico, portanto é rápida para pesquisa.</li>
+                    </ul>
+                    <li>Não é sincronizado, isto é não tem segurança para programação concorrente (threads)</li>
+                </ul>
+                <li><b>Vector</b>: Ideal para acesso randômico, porém é sincronizado, logo, é mais lento.</li>
+                <li><b>LinkedList</b>: ideal para acesso sequencial:</li>
+                <ul>
+                    <li>É implementada sobre uma lista ligada. Logo tem as vantagens e desvantagens associadas;</li>
+                    <li>Não é sincronizado, logo, não suporta threads.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo List (ArrayList).</h2>
+            <pre>
+            public static void main(String[] args) {
+                List list = new ArrayList();
+                list.add(9);
+                list.add(new Integer(8));
+                list.add(new Integer(10));
+                list.add(new Integer(6) + 3);
+                list.add(7);
+
+                for (int i = 0; i < list.size(); i++) {
+                    int x = (int)list.get(i);//cast necessário
+                    System.out.println(x);
+                }
+            }
+            </pre>
+            <i>Saída: 9 8 10 9 7</i>
+        </section>
+
+        <section>
+            <h2>For-each.</h2>
+            <pre>
+                <b>Sintaxe</b>:
+                <i> for (Tipo nomeVar: Coleção)</i>
+                <b>Exemplo</b>:
+                <i> for (Object obj: colecao_ou_vetor)</i>
+
+                Dá pra usar com Generics!
+                Funciona para arrays também (já vimos isso!)
+            </pre>
+        </section>
+
+        <section>
+            <h2>Exemplo 2 List (ArrayList).</h2>
+            <pre>
+                public static void main(String[] args) {
+                    List list = <b>new</b> LinkedList();
+                    list.add(1);
+                    list.add("Strings");
+                    list.add("Teste");
+                    list.add(<b>new</b> Integer("1"));
+                    list.add(<b>new</b> ArrayList());
+                    System.out.println(list.get(2));
+
+                    for (Object obj: list) {
+                        System.out.println(obj);
+                    }
+                }
+            </pre>
+            <i>Saída: Teste 1 Strings Teste 1 []</i>
+            <p>Não dá pra usar o for usando o índice (por exemplo, i), pois não existe a noção de posição.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
+    </footer>
+</body>
+</html>
