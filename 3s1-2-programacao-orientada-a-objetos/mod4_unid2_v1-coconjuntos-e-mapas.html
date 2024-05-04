@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 2 - Conjuntos e Mapas.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=Iudly4Lbw4o&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 4 - Unidade 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Conjuntos e Mapas.</h3>
+        </section>
+
+        <section>
+            <h2>A Interface Set.</h2>
+            <ul>
+                <li>Representa um agrupamento de elementos (de qualquer tipo);</li>
+                <li>Mesmas características do Set ADT:</li>
+                <ul>
+                    <li>Similar ao conceito de conjuntos finitos na matemática;</li>
+                    <li>Não há noção de ordem, posição dos elementos;</li>
+                    <li>Não aceita elementos repetidos.</li>
+                </ul>
+                <li>Existem duas principais implementações:</li>
+                <ul>
+                    <li>HashSet: os elementos não ficam ordenados (mais comum e mais rápido);</li>
+                    <li>TreeSet: os elementos ficam ordenados, independente de como foram adicionados.</li>
+                </ul>
+            </ul>
+            <b>Exemplo Set - HashSet.</b>
+            <pre>
+                public static void main(String[] args) {
+                    Set set = new HashSet();    // Ou TreeSet, mesmo resultado
+                    set.add("B");
+                    set.add("1");
+                    set.add("C");
+                    set.add("E");
+                    set.add("3");
+                    set.add("A");
+                    set.add("A");
+
+                    for (Object obj : set){
+                        String str = (String) obj;  // cast necessário
+                        System.out.print(str);
+                    }
+                }
+
+                Saída: 1ABC3E
+            </pre>
+            <p>Como visto, esta classe não permite duplicatas e não mantém a sequência de inserção dos elementos. Teste com TreeSet!</p>
+        </section>
+
+        <section>
+            <h2>A Interface Map.</h2>
+            <ul>
+                <li>Semelhante a um array, mas ao invés de índices numéricos, usa objetos como chaves;</li>
+                <li>Mesmas características do Map ADT:</li>
+                <ul>
+                    <li>Cada entrada possui:</li>
+                    <ul>
+                        <li>Uma chave/key (de qualquer tipo): serve para indexar os elementos, ou seja, serve para achar um elemento rapidamente. Deve ser comparável;</li>
+                        <li>Um valor/value (de qualquer tipo): o valor armazenado na fila e associado a chave.</li>
+                    </ul>
+                    <li>As chaves são únicas, porém os valores podem ser duplicados:</li>
+                    <ul>
+                        <li>Caso haja uma repetição de chave, o elemento antigo é sobreposto pelo novo.</li>
+                    </ul>
+                    <li>Também chamado de dictionary.</li>
+                </ul>
+                <li>Principais classes que implementam a interface:</li>
+                <ul>
+                    <li>HashMap: não sincronizado e não ordenado, aceita null como chave (mais comum);</li>
+                    <li>HashTable: igual ao HashMap, porém sincronizado e não aceita null como chave;</li>
+                    <li>TreeMap: não sincronizado mas é ordenado.</li>
+                </ul>
+            </ul>
+            <b>Exemplo Map (HashMap).</b>
+            <pre>
+                public static void main(String[] args) {
+                    Map nomes = new HashMap();
+                    nomes.put("João", 35);
+                    nomes.put("José", 22);
+                    nomes.put("Maria", 76);
+                    nomes.put("Bianca", 18);
+
+                    System.out.println("Quantidade: "+nomes.size());
+
+                    int idadeMaria = (int)nomes.get("Maria");   // cast necessário
+                    System.out.print(idadeMaria);
+                }
+            </pre>
+            <ul>
+                <li>Inicialmente será impresso 4, que é o tamanho total do Mapa criado;</li>
+                <li>Em seguida, será impresso: “76” que é o objeto (int) correspondente à chave “Maria”;</li>
+                <li>Não dá pra usar o foreach direto (só se for na Entry).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Collections + Generics.</h2>
+            <ul>
+                <li>É possível definir uma coleção ou mapa restrito a um tipo específico de objeto:</li>
+                <ul>
+                    <li>A partir do Java 1.5.</li>
+                </ul>
+                <li>Pode ser chamado de polimorfismo paramétrico;</li>
+                <li>Desta forma, fica inviável adicionar elementos à coleção que não sejam do tipo especificado;</li>
+                <li>Com isso, temos:</li>
+                <ul>
+                    <li>Maior nível de segurança;</li>
+                    <li>Evitar o cast.</li>
+                </ul>
+            </ul>
+
+            <b>Collections + Generics - Criação.</b>
+            <ul>
+                <li>Ao ser criado, informamos o tipo do elemento que pode ser armazenado na coleção:</li>
+                <ul>
+                    <li>Set(String> nomes = new HashSet(String>();</li>
+                    <li>List(Cliente> clientes = new ArrayList<>();</li>
+                </ul>
+                <li>Isto porque a coleção é implementada com tipos genéricos, onde o tipo é determinado no momento da execução (Runtime).                </li>
+            </ul>
+
+            <b>Collections + Generics - Exemplo:</b>
+            <pre>
+            List(ContaCorrente> contas = new ArrayList(ContaCorrente>();
+                contas.add(c1);
+                contas.add(c3);
+                contas.add(c2);
+
+                for(int i = 0; i < contas.size(); i++) {
+                    ContaCorrente cc = contas.get(i); // sem cast!
+                    System.out.println(cc.getSaldo());
+                }
+            </pre>
+            <p>Não há necessidade do cast, por exemplo:</p>
+            <i>ContaCorrente cc = (ContaCorrente) contas.get(i);</i>
+        </section>
+
+        <section>
+            <h2>For-each + Generics.</h2>
+            <ul>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>for (String nome: listaNomes) { ... }</li>
+                    <ul>
+                        <li>Onde listaNomes é uma coleção do tipo String:</li>
+                        <ul>
+                            <i>Collection(String> listaNomes</i>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Não dá pra usar direto para Maps</li>
+                <ul>
+                    <li>Precisa pegar para as chaves (keySet) ou valores (values)</li>
+                </ul>
+            </ul>
+
+            <b>Exemplo - ForEach.</b>
+            <pre>
+            public static void main(String[] args) {
+                Collection<String> nomes = new ArrayList<>();   // LinkedList,...
+                System.out.println("Qtd elementos: "+nomes.size());
+
+                for (String str: nomes) {
+                    System.out.println(str);
+                }
+            }
+            </pre>
+            <ul>
+                <li>Será impresso o tamanho total da estrutura do conjunto criado.</li>
+                <li>Em seguida, por meio do foreach, serão impressos todos os elementos (Strings) que pertencem à coleção criada.</li>
+                <ul>
+                    <li>Que pode ser qualquer coleção de objetos.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de maio de 2024</p>
+    </footer>
+</body>
+</html>
