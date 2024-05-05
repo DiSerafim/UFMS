@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 2 - Conjuntos e Mapas.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=m-Vfco5-MXc&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Programação Orientada a Objetos - Mapas (Maps). 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Júlio Cezar Estrella.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Mapas (Maps).</h3>
+            <p>Roteiro:</p>
+            <ul>
+                <li>Mapas.</li>
+                <li>Características.</li>
+                <li>HashMap.</li>
+                <li>HashTable.</li>
+                <li>TreeMap.</li>
+                <li>Exemplos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mapas.</h2>
+            <ul>
+                <li>O uso de mapas é bastante interessante quando queremos buscar um objeto, considerando que temos alguma informação sobre ele.</li>
+                <ul>
+                    <li>Exemplo: Com a placa do carro ter todas as informações relevantes sobre o carro.</li>
+                </ul>
+                <li>Um mapa é composto por um conjunto de associações entre um objeto chave a um objeto valor, sendo equivalente ao conceito de dicionário, presente em outras linguagens de programação.</li>
+                <li>Os objetos Map organizam seus dados em um código hash.</li>
+                <ul>
+                    <li>O algoritmo transforma uma grande quantidade de dados em um número pequeno de informações.</li>
+                    <li>O mecanismo de busca baseia-se em construir índices.</li>
+                    <ul>
+                        <li>Exemplo: Em uma lista telefônica a letra seria o índice a ser procurado para encontrar mais facilmente o nome do titular da linha.</li>
+                    </ul>
+                </ul>
+                <li>Não podem conter chaves duplicadas.</li>
+                <ul>
+                    <li>Mapeamento um para um.</li>
+                </ul>
+                <li>Classes de Implementação.</li>
+                <ul>
+                    <li><b>HashTable e HashMap</b>: Armazena elementos na tabela hash.</li>
+                    <li><b>TreeMap</b>: Armazena elementos na árvore.</li>
+                    <li><b>SortedMap</b>: Estende Map mantendo suas chaves na ordem classificada.</li>
+                    <li><b>LinkedHashMap</b>: Tabela hash e lista ligada.</li>
+                </ul>
+                <li>Fazem parte do pacote java.útil.</li>
+                <li>As chaves representam objetos e os valores representam objetos associados às chaves.</li>
+            </ul>
+
+            <b>Hierarquia da Interface Map.</b>
+            <pre>
+                        ((interface>>
+                            (Map)
+                                ^
+                                |
+                                |        
+                            AbstractMap      
+                                ^        
+                                |        
+                            HashTable       
+                                ^
+                                |      
+                    HashMap ────|───── TreeMap ─────> SortedMap
+                    ^           |
+                    |       Properties
+            LinkedHashMap
+            </pre>
+        </section>
+
+        <section>
+            <h2>Características.</h2>
+            <ul>
+                <li>Por armazenar um par chave-valor, há dois parâmetros genéricos.</li>
+                <pre>
+                // Map(K, V> Map(String, Integer> m = new HashMap(String, Integer>();
+                    ...
+                </pre>
+                <li>Algumas tarefas que podem ser feitas com Map.</li>
+                <ul>
+                    <li>Inserir algo no Map.</li>
+                    <li>Remover algo do Map.</li>
+                    <li>Obter um conjunto (set) de chaves para o Map.</li>
+                </ul>
+                <li>A própria implementação do Map T<K, V> usar generics para atribuir uma chave/valor.</li>
+            </ul>
+
+            <b>Declaração do Map.</b>
+            <ul>
+                <li>Map(E> mapa = new Type();</li>
+                <ul>
+                    <li>E → é o objeto declarado.</li>
+                    <li>Type() → Tipo de objeto da coleção a ser utilizado.</li>
+                </ul>
+                <li>O código abaixo testa a interface Map.</li>
+            </ul>
+            <pre>
+            public class TestInterfaceMap {
+                public static void main(String[] args) {
+                    Map(integer, string=""> mapNomes = new HashMap(integer, string="">();
+                    mapaNomes.put(1, "UNIVESP");
+                    mapaNomes.put(2, "USP");
+                    mapaNomes.put(3, "UNICAMP");
+                    mapaNomes.put(3, "UNESP");
+
+                    System.out.println(mapNomes);
+
+                    //resgatando o nome da posição 2
+                    System.out.println(mapaNomes.get(2));
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>HashMap.</h2>
+            <ul>
+                <li>É a implementação da interface Map.</li>
+                <li>Características.</li>
+                <ul>
+                    <li>Os elementos não são ordenados.</li>
+                    <li>É rápida na busca e inserção de dados.</li>
+                    <li>Permite inserir valores e chaves nulas.</li>
+                </ul>
+                <li>Métodos Importantes.</li>
+                <ul>
+                    <li><b>values()</b> - É uma Collection com todos os valores que foram associados a alguma das chaves.</li>
+                    <li><b>keySet()</b> - Retorna um Set com as chaves do mapa especificado.</li>
+                    <li><b>entrySet()</b> - Retorna um conjunto de Maps contido no mapa configurado, podendo ser possível acessar suas chaves e valores.</li>
+                    <li><b>put (Key key, Value value)</b> - Associa um valor a uma chave específica.</li>
+                </ul>
+            </ul>
+
+            <p>Exemplo:</p>
+            <li>Percorrer dados em um HashMap.</li>
+            <pre>
+            public class TestHashMap {
+                public static void main(String args[]) {
+                    //Declaração do HashMap */
+                    HashMap(Integer, String> hm = new HashMap(Integer, String>();
+
+                    // Adição de elementos
+                    hm.put(1, "UNIVESP");
+                    hm.put(2, "USP");
+                    hm.put(7, "UNICAMP");
+                    hm.put(9, "UNESP");
+                    hm.put(3, "UFMG");
+
+                    // Mostra o conteúdo, usando o Iterator
+                    Set set = hm.entrySet();
+                    Iterator iterator = set.iterator();
+
+                    while(iterator.hasNext()) {
+                        Map.Entry mentry = (Map.Entry)iterator.next();
+
+                        System.out.print("A chave é: "+ mentry.getKey() + " & o Valor é:");
+                        System.out.println(mentry.getValue());
+                    }
+
+                    // Obtém valores basedo na chave
+                    String var hm.get(2);
+                    System.out.println("Valor no indice 2 é: "+var);
+
+                    // Remove valor baseado na chave
+                    hm.remove(3);
+
+                    System.out.println("Chave e valor do mapa após remoção: ");
+                    Set set2 = hm.entrySet();
+                    Iterator iterator2 = set2.iterator();
+
+                    while(iterator2.hasNext()) {
+                        Map.Entry mentry2 = (Map.Entry)iterator2.next();
+
+                        System.out.print("A chave é: "+mentry2.getKey() + " & O valor é:");
+                        System.out.println(mentry2.getValue());
+                    }
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>HashTable.</h2>
+            <p>Estrutura de dados que utiliza hashing:</p>
+            <ul>
+                <li>Algoritmo para determinar uma chave na tabela.</li>
+                <li>Chaves nas tabelas possuem valores associados (dados).</li>
+                <li>Cada célula na tabela é um recipiente de hash.</li>
+                <ul>
+                    <li>Lista vinculada de todos os pares chave/valor que sofrem hash para essa célula.</li>
+                    <li>Minimiza colisões.</li>
+                </ul>
+            </ul>
+
+            <p>Características:</p>
+            <ul>
+                <li>Usa o algoritmo hash para conversão das chaves e um mecanismo de pesquisa de valores.</li>
+                <li>Apresenta uma eficiente pesquisa de elementos baseados em chave-valor.</li>
+                <li>Não aceita valores nulos.</li>
+                <li>Declaração do HashTable:</li>
+                <ul>
+                    <li>HashTable<E> mapa = new Type<E>();</li>
+                    <li>E→ é o objeto declarado.</li>
+                    <li>Type() →Tipo de objeto da coleção a ser utilizado.</li>
+                </ul>
+            </ul>
+
+            <p>Alguns métodos da classe HashTable:</p>
+            <ul>
+                <li><b>boolean isEmpty()</b>: Testa se esta tabela de hash não mapeia chaves para valores.</li>
+                <li><b>Object remove(object key)</b>: remove a chave (e seu valor correspondente) desta tabela de hash.</li>
+                <li><b>int size()</b>: Retorna o número de mapeamentos de valores-chave presentes em Hashtable.</li>
+                <li><b>void clear()</b>: Remove todos os mapeamentos de valores-chave do Hashtable e o torna vazio. Limpa esta tabela de hash para que não contenha chaves.</li>
+                <li><b>Object clone()</b>: Cria uma cópia superficial desta tabela de hash. Toda a estrutura da própria hashtable é copiada, mas as chaves e os valores não são clonados. Esta é uma operação relativamente cara.</li>
+                <li><b>String toString()</b>: Retorna a string equivalente a uma tabela hash.</li>
+                <li><b>boolean containsKey(Object key)</b>: Testa se o objeto especificado é uma chave nesta tabela de hash.</li>
+                <li><b>boolean containsValue(Object value)</b>: Testa se o objeto especificado é um valor nesta tabela de hash. Retorna verdadeiro se algum valor igual ao valor existir na tabela hash. Retorna falso se o valor não for encontrado.</li>
+                <li><b>Enumeration elements()</b>: Retorna uma enumeração dos valores contidos na tabela hash.</li>
+            </ul>
+
+            <p>Exemplo com HashTable:</p>
+            <pre>
+            public class HashtableExample {
+                public static void main(String[] args) {
+                    Enumeration names;
+                    String key;
+
+                    // Cria a tabela hash
+                    Hashtable(String, String> hashtable = new Hashtable(String, String>();
+
+                    // Adiciona o par chave/valor
+                    hashtable.put("Chave1", "UNIVESP");
+                    hashtable.put("Chave2","USP");
+                    hashtable.put("Chave3", "UNICAMP");
+                    hashtable.put("Chave4", "UNESP");
+                    hashtable.put("Chave1", "Mona");
+                    names = hashtable.keys();
+
+                    while(names.hasMoreElements()) {
+                        key = (String) names.nextElement();
+                        System.out.println("Chave: "+key+ "& Valor: " + hashtable.get(key));
+                    }
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>TreeMap.</h2>
+            <p>Características:</p>
+            <ul>
+                <li>Adição e a recuperação dos dados é igual à do HashMap.</li>
+                <li>Os dados no TreeMap são ordenados pela chave.</li>
+                <li>Apenas os valores armazenados podem ser nulos, mas a chave não.</li>
+                <li>TreeMap é uma implementação baseada em árvore.</li>
+                <li>Os elementos são classificados de acordo com a ordem natural de suas chaves.</li>
+                <li>A classe TreeMap implementa a interface Map semelhante à classe HashMap.</li>
+            </ul>
+            <p>A principal diferença entre elas é que o <b>HashMap</b> é uma coleção não ordenada, enquanto o <b>TreeMap</b> é classificado na ordem crescente de suas chaves.</p>
+            
+            <p>Declaração do TreeMap:</p>
+            <ul>
+                <li>TreeMap(E> mapa = new Type(E>();</li>
+                <ul>
+                    <li>E→ é o objeto declarado</li>
+                    <li>Type()→ Tipo de objeto da coleção a ser utilizado</li>
+                </ul>
+            </ul>
+
+            <p>Exemplo com TreeMap:</p>
+            <li>Armazenar os mapeamentos de chave e valor no TreeMap e obter um mapeamento de chave-valor classificado ao buscar os dados do TreeMap.</li>
+            <pre>
+            public class TestTreeMap {
+                public static void main(String args[]) {
+                    //Declaração do TreeMap
+                    TreeMap(Integer, String> tmap;
+                    tmap = new TreeMap(Integer, String>():
+
+                    //Adiciona elementos
+                    tmap.put(1, "UNIVESP");
+                    tmap.put(7, "USP");
+                    tmap.put(6, "UNICAMP");
+                    tmap.put(4, "UNESP");
+                    tmap.put(5, "UFMG");
+
+                    // Mostra o conteúdo usando o Iterator
+                    Set set = tmap.entrySet();
+                    Iterator iterator = set.iterator();
+
+                    while(iterator.hasNext()) {
+                        Map. Entry mentry = (Map.Entry)iterator.next();
+
+                        System.out.print("A chave é: "+ mentry.getKey() + " & O valor é: ");
+                        System.out.println(mentry.getValue());
+                    }
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de maio de 2024</p>
+    </footer>
+</body>
+</html>
