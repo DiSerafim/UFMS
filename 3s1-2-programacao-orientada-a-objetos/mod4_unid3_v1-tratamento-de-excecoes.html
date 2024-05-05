@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 3 - Tratamento de Exceções.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=WIIH-E6xVno&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 4 - Unidade 3. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Tratamento de Exceções.</h3>
+        </section>
+
+        <section>
+            <h2>Contextualização.</h2>
+            <ul>
+                <li>O tratamento de erros é uma característica fundamental, pois é praticamente impossível criar uma aplicação totalmente livre de erros;</li>
+                <li>Erros que não necessariamente são ocasionados por falhas do desenvolvimento:</li>
+                <ul>
+                    <li>Porém, se não tratados, os erros oriundos daquelas situações previstas, devem ser consideradas falhas no desenvolvimento de software.</li>
+                </ul>
+                <li>Com isso, faz-se necessário “preparar alguma resposta” nestas situações.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Objetivos do Tratamento de Exceções.</h2>
+            <ul>
+                <li>Detecção mais fácil de erros sem a escrita de um código especial para testar valores retornados;</li>
+                <li>Manter um código de manipulação de exceções nitidamente separado do código que gerará a exceção;</li>
+                <li>Lidar com as diferentes exceções possíveis usando o mesmo código de manipulação de exceções.</li>
+            </ul>
+
+            <b>Exemplos:</b>
+            <ul>
+                <li>Em uma aplicação que se comunica com o banco de dados, este pode estar fora do ar em determinada situação;</li>
+                <li>Um arquivo de configuração ter sido acidentalmente removido;</li>
+                <li>O usuário pode ter digitado um valor inválido;</li>
+                <li>Retorno de uma pilha vazia de inteiros.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ações a Serem Tomadas.</h2>
+            <ul>
+                <li>Por exemplo, se o BD estiver fora do ar, o que fazer?</li>
+                <ul>
+                    <li>A mensagem de erro deve ser impressa no console?</li>
+                    <li>A mensagem de erro deve ser impressa em uma área visível pelo usuário (interface gráfica, aplicação web ...)?</li>
+                    <li>Um e-mail deve ser enviado ao administrador do Banco de Dados?</li>
+                    <li>A operação deve ser logada em um arquivo?</li>
+                    <li>Os dados do usuário devem ser salvos em um arquivo temporário?</li>
+                    <li>Todos os anteriores?</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Java Exceptions.</h2>
+            <ul>
+                <li>Exceptions são classes comuns em Java e devem tratar os erros passíveis de ocorrer;</li>
+                <li>Existem muitos tipos nativos da linguagem tratando um conjunto específico de problemas, por exemplo:</li>
+                <ul>
+                    <i>SQLException, IOException, NullPointerException, NumberFormatException, ArrayIndexOutOfBoundsException…</i>
+                </ul>
+                <li>Java possui dois tipos de exceções: <b>Unchecked e Checked.</b></li>
+                <ul>
+                    <li>A "checagem" significa se a exceção é verificada em tempo de compilação ou não.</li>
+                    <ul>
+                        <li>Em C ++, todas as exceções são unchecked, portanto, o compilador não é forçado a manipular ou especificar a exceção</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hierarquia das Exceptions</h2>
+            <pre>
+                                    (Super Classe)
+                                    <b>Throwable</b>
+                                       /       \         <i>java.lang.OutOfMemoryError</i>
+            Erros tratáveis  🢂<b>Exception</b>      <b>Error</b>  🢂  Erros mais sérios, não tratáveis
+            (checked)           /      \       /   \                          (unchecked)
+                        <b>RuntimeException</b>   <b>ParseException</b>
+                            🡿
+        Erros em tempo de execução
+        (unchecked)
+            </pre>
+            <ul>
+                <li><b>Throwable</b> é a superclasse de todas as exceções e erros em Java.</li>
+                <li><b>Exception</b> é a superclasse para exceções que podem ser tratadas em tempo de compilação.</li>
+                <li><b>Error</b> é a superclasse para erros graves que normalmente não devem ser capturados ou tratados.</li>
+                <li><b>RuntimeException</b> é uma subclasse de Exception que representa exceções em tempo de execução, que geralmente ocorrem devido a erros no código do programador.</li>
+                <li><b>ParseException</b> é uma subclasse de Exception que pode ser usada para lidar com erros específicos de análise ou conversão de dados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Unchecked Exceptions.</h2>
+            <ul>
+                <li>Essas exceções ocorrem devido à programação incorreta;</li>
+                <li>O programa não dará um erro de compilação;</li>
+                <li>Não precisam ser declaradas, nem tratadas ou lançadas;</li>
+                <li>Todas são filhas de RuntimeException;</li>
+                <li>Exemplos:</li>
+                <ul>
+                    <li>NullPointerException</li>
+                    <li>ArrayIndexOutOfBound</li>
+                    <li>IllegalArgumentException</li>
+                    <li>ArithmeticException </li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Para criarmos uma classe que modela uma unchecked; exception, devemos estender a classe Error ou RuntimeException;</li>
+                <li>Tipicamente não criamos exceções desse tipo, elas são usadas pela própria linguagem para indicar condições de erro..</li>
+            </ul>
+            <pre>
+                public static void main(String args[]) {
+                    String arr[] = { "A", "B", "C", "D", "E" };
+                    String myString = arr[7];   // this throws ArrayIndexOutOfBoundException
+                    System.out.println(myString);
+                }
+            </pre>
+        </section>
+        <section>
+            <h2>Checked Exceptions.</h2>
+            <ul>
+                <li>Todas as exceções que não são filhas da classe RuntimeException;</li>
+                <li>Neste tipo, o desenvolvedor é obrigado a realizar alguma operação no caso de erro:</li>
+                <ul>
+                    <li>Assim, o método deve manipular a exceção <b>(try-catch)</b> ou lançar a exceção para o método chamador na pilha usando <b>throws</b>.</li>
+                </ul>
+                <li>É verificado em tempo de compilação. Ou seja, não compila se não for tratada.</li>
+            </ul>
+            <p>Exemplo Checked Exception.</p>
+            <pre>
+            public s"tatic void main(String args[]) {
+                FileReader file = new FileReader("C:\\test\\a.txt");
+                BufferedReader fileInput = new BufferedReader(file);
+
+                // Print first 3 lines of file "C:\test\a.txt"
+                for (int counter = 0; counter < 3; counter++)
+
+                System.out.println(fileInput.readLine());
+                
+                fileInput.close();
+            }"
+            </pre>
+            <p>A criação do <b>FileReader</b> “pede” o tratamento da exceção, pois o seu construtor (código chamado) lança uma exceção por meio do <b>throws</b>.</p>
+            <pre>
+            public FileReader(String fileName) throws FileNotFoundException{
+                super(new FileInputStream(fileName));
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Sintaxe try-catch.</h2>
+            <ul>
+                <li><b>try</b>: é usada para indicar/cercar um bloco de código que possa ocorrer uma exceção;</li>
+                <li><b>catch</b>: serve para manipular as exceções, ou seja, tratar o erro propriamente;</li>
+                <li><b>finally</b>: O importante é saber que esse bloco sempre será executado, útil para liberação de recursos, registros de logs, etc.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+                public static void main(String[] args) {
+                    int num = 0, den = 0;
+                    BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+
+                    System.out.println("Digite dois números seguidos da tecla ENTER:");
+                    
+                    try {
+                        num = Integer.parseInt (teclado.readLine());
+                        den = Integer.parseInt(teclado.readLine());
+                        System.out.println (num+"/"+den+" = "+ (num/den));
+                    }
+                    catch (NumberFormatException e){
+                        System.out.println ("Erro de formate.");
+                    }
+                    catch (IOException e) {
+                        System.out.println ("Erro de E/S.");
+                    }
+                    finally {
+                        System.out.println("Saindo do Bloco \"Try\".");
+                    }
+                    System.out.println("Fim do programa");
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>A Cláusula throws.</h2>
+            <ul>
+                <li>Os erros que devem ser tratados são lançados em métodos:</li>
+                <ul>
+                    <li>É necessário sinalizar esta possibilidade, para que o desenvolvedor tenha o conhecimento que deve tratá-los corretamente no método chamador.</li>
+                </ul>
+                <li>A indicação que estas falhas podem acontecer são definidas pela existência da cláusula throws;</li>
+                <li>Use quando o erro não for de responsabilidade da classe;</li>
+                <ul>
+                    <li>Ela simplesmente será executada e lançará qualquer erro para ser mais adequadamente tratado em uma classe própria para isso.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Lançando Exceções.</h2>
+            <p>O throws é usado da forma descrita a seguir para listar as exceções que um método pode lançar:</p>
+            <pre>
+            public class EntendendoExceptions {
+                void myFunction() throws MyExceptioni, MyException2 {
+                    // Código do método
+                }   // myFunction
+            }   // EntendendoExceptions
+            </pre>
+        </section>
+
+        <section>
+            <h2>Repassando Exceção.</h2>
+            <p>Se quisermos usar o método div sem tratar a exceção, deve-se declarar que a exceção deve ser passada adiante:</p>
+            <pre>
+                public void f() throws DivByZeroException {
+                    Calc calc = new Calc();
+                    int div = calc.div(a,b);    |🢂 O método div desenvolvido lança uma exceção e deve ser tratada!
+                    System.out.println(div);
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Tratando Múltiplas Exceções.</h2>
+            <p>Devemos declarar primeiramente as Exceptions mais específicas, ou seja, as classes filhas, e depois, as mais genéricas.</p>
+            <pre>
+            Ex: try { ... }
+                catch (ClasseExceptionFilha) {}
+                catch (ClasseExpcetionPai) {}
+                catch (ClasseExceptionAvo) {} 
+            </pre>
+        </section>
+
+        <section>
+            <h2>Métodos da Classe Throwable.</h2>
+            <ul>
+                <li><b>printStackTrace()</b>: É amplamente usado, sendo bastante útil para os desenvolvedores. Ele dá uma visão detalhada do erro, indicando qual método originou a falha, assim como cada método que a chamaram. Essa informação é impressa no console.</li>
+                <ul>
+                    <li>Muito mais útil ao programador.</li>
+                </ul>
+                <li><b>getMessage()</b>: Análogo ao anterior, porém não fornece detalhes da origem do erro e das chamadas dos métodos, apenas informa por meio de uma mensagem o tipo da exceção ocorrida.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Criando minhas Exceptions.</h2>
+            <ul>
+                <li>Criar a nossa própria classe de Exceção, tem como?</li>
+                <ul>
+                    <li>Sim, claro!</li>
+                </ul>
+                <li>Lembrando-se que Exception é uma classe qualquer e, portanto, filha de Object. Logo, para usá-la basta estender a classe Exception.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Minha Exceção.</h2>
+            <pre>
+            public class MyException extends Exception {
+                public MyException (String msg) {
+                    super(msg); //informa a msg para getMessage() metodoPersonalizado();
+                }
+
+                public void metodoPersonalizado() {
+                    System.out.println("Trate sua exceção como quiser");
+                    System.out.println(getMessage());
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 5 de maio de 2024</p>
+    </footer>
+</body>
+</html>
