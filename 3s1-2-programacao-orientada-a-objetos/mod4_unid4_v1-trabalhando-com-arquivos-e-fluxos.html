@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 4 - Trabalhando com Arquivos e Fluxos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=QuKphV_I2JY&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 1 - 
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 4 - Unidade 4. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Trabalhando com Arquivos e Fluxos.</h3>
+        </section>
+
+        <section>
+            <h2>Manipulação de Arquivos em Java.</h2>
+            <ul>
+                <li>Java oferece várias classes e métodos para lidar com operações de arquivo;</li>
+                <li>Arquivos de texto:</li>
+                <ul>
+                    <li>Classes <b>FileReader</b> e <b>FileWriter</b> para ler e escrever texto.</li>
+                </ul>
+                <li>Arquivos Binários:</li>
+                <ul>
+                    <li>Classes <b>FileInputStream</b> e <b>FileOutputStream</b> para ler e escrever dados binários.</li>
+                </ul>
+                <li>Uso do bloco try-catch para lidar com exceções.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Leitura de Arquivos em Java.</h2>
+            <ul>
+                <li><b>FileReader</b>: permite ler dados de um arquivo de texto;</li>
+                <li><b>FileInputStream</b>: permite ler dados de um arquivo de arquivos binários;</li>
+            </ul>
+            <pre>
+            public class LeituraArquivo {
+                public static void main(String[] args) {
+                    try {
+                        FileReader reader = new FileReader("arquivo.txt");
+                        int character;
+                        
+                        while ((character = reader.read()) != -1) {
+                            System.out.print((char) character);
+                        }
+
+                        reader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Escrita em Arquivos em Java.</h2>
+            <ul>
+                <li><b>FileWriter</b>: permite escrever dados em um arquivo de texto;</li>
+                <li><b>FileOutputStream</b>: permite escrever dados de um arquivo de arquivos binários;</li>
+            </ul>
+            <pre>
+                public class EscritaArquivo {
+                    public static void main(String[] args) {
+                        try {
+                            FileWriter writer = new FileWriter("arquivo.txt");
+                            writer.write("Olá, mundo!");
+                            // escrever mais texto
+
+                            writer.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Arquivos Binários.</h2>
+            <pre>
+                public class ManipulacaoArquivosBinarios {
+                    public static void main(String[] args) {
+                        try {
+                            FileInputStream input = new FileInputStream("imagem.jpg");
+                            FileOutputStream output = new FileOutputStream("copia_imagem.jpg");
+                            byte[] buffer = new byte[1024];
+                            int bytesRead;
+
+                            while ((bytesRead = input.read(buffer)) != -1) {
+                                output.write(buffer, 0, bytesRead);
+                            }
+
+                            input.close();
+                            output.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Manipulação de Arquivos e Diretórios.</h2>
+            <ul>
+                <li><b>File</b>: fornece métodos para manipular arquivos e diretórios;</li>
+                <li>Criar um diretório, verificar se um arquivo existe, listar arquivos em um diretório;</li>
+                <li>Uso dos métodos <b>isDirectory(), exists(), createNewFile(), listFiles()</b>, etc.</li>
+            </ul>
+            <pre>
+            public class ManipulacaoArquivos {
+                public static void main(String[] args) {
+                    // Criar um diretório
+                    File directory = new File("meuDiretorio");
+                    directory.mkdir();
+
+                    // Verificar se um arquivo existe
+                    File file = new File("meuDiretorio/arquivo.txt");
+
+                    if (file.exists()) {
+                        System.out.println("O arquivo existe!");
+                    }
+
+                    // Listar arquivos em um diretório
+                    File[] files = directory.listFiles();
+
+                    for (File f : files) {
+                        System.out.println(f.getName());
+                    }
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 5 de maio de 2024</p>
+    </footer>
+</body>
+</html>
