@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Conceitos Avançados.</h1>
+        <h2>💡 Unidade 4 - Trabalhando com Arquivos e Fluxos.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+        <a href="https://www.youtube.com/watch?v=9KxRnhyCUjA&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 - 
+                Programação Orientada a Objetos – Aula 13 – Arquivos e serialização. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Karina Valdivia Delgado.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Arquivos e serialização.</h3>
+            <p>Roteiro.</p>
+            <ul>
+                <li>Arquivos e fluxos.</li>
+                <li>Fluxos de bytes.</li>
+                <li>Serialização de objetos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Introdução.</h2>
+            <ul>
+                <li>Programadores utilizam arquivos para armazenar dados a longo prazo.</li>
+                <li>O Java vê cada arquivo como um fluxo sequencial. Existe um marcador de fim de arquivo.</li>
+                <li>O termo fluxo se refere a uma fonte sequencial de dados, que por exemplo, são lidos ou gravados em um arquivo.</li>
+            </ul>
+            <b>Arquivos binários.</b>
+            <p>Criados com base em fluxo de bytes. Podem ser lidos por um programa que converte os dados em um formato legível por humanos.</p>
+            <b>Arquivos de texto.</b>
+            <p>Criados com base em fluxo de caracteres. Podem ser lidos por editores de texto</p>
+        </section>
+
+        <section>
+            <h2>Arquivos e fluxos.</h2>
+            <p>Um programa Java abre um arquivo criando e associando um objeto ao fluxo de bytes ou caracteres. O construtor do objeto interage com o sistema operacional para abrir esse arquivo.</p>
+            <p>O Java também pode associar fluxos a diferentes dispositivos.</p>
+            <p>Exemplos de fluxos:</p>
+            <ul>
+                <li><b>System.in</b> objeto de fluxo de entrada padrão, permite inserir bytes a partir do teclado.</li>
+                <li><b>System.out</b> objeto de fluxo de saída padrão, permite enviar caracteres para a tela.</li>
+                <li><b>System.err</b> objeto de fluxo de erro padrão, permite enviar mensagens de erro para a tela.</li>
+            </ul>
+            <p>O processamento de arquivos é realizado utilizando o pacote java.io que inclui classes de fluxo.</p>
+            <p>Algumas classes de fluxo são:</p>
+            <ul>
+                <li>FileInputStream.</li>
+                <li>FileOutputStream.</li>
+                <li>FileReader.</li>
+                <li>FileWriter.</li>
+            </ul>
+
+            <b>Arquivos binários.</b>
+            <ul>
+                <li><b>FileInputStream</b>: para entrada baseada em bytes.</li>
+                <li><b>FileOutputStream</b>: para saída baseada em bytes.</li>
+            </ul>
+
+            <b>Arquivos de texto.</b>
+            <ul>
+                <li><b>FileReader</b>: para entrada baseada em caracteres.</li>
+                <li><b>FileWriter</b>: para saída baseada em caracteres.</li>
+            </ul>
+
+            <p>Além das classes explicadas anteriormente temos em java.util:</p>
+            <ul>
+                <li><b>Scanner</b>: para entrada baseada em caracteres a partir do teclado ou de um arquivo.</li>
+                <li><b>Formatter</b>: para saída baseada em caracteres na tela ou em arquivo.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fluxos de bytes.</h2>
+            <p>Todos os fluxos de bytes são subclasses das classes abstratas <b>InputStream</b> ou <b>OutputStream</b>.</p>
+            <p>São utilizados para manipulação de arquivos binários. Ex: som, imagem ou dados em geral.</p>
+            <pre>
+            InputStream
+            ├── ByteArrayInputStream
+            ├── FileInputStream
+            ├── FilterInputStream
+            │   ├── BufferedInputStream
+            │   ├── DataInputStream
+            │   ├── LineNumberInputStream
+            │   ├── PushbackInputStream
+            │   ├── SequenceInputStream
+            │   └── AudioInputStream
+            └── ObjectInputStream
+            
+            OutputStream
+            ├── ByteArrayOutputStream
+            ├── FileOutputStream
+            └── FilterOutputStream
+                ├── BufferedOutputStream
+                ├── DataOutputStream
+                └── PrintStream                
+            </pre>
+            <b>InputStream.</b>
+            <ul>
+                <li><b>ByteArrayInputStream</b>: Implementa um array de bytes como uma fonte de entrada de dados.</li>
+                <li><b>FileInputStream</b>: Lê dados de um arquivo como uma fonte de entrada de dados.</li>
+                <li><b>FilterInputStream</b>: Classe base para filtragem de entrada de dados.</li>
+                <ul>
+                    <li><b>BufferedInputStream</b>: Fornece buffering para entrada de dados.</li>
+                    <li><b>DataInputStream</b>: Lê primitivos de dados em um formato de fluxo binário.</li>
+                    <li><b>LineNumberInputStream</b>: Conta o número de linhas lidas.</li>
+                    <li><b>PushbackInputStream</b>: Permite retornar bytes lidos para o fluxo.</li>
+                    <li><b>SequenceInputStream</b>: Concatena dois ou mais fluxos de entrada.</li>
+                    <li><b>AudioInputStream</b>: Converte fluxos de áudio em outros tipos de fluxos.</li>
+                </ul>
+            </ul>
+            <b>ObjectInputStream.</b>
+            <ul>
+                <li>Lê objetos serializados de um fluxo de entrada.</li>
+            </ul>
+
+            <b>OutputStream.</b>
+            <ul>
+                <li><b>ByteArrayOutputStream</b>: Implementa um buffer em memória como uma fonte de saída de dados.</li>
+                <li><b>FileOutputStream</b>: Grava dados em um arquivo como uma fonte de saída de dados.</li>
+                <li><b>FilterOutputStream</b>: Classe base para filtragem de saída de dados.</li>
+                <ul>
+                    <li><b>BufferedOutputStream</b>: Fornece buffering para saída de dados.</li>
+                    <li><b>DataOutputStream</b>: Grava primitivos de dados em um formato de fluxo binário.</li>
+                    <li><b>PrintStream</b>: Fornece funcionalidade de formatação de saída.</li>
+                </ul>
+            </ul>
+
+            <b>Para ler um byte de um arquivo usamos FileInputStream.</b>
+            <p>Primeiro criamos um fluxo de entrada. Ex:</p>
+            <pre>
+                InputStream fluxo = new FileInputStream ("arquivo.dat");
+            </pre>
+            <p>O argumento deverá ser o nome do arquivo o qual pode incluir o caminho absoluto.</p>
+
+            <b>Para escrever um byte em um arquivo usamos FileOutputStream.</b>
+            <p>Primeiro criamos um fluxo de saída. Ex:</p>
+            <pre>
+                OutputStream fluxo = new FileOutputStream ("arquivo.dat");
+            </pre>
+        </section>
+
+        <section>
+            <h2>Serialização de objetos.</h2>
+            <p>Java permite ler e escrever objetos inteiros em arquivos.</p>
+            <p>É realizada com fluxos de bytes (arquivos binários).</p>
+            <p>A classe deve implementar a interface Serializable.</p>
+
+            <ul>
+                <li>Serialização é um mecanismo para ler ou gravar um objeto inteiro a partir de um arquivo.</li>
+                <li>Um objeto serializado é um objeto representado como uma sequência de bytes que inclui:</li>
+                <ul>
+                    <li>- Dados do objeto</li>
+                    <li>As informações sobre o tipo do objeto</li>
+                    <li>Os tipos dos dados armazenados no objeto.</li>
+                </ul>
+                <li>O objeto pode ser desserializado a partir do arquivo.</li>
+            </ul>
+            <p>As classes ObjectInputStream e ObjectOutputStream permitem que objetos sejam lidos ou gravados em um fluxo.</p>
+            <p>Para usar a serialização com arquivos inicializamos esses objetos de fluxo com objetos de fluxo que lêem e gravam bytes em arquivos: FileInputStream e FileOutputStream.</p>
+
+            <b>Abertura do fluxo para leitura:</b>
+            <pre>ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("meusobjetos.ser"));</pre>
+
+            <b>Abertura do fluxo para escrita:</b>
+            <pre>ObjectOutputStream saida = new ObjectOutputStream(new FileOutputStream(“meusobjetos.ser"));</pre>
+
+            <b>Leitura de dados:</b>
+            <pre>objeto = (Tipo) entrada.readObject();</pre>
+
+            <b>Escrita de dados:</b>
+            <pre>saida.writeObject(objeto);</pre>
+
+            <b>Fechamento do arquivo:</b>
+            <pre>
+            entrada.close();
+            saida.close();
+            </pre>
+
+            <p>Exemplo:</p>
+            <pre>
+            import java.io.Serializable;
+
+            public class Cliente implements Serializable{
+                private String cpf;
+                private String nome;
+
+                public Cliente (String cpf, String nome) {
+                    this.cpf=cpf;
+                    this.nome-nome;
+                }
+
+                public String toString(){
+                    return " cpf: "+cpf+" nome: "+nome;
+                }
+
+                public String getCpf() {
+                    return cpf;
+                }
+
+                public void setCpf(String cpf) {
+                    this.cpf cpf;
+                }
+
+                public String getNome() {
+                    return nome;
+                }
+
+                public void setNome (String nome) {
+                    this.nome - nome;
+                }
+            }    
+            </pre>
+            <p>A interface Serializable é uma interface de marcação, não tem nenhum método.</p>
+            <p>A classe é marcada para permitir que os objetos sejam serializáveis.</p>
+            <p>Devemos verificar que cada atributo da classe também seja serializável.</p>
+
+            <i>Cliente.java:</i>
+            <pre>
+            import java.io.*;
+
+            public class Teste {
+                public static void main(String[] args) {
+                    Cliente cliente=new Cliente ("293894930", "Daniel");
+                    FileOutputStream fluxo;
+
+                    try {
+                        fluxo = new FileOutputStream("cliente.ser");
+                        ObjectOutputStream objarq=new ObjectOutputStream(fluxo); objarq.writeObject(cliente);
+
+                        objarq.close();
+
+                        System.out.println("Arquivo gravado");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </pre>
+            <p>Se existir uma tentativa de leitura depois do final do arquivo, <b>readObject()</b> lança uma <b>EOFException</b>.</p>
+            <p>Se a classe do objeto sendo lido não puder ser localizada, <b>readObject()</b> lança uma exceção <b>ClassNotFoundException</b>.</p>
+            <i>TesteLeitura.java:</i>
+            <pre>
+            import java.io.*;
+            public class Teste {
+                public static void main(String[] args) {
+                    Cliente cliente;
+                    FileInputStream fluxo;
+                    ObjectInputStream objarq = null;
+                    try {
+                        fluxo new FileInputStream("cliente.ser");
+                        objarq-new ObjectInputStream(fluxo);
+
+                        while(true) {
+                            cliente (Cliente) objarq.readObject();
+                            System.out.println(cliente);
+                        }
+                    } catch (EOFException eofExc) {
+                        System.out.println("Chegou no fim do arquivo");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    finally{}
+                }
+            }
+            </pre>
+            <p>Estruturas de dados do tipo Collection podem ser lidas ou escritas na sua totalidade sem necessidade de iteração.</p>
+            <pre>
+            import java.io.*;
+            public class TesteMapa {
+                public static void main(String[] args) {
+                    Map<Integer, String> mapa new TreeMap<Integer, String>(); mapa.put(455, "vermelho");
+                    mapa.put(333, "branco"); mapa.put(678, "amarelo");
+                    mapa.put(455, "azul");
+
+                    try {
+                        FileOutputStream fluxo0ut-new FileOutputStream("myFile.ser"); ObjectOutputStream fout-new ObjectOutputStream(fluxo0ut); fout.writeObject(mapa);
+                        FileInputStream fluxoIn new FileInputStream("myFile.ser");
+                        ObjectInputStream fIn=new ObjectInputStream(fluxoIn);
+                        TreeMap<Integer, String> mapaNovo (TreeMap) fIn.read0bject(); fIn.close();
+
+                        fout.close();
+
+                        System.out.println(mapaNovo);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
+    </footer>
+</body>
+</html>
