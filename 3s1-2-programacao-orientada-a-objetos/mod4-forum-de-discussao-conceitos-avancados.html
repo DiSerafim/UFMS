@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 4 - Conceitos Avançados.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre alguns conceitos avançados da linguagem de programação Java e da orientação a objetos.</p>
+            <p>Coleções, Tratamento de Exceções e Manipulação de Arquivos já são conceitos mais avançados da linguagem. São importantes para o desenvolvimento de soluções finais, do mundo real.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Desta forma:</b>
+            <ol>
+                <li>Quais são as limitações de cada coleção? Quando devemos usar uma ou outra?</li>
+                <li>Como seriam os softwares reais sem tratamento de exceção? Qual seria o impacto para os usuários finais?</li>
+                <li>Que tipos de arquivos podem ser manipulados no Java?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>1. Quais são as limitações de cada coleção? Quando devemos usar uma ou outra?</h2>
+            <ul>
+                <li>ArrayList:</li>
+                <ul>
+                    Eficiente para acessar elementos por índice, a inserção e remoção de elementos podem ser lentas, devido ao deslocamento de elementos (em grandes conjuntos).
+                </ul>
+                <li>LinkedList:</li>
+                <ul>
+                    Eficiente para inserção e remoção de elementos no início e no fim da lista, o acesso aleatório aos elementos pode ser lento percorrer a lista a partir do início ou do fim.
+                </ul>
+                <li>HashMap:</li>
+                <ul>
+                    Eficiente para buscar elementos por chave, não garante a ordem dos elementos e não permite chaves duplicadas.
+                </ul>
+                <li>TreeMap:</li>
+                <ul>
+                    Mantém os elementos ordenados de acordo com a chave, pode ser menos eficiente para operações de busca, inserção e remoção.
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Como seriam os softwares reais sem tratamento de exceção? Qual seria o impacto para os usuários finais?</h2>
+            <p>Os erros seriam propagados diretamente para os usuários finais de maneira controlada, resultando em falhas de aplicativos e uma experiência ruim para o usuário.</p>
+            <p>Tratando as exceções permite capturar e gerenciar erros de forma adequada.</p>
+        </section>
+
+        <section>
+            <h2>3. Que tipos de arquivos podem ser manipulados no Java?</h2>
+            <ul>
+                <li>Arquivos de texto:</li>
+                <ul>
+                    <li>Podem ser lidos, gravados usando classes como <b>FileReader, FileWriter, BufferedReader e BufferedWriter</b>.</li>
+                </ul>
+                <li>Arquivos de binários:</li>
+                <ul>
+                    <li>Podem ser lidos, gravados usando classes como <b>FileInputStream, FileOutputStream, DataInputStream e DataOutputStream</b>.</li>
+                </ul>
+                <li>Arquivos de CSV(Valores Separados Por Virgula):</li>
+                <ul>
+                    <li>Podem ser manipulados usando classes como <b>BufferedReader e BufferedWriter</b></li>
+                </ul>
+                <li>Arquivos de JSON e XML:</li>
+                <ul>
+                    <li>Para manipula-los, podem ser usadas bibliotecas como <b>Gson para JSON e JAXB para XML</b></li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
+    </footer>
+</body>
+</html>
