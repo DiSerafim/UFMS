@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 - Conceitos Avançados.</h2>
+        <p>Professor Especialista: Anderson Viçoso de Araújo.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>PROGRAMAÇÃO ORIENTADA A OBJETOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof. Anderson Viçoso de Araújo.</li>
+                <li>Iniciado em	terça, 7 mai 2024, 14:28</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	terça, 7 mai 2024, 16:47</li>
+                <li>Tempo empregado	2 horas 19 minutos</li>
+                <li>Avaliar	9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Na programação orientada a objetos, o que são exceções?</p>
+                <ul>
+                    <li>a. São avisos emitidos pelo compilador.</li>
+                    <li>b. São erros que ocorrem durante a execução do programa.</li>
+                    <li>c. São erros de compilação.</li>
+                    <li>d. São erros de sintaxe.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>Resolução:</p>
+                <li>São eventos que ocorrem durante a execução de um programa que interrompem o fluxo normal de execução. Esses eventos podem ser erros, como divisão por zero ou acesso a um elemento de um array fora dos limites, ou situações excepcionais que podem ocorrer durante a execução do programa, como falhas na comunicação com um banco de dados ou falhas na leitura de um arquivo. As exceções são usadas para lidar com esses eventos de forma estruturada e controlada, permitindo que o programa reaja adequadamente a eles..</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Selecione as palavras que fazem o código funcionar corretamente.</p>
+                <pre>
+                void sumNumbers( String pFilename) (....) IOException, FileNotFoundException {
+                    FileInputStream f = new (....) (pFilename);
+                    (....) di = new DataInputStream(f);
+                
+                    int num1 = di.readInt();
+                    int num2 = di.readInt();
+                    int soma = num1 + num2;
+
+                    System.out.println(soma);
+                    di.(....);
+                }
+                </pre>
+                <p>Opções: FileInputStream, DataInputStream, close() e throws.</p>
+
+                <b class="answer">Resposta: . ✅</b>
+                <p>Resolução:</p>
+                <pre>
+                void sumNumbers( String pFilename) <b>throws</b> IOException, FileNotFoundException {
+                    FileInputStream f = new <b>FileInputStream</b> (pFilename);
+                    <b>DataInputStream</b> di = new DataInputStream(f);
+                
+                    int num1 = di.readInt();
+                    int num2 = di.readInt();
+                    int soma = num1 + num2;
+
+                    System.out.println(soma);
+                    di.<b>close()</b>;
+                }
+                </pre>
+                <ul>
+                    <li><b>FileInputStream</b>: É a classe responsável por abrir um arquivo para leitura de bytes.</li>
+                    <li><b>DataInputStream</b>: É a classe usada para ler dados primitivos de um fluxo de entrada.</li>
+                    <li><b>close()</b>: Método usado para fechar o fluxo de entrada após a leitura dos dados.</li>
+                    <li><b>throws</b>: Indica que o método sumNumbers pode lançar exceções do tipo IOException ou FileNotFoundException. Isso é necessário porque o método utiliza operações de entrada e saída que podem lançar essas exceções, e o método sumNumbers opta por não lidar diretamente com elas, mas sim passá-las para quem chama o método.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Indique a opção que mostre qual é a diferença entre um FileInputStream e um FileReader em Java:</p>
+                <ul>
+                    <li>a. FileInputStream é utilizado para leitura de arquivos binários, enquanto FileReader é utilizado para leitura de arquivos de texto.</li>
+
+                    <li>b. FileInputStream e FileReader são utilizados para a mesma finalidade, não há diferença entre eles.</li>
+
+                    <li>c. FileInputStream e FileReader são objetos equivalentes, não há diferença entre eles.</li>
+
+                    <li>d. FileInputStream é utilizado para leitura de arquivos de texto, enquanto FileReader é utilizado para leitura de arquivos binários.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Resolução:</p>
+                <li>Essa é a diferença fundamental entre FileInputStream e FileReader em Java. O FileInputStream é usado para ler dados brutos de arquivos, que podem ser qualquer tipo de arquivo, incluindo binários. Por outro lado, o FileReader é otimizado para ler arquivos de texto, realizando automaticamente a decodificação dos bytes em caracteres de acordo com o conjunto de caracteres padrão do sistema.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Um desenvolvedor gostaria de ter uma coleção que não aceite elementos repetidos e que seja necessariamente do tipo String. Qual a estrutura de dados (API Collection do Java) que seja mais apropriada de acordo com as necessidades descritas?</p>
+                <ul>
+                    <li>a. Arraylist.</li>
+                    <li>b. Map.</li>
+                    <li>c. Set.</li>
+                    <li>d. TreeMap.</li>
+                </ul>
+                
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>Resolução:</p>
+                <li>A interface Set na API de coleções do Java não permite elementos duplicados e é ideal para armazenar elementos únicos. Além disso, como o desenvolvedor quer uma coleção de elementos do tipo String, o Set pode ser parametrizado para armazenar apenas objetos desse tipo.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Escolha a opção que indica qual é a função do método apresentado a seguir:</p>
+                <pre>
+                void xx(String pInput, String pOutput) throws IOException {
+                    FileReader fr = new FileReader(pInput);
+                    BufferedReader br = new BufferedReader(fr);
+                    FileWriter fw = new FileWriter(pOutput);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    PrintWriter pw = new PrintWriter(bw);
+
+                    String line = br.readLine();
+        
+                    while (line != null) {
+                        bw.write(line + "\n");
+                        line = br.readLine();
+                    }
+        
+                    br.close();
+                    pw.close();
+                }
+                </pre>
+                <ul>
+                    <li>a. Copia um arquivo de texto para outro arquivo de texto.</li>
+                    <li>b. Cria um novo arquivo com conteúdo aleatório.</li>
+                    <li>c. Mistura conteúdos de dois arquivos.</li>
+                    <li>d. Mudar arquivos da impressora de lugar no sistema operacional.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>Resolução:</p>
+                <p>O método abre um arquivo de entrada (pInput) para leitura, lê cada linha desse arquivo e escreve em outro arquivo de saída (pOutput). Ele efetivamente copia o conteúdo do arquivo de entrada para o arquivo de saída.</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Indique a opção que mostre qual é a diferença entre um FileOutputStream e um FileWriter em Java:</p>
+                <ul>
+                    <li>a. FileOutputStream e FileWriter são utilizados para a mesma finalidade, não há diferença entre eles.</li>
+
+                    <li>b. FileOutputStream e FileWriter são objetos equivalentes, não há diferença entre eles.</li>
+
+                    <li>c. FileOutputStream é utilizado para leitura de arquivos de texto, enquanto FileWriter é utilizado para leitura de arquivos binários.</li>
+
+                    <li>d. FileOutputStream é utilizado para escrita de arquivos binários, enquanto FileWriter é utilizado para escrita de arquivos de texto.</li>
+
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Resolução:</p>
+                <li>O FileOutputStream é usado para gravar dados brutos em arquivos, enquanto o FileWriter é usado para gravar texto em arquivos, codificando automaticamente os caracteres em bytes usando o conjunto de caracteres padrão do sistema..</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Preencha os espaços vazios abaixo para que o código funcione corretamente..</p>
+                <pre>
+                List((.....)> lista = new ArrayList(Integer>();
+                for(Integer (.....)(.....))
+                    System.(.....).println(item);
+                </pre>
+                <p>Opções: Integer, lista, item: e out.</p>
+
+                <b class="answer">Resposta: . ✅</b>
+
+                <p>Resolução:</p>
+                <pre>
+                List(<b>Integer</b>> lista = new ArrayList(Integer>();
+                for(Integer <b>item:</b> <b>lista</b>)
+                    System.<b>out</b>.println(item);
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>O que são coleções em Java?</p>
+                <ul>
+                    <li>a. São classes que representam tipos de dados genéricos.</li>
+                    
+                    <li>b. São estruturas de dados que permitem armazenar e manipular um grupo de objetos.</li>
+                    
+                    <li>c. São bibliotecas que não fazem parte da API padrão do Java.</li>
+                    
+                    <li>d. São interfaces que definem um conjunto de métodos para manipular um grupo de objetos.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Resolução:</p>
+                <li>Em Java, as coleções são estruturas de dados que permitem armazenar e manipular um grupo de objetos de forma eficiente. Elas fornecem implementações de diversas estruturas, como listas, conjuntos, mapas, entre outros, para atender diferentes necessidades de armazenamento e manipulação de dados.</li>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Qual é a função de um bloco try-catch em Java?.</p>
+                <ul>
+                    <li>a. É um b'loco de código que permite capturar e tratar exceções em Java.</li>
+                    <li>b. É um 'bloco de código que é executado independentemente da ocorrência de exceções.</li>
+                    <li>c. É um bloco de código que é executado antes de ocorrer uma exceção.</li>
+                    <li>d. É um bloco de código que é executado apenas se ocorrer uma exceção.</li>
+                </ul>
+                
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Resolução:</p>
+                <p>Um bloco try-catch em Java é usado para capturar exceções que podem ocorrer durante a execução do código dentro do bloco try. Se uma exceção é lançada dentro do bloco try, ela é capturada e tratada pelos blocos catch correspondentes, permitindo que o programa lide com a exceção de uma maneira controlada.</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Dado o código a seguir:</p>
+                <pre>
+                public class Exceptions {
+                    public static void main(String[] args) {
+                        String a = "a";
+                        String b = "b";
+                        int x = soma(a, b);
+
+                        System.out.println(x);
+                    }
+
+                    public static int soma(String a, String b) {
+                        try {
+                            int x =Integer.parseInt(a) + Integer.parseInt(b);
+
+                            System.out.println("Soma realizada");
+
+                            return x;
+                        } catch (NumberFormatException e) {
+                            return 0;
+                        }
+
+                        finally {
+                        }
+                    }
+                }
+                </pre>
+                <p>Qual é o texto apresentado para o usuário no console de saída padrão?.</p>
+
+                <b class="answer">Resposta: Soma realizada 0. ❌</b>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 3 de maio de 2024</p>
+    </footer>
+</body>
+</html>
