@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>Apresentação do Módulo - Módulo 1 - Projeto de Banco de Dados Relacional.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=F1yBt-OcLaw&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Banco de Dados - Módulo 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Vanessa Borges</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Banco de Dados.</h3>
+            <p>Projeto de banco de dados relacional.</p>
+            <ul>
+                <li>Unidade 1 - Introdução - banco de dados e seus usuários.</li>
+                <li>Unidade 2 - Modelo conceitual.</li>
+                <li>Unidade 3 - Modelo relacional e transformação entre modelos.</li>
+                <li>Unidade 4 - Qualidade do projeto de banco de dados.</li>
+            </ul>
+            <p>Objetivo:</p>
+            <li>Projetar bancos de dados relacionais para aplicações.</li>
+        </section>
+
+        <section>
+            <h2>Unidade 1 - Introdução - banco de dados e seus usuários.</h2>
+            <b>Banco de Dados:</b>
+            <ul>
+                <li>É uma coleção de dados coerente e logicamente relacionados com algum significado associado.</li>
+                <li>É projetado, construído e populado com dados que atendem a um propósito e audiência específicos.</li>
+                <li>Representa algum aspecto do mundo real, chamado de mini-mundo.</li>
+            </ul>
+
+            <b>Sistema Gerenciador de Banco de Dados:</b>
+            <ul>
+                <li>Coleção de programas que permite ao usuário criar e manter um banco de dados</li>
+                <li>Software que facilita o processo de definição, construção, manipulação e compartilhamento de bancos de dados entre diversos usuários e aplicações.</li>
+            </ul>
+            <img src="img/sistema.jpg" alt="Sistema Gerenciador de Banco de Dados">
+            <p>Fonte imagem:</p>
+            <i>https://tiparafiscos.com.br/sgbd-sistema-gerenciador-de-banco-de-dados-parte-ii/</i>
+
+            <p></p>
+            <b>Vantagens de utilizar a abordagem de SGBD:</b>
+            <ul>
+                <li>Compartilhamento dos dados e processamento de transações multiusuários.</li>
+                <ul>
+                    <li>Permite que múltiplos usuários acessem o banco de dados ao mesmo tempo.</li>
+                </ul>
+                <li>Controle de redundância.</li>
+                <ul>
+                    <li>Normalização dos dados.</li>
+                </ul>
+                <li>Restringe acesso não autorizado.</li>
+                <li>Oferecendo estruturas de armazenamento e técnicas de pesquisa para o processamento eficiente de consulta.</li>
+                <ul>
+                    <li>Índices.</li>
+                    <li>Buffering ou caching.</li>
+                    <li>Processamento e otimização de consulta.</li>
+                </ul>
+                <li>Oferece backup e recuperação.</li>
+            </ul>
+
+            <img src="img/SGBDs.jpg" alt="Exemplos de SGBDs">
+            <p>Fonte imagem:</p>
+            <i>https://www.youtube.com/watch?app=desktop&v=NnG7f60XPkQ&ab_channel=ProfessorKelson</i>
+            <p></p>
+        </section>
+
+        <section>
+            <h2>Unidade 2 - Modelo conceitual.</h2>
+            <h2>Unidade 3 - Modelo relacional e transformação entre modelos.</h2>
+
+            <ul>
+                <li>Existem várias propostas para representar um modelo de dados. Podemos classificá-los de acordo com os conceitos usados para descrever a estrutura do banco de dados:</li>
+                <ul>
+                    <li>Modelos conceituais ou alto nível:</li>
+                    <ul>
+                        <li>Descrevem a estrutura de um banco de dados de acordo com a percepção dos usuários independentes de aspectos de implementação</li>
+                    </ul>
+                    <li>Modelos representativos (lógicos):</li>
+                    <ul>
+                        <li>Descrevem a estrutura de um banco de dados da forma como será manipulado pelo SGBD mais dependentes de aspectos de implementação</li>
+                    </ul>
+                    <li>Modelos físicos ou baixo nível:</li>
+                    <ul>
+                        <li>Descrevem a estrutura de um banco de dados da forma como os dados são fisicamente armazenados totalmente dependentes de aspectos de implementação (registros, blocos, índices, etc.)</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/modelo-conceitual.png" alt="Modelo conceitual">
+
+            <p></p>
+            <b>Mini- mundo (Levantamento de requisitos).</b>
+            <ul>
+                <li>Deseja-se manter informações sobre alunos, cursos, disciplinas e departamentos.</li>
+                <li>Uma disciplina pode possuir diversos pré-requisitos.</li>
+                <li>Uma disciplina pode ser pré-requisito de muitas outras disciplinas.</li>
+                <li>Uma disciplina pode aparecer no currículo de muitos cursos e um curso pode possuir muitas disciplinas em seu currículo.</li>
+                <li>Um aluno está inscrito em exatamente um curso e um curso pode ter nele inscritos muitos alunos.</li>
+                <li>Um aluno possui um RGA único, nome e endereço.</li>
+                <li>Uma disciplina possui um código único, um nome e um número de créditos.</li>
+            </ul>
+
+            <b>Modelo Relacional (Conceitual).</b>
+            <img src="img/diagrama-entidade-relacionamento.png" alt="diagrama-entidade-relacionamento">
+
+            <p></p>
+            <b>Modelo Relacional (Lógico).</b>
+            <img src="img/modelo-relacional-logico.png" alt="Modelo Relacional">
+
+            <p></p>
+            <ul>
+                <li>A maioria dos projetos relacionais práticos assumem uma das duas técnicas a seguir:</li>
+                <ul>
+                    <li>Realiza um projeto de esquema conceitual usando um modelo conceitual como ER ou EER e mapeia o projeto conceitual para um conjunto de relações.</li>
+                    <li>Projeta as relações com base no conhecimento externo derivado de uma implementação existente de arquivos, formulários ou relatórios.</li>
+                </ul>
+                <li>Necessário: teoria para determinação de bons esquemas de relação.</li>
+                <ul>
+                    <li>Dependências funcionais.</li>
+                </ul>
+                <li>Medir formalmente por que um esquema de relação é melhor que outro.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Unidade 4 - Qualidade do projeto de banco de dados.</h2>
+            <b>Normalização.</b>
+            <ul>
+                <li>Teoria proposta por Codd no início dos anos 70.</li>
+                <li>Baseia-se no conceito de FORMAS NORMAIS. Uma relação (tabela) é dita estar em uma determinada forma normal, se ela satisfizer um conjunto específico de restrições.</li>
+                <li>Faz parte do projeto lógico de banco de dados</li>
+            </ul>
+
+            <b>Forma Normal</b>
+            <ul>
+                <li>Utilizamos chaves e dependências funcionais (DFs) de uma relação para certificar que um determinado esquema de relação está em uma particular forma normal.</li>
+                <li>1FN, 2FN, 3FN, FNBC</li>
+            </ul>
+
+            <b>Conclusões.</b>
+            <ul>
+                <li>Projetar bancos de dados relacionais para aplicações desde o seu requisito até o modelo lógico.</li>
+                <li>O projeto terá a garantia de qualidade a partir da forma normal implementada.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
+    </footer>
+</body>
+</html>

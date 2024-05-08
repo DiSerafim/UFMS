@@ -17,6 +17,7 @@ public class TesteMapa {
 
             FileInputStream fluxoIn = new FileInputStream("myFile.ser"); // Cria o fluxo FileInputStream para fazer a leitura
             ObjectInputStream fIn = new ObjectInputStream(fluxoIn); // Cria o fluxo ObjectInputStream para fazer a leitura
+            @SuppressWarnings("unchecked")
             TreeMap<Integer, String > mapaNovo = (TreeMap<Integer, String>)fIn.readObject(); // faz aleitura com readObject
             
             fIn.close(); // fecha
