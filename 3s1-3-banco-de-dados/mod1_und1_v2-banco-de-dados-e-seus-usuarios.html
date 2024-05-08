@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>💡 Unidade 1 - Introdução - banco de dados e seus usuários.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=12evQIL9BGc&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=10&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Banco de Dados - Sistemas Gerenciadores de Bancos de Dados no Mercado.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: José Eduardo Santarem Segundo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Sistemas Gerenciadores de Bancos de Dados no Mercado.</h3>
+        </section>
+
+        <section>
+            <h2>Market Share - Bancos de Dados (há uma infinidade de rankings):</h2>
+            <img src="img/ranking-dbs.png" alt="ranking-dbs.png">
+            <p></p>
+            <a href="https://db-engines.com/en/ranking" target="_blank" rel="noopener noreferrer">
+                <i>https://db-engines.com/en/ranking</i>
+            </a>
+        </section>
+
+        <section>
+            <h2>ENTENDENDO SCORE DB-ENGINES RANKING.</h2>
+            <ul>
+                <li>Elementos que compõem o Score:</li>
+                <ul>
+                    <li>Número menções em Web Sites (Google e Bing)</li>
+                    <li>Interesse no sistema (Google Trends)</li>
+                    <li>Frequência de discussão em listas relevantes:</li>
+                    <ul>
+                        <li>Stack Overflow e DBA Stack Exchange</li>
+                    </ul>
+                    <li>Número de ofertas de emprego:</li>
+                    <ul>
+                        <li>Indeed e Simply Hired</li>
+                    </ul>
+                    <li>Número de Perfis profissionais que os sistemas são mencionados (Linkedin)</li>
+                    <li>Número de menções em rede social (Twitter)</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>TIPOS DE BANCOS.</h2>
+            <ul>
+                <li>7 dos 10 sistemas listados são primariamente BD relacionais.</li>
+                <ul>
+                    <li>Oracle, Mysql, SQL Server, PostgreSQL, DB2, SQLite e Access</li>
+                </ul>
+                <li>MongoDB é de documentos.</li>
+                <li>Redis é chave-valor.</li>
+                <li>Elasticsearch é mecanismo de busca.</li>
+                <li>8 deles são de modelos múltiplos.</li>
+                <ul>
+                    <li>Relacional, Documentos, grafos, espacial, rdf, time séries</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>BREVE ABORDAGEM SOBRE OS MAIS UTILIZADOS.</h2>
+            <ul>
+                <li>A probabilidade de atuar com banco de dados usando Oracle, Mysql, Postgresql ou Sql Server é extremamente grande.</li>
+                <li>Importante observar os detalhes desses produtos.</li>
+                <li>Atualmente, com o advento do Big Data e das possibilidades tecnológicas disponíveis, bancos do tipo chave-valor, de documentos e de grafos passam a ser muito recorrentes também, mas ainda com uso restrito.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ORACLE.</h2>
+            <ul>
+                <li>Uma das ferramentas mais usadas e robustas do mercado.</li>
+                <li>Tem como principal virtude a robustez e confiabilidade.</li>
+                <li>Empresa: Oracle</li>
+                <li>Desde 1980</li>
+                <li>Site: www.oracle.com/database</li>
+                <li>Licença comercial (com uma versão express)</li>
+                <li>Multiplataforma (AIX, HP-UX, Linux, OS X, Solaris, Windows, z/OS)</li>
+                <li>Suporta SQL</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MySQL.</h2>
+            <ul>
+                <li>MySQL AB foi comprada pela Sun, que foi comprada pela Oracle em 2009.</li>
+                <li>Integração com PHP foi uma grande sacada, pequenos projetos migraram rapidamente para MySQL.</li>
+                <li>Empresa: Oracle</li>
+                <li>Desde: 1995</li>
+                <li>Site: www.mysql.com</li>
+                <li>Open Source</li>
+                <li>Multiplataforma (FreeBSD, Linux, OS X, Solaris, Windows)</li>
+                <li>Suporta SQL</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SQL SERVER.</h2>
+            <ul>
+                <li>Um dos primeiros bancos de dados do mercado. Por muito tempo ficou restrito a plataforma Windows. Sempre prezou por uma interface amigável.</li>
+                <li>Empresa: Microsoft</li>
+                <li>Desde: 1989</li>
+                <li>Site: www.microsoft.com/en-us/sql-server</li>
+                <li>Licença comercial (com uma versão express)</li>
+                <li>Multiplataforma (Windows e Linux)</li>
+                <li>Suporta SQL</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>PostgreSQL.</h2>
+            <ul>
+                <li>Muito robusto, muito utilizado em sistemas com muitos registros, um dos primeiros open source a implementar UTF-8. Com certeza, uma ferramenta open source (além de BD) das mais excepcionais.</li>
+                <li>Responsável: PostgreSQL Global Development Group</li>
+                <li>Desde: 1989</li>
+                <li>Site: www.postgresql.org</li>
+                <li>Open Source</li>
+                <li>Multiplataforma (FreeBSD, HP-UX, Linux, NetBSD, OpenBSD, OS X, Solaris, Unix, Windows)</li>
+                <li>Suporta SQL</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>COMO ESCOLHER?</h2>
+            <ul>
+                <li>Compreender a variedade de critérios que podem ter impacto.</li>
+                <li>Opção sempre por um software open source (ou, mais simplesmente, por um não pago)?</li>
+                <li>Plataforma;</li>
+                <li>Implementação em Cloud - Oferecido como DBaaS;</li>
+                <li>Restrição com conectores ou linguagens;</li>
+                <li>Escolha por modelo (relacional, objetos, grafo....);</li>
+                <li>Tecnologias como controle de transações, triggers, stored procedures, map reduce, entrou outros...</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O QUE MUDA BASEADO NA ESCOLHA?</h2>
+            <ul>
+                <li>Como bancos de dados, são todos parecidos.</li>
+                <li>Um SQL padrão funciona em todos.</li>
+                <li>Há especificações da linguagem SQL, que são para uso exclusivo com determinados produtos (como funções). Isso pode determinar retrabalho em uma futura mudança de opção de produto.</li>
+                <li>O mesmo serve para outros recursos do SGBD.</li>
+                <li>Há ferramentas específicas (nativas ou não) para cada produto.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A DISCIPLINA BANCO DE DADOS.</h2>
+            <ul>
+                <li>Nessa disciplina trataremos banco de dados de uma forma generalizada, tentando usar elementos pouco específicos de um ou outro produto de banco de dados.</li>
+                <li>As aplicações práticas e exemplos serão implementadas no banco de dados MySQL, porque esse é o produto de banco de dados a ser utilizado na disciplina futura de projeto integrador.</li>
+                <li>Observe, toda implementação é baseada em conceitos básicos que vimos nas primeiras duas semanas, mas a escolha do produto é também muito importante!</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
+    </footer>
+</body>
+</html>
