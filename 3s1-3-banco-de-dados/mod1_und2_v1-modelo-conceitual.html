@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>💡 Unidade 1 - Introdução - banco de dados e seus usuários.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=oPlXecD-gZM&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Bancos de Dados - Aula 02 – Modelo Entidade-Relacionamento (MER) - Parte I. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Modelo Entidade-Relacionamento (MER).</h3>
+        </section>
+
+        <section>
+            <h2>Modelagem de dados.</h2>
+            <ul>
+                <li>Para que seja possível construir um banco de dados, é necessário estabelecer a forma como os dados serão armazenados nesse banco.</li>
+                <li>Estabelecer a forma como os dados serão armazenados implica na construção de um modelo para a organização dos dados: uma modelagem de dados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contexto didático.</h2>
+            <b>Uma empresa:</b>
+            <p>Cada departamento da empresa possui um nome e um número exclusivos.</p>
+            <p>Um funcionário gerencia um departamento e a data de início desse trabalho de gerência deve ser registrada.</p>
+            <p>Um mesmo departamento pode estar localizado em diferentes prédios.</p>
+            <p>Os departamentos possuem vários empregados e controlam uma série de projetos</p>
+        </section>
+        
+        <section>
+            <h2>Modelo Entidade-Relacionamento (MER).</h2>
+            <p>É um modelo de dados conceitual, de alto nível, que permite expressar a organização que deve ser imposta aos dados em um banco de dados.</p>
+            <p>Existe uma notação baseada em diagramas para a construção de um MER: o diagrama ER.</p>
+            
+            <b>Elementos do diagrama ER.</b>
+            <ul>
+                <li>Entidades.</li>
+                <li>Atributos.</li>
+                <li>Chaves.</li>
+                <li>Relacionamentos.</li>
+                <li>Cardinalidades.</li>
+            </ul>
+
+            <p><b>Entidade (forte):</b> é um objeto básico do MER usado para representar uma coisa no mundo real, física ou conceitual, com existência independente.</p>
+            <p>Se tal existência só faz sentido quando está relacionada a outra entidade, a entidade é dita <b>fraca</b>.</p>
+            <p><b>Heurística:</b> no discurso que descreve o mundo real, as entidades são frequentemente mencionadas, e geralmente são descritas em termos de suas propriedades.</p>
+
+            <b>Exemplo (Entidade).</b>
+            <p>Cada <b>departamento</b> da empresa possui um nome e um número exclusivos. Um funcionário gerencia um <b>departamento</b> e a data de início desse trabalho de gerência deve ser registrada. Um mesmo <b>departamento</b> pode estar localizado em diferentes prédios. Os <b>departamento</b>s possuem vários empregados e controlam uma série de projetos ...</p>
+            <p><b>Departamento</b> pode ser modelado como uma entidade.</p>
+
+            <p>No diagrama ER, as entidades são representadas por retângulos.</p>
+            <ul>
+                <li>DEPARTAMENTO.</li>
+                <li>FUNCIONÁRIO.</li>
+                <li>PROJETO.</li>
+                <li>DEPENDENTE.</li>
+                <ul>
+                    <li>Entidade fraca.</li>
+                </ul>
+            </ul>
+
+            <b>Exemplo (Atributo).</b>
+            <p><b>Atributo</b>: é uma propriedade que descreve uma entidade.</p>
+            <p>Exemplo: Um funcionário possui um <b>número</b> que o identifica (identidade), <b>nome</b>, <b>endereço</b>, <b>salário</b> e <b>data de nascimento</b>.</p>
+            <p>Os atributos da entidade FUNCIONÁRIO estão destacados em negrito.</p>
+
+            <b>No diagrama ER, os atributos são representados por elipses.</b>
+            <pre>
+            +-------------+
+            | FUNCIONÁRIO |
+            +-------------+
+              ( ident    )
+              ( nome     )
+              ( endereço )
+              ( salário  )
+              ( dt_nasc  )
+              +----------+      
+            </pre>
+            <b>Tipos de atributos:</b>
+            <ul>
+                <li>simples x compostos.</li>
+                <li>univalorados x multivalorados.</li>
+                <li>armazenados x derivados.</li>
+            </ul>
+            <img src="img/entidade-relacionamento.png" alt="entidade-relacionamento.png">
+            <p>Atributo com derivado:</p>
+            <img src="img/entidade-relacionamento-1.png" alt="entidade-relacionamento.png">
+            <p>Entidade Fraca:</p>
+            <img src="img/entidade-fraca.png" alt="entidade-fraca.png">
+
+            <p></p>
+            <b>Conceitos:</b>
+            <ul>
+                <li>Um tipo entidade define uma coleção, ou conjunto, de entidades que têm os mesmos atributos. É o <b>ESQUEMA</b>.</li>
+                <li>A coleção de todas as entidades de um tipo entidade é chamada de conjunto entidade. É a <b>INSTÂNCIA</b>.</li>
+            </ul>
+
+            <b>ESQUEMA.</b>
+            <ul>
+                <li>Nome do tipo entidade:</li>
+                <ul>
+                    <li>FUNCIONÁRIO_SIMPLES (nome, salário).</li>
+                </ul>
+                <li>Conjunto entidade INSTÂNCIA.</li>
+                <ul>
+                    <li>com duas entidades individuais.</li>
+                    <ul>
+                        <li>func1.</li>
+                        <ul>
+                            <li>(Carla de Paula, 5.000,00).</li>
+                        </ul>
+                        <li>func2.</li>
+                        <ul>
+                            <li>(Jonas Almeida, 3.000,00).</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <p><b>Atributo chave</b>: um tipo entidade, usualmente, tem um ou mais atributos que assumem valores distintos para cada entidade individual dentro do conjunto entidade. Esse atributo, ou conjunto de atributos (chave composta), identifica unicamente uma entidade.</p>
+            <p><b>Restrição de unicidade</b>: proíbe que duas entidades, em um mesmo conjunto entidade, tenham os mesmos valores no seu atributo chave.</p>
+
+            <b>Com a indicação do atributos chaves:</b>
+            <p></p>
+            <img src="img/atributos-chaves.png" alt="atributos-chaves.png">
+            <p></p>
+            <b>Dois Atributos chaves:</b>
+            <p></p>
+            <img src="img/atributos-chaves1.png" alt="atributos-chaves1.png">
+            <p></p>
+            <b>Uma entidade fraca possui uma chave parcial:</b>
+            <p></p>
+            <img src="img/atributos-chaves2.png" alt="atributos-chaves2.png">
+        </section>
+
+        <section>
+            <h2>Estes slides estão baseados na bibliografia:</h2>
+            <p>Modelo Entidade-Relacionamento (MER) Parte I: entidades, atributos, chaves.</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
+    </footer>
+</body>
+</html>
