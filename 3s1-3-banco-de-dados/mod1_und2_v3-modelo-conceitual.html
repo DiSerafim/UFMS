@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>💡 Unidade 1 - Introdução - banco de dados e seus usuários.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=39058AQgBuA&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=5&ab_channel=UNIVESP" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Bancos de Dados - Aula 04 – Modelo Entidade - Relacionamento estendido. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Modelo Entidade - Relacionamento estendido.</h3>
+            <ul>
+                <li>especialização-generalização, agregação.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Modelo Entidade - Relacionamento estendido.</h2>
+            <p>modelo de dados conceitual mais acurado, capaz de expressar propriedades e restrições dos dados com maior precisão.</p>
+            <ul>
+                <li>Características discutidas neste curso:</li>
+                <ul>
+                    <li>especialização-generalização.</li>
+                    <li>agregação.</li>
+                </ul>
+            </ul>
+
+            <p><b>Especialização</b>: processo de definir um conjunto de subtipos (ou subclasses) de um tipo entidade (supertipo ou superclasse), a partir das características que distinguem subconjuntos de entidades individuais.</p>
+            <p><b>Generalização</b>: processo inverso da abstração, no qual as diferenças entre vários tipos entidades são suprimidas na criação de um supertipo.</p>
+
+            <b>Especialização:</b>
+            <p></p>
+            <img src="img/especializacao.png" alt="especializacao.png">
+            <p></p>
+            <b>Restrição de disjunção:</b>
+            <p></p>
+            <img src="img/especializacao1.png" alt="especializacao.png">
+            <p></p>
+            <b>Subconjuntos:</b>
+            <p></p>
+            <img src="img/especializacao2.png" alt="especializacao.png">
+            <p></p>
+            <b>Diagrama resumido – suprimindo os atributos e relacionamentos:</b>
+            <p></p>
+            <img src="img/diagrama-resumido.png" alt="diagrama-resumido.png">
+        </section>
+
+        <section>
+            <h2>Generalização:</h2>
+            <img src="img/generalizacao.png" alt="generalizacao.png">
+            <p></p>
+            <b>Supertipo(Veículo)</b>
+            <p></p>
+            <img src="img/supertipo.png" alt="supertipo.png">
+            <p></p>
+            <b>Restrição de Sobreposição</b>
+            <p></p>
+            <img src="img/especializacao2.png" alt="restricao-de-sobreposicao.png">
+        </section>
+
+        <section>
+            <h2>Agregação:</h2>
+            <p>É uma abstração que permite a construção de objetos a partir de seus componentes.</p>
+            <p>No MER estendido podemos agregar (combinar) objetos que estão relacionados. A partir dessa agregação, criamos um novo objeto que pode ser tomado como uma entidade de alto nível e pode, portanto, participar de um relacionamento.</p>
+            <p>Ex:</p>
+            <b>Relacionamento (Entrevista).</b>
+            <p></p>
+            <img src="img/ex.png" alt="ex">
+            <p></p>
+            <b>Criando Agregação:</b>
+            <p></p>
+            <img src="img/agregacao.png" alt="agregacao.png">
+        </section>
+
+        <section>
+            <h2>Estes slides estão baseados na bibliografia:</h2>
+            <p>Modelo Entidade-Relacionamento estendido especialização-generalização, agregação.</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808p., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 9 de maio de 2024</p>
+    </footer>
+</body>
+</html>
