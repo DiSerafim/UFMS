@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>💡 Unidade 3 - Modelo relacional e transformação entre modelos.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=HXNQEfG4-mA&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=8&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Bancos de Dados - Aula 07 - Mapeamento MER → Relacional - Parte II: relacionamentos, cardinalidades. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Mapeamento MER → Relacional.</h3>
+            <p>relacionamentos, cardinalidades.</p>
+        </section>
+
+        <section>
+            <h2>Mapeando tipos relacionamento binários 1:1:</h2>
+            <p>Para cada tipo relacionamento binário 1:1 no MER, identifique as relações S e T que correspondem aos tipos entidade participantes no relacionamento.</p>
+            <img src="img/relacionamento-um-pra-um.png" alt="relacionamento-um-pra-um.png">
+            <p></p>
+            <b>Escolha uma abordagem:</b>
+            <ul>
+                <li>1. Abordagem da chave estrangeira (mais comum).</li>
+                <li>2. Abordagem da relação unificada.</li>
+                <li>3. Abordagem referência cruzada ou relação de relacionamento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>1. Abordagem da chave estrangeira:</h2>
+            <ul>
+                <li>Escolha uma das relações, por exemplo a relação S - e inclua como chave estrangeira em S a chave primária de T;</li>
+                <li>Se houver tipo entidade com participação total envolvido no relacionamento, escolhê-lo para o papel de S será a melhor opção;</li>
+                <li>Inclua todos os atributos simples, e os componentes simples dos atributos compostos, do tipo relacionamento como atributos de S.</li>
+            </ul>
+            <p>Escolhendo DEPARTAMENTO para o papel de S:</p>
+            <img src="img/chave-estrangeira.png" alt="chave-estrangeira.png">
+            <p></p>
+            <i>FK = Chave primária.</i>
+        </section>
+
+        <section>
+            <h2>2. Abordagem da relação unificada:</h2>
+            <ul>
+                <li>Unifique os dois tipos entidade e o tipo relacionamento é uma única relação;</li>
+                <li>Isto é possível quando ambos tipos entidade possuem participação total, indicando que as duas relações referentes aos tipos entidade participantes do relacionamento possuem sempre o mesmo número de tuplas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Abordagem referência cruzada:</h2>
+            <ul>
+                <li>Crie uma terceira relação para atuar como uma referência cruzada das chaves primárias de cada uma das duas relações S e T;</li>
+                <li>A terceira relação incluirá as chaves primárias de Se T como chaves estrangeiras;</li>
+                <li>A chave primária da terceira relação será uma das duas chaves estrangeiras, e a outra chave estrangeira será uma chave única.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mapeando tipos relacionamento binários 1:N (N:1).</h2>
+            <ul>
+                <li>Para cada tipo relacionamento regular binário 1:N, identifique a relação S que representa o tipo entidade que participa do tipo relacionamento uma vez.</li>
+                <li>Inclua a chave primária da relação T (a outra entidade que participa do relacionamento) como chave estrangeira na relação S;</li>
+                <li>Inclua como atributo de S todos os atributos simples, e os componentes simples dos atributos compostos, do tipo relacionamento.</li>
+            </ul>
+            <i>A abordagem de referência cruzada também pode ser usada!</i>
+            <p>N para Um ou Um para N:</p>
+            <img src="img/mapeando-um-para-n.png" alt="mapeando-um-para-n.png">
+            <p>Mapeamento:</p>
+            <img src="img/mapeamento-relacional.png" alt="mapeamento-relacional.png">
+            <p>Um departamento controla vários projetos:</p>
+            <img src="img/relacional.png" alt="relacional.png">
+            <p>Mapeamento:</p>
+            <img src="img/mapeamento1.png" alt="mapeamento.png">
+            <p>Binários 1:N (N:1):</p>
+            <img src="img/napeamento-binário.png" alt="mapeamento-binário.png">
+            <p>Mapeamento:</p>
+            <img src="img/mapeamento2.png" alt="mapeamento2.png">
+        </section>
+
+        <section>
+            <h2>Mapeando tipos relacionamento binários M:N:</h2>
+            <ul>
+                <li>Para cada tipo relacionamento binário M:N, crie uma nova relação para representar o relacionamento;</li>
+                <li>Inclua como chaves estrangeiras na nova relação as chaves primárias das relações que representam as entidades participantes do relacionamento;</li>
+                <li>A chave primária da nova relação é a combinação dessas chaves estrangeiras;</li>
+                <li>Também inclua todos os atributos simples, ou componentes simples de atributos compostos, como atributos na nova relação.</li>
+            </ul>
+            <img src="img/mapeamento3.png" alt="mapeamento3.png">
+            <p>Mapeamento:</p>
+            <img src="img/mapeamento4.png" alt="mapeamento4.png">
+            <p></p>
+        </section>
+        <section>
+            <h2>Mapeamento Relacional Completo:</h2>
+            <img src="img/mapeamento-relacional-completo.png" alt="mapeamento-relacional-completo.png">
+        </section>
+
+        <section>
+            <h2>Estes slides estão baseados na bibliografia:</h2>
+            <p>Modelo Entidade-Relacionamento (MER) Parte I: entidades, atributos, chaves.</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
+    </footer>
+</body>
+</html>
