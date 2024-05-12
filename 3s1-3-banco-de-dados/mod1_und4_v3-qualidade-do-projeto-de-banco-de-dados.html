@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
+        <h2>💡 Unidade 4 - Qualidade do projeto de banco de dados.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=pIvuT6YMtDI&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=21&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Bancos de Dados - Aula 19 - Formas Normais – Parte II. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Formas Normais.</h3>
+        </section>
+
+        <section>
+            <h2>Formas Normais.</h2>
+            <p>Terceira Forma Normal (3NF): é baseada no conceito de <b>dependência transitiva</b>.</p>
+            <ul>
+                <li>Uma dependência funcional X 🢂 Y em um esquema de relação R é uma <b>dependência transitiva</b> se:</li>
+                <li>Existe um conjunto de atributos Zem R,</li>
+                <li>Z não é chave candidata e nem um subconjunto de qualquer chave de R, e tanto X 🢂 Z quanto Z Y valem no esquema.</li>
+            </ul>
+            <p>Ex.:</p>
+            <img src="img/forma-normal12.png" alt="forma-normal12.png">
+            <p>Um esquema de relação R está na 3NF se ele está em 2NF e nenhum atributo não primo de Ré transitivamente dependente da chave primária (ou de qualquer chave) de R.</p>
+            <p>ou, escrevendo de uma outra forma...</p>
+            <ul>
+                <li>Um esquema de relação R está na 3NF se todo atributo não primo em R atende ambas condições abaixo:</li>
+                <ul>
+                    <li>a) ele tem dependência funcional total de toda chave de R;</li>
+                    <li>b) ele é não transitivamente dependente de toda chave de R.</li>
+                </ul>
+            </ul>
+            <img src="img/forma-normal13.png" alt="forma-normal13.png">
+            <p>Decompondo o esquema em outros menores, seguindo as dependências funcionais: normalizando o esquema.</p>
+            <img src="img/forma-normal14.png" alt="forma-normal14.png">
+            <p>Esquema de relação:</p>
+            <img src="img/forma-normal15.png" alt="forma-normal15.png">
+        </section>
+
+        <section>
+            <h2>Boyce-Codd Normal Form (BCNF):</h2>
+            <p>Um esquema de relação R está na BCNF se sempre que uma dependência funcional não trivial X → A vale em R, Xé uma superchave de R.</p>
+            <p>Ex. 1:</p>
+            <img src="img/forma-normal16.png" alt="forma-normal16.png">
+            <p>Ex. 2:</p>
+            <img src="img/forma-normal17.png" alt="forma-normal17.png">
+            <p>Ex. 3:</p>
+            <img src="img/forma-normal18.png" alt="forma-normal18.png">
+            <p>Ex. 4:</p>
+            <img src="img/forma-normal19.png" alt="forma-normal19.png">
+            <p>Ex. 5:</p>
+            <img src="img/forma-normal20.png" alt="forma-normal20.png">
+            <p>Decompondo o esquema em esquema menores, seguindo as dependências funcionais: normalizando o esquema.</p>
+            <img src="img/forma-normal21.png" alt="forma-normal21.png">
+            <ul>
+                <li>Propriedades de decomposição relacional.</li>
+                <ul>
+                    <li><b>É preciso assegurar</b> que cada atributo de R apareça em pelo menos uma relação dentro da decomposição.</li>
+                    <li><b>É uma meta</b> ter cada uma das relações da composição em BCNF ou 3NF.</li>
+                    <li><b>É desejável preservar</b> as dependências funcionais na decomposição.</li>
+                    <ul>
+                        <li>Não é necessário que as dependências funcionais especificadas para o esquema apareçam em relações individuais na decomposição desse esquema. É suficiente que elas possam ser <b>inferidas</b>.</li>
+                        <li>Se dependências funcionais são quebradas em mais de uma relação, a verificação delas exigirá a execução de operações de junção.</li>
+                    </ul>
+                    <li><b>É preciso assegurar</b> que a decomposição não causará perdas na junção.</li>
+                    <ul>
+                        <li>Esta propriedade assegura que tuplas espúrias não sejam geradas quando a JUNÇÃO NATURAL for aplicada nas relações resultantes da decomposição.</li>
+                        <li>Há casos em que a meta de alcançar uma forma normal precisa ser sacrificada, pois alcançá-la pode levar a uma decomposição com perdas na junção.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estes slides estão baseados na bibliografia:</h2>
+            <p>Formas Normais – Parte II.</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de maio de 2024</p>
+    </footer>
+</body>
+</html>
