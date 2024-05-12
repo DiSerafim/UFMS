@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 1 - Projeto de Banco de Dados Relacional.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: segunda, 25 mar 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Crie o modelo conceitual ER utilizando suas extensões para para um sistema que irá controlar um Hospital a partir da descrição a seguir. Para auxiliar utilize a ferramenta gratuita online draw.io (disponível em https://www.draw.io).</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Sistema de controle hospitalar </h2>
+            <pre>
+            +------------------+            +-------------------+           +-----------------------+
+            |     Hospital     |            |       Setor       |           |          UTI          |
+            +------------------+            +-------------------+           +-----------------------+
+            |      CNPJ        |<>----------|       Código      |<>---------|         Tipo          |
+            |      Nome        |            |    Descrição      |           |   Quantidade de Leitos|
+            +------------------+            +-------------------+           |     Nome do Resp.     |
+                                                                            +-----------------------+
+                    ^
+                    |
+            +------------------+            +-------------------+           +-----------------------+
+            | Pronto Socorro   |            |    Internação     |           |       Enfermeira      |
+            +------------------+            +-------------------+           +-----------------------+
+            | Classificação    |            |       Código      |           |          CRE          |
+            | de Risco         |<>----------|  Nome do Resp.    |<>---------|         Nome          |
+            +------------------+            | Nome do Acompanh. |           +-----------------------+
+                                            +-------------------+                        |
+                                                        |                                  |
+                                                        V                                  V
+                                                +-------------+              +-----------------------+
+                                                | Enf. Chefe  |              |     Plano de Saúde    |
+                                                +-------------+              +-----------------------+
+                                                |     Nome    |<>----------->|         Código        |
+                                                +-------------+              |          Nome         |
+                                                                                |         Telefone      |
+                                                                                |        Operadora      |
+                                                                                +-----------------------+
+                                                            ^
+                                                            |
+                                                            V
+                                                        +-------------+
+                                                        |   Médico    |
+                                                        +-------------+
+                                                        |     CRM     |<>-------------------+
+                                                        |     Nome    |                     |
+                                                        |   Telefone  |                     |
+                                                        +-------------+                     |
+                                                                |                          |
+                                                                V                          |
+                                                        +-------------+                     |
+                                                        |   Paciente  |                     |
+                                                        +-------------+                     |
+                                                        |     CPF     |<>-------------------+
+                                                        |     Nome    |
+                                                        |  Cod. Cred. |     
+                                                        |   Telefone  |     
+                                                        +-------------+                     
+            </pre>
+            <p>1 Hospital <-> Setor (N -> 1): Muitos setores podem estar associados a um único hospital. Um hospital pode ter vários setores, como UTI, Pronto Socorro e Internação, mas cada setor está associado a apenas um hospital.</p>
+            <p>2 Setor <-> UTI (N -> 1): Muitos setores podem estar associados a uma única UTI. Um setor pode ser designado como uma UTI, mas cada UTI está associada a apenas um setor.</p>
+            <p>3 Setor <-> Pronto Socorro (N -> 1): Muitos setores podem estar associados a um único Pronto Socorro. Um setor pode ser designado como Pronto Socorro, mas cada Pronto Socorro está associado a apenas um setor.</p>
+            <p>4 Setor <-> Internação (N -> 1): Muitos setores podem estar associados a uma única área de Internação. Um setor pode ser designado como área de Internação, mas cada área de Internação está associada a apenas um setor.</p>
+            <p>5 Enfermeira <-> Setor (N -> 1): Cada enfermeira pode ser responsável por vários setores, mas cada setor tem apenas uma enfermeira responsável.</p>
+            <p>6 Enfermeira <-> Enfermeira Chefe (1 -> 1): Cada enfermeira reporta-se a uma única enfermeira-chefe.</p>
+            <p>7 Hospital <-> Plano de Saúde (N -> N): Um hospital pode atender a vários planos de saúde, e um plano de saúde pode ser atendido por vários hospitais.</p>
+            <p>8 Plano de Saúde <-> Médico (N -> N): Cada plano de saúde pode ter vários médicos credenciados, e um médico pode ser credenciado a vários planos de saúde.</p>
+            <p>9 Médico <-> Paciente (N -> N): Um médico pode realizar consultas para vários pacientes, e um paciente pode ser atendido por vários médicos.</p>
+            <p>10 Paciente <-> Plano de Saúde (N -> N): Um paciente pode ser credenciado a vários planos de saúde, e um plano de saúde pode ter vários pacientes credenciados.</p>
+            <img src="img/mod1-checkout-de-presenca-projeto-de-banco-de-dados-relacional.png" alt="mod1-checkout-de-presenca-projeto-de-banco-de-dados-relacional.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de maio de 2024</p>
+    </footer>
+</body>
+</html>
