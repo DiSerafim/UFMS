@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
+        <h2>Apresentação do Módulo - Módulo 2 – Definição e manipulação de dados relacionais.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=nGpeAcA6tSQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Banco de Dados - Módulo 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Vanessa Borges</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Definição e manipulação de dados relacionais.</h3>
+            <ul>
+                <li>Unidade 1 - SQL Linguagem de definição de dados.
+                <li>Unidade 2 - SQL Linguagem de manipulação de dados.
+                <li>Objetivo.
+                    <ul>
+                        <li>Explorar bancos de dados relacionais por meio da linguagem SQL.
+                    </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Linguagem em Banco de Dados.</h2>
+            <ul>
+                <li>É a forma de comunicação com os SGBDs</li>
+                <li>SQL (Structured Query Language) é a linguagem padrão para SGBDs relacionais</li>
+                <li>SQL é uma linguagem abrangente que representa uma combinação de DDL e DML</li>
+                <ul>
+                    <li>Linguagem de definição de dados (DDL – Data Definition Language)</li>
+                    <ul>
+                        <li>Usada pelo DBA e pelo projetista de banco de dados para definir os dois esquemas (interno/físico e conceitual/lógico)</li>
+                        <li>Utilizada quando o SGBD não mantém separações entre níveis</li>
+                    </ul>
+                </ul>
+                <li>Linguagem de manipulação de dados (DML – Data Manipulation Language)</li>
+                <ul>
+                    <li>Incluem recuperação, inserção, exclusão e modificação dos dados</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Definição de dados relacionais.</h2>
+            <pre>
+                            DATABASE(Banco de dados)
+                                |
+        +-----------------------+--------------------------------+
+        |                       |                          TABLE(Tabelas Restrições)
+      SCHEMA(Esquemas)         TABLE(Tabelas Definição)    PRIMARY KEY(Chave primária)
+        |                       |                          UNIQUE(Chave candidata)
+        |                       |                          FOREIGN KEY(Integridade referencial)
+        |                       |                          NULL/NOT NULL
+        |                       |                              CHECK
+        |                       |                                |
+    DEFINITION            MATERIALIZED VIEW(Visões)           INDEX (Índices)
+        |                       |                                |
+        |                       |                                |
+    RESTRICTIONS              VIEW(Visões)                   INTEGRITY ()
+        |                       |                          REFERENTIAL ()
+                                |
+
+        DDL (Unidade 1-SQL Linguagem de Definição de Dados)
+            </pre>
+
+            <b>Exemplos:</b>
+            <pre>
+            <b>Definição de um banco de dados:</b>
+                CREATE DATABASE (nome do banco de dados>;
+
+            <b>Definição de um schema:</b>
+                CREATE SCHEMA (nome do schema>;
+
+            <b>DEFINIÇÃO de uma tabela de base:</b>
+                CREATE TABLE (nome da tabela> (
+                    atributo1 (domínio do atributo> (restrições do atributo>,
+                    atributo2 (domínio do atributo> (restrições do atributo>,
+                    (restrições de tabela>
+                );
+            </pre>
+
+            <b>Exemplos de DDL:</b>
+            <pre>
+            <b>Definição de um banco de dados:</b>
+                CREATE DATABASE (nome do banco de dados>;
+                CREATE DATABASE empresadb;
+
+            <b>Definição de um schema:</b>
+                CREATE SCHEMA (nome do schema>;
+                CREATE SCHEMA administracaoschema;
+
+            <b>DEFINIÇÃO de uma tabela de base:</b>
+            CREATE TABLE (nome da tabela> (
+                atributo1 (domínio do atributo> (restrições do atributo>,
+                atributo2 (domínio do atributo> (restrições do atributo>,
+                (restrições de tabela>
+            );
+
+            CREATE TABLE funcionario (
+                ID integer NOT NULL,
+                NOME varchar(100),
+                CPF char(11) UNIQUE NOT NULL,
+                NUM_DEPARTAMENTO integer,
+                PRIMARY KEY (ID),
+                FOREIGN KEY (NUM_DEPARTAMENTO) REFERENCES departamento (ID)
+            );
+            </pre>
+            <img src="img/tabela-funcionario.png" alt="tabela-funcionario.png">
+        </section>
+        
+        <section>
+            <h2>Manipulação de dados relacionais.</h2>
+            <img src="img/dados-relacionais.png" alt="dados-relacionais.png">
+            <p></p>
+            <b>Exemplos de DML:</b>
+            <pre>
+            <b>Inserção de tuplas em uma tabela:</b>
+                INSERT INTO (tabela> [((atributo1>[,..., (atributoN>])] VALUES ((valor1>[,..., (valorN>]);
+                INSERT INTO departamento (id, nome) VALUES (1, 'Administração');
+
+            <b>Remoção de tuplas em uma tabela:</b>
+                DELETE FROM (tabela> [WHERE (lista de condições>];
+                DELETE FROM funcionario WHERE num_departamento = 5;
+            
+            <b>Atualização de tuplas existentes:</b>
+                UPDATE (tabela> SET (campo1>=(valor1> [,..., (campoN>=(valorN>] [WHERE (condição>];
+                UPDATE funcionario SET num_departamento=1 WHERE num_departamento = 5;
+
+            <b>Consultas de tuplas em tabelas:</b>
+                SELECT * | (lista de atributos e funções> FROM (lista de tabelas> [WHERE (condições>];
+                SELECT nome, cpf FROM funcionario WHERE num_departamento = 5;
+            </pre>
+            <img src="img/tabela-dml.png" alt="tabela-dml.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
+    </footer>
+</body>
+</html>
