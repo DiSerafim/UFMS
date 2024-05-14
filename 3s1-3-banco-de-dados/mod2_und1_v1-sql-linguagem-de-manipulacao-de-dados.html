@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
+        <h2>💡 Unidade 1 - SQL - Linguagem de definição de dados.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=-HSyOYvksVw&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=14&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Bancos de Dados - Aula 13 - Linguagem de consulta – SQL Parte I. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Marques Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagem de consulta – SQL.</h3>
+        </section>
+
+        <section>
+            <h2>SQL.</h2>
+            <p>
+                Esquema para o modelo Relacional do contexto didático: EMPRESA.</p>
+            <pre>
+                FUNCIONARIO (<b>ident</b>, nome, sobrenome, endereco, dtnasc, salario, sexo, supident, dnumero)
+                DEPENDENTE(<b>fident</b>, <b>nome</b>, dt_nasc, sexo, relacionamento)
+                DEPARTAMENTO(<b>numero</b>, nome, gident, dtinicio)
+                LOCALIZACOES(<b>dnumero</b>, <b>localizacao</b>)
+                PROJETO(<b>numero</b>, nome, localizacao, dnumero)
+                TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
+            </pre>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+
+            <b>SQL-Structured Query Language:</b>
+            <ul>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+            </ul>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <ul>
+                <li>Sugestões de consulta para implementações comerciais:</li>
+                <ul>
+                    <li>https://www.postgresql.org/docs/9.0/static/sql.html</li>
+                    <li>https://www.postgresql.org/docs/9.0/static/bookindex.html</li>
+                    <li>http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html</li>
+                    <li>http://dev.mysql.com/doc/refman/5.7/en/literals.html</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estudaremos nesta aula:</h2>
+            <ul>
+                <li>Comando de definição de dados (DDL - Data Definition Language).</li>
+                <ul>
+                    <li>CREATE, ALTER, DROP.</li>
+                </ul>
+                <li>Comandos de manipulação de dados (DML - Data Manipulation Language).</li>
+                <ul>
+                    <li>INSERT, UPDATE, DELETE.</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>O comando CREATE permite criar objetos de banco de dados.</h2>
+            <ul>
+                <li>CREATE SCHEMA.</li>
+                <li>CREATE DOMAIN.</li>
+                <li>CREATE TABLE.</li>
+                <li>CREATE INDEX.</li>
+                <li>CREATE VIEW.</li>
+                <li>CREATE TRIGGER.</li>
+            </ul>
+            <p>O comando CREATE DOMAIN permite declarar um domínio especificando o seu nome para ser usado junto da criação de atributos.</p>
+            <pre>
+                CREATE DOMAIN TIPO_ID AS CHAR(4);
+                CREATE DOMAIN D_NUM AS INTEGER CHECK (D_NUM > 0 AND D_NUM <21)
+            </pre>
+            <p>O comando CREATE TABLE é usado para especificar as relações do banco de dados, atribuindo-lhe um nome e listando seus atributos e restrições iniciais.</p>
+            <pre>
+            CREATE TABLE FUNCIONARIO (
+                atributos...
+                restrições...
+            );
+            </pre>
+            <p>Ex.: funcionario.sql.</p>
+            <pre>
+            CREATE TABLE FUNCIONARIO (
+                ident           TIPO_ID
+                nome            VARCHAR(15),    NOT NULL,
+                sobrenome       VARCHAR(15),    NOT NULL,
+                endereco        VARCHAR(30),
+                dtnasc          DATE,
+                salario         DECIMAL(10,2),
+                sexo            BOOLEAN,
+                supident        TIPO_ID,
+                dnumero         TIPO_ID,        NOT NULL,
+                PRIMARY KEY(ident)
+            );
+            </pre>
+        </section>
+
+        <section>
+            <h2>O comando ALTER TABLE é usado para alterações nas definições dos objetos criados no banco de dados.</h2>
+            <pre>
+            ALTER TABLE FUNCIONARIO
+                especificações de alterações...;
+            </pre>
+            <p>O comando ALTER pode ser usado com outros objetos do banco de dados.</p>
+            <pre>
+            CREATE TABLE FUNCIONARIO (
+                ...         ...         ...
+                dnumero     TIPO_ID,    NOT NULL,
+                ...
+            );
+
+            CREATE TABLE DEPARTAMENTO (
+                numero      TIPO_ID,    NOT NULL,
+                ...
+            );
+
+            ALTER TABLE FUNCIONARIO
+            ADD CONSTRAINT FUNC_DEPTO FOREIGN KEY (dnumero) REFERENCES DEPARTAMENTO (numero);
+            </pre>
+
+            <b>Outros exemplos:</b>
+            <pre>
+            ALTER TABLE FUNCIONARIO
+            ALTER supident SET DEFAULT '1163';
+
+            ALTER TABLE FUNCIONARIO     ou      ALTER TABLE FUNCIONARIO
+            DROP endereco CASCADE;              DROP endereco RESTRICT;
+
+            ALTER TABLE FUNCIONARIO
+            DROP FUNC_DEPTO CASCADE;
+            </pre>
+        </section>
+
+        <section>
+            <h2>O comando DROP é usado para alterações nas definições dos objetos criados no banco de dados.</h2>
+            <pre>
+            DROP TABLE FUNCIONARIO CASCADE;
+            </pre>
+            <p>O comando DROP pode ser usado com outros objetos existentes no banco de dados.</p>
+        </section>
+
+        <section>
+            <h2>O comando INSERT permite inserir uma tupla em uma relação.</h2>
+            <pre>
+            INSERT INTO FUNCIONARIO
+            VALUES ('1163', 'Claudia', 'Morais', 'Rua A – 1 –SP', 12/08/1974, 5.558,00, F, NULL, '4' );
+
+            INSERT INTO FUNCIONARIO (ident, nome, sobrenome, dnumero) VALUES ('1164', 'Jorge', 'Vila Verde', '1');
+            </pre>
+            <p>Ex.:</p>
+            <pre>
+            INSERT INTO DEPTS_INFO (DNOME, NO_FUNC, T_SALARIO)
+            SELECT ...
+            FROM ...
+            GROUP BY ...
+            </pre>
+            <p>Uma consulta SQL para extração de informação existente em relações do banco de dados. Retorna um conjunto de tuplas e cada uma delas será inserida na relação DEPTS_INFO pelo comando INSERT INTO.</p>
+        </section>
+
+        <section>
+            <h2>O comand UPDATE permite modificar os valores dos atributos de uma ou mais tuplas de uma relação.</h2>
+            <pre>
+            UPDATE  PROJETO
+            SET     localizacao = 'Minas Gerais', dnumero = '5'
+            WHERE   numero = '1';                       🡻
+                        🡻                           novos valores
+            Condição para indicar as tuplas que
+            devem ter seus valores modificados.
+            </pre>
+            <p>Ex.:</p>
+            <pre>
+            UPDATE FUNCIONARIO
+            SET    salario salario * 1,1
+            WHERE  dnumero IN (SELECT FROM WHERE ...);
+            </pre>
+            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando UPDATE Indica que dnumero deve pertencer ao conjunto de tuplas retornado.</p>
+        </section>
+
+        <section>
+            <h2>O comando DELETE remove tuplas de uma relação.</h2>
+            <pre>
+                DELETE FROM FUNCIONARIO;
+
+                DELETE FROM FUNCIONARIO
+                WHERE ident = '1167';
+
+                DELETE FROM FUNCIONARIO
+                WHERE nome = 'Caio';
+            </pre>
+            <p>Ex.:</p>
+            <pre>
+            DELETE FUNCIONARIO
+            WHERE dnumero IN (SELECT ...
+                FROM
+                WHERE
+            );
+            </pre>
+            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando DELETE indica que dnumero deve pertencer ao conjunto de tuplas retornado.</p>
+        </section>
+
+        <section>
+            <h2>Linguagem de consulta - SQL Parte l.</h2>
+            <p>Estes slides estão baseados na bibliografia:</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
+    </footer>
+</body>
+</html>
