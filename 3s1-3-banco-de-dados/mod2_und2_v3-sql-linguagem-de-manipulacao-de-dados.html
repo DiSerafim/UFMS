@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
+        <h2>💡 Unidade 2 - SQL - Linguagem de manipulação de dados.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=qxoBxi7LpXk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=17&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Bancos de Dados - Aula 16 - Linguagem de consulta – SQL Parte IV. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Marques Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagem de consulta – SQL.</h3>
+        </section>
+
+        <section>
+            <h2>SQL.</h2>
+            <p>
+                Esquema para o modelo Relacional do contexto didático: EMPRESA.</p>
+            <pre>
+                FUNCIONARIO (<b>ident</b>, nome, sobrenome, endereco, dtnasc, salario, sexo, supident, dnumero)
+                DEPENDENTE(<b>fident</b>, <b>nome</b>, dt_nasc, sexo, relacionamento)
+                DEPARTAMENTO(<b>numero</b>, nome, gident, dtinicio)
+                LOCALIZACOES(<b>dnumero</b>, <b>localizacao</b>)
+                PROJETO(<b>numero</b>, nome, localizacao, dnumero)
+                TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
+            </pre>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+
+            <b>SQL-Structured Query Language:</b>
+            <ul>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+            </ul>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <ul>
+                <li>Sugestões de consulta para implementações comerciais:</li>
+                <ul>
+                    <li>https://www.postgresql.org/docs/9.0/static/sql.html</li>
+                    <li>https://www.postgresql.org/docs/9.0/static/bookindex.html</li>
+                    <li>http://dev.mysql.com/doc/refman/5.7/en/sql-syntax.html</li>
+                    <li>http://dev.mysql.com/doc/refman/5.7/en/literals.html</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Recursos avançados de SQL.</h2>
+            <ul>
+                <li>Asserções.</li>
+                <li>Regras ativas(gatilhos).</li>
+                <li>Visões.</li>
+            </ul>
+            <p>Cada SGBD disponibiliza formas diferentes de implementar restrições usando SQL.</p>
+            <ul>
+                <li>Para implementação de restrições que não são possíveis considerando apenas o modelo de dados, há algumas opções:</li>
+                <ul>
+                    <li>usar recursos da linguagem de programação escolhida para implementar a aplicação que acessará o banco de dados, ou de outros aplicativos de construção de sistemas;</li>
+                    <li>usar a linguagem de programação de propósito geral que está disponível no SGBD;</li>
+                    <li>usar recursos avançados de SQL;</li>
+                    <li>combinar os recursos das opções supracitadas.</li>
+                </ul>
+            </ul>
+            <b>Asserções:</b>
+            <ul>
+                <li>Especificações em SQL que permitem implementar uma regra via uma declaração em DDL.</li>
+            </ul>
+            <p>Envolve a especificação de regras do tipo CHECK que podem atuar em várias relações.</p>
+            <p>Modelo:</p>
+            <pre>
+                CREATE ASSERTION NOME_RESTRICAO
+                CHECK (NOT EXISTS (...));
+            </pre>
+            <p>Se o NOT EXISTS é <b>FALSO</b>, então a restrição da asserção foi violada !!! O banco de dados estaria em um estado inconsistente em relação às restrições do mundo modelado.</p>
+            <b>* Exemplo:</b>
+            <p><b>Restrição</b>: o salário de um funcionário não pode ser maior do que o salário do gerente do departamento para o qual o funcionário trabalha.</p>
+            <pre>
+                CREATE ASSERTION RESTRICAO_SALARIO
+                CHECK (NOT EXISTS (SELECT *
+                                FROM FUNCIONARIO AS F,
+                                     FUNCIONARIO AS G,
+                                     DEPARTAMENTO AS D 
+                                WHERE F.dnumero = D.numero 
+                                    AND D.Gident = G.ident
+                                    AND F.salario > G.salario
+                                )
+                       );
+            </pre>
+
+            <b>Regras ativas (gatilhos):</b>
+            <ul>
+                <li>Especificações em SQL que permitem implementar ações que são executadas quando determinados eventos ocorrem e quando determinadas condições são satisfeitas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo Evento-Condição-Ação</h2>
+            <b>Evento:</b>
+            <ul>
+                <li>Geralmente operações de alteração aplicadas ao banco de dados (insert, update, delete).</li>
+                <p><b>BEFORE</b> - significa que o gatilho deverá ser executado antes do evento ter efeito no banco de dados.</p>
+                <p><b>AFTER</b> - significa que o gatilho deverá ser executado depois do evento ter efeito no banco de dados.</p>
+            </ul>
+            <p><b>Condição</b>:</p>
+            <ul>
+                <li>Determina se a regra especificada na <b>ação</b> deveria ser executada a partir da verificação de uma condição. Se nenhuma condição é especificada, a <b>ação</b> será executada de acordo com a ocorrência do <b>evento</b>.</li>
+            </ul>
+            <p><b>Ação</b>:</p>
+            <ul>
+                <li>A ação é uma sequência de declarações em SQL, transações de banco de dados ou chamadas a funções implementadas no SGBD ou fora dele.</li>
+            </ul>
+            <b>* Exemplo:</b>
+            <p><b>Gatilho</b>: Sempre que o salário de um funcionário é maior do que o salário de seu supervisor direto, o supervisor precisa ser avisado.</p>
+            <pre>
+                CREATE TRIGGER VIOLACAO_SALARIO
+                BEFORE INSERT OR UPDATE OF salario, supident ON
+                                            FUNCIONARIO
+                FOR EACH ROW
+                WHEN (NEW.salario > (SELECT salario
+                                    FROM FUNCIONARIO
+                                    WHERE ident = NEW.supident))
+                INFORM_SUPERVISOR (NEW.Supident, NEW.ident);
+            </pre>
+            <img src="img/gatilho.png" alt="gatilho.png">
+            <p></p>
+            <b>Visões (ou views):</b>
+            <ul>
+                <li>Uma tabela única (geralmente virtual e temporária) derivada de outras tabelas.</li>
+                <li>Tabela que pode ser consultada de forma livre, mas que está limitada no que diz respeito à ações de inserção de dados.</li>
+                <li>Usadas para <b>otimização</b> e para <b>segurança</b>.</li>
+            </ul>
+            <b>Exemplos:</b>
+            <pre>
+                CREATE VIEW TRABALHA_EM_1(pnome, fnome, fsobrenome, horas)
+                AS SELECT PROJETO.nome, FUNCIONARIO.nome, sobrenome, horas
+                    FROM FUNCIONARIO, PROJETO, TRABALHA_EM
+                    WHERE ident = fident AND numero = pnumero;
+                <hr>
+                SELECT fnome, fsobrenome
+                FROM TRABALHA_EM_1
+                WHERE Pnome = 'Placa Verde';
+                DROP VIEW TRABALHA_EM_1;
+            </pre>
+            <p>Os dados nas visões devem estar sempre atualizados de acordo com os dados nas tabelas base.</p>
+            <p>Os SGBDs precisam ser estudados para verificar como cada um trata dessa questão.</p>
+
+            <pre>
+                CREATE VIEW DEPT_INFO (Dept_nome, No_of_funcs, Total_sal)
+                AS SELECT DEPARTAMENTO.nome, COUNT (*), SUM (salario)
+                FROM DEPARTMENTO, FUNCIONARIO
+                WHERE numero = Dnumero
+                GROUP BY DEPARTAMENTO.nome;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Linguagem de consulta - SQL Parte IV.</h2>
+            <p>Estes slides estão baseados na bibliografia:</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
+    </footer>
+</body>
+</html>
