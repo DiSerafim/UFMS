@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 2 - Definição e manipulação de dados relacionais.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>A linguagem SQL (Structured Query Language) permite que o projetista de banco de dados defina sua estrutura, além de possibilitar que usuários/aplicações realizem operações de CRUD (create, read, update e delete) em informações gravadas no banco de dados.</p>
+        </section>
+        
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Cite um comando SQL que execute uma das operações de CRUD na tabela DEPARTAMENTO abaixo. Explique o que o seu comando SQL realizou no banco de dados e qual é o resultado esperado.</b>
+            <p></p>
+            <table>
+                DEPARTAMENTO
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>cpf_gerente</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Pesquisa</td>
+                    <td>333445555</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Administração</td>
+                    <td>987654321</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Engenharia</td>
+                    <td>888665555</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Inovação</td>
+                    <td>NULL</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Computação</td>
+                    <td>NULL</td>
+                </tr>
+            </table>
+            <p>Exemplo: INSERT  INTO departamento (id,nome) VALUES (6,'Sistemas');</p>
+            <p>Esse comando serve para inserir uma nova tupla na tabela departamento. Essa tupla representa o departamento de nome ‘Sistemas’ que possui como chave primária o id com o valor 6 e não possui um gerente.</p>
+        </section>
+
+        <section>
+            <h2>CRUD (Update)</h2>
+            <pre>
+                UPDATE departamento
+                SET nome = 'T.I.'
+                WHERE id = 5;
+            </pre>
+            <p>O comando UPDATE modifica a tabela 'departamento', na coluna 'nome' onde o 'id' é 5, atualizando para 'T.I.'.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de maio de 2024</p>
+    </footer>
+</body>
+</html>
