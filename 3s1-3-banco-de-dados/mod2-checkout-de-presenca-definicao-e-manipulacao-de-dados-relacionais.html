@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 2 - Definição e manipulação de dados relacionais.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: segunda, 15 abr 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>A linguagem SQL pode ser considerada um dos principais motivos para o sucesso dos SGBDs relacionais. Parte desse sucesso se deu porque a linguagem se tornou um padrão para esse tipo de banco  de dados. Dessa forma, se o usuário estivesse insatisfeito com com o SGBD adotado, a migração para outro SGBD relacional não seria tão complexa uma vez que os dois SGBDs atuam sobre o mesmo padrão.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Modelo Relacional.</h2>
+            <p>Sob essa perspectiva, considere o modelo relacional abaixo, para realizar a seguinte consulta: para cada departamento, que possui mais de 2 funcionários, a consulta deve retornar o nome do departamento, o número de funcionários que trabalham em cada departamento e a média salarial dos funcionários.</p>
+            <ul>
+                <li>FUNCIONARIO (cpf, nome, datanasc, salario, dnumero (FK departamento.dnumero))</li>
+                <li>DEPARTAMENTO (dnumero, nome, cpf_gerente (FK funcionario.cpf))</li>
+                <li>PROJETO (projnumero, projnome, dnumero (FK departamento.dnumero))</li>
+                <li>TRABALH_EM (cpf (FK funcionario.cpf), projnumero (FK projeto.prjnumero), horas)</li>
+            </ul>
+            <p>Utilize boas práticas de banco de dados para realizar as junções considerando todas as restrições estabelecidas no modelo relacional.</p>
+
+            <pre>
+                SELECT D.nome AS nome_departamento
+                    COUNT(F.cpf) AS numero_funcionarios
+                    AVG(F.salario) AS media_salarial
+                FROM DEPARTAMENTO D
+                JOIN FUNCIONARIO F ON D.dnumero = F.dnumero
+                GROUP BY D.nome
+                HAVING COUNT(F.cpf) > 2;
+            </pre>
+            <ul>
+                <li>O SELECT seleciona o nome do departamento 'D.nome AS nome_departamento'</li>
+                <li>'COUNT(F.cpf) AS numero_funcionarios', conta o número de funcionários no departamento.</li>
+                <li>'AVG(F.salario) AS media_salarial', calculka a média salarial dos funcionários nos departamentos.</li>
+                <li>'FROM DEPARTAMENTO D', indica que a tabela departamento usará o alias D.</li>
+                <li>'JOIN FUNCIONARIO F ON D.dnumero = F.dnumero', faz uma junção entre as tabelas D e F onde os valores 'dnumero' coincidem.</li>
+                <li>'GROUP BY D.nome', agrupa os resultados pelo nome do departamento.</li>
+                <li>'HAVING COUNT(F.cpf) > 2;', filtra os grupos para incluir apenas os que tem mais que dois funcionários.</li>
+            </ul>
+
+            <!-- <p>Passos detalhados:</p>
+            <ul>
+                <li>Selecionar e juntar as tabelas:</li>
+                <ul>
+                    <li>Juntamos a tabela FUNCIONARIO com a tabela DEPARTAMENTO com base na chave estrangeira dnumero que está presente em ambas as tabelas.</li>
+                </ul>
+                <li>Agrupar por departamento:</li>
+                <ul>
+                    <li>Agrupamos os resultados pelo nome do departamento para calcular as agregações (número de funcionários e média salarial) para cada grupo (departamento).</li>
+                </ul>
+                <li>Aplicar condição de contagem:</li>
+                <ul>
+                    <li>Usamos a cláusula HAVING para filtrar os grupos que têm mais de 2 funcionários, pois a cláusula WHERE não pode ser usada com funções de agregação como COUNT.</li>
+                </ul>
+            </ul> -->
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de maio de 2024</p>
+    </footer>
+</body>
+</html>
