@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – SGBDs Relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – SGBDs Relacionais.</h1>
+        <h2>💡 Unidade 1 - Indexação.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=igbcutoOw-M&list=PL3JRjVnXiTBbAAEBfn77X47t7cpWLGUWB&index=23&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Armazenamento Físico, Registros e Páginas - Aula 04/11 - Bancos de Dados 2020.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Armazenamento em Bancos de Dados Relacionais.</h3>
+        </section>
+
+        <section>
+            <b>Arquitetura:</b>
+            <p></p>
+            <img src="img/banco-de-dados.png" alt="banco-de-dados-arquitetura.png">
+            <p></p>
+            <b>Modelos:</b>
+            <p></p>
+            <img src="img/banco-de-dados-modelos.png" alt="banco-de-dados-modelos.png">
+            <p></p>
+            <b>Modelo Físico:</b>
+            <p></p>
+            <img src="img/banco-de-dados-modelo-fisico.png" alt="banco-de-dados-modelo-fisico.png">
+        </section>
+
+        <section>
+            <h2>Recomendações de Leitura</h2>
+            <ul>
+                <li>(Silberschatz, 2006, cap. 11)</li>
+                <li>(Ramakrishnan, 2003, cap. 8)</li>
+                <li>(Elmasri, 2011, cap. 11 e 12)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Onde Armazenamos Dados?</h2>
+            <ul>
+                <li>Memória RAM.</li>
+                <li>Disco:</li>
+                <ul>
+                    <li>HD.</li>
+                    <li>CD / DVD.</li>
+                </ul>
+                <li>Fita magnética.</li>
+                <li>Solid State Drive (SSD):</li>
+                <ul>
+                    <li>usa circuitos integrados como a memória sem partes mecânicas -.</li>
+                    <li>retém os dados sem a necessidade de energia.</li>
+                    <li>Interface equivalente a de um disco.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Questão 1.</h2>
+            <p>Para cada item abaixo, liste suas vantagens e desvantagens como opção de tecnologia para armazenamento de dados num SGBD. Dê exemplos de dados que se adequariam à tecnologia.</p>
+            <ul>
+                <li>a) Memória RAM.</li>
+                <ul>
+                    <li>Rápida/cara. Pequena quantidade de dados, índices, dados temporários etc.</li>
+                </ul>
+                <li>b) Disco Magnético.</li>
+                <ul>
+                    <li>Relativamente barato/relativamente lento. Grande quantidade de dados, dados institucionais, logs, etc.</li>
+                </ul>
+                <li>c) Fita Magnética.</li>
+                <ul>
+                    <li>Baixo custo/lenta. Dados de backup, dados históricos, logs, etc.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hierarquia de Armazenamento.</h2>
+            <ul>
+                <li>Armazenamento Primário:</li>
+                <ul>
+                    <li>Operado diretamente pela CPU.</li>
+                    <li>Exemplos:</li>
+                    <ul>
+                        <li>memória RAM, cache.</li>
+                    </ul>
+                </ul>
+                <li>Armazenamento Secundário:</li>
+                <ul>
+                    <li>Usualmente mais barato e mais lento.</li>
+                    <li>Não operado diretamente pela CPU.</li>
+                    <ul>
+                        <li>Exigem intermediação de armazenamento primário.</li>
+                    </ul>
+                    <li>Exemplos:</li>
+                    <ul>
+                        <li>disco, fita magnética.</li>
+                    </ul>
+                </ul>
+                <li>Referência: (Elmasri, 2011).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estrutura do Disco.</h2>
+            <p></p>
+            <img src="img/Hard_drive-en.svg.png" alt="Hard_drive-en.svg.png">
+            <p>fonte: https://en.wikipedia.org/w/index.php?title=File:Hard_drive-en.svg</p>
+            <b>Trilha:</b>
+            <p></p>
+            <img src="img/Hard_drive-trilha.png" alt="Hard_drive-trilha.png">
+            <ul>
+                <li>Círculos magnéticos sobre a superfície.</li>
+                <li>Local onde são armazenados os dados.</li>
+            </ul>
+            <b>Setor:</b>
+            <p></p>
+            <img src="img/Hard_drive-setor.png" alt="Hard_drive-setor.png">
+            <ul>
+                <li>Unidades de divisão da trilha.</li>
+                <li>Menor unidade de leitura/gravação.</li>
+            </ul>
+            <b>Setor Físico:</b>
+            <p></p>
+            <img src="img/Hard_drive-setor-fisico.png" alt="Hard_drive-setor-fisico.png">
+        </section>
+
+        <section>
+            <h2>Página.</h2>
+            <ul>
+                <li>Organização feita pelo SO em memória sobre o disco.</li>
+                <li>Unidade de trabalho para o SO.</li>
+            </ul>
+            <img src="img/Hard_drive-setor-pagina.png" alt="Hard_drive-setor-fisico.png">
+        </section>
+
+        <section>
+            <h2>Bloco Físico X Página.</h2>
+            <ul>
+                <li>Blocos Físicos são mapeados para Páginas.</li>
+                <ul>
+                    <li>tamanhos podem ser diferentes.</li>
+                </ul>
+            </ul>
+            <img src="img/Hard_drive-setor-fisicoxpagina.png" alt="Hard_drive-setor-fisicoxpagina.png">
+        </section>
+
+        <section>
+            <h2>Armazenamento Secundário intermediado pelo Primário.</h2>
+            <b>Cenário Simplificado:</b>
+            <p></p>
+            <img src="img/armazenamento.png" alt="armazenamento.png">
+        </section>
+
+        <section>
+            <h2>Operação de Leitura.</h2>
+            <ul>
+                <li>ler(X).</li>
+                <ul>
+                    <li>encontra bloco X no disco.</li>
+                    <li>copia bloco para buffer da memória principal (se ainda não estiver lá).</li>
+                    <li>copia o item X do buffer para a variável X da memória principal.</li>
+                </ul>
+                <li>(Elmasri, 2010).</li>
+            </ul>
+            <img src="img/leitura.png" alt="leitura.png">
+        </section>
+
+        <section>
+            <h2>Operação de Gravação.</h2>
+            <ul>
+                <li>gravar(X).</li>
+                <ul>
+                    <li>encontra bloco X no disco.</li>
+                    <li>copia bloco para buffer da memória principal (se ainda não estiver lá).</li>
+                    <li>copia variável X da memória principal para o buffer.</li>
+                    <li>atualiza o buffer no disco.</li>
+                </ul>
+                <li>(Elmasri, 2010).</li>
+            </ul>
+            <img src="img/gravacao.png" alt="gravacao.png">
+        </section>
+
+        <section>
+            <h2>Linguagem de consulta - SQL Parte l.</h2>
+            <p>Estes slides estão baseados na bibliografia:</p>
+            <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
+    </footer>
+</body>
+</html>
