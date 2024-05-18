@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – SGBDs Relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – SGBDs Relacionais.</h1>
+        <h2>💡 Unidade 2 - Processamento de transações e controle de concorrência.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=5IlGUIvRu3k&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Bancos de Dados - Aula 26 - Controle de concorrência – Parte II. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Marques Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Controle de concorrência.</h3>
+        </section>
+
+        <section>
+            <h2>Controle de concorrência.</h2>
+            <ul>
+                <li>Um sistema está em estado de <b>deadlock</b> se há um conjunto de transações tal que cada transação neste conjunto está esperando outra transação também contida nele.</li>
+                <ul>
+                    <li>Seja um conjunto de transações <b>{T1, T2, ..., Tn}</b>.</li>
+                    <ul>
+                        <li>T1 está esperando um item de dado mantido por <b>T2</b>.</li>
+                        <li><b>Tn-1</b> está esperando um item de dado mantido por <b>Tn</b>.</li>
+                    </ul>
+                </ul>
+                <li>É preciso dispor de procedimentos de manuseio do deadlock.</li>
+            </ul>
+            <p>Existem <b>dois métodos principais</b> para tratamento de deadlock.</p>
+            <p><b>Prevenção de deadlock</b>: garante que o sistema nunca entrará em tal situação. Mais utilizado se a probabilidade do sistema entrar em deadlock for alta.</p>
+            <p><b>Detecção e recuperação de deadlock</b>: permite que o sistema entre em um estado de deadlock e então o remove desse estado recuperando-o.</p>
+        </section>
+
+        <section>
+            <h2>Prevenção: Abordagem 1.</h2>
+            <ul>
+                <li>Obriga que cada transação bloqueie todos os itens de dados antes de sua execução.</li>
+                <li>Ou todos os itens são bloqueados de uma só vez (a transação consegue todos os bloqueios), ou nenhum o será.</li>
+            </ul>
+            <p>Esse esquema reduz a concorrência.</p>
+        </section>
+
+        <section>
+            <h2>Prevenção: Abordagem 2.</h2>
+            <ul>
+                <li>Quando uma transação T2 solicita o bloqueio que está sendo mantido pela transação T1, o bloqueio concedido a T1 pode ser revisto por meio do rollback de T1 e concedido a T2.</li>
+                <li>Para controlar a preempção, considera-se um único timestamp para cada transação. Eles são usados para decidir se a transação esperará pelo bloqueio ou será desfeita.</li>
+                <li>Se uma transação for desfeita, ela manterá seu timestamp original quando for reiniciada.</li>
+            </ul>
+            <b>Esperar- morrer:</b>
+            <ul>
+                <li>Quando uma transação Ti solicita um item de dado mantido por Tj:</li>
+                <ul>
+                    <li>se Tié mais velha (timestamp menor) do que Tj, Ti espera;</li>
+                    <li>se Tié mais nova (timestamp malor) do que TJ, Ti é desfeita (morrer).</li>
+                </ul>
+            </ul>
+            <p>Transações solicitantes mais VELHAS esperam!</p>
+            <p>Transações solicitantes mais NOVAS morrem!</p>
+            <p>Exemplo:</p>
+            <ul>
+                <li>suponha que <b>T2</b>, <b>T3</b> e <b>T4</b> tenham timestamp <b>5</b>, <b>10</b> e <b>15</b> respectivamente. Se <b>T4</b> solicita um item de dado mantido por <b>T3</b>, então <b>T4</b> será desfeita.</li>
+            </ul>
+            <p></p>
+            <b>Ferir- esperar:</b>
+            <ul>
+                <li>Quando uma transação Ti solicita um item de dado mantido por Tj:</li>
+                <ul>
+                    <li>se Tié mais nova (timestamp maior) do que Tj, Ti espera;</li>
+                    <li>se Ti é mais velha (timestamp menor) do que TJ, Tjé desfeita (morrer).</li>
+                </ul>
+            </ul>
+            <p>Transações solicitantes mais NOVAS esperam!</p>
+            <p>Transações solicitantes mais VELHAS ferem/matam as mais NOVAS !</p>
+            <p>Exemplo:</p>
+            <ul>
+                <li>suponha que <b>T2</b>, <b>T3</b> e <b>T4</b> tenham timestamp <b>5</b>, <b>10</b> e <b>15</b> respectivamente. Se <b>T2</b> solicita um item de dado mantido por <b>T3</b>, então o item de dado será liberado por <b>T3</b>, que será então desfeita.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Detecção e recuperação.</h2>
+            <p>Um mecanismo é evocado periodicamente para examinar o estado do sistema e determinar se um deadlock está ocorrendo.</p>
+            <p>Se um deadlock está ocorrendo, o mecanismo recupera o sistema tirando-o deste estado.</p>
+            <b>Mecanismos de detecção e recuperação precisam:</b>
+            <ul>
+                <li>Manter informações sobre alocação corrente dos itens de dados para transações, assim como qualquer solicitação de itens de dados pendentes.</li>
+                <li>Proporcionar um algoritmo que use essas informações para determinar se o sistema entrou em estado de deadlock.</li>
+                <li>Recuperar-se de um deadlock quando o algoritmo de detecção determinar que ele ocorreu.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Para detecção: abordagem baseada em grafos.</h2>
+            <img src="img/transacao7.png" alt="transacao7.png">
+            <ul>
+                <li>A transação T1 está esperando as transações T2 e T3.</li>
+                <li>A transação T3 está esperando a transação T2.</li>
+                <li>A transação T2 está esperando a transação T4.</li>
+            </ul>
+            <p>Há um ciclo no grafo !!!! O sistema está em deadlock:</p>
+            <img src="img/transacao8.png" alt="transacao8.png">
+            <p></p>
+            <b>Para recuperação:</b>
+            <ul>
+                <li>Reverter uma ou mais transações para quebrar o deadlock.</li>
+                <ul>
+                    <li>1. Selecionar uma transação vítima de acordo com um custo minimo.</li>
+                    <li>2. Determinar até que ponto a transação deve ser revertida.</li>
+                </ul>
+            </ul>
+            <p><b>INANIÇÃO (STARVATION)</b>: é preciso garantir que uma transação seja escolhida como vítima somente um número finito e pequeno de vezes.</p>
+            <ul>
+                <li>O <b>controle de concorrência</b> também precisa assegurar que os esquemas de execução concorrentes permitam a execução de procedimentos de <b>recuperação da falhas</b>.</li>
+                <li>Para isso, os esquemas resultantes das execuções concorrentes devem ser:</li>
+                <ul>
+                    <li><b>RECUPERÁVEIS</b>: uma transação que depende de outra (usa um dado já alterado pela outra naquele esquema de execução concorrente) não pode ser efetivada antes que a outra o seja.</li>
+                    <li><b>ESCALAS SEM CASCATA</b>: uma transação usa um dado alterado por outra (naquele esquema de execução concorrente) apenas se a outra já foi efetivada.</li>
+                </ul>
+            </ul>
+            <p>O padrão SQL define quatro <b>níveis de isolamento</b> de uma transação em termos de três fenômenos que devem ser evitados:</p>
+            <ul>
+                <li><b>leitura suja</b> (dirty read): uma transação le dados não efetivados (uncommitted) escritos por uma transação concorrente.</li>
+                <li><b>leitura que não pode ser repetida</b> (nonrepeatable read): uma transação lê uma segunda vez os dados e descobre que eles foram modificados por outra transação (que os efetivou depois de ter sido feita a leitura anterior).</li>
+                <li><b>leitura fantasma</b> (phanton read): uma transação executa uma segunda vez uma consulta que retorna um conjunto de linhas que satisfaz uma condição de busca, e descobre que o conjunto de linhas mudou devido a uma outra transação efetivada recentemente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Níveis de Isolamento:</h2>
+            <img src="img/transacao9.png" alt="transacao9.png">
+        </section>
+
+        <section>
+            <h2>Controle de concorrência - Parte II.</h2>
+            <p>Estes slides estão baseados na bibliografia:</p>
+            <ul><li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808p., 2011.</li></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de maio de 2024</p>
+    </footer>
+</body>
+</html>
