@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – SGBDs Relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – SGBDs Relacionais.</h1>
+        <h2>💡 Unidade 1 - Indexação.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=kIYg-OAduSE&list=PL3JRjVnXiTBbAAEBfn77X47t7cpWLGUWB&index=24&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Organização dos Dados e Índices - Aula 04/11 - Bancos de Dados 2020.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Estruturas de Índice.</h3>
+            <ul>
+                <li>Um arquivo de registros - abstração para SGBD.</li>
+                <ul>
+                    <li>(Ramakrishnan, 2003).</li>
+                </ul>
+                <li><b>Arquivo</b>: abstração criada pelo SO para os blocos de disco.</li>
+                <li><b>Registro</b>: abstração de subdivisão do arquivo criada pela aplicação ou SGBD para o arquivo.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Como Guardar Tabelas?</h2>
+            <p>Passo 1:</p>
+            <img src="img/guardar-tabela.png" alt="guardar-tabela.png">
+            <p>Passo 2:</p>
+            <img src="img/guardar-tabela1.png" alt="guardar-tabela.png">
+            <p>Passo 3:</p>
+            <img src="img/guardar-tabela2.png" alt="guardar-tabela.png">
+        </section>
+        
+        <section>
+            <h2>Ordem dos Registros e Recuperação.</h2>
+            <b>Eficiência na Seleção:</b>
+            <p></p>
+            <img src="img/recuperacao.png" alt="recuperacao.png">
+            <p></p>
+            <b>Ordem:</b>
+            <p>Gravação em ordem sequencial de acordo com a chave de busca.</p>
+            <ul>
+                <li>(Silberschatz, 2006)</li>
+            </ul>
+            <img src="img/recuperacao1.png" alt="recuperacao1.png">
+            <p>Manter uma ordem dos registros no arquivo pode ser custoso.</p>
+            <b>Heap:</b>
+            <p>Sem ordenação; gravação em qualquer posição.</p>
+            <ul>
+                <li>(Silberschatz, 2006)</li>
+            </ul>
+            <img src="img/heap.png" alt="heap.png">
+            <p></p>
+            <b>Hash:</b>
+            <p>Cálculo de função de hash sobre atributo para definir posição.</p>
+            <li>(Silberschatz, 2006)</li>
+            <img src="img/hash.png" alt="hash.png">
+        </section>
+
+        <section>
+            <h2>Exercício 1.</h2>
+            <p>Dado o arquivo a seguir, proponha uma função hash para posicionar os registros conforme k.</p>
+            <p>Ex.1:</p>
+            <img src="img/exercicio1.png" alt="exercicio1.png">
+            <p>Ex.2:</p>
+            <img src="img/exercicio2.png" alt="exercicio1.png">
+            <p></p>
+            <b>Organização de Arquivos.</b>
+            <ul>
+                <li>Heap.</li>
+                <ul>
+                    <li>sem ordenação.</li>
+                    <li>gravação em qualquer posição.</li>
+                </ul>
+                <li>Sequencial.</li>
+                <ul>
+                    <li>gravação em ordem sequencial de acordo com a chave de busca.</li>
+                </ul>
+                <li>Hash.</li>
+                <ul>
+                    <li>cálculo de função de hash sobre atributo para definir posição.</li>
+                </ul>
+                <li>(Silberschatz, 2006)</ul>.</li>
+        </section>
+
+        <section>
+            <h2>Como tornar o acesso eficiente sem ordenar os registros?</h2>
+            <b>Seleção com Índices.</b>
+            <p></p>
+            <img src="img/indice.png" alt="indice.png">
+            <p></p>
+            <b>Processamento de Consulta.</b>
+            <ul>
+                <li>Dada a consulta:</li>
+                <ul>
+                    <li>SELECT nome FROM Pessoa WHERE id=146.</li>
+                </ul>
+                <li>Se os dados estão espalhados em disco, precisaríamos acessar todos os blocos do arquivo da tabela Pessoa.</li>
+                <li>Índices de BDs ajudam neste processo.</li>
+                <li>Índices de de BDs funcionam como índices de livros, apontando para a localização do conteúdo.</li>
+            </ul>
+            <b>Índice.</b>
+            <ul>
+                <li>Estrutura de dados.</li>
+                <li>Organiza registros.</li>
+                <li>Otimiza certas operações de recuperação.</li>
+                <li>(Ramakrishnan, 2003).</li>
+            </ul>
+            <b>Entrada de Índice.</b>
+            <ul>
+                <li>Entrada de índice (data entry) → registros armazenados em um índice.</li>
+                <li>Alternativas para a entrada de índice.</li>
+                <ul>
+                    <li>(1) k* - registro completo com chave k.</li>
+                    <li>(2) (k, rid)→ rid = id do registro de chave k.</li>
+                    <li>(3)(k, rid-list)→ rid-list = lista de registros de chave k.</li>
+                </ul>
+                <li>(Ramakrishnan, 2003).</li>
+            </ul>
+            <p>Passo 1:</p>
+            <img src="img/indice1.png" alt="indice1.png">
+            <p>Passo 2:</p>
+            <img src="img/indice2.png" alt="indice2.png">
+            <p>Passo 3:</p>
+            <img src="img/indice3.png" alt="indice3.png">
+            <ul>
+                <li>Alternativas para a entrada de índice.</li>
+                <ul>
+                    <li>(1) k* - registro completo com chave k.</li>
+                    <li>(2) (k, rid)→ rid = id do registro de chave k.</li>
+                    <li>(3)(k, rid-list)→ rid-list = lista de registros de chave k.</li>
+                </ul>
+                <li>(Ramakrishnan, 2003).</li>
+                <li>Vantagens das alternativas (2) e (3):</li>
+                <ul>
+                    <li>mais de um índice para o mesmo arquivo.</li>
+                    <li>menor: pode-se carregar mais ou inteiro na memória.</li>
+                    <li>suporta estruturas mais complexas.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exercício 2.</h2>
+            <p>Nas aulas anteriores, discutimos sobre redundância de informação e seus potenciais problemas. Índices são estruturas que introduzem redundância no banco de dados. Descreva o impacto da introdução deste tipo de redundância em termos de:</p>
+            <ul>
+                <li>a) Consistência dos dados.</li>
+                <li>b) Velocidade de leitura.</li>
+                <li>c) Velocidade de gravação.</li>
+            </ul>
+            <b>Índices Primários e Secundários.</b>
+            <ul>
+                <li>Índice primário ou de agrupamento.</li>
+                <ul>
+                    <li>arquivo ordenado sequencialmente.</li>
+                    <li>chave de busca define ordem do arquivo.</li>
+                </ul>
+                <li>Índice secundário.</li>
+                <ul>
+                    <li>índice de não agrupamento.</li>
+                    <li>índice não necessariamente único.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Índice Primário.</h2>
+            <p>Entrada do índice (1):</p>
+            <ul><li>k* - registro completo com chave k.</li></ul>
+            <img src="img/indice4.png" alt="indice4.png">
+            <p>Entrada do índice (2):</p>
+            <ul><li>(k, rid)→ rid = id do registro de chave k.</li></ul>
+            <img src="img/indice5.png" alt="indice5.png">
+        </section>
+
+        <section>
+            <h2>Índice Secundário.</h2>
+            <p>Entrada do índice (2):</p>
+            <ul><li>(k, rid)→ rid = id do registro de chave k.</li></ul>
+            <img src="img/indice6.png" alt="indice6.png">
+        </section>
+
+        <section>
+            <h2>Índices Densos e Esparsos.</h2>
+            <ul>
+                <li><b>Denso</b>.</li>
+                <ul>
+                    <li>uma entrada de indice para cada valor de chave.</li>
+                </ul>
+                <img src="img/indice7.png" alt="indice7.png">
+                <p></p>
+                <img src="img/indice8.png" alt="indice8.png">
+                <li><b>Esparso</b>.</li>
+                <ul>
+                    <li>uma entrada índice para mais de um valor de chave.</li>
+                </ul>
+                <img src="img/indice9.png" alt="indice9.png">
+            </ul>
+        </section>
+
+        <section>            
+            <h2>Exercício 2.</h2>
+            <p>Em uma relação com 5 atributos, qual o número máximo possível de índices primários e secundários ao mesmo tempo? Justifique.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de maio de 2024</p>
+    </footer>
+</body>
+</html>
