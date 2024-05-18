@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – SGBDs Relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – SGBDs Relacionais.</h1>
+        <h2>💡 Unidade 2 - Processamento de transações e controle de concorrência.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=zhL3pp4NdDY&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Bancos de Dados - Aula 25 - Controle de concorrência – Parte I. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Sarajane Marques Peres.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Controle de concorrência.</h3>
+        </section>
+
+        <section>
+            <h2>Controle de concorrência.</h2>
+            <p>O ISOLAMENTO é uma das propriedades fundamentais de uma transação.</p>
+            <ul>
+                <li>Quando diversas transações são executadas de <b>modo concorrente</b>, há o risco de ocorrer violação dessa propriedade.</li>
+                <li>É necessário que o sistema controle a forma como as operações das transações são intercaladas durante a execução concorrente. Esse controle é realizado pelo <b>módulo de controle de concorrência</b>.</li>
+                <li>Os esquemas de controle de concorrência tem por base a <b>propriedade de serialização</b>. Ou seja, os esquemas devem garantir que a ordenação da execução das operações das diferentes transações concorrentes seja serializável.</li>
+            </ul>
+            <img src="img/controlador-de-concorrencia.png" alt="controlador-de-concorrencia.png">
+        </section>
+
+        <section>
+            <h2>Protocolo de controle de concorrência baseado em bloqueio.</h2>
+            <ul>
+                <li>Uma das formas de garantir que apenas esquemas de execução concorrente serializáveis sejam produzidos é obrigar que o acesso aos itens de dados seja feito de maneira mutuamente exclusiva:</li>
+                <ul>
+                    <li>enquanto uma transação acessa um item de dados, nenhuma outra transação pode modificá-lo.</li>
+                </ul>
+                <li>Para implementar esse controle, pode-se usar o <b>método do bloqueio (lock)</b>:</li>
+                <ul>
+                    <li>a forma como os bloqueios são usados influencia no resultado referente à geração de um esquema de execução concorrente serializável ou não.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de bloqueios (ou travas).</h2>
+            <ul>
+                <li><b>Bloqueio compartilhado</b>: se uma transação Ti obteve um bloqueio compartilhado (S) sobre um item de dado Q, então Ti <b>pode ler</b> Q mas não <b>pode escrever</b> em Q.</li>
+                <li><b>Bloqueio exclusivo</b>: Se uma transação Ti obteve um bloqueio exclusivo (X) sobre o item de dados Q, então Ti <b>pode tanto ler</b> Q <b>quanto escrever</b> em Q.</li>
+            </ul>
+            <p>A transação solicita (procedimento implementado pelo SGBD) o bloqueio apropriado antes de executar qualquer operação sobre Q. O controle de concorrência decide se concede ou não o bloqueio solicitado.</p>
+            <b>Compatibilidade entre bloqueios:</b>
+            <p></p>
+            <img src="img/controlador-de-concorrencia1.png" alt="controlador-de-concorrencia1.png">
+            <p></p>
+            <b>Exemplo de transações com os bloqueios concedidos:</b>
+            <p></p>
+            <img src="img/controlador-de-concorrencia2.png" alt="controlador-de-concorrencia2.png">
+            <p></p>
+            <b>Exemplo de transações concorrentes:</b>
+            <p></p>
+            <img src="img/controlador-de-concorrencia3.png" alt="controlador-de-concorrencia3.png">
+            <p>O esquema de execução concorrente resultante é serializável????</p>
+            <b>Exemplo de transações com todos os desbloqueios no final .....</b>
+            <p></p>
+            <img src="img/controlador-de-concorrencia4.png" alt="controlador-de-concorrencia4.png">
+            <p></p>
+            <b>Exemplo de transações concorrentes:</b>
+            <p></p>
+            <img src="img/controlador-de-concorrencia5.png" alt="controlador-de-concorrencia5.png">
+            <p></p>
+            <ul>
+                <li>É necessário estabelecer um protocolo de bloqueio de forma que cada transação (ou a concessão do bloqueio) siga um determinado (e o mesmo) conjunto de regras.</li>
+                <ul>
+                    <li>o protocolo estabelece quando uma transação pode ou não receber o direito de bloquear ou desbloquear cada item de dados.</li>
+                </ul>
+                <li>As regras dizem respeito a:</li>
+                <ul>
+                    <li><b>quando</b> uma transação pode <b>solicitar</b> um bloqueio</li>
+                    <li><b>quando</b> uma transação pode <b>liberar</b> um bloqueio</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Protocolo de bloqueio em duas fases (Two-phase locking protocol).</h2>
+            <ul>
+                <li>FASE DE EXPANSÃO: uma transação pode obter bloqueios, mas não pode liberar nenhum.</li>
+                <li>FASE DE ENCOLHIMENTO: uma transação pode liberar bloqueios, mas não consegue obter nenhum bloqueio novo.</li>
+                <li>Esse protocolo garante <b>apenas</b> a geração de esquemas de execução concorrente <b>serializáveis</b>. Ele não garante ausência de deadlocks.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <img src="img/controlador-de-concorrencia6.png" alt="controlador-de-concorrencia6.png">
+            <p></p>
+            <img src="img/controlador-de-concorrencia7.png" alt="controlador-de-concorrencia7.png">
+            <p>Qual é o esquema de execução serial equivalente a esse concorrente?</p>
+        </section>
+
+        <section>
+            <h2>Outros esquemas de controle de concorrência:</h2>
+            <ul>
+                <li>Protocolo de bloqueio em duas fases SEVERO.</li>
+                <li>Protocolo de bloqueio em duas fases RIGOROSO.</li>
+                <li>Protocolo de bloqueio com upgrade e downgrade.</li>
+                <li>Protocolo de bloqueio de granularidade múltipla.</li>
+                <li>Protocolo de bloqueio baseado em timestamp.</li>
+                <li>Esquema de multiversão.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Observações.</h2>
+            <p>Os SGBDs que possuem o controlador de concorrência baseado em bloqueios possuem um mecanismo automático de concessão de bloqueios para as transações.</p>
+            <p>Os SGBDs permitem que bloqueios explícitos sejam colocados na codificação da transação (pelo programador). Esses bloqueios, geralmente, sobrepõem o mecanismo automático.</p>
+        </section>
+
+        <section>
+            <h2>Controle de concorrência - Parte l.</h2>
+            <p>Estes slides estão baseados na bibliografia:</p>
+            <ul><li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808p., 2011.</li></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de maio de 2024</p>
+    </footer>
+</body>
+</html>
