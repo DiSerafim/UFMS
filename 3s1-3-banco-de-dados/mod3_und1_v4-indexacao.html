@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – SGBDs Relacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – SGBDs Relacionais.</h1>
+        <h2>💡 Unidade 1 - Indexação.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=2KLJmCaBR3g&list=PL3JRjVnXiTBYpnVFYow5p1BBWOx8H_b31&index=28&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 4 - 
+                Índices: Árvore B e B+ - Aula 22/09 - Bancos de Dados 2021.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Árvore B.</h3>
+        </section>
+
+        <section>
+            <h2>Ordem m.</h2>
+            <ul>
+                <li>nós não folha.</li>
+                <ul>
+                    <li>k filhos e k-1 chaves.</li>
+                    <li>mínimo m/2 filhos (exceto raiz).</li>
+                    <li>máximo m filhos.</li>
+                </ul>
+                <li>nós folha.</li>
+                <ul>
+                    <li>todos no mesmo nível.</li>
+                </ul>
+            </ul>
+            <b>Ordem 4:</b>
+            <p></p>
+            <img src="img/arvoreb.png" alt="arvoreb.png">
+            <p></p>
+            <b>4 Filhos:</b>
+            <p></p>
+            <img src="img/arvoreb1.png" alt="arvoreb1.png">
+            <p></p>
+            <b>3 Chaves:</b>
+            <p></p>
+            <img src="img/arvoreb2.png" alt="arvoreb2.png">
+        </section>
+
+        <section>
+            <h2>Montando uma Árvore B.</h2>
+            <b>Estouro:</b>
+            <p></p>
+            <img src="img/arvoreb3.png" alt="arvoreb3.png">
+            <p></p>
+            <b>Split:</b>
+            <p></p>
+            <img src="img/arvoreb4.png" alt="arvoreb4.png">
+            <p></p>
+            <img src="img/arvoreb5.png" alt="arvoreb5.png">
+            <p></p>
+            <img src="img/arvoreb6.png" alt="arvoreb6.png">
+            <p></p>
+            <img src="img/arvoreb7.png" alt="arvoreb7.png">
+            <p></p>
+            <b>Questão.</b>
+            <p>Como ficará a árvore com a introdução destes três números (45, 63, 70)?</p>
+            <img src="img/arvoreb8.png" alt="arvoreb8.png">
+            <p></p>
+            <b>Árvore não Binária:</b>
+            <img src="img/arvoreb9.png" alt="arvoreb9.png">
+            <p></p>
+        </section>
+
+        <section>
+            <h2>Árvore B+.</h2>
+            <ul>
+                <li>Nós intermediários guiam.</li>
+                <ul>
+                    <li>chaves se repetem nas folhas.</li>
+                </ul>
+                <li>Folhas com ponteiros para registros.</li>
+                <li>Folhas indicam próximo nó.</li>
+            </ul>
+            <img src="img/arvoreb10.png" alt="arvoreb10.png">
+            <p></p>
+            <img src="img/arvoreb12.png" alt="arvoreb12.png">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <ul>
+                <li>Abadi D, Boncz P, Harizopoulos S, Idreos S, Madden S. (2013) <b>The Design and Implementation of Modern Column- Oriented Database Systems</b>. Foundations and Trends in Databases. 5(3):197-280.Chen, Peter Pin-Shan (1976) The entity-relationship model – toward a unified view of data. - ACM Trans. Database Systems, ACM, 1, 9-36.</li>
+                <li>Almeida, Charles Ornelas, Guerra, Israel; Ziviani, Nivio (2010) <b>Projeto de Algoritmos</b> (transparências aula).</li>
+                <li>Demaine, Erik. 6.897: Advanced Data Structures - Lecture 2 (notas de aula). Fevereiro, 2003.</li>
+                <li>Elmasri, Ramez; Navathe, Shamkant B. (2005) <b>Sistemas de Bancos de Dados</b>. Addison-Wesley, 4ª edição em português.</li>
+                <li>Elmasri, Ramez; Navathe, Shamkant B. (2011) <b>Sistemas de Bancos de Dados</b>. Addison-Wesley, 6ª edição em português.</li>
+                <li>Koudas, N. (2000). <b>Space efficient bitmap indexing</b>. Proceedings of the ninth international conference on Information and knowledge management (CIKM '00). New York, NY, USA: ACM. pp. 194-201. doi:10.1145/354756.354819</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de maio de 2024</p>
+    </footer>
+</body>
+</html>
