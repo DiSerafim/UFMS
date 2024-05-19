@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A3] Avaliação do Módulo 3 - SGBDs Relacionais.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof. Vanessa Borges.</li>
+                <li>Iniciado em	domingo, 19 mai 2024, 11:14</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	domingo, 19 mai 2024, 11:56</li>
+                <li>Tempo empregado	41 minutos 19 segundos</li>
+                <li>Avaliar	8,50 de um máximo de 10,00(85%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Índice de agrupamento foi criado para atributos não chave, possui uma entrada no arquivo de índice para cada valor distinto do campo de agrupamento, é esparso.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Um índice de agrupamento (clustered index) pode ser criado em atributos que não são chave primária. Ele possui uma entrada no arquivo de índice para cada valor distinto do campo de agrupamento e é esparso, pois não há uma entrada no índice para cada registro da tabela, mas sim para cada grupo de registros que compartilham o mesmo valor no campo de agrupamento..</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>No contexto de controle de concorrência, o deadlock (impasse) ocorre quando cada transação T em um conjunto de duas ou mais transações está esperando por algum item que está bloqueado por alguma outra transação T’ no conjunto.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>No contexto de controle de concorrência, um deadlock (impasse) ocorre quando cada transação em um conjunto de duas ou mais transações está esperando por algum recurso (como um item de dados) que está bloqueado por outra transação no conjunto. Isso cria uma situação em que nenhuma das transações pode prosseguir, resultando em um impasse..</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Em um banco de dados relacional, índices são usados para:</p>
+                <ul>
+                    <li>a. Permitir a localização eficiente de registros tabelas.</li>
+                    <li>b. Possuir a lista dos usuários com permissões em uma tabela.</li>
+                    <li>c. Identificar os registros válidos e os registros excluídos de uma tabela.</li>
+                    <li>d. Apontar para a posição do último registro inserido na tabela.</li>
+                    <li>e. Ordenar uma tabela por meio do identificador de registro.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Índices em bancos de dados relacionais são estruturas que melhoram a velocidade das operações de busca. Eles permitem a localização rápida e eficiente de registros dentro de uma tabela, baseando-se nos valores de uma ou mais colunas indexadas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Assinale todas as alternativas que possuem schedules que são serializáveis (de conflito)?</p>
+                <p>Considere:</p>
+                <ul>    
+                    <li>r a operação de leitura read_item.</li>
+                    <li>w a operação de escrita write_item.</li>
+                </ul>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <ul>
+                    <li>a. r1 (Y); r3 (X); w1 (Y); r2 (X); w3 (Y);</li>
+                    <pre>
+                        T1  T2
+                        🡻
+                        T3
+                    </pre>
+                    <li>b. r1 (X); r3 (X); w3 (X); w1 (X); r2 (X);</li>
+                    <pre>
+                        T1  T2
+                        🡻🡹
+                        T3
+                    </pre>
+                    <li>c. r3 (X); r2 (X); w3 (X); r1 (X); w1 (X);</li>
+                    <pre>
+                        T1  🢀T2
+                        🡹   🡿
+                        T3
+                    </pre>
+                    <li>d. r3 (X); r2 (X); r1 (X); w3 (X); w1 (X);</li>
+                    <pre>
+                        T1  🢀T2
+                        🡻🡹   🡿
+                        T3
+                    </pre>
+                    <li>e. Nenhum dos schedules apresentados são seriálizáveis por conflito.</li>
+                </ul>
+                
+                <b class="answer">Resposta: a.✅ c.✅ d.❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Os schedules serializáveis são aqueles em que as transações ocorrem de forma que o resultado seja equivalente a alguma serialização das transações, ou seja, o resultado final é o mesmo que se as transações tivessem sido executadas sequencialmente, uma após a outra. Nas alternativas corretas (a, c, d), as operações de leitura e escrita não causam conflitos diretos entre as transações, o que permite que elas possam ser serializadas de forma eficiente, mantendo a consistência dos dados.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Em um banco de dados, uma transação é uma unidade lógica que começa com a operação BEGIN TRANSACTION e, se o término for bem sucedido, há uma operação específica que informa ao gerenciador de transações que uma unidade lógica de trabalho foi concluída. Essa operação é denominada:</p>
+                <ul>
+                    <li>a. RECOVER.</li>
+                    <li>b. COMMIT.</li>
+                    <li>c. SUCCESS.</li>
+                    <li>d. ABORT.</li>
+                    <li>e. ROLLBACK.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. COMMIT. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Quando uma transação é concluída com sucesso em um banco de dados, ou seja, todas as suas operações foram executadas corretamente e os resultados estão prontos para serem permanentemente salvos no banco de dados, utiliza-se a operação COMMIT. Essa operação sinaliza ao sistema de gerenciamento de banco de dados que todas as mudanças feitas pela transação devem ser confirmadas e tornadas permanentes. Após o COMMIT, os dados modificados pela transação se tornam visíveis para outros usuários e transações.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>No contexto de processamento de transações, se uma transação está calculando uma função de resumo de agregação em uma série de itens de banco de dados, enquanto outras transações estão atualizando alguns desses itens, a função de agregação pode calcular alguns valores antes que eles sejam atualizados e outros, depois que eles forem atualizados.  Esse problema é denominado:</p>
+                <ul>
+                    <li>a. Atualização temporária.</li>
+                    <li>b. Leitura suja.</li>
+                    <li>c. Leitura na repetitiva.</li>
+                    <li>d. Atualização perdida.</li>
+                    <li>e. Resumo incorreto.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. Leitura suja. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Em um banco de dados, uma transação é uma unidade lógica que começa com a operação BEGIN TRANSACTION e, se o término da execução dessa transação NÃO for bem-sucedido, há uma operação específica que informa ao gerenciador de transações que algo deu errado e, a partir desse ponto, tudo que foi realizado até o momento precisará ser desfeito. Essa operação é denominada:</p>
+                <ul>
+                    <li>a. COMMIT.</li>
+                    <li>b. RECOVER.</li>
+                    <li>c. ABORT.</li>
+                    <li>d. ROLLBACK.</li>
+                    <li>e. SUCCESS.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ROLLBACK. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O comando ROLLBACK é usado para reverter ou desfazer uma transação que não foi concluída com sucesso, restaurando o banco de dados para o estado anterior à transação. Isso garante a consistência dos dados e evita mudanças indesejadas no banco de dados devido a uma transação mal-sucedida.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Índice primário é baseado na chave primária, é do tipo denso e seu número de entradas no índice é igual ao número de blocos de disco no arquivo de dados.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Um índice primário é baseado na chave primária e é, de fato, denso, mas o número de entradas no índice não é necessariamente igual ao número de blocos de disco no arquivo de dados. Em muitos casos, o número de entradas no índice pode ser menor do que o número de blocos de disco, especialmente se o índice for particionado ou se o fator de preenchimento não for 100%.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>O acrônimo ACID no contexto de transações de bancos de dados relacionais, significa:</p>
+                <ul>
+                    <li>a. Atomicidade (Atomicity), Consistência (Consistency), Isolamento (Isolation) e Durabilidade (Durability).</li>
+
+                    <li>b. Atomicidade (Atomicity), Compatibilidade (Compatibility), Integridade (Integrity) e Durabilidade (Durability).</li>
+
+                    <li>c. Disponibilidade (Availability), Compatibilidade (Compatibility), Integridade (Integrity) e Durabilidade (Durability).</li>
+
+                    <li>d. Disponibilidade (Availability), Consistência (Consistency), Integridade (Integrity) e Durabilidade (Durability).</li>
+
+                    <li>e. Atomicidade (Atomicity), Compatibilidade (Compatibility), Isolamento (Isolation) e Definição (Definition).</li>
+
+                </ul>
+                
+                <b class="answer">Resposta: a. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Um índice é uma estrutura auxiliar associado a uma tabela.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Um índice em um banco de dados é de fato uma estrutura auxiliar associada a uma tabela. Ele é usado para melhorar a eficiência das consultas, permitindo que o sistema de gerenciamento de banco de dados (SGBD) localize rapidamente as linhas de uma tabela que correspondem a determinados critérios de pesquisa. Em vez de percorrer todas as linhas da tabela, o SGBD pode usar o índice para localizar diretamente as linhas relevantes. Isso resulta em consultas mais rápidas e eficientes.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de maio de 2024</p>
+    </footer>
+</body>
+</html>
