@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 3 - SGBDs Relacionais.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: segunda, 6 mai 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Segundo Navathe, o conceito de transação oferece um mecanismo para descrever unidades lógicas de processamento de banco de dados. Os sistemas de processamento de  transação são sistemas com grandes bancos de dados e centenas de usuários  simultâneos que executam transações de banco de dados. Alguns exemplos desses sistemas incluem reservas aéreas, sistemas bancários, processamento de cartão de crédito,  compras on-line, mercados de ações, caixas de supermercado e muitas outras aplicações. Esses sistemas exigem alta disponibilidade e tempo de resposta rápido para centenas de usuários simultâneos.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <h3>Transação íntegra - ACID.</h3>
+            <p>Uma transação, para ser considerada íntegra, deve possuir quatro propriedades conhecidas pelo acrônimo ACID.</p>
+
+            <p>Escreva de forma detalhada cada uma dessas propriedades e seu significado.</p>
+            <p><b>A</b>tomicidade, <b>C</b>onsistência, <b>I</b>solamento e <b>D</b>urabilidade.</p>
+            <ul>
+                <li>Essas propriedades são essenciais para garantir que as transações sejam executadas corretamente e que o banco de dados mantenhas um estado consistente.</li>
+            </ul>
+            <b>Atomicidade:</b>
+            <ul>
+                <li>Garante que todas as operações de uma transação seja completamente executada ou não seja executada de forma alguma.</li>
+                <ul>
+                    <li>Se uma transação é iniciada e não puder ser concluída, o sistema de banco de dados deve garantir que todas as operações realizadas até aquele ponto sejam desfeitas, retornando ao banco de dados ao seu estado de inicio da transação.</li>
+                </ul>
+            </ul>
+            <b>Consistência:</b>
+            <ul>
+                <li>Garante que uma transação leve o banco de dados de um estado válido a outro estado válido, mantendo a integridade dos dados conforme regras definidas.</li>
+                <ul>
+                    <li>Antes e depois das transações todas as regras de integridade devem ser respeitadas. Todas as regras de negócios, validações e constraints devem ser aplicadas.</li>
+                </ul>
+            </ul>
+            <b>Isolamento:</b>
+            <ul>
+                <li>Garante que as operações de uma transação sejam isoladas das operações de outras ações simultâneas.</li>
+                <ul>
+                    <li>Previne problemas com leituras sujas (dirty read), leitura não repetível (non-repeatable read) e fantasma (phantom reads). Níveis de isolamento (Read Uncommitted, Read Committed, Repeatable Read e Serializable).</li>
+                </ul>
+            </ul>
+            <b>Durabilidade:</b>
+            <ul>
+                <li>Garante que uma vez que uma transação foi confirmada (commited), seus efeitos são permanentes e persistirão.</li>
+                <ul>
+                    <li>Os dados modificados por uma transação bem-sucedida são gravados permanentemente no armazenamento. Isso geralmente é implementado através do uso de logs de transação e técnicas de recuperação de desastres.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 19 de maio de 2024</p>
+    </footer>
+</body>
+</html>
