@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>💡 Unidade 2 - NoSQL orientado a documentos.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=swlCK8lrtlU&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=23&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Banco de Dados - MongoDB – Parte 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: José Eduardo Santarem Segundo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>MongoDB.</h3>
+        </section>
+
+        <section>
+            <h2>MongoDB.</h2>
+            <ul>
+                <li>O nome Mongo deriva da palavra inglesa "Humongous” e significa imenso.</li>
+                <li>Banco de dados <b>NoSQL</b> de código aberto</li>
+                <ul>
+                    <li>(https://github.com/mongodb/mongo)</li>
+                </ul>
+                <li>Gratuito</li>
+                <li>Alta Performance</li>
+                <li>Sem Esquemas</li>
+                <li>Orientado a documentos</li>
+                <li>Criado em 2009 com a premissa de ser um banco que atende a grandes volumes de dados.</li>
+            </ul>
+            <img src="img/mongodb.png" alt="mongodb.png">
+            <ul>
+                <li>Suporte a escalonamento vertical e horizontal.</li>
+                <li>Para escala horizontal são usados os replica sets (espelhamento de instâncias) e sharding (dados distribuídos).</li>
+                <li>Principal objetivo do MongoDB é reduzir os relacionamentos no banco de dados.</li>
+                <li>Alguns produtos do ecossistema Mongo:</li>
+                <ul>
+                    <li>MongoDBCharts (Dashboards visualização),</li>
+                    <li>MongoDB Atlas (Serviço Cloud Mongo),</li>
+                    <li>MongoDB Data Lake (Recurso para agregação),</li>
+                    <li>MongoDB Stitch (serviço de autenticação, acesso),</li>
+                    <li>MongoDB Compass (Ferramenta para conexão e manipulação do MongoDB), entre outros...</li>
+                </ul>
+            </ul>
+            <p>Formato de documentos do MongoDB é o BSON, representação binária do padrão JSON.</p>
+            <ul>
+                <li>Tipos de dados do Padrão JSON:</li>
+                <ul>
+                    <li>Booleans (true/false).</li>
+                    <li>strings.</li>
+                    <li>numbers.</li>
+                    <li>null.</li>
+                    <li>arrays (listas).</li>
+                    <li>objects/documents.</li>
+                </ul>
+            </ul>
+            <img src="img/json-tipos.png" alt="json-tipos.png">
+        </section>
+
+        <section>
+            <h2>Mongo DB - TERMINOLOGIA.</h2>
+            <p>Relação de nomes usados nos bancos relacionais e no MongoDB.</p>
+            <img src="img/terminologi.png" alt="terminologi.png">
+        </section>
+
+        <section>
+            <h2>MongoDB - DOCUMENTO.</h2>
+            <p>Vamos entender um documento MongoDB.</p>
+            <pre>Sempre há o campo_id:</pre>
+            <img src="img/mongodb-modelo.png" alt="mongodb-modelo.png">
+        </section>
+
+        <section>
+            <h2>CRIAR UMA CONTA – MongoDB Atlas.</h2>
+            <ul>
+                <li>Crie uma conta no MongoDB Atlas para experimentar o MongoDB.</li>
+                <ul>
+                    <li>https://www.mongodb.com/cloud/atlas</li>
+                    <li>Use sua conta do Google!</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ESQUEMAS FLEXÍVEIS.</h2>
+            <img src="img/esquema.png" alt="esquema.png">
+            <img src="img/esquema1.png" alt="esquema.png">
+            <p>Observe os campos não organizados na mesma ordem e atente-se a:</p>
+            <ul>
+                <li>num_mflix_coments e metacritic no documento superior</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>INSERIR UM DOCUMENTO.</h2>
+            <p>Ao inserir um documento, não é necessário seguir qualquer tipo de estrutura. Mas é importante que haja uma certa organização.</p>
+            <img src="img/inserir-documento.png" alt="inserir-documento.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2024</p>
+    </footer>
+</body>
+</html>
