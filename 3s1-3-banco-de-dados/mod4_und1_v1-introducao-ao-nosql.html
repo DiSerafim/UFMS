@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>💡 Unidade 1 - Introdução ao NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=sXJmsg6-9O8&list=PL3JRjVnXiTBYpnVFYow5p1BBWOx8H_b31&index=49&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Big Data e NoSQL - Aula 09/12 - Bancos de Dados 2020.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Bancos de Dados.</h3>
+        </section>
+
+        <section>
+            <h2>Big Data e NoSQL.</h2>
+            <b>O que está mudando?</b>
+            <ul>
+                <li>Dados estão por toda a parte.</li>
+                <ul>
+                    <li>não somente centralizados em um banco.</li>
+                    <li>produzidos de forma distribuída e interligados.</li>
+                </ul>
+                <li>Modelagem e semântica ganham importância.</li>
+                <ul>
+                    <li>Web Semântica e ontologias.</li>
+                </ul>
+                <li>Data deluge e Big Data.</li>
+                <ul>
+                    <li>novas abordagens (NoSQL).</li>
+                    <li>processamento e armazenamento descentralizados.</li>
+                    <li>bancos de dados em memória</ul>.</li>
+                </ul>
+            <p></p>
+        </section>
+        <section>
+            <h2>O valor dos dados.</h2>
+            <p>Impacto no Modelo Lógico/Físico.</p>
+            <p>Impacto no Armazenamento/Rede.</p>
+            <img src="img/dados.png" alt="dados.png">
+            <p></p>
+            <b>Data Deluge.</b>
+            <ul>
+                <li>Genoma Humano.</li>
+                <ul>
+                    <li>3.3 bilhões base-pairs.</li>
+                </ul>
+                <li>Facebook.</li>
+                <ul>
+                    <li>30/06/2015 – 1,49 bilhões de usuários ativos.</li>
+                    <ul>
+                        <li>http://newsroom.fb.com/company-inf 0/.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Lei de Moore.</b>
+            <ul>
+                <li>Poder de processamento dobra a cada dois anos</li>
+                <li>Como crescem os dados?</li>
+            </ul>
+            <b>Teorema CAP.</b>
+            <ul>
+                <li>É impossível para um armazenamento de dados distribuído fornecer simultaneamente mais de duas das três garantias a seguir (Eric Brewer):</li>
+                <ul>
+                    <li><b>Consistência</b>: cada leitura recebe a gravação mais recente ou um erro</li>
+                    <li><b>Disponibilidade</b>: toda solicitação recebe uma resposta (sem erro) - sem garantia de que contém a gravação mais recente</li>
+                    <li><b>Tolerância de partição</b>: O sistema continua a operar apesar de um número arbitrário de mensagens serem descartadas (ou atrasadas) pela rede entre nós</li>
+                </ul>
+                <p>Muitos armazenamentos NoSQL <b>comprometem</b> a <b>consistência</b> (no sentido do teorema CAP) <b>em favor da disponibilidade, tolerância de partição e velocidade</b>.</p>
+                <p>A maioria dos bancos de dados NoSQL oferece um conceito de "<b>consistência eventual</b>" em que as alterações do banco de dados são propagadas para todos os nós "eventualmente" (normalmente em milissegundos), de modo que as consultas de dados podem não retornar dados atualizados imediatamente ou podem resultar na leitura de dados imprecisos, um problema conhecido como leituras obsoletas</p>
+            </ul>
+        </section>
+
+        <section>
+            <h2>NoSql</h2>
+            <ul>
+                <li>Fornece um mecanismo para armazenamento e recuperação de dados que é modelado em meios diferentes das relações tabulares usadas em bancos de dados relacionais</li>
+                <li>Os bancos de dados NoSQL são cada vez mais usados ​​em big data e aplicações web em tempo real</li>
+                <li>Motivações: simplicidade de design, escalabilidade "horizontal" mais simples para clusters de máquinas e controle mais preciso sobre a disponibilidade.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de maio de 2024</p>
+    </footer>
+</body>
+</html>
