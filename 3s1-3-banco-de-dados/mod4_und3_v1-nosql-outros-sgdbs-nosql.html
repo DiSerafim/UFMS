@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>💡 Unidade 3 - NoSQL outros SGBDs NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=bSRttL4ILFM&list=PL3JRjVnXiTBYpnVFYow5p1BBWOx8H_b31&index=49&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Abordagens NoSQL / Modelos Lógicos e Físicos - Aula 09/12 - Bancos de Dados 2020.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Big Data e NoSQL.</h3>
+            <p>Impacto no Modelo Lógico e Físico.</p>
+        </section>
+
+        <section>
+            <h2>Bancos de Dados de Documentos e XML.</h2>
+            <b>JSON</b>
+            <p></p>
+            <img src="img/bd-documentos.png" alt="bd-documentos.png">
+        </section>
+
+        <section>
+            <h2>Estruturado x Semi-estruturado.</h2>
+            <ul>
+                <li>Estruturado.</li>
+                <ul>
+                    <li>formato estrito.</li>
+                    <ul>
+                        <li>e.g., modelo relacional.</li>
+                    </ul>
+                    <li>cada registro segue o mesmo formato.</li>
+                </ul>
+                <pre>(Elmasri, 2010).</pre>
+                <li>Semi-estruturado.</li>
+                <ul>
+                    <li>itens de dados podem ter estruturas variadas.</li>
+                    <li>grupos de itens compartilham estruturas.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Document Databases</h2>
+            <ul>
+                <li>XML-based.</li>
+                    <ul>
+                        <li>BaseX (http://basex.org).</li>
+                    </ul>
+                <li>JSON.</li>
+                    <ul>
+                        <li>CouchDB (http://couchdb.apache.org).</li>
+                        <li>Mongo DB (http://www.mongodb.org).</li>
+                    </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo Hierárquico (Documentos/XML).</h2>
+            <img src="img/modelo-hierarquico.png" alt="modelo-hierarquico.png">
+        </section>
+
+        <section>
+            <h2>Modelo Hierárquico (JSON + OO).</h2>
+            <img src="img/modelo-hierarquico1.png" alt="modelo-hierarquico.png">
+            <p></p>
+            <b>JSON.</b>
+            <p>JavaScript Object Notation.</p>
+            <ul>
+                <li>Padrão aberto de intercâmbio de objetos.</li>
+                <li>Baseado na notação JavaScript.</li>
+                <li>Incorporado ao ECMAScript (Ecma, 2011).</li>
+                <li>Adotado por diversas linguagens.</li>
+                <li>( http://json.org/).</li>
+            </ul>
+            <b>Objeto JS:</b>
+            <p></p>
+            <img src="img/obj-js.png" alt="obj-js.png">
+            <p></p>
+            <b>Insert Simples:</b>
+            <p></p>
+            <img src="img/insert-simples.png" alt="insert-simples.png">
+            <p></p>
+            <b>Insert Hierárquico:</b>
+            <p></p>
+            <img src="img/insert-hierarquico.png" alt="insert-hierarquico.png">
+            <p></p>
+            <b>Insert:</b>
+            <pre>
+            db.autores.find();
+            db.autores.find({"nome": "Doriana"});
+            db.autores.find({"livro.titulo": "Horacio o dino"});
+            </pre>
+            <b>Update:</b>
+            <pre>
+            db.autores.update(
+                { "nome" : "Doriana" },
+                { $set: { "livro.ano": 2015 } }
+            );
+            </pre>
+        </section>
+
+        <section>
+            <h2>Armazenamento Chave-valor.</h2>
+            <ul>
+                <li>Associa um valor arbitrário a uma chave.</li>
+                <li>Chave única em todo o repositório.</li>
+                <li>Recupera valor a partir da chave.</li>
+            </ul>
+            <b>Web Storage API.</b>
+            <p></p>
+            <img src="img/webstorage.png" alt="webstorage.png">
+            <p></p>
+            <b>Exemplo:</b>
+            <p>Gravando o campo HTML:</p>
+            <pre>Nome: (input type="text" id="nome">(/input></pre>
+            <p>Funções de leitura/gravação:</p>
+            <pre>
+            function ler() {
+                var nomeLido = localStorage.getItem("nome_db");
+                if (nomeLido != null)
+                    document.querySelector("#nome").value = nomeLido;
+            }
+            function gravar() {
+                var nomeGravar = document.querySelector("#nome").value;
+                localStorage.setItem("nome_db", nomeGravar);
+            }
+            </pre>
+            <b>Exemplo de Comandos em Redis.</b>
+            <pre>
+                SET dino "O dinossauro"
+                => OK
+                GET dino 
+                => "0 dinossauro"
+                APPEND dino," pulou na lama"
+                =>...
+                GET school 
+                => "0 dinossauro pulou na lama"
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2024</p>
+    </footer>
+</body>
+</html>
