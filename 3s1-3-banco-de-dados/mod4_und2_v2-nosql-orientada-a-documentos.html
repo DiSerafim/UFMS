@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>💡 Unidade 2 - NoSQL orientado a documentos.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=lbBAAfvdaw0&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=24&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Banco de Dados - MongoDB – Parte 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: José Eduardo Santarem Segundo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>MongoDB.</h3>
+        </section>
+
+        <section>
+            <h2>MongoDB.</h2>
+            <img src="img/obj-db.png" alt="obj-db.png">
+            <p></p>
+            <b>SELECIONAR DADOS.</b>
+            <p>O processo de pesquisa no mongoDB é bem diferente dos bancos relacionais tradicionais.</p>
+            <p>Na plataforma Cloud (Atlas), podemos usar a ferramenta "Filter” na opção“Find” para os filtros.</p>
+            <img src="img/filter-db.png" alt="filter-db.png">
+            <p>Realizando uma busca em um campo do tipo array.</p>
+            <p>Árabe ou Russo:</p>
+            <pre>FILTER {languages: {$in: ["Arabic", "Russia"]}}</pre>
+            <img src="img/filter-db1.png" alt="filter-db1.png">
+        </section>
+
+        <section>
+            <h2>AGGREGATION FRAMEWORK.</h2>
+            <ul>
+                <li>Base para realizar consultas.</li>
+                <li>Conjunto de ferramentas de análise que permite realizar vários tipos de consultas em documentos em uma ou mais coleções.</li>
+                <li>Baseada no conceito de Pipeline.</li>
+                <li><b>Pipeline</b> (imagine uma esteira industrial).</li>
+                <li>A entrada é uma <b>coleção MongoDB</b>, que vai sendo submetida a etapas sequenciais, cada uma com sua operação específica.</li>
+                <li><b>Cada etapa</b> recebe, como entrada, o resultado da saída da etapa anterior, independente do resultado que ela tiver gerado.</li>
+                <li>E as entradas e saídas para todas as etapas são documentos, ou seja, um fluxo de documentos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>AGGREGATION FRAMEWORK - PIPELINE.</h2>
+            <ul>
+                <li>O resultado final do pipeline é justamente o conjunto de documentos que se espera.</li>
+                <li>É possível que as etapas se repitam no pipeline, dependendo do resultado que se espera.</li>
+                <li>Há diversas possibilidades de operações que podem ser realizadas no pipeline MongoDB.</li>
+                <li>A ferramenta Atlas possibilita construir pipelines de agregação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ESTÁGIO/ETAPA - $match.</h2>
+            <ul>
+                <li>Uma das operações mais simples que existem no MongoDB, ela aplica um filtro ao conjunto de documentos.</li>
+                <li>Exemplo: filtro em dois campos (cast e languages)</li>
+            </ul>
+            <img src="img/filter2.png" alt="filter-db2.png">
+        </section>
+
+        <section>
+            <h2>ESTÁGIO/ETAPA - $group.</h2>
+            <ul>
+                <li>Uma etapa de um pipeline possibilita uma saída que pode ser bem diferente do documento original.</li>
+                <li>É muito comum que, ao passar por uma etapa, o conjunto de documentos passe a ter uma nova construção estrutural (esquema) diferente do seu documento original.</li>
+                <li>A etapa <b>$group</b> pode aplicar vários operadores de grupo (parecido com SQL):</li>
+                <ul>
+                    <li>$sum, $avg, $max, $min, $accumulator, entre outros</li>
+                </ul>
+            </ul>
+            <p>Exemplo: agrupamento por idiomas (languages).</p>
+            <p>No agrupamento é realizada a agregação de valor por minutos e também são quantificados os grupos.</p>
+            <img src="img/filter3.png" alt="filter3.png">
+            <img src="img/filter4.png" alt="filter4.png">
+        </section>
+
+        <section>
+            <h2>ATLAS – EXPORTAÇÃO PIPELINE.</h2>
+            <p>O Atlas permite que a estrutura do Pipeline seja exportada como código do próprio mongo ou já adaptado para algumas linguagens.</p>
+            <img src="img/export.png" alt="export.png">
+            <img src="img/export1.png" alt="export1.png">
+        </section>
+
+        <section>
+            <h2>NOVA BASE POR PROJEÇÃO.</h2>
+            <img src="img/projecao.png" alt="projecao.png">
+            <p></p>
+            <img src="img/projecao1.png" alt="projecao1.png">
+            <p></p>
+            <img src="img/projecao2.png" alt="projecao2.png">
+            <p></p>
+            <img src="img/projecao3.png" alt="projecao3.png">
+        </section>
+
+        <section>
+            <h2>BANCOS NoSQL e MongoDB.</h2>
+            <li>A ideia de apresentar o MongoDB e uma pequena parte de suas funcionalidades é demonstrar que os bancos NoSQL podem ter paradigmas completamente diferentes do que é atualmente o tradicional.</li>
+            <li>Outros produtos terão características específicas e também demandarão muito estudo para compreensão de funcionamento.</li>
+            <li>Deixem a mente aberta para aprender!</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2024</p>
+    </footer>
+</body>
+</html>
