@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>Apresentação.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=ME_tFTe9erA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo Apresentação - 
+                [UFMS Digital] Banco de Dados - Módulo 4. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: Vanessa Borges.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagem de consulta – SQL.</h3>
+        </section>
+
+        <section>
+            <h2>Módulo IV –SGBDs NoSQL.</h2>
+            <ul>
+                <li>Unidade 1 - Introdução ao NoSQL.</li>
+                <li>Unidade 2 - NoSQL orientado a documentos.</li>
+                <li>Unidade 3 - Outros SGBDs.</li>
+                <li>Objetivo.</li>
+                <ul>
+                    <li>Conhecer princípios e a aplicação prática de sistemas gerenciadores de banco de dados NoSQL.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Banco de Dados NoSQL.</h2>
+            <ul>
+                <li>NoSQL (Not Only SQL – não somente SQL) é um termo genérico definido para uma classe de banco de dados não relacionais (ACID).</li>
+                <li>O termo iniciou em 1998 como o nome de um banco de dados relacional de código aberto que não possuía uma interface SQL.</li>
+                <li>Em 2009 o termo foi utilizado por Eric Evans como nome de um evento para discutir bancos de dados open source distribuídos.</li>
+                <li>Essa foi uma tentativa de descrever o surgimento de um número crescente de banco de dados não relacional que não tinham a preocupação de fornecer garantias ACID.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Relacional vs NoSQL.</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Banco de dados relacional</th>
+                    <th>Banco de dados NoSQL</th>
+                </tr>
+                <tr>
+                    <td>Característica</td>
+                    <td>Tabelas, esquema definido, redundância mínima, entidade e relacionamento, ACID.</td>
+                    <td>Registros, não possui estrutura fixa, escalabilidade.</td>
+                </tr>
+                <tr>
+                    <td>Necessidades</td>
+                    <td>Sistemas financeiros, sistemas corporativos, consistência dos dados.</td>
+                    <td>Sistemas em nuvem, análises sociais, performance na consulta/escrita, replicação.</td>
+                </tr>
+                <tr>
+                    <td>SGBD</td>
+                    <td>DB2, Firebird, InterBase, SQL Server, MySQL, Oracle, PostgreSQL.</td>
+                    <td>Cassandra, BigTable, MongoDB, CouchDB, Dynamo.</td>
+                </tr>
+                <tr>
+                    <td>Empresas que utilizam</td>
+                    <td>SAP, OpenERP, Previdência Social, Caixa, Itaú.</td>
+                    <td>Twitter, Facebook, Amazon, LinkedIn, Google, Yahoo.</td>
+                </tr>
+                <tr>
+                    <td>Consistência</td>
+                    <td>As regras de integridade garantem a consistência das informações. Consistência rígida.</td>
+                    <td>Não garante a consistência da informação, caso nenhuma informação seja atualizada, retornará o mesmo valor para todas as solicitações. Consistência eventual.</td>
+                </tr>
+            </table>
+            <p></p>
+            <b>Consistência Rígida:</b>
+            <p></p>
+            <img src="img/consistencia-rigida.png" alt="consistencia-rigida.png">
+            <ul>
+                <li>Se houver uma alteração de salário na Máquina 2, essa alteração só será persistida quando todos os nós do cluster forem atualizados.</li>
+                <ul>
+                    <li>Demanda grande esforço de replicação de dados entre os nós do cluster.</li>
+                    <ul>
+                        <li>Problemas de escalabilidade.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <p></p>
+            <b>Consistência Eventual (assíncrono):</b>
+            <p></p>
+            <img src="img/conscistencia-eventual.png" alt="conscistencia-eventual.png">
+            <ul>
+                <li>Se houver uma alteração de salário na Máquina 2, essa alteração pode ser dita concluída.</li>
+                <ul>
+                    <li>Replicação dos dados entre nós do cluster de forma assíncrona.</li>
+                    <ul>
+                        <li>Simplifica escalabilidade.</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <b>Categorias de NoSQL:</b>
+            <p></p>
+            <img src="img/categorias-nosql.png" alt="categorias-nosql.png">
+        </section>
+
+        <section>
+            <h2>MongoDB - orientada a documentos.</h2>
+            <b>Principais diferenças entre relacional e orientado a documentos.</b>
+            <table>
+                <tr>
+                    <th>Banco de dados Relacional</th>
+                    <td></td>
+                    <th>MongoDB</th>
+                </tr>
+                <tr>
+                    <td>Armazenam dados em tabelas com linhas divididas em colunas</td>
+                    <td>🢂</td>
+                    <td>Armazenam os dados em coleções de documentos com campos e subdocumento</td>
+                </tr>
+                <tr>
+                    <td>Possuem relacionamento entre diferentes tabelas e registros</td>
+                    <td>🢂</td>
+                    <td>Não possuem relacionamentos entre coleções e/ou documentos</td>
+                </tr>
+                <tr>
+                    <td>Foco em garantir o ACID</td>
+                    <td>🢂</td>
+                    <td>Foco em garantir escalabilidade, alta-disponibilidade e performance</td>
+                </tr>
+                <tr>
+                    <td>Uso de transações para garantir commits e rollbacks</td>
+                    <td>🢂</td>
+                    <td>Não há uso de transações e o ACID é garantido apenas a nível de documento. Transações devem ser garantidas a nível de aplicação</td>
+                </tr>
+                <tr>
+                    <td>Uso da linguagem de consulta SQL para manipular o banco</td>
+                    <td>🢂</td>
+                    <td>Uso de comandos JavaScript para manipular o banco</td>
+                </tr>
+                <tr>
+                    <td>Cada coluna de uma linha pode armazenar apenas um dado (atômico)</td>
+                    <td>🢂</td>
+                    <td>Cada campo de um documento pode armazenar múltiplos valores ou até mesmo outros documentos</td>
+                </tr>
+                <tr>
+                    <td>Possuem chave-estrangeira e JOINS</td>
+                    <td>🢂</td>
+                    <td>Não possuem chave-estrangeira nem JOINs</td>
+                </tr>
+                <tr>
+                    <td>Schema pré-definido e rígido</td>
+                    <td>🢂</td>
+                    <td>Schema variável conforme o uso da aplicação</td>
+                </tr>
+                <tr>
+                    <td>Foco em não repetição de dados</td>
+                    <td>🢂</td>
+                    <td>Foco em acesso rápido de dados</td>
+                </tr>
+                <tr>
+                    <td>Menor consumo de disco</td>
+                    <td>🢂</td>
+                    <td>Maior consumo de disco (geralmente)</td>
+                </tr>
+                <tr>
+                    <td>Menor consumo de memória</td>
+                    <td>🢂</td>
+                    <td>Maior consumo de memória (geralmente)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Escolha do modelo relacional versus nosql.</h2>
+            <ul>
+                <li>Quando utilizar NoSQL?</li>
+                <li>Indicado para aplicações que:</li>
+                <ul>
+                    <li>Irão trabalhar com grande volume de dados</li>
+                    <li>Necessitam de velocidade de resposta (leitura e escrita) – escala horizontal</li>
+                    <li>Não necessita de consistência rígida</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de maio de 2024</p>
+    </footer>
+</body>
+</html>
