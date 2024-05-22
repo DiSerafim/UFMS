@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 4 - SGBDs NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo discutimos alguns SGBDs NoSQL. Sabemos que SGBDs NoSQL possuem algumas vantagens e algumas desvantagens quando comparados com SGBDs relacionais. Por esse motivo,  as empresas, muitas vezes, optam por utilizar os dois tipos de SGBDs, de forma complementar.</p>
+        </section>
+        
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Realize comparações entre SGBDs Relacionais e NoSQL e aponte possíveis vantagens e desvantagens de cada um dependendo do contexto citado.</b>
+            <p>Exemplo: Em sistemas financeiros, é importante que a informação seja sempre consistente, ou seja, mesmo que existam diversas máquinas se comunicando simultaneamente, é importante que qualquer consulta realizada retorne sempre o mesmo valor. Nesse contexto, o SGBD relacional é mais vantajoso, uma vez que ele é ACID e, por isso, garante a consistência, por sua vez, SGBDs NoSQL, em geral, têm consistência eventual.</p>
+        </section>
+
+        <section>
+            <h2>Comparação entre SGBDs Relacionais e NoSQL.</h2>
+            <b>Vantagens dos SGBDS Relacionais:</b>
+            <ul>
+                <li>Consistência e ACID:</li>
+                <ul>
+                    <li>Segurança e precisão das transações, ideal para sistemas onde a confiabilidade é essencial.</li>
+                </ul>
+                <li>Estrutura Rígida:</li>
+                <ul>
+                    <li>Modelagem de dados clara e padronizada, que facilita a manutenção e a integridade referencial.</li>
+                </ul>
+                <li>Ferramenta e Suporte:</li>
+                <ul>
+                    <li>Amplo suporte de ferramentas de desenvolvimento, análise e relatórios e uma grande comunidade de suporte.</li>
+                </ul>
+            </ul>
+            <b>Desvantagens dos SGBDS Relacionais:</b>
+            <ul>
+                <li>Escalabilidade Limitada:</li>
+                <ul>
+                    <li>Dificuldades para escalar horizontalmente, limitando o desempenho em grandes volumes de dados distribuídos.</li>
+                </ul>
+                <li>Flexibilidade Limitada:</li>
+                <ul>
+                    <li>Estrutura de esquema fixa, dificultando a adaptação de mudanças rápidas nos requisitos de dados.</li>
+                </ul>
+            </ul>
+            <b>Vantagens dos SGBDS NoSQL:</b>
+            <ul>
+                <li>Escalabilidade Horizontal:</li>
+                <ul>
+                    <li>Capacidade de escalar facilmente adicionando mais servidores, melhorando o desempenho e a disponibilidade.</li>
+                </ul>
+                <li>Flexibilidade de Esquema:</li>
+                <ul>
+                    <li>Não impõe estrutura rígida de esquema, permitindo a armazenagem de dados semi-estruturados e ou não estruturados.</li>
+                </ul>
+                <li>Desempenho em Grandes Volumes:</li>
+                <ul>
+                    <li>Otimização para operações de leitura e escrita em larga escala.</li>
+                </ul>
+            </ul>
+            <b>Desvantagens dos SGBDS NoSQL:</b>
+            <ul>
+                <li>Consistência Eventual:</li>
+                <ul>
+                    <li>Não garante consistência imediata dos dados após uma operação de escrita, o que pode não ser aceita em aplicações críticas.</li>
+                </ul>
+                <li>Menor Suporte para Transações Complexas:</li>
+                <ul>
+                    <li>Suporte limitado para operações ACID, que pode dificultar a implementação de transações complexas e consistentes.</li>
+                </ul>
+                <li>Curvas de Aprendizado:</li>
+                <ul>
+                    <li>Requer conhecimento específico e treinamento adicional para utilizar efetivamente os diferentes tipos de SGBDS.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 22 de maio de 2024</p>
+    </footer>
+</body>
+</html>
