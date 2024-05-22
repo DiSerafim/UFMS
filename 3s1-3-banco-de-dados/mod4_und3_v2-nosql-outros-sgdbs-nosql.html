@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – SGBDs NoSQL.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – SGBDs NoSQL.</h1>
+        <h2>💡 Unidade 3 - NoSQL outros SGBDs NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=UIiI52yzROU&list=PL3JRjVnXiTBYpnVFYow5p1BBWOx8H_b31&index=50&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Sistemas de Arquivo Distribuídos e MapReduce - Aula 09/12 - Bancos de Dados 2020.2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Professor ministrante: André Santanchè.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Big Data e NoSQL.</h3>
+            <p>Impacto no Armazenamento e Rede.</p>
+        </section>
+
+        <section>
+            <h2>Arquitetura Local.</h2>
+            <p>SGBD executado no mesmo dispositivo da aplicação.</p>
+            <b>Arquitetura Local Exemplos - Desktop.</b>
+            <ul>
+                <li>Sistema de loja simples.</li>
+                <li>Dados para análise de um pesquisador.</li>
+            </ul>
+            <b>Arquitetura Local Exemplos - Celular</b>
+            <ul>
+                <li>Agenda local.</li>
+                <li>Dados de perfil e registro de operações.</li>
+            </ul>
+            <img src="img/arquitetura.png" alt="arquitetura.png">
+            <p></p>
+            <b>Arquitetura de duas camadas ou mais.</b>
+            <p></p>
+            <img src="img/arquitetura1.png" alt="arquitetura1.png">
+            <p></p>
+            <b>Arquitetura de Dados Paralelos e Distribuídos.</b>
+            <p></p>
+            <img src="img/arquitetura2.png" alt="arquitetura2.png">
+            <p></p>
+            <b>MapReduce - Estágios.</b>
+            <ul>
+                <li>Map.</li>
+                <ul>
+                    <li>função de mapeamento que gera resultado temporário local.</li>
+                </ul>
+                <li>Shuffle.</li>
+                <ul>
+                    <li>redistribui resultados locais entre nós de acordo com chave (produzida por map).</li>
+                    <li>cada nó recebe dados de mesma chave.</li>
+                </ul>
+                <li>Reduce.</li>
+                <ul>
+                    <li>processa cada grupo de dados por chave localmente.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2024</p>
+    </footer>
+</body>
+</html>
