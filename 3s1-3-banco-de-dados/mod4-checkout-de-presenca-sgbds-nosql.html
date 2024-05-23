@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 4 - SGBDs NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: segunda, 27 mai 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>O MongoDB é um NoSQL orientado a documentos, o MongoDB possui funções que permite a realização de operações de CRUD (create, read, update, delete).</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <h3>Considere a collection funcionário que possui os atributos: nome, salário e sexo.</h3>
+            <p>Crie uma consulta para essa collection no MongoDB que retorne os funcionários que possuem salário maior ou igual a R$ 2000,00 e menor ou igual a R$ 5000,00,  e que são do sexo `M`.</p>
+        </section>
+
+        <section>
+            <h2>Consulta no MongoDB</h2>
+            <pre>
+                db.funcionario.find(
+                    {
+                        salario: {
+                            $gte: 2000,
+                            $lte: 5000,
+                        }
+                        sexo: 'M',
+                    }
+                );
+            </pre>
+            <p>Explicação:</p>
+            <ul>
+                <li><b>db.funcionario</b>: Refere-se à collection funcionario.</li>
+                <li><b>find()</b>: Método utilizado para buscar documentos na collection.</li>
+                <li>{ <b>salario</b>: { <b>$gte</b>: 2000, <b>$lte</b>: 5000 }, <b>sexo</b>: 'M' }: Objeto de consulta que especifica as condições:</li>
+                <ul>
+                    <li><b>salario</b>: { $gte: 2000, $lte: 5000 }: Filtra os documentos onde o campo salario é maior ou igual a 2000 e menor ou igual a 5000.</li>
+                    <li><b>sexo</b>: 'M': Filtra os documentos onde o campo sexo é igual a 'M'.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 22 de maio de 2024</p>
+    </footer>
+</body>
+</html>
