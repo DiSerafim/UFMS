@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANCO DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BANCO DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 - SGBDs NoSQL.</h2>
+        <p>Professor Especialista: Vanessa Borges.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>BANCO DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof. Vanessa Borges.</li>
+                <li>Iniciado em	quarta, 22 mai 2024, 20:04</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quarta, 22 mai 2024, 20:46</li>
+                <li>Tempo empregado	41 minutos 56 segundos</li>
+                <li>Avaliar	8,00 de um máximo de 10,00(80%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Assinale a alternativa correta quanto à execução do comando a seguir no MongoDB.</p>
+                <pre>
+                db.funcionario.find({
+                    salario:{$gte:1000, $lte:20000}, $ and [{sexo:"Masculino"}]
+                })
+                </pre>
+                <ul>
+                    <li>a. O comando remove os funcionários do sexo Masculino cujos salários são maiores ou iguais a 1000 ou menores ou iguais a 20000.</li>
+                    <li><b>b</b>. O comando retorna apenas os funcionários do sexo Masculino cujos salários são maiores ou iguais a 1000 e menores ou iguais a 20000.</li>
+                    <li>c. O comando remove os funcionários do sexo Masculino cujos salários são maiores ou iguais a 1000 e menores ou iguais a 20000.</li>
+                    <li>d. O comando  atualiza os salários dos funcionários do sexo Masculino.</li>
+                    <li>e. O comando retorna apenas os funcionários do sexo Masculino cujos salários são maiores que 1000 e menores que 20000.</li>
+                    <li>f. O comando retorna todos os funcionários do sexo Masculino com salário de 1000 ou 20000.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O comando, está buscando documentos na collection funcionario que atendem às seguintes condições:</li>
+                    <ul>
+                        <li>salario: maior ou igual a 1000 ($gte: 1000) e menor ou igual a 20000 ($lte: 20000).</li>
+                        <li>sexo: igual a "Masculino".</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Os comandos a seguir estão corretos e são equivalentes.</p>
+                <pre>
+                MongoDB:
+                db.cliente.find({
+                    nome:{$and:["Margarida","Ana"]}
+                })
+
+                SGBD relacional (SQL):
+                SELECT * FROM cliente WHERE nome IN ('Margarida', 'Ana');
+                </pre>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <p>$and em MongoDB não funciona dessa maneira. A forma correta de usar $and seria algo como:</p>
+                <pre>
+                db.cliente.find({ $and: [{ nome: "Margarida" }, { nome: "Ana" }] })
+                </pre>
+                <p>O comando SQL está correto.</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Em relação ao MongoDB, analise as assertivas a seguir.</p>
+                <ul>
+                    <li>I. O MongoDB não implementa integridade referencial. Logo, não existe o conceito de chave estrangeira.</li>
+                    <li>II. Não é possível representar relacionamentos no MongoDB</li>
+                    <li>III. Todo documento no MongoDB necessariamente possui um identificador único. Esse identificador pode ser especificado ou obtido automaticamente.</li>
+                    <li>IV. Documentos diferentes de uma mesma coleção podem ter atributos diferentes</li>
+                    <li>V. Não é possível fazer consultas agregadas no MongoDB.</li>
+                </ul>
+                <p>Estão corretas as assertivas:</p>
+                <ul>
+                    <li>a. I e II apenas.</li>
+                    <li>b. II e III apenas.</li>
+                    <li><b>c. I e V apenas</b>.</li>
+                    <li>d. I, III e V apenas.</li>
+                    <li>e. I, II, III e V apenas.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. I e V apenas. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>O MongoDB é um NoSQL chave-valor de alto desempenho e disponibilidade.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O MongoDB é um banco de dados NoSQL, mas não é do tipo chave-valor. Ele é classificado como um banco de dados orientado a documentos. No MongoDB, os dados são armazenados em documentos BSON (uma extensão binária de JSON), que permite uma estrutura mais complexa e flexível do que o simples par chave-valor.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Assinale a alternativa CORRETA acerca do seguinte comando realizado no MongoDB:</p>
+                <pre>
+                db.cliente.update(
+                    {"nome":"Margarida"},
+                    {$set:{"nome":"Margarida Teixeira"}},
+                    {upsert:true}
+                )
+                </pre>
+                <ul>
+                    <li><b>a. Se a condição de busca não for satisfeita, ou seja, o documento não for encontrado, o documento será inserido na coleção</b>.</li>
+                    <li>b. O comando apenas insere um novo documento na collection cliente.</li>
+                    <li>c. O comando pode remover todos os clientes que possuem nome "Margarida Teixeira".</li>
+                    <li>d. O comando busca por todos os clientes que possuem nome "Margarida Teixeira" e altera o atributo nome para "Margarida".</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O comando update no MongoDB, com a opção upsert: true, realiza uma atualização ou inserção (update or insert). Especificamente:</li>
+                    <ul>
+                        <li>{"nome":"Margarida"}: Condição de busca. MongoDB procura documentos que correspondam a essa condição.</li>
+                        <li>{$set: {"nome":"Margarida Teixeira"}}: Atualização. Se um documento correspondente for encontrado, o campo nome é atualizado para "Margarida Teixeira".</li>
+                        <li>{upsert: true}: Opção de upsert. Se nenhum documento correspondente for encontrado, um novo documento é inserido com os valores especificados na condição de busca e na atualização combinados.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>O termo NoSQL refere-se a:</p>
+                <ul>
+                    <li>a. São bancos de dados que não utilizam a SQL para garantir as propriedades ACID.</li>
+                    <li>b. Implementação simultânea das três propriedades presentes no teorema CAP.</li>
+                    <li>c. São bancos de dados que não utilizam a SQL, são distribuídos, possuem tabelas e esquema definido.</li>
+                    <li>d. É uma abordagem teórica normalizada, tem como premissa a não utilização do SQL em bancos de dados heterogêneos.</li>
+                    <li><b>e. São bancos de dados não relacionais, distribuídos e, em geral, de código aberto.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>O termo NoSQL (ou "Not Only SQL") refere-se a uma categoria de sistemas de gerenciamento de banco de dados que são não relacionais, distribuídos e geralmente de código aberto. Estes bancos de dados são projetados para grandes volumes de dados, diversidade de dados e a necessidade de operações rápidas e escalabilidade horizontal. Embora não utilizem SQL como linguagem principal de consulta, alguns NoSQL DBMS podem suportar SQL ou linguagens similares a SQL para certas operações. Eles são utilizados frequentemente em aplicações onde a flexibilidade, a performance e a escalabilidade são mais importantes do que a rigidez dos bancos de dados relacionais tradicionais.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>O teorema CAP foi desenvolvido para descrever o comportamento de sistemas distribuídos. Esse teorema define três propriedades (consistência, disponibilidade e tolerância a partição), sendo que é impossível garantir essas três propriedades ao mesmo tempo.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O teorema CAP, proposto por Eric Brewer, estabelece que em um sistema distribuído é impossível garantir simultaneamente todas as três propriedades: Consistência (Consistency), Disponibilidade (Availability) e Tolerância a Partição (Partition Tolerance). Em outras palavras, um sistema pode, no máximo, garantir duas dessas propriedades ao mesmo tempo, mas não todas as três. Quando ocorre uma partição de rede (falha de comunicação), o sistema deve escolher entre ser consistente (garantir que todas as partes do sistema vejam os mesmos dados ao mesmo tempo) ou disponível (garantir que o sistema continue operando e respondendo a solicitações).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Assinale a alternativa que correlaciona corretamente os SGBDs NoSQL e seus modelos:</p>
+                <ul>
+                    <li>a. MongoDB: modelo orientado a colunas; Cassandra: modelo baseado em grafos; Neo4J: modelo orientado a documentos; Redis: Modelo chave-valor;</li>
+                    <li>b. Cassandra: modelo orientado a colunas; Neo4J: modelo baseado em grafos; Redis: modelo orientado a documentos; MongoDB: Modelo chave-valor;</li>
+                    <li>c. Redis: modelo orientado a colunas; Cassandra: modelo baseado em grafos;  MongoDB: modelo orientado a documentos; Neo4J: Modelo chave-valor;</li>
+                    <li><b>d. Cassandra: modelo orientado a colunas; Neo4J: modelo baseado em grafos; MongoDB: modelo orientado a documentos; Redis: Modelo chave-valor;</b></li>
+                    <li>e. Redis: modelo orientado a colunas; Neo4J: modelo baseado em grafos;  MongoDB: modelo orientado a documentos; Cassandra: Modelo chave-valor;</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li><b>Cassandra</b>: é um SGBD NoSQL que utiliza um modelo orientado a colunas, ideal para grandes volumes de dados e alta disponibilidade.</li>
+                    <li><b>Neo4J</b>: é um banco de dados NoSQL especializado em grafos, permitindo a modelagem e consulta de dados altamente conectados.</li>
+                    <li><b>MongoDB</b>: é um SGBD NoSQL orientado a documentos, armazenando dados em formato BSON, que é uma forma binária do JSON.</li>
+                    <li><b>Redis</b>: é um banco de dados NoSQL chave-valor de alto desempenho, utilizado frequentemente para caching, sessões, e filas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Considere as operações de CRUD do MongoDB para responder à questão a seguir.</p>
+                <p>O comando abaixo pode criar a collection cliente caso ela não exista para inserir o novo documento com os dados da cliente "Margarida".</p>
+                <pre>
+                db.cliente.insert({nome:"Margarida", endereco: "Rua Cândido Mariano"})
+                </pre>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>No MongoDB, ao executar um comando insert, se a collection especificada (neste caso, cliente) não existir, o MongoDB cria automaticamente a collection e insere o documento.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Com relação ao teorema CAP no contexto de NoSQL, a propriedade de consistência (consistency) visa garantir que, ao realizar uma consulta qualquer, independente do nó do cluster, a versão do dado sempre será a mesma (mais atualizada).</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ❌</b>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 22 de maio de 2024</p>
+    </footer>
+</body>
+</html>
