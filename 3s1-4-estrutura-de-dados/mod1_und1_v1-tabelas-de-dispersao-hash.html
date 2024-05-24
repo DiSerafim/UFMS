@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Hash e Heap.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Hash e Heap.</h1>
+        <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=XHy_VM-24dU&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Tabelas de Dispersão: Hash.</h3>
+        </section>
+
+        <section>
+            <h2>Conceitos e Definições.</h2>
+            <b>PARTE 1</b>
+            <h3>Motivação</h3>
+            <ul>
+                <li>Imagine que gostaríamos de armazenar um <b>conjunto</b> de valores <b>inteiros</b> na memória do computador.</li>
+                <ul>
+                    <li>Ex: 10 valores inteiros que variam de 0 até 999 (dado).</li>
+                    <li>Estratégias:</li>
+                    <ul>
+                        <li>Usar vetor com 10 ou 1000 posições (chave)?(Algoritmos 1)</li>
+                        <li>Lista encadeada? (Algoritmos 2)</li>
+                    </ul>
+                </ul>
+            </ul>
+            <p>Valores inteiros de entrada (dados)</p>
+            <li>10, 502, 31, 97, 8, 16, 777, 13, 54, 9.</li>
+        </section>
+
+        <section>
+            <h2>Estrutura de Dados Lineares.</h2>
+            <ul>
+                <li>Estratégia: Usar <b>vetor</b> com 10 posições (N=10).</li>
+                <ul>
+                    <li>Vamos considerar a posição como chave;</li>
+                    <li>0 ≤ <b>chave</b> ≤ 9 e 0 ≤ <b>dado</b> ≤ 999.</li>
+                </ul>
+            </ul>
+            <p>tem o dado 54?</p>
+            <pre>
+                0  1   2  3  4 5  6  7  8  9    🢂   Índice
+
+                10 502 31 97 8 16 777 9 13 54   🢂   Valor
+            </pre>
+            <ul>
+                <li>Estratégia: Usar <b>vetor</b> com 10 posições.</li>
+                <ul>
+                    <li>Custo da inserção: O(1)</li>
+                    <li>Custo de buscar um valor: O(N)</li>
+                    <li>Só funciona para até 10 valores (fixo)!</li>
+                </ul>
+            </ul>
+            <p>tem o dado 54?</p>
+            <pre>
+                0  1   2  3  4 5  6  7  8  9    🢂   Índice
+
+                10 502 31 97 8 16 777 9 13 54   🢂   Valor
+            </pre>
+            <ul>
+                <li>Estratégia: <b>Lista encadeada</b>.</li>
+                <ul>
+                    <li>Custo da <b>inserção</b>: O(1)</li>
+                    <li>Custo de <b>buscar</b> um valor O(N)</li>
+                    <li>Armazenamento sob demanda!</li>
+                </ul>
+            </ul>
+            <p>tem o dado 54?</p>
+            <pre>
+            0xFF01 0xFF02 0xFF03 0xFF04 0xFF05 0xFF6 0xFF7 0xFF8  0xFF9 0xFFA   🢂 Endereço.
+            10     8      9      13     16     31    54    97     502   777     🢂 Índice.
+            OxFF9  OxFF05 OxFF04 OxFF07 OxFFA  OxFF8 NONE  OxFF02 OxFF6 OxFF03  🢂 Próximo endereço.
+              🡻                                       🡻  
+            início                                   fim
+            </pre>
+            <ul>
+                <li>Resumo:</li>
+                <ul>
+                    <li>Melhoramos o custo da busca, mas pioramos o custo de armazenamento;</li>
+                    <li>Resolvemos o problema de tamanho fixo, porém o custo da busca ainda está O(N);</li>
+                    <li>Tem como melhorar o armazenamento e ter custo O(1) na busca?</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tabela de Dispersão (Hash Table).</h2>
+            <ul>
+                <li>Encontrar no dado algo significante para determinar sua posição (chave) ;</li>
+                <li>Método de pesquisa com o objetivo de melhorar o custo da busca de um dado;</li>
+                <li>Se baseia na importante característica dos vetores que permitem acesso direto aos dados;</li>
+                <ul>
+                    <li>Ideia: associar (função de dispersão) cada chave a um valor na tabela (memória). </li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tabela de Dispersão (definições).</h2>
+            <ul>
+                <li>Vamos definir então as variáveis da tabela de dispersão:</li>
+                <ul>
+                    <li><b>d</b> (dado), podendo ser de qualquer tipo: string, float, objeto, matriz, etc.;</li>
+                    <li><b>k</b> (chave/posição na tabela) valores inteiros de 0 até M-1;</li>
+                    <li><b>T</b> (vetor/tabela) e <b>M</b> é o tamanho da tabela (idealmente um número primo);</li>
+                    <li><b>v</b> (valor/dado) armazenado na tabela;</li>
+                    <li><b>F</b> (função de dispersão).</li>
+                </ul>
+            </ul>
+            <p>Ideia: associar (função de dispersão) cada chave a um valor na tabela (memória). F(d)=k; T[k] = d.</p>
+            <img src="img/hash-table.png" alt="hash-table.png">
+            <ul>
+                <li>Podemos ter funções perfeitas e imperfeitas;</li>
+                <li>Difícil encontrar funçõe s perfeitas em prática.</li>
+            </ul>
+            <img src="img/hash-table1.png" alt="hash-table1.png">
+        </section>
+
+        <section>
+            <h2>Função de Dispersão.</h2>
+            <ul>
+                <li>O que se espera de uma <b>boa</b> função de dispersão?</li>
+                <ul>
+                    <li>Seja rápido calcular a chave para um dado e rápido acessar a chave na Tabela, custo O(1);</li>
+                    <li>Distribua (disperse ) igualmente os dados na tabela;</li>
+                    <li>Capture no dado alguma informação que seja relevante para obter uma chave única;</li>
+                </ul>
+                <li>O que seria <b>ruim</b> para uma função de dispersão?</li>
+                <ul>
+                    <li>Custo alto de cálculo > O(N);</li>
+                    <li>Para cada chave ter associado mais de um dado (problema conhecido como colisão).</li>
+                </ul>
+            </ul>
+            <p>Mas como funciona para strings?</p>
+            <ul>
+                <li>Associar um valor para cada caracter da string (Tabela ASCII);</li>
+                <li>Somar os valores de cada caractere para obter o dado numérico.</li>
+            </ul>
+            <img src="img/dispersao.png" alt="dispersao.png">
+            <p></p>
+            <img src="img/dispersao1.png" alt="dispersao1.png">
+        </section>
+
+        <section>
+            <h2>Criando Funções de Dispersão.</h2>
+            <ul>
+                <li>A mais clássica função de dispersão é usar a fórmula do resto da divisão (mod ou %) também conhecido como método da divisão , dado % m, m é um número inteiro maior que zero.</li>
+                <ul>
+                    <li>Ex: o resto da divisão de 5 por 4 é representado como</li>
+                </ul>
+            </ul>
+            <img src="img/dispersao2.png" alt="dispersao2.png">
+            <pre>
+            F(dado) = dado % m
+            Qual deve ser o valor de m ?
+            que tal o tamanho da Tabela.
+            F(dado) = dado % M
+            </pre>
+        </section>
+
+        <section>
+            <h2>Função de Dispersão (divisão).</h2>
+            <p>Dada uma tabela M=7 para inserir 5 valores inteiros de 0 a 99. F(dado) = dado % 7.</p>
+            <img src="img/dispersao3.png" alt="dispersao3.png">
+            <ul>
+                <li>Impacto da escolha de m: F(dado) = dado % m.</li>
+                <li>A ideia é simular a caminhada em uma estrutura linear de maneira circular.</li>
+            </ul>
+            <img src="img/dispersao4.png" alt="dispersao4.png">
+            <p>Exemplo:</p>
+            <img src="img/dispersao5.png" alt="dispersao5.png">
+            <ul>
+                <li>E se o valor de <b>m</b> for muito pequeno?</li>
+                <ul>
+                    <li>Vão ocorrer muitas <b>colisões</b>.</li>
+                </ul>
+                <li>Impacto da escolha de m: F(dado) = dado % m.</li>
+                <ul>
+                    <li>Vamos observar a distribuição dos dados (10,...,15) nas chaves:</li>
+                </ul>
+            </ul>
+            <img src="img/dispersao6.png" alt="dispersao6.png">
+            <ul>
+                <li>Se tenho valores de 10 a 15 e uso um m (par).</li>
+                <li>exemplo:</li>
+                <li>m=2, quantas colisões ocorrem?</li>
+                <ul>
+                    <li>Teremos TODOS os valores pares associados a chave 0 (4 colisões)</li>
+                </ul>
+                <li>Se tenho valores de 10 a 15 e uso um m (par).</li>
+                <li>exemplo:</li>
+                <li>m=4, quantas colisões ocorrem?</li>
+                <ul>
+                    <li>Teremos TODOS os valores pares distribuídos nas chaves pares (0 e 2), 2 colisões.</li>
+                </ul>
+                <li>Se tenho valores de 10 a 15 e uso um m (ímpar/primo)</li>
+                <li>exemplo:</li>
+                <li>m=3, quantas colisões ocorrem?</li>
+                <ul>
+                    <li>Teremos os valores pares e ímpares associados a uma mesma chave (3 colisões).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Função de Dispersão (multiplicação).</h2>
+            <ul>
+                <li>Ideia: usar os valores fracionados de uma multiplicação para determinar a posição da chave;</li>
+                <li>Utiliza outra constante A, tal que 0 < A < 1;</li>
+                <li>Fórmula: F(d) = m*(d *A % 1) ou F(d) = M*(d *A % 1);</li>
+                <ul>
+                    <li>O termo %1 serve para pegar apenas a parte fracionária da multiplicação (d *A).</li>
+                </ul>
+            </ul>
+            <img src="img/dispersao7.png" alt="dispersao7.png">
+        </section>
+        
+        <section>
+            <h2>Função de Dispersão (dobra).</h2>
+            <ul>
+                <li>Dobrar o dado como se dobra um papel;</li>
+                <li>Ideia: quebrar o dado em partes (dobrar e somar) até que se tenha a posição válida (chave) para a tabela de tamanho M; </li>
+                <li>Exemplo: encontrar a posição para o dado 1234 sendo M=2 (tabela com 2 posições).</li>
+            </ul>
+            <pre>1234 -> unidade(1+4) unidade(2+3)= 55>2 -> unidade(5+5) = 0<2</pre>
+            <img src="img/dispersao8.png" alt="dispersao8.png">
+        </section>
+
+        <section>
+            <h2>Função de Dispersão.</h2>
+            <ul>
+                <li>O desempenho é medido pelo número de colisões;</li>
+                <ul>
+                    <li>Pode ser estimado pelo fator de carga (fc): quantidade de chaves / M;</li>
+                </ul>
+                <li>Em geral, as colisões ocorrem quando a distribuição das chaves é desigual ou quando a tabela tem tamanho pequeno;</li>
+                <li>Estratégias para lidar com as colisões se fazem necessárias, vamos conhecer algumas delas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian.</li>
+                <ul>
+                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                </ul>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 23 de maio de 2024</p>
+    </footer>
+</body>
+</html>
