@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Hash e Heap.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Hash e Heap.</h1>
+        <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=2GFsHvenTXQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 3. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Tabelas de Dispersão: Hash.</h3>
+            <b>Implementação em Python.</b>
+            <p>PARTE 3</p>
+        </section>
+
+        <section>
+            <h2>Tabela de Dispersão (dicionário)</h2>
+            <ul>
+                <li>Podemos representar a tabela por meio da estrutura de dados em Python, conhecida como dicionário;</li>
+                <li>Precisamos do par: <chave:valor> ou <k:v>, ambos k e v podem ser de qualquer tipo (int,string…);</li>
+                <ul>
+                    <li>Exemplo, tabela com M=3:</li>
+                    <ul>
+                        <li>tabela = {k1 : v1, k2 : v2, k3 : v3}</li>
+                        <ul>
+                            <li>tabela = {‘A’ : 0, ‘B’ : 0, ‘C’ : 0}</li>
+                            <li>tabela[‘B’]=1</li>
+                        </ul>
+                        <li>tabela = dict(k1 = v1, k2 = v2, k3 = v3)</li>
+                        <ul>
+                            <li>k deve ter padrão de nome de variável.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <a href="https://pythontutor.com/render.html#mode=display" target="_blank" rel="noopener noreferrer">código ></a>
+            <img src="img/tabela-dispersao.png" alt="tabela-dispersao.png">
+            <ul>
+                <li>Vamos criar uma tabela com M=5 para d=[12,13,14,17];</li>
+                <ul>
+                    <li>Criar a tabela e inicializar as posições com vazio:</li>
+                    <ul>
+                        <li>(o que seria vazio? 0, -1, None,...); vamos usar None.</li>
+                    </ul>
+                    <li>Criar a função de dispersão:</li>
+                    <ul>
+                        <li>vamos usar o método da divisão: F(dado) = dado % M;</li>
+                    </ul>
+                    <li>Para cada dado, aplicar F para encontrar a chave e inserir o valor/dado na tabela.</li>
+                    <ul>
+                        <li>Antes de inserir deve-se identificar a colisão, mas como?</li>
+                        <ul>
+                            <li>Se tabela[chave] == ? None</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+
+            <b>Criar a Tabela de Dispersão:</b>
+            <p>Vamos criar uma tabela com M=5;</p>
+            <img src="img/dispersao-python.png" alt="dispersao-python.png">
+            <p>Vamos colocar o código de criação da tabela dentro de uma função chamada criaTabela(M);</p>
+            <pre>tabela-de-dispersao.py</pre>
+            <img src="img/dispersao-python1.png" alt="dispersao-python1.png">
+
+            <b>Criar a Função Dispersão:</b>
+            <p>Vamos criar uma função chamada dispersao(dado,m);</p>
+            <ul>
+                <li>função de dispersão será o método da divisão</li>
+            </ul>
+            <pre>tabela-de-dispersao1.py</pre>
+            <img src="img/dispersao-python2.png" alt="dispersao-python2.png">
+            <p></p>
+
+            <b>Verificar colisão e inserir na tabela:</b>
+            <ul>
+                <li>Vamos criar uma função chamada inserir(dado, chave, tabela);</li>
+                <ul>
+                    <li>temos que verificar se está “vazia” tabela[chave]==None;</li>
+                    <li>caso contrário imprimir que houve colisão.</li>
+                </ul>
+            </ul>
+            <pre>tabela-de-dispersao2.py</pre>
+            <img src="img/dispersao-python3.png" alt="dispersao-python3.png">
+            <ul>
+                <li>Agora é só combinar os códigos e ter a implementação completa da inserção na tabela de dispersão com o método da divisão.</li>
+                <li>Podemos até melhorar a organização do código utilizando orientação a objeto para criar uma classe associada à tabela de dispersão e definir as funções para criar, inserir, buscar, remover e imprimir a tabela de dispersão.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Implementação com classe.</h2>
+            <img src="img/dispersao-python4.png" alt="dispersao-python4.png">
+        </section>
+
+        <section>
+            <h2>Tratamento de Colisão (Endereçamento Aberto).</h2>
+            <ul>
+                <li>Com as sondagens vamos ter que percorrer a tabela até encontrar uma posição disponível (“vazia”);</li>
+                <li>Aplicado em todas as operações (ex: inserção, remoção e busca);</li>
+                <li>Precisamos definir a estratégia de sondagem e ajustar:</li>
+                <ul>
+                    <li>A função de dispersão;</li>
+                    <li>A função de inserção (busca ou remoção) que na ocorrência de colisão tem que continuar buscando uma posição vazia (inserir) ou o dado (busca e remoção).</li>
+                </ul>
+            </ul>
+            <b>Sondagem Linear (inserção).</b>
+            <p></p>
+            <img src="img/dispersao-python5.png" alt="dispersao-python5.png">
+            <p></p>
+            <b>Sondagem Linear (remoção).</b>
+            <p></p>
+            <img src="img/dispersao-python6.png" alt="dispersao-python6.png">
+        </section>
+
+        <section>
+            <h2>Tratamento de Colisão (Endereçamento Encadeado).</h2>
+            <ul>
+                <li>Vamos implementar, além da tabela, uma segunda estrutura de dados (Lista ligada):</li>
+                <ul>
+                    <li>2 ponteiros (início e fim) e nó cabeça;</li>
+                </ul>
+            </ul>
+            <img src="img/dispersao-python7.png" alt="dispersao-python7.png">
+            <p></p>
+            <img src="img/dispersao-python8.png" alt="dispersao-python8.png">
+            <p></p>
+            <img src="img/dispersao-python9.png" alt="dispersao-python9.png">
+        </section>
+
+        <section>
+            <h2>Resumo (implementações).</h2>
+            <ul>
+                <li>Nas técnicas de sondagem temos que percorrer a tabela para, por exemplo, buscar um valor, custo O(M);</li>
+                <li>Já na técnica encadeada temos que percorrer uma lista para buscar um valor, O(L), onde L é o tamanho da lista;</li>
+                <li>O ideal é que L tenha um tamanho médio L/N , indicando uma distribuição equilibrada das N chaves nas listas;</li>
+                <li>Se a maior lista na tabela tem tamanho L = M, temos que o custo da busca fica, no pior caso, igual às técnicas de sondagem, ou seja, O(L)=O(M).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian.</li>
+                <ul>
+                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                </ul>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de maio de 2024</p>
+    </footer>
+</body>
+</html>
