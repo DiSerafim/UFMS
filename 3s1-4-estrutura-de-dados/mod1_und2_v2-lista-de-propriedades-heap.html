@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Hash e Heap.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Hash e Heap.</h1>
+        <h2>💡 Unidade 2 - Lista de Prioridades: Heap.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=hyedRznKnjQ&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Projeto e Análise de Algoritmos - Aula 07 - A estrutura de dados heap. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Karina Valdivia Delgado.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>A estrutura de dados heap.</h3>
+        </section>
+
+        <section>
+            <h2>Roteiro.</h2>
+            <ul>
+                <li>Definição de heap.</li>
+                <li>Manutenção da propriedade de heap.</li>
+                <li>Construção de um max-heap.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Heap.</h2>
+            <ul>
+                <li>É uma estrutura de dados que pode ser visualizada como uma <b>árvore binária quase completa</b>.</li>
+                <li>Cada nó da árvore é ocupado por um elemento e temos as seguintes propriedades:</li>
+                <ul>
+                    <li>A árvore é completa até o penúltimo nível</li>
+                    <li>No último nível as folhas estão o mais à esquerda possível</li>
+                    <li>O conteúdo de um nó é <b>maior ou igual</b> ao conteúdo dos nós na subárvore enraizada nele (<b>max-heap</b>)</li>
+                    <li>O conteúdo de um nó é <b>menor ou igual</b> ao conteúdo dos nós na subárvore enraizada nele (<b>min-heap</b>).</li>
+                </ul>
+            </ul>
+            <p>Essas condições garantem que ele possa ser armazenado em um vetor A[1...m]</p>
+            <img src="img/heap.png" alt="heap.png">
+            <p>Vetor:</p>
+            <img src="img/heap1.png" alt="heap1.png">
+            <ul>
+                <li>Para qualquer nó i:</li>
+                <ul>
+                    <li>2i é o filho esquerdo de i</li>
+                    <li>2i + 1 é o filho direito de i</li>
+                </ul>
+                <li>Quem é o pai de i?</li>
+            </ul>
+            <img src="img/heap2.png" alt="heap2.png">
+            <p>[i/2] é o pai de i.</p>
+            <p>Para todo i=2,3,...,m: <b>A[[i/2]] ≥ A[i]</b></p>
+            <p>Cada nível p tem exatamente 2p nós, exceto talvez o último.</p>
+            <p><b>Ex</b>. o nível 2 tem 4 nós.</p>
+            <p>A altura de um nó i é o maior comprimento de um caminho de i até uma folha, isto é, o número de arestas no caminho mais longo desde i até uma folha.</p>
+        </section>
+
+        <section>
+            <h2>Manutenção da propriedade de Heap.</h2>
+            <img src="img/heap3.png" alt="heap3.png">
+            <p></p>
+            <img src="img/heap4.png" alt="heap4.png">
+            <p></p>
+            <p>Para transformar o vetor num heap bastou rebaixar o 8 até ele satisfazer a propriedade de heap.</p>
+            <img src="img/heap5.png" alt="heap5.png">
+            <p>Recebe o vetor A [1 ...m] e o índice i, tal que as árvores com raízes nos filhos esquerdo e direito do nó i são max-heaps.</p>
+            <img src="img/heap6.png" alt="heap6.png">
+            <p>Para encontrar a posição onde está o elemento maior entre o filho esquerdo, filho direito e i.</p>
+        </section>
+
+        <section>
+            <h2>Construção de um max-heap.</h2>
+            <p>A ideia do algoritmo que constrói um heap com base num vetor que não é um heap é montar o heap a partir das folhas.</p>
+            <img src="img/heap7.png" alt="heap7.png">
+            <p></p>
+            <img src="img/heap8.png" alt="heap8.png">
+            <p></p>
+            <img src="img/heap9.png" alt="heap9.png">
+            <p>Dado um vetor A[1...n] qualquer, o algoritmo monta a partir dele um max-heap.</p>
+            <ul>
+                <li>BUILD-MAX-HEAP (A, n)</li>
+                <li>1. para i [n/2] decrescendo até 1 faça</li>
+                <li>2. MAX-HEAPIFY (A, n, i)</li>
+            </ul>
+            <pre>
+                Análise grosseira
+                Θ(π/2)
+                O(n/2 lg n)
+                =O(nlgn)
+            </pre>
+            <p><b>Análise detalhada</b>: Precisamos contar o número de nós em cada nível e multiplicar pelo custo do max-heapify para cada um (que depende da altura do nó)</p>
+            <p>O consumo de tempo de BUILD-MAX-HEAP é Θ(η).</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de maio de 2024</p>
+    </footer>
+</body>
+</html>
