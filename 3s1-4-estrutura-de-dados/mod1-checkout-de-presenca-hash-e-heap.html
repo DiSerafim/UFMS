@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 1 - Hash e Heap.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ESTRUTURA DE DADOS
+                <span class="status concluida">Concluído</span>
+            </p>
+            <pre>
+            Iniciado em: segunda, 27 mai 2024, 19:26
+            Estado: Finalizada
+            Concluída: em segunda, 27 mai 2024, 19:46
+            Tempo empregado: 19 minutos 37 segundos
+            Notas: 1,00/1,00
+            Avaliar 10,00 de um máximo de 10,00(100%)
+            </pre>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Uma função de dispersão h deve transformar uma chave x em um endereço-base h(x) da tabela de dispersão. Atente-se que a finalidade da função de dispersão é produzir um número baixo de colisões entre as chaves. Na seção 10.3.1, Jayme Luiz Szwarcfiter e Lilian Markenzon (2010) apresentam o método da divisão, um método facilmente computado e que deve ser utilizado para implementar a solução desta atividade.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Crie um programa para calcular e imprimir o endereço-base de um conjunto de chaves.</h2>
+            <b>Entrada:</b>
+            <p>A entrada é composta por uma linha contendo dois valores inteiros, K e M, sendo a quantidade de chaves e tamanho da tabela hash, respectivamente. Na sequência serão fornecidos K valores inteiros, um em cada linha.</p>
+            <b>Saída:</b>
+            <p>Para cada chave seu programa deve produzir uma linha composta pela chave e o endereço-base separados por "->".</p>
+            <b>Exemplo:</b>
+            <pre>
+            Entrada         Saida
+            6 23            44 → 21
+            44              46 → 0
+            46              49 → 3
+            49              68 → 22
+            68              71 → 2
+            71              97 → 5
+            97
+            </pre>
+            <b>calcular_e_imprimir_endereco_base.py</b>
+            <pre>
+            def calcular_e_imprimir_endereco_base(chaves, M):
+                enderecos = []
+                
+                for chave in chaves:
+                    endereco = chave % M
+                    enderecos.append((chave, endereco))
+                    
+                return enderecos
+
+            def main():
+                # Ler valores de entrada
+                K, M = map(int, input().split())
+                
+                chaves = []
+                
+                for _ in range(K):
+                    chave = int(input())
+                    chaves.append(chave)
+                    
+                enderecos = calcular_e_imprimir_endereco_base(chaves, M)
+                
+                # Imprime os resultados
+                for chave, endereco in enderecos:
+                    print(f"{chave} -> {endereco}")
+                    
+            if __name__ == "__main__":
+                main()
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 27 de maio de 2024</p>
+    </footer>
+</body>
+</html>
