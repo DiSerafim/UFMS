@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A1] Avaliação do Módulo 1 - Hash e Heap.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	terça, 28 mai 2024, 06:39</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	terça, 28 mai 2024, 07:55</li>
+                <li>Tempo empregado	1 hora 16 minutos</li>
+                <li>Avaliar	7,00 de um máximo de 10,00(70%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Sejam x1 e x2 dois dados quaisquer a serem armazenados em uma tabela hashing T. Seja h(x) a função de dispersão utilizada. Uma colisão em T ocorre quando h(x1) ≠ h(x2).</p>
+                <p>Escolha uma opção: Verdadeiro ou <b>Falso</b></p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Uma colisão em uma tabela de dispersão (hash table) ocorre quando dois dados diferentes x1 e x2 são mapeados para o mesmo endereço na tabela, ou seja, quando  h(x1) = h(x2). Portanto, a colisão acontece precisamente quando os valores resultantes da função de dispersão são iguais para duas chaves distintas.</li>
+                    <li>Se ℎ(x1) ≠ ℎ(x2), não há colisão, pois as duas chaves são mapeadas para endereços diferentes na tabela hash.</li>
+                </ul>
+
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Sobre o tratamento de colisões em endereçamento aberto, é correto afirmar que:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <p>Escolha uma ou mais:</p>
+                <ul>
+                    <li>a. Alguns elementos ficam na própria tabela de dispersão e outros fora. Isto é, cada entrada da tabela contém um único elemento do conjunto ou uma lista de elementos.</li>
+                    <li><b>b.</b> Ao executar uma operação de inserção sobre a tabela, examina-se sucessivamente a tabela de dispersão até encontrar uma posição vazia na qual inserir a chave ou detectar que está cheia.</li>
+                    <li><b>c.</b> Ao procurar um elemento, examinam-se sistematicamente as posições da tabela até encontrar o elemento desejado ou até confirmar que o elemento não está na tabela.</li>
+                    <li><b>d.</b> Nessa forma de tratamento de colisões, a tabela de dispersão pode “ficar cheia”, de maneira que nenhuma inserção adicional pode ser feita; o fator de carga α nunca pode exceder 1.</li>
+                    <li>e. De maneira similar ao tratamento de colisões por encadeamento, não existe nenhuma lista e nenhum elemento armazenado fora da tabela.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. c. d. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>b. No endereçamento aberto, durante a inserção, a tabela é examinada sequencialmente (de acordo com uma sequência determinada pelo método de tratamento de colisões, como linear probing, quadratic probing ou double hashing) até encontrar uma posição vazia para inserir a nova chave.</li>
+                    <li>c. Similarmente, ao procurar um elemento, a busca continua sistematicamente pelas posições da tabela conforme a mesma sequência até encontrar o elemento ou determinar que ele não está presente (detectando uma posição vazia ou retornando ao ponto de início).</li>
+                    <li>d. No endereçamento aberto, todos os elementos são armazenados na própria tabela de dispersão. Assim, quando a tabela fica cheia, não é possível adicionar mais elementos. Isso significa que o fator de carga α (número de elementos divididos pelo tamanho da tabela) não pode exceder 1.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>O tratamento de colisões por encadeamento utiliza listas encadeadas para armazenar chaves sinônimas. Tais listas utilizam ponteiros, o que consome espaço. Para economizá-lo, desenvolveu-se o método denominado endereçamento aberto. A ideia é armazenar as chaves sinônimas também na tabela. Porém, não há uso de ponteiros. As chaves são armazenadas na tabela, sem qualquer informação adicional. Quando ocorre alguma colisão, determina-se, também por cálculo, qual o próximo compartimento a ser examinado. Se ocorrer nova colisão com alguma outra chave armazenada nesse último, um novo compartimento é escolhido mediante cálculo, e assim por diante. Selecione abaixo os métodos que podem ser utilizados nas operações de busca, inserção e remoção do endereçamento aberto:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <p>Escolha uma ou mais:</p>
+                <ul>
+                    <li><b>a.</b> tentativa quadrática.</li>
+                    <li>b. tentativa binária.</li>
+                    <li><b>c.</b> tentativa linear.</li>
+                    <li><b>d.</b> hash duplo.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. c. d. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Tentativa quadrática (quadratic probing): Este método resolve colisões examinando posições de forma quadrática. Se uma colisão ocorre na posição h(k), as próximas posições examinadas serão h(k)+1², h(k)+2², h(k)+3², e assim por diante. Isso reduz a probabilidade de clusters primários.</li>
+                    <li>Tentativa linear (linear probing): Neste método, a próxima posição a ser examinada após uma colisão é a próxima posição sequencial na tabela. Se uma colisão ocorre na posição h(k), a próxima posição examinada será h(k)+1, depois h(k)+2, h(k)+3, e assim por diante. Isso é simples, mas pode levar a clusters primários.</li>
+                    <li>Hash duplo (double hashing): Este método utiliza uma segunda função hash para determinar o deslocamento a ser utilizado após uma colisão. Se uma colisão ocorre na posição h1​(k), a próxima posição será determinada por h 1​(k)+i⋅h 2​(k), onde h2 ​é a segunda função hash e i é o número da tentativa.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Na implementação de listas de prioridades, podemos utilizar três abordagens, mais detalhadas abaixo. Classifique os trechos com V(verdadeiro) ou F (falso) e escolha uma das alternativas:</p>
+                <ul>
+                    <li>Na implementação por lista não ordenada, um novo nó da tabela pode ser colocado em qualquer posição conveniente, dependendo do tipo de alocação utilizada, sequencial ou encadeada e a remoção implica percorrer a tabela em busca do elemento de maior prioridade;</li>
+                    <li>Na implementação por lista ordenada, a remoção é imediata porque, estando as prioridades já ordenadas, o primeiro elemento é o que interessa</li>
+                    <li>Na implementação por lista não ordenada, a inserção obriga a um percurso pela lista para procurar sua posição correta;</li>
+                    <li>Na implementação por heap, o campo de prioridade aparece como rótulo do nó e os nós são numerados sequencialmente da raiz para os níveis mais baixos, da esquerda para a direita;</li>
+                    <li>Na implementação por heap, a tabela não pode ser disposta numa árvore binária completa, na qual o elemento de maior prioridade seja sempre o primeiro da ordenação, isto é, a raiz da árvore.</li>
+                </ul>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. V, V, F, V, V.</li>
+                    <li>b. V, F, F, F, V.</li>
+                    <li><b>c.</b> V, V, F, V, F.</li>
+                    <li>d. V, F, F, V, F.</li>
+                    <li>e. F, F, V, F, V.</li>
+                </ul>
+                
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>Resolução:</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Considere uma tabela Hash T com tamanho M = 7 e função de mapeamento pelo método da divisão. Qual o número de colisões na tabela, se os seguintes valores forem inseridos nesta ordem: 70, 7, 12, 9, 23, 14?</p>
+
+                <b class="answer">Resposta: 70, 23, 14. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>A função de hash para este método é h(x) = x mod M, onde M é o tamanho da tabela.</li>
+                    <ul>
+                        <li>70: h(70) = 70 mod 7 = O</li>
+                        <ul>
+                            <li>valor 70 vai para a posição 0. <b>Não há colisão</b>.</li>
+                        </ul>
+                        <li>7: h(7) = 7 mod 7 = O</li>
+                        <ul>
+                            <li>valor 7 vai para a posição 0, onde já está 70. Isso resulta em uma <b>colisão</b>.</li>
+                        </ul>
+                        <li>12: h(12) = 12 mod 7 = 5</li>
+                        <ul>
+                            <li>O valor 12 vai para a posição 5. <b>Não há colisão</b>.</li>
+                        </ul>
+                        <li>9: h(9) = 9 mod 7 = 2</li>
+                        <ul>
+                            <li>O valor 9 vai para a posição 2. <b>Não há colisão</b>.</li>
+                        </ul>
+                        <li>23: h(23) = 23 mod 7 = 2</li>
+                        <ul>
+                            <li>O valor 23 vai para a posição 2, onde já está 9. Isso resulta em uma <b>colisão</b>.</li>
+                        </ul>
+                        <li>14: h(14) = 14 mod 7 = 0</li>
+                        <ul>
+                            <li>O valor 14 vai para a posição 0, onde já estão 70 e 7. Isso resulta em outra <b>colisão</b>.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Analise as sequências e associe corretamente:</p>
+                <ul>
+                    <li>14 18 24 32 17 29 33 36 35</li>
+                    <ul>
+                        <li><b>Não é um Heap</b></li>
+                    </ul>
+                    <li>44 43 39 42 38 35 36 41 34</li>
+                    <ul>
+                        <li><b>É um max-heap</b></li>
+                    </ul>
+                </ul>
+                <p>Opções: É um max-heap, É um min-heap, Não é um Heap.</p>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Max-Heap: Em um max-heap, para todo nó i, o valor do nó i é maior ou igual aos valores dos seus filhos.</li>
+                <pre>
+                        14
+                        / \
+                      18   24
+                     /  \   / \
+                    32  17 29  33
+                   / \  / 
+                  36 35
+                 Nó 14: filhos 18 e 24 (14 < 18, 14 < 24, então não é max-heap)
+                 Nó 18: filhos 32 e 17 (18 < 32, 18 > 17, então não é min-heap)
+                 Nó 24: filhos 29 e 33 (24 < 29, 24 < 33, então não é max-heap)
+                 Nó 32: filhos 36 e 35 (32 < 36, 32 < 35, então não é max-heap)
+                </pre>
+                <ul>
+                    <li>não é um heap.</li>
+                </ul>
+                    <li>Min-Heap: Em um min-heap, para todo nó i, o valor do nó i é menor ou igual aos valores dos seus filhos.</li>
+                    <pre>
+                         44
+                        /  \
+                       43    39
+                      /  \   /  \
+                    42   38 35  36
+                    / \  / 
+                    41 34
+                    Nó 44: filhos 43 e 39 (44 > 43, 44 > 39, max-heap condição satisfeita)
+                    Nó 43: filhos 42 e 38 (43 > 42, 43 > 38, max-heap condição satisfeita)
+                    Nó 39: filhos 35 e 36 (39 > 35, 39 > 36, max-heap condição satisfeita)
+                    Nó 42: filhos 41 e 34 (42 > 41, 42 > 34, max-heap condição satisfeita)
+                    </pre>
+                    <ul>
+                        <li>esta sequência é um max-heap.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Considerando a lista de min-prioridades formada pelos elementos  12,21,28,23,36,32,41,47,51,49, determinar qual alternativa descreve a lista resultante da inclusão do elemento 18:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 12,18,28,23,21,41,32,51,37,49,36.</li>
+                    <li>b. 08,12,28,23,21,32,41,47,51,49,36.</li>
+                    <li><b>c.</b> 12,18,28,23,21,32,41,47,51,49,36.</li>
+                    <li>d. 12,18,28,21,23,32,41,47,51,49,36.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Para encontrar a lista resultante após a inclusão do elemento 18, precisamos encontrar o lugar certo para inseri-lo, mantendo a ordem crescente. Vamos ver onde o 18 se encaixa na lista original:</li>
+                    <ul>
+                        <li>12, 21, 28, 23, 36, 32, 41, 47, 51, 49</li>
+                        <li>O 18 está entre o 12 e o 21. Portanto, a lista resultante seria:</li>
+                        <li>12, 18, 21, 28, 23, 36, 32, 41, 47, 51, 49</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>O fator de carga de qualquer tabela de dispersão é no máximo 1.</p>
+                <p>Escolha uma opção: Verdadeiro ou <b>Falso</b>.</p>
+
+                <b class="answer">Resposta: Falso. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O fator de carga de uma tabela de dispersão é a razão entre o número de elementos armazenados na tabela e o número total de slots na tabela. Se o fator de carga for superior a 1, significa que há mais elementos na tabela do que slots disponíveis, o que pode resultar em colisões e diminuição do desempenho da tabela de dispersão. Portanto, o fator de carga idealmente deve ser mantido abaixo de 1 para garantir um desempenho eficiente da tabela de dispersão.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Considerando a estratégia de tratamento de colisão pelo endereçamento aberto com uma função linear e com o método da divisão para uma tabela de tamanho 7, arraste cada chave para sua posição correspondente. Posições vazias na tabela serão preenchidas com o valor -1.</p>
+                <p>Considere a seguinte ordem de inserção das chaves: 21, 17, 1, 14, 40, 0.</p>
+                <p>Tabela Hash:</p>
+                <ul>
+                    <li>0 1 2 3 4 5 6</li>
+                    <li>Opções:</li>
+                    <ul>
+                        <li>14 21 ‑1 1 0 17 40</li>
+                    </ul>
+                </ul>
+                
+                <b class="answer">Resposta: 21, 1, 14, 17, 0, 40, −1. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Para inserir as chaves na tabela hash utilizando o tratamento de colisão pelo endereçamento aberto com uma função linear e o método da divisão, podemos seguir estes passos:</li>
+                    <ul>
+                        <li>1. Calcular o índice inicial para cada chave.</li>
+                        <li>2. Se o slot correspondente estiver ocupado, procurar o próximo slot vazio de forma linear.</li>
+                        <li>3. Inserir a chave no primeiro slot vazio encontrado.</li>
+                        <li>Vamos inserir as chaves na tabela hash:</li>
+                        <ul>
+                            <li>21:</li>
+                            <ul>
+                                <li>Índice inicial: 21 % 7 = 0</li>
+                                <li>Insira 21 na posição 0.</li>
+                            </ul>
+                            <li>17:</li>
+                            <ul>
+                                <li>Índice inicial: 17 % 7 = 3</li>
+                                <li>Insira 17 na posição 3.</li>
+                            </ul>
+                            <li>1:</li>
+                            <ul>
+                                <li>Índice inicial: 1 % 7 = 1</li>
+                                <li>Insira 1 na posição 1.</li>
+                            </ul>
+                            <li>14:</li>
+                            <ul>
+                                <li>Índice inicial: 14 % 7 = 0</li>
+                                <li>O slot 0 está ocupado. Procuramos o próximo slot vazio de forma linear:</li>
+                                <ul>
+                                    <li>Slot 1 está ocupado. Próximo.</li>
+                                    <li>Slot 2 está vazio. Insira 14 na posição 2.</li>
+                                </ul>
+                            </ul>
+                            <li>40:</li>
+                            <ul>
+                                <li>Índice inicial: 40 % 7 = 5</li>
+                                <li>Insira 40 na posição 5.</li>
+                            </ul>
+                            <li>0:</li>
+                            <ul>
+                                <li>Índice inicial: 0 % 7 = 0</li>
+                                <li>O slot 0 está ocupado. Procuramos o próximo slot vazio de forma linear:</li>
+                                <ul>
+                                    <li>Slot 1 está ocupado. Próximo.</li>
+                                    <li>Slot 2 está ocupado. Próximo.</li>
+                                    <li>Slot 3 está ocupado. Próximo.</li>
+                                    <li>Slot 4 está ocupado. Próximo.</li>
+                                    <li>Slot 5 está ocupado. Próximo.</li>
+                                    <li>Slot 6 está vazio. Insira 0 na posição 6.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Se A,B,C,D,E,F,G é uma sequência de dados de uma lista de prioridades do tipo ‘max heap’, escolha abaixo a alternativa correta dos valores inteiros correspondentes a essa sequência:</p>
+                <pre>
+                      A>B
+                    /     \
+                D←B←A      F←C←A
+                /   \       /   \
+            A→D←B  A→E←B  A→F←C A→G←C
+                </pre>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 01, 03, 04, 07, 11, 18, 29.</li>
+                    <li>b. -10, -8, -7, -5, -4, -3, -1.</li>
+                    <li>c. {x+1}, {x}, {x-1}, {x-2}, {x-3}, {x-4}, {x-5}.</li>
+                    <li><b>d.</b> 15, 13, 11, 09, 10, 12, 14.</li>
+                    <li>e. 5/5, 10/5, 15/5, 20/5, 25/5, 30/5, 35/5.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de maio de 2024</p>
+    </footer>
+</body>
+</html>
