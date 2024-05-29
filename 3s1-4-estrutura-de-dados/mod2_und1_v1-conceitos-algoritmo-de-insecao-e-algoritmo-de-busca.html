@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Árvore Binária de Busca.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Árvore Binária de Busca.</h1>
+        <h2>💡 Unidade 1 - Conceitos, algoritmo de inserção e algoritmo de busca.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=mGoYmyDbZIY&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 2 - Unidade 1.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Conceitos, algoritmo de inserção e algoritmo de busca.</h3>
+            <p>PARTE 1</p>
+        </section>
+
+        <section>
+            <h2>Pesquisa Linear.</h2>
+            <ul>
+                <li>Considere um vetor V de valores ordenados V= [1,3,5,7,9,11,13] e desejamos buscar o valor <b>15</b>, que não existe em V.</li>
+                <ul>
+                    <li>Na busca convencional perguntamos de i=0 até i=6:</li>
+                    <ul>
+                        <li>V[i] == 15? (7 passos);</li>
+                        <li>Custo da busca O(N).</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/pesquisa-linear.png" alt="pesquisa-linear.png">
+        </section>
+
+        <section>
+            <h2>Pesquisa Binária.</h2>
+            <ul>
+                <li>Essa estratégia assume que o conjunto de dados deve estar <b>ordenado</b> (crescente ou decrescente);</li>
+                <li>Inicia a busca pela <b>posição central</b> do conjunto de dados;</li>
+                <ul>
+                    <li>Se não for o elemento a ser buscado, <b>divide</b> o conjunto em duas metades, continuando a busca na metade onde o elemento pode estar;</li>
+                    <li>Esse processo é repetido até encontrar o elemento desejado ou chegar ao fim do conjunto de dados. Pesquisa Binária</li>
+                </ul>
+                <li>Considere um vetor V de valores ordenados V= [1,3,5,7,9,11,13] e desejamos buscar o valor <b>15</b>, que não existe em V.</li>
+            </ul>
+            <img src="img/pesquisa-binaria.png" alt="pesquisa-binaria.png">
+            <ul>
+                <li>Problema:</li>
+                <ul>
+                    <li>Manter o vetor ordenado!</li>
+                    <li>Se aplicar a ordenação em cada operação de inserção e remoção o custo fica alto!</li>
+                    <li>Custo da inserção/remoção + custo da ordenação!</li>
+                </ul>
+                <li>Solução:</li>
+                <ul>
+                    <li>Árvore de Busca Binária!</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Árvore de Busca Binária.</h2>
+            <ul>
+                <li>Como vimos no módulo anterior sobre Heap, na árvore binária temos:</li>
+                <ul>
+                    <li>Cada nó possui até 2 filhos (FE e FD);</li>
+                    <li>A altura (h) da árvore é igual ao número de níveis -1;</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria.png" alt="busca-binaria.png">
+            <p></p>
+            <img src="img/busca-binaria1.png" alt="busca-binaria1.png">
+            <ul>
+                <li>A árvore a baixo é binária?</li>
+                <ul>
+                    <li>Não!</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria2.png" alt="busca-binaria2.png">
+            <ul>
+                <li>A árvore a baixo é binária?</li>
+                <ul>
+                    <li>Não! Por quê?</li>
+                    <ul>
+                        <li>6 Viola a propriedade.</li>
+                    </ul>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria3.png" alt="busca-binaria3.png">
+            <ul>
+                <li>A árvore a baixo é binária?</li>
+                <ul>
+                    <li>Agora sim!</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria4.png" alt="busca-binaria4.png">
+            <ul>
+                <li>A árvore a baixo é binária?</li>
+                <ul>
+                    <li>Agora sim!</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria5.png" alt="busca-binaria5.png">
+            <ul>
+                <li>Como podemos organizar os valores de 1 a 6 nessa árvore?</li>
+                <ul>
+                    <li>Onde colocar o menor e o maior valor?</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria6.png" alt="busca-binaria6.png">
+            <ul>
+                <li>Como podemos organizar os valores de 1 a 6 nessa árvore?</li>
+                <ul>
+                    <li>Qual valor vai na raiz?</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria7.png" alt="busca-binaria7.png">
+            <ul>
+                <li>Como podemos organizar os valores de 1 a 6 nessa árvore?</li>
+                <ul>
+                    <li>E os demais 2, 3 e 5?</li>
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria8.png" alt="busca-binaria8.png">
+            <ul>
+                <li>Como podemos organizar os valores de 1 a 6 nessa árvore?</li>
+                <ul>
+                    <li>E se a árvore fosse assim ↴</li>
+                    <img src="img/busca-binaria9.png" alt="busca-binaria9.png">
+                    <li>Teríamos ↴</li>
+                    <img src="img/busca-binaria10.png" alt="busca-binaria10.png">
+                    <li>Comparando as duas árvores binárias, temos:</li>
+                    <img src="img/busca-binaria11.png" alt="busca-binaria11.png">
+                    <li>Poderíamos ter outras configurações de árvore binária para os mesmos valores;</li>
+                    <ul>
+                        <li>Depende da ordem de inserção dos elementos.</li>
+                    </ul>
+                    <img src="img/busca-binaria12.png" alt="busca-binaria12.png">
+                </ul>
+                <li>Propriedade:</li>
+                <ul>
+                    <li>B < A < C</li>
+                    <li>B é o Menor</li>
+                    <li>C é o Maior</li>
+                </ul>
+            </ul>
+
+            <b>Tipos de árvores binárias:</b>
+            <ul>
+                <li><b>Degenerada</b>: cada nó possui exatamente 1 filho (n° de níveis = n° de nós);</li>
+                <li><b>Quase-Completa</b>: cada nível, exceto o último está completamente preenchido;</li>
+                <li><b>Completa</b>: todos os níveis estão completamente preenchidos;</li>
+                <li><b>Cheia</b> (completa): todos os nós, <b>exceto os do último nível</b> possuem exatamente 2 subárvores.</li>
+                <li><b>Estritamente Binária</b>: todo nó tem <b>0 ou 2 filhos</b>.</li>
+            </ul>
+            <img src="img/busca-binaria13.png" alt="busca-binaria13.png">
+            <ul>
+                <li>Nessa estrutura de dados gostaríamos de evitar obter árvores binárias degeneradas.</li>
+                <li>Caso tenhamos árvores quase-completas ou completas, teríamos um ótimo desempenho na inserção, remoção e busca.</li>
+                <ul>
+                    <li>De O(N) para O(log2N)!</li>
+                </ul>
+            </ul>
+            <img src="img/busca-binaria14.png" alt="busca-binaria14.png">
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Inserção).</h2>
+            <ul>
+                <li>Em geral, consiste na operação de incluir elementos nas subárvores esquerda ou direita da raiz;</li>
+                <li>Pode modificar a altura da árvore dependendo de onde for o local apropriado de inserção;</li>
+                <ul>
+                    <li>Pode resultar nos tipos de árvores comentados anteriormente, por exemplo, árvores degeneradas.</li>
+                </ul>
+                <li>Deve garantir a <b>propriedade</b> da árvore de busca binária.</li>
+                <li>Todo o processo de caminhada na árvore inicia-se na <b>raiz</b>;</li>
+                <li>Precisamos encontrar em qual <b>local</b> na árvore podemos incluir o novo nó;</li>
+                <li>Esse processo de inclusão sempre produzirá um <b>nó folha</b>;</li>
+                <li>Esse novo nó se tornará um filho esquerdo (<b>FE</b>) ou filho direito (<b>FD</b>) do seu ancestral.</li>
+                <ul>
+                    <li>Temos que encontrar o seu ancestral.</li>
+                </ul>
+                <li>Vamos visualizar o processo de inserção no <b>VISUALGO</b> (https://visualgo.net/en/bst);</li>
+                <ul>
+                    <li>Vamos criar uma árvore vazia (“Create” -> “Empty”)</li>
+                    <li>Aplicar a função de inserção para os valores (“Insert(v)”):</li>
+                    <ul>
+                        <li>A = [1,2,3,4,7,8]</li>
+                        <li>B = [4,2,7,1,3,8]</li>
+                    </ul>
+                    <li>Qual dessas árvores é uma árvore binária degenerada (A ou B)? A. Observe a organização dos valores.</li>
+                </ul>
+            </ul>
+            <b>Inserir o valor 5 nas árvores abaixo:</b>
+            <p></p>
+            <img src="img/arvore-binaria2.png" alt="arvore-binaria2.png">
+            <p></p>
+            <img src="img/arvore-binaria3.png" alt="arvore-binaria3.png">
+            <ul>
+                <li>Precisamos saber quando inserir na <b>raiz</b> ou <b>buscar</b> nas subárvores da esquerda ou direita o local de inserção.</li>
+                <ul>
+                    <li>Inserir na raiz é quando a árvore está vazia;</li>
+                    <ul>
+                        <li>Qual a configuração de árvore vazia? Raiz sem nó.</li>
+                        <li>Fazer a raiz ser esse novo nó.</li>
+                    </ul>
+                    <li>Se a árvore tem raiz, então devemos buscar o local de inserção…</li>
+                    <li>Se a árvore tem raiz então devemos buscar o local de inserção.</li>
+                    <ul>
+                        <li>Percorrer/<b>buscar</b> desde a raiz e perguntar se o novo nó deve estar na subárvore da esquerda ou da direita;</li>
+                        <ul>
+                            <li>novo < nó atual: ir para FE;</li>
+                            <li>novo > nó atual: ir para FD;</li>
+                            <li>novo = nó atual:  <b>não inserir</b>.</li>
+                            <ul>
+                                <li>Podemos gerar uma árvore degenerada.</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Busca).</h2>
+            <ul>
+                <li>Caminhar na árvore desde a raiz para <b>encontrar um elemento</b> ou <b>encontrar uma posição de inserção</b> para um novo elemento;</li>
+                <ul>
+                    <li>Na busca por um elemento vamos realizar a busca para <b>encontrar um valor</b>;</li>
+                    <li>Na busca por uma posição de inserção vamos realizar a busca para <b>encontrar um “ramo” sem filho</b> (FE=vazio ou FD=vazio).</li>
+                </ul>
+                <li>Vamos assumir que a estrutura de dados que representa o nosso nó tem 3 campos:</li>
+                <ul>
+                    <li><b>chave</b>: contendo o valor;</li>
+                    <li><b>FE</b>: contendo referência ao filho esquerdo;</li>
+                    <li><b>FD</b>: contendo referência ao filho direito.</li>
+                </ul>
+                <li>Buscar o valor 5</li>
+                <ul>
+                    <li>no = buscar(raiz,5)</li>
+                </ul>
+            </ul>
+            <pre>
+            Buscar(raiz,valor):
+                no_atual = raiz
+                Enquanto no_atual ≠ vazio e no_atual.chave ≠ valor faça
+                    Se valor < no_atual.chave Então
+                        no_atual = no_atual.FE
+                    Senão
+                        no_atual = no_atual.FD
+                retorna no_atual
+            </pre>
+            <img src="img/arvore-binaria4.png" alt="arvore-binaria4.png">
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Inserção).</h2>
+            <ul>
+                <li>Agora que temos o algoritmo da busca, podemos criar o algoritmo de inserção.</li>
+                <ul>
+                    <li>Porém, temos que ajustar a busca para obter também o <b>ancestral</b>;</li>
+                    <li>Lembrando: Se a árvore tem raiz, então devemos <b>buscar o local de inserção</b>.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria5.png" alt="arvore-binaria5.png">
+            <p></p>
+            <img src="img/arvore-binaria6.png" alt="arvore-binaria6.png">
+            <p></p>
+            <img src="img/arvore-binaria7.png" alt="arvore-binaria7.png">
+            <p>Agora que ajustamos a busca para ter acesso ao nó ancestral, podemos definir o algoritmo de inserção.</p>
+            <img src="img/arvore-binaria8.png" alt="arvore-binaria8.png">
+            <ul>
+                <li>Após a adaptação do algoritmo de busca, temos:</li>
+                <ul>
+                    <li>Buscar o ancestral:</li>
+                    <ul>
+                        <li>no, anc = buscar(raiz,valor)</li>
+                    </ul>
+                    <li>Conectar esse ancestral com o novo nó:</li>
+                    <ul>
+                        <li>Se valor < anc.valor Então</li>
+                        <ul>
+                            <li>anc.FE = novo</li>
+                        </ul>
+                        <li>Senão Se valor > anc.valor Então</li>
+                        <ul>
+                            <li>anc.FD = novo</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Como devem ficar os campos do novo nó após “CriaNo”?</li>
+                <ul>
+                    <li>campo chave = valor;</li>
+                    <li>filhos FE e FD = vazio.</li>
+                </ul>
+            </ul>
+            <pre>
+            inserir(valor):
+                novo = criaNo(valor)
+                no, anc = buscar(raiz,valor)
+                <b>Se</b> no = vazio <b>Então</b>
+                    <b>Se</b> valor < anc.valor <b>Então</b>
+                        anc.FE = novo
+                    <b>Senão Se</b> valor > anc.valor <b>Então</b>
+                        anc.FD = novo
+            </pre>
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Análise).</h2>
+            <ul>
+                <li>Conforme observamos, a inserção depende da busca de um local para inserir um novo nó.</li>
+                <li>O custo da inserção depende do número de passos dessa busca:</li>
+                <ul>
+                    <li>Caminhar em toda a altura da árvore;</li>
+                    <li>Complexidade de custo no pior caso O(N), se a árvore for degenerada.</li>
+                    <ul>
+                        <li>Se a árvore for completa ou quase-completa o custo fica em O(log2 N).</li>
+                    </ul>
+                </ul>
+                <li>Qual o <b>melhor</b> local de inserção de um novo nó?</li>
+                <ul>
+                    <li>Filho esquerdo de 4.</li>
+                </ul>
+                <li>Qual o <b>pior</b> local de inserção de um novo nó?</li>
+                <ul>
+                    <li>Filho (FE ou FD) do nó 9.</li>
+                </ul>
+                <li>Qual a <b>altura</b> da árvore?</li>
+                <ul>
+                    <li>altura (h=3).</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria9.png" alt="arvore-binaria9.png">
+        </section>
+
+        <section>
+            <h2>Implementação em Python.</h2>
+            <h3>PARTE II.</h3>
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Estrutura de Dados).</h2>
+            <ul>
+                <li>Podemos implementar a nossa árvore com 2 tipos de estrutura de dados:</li>
+                <ul>
+                    <li>Vetor/Array, como fizemos na Heap.</li>
+                    <ul>
+                        <li>Acesso direto aos nós da árvore;</li>
+                        <li>Porém, o tamanho da árvore fica <b>fixo</b>.</li>
+                    </ul>
+                    <li>Utilizando Listas Ligadas.</li>
+                    <ul>
+                        <li>Não temos acesso direto aos nós;</li>
+                        <li>Porém, o tamanho da árvore é <b>dinâmico</b>.</li>
+                    </ul>
+                </ul>
+                <li>Vamos considerar então as Listas Ligadas.</li>
+                <ul>
+                    <li>Queremos ter flexibilidade para inserção e remoção;</li>
+                </ul>
+                <li>Vamos considerar que cada nó tenha:</li>
+                <ul>
+                    <li>campo <b>chave</b> = valor;</li>
+                    <li>campo <b>FE</b> = referência ao filho esquerdo;</li>
+                    <li>campo <b>FD</b> = referência ao filho direito.</li>
+                </ul>
+                <li>Vamos considerar também que a estrutura de dados Árvore Binária de Busca(ABB), pode ter:</li>
+                <ul>
+                    <li>campo <b>raiz</b> = referência ao primeiro nó da árvore;</li>
+                    <li>campo <b>h</b> = indicando a altura da árvore.</li>
+                    <li>funções de manutenção:</li>
+                    <ul>
+                        <li>Inserção, remoção, busca, altura,...etc.</li>
+                    </ul>
+                </ul>
+                <li>Como conectar os nós 7 e 5 na raiz?</li>
+                <ul>
+                    <li>raiz.fe = b;</li>
+                    <li>raiz.fd = a.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria10.png" alt="arvore-binaria10.png">
+            <p>Código (https://pythontutor.com/render.html#mode=display)</p>
+            <img src="img/arvore-binaria11.png" alt="arvore-binaria11.png">
+            <ul>
+                <li>E se fizermos uma função chamada <b>conectar</b> para fazer essa ligação, como seria?</li>
+                <ul>
+                    <li>lembre que temos que saber quais nós devem ir para esquerda ou direita da raiz.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria12.png" alt="arvore-binaria12.png">
+            <ul>
+                <li>Se o nó tiver valor <b>menor</b> que a <b>raiz</b>, devemos conectar o <b>nó</b> com <b>fe</b> da raiz;</li>
+                <li>Se o <b>nó</b> tiver valor <b>maior</b> que a <b>raiz</b>, devemos conectar o <b>nó</b> com <b>fd</b> da raiz;</li>
+            </ul>
+            <img src="img/arvore-binaria13.png" alt="arvore-binaria13.png">
+            <ul>
+                <li>Vamos agora começar pela nossa função de <b>busca</b>.</li>
+                <ul>
+                    <li>Percorrer desde a raiz e encontrar <b>um valor</b> ou <b>local</b> de inserção.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria14.png" alt="arvore-binaria14.png">
+            <ul>
+                <li>Iniciar pela raiz e percorrer a árvore com duas variáveis:</li>
+                <ul>
+                    <li><b>anc</b>: ancestral (pai).</li>
+                    <li><b>no_atual</b>: nó a ser buscado.</li>
+                </ul>
+                <li>Por exemplo, <b>buscar(raiz, 6)</b></li>
+                <ul>
+                    <li>buscar o nó com valor 6.</li>
+                    <li><b>anc</b> = no(7) e <b>no_atual</b> = no(6)</li>
+                </ul>
+            </ul>
+            <b>Árvore Binária (Busca):</b>
+            <pre>
+            buscar(raiz,valor):
+                <b>no_anc</b> = vazio
+                no_atual = raiz
+                <b>Enquanto</b> no_atual ≠ vazio <b>e</b> no_atual ≠ valor <b>faça</b>
+                    <b>no_anc</b> = no_atual
+                    <b>Se</b> valor < no_atual.chave <b>Então</b>
+                        no_atual = no_atual.FE
+                    <b>Senão</b>
+                        no_atual = no_atual.FD
+                <b>retornar</b> no_atual, <b>no_anc</b>
+            </pre>
+            <img src="img/arvore-binaria15.png" alt="arvore-binaria15.png">
+            <p></p>
+            <img src="img/arvore-binaria17.png" alt="arvore-binaria17.png">
+            <p></p>
+            <b>Árvore Binária (Inserção):</b>
+            <ul>
+                <li>Juntando todas as funções…</li>
+                <ul>
+                    <li>Vamos inserir o valor 6.</li>
+                </ul>
+            </ul>
+            <pre>
+            <b>def</b> inserir(raiz,valor):
+                novo = <b>no</b>(valor)
+                <b>if</b> raiz == None:
+                    raiz = novo
+                <b>else</b>:
+                    _ , <b>anc</b> = <b>buscar</b>(raiz,valor)
+                    <b>conectar</b>(anc,novo)
+            inserir(raiz,6)
+            </pre>
+            <img src="img/arvore-binaria16.png" alt="arvore-binaria16.png">
+            <p></p>
+            <img src="img/arvore-binaria18.png" alt="arvore-binaria18.png">
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Classe).</h2>
+            <ul>
+                <li>Agora podemos criar a nossa classe ABB que conterá todas as funções implementadas.</li>
+                <ul>
+                    <li>conectar(raiz,no)</li>
+                    <li>buscar(raiz,valor)</li>
+                    <li>inserir(raiz,valor)</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria18.png" alt="arvore-binaria18.png">
+            <p></p>
+            <img src="img/arvore-binaria19.png" alt="arvore-binaria19.png">
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+            <ul>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de maio de 2024</p>
+    </footer>
+</body>
+</html>
