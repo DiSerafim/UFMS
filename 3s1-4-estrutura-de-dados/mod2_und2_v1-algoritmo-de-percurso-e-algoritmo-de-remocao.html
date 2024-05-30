@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Árvore Binária de Busca.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Árvore Binária de Busca.</h1>
+        <h2>💡 Unidade 2 - Algoritmo de percurso e algoritmo de remoção.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=Mdy6KCJ7ywE&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 2 - Unidade 2.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Árvore Binária de Busca.</h3>
+            <b>Algoritmo de percurso e algoritmo de remoção.</b>
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Remoção).</h2>
+            <ul>
+                <li>Diferentemente da inserção, a remoção exige retirar um nó <b>em qualquer posição</b> da árvore.</li>
+                <li>Esse processo interfere nas propriedades da árvore.</li>
+                <ul>
+                    <li>Temos que resolver com o menor impacto na árvore.</li>
+                </ul>
+                <li>Por exemplo, retirar o nó 7.</li>
+            </ul>
+            <img src="img/arvore-binaria-remocao.png" alt="arvore-binaria-remocao.png">
+            <ul>
+                <li>Temos 2 situações de remoção de um nó:</li>
+                <ul>
+                    <li><b>Nó folha</b>: o nó contendo 0 filhos, basta retirar o nó da ligação com seu ancestral;</li>
+                    <li><b>Nó interno</b>, temos dois tipos:</li>
+                    <ul>
+                        <li><b>Nó com 1 filho</b>: há uma sub-árvore conectada ao nó a ser removido na esquerda ou na direita;</li>
+                        <li><b>Nó com 2 filhos</b>: há duas sub-árvores conectadas ao nó a ser removido na esquerda e na direita.</li>
+                    </ul>
+                </ul>
+                <li>Temos as situações de remoção de nó: o nó contendo 0, 1 e 2 filhos, com a remoção de 5, 12 e 7 respectivamente.</li>
+            </ul>
+            <img src="img/arvore-binaria-remocao1.png" alt="arvore-binaria-remocao1.png">
+            <p></p>
+            <img src="img/arvore-binaria-remocao2.png" alt="arvore-binaria-remocao2.png">
+            <ul>
+                <li>A remoção do caso com 2 filhos pode ser feita:</li>
+                <ul>
+                    <li>Substituindo o valor do nó que se deseja remover por algum outro <b>mais próximo</b>.</li>
+                    <li>Ideia: se colocar um valor “parecido” não vai interferir na organização dos filhos e ainda mantém a propriedade da árvore binária.</li>
+                    <li>Quem seria o mais parecido com 7?</li>
+                    <ul>
+                        <li>temos o 5 (<b>antecessor</b>) e o 9 (<b>sucessor</b>).</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-remocao.png" alt="arvore-binaria-remocao.png">
+            <p></p>
+            <b>Árvore Binária (Antecessor e Sucessor).</b>
+            <ul>
+                <li>Antecessor do nó 7 é o 5:</li>
+                <ul>
+                    <li>é o <b>menor</b> valor <b>mais próximo</b> do nó 7.</li>
+                </ul>
+                <li>Sucessor do nó 7 é o 9:</li>
+                <ul>
+                    <li>é o <b>maior</b> valor <b>mais próximo</b> do nó 7.</li>
+                </ul>
+                <img src="img/arvore-binaria-remocao.png" alt="arvore-binaria-remocao.png">
+                <li>Antecessor (🟡) de um nó R:</li>
+                <ul>
+                    <li>está mais à direita na <b>sub-árvore esquerda de R</b>;</li>
+                </ul>
+                <li>Sucessor (🟠) de um nó R:</li>
+                <ul>
+                    <li>está mais à esquerda na <b>sub-árvore direita de R</b>;</li>
+                </ul>
+                <li>Podemos substituir o nó por qualquer um desses.</li>
+                <ul>
+                    <li>Qual é o mais rápido de achar?</li>
+                    <ul>
+                        <li>Antecessor com h-1 passos.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-antecessor-sucessor.png" alt="arvore-binaria-antecessor-sucessor.png">
+            <p></p>
+            <b>Árvore Binária (Remoção).</b>
+            <ul>
+                <li>E se o antecessor ou sucessor tiverem filhos?</li>
+                <ul>
+                    <li>Não dá pra remover o nó sucessor ou antecessor após a troca com o nó a ser removido.</li>
+                    <li>E se executar o procedimento de remoção no nó que está no local do sucessor ou antecessor?</li>
+                </ul>
+                <li>E se o antecessor ou sucessor tiverem filhos?</li>
+                <ul>
+                    <li>Queremos remover R que tem sucessor S;</li>
+                    <li>Esse sucessor S tem filho Z.</li>
+                </ul>
+                <li>Se trocar R com S e remover S, vamos perder toda subárvore de Z.</li>
+            </ul>
+            <img src="img/arvore-binaria-remocao3.png" alt="arvore-binaria-remocao3.png">
+            <ul>
+                <li>E se o antecessor ou sucessor tiverem filhos?</li>
+                <ul>
+                    <li>E se aplicar a remoção agora onde está o R?</li>
+                    <ul>
+                        <li>Verificar os 3 casos.</li>
+                        <ul>
+                            <li>Nó folha?</li>
+                            <li>Nó com 1 filho?</li>
+                            <li>Nó com 2 filhos?</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-remocao4.png" alt="arvore-binaria-remocao4.png">
+            <ul>
+                <li>E se o antecessor ou sucessor tiverem filhos?</li>
+                <ul>
+                    <li>E se aplicar a remoção agora onde está o R?</li>
+                    <ul>
+                        <li>Temos o caso de remover nó com 1 filho.</li>
+                        <ul>
+                            <li>Ancestral de R conecta-se com Z.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-remocao5.png" alt="arvore-binaria-remocao5.png">
+            <p></p>
+            <b>Remoção (Análise).</b>
+            <ul>
+                <li>Para remover um nó temos que:</li>
+                <ul>
+                    <li>Encontrar o nó a ser removido (h1);</li>
+                    <li>Verificar quantos filhos o nó tem:</li>
+                    <ul>
+                        <li>Se tiver 0 filhos o ancestral se desconecta;</li>
+                        <li>Se tiver 1 filho o ancestral conecta com esse filho;</li>
+                        <li>Se tiver 2 filhos, encontrar o seu sucessor ou antecessor (h2);</li>
+                        <ul>
+                            <li>Trocar de valor entre os nós e <b>repetir a remoção</b> até remover o nó.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-remocao6.png" alt="arvore-binaria-remocao6.png">
+            <ul>
+                <li>Esse custo médio pode envolver percorrer toda a altura da árvore (h = h1+h2), custo O(log2 N), se a árvore for não degenerada.</li>
+            </ul>
+            <img src="img/arvore-binaria-remocao7.png" alt="arvore-binaria-remocao7.png">
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Percurso).</h2>
+            <ul>
+                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca, visto na unidade anterior.</li>
+                <ul>
+                    <li>A ordem de visitação poderia ser de 3 possíveis maneiras:</li>
+                    <ul>
+                        <li><b>Pré-Ordem</b></li>
+                        <li><b>Em-Ordem</b></li>
+                        <li><b>Pós-Ordem</b></li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-percurso.png" alt="arvore-binaria-percurso.png">
+            <p>No percurso <b>Pré-Ordem</b> vamos visitar 1° a raiz, 2° o filho esquerdo e 3° o filho direito.</p>
+            <img src="img/arvore-binaria-percurso1.png" alt="arvore-binaria-percurso1.png">
+            <ul>
+                <li>preOrdem(<b>no</b>):</li>
+                <ul>
+                    <li><b>Se</b> <b>no</b> não vazio <b>então</b>:</li>
+                    <ul>
+                        <li>visita <b>no</b>;</li>
+                        <li>preOrdem(<b>no</b>.fe);</li>
+                        <li>preOrdem(<b>no</b>.fd).</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-percurso2.png" alt="arvore-binaria-percurso2.png">
+            <p>No percurso <b>Em-Ordem</b> vamos visitar 1° o filho esquerdo, 2° o nó raiz e 3° o filho direito.</p>
+            <img src="img/arvore-binaria-percurso3.png" alt="arvore-binaria-percurso3.png">
+            <ul>
+                <li>emOrdem(<b>no</b>):</li>
+                <ul>
+                    <li><b>Se</b> <b>no</b> não vazio <b>então</b>:</li>
+                    <ul>
+                        <li>emOrdem(<b>no</b>.fe);</li>
+                        <li>visita <b>no</b>;</li>
+                        <li>emOrdem(<b>no</b>.fd).</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-percurso4.png" alt="arvore-binaria-percurso4.png">
+            <p>No percurso <b>Pós-Ordem</b> vamos visitar 1° o filho esquerdo, 2° o filho direito e 3° o nó raiz.</p>
+            <img src="img/arvore-binaria-percurso5.png" alt="arvore-binaria-percurso5.png">
+            <ul>
+                <li>posOrdem(<b>no</b>):</li>
+                <li><b>Se</b> <b>no</b> não vazio <b>então</b>:</li>
+                <li>posOrdem(<b>no</b>.fe);</li>
+                <li>posOrdem(<b>no</b>.fd).</li>
+                <li>visita <b>no</b>;</li>
+            </ul>
+            <img src="img/arvore-binaria-percurso6.png" alt="arvore-binaria-percurso6.png">
+            <ul>
+                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca, visto na unidade anterior. Vamos ver no <b>VISUALGO</b>(https://visualgo.net/en/bst?slide=1).</li>
+                <ul>
+                    <li>A ordem de visitação poderia ser:</li>
+                    <ul>
+                        <li>Em-Ordem:</li>
+                        <ul>
+                            <li>[1,2,3,4,5,6,7]</li>
+                        </ul>
+                        <li>Pré-Ordem:</li>
+                        <ul>
+                            <li>[4,2,1,3,6,5,7]</li>
+                        </ul>
+                        <li>Pós-Ordem:</li>
+                        <ul>
+                            <li>[1,3,2,5,7,6,4]</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-percurso7.png" alt="arvore-binaria-percurso7.png">
+        </section>
+
+        <section>
+            <h2>Árvore Binária (Análise).</h2>
+            <ul>
+                <li>O número de nós de uma árvore com M níveis é 2M-1.</li>
+                <ul>
+                    <li>Qual seria a altura <b>h</b> de uma árvore com N nós?</li>
+                    <ul>
+                        <li>h = M-1.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-analise.png" alt="arvore-binaria-analise.png">
+            <ul>
+                <li>Qual seria a altura <b>h</b> de uma árvore com N nós?</li>
+                <ul>
+                    <li>altura(M-1) -> 2M-1 nós;</li>
+                    <li>Vamos considerar que temos X níveis nessa árvore com N nós.</li>
+                    <ul>
+                        <li>altura(<b>X</b>-1) -> <b>N</b> nós;</li>
+                        <ul>
+                            <li>altura(<b>X</b>-1) -> 2<b>X</b> -1 nós;</li>
+                            <li>N = 2<b>X</b> -1.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <p></p>
+            <ul>
+                <li>Qual seria a altura h de uma árvore com N nós?</li>
+                <ul>
+                    <li>N = 2X-1.</li>
+                    <ul>
+                        <li>N+1 = 2X.</li>
+                    </ul>
+                    <li>Vamos isolar a variável X de 2X.</li>
+                    <ul>
+                        <li>log2(N+1) = log2(2X);</li>
+                        <li>log2(N+1) = X.</li>
+                        <li>h = X-1; <b>h = log2(N+1)-1</b></li>
+                    </ul>
+                </ul>
+            </ul>
+            <p></p>
+            <ul>
+                <li>Vamos testar com N=15 nós, qual seria a altura (h)?</li>
+                <ul>
+                    <li><b>h = log2(N+1)-1</b>;</li>
+                    <li>h = log2(15+1)-1;</li>
+                    <li>h = log2(16)-1;</li>
+                    <li>h = 4-1;</li>
+                    <li>h = 3.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-analise1.png" alt="arvore-binaria-analise1.png">
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+            <ul>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 29 de maio de 2024</p>
+    </footer>
+</body>
+</html>
