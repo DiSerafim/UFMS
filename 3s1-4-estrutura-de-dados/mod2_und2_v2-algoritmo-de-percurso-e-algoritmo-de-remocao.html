@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Árvore Binária de Busca.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Árvore Binária de Busca.</h1>
+        <h2>💡 Unidade 2 - Algoritmo de percurso e algoritmo de remoção.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=3koM42vL6js&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Estrutura de Dados - Aula 18 - Árvores binárias de pesquisa - Parte 3.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Norton T. Roman.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Estrutura de Dados.</h3>
+            <b>Árvores binárias de pesquisa.</b>
+            <p>Remoção de um elemento.</p>
+        </section>
+
+        <section>
+            <h2>Remoção de um elemento.</h2>
+            <b>ABP – Remoção.</b>
+            <ul>
+                <li>Problemas na remoção de um nó:</li>
+                <ul>
+                    <li>Temos que lidar com as subárvores desse nó A árvore resultante deve continuar sendo de busca.</li>
+                    <ul>
+                        <li>Nós da subárvore da esquerda têm chave menor que a do nó raiz.</li>
+                        <li>Nós da subárvore da direita têm chave maior que a do nó raiz.</li>
+                    </ul>
+                </ul>
+                <li>Como fazer?</li>
+                <ul>
+                    <li>Se o nó a ser retirado possui no máximo um descendente, substitua-o por este.</li>
+                    <li>Se o nó possuir 2 descendentes, substituímos o nó a ser retirado pelo nó mais à direita da subárvore da esquerda.</li>
+                    <li>Alternativamente, substituímos o nó a ser retirado pelo nó mais à esquerda da subárvore da direita.</li>
+                </ul>
+                <li>Ou seja...</li>
+                <ul>
+                    <li>Para removermos o 15:</li>
+                    <ul>
+                        <li>Ou substituímos pelo 12 E 10 passa a ser filho de 8.</li>
+                        <li>Ou substituímos pelo 20.</li>
+                    </ul>
+                </ul>
+                <img src="img/arvore-binaria-remocao8.png" alt="arvore-binaria-remocao8.png">
+            </ul>
+            <ul>
+                <li>Para remover, precisamos então saber:</li>
+                <ul>
+                    <li>O nó a ser removido.</li>
+                    <li>Seu pai.</li>
+                    <li>O nó substituto.</li>
+                    <li>Seu pai.</li>
+                </ul>
+            </ul>
+            <img src="img/arvore-binaria-remocao9.png" alt="arvore-binaria-remocao9.png">
+            <p></p>
+            <b>Vamos então fazer um método auxiliar:</b>
+            <pre>
+            /* Busca binária não recursiva. Devolve o ponteiro do nó buscado. Abastece pai com o ponteiro para o nó pai deste /*
+
+            PONT buscaNo (PONT raiz, TIPOCHAVE ch, PONT *pai) {
+                PONT atual = raiz;
+                *pai = NULL;
+
+                while (atual) {
+                    if (atual -> chave == ch) return (atual);
+                    *pai atual;
+                    if (ch < atual -> chave) atual = atual -> esq;
+                    else atual = atual -> dir;
+                }
+                return (NULL);
+            }
+            </pre>
+            <img src="img/arvore-binaria-remocao10.png" alt="arvore-binaria-remocao10.png">
+            <pre>
+            PONT removeNo (PONT raiz, TIPOCHAVE ch) {
+                PONT pai, no, p, q;
+                no = buscaNo (raiz,ch, &pai);
+                if (no == NULL) return (raiz);
+                <p>Tratamos o caso do nó removido ter no máximo um filho:</p>
+                if (!no -> esq || !no - >dir ) {
+                    if (!no -> esq) q = no -> dir;
+                    else q = no -> esq;
+                }
+                <p>Ou de ter 2 filhos:</p>
+                else {
+                    P = no;
+                    q = no -> esq;
+                    while (q -> dir) {
+                        P = q;
+                        q = q -> dir;
+                    }
+                    <p>Além de tratarmos do caso do pai do substituto ser ou não o nó removido:</p>
+                    if (p != no) {
+                        p -> dir = q -> esq;
+                        q -> esq = no -> esq;
+                    }
+                    q -> dir = no -> dir;
+                }
+                <p>Do nó removido ser a Raiz:</p>
+                if (!pai) {
+                    free(no);
+                    return(q);
+                }
+                <p>Ou de não ser a Raiz:</p>
+                if (ch < pai -> chave) pai -> esq = q;
+                else pai -> dir = q;
+                free(no);
+                return (raiz);
+            }
+            </pre>
+            <img src="img/arvore-binaria-remocao11.png" alt="arvore-binaria-remocao11.png">
+            <p></p>
+            <b>ABP - Balanceamento.</b>
+            <ul>
+                <li>Podemos ter então a eficiência de uma busca binária, caso a árvore esteja balanceada Com a vantagem de ser uma estrutura dinâmica.</li>
+            </ul>
+            <img src="img/arvore-binaria-remocao12.png" alt="arvore-binaria-remocao12.png">
+            <ul>
+                <li>Ou voltamos à busca sequencial, como em uma lista ligada Só que usando mais memória, pelo ponteiro extra.</li>
+            </ul>
+            <img src="img/arvore-binaria-balanceamento.png" alt="arvore-binaria-balanceamento.png">
+            <ul>
+                <li>A boa notícia é que se os elementos que compõem a árvore forem obtidos aleatoriamente, espera-se um desempenho apenas 39% pior do que a árvore completamente balanceada.</li>
+                <li>Ou seja, a árvore em que as folhas aparecem no mesmo nível ou, no máximo, em dois níveis adjacentes.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 29 de maio de 2024</p>
+    </footer>
+</body>
+</html>
