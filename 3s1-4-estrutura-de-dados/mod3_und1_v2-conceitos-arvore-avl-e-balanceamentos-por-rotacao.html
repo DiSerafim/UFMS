@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Árvores Balanceadas.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Árvores Balanceadas.</h1>
+        <h2>💡 Unidade 1 - Conceitos: árvore AVL e balanceamentos por rotação.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=YkF76cOgtMQ&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Estrutura de Dados - Aula 21 - Árvores AVL.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Norton T. Roman.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Árvores AVL.</h3>
+        </section>
+
+        <section>
+            <h2>Árvores AVL.</h2>
+            <ul>
+                <li>Balanceamento é importante Contudo, um balanceamento perfeito é algo computacionalmente caro.</li>
+                <li>Que fazer?</li>
+                <ul>
+                    <li>Nada... você está com sorte hoje?</li>
+                </ul>
+                <li>Ou podemos permitir um “bom” balanceamento.</li>
+                <li>Em que pode haver um pouco de desbalanceamento.</li>
+                <li>Algoritmo de <b>A</b>delson-<b>V</b>elskii e <b>L</b>andis (as Árvores AVL).</li>
+                <li>AVL é uma <b>árvore de busca binária</b> balanceada com relação à altura de suas subárvores</li>
+                <li>Uma árvore AVL verifica a altura das subárvores da esquerda e da direita, garantindo que essa diferença não seja maior que ±1</li>
+                <li>Esta diferença é seu <b>Fator de Balanceamento</b></li>
+            </ul>
+            <pre>fb = hesg - hdir</pre>
+            <ul>
+                <li>O fator de balanceamento é calculado a cada nó.</li>
+                <ul>
+                    <li>E, para cada nó, a diferença de altura entre a subárvore da esquerda e da direita não pode passar de ±1</li>
+                    <ul>
+                        <li>Lembrando que a altura de uma árvore vazia é -1 O fator de balanceamento, ou alternativamente a altura do nó, é armazenada no próprio nó.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/avl14.png" alt="avl14.png">
+            <p>Note que, nesse caso, a inserção de um único elemento foi o suficiente para fazer com que uma árvore deixasse de ser AVL.</p>
+            <img src="img/avl14.png" alt="avl14.png">
+            <p>Contudo, somente nós no caminho do ponto de inserção até a raiz <b>podem ter mudado</b> sua altura.</p>
+            <p>Então, após a inserção, voltamos até a raiz, nó por nó, atualizando as alturas.</p>
+            <p>Se um novo fator de balanceamento para um determinado nó for 2 ou -2, ajustamos a árvore rotacionando em torno desse nó.</p>
+        </section>
+
+        <section>
+            <h2>Árvores AVL - Rotação.</h2>
+            <h3>Existem dois tipos de rotação:</h3>
+            <b>Rotação à esquerda:</b>
+            <p></p>
+            <img src="img/avl15.png" alt="avl15.png">
+            <b>Rotação à direita:</b>
+            <p></p>
+            <img src="img/avl16.png" alt="avl16.png">
+            <p>Temos um desequilíbrio (fator de balanceamento 2).</p>
+            <img src="img/avl17.png" alt="avl17.png">
+            <p>Balanceamos rotacionando em torno desse nó.</p>
+            <img src="img/avl18.png" alt="avl18.png">
+            <p></p>
+            <img src="img/avl19.png" alt="avl19.png">
+            <ul>
+                <li>Considere a árvore AVL:</li>
+                <img src="img/avl20.png" alt="avl20.png">
+                <ul>
+                    <li>O que pode acontecer se inserimos um elemento em a?</li>
+                    <img src="img/avl21.png" alt="avl21.png">
+                    <li>Quebramos o balanceamento em x.</li>
+                </ul>
+                <li>Como consertamos isso?</li>
+                <ul>
+                    <li>Fazendo a rotação à direita.</li>
+                    <img src="img/avl22.png" alt="avl22.png">
+                </ul>
+                <img src="img/avl23.png" alt="avl23.png">
+            </ul>
+            <p>Inserções na parte <b>mais externa</b> da árvore são resolvidas com rotações simples.</p>
+            <p>Na subárvore esquerda do filho esquerdo do nó desbalanceado.</p>
+            <p>Na subárvore direita do filho direito desse nó.</p>
+            <img src="img/avl24.png" alt="avl24.png">
+            <p>E quando a inserção é na parte mais interna?</p>
+            <p>Na subárvore direita do filho esquerdo do nó desbalanceado</p>
+            <p>Na subárvore esquerda do filho direito desse nó</p>
+            <img src="img/avl25.png" alt="avl25.png">
+            <ul>
+                <li>O que pode acontecer se inserimos um elemento em ẞ?</li>
+                <li>Quebramos novamente o balanceamento em x.</li>
+            </ul>
+            <img src="img/avl26.png" alt="avl26.png">
+            <p>Como consertamos isso?</p>
+            <p>Tentemos a rotação à direita</p>
+            <p>E tudo que fizemos foi mudar o ponto de desequilíbrio</p>
+            <img src="img/avl27.png" alt="avl27.png">
+            <p>Então, enquanto inserções na parte <b>mais externa</b> da árvore são resolvidas com rotações simples.</p>
+            <p>Inserções na parte <b>mais interna</b> da árvore são resolvidas com rotações duplas.</p>
+            <p>Fazemos uma <b>rotação à esquerda</b> se um nó foi inserido na subárvore direita do filho à direita:</p>
+            <img src="img/avl28.png" alt="avl28.png">
+            <p>Fazemos uma <b>rotação à direita</b> se um nó foi inserido na subárvore esquerda do filho à esquerda:</p>
+            <img src="img/avl29.png" alt="avl29.png">
+            <p>Fazemos uma rotação direita-esquerda se um nó foi inserido na subárvore esquerda do filho à direita:</p>
+            <img src="img/avl30.png" alt="avl30.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
+    </footer>
+</body>
+</html>
