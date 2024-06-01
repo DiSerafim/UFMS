@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A2] Avaliação do Módulo 2 - Árvore Binária de Busca.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	sexta, 31 mai 2024, 20:48</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	sexta, 31 mai 2024, 22:01</li>
+                <li>Tempo empregado	1 hora 12 minutos</li>
+                <li>Avaliar	6,00 de um máximo de 10,00(60%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <img src="img/remocao2-ABB.jpeg.png" alt="remocao2-ABB.png">
+                <p>Considerando a árvore binária de busca acima, ao removermos a chave do nó raiz, obteremos a árvore com topologia abaixo. Preencha os valores dos nós rotulados x, y, u, v, w com os valores corretos:</p>
+                <img src="img/remocao22-ABB.jpg" alt="remocao22-ABB.jpg">
+                <p></p>
+                <b class="answer">Resposta: x = 59, y = 66, u = 64, v = 70, w = 60. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>x = 59 (novo nó raiz).</li>
+                    <li>y = 66 (subárvore direita da nova raiz).</li>
+                    <li>u = 64 (nó movido após a remoção de 59).</li>
+                    <li>v = 70 (subárvore direita de 66).</li>
+                    <li>w = 60 (filho esquerdo de 64).</li>
+                </ul>
+
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Seja T uma árvore binária de busca qualquer com n nós e altura h. A operação de busca por uma chave x em T gasta sempre tempo proporcional à altura da árvore, ou seja, O( h) = O(log n).</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A afirmação só é verdadeira para árvores balanceadas</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Considere a inserção numa Árvore Binária de Busca (ABB) dos seguintes nós: 51, 20, 40, 82, 35, 73, 28 e 77, nessa ordem. Dado que a raiz fica no nível 1 da árvore, a altura da árvore e o nível do nó 35, respectivamente, serão:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 7 e 4.</li>
+                    <li>b. 6 e 4.</li>
+                    <li>c. 6 e 3.</li>
+                    <li>d. 5 e 5.</li>
+                    <li>e. 5 e 4.</li>
+                </ul>
+
+                <b class="answer">Resposta: e. 5 e 4. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Altura da Árvore: A altura é o número máximo de arestas de um caminho da raiz a uma folha. Contamos os níveis:</li>
+                    <ul>
+                        <li>Raiz (51): Nível 1.</li>
+                        <li>20 e 82: Nível 2.</li>
+                        <li>40 e 73: Nível 3.</li>
+                        <li>35: Nível 4.</li>
+                        <li>28: Nível 5.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Considere as afirmações a seguir.</p>
+                <ul>
+                    <li>A raiz da árvore se encontra no nível 1.</li>
+                    <li>O nível de qualquer nó é igual ao nível do seu pai mais 1.</li>
+                    <li>A profundidade de uma árvore é igual ao maior nível encontrado entre todos os seus nós.</li>
+                </ul>
+                <p>Partindo-se de tais premissas, escolha o item a seguir que contém a menor e a maior quantidade de nós, respectivamente, que poderiam estar em uma árvore binária de profundidade 4:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 5 e 16.</li>
+                    <li>b. 3 e 16.</li>
+                    <li>c. 4 e 16.</li>
+                    <li>d. 3 e 15.</li>
+                    <li>e. 4 e 15.</li>
+                </ul>
+                
+                <b class="answer">Resposta: e. 4 e 15. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Com profundidade 4, teremos 4 níveis, portanto a árvore menos balanceada terá 4 nós (um nó por nível).</li>
+                    <li>Com profundidade 4, a quantidade máxima de nós é 2⁴ - 1 = 16 - 1 = 15.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Dada a árvore binária de busca a seguir, escreva as chaves visitadas em um percurso/passeio em pré-ordem. Escreva todas as chaves como mostrado na figura (em maiúsculo) e sem espaço entre elas. Ex: IOUEA</p>
+                <img src="img/percurso-tree.jpg" alt="percurso-tree.jpg">
+                <p></p>
+
+                <b class="answer">Resposta: MGHDAJLBCQFZS. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>A sequência de chaves visitadas em pré-ordem sempre começa com a raiz da árvore e, em seguida, visita recursivamente o subárvore esquerdo e o subárvore direito de cada nó.</li>
+                    <li>As chaves são visitadas antes de seus descendentes.</li>
+                    <li>Essa sequência de visitação é útil para diversas operações em árvores binárias de busca, como inserção, exclusão e busca.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Dada a árvore binária de busca a seguir, escreva as chaves visitadas em um percurso/passeio em pós-ordem. Escreva todas as chaves como mostrado na figura (em maiúsculo) e sem espaço entre elas. Ex:  IOUEA.</p>
+                <img src="img/percurso-tree.jpg" alt="percurso-tree.jpg">
+                <p></p>
+
+                <b class="answer">Resposta: C H A L G D J B Q F S Z P M. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>A sequência de chaves visitadas em pós-ordem visita recursivamente os subárvores esquerdo e direito de cada nó antes de visitar o próprio nó.</li>
+                    <li>As chaves são visitadas após seus descendentes.</li>
+                    <li>Essa sequência de visitação é útil para diversas operações em árvores binárias de busca, como travessia da árvore, impressão da árvore e destruição da árvore.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <img src="img/pasted-image.png" alt="pasted-image.png">
+                <p>50, 35, 66, 28, 47, 52, 70, 40</p>
+                <p>Considerando a árvore binária de busca acima e o algoritmo de remoção apresentado no livro de Thomas Cormen (2013), ao remover o valor da raiz, qual das chaves a seguir poderia ocupar o lugar dela?</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 40.</li>
+                    <li>b. 70.</li>
+                    <li>c. 47.</li>
+                    <li>d. 35.</li>
+                    <li>e. 66.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. 40. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Considerando a árvore binária abaixo, identifique o número dos nós.</p>
+                <img src="img/arvore-maior-menor-valor.jpeg" alt="arvore-maior-menor-valor.jpeg">
+                <p>Responda:</p>
+                <p>Qual a posição do nó que deve conter o maior valor da árvore?</p>
+
+                <b class="answer">Resposta: 17. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Suponha que queremos remover o nó raiz da árvore binária de busca a seguir. Considerando a solução em que podemos substituí-la por uma chave da subárvore direita, qual valor de chave deverá ocupar a raiz da árvore?</p>
+                <img src="img/raiz.png" alt="raiz.png">
+                <p></p>
+                
+                <b class="answer">Resposta: 79. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Dado um conjunto de chaves A = {a1, a2, …, an}, satisfazendo a1 < a2 < … < an, é correto afirmar que existe apenas uma árvore binária de busca para A.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>                
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 31 de maio de 2024</p>
+    </footer>
+</body>
+</html>
