@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 2 - Árvore Binária de Busca.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 15 abr 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ESTRUTURA DE DADOS
+                <span class="status concluida">Concluído</span>
+            </p>
+            <pre>
+            Iniciado em: segunda, 27 mai 2024, 19:26
+            Estado: Finalizada
+            Concluída: em segunda, 27 mai 2024, 19:46
+            Tempo empregado: 19 minutos 37 segundos
+            Notas: 1,00/1,00
+            Avaliar 10,00 de um máximo de 10,00(100%)
+            </pre>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Em uma árvore binária de busca, os nós mantêm uma propriedade em relação ao seu pai, dependendo do lado em que foram inseridos. O tempo de busca por um elemento na árvore é realizado, no pior caso, em O( n ) passos, sendo n o número de nós da árvore.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Considerando o modelo de árvore a seguir e um conjunto com os seguintes valores [33, 15, 8, 60, 81, 7, 6, 5], posicione na árvore os valores de forma a manter a propriedade de uma árvore binária.</h2>
+            <img src="img/checkout-mod2.jpeg" alt="checkout-mod2.jpeg">
+            <p></p>
+            <a href="https://visualgo.net/en/bst"><b>VISUALGO</b></a>
+            <p></p>
+            <b>Resolução:</b>
+            <ul>
+                <li>33 → será o nó raiz da arvore, pois é o primeiro valor a ser inserido.</li>
+                <li>15 → é menor que 33, será inserido à esquerda de 33.</li>
+                <li>8 → é menor que 33, e menor que 15, será inserido à esquerda de 15.</li>
+                <li>60 → é maior que 33, será inserido à direita de 33.</li>
+                <li>81 → é maior que 33 e maior que 60, será inserido à direita de 60.</li>
+                <li>7 → é menor que 33, e menor que 8, será inserido à esquerda de 8. </li>
+                <li>6 → é menor que 33, e menor que 7, será inserido à esquerda de 7. </li>
+                <li>5 → é menor que 33, e menor que 6, será inserido à esquerda de 6. </li>
+            </ul>
+            <p></p>
+            <img src="img/checkout-mod2-resolucao.jpeg" alt="checkout-mod2-resolucao.jpeg">
+            <p>Esta árvore mantém a propriedade ABB, para cada nó, todos os valores à esquerda são menores e todos os valores à direita são maiores.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 27 de maio de 2024</p>
+    </footer>
+</body>
+</html>
