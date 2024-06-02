@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 3 - Árvores Balanceadas.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ESTRUTURA DE DADOS
+                <span class="status concluida">Concluído</span>
+            </p>
+            <pre>
+            Iniciado em: domingo, 2 jun 2024, 11:14
+            Estado: Finalizada
+            Concluída: em domingo, 2 jun 2024, 11:32
+            Tempo empregado: 17 minutos 15 segundos
+            Notas: 1,00/1,00
+            Avaliar 10,00 de um máximo de 10,00(100%)
+            </pre>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Em uma árvore AVL, a diferença de altura entre suas subárvores esquerda e direita é, em módulo, de no máximo uma unidade. Isso permite que uma busca na árvore seja realizada, no pior caso, em tempo O(log n), sendo n o número de nós da árvore. Considerando todos os conceitos aprendidos até aqui, escreva uma função na linguagem Python para encontrar o menor valor da árvore AVL. Considere o protótipo abaixo, sendo o parâmetro raiz, a raiz da árvore AVL:</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>def menor(raiz): retorna o menor valor da árvore enraizada em raiz.</h2>
+            <p>Considere que os campos do nó são:</p>
+            <ul>
+                <li>valor;</li>
+                <li>fe (filho esquerdo);</li>
+                <li>fd (filho direito);</li>
+                <li>nome da classe no.</li>
+            </ul>
+            <p>Implemente apenas a função.</p>
+            <b>menor.py</b>
+            <pre>
+            # valor e dois ponteiros para seus filhos esquerdo (fe) e direito (fd).
+            class no:
+                def __init__(self, valor):
+                    self.valor = valor
+                    self.fe = None
+                    self.fd = None
+
+            # retorna o valor do nó mais à esquerda.  
+            def menor(raiz):
+                if raiz is None:
+                    return None
+                
+                atual = raiz
+                while atual.fe is not None:
+                    atual = atual.fe
+                    
+                return atual.valor
+                    
+            # Teste
+            raiz = no(7)
+            raiz.fd = no(10)
+            print(menor(raiz))
+
+            raiz = no(47)
+            raiz.fe = no(40)
+            raiz.fe.fe = no(30)
+            raiz.fe.fe.fd = no(36)
+            raiz.fe.fd = no(45)
+            raiz.fd = no(58)
+            raiz.fd.fe = no(50)
+            raiz.fd.fd = no(60)
+            print(menor(raiz))
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de jun de 2024</p>
+    </footer>
+</body>
+</html>
