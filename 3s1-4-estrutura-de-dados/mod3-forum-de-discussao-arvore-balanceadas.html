@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 3 - Árvores Balanceadas.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p><b>AVL</b> é uma árvore de busca binária autobalanceada que recebeu o nome de seus inventores, <b>Adelson-Velskii</b> e <b>Landis</b>. Ela mantém a propriedade de que as alturas das duas subárvores de qualquer nó diferem no máximo em um. Sempre que uma operação de inserção ou exclusão fizer com que essa propriedade seja violada, a árvore é rebalanceada para restaurar a propriedade.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Assim como todas as estruturas de dados, essa também possui vantagens e desvantagens de sua utilização. Tendo isso em mente, escolha um exemplo de aplicação no qual você utilizaria árvores balanceadas em detrimento a outras estruturas de dados. Qual o motivo ou motivos que o levaram a essa escolha?</b>
+        </section>
+
+        <section>
+            <h2>Resposta:</h2>
+            <p>Eu escolheria AVL no caso de E-commerce, para o gerenciamento do estoque.</p>
+            <p>As razões para a escolha são:</p>
+            <ul>
+                <li>Rapidez nas operações de Busca, Inserção e Exclusão.</li>
+                <ul>
+                    <li>Em um sistema de gerenciamento de estoque, é essencial realizar buscas rápidas para verificar a disponibilidade de produtos, inserir novos produtos quando chegam ao estoque e remover produtos quando são vendidos ou devolvidos. As árvores AVL garantem que essas operações sejam realizadas em tempo logarítmico, O(log n), independentemente de quantos itens estão no estoque. Isso é crucial para a eficiência do sistema, especialmente quando se lida com um grande número de produtos.</li>
+                </ul>
+                <li>Manutenção do Balanceamento.</li>
+                <ul>
+                    <li>Em uma árvore AVL, as alturas das subárvores de qualquer nó diferem no máximo em um. Isso significa que a árvore permanece balanceada após cada inserção ou exclusão. Manter a árvore balanceada é fundamental para assegurar que as operações mencionadas anteriormente continuem eficientes, mesmo após várias modificações na estrutura de dados. Em um ambiente dinâmico como o estoque de uma loja online, onde itens são constantemente adicionados e removidos, essa propriedade é extremamente valiosa.</li>
+                </ul>
+                <li>Consistência dos dados.</li>
+                <ul>
+                    <li>A natureza autobalanceada das árvores AVL ajuda a garantir a consistência dos dados. Em uma aplicação de estoque, é crucial que as operações de busca forneçam resultados precisos e rápidos. A estrutura balanceada das árvores AVL minimiza o risco de degradação de desempenho ao longo do tempo, o que poderia causar inconsistências ou atrasos na recuperação de dados.</li>
+                </ul>
+                <li>Melhor desempenho em comparação com outras estruturas de dados, como:</li>
+                <ul>
+                    <li>Tabelas Hash.</li>
+                    <ul>
+                        <li>Embora as tabelas hash ofereçam operações de busca, inserção e exclusão em tempo constante, O(1), elas não mantêm os dados ordenados. Isso pode ser uma desvantagem se for necessário realizar operações que envolvem intervalos ou ordem, como listar todos os produtos em uma determinada categoria ou faixa de preço.</li>
+                    </ul>
+                    <li>Lista Ligada e Árvore Binária de Busca Simples.</li>
+                    <ul>
+                        <li>Essas estruturas podem sofrer de degradação de desempenho se não forem balanceadas. Em listas ligadas, as operações de busca são O(n), e em árvores binárias de busca simples, a profundidade da árvore pode se tornar O(n) no pior caso, tornando as operações ineficientes em grandes conjuntos de dados.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de junho de 2024</p>
+    </footer>
+</body>
+</html>
