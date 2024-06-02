@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Árvores Balanceadas.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Árvores Balanceadas.</h1>
+        <h2>💡 Unidade 2 - Algoritmos de inserção e remoção.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=1JKucLqAPZ8&t=819s&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                *Estruturas de Dados - Árvores AVL.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Árvores AVL.</h3>
+            <ul>
+                <li>Roteiro:</li>
+                <ul>
+                    <li>Conceitos Básicos.</li>
+                    <li>Estrutura do Nó.</li>
+                    <li>Tipo Abstrato de Dados.</li>
+                    <li>Detalhes de Implementação.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Árvores AVL</h2>
+            <ul>
+                <li>Nos algoritmos de <b>busca</b>, <b>inserção</b> e <b>remoção</b>, no pior caso, o número de comparações é proporcional à <b>altura da árvore</b>:</li>
+                <ul>
+                    <li>As buscas são eficientes em árvores balanceadas.</li>
+                    <li>Em árvores degeneradas, as operações deixam de ser eficientes.</li>
+                </ul>
+            </ul>
+            <img src="img/avl36.png" alt="avl36.png">
+            <ul>
+                <li>Número de Elementos: 5</li>
+                <li>Número Máximo de Comparações: 5</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conceitos Básicos.</h2>
+            <ul>
+                <li><b>Fator de balanceamento</b>: é a diferença de altura entre as subárvores da direita e da esquerda.</li>
+                <li>Em árvores AVL, deve ficar no intervalo de <b>-1 a 1</b>.</li>
+                <li>As inserções e remoções seguem os algoritmos vistos anteriormente. Entretanto, se algum nó violar a propriedade do fator de balanceamente após uma inserção ou remoção, uma rotação deve ser feita.</li>
+            </ul>
+            <p>Fator de Balanceamento:</p>
+            <img src="img/avl37.png" alt="avl37.png">
+        </section>
+
+        <section>
+            <h2>Rotação:</h2>
+            <img src="img/avl38.png" alt="avl38.png">
+            <p></p>
+            <b>Regras para uso das rotações:</b>
+            <p></p>
+            <img src="img/avl39.png" alt="avl39.png">
+            <p>Exemplos:</p>
+            <img src="img/avl40.png" alt="avl40.png">
+        </section>
+
+        <section>
+            <h2>Estrutura do Nó.</h2>
+            <p>Precisaremos armazenar o fator de balanceamento, além das outras informações que já guardávamos.</p>
+            <ul>
+                <li>Note que não precisamos modificar a classe Aluno.</li>
+            </ul>
+            <pre>
+            struct NodeType
+            {
+                Aluno aluno;
+                int  fatorB;
+                NodeType*  esquerda;
+                NodeType*  direita;
+            };
+            </pre>
+        </section>
+
+        <section>
+            <h2>Tipo Abstrato de Dados.</h2>
+            <img src="img/avl41.png" alt="avl41.png">
+            <ul>
+                <li>Apenas os métodos <b>insertAluno</b>, <b>deleteAluno</b> e <b>deleteNode</b> sofrem modificações.</li>
+                <ul>
+                    <li><b>is Taller</b> e <b>isShorter</b> servem para saber se a árvore cresceu na inserção ou decresceu na remoção (para gerenciar o <b>fator de balanceamento</b>).</li>
+                </ul>
+            </ul>
+            <pre>
+                private:
+                void <b>destroyTree</b>(NodeType*& tree);
+                void <b>retrieveAluno</b>(NodeType* tree, Aluno& item, bool& found) const;
+                void <b>insertAluno</b>(NodeType*& tree, Aluno item, <b>bool& isTaller</b>);
+                void <b>deleteAluno</b>(NodeType*& tree, int item, <b>bool & isShorter</b>);
+                void deleteNode(NodeType*& tree, bool& isShorter);
+                void <b>getSuccessor</b>(NodeType* tree, Aluno& data);
+                void <b>printTree</b>(NodeType *tree) const;
+                void printPreOrder(NodeType* tree) const;
+                void printInOrder(NodeType* tree) const;
+                void printPostOrder(NodeType* tree) const;
+            </pre>
+            <p>Novos métodos privados servem para realizar as rotações.</p>
+            <img src="img/avl42.png" alt="avl42.png">
+        </section>
+
+        <section>
+            <h2>Detalhes de Implementação.</h2>
+            <p>Estudaremos a implementação de alguns métodos. Apenas a lógica implementada nos interessa.</p>
+            <p>Métodos que não mudaram, como retrieve Aluno, não serão mencionados.</p>
+            <p>O método delete Aluno modifica, mas as ideias não mudam muito em relação ao que foi feito no método insertAluno.</p>
+            <ul>
+                <li><b>Inserções</b> e <b>remoções</b> gerenciam o <b>fator de balanceamento</b> com <b>isTaller</b> e <b>isShorter</b>.</li>
+                <ul>
+                    <li>Inserções usam isTaller.</li>
+                    <img src="img/avl43.png" alt="avl43.png">
+                    <li>Ao inserir uma folha, o fator de balanceamento é <b>zero</b>. Além disso, avisamos o nó pai sobre o aumento de tamanho.</li>
+                </ul>
+                <li>Um nó interno que recebe a notificação de crescimento de uma das subárvores deve ajustar o fator de balanceamento.</li>
+                <ul>
+                    <li>Note que a atualização do fator de balanceamento depende de qual filha cresceu.</li>
+                    <img src="img/avl44.png" alt="avl44.png">
+                </ul>
+                <li>Ao final da inserção, invocamos o <b>performRotation</b> (será visto mais adiante).</li>
+                <ul>
+                    <li>Esse método verificará se uma rotação precisa ser feita e realiza as operações.</li>
+                    <img src="img/avl45.png" alt="avl45.png">
+                </ul>
+            </ul>
+            <b>As rotações são uma implementação direta dos conceitos:</b>
+            <p></p>
+            <b>rotateToLeft e rotateToRight.</b>
+            <p></p>
+            <img src="img/avl46.png" alt="avl46.png">
+            <p></p>
+            <b>rotateToLeftAndRight e rotateToRightAndLeft.</b>
+            <p></p>
+            <img src="img/avl47.png" alt="avl47.png">
+            <p></p>
+            <b>Perform Rotation implementa a tabela de casos:</b>
+            <p></p>
+            <img src="img/avl48.png" alt="avl48.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
+    </footer>
+</body>
+</html>
