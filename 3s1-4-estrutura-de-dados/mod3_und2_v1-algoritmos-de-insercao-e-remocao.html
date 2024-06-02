@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Árvores Balanceadas.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Árvores Balanceadas.</h1>
+        <h2>💡 Unidade 2 - Algoritmos de inserção e remoção.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=GQ6UYN46ULc&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 3 - Unidade 2.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Árvores Balanceadas.</h3>
+            <b>Algoritmos de inserção e remoção.</b>
+        </section>
+
+        <section>
+            <h2>AVL - Atualização do Fator de Balanceamento.</h2>
+            <ul>
+                <li>Vamos então analisar o impacto do Fator de Balanceamento na AVL, após inserir 1 nó.</li>
+            </ul>
+            <img src="img/avl31.png" alt="avl31.png">
+            <ul>
+                <li>Devemos então percorrer desde o nó inserido até a raiz pelo caminho de inserção e ir atualizando o fb.</li>
+                <ul>
+                    <li>Ou até encontrar algum nó com fb=0.</li>
+                </ul>
+                <li>Como podemos ter acesso aos nós ancestrais?</li>
+                <ul>
+                    <li>Temos que incluir mais um campo “pai” no nosso nó.</li>
+                </ul>
+            </ul>
+            <img src="img/avl32.png" alt="avl32.png">
+            <p></p>
+            <b>AVL - Relembrando a Inserção na ABB.</b>
+            <ul>
+                <li>Para termos o campo “pai” atualizado temos que ajustar o nosso algoritmo de inserção para manter o campo pai apontando para seu ancestral.</li>
+                <li>Agora podemos caminhar para cima na árvore até a raiz.</li>
+            </ul>
+            <pre>
+            def inserir(raiz,valor):
+                novo = no(valor)
+                if raiz==None:
+                    raiz=novo
+                    <b>novo.pai=None</b>
+                else:
+                    _ , anc = buscar(raiz,valor)
+                    conectar(anc,novo)
+                    <b>novo.pai=anc</b>
+                <b>atualizarFBIns(novo)</b>
+            </pre>
+            <p>Agora temos os apontamentos para os ancestrais (“pai”):</p>
+            <pre>
+                atualizarFBIns(no):
+                    aux = no
+                    <b>Enquanto</b> aux≠vazio e aux.fb == 0 <b>faça</b>:
+                        <b>Se</b> aux.pai.fe == aux <b>então</b>
+                            aux.pai.fb = aux.pai.fb+1
+                        <b>Senão</b>
+                            aux.pai.fb = aux.pai.fb-1
+                        aux = aux.pai
+                        <b>verificarRotacao</b>(aux)
+            </pre>
+            <img src="img/avl33.png" alt="avl33.png">
+            <pre>
+            atualizarFBIns(no):
+                aux = no
+                <b>Enquanto</b> aux≠vazio <b>e</b> aux.fb == 0 <b>faça</b>:
+                    <b>Se</b> aux.pai.fe == aux <b>então</b>
+                        aux.pai.fb = aux.pai.fb+1
+                    <b>Senão</b>
+                        aux.pai.fb = aux.pai.fb-1
+                    aux = aux.pai
+                    <b>verificarRotacao</b>(aux)
+            </pre>
+            <img src="img/avl34.png" alt="avl34.png">
+        </section>
+
+        <section>
+            <h2>AVL - Verificar rotação.</h2>
+            <ul>
+                <li>Temos também o procedimento de ajustar o fator de balanceamento durante a remoção do nó.</li>
+                <li>A função <b>verificarRotacao</b>(no) deve observar as regras e aplicar as funções de rotação, vistas na unidade 1.</li>
+            </ul>
+            <img src="img/avl35.png" alt="avl35.png">
+        </section>
+
+        <section>
+            <h2>AVL - Remoção.</h2>
+            <ul>
+                <li>Durante a remoção temos também que verificar se houve o desbalanceamento nos nós ancestrais e rotacionar para balancear a AVL.</li>
+                <li>Realizamos o procedimento de remoção como na ABB e em seguida (como no inserção):</li>
+                <ul>
+                    <li>Atualizar o fb do ancestral que teve remoção em um dos filhos até a raiz;</li>
+                    <ul>
+                        <li>Como estamos removendo devemos considerar a subtração no fator de balanceamento, ou seja, inverter os sinais.</li>
+                        <li>Quando removemos em uma subárvore seria o equivalente a inserir na subárvore oposta.</li>
+                    </ul>
+                    <li>Aplicar os algoritmos de rotação no nó desbalanceado.</li>
+                </ul>
+            </ul>
+            <p>Ajustando a atualização do fator de balanceamento para a remoção.</p>
+            <pre>
+            atualizarFBRem(no):
+                aux = no
+                <b>Enquanto</b> aux≠vazio <b>e</b> aux.fb == 0 <b>faça</b>:
+                    <b>Se</b> aux.pai.fe == aux <b>então</b>
+                        aux.pai.fb = aux.pai.fb<b>-1</b>
+                    <b>Senão</b>
+                        aux.pai.fb = aux.pai.fb<b>+1</b>
+                    aux = aux.pai
+                    verificarRotacao(aux)
+            </pre>
+            <p>Exemplo no <a href="https://visualgo.net/en/bst?slide=1" target="_blank" rel="noopener noreferrer">VISUALGO</a></p>
+            <ul>
+                <li>Insert(5,3,8,2,4,7,10,1,6,9,11,12)</li>
+                <li>Remove(4)</li>
+            </ul>
+            <pre>
+            Procedimento envolve então:
+                Busca o nó a ser removido;
+                Verificar o caso de remoção
+                    Caso 1: remover nó folha;
+                    Caso 2: remover nó com 1 filho;
+                    Caso 3: encontrar o antecessor ou sucessor e chamar a remoção nesse nó antecessor ou sucessor.
+                Através do antecessor do nó removido realizar a atualização do fator de balanceamento.
+                    Verificar o caso de rotação e rotacionar.
+            </pre>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <p>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
+    </footer>
+</body>
+</html>
