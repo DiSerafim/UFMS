@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A3] Avaliação do Módulo 3 - Árvores Balanceadas.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	domingo, 2 jun 2024, 11:35</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	domingo, 2 jun 2024, 12:30</li>
+                <li>Tempo empregado	54 minutos 47 segundos</li>
+                <li>Avaliar	8,00 de um máximo de 10,00(80%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>A inserção das chaves 35, 50, 40, 25, 30, 60, 78, 20 e 28, nessa ordem, em uma AVL inicialmente vazia, necessita de um total de quantas rotações para que a árvore se mantenha balanceada durante todo o processo? Informe apenas o número, sem espaços ou outros símbolos.</p>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <b class="answer">Resposta: 3. ✅</b>
+
+                <p>Resolução:</p>
+                <img src="img/avaliacao-q1.png" alt="avaliacao-q1.png">
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Dada uma AVL T, a remoção de um nó qualquer dessa árvore, digamos de chave x, e sua inserção logo em seguida vai resultar, necessariamente, na árvore original.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A remoção e subsequente reinserção de um nó em uma árvore AVL não garantem que a árvore retornará exatamente ao seu estado original. A necessidade de balanceamento após essas operações pode alterar a estrutura da árvore.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>É correto afirmar que toda árvore binária de busca completa é uma AVL?</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Uma árvore binária de busca (BST) é completa se todos os níveis, exceto possivelmente o último, estão completamente preenchidos e todos os nós são o mais à esquerda possível no último nível.</li>
+                    <li>Uma árvore AVL é uma árvore binária de busca autobalanceada onde, para cada nó, a altura das subárvores esquerda e direita difere em no máximo uma unidade.</li>
+                    <ul>
+                        <li>Uma árvore binária de busca completa é necessariamente uma árvore AVL porque ela sempre satisfaz a condição de balanceamento que define uma árvore AVL.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Em que ordem as chaves 88, 89, 90, 91, 92, 93 e 94 devem ser inseridas em uma AVL inicialmente vazia de tal forma que nenhuma rotação seja necessária para que ela se mantenha balanceada durante todo o processo de inserção? Sua resposta deve seguir o seguinte formato (sem espaços e separado por virgula): chave,chave,chave,chave,...,chave.</p>
+                
+                <b class="answer">Resposta: e. 4 e 15. ✅</b>
+
+                <p>Resolução:</p>
+                <p>Inserir as chaves de maneira que cada inserção mantenha a propriedade AVL, ou seja, a diferença de altura entre as subárvores de qualquer nó deve ser no máximo 1.</p>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <img src="img/avaliacao-q1.png" alt="avaliacao-q1.png">
+                <ol>
+                    <li>Primeiro inserimos o valor mediano, 91.</li>
+                    <li>Em seguida, inserimos o valor mediano das sublistas esquerda (88, 89, 90) e direita (92, 93, 94).</li>
+                    <li>Continuamos esse processo recursivamente.</li>
+                </ol>
+                <p>Ordem de inserção:</p>
+                <ol>
+                    <li>Inserir 91 (mediana de 88 a 94)</li>
+                    <li>Inserir 89 (mediana de 88 a 90)</li>
+                    <li>Inserir 93 (mediana de 92 a 94)</li>
+                    <li>Inserir 88 (mediana de 88)</li>
+                    <li>Inserir 90 (mediana de 90)</li>
+                    <li>Inserir 92 (mediana de 92)</li>
+                    <li>Inserir 94 (mediana de 94)</li>
+                </ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Uma AVL com n nós possui sua altura limitada superiormente por qual função f( n )?</p>
+
+                <b class="answer">Resposta: f(n) = log₂(n + 1). ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>A altura de uma árvore AVL com n nós é limitada superiormente por uma função logarítmica. Especificamente, a altura h(n) de uma árvore AVL com n nós é O(log n). Mais formalmente, a altura de uma árvore AVL é limitada superiormente pela função f(n) = log₂(n + 1).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Dentre as sequências de inserção de chaves a seguir, em uma AVL inicialmente vazia, qual delas implica em uma rotação à direita, uma dupla à direita e uma dupla à esquerda, nessa ordem (mas não necessariamente uma seguida da outra) na árvore?</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 2, 3, 5, 7, 6 e 10.</li>
+                    <li>b. 6, 7, 5, 2, 3 e 10.</li>
+                    <li>c. 10, 6, 5, 7, 3 e 2.</li>
+                    <li>d. 10, 5 , 7, 6, 3 e 2.</li>
+                    <li>e. 10, 3, 2, 5, 7 e 6.</li>
+                </ul>
+
+                <b class="answer">Resposta: e. 10, 3, 2, 5, 7 e 6. ✅</b>
+
+                <p>Resolução:</p>
+                <ol>
+                    <li>Rotação à Direita: Acontece quando a inserção faz com que a altura da subárvore esquerda de um nó aumente muito mais do que a da subárvore direita.</li>
+                    <li>Dupla à Direita: Acontece quando a inserção faz com que a altura da subárvore esquerda de um nó aumente muito mais do que a da subárvore direita, e após uma rotação simples à direita, a altura da subárvore direita desse nó aumenta muito mais do que a da subárvore esquerda.</li>
+                    <li>Dupla à Esquerda: Acontece quando a inserção faz com que a altura da subárvore direita de um nó aumente muito mais do que a da subárvore esquerda, e após uma rotação simples à esquerda, a altura da subárvore esquerda desse nó aumenta muito mais do que a da subárvore direita.</li>
+                </ol>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <img src="img/avaliacao-q6.png" alt="avaliacao-q6.png">
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>É correto afirmar que toda árvore binária de busca é uma AVL.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Uma árvore binária de busca é uma estrutura de dados na qual cada nó possui no máximo dois filhos, e a chave (valor) de cada nó é maior que todas as chaves de sua subárvore à esquerda e menor que todas as chaves de sua subárvore à direita.</li>
+                    <li>Uma árvore AVL é uma árvore binária de busca autobalanceada na qual, para cada nó, a diferença de altura entre as subárvores esquerda e direita é, no máximo, uma unidade.</li>
+                    <li>Diferença entre BST e AVL:</li>
+                    <ul>
+                        <li>Enquanto todas as árvores binárias de busca (BST) seguem a propriedade de busca binária (chaves menores à esquerda, chaves maiores à direita), nem todas elas são árvores AVL.</li>
+                        <li>As árvores AVL são um tipo específico de BST que garantem um balanceamento automático para otimizar o tempo de busca e outras operações.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Dada a AVL mostrada abaixo, a remoção do nó de chave 6 dessa árvore possui como consequência:</p>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <img src="img/avaliacao-q8.png" alt="avaliacao-q8.png">
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Uma diminuição do número de nós na árvore.</li>
+                    <li>b. Duas rotações na árvore.</li>
+                    <li>c. Uma diminuição na altura da árvore.</li>
+                    <li>d. Uma rotação na árvore.</li>
+                </ul>
+                <b class="answer">Resposta: d. Uma rotação na árvore. ❌</b>
+                <p>Resolução:</p>
+                <ol>
+                    <li>A remoção do nó de chave 6 da árvore AVL [6,5,7,4,8] não resulta em uma diminuição do número de nós na árvore, pois ainda existirão quatro nós após a remoção.</li>
+                    <li>Tampouco resulta em duas rotações na árvore, pois remover um nó geralmente requer no máximo uma rotação para manter a propriedade de árvore AVL.</li>
+                    <li>Também não resulta em uma diminuição na altura da árvore, pois a remoção de um nó pode ou não alterar a altura, dependendo da estrutura da árvore.</li>
+                </ol>
+                <img src="img/avaliacao-q8-1.png" alt="avaliacao-q8-1.png">
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Suponha a inserção das chaves 1, 2, 3, 4, 5, 6, 7 e 8, nessa ordem, em uma AVL inicialmente vazia. Um percurso em ordem na árvore resultante dessas inserções tem como resultado qual sequência de vértices? Sua resposta deve seguir o seguinte formato (sem espaços e separado por virgula): chave,chave,chave,chave,...,chave</p>
+                
+                <b class="answer">Resposta: 1,2,3,4,5,6,7,8. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A inserção dessas chaves na ordem fornecida resultará em uma árvore AVL balanceada, já que são inseridas de forma ordenada.</li>
+                </ul>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <img src="img/avaliacao-q9.png" alt="avaliacao-q9.png">
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Dadas as três árvores binárias abaixo, é correto afirmar que:</p>
+                <p>[13, 12, 15, 11, 10]</p>
+                <p>[13, 15, 12, 10, 11]</p>
+                <p>[13, 12, 15, 14, 10]</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Somente as árvores I e III são AVL.</li>
+                    <li>b. Somente a árvore I é uma AVL.</li>
+                    <li>c. Somente a árvore III é uma AVL.</li>
+                    <li>d. Nenhuma das árvores é uma AVL.</li>
+                    <li>e. Todas as árvores são AVLs.</li>
+                    <li>f. Somente as árvores I e II são AVL.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. Somente a árvore III é uma AVL. ✅</b>
+                <p>Resolução:</p>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p></p>
+                <img src="img/avaliacao-q10.png" alt="avaliacao-q10.png">
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de jun de 2024</p>
+    </footer>
+</body>
+</html>
