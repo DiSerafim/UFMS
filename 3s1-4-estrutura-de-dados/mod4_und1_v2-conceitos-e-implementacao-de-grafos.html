@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Page-Rank (Grafos).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Page-Rank (Grafos).</h1>
+        <h2>💡 Unidade 1 - Conceitos e implementação de Grafos.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=MC0u4f334mI&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Estrutura de Dados - Aula 23 - Grafos - Conceitos básicos.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Norton T. Roman.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Grafos - Conceitos básicos.</h3>
+        </section>
+
+        <section>
+            <h2>O que é um Grafo.</h2>
+            <ul>
+                <li>Não... seguramente não.</li>
+                <li>Grafos são estruturas matemáticas que permitem codificar relacionamentos entre pares de objetos.</li>
+                <ul>
+                    <li>Os objetos são os <b>vértices</b> (ou <b>nós</b>) do grafo.</li>
+                    <li>Os relacionamentos são suas <b>arestas</b></li>
+                </ul>
+            </ul>
+            <p>São representados como um conjunto de nós (<b>vértices</b>) conectados par a par por linhas (<b>arestas</b>)</p>
+            <img src="img/grafos5.png" alt="grafos5.png">
+        </section>
+
+        <section>
+            <h2>E para que servem os Grafos?</h2>
+            <ul>
+                <li>Sua imaginação é o limite</li>
+                <li>Podem modelar conexões em redes sociais</li>
+                <img src="img/grafos6.png" alt="grafos6.png">
+                <p></p>
+                <li>Labirintos:</li>
+                <img src="img/grafos7.png" alt="grafos7.png">
+                <p></p>
+                <li>Rotas do metrô:</li>
+                <img src="img/grafos8.png" alt="grafos8.png">
+            </ul>
+        </section>
+
+        <section>
+            <h2>Alguns grafos são dirigidos (ou direcionados).</h2>
+            <ul>
+                <li>As relações representadas pelas arestas têm sentido definido</li>
+                <li>As arestas só podem ser seguidas em uma única direção</li>
+                <img src="img/grafos9.png" alt="grafos9.png">
+                <p></p>
+                <li>Em <b>Grafos Dirigidos</b>, as arestas são <b>pares ordenados</b> de vértices</li>
+                <ul>
+                    <li>Saindo de um em direção ao outro</li>
+                    <li>Mesmo que ambos sejam o mesmo vértice (<b>self-loop</b>)</li>
+                </ul>
+                <img src="img/grafos10.png" alt="grafos10.png">
+            </ul>
+        </section>
+
+        <section>
+            <h2>Outros são não dirigidos (ou não direcionados).</h2>
+            <ul>
+                <li>As relações representadas pelas arestas não têm sentido definido.</li>
+                <li>As arestas podem ser seguidas em qualquer direção.</li>
+            </ul>
+            <img src="img/grafos11.png" alt="grafos11.png">
+            <ul>
+                <li>Podemos pensar num grafo não dirigido como um grafo dirigido com arestas de sentido duplo.</li>
+                <li>As arestas são <b>pares não ordenados</b> de vértices.</li>
+                <li>Self-loops não são permitidos.</li>
+            </ul>
+            <img src="img/grafos12.png" alt="grafos12.png">
+        </section>
+
+        <section>
+            <h2>Grafos.</h2>
+            <ul>
+                <li>Se (u, v) é uma aresta no grafo, então dizemos que vé <b>adjacente</b> a u.</li>
+                <li>Alternativamente, que vé <b>vizinho</b> de u.</li>
+                <li>(u, v) significa que a aresta sai de u e entra em v.</li>
+            </ul>
+            <img src="img/grafos9.png" alt="grafos9.png">
+            <ul>
+                <li>Em grafos não dirigidos, a relação de adjacência é simétrica</li>
+                <ul>
+                    <li>(u, v) ⇔ (v, u)</li>
+                    <p></p>
+                    <img src="img/grafos11.png" alt="grafos11.png">
+                </ul>
+                <p></p>
+                <li>Já em dirigidos, não necessariamente há tal simetria</li>
+                <ul>
+                    <li>Há (V1, V2), mas não (V2, V₁)</li>
+                    <p></p>
+                    <img src="img/grafos9.png" alt="grafos9.png">
+                </ul>
+            </ul>
+
+            <b>Grau de um Vértice:</b>
+            <ul>
+                <li>Em grafos não dirigidos, o grau de um vértice é o número de arestas que incidem nele.</li>
+                <ul>
+                    <li>gr(v₁) = gr(v2) = gr(V5) 2</li>
+                    <li>gr(v3) = 3</li>
+                    <li>gr(v4) = 1</li>
+                </ul>
+            </ul>
+            <img src="img/grafos11.png" alt="grafos11.png">
+            <ul>
+                <li>Já em grafos dirigidos, o grau de um vértice é o número de arestas que <b>saem</b> do vértice mais o número de arestas que <b>chegam</b> nele.</li>
+                <ul>
+                    <li>gr(v₁) = gr(v2) = gr(v5) = 2</li>
+                    <li>gr(v3) = gr(v₄) = 3</li>
+                </ul>
+                <li>No caso de grafos dirigidos, há dois tipos de graus de vértice:</li>
+                <ul>
+                    <li><b>Grau de saída</b>: número de arestas que saem do vértice.</li>
+                    <li><b>Grau de entrada</b>: número de arestas que chegam no vértice.</li>
+                </ul>
+            </ul>
+            <img src="img/grafos10.png" alt="grafos10.png">
+            <p>Um <b>caminho</b> de um vértice x a um vértice y é uma sequência de vértices em que, para cada vértice, do primeiro ao penúltimo, há uma aresta ligando esse vértice ao próximo na sequência.</p>
+            <ul>
+                <li>No caso a cima, alguns caminhos são:</li>
+                <ul>
+                    <li>(V1, V2, V3, V5)</li>
+                    <li>(V4, V5)</li>
+                    <li>(V1, V2, V3)</li>
+                    <li>(V4, V4, V5)</li>
+                </ul>
+                <li>O <b>comprimento</b> de um caminho é o número de <b>arestas</b> nele:</li>
+                <ul>
+                    <li>compr(V1, V2, V3, V5) = 3</li>
+                    <li>compr(V4, V5) = 1</li>
+                    <li>compr(V1, V2, V3) = 2</li>
+                    <li>compr(V4, V4, V5) = 2</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Um <b>ciclo</b> acontece quando, a partir de um determinado vértice, pudermos percorrer algum caminho que nos leve a esse mesmo vértice.</li>
+                <ul>
+                    <li>Em grafos dirigidos, o caminho deve conter pelo menos uma aresta</li>
+                </ul>
+            </ul>
+            <img src="img/grafos13.png" alt="grafos13.png">
+            <p>Em <b>grafos não dirigidos</b>, um ciclo deve conter pelo menos 3 arestas.</p>
+            <ul>
+                <li>Grafos em que há ao menos um ciclo são chamados de <b>cíclicos</b>.</li>
+                <li>Grafos em que não há ciclos são chamados de <b>acíclicos</b>.</li>
+            </ul>
+            <img src="img/grafos14.png" alt="grafos14.png">
+            <p>Um grafo <b>não direcionado</b> é <b>conexo</b> (ou <b>conectado</b>) se cada par de vértices nele estiver conectado por um caminho.</p>
+            <ul>
+                <li>O grafo a baixo é conexo Agora é <b>desconexo</b>.</li>
+            </ul>
+            <img src="img/grafos15.png" alt="grafos15.png">
+            <p>Um grafo <b>dirigido</b> é <b>fortemente conexo</b> se existir um caminho entre qualquer par de vértices no grafo.</p>
+            <ul>
+                <li>Contém um caminho direto de u para v e um caminho direto de v para u para cada par de vértices (u, v).</li>
+            </ul>
+            <img src="img/grafos16.png" alt="grafos16.png">
+            <p>Um grafo <b>dirigido</b> é <b>conexo</b> se possuir um caminho de u para v, ou um caminho de v para u, para cada par de vértices (u, v).</p>
+            <img src="img/grafos17.png" alt="grafos17.png">
+            <p>Um grafo <b>dirigido</b> é <b>fracamente conexo</b> se a substituição de todas as suas arestas por arestas <b>não-direcionadas</b> produz um grafo conexo.</p>
+            <ul>
+                <li>Ex: não há caminho de.</li>
+                <ul>
+                    <li>V4 V3 nem de V3 → V4.</li>
+                </ul>
+            </ul>
+            <img src="img/grafos9.png" alt="grafos9.png">
+        </section>
+
+        <section>
+            <h2>Grafos também podem ser ponderados.</h2>
+            <p>Caso em que possuem pesos associados às suas arestas Esses pesos podem representar custos, distâncias etc.</p>
+            <img src="img/grafos18.png" alt="grafos18.png">
+        </section>
+
+        <section>
+            <h2>Grafos A árvore..</h2>
+            <p>Grafo acíclico.</p>
+            <p>Conexo.</p>
+            <p>Não-dirigido.</p>
+            <img src="img/grafos19.png" alt="grafos19.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
+    </footer>
+</body>
+</html>
+
+
+Simulação grátis.
+trocar para escolher o carro.
+trocar fundo por um outro carro premium ou maior venda(carrossel).
