@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Page-Rank (Grafos).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Page-Rank (Grafos).</h1>
+        <h2>💡 Unidade 2 - Algoritmo PageRank.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS-T01-2024-1
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=ebm5ysMyksQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Estrutura de Dados - Módulo 4 - Unidade 2.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Algoritmo PageRank.</h3>
+        </section>
+
+        <section>
+            <h2>PageRank.</h2>
+            <ul>
+                <li>Algoritmo proposto pelos fundadores do Google (Larry <b>Page</b> e Sergey Brin), em 1998, para acelerar busca por páginas na internet e ranquear as páginas mais relevantes;</li>
+                <li>O PageRank funciona como uma <b>métrica de avaliação</b> da relevância das páginas web de acordo com a quantidade e qualidade dos links em cada página.</li>
+                <li>Combina conceitos de Álgebra Linear, Cadeias de Markov e Grafos.</li>
+                <ul>
+                    <li>Utiliza a representação das páginas web por meio de um grafo direcionado.</li>
+                </ul>
+                <li>A ideia central é que as <b>páginas importantes</b> que recebem mais links de <b>outras páginas importantes</b> terão um valor de PageRank mais alto.</li>
+                <ul>
+                    <li>Processo iterativo para determinar essa importância relativa entre as páginas.</li>
+                </ul>
+                <li>Se temos muitas páginas recomendando uma página da web, podemos dizer que esta é uma página importante.</li>
+                <ul>
+                    <li>Se temos muitas páginas importantes recomendando outra página web, então essa página deve ser uma página ainda mais importante.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>PageRank - Representação.</h2>
+            <ul>
+                <li>Podemos utilizar a matriz de adjacências para representar a estrutura de conexões de um grafo de páginas web;</li>
+                <li>Cada página é um vértice desse grafo e as arestas são os links que levam a uma outra página (grafo direcionado); PageRank - Representação</li>
+                <li>Cada aresta tem uma porcentagem (peso) do valor de PageRank da página que o recomenda (grafo ponderado).</li>
+                <ul>
+                    <li>Uma página X com valor de PageRank em 1 terá esse valor distribuído em suas arestas (geralmente de maneira uniforme), indicando o peso das conexões (qualidade da página).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>PageRank - Exemplo Simplificado.</h2>
+            <ul>
+                <li>Considere 4 páginas web: A, B, C e D.</li>
+                <ul>
+                    <li><b>A soma do valor de PageRank (PR) de todas as páginas é 1</b>.</li>
+                    <ul>
+                        <li>1 = PR(A)+PR(B)+PR(C)+PR(D);</li>
+                    </ul>
+                    <li>Inicialmente vamos distribuir igualmente (0,25 para cada página);</li>
+                    <ul>
+                        <li>PR(A)=0,25;</li>
+                        <li>PR(B)=0,25;</li>
+                        <li>PR(C)=0,25;</li>
+                        <li>PR(D)=0,25;</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/pagerank.png" alt="pagerank.png">
+            <ul>
+                <li>Se apenas as páginas B, C e D recomendarem a página A, os seus valores de PageRank serão enviados para a página A, resultando em um novo valor de PR(A) = 0,75.</li>
+                <ul>
+                    <li>PR(A) = PR(B)+PR(C)+PR(D);</li>
+                    <li>PR(A) = 0,25+0,25+0,25;</li>
+                    <li>PR(A) = 0,75;</li>
+                </ul>
+                <li>Indicando que a página A é importante.</li>
+            </ul>
+            <img src="img/pagerank1.png" alt="pagerank1.png">
+            <ul>
+                <li>Se a página B recomenda todas as páginas, o PageRank da página A será ⅓ do PR(B).</li>
+                <ul>
+                    <li>PR(A) = ⅓ * PR(B);</li>
+                    <li>PR(A) = 0,25/3</li>
+                    <li>PR(A) = 0,083;</li>
+                </ul>
+            </ul>
+            <img src="img/pagerank2.png" alt="pagerank2.png">
+            <ul>
+                <li>Vamos considerar a seguinte ligação entre essas páginas.</li>
+                <ul>
+                    <li>Página A distribui ⅓ de 0,25 para cada página (0,083 para B, C e D);</li>
+                    <li>Página C distribuiu todo o valor de PageRank para página B (0,25), o mesmo para a página B.</li>
+                    <li>D dividiu pela metade (½) o seu PageRank e distribuiu para as páginas A e C o valor 0,125.</li>
+                </ul>
+            </ul>
+            <img src="img/pagerank3.png" alt="pagerank3.png">
+            <ul>
+                <li>Podemos representar esse grafo com os valores de PR de cada vértice no vetor V0 e matriz de transições T e matriz pesos P0:</li>
+            </ul>
+            <img src="img/pagerank4.png" alt="pagerank4.png">
+            <p></p>
+            <img src="img/pagerank5.png" alt="pagerank5.png">
+            <ul>
+                <li>Podemos observar então que o valor de PageRank da página B é:</li>
+                <ul>
+                    <li>PR(B) = PR(A)/Nº links saindo de A + PR(C)/Nº links saindo de C</li>
+                    <li>PR(B) = 0,083+0,25 = 0,333; PR(A) = 0,125;</li>
+                    <li>PR(C)=0,458 e PR(D)=0,083.</li>
+                </ul>
+            </ul>
+            <img src="img/pagerank6.png" alt="pagerank6.png">
+            <ul>
+                <li>Com os pesos das arestas P0, vamos recalcular o PR de cada página para obter o novo V1.</li>
+            </ul>
+            <img src="img/pagerank7.png" alt="pagerank7.png">
+            <p></p>
+            <img src="img/pagerank8.png" alt="pagerank8.png">
+            <ul>
+                <li>Em um nova iteração vamos recalcular os pesos das arestas P1.</li>
+            </ul>
+            <img src="img/pagerank9.png" alt="pagerank9.png">
+            <p></p>
+            <img src="img/pagerank10.png" alt="pagerank10.png">
+            <ul>
+                <li>O algoritmo continua sua execução até que um número específico de iterações seja alcançado ou os valores de V em duas iterações consecutivas não se alterem.</li>
+                <ul>
+                    <li>Simulação do <a href="https://pagerank-visualizer.netlify.app/" target="_blank" rel="noopener noreferrer">exemplo</a>.</li>
+                </ul>
+            </ul>
+            <img src="img/pagerank11.png" alt="pagerank11.png">
+        </section>
+
+        <section>
+            <h2>PageRank - Considerações.</h2>
+            <ul>
+                <li>Existem cenários em que podemos ter links “mortos” (dead links);</li>
+                <ul>
+                    <li>Páginas que não recomendam nenhuma outra (sumidouro).</li>
+                    <li>Nesses casos, o algoritmo pode não conseguir reajustar os valores de PageRank uma vez que não redistribui.</li>
+                </ul>
+                <li>Algumas páginas podem artificialmente induzir páginas importantes (quantidade de links)</li>
+                <ul>
+                    <li>Páginas com auto ligação (self loop);</li>
+                    <li>Múltiplos links de uma página para outra página.</li>
+                </ul>
+                <li>Uma maneira de amenizar essas situações é a inserção de um fator de amortecimento <b>d</b> (damping factor):</li>
+                <ul>
+                    <li>Na página B do nosso exemplo:</li>
+                    <ul>
+                        <li>Sem damping factor:</li>
+                        <ul>
+                            <li>PR(B) = PR(A)/Nº links saindo de A +</li>
+                            <li>PR(C)/Nº links saindo de C</li>
+                        </ul>
+                        <li>Com damping factor:</li>
+                        <ul>
+                            <li>PR(B) = (<b>1-d</b>)/N° de páginas + <b>d</b> * (PR(A)/Nº links saindo de A + PR(C)/Nº links saindo de C)</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>A ideia do uso de um fator de amortecimento é simular o cenário em que o usuário pode em algum momento deixar de seguir as indicações de páginas e começar a buscar um caminho alternativo.</li>
+                <ul>
+                    <li>Geralmente assume-se que em 85% do casos o usuário segue os links e em 15% deseja buscar alternativas;</li>
+                    <ul>
+                        <li>d = 0,85</li>
+                        <li>PR(B) = (<b>1-0,85</b>)/N° de páginas + <b>0,85</b> * (PR(A)/Nº links saindo de A + PR(C)/Nº links saindo de C)</li>
+                    </ul>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+            <ul>
+                <li>OLIVEIRA, M. V.; BOVOLONI, J. O.; Leite Filho, E. S.; MENEZES, G. Page Rank: o funcionamento da ferramenta de busca do Google. Cadernos de Graduação: Ciências exatas e tecnológicas, Aracaju, v. 3, n. 3, p. 73-84, out. 2016,. Disponível em: https://link.ufms.br/AqveS, Acesso em 30 mai 2023.</li>
+                <li>CAMARGO, Ariely da Silva; GALVES, Ana Paula Tremura. Abordagem matemática por trás do algoritmo PageRank. Revista Eletrônica Paulista de Matemática, v. 21, dez.2021, Disponível em: https://link.ufms.br/VVRSZ . Acesso em 30 mai 2023.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de jun de 2024</p>
+    </footer>
+</body>
+</html>
