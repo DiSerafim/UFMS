@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 4 - Page-Rank (Grafos).</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Agora você já tem conhecimento da base utilizada no algoritmo de classificação utilizado pelo Google, o PageRank. Descreva, com suas palavras, a ideia central utilizada pelo algoritmo, abrangendo os tópicos:</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <ul>
+                <li>Conceitos;</li>
+                <li>Estrutura de dados para representação;</li>
+                <li>Métrica/critério de avaliação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Resposta:</h2>
+            <p>A ideia é avaliar a relevância de uma página com base no número e na qualidade dos links que apontam pra ela. Os links são vistos como votos de confiança e uma página se torna importante se muitos links apontarem para ela.</p>
+            <p>Para representar o PageRank tem <b>Vértices</b> que representam páginas da web e <b>Arestas</b> que representam os links dessas páginas. Cada aresta tem uma direção. Cada página pode ter um valor inicial atribuído.</p>
+            <p>A métrica e critério de avaliação é descrito como <b>Distribuição Inicial</b> onde todas as páginas começam com o mesmo valor de PageRank. <b>Distribuição de PageRank</b> onde o PageRank de cada página é distribuído entre todas as páginas que ela aponta. <b>Normalização</b> onde o valor redistribuído é ajustado pela quantidade de links que contém na página. <b>Iteração</b> onde o processo é repetido várias vezes até que os valores de PageRank de todas as páginas se estabilizem.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de junho de 2024</p>
+    </footer>
+</body>
+</html>

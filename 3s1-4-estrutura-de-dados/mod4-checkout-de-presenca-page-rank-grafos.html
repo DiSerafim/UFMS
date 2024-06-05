@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+            <p>Probabilidade de transição entre as páginas:</p>
+            <ul>
+                <li><b>A</b> tem links para <b>B e E</b> probabilidade é = <b>1/2</b></li>
+                <li><b>B</b> tem links para <b>A, C, D e E</b> probabilidade é = <b>1/4</b></li>
+                <li><b>C</b> tem links para <b>B</b> probabilidade é = <b>1</b></li>
+                <li><b>D</b> tem links para <b>C e E</b> probabilidade é = <b>1/2</b></li>
+                <li><b>E</b> tem links para <b>D</b> probabilidade é = <b>1</b></li>
+            </ul>
+            <p>Matriz de transição:</p>
+            <table>
+                <tr>
+                    <th>Matriz</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>0</td>
+                    <td>1/2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1/2</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>1/4</td>
+                    <td>0</td>
+                    <td>1/4</td>
+                    <td>1/4</td>
+                    <td>1/4</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1/2</td>
+                    <td>0</td>
+                    <td>1/2</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>		
+        </section>
+        <ul>
+            <li>Para a linha de <b>A</b>, as probabilidades são 1/2 para <b>B</b> e 1/2 para <b>E</b>, já que <b>A</b> aponta para <b>B</b> e <b>E</b>.</li>
+            <li>Para a linha de <b>B</b>, as probabilidades são 1/4 para <b>A</b>, 1/4 para <b>C</b>, 1/4 para <b>D</b> e 1/4 para <b>E</b>, pois <b>B</b> aponta para <b>A</b>, <b>C</b>, <b>D</b> e <b>E</b>.</li>
+            <li>Para a linha de <b>C</b>, a probabilidade é 1 para <b>B</b>, pois <b>C</b> aponta apenas para <b>B</b>.</li>
+            <li>Para a linha de <b>D</b>, as probabilidades são 1/2 para <b>C</b> e 1/2 para <b>E</b>, pois <b>D</b> aponta para <b>C</b> e <b>E</b>.</li>
+            <li>Para a linha de <b>E</b>, a probabilidade é 1 para <b>D</b>, pois <b>E</b> aponta apenas para <b>D</b>.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de jun de 2024</p>
+    </footer>
+</body>
+</html>
