@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 - Page-Rank (Grafos).</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	quarta, 5 jun 2024, 16:13</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quarta, 5 jun 2024, 17:45</li>
+                <li>Tempo empregado	1 hora 32 minutos</li>
+                <li>Avaliar	5,67 de um máximo de 10,00(56,67%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>No grafo orientado a seguir, temos representada uma cadeia de Markov ergódica. (As probabilidades foram omitidas do grafo).</p>
+                <img src="img/rank18.png" alt="rank18.png">
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <b class="answer">Resposta: Verdadeiro. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Definição de Cadeia de Markov Ergódica:</li>
+                    <ul>
+                        <li>Uma cadeia de Markov é considerada ergódica se satisfaz as seguintes condições:</li>
+                        <ul>
+                            <li><b>Irredutibilidade</b>: Todos os estados (vértices) são acessíveis a partir de qualquer outro estado (vértice).</li>
+                            <li><b>Aperiodicidade</b>: Cada estado (vértice) não possui ciclos periódicos de qualquer comprimento.</li>
+                        </ul>
+                    </ul>
+                    <li>Análise do Grafo:</li>
+                    <ul>
+                        <li><b>Irredutibilidade</b>:</li>
+                        <ul>
+                            <li>No grafo fornecido, todos os vértices (1, 2, 3, 4, 5) podem ser acessíveis a partir de qualquer outro vértice.</li>
+                            <li>Por exemplo, podemos ir do vértice 1 para o vértice 2, depois para o vértice 3, depois para o vértice 4 e finalmente para o vértice 5.</li>
+                            <li>Da mesma forma, podemos iniciar em qualquer outro vértice e seguir um caminho que nos leva a todos os outros vértices.</li>
+                        </ul>
+                        <li><b>Aperiodicidade</b>:</li>
+                        <ul>
+                            <li>O grafo não possui ciclos periódicos de qualquer comprimento.</li>
+                            <li>Um ciclo periódico seria um caminho que se repete indefinidamente sem nunca chegar a um novo vértice.</li>
+                            <li>No grafo em questão, todos os caminhos eventualmente exploram todos os vértices, sem se prender a um ciclo repetitivo.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Escreva (apenas) uma função em Python, que dada uma matriz de adjacências M de um grafo não orientado G com n vértices e o número de um vértice v (sendo v um número inteiro entre 0 e n-1) calcula e retorna o grau do vértice v. Protótipo da função:</p>
+                <img src="img/rank12.png" alt="rank12.png">
+                <p>grauVertice(M, n, v)</p>
+                <p>Exemplo: Considere M abaixo, na qual n = 5 e v = 1. O grau de v é 3.</p>
+                <b class="answer">Resposta: mod4-avaliacao-q2.py ✅</b>
+                <p>Resolução:</p>
+                <pre>
+                def grau(M, n, v):
+                if v < 0 or v >= n:
+                    raise ValueError("Inválido")
+                
+                degree = 0
+                for neighbor in range(n):
+                    if M[v][neighbor] == 1:
+                        degree += 1
+                
+                return degree
+                
+                # Example usage
+                M = [
+                    [0, 1, 1, 0, 1],
+                    [1, 0, 0, 1, 0],
+                    [1, 0, 0, 1, 1],
+                    [0, 1, 1, 0, 0],
+                    [1, 0, 1, 0, 0]
+                ]
+                
+                n = 5
+                v = 1
+                
+                degree = grau(M, n, v)
+                print(f"grau v {v}: {degree}")
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Analise o grafo orientado a seguir. Cada vértice representa um site e uma aresta (a,b) indica que a recomenda b.</p>
+                <img src="img/rank17.png" alt="rank17.png">
+                <p>Pelo grafo, podemos afirmar que:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Y e W recomendam, cada um, um único site com probabilidade 1.</li>
+                    <li>b. Z recomenda todos os demais sites com probabilidade 1/2.</li>
+                    <li>c. X recomenda quatro outros sites.</li>
+                    <li>d. X recomenda dois sites com probabilidade 1/3.</li>
+                    <li>e. Y recomenda todos os sites com probabilidade 1.</li>
+                </ul>
+                <b class="answer">Resposta: a. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Google é uma empresa que fornece serviços e softwares on-line. A ferramenta de busca do Google foi criada por Larry Page e Sergey Brin. O algoritmo utilizado por ela é o Pagerank e seu nome homenageia um dos fundadores da empresa.</p>
+                <p>Escolha uma opção: Verdadeiro Falso.</p>
+                
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O nome "PageRank" homenageia Larry Page, um dos cofundadores do Google.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>A matriz de incidência em um grafo orientado G=(V,E) é uma matriz B = (bij), de ordem |V|x|E|, tal que:</p>
+                <pre>
+                bij = -1 se a aresta j sai do vértice i, 1 se a aresta j entra no vértice i, 0 em caso contrário.
+                </pre>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Qual o tamanho em número de células da matriz de incidência para o grafo acima? Escreva apenas o número sem espaço.</p>
+                <b class="answer">Resposta: 30. ❌</b>
+                <p>Conclusão:</p>
+                <ol>
+                    <li>Definindo a ordem da matriz:</li>
+                    <ul>
+                        <li>A ordem da matriz de incidência é definida pelo produto do número de vértices (V) e do número de arestas (E).</li>
+                        <li>No grafo em questão, podemos identificar:</li>
+                        <ul>
+                            <li>Vértices (V): 5 vértices (numerados de 1 a 5).</li>
+                            <li>Arestas (E): 6 arestas (representadas pelas setas entre os vértices).</li>
+                        </ul>
+                    </ul>
+                    <li>Cálculo do tamanho da matriz:</li>
+                    <ul>
+                        <li>Substituindo os valores na fórmula da ordem da matriz:</li>
+                        <ul>
+                            <li>Ordem da matriz B = |V| x |E| = 5 x 6 = 30</li>
+                        </ul>
+                    </ul>
+                    <li>Resultado:</li>
+                    <ul>
+                        <li>O tamanho da matriz de incidência para o grafo orientado fornecido é de 30 células.</li>
+                    </ul>
+                    <li>Observações:</li>
+                    <ul>
+                        <li>A matriz de incidência é uma matriz retangular com o número de linhas igual ao número de vértices e o número de colunas igual ao número de arestas.</li>
+                        <li>Cada célula da matriz de incidência representa a relação entre um vértice e uma aresta:</li>
+                        <ul>
+                            <li>-1 se a aresta sai do vértice</li>
+                            <li>1 se asta não entra em nenhum vértice</li>
+                            <li>0 se não há relação entre o vértice e a aresta</li>
+                        </ul>
+                    </ul>
+                </ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Um grafo G = (V,E) consiste em um conjunto de vértices (nós) e um conjunto de arestas. É correto afirmar que o grau de um nó é.</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. a distância entre este nó e um outro nó qualquer do grafo.</li>
+                    <li>b. um número atribuído à aresta, também denominado de peso.</li>
+                    <li>c. o número de pares ordenados que formam a aresta.</li>
+                    <li>d. a posição deste nó em relação ao nó raiz do grafo.</li>
+                    <li>e. o número de arestas incidentes nesse nó.</li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O grau de um nó (ou vértice) em um grafo é a quantidade de arestas que estão conectadas a esse nó.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Assinale e escolha as alternativas corretas a respeito do Pagerank:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <p>Escolha uma ou mais:</p>
+                <ul>
+                    <li>a. Usa os conceitos de cadeia de Markov para qualificar  a  relevância  de  cada  página  analisada.</li>
+                    <li>b. Analisa os back links presentes em uma página.</li>
+                    <li>c. Calcula a importância de um site.</li>
+                    <li>d. Calcula a probabilidade de um usuário chegar a determinados sites ao clicar em back links frequentes.</li>
+                </ul>
+                <b class="answer">Resposta: a, c. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>A estrutura de dados grafo consiste em um conjunto de vértices (ou nós) e um conjunto de arestas. O grafo em que as arestas possuem um número ou peso associado a elas, é chamado de grafo:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. adjacente.</li>
+                    <li>b. predecessor.</li>
+                    <li>c. incidente.</li>
+                    <li>d. ponderado.</li>
+                </ul>
+                <b class="answer">Resposta: d. ponderado. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Na lista de adjacências correspondente ao grafo orientado a seguir, as entradas Adj[6] e Adj[4] são vazias.</p>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Verdadeiro. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Os processos (.....) podem ser classificados em relação ao estado, podendo ser (.....) , em sequência, ou (.....) , em cadeia. Neste, é possível definir um conjunto enumerável ou finito, naquele, o caso é contrário. Em relação ao tempo pode ser classificado em (.....) e (.....) , no primeiro o tempo é infinito ou incontável, já no segundo, é finito ou contável.</p>
+                <p>Opções: discreto, discretos, estocásticos, contínuos, contínuo.</p>
+                <b class="answer">Resposta: ❌.</b>
+                <p>Resolução:</p>
+                <p>Os processos <b>discretos</b> ❌ podem ser classificados em relação ao estado, podendo ser <b>discreto</b> ❌ , em sequência, ou <b>estocásticos</b> ❌ , em cadeia. Neste, é possível definir um conjunto enumerável ou finito, naquele, o caso é contrário. Em relação ao tempo pode ser classificado em <b>contínuos</b> ❌ e <b>contínuo</b> ❌ , no primeiro o tempo é infinito ou incontável, já no segundo, é finito ou contável.</p>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de jun de 2024</p>
+    </footer>
+</body>
+</html>
