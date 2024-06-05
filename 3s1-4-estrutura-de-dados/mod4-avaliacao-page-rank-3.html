@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 - Page-Rank (Grafos) Recuperação.</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	quarta, 5 jun 2024, 16:13</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quarta, 5 jun 2024, 17:45</li>
+                <li>Tempo empregado	1 hora 32 minutos</li>
+                <li>Avaliar	5,67 de um máximo de 10,00(56,67%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>A matriz de incidência em um grafo orientado G=(V,E) é uma matriz B = (bij), de ordem |V|x|E|, tal que:</p>
+                <pre>
+                bij = -1 se a aresta j sai do vértice i, 1 se a aresta j entra no vértice i, 0 em caso contrário.
+                </pre>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Qual o tamanho em número de células da matriz de incidência para o grafo acima? Escreva apenas o número sem espaço.</p>
+                <b class="answer">Resposta: 48. ✅</b>
+                <p>Conclusão:</p>
+                <ol>
+                    <li>Definindo a ordem da matriz:</li>
+                    <ul>
+                        <li>A ordem da matriz de incidência é definida pelo produto do número de vértices (V) e do número de arestas (E).</li>
+                        <li>No grafo em questão, podemos identificar:</li>
+                        <ul>
+                            <li>Vértices (V): 6 vértices (numerados de 1 a 6).</li>
+                            <li>Arestas (E): 8 arestas (representadas pelas setas entre os vértices).</li>
+                        </ul>
+                    </ul>
+                    <li>Cálculo do tamanho da matriz:</li>
+                    <ul>
+                        <li>Substituindo os valores na fórmula da ordem da matriz:</li>
+                        <ul>
+                            <li>Ordem da matriz B = |V| x |E| = 6 x 8 = 48</li>
+                        </ul>
+                    </ul>
+                    <li>Observações:</li>
+                    <ul>
+                        <li>A matriz de incidência é uma matriz retangular com o número de linhas igual ao número de vértices e o número de colunas igual ao número de arestas.</li>
+                        <li>Cada célula da matriz de incidência representa a relação entre um vértice e uma aresta:</li>
+                        <ul>
+                            <li>-1 se a aresta sai do vértice</li>
+                            <li>1 se asta não entra em nenhum vértice</li>
+                            <li>0 se não há relação entre o vértice e a aresta</li>
+                        </ul>
+                    </ul>
+                </ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Em que ordem as chaves 88, 89, 90, 91, 92, 93 e 94 devem ser inseridas em uma AVL inicialmente vazia de tal forma que nenhuma rotação seja necessária para que ela se mantenha balanceada durante todo o processo de inserção? Sua resposta deve seguir o seguinte formato (sem espaços e separado por virgula): chave,chave,chave,chave,...,chave.</p>
+                <b class="answer">Resposta: 90,89,91,88,92,91,94 ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Considerando a árvore binária abaixo, identifique o número dos nós.</p>
+                <img src="img/arvore-maior-menor-valor.jpeg" alt="arvore-maior-menor-valor.jpeg">
+                <p>Responda:</p>
+                <p>Qual a posição do nó que deve conter o maior valor mais próximo da raiz da árvore? Ou seja, o sucessor da raiz.</p>
+                <b class="answer">Resposta: 12. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Considere as afirmações a seguir.</p>
+                <ul>
+                    <li>A raiz da árvore se encontra no nível 1.</li>
+                    <li>O nível de qualquer nó é igual ao nível do seu pai mais 1.</li>
+                    <li>A profundidade de uma árvore é igual ao maior nível encontrado entre todos os seus nós.</li>
+                </ul>
+                <p>Partindo-se de tais premissas, escolha o item a seguir que contém a menor e a maior quantidade de nós, respectivamente, que poderiam estar em uma árvore binária de profundidade 4:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 4 e 16</li>
+                    <li>b. 3 e 16</li>
+                    <li>c. 5 e 16</li>
+                    <li>d. 4 e 15</li>
+                    <li>e. 3 e 15</li>
+                </ul>
+                <b class="answer">Resposta: d. 4 e 15. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>podemos usar a fórmula </li>
+                    <li>2d -1, onde d é a profundidade da árvore.</li>
+                    <li>Para uma profundidade 4:</li>
+                    <li>Menor quantidade de nós: 2⁴ - 1 = 15</li>
+                    <li>Maior quantidade de nós: 2⁴⁺¹ - 1 = 31 - 1 = 30</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>A inserção das chaves 35, 50, 40, 25, 30, 60, 78, 20 e 28, nessa ordem, em uma AVL inicialmente vazia, implica em quais tipos de rotações na árvore para garantir o seu balanceamento?</p>
+                <a href="https://visualgo.net/en/bst" target="_blank" rel="noopener noreferrer">visualgo</a>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Duas duplas à esquerda</li>
+                    <li>b. Uma dupla à direita, uma simples à esquerda e uma simples à direita</li>
+                    <li>c. Uma dupla à esquerda, uma dupla à direita e uma simples à esquerda</li>
+                    <li>d. Uma dupla à direita, uma dupla à esquerda e uma simples à direita</li>
+                    <li>e. Duas duplas à direita</li>
+                </ul>
+                <b class="answer">Resposta: b. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Em muitas aplicações, uma característica importante que distingue os dados em uma certa estrutura é uma prioridade atribuída a cada um deles. Nessas aplicações, em geral, determinar repetidas vezes o dado de maior prioridade é uma operação importante.</p>
+                <p>Pode-se definir lista de prioridades como uma tabela na qual a cada um de seus dados está associada uma prioridade.</p>
+                <p>Em relação ao enunciado acima e de acordo com os conceitos e características de uma Lista de Prioridades, classifique os trechos abaixo com V (verdadeiro) ou F (falso) e escolha uma das alternativas:</p>
+                <ul>
+                    <li>Essa prioridade é, exclusivamente, definida através de um valor numérico e armazenada em algum de seus campos;</li>
+                    <li>Para encontrar a ordem desejada de execução das tarefas, por exemplo, um algoritmo deve, sucessivamente, escolher o dado de maior prioridade e retirá-lo da tabela; </li>
+                    <li>Tarefas novas podem ingressar na tabela a cada instante; </li>
+                    <li>As operações possíveis de serem efetuadas com os dados da lista de prioridades são somente três: seleção do elemento de maior prioridade, inserção de um novo elemento e remoção do elemento de maior prioridade;</li>
+                    <li>Entre as alterações permitidas nos dados da tabela não se inclui a mudança na prioridade desses dados pois haveria necessidade de implementação de uma nova lista de prioridades.</li>
+                </ul>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. V, F, F, V, F</li>
+                    <li>b. V, V, V, F, V</li>
+                    <li>c. F, F, V, F, V</li>
+                    <li>d. V, V, V, V, F</li>
+                    <li>e. F, V, V, F, F</li>
+                </ul>
+                <b class="answer">Resposta: a. V, F, F, V, F. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Ao comparar duas formas comuns de implementação de listas de prioridade, uma usando lista ordenada e outra usando heap binária, ambos armazenados em vetor, conclui-se que:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Lista ordenada é mais indicada, pois, apesar de sua complexidade de inserção ser O( n ), suas complexidades de remoção e consulta são O( 1 );</li>
+                    <li>b. Heap binária é mais indicada, pois apresenta complexidade O(1) para inserção e remoção e O(log n) para consulta;</li>
+                    <li>c. Ambas as escolhas são boas, pois apresentam as mesmas complexidades para inserção, remoção e consulta;</li>
+                    <li>d. Lista ordenada é mais indicada, pois apresenta complexidade O(1) para inserção, remoção e consulta;</li>
+                    <li>e. Heap binária é mais indicada, pois apresenta complexidade O(log n) para inserção e remoção e O(1) para consulta;</li>
+                </ul>
+                <b class="answer">Resposta: e. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Heap binário é geralmente preferido para implementar filas de prioridade devido às suas complexidades de inserção e remoção eficientes, ambas O(log n), e complexidade de consulta O(1).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Na lista de adjacências correspondente ao grafo orientado a seguir, as entradas Adj[6] e Adj[4] são vazias.</p>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Falso. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Dada a árvore binária de busca a seguir, escreva as chaves visitadas em um percurso/passeio simétrico. Escreva todas as chaves como mostrado na figura (em maiúsculo) e sem espaço entre elas. Ex:  IOUEA.</p>
+                <img src="img/percurso-tree.jpg" alt="percurso-tree.jpg">
+                <p></p>
+                <b class="answer">Resposta: DBCAHFIAJIKLM. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Os processos (.....) podem ser classificados em relação ao estado, podendo ser (.....) , em sequência, ou (.....) , em cadeia. Neste, é possível definir um conjunto enumerável ou finito, naquele, o caso é contrário. Em relação ao tempo pode ser classificado em (.....) e (.....) , no primeiro o tempo é infinito ou incontável, já no segundo, é finito ou contável.</p>
+                <p>Opções: discreto, discretos, estocásticos, contínuos, contínuo.</p>
+                <b class="answer">Resposta: ✅ ❌.</b>
+                <p>Resolução:</p>
+                <p>Os processos <b>estocásticos</b> ✅ podem ser classificados em relação ao estado, podendo ser <b>contínuos</b> ✅ , em sequência, ou <b>discretos</b> ✅ , em cadeia. Neste, é possível definir um conjunto enumerável ou finito, naquele, o caso é contrário. Em relação ao tempo pode ser classificado em <b>discreto</b> ❌ e <b>contínuo</b> ❌ , no primeiro o tempo é infinito ou incontável, já no segundo, é finito ou contável.</p>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de jun de 2024</p>
+    </footer>
+</body>
+</html>
