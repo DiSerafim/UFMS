@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTRUTURA DE DADOS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ESTRUTURA DE DADOS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 - Page-Rank (Grafos).</h2>
+        <p>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ESTRUTURA DE DADOS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva.</li>
+                <li>Iniciado em	quarta, 5 jun 2024, 07:14</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quarta, 5 jun 2024, 08:40</li>
+                <li>Tempo empregado	1 hora 25 minutos</li>
+                <li>Avaliar	5,50 de um máximo de 10,00(55%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Considere as afirmações a seguir sobre cadeia de Markov. Considere P a seguir, uma matriz de transição.</p>
+                <img src="img/rank15.png" alt="rank15.png">
+                <ul>
+                    <li>I - Uma cadeia de Markov pode ser representada por meio de uma matriz de transição P, contendo as probabilidades de transição entre estados em determinado momento.</li>
+                    <li>II - Na matriz de transição P, em que i representa estado atual e j, o seu estado futuro, a soma de cada linha deve ser igual à “1”, ou 100%.</li>
+                    <li>III - O valor do elemento Pij representa a probabilidade de transição entre o estado i para o j em determinado período. </li>
+                    <li>IV - No modelo de Markov não há um ponto de equilíbrio em que as probabilidades permanecem as mesmas.</li>
+                </ul>
+                <p>É correto afirmar que:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Todas estão corretas</li>
+                    <li>b. I, II e III estão corretas</li>
+                    <li>c. II e II estão corretas</li>
+                    <li>d. I, II e IV estão corretas</li>
+                    <li>e. I e II estão corretas</li>
+                </ul>
+                <b class="answer">Resposta: b. I, II e III estão corretas. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>A cadeia de Markov é comumente representada por uma matriz de transição que descreve as probabilidades de transição entre estados.</li>
+                    <li>Em uma matriz de transição, a soma das probabilidades em cada linha deve ser igual a 1, porque representa todas as possíveis transições a partir do estado atual i.</li>
+                    <li>O elemento Pij da matriz de transição representa a probabilidade de transição do estado i para o estado j.</li>
+                    <li>No modelo de Markov, existe sim um ponto de equilíbrio (ou distribuição estacionária) em que as probabilidades de estar em cada estado permanecem constantes ao longo do tempo.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Qual a desvantagem da representação por lista de adjacências?</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Gasta mais memória do que matriz de adjacências.</li>
+                    <li>b. Não existir um modo mais rápido de determinar se uma dada aresta (x,y) está presente no grafo do que procurar por y na lista de adjacências Adj[x].</li>
+                    <li>c. Não ter um tamanho pré-definido.</li>
+                    <li>d. Ser uma estrutura de alocação dinâmica.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A lista de adjacências geralmente gasta menos memória do que a matriz de adjacências, especialmente para grafos esparsos.</li>
+                    <li></li>
+                    <li>Na lista de adjacências, para verificar a existência de uma aresta (x,y), é necessário percorrer a lista de adjacências de x até encontrar y, o que pode levar tempo proporcional ao número de vértices adjacentes a x. Em contrapartida, na matriz de adjacências, a verificação é imediata, pois basta acessar o elemento correspondente na matriz.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Dado o grafo G a seguir, relacione corretamente as linhas da matriz de adjacências de G:</p>
+                <img src="img/rank5.png" alt="rank5.png">
+                <ul>
+                    <li>Linha 4 = ... </li>
+                    <li>Linha 5 = ... </li>
+                    <li>Linha 2 = ... </li>
+                    <li>Linha 1 = ... </li>
+                    <li>Linha 3 = ... </li>
+                </ul>
+                <p>Opções: 11110, 01011, 01011, 11110, 00101.</p>
+                <b class="answer">Resposta: Verdadeiro. ❌</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Linha 4 = <b>11110</b></li>
+                    <li>Linha 5 = <b>01011</b></li>
+                    <li>Linha 2 = <b>01011</b></li>
+                    <li>Linha 1 = <b>11110</b></li>
+                    <li>Linha 3 = <b>00101</b></li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>O funcionamento do Pagerank se baseia na aplicação de parte da Álgebra Linear, utilizando principalmente o conceito de determinantes e da cadeia de Markov. Dessa forma, é possível identificar quais os sites são menos seletivos e posicionar, em ordem, os links com informações menos importantes para o assunto pesquisado.</p>
+                <p>Escolha uma opção: Verdadeiro Falso.</p>
+                
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O conceito de determinantes não é central para o algoritmo PageRank. Em vez disso, o PageRank utiliza matrizes de transição e cálculo de autovetores e autovalores.</li>
+                    <li>O PageRank é utilizado para medir a importância relativa das páginas da web, não para identificar quais sites são menos seletivos ou para categorizar informações como "menos importantes". Ele classifica as páginas com base em sua relevância e os links apontados para elas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Dado o grafo G a seguir, quantos nós tem em cada entrada da lista de adjacências de G, da entrada 1 até 5, respectivamente:</p>
+                <img src="img/rank5.png" alt="rank5.png">
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. 4, 2, 3, 1, 2</li>
+                    <li>b. 2, 3, 3, 1, 4</li>
+                    <li>c. 2, 3, 4, 1, 2</li>
+                    <li>d. 2, 3, 3, 2, 4</li>
+                    <li>e. 1, 2, 3, 3, 4</li>
+                </ul>
+                <b class="answer">Resposta: c. 2, 3, 4, 1, 2. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Após realizar uma pesquisa no Google utilizando o algoritmo Pagerank, o conjunto V de páginas V = {X, Y, W, Z} foi retornado. O algoritmo retornou os seguintes valores de Pagerank para as páginas, respectivamente: Px = 0,20 , Py = 0,33 , Pw = 0,06 , Pz = 0,41.</p>
+                <p>Analise as afirmativas:</p>
+                <ul>
+                    I - Os resultados atingidos com Px, Py, Pw e Pz são as probabilidades estacionárias, o que indica que não mudarão com o acréscimo ou decréscimo de visitas às páginas deste universo com quatro sites.
+                    II - Dentre as quatro páginas, a que aparecerá no topo da lista de busca é W.
+                    III - Dentre as quatro páginas, a que aparecerá na última posição da lista de busca é Z.
+                    IV - No resultado da pesquisa, a ordem em que estas páginas apareceram no Google foi: 1o. Z, 2o. Y, 3o. X, 4o. W.
+                    V - O Pagerank de uma página(site) pode mudar, caso ela tenha mais acessos no dia anterior.
+                </ul>
+                <p>É correto afirmar que:</p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. IV e V estão corretas.</li>
+                    <li>b. I e IV estão corretas.</li>
+                    <li>c. III e V estão corretas.</li>
+                    <li>d. Todas estão incorretas.</li>
+                    <li>e. I e III estão corretas.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. IV e V estão corretas. ❌</b>
+
+                <p>Resolução:</p>
+                <ol>
+                    <li>Os valores de PageRank são considerados as probabilidades estacionárias da cadeia de Markov associada ao grafo da web. Eles representam uma distribuição que não muda a menos que a estrutura de links entre as páginas seja alterada, independentemente do número de visitas às páginas.</li>
+                    <li>A página com o maior PageRank (Pz = 0,41) é Z, não W (Pw = 0,06). Portanto, Z aparecerá no topo da lista de busca.</li>
+                    <li>A página com o menor PageRank (Pw = 0,06) é W, não Z (Pz = 0,41). Portanto, W aparecerá na última posição da lista de busca.</li>
+                    <li>A ordem das páginas pelo valor do PageRank é: Z (0,41), Y (0,33), X (0,20), W (0,06).</li>
+                    <li>O PageRank é determinado pela estrutura de links na web e não pelo número de acessos diários a uma página. Embora acessos possam influenciar outros algoritmos de ranking, como os que consideram a popularidade momentânea, o PageRank clássico é estático e depende apenas dos links.</li>
+                </ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Construa a matriz de adjacências correspondente ao grafo orientado acima. Considere cada linha como sendo um número binário e a coluna 6 como sendo o bit menos significativo. A soma dos números binários das linhas 3 e 5, no formato decimal é (Obs: utilize apenas algarismos, não use espaço):</p>
+
+                <b class="answer">Resposta: 3. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>construir a matriz de adjacências e calcular a soma dos números binários das linhas 3 e 5.</li>
+                    <ul>
+                        <li>Matriz de Adjacências:</li>
+                    </ul>
+                    <pre>
+                    Vértice    V1	V2	V3	V4	V5
+                    V1	        0	1	1	0	1
+                    V2	        0	0	1	1	0
+                    V3	        0	0	0	1	1
+                    V4	        0	0	0	0	1
+                    V5	        0	1	0	0	0
+                    </pre>
+                    <li>Matriz:</li>
+                    <ul>
+                        <li>Cada linha da matriz representa um vértice (V1, V2, V3, V4, V5).</li>
+                        <li>Cada coluna da matriz também representa um vértice (V1, V2, V3, V4, V5).</li>
+                        <li>Um valor "1" na célula (i, j) indica que existe uma aresta direcionada do vértice i para o vértice j.</li>
+                        <li>Um valor "0" na célula (i, j) indica que não existe uma aresta direcionada do vértice i para o vértice j.</li>
+                    </ul>
+                    <li>Soma dos Números Binários:</li>
+                    <ul>
+                        <li>Para calcular a soma dos números binários das linhas 3 e 5, convertemos os números binários para decimal e somamos os valores:</li>
+                        <ul>
+                            <li>Linha 3: 00011 = 3</li>
+                            <li>Linha 5: 00000 = 0</li>
+                            <li>Soma: 3 + 0 = 3</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <p>A matriz de adjacências representa corretamente as conexões direcionadas entre os vértices do grafo. A soma dos números binários das linhas 3 e 5 é 3.</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Para representar um grafo G = (V,E), podemos utilizar lista de adjacências ou matriz de adjacências. A representação por <b>...</b> é preferida, porque fornece um modo compacto de representar grafos <b>...</b> - aqueles para os quais |E| é muito menor que |V|². Contudo, uma representação de <b>...</b> pode ser preferível, quando o grafo é <b>...</b> - <b>...</b> está próximo de <b>...</b>.</p>
+                <p>Opções: |E|, esparsos, lista de adjacências, denso, matriz de adjacências, |V|².</p>
+                <b class="answer">Resposta: .. ✅</b>
+                <p>Resolução:</p>
+                <ol>Para representar um grafo G = (V,E), podemos utilizar lista de adjacências ou matriz de adjacências. A representação por <b>lista de adjacências</b> é preferida, porque fornece um modo compacto de representar grafos <b>esparsos</b> - aqueles para os quais |E| é muito menor que |V|². Contudo, uma representação de <b>matriz de adjacências</b> pode ser preferível, quando o grafo é <b>denso</b> - <b>|E|</b> está próximo de <b>|V|²</b>.</ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>As listas de adjacências não podem ser adaptadas para representar grafos ponderados, ou seja, grafos em que cada aresta tem um peso associado a ela.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>As listas de adjacências podem ser adaptadas para representar grafos ponderados. Em uma lista de adjacências para um grafo ponderado, cada elemento da lista não só indica a presença de uma aresta, mas também pode armazenar o peso dessa aresta. Por exemplo, cada entrada na lista pode ser um par (ou um objeto mais complexo) que contém o vértice de destino e o peso da aresta.</li>
+                </ul>
+                <pre>
+                    Lista de Adjacências:
+                    Vértice 0: [(1, 2), (3, 5)]
+                    Vértice 1: [(0, 2), (2, 3)]
+                    Vértice 2: [(1, 3), (3, 4)]
+                    Vértice 3: [(0, 5), (2, 4)]
+                </pre>
+                <p>É possível e comum usar listas de adjacências para representar grafos ponderados.</p>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <img src="img/rank7.png" alt="rank7.png">
+                <p>Dado o grafo orientado G a seguir, sobre sua lista de Adjacências Adj, é correto afirmar que:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <p>Escolha uma ou mais:</p>
+                <ul>
+                    <li>a. Adj[5] é vazia.</li>
+                    <li>b. Adj[3] possui um único valor em sua lista.</li>
+                    <li>c. Adj[1] possui quatro valores em sua lista.</li>
+                    <li>d. Adj[6] possui como entrada o valor 6.</li>
+                    <li>e. Adj[4] é vazia.</li>
+                </ul>
+
+                <b class="answer">Resposta: a ✅, b ✅, c ❌.</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>De acordo com a definição de lista de adjacências, uma entrada vazia indica que o vértice correspondente não possui arestas direcionadas para outros vértices.</li>
+                    <li>Uma entrada com um único valor na lista de adjacências indica que o vértice correspondente possui apenas uma aresta direcionada para outro vértice.</li>
+                    <li>O vértice 1 (V1) possui arestas direcionadas para os vértices 2 (V2),3 (V3),4 (V4) e 5 (V5).</li>
+                    <li>Uma entrada com quatro valores na lista de adjacências indica que o vértice correspondente possui quatro arestas direcionadas para outros vértices.</li>
+                    <li>O grafo possui apenas 5 vértices (V1,V2,V3,V4,V5).</li>
+                    <li>As entradas da lista de adjacências correspondem aos índices dos vértices, iniciando em 0.</li>
+                    <li>O índice 6 não corresponde a nenhum vértice no grafo.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 2 de jun de 2024</p>
+    </footer>
+</body>
+</html>
