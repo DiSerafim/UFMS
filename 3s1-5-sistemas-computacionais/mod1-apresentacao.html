@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Organização de Computadores.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Organização de Computadores.</h1>
+        <h2>💡 Apresentação do Módulo 1.</h2>
+        <!-- <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2> -->
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=SwRa2sVfmZ8&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Sistemas Computacionais - Módulo 1. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dra. Nahri Moreano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Visão Geral da Organização de um Computador.</h3>
+            <ul>
+                <li>Processador</li>
+                <li>Memórias</li>
+                <li>Dispositivos de entrada e saída (E/S)</li>
+                <li>Barramentos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visão Geral da Organização de um Computador.</h2>
+            <img src="img/computador.png" alt="computador.png">
+        </section>
+
+        <section>
+            <h2>Processador.</h2>
+            <ul>
+                <li>Também chamado de CPU (Central Processing Unit)</li>
+                <li>Interpreta e executa instruções de máquina dos programas</li>
+                <li>Programa, para ser executado, deve estar armazenado na memória</li>
+                <li>Composto por:</li>
+                <ul>
+                    <li>Unidade de controle</li>
+                    <li>Datapath (unidade de dados, caminho de dados)</li>
+                </ul>
+                <img src="img/computador1.png" alt="computador1.png">
+                <li>Unidade de Controle:</li>
+                <ul>
+                    <li>Comanda datapath, memória e dispositivos de E/S</li>
+                    <li>Decodifica instruções de máquina e controla sua execução</li>
+                </ul>
+                <li>Datapath:</li>
+                <ul>
+                    <li>Realiza operações comandadas pela Unidade de Controle para execução das instruções de máquina</li>
+                    <li>Composto por:</li>
+                    <ul>
+                        <li>Unidade lógico-aritmética (ALU)</li>
+                        <li>Registradores</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Sistema de Memórias.</h2>
+            <ul>
+                <li>Organizado em níveis: Hierarquia de memórias</li>
+                <ul>
+                    <li>Cada nível com memória de tamanho e velocidade diferentes</li>
+                    <li>Cada nível é mais rápido, menor, de maior custo e mais próximo do processador que nível abaixo</li>
+                </ul>
+                <li>Tira proveito do princípio de localidade</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hierarquia de Memórias.</h2>
+            <img src="img/computador2.png" alt="computador2.png">
+        </section>
+
+        <section>
+            <h2>Princípio de Localidade.</h2>
+            <ul>
+                <li>Em uma fase qualquer da sua execução, programa acessa uma porção relativamente pequena do seu espaço de endereçamento</li>
+                <li>Localidade temporal:</li>
+                <ul>
+                    <li>Se um item (instrução ou dado) do programa é acessado, provavelmente ele será acessado novamente num futuro próximo</li>
+                </ul>
+                <li>Localidade espacial:</li>
+                <ul>
+                    <li>Se um item (instrução ou dado) do programa é acessado, provavelmente itens cujos endereços são próximos serão acessados num futuro próximo</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Registradores.</h2>
+            <ul>
+                <li>Pequenas unidades capazes de guardar informações:</li>
+                <ul>
+                    <li>Dados, endereços, instruções</li>
+                </ul>
+                <li>Dispositivos de armazenamento de rápido acesso ⇒ Custo elevado ⇒ Processador tem poucos registradores</li>
+                <li>Meio de armazenamento volátil</li>
+                <li>Em geral, processadores possuem registradores para:</li>
+                <ul>
+                    <li>Endereço na memória da próxima instrução a executar</li>
+                    <li>Endereço do dado que está no topo da pilha de execução</li>
+                    <li>Realização de operações lógico-aritméticas</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Memória Principal.</h2>
+            <ul>
+                <li>Também chamada de memória primária</li>
+                <li>Armazena instruções e dados dos programas sendo executados</li>
+                <li>Memória RAM (Random-Access Memory):</li>
+                <ul>
+                    <li>Qualquer posição pode ser acessada com mesmo tempo de acesso</li>
+                </ul>
+                <li>Meio de armazenamento volátil</li>
+                <li>Pode ser vista como uma estrutura unidimensional:</li>
+                <ul>
+                    <li>Cada posição é uma célula onde pode-se armazenar uma informação</li>
+                    <li>Cada célula possui um endereço pelo qual é acessada</li>
+                </ul>
+            </ul>
+            <b>Endereço Memória:</b>
+            <p></p>
+            <img src="img/computador3.png" alt="computador3.png">
+        </section>
+
+        <section>
+            <h2>Memórias Cache.</h2>
+            <ul>
+                <li>Níveis da hierarquia de memórias entre processador e memória principal</li>
+                <li>Meio de armazenamento volátil</li>
+                <li>Organizações:</li>
+                <ul>
+                    <li>Cache de mapeamento direto</li>
+                    <li>Cache de mapeamento totalmente associativo</li>
+                    <li>Cache de mapeamento associativo por conjunto de n vias</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Execução do Programa.</h2>
+            <ul>
+                <li>Instrução de máquina:</li>
+                <ul>
+                    <li>Comando que é interpretado e executado pelo processador</li>
+                </ul>
+                <li>Instruções de máquina do programa são executadas através do <b>ciclo de execução de uma instrução</b>:</li>
+                <ul>
+                    <li>Busca instrução na memória</li>
+                    <li>Decodifica instrução</li>
+                    <li>Busca operandos</li>
+                    <li>Executa operação</li>
+                    <li>Escreve resultado</li>
+                    <li>Atualiza registrador com endereço da próxima instrução a executar</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Função de Dispersão.</h2>
+            <ul>
+                <li>O desempenho é medido pelo número de colisões;</li>
+                <ul>
+                    <li>Pode ser estimado pelo fator de carga (fc): quantidade de chaves / M;</li>
+                </ul>
+                <li>Em geral, as colisões ocorrem quando a distribuição das chaves é desigual ou quando a tabela tem tamanho pequeno;</li>
+                <li>Estratégias para lidar com as colisões se fazem necessárias, vamos conhecer algumas delas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian.</li>
+                <ul>
+                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                </ul>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 23 de maio de 2024</p>
+    </footer>
+</body>
+</html>
