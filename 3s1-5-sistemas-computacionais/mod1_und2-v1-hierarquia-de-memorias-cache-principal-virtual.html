@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Organização de Computadores.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Organização de Computadores.</h1>
+        <h2>💡 Unidade 2 - Hierarquia de memórias: memórias cache, memória principal e memória virtual.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=jBMs6vrIW18&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Sistemas Computacionais - Memória. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Nilson Mori.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Memória.</h3>
+            <p>Memórias cache, memória principal e memória virtual.</p>
+        </section>
+
+        <section>
+            <h2>CARACTERÍSTICAS DA MEMÓRIA.</h2>
+            <ul>
+                <li>A memória armazena programas e dados. Suas características são:</li>
+                <ul>
+                    <li>Capacidade de armazenamento</li>
+                    <li>Tempo de acesso e custo</li>
+                </ul>
+                <li>Essas características se relacionam entre si:</li>
+                <ul>
+                    <li>Tempo de acesso mais rápido, maior custo por bit</li>
+                    <li>Maior capacidade, menor custo por bit</li>
+                    <li>Maior capacidade, tempo de acesso mais lento</li>
+                </ul>
+                <li>Outras características podem ser consideradas</li>
+                <ul>
+                    <li>Durabilidade e consumo de energia</li>
+                </ul>
+            </ul>
+            <img src="img/memoria.png" alt="memoria.png">
+        </section>
+
+        <section>
+            <h2>MEMÓRIA E ENDEREÇAMENTO.</h2>
+            <ul>
+                <li><b>Memórias</b> consistem em uma quantidade de células (ou locais) e cada uma delas pode armazenar uma informação (ou palavra)</li>
+                <li>Cada célula tem um número, denominado endereço, pelo qual os programas podem se referir a ela</li>
+                <li>Endereço são números inteiros maiores que zero</li>
+                <li><b>Espaço de endereçamento</b> é o número total de localizações exclusivamente identificáveis na memória</li>
+                <li>Cada lugar da memória possui um endereço que inicia em 0 e vai até 2 (elevado a n) - 1, onde né o número de bits do endereço</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ENDEREÇAMENTO.</h2>
+            <ul>
+                <li>Se a memória tiver n células, quantos endereços terão?</li>
+                <ul>
+                    <li>Elas vão ter endereços de 0 an-1</li>
+                    <li>Todas as células têm o mesmo número de bits</li>
+                    <li>Caso uma célula consista em k bits, ela pode conter quaisquer das 2k diferentes combinações de bits</li>
+                </ul>
+            </ul>
+            <img src="img/memoria1.png" alt="memoria1.png">
+        </section>
+
+        <section>
+            <h2>TIPOS DE MEMÓRIA.</h2>
+            <ul>
+                <li>RAM (Random Access Memory - memória de acesso aleatório)</li>
+                <li>ROM (Read-Only Memory - memória somente de leitura)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MEMÓRIA RAM.</h2>
+            <ul>
+                <li>A memória RAM pode ser lida e escrita durante o processamento</li>
+                <li>Tipos</li>
+                <ul>
+                    <li><b>Estática</b> - SRAM (Static Random Access Memory) - memória muito rápida e volátil, cujo conteúdo é perdido quando o computador é desligado</li>
+                    <ul>
+                        <li>EX: memória cache (vamos a seguir)</li>
+                    </ul>
+                    <li><b>Dinâmica</b> - DRAM (Dynamic Random Access Memory) - memória lenta, com células contendo um transistor e um pequeno capacitor</li>
+                    <ul>
+                        <li>Se um capacitor estiver carregado, o estado é 1; senão 0</li>
+                    </ul>
+                </ul>
+            </ul>
+            <i>https://s2-techtudo.glbimg.com/4KmQvbEwzliNVDQ_bT3YjMN9ROU=/0x0:695x465/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/r/W/ZTob32SrSArTfI1tsaTQ/2016-08-05-memoria-ram-1.jpg</i>
+            <p></p>
+            <img src="img/memoria.avif" alt="memoria.avif">
+        </section>
+
+        <section>
+            <h2>MEMÓRIA CACHE.</h2>
+            <ul>
+                <li>Memória pequena e rápida, sendo mais rápida do que a memória principal e mais lenta que os registradores e a CPU.</li>
+                <li>As palavras de memória utilizadas com mais frequência são mantidas nesse dispositivo.</li>
+            </ul>
+            <img src="img/memoria2.png" alt="memoria2.png">
+            <ul>
+                <li>O uso da memória cache tem, basicamente, dois objetivos:</li>
+                <ul>
+                    <li>Obter velocidade de memória próxima das memórias mais rápidas</li>
+                    <li>Disponibilizar uma memória de grande capacidade ao preço de memórias semicondutoras mais baratas</li>
+                </ul>
+                <li>Uma memória principal relativamente grande e lenta está junto com uma memória cache, que é menor, mais rápida e deve conter uma cópia de partes da memória principal</li>
+            </ul>
+            <img src="img/memoria3.png" alt="memoria3.png">
+        </section>
+
+        <section>
+            <h2>NÍVEIS DE CACHE.</h2>
+            <ul>
+                <li>L1, L2 e L3 dizem respeito à proximidade da memória cache das unidades de execução do processador</li>
+                <li>Quanto mais próxima ela estiver da unidade de execução do processador, menor será seu número</li>
+                <li>Cache L1 é o mais próximo possível da unidade de execução do processador, L2 é um pouco mais distante e o L3 é ainda mais afastado.</li>
+                <ul>
+                    <li>Sempre que a unidade de busca do processador precisa de um novo dado ou instrução, ela procura inicialmente no cache L1. Se não encontrar, tenta o L2 e depois o L3. Se a informação não estiver em nenhum dos níveis de memória cache, ela terá que ir até a memória RAM</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MEMÓRIA ROM.</h2>
+            <ul>
+                <li>Não pode ser alterada nem apagada, pois os dados são inseridos durante sua fabricação</li>
+                <li>A única maneira de modificar seu programa é substituindo o chip</li>
+                <li>É utilizada em produtos cujos programa e dados básicos devem permanecer armazenados, mesmo quando o fornecimento de energia for interrompido, como carros, etc</li>
+                <li>Tipos:</li>
+                <ul>
+                    <li><b>PROM</b> (Programmable Read-Only Memory - ROM programável) - é como uma ROM, exceto pelo fato de poder ser programada uma vez em campo</li>
+                    <li><b>EPROM</b> (Erasable Programmable Read-Only Memory - ROM programável e apagável) - é uma variação da PROM, pois pode ser programada e apagada em campo</li>
+                    <li><b>EEPROM</b> (Electrically Erasable Programmable Read- Only Memory - ROM eletricamente programável e apagável) - é uma variação da EPROM, pois pode ser programada e apagada sem ser removida do computador</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>BIBLIOGRAFIA.</h2>
+            <ul>
+                <li>Corrêa, A. G. D (Organizadora). Organização e arquitetura de computadores. Cap. 1 (Páginas 16 a 30) e Cap. 4 (Páginas 130 a 153). Editora Pearson. Edição: 1° (2017). Idioma: Português. ISBN: 9788543020327</li>
+                <li>Stallings, W. Arquitetura e organização de computadores. Páginas 67 a 231 (de 731 páginas). Editora: Editora Pearson. Edição: 10° (2017). Idioma: Português. ISBN: 9788543020532</li>
+                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Páginas: 61 a 133 (de 628 páginas). Editora: Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de jun de 2024</p>
+    </footer>
+</body>
+</html>
