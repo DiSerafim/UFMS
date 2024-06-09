@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 1 - Organização de Computadores.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SISTEMAS COMPUTACIONAIS
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo estudamos, entre outros assuntos, a hierarquia de memórias do computador. Vimos que essa organização das memórias tira proveito dos princípios de localidade temporal e espacial que a maioria dos programas apresenta para permitir que programas muito grandes sejam executados e para tentar reduzir o tempo que os programas gastam acessando instruções e dados.</p>
+            <p>Considere um programa que possui um laço que realiza a soma dos elementos de um vetor de n posições. Considere as variáveis que esse programa possui e as instruções que executa. Imagine quais instruções e dados são acessados na memória durante a execução desse programa.</p>
+            <p>Escreva um texto claro e objetivo, de no máximo uma página, respondendo:</p>
+            <ol>
+                <li>Esse programa apresenta <b>localidade temporal</b> na sua execução? Se sim, descreva em que aspecto ele apresenta <b>localidade temporal</b>. Isto é, a <b>localidade temporal</b> ocorre nos acessos a quais instruções ou dados do programa?</li>
+                <li>Esse programa apresenta <b>localidade espacial</b> na sua execução? Se sim, descreva em que aspecto ele apresenta <b>localidade espacial</b>. Isto é, a <b>localidade espacial</b> ocorre nos acessos a quais instruções ou dados do programa?</li>
+            </ol>
+            <i>Se necessário, revise as videoaulas e as leituras indicadas na Unidade 2 deste módulo, em particular a seguinte referência: DELGADO, José. Arquitetura de Computadores, 5ª Edição. Rio de Janeiro: Ltc, 2017. ISBN 9788521633921.</i>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+            <b>Programa que realiza a soma dos elementos de um vetor de n posições e seu comportamento em termos de localidade temporal e espacial.</b>
+            <p>SomaVetor.java:</p>
+            <pre>
+            public class SomaVetor {
+                public static void main(String[] args) {
+                    int [] A = {1, 2, 3, 4, 5};
+                    int soma = 0;
+            
+                    for (int i = 0; i < A.length; i++) {
+                        soma +=  A[i];
+                    }
+            
+                    System.out.println("Soma: " + soma); // Soma: 15
+                }
+            }
+            </pre>
+            <b>localidade temporal:</b>
+            <p>Se um dado ou instrução foi acessado recentemente, há uma probabilidade de ele ser acessado novamente.</p>
+            <p>Aspectos de Localidade Temporal no Programa:</p>
+            <ul>
+                <li>Instruções do laço <b>for</b>, são acessadas repetidamente durante a execução do laço, elas apresentam localidade temporal.</li>
+                <li>Variável acumuladora <b>soma</b> é atualizada em cada iteração de <b>for</b>, ela também demonstra localidade temporal.</li>
+                <li>Variável de controle <b>i</b> é utilizada em cada iteração do laço <b>for</b>, ela também demonstra localidade temporal.</li>
+            </ul>
+            <b>localidade espacial:</b>
+            <p>Se um dado ou instrução foi acessado, há uma probabilidade de que os dados ou instruções adjacentes a ele também sejam acessados em breve.</p>
+            <p>Aspectos de Localidade Espacial no Programa:</p>
+            <ul>
+                <li>Acesso ao vetor <b>A</b>, os elementos são acessados de forma sequencial <b>A[0]...</b>. O acesso sequencial significa que quando um elemento é acessado, o próximo elemento é muito provável que seja acessado em seguida. <b>A</b> apresenta localidade espacial.</li>
+                <li>Instruções contíguas são as instruções dentro do laço <b>for</b> que são executadas repetidamente e estão próximas uma da outra na memória, também apresentam localidade espacial.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de jun de 2024</p>
+    </footer>
+</body>
+</html>
