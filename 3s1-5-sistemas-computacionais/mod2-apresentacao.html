@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Interface Hardware/Software.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Interface Hardware/Software.</h1>
+        <h2>💡 Apresentação do Módulo 2.</h2>
+        <!-- <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2> -->
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=BCQLTPLJt84&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Sistemas Computacionais - Módulo 2. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dra. Nahri Moreano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Interface Hardware/Software.</h3>
+        </section>
+
+        <section>
+            <h2>Conjunto de Instruções de Máquina.</h2>
+            <ul>
+                <li>Instrução de máquina:</li>
+                <ul>
+                    <li>Instrução implementada pelo hardware e visível ao programador</li>
+                    <li>Representa comando que é interpretado e executado pelo processador</li>
+                    <li>Codificada como sequência de bits</li>
+                    <li>Dividida em campos que indicam operação e operandos (fontes e destino)</li>
+                </ul>
+                <li>ISA (Instruction Set Architecture)</li>
+                <li>Interface entre hardware e software</li>
+                <li>Diferentes famílias de processadores possuem diferentes ISAs</li>
+                <li>Um mesmo ISA pode ter diferentes implementações, com custos e desempenhos diferentes</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interface Hardware/Software.</h2>
+            <img src="img/inteface-hardware-software.png" alt="inteface-hardware-software.png">
+        </section>
+
+        <section>
+            <h2>Conjunto de Instruções de Máquina.</h2>
+            <ul>
+                <li>Inclui definição de:</li>
+                <ul>
+                    <li>Quantidade de operandos das instruções</li>
+                    <li>Localização dos operandos:</li>
+                    <ul>
+                        <li>Em um campo da instrução, em um registrador ou em uma posição da memória</li>
+                    </ul>
+                    <li>Modos de endereçamento</li>
+                    <li>Categorias de operações das instruções</li>
+                    <li>Formatos e tamanhos das instruções</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Categorias de Instruções de Máquina.</h2>
+            <ul>
+                <li>Instruções lógicas e aritméticas</li>
+                <li>Instruções de comparação</li>
+                <li>Instruções de transferência de dados</li>
+                <li>Instruções de alteração do fluxo de controle:</li>
+                <ul>
+                    <li>Desvios condicionais e incondicionais</li>
+                    <li>Chamada e retorno de função</li>
+                </ul>
+                <li>Instruções de chamada ao sistema operacional</li>
+                <li>Instruções de ponto-flutuante</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Execução de um Programa.</h2>
+            <ul>
+                <li>Processador:</li>
+                <ul>
+                    <li>Não reconhece comandos das linguagens de programação de alto nível</li>
+                    <li>É capaz de executar apenas instruções de máquina</li>
+                </ul>
+                <li>Comandos do programa na linguagem de alto nível precisam ser transformados em instruções de máquina para programa ser executado</li>
+                <li>Realizado através dos processos de:</li>
+                <ul>
+                    <li>Compilação; ou</li>
+                    <li>Interpretação</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Geração do Programa Executável.</h2>
+            <img src="img/inteface-hardware-software1.png" alt="inteface-hardware-software1.png">
+            <ul>
+                <li>Compilação:</li>
+                <ul>
+                    <li>Realizada pelo programa compilador</li>
+                    <li>Traduz programa fonte na linguagem de alto nível para programa em linguagem de máquina:</li>
+                    <ul>
+                        <li>Módulo objeto: ainda não é o programa executável</li>
+                    </ul>
+                    <li>Pode gerar programa em linguagem de montagem</li>
+                </ul>
+                <li>Montagem:</li>
+                <ul>
+                    <li>Realizada pelo programa montador (assembler)</li>
+                    <li>Traduz programa fonte na linguagem de montagem (assembly language) para programa em linguagem de máquina (módulo objeto)</li>
+                </ul>
+                <li>Link-edição:</li>
+                <ul>
+                    <li>Realizada pelo programa link-editor (ou linker ou ligador)</li>
+                    <li>Une vários módulos objeto e bibliotecas, gerando o programa executável</li>
+                    <li>Corrige e completa endereços de memória referenciados nos módulos</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interpretação.</h2>
+            <ul>
+                <li>Realizada pelo programa interpretador</li>
+                <li>Programa fonte na linguagem de alto nível é executado diretamente pelo interpretador</li>
+                <li>Interpretador:</li>
+                <ul>
+                    <li>Examina cada comando do programa na linguagem de alto nível; e</li>
+                    <li>Executa diretamente uma sequência de instruções de máquina equivalente àquele comando</li>
+                </ul>
+                <li>Não gera um programa executável</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de jun de 2024</p>
+    </footer>
+</body>
+</html>
