@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Interface Hardware/Software.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Interface Hardware/Software.</h1>
+        <h2>💡 Unidade 1 - Conjunto de instruções de máquina e linguagem de montagem.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=IrBY3CK8sog&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 - 
+                Sistemas Computacionais - Linguagem Assembly (ASM). 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Alessandra Alaniz Macedo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagem Assembly (ASM).</h3>
+        </section>
+
+        <section>
+            <h2>Assembly.</h2>
+            <img src="img/assembly.png" alt="assembly.png">
+        </section>
+
+        <section>
+            <h2>POR QUE ASM? QUANDO?</h2>
+            <ul>
+                <li>ASM mostra o que o compilador faz e não faz</li>
+                <ul>
+                    <li>indicado para otimização de operações básicas</li>
+                </ul>
+                <li>ASM é mais preciso para indicar detalhes de programas, como operações type-cast</li>
+                <li>Bugs surgem no baixo nível e fica mais fácil manipulá-los com ASM</li>
+                <li>Otimizar tempo, otimizar espaço, otimizar...</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Linguagem de Máquina.</h2>
+            <img src="img/assembly1.png" alt="assembly1.png">
+        </section>
+
+        <section>
+            <h2>Organização da RAM.</h2>
+            <img src="img/assembly2.png" alt="assembly2.png">
+        </section>
+
+        <section>
+            <h2>INSTRUÇÃO ASM.</h2>
+            <ul>
+                <li>Função (argumento1, argumento2)</li>
+                <pre>opcode operando1 operando2</pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>PRINCIPAIS INSTRUÇOES ASM.</h2>
+            <ul>
+                <li>MOVE</li>
+                <li>destino</li>
+                <li>fonte</li>
+                <li>ADD/SUB</li>
+                <li>operando1</li>
+                <li>operando2</li>
+                <li>JUMP</li>
+                <li>condição</li>
+                <li>localização</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>1º PROGRAMA ASM.</h2>
+            <img src="img/assembly3.png" alt="assembly3.png">
+        </section>
+
+        <section>
+            <h2>2º PROGRAMA ASM</h2>
+            <pre>
+            Calcular 3 * 10 é 10 + 10 + 10
+
+            9 ....
+            10 MOVE RA, [3]
+            11 MOVE RB, [4]
+            12 MOVE RC  0
+            13 ADD  RC, RA
+            14 SUB  RB, 1
+            <b>15 JUMP NZ, 13</b>
+            </pre>
+            <img src="img/assembly4.png" alt="assembly4.png">
+            <p></p>
+            <b>JUMP & NZ.</b>
+            <p></p>
+            <img src="img/assembly5.png" alt="assembly5.png">
+            <pre>
+            Calcular 3 * 10 é 10 + 10 + 10
+
+            9 ....
+            10 MOVE RA, [3]
+            11 MOVE RB, [4]
+            12 MOVE RC  0
+            13 ADD  RC, RA
+            14 SUB  RB, 1
+            15 JUMP NZ, 13
+            16 MOVE [5], RC
+            17 ......
+        </pre>
+        </section>
+        
+        <section>
+            <h2>BIBLIOGRAFIA.</h2>
+            <ul>
+                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Apêndice C. Páginas: 493 a 510 (de 628 páginas). Editora: Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398</li>
+                <li>Corrêa, A. G. D. Organização e arquitetura de computadores. Unidade 3. Bibliografia Universitária Pearson. 131 a 143 (de 187) páginas. Ed. Pearson. 1º edição (2017) ISBN: 9788543020327</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de jun de 2024</p>
+    </footer>
+</body>
+</html>
