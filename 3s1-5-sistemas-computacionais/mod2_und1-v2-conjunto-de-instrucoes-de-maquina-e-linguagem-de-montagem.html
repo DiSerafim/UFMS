@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Interface Hardware/Software.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Interface Hardware/Software.</h1>
+        <h2>💡 Unidade 1 - Conjunto de instruções de máquina e linguagem de montagem.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=6gVqqKx6c5g&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Sistemas Computacionais - Linguagens de Montagem. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Alessandra Alaniz Macedo.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagens de Montagem.</h3>
+        </section>
+
+        <section>
+            <h2>ELEMENTOS:.</h2>
+            <ul>
+                <li>A estrutura de sentença da linguagem de montagem é composta por quatro elementos</li>
+                <ul>
+                    <li>Rótulo</li>
+                    <li>Mnemônico</li>
+                    <li>Operando(s)</li>
+                    <li>Comentário</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>LINGUAGEM DE MONTAGEM.</h2>
+            <img src="img/inteface-hardware-software4.png" alt="inteface-hardware-software4.png">
+        </section>
+
+        <section>
+            <h2>RÓTULO.</h2>
+            <ul>
+                <li>É identificador da instrução ou de uma constante</li>
+                <li>Rótulos são usados com mais frequência em instruções de desvio. Exemplos:</li>
+                <ul>
+                    <li>L2: SUB EAX, EDX</li>
+                    <li>JG L2</li>
+                </ul>
+                <li>No exemplo, o programa continua no laço de volta para a posição L2 até que o resultado seja zero ou negativo</li>
+                <ul>
+                    <li>quando a instrução JG é executada e o resultado é positivo, o processador coloca o endereço equivalente ao rótulo L2 no contador de programa</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>POR QUE USAR RÓTULOS?.</h2>
+            <ul>
+                <li>Um rótulo possibilita que uma posição do programa seja mais fácil de ser localizada e lembrada</li>
+                <li>O rótulo pode ser movido com facilidade para corrigir um programa</li>
+                <ul>
+                    <li>O montador automaticamente mudará o endereço em todas as instruções que usam o rótulo quando o programa for remontado</li>
+                </ul>
+                <li>O programador não precisa calcular endereços de memória relativos ou absolutos, apenas os usa conforme a necessidade</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MNEMÔNICO.</h2>
+            <ul>
+                <li>É o nome da operação ou função da sentença da linguagem de montagem</li>
+                <li>Serve para identificar uma operação ou função</li>
+                <ul>
+                    <li>pode corresponder a uma instrução de máquina (associado a determinado opcode), uma diretiva do montador ou uma macro</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>POR QUE USAR A LINGUAGEM DE MONTAGEM?</h2>
+            <ul>
+                <li>Programar na linguagem de montagem demora mais do que em uma linguagem de alto nível, pois:</li>
+                <ul>
+                    <li>Leva mais tempo para depurar, além da manutenção mais complicada devido ao desempenho e acesso à máquina</li>
+                    <li>É mais fácil que a linguagem de máquina, porém, ainda assim, tem suas dificuldades</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>OPERANDO(S).</h2>
+            <ul>
+                <li>Servem para especificar dados necessários à operação</li>
+                <li>Uma sentença da linguagem de montagem inclui zero ou mais operandos</li>
+                <ul>
+                    <li>Cada operando identifica um tipo de referência: um valor imediato, um registrador ou uma posição de memória</li>
+                </ul>
+                <li>A linguagem de montagem fornece convenções para:</li>
+                <ul>
+                    <li>Distinguir os três tipos de referências de operandos</li>
+                    <li>Indicar o modo de endereçamento</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplos:</h2>
+            <img src="img/inteface-hardware-software5.png" alt="inteface-hardware-software5.png">
+        </section>
+
+        <section>
+            <h2>COMENTÁRIO.</h2>
+            <ul>
+                <li>Começa com um caractere especial sinalizando para o montador que o restante da linha é um comentário e, por isso, deve ser ignorado pelo montador</li>
+                <ul>
+                    <li>Todas as linguagens de montagem permitem a inserção de comentários dentro do programa</li>
+                    <li>O comentário pode estar do lado direito de um comando em linguagem ou ocupar uma linha inteira de texto</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TIPOS DE SENTENÇAS.</h2>
+            <ul>
+                <li>A Sentença-<b>comentário</b> consiste inteiramente de um comentário</li>
+                <li><b>Instrução</b> é o tipo de sentença de representações simbólicas de instruções de linguagem de máquina</li>
+                <li>As sentenças <b>diretivas</b> (pseudoinstruções) fazem parte da linguagem de montagem que não são diretamente traduzidas para instruções da linguagem de máquina e, portanto, não são executáveis</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>DIRETIVAS.</h2>
+            <ul>
+                <li>São instruções para o montador executar ações específicas durante o processo de montagem, como:</li>
+                <ul>
+                    <li>Definir constantes</li>
+                    <li>Designar áreas da memória para armazenar dados</li>
+                    <li>Inicializar áreas da memória</li>
+                    <li>Inserir tabelas ou outros dados fixos na memória</li>
+                    <li>Permitir referências a outros programas</li>
+                </ul>
+            </ul>
+            <p>Exemplo:</p>
+            <img src="img/inteface-hardware-software6.png" alt="inteface-hardware-software6.png">
+        </section>
+
+        <section>
+            <h2>MACRO OU SUB-ROTINA.</h2>
+            <ul>
+                <li>É uma seção do programa que pode ser usada diversas vezes, sendo chamada a partir de qualquer ponto do programa</li>
+                <ul>
+                    <li>Sub-rotinas – são tratadas pelo hardware - em tempo de execução</li>
+                    <li>Macros - são consideradas pelo montador em tempo de montagem</li>
+                </ul>
+            </ul>
+            <p>EXEMPLO DE MACRO:</p>
+            <pre>
+            Macro de uma linha
+                %DEFINE B(X) = 2*X
+                %DEFINE A(X) = 1+B(X)
+            
+            Em algum ponto do programa da linguagem de montagem aparece a seguinte sentença
+                MOV AX, A(8)
+            
+            O montador expande essa sentença para
+                MOV AX, 1+2*8
+            </pre>
+        </section>
+
+        <section>
+            <h2>PROGRAМА С.</h2>
+            <pre>
+            // gcd(a,b) = max[k, tal que k é divisor de a ek divisor de b] unsigned int gcd (unsigned int a, unsigned int b) {
+                <b>if</b> (a == 0 && b == 0)
+                b = 1;
+                <b>else if</b> (b == 0)
+                b = a;
+                <b>else i</b>f (a != 0)
+                <b>while</b> (a != b)
+                <b>if</b> (a '<'b) b = a;
+                <b>else</b>
+                a -= b;
+                <b>return</b> b;
+            </pre>
+            <img src="img/inteface-hardware-software7.png" alt="inteface-hardware-software7.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de jun de 2024</p>
+    </footer>
+</body>
+</html>
