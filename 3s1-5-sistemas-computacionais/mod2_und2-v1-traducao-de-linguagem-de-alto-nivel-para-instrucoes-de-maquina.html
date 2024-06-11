@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Interface Hardware/Software.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Interface Hardware/Software.</h1>
+        <h2>💡 Unidade 2 - Tradução de linguagem de alto nível para instruções de máquina.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=K4EY0AbTOZ4&ab_channel=EmilioFrancesquini" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                2.1 - Arquitetura de Computadores - Instruções: A Linguagem do Computador. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Emílio Francesquini.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Arquitetura de Computadores.</h3>
+        </section>
+
+        <section>
+            <h2>Conjunto de instruções.</h2>
+            <ul>
+                <li>O <b>Conjunto de Instruções</b> (en: instruction set) é o conjunto das instruções de um computador.</li>
+                <li>Diferentes computadores têm diferentes conjuntos de instruções.</li>
+                <ul>
+                    <li>Mas todos tem muitos aspectos em comum!</li>
+                </ul>
+                <li>Os primeiros computadores tinham conjuntos de instruções bem limitados</li>
+                <ul>
+                    <li>Isto simplificava a implementação do hardware do computador</li>
+                </ul>
+                <li>Muitos computadores modernos continuam a ter conjuntos de instruções simples</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O Conjunto de Instruções MIPS.</h2>
+            <ul>
+                <li>É o conjunto com o qual mais trabalharemos até o fim da disciplina</li>
+                <li>É um computador (Stanford MIPS) que é comercializado pela empresa MIPS Technologies (www.mips.com).</li>
+                <ul>
+                    <li>Atualmente muito usado em roteadores, NAS, impressoras, câmeras...</li>
+                    <li>Também foi o processador usado no Nintendo 64, Playstation 1 e 2, e PSP</li>
+                    <li>E também nos carros Tesla e Volvo</li>
+                </ul>
+                <li>Por que o MIPS?</li>
+                <ul>
+                    <li>Ele representa o desing típico das arquiteturas mais modernas como ARMv7 e ARMv8</li>
+                    <li>O livro contém uma página com muitos outros detalhes sobre o MIPS</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Instruções aritméticas.</h2>
+            <ul>
+                <li>Vamos começar com uma das operações mais utilizadas: adição</li>
+                <li>As instruções em MIPS prezam pela regularidade</li>
+                <ul>
+                    <li>Quase todas trabalham com 3 operandos</li>
+                </ul>
+                <li><b>Princípio de Design 1</b>: Simplicidade favorece regularidade</li>
+                <ul>
+                    <li>Regularidade torna a implementação do hardware mais simples</li>
+                    <li>Simplicidade permite um desempenho superior a um custo inferior</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Soma - add.</h2>
+            <p>add soma dois números em registradores e armazena o resultado em um terceiro registador</p>
+            <pre>
+            add a, b, c  # a = b + c
+            </pre>
+            <p>sub funciona de maneira equivalente para a subtração</p>
+        </section>
+
+        <section>
+            <h2>Soma - Exemplo.</h2>
+            <p>O seguinte código em C...</p>
+            <pre>
+            f = (g + h) (i + j);
+            </pre>
+            <p>se transforma em:</p>
+            <pre>
+            add to, g, h  # temp to = g + h
+            add t1, i, j  # temp t1 = i + j
+            sub f, to, t1 # f = to t1
+            </pre>
+            <p>Esse exemplo ainda é fictício: não existem registradores f, g, h, i,...</p>
+        </section>
+
+        <section>
+            <h2>Operandos em registradores</h2>
+            <ul>
+                <li>Instruções aritméticas operam apenas em valores já contidos nos registradores</li>
+                <li>MIPS tem 32 registradores de 32 bits cada um</li>
+                <ul>
+                    <li>Registradores são rápidos e são usados para dados acessados frequentemente</li>
+                    <li></li>São numerados de 0 a 31</li>
+                    <li>Uma <b>palavra</b> (en: word) no MIPS são 32 bits</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Registradores.</h2>
+            <ul>
+                <li>Nomenclatura</li>
+                <ul>
+                    <li>$to, $t1, $t9 utilizados para variáveis temporárias</li>
+                    <li>$50, $s1, $s7 utilizadas para variáveis salvas</li>
+                </ul>
+                <li><b>Princípio de Design 2</b>: menor é mais rápido</li>
+                <ul>
+                    <li>Considere o tempo de acesso para milhares de posições e o tempo de acesso para apenas algumas dezenas</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo: operandos em registradores.</h2>
+            <pre>
+            f = (g + h) - (i + j);
+
+                f armazenado em $s0
+                g armazenado em $s1
+                h armazenado em $s2
+                i armazenado em $s3
+                j armazenado em $s4
+        
+            Código MIPS:
+                add $t0, $s1, $s2
+                add $t1, $s3, $s4
+                sub $s0, $to, $t1
+            </pre>
+        </section>
+
+        <section>
+            <h2>Operadores na memória</h2>
+            <ul>
+                <li>A memória principal pode ser usado para dados maiores ou compostos</li>
+                <ul>
+                    <li>Structs, arrays, estruturas dinâmicas (listas ligadas, árvores, ...)</li>
+                </ul>
+                <li>Contudo, operações aritméticas trabalham apenas nos registradores</li>
+                <li>Precisamos então ferramentas para carregar os valores da memória nos registradores</li>
+                <ul>
+                    <li>Operação conhecida como <b>load</b></li>
+                </ul>
+                <li>Também precisamos uma maneira de levar os valores dos registradores de volta à memória</li>
+                <ul>
+                    <li>Capacidade e quantidade de registradores são limitadas!</li>
+                    <li>Operação conhecida como <b>store</b></li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mais alguns detalhes....</h2>
+            <ul>
+                <li>A memória é <b>endereçada</b> (en: addressed) por bytes</li>
+                <ul>
+                    <li>Cada endereço identifica um byte de 8 bits</li>
+                </ul>
+                <li>Palavras são <b>alinhadas</b> na memória</li>
+                <ul>
+                    <li>Logo, como cada palavra tem 32 bits, cada endereço é um múltiplo de 4</li>
+                </ul>
+                <li>MIPS é <b>Big Endian</b></li>
+                <ul>
+                    <li>Isso significa que o byte mais significativo fica localizado no menor endereço da palavra</li>
+                    <li>Em contrapartida, arquiteturas <b>litte endian</b> armazenam o byte menos significativo no menor endereço</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo 1: Lendo operadores na memória.</h2>
+            <pre>
+            O MIPS oferece a instrução lw (load word) que recebe:
+                registrador destino
+                deslocamento (en:offset)
+                registrador base (en: base register)
+            
+                g = h + A[8];
+
+                Onde g está em $s1, h em $s2, e endereço base de A em $s3
+                Código MIPS:
+                lw $t0, 32($s3)  # Atenção ao deslocamento
+                add $s1, $s2, $t0
+            </pre>
+        </section>
+
+        <section>
+            <h2>Exemplo 2: Escrevendo operadores na memória.</h2>
+            <p>De maneira semelhante, temos a instrução <b>sw</b> (store word) que armazena o valor do segundo operando no registrador apontado pelo primeiro.</p>
+            <pre>
+                1 A[12] h+ A[8];
+                
+            Onde h em $s2, e endereço base de A em $s3
+            Código MIPS:
+                lw $t0, 32($s3)  # Atenção ao deslocamento
+                add $t1, $s2, $to
+                sw $t1, 48($s3)  # Atenção ao deslocamento
+            </pre>
+        </section>
+
+        <section>
+            <h2>Registradores vs. memória.</h2>
+            <ul>
+                <li>Registradores são de acesso mais rápido que a memória</li>
+                <li>Operar na memória exige o uso de loads e stores</li>
+                <ul>
+                    <li>Mais instruções precisam ser executadas</li>
+                </ul>
+                <li>Compiladores se esforçam para usar os registradores o máximo possível</li>
+                <ul>
+                    <li>Eles apenas <b>vazam</b> (en: spill) os registradores contendo as variáveis menos frequentemente utilizadas</li>
+                    <li>O estudo da otimização do uso de registradores é importantíssimo e foi por muitos anos tópico de muitas pesquisas</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Operadores Imediatos.</h2>
+            <ul>
+                <li>Operandos imediatos (en: immediate operands) são úteis pois, frequentemente, trabalhamos com constantes no nosso código.</li>
+                <ul>
+                    <li>Pense <b>i++, x = 0</b>, ...</li>
+                    <li>Otimizando casos comuns podemos ganhar simplicidade e desempenho</li>
+                </ul>
+                <li>A operação <b>add</b> tem uma versão com operando imediato chamada <b>addi</b></li>
+                <pre>addi $s3, $s3, 4</pre>
+                <li>Não temos a versão com imediatos de <b>sub</b>, mas <b>addi</b> aceita valores negativos. Então:</li>
+                <pre>addi $s2, $s1, -1</pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Princípio de design.</h2>
+            <ul>
+                <li><b>Princípio de Design 3</b>: Torne os casos comuns rápidos</li>
+                <ul>
+                    <li>Constantes são comuns e o operando imediato evita uma instrução de load</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A constante Zero.</h2>
+            <ul>
+                <li>A constante <b>zero</b> é tão importante e comum que o MIPS reserva um registrador que sempre contem este valor: <b>$zero</b></li>
+                <ul>
+                    <li>Esse registrador não pode ser sobrescrito</li>
+                </ul>
+                <li>É muito útil para efetuar operações muito comuns, por exemplo, copiar um valor entre um registrador e outro</li>
+                <ul>
+                    <li>Tradicionalmente essa operação é chamada de move ainda que ela não elimine o valor original</li>
+                </ul>
+                <pre>add $t2, $s1, $zero</pre>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de jun de 2024</p>
+    </footer>
+</body>
+</html>
