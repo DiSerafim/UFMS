@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 – Interface Hardware/Software.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Interface Hardware/Software.</h1>
+        <h2>💡 Unidade 2 - Tradução de linguagem de alto nível para instruções de máquina.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=HYJ2ei6wnKA&ab_channel=EmilioFrancesquini" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                2.5 - Arquitetura de Computadores - Operações Condicionais. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Emílio Francesquini.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Arquitetura de Computadores.</h3>
+            <p>Operações Condicionais</p>
+        </section>
+
+        <section>
+            <h2>Operações condicionais.</h2>
+            <ul>
+                <li><b>Branch</b> para uma instrução etiquetada (en: labeled) se a condição for verdadeira</li>
+                <ul>
+                    <li>Senão continua como se nada tivesse ocorrido</li>
+                </ul>
+                <li><b>if (rs == rt)</b> branch para a instrução etiquetada <b>L1</b></li>
+                <pre>beq rs, rt, L1</pre>
+                <li><b>if (rs != rt)</b> branch para a instrução etiquetada <b>L1</b></li>
+                <pre>bne rs, rt, L1</pre>
+                <li>Para fazer um salto (en: <b>jump</b>) não condicinal</li>
+                <pre>j L1</pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Compilando um if.</h2>
+            <pre>
+            if (i == j)
+                f = g + h;
+            else
+                f = g - h
+            </pre>
+            <img src="img/arquitetura.png" alt="arquitetura.png">
+            <p>Com <b>f, g, h, i, j</b> em <b>$s0, $s1, $s2, $s3, $s4.</b> respectivamente.</p>
+            <b>Código MIPS compilado:</b>
+            <pre>
+                # se (i!= j) pula para Else
+                bne $s3, $s4, Else
+                add $50, $s1, $s2
+                j Exit
+            Else:
+                sub $s0, $s1, $s2
+            Exit:
+                ...
+            </pre>
+        </section>
+
+        <section>
+            <h2>Compilando laços.</h2>
+            <pre>
+            while (save[i] == k) i+= 1;
+                Onde <b>i</b> está em <b>$s3</b>, <b>k</b> está em <b>$s5</b> e <b>save</b> está em <b>$s6</b>
+                
+                Código MIPS compilado:
+            Loop:
+                sll $t1, $s3, 2
+                add $t1, $t1, $s6
+                lw $t0, 0($t1)
+                bne $to, $s5, Exit
+                addi $s3, $s3, 1
+                j Loop
+                
+            Exit: ...
+            </pre>
+        </section>
+
+        <section>
+            <h2>Blocos básicos.</h2>
+            <ul>
+                <li>Um bloco básico é uma sequência de instruções com</li>
+                <ul>
+                    <li>Nenhum branch (exceto no final)</li>
+                    <li>Nenhum alvo de branches (exceto no início)</li>
+                </ul>
+                <li>Compiladores utilizam blocos básicos para otimização</li>
+                <li>Um processador moderno é capaz de acelerar a execução de um bloco básico</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Algumas operações condicionais a mais...</h2>
+            <pre>
+            <b>slt</b>: (set if less than) escreve 1 no resultado caso a condição seja verdadeira
+                Escreve 0 caso contrário
+
+                if (rs < rt)
+                    rd = 1;
+                else
+                    rd = 0;
+            
+            slt rd, rs, rt
+        
+            Há a versão com imediato <b>slti</b>
+                if (rs constante)
+                    rt = 1;
+                else
+                    rt = 0;
+
+            slti rt, rs, constant
+
+            Útil para combinar com <b>beq</b> ou <b>bne</b>:
+                slt $to, $s1, $s2  # if ($s1 < $s2)
+                bne $to, $zero, L  # branch para L
+            </pre>
+        </section>
+
+        <section>
+            <h2>Sobre o design das instruções de branches.</h2>
+            <ul>
+                <li>Por que não <b>blt</b>, <b>bge</b>, ...?</li>
+                <li>O hardware para <, >,... é mais lento que para =, ≠</li>
+                <ul>
+                    <li>Combinado com branches, isso significa mais trabalho por instrução o que causaria um clock mais lento</li>
+                    <li>Todas as demais instruções acabam sendo penalizadas</li>
+                </ul>
+                <li><b>beq</b> e <b>bne</b> são os casos mais comuns.</li>
+                <ul>
+                    <li>Um bom compromisso entre complexidade e desempenho</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Operações com sinal e sem sinal.</h2>
+            <ul>
+                <li>Comparações com sinal: <b>slte</b> e <b>slti</b></li>
+                <li>Comparações sem sinal: <b>sltu</b> e <b>sltui</b></li>
+                <li>Exemplo:</li>
+            </ul>
+            <pre>
+            s0 = 1111 1111 1111 1111 1111 1111 1111 1111 
+            s1 = 0000 0000 0000 0000 0000 0000 0000 0000 
+            </pre>
+            <pre>
+            slt $to, $s0, $s1   # com sinal
+                -1 < +1 → $t0 = 1
+
+            sltu $to, $so, $s1  # sem sinal
+                +4.294.967.295 > +1 → $t0 = 0
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de jun de 2024</p>
+    </footer>
+</body>
+</html>
