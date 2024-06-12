@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 2 – Interface Hardware/Software.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SISTEMAS COMPUTACIONAIS
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo estudamos, entre outros assuntos, como os programas que escrevemos em uma linguagem de alto nível precisam ser transformados para instruções de máquina para serem executados pelo processador. Vimos que as instruções de máquina são codificadas em binário, enquanto que na linguagem de montagem as instruções são representadas por mnemônicos (“abreviações” que indicam a operação realizada pela instrução) e os respectivos operandos. As linguagens de máquina e de montagem são específicas de cada processador (ou família de processadores). Mas, de forma geral, podemos afirmar que todos os processadores possuem instruções aritméticas como ADD, SUB, MPY e DIV, para as operações de adição, subtração, multiplicação e divisão, respectivamente.</p>
+            <ul>
+                <li>Um exemplo é ilustrado na Figura 12.3(a) na página 355 da seguinte referência: STALLINGS, William. Arquitetura e Organização de Computadores, 10ª Edição. Editora Pearson, 2017. 731 p. ISBN 9788543020532. O exemplo mostra como a expressão aritmética Y = (A - B) / [C + (D X E)] poderia ser traduzida para a sequência de 4 instruções de 3 endereços a seguir.</li>
+            </ul>
+            <pre>
+            Instrução       Comentário
+            SUB	Y, A, B     Y ← A - B
+            MPY T, D, E     T ← D * E
+            ADD T, T, C     T ← T + C
+            DIV	Y, Y, T     Y ← Y ÷ T
+            </pre>
+            <p>Observe que esse exemplo se baseia em instruções aritméticas genéricas e não enfoca instruções de um processador específico nem detalhes da localização dos operandos.  Cada instrução representa uma única operação aritmética e possui um operando destino e dois operandos fontes, nessa ordem. A expressão aritmética possui os operandos fonte A, B, C, D e E e o operando destino Y. As instruções usam esses operandos e ainda usam um operando T (de temporário) como auxiliar no cálculo da expressão.</p>
+            <p>Com base nesse exemplo, indique como a expressão abaixo pode ser traduzida para instruções de 3 endereços. Isto é, mostre a sequência de instruções que implementam a expressão. Preste atenção aos parênteses, colchetes e chaves, pois eles definem a ordem em que as operações devem ser realizadas. Na sua resposta, ao lado de cada instrução coloque um comentário, explicando o que a instrução faz, como apresentado no exemplo.</p>
+            <pre>Y ={ [ (A + B) X C ] - D } / E</pre>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+            <p>Decompondo a expressão:</p>
+            <pre>Y ={ [ (A + B) X C ] - D } / E</pre>
+            <ul>
+                <li>A + B</li>
+                <li>(A + B) * C</li>
+                <li>[(A + B) * C] - D</li>
+            </ul>
+            <p>Instruções de 3 endereços:</p>
+            <pre>
+            ADD T1, A, B    T1 = A + B          // Adiciona os valores de A e B.
+            MPY T2, T1, C   T2 = (A + B) * C    // Multiplica o valor de T1 por C
+            SUB T3, T2, D   T3 = (T2) - D       // Subtrai o valor de D do resultado de T2
+            DIV	Y, T3, E    Y = (T3) ÷ E        // Divide o resultado de T3 por E
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de jun de 2024</p>
+    </footer>
+</body>
+</html>
