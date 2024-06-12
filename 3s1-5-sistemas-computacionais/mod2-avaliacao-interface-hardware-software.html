@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1.</h1>
+        <h2>✅ [A2] Avaliação do Módulo 2 – Interface Hardware/Software.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Profª Especialista: Dra. Nahri Moreano.</li>
+                <li>Iniciado em	terça, 11 jun 2024, 20:23</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	terça, 11 jun 2024, 20:57</li>
+                <li>Tempo empregado	33 minutos 46 segundos</li>
+                <li>Avaliar	10,00 de um máximo de 10,00(100%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Assinale as alternativas que representam informações providas nos campos de uma instrução de máquina.</p>
+                <ul>
+                    <li>a. Os operandos destino usado pela instrução.</li>
+                    <li>b. O comentário da instrução.</li>
+                    <li>c. O código da operação representada pela instrução.</li>
+                    <li>d. O rótulo (do inglês, label) representa o endereço da instrução na memória.</li>
+                    <li>e. Os operandos fonte usados pela instrução.</li>
+                </ul>
+
+                <b class="answer">Resposta: a, c, e. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>a: <b>Representa o local onde o resultado da operação será armazenado.</b></li>
+                    <li>c: <b>Indica qual operação (como ADD, SUB, MPY, DIV, etc.) deve ser executada.</b></li>
+                    <li>e: <b>Indicam os dados que a operação utilizará para realizar a instrução.</b></li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Usando instruções aritméticas genéricas de 3 endereços (com um operando destino e dois operandos fontes, nessa ordem), indique como a expressão A = B - (C * D) + E pode ser traduzida. Isto é, assinale a alternativa que mostra a sequência de instruções que implementa a expressão.</p>
+                <ul>
+                    <li>a. MUL A, C, D; SUB A, A, B; ADD A, A, E;</li>
+                    <li>b. SUB A, B, C; MUL A, A, D; ADD A, A, E;</li>
+                    <li>c. SUB A, B, C; ADD A, D, E; MUL A, A, A;</li>
+                    <li>d. MUL A, C, D; SUB A, B, A; ADD A, A, E;</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>Resolução:</p>
+                <pre>
+                Primeiro, calcular C * D e armazenar o resultado em um temporário T1:
+                MUL T1, C, D
+
+                Depois, calcular B - T1 e armazenar o resultado em outro temporário T2:
+                SUB T2, B, T1
+
+                Finalmente, adicionar E ao resultado armazenado em T2 e armazenar o resultado final em A:
+                ADD A, T2, E
+
+                A sequência correta de instruções seria:
+                MUL T1, C, D
+                SUB T2, B, T1
+                ADD A, T2, E
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Instruções de máquina com 2 endereços em geral são mais curtas (em número de bits) do que instruções de máquina com 3 endereços.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Cada endereço (operando) ocupa um número fixo de bits no formato da instrução. Reduzir o número de operandos reduz a quantidade total de bits necessária para representar a instrução.</li>
+                    <ul>
+                        <li>Instruções de 2 endereços: Têm um campo para o endereço do operando de destino e um campo para o endereço do operando fonte. Geralmente, uma das operações é realizada "in-place" (isto é, o resultado é armazenado em um dos operandos de entrada).</li>
+                        <li>Instruções de 3 endereços: Têm campos separados para o endereço do operando de destino e os endereços de dois operandos fontes. Isso permite mais flexibilidade nas operações, pois o resultado pode ser armazenado em um local diferente dos operandos de entrada, mas exige mais bits para codificar a instrução.</li>
+                    </ul>
+                    <li>Por exemplo, suponha que um endereço de operando exige 8 bits. Uma instrução de 2 endereços precisa de 16 bits para os operandos, enquanto uma instrução de 3 endereços precisa de 24 bits para os operandos.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>O termo conjunto de instruções do processador (ou ISA, do inglês Instruction Set Architecture) refere-se a:</p>
+                <ul>
+                    <li>a. O conjunto de registradores internos do processador.</li>
+                    <li>b. O conjunto de instruções usadas por um programa.</li>
+                    <li>c. O conjunto de diferentes comandos de uma linguagem de programação de alto nível.</li>
+                    <li>d. O conjunto de diferentes instruções de máquina que o processador é capaz de executar.</li>
+                    <li>e. O conjunto de diferentes instruções de montagem da linguagem de montagem.</li>
+                </ul>
+                
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>ISA define todas as instruções que um processador pode executar, incluindo o formato das instruções, os tipos de operações suportadas (como aritméticas, lógicas, controle de fluxo, etc.), os modos de endereçamento, e os registradores disponíveis. Em outras palavras, a ISA é a interface entre o software e o hardware, especificando como o software pode controlar o hardware.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Assinale a alternativa INCORRETA:</p>
+                <ul>
+                    <li>a. A linguagem de montagem é específica de cada processador (ou família de processadores).</li>
+                    <li>b. A linguagem de alto nível é independente de plataforma, isto é, não é específica de cada processador (ou família de processadores).</li>
+                    <li>c. Um programa em uma linguagem de alto nível precisa ser transformado para instruções de máquina para ser executado pelo processador.</li>
+                    <li>d. A linguagem de máquina é específica de cada processador (ou família de processadores).</li>
+                    <li>e. Um programa em uma linguagem de alto nível precisa passar pelos processos de compilação ou interpretação para ser executado.</li>
+                    <li>f. Um programa em uma linguagem de montagem não precisa ser transformado para instruções de máquina para ser executado pelo processador.</li>
+                </ul>
+
+                <b class="answer">Resposta: f. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Um programa em uma linguagem de montagem precisa ser transformado (montado) em instruções de máquina para ser executado pelo processador. O processo de montagem é feito por um montador (assembler), que traduz o código de montagem (assembly) para código de máquina (binário), específico para o processador.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Assinale a alternativa que indica o software responsável por combinar um ou mais arquivos contendo instruções de máquina (módulos objeto) em um único programa executável.</p>
+                <ul>
+                    <li>a. Interpretador.</li>
+                    <li>b. Ligador (ou link-editor ou linker).</li>
+                    <li>c. Montador.</li>
+                    <li>d. Compilador.</li>
+                    <li>e. Carregador (loader).</li>
+                </ul>
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O ligador (ou link-editor ou linker) é o software responsável por combinar um ou mais arquivos contendo instruções de máquina (módulos objeto) em um único programa executável. Ele resolve referências entre módulos, combina todos os módulos objeto em um único arquivo executável e ajusta os endereços relativos.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Assinale a alternativa que NÃO representa uma categoria de instruções de máquina dos processadores.</p>
+                <ul>
+                    <li>a. Desvios incondicionais.</li>
+                    <li>b. Decodificação de instruções.</li>
+                    <li>c. Operações lógicas e aritméticas.</li>
+                    <li>d. Movimentação de dados entre registradores e memória.</li>
+                    <li>e. Desvios condicionais.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A decodificação de instruções é um processo interno do processador que interpreta as instruções de máquina para determinar quais operações devem ser realizadas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Assinale as alternativas que indicam onde os valores dos operandos, fonte e destino de uma instrução de máquina podem estar localizados.</p>
+                <ul>
+                    <li>a. Numa função do programa compilador.</li>
+                    <li>b. Nos registradores do processador.</li>
+                    <li>c. Na área de dados do programa na memória.</li>
+                    <li>d. Em um campo imediato da própria instrução de máquina.</li>
+                    <li>e. No barramento do computador.</li>
+                </ul>
+                <b class="answer">Resposta: b, c, d. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Os operandos podem estar <b>nos registradores do processador</b> (b), onde são rapidamente acessíveis.</li>
+                    <li>Podem também estar <b>na área de dados do programa na memória</b> (c), embora o acesso seja mais lento que aos registradores.</li>
+                    <li>Além disso, operandos podem ser valores imediatos, incluídos diretamente <b>em um campo imediato da própria instrução de máquina</b> (d), permitindo acesso rápido sem consultar a memória.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>As instruções de máquina representam as operações que são interpretadas e executadas pelo processador.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>As instruções de máquina são conjuntos de comandos codificados em binário que o processador interpreta e executa diretamente. Cada instrução de máquina especifica uma operação básica, como aritmética, lógica, movimentação de dados, ou controle de fluxo, que o processador realiza.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Assinale a alternativa que indica o software responsável por traduzir um programa em uma linguagem de programação de alto nível para instruções de máquina.</p>
+                <ul>
+                    <li>a. Compilador.</li>
+                    <li>b. Carregador (loader).</li>
+                    <li>c. Ligador (ou link-editor ou linker).</li>
+                    <li>d. Montador.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Um compilador é um software responsável por traduzir programas escritos em linguagens de alto nível, como C, C++, Python, Java, entre outras, para linguagem de máquina, que é entendida e executada diretamente pelo processador.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de jun de 2024</p>
+    </footer>
+</body>
+</html>
