@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Sistemas Operacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Sistemas Operacionais.</h1>
+        <h2>💡 Apresentação do Módulo 3.</h2>
+        <!-- <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2> -->
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=SNQKLRmB-B4&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Sistemas Computacionais - Módulo 3. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dra. Nahri Moreano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Sistemas Operacionais.</h3>
+        </section>
+
+        <section>
+            <h2>Sistema Operacional (SO).</h2>
+            <ul>
+                <li><b>Software</b> que executa diretamente sobre o hardware do computador</li>
+                <li>Provê a base para todas as demais camadas de software</li>
+            </ul>
+            <img src="img/sistemas-operacionais.png" alt="sistemas-operacionais.png">
+        </section>
+
+        <section>
+            <h2>Objetivos do SO.</h2>
+            <ul>
+                <li>Gerenciar recursos do hardware do computador:</li>
+                <ul>
+                    <li>SO permite que recursos do hardware sejam utilizados pelos programas de forma controlada e eficiente</li>
+                </ul>
+                <li>Fornecer interface entre computador e programas do usuário:</li>
+                <ul>
+                    <li>SO esconde do programador detalhes do hardware e provê interface amigável para ele usar o computador</li>
+                    <li>SO presta serviços para os programas</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Principais Módulos do SO.</h2>
+            <ul>
+                <li>Gerência de processos.</li>
+                <li>Gerência de memória.</li>
+                <li>Gerência do sistema de arquivos.</li>
+                <li>Gerência de entrada/saída.</li>
+                <li>Segurança e proteção.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gerência de Processos.</h2>
+            <ul>
+                <li><b>Processo</b>: programa em execução</li>
+                <ul>
+                    <li>Cada processo possui:</li>
+                    <ul>
+                        <li>Áreas de código (instruções de máquina), de dados e de pilha no espaço de endereçamento de memória</li>
+                        <li>Conteúdo dos registradores do processador</li>
+                        <li>Outros recursos</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Multiprogramação.</h2>
+            <ul>
+                <li>Capacidade do SO de gerenciar vários processos executando concorrentemente na mesma CPU</li>
+                <li>Somente um processo está ativo a cada momento (executando na CPU)</li>
+                <li>SO faz chaveamento (<b>troca de contexto</b>) de um processo para outro</li>
+                <li>Vantagens:</li>
+                <ul>
+                    <li>Permite que vários processos sejam executados “ao mesmo tempo” (na verdade, concorrentemente)</li>
+                    <li>Permite que um processo execute no processador enquanto outro processo realiza uma operação de entrada/saída</li>
+                    <li>Aumenta a utilização do processador e dos demais recursos do hardware (memória e dispositivos de entrada e saída)</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estados de um Processo.</h2>
+            <ul>
+                <li>Durante sua execução completa, processo passa por vários estados:</li>
+                <ul>
+                    <li><b>Em execução</b>: processo está sendo executado pela CPU nesse momento</li>
+                    <li><b>Pronto</b>: processo deseja usar a CPU nesse momento, porém ela está alocada para outro processo</li>
+                    <li><b>Bloqueado</b> (ou <b>em espera</b>): processo não pode executar na CPU no momento pois está aguardando evento externo ocorrer ou alocação de outro recurso</li>
+                </ul>
+            </ul>
+            <img src="img/sistemas-operacionais1.png" alt="sistemas-operacionais1.png">
+        </section>
+
+        <section>
+            <h2>Escalonamento de Processos.</h2>
+            <ul>
+                <li><b>Escalonador</b>: módulo do SO que seleciona, dentre os processos prontos, o próximo a executar</li>
+                <li>Escalonamento: preemptivo ou não-preemptivo</li>
+                <li>Algoritmos de escalonamento:</li>
+                <ul>
+                    <li>Primeiro a chegar, primeiro a ser servido (FCFS - First-Come, First-Served)</li>
+                    <li>Tarefa mais curta primeiro (SJF - Shortest Job First)</li>
+                    <li>Escalonamento por chaveamento circular (RR - Round-Robin)</li>
+                    <li>Escalonamento por prioridades</li>
+                    <li>…</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Multithreading.</h2>
+            <ul>
+                <li><b>Thread</b>: fluxo de execução dentro de um processo</li>
+                <ul>
+                    <li>Um processo pode possuir várias threads</li>
+                    <li>Cada thread possui:</li>
+                    <ul>
+                        <li>Área de pilha no espaço de endereçamento de memória</li>
+                        <li>Conteúdo dos registradores do processador</li>
+                    </ul>
+                    <li>Cada thread compartilha com outras threads do processo:</li>
+                    <ul>
+                        <li>Áreas de código e de dados no espaço de endereçamento de memória</li>
+                        <li>Outros recursos</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gerência de Memória.</h2>
+            <ul>
+                <li>Módulo do SO que gerencia o sistema de memórias</li>
+                <li>Programa, para ser executado, deve estar carregado na memória</li>
+                <li>Multiprogramação: SO permite que vários processos sejam executados concorrentemente</li>
+                <li>Portanto, SO precisa manter vários processos na memória ao mesmo tempo</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Memória Virtual.</h2>
+            <ul>
+                <li>Mecanismo de gerência de memória:</li>
+                <ul>
+                    <li>Implementado pelo SO com suporte do hardware</li>
+                    <li>Implementado juntamente com mecanismo de alocação particionada (paginação, segmentação ou segmentação paginada)</li>
+                </ul>
+                <li>Permite separação entre espaço de endereçamento lógico (virtual) do processo e memória física (real)</li>
+                <li>Vantagens:</li>
+                <ul>
+                    <li>Permite que vários programas estejam presentes na memória ao mesmo tempo</li>
+                    <li>Permite que programa seja executado sem estar inteiro na memória física</li>
+                    <li>Mecanismo transparente para programador</li>
+                </ul>
+                <li>Tira proveito do princípio de localidade</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Memória Virtual com Paginação.</h2>
+            <ul>
+                <li>Espaço de endereçamento lógico (virtual) do processo: dividido em partes de tamanho fixo (<b>páginas</b>)</li>
+                <li>Memória física: dividida em partes do mesmo tamanho (<b>frames</b> ou <b>molduras</b> de página)</li>
+                <li>Transferências entre memória virtual (no disco) e memória física: páginas inteiras</li>
+                <li>Durante execução, processo acessa endereço lógico:</li>
+                <ul>
+                    <li>SO, com suporte do hardware, traduz endereço lógico em endereço físico, usando <b>tabela de páginas</b></li>
+                    <li>Se endereço lógico não está presente na memória física, SO carrega página faltosa na memória física</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tradução do Endereço Lógico em Endereço Físico.</h2>
+            <img src="img/sistemas-operacionais2.png" alt="sistemas-operacionais2.png">
+        </section>
+
+        <section>
+            <h2>Suporte do Hardware para Mecanismo de Memória Virtual com Paginação.</h2>
+            <ul>
+                <li>Unidade de gerenciamento de memória (<b>MMU</b> - Memory Management Unit):</li>
+                <ul>
+                    <li>Componente do hardware de suporte ao mecanismo de memória virtual</li>
+                    <li>Faz a tradução do endereço virtual em endereço físico</li>
+                </ul>
+                <li>Buffer para tradução de endereços (<b>TLB</b> - Translation Lookaside Buffer):</li>
+                <ul>
+                    <li>Pequena memória em hardware para acelerar a tradução do endereço virtual em endereço físico</li>
+                    <li>Contém algumas informações da tabela de páginas</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de jun de 2024</p>
+    </footer>
+</body>
+</html>
