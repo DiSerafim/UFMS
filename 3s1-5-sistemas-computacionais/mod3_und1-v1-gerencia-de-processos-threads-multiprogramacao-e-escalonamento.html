@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Sistemas Operacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Sistemas Operacionais.</h1>
+        <h2>💡 Unidade 1 - Gerência de processos: processos, threads, multiprogramação e escalonamento.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=ZxbiITSC-bg&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Introdução a Conceitos de Computação - Sistema Operacional. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Cláudio Fabiano Motta Toledo (UNIVESP).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Sistema Operacional.</h3>
+            <ul>
+                <li>SUMÁRIO.</li>
+                <ul>
+                    <li>Papel do Sistema Operacional.</li>
+                    <li>Gerenciamento de Memória.</li>
+                    <li>Gerenciamento de Processo.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Papel do Sistema Operacional.</h2>
+            <ul>
+                <li>Softwares de sistemas:</li>
+                <ul>
+                    <li>Programas que gerenciam um sistema computacional e interagem com hardware</li>
+                </ul>
+            </ul>
+            <img src="img/sistemas-operacionais3.png" alt="sistemas-operacionais3.png">
+            <ul>
+                <li>Há uma complexidade considerável nos sistemas de computadores modernos.</li>
+                <li>Demanda a gerência de diversos dispositivos.</li>
+            </ul>
+            <p><b>Sistema operacional</b>: software de sistema que gerencia recursos computacionais e fornece uma interface para interação com o sistema.</p>
+            <img src="img/sistema-operacional.webp" alt="sistema-operacional.webp">
+            <ul>
+                <li>Dois papéis principais:</li>
+                <ul>
+                    <li>Máquina estendida (top-down)</li>
+                    <ul>
+                        <li>Viabilizar tarefas de baixo nível para o usuário.</li>
+                    </ul>
+                    <li>Gerenciador de recursos (bottom-up)</li>
+                    <ul>
+                        <li>Gerenciar dispositivos que compõem o computador.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/sistemas-operacionais4.png" alt="sistemas-operacionais4.png">
+            <ul>
+                <li>Gerenciamentos de Memória, de Processos e de CPU</li>
+                <ul>
+                    <li><b>Multiprogramação</b>: A técnica de manter múltiplos programas em memória principal ao mesmo tempo, competindo pela CPU</li>
+                    <li>Gerenciamento de memória: O ato de manter registro de como e onde programas são carregados em memória principal</li>
+                    <li><b>Processo</b>: a representação dinâmica de um programa durante execução</li>
+                    <li><b>Gerenciamento de processo</b>: o ato de manter registro de informação para processos ativos</li>
+                    <li><b>Escalonamento de CPU</b>: ato de determinar qual processo em memória terá acesso à CPU, de modo que ele possa executar</li>
+                </ul>
+                <li>Tempo compartilhado</li>
+                <ul>
+                    <li><b>Tempo compartilhado</b>: um sistema no qual tempo de CPU é compartilhado entre múltiplos usuários interativos ao mesmo tempo</li>
+                    <li><b>Máquina virtual</b>: a ilusão criada por um sistema de tempo compartilhado de que cada usuário possui uma máquina dedicada</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gerenciamento de Memória.</h2>
+            <ul>
+                <li>Registrar onde e como um programa reside em memória.</li>
+                <li>Converter endereços lógicos de programas em endereços reais de memória.</li>
+            </ul>
+            <img src="img/sistemas-operacionais5.png" alt="sistemas-operacionais5.png">
+            <ul>
+                <li><b>Endereço lógico</b>: referência a um valor armazenado, relativa ao programa que faz a referência.</li>
+                <li><b>Endereço físico</b>: endereço real no dispositivo de memória principal.</li>
+                <li><b>Ligação de endereço</b>: o mapeamento de um endereço lógico em um endereço físico.</li>
+            </ul>
+            <b>Gerenciamento de memória contígua única:</b>
+            <ul>
+                <li>A abordagem de gerenciamento de memória na qual um programa é carregado em uma área contígua de memória</li>
+            </ul>
+            <img src="img/sistemas-operacionais6.png" alt="sistemas-operacionais6.png">
+            <p></p>
+            <b>Gerenciamento de memória particionada:</b>
+            <p>há mais de um programa aplicativo em memória ao mesmo tempo, compartilhando espaço em memória e tempo de CPU.</p>
+            <ul>
+                <li><b>Técnica de partição fixa</b>: a memória é dividida em um número específico de partições nas quais os programas são carregados.</li>
+                <li><b>Técnica de partição dinâmica</b>: a memória é dividida em partições necessárias para acomodar programas.</li>
+            </ul>
+            <ul>
+                <li><b>Registrador base</b>: mantém o endereço de início da partição corrente.</li>
+                <li><b>Registrador de limites</b>: mantém o tamanho da partição corrente.</li>
+            </ul>
+            <img src="img/sistemas-operacionais7.png" alt="sistemas-operacionais7.png">
+            <ul>
+                <li><b>Técnica de memória paginada</b>: processos são divididos em páginas de tamanho fixo e carregados em quadros de memória.</li>
+                <li><b>Quadro</b>: tamanho fixo de memória principal que guarda uma página de processo.</li>
+                <li><b>Página</b>: tamanho fixo de um processo que é armazenado em um quadro de memória</li>
+                <li><b>Tabela de mapeamento de páginas (TMP)</b>: registro de relacionamentos página/quadro usada pelo sistema operacional.</li>
+            </ul>
+            <img src="img/sistemas-operacionais8.png" alt="sistemas-operacionais8.png">
+            <p></p>
+            <img src="img/sistemas-operacionais9.png" alt="sistemas-operacionais9.png">
+        </section>
+
+        <section>
+            <h2>Gerenciamento de Processo.</h2>
+            <ul>
+                <li><b>Processos CPU-bound (orientados à CPU)</b>: processos que utilizam muito o processador.</li>
+                <li><b>Processos I/O-bound (orientados à E/S)</b>: processos que realizam muito E/S;</li>
+            </ul>
+            <img src="img/sistemas-operacionais10.png" alt="sistemas-operacionais10.png">
+            <ul>
+                <li><b>Escalonamento de CPU</b>: determinar qual processo no estado pronto deve ser movido para o estado executando.</li>
+                <ul>
+                    <li><b>Não preemptivo</b>: o processo correntemente em execução cede a CPU voluntariamente.</li>
+                    <li><b>Preemptivo</b>: o sistema operacional decide favorecer outro processo, interrompendo o processo em execução.</li>
+                </ul>
+                <li><b>Tempo de retorno</b>: tempo decorrido entre a chegada do processo ao estado pronto e sua conclusão final</li>
+            </ul>
+            <p>Primeiro a chegar, primeiro a sair:</p>
+            <img src="img/sistemas-operacionais11.png" alt="sistemas-operacionais11.png">
+            <p>Menor trabalho primeiro:</p>
+            <img src="img/sistemas-operacionais12.png" alt="sistemas-operacionais12.png">
+            <p>Round Robin - Intervalo tempo 50:</p>
+            <img src="img/sistemas-operacionais13.png" alt="sistemas-operacionais13.png">
+            <img src="img/sistemas-operacionais14.png" alt="sistemas-operacionais14.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de jun de 2024</p>
+    </footer>
+</body>
+</html>
