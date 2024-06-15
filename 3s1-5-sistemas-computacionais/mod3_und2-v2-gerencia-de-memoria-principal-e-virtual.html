@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Sistemas Operacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Sistemas Operacionais.</h1>
+        <h2>💡 Unidade 2 - Gerência de memória: memória principal e memória virtual.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=1c1KklADRVQ&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Sistemas Computacionais - Gerenciamento de memória: Memória Virtual. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Alessandra Alaniz Macedo (UNIVESP).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Gerenciamento de memória.</h3>
+            <p>Memória Virtual.</p>
+        </section>
+
+        <section>
+            <h2>CONTEXTUALIZANDO.</h2>
+            <ul>
+                <li>O Sistema Operacional tem duas funções:</li>
+                <ul>
+                    <li>Interface para programas de usuário</li>
+                    <li>Gerência de recursos e controle de processo na CPU</li>
+                    <ul>
+                        <li>Gerenciamento de processos</li>
+                        <li>Gerenciamento de memória</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>GERENCIAMENTO DE MEMÓRIA.</h2>
+            <ul>
+                <li>Quem faz?</li>
+                <ul>
+                    <li>SO gerencia a memória e inclui a Memória Virtual</li>
+                </ul>
+                <li>O que faz?</li>
+                <ul>
+                    <li>Usa técnicas para tornar a memória mais eficiente</li>
+                    <li>Monoprogramação e multiprogamação</li>
+                </ul>
+                <li>Por que faz?</li>
+                <ul>
+                    <li>Busca do ideal para memória: grande, rápida, não volátil e de baixo custo</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>HIERARQUIA DE MEMÓRIAS.</h2>
+            <img src="img/memoria13.png" alt="memoria13.png">
+            <p></p>
+            <img src="img/memoria14.png" alt="memoria14.png">
+        </section>
+
+        <section>
+            <h2>O QUE É MEMÓRIA VIRTUAL (MV)?.</h2>
+            <ul>
+                <li>É uma técnica que resulta em tempo de acesso a memória de disco (disco rígido - HD) estatisticamente não muito pior que a memória principal</li>
+                <li>Seus princípios:</li>
+                <ul>
+                    <li>Localidade (espacial e temporal)</li>
+                    <li>Função de mapeamento (tradução endereços pelo MMU)</li>
+                    <li>Funcionamento automático</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>EXPANSÃO DOS NÍVEIS COMO NUMA CACHE.</h2>
+            <i>https://image.slidesharecdn.com/arq-memorias-200318002953/75/Arquitetura-de-Computadores-Memorias-7-2048.jpg</i>
+            <img src="img/computador3.webp" alt="computador3.webp">
+            <p>A MV poder ser uma espécie de cache com níveis para relacionar a memória principal e a memória de disco</p>
+        </section>
+
+        <section>
+            <h2>MONO E MULTIPROGRAMAÇÃO.</h2>
+            <ul>
+                <li>Considerando a hierarquia de memória, pode-se gerenciá-la fazendo:</li>
+                <ul>
+                    <li>Monoprogramação</li>
+                    <li>Multiprogramação</li>
+                </ul>
+            </ul>
+            <i>https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Li_mwuuW-i3Mv0GINQfyGg.png</i>
+            <img src="img/memoria2.webp" alt="memoria2.webp">
+        </section>
+
+        <section>
+            <h2>MULTIPROGRAMAÇÃO.</h2>
+            <ul>
+                <li>Exige a divisão da memória principal para manipular os diferentes processos com as seguintes abordagens:</li>
+                <ul>
+                    <li>Particionamento fixo (alocação estática)</li>
+                    <li>Particionamento variável (alocação dinâmica)</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>PARTICIONAMENTO VARIÁVEL.</h2>
+            <i>https://miro.medium.com/v2/resize:fit:720/format:webp/1*MR_BGLcKnzGEqf28Y_rHLw.png</i>
+            <img src="img/memoria3.webp" alt="memoria3.webp">
+        </section>
+
+        <section>
+            <h2>CONCEITO BÁSICO DE MEMÓRIA VIRTUAL: HARDWARE + SOFTWARE.</h2>
+            <img src="img/memoria15.png" alt="memoria15.png">
+        </section>
+
+        <section>
+            <h2>MEMORY MAMAGEMENT UNIT (MMU).</h2>
+            <ul>
+                <li>É um dispositivo de hardware (um circuito)</li>
+                <li>Faz a tradução do endereço lógico (virtual ou lógico usado pelo programa) em físico (da memória de fato)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>MEMÓRIA VIRTUAL.</h2>
+            <ul>
+                <li>Nem os programas e nem a memória física tem que usar todo o espaço de endereçamento</li>
+                <li>O espaço de endereçamento define os limites do endereçamento</li>
+                <li>O mecanismo de tradução de endereços deve saber quais faixas de endereçamento estão sendo usadas no nível virtual e físico</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>VANTAGENS DA MEMÓRIA VIRTUAL.</h2>
+            <ul>
+                <li>O espaço virtual pode ser maior que o físico</li>
+                <li>É um excelente suporte para a coexistência de vários programas</li>
+                <li>Compartilhamento de memória física ou periféricos entre processos, mesmo em endereços virtuais diferentes</li>
+                <li>Tradução das faixas de endereços virtuais, nos vários processos, para uma mesma faixa de endereços físicos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>BIBLIOGRAFIA.</h2>
+            <ul>
+                <li>Delgado, J & Ribeiro, C. Arquitetura de Computadores, 5ª edição. [Digite o Local da Editora]: Grupo GEN, 2017. 9788521633921. Disponível em: https://integrada.minhabiblioteca.com.br/#/books/9788521633921/. Acesso em: 13 Jan 2021</li>
+                <li>Stallings, W. Arquitetura e organização de computadores. Parte II. Cap 8 Páginas 233 e 270 (de 731 páginas). Editora: Editora Pearson. Edição: 10° (2017). Idioma: Português. ISBN: 9788543020532</li>
+                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Cap. 6 (O Sistema Operacional). Páginas: 363 a 425 (de 628 páginas). Editora: Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de jun de 2024</p>
+    </footer>
+</body>
+</html>
