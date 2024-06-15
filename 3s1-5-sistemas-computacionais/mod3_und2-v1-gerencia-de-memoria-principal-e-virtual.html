@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 – Sistemas Operacionais.</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Sistemas Operacionais.</h1>
+        <h2>💡 Unidade 2 - Gerência de memória: memória principal e memória virtual.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=9a5nKZHoai8&ab_channel=EmilioFrancesquini" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                5.7 - Arquitetura de Computadores - Memória Virtual - Uma Breve Revisão. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Emílio Francesquini (UFABC).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Memória Virtual - Uma Breve Revisão.</h3>
+        </section>
+
+        <section>
+            <h2>Fundamentos.</h2>
+            <ul>
+                <li>O código precisa estar na memória para ser executado, mas o programa completo raramente é usado</li>
+                <ul>
+                    <li>Código de erro, rotinas incomuns, grandes estruturas de dados</li>
+                </ul>
+                <li>Todo o código do programa não é necessário ao mesmo tempo</li>
+                <li>Considere a capacidade de executar programas parcialmente carregados</li>
+                <ul>
+                    <li>Programa não seriam mais limitados pelos por limites físicos da memória RAM</li>
+                    <li>Cada programa precisa de menos memória durante a execução: assim mais programas podem executar ao mesmo tempo</li>
+                    <ul>
+                        <li>Maior utilização da CPU e taxa de transferência sem aumento no tempo de resposta ou no tempo de retorno</li>
+                    </ul>
+                    <li>Menos E/S necessário para carregar ou trocar programas em memória: logo cada programa do usuário é executado mais rapidamente</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Memória virtual.</h2>
+            <ul>
+                <li>Memória virtual - separação da memória lógica do usuário da memória física</li>
+                <ul>
+                    <li>Apenas parte do programa precisa estar na memória para execução</li>
+                    <li>O espaço de endereçamento lógico pode, portanto, ser muito maior do que espaço de endereçamento físico</li>
+                    <li>Permite que os espaços de endereço sejam compartilhados por vários processos</li>
+                    <li>Permite uma criação de processo mais eficiente</li>
+                    <li>Mais programas em execução simultaneamente</li>
+                    <li>Menos E/S necessário para carregar ou trocar processos</li>
+                    <li>Memória virtual pode ser implementada via:</li>
+                    <ul>
+                        <li>Paginação por demanda</li>
+                        <li>Segmentação por demanda</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Memória virtual que é maior que a memória física.</h2>
+            <img src="img/memoria10.png" alt="memoria10.png">
+        </section>
+
+        <section>
+            <h2>Espaço de endereço virtual.</h2>
+            <ul>
+                <li>Geralmente projeta-se o espaço de endereço lógico da pilha para começar no endereço lógico máximo e crescer "para baixo enquanto heap cresce "para cima"</li>
+                <ul>
+                    <li>Maximiza o uso do espaço de endereçamento</li>
+                    <li>Espaço de endereço não utilizado entre os dois é buraco</li>
+                    <ul>
+                        <li>Nenhuma memória física necessária até a pilha ou heap crescerem até uma nova página</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/memoria11.png" alt="memoria11.png">
+            <ul>
+                <li>Habilita espaços de endereços <b>esparsos</b> com buracos deixados para crescimento, bibliotecas ligadas dinamicamente, etc.</li>
+                <li>Bibliotecas compartilhadas via mapeamento no espaço de endereçamento virtual</li>
+                <li>Memória compartilhada com páginas mapeadas em modo de leitura-escrita no espaço de endereço virtual</li>
+                <li>As páginas podem ser compartilhadas durante o <b>fork()</b>, acelerando a criação de processos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Biblioteca compartilhada usando memória virtual.</h2>
+            <img src="img/memoria12.png" alt="memoria12.png">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de jun de 2024</p>
+    </footer>
+</body>
+</html>
