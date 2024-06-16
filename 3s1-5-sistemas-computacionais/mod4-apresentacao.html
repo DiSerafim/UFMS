@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Entrada e Saída (E/S).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
+        <h2>💡 Apresentação do Módulo 4.</h2>
+        <!-- <h2>💡 Unidade 1 - Tabelas de Dispersão: Hash.</h2> -->
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=Vc4zeg9jMsQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Sistemas Computacionais - Módulo 4. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dra. Nahri Moreano.</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Entrada e Saída (E/S).</h3>
+        </section>
+
+        <section>
+            <h2>Visão Geral da Organização de um Computador.</h2>
+            <ul>
+                <li>Processador</li>
+                <li>Memórias</li>
+                <li>Sistema de entrada e saída (E/S):</li>
+                <ul>
+                    <li>Dispositivos de E/S</li>
+                    <li>Barramentos: interconexão entre processador, memórias e dispositivos de E/S</li>
+                </ul>
+            </ul>
+            <img src="img/entrada-e-saida.png" alt="entrada-e-saida.png">
+        </section>
+
+        <section>
+            <h2>Dispositivos de E/S.</h2>
+            <ul>
+                <li>Categorias:</li>
+                <ul>
+                    <li>Dispositivos de armazenamento secundário</li>
+                    <li>Dispositivos para interação usuário/computador</li>
+                </ul>
+                <li>Composto por:</li>
+                <ul>
+                    <li>Dispositivo propriamente dito</li>
+                    <li>Controlador do dispositivo de E/S:</li>
+                    <ul>
+                        <li>Circuito que controla operação do dispositivo de E/S</li>
+                        <li>Conectado ao barramento</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Operações de E/S.</h2>
+            <ul>
+                <li>SO atua como interface entre programas do usuário e dispositivos de E/S</li>
+                <li>Realização de operação de E/S requer comunicação entre processador e controlador do dispositivo de E/S</li>
+                <li>Controlador possui registradores internos para armazenar dados, endereços e sinais de controle</li>
+                <li>Processador comunica-se com controlador lendo e escrevendo nos registradores, através do barramento</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Comunicação entre Processador e Controlador de E/S.</h2>
+            <ul>
+                <li><b>Instruções de E/S</b>: Instruções de máquina especiais</li>
+                <ul>
+                    <li>Processador requisita operação de E/S executando instruções de E/S</li>
+                    <li>Instrução de E/S transfere dado para registrador do controlador, através do barramento</li>
+                </ul>
+                <li><b>E/S mapeada na memória</b>:</li>
+                <ul>
+                    <li>Registradores do controlador são mapeados no espaço de endereçamento do processador</li>
+                    <li>Processador requisita operação de E/S executando instruções comuns de transferência de dados, nos endereços mapeados</li>
+                    <li>Acesso a endereço mapeado causa transferência de dado para registrador do controlador, através do barramento</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Operações de E/S.</h2>
+            <ul>
+                <li>Realizadas através da interação entre processador e controlador do dispositivo de E/S</li>
+                <li>Formas de interação:</li>
+                <ul>
+                    <li>E/S por polling ou E/S programada</li>
+                    <li>E/S por interrupção</li>
+                    <li>E/S por acesso direto à memória (DMA – Direct Memory Access)</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E/S por Polling.</h2>
+            <ul>
+                <li>Ao realizar operação de E/S:</li>
+                <ul>
+                    <li>Para cada dado a ser transferido, processador repetidamente lê registradores do controlador de E/S, testando se operação de E/S terminou.</li>
+                </ul>
+                <li>Processador fica em <b>espera ocupada</b> (busy waiting) ⇒ Desperdício de tempo do processador ⇒ Piora desempenho.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E/S por Interrupção.</h2>
+            <ul>
+                <li>Processador:</li>
+                <ul>
+                    <li>Possui pino ligado ao barramento, por onde recebe sinal de interrupção do controlador de E/S</li>
+                    <li>Testa se há interrupção, após executar cada instrução</li>
+                </ul>
+                <li>Quando controlador de E/S termina operação de E/S:</li>
+                <ul>
+                    <li>Gera sinal de interrupção, notificando processador</li>
+                    <li>Envia pelo barramento identificação do dispositivo de E/S</li>
+                </ul>
+                <li>Processador executa rotina de tratamento da interrupção e transfere dado entre controlador e memória</li>
+                <li>Processador fica livre para executar outro processo, enquanto operação de E/S não termina ⇒ Melhora desempenho</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E/S por Acesso Direto à Memória.</h2>
+            <ul>
+                <li><b>Controlador de DMA</b>:</li>
+                <ul>
+                    <li>Circuito que transfere dados entre memória e controlador do dispositivo de E/S, sem intervenção do processador</li>
+                    <li>Gera interrupção para processador apenas quando operação completa de E/S termina</li>
+                </ul>
+                <li>Libera processador da tarefa de receber cada dado transferido e armazená-lo na memória</li>
+                <li>Processador fica mais livre para executar outro processo, enquanto operação de E/S não termina ⇒ Melhora desempenho</li>
+                <li>Reduz quantidade de interrupções recebidas e tratadas pelo processador</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interrupção.</h2>
+            <ul>
+                <li>Evento assíncrono, gerado fora do processador</li>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>Fim de operação de E/S</li>
+                </ul>
+                <li>Quando processador recebe sinal de interrupção:</li>
+                <ul>
+                    <li>Suspende temporariamente processo em execução</li>
+                    <li>Aciona SO</li>
+                    <li>Determina dispositivo de E/S que causou interrupção</li>
+                    <li>Executa rotina de tratamento da interrupção</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Chamada ao Sistema.</h2>
+            <ul>
+                <li>Chamada ao sistema operacional (system call)</li>
+                <li>Solicitação de serviço, feita por programa do usuário, ao SO</li>
+                <li>Exemplos de serviços:</li>
+                <ul>
+                    <li>Operações de E/S</li>
+                    <li>Operações de criação e terminação de processo</li>
+                    <li>Operações de alocação e liberação de memória</li>
+                </ul>
+                <li>Quando processo faz chamada ao SO:</li>
+                <ul>
+                    <li>Processo em execução é suspenso temporariamente</li>
+                    <li>Aciona SO</li>
+                    <li>Determina serviço solicitado</li>
+                    <li>Executa rotina de serviço</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de jun de 2024</p>
+    </footer>
+</body>
+</html>
