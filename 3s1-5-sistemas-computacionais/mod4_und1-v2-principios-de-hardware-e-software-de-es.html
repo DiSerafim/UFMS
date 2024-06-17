@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Entrada e Saída (E/S).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
+        <h2>💡 Unidade 1 - Princípios de hardware e software de E/S.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=z-LNdajnk3E&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Sistemas Operacionais – Aula 22 – Técnicas de E/S I. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Jó Ueyama (UNIVESP).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Técnicas de E/S I.</h3>
+        </section>
+
+        <section>
+            <h2>Princípios de software para E/S.</h2>
+            <ul>
+                <li>Vimos os princípios de hardware na aula passada.</li>
+                <li>Objetivos dos princípios de software (parte de SW).</li>
+                <li>Independência de dispositivo:</li>
+                <ul>
+                    <li>Não deve se preocupar com o dispositivo (CD, HD etc.).</li>
+                    <li>Cabe ao SO cuidar das particularidades.</li>
+                </ul>
+                <li>Nomenclatura uniforme:</li>
+                <ul>
+                    <li>Nome independente do dispositivo.</li>
+                </ul>
+                <li>Objetivos dos princípios de software (parte de SW).</li>
+                <li>Tratamento de erro:</li>
+                <ul>
+                    <li>Devem ser tratados o mais próximo do HW possível.</li>
+                    <li>Sem que o usuário tome conhecimento.</li>
+                    <li>Ex: repetindo a operação.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modos de Operação de E/S.</h2>
+            <ul>                
+                <li>E/S programada.</li>
+                <li>E/S via interrupções.</li>
+                <li>E/S via acesso direto à memória.</li>
+                <li>O que distingue as três formas?</li>
+                <ul>
+                    <li>É a participação da CPU.</li>
+                    <li>E a utilização das interrupções.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E/S programada.</h2>
+            <ul>
+                <li>Forma mais simples de E/S → <b>tudo é feito pela CPU</b>.</li>
+                <li>Os dados são trocados entre a CPU e o módulo de E/S.</li>
+                <li>A CPU executa um programa que:</li>
+                <ul>
+                    <li>Verifica o estado do módulo de E/S.</li>
+                    <li>Envia o comando de operação.</li>
+                    <li>Aguarda o resultado.</li>
+                    <li>Efetua a transferência para registrador da CPU.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E/S programada: Exemplo..</h2>
+            <ul>
+                <li>Imprimir "ABCDEFGH" na impressora.</li>
+                <li>Processo de impressão de cada caractere:</li>
+                <ul>
+                    <li>controlado pela CPU.</li>
+                </ul>
+            </ul>
+            <img src="img/es3.png" alt="es3.png">
+        </section>
+
+        <section>
+            <h2>E/S programada: desvantagens.</h2>
+            <ul>
+                <li>CPU é ocupada o tempo todo.</li>
+                <li>Ela realiza toda a E/S.</li>
+                <li>Espera ocupada para saber se imprimiu:</li>
+                <ul>
+                    <li>também chamada de polling.</li>
+                </ul>
+                <li>Outro exemplo: leitura.</li>
+                <ul>
+                    <li>Escrita é semelhante.</li>
+                </ul>
+            </ul>
+            <img src="img/es4.png" alt="es4.png">
+        </section>
+
+        <section>
+            <h2>E/S via interrupção.</h2>
+            <ul>
+                <li>Um exemplo de interrupção.</li>
+                <li>CPU requisita uma leitura no disco.</li>
+                <li>Controladora lê os dados enquanto a CPU faz outras tarefas.</li>
+                <li>Controladora envia uma <b>interrupção</b> à CPU.</li>
+                <li>CPU solicita os dados.</li>
+                <li>Controladora envia os dados.</li>
+            </ul>
+            <img src="img/es5.png" alt="es5.png">
+            <ul>
+                <li>Superar problema da espera da CPU.</li>
+                <ul>
+                    <li>Ex: impressora que não armazena caracteres.</li>
+                    <li>Quando pede mais dados, gera interrupção à CPU.</li>
+                </ul>
+                <li>A CPU:</li>
+                <ul>
+                    <li>Envia um comando para E/S.</li>
+                    <li>Executar outra tarefa.</li>
+                    <li>Envia sinal quando E/S realizada.</li>
+                    <li>CPU lê os dados da controladora.</li>
+                </ul>
+                <li>Interrupções são identificadas por números.</li>
+                <li>O menor número tem prioridade sobre o maior.</li>
+                <li>Ex: mapeamento das interrupções em um sistema compatível com IBM.</li>
+            </ul>
+            <img src="img/es6.png" alt="es6.png">
+        </section>
+
+        <section>
+            <h2>E/S via acesso direto à memória.</h2>
+            <ul>
+                <li>Inconvenientes das técnicas anteriores:</li>
+                <ul>
+                    <li>Limitam a capacidade de transferência da CPU.</li>
+                    <li>CPU fica ocupada no gerenciamento.</li>
+                    <li>Desempenho cai para grandes dados.</li>
+                </ul>
+                <li>Solução?</li>
+                <li>Acesso direto à memória.</li>
+                <li>Tirando a CPU do gerenciamento.</li>
+                <li>Direct Memory Access (DMA).</li>
+                <li>Necessita de uma controladora de DMA.</li>
+                <li>DMA faz a E/S programada, em vez da CPU.</li>
+            </ul>
+            <img src="img/es7.png" alt="es7.png">
+        </section>
+
+        <section>
+            <h2>E/S via DMA: informações.</h2>
+            <ul>
+                <li>Informações DMA?</li>
+                <li>Endereço de memória.</li>
+                <li>Quantidade de bytes.</li>
+                <li>A porta de E/S a ser usada.</li>
+                <li>Direção da transferência (do dispositivo ou para o dispositivo).</li>
+                <li>Unidade de transferência (byte ou palavra por vez).</li>
+            </ul>
+            <img src="img/es7.png" alt="es7.png">
+        </section>
+
+        <section>
+            <h2>E/S via DMA.</h2>
+            <ul>
+                <li>Desvantagem:</li>
+                <ul>
+                    <li>A CPU mais rápida que a controladora de DMA.</li>
+                    <li>Arquitetura mais barata.</li>
+                </ul>
+                <li>Vantagem:</li>
+                <ul>
+                    <li>DMA executa E/S programada.</li>
+                    <li>Controladora de DMA faz todo o trabalho.</li>
+                    <li>Libera a CPU.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bibliografia:</h2>
+            <ul>
+                <li>Sistemas Operacionais Modernos; Tanenbaum, A.S. 4ª Edição.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de jun de 2024.</p>
+    </footer>
+</body>
+</html>
