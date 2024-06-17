@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Entrada e Saída (E/S).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
+        <h2>💡 Unidade 1 - Princípios de hardware e software de E/S.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=E0HHKJPIwmg&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Sistemas Operacionais – Aula 21 – Introdução à E/S. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Jó Ueyama (UNIVESP).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Introdução à E/S.</h3>
+            <ul>
+                <li>E/S no SO.</li>
+                <ul>
+                    <li>Além de processos, RAM, etc.</li>
+                    <li>SO controla todos os dispositivos de E/S.</li>
+                    <li>Comandos para:</li>
+                    <ul>
+                        <li>Emitir instruções (read, write, etc.).</li>
+                        <li>Interceptar interrupções.</li>
+                        <li>Tratar erros.</li>
+                    </ul>
+                    <li><b>Interface única</b></li>
+                    <ul>
+                        <li>Para todos os dispositivos.</li>
+                    </ul>
+                    <li>Boa parcela do SO (e.g. drivers, overhead, etc.).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de E/S.</h2>
+            <ul>
+                <li>Podem ser classificados:</li>
+                <ul>
+                    <li>Tipo de conexão.</li>
+                    <li>Tipo de transferência de dados.</li>
+                    <li>Tipo de compartilhamento de conexões.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>1) <b>Tipo de conexão</b></h2>
+            <ul>
+                <li>Natureza da conexão entre:</li>
+                <ul>
+                    <li>Módulo de E/S x periférico.</li>
+                </ul>
+                <li>Serial x Paralela.</li>
+            </ul>
+
+            <b>Conexão serial.</b>
+            <ul>
+                <li>Única linha de conexão.</li>
+                <li>Vantagens:</li>
+                <ul>
+                    <li>Mais barata que a paralela.</li>
+                    <li>Mais lenta que a paralela.</li>
+                    <li>Relativamente confiável.</li>
+                    <li>Usada em dispositivos mais baratos e lentos.</li>
+                    <ul>
+                        <li>Impressoras e terminais.</li>
+                    </ul>
+                </ul>
+            </ul>
+            
+            <b>Conexão paralela.</b>
+            <ul>
+                <li>Várias linhas e bits de dados.</li>
+                <li>Características principais:</li>
+                <ul>
+                    <li>Mais complexa que a serial.</li>
+                    <li>Mais cara.</li>
+                    <li>Mais rápida.</li>
+                    <li>Altamente confiável.</li>
+                    <li>Usada em dispositivos mais velozes.</li>
+                    <ul>
+                        <li><b>Ex:</b> disco.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2) Tipo de transferência de E/S</h2>
+            <b>Dispositivos de bloco (block devices):</b>
+            <ul>
+                <li>Blocos de tamanho fixo.</li>
+                <ul>
+                    <li>Cada um com endereço.</li>
+                    <li>Tamanho de 128 a 1024 bytes.</li>
+                </ul>
+                <li>Transferências com um ou mais blocos.</li>
+                <li>Referência de localidade.</li>
+                <li>Mais otimizados.</li>
+                <li>E/S toma tempo.</li>
+                <li><b>Ex:</b> HD, CD-ROM, Drive USB.</li>
+            </ul>
+            <b>Dispositivos de caracter (character devices):</b>
+            <ul>
+                <li>Acessam um fluxo de caracteres.</li>
+                <li>Não consideram bloco.</li>
+                <li>Não são endereçáveis.</li>
+                <li>Não possuem acesso aleatório (“seek operation").</li>
+                <li><b>Ex:</b> impressoras, interfaces de rede, mouses.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3) Compartilhamento de conexões.</h2>
+            <b>Ponto a Ponto:</b>
+            <ul>
+                <li>É a conexão mais simples.</li>
+                <li>Linha dedicada para a ligação.</li>
+                <li>Entre o módulo de E/S e periférico.</li>
+                <li>Oferece maior confiabilidade.</li>
+                <li>Paralelismo.</li>
+                <li>Protocolos RTS/CTS.</li>
+            </ul>
+            <img src="img/es.png" alt="es.png">
+            <p></p>
+            <b>Multiponto:</b>
+            <ul>
+                <li>Compartilha um conjunto de linhas.</li>
+                <li>Entre diversos periféricos.</li>
+                <li>Maior escalabilidade que a ponto a ponto.</li>
+                <li>Não permite paralelismo.</li>
+                <li>Usada para armazenamento.</li>
+                <li>Interfaces de rede: crossbar.</li>
+                <li>Exemplos: IDE, SCSI, USB, etc.</li>
+            </ul>
+            <img src="img/es1.png" alt="es1.png">
+        </section>
+
+        <section>
+            <h2>Princípios de hardware.</h2>
+            <ul>
+                <li>As unidades de E/S:</li>
+                <ul>
+                    <li>Componente mecânico.</li>
+                    <ul>
+                        <li>O dispositivo em si.</li>
+                    </ul>
+                    <li>Controladora de dispositivo:</li>
+                    <ul>
+                        <li>Componente eletrônico do dispositivo.</li>
+                        <li>Parte programável.</li>
+                        <li>Nos PCs, um Cl.</li>
+                        <li>Há controladores para dispositivos idênticos. • Órgãos de padronização: IEEE, ISO, ANSI, etc.</li>
+                    </ul>
+                </ul>
+                <li>O SO trata com a controladora.</li>
+                <li>Não lida com os dispositivos.</li>
+                <li>Comunicação CPU e controladoras.</li>
+                <ul>
+                    <li>Usa barramentos comuns (interface de <b>alto nível</b>).</li>
+                </ul>
+                <li>Interface entre controladora e dispositivo: <b>baixo nível</b>.</li>
+            </ul>
+            <i>https://www.ic.unicamp.br/~lehilton/cursos/1s2020/mc102qr/unidades/figs/organizacao.svg</i>
+            <img src="img/es2.svg" alt="es2.svg">
+        </section>
+
+        <section>
+            <h2>Exemplo com uma controladora de disco.</h2>
+            <ul>
+                <li>Recebe um fluxo de bits com:</li>
+                <ul>
+                    <li>Preambulo.</li>
+                    <li>Os bits do setor.</li>
+                    <li>Checksum (Error-Correcting Code – ECC).</li>
+                </ul>
+                <li>Do dispositivo:</li>
+                <ul>
+                    <li>Monta os bytes em bloco.</li>
+                    <li>Coloca-os em um buffer interno.</li>
+                    <li>Após verificar a checksum.</li>
+                    <li>Copia o bloco na RAM.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Princípio de hardware: controladoras.</h2>
+            <ul>
+                <li>Cada controladora possui registradores.</li>
+                <ul>
+                    <li>Controle pela CPU.</li>
+                    <li>Dados para ler/escrever no dispositivo.</li>
+                </ul>
+                <li>O SO pode comandar o dispositivo.</li>
+                <li>Escrevendo comandos e seus parâmetros.</li>
+                <li>Depois de escrever comando.</li>
+                <li>CPU executa outra tarefa; interrupção quando termina.</li>
+                <li>Usa estes registradores.</li>
+                <li>Saber o estado do dispositivo, etc.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formas de comunicação CPU x controladora: mapeada na memória.</h2>
+            <ul>
+                <li>Está dentro do espaço da memória.</li>
+                <li>Usa um conjunto de endereços reservados.</li>
+                <li>Registradores são tratados como posições de memórias.</li>
+                <li>Mapeia todos os registradores no espaço de memória.</li>
+                <li>Geralmente o topo do espaço de endereços.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formas de comunicação CPU x controladora: mapeada em E/S.</h2>
+            <ul>
+                <li>Controladora recebe um número de portas de E/S.</li>
+                <li>Acessadas via instruções especiais.</li>
+                <li>Usadas apenas pelo SO.</li>
+                <ul>
+                    <li>IN REG, PORT</li>
+                    <li>OUT PORT, REG</li>
+                </ul>
+                <li>Espaços de endereços diferentes.</li>
+                <li>Para a memória e E/S.</li>
+            </ul>
+            <img src="img/es2.png" alt="es2.png">
+        </section>
+
+        <section>
+            <h2>Formas de comunicação CPU x controladora: híbrido.</h2>
+            <ul>
+                <li>Buffers de dados na memória.</li>
+                <li>Portas de E/S para controle.</li>
+                <li>Exemplo no Pentium:</li>
+                <ul>
+                    <li>640 Ka 1M-1 para buffer de dados.</li>
+                    <li>Portas de E/S de 0 a 64K-1 (p/ controle).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bibliografia:</h2>
+            <ul>
+                <li>Sistemas Operacionais Modernos; Tanenbaum, A. S 4ª Edição.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de jun de 2024</p>
+    </footer>
+</body>
+</html>
