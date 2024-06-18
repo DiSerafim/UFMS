@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4 – Entrada e Saída (E/S).</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
+        <h2>💡 Unidade 2 - Operações de E/S, chamadas ao sistema operacional e interrupçõesURL.</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=IE9EVxy8Ups&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Sistemas Operacionais – Aula 03 - Chamada de Sistema e Interrupção. 
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Jó Ueyama (UNIVESP).</p>
+        </section>
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Chamada de Sistema e Interrupção.</h3>
+        </section>
+
+        <section>
+            <h2>Chamadas de Sistemas.</h2>
+            <ul>
+                <li>Se uma aplicação precisa realizar alguma instrução privilegiada (<b>imprimir um arquivo</b>),</li>
+                <li>ela realiza uma <b>chamada de sistema</b>, que altera do <b>modo usuário</b> para o <b>modo kernel</b>;</li>
+                <li>Ex: Ler um arquivo</li>
+                <li>Chamadas de sistemas são a porta de entrada para o <b>modo kernel</b>;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Como elas são realizadas?</h2>
+            <ul>
+                <li>1) As chamadas de sistemas são realizadas através de instruções <b>Traps</b>.</li>
+                <li>2) Traps são conhecidos como <b>interrupções de software</b>.</li>
+                <li>3) Após o término da chamada (ex.: ler um arquivo), a execução <b>continua após a chamada de sistema</b></li>
+            </ul>
+            <img src="img/chamada-de-sistema.png" alt="chamada-de-sistema.png">
+            <p></p>
+            <b>Passos p/ Chamada de Sistema:</b>
+            <p></p>
+            <img src="img/chamada-de-sistema1.png" alt="chama1da-de-sistema.png">
+            <ul>
+                <li>(a) Aplicativo faz chamada ao sistema (Trap).</li>
+                <li>(b) Através de uma tabela, o SO determina o endereço da rotina.</li>
+                <li>(c) Rotina de Serviço é acionada (<b>rotina compartilhada</b>).</li>
+                <li>(d) Serviço solicitado é executado e o controle retorna ao aplicativo.</li>
+            </ul>
+            <i>https://edisciplinas.usp.br/pluginfile.php/7955196/mod_resource/content/1/aula03.pdf</i>
+            <img src="img/chamada-de-sistema2.png" alt="chama1da-de-sistem2.png">
+        </section>
+
+        <section>
+            <h2>Interfaces das SysCalls.</h2>
+            <ul>
+                <li>1) Interface para esconder a complexidade das syscalls.</li>
+                <li>2) Interface de programação fornecida pelo SO.</li>
+                <li>3) Geralmente escrita em linguagem de alto nível (C, C++ ou Java).</li>
+                <li>4) Normalmente as aplicações utilizam uma <b>Application Program Interface (API)</b>.</li>
+                <li>5) Interface que encapsula o acesso direto às chamadas ao sistema.</li>
+            </ul>
+            <p>Interface das Chamadas de Sistema (Wrappers) mais utilizadas:</p>
+            <ul>
+                <li>1) Win32 API para Windows</li>
+                <li>2) POSIX API para praticamente todas as versões de UNIX</li>
+                <li>3) Java API para a Java Virtual Machine (JVM)</li>
+            </ul>
+            <p>Motivos para utilizar APIs em vez das chamadas ao sistema diretamente:</p>
+            <ul>
+                <li>1) Portabilidade -- independência da plataforma</li>
+                <li>2) Esconder complexidade inerente às chamadas ao sistema</li>
+                <li>3) Acréscimo de funcionalidades que otimizam o desempenho</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Portabilidade usando Wrappers.</h2>
+            <img src="img/chamada-de-sistema3.png" alt="chama1da-de-sistem3.png">
+        </section>
+
+        <section>
+            <h2>Exemplo de Uso com printf().</h2>
+            <ul>
+                <li>Programa em C que invoca a função de biblioteca <b>printf()</b>, que por sua vez chama o system call <b>write()</b></li>
+                <li>A chamada <b>printf()</b> ocasiona a chamada <b>write()</b> e <b>exit()</b></li>
+            </ul>
+            <img src="img/chamada-de-sistema4.png" alt="chama1da-de-sistem4.png">
+        </section>
+
+        <section>
+            <h2>Interrupções.</h2>
+            <b>Vimos que um software pode interromper seu próprio processo (ao fazer uma chamada ao sistema):</b>
+            <ul>
+                <li>1) Usando <b>traps</b> (Interrupções de software ou Exceções).</li>
+                <li>2) Para isso, a aplicação tem que estar rodando.</li>
+            </ul>
+            <b>Mas ocorrem interrupções que não são causadas por aplicações em execução:</b>
+            <ul>
+                <li>1) Interrupções de hardware (<b>eventos externos</b>).</li>
+                <li>2) Um sinal elétrico no hardware.</li>
+                <li>3) Causa: dispositivos de E/S ou o clock.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Passos para tratar a interrupção:</h2>
+            <img src="img/chamada-de-sistema5.png" alt="chama1da-de-sistem5.png">
+        </section>
+
+        <section>
+            <h2>Interrupção vs. Traps.</h2>
+            <ul>
+                <li><b>Interrupção</b></li>
+                <ul>
+                    <li>Evento externo ao processador.</li>
+                    <li>Gerada por dispositivos que precisam da atenção do SO. Pode não estar relacionada ao processo que está rodando.</li>
+                </ul>
+                <li><b>Traps</b></li>
+                <ul>
+                    <li>Evento inesperado vindo de dentro do processador. Causados pelo processo corrente no processador (seja por chamada ao SO, seja por instrução ilegal).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplos de uma interrupção.</h2>
+            <img src="img/chamada-de-sistema6.png" alt="chama1da-de-sistem6.png">
+            <p></p>
+            <img src="img/chamada-de-sistema7.png" alt="chama1da-de-sistem7.png">
+            <p></p>
+            <img src="img/chamada-de-sistema8.png" alt="chama1da-de-sistem8.png">
+            <p></p>
+            <img src="img/chamada-de-sistema9.png" alt="chama1da-de-sistem9.png">
+            <p></p>
+            <img src="img/chamada-de-sistema10.png" alt="chama1da-de-sistem10.png">
+            <p></p>
+            <img src="img/chamada-de-sistema11.png" alt="chama1da-de-sistem11.png">
+        </section>
+
+        <section>
+            <h2>Bibliografia:</h2>
+            <ul>
+                <li>Sistemas Operacionais Modernos; Tanenbaum, A. S 4ª Edição.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de jun de 2024.</p>
+    </footer>
+</body>
+</html>
