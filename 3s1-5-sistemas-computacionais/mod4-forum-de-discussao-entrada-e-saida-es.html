@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 4 – Entrada e Saída (E/S).</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>No último módulo da disciplina, estudamos como as operações de entrada e saída (E/S) são realizadas pelo hardware e software do computador.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Para discutir sobre esses conceitos, estude as leituras e videoaulas selecionadas e, depois, responda às questões a seguir.</p>
+            <p>1) Vimos que a operação de E/S é realizada através da interação entre o processador e o controlador do dispositivo de E/S e que existem 3 modos diferentes de interação:</p>
+            <ul>
+                <li>E/S por polling (ou E/S programada);</li>
+                <li>E/S por interrupção</li>
+                <li>E/S por acesso direto à memória (DMA – Direct Memory Access).</li>
+            </ul>
+            <p>Quais as vantagens da E/S por DMA em relação à E/S apenas por interrupção?</p>
+            </ul>
+            <p>2) Vimos que uma chamada ao sistema operacional (do inglês, system call) é uma solicitação de serviço que um processo do usuário faz ao sistema operacional (SO). Alguns autores denominam a chamada ao sistema operacional de "interrupção de software". </p>
+            <p>Indique um exemplo de serviço que pode ser solicitado através de uma chamada ao sistema operacional.</p>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>1. As vantagens da E/S por DMA em relação à E/S apenas por interrupção.</b>
+            <p>Eficiência e desempenho:</p>
+            <ul>
+                <li>Com o DMA a transferência de dados é realizada diretamente entre o dispositivo de E/S e a memória, liberando a cpu para executar outras tarefas.</li>
+            </ul>
+            <p>Menor sobrecarga do processador:</p>
+            <ul>
+                <li>Com a DMA é minimizada a carga de trabalho do processador.</li>
+            </ul>
+            <p>Melhoria no tempo de resposta:</p>
+            <ul>
+                <li>O DMA permite transferência de grandes blocos de dados na operação o que resulta em um tempo de resposta mais rápido para E/S.</li>
+            </ul>
+            <p>Redução no número de interrupções:</p>
+            <ul>
+                <li>Com o DMA pode transferir grandes blocos de dados em uma única operação, tendo um número muito menor de interrupções geradas comparando com a E/S por interrupção.</li>
+            </ul>
+            <b>2. Exemplo de Serviço Solicitado através de uma Chamada ao Sistema Operacional.</b>
+            <p>Leitura de um arquivo do sistema de arquivos:</p>
+            <ul>
+                <li>Um processo de usuário que realiza uma chamada no sistema, Ex.: <b>read()</b> para que o SO acesse o dispositivo de armazenamento e localize o arquivo desejado, leia os dados do arquivo e os entregue ao processo que fez a chamada.</li>
+                <ul>
+                    <li><b>read()</b> fornece como parâmetro um identificador do arquivo, um buffer onde os dados lidos serão armazenados e o número de bytes a serem lidos.</li>
+                    <li>O SO ao receber a chamada realiza operações necessárias para acessar o dispositivo de armazenamento, localiza o arquivo, ler os dados e os coloca no buffer fornecido pelo processo de usuário.</li>
+                    <li>Após a leitura o SO retorna ao processo de usuário, indicando quantos bytes foram lidos.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de jun de 2024</p>
+    </footer>
+</body>
+</html>
