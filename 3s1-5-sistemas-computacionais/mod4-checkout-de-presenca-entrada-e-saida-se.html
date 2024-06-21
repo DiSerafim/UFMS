@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 4 – Entrada e Saída (E/S).</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+        <p>Vencimento: segunda, 1 abr 2024, 23:59</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SISTEMAS COMPUTACIONAIS
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo estudamos, entre outros assuntos, como as operações de entrada e saída (E/S) são realizadas pelo hardware e software do computador.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Escreva um texto claro e objetivo, de no máximo meia página, explicando para que serve o mecanismo de interrupção, na realização de uma operação de E/S.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+            <b>Mecanismo de interrupção na realização de operações de E/S.</b>
+            <p>O mecanismo de interrupção é fundamental na arquitetura dos SOs. Servem para otimizar a comunicação entre o processador e os dispositivos periféricos, garantindo um uso eficiente dos recursos do sistema.</p>
+            <ul>
+                <li>Notificação assíncrona:</li>
+                <ul>
+                    <li>As interrupções permitem que dispositivos periféricos, como teclados, impressoras e Hds, notifiquem o processador sobre a conclusão de uma operação de E/S ou a necessidade de atenção, sem que o processador precise constantemente verificar o estado desses dispositivos.</li>
+                </ul>
+                <li>Economia de recursos:</li>
+                <ul>
+                    <li>Ao invés de desperdiçar ciclos de cpu verificando repetidas vezes o estado dos dispositivos de E/S, o processador pode se concentrar em outras operações até receber uma interrupção.</li>
+                </ul>
+                <li>Resposta Imediata:</li>
+                <ul>
+                    <li>Sempre que ocorre uma interrupção o processador pode interromper temporariamente a execução do programa atual para atender a interrupção. Isso é realizado salvando o estado atual do processador e executando uma rotina de tratamento de interrupção específica para o dispositivo que gerou a interrupção.</li>
+                </ul>
+                <li>Flexibilidade e escalabilidade:</li>
+                <ul>
+                    <li>O mecanismo de interrupção é flexível e escalável permitindo que múltiplos dispositivos periféricos gerem interrupções independentes.</li>
+                </ul>
+            </ul>
+            <p>Exemplo:</p>
+            <ul>
+                <li>Um HD que está transferindo dados para a memória. Sem interrupções o processador precisaria verificar continuamente o status do disco para saber quando a transferência é concluída. Com as interrupções o HD pode sinalizar diretamente ao processador, assim que a transferência é concluída. O processador ao receber a interrupção pausa a tarefa atual e executa a rotina de tratamento de interrupção para processar os dados transferidos, e depois retornar a tarefa original.</li>
+            </ul>
+            <p>O mecanismos de interrupção é crucial para a eficiência dos sistemas de E/S permitindo uma comunicação eficaz entre o processador e os dispositivos periféricos. Reduzindo a sobrecarga do processador e melhorando a resposta do sistema garantindo uma utilização eficiente dos recursos.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de jun de 2024</p>
+    </footer>
+</body>
+</html>
