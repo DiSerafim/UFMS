@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1.</h1>
+        <h2>✅ [A4] Avaliação do Módulo 4 – Entrada e Saída (E/S).</h2>
+        <p>Profª Especialista: Dra. Nahri Moreano.</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>SISTEMAS COMPUTACIONAIS.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Profª Especialista: Dra. Nahri Moreano.</li>
+                <li>Iniciado em	terça, quinta, 20 jun 2024, 21:10</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quinta, 20 jun 2024, 21:41</li>
+                <li>Tempo empregado	30 minutos 53 segundos</li>
+                <li>Avaliar	10,00 de um máximo de 10,00(100%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Diferentes tipos de dispositivos de E/S são bastante similares em vários aspectos. Por exemplo, apresentam velocidades de transferência de dados parecidas.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Diferentes tipos de dispositivos de entrada e saída (E/S) variam significativamente em termos de velocidades de transferência de dados e outras características.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Uma operação de E/S é realizada através da interação entre o processador e o controlador de E/S, que pode ocorrer de uma das formas: E/S programada (ou E/S por polling), E/S por interrupção ou E/S por acesso direto à memória (DMA, do inglês Direct Memory Access). Uma importante semelhança entre estas três formas é o tempo gasto pelo processador participando na realização da operação de E/S.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>As três formas de realização de operações de E/S (E/S programada, E/S por interrupção, e E/S por acesso direto à memória - DMA) diferem significativamente no tempo gasto pelo processador participando na realização da operação de E/S.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Assinale as alternativas que NÃO representam uma função do controlador de um dispositivo de E/S.</p>
+                <p>Escolha uma ou mais:</p>
+                <ul>
+                    <li>a. Controlar o acesso ao barramento para o dispositivo de E/S.</li>
+                    <li>b. Controlar a execução das instruções de máquina do programa.</li>
+                    <li>c. Armazenar as instruções de máquina e os dados de um programa.</li>
+                    <li>d. Controlar a realização da operação de E/S no dispositivo de E/S.</li>
+                    <li>e. Controlar o funcionamento do dispositivo de E/S.</li>
+                </ul>
+                <b class="answer">Resposta: b, c. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li><b>b</b> - Não é uma função do controlador de E/S. Essa é uma função do processador (CPU), que executa as instruções de máquina de um programa.</li>
+                    <li><b>c</b> - Não é uma função do controlador de E/S. Essa é uma função da memória do sistema, como a RAM, que armazena instruções de máquina e dados de um programa.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Assinale a alternativa que representa uma desvantagem da E/S programada (ou E/S por polling).</p>
+                <ul>
+                    <li>a. O processador não realiza a tarefa de transferir os dados entre o controlador do dispositivo de E/S e a memória.</li>
+                    <li>b. O processador gasta grande parte do seu tempo testando se o dispositivo de E/S terminou a operação, em uma espera ocupada (busy waiting).</li>
+                    <li>c. O processador gasta grande parte do seu tempo testando se o dispositivo de E/S enviou um sinal de interrupção.</li>
+                    <li>d. O processador fica livre para executar outro programa enquanto a operação de E/S é realizada.</li>
+                    <li>e. O processador fica ocioso, por não ter outros programas para executar, enquanto a operação de E/S é realizada.</li>
+                </ul>
+                
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Na E/S programada, o processador verifica constantemente o status do dispositivo de E/S em um loop até que a operação de E/S seja concluída. Isso é conhecido como espera ocupada (busy waiting), e é uma grande desvantagem:</li>
+                    <ul>
+                        <li>Significa que a CPU é utilizada de maneira ineficiente, pois fica presa em um loop de verificação em vez de executar outras tarefas úteis. Essa abordagem desperdiça ciclos de CPU e reduz a performance geral do sistema.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Assinale a alternativa que NÃO representa uma característica de dispositivos de E/S de blocos.</p>
+                <ul>
+                    <li>a. Realizam transferências em unidades de um ou mais blocos inteiros.</li>
+                    <li>b. Cada bloco do dispositivo possui um endereço.</li>
+                    <li>c. Armazenam informações em blocos de tamanho fixo.</li>
+                    <li>d. Não possuem operação de posicionamento em um determinado bloco.</li>
+                    <li>e. Cada bloco do dispositivo pode ser lido ou escrito independente dos outros blocos.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Não representa uma característica dos dispositivos de E/S de blocos. Na verdade, uma das principais vantagens dos dispositivos de E/S de blocos é justamente a capacidade de acessar diretamente qualquer bloco específico, o que implica a existência de operações de posicionamento.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Sobre o sinal de interrupção (relativa a uma operação de E/S), é INCORRETO afirmar que:</p>
+                <ul>
+                    <li>a. Ele é enviado pelo controlador de E/S para o processador.</li>
+                    <li>b. Ele é enviado por uma linha do barramento.</li>
+                    <li>c. Ele força o processador a suspender temporariamente o programa em execução e executar uma rotina de tratamento da interrupção.</li>
+                    <li>d. Ele transfere o dado entre o dispositivo de E/S e a memória principal.</li>
+                    <li>e. Ele sinaliza ao processador que um dispositivo de E/S que requer atenção.</li>
+                </ul>
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O sinal de interrupção não transfere dados. Ele simplesmente notifica o processador de um evento que requer atenção. A transferência de dados entre o dispositivo de E/S e a memória principal é realizada por outros mecanismos, como através do controlador de E/S ou usando DMA (Acesso Direto à Memória).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Para realização de uma operação de E/S em um dispositivo de E/S, é necessário que ocorra a comunicação entre o processador e o controlador do dispositivo. Assinale a alternativa INCORRETA sobre essa comunicação.</p>
+                <ul>
+                    <li>a. Na comunicação através de instruções de E/S, instruções de máquina especiais são executadas pelo Sistema Operacional e acessam portas de E/S associadas aos registradores do controlador.</li>
+                    <li>b. A comunicação entre o processador e o controlador do dispositivo de E/S é intermediada pela memória principal.</li>
+                    <li>c. A comunicação entre o processador e o controlador do dispositivo de E/S pode ser realizada de duas formas diferentes: usando instruções de E/S ou a E/S mapeada na memória.</li>
+                    <li>d. Na comunicação através da E/S mapeada na memória, os registradores do controlador são associados a endereços de memória. O Sistema Operacional acessa esses registradores executando instruções de leitura e escrita na memória nos endereços mapeados.</li>
+                    <li>e. A comunicação entre o processador e o controlador do dispositivo de E/S ocorre com o Sistema Operacional lendo e escrevendo nos registradores do controlador.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A comunicação entre o processador e o controlador de E/S não é intermediada pela memória principal. Em vez disso, ela ocorre diretamente através de portas de E/S ou por meio de E/S mapeada na memória, onde os registradores do controlador são acessados diretamente.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>De forma simplificada, os dispositivos de E/S podem ser classificados em duas categorias: dispositivos de blocos e dispositivos de carácter. Associe cada dispositivo de E/S abaixo com uma categoria. Impressora (.....). Disco rígido (.....). Interface de rede (.....).</p>
+                <p>Opções: Dispositivo de carácter, Dispositivo de blocos.</p>
+                <b class="answer">Resposta: . ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>De forma simplificada, os dispositivos de E/S podem ser classificados em duas categorias: dispositivos de blocos e dispositivos de carácter. Associe cada dispositivo de E/S abaixo com uma categoria. Impressora <b>Dispositivo de carácter</b>. Disco rígido <b>Dispositivo de blocos</b>. Interface de rede <b>Dispositivo de carácter</b>.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>O árbitro de barramento é um circuito do hardware que decide qual componente pode usar o barramento em seguida, quando dois ou mais componentes (por exemplo, o processador e um controlador de dispositivo de E/S) querem usar o barramento ao mesmo tempo.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>O árbitro de barramento é de fato um circuito do hardware que gerencia o acesso ao barramento quando múltiplos dispositivos desejam utilizá-lo simultaneamente. Ele decide a ordem de acesso, evitando conflitos e coordenando o uso eficiente do barramento entre o processador, controladores de dispositivos de E/S e outros componentes do sistema.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Assinale a alternativa que NÃO representa uma tarefa relativa a E/S realizada pelo SO.</p>
+                <ul>
+                    <li>a. Tratar os erros ocorridos nos dispositivos de E/S, durante a realização de uma operação de E/S.</li>
+                    <li>b. Fornecer uma interface simples entre os dispositivos de E/S e o restante do sistema.</li>
+                    <li>c. Emitir comandos para os dispositivos de E/S.</li>
+                    <li>d. Interceptar interrupções enviadas pelos controladores de E/S.</li>
+                    <li>e. Traduzir endereços virtuais em endereços físicos.</li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A tradução de endereços virtuais em endereços físicos é uma função realizada pelo gerenciador de memória do SO, não especificamente relacionada à E/S. Essa função é crucial para garantir que os programas acessem corretamente a memória física disponível, mas não está diretamente ligada às operações de E/S.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de jun de 2024</p>
+    </footer>
+</body>
+</html>
