@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução Web.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução Web</h1>
+        <h2>💡 Unidade 1 - Redes e protocolos de comunicação.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=se-icVQucuQ&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=3" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Fundamentos de Internet e Web - Introdução às Redes de Computadores
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Introdução às Redes de Computadores</h3>
+            <b>Roteiro:</b>
+            <ul>
+                <li>Redes de Computadores e suas características.</li>
+                <li>Arquitetura em Camadas.</li>
+                <li>Modelos de Camadas.</li>
+                <li>A Internet.</li>
+                <li>Aplicações da Internet.</li>
+                <li>Internet e WWW.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Introdução às Redes de Computadores.</h2>
+            <b>Redes de Computadores e suas características.</b>
+            <ul>
+                <li>As redes de computadores foram criadas com o intuito de permitir que:</li>
+                <ul>
+                    <li>Dois ou mais elementos computacionais pudessem se comunicar.</li>
+                    <li>Para compartilhar recursos</li>
+                    <ul>
+                        <li>Áudio, vídeo, imagens, acessar aplicações, para operar máquinas remotamente.</li>
+                    </ul>
+                </ul>
+                <li>As redes atuais permitem que centenas de milhares de aplicações possam trocar dados.</li>
+                <ul>
+                    <li>Pessoas com pessoas.</li>
+                    <li>Pessoas com com empresas.</li>
+                    <li>Empresas com empresas.</li>
+                    <li>Dispositivos com outros dispositivos sem a intervenção humana.</li>
+                </ul>
+                <li>As redes de computadores são formadas por diversos elementos que envolvem inúmeros blocos:</li>
+                <ul>
+                    <li>Usuários e aplicações.</li>
+                    <li>Roteadores.</li>
+                    <li>Switches.</li>
+                    <li>Servidores.</li>
+                    <li>Meio físico cabeado, meio físico aéreo.</li>
+                    <ul>
+                        <li>Links de comunicação.</li>
+                    </ul>
+                    <li>Celulares, tablets, desktops.</li>
+                </ul>
+                <li>Diferentes tecnologias de comunicação.</li>
+                <li>Diversos protocolos para garantir que a comunicação ocorra.</li>
+                <li>Para um elemento computacional ser conectado a uma rede de dados é preciso:</li>
+                <ul>
+                    <li>Uma <b>placa de rede</b>.</li>
+                    <li>E que esta placa de rede esteja ligada por algum <b>link</b> a um <b>elemento de comutação</b>.</li>
+                </ul>
+                <li>É por meio da placa de rede que todos os sinais são transmitidos pelo cabo, ou pelo ar.</li>
+                <li>Em seguida, esses sinais são interpretados tanto pelo emissor quanto pelo  receptor para que as informações possam ser apresentadas aos usuários das aplicações.</li>
+                <li>Denominamos de elemento de comutação, no contexto de uma rede local, aquele que:</li>
+                <ul>
+                    <li>Vai receber dados em algum formato de um emissor, e vai comuta-lo e encaminhar o mesmo para o receptor da informação, estando ele ou não na mesma rede do emissor.</li>
+                    <li>Ex.:</li>
+                    <li>Suponha que o emissor A queira enviar um arquivo para o emissor B e que ambos estejam na mesma rede (rede local). O repasse dos dados de forma bastante simplista será feita por um elemento chamado <b>SWITCH</b></li>
+                    <ul>
+                        <li>Se A estiver em uma rede e B estiver em outra, será preciso que o outro elemento denominado <b>Roteador</b> se encarregue de encaminhar os dados /pacotes entre eles.</li>
+                    </ul>
+                </ul>
+                <li>Como destacamos anteriormente, diversos são os elementos que compõem uma rede de computadores</li>
+                <ul>
+                    <li>Cada um desses elementos opera/funciona obedecendo regras, para que os usuários/computadores possam se comunicar</li>
+                </ul>
+                <li>Devido à complexidade envolvida, a concepção de uma rede considera que os dados são transportados utilizando-se de diversas camadas no processo de comunicação</li>
+                <li>Vamos abordar um exemplo, que apesar de não ser ligado ao ambiente computacional, servirá de base para você entender como tudo isso funciona</li>
+                <li>Suponha os seguintes elementos para organizarmos alguns dados em camadas:</li>
+                <ul>
+                    <li>1 palito de fósforo</li>
+                    <li>1 caixa de fósforo</li>
+                    <li>1 caixa de sapato</li>
+                    <li>1 caixa de papelão</li>
+                    <li>1 caixa de um fogão de 4 bocas</li>
+                </ul>
+            </ul>
+            <b>Envio:</b>
+            <p>Suponha a sequência do <b>emissor</b>, o qual deseja enviar <b>um palito de fósforo</b> a um receptor:</p>
+            <img src="img/redes.png" alt="redes.png">
+            <p></p>
+            <b>Recebimento:</b>
+            <p></p>
+            <img src="img/redes1.png" alt="redes1.png">
+            <pre>
+                        Internet
+                            |
+                        (Nuvem)
+                            |       
+                +----------|----------+
+                |                     |
+            Roteador 1            Roteador 2
+                |                      |
+                +----+----+      +-----+-----+
+                |         |      |           |
+            Dispositivo  Dispositivo  Dispositivo
+            (PC)         (Laptop)     (Smartphone)
+            </pre>
+        </section>
+        
+        <section>
+            <h2>Arquitetura em Camadas.</h2>
+            <ul>
+                <li>O que acabamos de discutir anteriormente é a organização da comunicação na forma de camadas</li>
+                <li>Os computadores trocam informações obedecendo uma arquitetura em camadas, com cada uma tendo regras/protocolos bem estabelecidos</li>
+                <li>Vamos tratar de forma simples de dois tipos de modelos de arquitetura em camadas</li>
+                <ul>
+                    <li>Modelo OSI</li>
+                    <li>Modelo TCP/IP</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo OSI.</h2>
+            <ul>
+                <li>Modelo OSI(Open System Interconnection): é conhecido por ser um modelo de referência, que não foi implementado na prática. Ele possui as camadas descritas a seguir:</li>
+                <ul>
+                    <li>7. Aplicação.</li>
+                    <li>6. Apresentação.</li>
+                    <li>5. Sessão.</li>
+                    <li>4. Transporte.</li>
+                    <li>3. Rede.</li>
+                    <li>2. Enlace de dados.</li>
+                    <li>1. Física.</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Modelo TCP/IP</h2>
+            <ul>
+                <li>Modelo TCP/IP é o padrão de comunicação na maioria das redes, sendo utilizado na prática por inúmeros elementos de comunicação em redes locais ou remotas. Diferentemente do modelo OSI, o TCP/IP possui 4 camadas:</li>
+                <ul>
+                    <li>Aplicação.</li>
+                    <li>Transporte.</li>
+                    <li>Internet.</li>
+                    <li>Acesso à rede.</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Funções de cada camada do modelo TCP/IP:</h2>
+            <ul>
+                <li>Aplicação:</li>
+                <ul>
+                    <li>Processo de rede para aplicações.</li>
+                    <li>Representação das mensagens.</li>
+                    <li>Formatação das mensagens.</li>
+                </ul>
+                <li>Transporte:</li>
+                <ul>
+                    <li>Conexão ponto a ponto entre processos que executa em hosts diferentes</li>
+                </ul>
+                <li>Internet:</li>
+                <ul>
+                    <li>Endereçamento lógico dos hosts.</li>
+                    <li>Roteamento.</li>
+                </ul>
+                <li>Acesso à rede:</li>
+                <ul>
+                    <li>Acesso ao meio físico.</li>
+                    <li>Transmissão binária.</li>
+                    <li>Codificação/Decodificação de sinais.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A Internet.</h2>
+            <b>O que é?</b>
+            <ul>
+                <li>Pc.</li>
+                <li>Servidor.</li>
+                <li>Laptop sem fio.</li>
+                <li>Celular.</li>
+            </ul>
+            <p>Milhões de dispositivos de computação conectados:</p>
+            <ul>
+                <li>hospedeiros = sistemas finais.</li>
+                <ul>
+                    <li>Executando aplicações de rede.</li>
+                </ul>
+                <li>Rede móvel.</li>
+                <li>Rede doméstica.</li>
+                <li>Rede institucional.</li>
+                <li>ISP global.</li>
+                <li>ISP regional.</li>
+            </ul>
+           
+        </section>
+    
+        <section>
+            <h2>Aplicações da Internet.</h2>
+            <ul>
+                <li>Inúmeras são as aplicações que "rodam" na Internet.</li>
+                <ul>
+                    <li>Serviços de e-mail.</li>
+                    <li>Serviços de streaming de áudio e vídeo.</li>
+                    <li>Serviços de compartilhamento de arquivos.</li>
+                    <li>Serviços e pagamentos on-line.</li>
+                    <li>Aplicação para acesso seguro a dados sigilosos.</li>
+                </ul>
+                <li>Algumas das aplicações podem ser executadas fora do que chamamos de Web, ou WWW, pois são anteriores à Web como ela é conhecida hoje.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <ul>
+                <li>Redes de Computadores e a Internet. J.F Kurose e K.W. Ross. 5ª e 6ª Edições</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de jun de 2024</p>
+    </footer>
+</body>
+</html>

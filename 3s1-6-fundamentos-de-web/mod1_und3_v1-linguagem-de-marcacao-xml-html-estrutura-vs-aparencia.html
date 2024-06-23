@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução Web.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução Web</h1>
+        <h2>💡 Unidade 3 - Linguagens de Marcação - XML, HTML – Estrutura vs Aparência.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=62dYzVao-yk&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=6" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Fundamentos de Internet e Web - Linguagens de marcação para a WWW.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Linguagens de marcação para a WWW.</h3>
+            <b>Roteiro:</b>
+            <ul>
+                <li>Introdução.</li>
+                <li>Navegação.</li>
+                <li>Páginas.</li>
+                <li>A linguagem HTML.</li>
+                <ul>
+                    <li>Exemplo de página HTML.</li>
+                    <li>Ferramentas para criar páginas HTML.</li>
+                    <li>Primeira Página HTML.</li>
+                    <li>Tags HTML básicas.</li>
+                    <li>Tags de parágrafo.</li>
+                    <li>Tags de quebra.</li>
+                    <li>Tags de cabeçalho.</li>
+                    <li>Tabelas.</li>
+                    <li>Imagem.</li>
+                    <li>Áudio.</li>
+                    <li>Link.</li>
+                    <li>Componentes para a formatação do texto.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Introdução</h2>
+            <ul>
+                <li>Internet e WWW</li>
+                <ul>
+                    <li>Vasta rede global de computadores conectados entre si por meio das redes de comunicação existentes.</li>
+                    <li>Para conectar-se a Internet em geral precisamos:</li>
+                    <ul>
+                        <li>Computador.</li>
+                        <li>Provedor (ISP).</li>
+                        <li>Software básico de comunicação.</li>
+                        <li>Navegador.</li>
+                    </ul>
+                </ul>
+                <li>Endereços das páginas.</li>
+                <ul>
+                    <li>https://www.univesp.br.</li>
+                    <ul>
+                        <li><b>http</b> → Protocolo utilizado(HyperText Transfer Protocol).</li>
+                        <li><b>www.univesp.br</b> → Nome do servidor, endereço de registro.</li>
+                        <li><b>/cursos</b> → Servidor do nome e diretório da página Web.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Páginas</h2>
+            <ul>
+                <li>As páginas são construídas usando linguagem de marcação.</li>
+                <li><b>HTML</b> (HyperText Markup Language)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>A linguagem HTML.</h2>
+            <ul>
+                <li>Trata-se de um conjunto de inúmeros comandos que identifica os elementos em uma página.</li>
+                <li>Ex.:</li>
+                <ul>
+                    <li>Um texto, imagem ou arquivo multimídia.</li>
+                </ul>
+                <li>É o que permite ao browser exibir corretamente a página, pois trata-se de uma linguagem de marcação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estrutura de uma página Web.</h2>
+            <img src="img/estrutura-html.png" alt="estrutura-html.png">
+        </section>
+
+        <section>
+            <h2>Exemplo de página HTML.</h2>
+            <pre>
+            <!-- Tags básicas de HTML -->
+            &lt;!DOCTYPE html&gt;
+            <b>Tags HTML básicas.</b>
+            <b>Abertura da tag HTML com idioma definido como Português do Brasil</b>
+            &lt;html lang="pt-br"&gt; <!-- Declaração do tipo de documento: HTML5 / Define o idioma do documento como Português do Brasil-->
+                &lt;head&gt; <!-- Início do cabeçalho -->
+                    <b>Definição do conjunto de caracteres como UTF-8 para suportar vários idiomas</b>
+                    &lt;meta charset="UTF-8"&gt; <!-- Meta tag para especificar o conjunto de caracteres como UTF-8 -->
+                    <b>Título da página exibido na aba do navegador</b>
+                    &lt;title&gt;Minha Página&lt;/title&gt; <!-- Título da página exibido na aba do navegador -->
+                &lt;/head&gt; <!-- Fim do cabeçalho -->
+                &lt;body&gt; <!-- Início do corpo do documento -->
+                    <b>Tags de cabeçalho.</b> <!-- Tags de cabeçalho -->
+                    &lt;h1&gt;Título Principal&lt;/h1&gt; <!-- Título de nível 1 (h1) -->
+                    &lt;h2&gt;Subtítulo&lt;/h2&gt; <!-- Título de nível 2 (h2) -->
+                    &lt;h3&gt;Subtítulo Menor&lt;/h3&gt; <!-- Título de nível 3 (h3) -->
+                    &lt;h4&gt;Subtítulo Pequeno&lt;/h4&gt; <!-- Título de nível 4 (h4) -->
+                    &lt;h5&gt;Subtítulo Mínimo&lt;/h5&gt; <!-- Título de nível 5 (h5) -->
+                    &lt;h6&gt;Subtítulo Mínimo Menor&lt;/h6&gt; <!-- Título de nível 6 (h6) -->
+
+                    <b>Tags de parágrafo.</b> <!-- Tags de parágrafo -->
+                    &lt;p&gt;Texto de exemplo em um parágrafo.&lt;/p&gt; <!-- Define um parágrafo de texto -->
+
+                    <b>Tags de quebra.</b> <!-- Tags de quebra -->
+                    &lt;br&gt; <!-- Cria uma quebra de linha -->
+                    <!-- Tags de cabeçalho -->
+                    &lt;h2&gt;Título de Nível 2&lt;/h2&gt; <!-- Cria um título de nível 2 -->
+
+                    <b>Tabelas.</b> <!-- Tabelas -->
+                    &lt;table border="1"&gt; <!-- Início da tabela com bordas -->
+                        &lt;tr&gt; <!-- Início de uma linha -->
+                            &lt;td&gt;Célula 1&lt;/td&gt; <!-- Célula na tabela -->
+                            &lt;td&gt;Célula 2&lt;/td&gt; <!-- Outra célula na mesma linha -->
+                        &lt;/tr&gt; <!-- Fim da linha -->
+                    &lt;/table&gt; <!-- Fim da tabela -->
+
+                    <b>Imagem.</b> <!-- Imagem -->
+                    &lt;img src="caminho_da_imagem.jpg" alt="Descrição da Imagem"&gt; <!-- Inclui uma imagem na página -->
+
+                    <b>Áudio.</b> <!-- Áudio -->
+                    &lt;audio controls&gt; <!-- Elemento de áudio com controles -->
+                        &lt;source src="caminho_do_audio.mp3" type="audio/mpeg"&gt; <!-- Fonte do áudio -->
+                        Seu navegador não suporta o elemento de áudio. <!-- Mensagem alternativa para navegadores que não suportam áudio -->
+                    &lt;/audio&gt; <!-- Fim do elemento de áudio -->
+
+                    <b>Link.</b> <!-- Link -->
+                    &lt;a href="url_do_link"&gt;Texto do Link&lt;/a&gt; <!-- Cria um link para outra página ou recurso -->
+
+                    <b>Componentes para a formatação do texto.</b> <!-- Componentes para formatação do texto -->
+                    &lt;b&gt;Texto em <b>negrito</b>&lt;/b&gt; <!-- Texto em negrito -->
+                    &lt;i&gt;Texto em <i>itálico</i>&lt;/i&gt; <!-- Texto em itálico -->
+                    &lt;u&gt;Texto <u>sublinhado</u>&lt;/u&gt; <!-- Texto sublinhado -->
+                    &lt;s&gt;Texto <s>tachado</s>&lt;/s&gt; <!-- Texto tachado -->
+                    &lt;sup&gt;Texto <sup>sobrescrito</sup>&lt;/sup&gt; <!-- Texto sobrescrito -->
+                    &lt;sub&gt;Texto <sub>subscrito</sub>&lt;/sub&gt; <!-- Texto subscrito -->
+                &lt;/body&gt; <!-- Fim do corpo do documento -->
+            &lt;/html&gt; <!-- Fim da tag HTML -->
+            </pre>
+            <b>O elemento head:</b>
+            <ul>
+                <li>Nele, inserimos informações para ajudar o seu navegador a entender informações de formatação da página como:</li>
+                <ul>
+                    <li>caracteres utilizados, língua do país onde a página foi feita, versão da página ou linguagem, locais onde os arquivos utilizados estão armazenados, etc.</li>
+                </ul>
+            </ul>
+            <b></b>
+        </section>
+    
+        <section>
+            <h2>Ferramentas para criar páginas HTML.</h2>
+            <ul>
+                <li><b>Visual Studio Code</b>: Disponível para Windows, macOS e Linux.</li>
+                <li><b>Sublime Text</b>: Disponível para Windows, macOS e Linux.</li>
+                <li><b>Atom</b>: Disponível para Windows, macOS e Linux.</li>
+                <li><b>Brackets</b>: Disponível para Windows, macOS e Linux.</li>
+                <li><b>Visual Studio</b> / Visual Studio Community: Principalmente para Windows, mas existe o Visual Studio Code, que é multiplataforma.</li>
+                <li><b>Notepad++:</b> Exclusivo para Windows, mas pode ser executado no Linux usando emuladores ou soluções de compatibilidade.</li>
+                <li><b>Adobe Dreamweaver</b>: Disponível para Windows e macOS.</li>
+                <li><b>CodePen</b>: Plataforma online, acessível através de um navegador web em qualquer sistema operacional.</li>
+                <li><b>JSFiddle</b>: Plataforma online, acessível através de um navegador web em qualquer sistema operacional.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>http://www.w3schools.com/</li>
+                <li>https://www.hostinger.com.br/tutoriais/melhores-editores-html/</li>
+                <li>https://kinsta.com/pt/blog/editores-html-gratis/</li>
+                <li>https://developer.mozilla.org/pt- BR/docs/Aprender/HTML/Introducao_ao_HTML</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 22 de jun de 2024</p>
+    </footer>
+</body>
+</html>
