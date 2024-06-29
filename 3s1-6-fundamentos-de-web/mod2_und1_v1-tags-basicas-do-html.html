@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – HTML5 e CSS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – HTML5 e CSS</h1>
+        <h2>💡 Unidade 1 - Tags básicas do HTML5.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=dHSGyW6byUs&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=7&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Fundamentos de Internet e Web - HTML5 - Hypertext Markup Language/Versão 5.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>FUNDAMENTOS DE INTERNET E WEB.</h3>
+            <p>HTML5 - Hypertext Markup Language/Versão 5.</p>
+            <ul>
+                <li>ROTEIRO</li>
+                <ul>
+                    <li>Introdução</li>
+                    <li>O HTML5</li>
+                    <li>Estrutura do documento</li>
+                    <li>Grupos de conteúdo</li>
+                    <li>Semântica dos elementos</li>
+                    <li>Edição</li>
+                    <ul>
+                        <li>Tags iniciais, listas e links, textos, tabelas, imagens, formulários, conteúdo embutido</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Introdução.</h2>
+            <b>Porque HTML5?</b>
+            <ul>
+                <li>Porque o HTML4 não traz um diferencial real para a semântica do código</li>
+                <li>Pois facilita a manipulação de elementos do documento html</li>
+                <li>Porque ele se integra mais facilmente ao CSS e Java Script</li>
+                <li>Por que ele modifica a forma como escrevemos código e organizamos a informação na página</li>
+                <ul>
+                    <li>Mais semântica e menos código</li>
+                    <li>Mais interatividade sem a instalação de plugins</li>
+                    <li>Códigos interoperáveis para futuros dispositivos</li>
+                    <ul>
+                        <li>Facilita a reutilização da informação de diversas formas</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Estrutura do documento/página.</h2>
+            <p>A estrutura básica de uma página na nova versão do HTML é descrita abaixo.</p>
+            <img src="img/estrutura-html5.gif" alt="estrutura-html5.gif">
+        </section>
+
+        <section>
+            <h2>Estrutura do documento.</h2>
+            <p>Vamos então analisar uma a uma o que significa cada uma das partes apresentadas anteriormente</p>
+            <ul>
+                <li><b>header</b></li>
+                <ul>
+                    <li>Cabeçalho. Indica a introdução de um tema abordado na página. Quanto mais no começo do código está, mais relevante para os mecanismos de busca.</li>
+                </ul>
+                <li><b>nav</b></li>
+                <ul>
+                    <li>Agrupa uma série de links, desde que sejam blocos de navegação principal (nav. Primária, secundária e in page).</li>
+                </ul>
+                <li><b>Footer</b></li>
+                <ul>
+                    <li>Pode ser utilizado dentro da tag section, indicando o final de um tema, porém não é muito útil.</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Estrutura do documento.</h2>
+            <ul>
+                <li><b>Aside</b>:</li>
+                <ul>
+                    <li>Faz referência ao conteúdo principal que o envolve (como se fosse separado do conteúdo principal).</li>
+                    <li>Quando está dentro de um (article> faz referência ao assunto geral dele, se estiver fora, está relacionado com o conteúdo global do site. Pode estar ou não em uma sidebar</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Grupos de conteúdo.</h2>
+            <ul>
+                <li><b>Article</b>:</li>
+                <ul>
+                    <li>Trata-se de uma área que define o conteúdo principal da página, podendo ser uma composição de formulários, um artigo de notícias, etc. desde que seja um conteúdo independente.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Semântica dos elementos.</h2>
+            <ul>
+                <li><b>Section</b>:</li>
+                <ul>
+                    <li>Define uma seção dentro de determinado elemento.</li>
+                    <li>Pode conter um header, um footer e uma nova ordem de títulos, se necessário.</li>
+                    <li>Pode ser utilizada na tag article para separar notícias, eventos, galeria de fotos, etc.</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Semântica dos elementos.</h2>
+            <b>Diferenças entre article x section</b>
+            <ul>
+                <li><b>article</b>:</li>
+                <ul>
+                    <li>Deve conter o conteúdo principal da página</li>
+                    <li>Pode ser combinado com o elemento section para formatação de seu conteúdo</li>
+                    <li>O objetivo é agrupar os principais conteúdos da página</li>
+                </ul>
+                <li><b>section</b>:</li>
+                <ul>
+                    <li>Pode conter qualquer tipo de conteúdo</li>
+                    <li>É a versão mais semântica da div (mas não substitui)</li>
+                    <li>O objetivo é marcar uma seção da página agrupando conteúdos sobre um mesmo assunto</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Edição.</h2>
+            <b>Mais tags do HTML5</b>
+            <ul>
+                <li><b>hgroup</b>:</li>
+                <ul>
+                    <li>Agrupa uma sequência de títulos (do h1 ao h5)</li>
+                </ul>
+                <li><b>áudio/vídeo</b>:</li>
+                <ul>
+                    <li>Inserção de conteúdo multimídia na página, de forma mais simples e segura.</li>
+                </ul>
+                <li><b>main</b>:</li>
+                <ul>
+                    <li>Define o conteúdo mais importante, ou seja, aquele que está relacionado com o tópico central da página.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo Simples.</h2>
+            <pre>
+            (!DOCTYPE HTML>
+            (html lang="en">
+            (head>
+            (meta charset=utf-8>
+            (title>Exemoplo HTML5 doctype(/title>
+            (/head>
+            (body> (h1>Tutorial de HTML5 doctype(/h1> (p>Teste de HTML5(/p> (/body>
+            (/html>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>HTML 5 - Guia Prático. 2014. Érica.</li>
+                <li>https://www.w3resource.com/html5/introduction.php</li>
+                <li>https://html5andcss3.org/</li>
+                <li>https://www.w3resource.com/html5/introduction.php</li>
+                <li>https://www.w3c.br/pub/Cursos/CursoHTML5/html5- web.pdf</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de jun de 2024</p>
+    </footer>
+</body>
+</html>
