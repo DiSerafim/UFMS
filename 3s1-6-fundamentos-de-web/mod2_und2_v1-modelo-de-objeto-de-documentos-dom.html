@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – HTML5 e CSS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – HTML5 e CSS</h1>
+        <h2>💡 Unidade 2 - Modelo de objeto de documentos - DOM.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=JiwdZQ8XpaA&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=5&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Desenvolvimento Web - Componentes de Aplicações Web.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Desenvolvimento Web.</h3>
+            <p>Componentes de Aplicações Web.</p>
+            <ul>
+                <li>ROTEIRO</li>
+                <ul>
+                    <li>Como funciona uma aplicação Web</li>
+                    <li>Vantagens de uma aplicação Web</li>
+                    <li>Aplicação Web x Aplicação Tradicional</li>
+                    <li>Aplicação Web x Site</li>
+                    <li>Componentes de Software</li>
+                    <li>Componentes de uma aplicação Web</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>COMO FUNCIONA UMA APLICAÇÃO WEB.</h2>
+            <ul>
+                <li>Para funcionar, uma aplicação Web depende de:</li>
+                <ul>
+                    <li>Servidor Web</li>
+                    <li>Requisições feitas pelos usuários ao servidor Web</li>
+                    <li>Protocolos e métodos do HTTP (como visto na aula anterior)</li>
+                    <li>Resposta às requisições realizadas</li>
+                </ul>
+                <li>O usuário sempre deve ser capaz de receber uma resposta a um pedido realizado. Por exemplo:</li>
+                <ul>
+                    <li>Se o usuário pediu para abrir uma foto ao clicar em um link, é preciso que a foto seja devolvida ao usuário (não pode abrir qualquer coisa!!!)</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>VANTAGENS DE UMA APLICAÇÃO WEB.</h2>
+            <ul>
+                <li>A maioria dos usuários domina o uso de navegadores (browsers)</li>
+                <li>A usabilidade passa a ser muito mais fácil e simples, pois não há um treinamento detalhado sobre como usar a solução desenvolvida</li>
+                <li>Todas as atualizações necessárias são realizadas do lado do servidor (onde efetivamente a aplicações foi implantada)</li>
+                <li>Não precisa baixar atualizações ou reinstalar a aplicação</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>APLICAÇÃO WEB X APLICAÇÃO TRADICIONAL.</h2>
+            <ul>
+                <li>Aplicações tradicionais são diferentes das aplicações Web pois:</li>
+                <ul>
+                    <li>Apresentam o mesmo resultado para todos os usuários</li>
+                    <li>Não há adaptações ou navegações personalizadas de acordo com cada usuário</li>
+                    <li>Você precisa instalar a aplicação na máquina de cada usuário</li>
+                    <li>São mais instáveis, porque muitas vezes há incompatibilidades com outros softwares dos usuários (antivírus, p. ex.)</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>APLICAÇÃO WEB X SITE.</h2>
+            <ul>
+                <li>Embora ambos operem no navegador, é importante ressaltar que:</li>
+                <ul>
+                    <li>Uma aplicação Web é interativa, ou seja o usuário tende a ter mais engajamento com a mesma. Exemplo: Trello (Gerenciador de Tarefas Web)</li>
+                    <li>Um site tende a ser mais estático, sendo portanto apenas um conjunto de páginas que geralmente informa o usuário sobre alguma coisa, não tendo muito o que ser complementado</li>
+                    <li>Dificuldade de adicionar conteúdo no local, como por exemplo cadastrar informações por meio de um formulário.</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>COMPONENTES DE SOFTWARE.</h2>
+            <ul>
+                <li>Partes pré-definidas de software que incluem pacotes coerentes de artefatos</li>
+                <li>Separa a definição do componente e a sua implementação</li>
+                <ul>
+                    <li>Vantagens:</li>
+                    <ul>
+                        <li>Alto nível de abstração com melhora de produtividade do desenvolvedor</li>
+                    </ul>
+                    <li>O encapsulamento mascara a complexidade, enquanto APIs bem definidas facilitam o acesso à funcionalidade, além de melhorar a interoperabilidade das aplicações</li>
+                    <li>Menor risco de problemas, devido à natureza encapsulada dos componentes</li>
+                    <li>Há muitas bibliotecas e ferramentas padrão baseadas em componentes disponíveis para utilização</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>COMPONENTES DE UMA APLICAÇÃO WEB.</h2>
+            <ul>
+                <li>Um pouco sobre HTML DOM</li>
+                <ul>
+                    <li>DOM - Document Object Model</li>
+                    <ul>
+                        <li>Trata-se de um modelo de objeto para HTML e define:</li>
+                        <ul>
+                            <li>Elementos HTML como objetos</li>
+                            <li>Propriedades para todos os elementos HTML</li>
+                            <li>Métodos para todos os elementos HTML</li>
+                            <li>Eventos para todos os elementos HTML</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>COMPONENTES DE UMA APLICAÇÃO WEB.</h2>
+            <ul>
+                <li>Um pouco sobre HTML DOM</li>
+                <ul>
+                    <li>O HTML DOM é uma API (Application Programming Interface)</li>
+                    <ul>
+                        <li>para Java Script. O JavaScript pode:</li>
+                        <li>Adicionar, modificar e remover elementos HTML</li>
+                        <li>Adicionar, modificar e remover atributos HTML</li>
+                        <li>Adicionar, modificar e remover estilos CSS</li>
+                        <li>Reagir a eventos HTML</li>
+                        <li>Adicionar, modificar e remover eventos HTML</li>
+                    </ul>
+                </ul>
+            </ul>
+            <p>IMPORTANTE: Consulte os links abaixo para entender mais sobre o que é DOM (Documento Object Model) e a interação com Java Script</p>
+            <a href="https://www.w3schools.com/whatis/whatis htmldom.asp" target="_blank" rel="noopener noreferrer">what is html dom</a>
+            <p></p>
+            <a href="https://www.w3schools.com/js/js htmldom.asp" target="_blank" rel="noopener noreferrer">js html dom</a>
+            <ul>
+                <li>São um conjunto de primitivas incorporadas à plataforma Web</li>
+                <li>Abrem um mundo de possibilidades quando se trata de componentizar o código do front-end, criando experiências poderosas e imersivas</li>
+                <li>Apresentam-se como bibliotecas, sendo construídas sobre APIs e baseadas em padrões da Web</li>
+                <li>Tornam mais fácil construir seu próprios elementos HTML personalizados</li>
+                <li>Esses componentes Web são incorporados em inúmeros navegadores</li>
+                <li>Coleção de padrões que permitem:</li>
+                <ul>
+                    <li>Encapsular</li>
+                    <li>Compor</li>
+                    <li>Reutilizar</li>
+                    <li>Elementos HTML</li>
+                    <ul>
+                        <li>Site com inúmeros componentes Web</li>
+                        <ul>
+                            <a href="https://www.webcomponents.org" target="_blank" rel="noopener noreferrer">web components</a>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>A criação de elementos personalizados e reutilizáveis e o uso de elementos desenvolvidos por terceiros pode tornar a construção de aplicações Web complexas em algo muito mais fácil e eficiente</li>
+                <li>Boas práticas a serem seguidas para construir seus próprios componentes Web:</li>
+                <ul>
+                    <li>Ter elementos customizados. Isso permite, como resultado, um código mais modular que pode ser reutilizado em muitos contextos diferentes das aplicações</li>
+                    <li>Utilizar Shadow DOM, que é um padrão da Web que oferece estilo de componente e encapsulamento de marcação. É uma parte extremamente importante da história dos componentes Web, já que garante que um componente funcionará em qualquer ambiente, mesmo se outro CSS ou JavaScript estiver em execução na página.</li>
+                </ul>
+                <li>Exemplo</li>
+                <ul>
+                    <li>Polymer</li>
+                    <ul>
+                        <li>É uma biblioteca leve construída sobre as APIs de componentes da Web baseadas em padrões da Web</li>
+                        <li>Fornece uma sintaxe declarativa para criar rapidamente seus próprios elementos HTML, utilizando tecnologias padrão da Web</li>
+                        <ul>
+                            <li>Basicamente a biblioteca permite:</li>
+                            <ul>
+                                <li>Definir a estrutura do elemento com HTML</li>
+                                <li>Estilizar o elemento com CSS</li>
+                                <li>Adicionar interações ao elemento com JavaScript</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Polymer</li>
+                <ul>
+                    <li>Custom Elements: Permite criarmos novos elementos HTML code-friend.</li>
+                    <ul>
+                        <li>Exemplos com o google-web-components:</li>
+                        <ul>
+                            <li>Google-analytics</li>
+                            <li>Google-calendar</li>
+                            <li>Google-drive</li>
+                            <li>Google map</li>
+                            <li>Google youtube upload</li>
+                        </ul>
+                        <a href="https://www.webcomponents.org/collection/GoogleWebComponents/google-web-components" target="_blank" rel="noopener noreferrer">Google Web Components</a>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <ul>
+                <li>1.https://blog.betrybe.com/desenvolvimento-web/aplicacoes-web/</li>
+                <li>2.https://pt.wikipedia.org/wiki/Componentes Web</li>
+                <li>3.https://pt.wikipedia.org/wiki/WebKit</li>
+                <li>4.https://webkit.org/</li>
+                <li>5.https://www.webcomponents.org/</li>
+                <li>6.https://developers.google.com/web/fundamentals/web-components</li>
+                <li>7.https://web.dev/</li>
+                <li>8.https://developer.chrome.com/</li>
+                <li>9.https://www.webcomponents.org/collection/GoogleWebComponents/google-w eb-components</li>
+                <li>10.https://github.com/Polymer/polymer</li>
+                <li>11.https://www.w3schools.com/whatis/whatis htmldom.asp</li>
+                <li>12.https://www.w3schools.com/js/js htmldom.asp</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de jul de 2024</p>
+    </footer>
+</body>
+</html>
