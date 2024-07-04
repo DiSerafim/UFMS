@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – HTML5 e CSS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – HTML5 e CSS</h1>
+        <h2>💡 Unidade 3 - Principais atributos e seletores do CSS.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=PBk5HxF1cxM&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=8&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Fundamentos de Internet e Web - CSS - Cascading Style Sheets.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Fundamentos de Internet e Web.</h3>
+            <p>CSS - Cascading Style Sheets.</p>
+            <ul>
+                <li>ROTEIRO</li>
+                <ul>
+                    <li>O CSS</li>
+                    <li>Como aplicar estilos seletivos aos elementos HTML</li>
+                    <ul>
+                        <li>Mudança de cores</li>
+                        <li>Posicionamento de Conteúdo</li>
+                        <li>Decoração da página com imagem de fundo</li>
+                        <li>Outros...</li>
+                    </ul>
+                    <li>Vamos Praticar</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>O CSS.</h2>
+            <ul>
+                <li>CSS - Cascading Style Sheets:</li>
+                <ul>
+                    <li>Estilos de Página em Cascata</li>
+                    <li>É uma linguagem de estilos</li>
+                    <li>Define a apresentação de documentos</li>
+                    <li>Permite aplicar estilos seletivamente a elementos em documentos HTML.</li>
+                    <li>Exemplos:</li>
+                    <ul>
+                        <li>Selecionar todos os elementos parágrafo de uma página HTML e tornar o texto dentro deles verde</li>
+                        <li>Selecionar todos os elementos H1 de uma página HTML e tornar o texto dentro deles azul</li>
+                    </ul>
+                </ul>
+                <li>Antes do CSS:</li>
+                <ul>
+                    <li>Configurações referentes a apresentação dos elementos HTML era feita pelo atributos do HTML</li>
+                    <li>A primeira especificação do CSS foi em 1996</li>
+                    <li>Inicialmente o Internet Explorer 3.0</li>
+                    <li>Em 2000 foi empregado no Internet Explorer 5.0</li>
+                </ul>
+                <li>Atualmente:</li>
+                <ul>
+                    <li>A partir do HTML4, já não é mais utilizado atributos de apresentação para os elementos HTML e o CSS passa a ser usado para permitir configurações mais dinâmicas</li>
+                    <li>Isso já é padrão para o HTML5 também</li>
+                </ul>
+                <li>Vantagens:</li>
+                <ul>
+                    <li>Separar o conteúdo da apresentação</li>
+                    <li>Realizar a formatação do texto de forma mais limpa</li>
+                    <li>Permitir a acessibilidade</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Conjunto de Regras.</h2>
+            <ul>
+                <li>O conjunto de regras ou simplesmente as regras são divididas em duas partes:</li>
+                <ul>
+                    <li>Seletor:</li>
+                    <ul>
+                        <li>O nome do elemento HTML no começo do conjunto de regras. Ele seleciona o(s) elemento(s) a serem estilizados</li>
+                    </ul>
+                    <li>Declaração:</li>
+                    <ul>
+                        <li>Uma regra simples, especificando quais das propriedades do elemento você quer estilizar.</li>
+                        <li>Faz parte da declaração:</li>
+                        <ul>
+                            <li>Propriedades:</li>
+                            <ul>
+                                <li>Forma pela qual você estiliza um elemento HTML.</li>
+                            </ul>
+                            <li>Valor da Propriedade:</li>
+                            <ul>
+                                <li>O valor de propriedade escolhe uma dentre muitas aparências possíveis para uma determinada propriedade</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <i>https://pbs.twimg.com/media/FILoj0FXIAAtJgi?format=png&name=small</i>
+            <img src="img/css1.png" alt="css1.png">
+            <ul>
+                <li>Como eu posso criar essas regras?</li>
+                <ul>
+                    <li>Externamente:</li>
+                    <ul>
+                        <li>Em um arquivo com extensão.<b>css</b></li>
+                    </ul>
+                    <li>Internamente:</li>
+                    <ul>
+                        <li>Como conteúdo da tag <b>style</b></li>
+                    </ul>
+                    <li>Como atributos inline</li>
+                </ul>
+                <li>Qual a ordem dessas regras?</li>
+                <ul>
+                    <li>Se há regras em diversos lugares, considerar:</li>
+                    <ul>
+                        <li>Se há propriedades repetidas, mantem-se apenas uma regra, obedecendo a ordem abaixo:</li>
+                        <ul>
+                            <li>Inline</li>
+                            <li>Interna</li>
+                            <li>Externa</li>
+                            <li>Padrão do browser</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Como aplicar estilos seletivos aos elementos HTMLL.</h2>
+            <ul>
+                <li>Nesta aula vamos abordar:</li>
+                <ul>
+                    <li>Propriedades do background (fundo)</li>
+                    <ul>
+                        <li>Algumas propriedades</li>
+                        <ul>
+                            <li>background-color</li>
+                    <pre>
+                    body {
+                        background-color: blue;
+                    }
+                    </pre>
+                            <li>background-image</li>
+                    <pre>
+                    body {
+                        background-image:url('imagem.png');
+                    }
+                    </pre>
+                            <li>background-repeat</li>
+                    <pre>
+                    body {
+                        background-image:url('imagem.png');
+                        background-repeat: repeat-y
+                    }
+                    </pre>
+                            <li>background-attachment</li>
+                    <pre>
+                    body {
+                        background-image:url('imagem.png');
+                        background-repeat: repeat-x
+                    }
+                    body {
+                        background-image:url('imagem.png');
+                        background-repeat: no-repeat
+                    }
+                    </pre>
+                            <li>background-position</li>
+                        </ul>
+                        <pre>
+                        body {
+                            background-image:url('imagem.png');
+                            background-repeat: no-repeat
+                            background-position: right top
+                        }
+                        </pre>
+                    </ul>
+                    <li>Propriedades do texto</li>
+                    <ul>
+                        <li>Algumas propriedades</li>
+                        <ul>
+                            <li>color</li>
+                            <pre>
+                            color:red;
+                            color:#00FF00;
+                            color:rgb(0,0,255);
+                            </pre>
+                            <li>text-align</li>
+                            <pre>
+                            left
+                                    right
+                                center
+                            j u s t i f y
+                            </pre>
+                            <li>text-decoration</li>
+                            <pre>
+                            none
+                            <u>underline</u>
+                            </pre>
+                            <li>text-transform</li>
+                            <pre>
+                            Capitalize
+                            UPPERCASE
+                            lowercase
+                            </pre>
+                        </ul>
+                    </ul>
+                    <li>Classes e identificadores</li>
+                    <li>Criar estilos aplicados a todos os elementos com identificação comum</li>
+                    <ul>
+                        <li>É preciso considerar o atributo Global id do HTML</li>
+                        <li>Código em CSS</li>
+                        <ul>
+                            <li>#Teste{color: blue; text-align: center;}</li>
+                        </ul>
+                        <li>Como utilizar?</li>
+                        <ul>
+                            <li><h1 id="Teste">Teste de CSS h1.</h1></li>
+                        </ul>
+                    </ul>
+                    <li>Fontes</li>
+                    <ul>
+                        <li>Em geral as propriedades mais usadas:</li>
+                        <ul>
+                            <li>font-family</li>
+                            <ul>
+                                <li>Arial, Time New Roman, Verdana, Sans Serif</li>
+                            </ul>
+                            <li>font-style</li>
+                            <ul>
+                                <li>normal, italic, oblique</li>
+                            </ul>
+                            <li>font-weight</li>
+                            <ul>
+                                <li>normal, bold, lighter</li>
+                            </ul>
+                            <li>font-size</li>
+                            <ul>
+                                <li>Absoluto: Tamanho numero: px, cm</li>
+                                <li>Relativo: xx-small, x-small, small, médium, large, x- large, xx-large</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <li>Links</li>
+                    <ul>
+                        <li>Modificar a cor dos hyperlinks</li>
+                        <ul>
+                            <li>a:link {color:#FF0000;}</li>
+                            <ul>
+                                <li>Link ainda não visitado;</li>
+                            </ul>
+                            <li>a:visited {color:#00FF00;}</li>
+                            <ul>
+                                <li>Link já visitado;</li>
+                            </ul>
+                            <li>a:hover {color:#FF00FF;}</li>
+                            <ul>
+                                <li>Mouse encima do link;</li>
+                            </ul>
+                            <li>a:active {color:#0000FF;}</li>
+                            <ul>
+                                <li>Link selecionado.</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <li>Tabelas</li>
+                    <ul>
+                        <li>Podemos modificar nas bordas</li>
+                        <ul>
+                            <li>border-width: 1px;</li>
+                            <li>border-spacing: 2px;</li>
+                            <li>border-style: solid;</li>
+                            <li>border-color: #FF0000;</li>
+                            <li>border-collapse: separate</li>
+                        </ul>
+                    </ul>
+                    <li>Layouts</li>
+                    <ul>
+                        <li>Em geral o conteúdo é disposto no documento html considerando um layout</li>
+                        <li>Usamos seções</li>
+                        <ul>
+                            <li>As quais são separadas por tags</li>
+                            <li>Seções representam caixas</li>
+                            <li>As caixas possuem: posicionamento, estilo, conteúdo</li>
+                        </ul>
+                        <i>https://i.pinimg.com/564x/36/ae/d0/36aed058a33efa95cc984eb277d410b0.jpg</i>
+                        <img src="img/layout.jpg" alt="img/layout.jpg">
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências.</h2>
+            <p>Desenvolvimento de Software II: Introdução ao Desenvolvimento Web com HTML, CSS, JavaScript e PHP. 2014.</p>
+            <ul>
+                <li>CSS Básico</li>
+                <ul>
+                    <li>https://developer.mozilla.org/pt-BR/docs/Aprender/Getting star ted with the web/CSS basico</li>
+                </ul>
+                <li>HTML Básico</li>
+                <ul>
+                    <li>https://developer.mozilla.org/pt-BR/docs/Aprender/Getting star ted with the web/HTML basico</li>
+                </ul>
+                <li>Semantic HTML5 Page Layout</li>
+                <ul>
+                    <li>https:// www.codeproject.com/Articles/146409/Semantic-HTML5-Page- Layout</li>
+                </ul>
+                <li>Skptricks</li>
+                <ul>
+                    <li>https://www.skptricks.com/</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de jul de 2024</p>
+    </footer>
+</body>
+</html>
