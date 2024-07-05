@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – HTML5 e CSS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-exemplo.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – HTML5 e CSS</h1>
+        <h2>💡 Unidade 4 - Formulários HTML.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-1.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=PBk5HxF1cxM&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=8&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Fundamentos de Internet e Web - Desenvolvimento de páginas Web com HTML5 e CSS - Parte 3.
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Fundamentos de Internet e Web.</h3>
+            <p>Desenvolvimento de páginas Web com HTML5 e CSS.</p>
+            <ul>
+                <li>ROTEIRO</li>
+                <ul>
+                    <li>Curriculum.</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Curriculum</h2>
+            
+            <img src="img/eu8.jpeg" alt="eu8.jpeg" class="foto">
+            
+            <ul id="menu">
+                <li class="ativo">Completo</li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Resumido</a></li>
+            </ul>
+
+            <div class="secao">
+                <h3>Dados Pessoais</h3>
+                <div class="dados-pessoais">
+                    <span class="nome">Diego </span>
+                    <span class="nome-meio">Serafim</span>
+                    <span class="sobrenome">de Sousa</span>
+
+                    <a class="email" href="mailto:diegoserafim1@gmail.com">Gmail</a>
+                    <a class="url" href="#" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                    <a class="url" href="#" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a class="" href="tel:+5511916178416">11 91617-8416</a>
+                </div>
+
+                <div class="endereco">
+                    <span class="localidade">Belém</span>
+                    <span class="regiao">Pará</span>
+                </div>
+
+                <div class="secao">
+                    <h2>Dados Profissionais</h2>
+                    <p><label>Organização</label> Google</p>
+                    <p><label>Organização</label> Microsoft</p>
+                    <p><label>Organização</label> AWS</p>
+                    <p><label>Organização</label> SAP</p>
+                </div>
+
+                <div class="secao">
+                    <h2>Formação Acadêmica</h2>
+                    <p><label>Fundamental</label> EF Nossa senhora do perpétuo socorro.</p>
+                    <p><label>Médio</label> EEEFM Maria Luiza da Costa Rego</p>
+                    <p><label>Superior</label> UFMS</p>
+                </div>
+
+                <div class="secao">
+                    <h2>Formação Complementar</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Curso</th>
+                                <th>Carga horária</th>
+                            </tr>
+                        </thead>
+                        <tr class="par">
+                            <td>Desenvolvimento Web</td>
+                            <td>1.200 horas</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="secao">
+                    <h2>Línguas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Língua</th>
+                                <th>Nível</th>
+                            </tr>
+                        </thead>
+                        <tr class="par">
+                            <td>Inglês</td>
+                            <td>Básico</td>
+                        </tr>
+                        <tr class="impar">
+                            <td>Espanhol</td>
+                            <td>Básico</td>
+                        </tr>
+                        <tr class="par">
+                            <td>Português</td>
+                            <td>Fluente</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Deixe sua mensagem caso queira me contatar.</legend>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome"/ maxlength="50">
+                        <label for="email">Email</label>
+                        <input type="email" name="email"/ maxlength="50">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea name="msg" maxlength="1000" cols="30" rows="10"></textarea>
+                        <input type="submit" value="Enviar">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 04 de jul de 2024</p>
+    </footer>
+</body>
+</html>
