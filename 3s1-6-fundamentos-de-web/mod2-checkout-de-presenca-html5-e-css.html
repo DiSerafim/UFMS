@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUNDAMENTOS DE WEB-T01-2024-1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FUNDAMENTOS DE WEB-T01-2024-1</h1>
+        <h2>📍 [Checkout de Presença] Módulo 2 – HTML5 e CSS.</h2>
+        <p>Profº Especialista: Luciano Édipo Pereira da Silva.</p>
+        <p>Vencimento: segunda, 15 abr 2024, 23:59</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Utilizando os conhecimentos adquiridos neste módulo, construa uma página do tipo  Formulário HTML5 que contenha os dados mostrados no Modelo de Formulário HTML5 com o qual uma pessoa poderá se cadastrar para utilizar os serviços de um site.</p>
+            <p>O formulário deve ser criado usando apenas HTML e CSS (sem Javascript). Não deve utilizar nenhum elemento linkado externamente (exceto a folha de estilo CSS criada por você). Utilize as páginas listadas a seguir para auxiliar. Observe os links adicionais no menu lateral, nem todos estarão em português (infelizmente!):</p>
+            <ul>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms (pt-BR)</li>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Your_first_form (pt-BR)</li>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms/How_to_structure_a_web_form  (pt-BR)</li>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Basic_native_form_controls (pt-BR)</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Other_form_controls</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling</li>
+            </ul>
+            <b>O CSS deve estar:</b>
+            <ul>
+                <li>Interno;</li>
+                <li>Externo - nesse caso use arquivo chamado “estilo.css”;</li>
+                <li>Inline (Evitar, usar em casos excepcionais e comentar no código o motivo do uso).</li>
+            </ul>
+            <p>Relembre os modos pelo link [Relembre].</p>
+            <b>Sobre os dados:</b>
+            <p>Todos os campos  devem estar presentes no formulário, e:</p>
+            <ol>
+                <li>O campo Estado Civil deverá vir com as seguintes opções: Solteiro, Casado, Viúvo, e Divorciado;</li>
+                <li>Os campos a seguir devem ser marcados como de preenchimento obrigatório, ou seja devem ter  atributo [https://www.w3schools.com/tags/att_input_required.asp]:</li>
+                <ul>
+                    <li>Nome completo</li>
+                    <li>CPF</li>
+                    <li>Email</li>
+                    <li>Endereço</li>
+                    <li>Bairro</li>
+                    <li>Cidade</li>
+                    <li>UF (deverá vir com as siglas de todos os estados brasileiros para o usuário escolher)</li>
+                    <li>CEP</li>
+                    <li>Data de Nascimento</li>
+                    <li>Celular</li>
+                    <li>Login</li>
+                    <li>Senha</li>
+                </ul>
+                <li>O formulário deve ter 03 agrupamentos de campo &lt;fieldset>, onde os campos correspondentes devem estar inseridos:</li>
+                <ul>
+                    <li>Dados Pessoais (referente a pessoa);</li>
+                    <li>Dados de Contato (referente a endereço e contato da pessoa);</li>
+                    <li>Dados de Cadastro (referente ao serviços e interesses em que se cadastrar).</li>
+                </ul>
+            </ol>
+            <b>Sobre estilo:</b>
+            <ol>
+                <li>Deve ser aplicado efeito nos campos:</li>
+                <ul>
+                    <li>que estão sendo preenchidos;</li>
+                    <li>que apresentam ausência de dados, quando obrigatório;</li>
+                    <li>seguindo padrões utilizados na atividade (cores, elementos visuais e imagens são permitidas, mas, se inseridas, devem estar de acordo com os padrões utilizados na atividade, incluindo acessibilidade).</li>
+                </ul>
+            </ol>
+            <b>Sobre acessibilidade.</b>
+            <p>Todos os elementos devem ter seus elementos de acessibilidade preenchidos corretamente, veja: https://developer.mozilla.org/pt-BR/docs/Learn/Accessibility/HTML.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>O formulário criado deverá ser configurado para utilizar o método POST e deve enviar os dados para a página fictícia chamada “cadastro.html”, que não precisará ser criada nesta atividade.</p>
+            <b>Sobre o envio da  atividade no AVA:</b>
+            <ol>
+                <li>Postar um arquivo zip contendo:</li>
+                <ul>
+                    <li>formulario.html;</li>
+                    <li>estilo.css;</li>
+                    <li>[imagens].png/jpg -> imagens devem ter endereço relativo.</li>
+                    <li>Modelo de Formulário HTML5.</li>
+                    <img src="img/formulario-html.png" alt="formulario-html.png">
+                </ul>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+
+            <!-- Início do desenvolvimento do formulário. -->
+                <!DOCTYPE html>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Formulário de Cadastro</title>
+                    <link rel="stylesheet" href="estilo.css">
+                </head>
+                <body>
+                    <h1>Formulário de Cadastro.</h1>
+                    <form action="cadastro.html" method="post">
+                        <fieldset>
+                            <legend>Dados Pessoais</legend>
+
+                            <div class="form-group">
+                                <label for="nome-completo">Nome Completo</label>
+                                <input type="text" name="nome-completo" id="nome-completo" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="website">Website:</label>
+                                <input type="url" id="website" name="website">
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" name="endereco" id="endereco" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" name="bairro" id="bairro" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" name="cidade" id="cidade" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" name="cep" id="cep" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="uf">UF</label>
+                                <select name="uf" id="uf" required>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>
+                            </div>
+    
+                            <label for="telefone">Telefone</label>
+                            <input type="text" name="telefone" id="telefone" required>
+
+                            <div class="form-group">
+                                <label for="data-nascimento">Data de Nascimento</label>
+                                <input type="text" name="data-nascimento" id="data-nascimento" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="celular">Celular</label>
+                                <input type="text" name="celular" id="celular" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="estado-civil">Est. Civil</label>
+                                <select name="estado-civil" id="estado-civil" required>
+                                    <option value="solteiro">Solteiro</option>
+                                    <option value="casado">Casado</option>
+                                    <option value="viuvo">Viúvo</option>
+                                    <option value="divorciado">Divorciado</option>
+                                </select>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="login">Login</label>
+                                <input type="text" name="login" id="login" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="text" name="password" id="password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Deseja receber informações sobre os seguintes assuntos abaixo:</label><br>
+                                <div>
+                                    <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+                                    <label for="tecnologia">Tecnologia</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="esportes" name="interesses" value="esportes">
+                                    <label for="esportes">Esportes</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="automoveis" name="interesses" value="automoveis">
+                                    <label for="automoveis">Automóveis</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="culinaria" name="interesses" value="culinaria">
+                                    <label for="culinaria">Culinária</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="politica" name="interesses" value="politica">
+                                    <label for="politica">Política</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="policial" name="interesses" value="policial">
+                                    <label for="policial">Policial</label>
+                                </div><br>
+                                <div>
+                                    <input type="checkbox" id="tempo" name="interesses" value="tempo">
+                                    <label for="tempo">Tempo</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="cultura" name="interesses" value="cultura">
+                                    <label for="cultura">Cultura</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="economia" name="interesses" value="economia">
+                                    <label for="economia">Economia</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="jogos" name="interesses" value="jogos">
+                                    <label for="jogos">Jogos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="educacao" name="interesses" value="educacao">
+                                    <label for="educacao">Educação</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="viagem" name="interesses" value="viagem">
+                                    <label for="viagem">Viagem</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="empregos" name="interesses" value="empregos">
+                                    <label for="empregos">Empregos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="moda" name="interesses" value="moda">
+                                    <label for="moda">Moda e Estilo</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="regras" name="regras" required>
+                                    <label for="regras">Li as regras de cadastro e autorizo a criação do usuário</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <input type="submit" value="Cadastrar">
+                    </form>
+                </body>
+            <!-- Fim do desenvolvimento do formulário. -->
+
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 09 de jul de 2024</p>
+    </footer>
+</body>
+</html>

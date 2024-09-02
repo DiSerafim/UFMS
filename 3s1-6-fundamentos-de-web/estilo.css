@@ -1,0 +1,71 @@
+body {
+    background-color: darkblue !important;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group label {
+    display: block;
+    margin: 0 15px 5px 0;
+    color: #333;
+}
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="date"], .form-group input[type="tel"], .form-group input[type="password"], select {
+    flex: 2 0 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+input:required:invalid {
+    border-color: #dc3545;
+}
+
+input:required:valid {
+    border-color: #28a745;
+}
