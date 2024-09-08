@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Arquitetura WEB.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Arquitetura WEB</h1>
+        <h2>💡 Unidade 3 - Arquitetura orientada a serviço e microsserviços.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-2.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=PCHA8K_dZzU&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=12&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Desenvolvimento Web - Arquiteturas e Metodologias para Desenvolvimento Web
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Estrutura de Aplicações Web</h3>
+            <b>Roteiro:</b>
+            <ul>
+                <li>Introdução</li>
+                <li>Estratégias de geração de conteúdo</li>
+                <ul>
+                    <li>Linguagens de programação e de marcação</li>
+                </ul>
+                <li>Aplicações Web</li>
+                <li>Arquiteturas Web</li>
+                <ul>
+                    <li>Monolíticas x Micro-Serviços</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>INTRODUÇÃO.</h2>
+            <p>No passado, o universo Web era baseado especialmente em páginas estáticas (sites simples)</p>
+            <p>Atualmente o universo Web é muito mais rico e inclui inúmeras aplicações e a integração com diversas APIs</p>
+            <p>Seus aplicativos do celular são escritos em linguagem Web, pois códigos dos sistemas operacionais são muito específicos</p>
+            <ul>
+                <li>Por isso que não é possível criar um app que roda tanto em Android e em iOS.</li>
+            </ul>
+            <p>Por essa razão há frameworks de desenvolvimento e metodologias baseadas em linguagens da Web como JavaScript por exemplo</p>
+            <p>Isso permite uma grande versatilidade de criar aplicações e gerar produtos digitais</p>
+            <ul>
+                <li>Pode ser uma página textual ou complexas ferramentas de vendas na Internet</li>
+            </ul>
+            <p>Há uma variedade enorme em relação ao escopo de projetos da Web pois incluem simples sites até aplicações multifuncionais</p>
+            <p>Isso indica que as equipes de desenvolvimento também sejam multifuncionais. Por exemplo, no desenvolvimento de uma aplicação complexa podemos ter diversas áreas:</p>
+            <ul>
+                <li>Segurança em Rede</li>
+                <li>Gestão dos bancos de dados</li>
+                <li>Desenvolvedor front-end e back-end</li>
+                <li>Engenharia Web</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>ESTRATÉGIAS - GERAR CONTEÚDO.</h2>
+            <p>Uma aplicação Web típica tem em sua estrutura códigos que serão gerados a partir do processamento de dados em servidores de aplicações (Web)</p>
+            <p>Há códigos relacionados a linguagem de marcação (HTML) e também relacionados a programação como PHP, JSP, Ruby, etc</p>
+            <ul>
+                <li>É por isso que temos a figura do desenvolvedor front-end e do back-end</li>
+            </ul>
+            <p>Linguagens como PHP por exemplo são utilizadas para criar e estruturar as regras de negócio da aplicação e para manipular os dados armazenados em SGBDS</p>
+            <p>Por outro lado a linguagem de marcação HTML é usada para interagir com o usuário por meio de criação de interfaces intuitivas e acessíveis</p>
+            <p>Embora atualmente haja uma divisão do que é o front-end e o back-end não é tão simples conciliar os dois mundos pois:</p>
+            <ul>
+                <li>Há ferramentas distintas (IDE x Editores)</li>
+                <li>Habilidades diferentes dos profissionais (Front-end x Back- end)</li>
+                <li>Uma IDE pode ser boa para escrever código JAVA, PHP mas não tão adequada para escrever código HTML e CSS</li>
+                <li>Um editor HTML e CSS pode ser ruim para editar e construir códigos em linguagens que executam no back-end</li>
+            </ul>
+            <p>Boas estratégias de geração de conteúdo envolvem:</p>
+            <ul>
+                <li>Organizar a forma de trabalho com as tecnologias e com os profissionais envolvidos. Isso é fundamental pra sistemas grandes e complexos e com equipes multidisciplinares</li>
+                <li>Criar o hábito de documentos o seu código</li>
+                <li>Aprenda com arquitetos e desenvolvedores experientes</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>APLICAÇÕES WEB.</h2>
+            <p>A variedade de aplicações Web é enorme, tanto em domínio quanto em tipo.</p>
+            <ul>
+                <li>Redes Sociais</li>
+                <li>Blogs Pessoais</li>
+                <li>Comércio Eletrônico</li>
+                <li>Internet-Banking</li>
+                <li>Plataforma de Ensino Online</li>
+            </ul>
+            <p>Essas aplicações Web também apresentam grande variedade de requisitos não funcionais, como por exemplo:</p>
+            <ul>
+                <li>Segurança</li>
+                <li>Desempenho</li>
+                <li>Escalabilidade</li>
+                <li>Disponibilidade</li>
+            </ul>
+            <p>Deste modo, ao pensarmos em uma aplicação Web atual precisamos considerar não somente a interface com o usuário, mas se esta aplicação atende a alguns desses requisitos não funcionais, os quais dependem por exemplo em que local a aplicação está hospedada, etc.</p>
+        </section>
+    
+        <section>
+            <h2>ARQUITETURAS WEB.</h2>
+            <p>Arquitetar uma aplicação de software é fundamental para separar as responsabilidades entre os componentes</p>
+            <ul>
+                <li>Ajuda a entender os requisitos não-funcionais esperados pela aplicação</li>
+                <li>Embora a complexidade aumente, pois quanto mais componentes, mais pontos para tratar</li>
+            </ul>
+            <p>No curto, médio e longo prazo a arquitetura escolhida pode impactar o funcionamento da aplicação</p>
+            <ul>
+                <li>No <b>curto prazo</b> em geral focamos apenas no desenvolvimento</li>
+                <li>No <b>médio prazo</b> o foco é na produção da aplicação</li>
+                <li>No <b>longo prazo</b> a preocupação recai sobre a manutenção da aplicação</li>
+            </ul>
+            <p>As arquiteturas separam as responsabilidades em camadas em que cada uma delas pode estar em servidores diferentes</p>
+            <p>Exemplos</p>
+            <ul>
+                <li>Arquitetura Cliente-Servidor</li>
+                <ul>
+                    <li>Em geral tem relação com o processamento e armazenamento</li>
+                </ul>
+                <li>Arquitetura em 2 camadas</li>
+                <ul>
+                    <li>Separa o processamento/armazenamento e a apresentação dos resultados</li>
+                </ul>
+                <li>Arquitetura em 3 camadas</li>
+                <ul>
+                    <li>Separa aplicação da apresentação e do processamento/armazenamento</li>
+                </ul>
+            </ul>
+            <p>Podemos também organizar as arquiteturas em monolíticas e de micro-serviços</p>
+            <ul>
+                <li><b>Monolítica</b></li>
+                <ul>
+                    <li>É simples e foi muito utilizada no passado</li>
+                    <ul>
+                        <li>Suas características são:</li>
+                        <ul>
+                            <li>Suporta diversos tipos de clientes (mobile e desktop)</li>
+                            <li>Pode integrar com outras aplicações com REST ou SOAP</li>
+                            <li>Trata requisições HTTP, executa regras de negócios, acessa banco de dados, etc.</li>
+                        </ul>
+                    </ul>
+                    <li>Exemplo: Um sistema para reservas em um hotel</li>
+                    <ul>
+                        <li>Recebe reservas dos clientes (app cliente)</li>
+                        <li>Verifica disponibilidade de quartos (back-end)</li>
+                        <li>Valida pagamento (back-end)</li>
+                        <li>Faz reserva (back-end)</li>
+                    </ul>
+                    <li>Avisa o hotel (back-end) Veja o número de camadas da aplicação!!!</li>
+                    <li><b>Vantagens</b></li>
+                    <ul>
+                        <li>Desenvolvimento inicial rápido</li>
+                        <li>Mais simples de aprender</li>
+                        <li>Usa uma infraestrutura simples</li>
+                    </ul>
+                    <li><b>Desvantagens</b></li>
+                    <ul>
+                        <li>Componentes com acoplamento forte</li>
+                        <li>Mudanças em um componente, precisa atualizar a aplicação inteira</li>
+                        <li>Tempo de inicialização grande e muito uso de CPU e memória</li>
+                    </ul>
+                </ul>
+                <li><b>Micro-serviços</b></li>
+                <ul>
+                    <li>Arquitetura mais atual e muito popular entre arquitetos e desenvolvedores Web</li>
+                    <li>Oferece muito das funcionalidades da arquitetura monolítica</li>
+                    <li>Os componentes têm baixo acoplamento e exigem monitoramento</li>
+                    <li>São mais leves e com funcionalidades específicas</li>
+                    <li>Cada componente pode ser desenvolvido com uma stack de tecnologia própria</li>
+                    <li>Podem ser desenvolvidos, testados, implantados e escalados de forma independente</li>
+                    <li>Exemplo: Um sistema de vendas online em que usuários podem navegar entre categorias, escolher e adicionar produtos ao carrinho, fazer e acompanhar pedidos</li>
+                    <ul>
+                        <li>O sistema precisa fazer gestão de estoque, de usuários, métodos de pagamento diferentes, gestão de compras e de entregas</li>
+                        <li>É preciso que a interface com o usuário tenha um sistema de autenticação, e seja simples e fácil de usar</li>
+                    </ul>
+                    <li><b>Vantagens</b></li>
+                    <ul>
+                        <li>Baixo acomplamento entre os componentes, mais fácil de testar e inicializa mais rápido</li>
+                        <li>A falha em um componente isolado não para toda a aplicação</li>
+                        <li>Os times de desenvolvimento são independentes (bom para estratégias de desenvolvimento Ágeis)</li>
+                    </ul>
+                    <li><b>Desvantagens</b></li>
+                    <ul>
+                        <li>No geral, o desenvolvimento fica mais complexo</li>
+                        <li>Os testes e a integração são custosos e complexos (têm muitas partes separadas)</li>
+                        <li>Precisa de uma infraestrutura mais complexa (dockers)</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Metodologias de Desenvolvimento.</h2>
+            <p>Há diversos métodos e abordagens que podem ser utilizados para desenvolver um software e elas se encaixam atualmente em duas categorias:</p>
+            <ul>
+                <li><b>Metodologias Ágeis</b></li>
+                <ul>
+                    <li>Scrum</li>
+                    <li>Kanban</li>
+                    <li>Lean</li>
+                    <li>Smart</li>
+                </ul>
+                <li><b>Cascata</b></li>
+            </ul>
+            <p><b>Metodologia Ágil</b></p>
+            <ul>
+                <li>Foca no projeto e visa fazer melhorias contínuas na aplicação, com base em feedbacks de usuários, clientes e do time de desenvolvimento. Não tem estruturas rígidas e atua com processos de desenvolvimento curtos. Problemas podem ser resolvidos em estágio inicial, o que pode melhorar a qualidade</li>
+                <ul>
+                    <li><b>Scrum</b></li>
+                    <ul>
+                        <li>Tem como objetivo agregar mais produtividade aos processos</li>
+                        <li>Recursos: listas sobre trabalhos pendentes, reuniões diárias, sessões de planejamento para tratar os problemas. Equipes podem identificar e corrigir os problemas rapidamente</li>
+                    </ul>
+                    <li><b>Kanban</b></li>
+                    <ul>
+                        <li>Interessante para equipes que recebem muitos pedidos. Atualizações solicitadas são liberadas quando ficam prontas. Não tem período fixo para entrega de tarefas. É flexível e muito boa para desenvolver sistemas que têm muitos requisitos de mudanças</li>
+                    </ul>
+                    <li><b>Lean</b></li>
+                    <ul>
+                        <li>Estratégia que se concentra na redução das perdas durante o processo de desenvolvimento. O valor a ser gerado para os clientes é o ponto fundamental de todas as atividades. O projeto é analisado de forma minuciosa desde o início. É bom para projetos com orçamento limitado e com tempo pequeno para ser desenvolvido.</li>
+                    </ul>
+                    <li><b>Smart</b></li>
+                    <ul>
+                        <li>É uma ferramenta que tem o objetivo de definir metas construídas de forma a se considerar 5 atributos: S (Específico), M (Mensurável), A (Atingível), R (Relevante) e T (Temporal)...</li>
+                    </ul>
+                </ul>
+            </ul>
+            <p><b>Cascata</b></p>
+            <ul>
+                <li>É o oposto da metodologia Ágil, sendo portanto mais travada, pois adota controle e processos com mais rigor. Só inicia uma etapa quando a anterior for concluída</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <ul>                
+                <li>1. https://mundodevops.com/blog/desenvolvimento-web/ </li>
+                <li>2. https://www.monitoratec.com.br/blog/metodologias-de-desenvolvimento-de-software/# </li>
+                <li>3. https://www.atlassian.com/br/agile/scrum </li>
+                <li>4. https://www.totvs.com/blog/negocios/metodologia-agil/ </li>
+                <li>5. https://rockcontent.com/br/blog/kanban/ </li>
+                <li>6. https://www.ludospro.com.br/blog/metodologia-lean </li>
+                <li>7. Ajax, Rich Internet Applications e Desenvolvimento Web para Programadores </li>
+                <li>8. Desenvolvimento de Software II: Introdução ao Desenvolvimento Web com HTML, CSS, JavaScript e PHP</li>
+                <li>9. https://rockcontent.com/br/blog/metodologias-ageis/</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de Set de 2024</p>
+    </footer>
+</body>
+</html>
