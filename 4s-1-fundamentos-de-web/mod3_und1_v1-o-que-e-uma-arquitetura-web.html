@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Arquitetura WEB.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Arquitetura WEB</h1>
+        <h2>💡 Unidade 1 - O que é uma arquitetura WEB.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-2.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=NwfUKE5eSBo&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=6&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                Desenvolvimento Web - Estrutura de Aplicações Web
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Estrutura de Aplicações Web</h3>
+            <b>Roteiro:</b>
+            <ul>
+                <li>Entendendo as aplicações Web</li>
+                <li>Camadas de uma aplicação Web</li>
+                <li>Um pouco sobre Cookies</li>
+                <li>Arquitetura MVC</li>
+                <li>Aplicação Web e Computação em Nuvem</li>
+                <li>Quebra-Cabeça de uma aplicação Web</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>ENTENDENDO AS APLICAÇÕES WEB.</h2>
+            <p>Uma aplicação Web é um software implantado/instalado em um servidor Web, sendo projetada para receber requisições, processá-las, armazenar (se for o caso) e responder a essas requisições.</p>
+            <ul>
+                <li>As respostas podem vir de apenas um servidor ou de vários servidores Web, especialmente por conta da enorme demanda de requisições para determinadas aplicações acessadas pelos usuários.</li>
+            </ul>
+            <p>Variações de aplicações Web:</p>
+            <ul>
+                <li>Baseada no navegador</li>
+                <ul>
+                    <li>Aquelas que possuem códigos que parcialmente serão processados no servidor Web, mas são executadas dentro do navegador. Elas têm capacidade de acessar dados do servidor remoto ou também localmente.</li>
+                </ul>
+                <li>Baseada no cliente</li>
+                <ul>
+                    <li>Semelhante à anterior, mas ao invés de ser executada dentro do navegador, são executadas como aplicações próprias, e exigem que sejam instaladas do lado do cliente/usuário.</li>
+                </ul>
+                <li>Aplicações Móveis</li>
+                <ul>
+                    <li>Mais comumente utilizada, em razão de os usuários terem aparelhos celulares. O app é executado em um SO móvel (Android, loS)</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>CAMADAS DE UMA APLICAÇÃO WEB.</h2>
+            <p>Embora de forma mais simples, uma aplicação Web consiste de apenas um servidor e seus clientes/usuários. Podemos vislumbrar uma aplicação Web baseada em 3 camadas:</p>
+            <ul>
+                <li>Apresentação</li>
+                <ul>
+                    <li>Apresenta informações ao usuário </li>
+                </ul>
+                <li>Lógica</li>
+                <ul>
+                    <li>Transforma, consulta, edita e manipula informações de e para os formulários nos quais deve ser apresentada ou armazenada </li>
+                </ul>
+                <li>Dados</li>
+                <ul>
+                    <li>Retêm dados para a aplicação de forma geral</li>
+                </ul>
+            </ul>
+            <p>As camadas descritas anteriormente dependem das tecnologias utilizadas do lado do servidor e do cliente.</p>
+            <p>No entanto, o padrão de comunicação deve ser feito via protocolo HTTP</p>
+            <ul>
+                <li>Servidores Web podem ser diferentes </li>
+                <ul>
+                    <li>Apache </li>
+                    <li>Nginx </li>
+                    <li>IIS (Microsoft) </li>
+                </ul>
+                <li>Um importante aspecto das aplicações Web é a utilização de Cookies</li>
+                <ul>
+                    <li>Os cookies são uma forma de armazenar informações que o protocolo HTTP não consegue armazenar</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>UM POUCO SOBRE COOKIES.</h2>
+            <ul>
+                <li>O protocolo HTTP não armazena informações da sessões de uma conexão para a próxima</li>
+                <ul>
+                    <li>Cada conexão HTTP é tratada de forma independente como uma ligação separada</li>
+                </ul>
+                <li>Uma aplicação em execução que usa o HTTP precisa manter o controle das informações de alguma forma, e é por isso que os cookies são utilizados.</li>
+                <li>Os cookies são importantes e necessários para o funcionamento de milhares de aplicações Web no mundo</li>
+                <li>Embora importantes, os cookies podem ser usados por usuários mal-intencionados, que os utilizam para comprometer a segurança geral da aplicação Web</li>
+                <li>Um cookie pode ser um token de autenticação, ou uma espécie de mecanismo para armazenamento de dados</li>
+                <ul>
+                    <li>Por isso que invasores desejam muito o acesso aos cookies</li>
+                    <ul>
+                        <li>Ataques como o XSS e Sniffing são comuns para roubar informações de sessões de cookies que residem na máquina do usuário</li>
+                    </ul>
+                </ul>
+                <li>Há um lado bom em relação ao uso de cookies</li>
+                <ul>
+                    <li>Eles nos ajudam, por exemplo, em processos de compras em lojas online, em que vamos colocando tudo o que desejamos em um carrinho de compras e só finalizamos uma conexão com o servidor quando clicamos definitivamente no botão comprar</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>ARQUITETURA MVC.</h2>
+            <p>
+                Model View Controller (MVC)</p>
+            <ul>
+                <li>Um padrão de projeto de software ou padrão de arquitetura de software formulado na década de 1970</li>
+                <ul>
+                    <li>Separação de conceitos em 3 camadas interconectadas</li>
+                    <ul>
+                        <li>Apresentação dos dados e interação com Controle usuários (front-end) são separados dos métodos que interagem com o back-end (banco de dados e outros)</li>
+                    </ul>
+                </ul>
+            </ul>
+            <p>Tornou-se popular para aplicações Web, muito embora, originalmente, tenha sido desenvolvida para construir aplicações com interface gráfica para os usuários</p>
+            <p>Serve também para aplicações móveis e para aplicações desktop</p>
+            <p>Linguagens que utilizam MVC</p>
+            <ul>
+                <li>PHP, Java, C#, Ruby, JavaScript e outros frameworks</li>
+            </ul>
+            <p>Os componentes do MVC:</p>
+            <ul>
+                <li><b>Model</b> (camada de modelo ou lógica da aplicação)</li>
+                <ul>
+                    <li>Ponte entre a View e Controller. É a parte lógica da aplicação e gerencia o comportamento dos dados por meio de regras de negócios, lógica e funções </li>
+                </ul>
+                <li><b>View</b> (camada de apresentação ou visualização)</li>
+                <ul>
+                    <li>Saída de representação dos dados (tabela, diagrama, etc). É como os dados solicitados do modelo são exibidos. Aqui podemos ter várias visões de um mesmo dado (usar uma tabela, usar um gráfico, etc). Ela permite interações com o usuário </li>
+                </ul>
+                <li><b>Controller</b> (camada de controle ou controlador)</li>
+                <ul>
+                    <li>Faz a mediação entre o modelo e a View, ou seja entre a entrada e a saída dos dados</li>
+                </ul>
+            </ul>
+            <p>Interação entre os componentes:</p>
+            <ul>
+                <li>Controlador</li>
+                <ul>
+                    <li>envia comandos para modelo para atualizar o seu estado (editar um documento, por exemplo)</li>
+                </ul>
+                <li>Modelo</li>
+                <ul>
+                    <li>armazena dados e notifica suas visões e controladores associados</li>
+                </ul>
+                <li>Visão</li>
+                <ul>
+                    <li>gera uma representação dos dados presentes no modelo solicitado e faz a exibição dos dados (html ou xml)</li>
+                </ul>
+            </ul>
+            <p>Utilização em aplicações Web:</p>
+            <ul>
+                <li>Muitos frameworks de desenvolvimento de aplicações Web foram desenvolvidos com base neste modelo</li>
+                <li>Atualmente, os frameworks Web MVC utilizando uma abordagem thin-client quase colocaram o model, view e controller tudo no servidor</li>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>Cliente envia requisições ao controlador e então recebe uma página Web completa atualizada da View. Veja que o modelo está praticamente todo no servidor Web neste caso</li>
+                </ul>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>Em uma aplicação Web em que a visão é um <b>documento HTML</b> gerado pela aplicação, o controlador recebe uma entrada GET ou POST após um estímulo do usuário (um clique em um botão do form) e processa o documento. Isso invoca objetos do domínio para tratar a <b>lógica de negócio</b>, e em seguida invoca uma <b>visão</b> para apresentar a saída ao usuário.</li>
+                </ul>
+            </ul>
+            <b>Vantagens</b>
+            <ul>
+                <li>A aplicação torna-se escalável </li>
+                <li>Facilita o reuso de códigos </li>
+                <li>Facilita a manutenção da aplicação </li>
+                <li>Como a arquitetura é modular, permite que desenvolvedores e designers desenvolvam em paralelo </li>
+                <li>Partes da aplicação podem ser alteradas sem alterar outras </li>
+            </ul>
+            <b>Desvantagens</b>
+            <ul>
+                <li>À medida que cresce o projeto, cresce o número de arquivos e pastas </li>
+                <li>Requer tempo para modelar o sistema</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>APLICAÇÃO WEB E COMPUTAÇÃO EM NUVEM.</h2>
+            <ul>
+                <li>Uma nuvem computacional não armazena somente fotos, vídeos e áudios</li>
+                <li>Muitas aplicações que você utiliza, como Redes Sociais, Bancos Online, Lojas de Departamentos Online estão também em um ambiente computacional na nuvem</li>
+                <li>As aplicações Web se integram aos provedores de serviços como AWS, Azure e Google Cloud, o que permite maior flexibilidade e acesso em relação ao uso das aplicações fora do ambiente de Cloud</li>
+                <li>A nuvem também contempla muitas partes de aplicações que consumimos por meio de smartphones e tablets</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>QUEBRA-CABEÇA UMA APLICAÇÃO WEB.</h2>
+            <ul>
+                <li>Há vários componentes em uma aplicação Web, em que cada um possui uma função específica</li>
+                <ul>
+                    <li>Login/Autenticação</li>
+                    <ul>
+                        <li>Usado para ter acesso ao sistema/aplicação</li>
+                        <li>Ela pode ser: anônima, básica, com certificados digitais</li>
+                    </ul>
+                    <li>Servidores Web</li>
+                    <ul>
+                        <li>Hardware + Software para hospedar a aplicação Web</li>
+                    </ul>
+                    <li>Permissões</li>
+                    <ul>
+                        <li>Com base na autenticação e autorização, é determinado o nível de acesso que o usuário tem em relação aos recursos no servidor</li>
+                    </ul>
+                    <li>Conteúdo da Aplicação</li>
+                    <ul>
+                        <li>Informação com a qual o cliente/usuário vai interagir</li>
+                    </ul>
+                    <li>Páginas de acesso aos dados</li>
+                    <ul>
+                        <li>As que são anexadas a uma biblioteca que fornece acesso aos dados</li>
+                    </ul>
+                    <li>Armazenamento de dados</li>
+                    <ul>
+                        <li>Onde são armazenadas as informações da aplicação Web. O armazenamento é feito em bases de dados remotas e protegidas</li>
+                    </ul>
+                    <li>Lógica</li>
+                    <ul>
+                        <li>Interage com o usuário e fornece mecanismos para obter as informações a serem obtidas do banco de dados</li>
+                    </ul>
+                    <li>Logout</li>
+                    <ul>
+                        <li>Utilizada pelos usuários para se desconectar da aplicação</li>
+                        <ul>
+                            <li>Isso pode ocorrer sem a interação direta do usuário, depois de um período de inatividade do usuário com a aplicação (a sessão é fechada automaticamente)</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+           
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <ul>
+                <li>1.https://www.devmedia.com.br/aplicacao-web-usando-arquitetura-mvc/24375</li>
+                <li>2.https://www.lewagon.com/pt-BR/blog/o-que-e-padrao-mvc</li>
+                <li>3.https://pt.wikipedia.org/wiki/MVC</li>
+                <li>4.https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview</li>
+                <li>5.https://www.redhat.com/pt-br/topics/cloud-native-apps/what-are-cloud-applications</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de Set de 2024</p>
+    </footer>
+</body>
+</html>
