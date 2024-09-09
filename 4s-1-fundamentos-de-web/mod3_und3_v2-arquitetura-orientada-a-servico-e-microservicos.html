@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Arquitetura WEB.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Arquitetura WEB</h1>
+        <h2>💡 Unidade 3 - Arquitetura orientada a serviço e microsserviços.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB-T01-2024-2.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=Z1Kw6HzSCu0&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=13&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                Desenvolvimento Web - Aplicações Web RESTFul
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Estrutura de Aplicações Web</h3>
+            <b>Roteiro:</b>
+            <ul>
+                <li>Retrospectiva</li>
+                <li>Introdução ao REST</li>
+                <li>REST x RESTFUL</li>
+                <li>Restrições da API RESTFUL</li>
+                <li>Interface Uniforme</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Retrospectiva.</h2>
+            <p>O HTTP que utilizamos atualmente foi inicialmente concebido para apenas fazer ligações entre páginas Web, ou seja, só transportava HTML</p>
+            <p>Hoje os recursos disponíveis podem ser de qualquer tipo de mídia</p>
+            <p>O transporte de recursos (dados) exceto páginas HTML era feito no início com RPC (Remote Procedure Call)</p>
+            <ul>
+                <li>As RPCs permitiam requisitar serviços de outras máquinas para conseguirmos recursos via rede, sem saber dos detalhes de implementação</li>
+            </ul>
+            <p>Em 1998, Dave Winer juntou a disponibilidade dos serviços disponíveis anteriormente com a Web e cunhou o termo Web Services que inicialmente era baseado em XML-RPC</p>
+            <p>Por isso a importância do RPC no contexto</p>
+            <p>O XML-RPC foi criado para ser usado em cima do HTTP como protocolo de transporte dos dados</p>
+            <p>Depois foi rebatizado como SOAP, que de fato se tornou o padrão de transporte de mensagens XML entre aplicações distribuídas</p>
+            <p>Embora o SOAP seja um protocolo poderoso em termos de exposição de dados, ele é complexo</p>
+            <p>Para simplificar as coisas, foram idealizadas Web APIs, e uma delas foi a REST.</p>
+        </section>
+        
+        <section>
+            <h2>Introdução ao REST.</h2>
+            <p>O REST é uma forma alternativa de se desenvolver Web Services</p>
+            <p>Foi proposto por Roy Fielding (2000), em sua tese de doutorado.</p>
+            <ul>
+                <li>Razão pela qual não há tantas especificações e padrões. Em resumo é simples!!!</li>
+            </ul>
+            <p>A vantagem do REST é que ele foi amadurecendo de forma gradativa se comparado ao SOAP</p>
+            <p>REST é muito aderente às necessidades do mercado de desenvolvimento de aplicações Web atuais</p>
+        </section>
+
+        <section>
+            <h2>REST x RESTFUL.</h2>
+            <p>REST</p>
+            <ul>
+                <li>É uma abstração da arquitetura da WWW</li>
+                <li>É um estilo arquitetural que tem um conjunto de restrições aplicados a componentes da aplicação</li>
+                <li>Ele ignora detalhes de implementação de componente e sintaxe do protocolo</li>
+                <ul>
+                    <li>Foca nos papéis dos componentes</li>
+                </ul>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>RESTRIÇÃO DA API RESTFUL.</h2>
+            <p>Critérios para API Restful</p>
+            <ul>
+                <li>Interface uniforme</li>
+                <li>Sem estado</li>
+                <li>Cacheável</li>
+                <li>Cliente-Servidor</li>
+                <li>Baseado em camadas</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>INTERFACE UNIFORME.</h2>
+            <p>Das restrições destacadas a que menos é atendida éa interface uniforme</p>
+            <p>Para alcançar a interface uniforme é preciso atingir 4 critérios</p>
+            <ul>
+                <li>Base em recursos</li>
+                <ul>
+                    <li>Se comparado ao RPC REST lidar com recursos ao invés de métodos.</li>
+                    <ul>
+                        <li>Exemplo: as chamadas posts/criar-dados?=valor=Teste e /posts são diferentes</li>
+                    </ul>
+                </ul>
+                <li>Manipular recursos por meio de representações</li>
+                <ul>
+                    <li>Cliente lida com os recursos por meio de uma representação (JSON, XML, etc.), que contenha informação suficiente para manipular este no servidor</li>
+                </ul>
+                <li>Mensagens autodescritivas</li>
+                <ul>
+                    <li>Também inclui informações para que o cliente saiba como utilizá-las. Usando HTTP, por exemplo, é necessário uma propriedade Content-Type incluída no cabeçalho para descrever que tipo de representação é utilizada.</li>
+                </ul>
+                <li>Hipermídia como motor do estado da aplicação (HATEOS)</li>
+                <ul>
+                    <li>Tem como objetivo ajudar os clientes a consumirem o serviço sem a necessidade de conhecimento prévio profundo da API.</li>
+                </ul>
+            </ul>
+            <p>Exemplo de API que obedece a restrição HATEOAS</p>
+            <pre>
+                {
+                    "cursos": [
+                        {
+                            "id": 1,
+                            "nome": "C++",
+                            "aulas": "api.treinamento.univesp.br/cursos/1/aulas"
+                        },
+                        {
+
+                            "id":2,
+                            "nome": "Ruby",
+                            "aulas": "api.treinamento.univesp.com.br/cursos/2/aulas"
+                        },
+                        {
+                            "id": 3,
+                            "nome": "Java",
+                            "aulas": "apitreinamento.univesp.com.br/cursos/3/aulas"
+                        }
+                    ]
+                }
+            </pre>
+            <p>HATEOAS (RFC 5988)</p>
+            <ul>
+                <li>Tem como objetivo ajudar os clientes a consumirem o serviço sem a necessidade de conhecimento prévio profundo da API.</li>
+            </ul>
+            <p>É importante frisar que uma API deve ser um livro aberto e que você não precise de acesso à documentação para saber como fazer um GET ou POST em um recurso</p>
+            <ul>
+                <li>Tudo precisa ser simples e tudo ser descoberto por meio da API</li>
+                <li>Se você não consegue fazer isso, sua API não é RESTFul</li>
+            </ul>
+            <p>O REST fornece uma interface uniforme com os métodos GET, POST, PUT e DELETE</p>
+            <img src="img/metodos_basicos_rest.jpeg" alt="metodos_basicos_rest.jpeg"> <br>
+            <i>https://javabahia.github.io/img/posts/2020-08-07-integracao-de-sistemas-com-web-service-rest-ou-soap/metodos_basicos_rest.jpeg</i>
+            <p>Interface uniform:</p>
+            <img src="img/interface-uniform.jpg" alt="interface-uniform.jpg"> <br>
+            <i>https://i.sstatic.net/9vcYP.jpg</i>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <ul>                
+                <li>1.Desenvolvimento de Software II: Introdução ao Desenvolvimento Web com HTML, CSS, JavaScript e PHP</li>
+                <li>2.https://www.treinaweb.com.br/blog/o-que-e-hateoas</li>
+                <li>3.https://en.wikipedia.org/wiki/HATEOAS</li>
+                <li>4.https://javabahia.github.io/integracao-de-sistemas-com-web-service-rest-ou-so ap/#4-rest</li>
+                <li>5.http://www.revistaintellectus.com.br/artigos/6.71.pdf</li>
+                <li>6.http://www.linhadecodigo.com.br/artigo/2059/web-services-rest.aspx</li>
+                <li>7.https://www.infoq.com/br/articles/rest-introduction/</li>
+                <li>8.https://pt.wikipedia.org/wiki/Dave_Winer</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de Set de 2024</p>
+    </footer>
+</body>
+</html>
