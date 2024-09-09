@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUNDAMENTOS DE WEB-T01-2024-2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FUNDAMENTOS DE WEB-T01-2024-2</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 3 – Arquitetura WEB.</h2>
+        <p>Profº Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>FUNDAMENTOS DE WEB
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>A Arquitetura WEB é uma especialização de arquitetura de software que abrange os aspectos típicos e característicos da WEB. Como visto no módulo 1, a WEB é um serviço distribuído, ancorado em diversas camadas de protocolos de redes, a arquitetura Cliente/Servidor foi a que mais influenciou e deu base para outras arquiteturas.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Realize buscas na web utilizando combinações das palavras-chave “arquitetura”, “web”, “software” com outras que julgar de interesse a este fórum. Analise os resultados, escolha um subtipo de arquitetura, apresente-o no tópico e discuta suas características, uso típico, vantagens e desvantagens.</p>
+        </section>
+
+        <section>
+            <h2>Resolução</h2>
+            <h3>Apresentação da Arquitetura REST (Representational State Transfer).</h3>
+            
+            <b>Características:</b>
+            <p>A arquitetura REST utiliza HTTP como protocolo de comunicação, e os recursos são acessados por meio de URL's, representados em formatos como JSON ou XML.</p>
+            <p>Segue princípios como:</p>
+            <ol>
+                <li><b>Cliente-Server</b>:</li>
+                <ul>
+                    <li>Separação clara entre cliente e servidor, promovendo independência entre as partes.</li>
+                </ul>
+                <li><b>Stateless:</b></li>
+                <ul>
+                    <li>Cada requisição do cliente ao servidor deve conter todas as informações necessárias para ser compreendida e processada, sem depender de requisições anteriores.</li>
+                </ul>
+                <li><b>Cacheable:</b></li>
+                <ul>
+                    <li>As respostas podem ser armazenadas em cache para melhorar a eficiência.</li>
+                </ul>
+                <li><b>Uniform Interface:</b></li>
+                <ul>
+                    <li>Utiliza operações padrão do protocolo HTTP, como GET, POST, PUT, DELETE.</li>
+                </ul>
+            </ol>
+            
+            <b>Uso:</b>
+            <p>A arquitetura REST é amplamente utilizada em APIs web devido à sua simplicidade e à integração fácil com diversos sistemas. É usada em aplicações móveis, sistemas de microsserviços e em APIs públicas para serviços como redes sociais e mapas.</p>
+
+            <b>Vantagens:</b>
+            <ol>
+                <li>Escalabilidade:</li>
+                <ul>
+                    <li>Por ser Stateless(recursos isolados), a arquitetura REST permite maior escalabilidade.</li>
+                </ul>
+                <li>Flexibilidade:</li>
+                <ul>
+                    <li>Funciona com qualquer linguagem de programação que suporte HTTP.</li>
+                </ul>
+                <li>Cache:</li>
+                <ul>
+                    <li>Aproveita o cacheamento para otimizar a performance.</li>
+                </ul>
+            </ol>
+
+            <b>Desvantagens:</b>
+            <ol>
+                <li>Limitações em operações complexas:</li>
+                <ul>
+                    <li>Para operações que vão além do CRUD, REST pode se tornar mais complexo.</li>
+                </ul>
+                <li>Overhead em requisições:</li>
+                <ul>
+                    <li>O uso de HTTP pode adicionar overhead em comparação a outros protocolos.</li>
+                </ul>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 9 de Set de 2024</p>
+    </footer>
+</body>
+</html>
