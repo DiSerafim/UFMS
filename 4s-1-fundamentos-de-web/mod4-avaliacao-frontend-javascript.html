@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUNDAMENTOS DE WEB-T01-2024-2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FUNDAMENTOS DE WEB-T01-2024-2</h1>
+        <h2>📍 [Checkout de Presença] Módulo 4 – Frontend Javascript.</h2>
+        <p>Profº Especialista: Luciano Édipo Pereira da Silva.</p>
+        <p>Vencimento: segunda, 15 abr 2024, 23:59</p>
+        <p>Fecha: terça, 2 jul 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>FUNDAMENTOS DE WEB
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Essa atividade será uma evolução da atividade do Módulo 2. Utilizando como base o formulário HTML5 construído no Módulo 2, atualize-o utilizando um dos frameworks front-end abaixo de sua escolha:</p>
+            <ul>
+                <li>Bootstrap - https://getbootstrap.com.br/ ;</li>
+                <li>jQuery - https://jquery.com/ ;</li>
+                <li>Vue.js - https://vuejs.org/ ;</li>
+                <li>Angular.js  - https://angularjs.org/ ;</li>
+                <li>React -  https://pt-br.reactjs.org/ .</li>
+            </ul>
+
+            <p>Os requisitos de campos são parecidos ao da atividade do Módulo 2, mas atente para os demais detalhes adicionais. O formulário deve conter dados mostrados no Modelo de Formulário HTML 5, com o qual uma pessoa poderá se cadastrar para utilizar os serviços de um site.</p>
+            <img src="img/formulario-html.png" alt="formulario-html.png">
+            <p>O formulário deve ser criado usando um dos  frameworks escolhidos (Bootstrap; jQuery; Vue.js; Angular.js; React), podendo utilizar outros elementos linkados externamente. Utilize estas páginas para auxiliar, perceba os links adicionais no menu lateral, nem todos estarão em português (infelizmente!):</p>
+            <ul>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms (pt-BR)</li>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Your_first_form (pt-BR)</li>
+                <li>https://developer.mozilla.org/pt-BR/docs/Learn/Forms/How_to_structure_a_web_form  (pt-BR)</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Other_form_controls</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms</li>
+                <li>https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling</li>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Sobre os dados:</b>
+            <p>Todos os campos  devem estar presentes no formulário, e:</p>
+            <ol>
+                <li>O campo Estado Civil deverá vir com as seguintes opções: Solteiro, Casado, Viúvo, e Divorciado;</li>
+                <li>Os campos a seguir devem ser marcados como de preenchimento obrigatório, ou seja devem ter  atributo [https://www.w3schools.com/tags/att_input_required.asp]:</li>
+                <ul>
+                    <li>Nome completo</li>
+                    <li>CPF</li>
+                    <li>Email</li>
+                    <li>Endereço</li>
+                    <li>Bairro</li>
+                    <li>Cidade</li>
+                    <li>UF (deverá vir com as siglas de todos os estados brasileiros para o usuário escolher)</li>
+                    <li>CEP</li>
+                    <li>Data de Nascimento</li>
+                    <li>Celular</li>
+                    <li>Login</li>
+                    <li>Senha</li>
+                </ul>
+                <li>O formulário deve ter 3 agrupamentos de campo &lt;fieldset>, onde os campos correspondentes devem estar inseridos:</li>
+                    <ul>
+                        <li>Dados Pessoais (referente a pessoa);</li>
+                        <li>Dados de Contato (referente a endereço e contato da pessoa);</li>
+                        <li>Dados de Cadastro (referente ao serviços e interesses em que se cadastrar).</li>
+                    </ul>
+            </ol>
+
+            <b>Sobre acessibilidade</b>
+            <p>Todos os elementos devem ter seus elementos de acessibilidade preenchidos corretamente, <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Accessibility/HTML" target="_blank">veja</a>.</p>
+
+            <b>Sobre a execução</b>
+            <p>O formulário poderá tanto o método POST quanto GET para o envio de dados para uma página de relatório, exemplo: “cadastro_resultado.html” ou “relatorio.php”, esta página de relatório deverá ser criada e usada para apresentar os dados preenchidos recebidos do formulário.</p>
+
+            <p>Dependendo de qual framework escolhido há diversas formas de se executar tal atividade, algumas com soluções nativas, outras usando JS ou outra linguagem de programação auxiliar. É imprescindível que ANTES de escolher, busque conhecer o básico na documentação do framework. Em cada link mostrado no início do enunciado há a opções de documentação, DOC ou manual, algumas apenas em inglês, em seguida adicionamos dois caminhos que podem ajudar na execução da atividade.</p>
+            <ol>
+                <li>✅Apenas nativo, neste caso deve buscar no framework escolhido a informação de como ele trata formulários, mostraremos um exemplo abaixo:</li>
+                <ul>
+                    <li>Por exemplo, caso escolha AngularJS, acessando o site Angular.js  - https://angularjs.org/ há no início o aviso sobre o link para o suporte ativo da linguagem que redireciona ao site https://angular.io/ e nossa primeira opção de DOCS aparece logo no início do site:</li>
+                    <li>haverá na seção “Developers Guides” o documento https://angular.io/guide/forms-overview onde verá como usar o frameworks para trabalhar com formulários.</li>
+                </ul>
+                <li>✅Outra solução adicional é usar o auxílio de alguma linguagem de programação WEB apenas para a leitura dos dados recebidos do formulário, que pode também ser usada em conjunto com qualquer um dos frameworks acima, sugerimos o uso do PHP, uma linguagem de programação Web versátil e muito utilizada.</li>
+
+            </ol>
+            <p>Para criar um ambiente básico para executar a atividade indicamos o uso do WAMP que instala e configura um ambiente básico para programação em PHP - https://www.wampserver.com/en/  e para auxiliar na criação do script PHP para recebimento dos dados do formulário veja a documentação, caso use GET → https://www.php.net/manual/pt_BR/reserved.variables.get.php ou POST → https://www.php.net/manual/pt_BR/reserved.variables.post.php, lembrando que essa solução deve continuar sendo usada em conjunto com os frameworks solicitados no início do enunciado.</p>
+
+            <b>Sobre o envio da atividade no AVA</b>
+            <ol>
+                <li>Postar um arquivo zip contendo (de acordo com o framework selecionado):</li>
+                <ul>
+                    <li>✅a página do formulário;</li>
+                    <li>✅a página do relatório;</li>
+                    <li>✅as dependências do framework.</li>
+                    <li><a href="https://www.youtube.com/watch?v=JV3zOwRbg38&ab_channel=AGEADUFMS" target="_blank" rel="noopener noreferrer">▶️ Clique aqui e assista ao vídeo-tutorial com orientações para realização da atividade</a></li>
+                    <li>Página mencionada no vídeo-tutorial: www.ledipo.eti.br/projetos/form-web</li>
+                </ul>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução:</h2>
+
+            <!-- Início do desenvolvimento do formulário. -->
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Formulário de Cadastro</title>
+                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+            </head>
+            <body>
+                <div class="container mt-5">
+
+                    <h3>Formulário de Cadastro.</h3>
+                    <form action="resultado.html" method="get">
+                    <!-- dados pessoais -->
+                        <fieldset class="border p-4 mb-4">
+                            <legend class="w-auto">Dados Pessoais</legend>
+
+                            <div class="form-group row">
+                                <label for="nome" class="col-sm-2 col-form-label">Nome Completo</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="nome" id="nome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cpf" class="col-sm-2 col-form-label">CPF</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="cpf" id="cpf" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="data-nascimento" class="col-sm-2 col-form-label">Data de Nascimento</label>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control" name="data-nascimento" id="data-nascimento" required>
+                                </div>
+                                
+                                <label for="sexo" class="col-form-label">Sexo</label>
+                                <div class="col-sm-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="masculino" name="sexo" value="masculino" required>
+                                        <label class="form-check-label" for="masculino">M</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="feminino" name="sexo" value="feminino" required>
+                                        <label class="form-check-label" for="feminino">F</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="outro" name="sexo" value="outro" required>
+                                        <label class="form-check-label" for="outro">Outro</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="estado-civil" class="col-sm-2 col-form-label">Est. Civil</label>
+                                <div class="col-sm-4">
+                                    <select  class="form-control" name="estado-civil" id="estado-civil" required>
+                                        <option value="solteiro">Solteiro</option>
+                                        <option value="casado">Casado</option>
+                                        <option value="viuvo">Viúvo</option>
+                                        <option value="divorciado">Divorciado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- contato -->
+                        <fieldset class="border p-4 mb-4">
+                            <legend class="w-auto">Dados de Contato</legend>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="website" class="col-sm-2 col-form-label">Website</label>
+                                <div class="col-sm-10">
+                                    <input type="url" class="form-control"  id="website" name="website">
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="endereco" class="col-sm-2 col-form-label">Endereço</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="endereco" id="endereco" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="bairro" class="col-sm-2 col-form-label">Bairro</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="bairro" id="bairro" required>
+                                </div>
+                                <label for="cidade" class="col-form-label">Cidade</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="cidade" id="cidade" required>
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="cep" class="col-sm-2 col-form-label">CEP</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="cep" id="cep" required>
+                                </div>
+
+                                <label for="uf" class="col-form-label">UF</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control" name="uf" id="uf" required>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
+                                <div class="col-sm-4">
+                                    <input type="tel" class="form-control" name="telefone" id="telefone" required>
+                                </div>
+
+                                <label for="celular" class="col-form-label">Celular</label>
+                                <div class="col-sm-4">
+                                    <input type="tel" class="form-control" name="celular" id="celular" required>
+                                </div>
+                            </div>
+                        </fieldset>
+    
+                        <fieldset class="border p-4 mb-4">
+                            <legend class="w-auto">Dados de Cadastro</legend>
+                            <div class="form-group row">
+                                <label for="login" class="col-sm-2 col-form-label">Login</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="login" id="login" required>
+                                </div>
+                                
+                                <label for="senha" class="col-form-label">Senha</label>
+                                <div class="col-sm-4">
+                                    <input type="password" class="form-control" name="senha" id="senha" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="d-block">Deseja receber informações sobre os seguintes assuntos abaixo:</label>
+                                
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+                                            <label class="form-check-label" for="tecnologia">Tecnologia</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="esportes" name="interesses" value="esportes">
+                                            <label class="form-check-label" for="esportes">Esportes</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="automoveis" name="interesses" value="automoveis">
+                                            <label class="form-check-label" for="automoveis">Automóveis</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="culinaria" name="interesses" value="culinaria">
+                                            <label class="form-check-label" for="culinaria">Culinária</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="politica" name="interesses" value="politica">
+                                            <label class="form-check-label" for="politica">Política</label>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="policial" name="interesses" value="policial">
+                                            <label class="form-check-label" for="policial">Policial</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tempo" name="interesses" value="tempo">
+                                            <label class="form-check-label" for="tempo">Tempo</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cultura" name="interesses" value="cultura">
+                                            <label class="form-check-label" for="cultura">Cultura</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="economia" name="interesses" value="economia">
+                                            <label class="form-check-label" for="economia">Economia</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="jogos" name="interesses" value="jogos">
+                                            <label class="form-check-label" for="jogos">Jogos</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="educacao" name="interesses" value="educacao">
+                                            <label class="form-check-label" for="educacao">Educação</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="viagem" name="interesses" value="viagem">
+                                            <label class="form-check-label" for="viagem">Viagem</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="empregos" name="interesses" value="empregos">
+                                            <label class="form-check-label" for="empregos">Empregos</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-2 col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="moda" name="interesses" value="moda">
+                                            <label class="form-check-label" for="moda">Moda e Estilo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="aceitar-regras" name="regras" required>
+                                    <label class="form-check-label" for="regras">Li as regras de cadastro e autorizo a criação do usuário</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                        <a href="#" class="btn btn-secondary">Retornar</a>
+                    </form>
+                </div>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script src="script.js"></script>
+            </body>
+            </html>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de Set de 2024</p>
+    </footer>
+</body>
+</html>

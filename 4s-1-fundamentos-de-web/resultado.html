@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultado do Cadastro</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div>
+            <div class="container mt-5">
+                <div id="resultado"></div>
+                <a href="http://127.0.0.1:5500/4s-1-fundamentos-de-web/formulario.html" class="btn btn-secondary">Voltar</a>
+            </div>
+
+            ̣<!-- jQuery para manipulação DOM mais fácil e outras funcionalidades -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- Bootstrap -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                let result = '<h2 style="text-align: center; padding: 1vmax; margin: 0 0 2vmax 0">Resultado do Cadastro</h2>';
+
+                for (const [key, value] of params.entries()) {
+                    result += `<div class="form-group row col-sm-10" ><p style="color: #c5c5c5">${key}:</p><b class="col-sm-4">${value}</b></div>`;
+                }
+
+                document.getElementById('resultado').innerHTML = result;
+            </script>
+        </div>
+    </body>
+</html>
