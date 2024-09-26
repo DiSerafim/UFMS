@@ -206,3 +206,85 @@ footer {
   transition: all 0.3s ease-out;
 }
 /* css do button fim */
+
+/* Explicação checkout de presença interface humano computador modulo 2 */
+.card {
+  width: 700px;
+  height: 100%;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  }
+  
+  .card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 10px;
+  }
+  
+  .progress-bar-inner {
+  width: 0;
+  height: 10px;
+  background-color: #4CAF50;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+  }
+  
+  .card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  
+  .card li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  }
+  
+  .material-container {
+  margin-top: 20px;
+  }
+  
+  .material-container h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  }
+  
+  .material-container p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+  }
+  
+  .material-container video {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  }
+  
+  .next-material {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  }
+  
+  .next-material:hover {
+  background-color: #3e8e41;
+  }
+  
