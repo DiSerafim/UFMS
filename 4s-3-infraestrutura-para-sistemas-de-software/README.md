@@ -3,8 +3,8 @@
 **UFMS Digital**
 
 Disciplina: **🚀 Infraestrutura para Sistemas de Software**  
-Carga horária: **85 h**
 Professor Especialista: **Carlos Alberto da Silva**
+Carga horária: **85 h**
 
 Este repositório contém os materiais de estudo, atividades e protótipos desenvolvidos durante os módulos de **Infraestrutura para Sistemas de Software** no curso de **Tecnologia da Informação** na **UFMS Digital**.
 
