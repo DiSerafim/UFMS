@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 1 - Redes de computadores</h1>
+        <h2>💡 Unidade 2 - Arquitetura dos protocolos em camadas.</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=QV7isl7vB0U&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 1 - Unidade 2 - Arquitetura dos protocolos em camadas
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Arquitetura dos protocolos em camadas</h3>
+            <ul>
+                <li>Compreender protocolos</li>
+                <li>Modelo OSI e seus níveis</li>
+                <li>Modelo TCP/IP e seus níveis</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Compreender protocolos.</h2>
+            <b>Protocolos</b>
+            <p>Os protocolos de comunicação em redes são responsáveis por realizar a comunicação entre dispositivos que estejam conectados a uma rede.</p>
+            <p>Um protocolo é um conjunto de regras que gerencia a comunicação de dados.</p>
+            <p>Exemplo de pilhas de protocolos</p>
+            <img src="img/protocolo.png" alt="pilhas de protocolos" title="pilhas de protocolos">
+            <p>Os elementos que compõem um protocolo são:</p>
+            <ul>
+                <li>sintaxe: representa a estrutura ou o formato dos dados e a ordem em que eles são apresentados.</li>
+                <li>semântica: representa o significado de cada seção de bits.</li>
+                <li>sincronismo: representa quando os dados devem ser enviados e com que agilidade podem ser enviados.</li>
+            </ul>
+            <p>Normas internacionais RFC (Request for comment):</p>
+            <ul>
+                <li>Transmission Control Protocol (TCP) – RFC 793</li>
+                <li>Internet Protocol (IP) - RFC 791</li>
+            </ul>
+            <p>Padronizando a comunicação entre os dispositivos das redes para:</p>
+            <ul>
+                <li>codificação de mensagens;</li>
+                <li>formatação e encapsulamento da mensagem;</li>
+                <li>tamanho da mensagem;</li>
+                <li>tempo da mensagem;</li>
+                <li>opções de envio da mensagem.</li>
+            </ul>
+            <p>Um protocolo define o padrão/forma de como será a comunicação entre os dispositivos das redes.</p>
+            <img src="img/protocolo-1.png" alt="protocolo define o padrão/forma" title="protocolo define o padrão/forma">
+            <p>Um dispositivo conectado na rede tem a opção de envio de uma mensagem para:</p>
+            <ul>
+                <li>uma pessoa (unicast);</li>
+                <li>um grupo de pessoas (multicast);</li>
+                <li>todos os computadores conectados à rede (broadcast).</li>
+            </ul>
+            <p>Opções de envio da mensagem:</p>
+            <img src="img/protocolo-2.png" alt="unicast, multicast, broadcast" title="unicast, multicast, broadcast">
+            <p></p>
+            <b>Protocolos de redes</b>
+            <ul>
+                <li>Um conjunto de protocolos pertence a uma camada.</li>
+                <ul>
+                    <li>cada camada possui funções específicas;</li>
+                    <li>fornecendo serviços para a camada superior e utilizando serviços da camada inferior.</li>
+                </ul>
+            </ul>
+            <b>Protocolos em camadas</b>
+            <p></p>
+            <img src="img/protocolo-3.png" alt="Protocolos em camadas" title="Protocolos em camadas">
+        </section>
+        
+        <section>
+            <h2>Modelo OSI e seus níveis.</h2>
+            <p>O modelo Open System Interconnection (OSI) é uma estrutura em camadas criada para atender projetos de rede:</p>
+            <ul>
+                <li>Tem por objetivo facilitar a comunicação entre sistemas de computador por meio de um conjunto de protocolos entre sistemas diferentes;</li>
+                <li>Não há necessidade de alteração na lógica do hardware e do software subjacentes.</li>
+            </ul>
+            <b>Modelo conceitual</b>
+            <p>O modelo OSI não deve ser considerado como um protocolo.</p>
+            <p>⇒ mas como um arquétipo com a finalidade de assimilar e delinear uma arquitetura de rede flexível.</p>
+            <img src="img/osi.png" alt="Modelo conceitual" title="Modelo conceitual">
+            <b>Camada de Aplicação</b>
+            <p>Tipo de comunicação</p>
+            <p>E-mail; transferência de arquivos,</p>
+            cliente/servidor
+            <b>Camada de Apresentação</b>
+            <p>Criptografia</p>
+            <p>Conversão de código (ASCII para EBCDIC)</p>
+            <b>Camada de Sessão</b>
+            <p>Início e término de sessão.</p>
+            <p>Controle de sequência.</p>
+            <b>Camada de Transporte</b>
+            <p>Assegura a transmissão fim-a-fim dos arquivos e mensagens.</p>
+            <b>Camada de Rede</b>
+            <p>Encaminha os dados para diferentes LANs e WANs baseado no endereço/rede.</p>
+            <b>Camada de Enlace de Dados</b>
+            <p>Transmite os pacotes de um nó de rede para outro baseado no endereço da estação.</p>
+            <b>Camada Física</b>
+            <p>Sinais elétricos e características mecânicas da transmissão de bits.</p>
+            <b>Protocolos de cada camada</b>
+            <img src="img/osi-1.png" alt="Protocolos de cada camada" title="Protocolos de cada camada">
+        </section>
+
+        <section>
+            <h2>Modelo TCP/IP e seus níveis</h2>
+            <p>No contexto da Guerra Fria, os cientistas norte-americanos desenvolveram a Arpanet (rede de armazenamento de informações de pesquisa de forma virtual).</p>
+            <p>A Arpanet, antecessora da internet.</p>
+            <ul>
+                <li>De 1974-1983, o protocolo TCP/IP foi proposto como um conjunto de protocolos para:</li>
+                <ul>
+                    <li>roteamento entre diferentes redes;</li>
+                    <li>com independência para redes e subredes;</li>
+                    <li>e recuperação de falhas.</li>
+                </ul>
+            </ul>
+            <img src="img/osi-2.png" alt="Modelo TCP/IP e seus níveis" title="Modelo TCP/IP e seus níveis">
+            <p>Um protocolo da camada TCP/IP se comunica utilizando o modelo Cliente-Servidor, onde:</p>
+            <ul>
+                <li>A camada Aplicação trata de Mensagens;</li>
+                <li>A camada Transporte trata de Segmentos;</li>
+                <li>A camada Internet trata de Pacotes;</li>
+                <li>A camada de Enlace trata de Quadros;</li>
+                <li>e camada Física trata de Bits.</li>
+            </ul>
+            <img src="img/osi-3.png" alt="protocolo da camada TCP/IP" title="protocolo da camada TCP/IP">
+            <p></p>
+            <b>Modelo OSI x TCP/IP</b>
+            <p>Os modelos de referência OSI e TCP/IP têm semelhanças e diferenças.</p>
+            <p>Tanto o modelo OSI quanto o modelo TCP/IP são baseados em pilhas de protocolos e as funções de cada camada são similares.</p>
+            <p>As diferentes tecnologias de redes de computadores fizeram cada modelo se adaptar a arquiteturas de hardware e sistemas operacionais diversos.</p>
+            <ul>
+                <li>O modelo OSI é um modelo conceitual que apresenta as funcionalidades de redes individuais.</li>
+                <ul>
+                    <li>Já o modelo TCP/IP foi criado para solucionar problemas específicos.</li>
+                </ul>
+                <li>O modelo OSI contribuiu para que os conceitos de serviços, interfaces e protocolos fossem diferenciados.</li>
+                <ul>
+                    <li>O modelo TCP/IP não define ao certo os conceitos de serviço, interface e protocolo.</li>
+                </ul>
+            </ul>
+            <b>Benefícios da separação em pilhas ou camadas</b>
+            <ul>
+                <li>O modelo de camadas TCP/IP é usado para auxiliar a visualização da interação entre diversos protocolos.</li>
+                <li>As redes e os equipamentos são planejados e construídos baseados em padrões (RFC's).</li>
+            </ul>
+            <img src="img/osi-4.png" alt="separação em pilhas ou camadas" title="separação em pilhas ou camadas">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>BARBOSA, Cynthia S.; SERPA, Matheus S.; OLIVEIRA, Diego B.; SARAIVA, Maurício O. Arquitetura TCP/IP I. Editora Grupo A, 2020. p. 15-17. ISBN 9786556900766. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 37-41. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 30-46. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 3 de out de 2024</p>
+    </footer>
+</body>
+</html>
