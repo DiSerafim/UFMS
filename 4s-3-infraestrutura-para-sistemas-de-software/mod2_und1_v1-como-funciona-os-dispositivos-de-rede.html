@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Infraestrutura de redes</h1>
+        <h2>💡 Unidade 1 - Como funcionam os dispositivos de rede.</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=2999JV3nCVA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 2 - Unidade 1 - Como funcionam os dispositivos de redes
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Como funcionam os dispositivos de redes?</h3>
+            <ul>
+                <li>Hub (repetidor)</li>
+                <li>Switch (bridge)</li>
+                <li>Roteador</li>
+                <li>Backbone corporativo</li>
+                <li>Modem</li>
+                <li>Gateway</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Como funcionam os dispositivos de redes?</h2>
+            <b>Dispositivos por camadas:</b>
+            <p>Modelo de interface TCP/IP</p>
+            <img src="img/modelo-de-interface.png" alt="modelo de interface" title="modelo de interface">
+            <p>Número da portas (ports) define o tipo de serviço:</p>
+            <ul>
+                <li>port 110 = pop3 (para receber e-mails)</li>
+                <li>port 25 = SMTP (para enviar e-mails)</li>
+                <li>port 80 = HTTP (hyper text transfer protocol)</li>
+                <li>port 23 = telnet (para acessar e simular terminais de outros computadores)</li>
+                <li>port 20 e 21 = FTP (para fazer a transferência de arquivos entre computadores)</li>
+            </ul>
+            <img src="img/modelo-de-interface-1.png" alt="modelo de interface" title="modelo de interface">
+            <p>Formato do segmento TCP</p>
+            <img src="img/modelo-de-interface-segmento-tcp.png" alt="segmento-tcp" title="segmento-tcp">
+            <p>segmento UDP</p>
+            <img src="img/modelo-de-interface-segmento-udp.png" alt="segmento-udp" title="segmento-udp">
+            <p>Protocolos das camadas</p>
+            <img src="img/modelo-de-interface-protocolo-das-camadas.png" alt="protocolo-das-camadas" title="protocolo-das-camadas"><p></p>
+            <img src="img/modelo-de-interface-protocolo-das-camadas.png" alt="protocolo-das-camadas" title="protocolo-das-camadas">
+            <p></p>
+            <b>Encapsulamento e desencapsulamento</b>
+            <p>As camadas superiores no modelo TCP/IP e modelo OSI são encapsulados pelo protocolo da camada inferior que recebe os dados.</p>
+            <p>Todo protocolo, em cada camada, tem uma função específica.</p>
+            <img src="img/modelo-de-interface-encapsulamento-e-desencapsulamento.png" alt="encapsulamento-e-desencapsulamento" title="encapsulamento-e-desencapsulamento">
+            <p>Os dispositivos conectam-se em um camadas, e têm seus protocolos específicos.</p>
+            <p>Na arquitetura TCP/IP, as interconexões entre dispositivos e as redes são efetuadas:</p>
+            <ul>
+                <li>por hubs e switches na rede local/intranet;</li>
+                <li>e por roteadores nas conexões remotas (internet).</li>
+            </ul>
+            <img src="img/arquitetura-tcp-ip.png" alt="arquitetura-tcp-ip" title="arquitetura-tcp-ip">
+            <p></p>
+            <b>Hub (repetidor)</b>
+            <p>tem função de interligar os dispositivos de uma rede local, por meio de cabos de pares trançados (UTP) ou cabo coaxial.</p>
+            <ul>
+                <li>conectando as placas de rede dos dispositivos às portas do hub (endereço MAC/cada).</li>
+            </ul>
+            <p>O barramento (ou segmento de rede) é o meio físico de comunicação entre hosts de uma rede local.</p>
+            <img src="img/modelo-de-interface-hub.png" alt="hub" title="hub">
+            <p></p>
+            <b>Switch (bridge)</b>
+            <ul>
+                <li>É mais inteligentes que o hub:</li>
+                <ul>
+                    <li>por isolar os domínios de colisão;</li>
+                    <li>evita que colisões ocorram em um segmento de rede.</li>
+                </ul>
+                <li>Isola suas sub-redes (redes locais):</li>
+                <ul>
+                    <li>não re-transmite quadro (frame) desnecessário;</li>
+                    <li>utiliza uma tabela de endereços MAC para encaminhar os quadros (frames).</li>
+                </ul>
+            </ul>
+            <img src="img/modelo-de-interface-switch.png" alt="switch" title="switch">
+            <p></p>
+            <b>Domínio de colisão</b>
+            <ul>
+                <li>Chama-se domínio de colisão da rede local quando os quadros são irradiados a todos os dispositivos ligados ao barramento.</li>
+                <li>Em um segmento de rede local, o domínio de colisão ocorre se as placas de rede Ethernet de dois dispositivos tentam transmitir ao mesmo tempo, ocorre uma colisão de dois sinais irradiados no segmento.</li>
+            </ul>
+            <b>Domínio de broadcast</b>
+            <ul>
+                <li>É um conjunto de segmentos de redes locais interligados por switch (ou bridge):</li>
+                <ul>
+                    <li>em que um quadro de broadcast enviado para todos</li>
+                    <ul>
+                        <li>endereço MAC = FFFFFFFFFFF, domínio de broadcast</li>
+                    </ul>
+                </ul>
+                <li>Um domínio de broadcast não ultrapassa o roteador, pois o roteador não repassa frames de broadcast.</li>
+            </ul>
+            <img src="img/modelo-de-interface-broadcast.png" alt="modelo-de-interface-broadcast" title="modelo-de-interface-broadcast">
+            <p></p>
+            <b>Roteadores</b>
+            <ul>
+                <li>São equipamentos que fazem a conexão de redes heterogêneas</li>
+                <ul>
+                    <li>com diferentes protocolos de acesso e compartilhando os meios de comunicação com diferentes usuários</li>
+                    <li>compreendem e convertem vários protocolos, como frame-relay, HDLC, PPP, FDDI, Token-Ring, Ethernet e outros.</li>
+                </ul>
+                <li>Para encaminhar, o roteador verifica o endereço IP destino no pacote, e verifica a tabela de roteamento.</li>
+            </ul>
+            <img src="img/modelo-de-interface-roteador.png" alt="roteador" title="roteador">
+            <p></p>
+            <b>Backbone</b>
+            <ul>
+                <li>É uma arquitetura central de conexões em uma rede</li>
+                <ul>
+                    <li>como artérias principais pelas quais passa o tráfego de comunicação entre as redes.</li>
+                </ul>
+            </ul>
+            <p>Exemplo:</p>
+            <p>Empresa locada em um edifício, normalmente as redes locais são interligadas por um switch central e as conexões entre as redes.</p>
+            <img src="img/modelo-de-interface-backbone.png" alt="modelo-de-interface-backbone.png" title="modelo-de-interface-backbone">
+            <p></p>
+            <b>Modem</b>
+            <ul>
+                <li>Servem para acessar o computador da empresa pelas linhas telefônicas, diretamente, sem usar a internet</li>
+                <ul>
+                    <li>e podem acessar a rede local por uma conexão telefônica (dial-up).</li>
+                </ul>
+                <li>Os servidores de comunicação para acesso remoto são dispositivos denominados RAS (Remote Access Server).</li>
+            </ul>
+            <img src="img/modelo-de-interface-modem.png" alt="modem" title="modem">
+            <p></p>
+            <b>Gateway</b>
+            <p>Gateway de aplicação</p>
+            <ul>
+                <li>Reconhece o formato e o conteúdo dos dados</li>
+                <ul>
+                    <li>Exemplo: um gateway de correio eletrônico que converte mensagens SMS para telefone móvel.</li>
+                </ul>
+                <li>Converte o formato de pacotes de dados de um protocolo de transporte para outro.</li>
+                <ul>
+                    <li>Exemplo: converte pacotes TCP/IP para o protocolo orientado a conexão diferente SCTP.</li>
+                </ul>
+            </ul>
+            <img src="img/modelo-de-interface-gateway.png" alt="modelo-de-interface-gateway" title="modelo-de-interface-gateway">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>COMER, Douglas E. Redes de computadores e internet. Editora Bookman, 2016. p. 252-262. ISBN 9788582603734. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 250, 493-546. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>SOUZA, Lindeberg Barros de. Administração de redes locais. 2. São Paulo: Érica, 2020. 1 recurso online. (Eixos). p. 13-24. ISBN 9788536533698. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 215-225. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 5 de out de 2024</p>
+    </footer>
+</body>
+</html>
