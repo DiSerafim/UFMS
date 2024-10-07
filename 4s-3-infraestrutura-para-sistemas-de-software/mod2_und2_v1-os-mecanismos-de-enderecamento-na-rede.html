@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Infraestrutura de redes</h1>
+        <h2>💡 Unidade 2 - Os mecanismos de endereçamentos na rede.</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=fG1caYj3Iak&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 2 - Unidade 2 - Parte 1- Os mecanismos de endereçamento na rede
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Os mecanismos de endereçamento na rede</h3>
+            <ul>
+                <li>Endereço físico MAC.</li>
+                <li>Endereços lógicos IP:</li>
+                <ul>
+                    <li>IPv4;</li>
+                    <li>IPv6.</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Endereços na redes.</h2>
+            <p>As redes de computadores possuem 2 tipos de endereços:</p>
+            <ul>
+                <li><b>Endereço físico MAC</b>: é gravado fisicamente em cada dispositivo (IMUTÁVEL, camada de enlace).</li>
+                <li><b>Endereço lógico IP</b>: endereço ou número IP é atribuído quando conectamos um dispositivo na rede de computadores de forma manual ou automática (MUTÁVEL, camada de rede).</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Endereço físico MAC.</h2>
+            <b>Media Access Control (MAC)</b>
+            <p>Este MAC é permanente, registrado no dispositivo (único e IMUTÁVEL).</p>
+            <ul>
+                <li>um endereço MAC possui 12 caracteres.</li>
+                <li>Encaminha quadros nas redes internas (intranet).</li>
+            </ul>
+            <img src="img/endereco-fisico-mac.png" alt="endereco-fisico-mac" title="endereco-fisico-mac">
+            <p>Exemplo: E0-06-E0-FD-EC-27</p>
+            <ul>
+                <li>o número <b>E0-06-E0</b> é o <b>número do fabricante</b>, conhecido como Organizationally Unique Identifier (OUI).</li>
+                <li>E os três últimos pares identificam o <b>número de série</b> do próprio dispositivo deste fabricante, no caso <b>FD-EC-27</b>.</li>
+            </ul>
+            <img src="img/endereco-fisico-mac-1.png" alt="endereco-fisico-mac" title="endereco-fisico-mac">
+            <ul>
+                <li>O uso do MAC address permite identificar os dispositivos da rede interna, justamente por ser estático, mesmo quando o endereço IP não é conhecido.</li>
+                <ul>
+                    <li>O que funciona para detectar a localização de um equipamento específico na camada de enlace.</li>
+                </ul>
+                <li>O quadro da camada de enlace registra o endereço MAC de origem (source) e de destino (destination) para encaminhar os frames.</li>
+            </ul>
+            <b>Formato quadro (camada enlace)</b>
+            <p></p>
+            <img src="img/endereco-fisico-mac-2.png" alt="endereco-fisico-mac" title="endereco-fisico-mac">
+
+        </section>
+
+        <section>
+            <h2>Endereços lógicos IP.</h2>
+            <b>Endereço lógica para os dispositivos na rede</b>
+            <p></p>
+            <img src="img/Endereco-logico-ip.png" alt="Endereco-logico-ip" title="Endereco-logico-ip">
+        </section>
+
+        <section>
+            <h2>Endereço lógico IPv4.</h2>
+            <b>Endereçamento lógico IPv4</b>
+            <ul>
+                <li>Definido no padrão RFC 1918.</li>
+                <li>Protocolo de Internet versão 4 ou IPv4:</li>
+                <li>utiliza de 32 bits;</li>
+                <li>em grupos de 4 octetos de 0 a 255;</li>
+                <li>no formato 4.4.4.4.</li>
+            </ul>
+            <p>Permite a identificação e encaminhar pacotes nas redes internas (intranet) e externas (internet).</p>
+            <b>IPv4, padrão RFC 1918</b>
+            <p>Endereço IP + Mascara</p>
+            <img src="img/endereco-logico-ipv4.png" alt="endereco-logico-ipv4" title="endereco-logico-ipv4">
+            <ul>
+                <li>IPv4: tem quatro partes, de 8 bits, variando de 0 até 255 e separados por pontos.</li>
+                <li>Exemplo: 192.168.0.95, 192.168.0.107 e 192.168.0.33.</li>
+                <li>o endereço IP de cada dispositivo deve ser único.</li>
+            </ul>
+            <p>⇒ Ocorre erro: se houver uma tentativa de uso de um número IP por 2 dispositivos na mesma rede.</p>
+            <b>Segmentos de rede (IPv4)</b>
+            <ul>
+                <li>de 223.1.1.1 até 223.1.1.255</li>
+                <li>de 223.1.2.1 até 223.1.2.255</li>
+                <li>……</li>
+                <li>de 223.1.255.1 até 223.1.255.255</li>
+            </ul>
+            <p>O número IPv4 é acompanhado de uma máscara que identifica a sub rede, exemplo: 255.255.255.64.</p>
+            <img src="img/endereco-logico-ipv4.png" alt="endereco-logico-ipv4" title="endereco-logico-ipv4">
+            <p></p>
+            <b>Intervalos de endereços IP privados</b>
+            <ul>
+                <li>Endereço IP privado é um dos endereços IP privados reservados nestes intervalos:</li>
+                <ul>
+                    <li>Classe A: 10.0.0.0 — 10.255.255.255</li>
+                    <li>Classe B: 172.16.0.0 — 172.31.255.255</li>
+                    <li>Classe C: 192.168.0.0 — 192.168.255.255</li>
+                </ul>
+            </ul>
+            <b>Intervalos de endereços IP públicos</b>
+            <ul>
+                <li>Endereço IP público: qualquer número não incluído no intervalo de endereços IP privados reservados</li>
+                <li>Exemplos: 8.8.8.8, 15.16.14.15, 175.0.1.1, 245.2.40.50</li>
+            </ul>
+            <b>Intervalos de endereços IP privados e públicos</b>
+            <ul>
+                <li>Os IPs privados são gratuitos.</li>
+                <li>Os IPs públicos pagos, e controlados pela Internet Assigned Numbers Authority (IANA).</li>
+                <ul>
+                    <li>Os endereços de IP públicos IP na internet estão escassos.</li>
+                </ul>
+            </ul>
+            <b>Formato do datagrama do IPv4</b>
+            <ul>
+                <li>o protocolo Internet (IP) tem os seguintes campos no datagrama IPv4:</li>
+                <ul>
+                    <li>o endereço IP da origem;</li>
+                    <li>o endereço IP do destino;</li>
+                    <li>o protocolo da camada superior (TCP ou UDP);</li>
+                    <li>….</li>
+                </ul>
+            </ul>
+            <img src="img/datagrama-do-ipv4.png" alt="datagrama-do-ipv4" title="datagrama-do-ipv4">
+            <p></p>
+            <b>Protocolo Network Adress Translate (NAT)</b>
+            <ul>
+                <li>O NAT faz tradução de endereço de IP privado em endereço de IP público:</li>
+                <ul>
+                    <li>A Internet pode acessar dispositivos da rede interna (intranet).</li>
+                </ul>
+                <li>Com o NAT, permite que uma grande quantidade de computadores na rede interna da empresa acesse a internet.</li>
+            </ul>
+            <b>Protocolo NAT</b>
+            <p></p>
+            <img src="img/protocolo-nat.png" alt="protocolo-nat" title="protocolo-nat">
+            <ul>
+                <li>A tradução NAT de [endereço IP + ports] do TCP/IP permite identificar as conexões com segurança.</li>
+                <li>O NAT pode fazer o mapeamento entre:</li>
+                <ul>
+                    <li>IP local + porta local ⇔ IP global + porta mapeada</li>
+                </ul>
+            </ul>
+            <img src="img/protocolo-nat-1.png" alt="protocolo-nat" title="protocolo-nat">
+            <p></p>
+            <b>Protocolos SNAT e DNAT</b>
+            <p>O <b>protocolo SNAT (Source NAT)</b> permite a conexão e tradução de pacotes de dispositivos internos da intranet com os dispositivos externos internet.</p>
+            <p>O <b>protocolo DNAT (Destination NAT)</b> permite a conexão e tradução de pacotes de dispositivos externos da internet com os dispositivos internos da intranet.</p>
+            <img src="img/protocolo-nat-2.png" alt="protocolo-nat" title="protocolo-nat">
+        </section>
+        <section>
+            <h2>Endereço lógico IPv6</h2>
+            <b>Protocolo de Internet versão 6 ou IPv6</b>
+            <ul>
+                <li>Foi apresentado pela primeira vez no final dos anos 1990 como substituto ao IPv4:</li>
+                <ul>
+                    <li>devido aos acessos à internet, necessitou-se de mais endereços lógicos.</li>
+                </ul>
+            </ul>
+            <b>Protocolo IPv6</b>
+            <ul>
+                <li>Utiliza 128 bits.</li>
+                <li>Em 16 octetos de 8 bits.</li>
+                <li>Apresentados em forma hexadecimal de 0-9 + A-F :</li>
+                <ul>
+                    <li>Exemplo: FA80:43440:0000:0000:0202.B3EF.FE1E.8329</li>
+                </ul>
+                <li>Usando endereços lógicos de 128-bit</li>
+                <ul>
+                    <li>que permite, teoricamente, endereçar:</li>
+                    <ul>
+                        <li>340.282.366.920.938.463.463.374.607.431.768.211.456 ou 340 undecilhão de endereços.</li>
+                        <li>existem métodos para abreviar essa notação.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Formato do datagrama do IPv6</b>
+            <ul>
+                <li>O protocolo Internet (IP) tem o datagrama IPv6 com os seguintes campos:</li>
+                <ul>
+                    <li>O endereço IP da origem;</li>
+                    <li>O endereço IP do destino;</li>
+                    <li>Limite de saltos;</li>
+                    <li>….</li>
+                </ul>
+            </ul>
+            <img src="img/endereco-logico-ipv6.png" alt="endereco-logico-ipv6." title="endereco-logico-ipv6.">
+            <p></p>
+            <b>IPv6 em relação ao IPv4</b>
+            <ul>
+                <li>IPv6 suporta endereçamento multicast</li>
+                <ul>
+                    <li>que permite fluxos de pacote que usam muita largura de banda (como streams multimídia):</li>
+                    <ul>
+                        <li>sejam enviados a vários destinos simultaneamente;</li>
+                        <li>o que reduz largura de banda de rede. </li>
+                    </ul>
+                </ul>
+                <li>IPv6 tem um recurso chamado configuração automática, que permite gerar um endereço IPv6 assim que o dispositivo liga e se conecta na rede.</li>
+                <ul>
+                    <li>O dispositivo começa a procurar por um roteador IPv6.</li>
+                    <ul>
+                        <li>Se algum estiver presente, o dispositivo pode gerar um endereço local e um endereço roteável globalmente de forma automática.</li>
+                    </ul>
+                    <li>IPv6 permite que os dispositivos fiquem conectados a várias redes simultaneamente.</li>
+                    <ul>
+                        <li>a recursos de interoperabilidade;</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Implementação IPv6</b>
+            <ul>
+                <li>O protocolo IPv6 está sendo implementado no 2º nível de roteadores:</li>
+                <ul>
+                    <li>por meio de um túnel lógico;</li>
+                    <li>encapsulando quadros de IPv6 em IPv4.</li>
+                </ul>
+            </ul>
+            <img src="img/implementacao-ipv6.png" alt="implementacao-ipv6." title="implementacao-ipv6.">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 265-282. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 284-306. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de out de 2024</p>
+    </footer>
+</body>
+</html>
