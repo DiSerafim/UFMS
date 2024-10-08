@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 2 – Infraestrutura de redes</h1>
+        <h2>💡 Unidade 2 - Os mecanismos de endereçamentos na rede.</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fG1caYj3Iak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            
+
+            <a href="https://www.youtube.com/watch?v=fG1caYj3Iak&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 2 - Unidade 2 - Parte 2 - Os mecanismos de endereçamento na rede
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Protocolos sobre IP</h3>
+            <ul>
+                <li>Protocolo sobre IP: ARP, DNS e DHCP.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Protocolos sobre IP.</h2>
+            <b>Protocolo ARP</b>
+            <p>O protocolo de resolução de endereço (ARP) é um protocolo:</p>
+            <ul>
+                <li>que resolve o endereço lógico IP de 32 bits (camada de rede) em um endereço físico MAC de 48 bits (camada de enlace).</li>
+                <li>O gateway (Bridge ou Switch) que faz a conversão usando o Protocolo ARP</li>
+                <li>Quando pacotes de dados chegam a um gateway destinados a uma máquina host específica.</li>
+                <ul>
+                    <li>O gateway permite que os dados fluam de uma rede para outra, solicita que o programa ARP encontre um endereço MAC que corresponda ao endereço IP. </li>
+                    <li>O cache ARP (tabela ARP) mantém um registro de cada endereço IP e seu endereço MAC correspondente.</li>
+                    <li>O campo Time to Life (TTL) define o tempo de vida desta informação.</li>
+                </ul>
+            </ul>
+            <img src="img/protocolo-arp.png" alt="protocolo-arp" title="protocolo-arp">
+            <p>Exemplo de duas redes conectadas por um roteador (ARP funcionando):</p>
+            <img src="img/arp-funcionando.png" alt="arp-funcionando." title="arp-funcionando.">
+            <p>Existem diferentes versões e casos de uso de ARP:</p>
+            <ul>
+                <li><b>ARP de proxy</b>: o proxy está ciente da localização do destino do tráfego e oferece seu próprio endereço MAC como destino.</li>
+                <li><b>ARP gratuito</b>: um host em uma rede simplesmente anuncia ou atualiza seu endereço IP para MAC.</li>
+                <li><b>ARP reverso (RARP)</b>: As máquinas host que não conhecem seu próprio endereço IP podem usar o ARP reverso (RARP) para descoberta.</li>
+                <li><b>ARP inverso (IARP)</b>: Enquanto o ARP usa um endereço IP para localizar um endereço MAC, o IARP usa um endereço MAC para localizar um endereço IP.</li>
+            </ul>
+            <b>Protocolo Servidor de Nomes de Domínios (DNS)</b>
+            <p>O protocolo sistema de nomes de domínios, Domain Name System (DNS), resolve os nomes de domínios em endereço IP.</p>
+            <ul>
+                <li>Sempre que acessar um site (domínio), usamos uma URL, como: alura.com.br e ufms.br.</li>
+                <li>Um sistema de banco de dados armazenados em servidores DNS:</li>
+                <ul>
+                    <li>respondem a estas solicitações</li>
+                    <li>exemplo: www.uol.com.br = 13.227.97.71</li>
+                </ul>
+            </ul>
+            <b>Protocolo DNS</b>
+            <p></p>
+            <img src="img/protocolo-dns.png" alt="protocolo-dns" title="protocolo-dns">
+            <p></p>
+            <img src="img/protocolo-dns-1.png" alt="protocolo-dns" title="protocolo-dns">
+            <p></p>
+            <b>DNS público x DNS privado</b>
+            <p><b>DNS público</b> é um serviço aberto, menos seguro, e gratuito.</p>
+            <p><b>DNS privado</b> é um serviço pago, mais seguro, e contrato para oferecer um desempenho personalizado e maior privacidade.</p>
+            <u>DNS público:</u>
+            <pre>
+            ● Google DNS (Google Public DNS)
+            Endereços IPV4: 8.8.8.8 e 8.8.4.4
+            Endereços IPV6: 2001:4860:4860:0:0:0:0:8888 e
+                            2001:4860:4860:0:0:0:0:8844
+
+            ● Cloudflare DNS é um DNS focado em segurança e privacidade e é muito rápido.
+            Endereços IPV4: 1.1.1.1 e 1.0.0.1
+            Endereços IPV6: 2606:4700:4700::1111 e 2606:4700:4700::1001
+            </pre>
+        </section>
+        
+        <section>
+            <h2>Protocolos sobre endereço IP.</h2>
+            <b>Protocolo Dinâmico de Configuração de Host (DHCP)</b>
+            <p>O protocolo DHCP é um protocolo de cliente/servidor que fornece, automaticamente, a um host (cliente):</p>
+            <ul>
+                <li>um número IP (Protocolo de Internet);</li>
+                <li>a máscara de sub-rede;</li>
+                <li>o número IP do DNS;</li>
+                <li>e o gateway padrão (roteador).</li>
+            </ul>
+            <b>Protocolo DHCP</b>
+            <p></p>
+            <img src="img/servidor-dhcp.png" alt="servidor-dhcp." title="servidor-dhcp.">
+            <ul>
+                <li>Um servidor DHCP baseia-se nas RFCs 2131 e 2132.</li>
+                <li>Um padrão IETF (Internet Engineering Task Force).</li>
+                <li>⇒ endereço físico MAC pode ser utilizado para verificar autenticidade e autorizar um número IP de uma sub-rede. </li>
+            </ul>
+            <img src="img/servidor-dhcp-1.png" alt="servidor-dhcp." title="servidor-dhcp.">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 265-282. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 284-306. Disponível na Biblioteca Digital da UFMS</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de out de 2024</p>
+    </footer>
+</body>
+</html>
