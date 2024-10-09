@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 3 – Roteamento e segurança de redes</h1>
+        <h2>💡 Unidade 1 - O conceito de roteamento de pacotes e os seus algoritmos</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="716" src="https://www.youtube.com/embed/tpjjbYPmM9o" title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=2999JV3nCVA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1 - O conceito de roteamento de pacotes e os seus algoritmos
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>O conceito de roteamento de pacotes e os seus algoritmos</h3>
+            <ul>
+                <li>Conceito de Roteamento</li>
+                <li>Tipos de Roteamento</li>
+                <li>Protocolos de Roteamentos (algoritmos)</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Conceito de Roteamento</h2>
+            <b>Protocolo de Roteamento</b>
+            <p>é o mecanismo como os roteadores encaminham pacotes.</p>
+            <ul>
+                <li>Para realizar esta função um roteador precisa de:</li>
+                <ul>
+                    <li>ter o endereço de destino do pacote;</li>
+                    <li>conhecer os roteadores vizinhos;</li>
+                    <li>e manter atualizadas as tabelas de roteamento:</li>
+                    <ul>
+                        <li>com as rotas das redes internas ou externas</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/conceito-de-roteamento.png" alt="conceito-de-roteamento" title="conceito-de-roteamento">
+            <p><b>Tabelas de roteamento</b> definem as rotas para encaminhar os pacotes corretamente em direção ao destino final:</p>
+            <ul>
+                <li>Rotas internas - atuam na rede privada (intranet);</li>
+                <li>Rotas externas - atuam na rede mundial (internet).</li>
+                <ul>
+                    <li>os roteadores de provedores de internet</li>
+                </ul>
+            </ul>
+            <b>Rotas de roteamento</b>
+            <p>Modelo abstrato de grafo de uma rede de computadores</p>
+            <img src="img/rotas-de-roteamento.png" alt="rotas-de-roteamento" title="rotas-de-roteamento">
+            <p></p>
+            <b>Plano de controle</b>
+            <p>Algoritmo de roteamento</p>
+            <b>Plano de dados</b>
+            <p>Tabelas de roteamento</p>
+            <img src="img/protocolo-de-roteamento.png" alt="protocolo-de-roteamento" title="protocolo-de-roteamento">
+        </section>
+
+        <section>
+            <h2>Tipos de roteamento.</h2>
+            <b>Protocolos de redes internas</b>
+            <p>Atuam dentro de uma rede privada (intranet, ou intra-domínio, ou Interior Gateway Protocol (IGP)) podendo ser:</p>
+            <ul>
+                <li>Vetor de distâncias:</li>
+                <ul>
+                    <li>Routing Information Protocol (RIP)</li>
+                </ul>
+                <li>Estado de enlace (Link State):</li>
+                <ul>
+                    <li>Open Shortest Path First Protocol (OSPF)</li>
+                </ul>
+            </ul>
+            <b>Protocolos de redes externas</b>
+            <p>Atuam na rede mundial (internet) e são utilizados entre roteadores de diferentes provedores podendo ser:</p>
+            <ul>
+                <li>Exterior Gateway Protocol (EGP);</li>
+                <li>Border Gateway Protocol (BGP);</li>
+            </ul>
+            <b>Protocolos de roteamento</b>
+            <p>Funções básicas de um protocolo de roteamento:</p>
+            <ol>
+                <li>Preencher as tabelas de roteamento com rotas para todas as sub-redes.</li>
+                <li>Escolher a melhor rota quando houver mais de uma.</li>
+                <li>Remover rotas da tabela de roteamento quando não forem mais válidas.</li>
+                <li>Evitar loops de roteamento.</li>
+            </ol>
+            <i>Evitar loops de roteamento</i>
+            <br>
+            <img src="img/evitar-loops-de-roteamento.png" alt="evitar-loops-de-roteamento" title="evitar-loops-de-roteamento">
+            <ul>
+                <li>Os algoritmos de roteamento trocam informações de suas tabelas de roteamentos com os roteadores vizinhos:</li>
+                <ul>
+                    <li>Calculando as rotas pelos parâmetros:</li>
+                    <ul>
+                        <li>menor custo;</li>
+                        <li>menor distância;</li>
+                        <li>velocidade do enlace;</li>
+                        <li>outros.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Protocolos de Roteamentos (algoritmos)</h2>
+            <p><b>Vetor de distâncias</b> Routing Information Protocol (RIP)</p>
+            
+            <p>É um protocolo de roteamento para determinar a rota de menor custo para uma rede de destino</p>
+            <ul>
+                <li>onde os roteadores trocam informações de roteamento referente às medidas de distância dos destinos alcançáveis.</li>
+            </ul>
+            <p>Este protocolo atualiza uma tabela de roteamento com as rotas válidas registrando:</p>
+            <ul>
+                <li>um número de sub-rede;</li>
+                <li>a interface pela qual os pacotes serão encaminhados;</li>
+                <li>o endereço IP do próximo roteador alcançável.</li>
+            </ul>
+            <p>No RIP, o cálculo das melhores rotas é baseado apenas no número de saltos entre roteadores dentro do seu domínio:</p>
+            <ul>
+                <li>É limitada a 15 saltos;</li>
+                <li>⇒ Ideal para redes de pequeno a médio porte.</li>
+            </ul>
+            <img src="img/vetor-de-distancia-rip.png" alt="vetor-de-distancia-rip" title="vetor-de-distancia-rip">
+            <p></p>
+            <img src="img/vetor-de-distancia-rip-1.png" alt="vetor-de-distancia-rip" title="vetor-de-distancia-rip">
+            <p></p>
+            <img src="img/vetor-de-distancia-rip-2.png" alt="vetor-de-distancia-rip" title="vetor-de-distancia-rip">
+            <p>Roteadores RIP trocam atualizações de roteamento a cada 30 segundos:</p>
+            <ul>
+                <li>Transmitindo a tabela de roteamento para todos os vizinhos.</li>
+            </ul>
+            <b>Routing Information Protocol (RIP)</b>
+            <ul>
+                <li>RIPv1 é um protocolo de roteamento classful que não oferece suporte a sub-redes;</li>
+                <li>RIPv2 suporta VLSM e CIDR (máscaras de sub-rede).</li>
+            </ul>
+            <p>⇒ Este protocolo pode apresentar problemas de convergência.</p>
+            <b>Estado de enlace (Link State)</b>
+            <p></p>
+            <b>Open Shortest Path First Protocol (OSPF)</b>
+            <p>Definido pela RFC 2328:</p>
+            <ul>
+                <li>Amplamente utilizado em IPv4 e IPv6.</li>
+            </ul>
+            <b>Protocolo OSPF</b>
+            <p>Algoritmo de caminho mais curto (algorithm shortest path first):</p>
+            <ul>
+                <li>Algoritmo de Dijkstra, 1959.</li>
+            </ul>
+            <img src="img/ospf.png" alt="ospf" title="ospf">
+            <p>Open Shortest Path First Protocol (OSPF)</p>
+            <ul>
+                <li>Suporte um grande número de roteadores:</li>
+                <ul>
+                    <li>Utiliza o custo da largura de banda da interface para calcular as rotas mais curtas.</li>
+                </ul>
+            </ul>
+            <p>Suporta Variable Length Subnet Masking (VLSM):</p>
+            <ul>
+                <li>Criação de sub-redes de tamanhos variáveis;</li>
+                <ul>
+                    <li>Melhorando a utilização dos endereços IP.</li>
+                </ul>
+                <li>Tempo de convergência rápido.</li>
+            </ul>
+            <p>É escalável:</p>
+            <ul>
+                <li>Preferido dos provedores de serviços de Internet e redes empresariais.</li>
+            </ul>
+            <p>Vantagens:</p>
+            <ul>
+                <li>Reduz o tamanho da base de dados das rotas;</li>
+                <li>Minimiza o tráfego de roteamento.</li>
+            </ul>
+            <b>Estado de enlace (Link State)</b>
+            <p></p>
+            <b>Protocol (OSPF)</b>
+            <ul>
+                <li>Faz Agregação de rotas para endereços IP hierárquico.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <p>destino 223.1 (alcança todos).</p>
+            <img src="img/ospf-1.png" alt="ospf" title="ospf">
+            <p></p>
+            <b>Border Gateway Protocol (BGP)</b>
+            <p>É um protocolo de roteamento escalável e flexível usado entre Sistemas Autônomos (AS-AS).</p>
+            <p>⇒ Preferido por provedores de serviços de Internet.</p>
+            <ul>
+                <li>É um protocolo de vetor de distâncias.</li>
+                <li>Considera o caminho completo até o destino:</li>
+                <ul>
+                    <li>Não apenas o estado local do enlace (link)</li>
+                </ul>
+                <li>Os roteadores BGP trocam informações de roteamento:</li>
+                <ul>
+                    <li>Incluindo prefixos de rede;</li>
+                    <li>Número do Sistema Autônomo (ASN) associado a cada prefixo.</li>
+                </ul>
+            </ul>
+            <b>Enhanced Interior Gateway Routing Protocol (EIGRP)</b>
+            <ul>
+                <li>É um protocolo de roteamento Exterior Gateway Protocol (EGP) desenvolvido pela Cisco Systems®:</li>
+                <ul>
+                    <li>utiliza o algoritmo de atualização por difusão.</li>
+                </ul>
+            </ul>
+            <p>Algoritmo por Difusão</p>
+            <img src="img/algoritmo-de-difusao.png" alt="algoritmo-de-difusao" title="algoritmo-de-difusao">
+            <ul>
+                <li>É um protocolo de roteamento híbrido combinando:</li>
+                <ul>
+                    <li>Estado de enlace (convergência rápida);</li>
+                    <li>Vetor de distância (baixa sobrecarga de processamento e largura de banda).</li>
+                </ul>
+                <li>Para calcular as rotas, permite o balanceamento de carga em caminhos redundantes usando:</li>
+                <ul>
+                    <li>Largura de banda;</li>
+                    <li>Latência;</li>
+                    <li>Confiabilidade;</li>
+                    <li>Carga do enlace.</li>
+                </ul>
+            </ul>
+            <b>Intermediate System to Intermediate System (IS-IS)</b>
+            <ul>
+                <li>É um protocolo de estado de enlace para roteamento de intradomínio (IGP):</li>
+                <ul>
+                    <li>utiliza o algoritmo de Dijkstra para calcular as rotas de menor custo.</li>
+                </ul>
+            </ul>
+            <p>⇒ roteadores vizinhos trocam informações sobre o estado dos enlaces.</p>            
+            <ul>
+                <li>Os roteadores calculam as rotas mais curta para cada destino com base nessa topologia.</li>
+                <ul>
+                    <li>Registrando em um banco de dados:</li>
+                    <ul>
+                        <li>topologia;</li>
+                        <li>custo;</li>
+                        <li>destino.</li>
+                    </ul>
+                </ul>
+                <li>Suporta endereços IPv4 e IPv6;</li>
+                <li>É similar ao do protocolo OSPF.</li>
+            </ul>
+            <img src="img/is-is.png" alt="is-is" title="is-is">
+            <p></p>
+            <img src="img/is-is-1.png" alt="is-is" title="is-is">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>BARBOSA, Cynthia S.; SERPA, Matheus S.; OLIVEIRA, Diego B.; SARAIVA, Maurício O. Arquitetura TCP/IP I. Editora Grupo A, 2020. p. 15-17. ISBN 9786556900766. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 273, 303-328. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 236-251. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 8 de out de 2024</p>
+    </footer>
+</body>
+</html>
