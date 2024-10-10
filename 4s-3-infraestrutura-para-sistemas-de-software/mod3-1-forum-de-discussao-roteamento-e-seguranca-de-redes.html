@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 3 - Roteamento e segurança de redes.</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre o conceito de roteamento de pacotes e seus algoritmos e protocolos, além de compreender sobre os princípios e mecanismos de segurança para proteção das informações que trafegam na sua rede.</p>
+            <p>Neste fórum, iremos debater sobre como você interage com os mecanismos de segurança no seu dia a dia na internet.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Dessa forma, relacione os tipos de serviços da internet com os mecanismos/algoritmos de proteção, tamanhos de chaves para: (1) chaves simétricas; (2) chaves assimétricas; (3) Hash; (4) Autenticação.</p>
+            <pre>
+            Tipo de serviço ↓                        Mecanismo de proteção (criptografia) ↓
+            Acesso por Wifi                         →
+            Ambiente Virtual de Aprendizagem (AVA)  →
+            Assinatura digital                      →
+            Certificado digital                     →
+            Comércio eletrônico                     →
+            E-mail                                  →
+            Rede de celular                         →
+            Sistema bancário                        →
+            </pre>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <pre>
+            <b>Tipo de serviço ↓                        Mecanismo de proteção (criptografia) ↓</b>
+            <b>Acesso por Wi-Fi	                     → AES-256 (1) chave simétrica</b>
+                                                    <i>Redes Wi-Fi, AES (Advanced Encryption Standard) é o padrão de criptografia mais seguro e comum, utilizado em WPA2 e WPA3. AES utiliza uma chave simétrica, a mesma chave é usada para criptografar e descriptografar os dados.</i>
+
+            <b>Ambiente Virtual de Aprendizagem (AVA)   → RSA-2048 (2) chave assimétrica</b>
+                                                    <i>O RSA-2048 é uma criptografia de chave pública, onde uma chave pública encripta e uma chave privada decripta os dados.</i>
+            <b>Assinatura Digital	                     → SHA-256 (3) Hash</b>
+                                                    <i>A SHA-256 é uma função hash que gera uma "impressão digital" única dos dados. Em assinaturas digitais, é utilizada para garantir que o conteúdo não foi alterado, pois mesmo uma pequena mudança nos dados originais gera um hash completamente diferente.</i>
+            <b>Certificado Digital	                     → RSA-2048 (2) chave assimétrica</b>
+                                                    <i>RSA-2048 para garantir a identidade de um servidor ou usuário. A criptografia assimétrica RSA permite que esses certificados criem um canal seguro para a troca de informações, autenticando os servidores e evitando fraudes, especialmente em conexões HTTPS.</i>
+            <b>Comércio Eletrônico	                     → AES-256 (1) chave simétrica</b>
+                                                    <i>AES-256 é usado para proteger os dados financeiros dos clientes. A criptografia simétrica AES é eficiente para proteger grandes volumes de dados trocados rapidamente, garantindo que informações sensíveis, como dados de cartões de crédito.</i>
+            <b>E-mail                                   → RSA-2048 (2) chave assimétrica</b>
+                                                    <i>RSA-2048 é utilizado para proteger a autenticação e o tráfego de dados entre os servidores e clientes de e-mail. RSA permite o uso de chaves públicas para garantir que somente o destinatário com a chave privada correspondente possa ler a mensagem.</i>
+            <b>Rede de Celular                          → AES-128 (1) chave simétrica</b>
+                                                    <i>AES-128 para proteger a comunicação. Embora tenha um tamanho de chave menor, o AES-128 ainda é bastante seguro e rápido, sendo suficiente para os protocolos de criptografia nas redes 4G e 5G, como o LTE.</i>
+            <b>Sistema Bancário	                     → MFA (4) autenticação</b>
+                                                    <i>MFA (Multi-Factor Authentication) é um mecanismo de autenticação adicional para reforçar a segurança. A MFA combina senhas com outros fatores, como autenticação por biometria, tokens de SMS ou aplicativos autenticadores, proporcionando uma camada extra de proteção.</i>
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 9 de out de 2024</p>
+    </footer>
+</body>
+</html>
