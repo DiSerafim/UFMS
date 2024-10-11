@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2.</h1>
+        <h2>✅ [A3] – Avaliação do Módulo 3 - Roteamento e segurança de redes.</h2>
+        <p>Professora Especialista: Carlos Alberto da Silva.</p>
+        <p>Fecha: terça, 7 dez 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE.
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>prof.ª Especialista: Carlos Alberto da Silva.</li>
+                <li>Iniciado em	quinta, 10 out 2024, 19:45</li>
+                <li>Estado	Finalizada</li>
+                <li>Concluída em	quinta, 10 out 2024, 20:38</li>
+                <li>Tempo empregado	52 minutos 21 segundos</li>
+                <li>Avaliar	7,50 de um máximo de 10,00(75%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Marque as opções possíveis. Nos protocolos de roteamento que atuam na camada de internet (rede), há:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <ul>
+                    <li>a. Plano de contingência</li>
+                    <li>b. Plano de controle</li>
+                    <li>c. Plano de dados</li>
+                    <li>d. Plano de continuidade de negócio</li>
+                    <li>e. Plano de recuperação de desastre</li>
+                </ul>
+
+                <b class="answer">Resposta correta: b, c. ✅</b>
+                
+                <p>Resolução:</p>
+                <ul>
+                    <li>Nos protocolos de roteamento que operam na camada de internet (ou rede), o plano de controle é responsável por determinar o melhor caminho para os pacotes através da rede, enquanto o plano de dados é o responsável por realmente encaminhar esses pacotes pelo caminho selecionado.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>A assinatura digital precisa garantir quais características abaixo?</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <ul>
+                    <li>a. Ser verificável por terceiros para resolver disputas.</li>
+                    <li>b. Autorizar a distribuição unilateral do documento original.</li>
+                    <li>c. Autorizar o compartilhamento do documento original.</li>
+                    <li>d. Verificar o autor, a data e hora da assinatura.</li>
+                    <li>e. Autenticar o conteúdo no momento da assinatura.</li>
+                </ul>
+
+                <b class="answer">Resposta: a, d, e. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Essas opções correspondem às propriedades fundamentais de uma assinatura digital. Elas garantem que a assinatura possa ser verificada por terceiros, confirmando a autenticidade do documento e o momento da assinatura, bem como asseguram a integridade do conteúdo assinado.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Coloque em ordem as funções básicas de um protocolo de roteamento em roteador:</p>
+                <pre>
+                1. Escolher a melhor rota quando houver mais de uma.
+                2. Preencher as tabelas de roteamento com rotas para todas as sub-redes.
+                3. Remover rotas da tabela de roteamento quando não forem mais válidas.
+                4. Evitar loops de roteamento.
+                </pre>
+                <b class="answer">Resposta: ✅</b>
+
+                <p>Resolução:</p>
+
+                <pre>
+                ✅1. Preencher as tabelas de roteamento com rotas para todas as sub-redes.
+                    - O protocolo identifica e popula a tabela com todas as rotas conhecidas.
+                ✅2. Escolher a melhor rota quando houver mais de uma.
+                    - Entre múltiplas rotas, o protocolo seleciona a rota mais eficiente para cada destino.
+                ❌3. Evitar loops de roteamento.
+                    - O protocolo implementa mecanismos para impedir loops de roteamento, que causariam um encaminhamento cíclico de pacotes.
+                ❌4. Remover rotas da tabela de roteamento quando não forem mais válidas.
+                    - O protocolo monitora e remove rotas inválidas, mantendo a tabela atualizada.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>O Open Shortest Path First Protocol (OSPF) tem as vantagens como reduzir o tamanho da base de dados das rotas, além de minimizar o tráfego de roteamento. Isso é possível por meio de quê? Escolha a única resposta correta.</p>
+                <ul>
+                    <li>a. Agregação de rotas para endereços IP hierárquicos.</li>
+                    <li>b. Não ser escalável.</li>
+                    <li>c. Tempo de convergência lento.</li>
+                    <li>d. Recálculo do enlace para rotas estáticas.</li>
+                    <li>e. Recálculo do enlace para rotas dinâmicas.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>O OSPF reduz o tamanho da base de dados de rotas e minimiza o tráfego de roteamento por meio da agregação de rotas. Esse mecanismo permite que redes hierárquicas utilizem endereços IP de forma organizada, consolidando múltiplas rotas em uma única entrada de roteamento quando pertencem ao mesmo prefixo. Isso simplifica as tabelas e reduz a carga no processamento e na troca de informações de roteamento.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>O Algoritmo por difusão permite que o Enhanced Interior Gateway Routing Protocol (EIGRP) gere uma árvore de caminho mínimo entre os roteadores a partir de uma floresta de rotas possíveis.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>O EIGRP utiliza o algoritmo de atualização por difusão (DUAL) para criar uma árvore de caminho mínimo que conecta os roteadores da rede. Esse algoritmo permite que o EIGRP selecione a rota mais eficiente e evita loops, garantindo um roteamento rápido e confiável. Com o DUAL, o EIGRP mantém uma visão da rede com uma "floresta" de rotas possíveis, escolhendo a melhor rota enquanto mantém redundância para maior resiliência.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>O algoritmo de encriptação que utiliza uma chave pública e uma chave privada é chamado de:</p>
+                <p>Aviso: escreva sua resposta curta usando apenas letras minúsculas desde o início.</p>
+
+                <b class="answer">Resposta: encriptação assimétrica. ❌</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Um firewall tem a funcionalidade de filtrar os pacotes baseados nos valores da tabela de regras de filtragem. Marque o tipo de valores que nunca é utilizado nesta tabela:</p>
+                <ul>
+                    <li>a. Número de porta de origem e número da porta de destino.</li>
+                    <li>b. Endereço MAC de origem e endereço MAC de destino.</li>
+                    <li>c. Direcionamento dos pacotes que chegam (in), ou para os pacotes que saem (out).</li>
+                    <li>d. Tipo de protocolo do pacote: TCP ou UDP.</li>
+                    <li>e. Endereço IP de origem e no endereço IP de destino.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Os firewalls geralmente filtram pacotes com base em informações de nível de rede (camada 3) e transporte (camada 4), como endereços IP e números de porta, mas não costumam usar endereços MAC, que são informações de nível de enlace (camada 2), em suas regras de filtragem.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Criptografia garante os princípios de segurança por meio de vários tipos de algoritmos. Marque a opção incorreta.</p>
+                <ul>
+                    <li>a. Algoritmos de difusão.</li>
+                    <li>b. Algoritmos de certificado digital.</li>
+                    <li>c. Algoritmos de assinatura digital.</li>
+                    <li>d. Algoritmos de hash.</li>
+                    <li>e. Algoritmos de encriptação e desencriptação.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ❌</b>
+
+                <p>Resolução:</p>
+                <ul>
+                    <li>Os certificados digitais não são algoritmos de criptografia, mas sim documentos eletrônicos que atestam a identidade de uma entidade, utilizando criptografia para assegurar a integridade e a autenticidade da informação.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Os dispositivos de segurança que implementam mecanismos de segurança lógica para os dados trafegarem na rede são:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma alternativa correta.</p>
+                <ul>
+                    <li>a. Sistemas Antimísseis</li>
+                    <li>b. Firewall</li>
+                    <li>c. Sistemas de Detecção de Intrusos (IDS)</li>
+                    <li>d. Sistemas Balísticos</li>
+                    <li>e. Sistemas de Prevenção de Intrusos (IPS)</li>
+                </ul>
+
+                <b class="answer">Resposta: b, c, e. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>Atuam na proteção dos dados e no monitoramento do tráfego da rede.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>No Routing Information Protocol (RIP), o cálculo das melhores rotas é baseado apenas no número de saltos entre roteadores dentro do seu domínio, que é limitada a quantos saltos?</p>
+                <p>Aviso: não escrever por extenso, digitar algarismo.</p>
+
+                <b class="answer">Resposta: 15. ✅</b>
+                <p>Resolução:</p>
+                <ul>
+                    <li>A limitação de 15 saltos no RIP é uma parte fundamental do seu design, que influencia tanto sua simplicidade quanto suas restrições em ambientes de rede mais complexos.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de out de 2024</p>
+    </footer>
+</body>
+</html>
