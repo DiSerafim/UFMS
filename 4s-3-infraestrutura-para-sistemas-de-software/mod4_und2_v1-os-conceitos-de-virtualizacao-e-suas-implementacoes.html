@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Computação na nuvem</h1>
+        <h2>💡 Unidade 2 - Os conceitos de Virtualização, e suas implementações</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="728" src="https://www.youtube.com/embed/TuEzZaDtJU0" title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 4 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=TuEzZaDtJU0&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 4 - Unidade 2 - Os conceitos de Virtualização, e suas implementações
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Os conceitos de Virtualização e suas implementações</h3>
+            <ul>
+                <li>Origens da virtualização</li>
+                <li>Evolução dos Data Center</li>
+                <li>Infraestrutura como um Serviço (IaaS)</li>
+                <li>Virtualização</li>
+                <li>Virtualização por Container</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Origens da virtualização</h2>
+            <ul>
+                <li>Surgimento em meados da década de 1960.</li>
+                <li>Grandes computadores ficaram mais velozes:</li>
+                <ul>
+                    <li>Mas eram ineficientes em aproveitar o tempo de cálculo devido ao gerenciamento manual de processos feitos por um operador.</li>
+                </ul>
+            </ul>
+            <p>⇒ Surge o conceito de tempo compartilhado (Time Sharing).</p>
+            <ul>
+                <li>Robert P. Goldberg em 1972:</li>
+                <ul>
+                    <li>Dissertação na Universidade de Harvard.</li>
+                    <ul>
+                        <li>Base teórica da arquitetura para sistemas computacionais virtuais.</li>
+                    </ul>
+                </ul>
+                <li>IBM lança um mainframe capaz de executar de forma simultânea diferentes sistemas operacionais (SO):</li>
+                <ul>
+                    <li>Sob a supervisão de um controlador.</li>
+                    <ul>
+                        <li>Hypervisor.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Evolução dos Data Center</h2>
+            <p>Evolução dos Data Center para Infraestrutura como um Serviço</p>
+            <ul>
+                <li>A utilização de recursos de virtualização produz vários Data Center virtuais:</li>
+                <ul>
+                    <li>completamente autônomos;</li>
+                    <li>isolados (independentes uns dos outros).</li>
+                </ul>
+            </ul>
+            <img src="img/evolucao-data-center.png" alt="evolucao-data-center" title="evolucao-data-center">
+            <ul>
+                <li>A Infraestrutura como um Serviço (IaaS) apresenta um nível maior de abstração do que a virtualização tradicional.</li>
+            </ul>
+            <img src="img/evolucao-data-center-1.png" alt="evolucao-data-center" title="evolucao-data-center">
+            <p></p>
+            <b>Motivação para virtualização</b>
+            <ul>
+                <li>Organizar vários servidores virtuais em um conjunto reduzido de servidores físicos.</li>
+                <li>Ambientes de desenvolvimento, teste e produção (homologação de sistemas).</li>
+                <li>Execução de aplicações que utilizam diferentes SO's.</li>
+                <li>Provisionamento de servidores.</li>
+                <li>Recuperação de desastres.</li>
+                <li>Diminuir custos com TI (hardware e software).</li>
+                <li>Diminuir custos com energia elétrica.</li>
+                <li>Diminuir lixo tecnológico.</li>
+                <li>Flexibilidade e agilidade para criação de ambientes corporativos.</li>
+            </ul>
+            <p>⇒ Infraestrutura como um Serviço (IaaS).</p>
+        </section>
+
+        <section>
+            <h2>Infraestrutura como um Serviço (IaaS)</h2>
+            <b>Caracterização de um ambiente virtualizado</b>
+            <ul>
+                <li>Sistemas operacionais diferentes podem rodar em máquinas virtuais</li>
+                <ul>
+                    <li>provocando a ilusão de rodarem em uma máquina real.</li>
+                </ul>
+                <li>As limitações podem ser criadas nos níveis:</li>
+                <ul>
+                    <li>de aplicação;</li>
+                    <li>de sistema operacional;</li>
+                    <li>do hardware.</li>
+                </ul>
+            </ul>
+            <b>Impacto da virtualização em IaaS</b>
+            <ul>
+                <li>A virtualização é a tecnologia central da nuvem.</li>
+                <li>Permite o aperfeiçoamento do uso dos recursos.</li>
+                <li>Viabiliza o modelo de computação sob demanda. </li>
+                <li>Transforma servidor físico em vários servidores virtuais.</li>
+                <li>Reduz espaço físico.</li>
+            </ul>
+            <b>Virtualização</b>
+            <ul>
+                <li>O ambiente implementado por meio de máquinas virtuais.</li>
+                <li><b>Máquina virtual</b> é a imitação de uma máquina real. </li>
+            </ul>
+            <b>Máquina física X Máquina Virtual</b>
+            <p></p>
+            <img src="img/infraestrutura-como-um-servico.png" alt="infraestrutura-como-um-servico" title="infraestrutura-como-um-servico">
+            <p></p>
+            <b>Virtual Machine (VM) (máquina virtual)</b>
+            <ul>
+                <li>É um bloco de software totalmente isolado.</li>
+                <li>Se comporta como um servidor físico</li>
+                <li>que tem CPU, memória RAM, disco rígido e NIC (network interface card)</li>
+            </ul>
+            <p>⇒ Tudo virtual baseado em software.</p>
+            <b>VM</b>
+            <p></p>
+            <img src="img/infraestrutura-como-um-servico-1.png" alt="infraestrutura-como-um-servico" title="infraestrutura-como-um-servico">
+        </section>
+
+        <section>
+            <h2>Virtualização</h2>
+            <b>Hypervisor</b>
+            <p>É um processo que cria e executa as máquinas virtuais.</p>
+            <p>Nomeclaturas:</p>
+            <ul>
+                <li>Monitor de Máquina Virtual (MMV);</li>
+                <ul>
+                    <li>Virtual Machine Monitor (VMM);</li>
+                </ul>
+                <li>Servidor virtual;</li>
+                <li>Monitor.</li>
+                <li>Controla o hardware e disponibiliza os recursos para as VM's.</li>
+                <li>Multiplexando, no tempo, as execuções das diversas VM's em uma máquina real.</li>
+            </ul>
+            <img src="img/hipervisor.png" alt="hipervisor" title="hipervisor">
+            <ul>
+                <li>Cada VM utiliza um sistema operacional e suas respectivas aplicações.</li>
+                <li>Virtualização permite diversas VM’s coexistindo em um mesmo servidor físico.</li>
+            </ul>
+            <img src="img/hipervisor-1.png" alt="hipervisor" title="hipervisor">
+            <p>Hypervisor monolítico:</p>
+            <img src="img/hipervisor-2.png" alt="hipervisor" title="hipervisor">
+            <p></p>
+            <b>Técnica de virtualização</b>
+            <p>Hypervisor total ou completa:</p>
+            <img src="img/hipervisor-3.png" alt="hipervisor" title="hipervisor">
+            <p>Hypervisor (Paravirtualização):</p>
+            <img src="img/hipervisor-4.png" alt="hipervisor" title="hipervisor">
+            <p>Virtualização Assistida por hardware:</p>
+            <img src="img/hipervisor-5.png" alt="hipervisor" title="hipervisor">
+            <p>Virtualização por Container:</p>
+            <img src="img/hipervisor-6.png" alt="hipervisor" title="hipervisor">
+            <p>Diferenças para ambientes virtualizados tradicionais</p>
+            <ul>
+                <li>Itens compartilhados que servem apenas para leitura:</li>
+                <ul>
+                    <li>Container fica mais leve se comparado à VM.</li>
+                </ul>
+                <li>São mais rápidos no boot;</li>
+                <li>Economiza os recursos do hardware (CPU, memória, etc.).</li>
+            </ul>
+            <b>Soluções em virtualização:</b>
+            <p></p>
+            <img src="img/virtualizacao.png" alt="virtualizacao" title="virtualizacao">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>NETO, Manoel V. S. Virtualização: tecnologia central do datacenter. 1a. edição. Rio de Janeiro: Brasport, 2016. p. 40-65. ISBN: 9788574527680. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>SILVA, Fernanda R.; SOARES, Juliane A.; SERPA, Matheus S.; NETO, Roque M.; JUNIOR, José F. M. A.; OLIVEIRA, Hygo S.; Pichetti, Roni F. Cloud Computing. Editora Soluções Educacionais Integradas, 2020. p. 31-50. E-book. ISBN 9786556900193. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>VITALINO, Jeferson F. N.; CASTRO, Marcus A. N. Descomplicando o Docker. 1a. edição. Rio de Janeiro: Brasport, 2016. p. 13-15. ISBN 9788574528007. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de out de 2024</p>
+    </footer>
+</body>
+</html>
