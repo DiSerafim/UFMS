@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 5 – Arquitetura de micros serviços</h1>
+        <h2>💡 Unidade 2 - Exemplos de provedores, e seus serviços</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="728" src="https://www.youtube.com/embed/HfPkV7Z9hUg" title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 5 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=HfPkV7Z9hUg&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 5 - Unidade 2 - Exemplos de provedores, e seus serviços
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Conhecer os provedores de serviços na nuvem</h3>
+            <ul>
+                <li>Container como um Serviço (CaaS)</li>
+                <li>Provedores de CaaS</li>
+                <li>Testar uma plataforma Docker®</li>
+                <li>PodMan®</li>
+                <li>E-books sobre Docker®</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Container como um Serviço (CaaS)</h2>
+            <p>Deve ser uma plataforma de hospedagem baseada em nuvem, perfeita para gerenciar seus containers Docker®.</p>
+            <p>Deve oferecer escalabilidade e confiabilidade robustas para qualquer tamanho de projeto.</p>
+            <ul>
+                <li>Com recursos avançados de gerenciamento como:</li>
+                <ul>
+                    <li>implantação automatizada;</li>
+                    <li>funcionalidade de auto recuperação;</li>
+                    <li>e opções de escalonamento personalizadas.</li>
+                </ul>
+            </ul>
+            <p>Utiliza os IaaS e PaaS do mesmo provedor</p>
+            <img src="img/container-como-um-servico.png" alt="container-como-um-servico" title="container-como-um-servico">
+        </section>
+
+        <section>
+            <h2>Provedores de CaaS</h2>
+            <p>Você pode escolher entre uma variedade de sistemas operacionais e configurações de hardware:</p>
+            <ul>
+                <li>Amazon Web Services (AWS): a AWS oferece o serviço EC2 (Elastic Compute Cloud)</li>
+                <li>Google Cloud</li>
+                <li>Microsoft Azure</li>
+                <li>IBM Cloud</li>
+                <li>Oracle Cloud</li>
+            </ul>
+            <b>Como acessar:</b>
+            <ul>
+                <li>Amazon Web Services (AWS): https://aws.amazon.com/pt</li>
+                <li>Google Cloud: https://cloud.google.com/</li>
+                <li>Microsoft Azure: https://azure.microsoft.com/pt-br/</li>
+                <li>IBM Cloud: https://cloud.ibm.com/login</li>
+                <li>Oracle Cloud: https://www.oracle.com/br/cloud/</li>
+            </ul>
+            <p>Símbolos:</p>
+            <img src="img/provedores-de-caas.png" alt="provedores-de-caas." title="provedores-de-caas.">
+            <p></p>
+            <b>Como tratar este serviço de CaaS</b>
+            <ul>
+                <li>Passos para contratar um serviço na nuvem (CaaS):</li>
+                <ul>
+                    <li>1) Escolher o provedor;</li>
+                    <li>2) Criar uma conta de acesso;</li>
+                    <li>3) Registar um cartão de crédito na sua conta;</li>
+                    <li>4) Escolher o serviço e finalizar o contrato.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Testar uma plataforma Docker®</h2>
+            <b>Comandos Docker®</b>
+            <pre>
+            Comandos para ↓     Gerenciamento de ↓
+            builder             builds
+            config              Docker configs
+            container           contêineres
+            context             contextos
+            engine              docker engine
+            network             networks
+            node                Swarm nodes
+            plugin              plugins
+            secret              Docker secrets
+            service             serviços
+            stack               Docker stacks
+            swarm               swarm
+            system              system
+            trust               trust on Docker images
+            volume              volumes
+            </pre>
+            <b>Sintaxe do comando em Docker®</b>
+            <p>Docker (comando global) (comando específico) (parâmetro/s)</p>
+            <p>⇒ Por exemplo: Listar todos os Containers ativos e inativos</p>
+            <pre>
+                docker container ls -a
+            </pre>
+            <b>Comandos gerais</b>
+            <ul>
+                <li><b>docker version</b> (no cliente ou servidor);</li>
+                <li><b>docker login</b> (no Docker Hub®);</li>
+                <li><b>docker logout</b> (no Docker Hub®);</li>
+                <li><b>docker system</b> prune - eliminar os containers:</li>
+                <ul>
+                    <li>parados (stopped);</li>
+                    <li>de redes inativas;</li>
+                    <li>de imagens de teste. </li>
+                </ul>
+            </ul>
+            <b>Comandos para containers</b>
+            <ul>
+                <li><b>create</b> – cria novo container baseado em uma imagem;</li>
+                <li><b>start</b> – inicializa um container existente;</li>
+                <li><b>run</b> – cria um container e o inicia;</li>
+                <li><b>ls</b> – lista todos os containers ativos;</li>
+                <li><b>inspect</b> – fornece informações mais completas sobre um container;</li>
+                <li><b>logs</b> – lista os logs de um container específico.</li>
+                <li><b>stop</b> – interrompe um container ativo.</li>
+                <li><b>rm</b> – remove um container parado.</li>
+            </ul>
+            <p>⇒ Por exemplo: Inspecionar um container com:</p>
+            <pre>
+                docker container inspect (nome do container)
+            </pre>
+            <b>Comandos para Imagem</b>
+            <ul>
+                <li><b>build</b> – cria uma imagem baseada em um Dockerfile®;</li>
+                <li><b>push</b> – faz upload de uma imagem para o repositório;</li>
+                <li><b>tag</b> – permite atribuir uma tag à imagem;</li>
+                <li><b>ls</b> – lista todas as imagens baixadas atualmente;</li>
+                <li><b>inspect</b> – obtém mais informações de uma imagem;</li>
+                <li><b>rm</b> – remove uma imagem do sistema.</li>
+            </ul>
+            <p>⇒ Por exemplo: <b>docker rm</b> (nome da imagem)</p>
+            <b>Comandos para redes e volumes</b>
+            <ul>
+                <li><b>ls</b> – lista todas as redes ou volumes</li>
+                <li><b>rm</b> – remove uma rede ou volume</li>
+                <li><b>create</b> – cria nova rede ou volume</li>
+                <li><b>inspect</b> – fornece informações mais completas sobre uma rede ou volume</li>
+                <li><b>prune</b> - eliminar uma rede ou volume</li>
+            </ul>
+            <p>⇒ Por exemplo: <b>docker network create</b> (nome da rede)</p>
+            <b>Testar uma plataforma Docker®</b>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-1.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-2.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Digite o comando:</p>
+            <ul>
+                <li>docker version</li>
+            </ul>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-3.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Digite o comando:</p>
+            <ul>
+                <li>docker container ls -a</li>
+            </ul>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-4.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Criar outro container (instância)</p>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-5.png" alt="plataforma-docker" title="plataforma-docker">
+            
+            <p>Temos 2 containers:</p>
+            <p>com números IP: 192.168.0.28 e 192.168.0.27.</p>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-6.png" alt="plataforma-docker" title="plataforma-docker">
+
+            <p>Digitar o comando no 1º container (192.168.0.28):</p>
+            <pre>curl -I 192.168.0.27</pre>
+            <p>Falha de conexão com o servidor Web no IP: 192.168.0.27</p>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-7.png" alt="plataforma-docker" title="plataforma-docker">
+
+            <p>Digitar o comando no 2º container (192.168.0.27):</p>
+            <pre>docker pull nginx</pre>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-8.png" alt="plataforma-docker" title="plataforma-docker">
+
+            <p>Digitar o comando no 2º container (192.168.0.27):</p>
+            <pre>docker run -d -p 80:80 nginx</pre>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-9.png" alt="plataforma-docker" title="plataforma-docker">
+
+            <p>Digitar no 1º container (192.168.0.28):</p>
+            <pre>curl -I 192.168.0.27</pre>
+            <p>Site https://labs.play-with-docker.com/</p>
+            <img src="img/plataforma-docker-10.png" alt="plataforma-docker" title="plataforma-docker">
+        </section>
+
+        <section>
+            <h2>Podman®</h2>
+            <p>Podman® (POD MANager)</p>
+            <p>Documentação em:</p>
+            <p>https://podman.io/</p>
+            <img src="img/podman.png" alt="podman" title="podman">
+            <ul>
+                <li>Concorrente do Docker®;</li>
+                <li>Podman® foi criado sem daemon;</li>
+            </ul>
+            <p>Para desenvolver, gerenciar e executar containers OCI em seu sistema Linux;</p>
+            <p>A biblioteca libpod fornece APIs para gerenciar containers, pods, imagens de container e volumes.</p>
+        </section>
+
+        <section>
+            <h2>E-books sobre Docker®</h2>
+            <ul>
+                <li>https://dotnet.microsoft.com/pt-br/download/e-book/microservices-architecture/pdf</li>
+                <li>https://aka.ms/liftandshiftwithcontainersebook</li>
+                <li>https://pub.erudio.com.br/guia-docker</li>
+                <li>https://docs.oracle.com/cd/F61410_01/docker/OL-DOCKER.pdf</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>AMAZON AWS. [Online]. Disponível em: https://www.aws.amazon.com/pt/. Acessado em: 18 de novembro de 2023.</p>
+            <p>DOCKER. [Online]. Disponível em: https://www.docker.com/. Acessado em: 18 de novembro de 2023.</p>
+            <p>PLAY WITH DOCKER. [Online]. Disponivel em: https://labs.play-with-docker.com/. Acessado em: 18 de novembro de 2023.</p>
+            <p>PODMAN. [Online]. Disponivel em: https://podman.io/. Acessado em: 18 de novembro de 2023.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de out de 2024</p>
+    </footer>
+</body>
+</html>
