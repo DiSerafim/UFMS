@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 5 – Arquitetura de micros serviços</h1>
+        <h2>💡 Unidade 1 - Os conceitos de containers e docker</h2>
+        <p>Professor Especialista: Carlos Alberto da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>INFRAESTRUTURA PARA SISTEMAS DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="728" src="https://www.youtube.com/embed/1vmqjJF7NGY" title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 5 - Unidade 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=1vmqjJF7NGY&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 5 - Unidade 1 - Os conceitos de containers e docker
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.° ministrante: Carlos Alberto da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Os conceitos de virtualização por Container e Docker®</h3>
+            <ul>
+                <li>Container</li>
+                <li>Docker®</li>
+                <li>Arquitetura Docker®</li>
+                <li>Plataforma Docker®</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Container</h2>
+            <b>Virtualização por Container</b>
+            <ul>
+                <li>É uma tecnologia que permite a criação de múltiplas instâncias isoladas de um determinado sistema operacional dentro de um único hospedeiro;</li>
+                <li>É uma maneira de virtualizar aplicações dentro de um servidor.</li>
+            </ul>
+            <p>Container usa uma quantidade muito menor de memória e espaço em disco que as VMs.</p>
+            <p>⇒ Container utiliza os recursos de seu próprio SO (host).</p>
+            <img src="img/virtualizacao-por-container.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p></p>
+            <b>Vantagens da virtualização por Container</b>
+            <ul>
+                <li>Tudo pode ser instalado em Containers no servidor;</li>
+                <li>Usam bibliotecas do kernel do SO:</li>
+                <ul>
+                    <li>O ambiente torna-se portável;</li>
+                    <li>Torna o trabalho conjunto mais eficiente.</li>
+                </ul>
+                <li>Simplifica a metodologia DevOps facilitando o desenvolvimento ágil;</li>
+                <li>Permite o escalonamento de aplicações;</li>
+                <li>Torna processos de implantação e configuração mais simples.</li>
+                <li>Facilita o gerenciamento do ambiente:</li>
+                <ul>
+                    <li>Economia de recursos;</li>
+                    <li>Aplicação como pacote completo;</li>
+                    <li>Replicação e padronização.</li>
+                </ul>
+                <li>No compartilhamento de recursos:</li>
+                <ul>
+                    <li>Os arquivos podem ser compartilhados entre o host e o</li>
+                    <li>Ou um volume pode ser distribuído para outros.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Docker®</h2>
+            <img src="img/docker.png" alt="docker" title="docker">
+            <ul>
+                <li>Tecnologia Open Source permite dentro de um container de software as aplicações distribuídas para:</li>
+                <ul>
+                    <li>Desenvolver;</li>
+                    <li>Testar;</li>
+                    <li>Executar.</li>
+                </ul>
+            </ul>
+            <p>⇒ Empacotar uma aplicação de forma padronizada contendo: código, runtime, ferramentas, bibliotecas, etc.</p>
+            <b>Vantagens</b>
+            <ul>
+                <li>Possibilita a implantação de aplicações de forma mais ágil, confiável e estável, em qualquer ambiente.</li>
+                <li>Controle mais granular dos recursos gerando mais eficiência da infraestrutura.</li>
+            </ul>
+            <b>Virtualização por Container</b>
+            <p></p>
+            <img src="img/virtualizacao-por-container-1.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p>(1) Tradicional</p>
+            <p>(2-3-4) Docker®</p>
+            <img src="img/virtualizacao-por-container-2.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p>Exemplo:</p>
+            <img src="img/virtualizacao-por-container-3.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p></p>
+            <b>Visão geral</b>
+            <p></p>
+            <img src="img/virtualizacao-por-container-4.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p>Exemplo:</p>
+            <img src="img/virtualizacao-por-container-5.png" alt="virtualizacao-por-container" title="virtualizacao-por-container">
+            <p></p>
+            <b>Docs (manuais)</b>
+            <p>Site www.Docker.com</p>
+            <img src="img/docker-manuais.png" alt="docker-manuais" title="docker-manuais">
+            <p></p>
+            <b>Docker Personal®</b>
+            <p></p>
+            <img src="img/docker-manuais-1.png" alt="docker-manuais" title="docker-manuais">
+            <p></p>
+            <b>Criar uma conta para acesso</b>
+            <p></p>
+            <img src="img/docker-manuais-2.png" alt="docker-manuais" title="docker-manuais">
+        </section>
+
+        <section>
+            <h2>Arquitetura Docker®</h2>
+            <b>Arquitetura cliente-servidor</b>
+            <p></p>
+            <img src="img/arquitetura-cliente-servidor.png" alt="arquitetura-cliente-servidor" title="arquitetura-cliente-servidor">
+            <p></p>
+            <b>Client executa comandos</b>
+            <img src="img/arquitetura-cliente-servidor-1.png" alt="arquitetura-cliente-servidor" title="arquitetura-cliente-servidor">
+            <p>Client docker e daemon docker se comunicam por meio de:</p>
+            <ul>
+                <li>REST API;</li>
+                <li>Sockets;</li>
+                <li>Outros.</li>
+            </ul>
+            <b>Componentes Docker®</b>
+            <ul>
+                <li>Container engine®</li>
+                <li>Container docker®</li>
+                <li>Image docker®</li>
+                <li>Dockerfile®</li>
+                <li>Docker Registry®</li>
+                <li>Docker Hub®</li>
+            </ul>
+            <p>Container engine®:</p>
+            <img src="img/container-enginer.png" alt="container-enginer" title="container-enginer">
+            <p>Container docker®:</p>
+            <ul>
+                <li>Como base no image docker:</li>
+                <ul>
+                    <li>Image é uma classe java;</li>
+                    <li>Container é uma instância desta classe.</li>
+                </ul>
+            </ul>
+            <p>Image docker:</p>
+            <ul>
+                <li>Templates para criação de container;</li>
+                <li>São imutáveis, pois para executá-las é necessário criar um instância da mesma (container).</li>
+                <li>São construídas em camadas:</li>
+                <ul>
+                    <li>Facilita a reutilização e manutenção.</li>
+                </ul>
+            </ul>
+            <p>⇒ Ambiente encapsulado pronto para ser replicado.</p>
+            <p>Dockerfile®:</p>
+            <ul>
+                <li>São scripts com comandos para:</li>
+                <ul>
+                    <li>Criar imagens;</li>
+                    <li>Executar comandos;</li>
+                    <li>Criar variáveis de ambiente;</li>
+                    <li>Copiar arquivos e pastas do host para a imagem.</li>
+                </ul>
+            </ul>
+            <img src="img/dockerfile.png" alt="dockerfile" title="dockerfile">
+            <p>Docker Registry®:</p>
+            <ul>
+                <li>Um repositório Git:</li>
+                <ul>
+                    <li>Imagens podem ser versionadas.</li>
+                </ul>
+                <li>Docker Hub® é o repositório oficial do Docker® :</li>
+                <ul>
+                    <li>Permite versionar e hospedar imagens privadas e públicas.</li>
+                </ul>
+            </ul>
+            <p>Docker Hub®:</p>
+            <img src="img/dockerhub.png" alt="dockerhub" title="dockerhub">
+        </section>
+
+        <section>
+            <h2>Plataforma Docker®</h2>
+            <b>Plataforma composta por:</b>
+            <p>Docker Engine® + Docker Hub®</p>
+            <b>Docker Engine®</b>
+            <p>Docker Daemon® + (Docker CLI® e/ou Docker API®)</p>
+            <b>Docker Desktop®</b>
+            <p>Disponível para os sistemas operacionais</p>
+            <p>(seu Docker engine)</p>
+            <img src="img/docker-enginer.png" alt="docker-enginer" title="docker-enginer">
+            <p></p>
+            <b>Kubernetes®</b>
+            <p>Gerenciamento de vários containers Docker®</p>
+            <img src="img/kubernetes.png" alt="kubernetes" title="kubernetes">
+            <p></p>
+            <b>Entreprise Docker®</b>
+            <p></p>
+            <img src="img/entrepise-docker.png" alt="entrepise-docker" title="entrepise-docker">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p>DOCKER. [Online]. Disponível em: https://www.docker.com/. Acessado em: 18 de novembro de 2023.</p>
+            <p>KUBERNETES. [Online]. Disponível em: https://kubernetes.io/pt-br/. Acessado em: 18 de novembro de 2023.</p>
+            <p>VITALINO, Jeferson Fernando Noronha; CASTRO, Marcus André Nunes. Descomplicando o Docker. 1a edição. Rio de Janeiro: Brasport, 2016. Capítulo 1 e 2. ISBN 9788574528007. Disponível na Biblioteca Digital da UFMS.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de out de 2024</p>
+    </footer>
+</body>
+</html>
