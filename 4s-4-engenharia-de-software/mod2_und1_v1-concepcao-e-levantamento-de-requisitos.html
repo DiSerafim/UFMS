@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGENHARIA DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo  2 – Elicitação e especificação de requisitos de software</h1>
+        <h2>💡 Unidade 1 - Concepção e levantamento de requisitos</h2>
+        <p>Professora Especialista: Débora Maria Barroso Paiva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ENGENHARIA DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="752" src="https://www.youtube.com/embed/mD7Bl1SE1kU" title="[UFMS Digital] Engenharia de Software - Módulo 2 - Unidade 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=mD7Bl1SE1kU&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] ENGENHARIA DE SOFTWARE - Módulo 2 - Unidade 1 - Concepção e levantamento de requisitos
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Débora Maria Barroso Paiva</p>
+        </section>
+        
+        <section>
+            <h2>Objetivo</h2>
+            <ul>
+                <li>Entender as alternativas utilizadas para conhecer as necessidades dos clientes e usuários finais e definir as funcionalidades (requisitos) de software.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Definições</h2>
+            <ul>
+                <li><b>Requisito</b>: é uma característica do sistema ou a descrição de algo que o sistema é capaz de realizar para atingir os objetivos dos usuários.</li>
+                <li><b>Especificação</b>: descrição minuciosa das características que um material, uma obra ou um serviço deverão apresentar.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de requisitos</h2>
+            <b>Requisitos Funcionais (RF)</b>
+            <ul>
+                <li>RF são requisitos diretamente ligados à funcionalidade do software.</li>
+            </ul>
+            <b>Requisitos Não Funcionais (RNF)</b>
+            <ul>
+                <li>RNF são requisitos que expressam restrições que o software deve atender ou qualidades  específicas que o software deve ter.</li>
+            </ul>
+            <b>Requisitos Inversos (RIN)</b>
+            <ul>
+                <li>RIN estabelecem condições que nunca podem ocorrer.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplos de requisitos</h2>
+            <p>O sistema deve prover um formulário para a entrada dos resultados dos exames clínicos de um paciente. <b>(RF)</b>.</p>
+            <p>O sistema deve emitir um recibo para o cliente, com o tempo máximo de 3 segundos após a transação. <b>(RF "," RNF de performance)</b>.</p>
+            <p>O sistema não pode apagar as informações de um cliente <b>(RIN)</b>.</p>
+        </section>
+
+        <section>
+            <h2>Definição</h2>
+            <p>O que é engenharia de requisitos de software?</p>
+            <ul>
+                <li>Atividade de desenvolvimento de software que ajuda o engenheiro de software a compreender o problema a resolver.</li>
+            </ul>
+            <p>A engenharia de requisitos é o processo de descobrir, analisar, documentar e verificar as funções e restrições dos sistemas;</p>
+            <p>Trata-se de um processo que envolve todas as atividades exigidas para criar e manter o documento de requisitos do sistema (SOMMERVILLE, 2018).</p>
+        </section>
+
+        <section>
+            <h2>Atividades da engenharia de requisitos</h2>
+            <p>1º Fazer perguntas ao cliente, demonstrando sistemas similares e desenvolvendo protótipos;</p>
+            <p>2º Registrar os requisitos em documentos;</p>
+            <p>3º Realizar uma etapa de verificação para assegurar que os requisitos estejam completos, corretos e consistentes e uma etapa de validação para garantir que descrevemos o que o cliente quer.</p>
+            <ul>
+                <li>Em um ambiente ideal:</li>
+                <ul>
+                    <li>Clientes e engenheiros de software trabalham juntos na mesma equipe;</li>
+                    <li>A engenharia de requisitos consiste em conversar com colegas e registrar.</li>
+                </ul>
+                <li>Na realidade:</li>
+                <ul>
+                    <li>Os clientes podem estar em uma cidade ou país diferente;</li>
+                    <li>Podem ter apenas uma vaga ideia do que é necessário, ter opiniões conflitantes, ter conhecimento técnico limitado, ter tempo limitado…</li>
+                </ul>
+            </ul>
+            <b>Atividades da engenharia de requisitos (detalhando o 1º passo)</b>
+            <p>1.1- Identificação dos interessados</p>
+            <ul>
+                <li>Os interessados são chamados também de stakeholders;</li>
+                <li>Todos que se beneficiam de modo direto ou indireto do sistema. Exemplo: clientes, usuários finais, consultores, pessoal de marketing, etc.</li>
+            </ul>
+            <p>1.2- Reconhecimento de diversos pontos de vista</p>
+            <ul>
+                <li>Os requisitos do sistema serão explorados a partir de muitos pontos de vista diferentes:</li>
+                <ul>
+                    <li>Grupo de marketing: interessados em funções que estimulem o mercado a comprar o software;</li>
+                    <li>Usuários finais: interessados em facilidade de uso.</li>
+                </ul>
+            </ul>
+            <p>1.3- Trabalho em busca da colaboração</p>
+            <ul>
+                <li>Quando os requisitos são conflitantes, os interessados no software colaboram fornecendo seu ponto de vista sobre os requisitos.</li>
+            </ul>
+            <p>1.4- Formulação das primeiras questões</p>
+            <ul>
+                <li>Primeiro conjunto de questões: focaliza os interessados, os objetivos gerais, os benefícios, o software e a comunicação:</li>
+                <ul>
+                    <li>Quem vai usar a solução?</li>
+                    <li>Qual será o benefício da solução?</li>
+                    <li>Como você caracterizaria boas saídas do software?</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Técnicas para identificação de requisitos.</h2>
+            <ul>
+                <li>Leitura de documentos;</li>
+                <li>Observação;</li>
+                <li>Entrevistas;</li>
+                <li>Questionários;</li>
+                <li>Reuniões: brainstorming.</li>
+                <li>Documentos</li>
+                <ul>
+                    <li>sublinhar palavras repetidas;</li>
+                    <li>sinônimos;</li>
+                    <li>anotar termos desconhecidos;</li>
+                    <li>buscar relacionamentos;</li>
+                    <li>vocabulário.</li>
+                </ul>
+                <li>Procurar entender a <b>estrutura</b> dos documentos lidos.</li>
+                <li>Entrevistas</li>
+                <ul>
+                    <li>Planejamento;</li>
+                    <li>Realização;</li>
+                    <li>Finalização.</li>
+                </ul>
+                <li>Planejamento das entrevistas:</li>
+                <ul>
+                    <li>Qual tipo de anotação usar (manual, gravação em fita ou em vídeo)?</li>
+                    <li>Depende do consentimento dos participantes;</li>
+                    <li>Informar ao especialista sobre a metodologia de anotação;</li>
+                    <li>Estipular o tempo necessário e os recursos para a entrevista.</li>
+                </ul>
+                <li>Realização das entrevistas:</li>
+                <ul>
+                    <li>Motivar os participantes a uma comunicação ativa;</li>
+                    <li>Fornecer um resumo verbal do problema;</li>
+                    <li>Relacionar a pergunta inicial com o tópico global da sessão;</li>
+                    <li>Perguntas abertas ou fechadas.</li>
+                </ul>
+                <li>Realização das entrevistas - diretrizes:</li>
+                <ul>
+                    <li>Desenvolva um plano geral de entrevistas;</li>
+                    <li>Certifique-se de que você tem autorização para falar com as pessoas;</li>
+                    <li>Utilize ferramentas automatizadas adequadas, mas sem exagero;</li>
+                    <li>Planeje a entrevista para fazer uso eficiente do tempo;</li>
+                    <li>Não desperdice o tempo do usuário;</li>
+                    <li>Colete, antes da entrevista, tantos dados pertinentes quanto possível;</li>
+                    <li>Faça uma previsão do tempo que será gasto na entrevista e comunique ao interessado;</li>
+                    <li>Tente descobrir em quais informações o usuário está mais interessado;</li>
+                    <ul>
+                        <li>Deixe o usuário começar a entrevista por onde ele preferir: entradas, saídas, funções, dados…</li>
+                    </ul>
+                </ul>
+                <li>Realização das entrevistas:</li>
+                <ul>
+                    <li>Podem surgir situações que interfiram nos objetivos da sessão;</li>
+                    <li>Respostas ambíguas;</li>
+                    <li>Comentários irrelevantes, respostas genéricas;</li>
+                    <li>Depois de obtido o conhecimento, avaliá-lo junto ao especialista.</li>
+                </ul>
+                <li>Leitura de documentos;</li>
+                <li>Observação;</li>
+                <li>Entrevistas;</li>
+                <li>Questionários;</li>
+                <li>Reuniões: brainstorming.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Considerações finais</h2>
+            <p>É muito importante valorizar a etapa de identificação de requisitos no processo de desenvolvimento de software;</p>
+            <p>Há diversas técnicas que podem ser usadas de acordo com o contexto e os recursos disponíveis;</p>
+            <p>A boa comunicação e interação são cruciais para o sucesso desta atividade.</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>PFLEEGER, Shari Lawrence. Engenharia de software: teoria e prática. 2. ed. São Paulo: Prentice-Hall, 2004. ISBN 8587918311. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>PRESSMAN, Roger S; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional. 9. ed. Porto Alegre: McGraw Hill, 2021. ISBN 9786558040118. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Editora Pearson, 2018. ISBN 9788543024974. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 22 de out de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
