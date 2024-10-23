@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGENHARIA DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo  2 – Elicitação e especificação de requisitos de software</h1>
+        <h2>💡 Unidade 2 - Especificação de requisitos e elaboração de artefatos</h2>
+        <p>Professora Especialista: Débora Maria Barroso Paiva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ENGENHARIA DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/QlJlEPLEqOo" title="[UFMS Digital] Engenharia de Software - Módulo 2 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=QlJlEPLEqOo" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Engenharia de Software - Módulo 2 - Unidade 2 - Especificação de requisitos e elaboração de artefatos
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Débora Maria Barroso Paiva</p>
+        </section>
+        
+        <section>
+            <h2>Objetivo</h2>
+            <ul>
+                <li>Entender as alternativas utilizadas para conhecer as
+                    necessidades dos clientes e usuários finais e definir as
+                    funcionalidades (requisitos) de software.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Relembrando: tipos de requisitos</h2>
+            <ul>
+                <li>Requisitos Funcionais (RF)</li>
+                <ul>
+                    <li>RF são requisitos diretamente ligados à funcionalidade do software.</li>
+                </ul>
+                <li>Requisitos Não Funcionais (RNF)</li>
+                <ul>
+                    <li>RNF são requisitos que expressam restrições que o software deve atender ou qualidades específicas que o software deve ter.</li>
+                </ul>
+                <li>Requisitos Inversos (RIN)</li>
+                <ul>
+                    <li>RIN estabelecem condições que nunca podem ocorrer.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Requisitos não funcionais</h2>
+            <p>Podem estar relacionados às propriedades emergentes do sistema, como confiabilidade, tempo de resposta e espaço de armazenamento;</p>
+            <p>Podem especificar desempenho, proteção, disponibilidade, etc.</p>
+            <figure>
+                <img src="img/requisitos-nao-funcionais-3.png" alt="requisitos-nao-funcionais" title="requisitos-nao-funcionais">
+            </figure>
+            <b>exemplos:</b>
+            <ul>
+                <li>Requisito de produto:</li>
+                <ul>
+                    <li>A interface do usuário deve ser fácil de aprender.</li>
+                </ul>
+                <li>Requisito organizacional:</li>
+                <ul>
+                    <li>O processo de desenvolvimento do sistema e os documentos a serem entregues devem estar em conformidade com o processo e produtos a serem entregues definidos em XYZCo-SP-STAN-95.</li>
+                </ul>
+                <li>Requisito externo:</li>
+                <ul>
+                    <li>O sistema não deve revelar quaisquer informações pessoais sobre os usuários do sistema ao pessoal da biblioteca que usa o sistema.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Norma ISO/IEC 25010</h2>
+            <ul>
+                <li><b>Adequação funcional</b>: mede o grau em que o produto disponibiliza funções que satisfazem às necessidades estabelecidas.</li>
+                <li><b>Confiabilidade</b>: capacidade do software de manter seu nível de desempenho sob condições estabelecidas durante um período de tempo estabelecido.</li>
+                <li><b>Usabilidade</b>: avalia o grau no qual o produto tem atributos que permitem que seja entendido, aprendido, usado e que seja atraente ao usuário.</li>
+                <li><b>Eficiência</b>: trata da otimização do uso de recursos de tempo e espaço.</li>
+                <li><b>Segurança, manutenibilidade, portabilidade</b></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Artefatos gerados</h2>
+            <ul>
+                <li>Documento de requisitos;</li>
+                <li>Casos de uso;</li>
+                <li>Cartões de estórias dos usuários;</li>
+                <li>Protótipos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Documento de Requisitos</h2>
+            <p>O Documento de Requisitos de um software contém todos os requisitos funcionais e não funcionais do software.</p>
+            <p>Esse documento serve como um meio de comunicação entre o engenheiro de software e o usuário, a fim de estabelecer um “acordo” acerca do software pretendido.</p>
+            <p>Contém 3 partes:</p>
+            <ul>
+                <li>Visão geral do sistema;</li>
+                <li>Requisitos funcionais;</li>
+                <li>Requisitos não funcionais.</li>
+            </ul>
+            <p>A visão geral deve conter:</p>
+            <ul>
+                <li>Objetivo principal;</li>
+                <li>Quem são os principais usuários;</li>
+                <li>Principais funcionalidades.</li>
+            </ul>
+            <p>Requisitos funcionais e não funcionais: devem ser compostos por sentenças em linguagem natural, seguindo certos padrões:</p>
+            <ul>
+                <li>1- Iniciar com: “O sistema deve…”</li>
+                <ul>
+                    <li>Exemplo: O sistema deve permitir o cadastro de fornecedores da empresa. Os seguintes dados serão cadastrados: nome do fornecedor, CNPJ, endereço, cidade e CEP.</li>
+                </ul>
+                <li>2- Os requisitos devem estar organizados logicamente:</li>
+                <ul>
+                    <li>devem ser apresentados inicialmente os requisitos de entrada, depois os requisitos de processamento e por último os requisitos de saída.</li>
+                </ul>
+                <li>3- Cada requisito deve ter um identificador único.</li>
+                <li>4- Os requisitos de software devem ser divididos em requisitos funcionais e não funcionais.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Outro artefato: casos de uso</h2>
+            <p>Conta uma “estória” sobre como um usuário final interage com um sistema sob um conjunto específico de circunstâncias.</p>
+            <p>Descreve o software do ponto de vista do usuário.</p>
+            <p>Os casos de uso são uma maneira de descrever as interações entre usuários e um sistema.</p>
+            <b>Caso de uso: atores</b>
+            <p>Um ator é algo com comportamento, tal como uma pessoa, um sistema de computador ou uma organização.</p>
+            <p><b>Ator principal</b>: interage diretamente com o sistema computacional.</p>
+            <p><b>Ator secundário</b>: interage com outros atores.</p>
+            <b>Exemplos de casos de uso</b>
+            <ul>
+                <li>Emprestar livro;</li>
+                <li>Vender produtos;</li>
+                <li>Incluir ordem de serviço.</li>
+            </ul>
+            <b>Escrevendo casos de uso</b>
+            <p>Deve-se descrever o caso de uso passo a passo: como ele ocorre, como é a interação entre os usuários e o sistema.</p>
+            <p>A princípio descreve-se o fluxo principal, no qual se descreve o que acontece quando tudo dá certo na interação.</p>
+            <p>Em seguida analisa-se de forma crítica cada passo do caso de uso e procura-se verificar o que poderia dar errado.</p>
+            <p>A partir da identificação de uma possível exceção, deve-se construir uma descrição de procedimentos para contornar o problema (o caso de uso passa a possuir as sequências alternativas).</p>
+            <b>Exemplo: caso de uso:</b>
+            <p>Caso de uso: pedir livros:</p>
+            <ul>
+                <li>Ator(es): compradores.</li>
+                <li>Pré-condições: o estoque está atualizado.</li>
+                <li>Pós-condições: o pedido foi registrado.</li>
+            </ul>
+            <p>Fluxo principal:</p>
+            <ul>
+                <li>1. O comprador fornece palavras-chave para pesquisar livros.</li>
+                <li>2. O sistema gera uma lista de livros para venda que satisfaz as palavras-chave incluindo título, autor, preço, número de páginas, editora e ISBN.</li>
+                <li>3. O comprador seleciona livros da lista e indica a quantidade desejada para cada um.</li>
+                <li>4. O sistema gera um resumo do pedido (título, autor, quantidade, preço unitário e subtotal para cada livro) e o valor total.</li>
+                <li>5. O comprador finaliza o pedido.</li>
+            </ul>
+            <p>Tratamento de exceções:</p>
+            <ul>
+                <li>3a: A quantidade solicitada é maior do que a quantidade em estoque para um ou mais livros.</li>
+                <li>3a.1: O sistema informa as quantidades disponíveis para cada livro que foi pedido acima do estoque.</li>
+                <li>3a.2: O comprador altera as quantidades desejadas para valores iguais ou menores do que o disponível no estoque.</li>
+                <li>3a.3: Avança para o passo 4.</li>
+                <li>5a: O comprador ainda não se identificou.</li>
+                <li>5a.1: O comprador fornece uma identificação válida.</li>
+                <li>5a.2: Retorna ao passo 5.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Considerações finais</h2>
+            <p>A engenharia de requisitos é uma atividade crucial no processo de desenvolvimento de software e está fortemente relacionada à qualidade dos produtos que são gerados.</p>
+            <p>Há diferentes artefatos que podem ser gerados e eles devem ser utilizados de acordo com as necessidades de cada projeto e os recursos disponíveis.</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>PFLEEGER, Shari Lawrence. Engenharia de software: teoria e prática. 2. ed. São Paulo: Prentice-Hall, 2004. ISBN 8587918311. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>PRESSMAN, Roger S; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional. 9. ed. Porto Alegre: McGraw Hill, 2021. ISBN 9786558040118. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Editora Pearson, 2018. ISBN 9788543024974. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 23 de out de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
