@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGENHARIA DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Teste e manutenção de software.</h1>
+        <h2>💡 Unidade 1 - Estratégias de teste de software</h2>
+        <p>Professora Especialista: Débora Maria Barroso Paiva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ENGENHARIA DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="839" src="https://www.youtube.com/embed/XsQh0DzosoA" title="[UFMS Digital] Engenharia de Software - Módulo 4 - Unidade 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=XsQh0DzosoA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] ENGENHARIA DE SOFTWARE - Módulo 4 - Unidade 1 - Estratégias de teste de software
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Débora Maria Barroso Paiva</p>
+        </section>
+        
+        <section>
+            <h2>Objetivo</h2>
+            <ul>
+                <li>Entender as principais técnicas usadas para testar software e realizar sua manutenção, incluindo atividades de reengenharia de software.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Verificação e validação de software</h2>
+            <p><b>Validação</b>: Estamos construindo o produto correto?</p>
+            <ul>
+                <li>assegurar que o software atende às expectativas dos clientes.</li>
+            </ul>
+            <p><b>Verificação</b>: Estamos construindo o produto corretamente?</p>
+            <ul>
+                <li>verificar se o software está de acordo com suas especificações.</li>
+            </ul>
+            <p>Incluem várias atividades, tais como:</p>
+            <ul>
+                <li>Revisões técnicas ou inspeções de software;</li>
+                <li>Auditoria;</li>
+                <li>Simulação;</li>
+                <li>Testes;</li>
+                <li>Etc.</li>
+            </ul>
+            <p><b>Inspeções de software</b>:</p>
+            <ul>
+                <li>analisam e verificam representações de sistemas, como documento de requisitos, diagramas de projeto e código-fonte de programa.</li>
+            </ul>
+            <p><b>Testes de software</b>:</p>
+            <ul>
+                <li>envolvem executar uma implementação do software com dados de teste.</li>
+            </ul>
+            <p>O objetivo principal da atividade de teste é <b>mostrar a presença de defeitos</b>, caso eles existam (realizar testes não garante que um software está correto).</p>
+            <p>Quando os testes são realizados de forma criteriosa, o que se tem é uma certa <b>confiança</b> de que ele se comporta corretamente.</p>
+        </section>
+
+        <section>
+            <h2>Como fazer inspeção de software?</h2>
+            <p>É um processo formal realizado por uma equipe de pelo menos quatro pessoas;</p>
+            <p>Os membros da equipe analisam o artefato e apontam defeitos;</p>
+            <p>Papéis: autor, leitor, testador e moderador;</p>
+            <p>O leitor lê em voz alta para a equipe de inspeção, o testador inspeciona o artefato e o moderador organiza o processo.</p>
+        </section>
+
+        <section>
+            <h2>Inspeção de software.</h2>
+            <p>Como resultado de uma inspeção, diversos problemas podem ser encontrados:</p>
+            <ul>
+                <li>defeitos de controle;</li>
+                <li>defeitos de gerenciamento de exceções;</li>
+                <li>inconsistência;</li>
+                <li>informação incorreta;</li>
+                <li>etc. </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste de software</h2>
+            <p>Relembrando:</p>
+            <ul>
+                <li>Processo de executar um programa com o objetivo de revelar a presença de defeitos, ou, falhando nesse objetivo, aumentar a confiança sobre o programa.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estratégia de teste de software.</h2>
+            <p>Qualquer estratégia de teste deve incorporar:</p>
+            <ul>
+                <li>planejamento de teste;</li>
+                <li>projeto de <b>casos de teste</b>;</li>
+                <li>execução de testes;</li>
+                <li>a resultante coleta e avaliação de dados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Caso de teste.</h2>
+            <p>Um caso de teste é um par ordenado no qual o primeiro elemento representa uma entrada para o programa, e o segundo, a correspondente saída esperada.</p>
+            <p><b>Entrada</b>: conjunto de dados necessários para uma execução do programa;</p>
+            <p><b>Saída esperada</b>: resultado de tal execução do programa.</p>
+            <b>Caso de teste - exemplo</b>
+            <p>Considere um programa que recebe como parâmetros de entrada dois números inteiros, x e y, com y >=0 e computa xy .</p>
+            <p>Casos de teste para o exemplo são:</p>
+            <pre>
+            <(2,3), 8>
+            <(-4,3), -64>
+            <(3,-1), Erro>
+            </pre>
+            <b>Casos de teste em Desenvolvimento Dirigido por Testes (TDD)</b>
+            <p>Em TDD é possível elaborar os casos de teste enquanto cartões de estória são escritos.</p>
+            <p>O teste é escrito antes da tarefa ser implementada;</p>
+            <p>Após a implementação do software, o teste pode ser colocado em prática imediatamente;</p>
+            <p>O desenvolvimento test-first e o uso de ferramentas de teste automatizadas são os principais pontos fortes da abordagem XP.</p>
+            <p>O projeto dos casos de teste pode ser tão difícil quanto o projeto do próprio produto a ser testado.</p>
+            <pre>
+                    ↓↓
+            Técnicas de Projeto de
+                Casos de Teste
+            </pre>
+            <p>Os casos de teste devem levar em consideração os requisitos;</p>
+            <p>Os testes devem ser planejados com antecedência, desde o início do desenvolvimento;</p>
+            <p>Um caso de teste deve levar em consideração não só o conjunto de dados de entrada, mas também a saída esperada;</p>
+            <p>Um conjunto de testes deve exercitar não só as condições válidas, mas também as inválidas e inoportunas;</p>
+            <p>Casos de teste devem ser guardados para que possam ser replicados;</p>
+            <p>Um bom caso de teste é aquele que tem alta probabilidade de encontrar uma falha que não havia sido encontrada ainda.</p>
+        </section>
+
+        <section>
+            <h2>Fases de teste.</h2>
+            <p>O processo de teste inicia com os <b>testes de unidade</b>, que visam verificar se cada módulo ou unidade do software satisfaz à sua especificação;</p>
+            <p>Após testar separadamente cada módulo, estes são agrupados para compor os subsistemas, sendo esta a fase de <b>testes de integração</b>;</p>
+            <p>Uma vez que os subsistemas são testados isoladamente, estes são integrados formando o software completo. Neste momento começa a fase de <b>testes de sistema</b>, cujo objetivo é exercitar o sistema como um todo;</p>
+            <p>Finalmente, os <b>testes de aceitação</b> visam validar o software, ou seja, determinam se ele satisfaz aos requisitos especificados na fase de especificação do sistema.</p>
+            <p><b>Teste de Unidade</b>:</p>
+            <ul>
+                <li>Identificar erros de lógica e de implementação em cada módulo do software, separadamente.</li>
+            </ul>
+            <p><b>Teste de Integração</b>:</p>
+            <ul>
+                <li>Identificar erros associados às interfaces entre os módulos do software.</li>
+            </ul>
+            <p><b>Teste de Sistema</b>:</p>
+            <ul>
+                <li>Verificar se as funções estão de acordo com a especificação e se todos os elementos do sistema combinam-se adequadamente.</li>
+            </ul>
+            <p><b>Teste de Aceitação</b>:</p>
+            <ul>
+                <li>Realizado pelos usuários finais.</li>
+            </ul>
+            <b>Teste de unidade:</b>
+            <p>Focaliza o esforço de verificação na menor unidade de projeto do software.</p>
+            <p>Testa os caminhos de controle nos componentes.</p>
+            <p><b>Foco principal</b>: lógica interna de processamento e as estruturas de dados .</p>
+            <p>Erros mais comuns:</p>
+            <ul>
+                <li>Precedência aritmética mal entendida ou incorreta;</li>
+                <li>Inicialização incorreta;</li>
+                <li>Falta de precisão;</li>
+                <li>Comparação de tipos de dados diferentes;</li>
+                <li>Operadores ou precedência lógica incorretos;</li>
+                <li>Comparação incorreta de variáveis;</li>
+                <li>Falhas na saída;</li>
+                <li>Descrição do erro ininteligível;</li>
+                <li>Erro mencionado não corresponde ao erro encontrado;</li>
+                <li>Erros nos limites.</li>
+            </ul>
+            <p>Em situações em que não existam recursos para fazer testes de unidade abrangentes: escolha os módulos (componentes) críticos;</p>
+            <p>Um teste de unidade é simplificado quando um componente com alta coesão é projetado (apenas uma função é implementada por um componente).</p>
+            <b>Teste de integração:</b>
+            <p>O objetivo é, a partir dos módulos testados ao nível de unidade, construir a estrutura de programa que foi determinada pelo projeto;</p>
+            <p>Os módulos são montados ou integrados para formarem um pacote de software.</p>
+            <p>Verifica se os componentes funcionam realmente em conjunto, se são chamados corretamente e se transferem dados corretos no tempo correto por meio de suas interfaces.</p>
+            <p><b>Integração não-incremental</b>: o programa completo é testado como um todo e o resultado é o caos.</p>
+            <p><b>Integração incremental</b>:</p>
+            <ul>
+                <li>o programa é construído e testado em pequenos segmentos, nos quais os erros são mais fáceis de serem isolados e corrigidos;</li>
+                <li>as interfaces têm maior probabilidade de ser testadas completamente;</li>
+                <li>uma abordagem sistemática ao teste pode ser aplicada.</li>
+            </ul>
+            <b>Teste de sistema:</b>
+            <p>O software é apenas um elemento de um sistema baseado em computador mais amplo.</p>
+            <p>O teste de sistema envolve uma série de diferentes testes, cujo propósito primordial é pôr completamente a prova o sistema baseado em computador.</p>
+            <b>Exemplos - teste de sistema:</b>
+            <p>Forçar o software a falhar de diversas maneiras e verificar se a recuperação é adequadamente executada → (<b>teste de recuperação</b>).</p>
+            <p>Verificar se todos os mecanismos de proteção embutidos num sistema o protegerão, de fato, de acessos indevidos → (<b>teste de segurança</b>).</p>
+            <p>Executar o sistema de uma forma que exija recursos em: quantidade, frequência ou volume anormais → (<b>teste de estresse</b>)</p>
+            <ul>
+                <li>A velocidade de entrada de dados pode ser aumentada;</li>
+                <li>Casos de teste que exigem o máximo de memória podem ser executados;</li>
+                <li>Casos de teste que podem causar busca excessiva de dados residentes em disco são criados.</li>
+            </ul>
+            <b>Teste de aceitação:</b>
+            <p>Ao término da atividade de teste, o software está completamente montado como um pacote.</p>
+            <p>Diferentes erros foram descobertos e corrigidos.</p>
+            <p>Uma série final de testes de software, (testes de aceitação), podem iniciar.</p>
+            <p>O plano e o procedimento de teste são projetados para garantir que:</p>
+            <ul>
+                <li>todos os requisitos funcionais são satisfeitos;</li>
+                <li>todos os requisitos de desempenho são obtidos;</li>
+                <li>a documentação está correta;</li>
+                <li>outros requisitos são cumpridos: portabilidade, compatibilidade, remoção de erros e manutenibilidade.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Considerações Finais</h2>
+            <p>Teste de software é uma atividade fundamental do processo de desenvolvimento de software e está diretamente relacionado à qualidade dos sistemas que são entregues.</p>
+            <p>Há diferentes abordagens de teste, que são colocadas em prática de acordo com os recursos disponíveis em cada empresa.</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>PRESSMAN, Roger S; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional. 9. ed. Porto Alegre: McGraw Hill, 2021. ISBN 9786558040118. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Editora Pearson, 2018. ISBN 9788543024974. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 26 de out de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
