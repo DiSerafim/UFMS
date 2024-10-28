@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGENHARIA DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Teste e manutenção de software.</h1>
+        <h2>💡 Unidade 2 - Tipos de manutenção de software, reengenharia e engenharia reversa</h2>
+        <p>Professora Especialista: Débora Maria Barroso Paiva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ENGENHARIA DE SOFTWARE
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="839" src="https://www.youtube.com/embed/zgp1r7H1qZ0" title="[UFMS Digital] Engenharia de Software - Módulo 4 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=zgp1r7H1qZ0&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Engenharia de Software - Módulo 4 - Unidade 2 - Tipos de manutenção de software, reengenharia e engenharia reversa
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Débora Maria Barroso Paiva</p>
+        </section>
+        
+        <section>
+            <h2>Objetivo</h2>
+            <ul>
+                <li>Entender as principais técnicas usadas para testar software e realizar sua manutenção, incluindo atividades de reengenharia de software.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Fases genéricas dos modelos de processo de software.</h2>
+            <pre>
+            DEFINIÇÃO → Ocorre modelagem de software
+                ↓
+            CONSTRUÇÃO → Ocorre modelagem e implementação de software
+                ↓
+            SOFTWARE PRODUTO
+                ↓
+            MANUTENÇÃO → Ocorrem mudanças nos modelos e código-fonte do software
+            </pre>
+        </section>
+
+        <section>
+            <h2>Introdução.</h2>
+            <p>Alterações efetuadas no software depois de sua liberação;</p>
+            <p>As alterações ocorrem por diversas razões;</p>
+            <p>As razões para as alterações determinam a categoria de manutenção.</p>
+        </section>
+
+        <section>
+            <h2>Categorias de manutenção.</h2>
+            <p>Manutenção para reparo de defeitos de software (<b>manutenção corretiva</b>):</p>
+            <ul>
+                <li>Corrigir erros de codificação normalmente é barato;</li>
+                <li>Erros de requisitos são mais onerosos, pois pode ser necessário o reprojeto do sistema.</li>
+            </ul>
+            <p>Manutenção para adaptar o software a um ambiente operacional diferente (<b>manutenção adaptativa</b>):</p>
+            <ul>
+                <li>Ocorre quando algum aspecto do ambiente do sistema, como o hardware, sistema operacional ou outro software de apoio mudam;</li>
+                <li>Novas gerações de hardware;</li>
+                <li>Novos sistemas operacionais e software de apoio;</li>
+                <li>Atualizações e modificações em equipamentos periféricos e outros elementos de sistema.</li>
+            </ul>
+            <p>Manutenção para adicionar funcionalidade ao sistema ou modificá-la (<b>manutenção evolutiva</b>):</p>
+            <ul>
+                <li>Necessária quando os requisitos do sistema mudam em resposta às mudanças organizacionais ou de negócios.</li>
+                <li>Atender aos pedidos do usuário para:</li>
+                <ul>
+                    <li>Modificar funções existentes;</li>
+                    <li>Incluir novas funções (novos requisitos);</li>
+                    <li>Ampliar o escopo do software etc.</li>
+                </ul>
+            </ul>
+            <p>Na prática, não fica muito clara a distinção entre esses tipos de manutenção!</p>
+        </section>
+
+        <section>
+            <h2>Manutenção de software.</h2>
+            <p>Fase mais problemática do ciclo de vida de software;</p>
+            <p>Pode despender mais de 70% de todo esforço de uma organização;</p>
+            <p>É benéfico investir esforço no projeto e na implementação de um sistema para reduzir os custos de manutenção.</p>
+            <p>Cenário atual:</p>
+            <ul>
+                <li>Migração para novas plataformas;</li>
+                <li>Sistemas mal estruturados;</li>
+                <li>Melhoramentos para atender novas necessidades;</li>
+                <li>Nenhuma preocupação com a arquitetura global;</li>
+                <li>Codificação, lógica e documentação ruins.</li>
+            </ul>
+            <i>Esses sistemas precisam continuar “rodando” e as alterações são inevitáveis</i>
+            <p>A manutenção é onerosa porque é preciso empregar esforços para compreender o sistema e analisar o impacto das mudanças propostas.</p>
+            <p>Boas técnicas de Engenharia de Software, como <b>especificações precisas</b>, uso da <b>orientação a objetos</b> e <b>gerenciamento de configuração</b> contribuem para redução dos custos de manutenção. </p>
+            <b>Custo da manutenção de software</b>
+            <p>Custos não monetários:</p>
+            <ul>
+                <li>Adiamento de oportunidades de desenvolvimento;</li>
+                <li>Redução da qualidade global do software;</li>
+                <li>Insatisfação do cliente;</li>
+                <li>Insatisfação da equipe;</li>
+                <li>Diminuição drástica da produtividade.</li>
+            </ul>
+            <b>Reduzindo os custos de manutenção de software</b>
+            <p>Uso de boas técnicas de Engenharia de Software:</p>
+            <ul>
+                <li>Descrição precisa;</li>
+                <li>Desenvolvimento OO;</li>
+                <li>Gerenciamento de Configuração;</li>
+                <li>Refatoração (prática ágil);</li>
+                <li>Testes de regressão automatizados.</li>
+            </ul>
+            <b>Custos da manutenção de software</b>
+            <p></p>
+            <i>A maioria dos problemas com a manutenção do software é causada por deficiências na maneira como o software foi planejado e desenvolvido</i>
+        </section>
+
+        <section>
+            <h2>Manutenibilidade de software.</h2>
+            <p>A manutenibilidade pode ser definida qualitativamente como a facilidade com que o software pode ser entendido, corrigido, adaptado e/ou melhorado;</p>
+            <p>É afetada por muitos fatores: cuidado com o projeto, codificação e teste, estruturas padronizadas de documentação etc.</p>
+            <p>Medidas de manutenibilidade:</p>
+            <ul>
+                <li>Tempo de reconhecimento do problema;</li>
+                <li>Tempo de coleta de ferramentas de manutenção;</li>
+                <li>Tempo de análise do problema;</li>
+                <li>Tempo de especificação da alteração;</li>
+                <li>Tempo de correção ou modificação;</li>
+                <li>Tempo de teste local e global;</li>
+                <li>Tempo de revisão da manutenção;</li>
+                <li>Tempo de recuperação total;</li>
+                <li>Número de comandos-fonte adicionados por alteração no programa;</li>
+                <li>Número de pessoas-horas despendidos na manutenção;</li>
+                <li>Tipo de manutenção;</li>
+                <li>Total de pessoas-horas empregadas em cada categoria de manutenção.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Engenharia Reversa.</h2>
+            <b>Engenharia Progressiva:</b>
+            <p>Processo tradicional de ES, caracterizado pelas atividades progressivas do ciclo de vida, que partem de um alto nível de abstração para um baixo nível de abstração.</p>
+            <b>Engenharia Reversa:</b>
+            <p>Processo inverso à Engenharia Progressiva, caracterizado pelas atividades retroativas do ciclo de vida, que partem de um baixo nível de abstração para um alto nível de abstração.</p>
+            <p>Processo de exame e compreensão do software existente, para recapturar ou recriar o projeto e decifrar os requisitos atualmente implementados pelo sistema, apresentando-os em um nível mais alto de abstração.</p>
+            <ul>
+                <li>Redocumentação</li>
+                <li>Recuperação de projeto</li>
+            </ul>
+            <p>Extração de abstrações</p>
+            <ul>
+                <li>Avalia-se o programa antigo, extraindo, a partir do código-fonte:</li>
+                <ul>
+                    <li>Uma especificação significativa do processamento;</li>
+                    <li>A interface com o usuário;</li>
+                    <li>As estruturas de dados ou a base de dados do programa.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reengenharia de Software</h2>
+            <p>A reengenharia de software está relacionada à re-implementação de sistemas legados para torná-los mais fáceis de manter.</p>
+            <p>Pode envolver uma nova documentação, organização e reestruturação do sistema, conversão do sistema em uma linguagem mais moderna e modificação e atualização da estrutura do software.</p>
+            <p>Sistemas Legados: são sistemas baseados em computadores e que foram desenvolvidos no passado, frequentemente usando tecnologias mais antigas ou obsoletas.</p>
+            <ul>
+                <li>sistemas militares;</li>
+                <li>sistemas de controle de tráfego aéreo.</li>
+            </ul>
+            <p>A funcionalidade não é alterada e, normalmente, a arquitetura também permanece a mesma.</p>
+            <figure>
+                <img src="img/teste-de-software-5.png" alt="teste-de-software" title="teste-de-software">
+            </figure>
+            <b>Análise de inventário:</b>
+            <ul>
+                <li>um modelo de planilha contendo informação que fornece uma descrição detalhada (por exemplo, tamanho, idade, criticalidade para o negócio) de cada aplicação ativa.</li>
+                <li>Avaliar cada aplicação sistematicamente a fim de determinar quais são candidatas à reengenharia.</li>
+            </ul>
+            <b>Reestruturação de documentos:</b>
+            <ul>
+                <li>Criar um arcabouço de documentação necessário para o suporte a longo prazo de uma aplicação.</li>
+                <li>Decidir se apenas as partes do sistema que estão sofrendo modificações serão totalmente documentadas.</li>
+                <li>Decidir se haverá redocumentação total.</li>
+            </ul>
+            <i>Sugestão: “Criar apenas a documentação necessária para melhorar o entendimento do software.”</i>
+            <p></p>
+            <b>Engenharia reversa:</b>
+            <ul>
+                <li>Origem no mundo do hardware.</li>
+                <li>É o processo de análise de um programa, em um esforço para representá-lo em uma abstração mais alta do que o código-fonte.</li>
+                <li>É um processo de recuperação de projeto de dados, arquitetural e procedimental para um programa existente.</li>
+            </ul>
+            <b>Reestruturação de código:</b>
+            <ul>
+                <li>A arquitetura de programa é relativamente sólida, mas módulos individuais foram codificados de modo que torna difícil entendê-los, testá-los e mantê-los;</li>
+                <li>O código-fonte é analisado usando uma ferramenta de reestruturação;</li>
+                <li>Violações das construções de programação são registradas.</li>
+                <li>O código é reestruturado.</li>
+                <li>O código reestruturado é revisado e testado para garantir que nenhuma anomalia foi introduzida.</li>
+                <li>A documentação interna do código é atualizada.</li>
+            </ul>
+            <b>Reestruturação de dados:</b>
+            <ul>
+                <li>Uma arquitetura de dados fraca é difícil de adaptar e aperfeiçoar;</li>
+                <li>Viabilidade do programa a longo prazo;</li>
+                <li>A arquitetura de dados atual é “dissecada”;</li>
+                <li>Os modelos de dados necessários são definidos;</li>
+                <li>Objetos de dados e atributos são identificados.</li>
+                <li>As estruturas de dados são revisadas quanto à qualidade;</li>
+                <li>Se a estrutura de dados é fraca, os dados passam por reengenharia;</li>
+                <li>Modificações nos dados resultarão em modificações arquiteturais e de código.</li>
+            </ul>
+            <b>Engenharia Avante:</b>
+            <ul>
+                <li>Transferência das abstrações, modelos lógicos e projeto do sistema para uma implementação física.</li>
+                <li>Aplica princípios, conceitos e métodos de ES para recriar a aplicação existente.</li>
+                <li>Recupera informações de projeto (Engenharia Reversa), utilizando-as para alterar ou reconstituir o sistema existente a fim de melhorar sua qualidade global.</li>
+                <li>Reimplementa a função existente.</li>
+                <li>Adiciona novas funções (amplia a capacidade da aplicação antiga).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Considerações Finais</h2>
+            <p>Diferentes tipos de manutenção: corretiva, adaptativa e evolutiva.</p>
+            <p>Muito esforço gasto na fase de manutenção. Vale a pena investir recursos na fase de desenvolvimento!</p>
+            <p>Engenharia reversa, reengenharia: há muitas oportunidades interessantes e desafiadoras no mercado. Diversos problemas a serem resolvidos.</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>PRESSMAN, Roger S; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional. 9. ed. Porto Alegre: McGraw Hill, 2021. ISBN 9786558040118. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Editora Pearson, 2018. ISBN 9788543024974. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 28 de out de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
