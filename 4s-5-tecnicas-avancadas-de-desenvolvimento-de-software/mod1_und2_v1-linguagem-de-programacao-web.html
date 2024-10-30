@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo  1 - Programação para Web</h1>
+        <h2>💡 Unidade 2 - Linguagem de Programação Web</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="839" src="https://www.youtube.com/embed/nK7XuEFn-ak" title="[UFMS Digital] Técnicas Avançadas de Desenvolvimento de Software - Módulo 1 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=nK7XuEFn-ak&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Técnicas Avançadas de Desenvolvimento de Software - Módulo 1 - Unidade 2 - Linguagem de Programação Web
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <ul>
+                <li>Evolução do Desenvolvimento Web</li>
+                <ul>
+                    <li>Histórico e tendências recentes no desenvolvimento web</li>
+                </ul>
+                <li>Introdução ao JavaScript</li>
+                <li>Manipulação avançada do DOM com JavaScript</li>
+                <li>Introdução ao JQuery</li>
+                <li>Introdução ao Node.js e seu ecossistema</li>
+                <li>Frameworks front-end - React, Angular, Vue.js</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Histórico e tendências recentes no desenvolvimento web</h2>
+            <ul>
+                <li>JAMstack</li>
+                <li>Serverless Architecture</li>
+                <li>Progressive Web Apps (PWAs)</li>
+                <li>Inteligência Artificial (IA) e Machine Learning (ML)</li>
+                <li>WebAssembly (Wasm)</li>
+                <li>API-First Development</li>
+                <li>GraphQL</li>
+                <li>Arquiteturas de Microsserviços</li>
+                <li>Responsividade e Design Mobile-First</li>
+                <li>Segurança Embarcada</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Introdução ao JavaScript</h2>
+            <ul>
+                <li>Linguagem de Script do Lado do Cliente</li>
+                <li>Sintaxe Simples e Flexível</li>
+                <li>Manipulação do DOM</li>
+                <li>Variáveis e Tipos de Dados</li>
+                <li>Funções e Controle de Fluxo</li>
+                <li>Gestão de Eventos</li>
+                <li>Integração com HTML e CSS</li>
+                <li>Ecossistema de Bibliotecas e Frameworks</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Frameworks</h2>
+            <figure>
+                <img src="img/frameworks.png" alt="frameworks.png" title="frameworks.png">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Manipulação avançada do DOM com JavaScript</h2>
+            <li>Dinamismo e Atualizações em tempo real</li>
+            <li>Resposta a Eventos do Usuário</li>
+            <li>Inserção e Remoção de Elementos</li>
+            <li>Alteração Dinâmica de Estilos</li>
+            <li>Traversing (Navegação) pelo DOM</li>
+            <li>Manipulação de Formulários</li>
+            <li>AJAX e Atualizações Assíncronas</li>
+        </section>
+
+        <section>
+            <h2>Introdução ao JQuery</h2>
+            <ul>
+                <li>JS:LIB</li>
+                <li>Manipulação de Eventos</li>
+                <li>Dev em 2006 por John Resig</li>
+                <li>Abstração de complexidade de JS e Navegadores</li>
+                <li>Compatibilidade com navegadores</li>
+            </ul>
+            <b>Introdução ao JQuery: Recursos</b>
+            <ul>
+                <li>Seleção de Elementos: $( )</li>
+                <li>Manipulação de Conteúdo: append( ), prepend( ), html( ),...</li>
+                <li>Manipulação de Eventos: clique, mouseover, teclas pressionadas e …</li>
+                <li>Animações: fadeIn( ), fadeOut( ), slideDown( ), …</li>
+                <li>Requisições AJAX</li>
+            </ul>
+            <b>Introdução ao JQuery: Requisições</b>
+            <p>AJAX</p>
+            <ul>
+                <li>Asynchronous JavaScript and XML (JavaScript e XML Assíncronos)</li>
+                <li>XMLHttpRequest</li>
+                <li>Manipulação das Respostas</li>
+                <li>Eventos: onload, onerror, onprogress</li>
+                <li>Manipulação da árvore DOM</li>
+            </ul>
+            <p>Código Exemplo</p>
+            <i>(fazer download)</i>
+            <pre>
+            &lt;script> 
+            function consultarCEP() { 
+                // Obtenha o valor do CEP inserido pelo usuário
+                var cep document.getElementById('cep').value; 
+
+                // Verifique se o CEP possui o formato adequado (opcional, dependendo do seu caso) 
+                var cepPattern /^\d(8)$/; 
+                If (IcepPattern.test(cep)) { 
+                    alert("Formato de CEP inválido. Insira um CEP válido com 8 digitos.");
+                    return; 
+                }
+
+                // Construa a URL da API de consulta de CEP (substitua pela API real que você utilizará)
+                var apiurl https://viacep.com.br/ws/$(cep)/json/; 
+
+                // Crie uma instância do objeto XMLHttpRequest 
+                var xhr new XMLHttpRequest(); 
+
+                // Configure a função de callback para lidar com a resposta da requisição 
+                xhr.onload function() { 
+                    if (xhr.status 200) { 
+                        // Parse da resposta JS0N 
+                        var endereco JSON.parse(xhr.responseText); 
+
+                        // Preencha os campos de endereço na página 
+                        document.getElementById('logradouro").textContent = `Logradouro: ${endereco.logradouro}`;
+                        document.getElementById('bairro').textContent = `Bairro: $(endereco.bairro)`;
+                        document.getElementById('cidade').textContent = `Cidade: $(endereco.localidade)`;
+                        document.getElementById('estado').textContent = `Estado: $(endereco.uf)`;
+                    } else { 
+                        alert("Erro ao consultar o CEP. Por favor, tente novamente mais tarde.");
+                    }; 
+                }
+                    
+                // Configure o método e a URL da requisição 
+                xhr.open('GET', apiurl, true);
+                
+                // Envie a requisição 
+                xhr.send(); 
+            &lt;script>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Introdução ao Node.js</h2>
+            <ul>
+                <li>JS no lado Servidor</li>
+                <li>Motor V8 do Google</li>
+                <li>Assincronismo e Event-Driven</li>
+                <li>Gerenciador de Pacotes NPM</li>
+                <li>Criação de Servidores Web</li>
+                <li>Frameworks Populares</li>
+                <li>Aplicações Full-Stack</li>
+                <li>Suporte à Programação JavaScript Moderna</li>
+            </ul>
+            <b>Node.js: Dev</b>
+            <ul>
+                <li>Instalação do Node.js -> https://nodejs.org/</li>
+                <li>Criação de um Projeto Node.js -> npm init</li>
+                <li>Instalação de Dependências -> package.json</li>
+                <li>Criação de um Arquivo de Aplicação -> app.js</li>
+                <li>Desenvolvimento com Node.js</li>
+                <li>Execução da Aplicação -> node app.js</li>
+                <li>Explorando o Ecos do Node.js -> https://www.npmjs.com/</li>
+                <li>Aprofundamento Específicos: Arquivos, Segurança, BD e …</li>
+            </ul>
+            <b>Node.js: Exemplo</b>
+            <pre>
+            // Importando o módulo express
+            const express = require('express');
+            
+            // Criando uma instância do express
+            const app = express();
+            
+            // Rota principal
+            app.get('/', (req, res) => {
+                res.send('Bem-vindo à minha aplicação Node.js!');
+            });
+            
+            // Definindo a porta para o servidor escutar
+            const port = 3000;
+            
+            // Iniciando o servidor na porta especificada
+            app.listen(port, () => {
+                console.log(Servidor Node.js está rodando em http://localhost:$(port)});
+            });
+            </pre>
+        </section>
+
+        <section>
+            <h2>Frameworks front-end - React, Angular, Vue.js</h2>
+            <p><b>React</b>: Flexibilidade, eficiência e uma comunidade grande e ativa. Ótimo para interfaces de usuário dinâmicas e componentes reutilizáveis.</p>
+            <p><b>Angular</b>: Framework completo com uma ampla gama de recursos. Bem adaptado para aplicações empresariais complexas e projetos de grande escala.</p>
+            <p><b>Vue.js</b>: Simplicidade e facilidade de integração. Uma excelente escolha para projetos menores ou para desenvolvedores que estão começando no desenvolvimento front-end.</p>
+        </section>
+
+        <section>
+            <h2>Estudo de caso: TaskHub</h2>
+            <p>Desenvolva um sistema web simples para gerenciamento de tarefas:</p>
+            <ul>
+                <li>Cadastro de tarefas</li>
+                <li>Listagem de tarefas</li>
+                <li>Marcar tarefas como concluídas</li>
+                <li>Excluir tarefas **</li>
+                <li>Editar tarefas **</li>
+            </ul>
+            <i>www.ledipo.eti.br/projetos/taskhub</i>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>MARINHO, Antônio Lopes; CRUZ, J. L. Desenvolvimento de aplicações para internet. 2. ed. São Paulo: Pearson Education do Brasil, 2020. ISBN 9786550110604. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>OLIVEIRA, Cláudio Luís Vieira; ZANETTI, Humberto Augusto Piovesana. JavaScript descomplicado: programação para a Web, IoT e dispositivos móveis. São Paulo: Erica, 2020. ISBN 9788536533100. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 30 de out de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
