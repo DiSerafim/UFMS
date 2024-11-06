@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</h1>
+        <h2>💬 [Fórum de Discussão] Módulo 3 - Desenvolvimento baseado em componentes.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você estudou um pouco sobre o desenvolvimento baseado em componentes e sua importância no desenvolvimento Web. Vamos explorar agora como os padrões de projeto podem ser aplicados nesse contexto?</p>
+            <p>Os padrões de projeto são soluções comprovadas para problemas comuns no desenvolvimento de software. Neste fórum, convido você a discutir sobre como esses padrões podem ser aplicados de maneira eficaz no desenvolvimento baseado em componentes.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Primeiro, veja as indicações da curadoria, realize pesquisas e veja estas fontes de informações adicionais sobre o tema:</p>
+            <ul>
+                <li>1. Websites e Tutoriais Online:</li>
+                <ul>
+                    <li><b><a href="https://www.tutorialspoint.com/design_pattern/index.htm" target="_blank" rel="noopener noreferrer">TutorialsPoint</a></b> - Design Patterns: Este site oferece explicações detalhadas e exemplos de vários padrões de projeto.</li>
+                    <li><b><a href="https://refactoring.guru/design-patterns" target="_blank" rel="noopener noreferrer">Refactoring Guru</a></b> - Design Patterns: Este site fornece informações detalhadas sobre padrões de projeto com exemplos práticos.</li>
+                    <li><b><a href="https://dzone.com/articles/design-patterns-uncovered" target="_blank" rel="noopener noreferrer">DZone</a></b> - Design Patterns: DZone é uma comunidade de desenvolvedores que oferece uma série de artigos sobre padrões de projeto.</li>
+                </ul>
+                <li>2. Vídeos e Cursos Online:</li>
+                <ul>
+                    <li>Plataformas de aprendizado online, como Udemy, Coursera e edX, oferecem cursos dedicados a padrões de projeto. Você pode pesquisar por cursos específicos em suas plataformas preferidas.</li>
+                </ul>
+            </ul>
+            <p>O que fazer para participar do fórum:</p>
+            <ol>
+                <li>Escolha um padrão de projeto amplamente reconhecido (por exemplo, Singleton, Factory Method, Observer, etc) e explique como ele pode ser aplicado no contexto do desenvolvimento baseado em componentes.</li>
+                <li>Forneça um exemplo prático de como esse padrão de projeto pode ser implementado em um sistema baseado em componentes (link, código, componente, repositório etc).</li>
+            </ol>
+            <p>Questões para discussão:</p>
+            <ol type="a">
+                <li>Como a aplicação de padrões de projeto pode facilitar o desenvolvimento baseado em componentes?</li>
+                <li>Quais são os benefícios de usar padrões de projeto em sistemas compostos por componentes reutilizáveis?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>Padrão de projeto: Observer (Observador)</b>
+            <ol>
+                <li>Aplicando Observer no contexto do desenvolvimento baseado em componentes.</li>
+                <p>O padrão Observer  é usado quando há um relacionamento um-para-muitos entre objetos, quando um objeto é modificado, seus objetos dependentes devem ser notificados automaticamente.</p>
+                <p>O padrão Observer usa três classes (Subject, Observer e Client).</p>
+                <ul>
+                    <li><b>Subject</b> é um objeto que tem métodos para anexar e desanexar observadores a um objeto cliente.</li>
+                </ul>
+                <figure>
+                    <img src="img/observer_pattern_uml_diagram.jpg" alt="Padrão de projeto: Observer" title="Padrão de projeto: Observer"><br>
+                    <figcaption>https://www.tutorialspoint.com/design_pattern/images/observer_pattern_uml_diagram.jpg</figcaption>
+                </figure>
+                <p>Esse padrão é amplamente utilizado em interfaces de usuário e sistemas que exigem que vários componentes atualizem simultaneamente suas exibições ou funções ao detectar mudanças de estado em outro componente.</p>
+                <li>Exemplo de implementação do observer em um sistema de componentes.</li>
+                <ul>
+                    <li>Sistema de monitoramento onde um componente central de dados e vários painéis que exibem diferentes partes desses dados. Podendo usar o padrão Observer para garantir que todos os painéis sejam atualizados automaticamente sempre que o componente de dados central recebe novas informações.</li>
+                </ul>
+                <pre>
+                // Criar classe Subject.
+                class DataSubject {
+                    constructor () {
+                        this.observers = [];
+                        this.data = null;
+                    }
+
+                    // Inscreve os observer
+                    addObserver(observer) {
+                        this.observers.push(observer);
+                    }
+
+                    // Notifica os observer
+                    notifyObservers() {
+                        this.observers.forEach(
+                            observer => observer.update(this.data)
+                        );
+                    }
+
+                    // Atualiza os dados e notifica os observer
+                    setData(newData) {
+                        this.data = newData;
+                        this.notifyObservers();
+                    }
+                };
+
+                // Crie a classe Observer.
+                class DataPanel {
+                    update(data) {
+                        console.log("Painel atualizado com dados novos, ", data);
+                    }
+                };
+
+                // Exemplo de uso
+                const dataSubject = new DataSubject();
+                const panel1 = new DataPanel();
+                const panel2 = new DataPanel();
+
+                dataSubject.addObserver(panel1);
+                dataSubject.addObserver(panel2);
+
+                // Saída
+                dataSubject.setData("Serafim");
+                </pre>
+            </ol>
+            <ol type="a">
+                <li>Como a aplicação de padrões de projeto pode facilitar o desenvolvimento baseado em componentes?</li>
+                <ul>
+                    <li>Padrões de projeto com Observer facilitam o desenvolvimento complexo, permitindo que os componentes se comuniquem e reajam a mudanças sem depender diretamente uns dos outros. Simplificando a manutenção e a escalabilidade, novos componente podem ser adicionados como observers sem alterar a lógica existente.</li>
+                </ul>
+                <li>Quais são os benefícios de usar padrões de projeto em sistemas compostos por componentes reutilizáveis?</li>
+                <ul>
+                    <li>Padrões de projeto com Observer padronizam as interações e evitam o código duplicado, facilitando a composição de novos sistemas a partir de componentes já existentes, estabelecendo uma linguagem comum para comunicação entre os componentes, permitindo uma maior flexibilidade.</li>
+                </ul>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 6 de nov de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
