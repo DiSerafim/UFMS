@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Módulo 4 – Desenvolvimento orientado a serviços</h1>
+        <h2>💡 Unidade 2 - Microsserviços</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="708" src="https://www.youtube.com/embed/wpN1YPa1q30" title="[UFMS Digital] Técnicas Avançadas de Desenvolvimento de Software - Módulo 4 - Unidade 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=wpN1YPa1q30&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 - 
+                [UFMS Digital] Técnicas Avançadas de Desenvolvimento de Software - Módulo 4 - Unidade 2 - Microsserviços
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva</p>
+        </section>
+        
+        <section>
+            <h2>Conteúdo</h2>
+            <ul>
+                <li>Microsserviços</li>
+                <li>Criando microsserviços com Docker</li>
+                <li>Aplicações de microsserviços</li>
+                <li>Microsserviços e arquitetura monolítica</li>
+                <li>Benefícios e desafios da utilização de microsserviços</li>
+                <li>Estudo de caso: Implementação de um sistema baseado em microsserviços.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Microsserviços</h2>
+            <p>Arquitetura de desenvolvimento de software que descompõe uma aplicação monolítica em pequenos serviços independentes, favorecendo escalabilidade, manutenção e implementação ágil.</p>
+            <ul>
+                <li>Um tipo de abordagem arquitetônica SOA</li>
+                <li>Objetivo: Atomicidade dos serviços -> altamente modulares, escaláveis</li>
+                <li>Descentralização maior que no SOA</li>
+                <li>Distribuição maior que no SOA</li>
+            </ul>
+            <p>SOA é uma abordagem mais abrangente, enquanto os Microsserviços são uma implementação específica dessa abordagem, destacando-se pela <b>modularidade</b> e <b>autonomia</b> dos serviços.</p>
+            <b>Docker</b>
+            <p>Docker é uma plataforma que simplifica o desenvolvimento, distribuição e execução de aplicativos em contêineres, proporcionando uma abstração eficiente sobre a infraestrutura e permitindo a portabilidade entre diferentes ambientes.</p>
+            <figure>
+                <img src="img/docker.png" alt="docker" title="docker">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Criando microsserviços com Docker</h2>
+            <ul>
+                <li>Isolamento e Portabilidade</li>
+                <li>Padronização do Ambiente</li>
+                <li>Rápido Provisionamento</li>
+                <li>Gerenciamento de Dependências</li>
+                <li>Escalabilidade</li>
+                <li>Versionamento</li>
+                <li>Comunidade e Ecossistema</li>
+                <li>…</li>
+            </ul>
+            <p>Ex.:</p>
+            <pre>
+            version: '3'
+            services:
+                servicel:
+                    build:
+                        context: ./servicel
+                    ports:
+                        - "3001:3000"
+                service2:
+                    build:
+                        context: ./service2
+                    ports:
+                        - "3002:3000"
+            </pre>
+        </section>
+
+        <section>
+            <h2>Aplicações de microsserviços</h2>
+            <ul>
+                <li>Sistemas compostos por pequenos serviços</li>
+                <li>Cada microsserviço é responsável por uma função específica</li>
+                <li>Comunica-se com outros microsserviços por meio de APIs</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Microsserviços e arquitetura monolítica</h2>
+            <pre>
+            Monólito            Descentralização
+            Acoplamento Forte   Desacoplamento
+            Escala Vertical     Escala Horizontal
+            Implantação única   Implantação Independente
+            </pre>
+            <figure>
+                <img src="img/microsservicos-vs-monolitica.png" alt="microsservicos-vs-monolitica." title="microsservicos-vs-monolitica.">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Benefícios e desafios da utilização de microsserviços</h2>
+            <b>Benefícios:</b>
+            <ul>
+                <li>Escalabilidade</li>
+                <li>Flexibilidade</li>
+                <li>Manutenção</li>
+                <li>Implementação de Novas Funcionalidades</li>
+                <li>Microsserviços</li>
+                <li>Ambientes Dinâmicos</li>
+                <li>Mudanças Frequentes</li>
+                <li>Escalabilidade Horizontal</li>
+            </ul>
+            <b>Desafios:</b>
+            <ul>
+                <li>Gestão da Complexidade da Comunicação entre os Microsserviços</li>
+                <li>Coordenação das Operações</li>
+                <li>Garantia da Consistência dos Dados em um Ambiente Distribuído</li>
+            </ul>
+            <b>Superar Desafios:</b>
+            <ul>
+                <li>Práticas Adequadas de Design</li>
+                <li>Uso de Ferramentas de Orquestração</li>
+                <li>Boas Práticas de DevOps</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estudo de caso: TaskHub</h2>
+            <p>Desenvolva um sistema web simples para gerenciamento de tarefas:</p>
+            <ul>
+                <li>Refatore o sistema para dividir funcionalidades distintas em microsserviços independentes.</li>
+                <li>Implemente uma comunicação assíncrona entre os microsserviços.</li>
+                <li>Utilize uma ferramenta de orquestração para gerenciar a implantação e a escalabilidade dos microsserviços.</li>
+            </ul>
+            <i>www.ledipo.eti.br/projetos/taskhub</i>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>ERL, Thomas. SOA: princípios de design de serviços. São Paulo: Pearson, 2008. ISBN 9788576051893. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>MONTEIRO, Eduarda Rodrigues et al. DevOps. Porto Alegre: SAGAH, 2021. ISBN 9786556901725. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 11 de nov de 2024</p>
+        </address>
+    </footer>
+</body>
+</html>
