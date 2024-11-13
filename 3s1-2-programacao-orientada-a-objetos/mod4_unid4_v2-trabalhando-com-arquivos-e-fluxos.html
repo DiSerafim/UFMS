@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Conceitos Avançados.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=9KxRnhyCUjA&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
-                Programação Orientada a Objetos – Aula 13 – Arquivos e serialização. 
+            <a href="https://www.youtube.com/watch?v=9KxRnhyCUjA&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
+                Programação Orientada a Objetos – Aula 13 – Arquivos e serialização.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Karina Valdivia Delgado.</p>
@@ -50,17 +53,20 @@
             <ul>
                 <li>Programadores utilizam arquivos para armazenar dados a longo prazo.</li>
                 <li>O Java vê cada arquivo como um fluxo sequencial. Existe um marcador de fim de arquivo.</li>
-                <li>O termo fluxo se refere a uma fonte sequencial de dados, que por exemplo, são lidos ou gravados em um arquivo.</li>
+                <li>O termo fluxo se refere a uma fonte sequencial de dados, que por exemplo, são lidos ou gravados em
+                    um arquivo.</li>
             </ul>
             <b>Arquivos binários.</b>
-            <p>Criados com base em fluxo de bytes. Podem ser lidos por um programa que converte os dados em um formato legível por humanos.</p>
+            <p>Criados com base em fluxo de bytes. Podem ser lidos por um programa que converte os dados em um formato
+                legível por humanos.</p>
             <b>Arquivos de texto.</b>
             <p>Criados com base em fluxo de caracteres. Podem ser lidos por editores de texto</p>
         </section>
 
         <section>
             <h2>Arquivos e fluxos.</h2>
-            <p>Um programa Java abre um arquivo criando e associando um objeto ao fluxo de bytes ou caracteres. O construtor do objeto interage com o sistema operacional para abrir esse arquivo.</p>
+            <p>Um programa Java abre um arquivo criando e associando um objeto ao fluxo de bytes ou caracteres. O
+                construtor do objeto interage com o sistema operacional para abrir esse arquivo.</p>
             <p>O Java também pode associar fluxos a diferentes dispositivos.</p>
             <p>Exemplos de fluxos:</p>
             <ul>
@@ -98,7 +104,8 @@
 
         <section>
             <h2>Fluxos de bytes.</h2>
-            <p>Todos os fluxos de bytes são subclasses das classes abstratas <b>InputStream</b> ou <b>OutputStream</b>.</p>
+            <p>Todos os fluxos de bytes são subclasses das classes abstratas <b>InputStream</b> ou <b>OutputStream</b>.
+            </p>
             <p>São utilizados para manipulação de arquivos binários. Ex: som, imagem ou dados em geral.</p>
             <pre>
             InputStream
@@ -182,8 +189,10 @@
                 </ul>
                 <li>O objeto pode ser desserializado a partir do arquivo.</li>
             </ul>
-            <p>As classes ObjectInputStream e ObjectOutputStream permitem que objetos sejam lidos ou gravados em um fluxo.</p>
-            <p>Para usar a serialização com arquivos inicializamos esses objetos de fluxo com objetos de fluxo que lêem e gravam bytes em arquivos: FileInputStream e FileOutputStream.</p>
+            <p>As classes ObjectInputStream e ObjectOutputStream permitem que objetos sejam lidos ou gravados em um
+                fluxo.</p>
+            <p>Para usar a serialização com arquivos inicializamos esses objetos de fluxo com objetos de fluxo que lêem
+                e gravam bytes em arquivos: FileInputStream e FileOutputStream.</p>
 
             <b>Abertura do fluxo para leitura:</b>
             <pre>ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("meusobjetos.ser"));</pre>
@@ -265,8 +274,10 @@
                 }
             }
             </pre>
-            <p>Se existir uma tentativa de leitura depois do final do arquivo, <b>readObject()</b> lança uma <b>EOFException</b>.</p>
-            <p>Se a classe do objeto sendo lido não puder ser localizada, <b>readObject()</b> lança uma exceção <b>ClassNotFoundException</b>.</p>
+            <p>Se existir uma tentativa de leitura depois do final do arquivo, <b>readObject()</b> lança uma
+                <b>EOFException</b>.</p>
+            <p>Se a classe do objeto sendo lido não puder ser localizada, <b>readObject()</b> lança uma exceção
+                <b>ClassNotFoundException</b>.</p>
             <i>TesteLeitura.java:</i>
             <pre>
             import java.io.*;
@@ -296,7 +307,8 @@
                 }
             }
             </pre>
-            <p>Estruturas de dados do tipo Collection podem ser lidas ou escritas na sua totalidade sem necessidade de iteração.</p>
+            <p>Estruturas de dados do tipo Collection podem ser lidas ou escritas na sua totalidade sem necessidade de
+                iteração.</p>
             <pre>
             import java.io.*;
             public class TesteMapa {
@@ -330,4 +342,5 @@
         <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

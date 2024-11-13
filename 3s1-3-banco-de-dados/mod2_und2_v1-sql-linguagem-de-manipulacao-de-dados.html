@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=XnS8XCXPkuk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=15&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 14 - Linguagem de consulta – SQL Parte II. 
+            <a href="https://www.youtube.com/watch?v=XnS8XCXPkuk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=15&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 14 - Linguagem de consulta – SQL Parte II.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Marques Peres.</p>
@@ -51,14 +54,18 @@
                 PROJETO(<b>numero</b>, nome, localizacao, dnumero)
                 TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
             </pre>
-            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas.
+                A chave primária, em cada relação, está sublinhada.</p>
 
             <b>SQL-Structured Query Language:</b>
             <ul>
-                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
-                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização
+                    de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da
+                    integridade e segurança da informação armazenada.</li>
             </ul>
-            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National
+                Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
             <ul>
                 <li>Sugestões de consulta para implementações comerciais:</li>
                 <ul>
@@ -78,14 +85,18 @@
                 <li><b>WHERE</b> (condição></li>
                 <li>em que:</li>
                 <ul>
-                    <li>(lista de atributos >: é uma lista de nomes de atributos cujos valores serão recuperados pela consulta.</li>
-                    <li>(lista de relações/tabelas >: é uma lista de nomes de relações necessárias para encontrar a informação desejada na consulta.</li>
-                    <li>( condição >: é uma expressão condicional (booleana) que identifica quais tuplas das relações mencionadas devem ser consideradas na consulta.</li>
+                    <li>(lista de atributos >: é uma lista de nomes de atributos cujos valores serão recuperados pela
+                        consulta.</li>
+                    <li>(lista de relações/tabelas >: é uma lista de nomes de relações necessárias para encontrar a
+                        informação desejada na consulta.</li>
+                    <li>( condição >: é uma expressão condicional (booleana) que identifica quais tuplas das relações
+                        mencionadas devem ser consideradas na consulta.</li>
                 </ul>
             </ul>
 
             <p>Exemplos:</p>
-            <b>Consulta 18: Recupere as datas de nascimento e os endereços dos funcionários que possuem o sobrenome 'Brotas'.</b>
+            <b>Consulta 18: Recupere as datas de nascimento e os endereços dos funcionários que possuem o sobrenome
+                'Brotas'.</b>
             <pre>
                 SELECT dtnasc, endereco FROM FUNCIONARIO WHERE sobrenome = 'Brotas';
             </pre>
@@ -95,7 +106,8 @@
                 SELECT ident FROM FUNCIONARIO;
             </pre>
 
-            <b>Consulta 20: Recupere os nomes e os endereços de todos os funcionários que trabalham para o departamento de engenharia.</b>
+            <b>Consulta 20: Recupere os nomes e os endereços de todos os funcionários que trabalham para o departamento
+                de engenharia.</b>
             <pre>
                 SELECT FUNCIONARIO.nome, endereco
                 FROM FUNCIONARIO, DEPARTAMENTO
@@ -105,14 +117,17 @@
             <img src="img/tabela-funcionario-departamento.png" alt="tabela-funcionario-departamento.png">
             <p></p>
 
-            <b>Consulta 21: Recupere todos os atributos de FUNCIONARIO e de DEPARTAMENTO, considerando que o funcionário trabalha para o departamento 'Engenharia'.</b>
+            <b>Consulta 21: Recupere todos os atributos de FUNCIONARIO e de DEPARTAMENTO, considerando que o funcionário
+                trabalha para o departamento 'Engenharia'.</b>
             <pre>
                 SELECT *
                 FROM FUNCIONARIO, DEPARTAMENTO
                 WHERE DEPARTAMENTO.nome = 'Engenharia' AND numero= dnumero;
             </pre>
 
-            <b>Consulta 22: Para cada projeto localizado em 'São Paulo', liste o número do projeto, o número do departamento que controla o projeto, eo nome, endereço e data de nascimento do gerente deste departamento.</b>
+            <b>Consulta 22: Para cada projeto localizado em 'São Paulo', liste o número do projeto, o número do
+                departamento que controla o projeto, eo nome, endereço e data de nascimento do gerente deste
+                departamento.</b>
             <pre>
                 SELECT PROJETO.numero, PROJETO.dnumero,
                     FUNCIONARIO.nome, endereco, dtnasc
@@ -140,7 +155,9 @@
                 SELECT DISTINCT salario FROM FUNCIONARIO;
             </pre>
 
-            <b>Consulta 26: Faça uma lista de números de projetos que envolvem um funcionário cujo sobrenome é 'Silva'. O envolvimento do funcionário pode ser como trabalhador ou como gerente do departamento que controla o projeto.</b>
+            <b>Consulta 26: Faça uma lista de números de projetos que envolvem um funcionário cujo sobrenome é 'Silva'.
+                O envolvimento do funcionário pode ser como trabalhador ou como gerente do departamento que controla o
+                projeto.</b>
             <pre>
                 (SELECT DISTINCT PROJETO.numero
                 FROM PROJETO, DEPARTAMENTO, FUNCIONARIO WHERE PROJETO.dnumero= DEPARTAMENTO.numero AND
@@ -169,7 +186,8 @@
                 WHERE dtnasc LIKE '__/__/195_';
             </pre>
 
-            <b>Consulta 29: Recupere a lista de funcionários e de projetos nos quais eles trabalham, ordenada por departamento. Dentro de departamento, ordene por nome do funcionário.</b>
+            <b>Consulta 29: Recupere a lista de funcionários e de projetos nos quais eles trabalham, ordenada por
+                departamento. Dentro de departamento, ordene por nome do funcionário.</b>
             <pre>
                 SELECT D.nome, F.nome, P.numero
                 FROM DEPARTAMENTO AS D, FUNCIONARIO AS F,
@@ -234,4 +252,5 @@
         <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

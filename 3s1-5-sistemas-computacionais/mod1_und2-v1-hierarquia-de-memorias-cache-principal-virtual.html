@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Organização de Computadores.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Organização de Computadores.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Organização de Computadores.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=jBMs6vrIW18&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Sistemas Computacionais - Memória. 
+            <a href="https://www.youtube.com/watch?v=jBMs6vrIW18&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Sistemas Computacionais - Memória.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Nilson Mori.</p>
@@ -65,11 +68,14 @@
         <section>
             <h2>MEMÓRIA E ENDEREÇAMENTO.</h2>
             <ul>
-                <li><b>Memórias</b> consistem em uma quantidade de células (ou locais) e cada uma delas pode armazenar uma informação (ou palavra)</li>
+                <li><b>Memórias</b> consistem em uma quantidade de células (ou locais) e cada uma delas pode armazenar
+                    uma informação (ou palavra)</li>
                 <li>Cada célula tem um número, denominado endereço, pelo qual os programas podem se referir a ela</li>
                 <li>Endereço são números inteiros maiores que zero</li>
-                <li><b>Espaço de endereçamento</b> é o número total de localizações exclusivamente identificáveis na memória</li>
-                <li>Cada lugar da memória possui um endereço que inicia em 0 e vai até 2 (elevado a n) - 1, onde né o número de bits do endereço</li>
+                <li><b>Espaço de endereçamento</b> é o número total de localizações exclusivamente identificáveis na
+                    memória</li>
+                <li>Cada lugar da memória possui um endereço que inicia em 0 e vai até 2 (elevado a n) - 1, onde né o
+                    número de bits do endereço</li>
             </ul>
         </section>
 
@@ -80,7 +86,8 @@
                 <ul>
                     <li>Elas vão ter endereços de 0 an-1</li>
                     <li>Todas as células têm o mesmo número de bits</li>
-                    <li>Caso uma célula consista em k bits, ela pode conter quaisquer das 2k diferentes combinações de bits</li>
+                    <li>Caso uma célula consista em k bits, ela pode conter quaisquer das 2k diferentes combinações de
+                        bits</li>
                 </ul>
             </ul>
             <img src="img/memoria1.png" alt="memoria1.png">
@@ -100,11 +107,13 @@
                 <li>A memória RAM pode ser lida e escrita durante o processamento</li>
                 <li>Tipos</li>
                 <ul>
-                    <li><b>Estática</b> - SRAM (Static Random Access Memory) - memória muito rápida e volátil, cujo conteúdo é perdido quando o computador é desligado</li>
+                    <li><b>Estática</b> - SRAM (Static Random Access Memory) - memória muito rápida e volátil, cujo
+                        conteúdo é perdido quando o computador é desligado</li>
                     <ul>
                         <li>EX: memória cache (vamos a seguir)</li>
                     </ul>
-                    <li><b>Dinâmica</b> - DRAM (Dynamic Random Access Memory) - memória lenta, com células contendo um transistor e um pequeno capacitor</li>
+                    <li><b>Dinâmica</b> - DRAM (Dynamic Random Access Memory) - memória lenta, com células contendo um
+                        transistor e um pequeno capacitor</li>
                     <ul>
                         <li>Se um capacitor estiver carregado, o estado é 1; senão 0</li>
                     </ul>
@@ -118,7 +127,8 @@
         <section>
             <h2>MEMÓRIA CACHE.</h2>
             <ul>
-                <li>Memória pequena e rápida, sendo mais rápida do que a memória principal e mais lenta que os registradores e a CPU.</li>
+                <li>Memória pequena e rápida, sendo mais rápida do que a memória principal e mais lenta que os
+                    registradores e a CPU.</li>
                 <li>As palavras de memória utilizadas com mais frequência são mantidas nesse dispositivo.</li>
             </ul>
             <img src="img/memoria2.png" alt="memoria2.png">
@@ -126,9 +136,11 @@
                 <li>O uso da memória cache tem, basicamente, dois objetivos:</li>
                 <ul>
                     <li>Obter velocidade de memória próxima das memórias mais rápidas</li>
-                    <li>Disponibilizar uma memória de grande capacidade ao preço de memórias semicondutoras mais baratas</li>
+                    <li>Disponibilizar uma memória de grande capacidade ao preço de memórias semicondutoras mais baratas
+                    </li>
                 </ul>
-                <li>Uma memória principal relativamente grande e lenta está junto com uma memória cache, que é menor, mais rápida e deve conter uma cópia de partes da memória principal</li>
+                <li>Uma memória principal relativamente grande e lenta está junto com uma memória cache, que é menor,
+                    mais rápida e deve conter uma cópia de partes da memória principal</li>
             </ul>
             <img src="img/memoria3.png" alt="memoria3.png">
         </section>
@@ -136,11 +148,15 @@
         <section>
             <h2>NÍVEIS DE CACHE.</h2>
             <ul>
-                <li>L1, L2 e L3 dizem respeito à proximidade da memória cache das unidades de execução do processador</li>
+                <li>L1, L2 e L3 dizem respeito à proximidade da memória cache das unidades de execução do processador
+                </li>
                 <li>Quanto mais próxima ela estiver da unidade de execução do processador, menor será seu número</li>
-                <li>Cache L1 é o mais próximo possível da unidade de execução do processador, L2 é um pouco mais distante e o L3 é ainda mais afastado.</li>
+                <li>Cache L1 é o mais próximo possível da unidade de execução do processador, L2 é um pouco mais
+                    distante e o L3 é ainda mais afastado.</li>
                 <ul>
-                    <li>Sempre que a unidade de busca do processador precisa de um novo dado ou instrução, ela procura inicialmente no cache L1. Se não encontrar, tenta o L2 e depois o L3. Se a informação não estiver em nenhum dos níveis de memória cache, ela terá que ir até a memória RAM</li>
+                    <li>Sempre que a unidade de busca do processador precisa de um novo dado ou instrução, ela procura
+                        inicialmente no cache L1. Se não encontrar, tenta o L2 e depois o L3. Se a informação não
+                        estiver em nenhum dos níveis de memória cache, ela terá que ir até a memória RAM</li>
                 </ul>
             </ul>
         </section>
@@ -150,12 +166,17 @@
             <ul>
                 <li>Não pode ser alterada nem apagada, pois os dados são inseridos durante sua fabricação</li>
                 <li>A única maneira de modificar seu programa é substituindo o chip</li>
-                <li>É utilizada em produtos cujos programa e dados básicos devem permanecer armazenados, mesmo quando o fornecimento de energia for interrompido, como carros, etc</li>
+                <li>É utilizada em produtos cujos programa e dados básicos devem permanecer armazenados, mesmo quando o
+                    fornecimento de energia for interrompido, como carros, etc</li>
                 <li>Tipos:</li>
                 <ul>
-                    <li><b>PROM</b> (Programmable Read-Only Memory - ROM programável) - é como uma ROM, exceto pelo fato de poder ser programada uma vez em campo</li>
-                    <li><b>EPROM</b> (Erasable Programmable Read-Only Memory - ROM programável e apagável) - é uma variação da PROM, pois pode ser programada e apagada em campo</li>
-                    <li><b>EEPROM</b> (Electrically Erasable Programmable Read- Only Memory - ROM eletricamente programável e apagável) - é uma variação da EPROM, pois pode ser programada e apagada sem ser removida do computador</li>
+                    <li><b>PROM</b> (Programmable Read-Only Memory - ROM programável) - é como uma ROM, exceto pelo fato
+                        de poder ser programada uma vez em campo</li>
+                    <li><b>EPROM</b> (Erasable Programmable Read-Only Memory - ROM programável e apagável) - é uma
+                        variação da PROM, pois pode ser programada e apagada em campo</li>
+                    <li><b>EEPROM</b> (Electrically Erasable Programmable Read- Only Memory - ROM eletricamente
+                        programável e apagável) - é uma variação da EPROM, pois pode ser programada e apagada sem ser
+                        removida do computador</li>
                 </ul>
             </ul>
         </section>
@@ -163,9 +184,13 @@
         <section>
             <h2>BIBLIOGRAFIA.</h2>
             <ul>
-                <li>Corrêa, A. G. D (Organizadora). Organização e arquitetura de computadores. Cap. 1 (Páginas 16 a 30) e Cap. 4 (Páginas 130 a 153). Editora Pearson. Edição: 1° (2017). Idioma: Português. ISBN: 9788543020327</li>
-                <li>Stallings, W. Arquitetura e organização de computadores. Páginas 67 a 231 (de 731 páginas). Editora: Editora Pearson. Edição: 10° (2017). Idioma: Português. ISBN: 9788543020532</li>
-                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Páginas: 61 a 133 (de 628 páginas). Editora: Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398</li>
+                <li>Corrêa, A. G. D (Organizadora). Organização e arquitetura de computadores. Cap. 1 (Páginas 16 a 30)
+                    e Cap. 4 (Páginas 130 a 153). Editora Pearson. Edição: 1° (2017). Idioma: Português. ISBN:
+                    9788543020327</li>
+                <li>Stallings, W. Arquitetura e organização de computadores. Páginas 67 a 231 (de 731 páginas). Editora:
+                    Editora Pearson. Edição: 10° (2017). Idioma: Português. ISBN: 9788543020532</li>
+                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Páginas: 61 a 133 (de 628
+                    páginas). Editora: Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398</li>
             </ul>
         </section>
     </main>
@@ -173,4 +198,5 @@
         <p>Diego Serafim de Sousa - 7 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

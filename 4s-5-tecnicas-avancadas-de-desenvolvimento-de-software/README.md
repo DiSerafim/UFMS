@@ -1,5 +1,5 @@
+# CRONOGRAMA DA TRILHA DE APRENDIZAGEM
 
-# CRONOGRAMA DA TRILHA DE APRENDIZAGEM  
 **UFMS Digital**
 
 Disciplina: **🚀 TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE**  
@@ -10,7 +10,8 @@ Este repositório contém os materiais de estudo, atividades e protótipos desen
 
 ---
 
-## 🚪 Comece por aqui!  
+## 🚪 Comece por aqui!
+
 📝 **Plano de Ensino da Disciplina**  
 ▶️ **Vídeo de Apresentação da Disciplina**  
 📚 **Curadoria de Recursos Digitais da Disciplina**  
@@ -20,6 +21,7 @@ Este repositório contém os materiais de estudo, atividades e protótipos desen
 ---
 
 ## 📅 Módulos
+
 - **Módulo 1** - Programação para Web
 - **Módulo 2** - Arquitetura de Software
 - **Módulo 3** - Desenvolvimento baseado em Componentes
@@ -30,6 +32,7 @@ Este repositório contém os materiais de estudo, atividades e protótipos desen
 ## 📅 Módulo 1 – Programação para Web
 
 ### 💡 Unidade 1 - Revisão dos fundamentos de Web
+
 📕 **Leitura obrigatória:**  
 MARINHO, Antônio Lopes; CRUZ, J. L. Desenvolvimento de aplicações para internet. 2. ed. São Paulo: Pearson Education do Brasil, 2020. ISBN 9786550110604. p. 1-27. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -40,6 +43,7 @@ SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Pearson, 2018. ISB
 💻 https://www.youtube.com/watch?v=lMXH3-1aXeY&ab_channel=AGEADUFMS
 
 ### 💡 Unidade 2 - Linguagem de Programação Web
+
 📕 **Leitura obrigatória:**  
 OLIVEIRA, Cláudio Luís Vieira; ZANETTI, Humberto Augusto Piovesana. JavaScript descomplicado: programação para a Web, IoT e dispositivos móveis. São Paulo: Erica, 2020. ISBN 9788536533100. p. 43-97; 111-124. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -56,9 +60,10 @@ Acessar no AVA
 
 ---
 
-## 📅 Módulo 2 – Arquitetura de Software  
+## 📅 Módulo 2 – Arquitetura de Software
 
 ### 💡 Unidade 1 - Fundamentos de Arquitetura de Software
+
 📕 **Leitura obrigatória:**  
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 147-154. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -69,6 +74,7 @@ GALLOTTI, Giocondo Marino Antonio (Org.). Arquitetura de software. São Paulo: P
 💻 https://www.youtube.com/watch?v=VCFptAL5ypE&ab_channel=AGEADUFMS
 
 ### 💡 Unidade 2 - Modelo MVC
+
 📕 **Leitura obrigatória:**  
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 154-174; 414-417. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -85,9 +91,10 @@ Acessar no AVA
 
 ---
 
-## 📅 Módulo 3 – Desenvolvimento baseado em Componentes  
+## 📅 Módulo 3 – Desenvolvimento baseado em Componentes
 
 ### 💡 Unidade 1 - Introdução a componentes
+
 📕 **Leitura obrigatória:**  
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 435-450. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -98,6 +105,7 @@ SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISB
 💻 https://www.youtube.com/watch?v=YRmB9JWMrFY&ab_channel=AGEADUFMS
 
 ### 💡 Unidade 2 - Desenvolvimento de Componentes
+
 📕 **Leitura obrigatória:**  
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 451-460. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -114,16 +122,17 @@ Acessar no AVA
 
 ---
 
-## 📅 Módulo 4 – Desenvolvimento orientado a Serviços  
+## 📅 Módulo 4 – Desenvolvimento orientado a Serviços
 
 ### 💡 Unidade 1 - Orientação a serviços
+
 📕 **Leitura obrigatória:**  
 ERL, Thomas. SOA: princípios de design de serviços. São Paulo: Pearson, 2008. ISBN 9788576051893. p. 15-62. Disponível na Biblioteca Digital da UFMS.
 
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 491-500. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
 📗 **Leitura complementar:**  
-MUNIZ, Antonio et. al. Jornada microsserviços. Rio de Janeiro: Brasport, 2022. ISBN 9786588431580. Itens: 6, 7 e 8. Disponível na Biblioteca Digital da UFMS. 
+MUNIZ, Antonio et. al. Jornada microsserviços. Rio de Janeiro: Brasport, 2022. ISBN 9786588431580. Itens: 6, 7 e 8. Disponível na Biblioteca Digital da UFMS.
 
 SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISBN 9788543024974. p. 500-520. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -131,6 +140,7 @@ SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. ISB
 💻 https://www.youtube.com/watch?v=Fd3L3DlrRbM&ab_channel=AGEADUFMS
 
 ### 💡 Unidade 2 - Microsserviços
+
 📕 **Leitura obrigatória:**  
 MONTEIRO, Eduarda Rodrigues et al. DevOps. Porto Alegre: SAGAH, 2021. ISBN 9786556901725. p. 97-136. Disponível na Biblioteca Digital da UFMS. https://pergamum.ufms.br/
 
@@ -147,8 +157,9 @@ Acessar no AVA
 
 ---
 
-## 🆘 Trilha de Recuperação  
-✅ **Questionário da Prova Optativa**  
+## 🆘 Trilha de Recuperação
+
+✅ **Questionário da Prova Optativa**
 
 ---
 

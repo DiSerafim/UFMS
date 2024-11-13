@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Infraestrutura de redes</h1>
@@ -23,14 +25,16 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=fG1caYj3Iak&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 2 - Unidade 2 - Parte 1- Os mecanismos de endereçamento na rede
+            <a href="https://www.youtube.com/watch?v=fG1caYj3Iak&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 2 - Unidade 2 - Parte 1- Os mecanismos
+                de endereçamento na rede
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof.° ministrante: Carlos Alberto da Silva</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>Os mecanismos de endereçamento na rede</h3>
@@ -43,16 +47,18 @@
                 </ul>
             </ul>
         </section>
-        
+
         <section>
             <h2>Endereços na redes.</h2>
             <p>As redes de computadores possuem 2 tipos de endereços:</p>
             <ul>
-                <li><b>Endereço físico MAC</b>: é gravado fisicamente em cada dispositivo (IMUTÁVEL, camada de enlace).</li>
-                <li><b>Endereço lógico IP</b>: endereço ou número IP é atribuído quando conectamos um dispositivo na rede de computadores de forma manual ou automática (MUTÁVEL, camada de rede).</li>
+                <li><b>Endereço físico MAC</b>: é gravado fisicamente em cada dispositivo (IMUTÁVEL, camada de enlace).
+                </li>
+                <li><b>Endereço lógico IP</b>: endereço ou número IP é atribuído quando conectamos um dispositivo na
+                    rede de computadores de forma manual ou automática (MUTÁVEL, camada de rede).</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Endereço físico MAC.</h2>
             <b>Media Access Control (MAC)</b>
@@ -64,16 +70,21 @@
             <img src="img/endereco-fisico-mac.png" alt="endereco-fisico-mac" title="endereco-fisico-mac">
             <p>Exemplo: E0-06-E0-FD-EC-27</p>
             <ul>
-                <li>o número <b>E0-06-E0</b> é o <b>número do fabricante</b>, conhecido como Organizationally Unique Identifier (OUI).</li>
-                <li>E os três últimos pares identificam o <b>número de série</b> do próprio dispositivo deste fabricante, no caso <b>FD-EC-27</b>.</li>
+                <li>o número <b>E0-06-E0</b> é o <b>número do fabricante</b>, conhecido como Organizationally Unique
+                    Identifier (OUI).</li>
+                <li>E os três últimos pares identificam o <b>número de série</b> do próprio dispositivo deste
+                    fabricante, no caso <b>FD-EC-27</b>.</li>
             </ul>
             <img src="img/endereco-fisico-mac-1.png" alt="endereco-fisico-mac" title="endereco-fisico-mac">
             <ul>
-                <li>O uso do MAC address permite identificar os dispositivos da rede interna, justamente por ser estático, mesmo quando o endereço IP não é conhecido.</li>
+                <li>O uso do MAC address permite identificar os dispositivos da rede interna, justamente por ser
+                    estático, mesmo quando o endereço IP não é conhecido.</li>
                 <ul>
-                    <li>O que funciona para detectar a localização de um equipamento específico na camada de enlace.</li>
+                    <li>O que funciona para detectar a localização de um equipamento específico na camada de enlace.
+                    </li>
                 </ul>
-                <li>O quadro da camada de enlace registra o endereço MAC de origem (source) e de destino (destination) para encaminhar os frames.</li>
+                <li>O quadro da camada de enlace registra o endereço MAC de origem (source) e de destino (destination)
+                    para encaminhar os frames.</li>
             </ul>
             <b>Formato quadro (camada enlace)</b>
             <p></p>
@@ -129,7 +140,8 @@
             </ul>
             <b>Intervalos de endereços IP públicos</b>
             <ul>
-                <li>Endereço IP público: qualquer número não incluído no intervalo de endereços IP privados reservados</li>
+                <li>Endereço IP público: qualquer número não incluído no intervalo de endereços IP privados reservados
+                </li>
                 <li>Exemplos: 8.8.8.8, 15.16.14.15, 175.0.1.1, 245.2.40.50</li>
             </ul>
             <b>Intervalos de endereços IP privados e públicos</b>
@@ -158,13 +170,15 @@
                 <ul>
                     <li>A Internet pode acessar dispositivos da rede interna (intranet).</li>
                 </ul>
-                <li>Com o NAT, permite que uma grande quantidade de computadores na rede interna da empresa acesse a internet.</li>
+                <li>Com o NAT, permite que uma grande quantidade de computadores na rede interna da empresa acesse a
+                    internet.</li>
             </ul>
             <b>Protocolo NAT</b>
             <p></p>
             <img src="img/protocolo-nat.png" alt="protocolo-nat" title="protocolo-nat">
             <ul>
-                <li>A tradução NAT de [endereço IP + ports] do TCP/IP permite identificar as conexões com segurança.</li>
+                <li>A tradução NAT de [endereço IP + ports] do TCP/IP permite identificar as conexões com segurança.
+                </li>
                 <li>O NAT pode fazer o mapeamento entre:</li>
                 <ul>
                     <li>IP local + porta local ⇔ IP global + porta mapeada</li>
@@ -173,8 +187,10 @@
             <img src="img/protocolo-nat-1.png" alt="protocolo-nat" title="protocolo-nat">
             <p></p>
             <b>Protocolos SNAT e DNAT</b>
-            <p>O <b>protocolo SNAT (Source NAT)</b> permite a conexão e tradução de pacotes de dispositivos internos da intranet com os dispositivos externos internet.</p>
-            <p>O <b>protocolo DNAT (Destination NAT)</b> permite a conexão e tradução de pacotes de dispositivos externos da internet com os dispositivos internos da intranet.</p>
+            <p>O <b>protocolo SNAT (Source NAT)</b> permite a conexão e tradução de pacotes de dispositivos internos da
+                intranet com os dispositivos externos internet.</p>
+            <p>O <b>protocolo DNAT (Destination NAT)</b> permite a conexão e tradução de pacotes de dispositivos
+                externos da internet com os dispositivos internos da intranet.</p>
             <img src="img/protocolo-nat-2.png" alt="protocolo-nat" title="protocolo-nat">
         </section>
         <section>
@@ -225,11 +241,13 @@
                         <li>o que reduz largura de banda de rede. </li>
                     </ul>
                 </ul>
-                <li>IPv6 tem um recurso chamado configuração automática, que permite gerar um endereço IPv6 assim que o dispositivo liga e se conecta na rede.</li>
+                <li>IPv6 tem um recurso chamado configuração automática, que permite gerar um endereço IPv6 assim que o
+                    dispositivo liga e se conecta na rede.</li>
                 <ul>
                     <li>O dispositivo começa a procurar por um roteador IPv6.</li>
                     <ul>
-                        <li>Se algum estiver presente, o dispositivo pode gerar um endereço local e um endereço roteável globalmente de forma automática.</li>
+                        <li>Se algum estiver presente, o dispositivo pode gerar um endereço local e um endereço roteável
+                            globalmente de forma automática.</li>
                     </ul>
                     <li>IPv6 permite que os dispositivos fiquem conectados a várias redes simultaneamente.</li>
                     <ul>
@@ -250,12 +268,15 @@
 
         <section>
             <h2>Referências:</h2>
-            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 265-282. Disponível na Biblioteca Digital da UFMS.</p>
-            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 284-306. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora
+                Pearson, 2021. ISBN: 9788582605592. p. 265-282. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora
+                Pearson, 2021. ISBN: 9788582605615. p. 284-306. Disponível na Biblioteca Digital da UFMS.</p>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 6 de out de 2024</p>
     </footer>
 </body>
+
 </html>

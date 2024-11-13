@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=ufJkkwdw1C4&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=ufJkkwdw1C4&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
                 [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 4.
                 <i class="material-icons right"> send</i>
             </a>
@@ -50,7 +53,8 @@
             <h2>Generics.</h2>
             <ul>
                 <li>Trata-se de um recurso bem parecido com os templates em C++.</li>
-                <li>Este conceito permite que tipos (classes e interfaces) sejam parâmetros na definição de classes, interfaces e métodos.</li>
+                <li>Este conceito permite que tipos (classes e interfaces) sejam parâmetros na definição de classes,
+                    interfaces e métodos.</li>
                 <li>Podemos reusar código para diferentes tipos.</li>
                 <li>Evita o uso de casting.</li>
             </ul>
@@ -60,7 +64,8 @@
                 <ul>
                     <li>É uma classe ou interface parametrizada sobre tipos.</li>
                     <li>Em uma classe que não usa Generics, qualquer objeto pode ser utilizado.</li>
-                    <li>O problema é que em tempo de compilação não é possível saber que tipo de objeto será passado ou retornado.</li>
+                    <li>O problema é que em tempo de compilação não é possível saber que tipo de objeto será passado ou
+                        retornado.</li>
                 </ul>
                 <li>Para demonstrar como é um código Java sem Generics, vamos considerar o seguinte exemplo:</li>
                 <ul>
@@ -69,9 +74,11 @@
                     String result = (String) list.get(0);
                     System.out.println(result);
                     </pre>
-                    <li>Veja que ao recuperar valores de uma lista era necessário realizar o <b>cast</b> para um determinado tipo.</li>
+                    <li>Veja que ao recuperar valores de uma lista era necessário realizar o <b>cast</b> para um
+                        determinado tipo.</li>
                     <ul>
-                        <li>Isso ocorre porque a interface <b>List</b> recebia um Object como parâmetro em seu método add.</li>
+                        <li>Isso ocorre porque a interface <b>List</b> recebia um Object como parâmetro em seu método
+                            add.</li>
                         <li>Lembre-se que em Java todos os tipos estendem Object.</li>
                     </ul>
                     <li>O código acima compila corretamente. Agora vejamos o próximo exemplo.</li>
@@ -90,16 +97,20 @@
                 </pre>
                 <li>O que ocorre no código acima?</li>
                 <ul>
-                    <li>Não é possível ter segurança de qual tipo será retornado pela lista em tempo de compilação e o erro somente será percebido em tempo de execução, como o apresentado abaixo</li>
+                    <li>Não é possível ter segurança de qual tipo será retornado pela lista em tempo de compilação e o
+                        erro somente será percebido em tempo de execução, como o apresentado abaixo</li>
                 </ul>
                 <i>
-                    out- Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+                    out- Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to
+                    java.lang.String
                 </i>
             </ul>
 
             <ul>
-                <li>Felizmente com uso de Generics, vamos economizar as escritas de códigos e torná-los mais limpos e com possibilidade de reutilização.</li>
-                <li>A vantagem é que o Generics vai servir como parâmetro para a classe em questão e assim podemos utilizar esta "variável" em todo o escopo da classe.</li>
+                <li>Felizmente com uso de Generics, vamos economizar as escritas de códigos e torná-los mais limpos e
+                    com possibilidade de reutilização.</li>
+                <li>A vantagem é que o Generics vai servir como parâmetro para a classe em questão e assim podemos
+                    utilizar esta "variável" em todo o escopo da classe.</li>
             </ul>
 
             <ul>
@@ -191,13 +202,15 @@
             </pre>
 
             <ul>
-                <li>No exemplo anterior, ao longo da classe o tipo T estará disponível e poderá ser utilizado na criação de:</li>
+                <li>No exemplo anterior, ao longo da classe o tipo T estará disponível e poderá ser utilizado na criação
+                    de:</li>
                 <ul>
                     <li>Variáveis</li>
                     <li>Retorno de métodos (ex: get)</li>
                     <li>Em parâmetros de métodos (ex: add)</li>
                 </ul>
-                <li>Isso faz com que MinhaLista possa ser utilizada com qualquer tipo, mas somente um tipo nos elementos, uma vez que a lista tenha sido instanciada</li>
+                <li>Isso faz com que MinhaLista possa ser utilizada com qualquer tipo, mas somente um tipo nos
+                    elementos, uma vez que a lista tenha sido instanciada</li>
             </ul>
 
             <p>Exemplo:</p>
@@ -212,10 +225,12 @@
             </pre>
 
             <ul>
-                <li>Não são somente as classes e interfaces que possuem a flexibilidade dos Generics, também podemos criar métodos genéricos.</li>
+                <li>Não são somente as classes e interfaces que possuem a flexibilidade dos Generics, também podemos
+                    criar métodos genéricos.</li>
                 <li>Métodos Genéricos;</li>
                 <ul>
-                    <li>Conceito de Generics pode ser amplamante aplicado em métodos, sem que a classe seja genérica (métodos estáticos, construtores, não estáticos)</li>
+                    <li>Conceito de Generics pode ser amplamante aplicado em métodos, sem que a classe seja genérica
+                        (métodos estáticos, construtores, não estáticos)</li>
                     <li>A lista de parâmetros de tipo deve aparecer antes do tipo de retorno.</li>
                 </ul>
             </ul>
@@ -252,10 +267,12 @@
             </pre>
 
             <ul>
-                <li>É importante frisar que quando utilizado em métodos, o tipo genérico pertence ao escopo daquele método.</li>
+                <li>É importante frisar que quando utilizado em métodos, o tipo genérico pertence ao escopo daquele
+                    método.</li>
                 <li>Não é possível utilizar o tipo em outros métodos.</li>
                 <ul>
-                    <li>Se a classe também é genérica e possui um identificador de tipo igual ao do método, o do método vai sobrescrever o da classe.</li>
+                    <li>Se a classe também é genérica e possui um identificador de tipo igual ao do método, o do método
+                        vai sobrescrever o da classe.</li>
                 </ul>
             </ul>
         </section>
@@ -275,14 +292,16 @@
                         /* ... */
                     }
                 </pre>
-                <li>Como não há relação de herança entre as classes não podemos passar Caixa<Integer> ou Caixa (Double>.</li>
+                <li>Como não há relação de herança entre as classes não podemos passar Caixa<Integer> ou Caixa (Double>.
+                </li>
             </ul>
 
             <ul>
                 <li>É possível herdar ou implementar classes genéricas.</li>
                 <ul>
                     <li>Classe filha pode ou não ser genérica.</li>
-                    <li>Toda a relação entre os tipos genéricos da classe mãe e da filha é definida na declaração de classe.</li>
+                    <li>Toda a relação entre os tipos genéricos da classe mãe e da filha é definida na declaração de
+                        classe.</li>
                 </ul>
                 <li>Por exemplo:</li>
                 <ul>
@@ -329,4 +348,5 @@
         <p>Diego Serafim de Sousa - 2 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

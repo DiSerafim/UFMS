@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Árvores Balanceadas.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Árvores Balanceadas.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Árvores Balanceadas.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=ceW8YXoW1fc&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=ceW8YXoW1fc&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 [UFMS Digital] Estrutura de Dados - Módulo 3 - Unidade 1.
                 <i class="material-icons right"> send</i>
             </a>
@@ -42,7 +45,8 @@
         <section>
             <h2>Árvores Binárias Balanceadas..</h2>
             <ul>
-                <li>Existem alguns tipos de árvore binárias que realizam esse processo de “balanceamento” para garantir a árvore binária quase-completa, por exemplo:</li>
+                <li>Existem alguns tipos de árvore binárias que realizam esse processo de “balanceamento” para garantir
+                    a árvore binária quase-completa, por exemplo:</li>
                 <ul>
                     <li>Árvores AVL (1962);</li>
                     <li>Árvores Rubro-Negras (1978);</li>
@@ -54,14 +58,19 @@
         <section>
             <h2>AVL (Adelson-Velsky e Landis).</h2>
             <ul>
-                <li>Criada em 1962 por Georgy Adelson-Velsky e Evgenii Landis, a AVL é a mais antiga estrutura de dados para permitir o balanceamento das árvores binárias;</li>
-                <li>Possui estratégias de balanceamento para permitir equilibrar as alturas das sub-árvores esquerda e direita de qualquer nó;</li>
-                <li>O balanceamento é realizado sempre após as operações de inserção e remoção da árvore. AVL (Adelson-Velsky e Landis)</li>
+                <li>Criada em 1962 por Georgy Adelson-Velsky e Evgenii Landis, a AVL é a mais antiga estrutura de dados
+                    para permitir o balanceamento das árvores binárias;</li>
+                <li>Possui estratégias de balanceamento para permitir equilibrar as alturas das sub-árvores esquerda e
+                    direita de qualquer nó;</li>
+                <li>O balanceamento é realizado sempre após as operações de inserção e remoção da árvore. AVL
+                    (Adelson-Velsky e Landis)</li>
                 <li>A estratégia de balanceamento envolve operações de rotação em qualquer nó da árvore;</li>
-                <li>A ideia é rotacionar a árvore para esquerda ou direita para distribuir os nós de uma subárvore para outra.</li>
+                <li>A ideia é rotacionar a árvore para esquerda ou direita para distribuir os nós de uma subárvore para
+                    outra.</li>
                 <li>Na AVL uma árvore é dita balanceada quando:</li>
                 <ul>
-                    <li>A diferença de altura das subárvores esquerda e direita de um nó é de no máximo 1 unidade (±1).</li>
+                    <li>A diferença de altura das subárvores esquerda e direita de um nó é de no máximo 1 unidade (±1).
+                    </li>
                 </ul>
             </ul>
         </section>
@@ -70,7 +79,8 @@
             <h2>AVL - Balanceamento.</h2>
             <ul>
                 <li>A altura de um nó é o número de arestas no maior caminho até um nó folha;</li>
-                <li>O <b>fator de balanceamento</b> (fb) é a diferença entre as alturas das subárvores esquerda e direita de um nó:</li>
+                <li>O <b>fator de balanceamento</b> (fb) é a diferença entre as alturas das subárvores esquerda e
+                    direita de um nó:</li>
                 <ul>
                     <li>fb(no) = altura(no.fe) - altura(no.fd)</li>
                 </ul>
@@ -82,7 +92,7 @@
             <h2>AVL - Exemplos.</h2>
             <ul>
                 <li>Calcular o fator de balanceamento dos nós e verificar se é AVL, (fb no máximo em 1 unidade).</li>
-                </ul>
+            </ul>
             </ul>
             <img src="img/avl1.png" alt="avl1.png">
         </section>
@@ -90,10 +100,12 @@
         <section>
             <h2>AVL - Balanceamento.</h2>
             <ul>
-                <li>Para realizar o balanceamento em um nó com fb com 2 unidades, temos 2 tipos de operação de rotação:</li>
+                <li>Para realizar o balanceamento em um nó com fb com 2 unidades, temos 2 tipos de operação de rotação:
+                </li>
                 <ul>
                     <li><b>Rotação Simples</b>: rotacionar para esquerda (RE) ou direita (RD) os nós da árvore.</li>
-                    <li><b>Rotação Dupla</b>: realizar duas rotações consecutivas e alternadas, rotação simples à esquerda seguida da direita (RED) ou direita seguida da esquerda (RDE).</li>
+                    <li><b>Rotação Dupla</b>: realizar duas rotações consecutivas e alternadas, rotação simples à
+                        esquerda seguida da direita (RED) ou direita seguida da esquerda (RDE).</li>
                 </ul>
             </ul>
         </section>
@@ -117,7 +129,8 @@
                     <li>retorna raiz</li>
                 </ul>
             </ul>
-            <a href="https://pythontutor.com/visualize.html#code=class%20no%3A%0A%20%20%20%20def%20__init__%28self,valor%29%3A%0A%20%20%20%20%20%20%20%20self.chave%3Dvalor%0A%20%20%20%20%20%20%20%20self.fe%3DNone%0A%20%20%20%20%20%20%20%20self.fd%3DNone%0A%0A%20%0Adef%20rotacaoEsq%28r%29%3A%0A%20%20%20%20no%20%3D%20r%0A%20%20%20%20r%20%3D%20r.fd%0A%20%20%20%20no.fd%20%3D%20r.fe%0A%20%20%20%20r.fe%20%3D%20no%0A%20%20%20%20return%20r%0A%20%20%20%20%20%20%20%20%0Ab%20%3D%20no%287%29%20%20%0Aa%20%3D%20no%286%29%0Aa.fd%3Db%0Araiz%20%3D%20no%284%29%0Araiz.fd%20%3D%20a%0A%0Araiz%20%3D%20rotacaoEsq%28raiz%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" rel="noopener noreferrer">Código</a>
+            <a href="https://pythontutor.com/visualize.html#code=class%20no%3A%0A%20%20%20%20def%20__init__%28self,valor%29%3A%0A%20%20%20%20%20%20%20%20self.chave%3Dvalor%0A%20%20%20%20%20%20%20%20self.fe%3DNone%0A%20%20%20%20%20%20%20%20self.fd%3DNone%0A%0A%20%0Adef%20rotacaoEsq%28r%29%3A%0A%20%20%20%20no%20%3D%20r%0A%20%20%20%20r%20%3D%20r.fd%0A%20%20%20%20no.fd%20%3D%20r.fe%0A%20%20%20%20r.fe%20%3D%20no%0A%20%20%20%20return%20r%0A%20%20%20%20%20%20%20%20%0Ab%20%3D%20no%287%29%20%20%0Aa%20%3D%20no%286%29%0Aa.fd%3Db%0Araiz%20%3D%20no%284%29%0Araiz.fd%20%3D%20a%0A%0Araiz%20%3D%20rotacaoEsq%28raiz%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"
+                target="_blank" rel="noopener noreferrer">Código</a>
             <p></p>
             <img src="img/avl4.png" alt="avl4.png">
             <ul>
@@ -167,7 +180,8 @@
                 <ul>
                     <li>Porém, atualiza-se o fator de balanceamento (fb) dos nós.</li>
                 </ul>
-                <li>Caso o fb exceda em uma unidade (fb ±1) aplicar as rotações adequadas para o devido balanceamento da árvore.</li>
+                <li>Caso o fb exceda em uma unidade (fb ±1) aplicar as rotações adequadas para o devido balanceamento da
+                    árvore.</li>
             </ul>
         </section>
 
@@ -207,7 +221,8 @@
                     <li>Verificar quando houve desbalanceamento;</li>
                     <li>Aplicar o procedimento de rotação adequado.</li>
                 </ul>
-                <li>Exemplo no <a href="https://visualgo.net/en/bst?slide=1" target="_blank" rel="noopener noreferrer">VISUALGO</a>.</li>
+                <li>Exemplo no <a href="https://visualgo.net/en/bst?slide=1" target="_blank"
+                        rel="noopener noreferrer">VISUALGO</a>.</li>
                 <ul>
                     <li>Testar com os casos de rotação simples e duplo.</li>
                 </ul>
@@ -218,8 +233,10 @@
         <section>
             <h2>Referências</h2>
             <ul>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</li>
-                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                    Disponível na Biblioteca Digital da UFMS.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de
+                    Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
             </ul>
         </section>
     </main>
@@ -227,4 +244,5 @@
         <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

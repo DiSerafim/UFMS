@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Hash e Heap.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Hash e Heap.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Hash e Heap.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=GwA22pIu85I&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 2. 
+            <a href="https://www.youtube.com/watch?v=GwA22pIu85I&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 2.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
@@ -42,22 +45,28 @@
         <section>
             <h2>Motivação</h2>
             <ul>
-                <li>Até agora vimos diferentes estruturas de dados com o objetivo de melhorar os custos de inserção, remoção ou busca de elementos em um conjunto;</li>
+                <li>Até agora vimos diferentes estruturas de dados com o objetivo de melhorar os custos de inserção,
+                    remoção ou busca de elementos em um conjunto;</li>
                 <ul>
                     <li>Seja com Array (vetor), Lista, Pilha, Fila e Tabela de dispersão.</li>
                 </ul>
-                <li>Mesmo se conseguirmos o menor custo para buscar um elemento no conjunto, esse custo se manteria caso quiséssemos o <b>menor</b> ou o <b>maior</b> elemento do conjunto?</li>
+                <li>Mesmo se conseguirmos o menor custo para buscar um elemento no conjunto, esse custo se manteria caso
+                    quiséssemos o <b>menor</b> ou o <b>maior</b> elemento do conjunto?</li>
                 <ul>
                     <li>Não, precisaríamos <b>ordenar</b> o conjunto de dados, caro!</li>
                 </ul>
                 <li>Poderíamos então explorar a estrutura de dados <b>Fila de prioridades</b>.</li>
                 <ul>
-                    <li>Permite organizar/ordenar os elementos do conjunto por meio de seus valores de prioridades (ou chaves).</li>
+                    <li>Permite organizar/ordenar os elementos do conjunto por meio de seus valores de prioridades (ou
+                        chaves).</li>
                 </ul>
-                <li>Imagine em um posto de saúde em que uma triagem é feita para realizar os atendimentos dos pacientes.</li>
+                <li>Imagine em um posto de saúde em que uma triagem é feita para realizar os atendimentos dos pacientes.
+                </li>
                 <ul>
-                    <li>A triagem determina uma prioridade ou chave (fita verde, amarela ou vermelha) para cada paciente;</li>
-                    <li>Os atendimentos realizam uma busca pelo paciente de maior prioridade de atendimento (fita vermelha, primeiro).</li>
+                    <li>A triagem determina uma prioridade ou chave (fita verde, amarela ou vermelha) para cada
+                        paciente;</li>
+                    <li>Os atendimentos realizam uma busca pelo paciente de maior prioridade de atendimento (fita
+                        vermelha, primeiro).</li>
                 </ul>
             </ul>
         </section>
@@ -65,18 +74,23 @@
         <section>
             <h2>Heaps.</h2>
             <ul>
-                <li>Heap pode ser visto como uma estratégia para manter ordenado (mesmo após inserção ou remoção) os elementos em uma <b>fila de prioridades “ordenado”</b> com custo menor que O(N), onde N é o tamanho do conjunto;</li>
+                <li>Heap pode ser visto como uma estratégia para manter ordenado (mesmo após inserção ou remoção) os
+                    elementos em uma <b>fila de prioridades “ordenado”</b> com custo menor que O(N), onde N é o tamanho
+                    do conjunto;</li>
                 <li>Podemos ter duas maneiras de ordenar as prioridades: do maior para o menor, ou vice e versa.</li>
                 <ul>
                     <li><b>Max-Heap</b>: a prioridade está com os maiores valores.</li>
                     <li><b>Min-Heap</b>: a prioridade está com os menores valores.</li>
                 </ul>
-                <li>A ideia de organização dos elementos na Heap, envolve organizar os elementos em uma estrutura conhecida como <b>árvore binária, ou alternativamente, heap binária (binary heap)</b>.</li>
+                <li>A ideia de organização dos elementos na Heap, envolve organizar os elementos em uma estrutura
+                    conhecida como <b>árvore binária, ou alternativamente, heap binária (binary heap)</b>.</li>
                 <ul>
                     <li>Cada elemento é um nó dessa estrutura de dados;</li>
-                    <li>Porém, não são organizados (conectados) linearmente como é feito em uma lista ou fila linear.</li>
+                    <li>Porém, não são organizados (conectados) linearmente como é feito em uma lista ou fila linear.
+                    </li>
                 </ul>
-                <li>A organização segue um padrão de árvore binária em que um elemento A pode estar conectado a mais dois outros elementos desde que <b>ambos sejam menores ou maiores que A</b>.</li>
+                <li>A organização segue um padrão de árvore binária em que um elemento A pode estar conectado a mais
+                    dois outros elementos desde que <b>ambos sejam menores ou maiores que A</b>.</li>
             </ul>
         </section>
 
@@ -95,16 +109,19 @@
         <section>
             <h2>Heap Binária (Array/Vetor).</h2>
             <ul>
-                <li>Podemos também representar essa árvore binária quase completa por meio de vetor/array, mas por que?</li>
+                <li>Podemos também representar essa árvore binária quase completa por meio de vetor/array, mas por que?
+                </li>
                 <ul>
                     <li>Lembra da Hash? Acesso direto, O(1);</li>
                 </ul>
             </ul>
             <img src="img/heap-binaria.png" alt="heap-binaria.png">
-            <p>Um nó na posição i do vetor tem filhos nas posições FE=2*i+1 e FD=2*i + 2 e ancestral em (i-1)/2; Veja para o nó B, i=1.</p>
+            <p>Um nó na posição i do vetor tem filhos nas posições FE=2*i+1 e FD=2*i + 2 e ancestral em (i-1)/2; Veja
+                para o nó B, i=1.</p>
             <img src="img/heap-binaria1.png" alt="heap-binaria1.png">
             <ul>
-                <li>Agora que sabemos como encontrar os elementos da árvore no vetor, temos que definir algumas restrições de ordem:</li>
+                <li>Agora que sabemos como encontrar os elementos da árvore no vetor, temos que definir algumas
+                    restrições de ordem:</li>
                 <ul>
                     <li>Prioridade do nó ancestral <b>é ≥ que</b> dos filhos (<b>Max-Heap</b>);</li>
                     <img src="img/heap-binaria2.png" alt="heap-binaria2.png">
@@ -265,7 +282,8 @@
                 <li>ExtrairMax ou Remoção na Max-Heap.</li>
                 <ul>
                     <li>Custo de retirar o maior elemento na raiz é O(1);</li>
-                    <li>Porém, descer a árvore e ir verificando as violações depende do número de níveis da árvore (como na inserção);</li>
+                    <li>Porém, descer a árvore e ir verificando as violações depende do número de níveis da árvore (como
+                        na inserção);</li>
                     <li>Portanto, o custo da remoção de um elemento é O(log2 (N)).</li>
                 </ul>
             </ul>
@@ -274,8 +292,10 @@
         <section>
             <h2>Referências.</h2>
             <ul>
-                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de
+                    Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                </li>
             </ul>
         </section>
     </main>
@@ -283,4 +303,5 @@
         <p>Diego Serafim de Sousa - 25 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

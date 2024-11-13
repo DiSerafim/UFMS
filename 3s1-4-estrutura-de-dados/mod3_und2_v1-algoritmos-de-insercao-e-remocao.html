@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Árvores Balanceadas.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Árvores Balanceadas.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Árvores Balanceadas.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=GQ6UYN46ULc&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=GQ6UYN46ULc&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 [UFMS Digital] Estrutura de Dados - Módulo 3 - Unidade 2.
                 <i class="material-icons right"> send</i>
             </a>
@@ -47,7 +50,8 @@
             </ul>
             <img src="img/avl31.png" alt="avl31.png">
             <ul>
-                <li>Devemos então percorrer desde o nó inserido até a raiz pelo caminho de inserção e ir atualizando o fb.</li>
+                <li>Devemos então percorrer desde o nó inserido até a raiz pelo caminho de inserção e ir atualizando o
+                    fb.</li>
                 <ul>
                     <li>Ou até encontrar algum nó com fb=0.</li>
                 </ul>
@@ -60,7 +64,8 @@
             <p></p>
             <b>AVL - Relembrando a Inserção na ABB.</b>
             <ul>
-                <li>Para termos o campo “pai” atualizado temos que ajustar o nosso algoritmo de inserção para manter o campo pai apontando para seu ancestral.</li>
+                <li>Para termos o campo “pai” atualizado temos que ajustar o nosso algoritmo de inserção para manter o
+                    campo pai apontando para seu ancestral.</li>
                 <li>Agora podemos caminhar para cima na árvore até a raiz.</li>
             </ul>
             <pre>
@@ -106,7 +111,8 @@
             <h2>AVL - Verificar rotação.</h2>
             <ul>
                 <li>Temos também o procedimento de ajustar o fator de balanceamento durante a remoção do nó.</li>
-                <li>A função <b>verificarRotacao</b>(no) deve observar as regras e aplicar as funções de rotação, vistas na unidade 1.</li>
+                <li>A função <b>verificarRotacao</b>(no) deve observar as regras e aplicar as funções de rotação, vistas
+                    na unidade 1.</li>
             </ul>
             <img src="img/avl35.png" alt="avl35.png">
         </section>
@@ -114,12 +120,14 @@
         <section>
             <h2>AVL - Remoção.</h2>
             <ul>
-                <li>Durante a remoção temos também que verificar se houve o desbalanceamento nos nós ancestrais e rotacionar para balancear a AVL.</li>
+                <li>Durante a remoção temos também que verificar se houve o desbalanceamento nos nós ancestrais e
+                    rotacionar para balancear a AVL.</li>
                 <li>Realizamos o procedimento de remoção como na ABB e em seguida (como no inserção):</li>
                 <ul>
                     <li>Atualizar o fb do ancestral que teve remoção em um dos filhos até a raiz;</li>
                     <ul>
-                        <li>Como estamos removendo devemos considerar a subtração no fator de balanceamento, ou seja, inverter os sinais.</li>
+                        <li>Como estamos removendo devemos considerar a subtração no fator de balanceamento, ou seja,
+                            inverter os sinais.</li>
                         <li>Quando removemos em uma subárvore seria o equivalente a inserir na subárvore oposta.</li>
                     </ul>
                     <li>Aplicar os algoritmos de rotação no nó desbalanceado.</li>
@@ -137,7 +145,8 @@
                     aux = aux.pai
                     verificarRotacao(aux)
             </pre>
-            <p>Exemplo no <a href="https://visualgo.net/en/bst?slide=1" target="_blank" rel="noopener noreferrer">VISUALGO</a></p>
+            <p>Exemplo no <a href="https://visualgo.net/en/bst?slide=1" target="_blank"
+                    rel="noopener noreferrer">VISUALGO</a></p>
             <ul>
                 <li>Insert(5,3,8,2,4,7,10,1,6,9,11,12)</li>
                 <li>Remove(4)</li>
@@ -156,12 +165,15 @@
 
         <section>
             <h2>Referências.</h2>
-            <p>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</p>
-            <p>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                Disponível na Biblioteca Digital da UFMS.</p>
+            <p>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro,
+                RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</p>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

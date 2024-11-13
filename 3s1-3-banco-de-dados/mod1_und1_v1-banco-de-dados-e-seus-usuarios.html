@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Uua7T2Dzndk&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=3&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Banco de Dados - Visão geral sobre banco de dados. 
+            <a href="https://www.youtube.com/watch?v=Uua7T2Dzndk&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=3&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Banco de Dados - Visão geral sobre banco de dados.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: José Eduardo Santarem Segundo.</p>
@@ -41,25 +44,33 @@
 
         <section>
             <h2>BANCO DE DADOS.</h2>
-            <p>Um banco de dados é uma coleção de dados. Nesse contexto, um dado é um fato que deve ser armazenado (persistido) e que tem um significado implícito.</p>
+            <p>Um banco de dados é uma coleção de dados. Nesse contexto, um dado é um fato que deve ser armazenado
+                (persistido) e que tem um significado implícito.</p>
             <ul>
-                <li>Diz respeito a algum aspecto do mundo real e é criado com foco em um propósito específico (um objetivo);</li>
+                <li>Diz respeito a algum aspecto do mundo real e é criado com foco em um propósito específico (um
+                    objetivo);</li>
                 <li>Tem uma estrutura lógica que confere um significado aos dados.</li>
             </ul>
         </section>
 
         <section>
             <h2>INDEPENDÊNCIA ENTRE DADOS E PROGRAMA.</h2>
-            <p>Aplicações (ou sistemas) <b>que não fazem uso</b> de um SGBD e de um banco de dados incorporam as estruturas de dados e fazem o controle de acesso a esses dados.</p>
-            <p>Aplicações (ou sistemas) <b>que fazem uso</b> de um SGBD e de um banco de dados não precisam lidar com o armazenamento e o controle de acesso aos dados.</p>
+            <p>Aplicações (ou sistemas) <b>que não fazem uso</b> de um SGBD e de um banco de dados incorporam as
+                estruturas de dados e fazem o controle de acesso a esses dados.</p>
+            <p>Aplicações (ou sistemas) <b>que fazem uso</b> de um SGBD e de um banco de dados não precisam lidar com o
+                armazenamento e o controle de acesso aos dados.</p>
             <p>Os SGBDs permitem que operações sobre os dados sejam definidas de maneira independente da aplicação.</p>
-            <p>As aplicações podem chamar tais operações por meio de seus nomes e argumentos, e não se preocupam como tais operações são implementadas.</p>
+            <p>As aplicações podem chamar tais operações por meio de seus nomes e argumentos, e não se preocupam como
+                tais operações são implementadas.</p>
         </section>
-        
+
         <section>
             <h2>ABSTRAÇÃO DE DADOS.</h2>
-            <p>Para que seja possível usar as funcionalidades de um SGBD e atuar sobre um banco de dados, é preciso conhecer o modelo de dados, o qual usualmente é apresentado aos usuários via uma representação conceitual.</p>
-            <p>O modelo de dados conceitual é construído por um analista de dados, e sua implementação física é realizada em um SGBD.</p>
+            <p>Para que seja possível usar as funcionalidades de um SGBD e atuar sobre um banco de dados, é preciso
+                conhecer o modelo de dados, o qual usualmente é apresentado aos usuários via uma representação
+                conceitual.</p>
+            <p>O modelo de dados conceitual é construído por um analista de dados, e sua implementação física é
+                realizada em um SGBD.</p>
         </section>
 
         <section>
@@ -74,15 +85,25 @@
 
         <section>
             <h2>VANTAGENS DA ABORDAGEM BASEADA EM SGBDS.</h2>
-            <p>Se diferentes instâncias de um mesmo dado são armazenadas em locais diferentes e gerenciadas por aplicações diferentes, corre-se o risco de criar inconsistência de dados.</p>
+            <p>Se diferentes instâncias de um mesmo dado são armazenadas em locais diferentes e gerenciadas por
+                aplicações diferentes, corre-se o risco de criar inconsistência de dados.</p>
             <ul>
-                <li><b>Controle de redundância</b>: todos os dados estão armazenados em um único lugar, e diferentes aplicações acessam a mesma instância desses dados.</li>
-                <li><b>Controle de acesso</b>: o SGBD oferece um subsistema de autorização e segurança que previne que usuários acessem dados sem que estejam autorizados.</li>
-                <li><b>Persistência para programas e estruturas de dados (objetos)</b>: códigos e estruturas de dados são armazenados e gerenciados pelos SGBDs como objetos - são nomeados e podem ser invocados, alterados e excluídos a partir de funcionalidades oferecidas pelo sistema.</li>
-                <li><b>Eficiência no processamento de consultas</b>: os SGBDS possuem funcionalidades que permitem executar requisições sobre os dados de forma eficiente. Essas funcionalidades incluem gerenciamento de índices e de memória, e otimização de consultas.</li>
+                <li><b>Controle de redundância</b>: todos os dados estão armazenados em um único lugar, e diferentes
+                    aplicações acessam a mesma instância desses dados.</li>
+                <li><b>Controle de acesso</b>: o SGBD oferece um subsistema de autorização e segurança que previne que
+                    usuários acessem dados sem que estejam autorizados.</li>
+                <li><b>Persistência para programas e estruturas de dados (objetos)</b>: códigos e estruturas de dados
+                    são armazenados e gerenciados pelos SGBDs como objetos - são nomeados e podem ser invocados,
+                    alterados e excluídos a partir de funcionalidades oferecidas pelo sistema.</li>
+                <li><b>Eficiência no processamento de consultas</b>: os SGBDS possuem funcionalidades que permitem
+                    executar requisições sobre os dados de forma eficiente. Essas funcionalidades incluem gerenciamento
+                    de índices e de memória, e otimização de consultas.</li>
                 <li><b>Oferecimento de sistemas de backup e recuperação</b>:
-                SGBDs oferecem subsistemas que realizam a recuperação dos dados após a ocorrência de falhas de software e hardware.</li>
-                <li><b>Garantia das restrições de integridade</b>: os dados armazenados em um banco de dados são associados a algumas restrições. Tais restrições são constantemente verificadas, e garantidas pelo SGBD.</li>
+                    SGBDs oferecem subsistemas que realizam a recuperação dos dados após a ocorrência de falhas de
+                    software e hardware.</li>
+                <li><b>Garantia das restrições de integridade</b>: os dados armazenados em um banco de dados são
+                    associados a algumas restrições. Tais restrições são constantemente verificadas, e garantidas pelo
+                    SGBD.</li>
                 <li>Garante padrões.</li>
                 <li>Reduz o tempo de desenvolvimento de aplicações.</li>
                 <li>Fornece flexibilidade e disponibilidade.</li>
@@ -93,11 +114,19 @@
         <section>
             <h2>MODELOS DE DADOS.</h2>
             <ul>
-                <li>Modelos de alto nível ou modelos de dados conceituais: fornecem conceitos que são próximos à forma como os usuários percebem os dados.</li>
-                <ul><li>Ex.: Modelo Entidade- Relacionamento.</li></ul>
-                <li>Modelos de baixo nível ou modelos de dados físicos: fornecem conceitos que descrevem em detalhes como os dados são armazenados no meio de persistência.</li>
-                <ul><li>Ex.: formato de registros, ordenação e formas de acesso.</li></ul>
-                <li>Modelos de dados de representação (ou implementação): fornecem conceitos que são compreensíveis por parte dos usuários mas que não estão longe da maneira como os dados são armazenados no meio de persistência.</li>
+                <li>Modelos de alto nível ou modelos de dados conceituais: fornecem conceitos que são próximos à forma
+                    como os usuários percebem os dados.</li>
+                <ul>
+                    <li>Ex.: Modelo Entidade- Relacionamento.</li>
+                </ul>
+                <li>Modelos de baixo nível ou modelos de dados físicos: fornecem conceitos que descrevem em detalhes
+                    como os dados são armazenados no meio de persistência.</li>
+                <ul>
+                    <li>Ex.: formato de registros, ordenação e formas de acesso.</li>
+                </ul>
+                <li>Modelos de dados de representação (ou implementação): fornecem conceitos que são compreensíveis por
+                    parte dos usuários mas que não estão longe da maneira como os dados são armazenados no meio de
+                    persistência.</li>
                 <ul>
                     <li>Ex.: Modelo Relacional.</li>
                 </ul>
@@ -107,8 +136,11 @@
         <section>
             <h2>ESQUEMAS, INSTÂNCIAS E ESTADO DO BANCO DE DADOS.</h2>
             <ul>
-                <li><b>Esquema</b>: descrição de um banco de dados. É especificado durante o projeto do banco de dados e não é esperado que sofra mudanças frequentes.</li>
-                <li><b>Instância (estado)</b>: os dados armazenados em um banco de dados em um momento particular (tempo). Muitos (diferentes) estados de um banco de dados podem ser construídos a partir de um mesmo esquema.</li>
+                <li><b>Esquema</b>: descrição de um banco de dados. É especificado durante o projeto do banco de dados e
+                    não é esperado que sofra mudanças frequentes.</li>
+                <li><b>Instância (estado)</b>: os dados armazenados em um banco de dados em um momento particular
+                    (tempo). Muitos (diferentes) estados de um banco de dados podem ser construídos a partir de um mesmo
+                    esquema.</li>
             </ul>
         </section>
 
@@ -116,8 +148,10 @@
             <h2>LINGUAGENS.</h2>
             <ul>
                 <li>Linguagem de definição de dados <b>(DDL)</b>: é usada para definir o esquema do banco de dados.</li>
-                <li>Atualmente pode englobar a <b>SDL</b> – Linguagem de definição de armazenamento - e a VDL - Linguagem de definição de visão.</li>
-                <li>Linguagem de manipulação de dados <b>(DML)</b>: é usada para executar instruções de recuperação, inserção, exclusão e modificação de dados.</li>
+                <li>Atualmente pode englobar a <b>SDL</b> – Linguagem de definição de armazenamento - e a VDL -
+                    Linguagem de definição de visão.</li>
+                <li>Linguagem de manipulação de dados <b>(DML)</b>: é usada para executar instruções de recuperação,
+                    inserção, exclusão e modificação de dados.</li>
             </ul>
         </section>
 
@@ -188,14 +222,22 @@
             └── ...
             </pre>
             <ul>
-                <li><b>Usuários_e_Programadores</b> contém manuais, guias e outros documentos destinados aos usuários e programadores do sistema.</li>
-                <li><b>Aplicações</b> inclui os arquivos executáveis das aplicações desenvolvidas para interagir com o sistema.</li>
-                <li><b>Sistema_de_Banco_de_Dados</b> é o diretório principal relacionado ao banco de dados do sistema.</li>
-                <li><b>SGBD</b> contém os executáveis dos sistemas de gerenciamento de banco de dados, como MySQL e OracleDB.</li>
-                <li><b>Softwares_de_Requisições</b> inclui softwares responsáveis por processar requisições (consultas) das aplicações, como servidores API REST ou GraphQL.</li>
-                <li><b>Softwares_de_Acesso</b> contém softwares que acessam os dados armazenados no banco de dados, como camadas de acesso a dados ou drivers ODBC.</li>
-                <li><b>Metadados.txt</b> armazena informações sobre os dados armazenados, como esquemas de tabelas, tipos de dados, etc.</li>
-                <li><b>Dados_Armazenados</b> é o diretório onde os dados do banco de dados são armazenados, em formatos como CSV, Excel, etc.</li>
+                <li><b>Usuários_e_Programadores</b> contém manuais, guias e outros documentos destinados aos usuários e
+                    programadores do sistema.</li>
+                <li><b>Aplicações</b> inclui os arquivos executáveis das aplicações desenvolvidas para interagir com o
+                    sistema.</li>
+                <li><b>Sistema_de_Banco_de_Dados</b> é o diretório principal relacionado ao banco de dados do sistema.
+                </li>
+                <li><b>SGBD</b> contém os executáveis dos sistemas de gerenciamento de banco de dados, como MySQL e
+                    OracleDB.</li>
+                <li><b>Softwares_de_Requisições</b> inclui softwares responsáveis por processar requisições (consultas)
+                    das aplicações, como servidores API REST ou GraphQL.</li>
+                <li><b>Softwares_de_Acesso</b> contém softwares que acessam os dados armazenados no banco de dados, como
+                    camadas de acesso a dados ou drivers ODBC.</li>
+                <li><b>Metadados.txt</b> armazena informações sobre os dados armazenados, como esquemas de tabelas,
+                    tipos de dados, etc.</li>
+                <li><b>Dados_Armazenados</b> é o diretório onde os dados do banco de dados são armazenados, em formatos
+                    como CSV, Excel, etc.</li>
             </ul>
 
             <p></p>
@@ -267,4 +309,5 @@
         <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

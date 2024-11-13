@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 4 - Estruturas de repetição</title>
 </head>
+
 <body>
 
     <header>
@@ -13,7 +15,8 @@
             Módulo 4 <br>
             Unidade 1 - Estruturas de repetição <br>
             <br>
-            <a href="https://www.youtube.com/watch?v=UrPTIgsBiCU&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=20">Vídeo 3 - Algoritmos e Programação de Computadores I - Outros comandos: break, continue e pass</a>
+            <a href="https://www.youtube.com/watch?v=UrPTIgsBiCU&list=PLxI8Can9yAHcUdIGv9aaZqkt-z0fepFa8&index=20">Vídeo
+                3 - Algoritmos e Programação de Computadores I - Outros comandos: break, continue e pass</a>
         </h1>
         <p>
             Professor: Said Sadique Adi <br>
@@ -24,12 +27,13 @@
     <h4>break, continue e pass</h4>
 
     <p>
-        O comando <strong>break</strong>, quando inserido dentro de um  loop (for ou while), faz com que aquele laço seja finalizado, passando o controle para o próximo bloco de instruções não indentado
+        O comando <strong>break</strong>, quando inserido dentro de um loop (for ou while), faz com que aquele laço seja
+        finalizado, passando o controle para o próximo bloco de instruções não indentado
     </p>
     <p>
         Exemplo: <br>
         Implemente uma função que verifica se um número é primo ou não.
-        <pre>
+    <pre>
             >>> def primo(num):
             ...     i = 2
             ...     while i < num:
@@ -50,12 +54,14 @@
     </p>
 
     <p>
-        O comando <strong>continue</strong>, quando inserido dentro de um loop (for ou while), faz com que a nova interação do laço seja forçada, a partir daquele ponto onde o comando foi inserido.
+        O comando <strong>continue</strong>, quando inserido dentro de um loop (for ou while), faz com que a nova
+        interação do laço seja forçada, a partir daquele ponto onde o comando foi inserido.
     </p>
     <p>
         Exemplo: <br>
-        Dada a função primo() implementada no exemplo anterior, faça um programa qie imprima todos os números primos de 2 a 100.
-        <pre>
+        Dada a função primo() implementada no exemplo anterior, faça um programa qie imprima todos os números primos de
+        2 a 100.
+    <pre>
             >>> for n in range(2, 101):
             ...     if not primo(n):
             ...         continue
@@ -66,12 +72,13 @@
     </p>
 
     <p>
-        O comando <strong>pass</strong> apesar de poder ser evitado na maioria das situações, a linguagem Python oferece o comando, que é uma instrução válida que não faz nada. <br>
+        O comando <strong>pass</strong> apesar de poder ser evitado na maioria das situações, a linguagem Python oferece
+        o comando, que é uma instrução válida que não faz nada. <br>
         def, if, else, for ou while precisam ter necessariamente um bloco indentado não vazio.
     </p>
     <p>
         Exemplo:
-        <pre>
+    <pre>
             >>> if n % 2 == 0:
             ...     pass
             ... else:
@@ -79,4 +86,5 @@
         </pre>
     </p>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=fzdLzuD7RAg&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 1 - 
-                Programação Orientada a Objetos - Encapsulamento e Ocultação de Informação. 
+            <a href="https://www.youtube.com/watch?v=fzdLzuD7RAg&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 1 -
+                Programação Orientada a Objetos - Encapsulamento e Ocultação de Informação.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Júlio Cezar Estrella.</p>
@@ -48,11 +51,13 @@
 
         <section>
             <h2>O que é encapsulamento?</h2>
-            <p>A palavra encapsulamento é oriundo de encapsular, que em POO significa separar o programa em partes de forma mais isolada possível.</p>
+            <p>A palavra encapsulamento é oriundo de encapsular, que em POO significa separar o programa em partes de
+                forma mais isolada possível.</p>
             <b>Quais as vantagens?</b>
             <ul>
                 <li>Tornar o software mais flexível, fácil de modificar e de criar novas implementações.</li>
-                <li>Controlar o acesso aos atributos e métodos de uma classe, sendo uma forma de proteger os dados manipulados em uma classe qualquer.</li>
+                <li>Controlar o acesso aos atributos e métodos de uma classe, sendo uma forma de proteger os dados
+                    manipulados em uma classe qualquer.</li>
                 <li>O encapsulamento evita que os dados de uma aplicação sofram acessos indevidos.</li>
                 <li>Java utiliza muito o conceito de encapsulamento.</li>
             </ul>
@@ -63,10 +68,14 @@
             <p>Mecanismo para restringir o acesso a alguns dos componentes do objeto.</p>
             <ul>
                 <li>Em Programação Orientada a Objetos a ocultação de informação é parte do encapsulamento.</li>
-                <li>O encapsulamento é um conceito da POO em que os estados dos objetos (variáveis de classe) e seus comportamentos (métodos da classe) são agrupados em conjunto segundo o seu grau de relação.</li>
-                <li>A ocultação da informação é mais que esconder os dados, e é um critério base para modularizar sistemas, levando em conta a ocultação das decisões de desenho do projeto que são suscetíveis a mudanças.</li>
+                <li>O encapsulamento é um conceito da POO em que os estados dos objetos (variáveis de classe) e seus
+                    comportamentos (métodos da classe) são agrupados em conjunto segundo o seu grau de relação.</li>
+                <li>A ocultação da informação é mais que esconder os dados, e é um critério base para modularizar
+                    sistemas, levando em conta a ocultação das decisões de desenho do projeto que são suscetíveis a
+                    mudanças.</li>
                 <ul>
-                    <li>Em resumo, eu não preciso saber como é feita a lógica de determinados métodos, pois somente preciso chamá-los e utilizar seus resultados.</li>
+                    <li>Em resumo, eu não preciso saber como é feita a lógica de determinados métodos, pois somente
+                        preciso chamá-los e utilizar seus resultados.</li>
                 </ul>
             </ul>
         </section>
@@ -81,7 +90,8 @@
                 </ul>
                 <li><b>Nível de membro.</b></li>
                 <ul>
-                    <li>Quando determinamos o acesso de atributos ou métodos de uma classe que podem ser (public, private, protected, package-private).</li>
+                    <li>Quando determinamos o acesso de atributos ou métodos de uma classe que podem ser (public,
+                        private, protected, package-private).</li>
                 </ul>
             </ul>
             <p>Para ter um método encapsulado utilizamos um modificador de acesso, além do tipo de retorno dele.</p>
@@ -91,11 +101,13 @@
                 <ul>
                     <li><b>Setters.</b></li>
                     <ul>
-                        <li>Este método retorna o valor que lhe foi solicitado, mas não prejudica a integridade do dado.</li>
+                        <li>Este método retorna o valor que lhe foi solicitado, mas não prejudica a integridade do dado.
+                        </li>
                     </ul>
                     <li><b>Getters.</b></li>
                     <ul>
-                        <li>Este método recebe como argumento uma informação que pode ser qualquer tipo de dado suportado pela linguagem, o que evita acessos indevidos..</li>
+                        <li>Este método recebe como argumento uma informação que pode ser qualquer tipo de dado
+                            suportado pela linguagem, o que evita acessos indevidos..</li>
                     </ul>
                 </ul>
             </ul>
@@ -103,11 +115,15 @@
 
         <section>
             <h2>Como funciona o encapsulamento?</h2>
-            <p>Imagine um sistema de vendas em que temos diversos tipos de cadastros (funcionários, usuários, gerentes e clientes, produtos).</p>
+            <p>Imagine um sistema de vendas em que temos diversos tipos de cadastros (funcionários, usuários, gerentes e
+                clientes, produtos).</p>
             <ul>
-                <li>Neste caso, separar o que pode ser acessado e como pode ser acessado, diminui erros em acessar algum atributo de forma não autorizada.</li>
+                <li>Neste caso, separar o que pode ser acessado e como pode ser acessado, diminui erros em acessar algum
+                    atributo de forma não autorizada.</li>
                 <ul>
-                    <li>No encapsulamento, os atributos das classes são do tipo private. E para esses tipos de modificadores, é necessário criar métodos setters e getters, como já foi mencionado anteriormente.</li>
+                    <li>No encapsulamento, os atributos das classes são do tipo private. E para esses tipos de
+                        modificadores, é necessário criar métodos setters e getters, como já foi mencionado
+                        anteriormente.</li>
                     <li>Recapitulando.....</li>
                     <ul>
                         <li>Os <b>setters</b> servem para alterar a informação de uma propriedade de um objeto.</li>
@@ -227,7 +243,8 @@
             <ul>
                 <li>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição.</li>
                 <li>2. Java Como Programar: Paul Deitel & Harvey Deitel - 8ª Edição.</li>
-                <li><a href="https://www.devmedia.com.br/abstracao-encapsu lamento-e-heranca-pilares-da-poo-em-java/26366" target="_blank">3. Devemedia - Abstração, Encapsulamento ...</a></li>
+                <li><a href="https://www.devmedia.com.br/abstracao-encapsu lamento-e-heranca-pilares-da-poo-em-java/26366"
+                        target="_blank">3. Devemedia - Abstração, Encapsulamento ...</a></li>
             </ul>
         </section>
     </main>
@@ -235,4 +252,5 @@
         <p>Diego Serafim de Sousa - 1 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

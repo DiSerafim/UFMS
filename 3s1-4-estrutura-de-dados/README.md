@@ -4,6 +4,7 @@
 **Professor Especialista:** Gedson Faria, Graziela Santos de Araújo e Jonathan de Andrade Silva
 
 ## 🚪 Comece por aqui!
+
 - 📝 [Plano de Ensino da Disciplina]()
 - ▶️ [Vídeo de Apresentação da Disciplina]()
 - 📚 [Curadoria de Recursos Digitais da Disciplina]()
@@ -14,7 +15,7 @@
 
 ## 📅 Módulo 1
 
-### 📚 Módulo 1 – Hash e Heap  
+### 📚 Módulo 1 – Hash e Heap
 
 💡 Unidade 1 - Tabelas de dispersão: Hash
 
@@ -24,7 +25,7 @@ SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus al
 📗 Leituras complementares
 CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo: LTC, 2012. ISBN 9788595158092. Capítulo 11. Disponível na Biblioteca Digital da UFMS.
 
-PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953.  p. 146-149. Disponível na Biblioteca Digital da UFMS.
+PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953. p. 146-149. Disponível na Biblioteca Digital da UFMS.
 
 ▶️ Videoaula Obrigatória - Módulo 1 - Unidade 1
 [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 1
@@ -35,15 +36,15 @@ PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH
 
 ▶️ Videoaula Complementar - Módulo 1 - Unidade 1
 Estruturas de Dados - Conceitos de Tabela Hash
-Assistir até  22m e 22s.
+Assistir até 22m e 22s.
 
 💡 Unidade 2 - Lista de prioridades: Heap
 
 📕 Leitura obrigatória
-SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro: LTC, 2010. ISBN 978-85-216-2995-5.  Capítulo 6. Disponível na Biblioteca Digital da UFMS.
+SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro: LTC, 2010. ISBN 978-85-216-2995-5. Capítulo 6. Disponível na Biblioteca Digital da UFMS.
 
 📗 Leitura complementar
-CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo: LTC, 2012. ISBN 9788595158092.  Seções 6.1; 6.2; 6.3; 6.5. Disponível na Biblioteca Digital da UFMS.
+CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo: LTC, 2012. ISBN 9788595158092. Seções 6.1; 6.2; 6.3; 6.5. Disponível na Biblioteca Digital da UFMS.
 
 ▶️ Videoaula Obrigatória - Módulo 1 - Unidade 2
 [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 2
@@ -51,7 +52,7 @@ CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo
 💻 Download do Slide da Videoaula Obrigatória - Módulo 1 - Unidade 2
 
 ▶️ Videoaula Complementar - Módulo 1 - Unidade 2
-Projeto e Análise de Algoritmos - Aula 07 - A estrutura de dados heap 
+Projeto e Análise de Algoritmos - Aula 07 - A estrutura de dados heap
 
 Acessar no AVA
 💬 Fórum de Discussão do Módulo 1
@@ -70,9 +71,9 @@ SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus al
 📗 Leituras complementares
 CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo: LTC, 2012. ISBN 9788595158092 Seções 12.1; 12.2; 12.3 subitem: Inserção. Disponível na Biblioteca Digital da UFMS.
 
-ZIVIANI, Nivio. Projeto de algoritmos com implementações em Pascal e C. 3. ed. São Paulo: Cengage Learning, 2018. ISBN 9788522126590. Seções 5.3 e 5.3.1. Disponível na Biblioteca Digital da UFMS.                
+ZIVIANI, Nivio. Projeto de algoritmos com implementações em Pascal e C. 3. ed. São Paulo: Cengage Learning, 2018. ISBN 9788522126590. Seções 5.3 e 5.3.1. Disponível na Biblioteca Digital da UFMS.
 
-PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953.  p. 183-192; 217-228. Disponível na Biblioteca Digital da UFMS.
+PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953. p. 183-192; 217-228. Disponível na Biblioteca Digital da UFMS.
 
 ▶️ Videoaula Obrigatória - Módulo 2 - Unidade 1
 [UFMS Digital] Estrutura de Dados - Módulo 2 - Unidade 1
@@ -80,7 +81,7 @@ PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH
 💻 Download do Slide da Videoaula Obrigatória - Módulo 2 - Unidade 1
 
 ▶️ Videoaula Complementar - Módulo 2 - Unidade 1
-Estrutura de Dados - Aula 15 - Árvores - Conceitos básicos 
+Estrutura de Dados - Aula 15 - Árvores - Conceitos básicos
 
 💡 Unidade 2 - Algoritmo de percurso e algoritmo de remoção
 
@@ -90,7 +91,7 @@ CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo
 SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro: LTC, 2010. ISBN 978-85-216-2995-5. Seção 3.4. Disponível na Biblioteca Digital da UFMS.
 
 📗 Leituras complementares
-LAMBERT, Kenneth A. Fundamentos de Python: estruturas de dados. São Paulo: Cengage Learning Brasil, 2022.  ISBN 9786555584288. Seção 3.4. Disponível na Biblioteca Digital da UFMS.
+LAMBERT, Kenneth A. Fundamentos de Python: estruturas de dados. São Paulo: Cengage Learning Brasil, 2022. ISBN 9786555584288. Seção 3.4. Disponível na Biblioteca Digital da UFMS.
 
 PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953. p. 205-215. Disponível na Biblioteca Digital da UFMS.
 
@@ -100,7 +101,7 @@ PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH
 💻Download do Slide da Videoaula Obrigatória - Módulo 2 - Unidade 2
 
 ▶️ Videoaula Complementar - Módulo 2 - Unidade 2
-Estrutura de Dados - Aula 18 - Árvores binárias de pesquisa - Parte 3 
+Estrutura de Dados - Aula 18 - Árvores binárias de pesquisa - Parte 3
 
 Acessar no AVA
 💬 Fórum de Discussão do Módulo 2
@@ -114,7 +115,7 @@ Acessar no AVA
 💡 Unidade 1 - Conceitos: árvore AVL e balanceamentos por rotação
 
 📕 Leitura obrigatória
-SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro: LTC, 2010. ISBN 978-85-216-2995-5.  Seções 5.1, 5.2 e 5.3. Disponível na Biblioteca Digital da UFMS.
+SZWARCFITER, Jayme Luiz; MARKENSON, Lilian (null). Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro: LTC, 2010. ISBN 978-85-216-2995-5. Seções 5.1, 5.2 e 5.3. Disponível na Biblioteca Digital da UFMS.
 
 📗 Leitura complementar
 PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH, 2020. ISBN 9786581492953. p. 229-240. Disponível na Biblioteca Digital da UFMS.
@@ -125,7 +126,7 @@ PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH
 💻 Download do Slide da Videoaula Obrigatória - Módulo 3 - Unidade 1
 
 ▶️ Videoaula Complementar - Módulo 3 - Unidade 1
-Estrutura de Dados - Aula 21 - Árvores AVL 
+Estrutura de Dados - Aula 21 - Árvores AVL
 
 💡 Unidade 2 - Algoritmos de inserção e remoção
 
@@ -141,7 +142,7 @@ PINTO, Rafael Albuquerque et al. (null). Estrutura de dados. Porto Alegre: SAGAH
 💻Download do Slide da Videoaula Obrigatória - Módulo 3 - Unidade 2
 
 ▶️ Videoaula Complementar - Módulo 3 - Unidade 2
-*Estruturas de Dados - Árvores AVL
+\*Estruturas de Dados - Árvores AVL
 Assistir até 13 min 38 seg
 
 Acessar no AVA
@@ -159,7 +160,7 @@ Acessar no AVA
 CORMEN, Thomas H et al. (null). Algoritmos: teoria e prática. 3. ed. São Paulo: LTC, 2012. ISBN 9788595158092. Seção 22.1. Disponível na Biblioteca Digital da UFMS.
 
 📗 Leitura complementar
-LAMBERT, Kenneth A. Fundamentos de Python: estruturas de dados. São Paulo: Cengage Learning Brasil, 2022.  ISBN 9786555584288. p. 356-364. Disponível na Biblioteca Digital da UFMS.
+LAMBERT, Kenneth A. Fundamentos de Python: estruturas de dados. São Paulo: Cengage Learning Brasil, 2022. ISBN 9786555584288. p. 356-364. Disponível na Biblioteca Digital da UFMS.
 
 ▶️ Videoaula Obrigatória - Módulo 4 - Unidade 1
 [UFMS Digital] Estrutura de Dados - Módulo 4 - Unidade 1
@@ -196,7 +197,3 @@ Acessar no AVA
 
 💬 Feedback da Disciplina
 📋 Feedback da Disciplina
-
-
-
-

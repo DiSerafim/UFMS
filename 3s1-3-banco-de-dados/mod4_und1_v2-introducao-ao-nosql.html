@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – SGBDs NoSQL.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – SGBDs NoSQL.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – SGBDs NoSQL.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=QV9c5t0BDwc&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=22&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Banco de Dados - Introdução a Bancos de Dados Não Relacionais - NoSQL. 
+            <a href="https://www.youtube.com/watch?v=QV9c5t0BDwc&list=PLxI8Can9yAHeZcEzZElhxwsQTf9MaG6sS&index=22&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Banco de Dados - Introdução a Bancos de Dados Não Relacionais - NoSQL.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: José Eduardo Santarem Segundo.</p>
@@ -40,20 +43,24 @@
             <ul>
                 <li>NoSQL quer dizer exatamente isso, não SQL ou não Relacional.</li>
                 <li>Atualmente o termo NoSQL foi estendido para "Not Only SQL" - Não Somente SQL.</li>
-                <li>Os Bancos NoSQL tem tido como principal insumo o Big Data e tem sido pautado muitas vezes como elemento importante no desenvolvimento de Data Science.</li>
+                <li>Os Bancos NoSQL tem tido como principal insumo o Big Data e tem sido pautado muitas vezes como
+                    elemento importante no desenvolvimento de Data Science.</li>
             </ul>
         </section>
 
         <section>
             <h2>BANCOS RELACIONAIS.</h2>
             <ul>
-                <li>Os bancos mais utilizados durante muitos anos, padrão para a grande maioria das necessidades de armazenar dados desde 1970.</li>
+                <li>Os bancos mais utilizados durante muitos anos, padrão para a grande maioria das necessidades de
+                    armazenar dados desde 1970.</li>
                 <li>Formato de Tabelas (<b>linhas x colunas</b>)</li>
-                <li>Uso de PK (<b>Chave Primaria</b>) e FK (<b>Chave Estrangeira</b>) para conectar dados entre tabelas.</li>
+                <li>Uso de PK (<b>Chave Primaria</b>) e FK (<b>Chave Estrangeira</b>) para conectar dados entre tabelas.
+                </li>
                 <li>Alguns <b>limites de uso</b> passaram a ser notados:</li>
                 <ul>
                     <li>Escala (petabytes)</li>
-                    <li>Perda de performance e dificuldade de processar relacionamentos em grandes conjunto de dados.</li>
+                    <li>Perda de performance e dificuldade de processar relacionamentos em grandes conjunto de dados.
+                    </li>
                     <li>Dificuldade com esquemas complexos.</li>
                 </ul>
             </ul>
@@ -61,9 +68,12 @@
         <section>
             <h2>BANCOS NoSQL - HISTÓRIA.</h2>
             <ul>
-                <li>Criado por Carlo Strozzi em 1998, com a estrutura de um banco relacional, sendo aberto e sem o SQL.</li>
-                <li>Em 2006, o artigo: "BigTable: A Distributed Storage System for Structured Data", publicado pelo Google, reacende o tema sobre os bancos NoSQL.</li>
-                <li>Em 2009, a discussão sobre NoSQL é retomada por Eric Evans (Rackspace), na reunião organizada por Johan Oskarsson, da Last.fm, em 11 de junho de 2009 em São Francisco nos EUA.</li>
+                <li>Criado por Carlo Strozzi em 1998, com a estrutura de um banco relacional, sendo aberto e sem o SQL.
+                </li>
+                <li>Em 2006, o artigo: "BigTable: A Distributed Storage System for Structured Data", publicado pelo
+                    Google, reacende o tema sobre os bancos NoSQL.</li>
+                <li>Em 2009, a discussão sobre NoSQL é retomada por Eric Evans (Rackspace), na reunião organizada por
+                    Johan Oskarsson, da Last.fm, em 11 de junho de 2009 em São Francisco nos EUA.</li>
                 <li>Nos últimos anos, o uso de bancos de dados NoSQL tem aumentado de forma significativa.</li>
             </ul>
         </section>
@@ -73,7 +83,8 @@
             <ul>
                 <li>Não usam SQL;</li>
                 <li>Geralmente são open-source;</li>
-                <li>Formas diferentes de organização (não usam tabelas): usam grafos, documentos, colunas, entre outros, o que garante melhor performance.</li>
+                <li>Formas diferentes de organização (não usam tabelas): usam grafos, documentos, colunas, entre outros,
+                    o que garante melhor performance.</li>
                 <li>Clusterização</li>
                 <li>Usam esquemas flexíveis (formatos diferentes para o mesmo registro).</li>
                 <li>Persistência Poliglota;</li>
@@ -86,7 +97,8 @@
             <h2>BANCOS NoSQL – CARACTERÍSTICAS</h2>
             <ul>
                 <li>Escalonamento horizontal (Scaling out) é a capacidade de aumentar a quantidade de computadores.</li>
-                <li>Escalonamento vertical (Scaling up) é a capacidade de alocar mais recursos ao computador (memória e processamento).</li>
+                <li>Escalonamento vertical (Scaling up) é a capacidade de alocar mais recursos ao computador (memória e
+                    processamento).</li>
                 <li>Escalonamento horizontal é sempre mais complexo.</li>
             </ul>
         </section>
@@ -94,7 +106,8 @@
         <section>
             <h2>MODELOS NoSQL: CHAVE-VALOR.</h2>
             <ul>
-                <li>Em chave-valor, o banco tem sua formação a partir de estruturas de chaves, que são associadas a um único valor.</li>
+                <li>Em chave-valor, o banco tem sua formação a partir de estruturas de chaves, que são associadas a um
+                    único valor.</li>
                 <li>Estrutura flexível e própria para armazenamento de big data.</li>
                 <li>Favorece a escalabilidade ao invés da consistência.</li>
                 <li>Exemplos: Redis, DynamoDB, Ryak, Azure Table Storage, entre outros.</li>
@@ -114,7 +127,8 @@
             <ul>
                 <li>No modelo colunas, o banco de dados faz armazenamento em linhas particulares de tabela.</li>
                 <li>Esse esquema é o oposto dos bancos relacionais.</li>
-                <li>O armazenamento em colunas é similar a uma tabela, onde cada linha pode ter uma ou mais colunas. O número de colunas por linha pode variar.</li>
+                <li>O armazenamento em colunas é similar a uma tabela, onde cada linha pode ter uma ou mais colunas. O
+                    número de colunas por linha pode variar.</li>
                 <li>Exemplos: Hbase, Cassandra, Hypertable, Apache Flink, etc.</li>
             </ul>
             <img src="img/modelo.png" alt="modelo.png">
@@ -139,12 +153,15 @@
             <h2>MODELOS NoSQL: DOCUMENTOS.</h2>
             <ul>
                 <li>Dados são compreendidos como documentos.</li>
-                <li>Estrutura totalmente flexível e não precisa ter colunas pré-montadas, como é o caso dos bancos de dados colunares.</li>
-                <li>Especialmente eficiente para tratar dados não estruturados, já que cada documento pode ter um formato diferente.</li>
+                <li>Estrutura totalmente flexível e não precisa ter colunas pré-montadas, como é o caso dos bancos de
+                    dados colunares.</li>
+                <li>Especialmente eficiente para tratar dados não estruturados, já que cada documento pode ter um
+                    formato diferente.</li>
                 <li>Pense no documento como um <b>arquivo Json</b>.</li>
                 <li>Exemplos: MongoDB, Elastic, IBM Domino, CouchBase.</li>
             </ul>
-            <p>Json - É um formato de intercâmbio de dados. Fácil de entender por humanos e também para análise, geração e leitura por máquinas.</p>
+            <p>Json - É um formato de intercâmbio de dados. Fácil de entender por humanos e também para análise, geração
+                e leitura por máquinas.</p>
             <img src="img/documento-json.png" alt="documento-json.png">
             <p>Rank:</p>
             <img src="img/ranking-dbs2.png" alt="ranking-dbs2.png">
@@ -162,13 +179,17 @@
                 </ul>
                 <li>Considerar consistência:</li>
                 <ul>
-                    <li>Os bancos de dados relacionais são muito consistentes. A consistência está no DNA dos bancos relacionais.</li>
-                    <li>Um banco de dados NoSQL não tem como premissa garantir a consistência, isso acontece de forma eventual.</li>
+                    <li>Os bancos de dados relacionais são muito consistentes. A consistência está no DNA dos bancos
+                        relacionais.</li>
+                    <li>Um banco de dados NoSQL não tem como premissa garantir a consistência, isso acontece de forma
+                        eventual.</li>
                 </ul>
                 <li>Considerar disponibilidade:</li>
                 <ul>
-                    <li>O banco relacional não trabalha de forma natural com distribuição de dados, portanto tem dificuldade com a questão de disponibilidade para grandes cargas de dados.</li>
-                    <li>Bancos NoSQL possuem alto nível de distribuição, com possibilidade de atender grandes fluxos de solicitações de dados.</li>
+                    <li>O banco relacional não trabalha de forma natural com distribuição de dados, portanto tem
+                        dificuldade com a questão de disponibilidade para grandes cargas de dados.</li>
+                    <li>Bancos NoSQL possuem alto nível de distribuição, com possibilidade de atender grandes fluxos de
+                        solicitações de dados.</li>
                 </ul>
             </ul>
         </section>
@@ -181,7 +202,9 @@
                 <ul>
                     <li><b>Os bancos NoSQL não vieram substituí-los</b>.</li>
                 </ul>
-                <li>Avalie sempre a necessidade e as características necessárias para escolher entre Relacional ou NoSQL, e fazendo a opção, deverá escolher qual o produto a usar de acordo com as necessidades do projeto.</li>
+                <li>Avalie sempre a necessidade e as características necessárias para escolher entre Relacional ou
+                    NoSQL, e fazendo a opção, deverá escolher qual o produto a usar de acordo com as necessidades do
+                    projeto.</li>
             </ul>
         </section>
     </main>
@@ -189,4 +212,5 @@
         <p>Diego Serafim de Sousa - 21 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

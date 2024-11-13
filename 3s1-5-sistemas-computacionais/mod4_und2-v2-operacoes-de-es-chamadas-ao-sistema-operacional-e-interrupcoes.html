@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Entrada e Saída (E/S).</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Entrada e Saída (E/S).</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=1FzTbx8VOt4&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Sistemas Computacionais - Tratamento de Interrupção. 
+            <a href="https://www.youtube.com/watch?v=1FzTbx8VOt4&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Sistemas Computacionais - Tratamento de Interrupção.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Alessandra Alaniz Macedo (UNIVESP).</p>
@@ -42,14 +45,16 @@
         <section>
             <h2>INTERRUPÇÕES.</h2>
             <ul>
-                <li>São mecanismos pelo qual outros módulos interrompem o processamento normal da CPU para avisar eventos como:</li>
+                <li>São mecanismos pelo qual outros módulos interrompem o processamento normal da CPU para avisar
+                    eventos como:</li>
                 <ul>
                     <li>interrupção de programa (como traps)</li>
                     <li>interrupção de temporização (escalonamento de processo)</li>
                     <li>falha de hardware (c/ falta de energia)</li>
                     <li>interrupção de E/S (c/ fim de escrita no disco)</li>
                 </ul>
-                <li>Quando ocorre uma interrupção, a CPU para o processamento do programa em execução e executa um pedaço de código chamado de tratador de interrupção</li>
+                <li>Quando ocorre uma interrupção, a CPU para o processamento do programa em execução e executa um
+                    pedaço de código chamado de tratador de interrupção</li>
                 <li>Em muitos casos, após a execução do tratador, a CPU volta a executar o programa interrompido</li>
             </ul>
         </section>
@@ -59,9 +64,12 @@
             <ul>
                 <li>Feito por um bloco especial de código associado a uma condição de interrupção específica</li>
                 <li>Chamado também de rotina de serviço de interrupção, ISR ou tratador de interrupção</li>
-                <li>Os handlers de interrupção são iniciados por interrupções de hardware, instruções de interrupção de software ou exceções de software</li>
-                <li>Usado para implementar drivers de dispositivo ou transições entre modos protegidos de operação, como chamadas de sistema</li>
-                <li>É um programa que determina a natureza da interrupção e que realiza o tratamento adequado. O controle é transferido para o tratador após:</li>
+                <li>Os handlers de interrupção são iniciados por interrupções de hardware, instruções de interrupção de
+                    software ou exceções de software</li>
+                <li>Usado para implementar drivers de dispositivo ou transições entre modos protegidos de operação, como
+                    chamadas de sistema</li>
+                <li>É um programa que determina a natureza da interrupção e que realiza o tratamento adequado. O
+                    controle é transferido para o tratador após:</li>
                 <ul>
                     <li>O salvamento de algumas informações</li>
                     <ul>
@@ -74,16 +82,21 @@
         <section>
             <h2>FUNÇÃO DO TRATADOR DE INTERRUPÇÕES.</h2>
             <ul>
-                <li>Saber qual dispositivo lançou a interrupção e em que ponto do sistema operacional está o endereço inicial da rotina que trata esta interrupção, para que o processador possa executar esta rotina no endereço especificado pelo tratador e depois deixar que o processador volte ao seu curso normal de execução após a interrupção ter sido resolvida</li>
+                <li>Saber qual dispositivo lançou a interrupção e em que ponto do sistema operacional está o endereço
+                    inicial da rotina que trata esta interrupção, para que o processador possa executar esta rotina no
+                    endereço especificado pelo tratador e depois deixar que o processador volte ao seu curso normal de
+                    execução após a interrupção ter sido resolvida</li>
             </ul>
         </section>
 
         <section>
             <h2>INTERRUPÇÕES.</h2>
             <ul>
-                <li>Em termos de fluxo de controle, a execução do tratador é um pouco como uma chamada de rotina, MAS</li>
+                <li>Em termos de fluxo de controle, a execução do tratador é um pouco como uma chamada de rotina, MAS
+                </li>
                 <li>a chamada de rotina é iniciada por instruções do programa em execução</li>
-                <li>e o tratador de interrupção é NA MAIORIA das vezes <b>assíncrono</b> (SEM comunicação entre o programa interrompido e o tratador)</li>
+                <li>e o tratador de interrupção é NA MAIORIA das vezes <b>assíncrono</b> (SEM comunicação entre o
+                    programa interrompido e o tratador)</li>
                 <li>MAS existe interrupção <b>síncrona</b>, como o caso do Trap</li>
             </ul>
         </section>
@@ -91,8 +104,11 @@
         <section>
             <h2>SUPORTE DE HARDWARE.</h2>
             <ul>
-                <li>Tipicamente, o hardware detecta a interrupção, aguarda o final da execução da instrução corrente e aciona o tratador, salvando antes o contexto de execução do processo interrompido</li>
-                <li>Para reiniciar a execução, é necessário salvar o Contador de Programa e outros registradores de status. Os registradores com dados do programa devem ser salvos pelo próprio tratador (ou seja, pelo software), caso ele os utilize.</li>
+                <li>Tipicamente, o hardware detecta a interrupção, aguarda o final da execução da instrução corrente e
+                    aciona o tratador, salvando antes o contexto de execução do processo interrompido</li>
+                <li>Para reiniciar a execução, é necessário salvar o Contador de Programa e outros registradores de
+                    status. Os registradores com dados do programa devem ser salvos pelo próprio tratador (ou seja, pelo
+                    software), caso ele os utilize.</li>
                 <li>Em muitas arquiteturas, existe uma pilha independente associada ao tratamento de interrupções</li>
             </ul>
         </section>
@@ -101,9 +117,11 @@
             <h2>INTERRUPÇÕES DE HARDWARE.</h2>
             <ul>
                 <li>São geradas pelo hardware</li>
-                <li>Por exemplo, para indicar overflow em operações aritméticas, ou acesso a regiões de memória não permitidas</li>
+                <li>Por exemplo, para indicar overflow em operações aritméticas, ou acesso a regiões de memória não
+                    permitidas</li>
                 <li>Essas são situações em que o programa não teria como prosseguir</li>
-                <li>O hardware sinaliza uma interrupção para passar o controle para o tratador de interrupção, que tipicamente termina a execução do programa</li>
+                <li>O hardware sinaliza uma interrupção para passar o controle para o tratador de interrupção, que
+                    tipicamente termina a execução do programa</li>
             </ul>
         </section>
 
@@ -111,8 +129,11 @@
             <h2>INTERRUPÇÕES DE RELÓGIO.</h2>
             <ul>
                 <li>É uma interrupção comum de hardware</li>
-                <li>O mecanismo permite ao sistema operacional atribuir quotas de tempos de execução (fatias de tempo) para cada um dos processos em um sistema multiprograma</li>
-                <li>A cada interrupção do relógio, o tratador pode verificar se a fatia de tempo do processo em execução já se esgotou e, se for o caso, suspendê-lo e acionar o escalonador para que escolha outro processo para colocar em execução.</li>
+                <li>O mecanismo permite ao sistema operacional atribuir quotas de tempos de execução (fatias de tempo)
+                    para cada um dos processos em um sistema multiprograma</li>
+                <li>A cada interrupção do relógio, o tratador pode verificar se a fatia de tempo do processo em execução
+                    já se esgotou e, se for o caso, suspendê-lo e acionar o escalonador para que escolha outro processo
+                    para colocar em execução.</li>
             </ul>
         </section>
 
@@ -130,7 +151,8 @@
             <h2>CHAMADA DE SISTEMA.</h2>
             <ul>
                 <li>É o mecanismo pelo qual um programa de usuário solicita um serviço do sistema operacional</li>
-                <li>Por exemplo, para acessar o disco rígido, a criação e a execução de novos processos e comunicação com serviço do SO como escalonamento de processo</li>
+                <li>Por exemplo, para acessar o disco rígido, a criação e a execução de novos processos e comunicação
+                    com serviço do SO como escalonamento de processo</li>
                 <li>É uma interface essencial entre um processo e o sistema operacional</li>
             </ul>
         </section>
@@ -139,18 +161,24 @@
             <h2>EXEMPLO ASSEMBLY DE INTERRUPÇÃO: IA-32.</h2>
             <ul>
                 <li>A instrução int n do assembly IA-32 gera um trap</li>
-                <li>No Linux, antes de executar essa instrução, o <b>número da chamada</b> deve ser colocado no registrador %eax, e os argumentos nos registradores %ebx, %ecx, %edx, %esi e %edi</li>
-                <li>Depois que o sistema operacional executa o serviço requisitado, o controle retorna à instrução seguinte int, com o valor de retorno em %eax</li>
+                <li>No Linux, antes de executar essa instrução, o <b>número da chamada</b> deve ser colocado no
+                    registrador %eax, e os argumentos nos registradores %ebx, %ecx, %edx, %esi e %edi</li>
+                <li>Depois que o sistema operacional executa o serviço requisitado, o controle retorna à instrução
+                    seguinte int, com o valor de retorno em %eax</li>
             </ul>
         </section>
 
         <section>
             <h2>Bibliografia:</h2>
             <ul>
-                <li>Delgado, C.J. R. Arquitetura de Computadores, Cap 3 e 5. 5ª edição. Grupo GEN, 2017. 9788521633921</li>
-                <li>W. Stallings. Arquitetura e organização de computadores, Cap 11 e 12 de 731 páginas. Editora Pearson, 10° edição (2017). ISBN: 9788543020532</li>
-                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Pag 58 (de 628 páginas). Editora Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398"</li>
-                <li>Corrêa, A. G. D. Organização e arquitetura de computadores. Unidade 3. Bibliografia Universitária Pearson. 187 páginas. Ed. Pearson. 1° edição (2017) ISBN: 9788543020327</li>
+                <li>Delgado, C.J. R. Arquitetura de Computadores, Cap 3 e 5. 5ª edição. Grupo GEN, 2017. 9788521633921
+                </li>
+                <li>W. Stallings. Arquitetura e organização de computadores, Cap 11 e 12 de 731 páginas. Editora
+                    Pearson, 10° edição (2017). ISBN: 9788543020532</li>
+                <li>Tanenbaum, A & Austin, T. Organização estruturada de computadores. Pag 58 (de 628 páginas). Editora
+                    Pearson. Edição: 6° (2013). Idioma: Português. ISBN: 9788581435398"</li>
+                <li>Corrêa, A. G. D. Organização e arquitetura de computadores. Unidade 3. Bibliografia Universitária
+                    Pearson. 187 páginas. Ed. Pearson. 1° edição (2017) ISBN: 9788543020327</li>
             </ul>
         </section>
     </main>
@@ -158,4 +186,5 @@
         <p>Diego Serafim de Sousa - 18 de jun de 2024.</p>
     </footer>
 </body>
+
 </html>

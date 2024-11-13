@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMAS COMPUTACIONAIS-T01-2024-1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>SISTEMAS COMPUTACIONAIS-T01-2024-1</h1>
@@ -24,12 +26,18 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <p>Neste módulo estudamos, entre outros assuntos, o mecanismo de memória virtual, implementado pelo sistema operacional com suporte do hardware. Vimos que esse mecanismo permite a separação entre o espaço de endereçamento lógico (ou virtual) de um processo e a memória física (real). Assim, durante a execução do programa, os acessos a instruções e dados referenciam endereços lógicos, que são então traduzidos em endereços físicos.</p>
+            <p>Neste módulo estudamos, entre outros assuntos, o mecanismo de memória virtual, implementado pelo sistema
+                operacional com suporte do hardware. Vimos que esse mecanismo permite a separação entre o espaço de
+                endereçamento lógico (ou virtual) de um processo e a memória física (real). Assim, durante a execução do
+                programa, os acessos a instruções e dados referenciam endereços lógicos, que são então traduzidos em
+                endereços físicos.</p>
         </section>
 
         <section id="conteudo">
             <h2>Conteúdo</h2>
-            <p>Faça uma ilustração clara e objetiva, ocupando no máximo uma página, representando como é realizada a tradução de um endereço lógico no endereço físico correspondente, no mecanismo de memória virtual com paginação, e como a tabela de páginas é usada para isso.</p>
+            <p>Faça uma ilustração clara e objetiva, ocupando no máximo uma página, representando como é realizada a
+                tradução de um endereço lógico no endereço físico correspondente, no mecanismo de memória virtual com
+                paginação, e como a tabela de páginas é usada para isso.</p>
         </section>
 
         <section id="conteudo">
@@ -52,15 +60,19 @@
             </ul>
             <p>Tabela de páginas:</p>
             <ul>
-                <li>É mantida pelo sistema operacional, mapeia cada página lógica para uma página física correspondente. Ex.: <b>0x1</b> mapeia para a página física <b>0xA</b>.</li>
+                <li>É mantida pelo sistema operacional, mapeia cada página lógica para uma página física correspondente.
+                    Ex.: <b>0x1</b> mapeia para a página física <b>0xA</b>.</li>
             </ul>
             <p>Tradução de endereço:</p>
             <ul>
-                <li>Usando a tabela de páginas o SO traduz o número da página lógica <b>0x1</b> para o número da página física <b>0xA</b>.</li>
+                <li>Usando a tabela de páginas o SO traduz o número da página lógica <b>0x1</b> para o número da página
+                    física <b>0xA</b>.</li>
             </ul>
             <p>Construção do endereço físico:</p>
             <ul>
-                <li>O endereço físico é construído combinando o número da página física com o deslocamento. Ex.: <b>0xA</b>(página física) combinado com <b>0x234</b>(deslocamento) formam o endereço físico <b>0xA234</b>.</li>
+                <li>O endereço físico é construído combinando o número da página física com o deslocamento. Ex.:
+                    <b>0xA</b>(página física) combinado com <b>0x234</b>(deslocamento) formam o endereço físico
+                    <b>0xA234</b>.</li>
             </ul>
             <p>Acesso à Memória Física:</p>
             <ul>
@@ -71,7 +83,8 @@
                 <li><b>Endereço Lógico</b>: 0x1234</li>
                 <li><b>Divisão</b>: Página Lógica 0x1, Deslocamento 0x234</li>
                 <li><b>Tabela de Páginas</b>: Página Lógica 0x1 mapeia para Página Física 0xA</li>
-                <li><b>Endereço Físico</b>: Combinação de 0xA (Página Física) e 0x234 (Deslocamento) resulta em 0xA234</li>
+                <li><b>Endereço Físico</b>: Combinação de 0xA (Página Física) e 0x234 (Deslocamento) resulta em 0xA234
+                </li>
                 <li><b>Memória Física</b>: Acesso ao endereço físico 0xA234</li>
             </ol>
         </section>
@@ -80,4 +93,5 @@
         <p>Diego Serafim de Sousa - 15 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

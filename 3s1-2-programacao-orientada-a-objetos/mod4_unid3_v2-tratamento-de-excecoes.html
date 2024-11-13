@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Conceitos Avançados.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=dicmUJ5A6NY&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
-                Programação Orientada a Objetos - Exceções - Parte 1. 
+            <a href="https://www.youtube.com/watch?v=dicmUJ5A6NY&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
+                Programação Orientada a Objetos - Exceções - Parte 1.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo.</p>
@@ -49,8 +52,10 @@
         <section>
             <h2>Introdução.</h2>
             <ul>
-                <li>O tratamento de exceções é um dos recursos mais importantes da programação Java que nos permite tratar os erros em tempo de execução causados por exceções.</li>
-                <li>Nesta aula, aprenderemos o que é uma exceção, seus tipos, classes de exceção e como lidar com exceções em Java com exemplos.</li>
+                <li>O tratamento de exceções é um dos recursos mais importantes da programação Java que nos permite
+                    tratar os erros em tempo de execução causados por exceções.</li>
+                <li>Nesta aula, aprenderemos o que é uma exceção, seus tipos, classes de exceção e como lidar com
+                    exceções em Java com exemplos.</li>
             </ul>
 
             <b>O que é uma Exceção.</b>
@@ -60,20 +65,25 @@
                 <ul>
                     <li>Nesses casos, recebemos uma mensagem de erro gerada pelo sistema.</li>
                     <li>O bom das exceções é que podem ser tratadas em Java.</li>
-                    <li>Ao lidar com as exceções, podemos fornecer uma mensagem significativa ao usuário sobre o problema em vez de uma mensagem gerada pelo sistema, que pode não ser compreensível para o usuário</li>
+                    <li>Ao lidar com as exceções, podemos fornecer uma mensagem significativa ao usuário sobre o
+                        problema em vez de uma mensagem gerada pelo sistema, que pode não ser compreensível para o
+                        usuário</li>
                 </ul>
             </ul>
 
             <b>Diferença entre Erro e Exceção.</b>
             <ul>
-                <li>Os erros indicam que algo grave o suficiente deu errado, o aplicativo deve travar em vez de tentar lidar com o erro.</li>
-                <li>Exceções são eventos que ocorrem no código. Um programador pode lidar com tais condições e tomar as ações corretivas necessárias.</li>
+                <li>Os erros indicam que algo grave o suficiente deu errado, o aplicativo deve travar em vez de tentar
+                    lidar com o erro.</li>
+                <li>Exceções são eventos que ocorrem no código. Um programador pode lidar com tais condições e tomar as
+                    ações corretivas necessárias.</li>
             </ul>
 
             <b>Por que ocorrem Exceções?</b>
             <ul>
                 <li>Pode haver vários motivos que podem fazer com que um programa lance uma exceção.</li>
-                <li>Há erros que podem ser detectados durante a compilação, por falha do programador</li><ul>
+                <li>Há erros que podem ser detectados durante a compilação, por falha do programador</li>
+                <ul>
                     <li>Exemplos:</li>
                     <ul>
                         <li>Associar valores a variáveis de tipos diferentes</li>
@@ -107,8 +117,10 @@
             </ul>
 
             <ul>
-                <li>Toda vez que surge um erro na execução de um método, o método cria um objeto de exceção e passa para o sistema de runtime do java <b>(lança a exceção)</b>.</li>
-                <li>A execução do programa "congela" naquele ponto e o runtime procura o trecho de código mais próximo que seja capaz de <b>capturar</b> uma exceção daquele tipo.</li>
+                <li>Toda vez que surge um erro na execução de um método, o método cria um objeto de exceção e passa para
+                    o sistema de runtime do java <b>(lança a exceção)</b>.</li>
+                <li>A execução do programa "congela" naquele ponto e o runtime procura o trecho de código mais próximo
+                    que seja capaz de <b>capturar</b> uma exceção daquele tipo.</li>
                 <li>Se a busca chegar ao main e não encontrar quem capture a exceção, o programa termina.</li>
             </ul>
         </section>
@@ -117,13 +129,20 @@
             <h2>Tipos de Exceções.</h2>
             <b>Há 2 tipos de exceções:</b>
             <ul>
-                <li><b>Checked</b>: Todas as exceções, exceto Runtime Exceptions, são conhecidas como exceções verificadas, pois o compilador as verifica durante a compilação para ver se o programador as manipulou ou não. Se essas exceções não forem tratadas / declaradas no programa, você obterá um erro de compilação.</li>
+                <li><b>Checked</b>: Todas as exceções, exceto Runtime Exceptions, são conhecidas como exceções
+                    verificadas, pois o compilador as verifica durante a compilação para ver se o programador as
+                    manipulou ou não. Se essas exceções não forem tratadas / declaradas no programa, você obterá um erro
+                    de compilação.</li>
                 <ul>
                     <li><b>Exemplo</b>: SQLException, IOException, ClassNotFoundException etc.</li>
                 </ul>
-                <li><b>Unchecked</b>: As exceções de tempo de execução também são conhecidas como exceções não verificadas. Essas exceções não são verificadas em tempo de compilação, então o compilador não verifica se o programador as manipulou ou não, mas é responsabilidade do programador lidar com essas exceções e fornecer uma saída segura.</li>
+                <li><b>Unchecked</b>: As exceções de tempo de execução também são conhecidas como exceções não
+                    verificadas. Essas exceções não são verificadas em tempo de compilação, então o compilador não
+                    verifica se o programador as manipulou ou não, mas é responsabilidade do programador lidar com essas
+                    exceções e fornecer uma saída segura.</li>
                 <ul>
-                    <li><b>Exemplo</b>: Arithmetic Exception, NullPointerException, ArrayIndexOutOfBoundsException etc.</li>
+                    <li><b>Exemplo</b>: Arithmetic Exception, NullPointerException, ArrayIndexOutOfBoundsException etc.
+                    </li>
                 </ul>
             </ul>
             <ul>
@@ -138,7 +157,8 @@
 
             <b>Exception.</b>
             <ul>
-                <li>Precisam ser tratadas, pois são situações excepcionais em um programa que podem ser contornadas.</li>
+                <li>Precisam ser tratadas, pois são situações excepcionais em um programa que podem ser contornadas.
+                </li>
                 <ul>
                     <li>Abertura de um arquivo cujo nome foi informado errado pelo usuário.</li>
                     <li>Abertura do arquivo falha, gerando uma exceção que pode ser contornada pelo programador.</li>
@@ -152,7 +172,8 @@
                     <li>Erros na lógica de programação.</li>
                     <li>Uso incorreto da API Java.</li>
                 </ul>
-                <li>Por algum motivo, o programa lê o nome de um arquivo do usuário mas passa null para o construtor do arquivo.</li>
+                <li>Por algum motivo, o programa lê o nome de um arquivo do usuário mas passa null para o construtor do
+                    arquivo.</li>
                 <li>O código precisa ser corrigido, embora a exceção gerada possa ser capturada pelo desenvolvedor.</li>
             </ul>
 
@@ -210,4 +231,5 @@
         <p>Diego Serafim de Sousa - 5 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

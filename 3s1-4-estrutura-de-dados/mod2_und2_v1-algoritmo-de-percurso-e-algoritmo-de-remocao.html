@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Árvore Binária de Busca.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Árvore Binária de Busca.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Árvore Binária de Busca.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Mdy6KCJ7ywE&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=Mdy6KCJ7ywE&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 [UFMS Digital] Estrutura de Dados - Módulo 2 - Unidade 2.
                 <i class="material-icons right"> send</i>
             </a>
@@ -57,11 +60,14 @@
                     <li><b>Nó folha</b>: o nó contendo 0 filhos, basta retirar o nó da ligação com seu ancestral;</li>
                     <li><b>Nó interno</b>, temos dois tipos:</li>
                     <ul>
-                        <li><b>Nó com 1 filho</b>: há uma sub-árvore conectada ao nó a ser removido na esquerda ou na direita;</li>
-                        <li><b>Nó com 2 filhos</b>: há duas sub-árvores conectadas ao nó a ser removido na esquerda e na direita.</li>
+                        <li><b>Nó com 1 filho</b>: há uma sub-árvore conectada ao nó a ser removido na esquerda ou na
+                            direita;</li>
+                        <li><b>Nó com 2 filhos</b>: há duas sub-árvores conectadas ao nó a ser removido na esquerda e na
+                            direita.</li>
                     </ul>
                 </ul>
-                <li>Temos as situações de remoção de nó: o nó contendo 0, 1 e 2 filhos, com a remoção de 5, 12 e 7 respectivamente.</li>
+                <li>Temos as situações de remoção de nó: o nó contendo 0, 1 e 2 filhos, com a remoção de 5, 12 e 7
+                    respectivamente.</li>
             </ul>
             <img src="img/arvore-binaria-remocao1.png" alt="arvore-binaria-remocao1.png">
             <p></p>
@@ -70,7 +76,8 @@
                 <li>A remoção do caso com 2 filhos pode ser feita:</li>
                 <ul>
                     <li>Substituindo o valor do nó que se deseja remover por algum outro <b>mais próximo</b>.</li>
-                    <li>Ideia: se colocar um valor “parecido” não vai interferir na organização dos filhos e ainda mantém a propriedade da árvore binária.</li>
+                    <li>Ideia: se colocar um valor “parecido” não vai interferir na organização dos filhos e ainda
+                        mantém a propriedade da árvore binária.</li>
                     <li>Quem seria o mais parecido com 7?</li>
                     <ul>
                         <li>temos o 5 (<b>antecessor</b>) e o 9 (<b>sucessor</b>).</li>
@@ -170,7 +177,8 @@
             </ul>
             <img src="img/arvore-binaria-remocao6.png" alt="arvore-binaria-remocao6.png">
             <ul>
-                <li>Esse custo médio pode envolver percorrer toda a altura da árvore (h = h1+h2), custo O(log2 N), se a árvore for não degenerada.</li>
+                <li>Esse custo médio pode envolver percorrer toda a altura da árvore (h = h1+h2), custo O(log2 N), se a
+                    árvore for não degenerada.</li>
             </ul>
             <img src="img/arvore-binaria-remocao7.png" alt="arvore-binaria-remocao7.png">
         </section>
@@ -178,7 +186,8 @@
         <section>
             <h2>Árvore Binária (Percurso).</h2>
             <ul>
-                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca, visto na unidade anterior.</li>
+                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca,
+                    visto na unidade anterior.</li>
                 <ul>
                     <li>A ordem de visitação poderia ser de 3 possíveis maneiras:</li>
                     <ul>
@@ -228,7 +237,8 @@
             </ul>
             <img src="img/arvore-binaria-percurso6.png" alt="arvore-binaria-percurso6.png">
             <ul>
-                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca, visto na unidade anterior. Vamos ver no <b>VISUALGO</b>(https://visualgo.net/en/bst?slide=1).</li>
+                <li>Para poder imprimir ou visitar os nós na árvore binária podemos fazer o processo similar à busca,
+                    visto na unidade anterior. Vamos ver no <b>VISUALGO</b>(https://visualgo.net/en/bst?slide=1).</li>
                 <ul>
                     <li>A ordem de visitação poderia ser:</li>
                     <ul>
@@ -309,8 +319,10 @@
         <section>
             <h2>Referências</h2>
             <ul>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</li>
-                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                    Disponível na Biblioteca Digital da UFMS.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de
+                    Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
             </ul>
         </section>
     </main>
@@ -318,4 +330,5 @@
         <p>Diego Serafim de Sousa - 29 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

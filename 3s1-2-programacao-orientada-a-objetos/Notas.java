@@ -7,7 +7,7 @@ public class Notas {
         Scanner scanner = new Scanner(System.in);
         // Array que armazena as notas
         int[] notas = new int[10];
-        
+
         // Ler as notas e soma
         int soma = 0;
         for (int i = 0; i < 10; i++) {
@@ -37,7 +37,7 @@ public class Notas {
             System.out.print(nota + " ");
         }
         System.out.println(); // Imprime uma nova linha
-        
+
         // Fechar o scanner
         scanner.close();
     }

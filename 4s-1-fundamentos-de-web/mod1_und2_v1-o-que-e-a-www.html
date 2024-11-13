@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Introdução Web</h1>
@@ -23,14 +25,15 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=49P7IRLNRFo&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=5&t=598s" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=49P7IRLNRFo&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=5&t=598s"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 Fundamentos de Internet e Web - A World Wide Web - WWW
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>A World Wide Web - WWW</h3>
@@ -54,19 +57,27 @@
             <h2>Como surgiu a WWW?</h2>
             <ul>
                 <li>As ideias por trás da WWW iniciaram-se na década de 1980 no CERN na Suíça.</li>
-                <li>O desejo de tornar mais fácil as pesquisas por documentos, feitas pelos cientistas, fez em 1989 um pesquisador chamado 'Tim Berners-Lee' iniciar um projeto para gerenciar melhor as informações trocadas entre os pesquisadores.</li>
-                <li>Berners-Lee se baseou no sistema chamado ENQUIRE para junto com 'Robert Cailliau' rascunhar a <b>WWW</b>.</li>
-                <li><b>1990</b> Neste período Berners-Lee usou um computador NeXtcube para escrever o primeiro servidor web e o primeiro navegador chamado de <b>WorldWideWeb</b>.</li>
+                <li>O desejo de tornar mais fácil as pesquisas por documentos, feitas pelos cientistas, fez em 1989 um
+                    pesquisador chamado 'Tim Berners-Lee' iniciar um projeto para gerenciar melhor as informações
+                    trocadas entre os pesquisadores.</li>
+                <li>Berners-Lee se baseou no sistema chamado ENQUIRE para junto com 'Robert Cailliau' rascunhar a
+                    <b>WWW</b>.</li>
+                <li><b>1990</b> Neste período Berners-Lee usou um computador NeXtcube para escrever o primeiro servidor
+                    web e o primeiro navegador chamado de <b>WorldWideWeb</b>.</li>
                 <li>O NeXtcube era um computador criado pela NeXT, empresa de Steve Jobs, criada em 1985</li>
                 <li><b>1991</b> Nasceu a WWW</li>
                 <ul>
-                    <li>Junto também aparece um novo protocolo (o HTTP), pois não avia protocolos que atendiam às necessidades da comunidade cientifica.</li>
-                    <li>Hipertexto já era discutido desde 1960, mas o que Lee fez foi unir o Hipertexto e a internet.</li>
+                    <li>Junto também aparece um novo protocolo (o HTTP), pois não avia protocolos que atendiam às
+                        necessidades da comunidade cientifica.</li>
+                    <li>Hipertexto já era discutido desde 1960, mas o que Lee fez foi unir o Hipertexto e a internet.
+                    </li>
                     <li>Lee quis "casar" as duas coisas, ele decidiu implementar o projeto sozinho.</li>
-                    <li>Neste mesmo período ele também desenvolveu um sistema de identificação global e único de recursos, o (URI) Uniform Resource Identifier.</li>
+                    <li>Neste mesmo período ele também desenvolveu um sistema de identificação global e único de
+                        recursos, o (URI) Uniform Resource Identifier.</li>
                 </ul>
                 <li>Em 1991, já havia outros protocolos, como os de e-mail.</li>
-                <li>Para suprir algumas limitações como acesso simples e por links, o protocolo necessitado para acesso à informação deveria atender aos seguintes requisitos:</li>
+                <li>Para suprir algumas limitações como acesso simples e por links, o protocolo necessitado para acesso
+                    à informação deveria atender aos seguintes requisitos:</li>
                 <ul>
                     <li>Incorporar a funcionalidade do FTP (File Transfer Protocol).</li>
                     <li>Ser hábil para realizar uma busca.</li>
@@ -75,7 +86,7 @@
                 </ul>
             </ul>
         </section>
-        
+
         <section>
             <h2>Funcionamento Básico da Web.</h2>
             <ul>
@@ -86,103 +97,124 @@
                 </ul>
                 <li>Os servidores armazenam os arquivos que são requisitados pelos usuários.</li>
                 <li>Importante:</li>
-                <li>O <b>usuário/cliente/browser</b> não consegue acessar diretamente o arquivo que deseja ler sem pedir para o servidor</li>
+                <li>O <b>usuário/cliente/browser</b> não consegue acessar diretamente o arquivo que deseja ler sem pedir
+                    para o servidor</li>
                 <ul>
-                    <li>Aqui o servidor é tanto o equipamento e também um programa  que fica <b>escutando</b> o tempo todo, pedidos de quem deseja acessar o conteúdo que está disponível para ler/escrever</li>
+                    <li>Aqui o servidor é tanto o equipamento e também um programa que fica <b>escutando</b> o tempo
+                        todo, pedidos de quem deseja acessar o conteúdo que está disponível para ler/escrever</li>
                 </ul>
                 <li>É necessário:</li>
                 <ul>
                     <li>Recursos, os quais são obtidos por meio de uma URL e armazena em servidores.</li>
                     <li>Ao digitar uma URL no navegador desejamos acessar um recurso endereçável.</li>
                     <ul>
-                        <li>Parte da URL referente ao servidor de rede é separada e transformada em um endereço IP, por um banco de dados da internet chamado <b>Domain Name System</b>(DNS).</li>
-                        <li>O navegador estabelece uma conexão TCP com o servidor web localizado no endereço IP retornado.</li>
-                        <li>O navegador envia uma requisição HTTP ao servidor para obter o recurso indicado pela parte restante da URL.</li>
-                        <li>O recurso é recebido e interpretado pelo navegador, que realiza então requisições adicionais para figuras, arquivos de formatação, arquivos de script e outros recursos que fazem parte da página.</li>
+                        <li>Parte da URL referente ao servidor de rede é separada e transformada em um endereço IP, por
+                            um banco de dados da internet chamado <b>Domain Name System</b>(DNS).</li>
+                        <li>O navegador estabelece uma conexão TCP com o servidor web localizado no endereço IP
+                            retornado.</li>
+                        <li>O navegador envia uma requisição HTTP ao servidor para obter o recurso indicado pela parte
+                            restante da URL.</li>
+                        <li>O recurso é recebido e interpretado pelo navegador, que realiza então requisições adicionais
+                            para figuras, arquivos de formatação, arquivos de script e outros recursos que fazem parte
+                            da página.</li>
                         <li>O navegador, reconstitui a página na tela do usuário.</li>
                     </ul>
                 </ul>
             </ul>
         </section>
-       
+
         <section>
             <h2>Servidores Web.</h2>
             <ul>
                 <li>Importante relembrar que a Web baseia-se fundamentalmente em três padrões:</li>
                 <ul>
-                    <li><b>URL</b> - um sistema que especifica como cada página de informação recebe um "endereço" único onde pode ser encontrada.</li>
-                    <li><b>HTTP</b> - um protocolo que especifica como o navegador e servidor web se comunicam entre si.</li>
-                    <li><b>HTML</b> - uma linguagem de marcação para codificar a informação de modo que possa ser exibida em uma grande quantidade de dispositivos.</li>
+                    <li><b>URL</b> - um sistema que especifica como cada página de informação recebe um "endereço" único
+                        onde pode ser encontrada.</li>
+                    <li><b>HTTP</b> - um protocolo que especifica como o navegador e servidor web se comunicam entre si.
+                    </li>
+                    <li><b>HTML</b> - uma linguagem de marcação para codificar a informação de modo que possa ser
+                        exibida em uma grande quantidade de dispositivos.</li>
                 </ul>
-                <li>Um servidor Web é basicamente <b>um programa</b> que escuta os pedidos dos navegadores ou aplicações clientes e realiza a execução desses pedidos</li>
-                <li>Tais pedidos são páginas web, tais como documentos em HTML com objetos embutidos (imagens, etc.) no servidor</li>
+                <li>Um servidor Web é basicamente <b>um programa</b> que escuta os pedidos dos navegadores ou aplicações
+                    clientes e realiza a execução desses pedidos</li>
+                <li>Tais pedidos são páginas web, tais como documentos em HTML com objetos embutidos (imagens, etc.) no
+                    servidor</li>
                 <ul>
-                    <li>O Apache é um servidor web de plataforma aberta, sendo um dos mais populares atualmente. É ativamente mantido pelo Apache Software Foundation.</li>
-                    <li>O Apache possui módulos que adicionam mais funções além de apenas servir o conteúdo, mas como fazer isso com segurança, por exemplo. O <b>mod_ss</b>/ é um utilizado para ativar o suporte <b>SSL</b> (Security Socket Layer)</li>
-                    <li>Também possui recursos para: <b>balanceamento de carga, reescrita de URL, geolocalização baseada em IP</b>, etc.</li>
+                    <li>O Apache é um servidor web de plataforma aberta, sendo um dos mais populares atualmente. É
+                        ativamente mantido pelo Apache Software Foundation.</li>
+                    <li>O Apache possui módulos que adicionam mais funções além de apenas servir o conteúdo, mas como
+                        fazer isso com segurança, por exemplo. O <b>mod_ss</b>/ é um utilizado para ativar o suporte
+                        <b>SSL</b> (Security Socket Layer)</li>
+                    <li>Também possui recursos para: <b>balanceamento de carga, reescrita de URL, geolocalização baseada
+                            em IP</b>, etc.</li>
                 </ul>
             </ul>
             <i>https://image.slidesharecdn.com/sistemascomputacionais-aula9-auditoriaeseguranaemsistemasdeinformao-160529003100/75/Sistemas-Computacionais-Aula-9-Auditoria-e-Seguranca-em-Sistemas-de-Informacao-Internet-Intranet-e-Extranet-60-2048.jpg</i>
             <img src="img/servidor-web.webp" alt="servidor-web.webp">
         </section>
-       
+
         <section>
-           <h2>O protocolo HTTP</h2>
-           <ul>
-               <li>Para acessar os recursos disponíveis nos servidores Web, é preciso da ajuda de um protocolo.</li>
-               <ul>
-                   <li>O protocolo padrão da WWW é o <b>HTTP</b>.</li>
-                   <li>O HTTP é um protocolo cliente-servidor que permite a obtenção de recursos, tais como documentos HTML.</li>
-                   <li>É um protocolo extensível da camada de aplicação do modelo TCP/IP que é encapsulado sobre o TCP.</li>
-                   <li>É usado para não apenas buscar documentos de hipertexto, mas também imagens e vídeos ou publicar conteúdo em servidores, como nos resultados de formulário HTML.</li>
-               </ul>
-           </ul>
-           <i>https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201212102533/HTTP-Fetching-a-Web-Page.png</i>
-           <img src="img/protocolo-http.png" alt="protocolo-http.png">
-           <li>Estrutura do HTTP e o seu funcionamento.</li>
-           <ul>
-               <li>Componentes.</li>
-               <ul>
-                   <li>Fundamentalmente o cliente.</li>
-                   <li>O servidor de páginas Web.</li>
-               </ul>
-               <li>As três etapas básicas de uma comunicação HTTP são:</li>
-               <ul>
-                   <li>1. Estabelecimento da conexão TCP.</li>
-                   <li>2. Envio do pedido da parte do cliente.</li>
-                   <li>3. Envio dos dados da parte do servidor.</li>
-               </ul>
-           </ul>
-           <li>Quem controla uma conexão para encaminhar mensagens HTTP é a camada <b>transporte</b>, ou seja independente do HTTP.</li>
-           <li>O HTTP apenas requer que essa conexão seja confiável.</li>
-           <ul>
-               <li>É por isso que a base de transporte do HTTp é o TCP e não o UDP.</li>
-               <li>A versões atuais do HTTP baseiam-se em trazer uma única conexão TCP, praticamente todo o conteúdo de uma página.</li>
-               <ul>
-                   <li>Vantagens:</li>
-                   <ul>
-                       <li>Isso economiza a abertura de novas conexões TCP.</li>
-                   </ul>
-               </ul>
-               <li>Fluxo Padrão:
+            <h2>O protocolo HTTP</h2>
+            <ul>
+                <li>Para acessar os recursos disponíveis nos servidores Web, é preciso da ajuda de um protocolo.</li>
                 <ul>
-                    <li>1. <b>Abertura de conexão TCP.</b>
-                    <li>2. <b>Envio de mensagem HTTP.</b>
-                    <li>GET/HTTP/1.1
-                    <li>Host: developer.mozilla.org.
-                    <li>Accept-Language: en
-                    <li>3. <b>Retorno da resposta do servidor</b>
-                    <li>HTTP/1.1 200 OK
-                    <li>Date: Sat, 28 Aug 2020 14:28:02 GMT.
-                    <li>Server: Apache.
-                    <li>Last-Modified: Tue, 01 Dec 2009 20:18:22 GMT.
-                    <li>ETag: "438752-435t4ith-45t43hhs"
-                    <li>Accept-Ranges: bytes.
-                    <li>Content-Length: 29769.
-                    <li>Content-Type: text/html(!DOCTYPE Texto em html...>
-                    <li>4. <b>Fechamento da conexão  TCP.</b>
+                    <li>O protocolo padrão da WWW é o <b>HTTP</b>.</li>
+                    <li>O HTTP é um protocolo cliente-servidor que permite a obtenção de recursos, tais como documentos
+                        HTML.</li>
+                    <li>É um protocolo extensível da camada de aplicação do modelo TCP/IP que é encapsulado sobre o TCP.
+                    </li>
+                    <li>É usado para não apenas buscar documentos de hipertexto, mas também imagens e vídeos ou publicar
+                        conteúdo em servidores, como nos resultados de formulário HTML.</li>
                 </ul>
-           </ul>
+            </ul>
+            <i>https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201212102533/HTTP-Fetching-a-Web-Page.png</i>
+            <img src="img/protocolo-http.png" alt="protocolo-http.png">
+            <li>Estrutura do HTTP e o seu funcionamento.</li>
+            <ul>
+                <li>Componentes.</li>
+                <ul>
+                    <li>Fundamentalmente o cliente.</li>
+                    <li>O servidor de páginas Web.</li>
+                </ul>
+                <li>As três etapas básicas de uma comunicação HTTP são:</li>
+                <ul>
+                    <li>1. Estabelecimento da conexão TCP.</li>
+                    <li>2. Envio do pedido da parte do cliente.</li>
+                    <li>3. Envio dos dados da parte do servidor.</li>
+                </ul>
+            </ul>
+            <li>Quem controla uma conexão para encaminhar mensagens HTTP é a camada <b>transporte</b>, ou seja
+                independente do HTTP.</li>
+            <li>O HTTP apenas requer que essa conexão seja confiável.</li>
+            <ul>
+                <li>É por isso que a base de transporte do HTTp é o TCP e não o UDP.</li>
+                <li>A versões atuais do HTTP baseiam-se em trazer uma única conexão TCP, praticamente todo o conteúdo de
+                    uma página.</li>
+                <ul>
+                    <li>Vantagens:</li>
+                    <ul>
+                        <li>Isso economiza a abertura de novas conexões TCP.</li>
+                    </ul>
+                </ul>
+                <li>Fluxo Padrão:
+                    <ul>
+                        <li>1. <b>Abertura de conexão TCP.</b>
+                        <li>2. <b>Envio de mensagem HTTP.</b>
+                        <li>GET/HTTP/1.1
+                        <li>Host: developer.mozilla.org.
+                        <li>Accept-Language: en
+                        <li>3. <b>Retorno da resposta do servidor</b>
+                        <li>HTTP/1.1 200 OK
+                        <li>Date: Sat, 28 Aug 2020 14:28:02 GMT.
+                        <li>Server: Apache.
+                        <li>Last-Modified: Tue, 01 Dec 2009 20:18:22 GMT.
+                        <li>ETag: "438752-435t4ith-45t43hhs"
+                        <li>Accept-Ranges: bytes.
+                        <li>Content-Length: 29769.
+                        <li>Content-Type: text/html(!DOCTYPE Texto em html...>
+                        <li>4. <b>Fechamento da conexão TCP.</b>
+                    </ul>
+            </ul>
         </section>
 
         <section>
@@ -215,19 +247,28 @@
                 <li>O Domain Name System é uma sigla para sistema de nomes de domínio.</li>
                 <li>É um registro que contém nomes de sites e seus respectivos endereços IP associados.</li>
                 <li>Essa correlação favorece a transferência de dados entre computadores e permite o acesso à WWW.</li>
-                <li>Na barra de endereços de um navegador, o domínio é o nome do site (univesp.br), e o servidor de nomes armazena um conjunto deles.</li>
+                <li>Na barra de endereços de um navegador, o domínio é o nome do site (univesp.br), e o servidor de
+                    nomes armazena um conjunto deles.</li>
             </ul>
             <b>Por que o DNS é tão importante e necessário para a WWW?</b>
             <ul>
-                <li>Os Hosts (computadores, tablets, celulares, etc.) na Internet se comunicam por números (endereços IP).</li>
-                <li>Os sites da web são armazenados em máquinas especiais, OS chamados servidores, por meio de serviços os de hospedagem.</li>
-                <li>Como já sabemos, cada servidor deve ter um único permita que as pessoas encontrem esse endereço que perm site e consigam acessar seus dados.</li>
+                <li>Os Hosts (computadores, tablets, celulares, etc.) na Internet se comunicam por números (endereços
+                    IP).</li>
+                <li>Os sites da web são armazenados em máquinas especiais, OS chamados servidores, por meio de serviços
+                    os de hospedagem.</li>
+                <li>Como já sabemos, cada servidor deve ter um único permita que as pessoas encontrem esse endereço que
+                    perm site e consigam acessar seus dados.</li>
                 <li>Os endereços web we contêm uma combinação de IP e um domínio associado.</li>
                 <ul>
-                    <li>Imagine termos que lembrar os endereços IPs dos sites que visitamos, das lojas on-line que compramos produtos?</li>
-                    <li>Um sistema de mapeamento de endereços para nomes ajuda os seres humanos a lembrar mais facilmente no momento da a "navegação" para encontrar os recursos (fotos, vídeos, textos, produtos) que deseja.</li>
+                    <li>Imagine termos que lembrar os endereços IPs dos sites que visitamos, das lojas on-line que
+                        compramos produtos?</li>
+                    <li>Um sistema de mapeamento de endereços para nomes ajuda os seres humanos a lembrar mais
+                        facilmente no momento da a "navegação" para encontrar os recursos (fotos, vídeos, textos,
+                        produtos) que deseja.</li>
                 </ul>
-                <li>Além disso, um sistema de links baseado em nomes facilita a construção de aplicações que "rodam" na Web. O nome que informamos na barra de endereços do browser é chamado de domínio, como por exemplo: univesp.br</li>
+                <li>Além disso, um sistema de links baseado em nomes facilita a construção de aplicações que "rodam" na
+                    Web. O nome que informamos na barra de endereços do browser é chamado de domínio, como por exemplo:
+                    univesp.br</li>
             </ul>
         </section>
 
@@ -240,7 +281,8 @@
                 <li>https://pt.wikipedia.org/wiki/Servidor_web</li>
                 <li>https://aws.amazon.com/pt/route53/what-is-dns/</li>
                 <li>https://www.verisign.com/pt_BR/website-presence/online/how-d ns-works/index.xhtml</li>
-                <li>https://www.datacenterknowledge.com/archives/2011/08/01/report-go ogle-uses-about-900000-servers</li>
+                <li>https://www.datacenterknowledge.com/archives/2011/08/01/report-go ogle-uses-about-900000-servers
+                </li>
             </ul>
         </section>
     </main>
@@ -248,4 +290,5 @@
         <p>Diego Serafim de Sousa - 22 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

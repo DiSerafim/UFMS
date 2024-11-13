@@ -20,5 +20,5 @@ public class Teste {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
 }

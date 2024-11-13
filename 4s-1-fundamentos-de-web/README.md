@@ -1,4 +1,5 @@
 # UFMS
+
 ## CRONOGRAMA DA TRILHA DE APRENDIZAGEM
 
 UFMS Digital
@@ -27,7 +28,7 @@ Professor Especialista: Luciano Édipo Pereira da Silva
 ## 💡 Unidade 1 - Redes e protocolos de comunicação
 
 📕 Leitura obrigatória
-MARINHO, Antonio Lopes; CRUZ, Jorge Luiz da. (Org.) Desenvolvimento de aplicações para internet. Editora Pearson, 2019. ISBN 9786550110604. p. 1-5.  Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+MARINHO, Antonio Lopes; CRUZ, Jorge Luiz da. (Org.) Desenvolvimento de aplicações para internet. Editora Pearson, 2019. ISBN 9786550110604. p. 1-5. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 📗 Leitura complementar
 KUROSE, James F.; ROSS, Keith W. Redes de computadores e a internet: uma abordagem top-down. Pearson/Grupo A, 2021. ISBN 9788582605592. p. 76-90. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
@@ -38,7 +39,7 @@ Fundamentos de Internet e Web - Protocolos de comunicação da internet - <https
 ## 💡 Unidade 2 - O que é a WWW? – o conceito de Hipertexto
 
 📕 Leitura obrigatória
-MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969.  p. 3-11. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969. p. 3-11. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
 ▶️ Videoaulas Obrigatórias - Módulo 1 - Unidade 2
 Fundamentos de Internet e Web - A World Wide Web - WWW - <https://www.youtube.com/watch?v=49P7IRLNRFo&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=5&t=598s>
@@ -67,14 +68,14 @@ Acessar no AVA
 ▶️ Videoaula de Apresentação do Módulo 2
 [UFMS Digital] Fundamentos de Web - Módulo 2 - <https://www.youtube.com/watch?v=w1KyJMDxn2s>
 
-💻 Slide da Videoaula  de Apresentação do Módulo 2
+💻 Slide da Videoaula de Apresentação do Módulo 2
 <https://link.ufms.br/xYeG0>
 
 ## 💡 Unidade 1 - Tags básicas do HTML5
 
 📕 Leituras obrigatórias
 MARINHO, Antonio Lopes; CRUZ, Jorge Luiz da. (Org.) Desenvolvimento de aplicações para Internet. Editora Pearson, 2019. ISBN 9786550110604. p. 7-20. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
-MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969.  p. 62-68. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969. p. 62-68. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 TERUEL, Evandro Carlos. HTML 5: guia prático. São Paulo: Érica, 2014. ISBN 9788536519296. p. 21-33. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 📗 Leitura complementar
 TERUEL, Evandro Carlos. HTML 5: guia prático. São Paulo: Érica, 2014. ISBN 9788536519296. p. 112-305. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
@@ -99,7 +100,7 @@ Desenvolvimento Web - Componentes de Aplicações Web - <https://www.youtube.com
 
 📕 Leituras obrigatórias
 MARINHO, Antonio Lopes; CRUZ, Jorge Luiz da. (Org.) Desenvolvimento de aplicações para Internet. Editora Pearson, 2019. ISBN 9786550110604. p. 20-24. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
-MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969.  p. 70-91. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969. p. 70-91. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 📗 Leitura complementar
 OLIVEIRA, Cláudio Luís Vieira; ZANETTI, Humberto Augusto Piovesana. JavaScript descomplicado: programação para a Web, IoT e dispositivos móveis. São Paulo: Érica, 2020. ISBN 9788536533100 p. 33-42. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
@@ -126,7 +127,7 @@ Acessar no AVA
 ▶️ Videoaula de Apresentação do Módulo 3
 [UFMS Digital] Fundamentos de Web - Módulo 3 - <https://www.youtube.com/watch?v=I5HYZhqQV1g>
 
-💻 Slide da Videoaula  de Apresentação do Módulo 3
+💻 Slide da Videoaula de Apresentação do Módulo 3
 <https://link.ufms.br/m2oax>
 
 ## 💡 Unidade 1 - O que é uma arquitetura WEB
@@ -166,7 +167,7 @@ Acessar no AVA
 ▶️ Videoaula de Apresentação do Módulo 4
 [UFMS Digital] Fundamentos de Web - Módulo 4 - <https://www.youtube.com/watch?v=W9na5-GMTSk>
 
-💻 Slide da Videoaula  de Apresentação do Módulo 4
+💻 Slide da Videoaula de Apresentação do Módulo 4
 <https://link.ufms.br/FsUil>
 
 ## 💡 Unidade 1 - Tecnologias Front-end
@@ -184,10 +185,10 @@ Desenvolvimento Web - Desenvolvimento Full Stack - <https://www.youtube.com/watc
 📕 Leituras obrigatórias
 MARINHO, Antonio Lopes; CRUZ, Jorge Luiz da. (org.) Desenvolvimento de aplicações para Internet. Editora Pearson, 2019. ISBN 9786550110604. p. 65-79. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
-MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969.  p. 95-122. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php. Porto Alegre: Bookman, 2014. ISBN 9788582601969. p. 95-122. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
 📗 Leitura complementar
-OLIVEIRA, Cláudio Luís Vieira; ZANETTI, Humberto Augusto Piovesana. JavaScript descomplicado: programação para a Web, IoT e dispositivos móveis. São Paulo: Érica, 2020.  ISBN 9788536533100  p. 45-93. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
+OLIVEIRA, Cláudio Luís Vieira; ZANETTI, Humberto Augusto Piovesana. JavaScript descomplicado: programação para a Web, IoT e dispositivos móveis. São Paulo: Érica, 2020. ISBN 9788536533100 p. 45-93. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
 ▶️ Videoaulas Obrigatórias - Módulo 4 - Unidade 2
 Aula - Framework Front-End - <https://www.youtube.com/watch?v=B_6ZBYIf04Q>

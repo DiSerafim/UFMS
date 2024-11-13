@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Árvores Balanceadas.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Árvores Balanceadas.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Árvores Balanceadas.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=YkF76cOgtMQ&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=YkF76cOgtMQ&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 Estrutura de Dados - Aula 21 - Árvores AVL.
                 <i class="material-icons right"> send</i>
             </a>
@@ -51,25 +54,30 @@
                 <li>Em que pode haver um pouco de desbalanceamento.</li>
                 <li>Algoritmo de <b>A</b>delson-<b>V</b>elskii e <b>L</b>andis (as Árvores AVL).</li>
                 <li>AVL é uma <b>árvore de busca binária</b> balanceada com relação à altura de suas subárvores</li>
-                <li>Uma árvore AVL verifica a altura das subárvores da esquerda e da direita, garantindo que essa diferença não seja maior que ±1</li>
+                <li>Uma árvore AVL verifica a altura das subárvores da esquerda e da direita, garantindo que essa
+                    diferença não seja maior que ±1</li>
                 <li>Esta diferença é seu <b>Fator de Balanceamento</b></li>
             </ul>
             <pre>fb = hesg - hdir</pre>
             <ul>
                 <li>O fator de balanceamento é calculado a cada nó.</li>
                 <ul>
-                    <li>E, para cada nó, a diferença de altura entre a subárvore da esquerda e da direita não pode passar de ±1</li>
+                    <li>E, para cada nó, a diferença de altura entre a subárvore da esquerda e da direita não pode
+                        passar de ±1</li>
                     <ul>
-                        <li>Lembrando que a altura de uma árvore vazia é -1 O fator de balanceamento, ou alternativamente a altura do nó, é armazenada no próprio nó.</li>
+                        <li>Lembrando que a altura de uma árvore vazia é -1 O fator de balanceamento, ou
+                            alternativamente a altura do nó, é armazenada no próprio nó.</li>
                     </ul>
                 </ul>
             </ul>
             <img src="img/avl14.png" alt="avl14.png">
-            <p>Note que, nesse caso, a inserção de um único elemento foi o suficiente para fazer com que uma árvore deixasse de ser AVL.</p>
+            <p>Note que, nesse caso, a inserção de um único elemento foi o suficiente para fazer com que uma árvore
+                deixasse de ser AVL.</p>
             <img src="img/avl14.png" alt="avl14.png">
             <p>Contudo, somente nós no caminho do ponto de inserção até a raiz <b>podem ter mudado</b> sua altura.</p>
             <p>Então, após a inserção, voltamos até a raiz, nó por nó, atualizando as alturas.</p>
-            <p>Se um novo fator de balanceamento para um determinado nó for 2 ou -2, ajustamos a árvore rotacionando em torno desse nó.</p>
+            <p>Se um novo fator de balanceamento para um determinado nó for 2 ou -2, ajustamos a árvore rotacionando em
+                torno desse nó.</p>
         </section>
 
         <section>
@@ -133,4 +141,5 @@
         <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

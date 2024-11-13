@@ -2,9 +2,9 @@ public class Vetores {
     public static void main(String[] args) {
         // declarando um vetor com até 10 valores (tamanho do vetor)
         int[] numeros = new int[10];
-        
+
         // declarando um vetor com 4 valores (tamanho do vetor)
-        int[] idades = {18, 21, 33, 45};
+        int[] idades = { 18, 21, 33, 45 };
 
         // Armazenar elementos dentro de um vetor
         numeros[0] = 10;
@@ -30,6 +30,7 @@ public class Vetores {
 
         // Tentando incluir além do que já está programado.
         System.out.println(numeros[1000]);
-        System.out.println("Exception in thread main java.lang.ArrayIndexOutOfBoundsException: Index 1000 out of bounds for length 10 at Vetores.main(Vetores.java:32)");
+        System.out.println(
+                "Exception in thread main java.lang.ArrayIndexOutOfBoundsException: Index 1000 out of bounds for length 10 at Vetores.main(Vetores.java:32)");
     }
 }

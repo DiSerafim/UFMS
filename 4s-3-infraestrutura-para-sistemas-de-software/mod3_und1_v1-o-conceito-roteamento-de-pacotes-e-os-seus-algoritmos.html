@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Roteamento e segurança de redes</h1>
@@ -23,16 +25,21 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <iframe width="100%" height="716" src="https://www.youtube.com/embed/tpjjbYPmM9o" title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="100%" height="716" src="https://www.youtube.com/embed/tpjjbYPmM9o"
+                title="[UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <a href="https://www.youtube.com/watch?v=2999JV3nCVA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1 - O conceito de roteamento de pacotes e os seus algoritmos
+            <a href="https://www.youtube.com/watch?v=2999JV3nCVA&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Infraestrutura para Sistemas de Software - Módulo 3 - Unidade 1 - O conceito de
+                roteamento de pacotes e os seus algoritmos
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof.° ministrante: Carlos Alberto da Silva</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>O conceito de roteamento de pacotes e os seus algoritmos</h3>
@@ -42,7 +49,7 @@
                 <li>Protocolos de Roteamentos (algoritmos)</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Conceito de Roteamento</h2>
             <b>Protocolo de Roteamento</b>
@@ -59,7 +66,8 @@
                 </ul>
             </ul>
             <img src="img/conceito-de-roteamento.png" alt="conceito-de-roteamento" title="conceito-de-roteamento">
-            <p><b>Tabelas de roteamento</b> definem as rotas para encaminhar os pacotes corretamente em direção ao destino final:</p>
+            <p><b>Tabelas de roteamento</b> definem as rotas para encaminhar os pacotes corretamente em direção ao
+                destino final:</p>
             <ul>
                 <li>Rotas internas - atuam na rede privada (intranet);</li>
                 <li>Rotas externas - atuam na rede mundial (internet).</li>
@@ -81,7 +89,8 @@
         <section>
             <h2>Tipos de roteamento.</h2>
             <b>Protocolos de redes internas</b>
-            <p>Atuam dentro de uma rede privada (intranet, ou intra-domínio, ou Interior Gateway Protocol (IGP)) podendo ser:</p>
+            <p>Atuam dentro de uma rede privada (intranet, ou intra-domínio, ou Interior Gateway Protocol (IGP)) podendo
+                ser:</p>
             <ul>
                 <li>Vetor de distâncias:</li>
                 <ul>
@@ -93,7 +102,8 @@
                 </ul>
             </ul>
             <b>Protocolos de redes externas</b>
-            <p>Atuam na rede mundial (internet) e são utilizados entre roteadores de diferentes provedores podendo ser:</p>
+            <p>Atuam na rede mundial (internet) e são utilizados entre roteadores de diferentes provedores podendo ser:
+            </p>
             <ul>
                 <li>Exterior Gateway Protocol (EGP);</li>
                 <li>Border Gateway Protocol (BGP);</li>
@@ -108,9 +118,11 @@
             </ol>
             <i>Evitar loops de roteamento</i>
             <br>
-            <img src="img/evitar-loops-de-roteamento.png" alt="evitar-loops-de-roteamento" title="evitar-loops-de-roteamento">
+            <img src="img/evitar-loops-de-roteamento.png" alt="evitar-loops-de-roteamento"
+                title="evitar-loops-de-roteamento">
             <ul>
-                <li>Os algoritmos de roteamento trocam informações de suas tabelas de roteamentos com os roteadores vizinhos:</li>
+                <li>Os algoritmos de roteamento trocam informações de suas tabelas de roteamentos com os roteadores
+                    vizinhos:</li>
                 <ul>
                     <li>Calculando as rotas pelos parâmetros:</li>
                     <ul>
@@ -126,10 +138,11 @@
         <section>
             <h2>Protocolos de Roteamentos (algoritmos)</h2>
             <p><b>Vetor de distâncias</b> Routing Information Protocol (RIP)</p>
-            
+
             <p>É um protocolo de roteamento para determinar a rota de menor custo para uma rede de destino</p>
             <ul>
-                <li>onde os roteadores trocam informações de roteamento referente às medidas de distância dos destinos alcançáveis.</li>
+                <li>onde os roteadores trocam informações de roteamento referente às medidas de distância dos destinos
+                    alcançáveis.</li>
             </ul>
             <p>Este protocolo atualiza uma tabela de roteamento com as rotas válidas registrando:</p>
             <ul>
@@ -137,7 +150,8 @@
                 <li>a interface pela qual os pacotes serão encaminhados;</li>
                 <li>o endereço IP do próximo roteador alcançável.</li>
             </ul>
-            <p>No RIP, o cálculo das melhores rotas é baseado apenas no número de saltos entre roteadores dentro do seu domínio:</p>
+            <p>No RIP, o cálculo das melhores rotas é baseado apenas no número de saltos entre roteadores dentro do seu
+                domínio:</p>
             <ul>
                 <li>É limitada a 15 saltos;</li>
                 <li>⇒ Ideal para redes de pequeno a médio porte.</li>
@@ -249,7 +263,7 @@
                     <li>utiliza o algoritmo de Dijkstra para calcular as rotas de menor custo.</li>
                 </ul>
             </ul>
-            <p>⇒ roteadores vizinhos trocam informações sobre o estado dos enlaces.</p>            
+            <p>⇒ roteadores vizinhos trocam informações sobre o estado dos enlaces.</p>
             <ul>
                 <li>Os roteadores calculam as rotas mais curta para cada destino com base nessa topologia.</li>
                 <ul>
@@ -270,13 +284,17 @@
 
         <section>
             <h2>Referências:</h2>
-            <p>BARBOSA, Cynthia S.; SERPA, Matheus S.; OLIVEIRA, Diego B.; SARAIVA, Maurício O. Arquitetura TCP/IP I. Editora Grupo A, 2020. p. 15-17. ISBN 9786556900766. Disponível na Biblioteca Digital da UFMS.</p>
-            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora Pearson, 2021. ISBN: 9788582605592. p. 273, 303-328. Disponível na Biblioteca Digital da UFMS.</p>
-            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora Pearson, 2021. ISBN: 9788582605615. p. 236-251. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>BARBOSA, Cynthia S.; SERPA, Matheus S.; OLIVEIRA, Diego B.; SARAIVA, Maurício O. Arquitetura TCP/IP I.
+                Editora Grupo A, 2020. p. 15-17. ISBN 9786556900766. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>KUROSE, Jim; ROSS, Keith W. Redes de Computadores e a Internet: uma Abordagem Top-down, 8 Edição. Editora
+                Pearson, 2021. ISBN: 9788582605592. p. 273, 303-328. Disponível na Biblioteca Digital da UFMS.</p>
+            <p>TANENBAUM, Andrew S.; FEAMSTER, Nicholas; WETHERALL, David J.; Redes de Computadores, 6ª Edição. Editora
+                Pearson, 2021. ISBN: 9788582605615. p. 236-251. Disponível na Biblioteca Digital da UFMS.</p>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 8 de out de 2024</p>
     </footer>
 </body>
+
 </html>

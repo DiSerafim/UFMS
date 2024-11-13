@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=oPlXecD-gZM&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 02 – Modelo Entidade-Relacionamento (MER) - Parte I. 
+            <a href="https://www.youtube.com/watch?v=oPlXecD-gZM&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 02 – Modelo Entidade-Relacionamento (MER) - Parte I.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -42,8 +45,10 @@
         <section>
             <h2>Modelagem de dados.</h2>
             <ul>
-                <li>Para que seja possível construir um banco de dados, é necessário estabelecer a forma como os dados serão armazenados nesse banco.</li>
-                <li>Estabelecer a forma como os dados serão armazenados implica na construção de um modelo para a organização dos dados: uma modelagem de dados.</li>
+                <li>Para que seja possível construir um banco de dados, é necessário estabelecer a forma como os dados
+                    serão armazenados nesse banco.</li>
+                <li>Estabelecer a forma como os dados serão armazenados implica na construção de um modelo para a
+                    organização dos dados: uma modelagem de dados.</li>
             </ul>
         </section>
 
@@ -51,16 +56,18 @@
             <h2>Contexto didático.</h2>
             <b>Uma empresa:</b>
             <p>Cada departamento da empresa possui um nome e um número exclusivos.</p>
-            <p>Um funcionário gerencia um departamento e a data de início desse trabalho de gerência deve ser registrada.</p>
+            <p>Um funcionário gerencia um departamento e a data de início desse trabalho de gerência deve ser
+                registrada.</p>
             <p>Um mesmo departamento pode estar localizado em diferentes prédios.</p>
             <p>Os departamentos possuem vários empregados e controlam uma série de projetos</p>
         </section>
-        
+
         <section>
             <h2>Modelo Entidade-Relacionamento (MER).</h2>
-            <p>É um modelo de dados conceitual, de alto nível, que permite expressar a organização que deve ser imposta aos dados em um banco de dados.</p>
+            <p>É um modelo de dados conceitual, de alto nível, que permite expressar a organização que deve ser imposta
+                aos dados em um banco de dados.</p>
             <p>Existe uma notação baseada em diagramas para a construção de um MER: o diagrama ER.</p>
-            
+
             <b>Elementos do diagrama ER.</b>
             <ul>
                 <li>Entidades.</li>
@@ -70,12 +77,18 @@
                 <li>Cardinalidades.</li>
             </ul>
 
-            <p><b>Entidade (forte):</b> é um objeto básico do MER usado para representar uma coisa no mundo real, física ou conceitual, com existência independente.</p>
-            <p>Se tal existência só faz sentido quando está relacionada a outra entidade, a entidade é dita <b>fraca</b>.</p>
-            <p><b>Heurística:</b> no discurso que descreve o mundo real, as entidades são frequentemente mencionadas, e geralmente são descritas em termos de suas propriedades.</p>
+            <p><b>Entidade (forte):</b> é um objeto básico do MER usado para representar uma coisa no mundo real, física
+                ou conceitual, com existência independente.</p>
+            <p>Se tal existência só faz sentido quando está relacionada a outra entidade, a entidade é dita
+                <b>fraca</b>.</p>
+            <p><b>Heurística:</b> no discurso que descreve o mundo real, as entidades são frequentemente mencionadas, e
+                geralmente são descritas em termos de suas propriedades.</p>
 
             <b>Exemplo (Entidade).</b>
-            <p>Cada <b>departamento</b> da empresa possui um nome e um número exclusivos. Um funcionário gerencia um <b>departamento</b> e a data de início desse trabalho de gerência deve ser registrada. Um mesmo <b>departamento</b> pode estar localizado em diferentes prédios. Os <b>departamento</b>s possuem vários empregados e controlam uma série de projetos ...</p>
+            <p>Cada <b>departamento</b> da empresa possui um nome e um número exclusivos. Um funcionário gerencia um
+                <b>departamento</b> e a data de início desse trabalho de gerência deve ser registrada. Um mesmo
+                <b>departamento</b> pode estar localizado em diferentes prédios. Os <b>departamento</b>s possuem vários
+                empregados e controlam uma série de projetos ...</p>
             <p><b>Departamento</b> pode ser modelado como uma entidade.</p>
 
             <p>No diagrama ER, as entidades são representadas por retângulos.</p>
@@ -91,7 +104,8 @@
 
             <b>Exemplo (Atributo).</b>
             <p><b>Atributo</b>: é uma propriedade que descreve uma entidade.</p>
-            <p>Exemplo: Um funcionário possui um <b>número</b> que o identifica (identidade), <b>nome</b>, <b>endereço</b>, <b>salário</b> e <b>data de nascimento</b>.</p>
+            <p>Exemplo: Um funcionário possui um <b>número</b> que o identifica (identidade), <b>nome</b>,
+                <b>endereço</b>, <b>salário</b> e <b>data de nascimento</b>.</p>
             <p>Os atributos da entidade FUNCIONÁRIO estão destacados em negrito.</p>
 
             <b>No diagrama ER, os atributos são representados por elipses.</b>
@@ -121,8 +135,10 @@
             <p></p>
             <b>Conceitos:</b>
             <ul>
-                <li>Um tipo entidade define uma coleção, ou conjunto, de entidades que têm os mesmos atributos. É o <b>ESQUEMA</b>.</li>
-                <li>A coleção de todas as entidades de um tipo entidade é chamada de conjunto entidade. É a <b>INSTÂNCIA</b>.</li>
+                <li>Um tipo entidade define uma coleção, ou conjunto, de entidades que têm os mesmos atributos. É o
+                    <b>ESQUEMA</b>.</li>
+                <li>A coleção de todas as entidades de um tipo entidade é chamada de conjunto entidade. É a
+                    <b>INSTÂNCIA</b>.</li>
             </ul>
 
             <b>ESQUEMA.</b>
@@ -146,8 +162,11 @@
                     </ul>
                 </ul>
             </ul>
-            <p><b>Atributo chave</b>: um tipo entidade, usualmente, tem um ou mais atributos que assumem valores distintos para cada entidade individual dentro do conjunto entidade. Esse atributo, ou conjunto de atributos (chave composta), identifica unicamente uma entidade.</p>
-            <p><b>Restrição de unicidade</b>: proíbe que duas entidades, em um mesmo conjunto entidade, tenham os mesmos valores no seu atributo chave.</p>
+            <p><b>Atributo chave</b>: um tipo entidade, usualmente, tem um ou mais atributos que assumem valores
+                distintos para cada entidade individual dentro do conjunto entidade. Esse atributo, ou conjunto de
+                atributos (chave composta), identifica unicamente uma entidade.</p>
+            <p><b>Restrição de unicidade</b>: proíbe que duas entidades, em um mesmo conjunto entidade, tenham os mesmos
+                valores no seu atributo chave.</p>
 
             <b>Com a indicação do atributos chaves:</b>
             <p></p>
@@ -172,4 +191,5 @@
         <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

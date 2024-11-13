@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Entrada e Saída (E/S).</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Entrada e Saída (E/S).</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=IE9EVxy8Ups&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Sistemas Operacionais – Aula 03 - Chamada de Sistema e Interrupção. 
+            <a href="https://www.youtube.com/watch?v=IE9EVxy8Ups&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Sistemas Operacionais – Aula 03 - Chamada de Sistema e Interrupção.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Jó Ueyama (UNIVESP).</p>
@@ -43,7 +46,8 @@
             <h2>Chamadas de Sistemas.</h2>
             <ul>
                 <li>Se uma aplicação precisa realizar alguma instrução privilegiada (<b>imprimir um arquivo</b>),</li>
-                <li>ela realiza uma <b>chamada de sistema</b>, que altera do <b>modo usuário</b> para o <b>modo kernel</b>;</li>
+                <li>ela realiza uma <b>chamada de sistema</b>, que altera do <b>modo usuário</b> para o <b>modo
+                        kernel</b>;</li>
                 <li>Ex: Ler um arquivo</li>
                 <li>Chamadas de sistemas são a porta de entrada para o <b>modo kernel</b>;</li>
             </ul>
@@ -54,7 +58,8 @@
             <ul>
                 <li>1) As chamadas de sistemas são realizadas através de instruções <b>Traps</b>.</li>
                 <li>2) Traps são conhecidos como <b>interrupções de software</b>.</li>
-                <li>3) Após o término da chamada (ex.: ler um arquivo), a execução <b>continua após a chamada de sistema</b></li>
+                <li>3) Após o término da chamada (ex.: ler um arquivo), a execução <b>continua após a chamada de
+                        sistema</b></li>
             </ul>
             <img src="img/chamada-de-sistema.png" alt="chamada-de-sistema.png">
             <p></p>
@@ -102,7 +107,8 @@
         <section>
             <h2>Exemplo de Uso com printf().</h2>
             <ul>
-                <li>Programa em C que invoca a função de biblioteca <b>printf()</b>, que por sua vez chama o system call <b>write()</b></li>
+                <li>Programa em C que invoca a função de biblioteca <b>printf()</b>, que por sua vez chama o system call
+                    <b>write()</b></li>
                 <li>A chamada <b>printf()</b> ocasiona a chamada <b>write()</b> e <b>exit()</b></li>
             </ul>
             <img src="img/chamada-de-sistema4.png" alt="chama1da-de-sistem4.png">
@@ -134,11 +140,13 @@
                 <li><b>Interrupção</b></li>
                 <ul>
                     <li>Evento externo ao processador.</li>
-                    <li>Gerada por dispositivos que precisam da atenção do SO. Pode não estar relacionada ao processo que está rodando.</li>
+                    <li>Gerada por dispositivos que precisam da atenção do SO. Pode não estar relacionada ao processo
+                        que está rodando.</li>
                 </ul>
                 <li><b>Traps</b></li>
                 <ul>
-                    <li>Evento inesperado vindo de dentro do processador. Causados pelo processo corrente no processador (seja por chamada ao SO, seja por instrução ilegal).</li>
+                    <li>Evento inesperado vindo de dentro do processador. Causados pelo processo corrente no processador
+                        (seja por chamada ao SO, seja por instrução ilegal).</li>
                 </ul>
             </ul>
         </section>
@@ -169,4 +177,5 @@
         <p>Diego Serafim de Sousa - 18 de jun de 2024.</p>
     </footer>
 </body>
+
 </html>

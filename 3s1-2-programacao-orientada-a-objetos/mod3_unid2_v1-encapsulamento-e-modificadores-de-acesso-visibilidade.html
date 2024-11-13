@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=IE274m4O7kA&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 1 - 
-                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 2. 
+            <a href="https://www.youtube.com/watch?v=IE274m4O7kA&ab_channel=AGEADUFMS" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 1 -
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 2.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
@@ -80,7 +83,8 @@
                 <ul>
                     <li>public: acessado de qualquer classe</li>
                     <li>protected: acessado por classes filhas e do mesmo pacote</li>
-                    <li>Sem Modificador (package-private ou padrão): acessado dentro do mesmo pacote (filha ou não).</li>
+                    <li>Sem Modificador (package-private ou padrão): acessado dentro do mesmo pacote (filha ou não).
+                    </li>
                     <li>private: acessado dentro da mesma classe</li>
                 </ul>
             </ul>
@@ -96,17 +100,20 @@
                 </ul>
                 <li>O que significa o fato do código em uma classe ter acesso a um membro de outra classe?</li>
                 <ul>
-                    <li>Se a classe A tiver acesso a um membro da classe B, significa que o membro da classe B está visível para a classe A.</li>
+                    <li>Se a classe A tiver acesso a um membro da classe B, significa que o membro da classe B está
+                        visível para a classe A.</li>
                 </ul>
                 <li>Uma subclasse herda quais membros da sua superclasse?</li>
                 <ul>
                     <li>A SUBCLASSE herda todos os membros da SUPERCLASSE</li>
                     <ul>
-                        <li>E se ele estiver visível é exatamente como se a SUBCLASSE tivesse declarado o membro nela mesma</li>
+                        <li>E se ele estiver visível é exatamente como se a SUBCLASSE tivesse declarado o membro nela
+                            mesma</li>
                     </ul>
                     <li>Não é uma questão de se herdar ou não, mas se é visível ou não.</li>
                     <ul>
-                        <li>Ou seja, quais membros de uma SUPERCLASSE podem ser acessados por uma SUBCLASSE por meio da herança</li>
+                        <li>Ou seja, quais membros de uma SUPERCLASSE podem ser acessados por uma SUBCLASSE por meio da
+                            herança</li>
                     </ul>
                 </ul>
             </ul>
@@ -115,17 +122,19 @@
         <section>
             <h2>Membros public.</h2>
             <p>Quando um membro é declarado public, significa que
-            todas as outras classes, independente do pacote ao qual
-            pertençam, podem acessar o membro em questão.</p>
+                todas as outras classes, independente do pacote ao qual
+                pertençam, podem acessar o membro em questão.</p>
             <li>Assumindo que a própria classe esteja visível.</li>
         </section>
 
         <section>
             <h2>Membros protected.</h2>
             <ul>
-                <li>Pode ser acessado (através de herança) por uma subclasse, mesmo se a subclasse estiver em um pacote diferente:</li>
+                <li>Pode ser acessado (através de herança) por uma subclasse, mesmo se a subclasse estiver em um pacote
+                    diferente:</li>
                 <ul>
-                    <li>Depois que a subclasse de fora do pacote herda o membro protected, ele torna-se private para qualquer código de fora da subclasse, com exceção das subclasses da subclasse.</li>
+                    <li>Depois que a subclasse de fora do pacote herda o membro protected, ele torna-se private para
+                        qualquer código de fora da subclasse, com exceção das subclasses da subclasse.</li>
                 </ul>
                 <li>Pode ser acessado por classes do mesmo pacote também:</li>
                 <ul>
@@ -145,7 +154,8 @@
         <section>
             <h2>Membros private.</h2>
             <ul>
-                <li>Membros marcados como private não podem ser acessados por nenhuma outra classe, a não ser aquela na qual o membro private foi declarado.</li>
+                <li>Membros marcados como private não podem ser acessados por nenhuma outra classe, a não ser aquela na
+                    qual o membro private foi declarado.</li>
                 <ul>
                     <li>Obs.: Isso caracteriza o conceito OO chamado Encapsulamento.</li>
                 </ul>
@@ -155,11 +165,14 @@
         <section>
             <h2>Encapsulamento.</h2>
             <ul>
-                <li>Técnica para fazer com que os campos de uma classe sejam escondidos e acessá-los via métodos públicos.</li>
+                <li>Técnica para fazer com que os campos de uma classe sejam escondidos e acessá-los via métodos
+                    públicos.</li>
                 <ul>
-                    <li>Se um campo é declarado privado, ele não pode ser acessado fora da classe, escondendo, assim, os campos dentro da classe.</li>
+                    <li>Se um campo é declarado privado, ele não pode ser acessado fora da classe, escondendo, assim, os
+                        campos dentro da classe.</li>
                 </ul>
-                <li>Pode ser descrito como uma barreira protetora que impede que o código e os dados sejam acessados por outro código definido fora da classe.</li>
+                <li>Pode ser descrito como uma barreira protetora que impede que o código e os dados sejam acessados por
+                    outro código definido fora da classe.</li>
                 <li>Provê fácil manutenção, flexibilidade e extensibilidade para o código.</li>
                 <li>Também conhecido como Data Hiding.</li>
                 <li>A forma mais comum de uso do Encapsulamento é através dos getters e setters.</li>
@@ -239,7 +252,8 @@
                     }
                 }
             </pre>
-            <p>Qualquer classe que queira acessar os atributos “escondidos” deve fazê-lo através dos métodos públicos.</p>
+            <p>Qualquer classe que queira acessar os atributos “escondidos” deve fazê-lo através dos métodos públicos.
+            </p>
         </section>
 
         <section>
@@ -297,7 +311,8 @@
             <ul>
                 <li><i>private final String nome = ″João″;</i></li>
             </ul>
-            <li>static: só vai ter uma instância/valor do atributo para todas as instâncias da classe. Se torna um atributo da classe e não da instância;</li>
+            <li>static: só vai ter uma instância/valor do atributo para todas as instâncias da classe. Se torna um
+                atributo da classe e não da instância;</li>
             <li>Outros que vamos ver mais tarde…</li>
         </section>
 
@@ -306,7 +321,8 @@
             <ul>
                 <li>São definidas através do uso de duas palavras reservadas da linguagem Java: static e final</li>
                 <ul>
-                    <li>static: indica que a variável é da classe, ou seja, existe um só valor para classe e todos os objetos criados a partir dela;</li>
+                    <li>static: indica que a variável é da classe, ou seja, existe um só valor para classe e todos os
+                        objetos criados a partir dela;</li>
                     <li>final: indica que o valor de uma variável não pode ser alterado.</li>
                 </ul>
                 <li>Exemplo:</li>
@@ -330,4 +346,5 @@
         <p>Diego Serafim de Sousa - 30 de abril de 2024</p>
     </footer>
 </body>
+
 </html>

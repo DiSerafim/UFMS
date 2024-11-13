@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Aprofundando na Orientação a Objetos.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=IlgAMHgODUA&t=763s&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=IlgAMHgODUA&t=763s&ab_channel=UNIVESP" target="_blank"
+                type="button" name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
                 Programação Orientada a Objetos – Aula 02 - Classes e Objetos - Parte I.
                 <i class="material-icons right"> send</i>
             </a>
@@ -52,8 +55,10 @@
 
         <section>
             <h2>Métodos Acessadores(get) e Modificadores (set).</h2>
-            <p>Para garantir o princípio de encapsulamento é comum que os atributos das classes sejam definidos como privados ou protegidos.</p>
-            <p>Se algum objeto de outra classe deseja alterar ou consultar o valor dos atributos deverá usar os métodos acessadores ou modificadores fornecidos pela classe.</p>
+            <p>Para garantir o princípio de encapsulamento é comum que os atributos das classes sejam definidos como
+                privados ou protegidos.</p>
+            <p>Se algum objeto de outra classe deseja alterar ou consultar o valor dos atributos deverá usar os métodos
+                acessadores ou modificadores fornecidos pela classe.</p>
             <p>Cada atributo e método possui um nível de visibilidade:</p>
             <ul>
                 <li>Público (+): todo mundo vê.</li>
@@ -73,8 +78,10 @@
                 <li>+ boolean fazer Transferência (Conta dest, double monto)</li>
             </ul>
 
-            <p>Os métodos acessadores retornam o valor de um atributo e geralmente são nomeados por <i>getNomeAtributo</i>.</p>
-            <p>Os métodos modificadores modificam o valor de um atributo e geralmente são nomeados por <i>setNomeAtributo</i>.</p>
+            <p>Os métodos acessadores retornam o valor de um atributo e geralmente são nomeados por
+                <i>getNomeAtributo</i>.</p>
+            <p>Os métodos modificadores modificam o valor de um atributo e geralmente são nomeados por
+                <i>setNomeAtributo</i>.</p>
 
             <p>Ex: atributo nroConta.</p>
             <pre>
@@ -91,14 +98,16 @@
             }
             </pre>
 
-            <p>Princípio de encapsulamento perdido! Quando for necessário retornar um objeto que é um atributo de uma classe, retorne um clone desse atributo.</p>
+            <p>Princípio de encapsulamento perdido! Quando for necessário retornar um objeto que é um atributo de uma
+                classe, retorne um clone desse atributo.</p>
             <pre>
             public Data getDataApertura () {
                 return dataApertura;
             }
             </pre>
 
-            <p>Os métodos set e get podem ser usados para validar os argumentos e impedir qualquer tentativa de modificar os atributos com valores não válidos.</p>
+            <p>Os métodos set e get podem ser usados para validar os argumentos e impedir qualquer tentativa de
+                modificar os atributos com valores não válidos.</p>
             <p>Controlar o acesso aos dados pode reduzir os erros e aumentar a robustez dos programas.</p>
         </section>
 
@@ -118,7 +127,7 @@
 
         <section>
             <h2>Referências a objetos.</h2>
-            
+
             <pre>
                 Pessoa a1 = new Pessoa("Ana", 25);
             </pre>
@@ -137,9 +146,10 @@
 
         <section>
             <h2>Objetos como argumentos de métodos.</h2>
-            
+
             <i>boolean fazerTransferencia(Conta dest, double monto)</i>
-            <p>Java trabalha apenas com passagem de parâmetros por valor, isto é, funciona como uma atribuição simples.</p>
+            <p>Java trabalha apenas com passagem de parâmetros por valor, isto é, funciona como uma atribuição simples.
+            </p>
             <p>Assim, quando chamamos o método fazer Transferencia não há cópia de objetos e sim cópia de endereços.</p>
             <pre>
                 public static void trocaDatas (Data d1, Data d2){
@@ -148,14 +158,15 @@
                     d2 = temp;
                 }
             </pre>
-           <p>Funciona?</p>
+            <p>Funciona?</p>
         </section>
 
         <section>
             <h2>Métodos e variáveis static.</h2>
 
             <b>Métodos static.</b>
-            <p>Métodos que realizam uma tarefa que não depende de um objeto são chamados de métodos static ou métodos da classe.</p>
+            <p>Métodos que realizam uma tarefa que não depende de um objeto são chamados de métodos static ou métodos da
+                classe.</p>
             <p>Esses métodos só podem acessar variáveis estáticas da classe.</p>
             <p>Para chamar um método static usar:</p>
             <pre>
@@ -176,7 +187,8 @@
             </pre>
 
             <b>Método main.</b>
-            <p>O método main é estático pois isso permite que a JVM invoque o main sem criar uma instância de classe.</p>
+            <p>O método main é estático pois isso permite que a JVM invoque o main sem criar uma instância de classe.
+            </p>
             <p>Todo programa Java começa sua execução neste método.</p>
             <i>Java NomeDaClasse arg1 arg2 ...</i>
             <pre>
@@ -191,7 +203,8 @@
 
         <section>
             <h2>Construindo suas próprias classes.</h2>
-            <p>Havendo múltiplas classes em um mesmo arquivo, somente uma pode ser public, e deve ter o mesmo nome do arquivo fonte.</p>
+            <p>Havendo múltiplas classes em um mesmo arquivo, somente uma pode ser public, e deve ter o mesmo nome do
+                arquivo fonte.</p>
         </section>
 
         <section>
@@ -216,7 +229,7 @@
             <pre>
                 import java.lang.*;
             </pre>
-            
+
             <p>Também podemos importar uma classe específica:</p>
             <pre>
                 import pacote.Classe;
@@ -233,9 +246,10 @@
                 <li>Evitar conflitos de nomes;</li>
                 <li>Fazer controle de acesso.</li>
             </ul>
-            
+
             <p>Exemplo:</p>
-            <i>Considere um grupo de classes para representar uma coleção de objetos gráficos (Shape, Circle, Rectangle e Triangle)</i>
+            <i>Considere um grupo de classes para representar uma coleção de objetos gráficos (Shape, Circle, Rectangle
+                e Triangle)</i>
             <pre>
                 public abstract class Shape {
                 }
@@ -265,7 +279,8 @@
             </pre>
             <p>A classe Circle é um membro público do pacote graphics.</p>
 
-            <p>Se nenhum nome de pacote for utilizado, seus tipos serão membros de um pacote default, que é um pacote sem nome.</p>
+            <p>Se nenhum nome de pacote for utilizado, seus tipos serão membros de um pacote default, que é um pacote
+                sem nome.</p>
             <p>Esta prática só faz sentido em aplicações muito pequenas de caráter temporário.</p>
             <pre>
                 package graphics;           →   graphics
@@ -283,8 +298,10 @@
                 graphics\Rectangle.java
             </pre>
 
-            <p>Ao ser compilado, um arquivo fonte (.java) gera-se um arquivo de saída de mesmo nome para cada classe, interface etc, porém com a extensão .class.</p>
-            <p>Os arquivos .class também devem ficar em uma estrutura de diretórios refletindo seus nomes, mas não necessariamente junto dos arquivos fonte.</p>
+            <p>Ao ser compilado, um arquivo fonte (.java) gera-se um arquivo de saída de mesmo nome para cada classe,
+                interface etc, porém com a extensão .class.</p>
+            <p>Os arquivos .class também devem ficar em uma estrutura de diretórios refletindo seus nomes, mas não
+                necessariamente junto dos arquivos fonte.</p>
 
             <b>Arquivos de saída (.class)</b>
             <table>
@@ -312,11 +329,13 @@
             <p>Esta separação permite a disponibilização de programas aos usuários sem revelar o código fonte.</p>
 
             <b>Gerenciamento de pacotes e Eclipse</b>
-            <p>O ambiente Eclipse apresenta um conjunto de facilidades para gerenciamento de pacotes de forma automática.</p>
+            <p>O ambiente Eclipse apresenta um conjunto de facilidades para gerenciamento de pacotes de forma
+                automática.</p>
             <p>Ao criar uma nova classe é possível especificar o pacote a qual ela pertence.</p>
             <p>O Eclipse se encarrega da criação de diretórios.</p>
             <p>Exemplo:</p>
-            <p>Escreva uma (ou mais) classe(s) em Java para calcular o saldo de uma conta corrente que pertence a um correntista. Considere:</p>
+            <p>Escreva uma (ou mais) classe(s) em Java para calcular o saldo de uma conta corrente que pertence a um
+                correntista. Considere:</p>
             <ul>
                 <li>1. Toda conta se abre com pelo menos 200 reais</li>
                 <li>2. O sistema deverá permitir fazer saques, depósitos e transferências.</li>
@@ -329,4 +348,5 @@
         <p>Diego Serafim de Sousa - 28 de abril de 2024</p>
     </footer>
 </body>
+
 </html>

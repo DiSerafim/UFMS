@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Interface Hardware/Software.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Interface Hardware/Software.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Interface Hardware/Software.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=K4EY0AbTOZ4&ab_channel=EmilioFrancesquini" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                2.1 - Arquitetura de Computadores - Instruções: A Linguagem do Computador. 
+            <a href="https://www.youtube.com/watch?v=K4EY0AbTOZ4&ab_channel=EmilioFrancesquini"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                2.1 - Arquitetura de Computadores - Instruções: A Linguagem do Computador.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Emílio Francesquini.</p>
@@ -42,7 +45,8 @@
         <section>
             <h2>Conjunto de instruções.</h2>
             <ul>
-                <li>O <b>Conjunto de Instruções</b> (en: instruction set) é o conjunto das instruções de um computador.</li>
+                <li>O <b>Conjunto de Instruções</b> (en: instruction set) é o conjunto das instruções de um computador.
+                </li>
                 <li>Diferentes computadores têm diferentes conjuntos de instruções.</li>
                 <ul>
                     <li>Mas todos tem muitos aspectos em comum!</li>
@@ -59,7 +63,8 @@
             <h2>O Conjunto de Instruções MIPS.</h2>
             <ul>
                 <li>É o conjunto com o qual mais trabalharemos até o fim da disciplina</li>
-                <li>É um computador (Stanford MIPS) que é comercializado pela empresa MIPS Technologies (www.mips.com).</li>
+                <li>É um computador (Stanford MIPS) que é comercializado pela empresa MIPS Technologies (www.mips.com).
+                </li>
                 <ul>
                     <li>Atualmente muito usado em roteadores, NAS, impressoras, câmeras...</li>
                     <li>Também foi o processador usado no Nintendo 64, Playstation 1 e 2, e PSP</li>
@@ -136,7 +141,8 @@
                 </ul>
                 <li><b>Princípio de Design 2</b>: menor é mais rápido</li>
                 <ul>
-                    <li>Considere o tempo de acesso para milhares de posições e o tempo de acesso para apenas algumas dezenas</li>
+                    <li>Considere o tempo de acesso para milhares de posições e o tempo de acesso para apenas algumas
+                        dezenas</li>
                 </ul>
             </ul>
         </section>
@@ -193,7 +199,8 @@
                 <li>MIPS é <b>Big Endian</b></li>
                 <ul>
                     <li>Isso significa que o byte mais significativo fica localizado no menor endereço da palavra</li>
-                    <li>Em contrapartida, arquiteturas <b>litte endian</b> armazenam o byte menos significativo no menor endereço</li>
+                    <li>Em contrapartida, arquiteturas <b>litte endian</b> armazenam o byte menos significativo no menor
+                        endereço</li>
                 </ul>
             </ul>
         </section>
@@ -217,7 +224,8 @@
 
         <section>
             <h2>Exemplo 2: Escrevendo operadores na memória.</h2>
-            <p>De maneira semelhante, temos a instrução <b>sw</b> (store word) que armazena o valor do segundo operando no registrador apontado pelo primeiro.</p>
+            <p>De maneira semelhante, temos a instrução <b>sw</b> (store word) que armazena o valor do segundo operando
+                no registrador apontado pelo primeiro.</p>
             <pre>
                 1 A[12] h+ A[8];
                 
@@ -239,8 +247,10 @@
                 </ul>
                 <li>Compiladores se esforçam para usar os registradores o máximo possível</li>
                 <ul>
-                    <li>Eles apenas <b>vazam</b> (en: spill) os registradores contendo as variáveis menos frequentemente utilizadas</li>
-                    <li>O estudo da otimização do uso de registradores é importantíssimo e foi por muitos anos tópico de muitas pesquisas</li>
+                    <li>Eles apenas <b>vazam</b> (en: spill) os registradores contendo as variáveis menos frequentemente
+                        utilizadas</li>
+                    <li>O estudo da otimização do uso de registradores é importantíssimo e foi por muitos anos tópico de
+                        muitas pesquisas</li>
                 </ul>
             </ul>
         </section>
@@ -248,14 +258,16 @@
         <section>
             <h2>Operadores Imediatos.</h2>
             <ul>
-                <li>Operandos imediatos (en: immediate operands) são úteis pois, frequentemente, trabalhamos com constantes no nosso código.</li>
+                <li>Operandos imediatos (en: immediate operands) são úteis pois, frequentemente, trabalhamos com
+                    constantes no nosso código.</li>
                 <ul>
                     <li>Pense <b>i++, x = 0</b>, ...</li>
                     <li>Otimizando casos comuns podemos ganhar simplicidade e desempenho</li>
                 </ul>
                 <li>A operação <b>add</b> tem uma versão com operando imediato chamada <b>addi</b></li>
                 <pre>addi $s3, $s3, 4</pre>
-                <li>Não temos a versão com imediatos de <b>sub</b>, mas <b>addi</b> aceita valores negativos. Então:</li>
+                <li>Não temos a versão com imediatos de <b>sub</b>, mas <b>addi</b> aceita valores negativos. Então:
+                </li>
                 <pre>addi $s2, $s1, -1</pre>
             </ul>
         </section>
@@ -273,11 +285,13 @@
         <section>
             <h2>A constante Zero.</h2>
             <ul>
-                <li>A constante <b>zero</b> é tão importante e comum que o MIPS reserva um registrador que sempre contem este valor: <b>$zero</b></li>
+                <li>A constante <b>zero</b> é tão importante e comum que o MIPS reserva um registrador que sempre contem
+                    este valor: <b>$zero</b></li>
                 <ul>
                     <li>Esse registrador não pode ser sobrescrito</li>
                 </ul>
-                <li>É muito útil para efetuar operações muito comuns, por exemplo, copiar um valor entre um registrador e outro</li>
+                <li>É muito útil para efetuar operações muito comuns, por exemplo, copiar um valor entre um registrador
+                    e outro</li>
                 <ul>
                     <li>Tradicionalmente essa operação é chamada de move ainda que ela não elimine o valor original</li>
                 </ul>
@@ -289,4 +303,5 @@
         <p>Diego Serafim de Sousa - 11 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

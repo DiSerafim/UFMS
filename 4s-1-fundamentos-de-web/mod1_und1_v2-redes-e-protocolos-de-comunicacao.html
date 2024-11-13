@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Introdução Web</h1>
@@ -23,14 +25,15 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=UsaNtKOoXyg&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=4" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=UsaNtKOoXyg&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=4"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 Fundamentos de Internet e Web - Protocolos de comunicação da internet
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>Protocolos de comunicação da internet</h3>
@@ -68,23 +71,29 @@
                     <li>Há respostas específicas a serem recebidas.</li>
                 </ul>
             </ul>
-           
+
             <p>Exemplo:</p>
             <ul>
                 <li>Saber que horas são.</li>
             </ul>
         </section>
-           
+
         <section>
             <h2>O que é um protocolo.</h2>
             <b>Protocolo de horas (humanos/computadores)</b>
             <i>https://image.slidesharecdn.com/unidade1-redesdecomp-120316160929-phpapp02/75/Unidade-1-redes-de-comp-12-2048.jpg</i>
             <img src="img/protocolos.webp" alt="protocolos.webp">
             <ul>
-                <li>Um protocolo, em termos gerais, é um conjunto de regras, convenções ou procedimentos estabelecidos para permitir a comunicação, interação ou troca de informações entre sistemas, dispositivos ou pessoas.</li>
-                <li>Para humanos, o protocolo de horas se refere às práticas sociais, regras ou convenções seguidas para determinar e coordenar horários.</li>
-                <li>Já no âmbito computacional, os protocolos de horas são conjuntos de regras e processos seguidos por dispositivos ou sistemas para sincronizar seus relógios e manter uma noção precisa do tempo.</li>
-                <li>Esses protocolos de horas para computadores são essenciais para operações críticas que dependem da precisão temporal, como transações financeiras, sincronização de dados em redes, registros de eventos sequenciais e muito mais.</li>
+                <li>Um protocolo, em termos gerais, é um conjunto de regras, convenções ou procedimentos estabelecidos
+                    para permitir a comunicação, interação ou troca de informações entre sistemas, dispositivos ou
+                    pessoas.</li>
+                <li>Para humanos, o protocolo de horas se refere às práticas sociais, regras ou convenções seguidas para
+                    determinar e coordenar horários.</li>
+                <li>Já no âmbito computacional, os protocolos de horas são conjuntos de regras e processos seguidos por
+                    dispositivos ou sistemas para sincronizar seus relógios e manter uma noção precisa do tempo.</li>
+                <li>Esses protocolos de horas para computadores são essenciais para operações críticas que dependem da
+                    precisão temporal, como transações financeiras, sincronização de dados em redes, registros de
+                    eventos sequenciais e muito mais.</li>
             </ul>
             <b>Todo protocolo considera:</b>
             <ul>
@@ -94,26 +103,30 @@
                 <li>O formato de cada mensagem do vocabulário.</li>
                 <li>Os algoritmos que tentam garantir a troca de mensagens e a integridade do serviço oferecido.</li>
             </ul>
-           <b>Em resumo.</b>
-           <ul>
-               <li>Protocolos são padronizações que definem como se dá a comunicação e a utilização do meio físico na infraestrutura de comunicação (rede)</li>
-           </ul>
+            <b>Em resumo.</b>
+            <ul>
+                <li>Protocolos são padronizações que definem como se dá a comunicação e a utilização do meio físico na
+                    infraestrutura de comunicação (rede)</li>
+            </ul>
             <p>Os protocolos consideram:</p>
             <ul>
                 <li><b>Semântica</b> (regras): temporizações, controle de erros, etc.</li>
                 <li><b>Sintaxe</b> (formato): codificação, quadro, etc.</li>
             </ul>
-           <b>Segundo Kurose & Ross</b>            
-            <p>"Um protocolo define o <b>formato</b> e a <b>ordem</b> das mensagens trocadas entre duas ou mais entidades comunicantes, bem como as <b>ações realizadas</b> na transmissão e/ou recepção dessas mensagens"</p>
+            <b>Segundo Kurose & Ross</b>
+            <p>"Um protocolo define o <b>formato</b> e a <b>ordem</b> das mensagens trocadas entre duas ou mais
+                entidades comunicantes, bem como as <b>ações realizadas</b> na transmissão e/ou recepção dessas
+                mensagens"</p>
         </section>
-    
+
         <section>
             <h2>Protocolos de comunicação fundamentais da Internet.</h2>
             <ul>
                 <li>Na comunicação de aplicações que utilizamos na internet há diversos protocolos.</li>
                 <li>Cada camada possui um ou mais protocolos, dependendo do modelo de camadas utilizado.</li>
                 <li>TCP/IP com suas camadas e protocolos.</li>
-                <li>A Internet é composta de vários tipos de redes que operam com inúmeros protocolos de comunicação</li>
+                <li>A Internet é composta de vários tipos de redes que operam com inúmeros protocolos de comunicação
+                </li>
                 <li>No contexto da infraestrutura de comunicação, grande parte da Internet opera no modelo TCP/IP.</li>
                 <li>3 protocolos deste modelo:</li>
                 <ul>
@@ -146,51 +159,92 @@
             |_____________________________________|           
             </pre>
         </section>
-    
+
         <section>
             <h2>IP (Internet Protocol)</h2>
-            <p>O Protocolo da Internet (IP) é um dos principais protocolos da camada de rede no modelo TCP/IP. Sua responsabilidade central é realizar o roteamento e encaminhamento dos pacotes de dados entre diferentes dispositivos em uma rede.</p>
+            <p>O Protocolo da Internet (IP) é um dos principais protocolos da camada de rede no modelo TCP/IP. Sua
+                responsabilidade central é realizar o roteamento e encaminhamento dos pacotes de dados entre diferentes
+                dispositivos em uma rede.</p>
             <ul>
                 <li>Principais responsabilidades do IP:</li>
                 <ul>
-                    <li>1. <b>Endereçamento</b>: Atribui endereços IP únicos a dispositivos na rede para identificação e comunicação. Esses endereços permitem que os pacotes sejam direcionados de um remetente para um destinatário específico.</li>
-                    <li>2. <b>Roteamento</b>: Decide a melhor rota para os pacotes de dados viajarem de um ponto a outro na rede. Isso envolve tomar decisões sobre o caminho mais eficiente para a entrega dos dados, considerando fatores como latência, largura de banda e condições da rede.</li>
-                    <li>3. <b>Fragmentação e Remontagem</b>: Se um pacote for muito grande para ser transmitido pela rede, o IP pode dividir esse pacote em fragmentos menores antes de enviá-los. O IP no destino então remonta esses fragmentos para recriar o pacote original.</li>
-                    <li>4. <b>Encaminhamento de Pacotes</b>: Recebe pacotes de dados da camada superior (camada de transporte) e os encapsula com informações de cabeçalho IP, incluindo endereços de origem e destino. Em seguida, encaminha esses pacotes para o próximo salto na rede até que alcancem seu destino final.</li>
+                    <li>1. <b>Endereçamento</b>: Atribui endereços IP únicos a dispositivos na rede para identificação e
+                        comunicação. Esses endereços permitem que os pacotes sejam direcionados de um remetente para um
+                        destinatário específico.</li>
+                    <li>2. <b>Roteamento</b>: Decide a melhor rota para os pacotes de dados viajarem de um ponto a outro
+                        na rede. Isso envolve tomar decisões sobre o caminho mais eficiente para a entrega dos dados,
+                        considerando fatores como latência, largura de banda e condições da rede.</li>
+                    <li>3. <b>Fragmentação e Remontagem</b>: Se um pacote for muito grande para ser transmitido pela
+                        rede, o IP pode dividir esse pacote em fragmentos menores antes de enviá-los. O IP no destino
+                        então remonta esses fragmentos para recriar o pacote original.</li>
+                    <li>4. <b>Encaminhamento de Pacotes</b>: Recebe pacotes de dados da camada superior (camada de
+                        transporte) e os encapsula com informações de cabeçalho IP, incluindo endereços de origem e
+                        destino. Em seguida, encaminha esses pacotes para o próximo salto na rede até que alcancem seu
+                        destino final.</li>
                 </ul>
             </ul>
-            <p>Basicamente, o IP é responsável por permitir a comunicação entre dispositivos em uma rede, garantindo que os pacotes de dados sejam entregues corretamente e no tempo certo, independentemente da complexidade da infraestrutura de rede.</p>
+            <p>Basicamente, o IP é responsável por permitir a comunicação entre dispositivos em uma rede, garantindo que
+                os pacotes de dados sejam entregues corretamente e no tempo certo, independentemente da complexidade da
+                infraestrutura de rede.</p>
         </section>
-           
+
         <section>
             <h2>TCP (Transmission Control Protocol)</h2>
-            <p>O Protocolo de Controle de Transmissão (TCP) é um dos protocolos fundamentais da camada de transporte no modelo TCP/IP. Sua principal responsabilidade é fornecer comunicação confiável e orientada à conexão entre aplicativos em dispositivos em uma rede.</p>
+            <p>O Protocolo de Controle de Transmissão (TCP) é um dos protocolos fundamentais da camada de transporte no
+                modelo TCP/IP. Sua principal responsabilidade é fornecer comunicação confiável e orientada à conexão
+                entre aplicativos em dispositivos em uma rede.</p>
             <ul>
                 <li>Principais responsabilidades do TCP:</li>
                 <ul>
-                    <li>1. <b>Confiabilidade na Transmissão</b>: O TCP garante que os dados transmitidos sejam entregues de forma confiável, verificando se os pacotes são recebidos e retransmitindo aqueles que podem ter sido perdidos ou corrompidos durante a transmissão.</li>
-                    <li>2. <b>Controle de Fluxo</b>: Regula a taxa de transmissão de dados entre emissor e receptor, evitando que o receptor fique sobrecarregado por receber informações mais rapidamente do que consegue processar.</li>
-                    <li>3. <b>Controle de Congestionamento</b>: Gerencia a quantidade de dados que pode ser enviada em um determinado momento para evitar congestionamentos na rede, ajustando a taxa de transmissão para evitar perda de pacotes e degradação do desempenho.</li>
-                    <li>4. <b>Segmentação e Reordenação</b>: Divide os dados em segmentos de tamanho gerenciável para transmissão e reorganiza-os no destino, garantindo que os dados sejam entregues na ordem correta.</li>
-                    <li>5. <b>Handshaking e Terminação de Conexão</b>: Estabelece, mantém e encerra conexões entre aplicativos em dispositivos diferentes. Isso inclui processos de início (handshaking) e encerramento de sessões de comunicação.</li>
+                    <li>1. <b>Confiabilidade na Transmissão</b>: O TCP garante que os dados transmitidos sejam entregues
+                        de forma confiável, verificando se os pacotes são recebidos e retransmitindo aqueles que podem
+                        ter sido perdidos ou corrompidos durante a transmissão.</li>
+                    <li>2. <b>Controle de Fluxo</b>: Regula a taxa de transmissão de dados entre emissor e receptor,
+                        evitando que o receptor fique sobrecarregado por receber informações mais rapidamente do que
+                        consegue processar.</li>
+                    <li>3. <b>Controle de Congestionamento</b>: Gerencia a quantidade de dados que pode ser enviada em
+                        um determinado momento para evitar congestionamentos na rede, ajustando a taxa de transmissão
+                        para evitar perda de pacotes e degradação do desempenho.</li>
+                    <li>4. <b>Segmentação e Reordenação</b>: Divide os dados em segmentos de tamanho gerenciável para
+                        transmissão e reorganiza-os no destino, garantindo que os dados sejam entregues na ordem
+                        correta.</li>
+                    <li>5. <b>Handshaking e Terminação de Conexão</b>: Estabelece, mantém e encerra conexões entre
+                        aplicativos em dispositivos diferentes. Isso inclui processos de início (handshaking) e
+                        encerramento de sessões de comunicação.</li>
                 </ul>
             </ul>
-            <p>O TCP é crucial para a comunicação confiável e ordenada entre aplicativos em diferentes dispositivos conectados em redes, garantindo que os dados sejam transmitidos e recebidos sem erros, de forma ordenada e eficiente.</p>
+            <p>O TCP é crucial para a comunicação confiável e ordenada entre aplicativos em diferentes dispositivos
+                conectados em redes, garantindo que os dados sejam transmitidos e recebidos sem erros, de forma ordenada
+                e eficiente.</p>
         </section>
-           
+
         <section>
             <h2>UDP (User Datagram Protocol)</h2>
-            <p>O User Datagram Protocol (UDP) é outro protocolo da camada de transporte no modelo TCP/IP. Ao contrário do TCP, o UDP é um protocolo de transporte sem conexão e não oferece os mesmos recursos de confiabilidade e controle de erro que o TCP. Ele é mais leve e rápido, ideal para certos tipos de aplicativos que valorizam a velocidade sobre a precisão na entrega de dados.</p>
+            <p>O User Datagram Protocol (UDP) é outro protocolo da camada de transporte no modelo TCP/IP. Ao contrário
+                do TCP, o UDP é um protocolo de transporte sem conexão e não oferece os mesmos recursos de
+                confiabilidade e controle de erro que o TCP. Ele é mais leve e rápido, ideal para certos tipos de
+                aplicativos que valorizam a velocidade sobre a precisão na entrega de dados.</p>
             <ul>
                 <li>Principais características do UDP:</li>
                 <ul>
-                    <li>1. <b>Sem Conexão</b>: O UDP não estabelece uma conexão direta entre o emissor e o receptor antes de enviar dados. Isso o torna mais rápido, pois não há etapas de handshaking como no TCP.</li>
-                    <li>2. <b>Não Orientado a Conexão</b>: Não há garantia de entrega dos dados, reordenação ou retransmissão em caso de perda ou erro. Os pacotes podem ser perdidos durante a transmissão sem que o protocolo tente recuperá-los automaticamente.</li>
-                    <li>3. <b>Mensagens Independentes</b>: Os dados são enviados em pacotes individuais, chamados de data-gramas, e cada data-grama é tratado independentemente dos outros. Não há garantia de que chegarão em ordem ou mesmo que todos serão recebidos.</li>
-                    <li>4. <b>Baixa Overhead</b>: Por ser mais simples e não realizar verificações complexas de erros e retransmissões, o UDP possui menos overhead (carga adicional de processamento) em comparação com o TCP.</li>
+                    <li>1. <b>Sem Conexão</b>: O UDP não estabelece uma conexão direta entre o emissor e o receptor
+                        antes de enviar dados. Isso o torna mais rápido, pois não há etapas de handshaking como no TCP.
+                    </li>
+                    <li>2. <b>Não Orientado a Conexão</b>: Não há garantia de entrega dos dados, reordenação ou
+                        retransmissão em caso de perda ou erro. Os pacotes podem ser perdidos durante a transmissão sem
+                        que o protocolo tente recuperá-los automaticamente.</li>
+                    <li>3. <b>Mensagens Independentes</b>: Os dados são enviados em pacotes individuais, chamados de
+                        data-gramas, e cada data-grama é tratado independentemente dos outros. Não há garantia de que
+                        chegarão em ordem ou mesmo que todos serão recebidos.</li>
+                    <li>4. <b>Baixa Overhead</b>: Por ser mais simples e não realizar verificações complexas de erros e
+                        retransmissões, o UDP possui menos overhead (carga adicional de processamento) em comparação com
+                        o TCP.</li>
                 </ul>
             </ul>
-            <p>O UDP é comumente utilizado em aplicações em tempo real, como streaming de vídeo, chamadas de voz pela internet (VoIP), jogos online e transmissões ao vivo, onde a latência é mais crítica do que a garantia absoluta da entrega de cada pacote. Nessas situações, a velocidade e a agilidade na transmissão dos dados são mais valorizadas do que a correção absoluta de erros.</p>
+            <p>O UDP é comumente utilizado em aplicações em tempo real, como streaming de vídeo, chamadas de voz pela
+                internet (VoIP), jogos online e transmissões ao vivo, onde a latência é mais crítica do que a garantia
+                absoluta da entrega de cada pacote. Nessas situações, a velocidade e a agilidade na transmissão dos
+                dados são mais valorizadas do que a correção absoluta de erros.</p>
         </section>
 
         <section>
@@ -204,4 +258,5 @@
         <p>Diego Serafim de Sousa - 22 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

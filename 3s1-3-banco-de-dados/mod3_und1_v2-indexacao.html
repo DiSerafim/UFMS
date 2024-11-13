@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – SGBDs Relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – SGBDs Relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – SGBDs Relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=kIYg-OAduSE&list=PL3JRjVnXiTBbAAEBfn77X47t7cpWLGUWB&index=24&ab_channel=Andr%C3%A9Santanch%C3%A8" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Organização dos Dados e Índices - Aula 04/11 - Bancos de Dados 2020.2. 
+            <a href="https://www.youtube.com/watch?v=kIYg-OAduSE&list=PL3JRjVnXiTBbAAEBfn77X47t7cpWLGUWB&index=24&ab_channel=Andr%C3%A9Santanch%C3%A8"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Organização dos Dados e Índices - Aula 04/11 - Bancos de Dados 2020.2.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: André Santanchè.</p>
@@ -43,7 +46,8 @@
                     <li>(Ramakrishnan, 2003).</li>
                 </ul>
                 <li><b>Arquivo</b>: abstração criada pelo SO para os blocos de disco.</li>
-                <li><b>Registro</b>: abstração de subdivisão do arquivo criada pela aplicação ou SGBD para o arquivo.</li>
+                <li><b>Registro</b>: abstração de subdivisão do arquivo criada pela aplicação ou SGBD para o arquivo.
+                </li>
             </ul>
         </section>
 
@@ -56,7 +60,7 @@
             <p>Passo 3:</p>
             <img src="img/guardar-tabela2.png" alt="guardar-tabela.png">
         </section>
-        
+
         <section>
             <h2>Ordem dos Registros e Recuperação.</h2>
             <b>Eficiência na Seleção:</b>
@@ -106,7 +110,8 @@
                 <ul>
                     <li>cálculo de função de hash sobre atributo para definir posição.</li>
                 </ul>
-                <li>(Silberschatz, 2006)</ul>.</li>
+                <li>(Silberschatz, 2006)
+            </ul>.</li>
         </section>
 
         <section>
@@ -121,7 +126,8 @@
                 <ul>
                     <li>SELECT nome FROM Pessoa WHERE id=146.</li>
                 </ul>
-                <li>Se os dados estão espalhados em disco, precisaríamos acessar todos os blocos do arquivo da tabela Pessoa.</li>
+                <li>Se os dados estão espalhados em disco, precisaríamos acessar todos os blocos do arquivo da tabela
+                    Pessoa.</li>
                 <li>Índices de BDs ajudam neste processo.</li>
                 <li>Índices de de BDs funcionam como índices de livros, apontando para a localização do conteúdo.</li>
             </ul>
@@ -168,7 +174,9 @@
 
         <section>
             <h2>Exercício 2.</h2>
-            <p>Nas aulas anteriores, discutimos sobre redundância de informação e seus potenciais problemas. Índices são estruturas que introduzem redundância no banco de dados. Descreva o impacto da introdução deste tipo de redundância em termos de:</p>
+            <p>Nas aulas anteriores, discutimos sobre redundância de informação e seus potenciais problemas. Índices são
+                estruturas que introduzem redundância no banco de dados. Descreva o impacto da introdução deste tipo de
+                redundância em termos de:</p>
             <ul>
                 <li>a) Consistência dos dados.</li>
                 <li>b) Velocidade de leitura.</li>
@@ -192,17 +200,23 @@
         <section>
             <h2>Índice Primário.</h2>
             <p>Entrada do índice (1):</p>
-            <ul><li>k* - registro completo com chave k.</li></ul>
+            <ul>
+                <li>k* - registro completo com chave k.</li>
+            </ul>
             <img src="img/indice4.png" alt="indice4.png">
             <p>Entrada do índice (2):</p>
-            <ul><li>(k, rid)→ rid = id do registro de chave k.</li></ul>
+            <ul>
+                <li>(k, rid)→ rid = id do registro de chave k.</li>
+            </ul>
             <img src="img/indice5.png" alt="indice5.png">
         </section>
 
         <section>
             <h2>Índice Secundário.</h2>
             <p>Entrada do índice (2):</p>
-            <ul><li>(k, rid)→ rid = id do registro de chave k.</li></ul>
+            <ul>
+                <li>(k, rid)→ rid = id do registro de chave k.</li>
+            </ul>
             <img src="img/indice6.png" alt="indice6.png">
         </section>
 
@@ -224,13 +238,15 @@
             </ul>
         </section>
 
-        <section>            
+        <section>
             <h2>Exercício 2.</h2>
-            <p>Em uma relação com 5 atributos, qual o número máximo possível de índices primários e secundários ao mesmo tempo? Justifique.</p>
+            <p>Em uma relação com 5 atributos, qual o número máximo possível de índices primários e secundários ao mesmo
+                tempo? Justifique.</p>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 17 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

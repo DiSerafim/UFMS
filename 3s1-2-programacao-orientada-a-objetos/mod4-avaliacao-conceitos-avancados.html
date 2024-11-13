@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</h1>
@@ -29,11 +31,11 @@
             <h2>Materiais</h2>
             <ul>
                 <li>Prof. Anderson Viçoso de Araújo.</li>
-                <li>Iniciado em	terça, 7 mai 2024, 14:28</li>
-                <li>Estado	Finalizada</li>
-                <li>Concluída em	terça, 7 mai 2024, 16:47</li>
-                <li>Tempo empregado	2 horas 19 minutos</li>
-                <li>Avaliar	9,00 de um máximo de 10,00(90%)</li>
+                <li>Iniciado em terça, 7 mai 2024, 14:28</li>
+                <li>Estado Finalizada</li>
+                <li>Concluída em terça, 7 mai 2024, 16:47</li>
+                <li>Tempo empregado 2 horas 19 minutos</li>
+                <li>Avaliar 9,00 de um máximo de 10,00(90%)</li>
             </ul>
         </section>
         <section id="conteudo">
@@ -51,7 +53,12 @@
 
                 <b class="answer">Resposta: b. ✅</b>
                 <p>Resolução:</p>
-                <li>São eventos que ocorrem durante a execução de um programa que interrompem o fluxo normal de execução. Esses eventos podem ser erros, como divisão por zero ou acesso a um elemento de um array fora dos limites, ou situações excepcionais que podem ocorrer durante a execução do programa, como falhas na comunicação com um banco de dados ou falhas na leitura de um arquivo. As exceções são usadas para lidar com esses eventos de forma estruturada e controlada, permitindo que o programa reaja adequadamente a eles..</li>
+                <li>São eventos que ocorrem durante a execução de um programa que interrompem o fluxo normal de
+                    execução. Esses eventos podem ser erros, como divisão por zero ou acesso a um elemento de um array
+                    fora dos limites, ou situações excepcionais que podem ocorrer durante a execução do programa, como
+                    falhas na comunicação com um banco de dados ou falhas na leitura de um arquivo. As exceções são
+                    usadas para lidar com esses eventos de forma estruturada e controlada, permitindo que o programa
+                    reaja adequadamente a eles..</li>
             </section>
 
             <section class="question">
@@ -91,7 +98,10 @@
                     <li><b>FileInputStream</b>: É a classe responsável por abrir um arquivo para leitura de bytes.</li>
                     <li><b>DataInputStream</b>: É a classe usada para ler dados primitivos de um fluxo de entrada.</li>
                     <li><b>close()</b>: Método usado para fechar o fluxo de entrada após a leitura dos dados.</li>
-                    <li><b>throws</b>: Indica que o método sumNumbers pode lançar exceções do tipo IOException ou FileNotFoundException. Isso é necessário porque o método utiliza operações de entrada e saída que podem lançar essas exceções, e o método sumNumbers opta por não lidar diretamente com elas, mas sim passá-las para quem chama o método.</li>
+                    <li><b>throws</b>: Indica que o método sumNumbers pode lançar exceções do tipo IOException ou
+                        FileNotFoundException. Isso é necessário porque o método utiliza operações de entrada e saída
+                        que podem lançar essas exceções, e o método sumNumbers opta por não lidar diretamente com elas,
+                        mas sim passá-las para quem chama o método.</li>
                 </ul>
             </section>
 
@@ -99,34 +109,44 @@
                 <h3>Pergunta 3</h3>
                 <p>Indique a opção que mostre qual é a diferença entre um FileInputStream e um FileReader em Java:</p>
                 <ul>
-                    <li>a. FileInputStream é utilizado para leitura de arquivos binários, enquanto FileReader é utilizado para leitura de arquivos de texto.</li>
+                    <li>a. FileInputStream é utilizado para leitura de arquivos binários, enquanto FileReader é
+                        utilizado para leitura de arquivos de texto.</li>
 
-                    <li>b. FileInputStream e FileReader são utilizados para a mesma finalidade, não há diferença entre eles.</li>
+                    <li>b. FileInputStream e FileReader são utilizados para a mesma finalidade, não há diferença entre
+                        eles.</li>
 
                     <li>c. FileInputStream e FileReader são objetos equivalentes, não há diferença entre eles.</li>
 
-                    <li>d. FileInputStream é utilizado para leitura de arquivos de texto, enquanto FileReader é utilizado para leitura de arquivos binários.</li>
+                    <li>d. FileInputStream é utilizado para leitura de arquivos de texto, enquanto FileReader é
+                        utilizado para leitura de arquivos binários.</li>
                 </ul>
 
                 <b class="answer">Resposta: a. ✅</b>
                 <p>Resolução:</p>
-                <li>Essa é a diferença fundamental entre FileInputStream e FileReader em Java. O FileInputStream é usado para ler dados brutos de arquivos, que podem ser qualquer tipo de arquivo, incluindo binários. Por outro lado, o FileReader é otimizado para ler arquivos de texto, realizando automaticamente a decodificação dos bytes em caracteres de acordo com o conjunto de caracteres padrão do sistema.</li>
+                <li>Essa é a diferença fundamental entre FileInputStream e FileReader em Java. O FileInputStream é usado
+                    para ler dados brutos de arquivos, que podem ser qualquer tipo de arquivo, incluindo binários. Por
+                    outro lado, o FileReader é otimizado para ler arquivos de texto, realizando automaticamente a
+                    decodificação dos bytes em caracteres de acordo com o conjunto de caracteres padrão do sistema.</li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 4</h3>
-                <p>Um desenvolvedor gostaria de ter uma coleção que não aceite elementos repetidos e que seja necessariamente do tipo String. Qual a estrutura de dados (API Collection do Java) que seja mais apropriada de acordo com as necessidades descritas?</p>
+                <p>Um desenvolvedor gostaria de ter uma coleção que não aceite elementos repetidos e que seja
+                    necessariamente do tipo String. Qual a estrutura de dados (API Collection do Java) que seja mais
+                    apropriada de acordo com as necessidades descritas?</p>
                 <ul>
                     <li>a. Arraylist.</li>
                     <li>b. Map.</li>
                     <li>c. Set.</li>
                     <li>d. TreeMap.</li>
                 </ul>
-                
+
                 <b class="answer">Resposta: c. ✅</b>
 
                 <p>Resolução:</p>
-                <li>A interface Set na API de coleções do Java não permite elementos duplicados e é ideal para armazenar elementos únicos. Além disso, como o desenvolvedor quer uma coleção de elementos do tipo String, o Set pode ser parametrizado para armazenar apenas objetos desse tipo.</li>
+                <li>A interface Set na API de coleções do Java não permite elementos duplicados e é ideal para armazenar
+                    elementos únicos. Além disso, como o desenvolvedor quer uma coleção de elementos do tipo String, o
+                    Set pode ser parametrizado para armazenar apenas objetos desse tipo.</li>
             </section>
 
             <section class="question">
@@ -161,27 +181,34 @@
                 <b class="answer">Resposta: a. ✅</b>
 
                 <p>Resolução:</p>
-                <p>O método abre um arquivo de entrada (pInput) para leitura, lê cada linha desse arquivo e escreve em outro arquivo de saída (pOutput). Ele efetivamente copia o conteúdo do arquivo de entrada para o arquivo de saída.</p>
+                <p>O método abre um arquivo de entrada (pInput) para leitura, lê cada linha desse arquivo e escreve em
+                    outro arquivo de saída (pOutput). Ele efetivamente copia o conteúdo do arquivo de entrada para o
+                    arquivo de saída.</p>
             </section>
 
             <section class="question">
                 <h3>Pergunta 6</h3>
                 <p>Indique a opção que mostre qual é a diferença entre um FileOutputStream e um FileWriter em Java:</p>
                 <ul>
-                    <li>a. FileOutputStream e FileWriter são utilizados para a mesma finalidade, não há diferença entre eles.</li>
+                    <li>a. FileOutputStream e FileWriter são utilizados para a mesma finalidade, não há diferença entre
+                        eles.</li>
 
                     <li>b. FileOutputStream e FileWriter são objetos equivalentes, não há diferença entre eles.</li>
 
-                    <li>c. FileOutputStream é utilizado para leitura de arquivos de texto, enquanto FileWriter é utilizado para leitura de arquivos binários.</li>
+                    <li>c. FileOutputStream é utilizado para leitura de arquivos de texto, enquanto FileWriter é
+                        utilizado para leitura de arquivos binários.</li>
 
-                    <li>d. FileOutputStream é utilizado para escrita de arquivos binários, enquanto FileWriter é utilizado para escrita de arquivos de texto.</li>
+                    <li>d. FileOutputStream é utilizado para escrita de arquivos binários, enquanto FileWriter é
+                        utilizado para escrita de arquivos de texto.</li>
 
                 </ul>
 
                 <b class="answer">Resposta: d. ✅</b>
 
                 <p>Resolução:</p>
-                <li>O FileOutputStream é usado para gravar dados brutos em arquivos, enquanto o FileWriter é usado para gravar texto em arquivos, codificando automaticamente os caracteres em bytes usando o conjunto de caracteres padrão do sistema..</li>
+                <li>O FileOutputStream é usado para gravar dados brutos em arquivos, enquanto o FileWriter é usado para
+                    gravar texto em arquivos, codificando automaticamente os caracteres em bytes usando o conjunto de
+                    caracteres padrão do sistema..</li>
             </section>
 
             <section class="question">
@@ -209,18 +236,21 @@
                 <p>O que são coleções em Java?</p>
                 <ul>
                     <li>a. São classes que representam tipos de dados genéricos.</li>
-                    
+
                     <li>b. São estruturas de dados que permitem armazenar e manipular um grupo de objetos.</li>
-                    
+
                     <li>c. São bibliotecas que não fazem parte da API padrão do Java.</li>
-                    
+
                     <li>d. São interfaces que definem um conjunto de métodos para manipular um grupo de objetos.</li>
                 </ul>
 
                 <b class="answer">Resposta: b. ✅</b>
 
                 <p>Resolução:</p>
-                <li>Em Java, as coleções são estruturas de dados que permitem armazenar e manipular um grupo de objetos de forma eficiente. Elas fornecem implementações de diversas estruturas, como listas, conjuntos, mapas, entre outros, para atender diferentes necessidades de armazenamento e manipulação de dados.</li>
+                <li>Em Java, as coleções são estruturas de dados que permitem armazenar e manipular um grupo de objetos
+                    de forma eficiente. Elas fornecem implementações de diversas estruturas, como listas, conjuntos,
+                    mapas, entre outros, para atender diferentes necessidades de armazenamento e manipulação de dados.
+                </li>
             </section>
 
             <section class="question">
@@ -232,10 +262,13 @@
                     <li>c. É um bloco de código que é executado antes de ocorrer uma exceção.</li>
                     <li>d. É um bloco de código que é executado apenas se ocorrer uma exceção.</li>
                 </ul>
-                
+
                 <b class="answer">Resposta: a. ✅</b>
                 <p>Resolução:</p>
-                <p>Um bloco try-catch em Java é usado para capturar exceções que podem ocorrer durante a execução do código dentro do bloco try. Se uma exceção é lançada dentro do bloco try, ela é capturada e tratada pelos blocos catch correspondentes, permitindo que o programa lide com a exceção de uma maneira controlada.</p>
+                <p>Um bloco try-catch em Java é usado para capturar exceções que podem ocorrer durante a execução do
+                    código dentro do bloco try. Se uma exceção é lançada dentro do bloco try, ela é capturada e tratada
+                    pelos blocos catch correspondentes, permitindo que o programa lide com a exceção de uma maneira
+                    controlada.</p>
             </section>
 
             <section class="question">
@@ -276,4 +309,5 @@
         <p>Diego Serafim de Sousa - 7 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

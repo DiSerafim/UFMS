@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Técnicas de inferência estatística</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas de inferência estatística</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Técnicas de inferência estatística</h1>
@@ -32,8 +34,10 @@
                     <button class="btn waves-effect waves-light" type="button" name="action">Vídeo 5
                         <i class="material-icons right">send</i>
                     </button>
-                    <a href="https://www.youtube.com/watch?v=aCu4Ibc5dWU&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=19&ab_channel=UNIVESP" target="_blank">
-                        Estatística - Aula 19 - Intervalo de confiança para proporção e média com variância desconhecida.<i class="material-icon">&#xE03C;</i>
+                    <a href="https://www.youtube.com/watch?v=aCu4Ibc5dWU&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=19&ab_channel=UNIVESP"
+                        target="_blank">
+                        Estatística - Aula 19 - Intervalo de confiança para proporção e média com variância
+                        desconhecida.<i class="material-icon">&#xE03C;</i>
                     </a>
                 </li>
                 <li>
@@ -48,7 +52,8 @@
 
             <p>Objetivos:</p>
             <ul>
-                <li>Conceituar intervalos de confiança relativos a variável aleatória "Proporção" e "Medida com Variância Desconhecida".</li>
+                <li>Conceituar intervalos de confiança relativos a variável aleatória "Proporção" e "Medida com
+                    Variância Desconhecida".</li>
             </ul>
             <p></p>
         </section>
@@ -61,7 +66,7 @@
                 <li>Sucesso: ✅</li>
                 <li>Fracasso: ⛔️</li>
             </ul>
-            
+
             <p>Distribuição de Frequência Relativa ou Proporção Amostral.</p>
             <p>p = f/n</p>
             <ul>
@@ -83,9 +88,11 @@
 
         <section>
             <b>Caso: Teste de Vazamento</b>
-            <p>Considere testes de vazamento realizados em dois municípios, A e B, buscando identificar o percentual de edifícios que possuem alguma falha na tubulação.</p>
+            <p>Considere testes de vazamento realizados em dois municípios, A e B, buscando identificar o percentual de
+                edifícios que possuem alguma falha na tubulação.</p>
 
-            <p>No município A foram examinadas 500 edifícios, sendo que 100 deles apresentam falhas na tubulação. No município B dos 1.000 edifícios examinadas, 300 apresentaram falhas.</p>
+            <p>No município A foram examinadas 500 edifícios, sendo que 100 deles apresentam falhas na tubulação. No
+                município B dos 1.000 edifícios examinadas, 300 apresentaram falhas.</p>
 
             <p>Resolução:</p>
             <ul>
@@ -99,13 +106,14 @@
                 <li>Z(α/2) = 1,96.</li>
             </ul>
 
-            <p>a) Construa um intervalo de confiança para o percentual de edifícios com falhas na tubulação do município A considerando um nível de confiança de 95%.</p>
+            <p>a) Construa um intervalo de confiança para o percentual de edifícios com falhas na tubulação do município
+                A considerando um nível de confiança de 95%.</p>
             <pre>
             e₀ = z(α/2)√(p̂(1-p̂))/n
             e₀ = 1,96√(0,2(1-0,2))/500
             e₀ = 0,035
             </pre>
-    
+
             <p>Intervalo de confiança:</p>
             <ul>
                 <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
@@ -119,7 +127,7 @@
             e₀ = 1,96√(0,3(1-0,3))/1000
             e₀ = 0,028
             </pre>
-            
+
             <p>Intervalo de confiança:</p>
             <ul>
                 <li>P(p̂ - e₀ ≤ π ≤ p̂ + e₀) = 1-α</li>
@@ -137,7 +145,7 @@
             Sₓ = √∑ⁿ(xᵢ-x̄)²/(n-1)
                   ᵢ₌₁
             </pre>
-            
+
             <p>Distribuição t de Student:</p>
             <ul>
                 <li>tₙ-₁,ₚ = Zₚ · σ/S</li>
@@ -238,4 +246,5 @@
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Pilares da Programação Orientada a Objetos.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=cfEXV6fedt8&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 1 - 
-                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 3. 
+            <a href="https://www.youtube.com/watch?v=cfEXV6fedt8&ab_channel=AGEADUFMS" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 1 -
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 3 - Unidade 3.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
@@ -43,17 +46,21 @@
         <section>
             <h2>Abstração.</h2>
             <ul>
-                <li>Habilidade de expor comportamentos essenciais de uma classe enquanto se esconde os detalhes de implementação.</li>
+                <li>Habilidade de expor comportamentos essenciais de uma classe enquanto se esconde os detalhes de
+                    implementação.</li>
                 <li>Por que usar abstração?</li>
                 <ul>
                     <li>Reduz a complexidade do código.</li>
                     <li>Organiza o projeto/código.</li>
                 </ul>
-                <li>Tornar uma classe abstrata (ou seja, uma classe que não pode ser instanciada) ou implementar uma interface.</li>
+                <li>Tornar uma classe abstrata (ou seja, uma classe que não pode ser instanciada) ou implementar uma
+                    interface.</li>
                 <li><i>Abstraction is more about ‘What‘ a class can do. [Idea]</i>.</li>
                 <li>A definição da abstração ocorre durante a fase de planejamento/definição das classes.</li>
-                <li>Se uma classe é abstrata e não pode ser instanciada, a classe não tem muita utilidade, a não ser que seja estendida (herança).</li>
-                <li>A classe pai contém a funcionalidade comum de uma coleção de classes filhas (como na herança simples) mas não tem função sozinha.</li>
+                <li>Se uma classe é abstrata e não pode ser instanciada, a classe não tem muita utilidade, a não ser que
+                    seja estendida (herança).</li>
+                <li>A classe pai contém a funcionalidade comum de uma coleção de classes filhas (como na herança
+                    simples) mas não tem função sozinha.</li>
                 <li>Na classe abstrata é possível ter métodos normais e ter métodos abstratos também.</li>
                 <li>Modificadores de classe:</li>
                 <ul>
@@ -62,7 +69,8 @@
                 </ul>
                 <li>Modificador de método:</li>
                 <ul>
-                    <li><b>abstract</b>: o método não vai ser instanciado na classe abstrata, mas deve ser obrigatoriamente implementado em suas subclasses concretas</li>
+                    <li><b>abstract</b>: o método não vai ser instanciado na classe abstrata, mas deve ser
+                        obrigatoriamente implementado em suas subclasses concretas</li>
                 </ul>
             </ul>
             <p>Exemplo - Abstração</p>
@@ -111,7 +119,7 @@
         <section>
             <h2>Interface.</h2>
             <ul>
-                
+
                 <li>É uma lista de declaração de métodos e constantes:</li>
                 <ul>
                     <li>Não implementa os métodos, só declara*;</li>
@@ -145,11 +153,13 @@
                     <li>Herança Múltipla!</li>
                     <li>Separadas por uma vírgula na definição.</li>
                 </ul>
-                <li><li>*Menos em Java 8 (métodos static em interfaces)</li></li>
+                <li>
+                <li>*Menos em Java 8 (métodos static em interfaces)</li>
+                </li>
             </ul>
-                <b>Membros Internos - Exemplo:</b>
-                <p>O que é declarado:</p>
-                <pre>
+            <b>Membros Internos - Exemplo:</b>
+            <p>O que é declarado:</p>
+            <pre>
                     interface MinhaInterface{
                         int x = 10;
 
@@ -157,9 +167,9 @@
                         void metodo2(String str);
                     }
                 </pre>
-                
-                <p>O que é visto pelo compilador:</p>
-                <pre>
+
+            <p>O que é visto pelo compilador:</p>
+            <pre>
                     interface MinhaInterface{
                         public static final int x = 10;
                         public abstract void metodo1();
@@ -171,10 +181,10 @@
         <section>
             <h2>Exemplo de Uso de Interface - ADTs (Abstract Data Types).</h2>
             <ul>
-               <li>Pilha, Fila, String, Grafo…</li>
-               <li>Um ADT pode ser implementado de diversas maneiras:</li>
-               <li>Uma pilha, por exemplo, pode ser implementada em um vetor ou em uma lista ligada.</li>
-               <li>Para ser uma pilha, o que a classe obrigatoriamente tem que ter?</li>
+                <li>Pilha, Fila, String, Grafo…</li>
+                <li>Um ADT pode ser implementado de diversas maneiras:</li>
+                <li>Uma pilha, por exemplo, pode ser implementada em um vetor ou em uma lista ligada.</li>
+                <li>Para ser uma pilha, o que a classe obrigatoriamente tem que ter?</li>
             </ul>
             <b>Exemplo:</b>
             <pre>
@@ -186,7 +196,8 @@
                 }
             </pre>
             <ul>
-                <li>A classe <b>PilhaVetor</b> compromete-se a ser tratada como Pilha, sendo obrigada a ter os métodos necessários, definidos no “contrato”;</li>
+                <li>A classe <b>PilhaVetor</b> compromete-se a ser tratada como Pilha, sendo obrigada a ter os métodos
+                    necessários, definidos no “contrato”;</li>
                 <li>Faz sentido algum desses métodos da interface não serem públicos?</li>
             </ul>
             <pre>
@@ -207,7 +218,8 @@
         <section>
             <h2>Declaração de Interfaces.</h2>
             <ul>
-                <li>A interface especifica quais operações podem ser realizadas, mas não especifica como essas operações são realizadas.</li>
+                <li>A interface especifica quais operações podem ser realizadas, mas não especifica como essas operações
+                    são realizadas.</li>
                 <li>Os modificadores de acesso de interfaces são os mesmos que de classes:</li>
                 <ul>
                     <li>public</li>
@@ -219,9 +231,11 @@
         <section>
             <h2>Implementando Métodos da Interface.</h2>
             <ul>
-                <li>Uma classe que implementa uma interface deve implementar todos os métodos definidos por aquela interface;</li>
+                <li>Uma classe que implementa uma interface deve implementar todos os métodos definidos por aquela
+                    interface;</li>
                 <li>Se um ou mais métodos não for implementado, o compilador Java gerará um erro;</li>
-                <li>Subclasses (filhos) automaticamente implementam todas as interfaces que as suas superclasses (pais) implementam.</li>
+                <li>Subclasses (filhos) automaticamente implementam todas as interfaces que as suas superclasses (pais)
+                    implementam.</li>
             </ul>
         </section>
 
@@ -233,7 +247,8 @@
                     <li>A hierarquia de uma interface é independente da hierarquia da classe;</li>
                     <li>A interface que estende outra interface herda todos os seus métodos.</li>
                     <ul>
-                        <li>A classe concreta que implementa uma interface filha de outra, tem que obrigatoriamente implementar os métodos de ambas as interfaces;</li>
+                        <li>A classe concreta que implementa uma interface filha de outra, tem que obrigatoriamente
+                            implementar os métodos de ambas as interfaces;</li>
                     </ul>
                 </ul>
             </ul>
@@ -400,7 +415,7 @@
                 </tr>
                 <tr>
                     <td>
-                <pre>
+                        <pre>
                 8) Example:
                 public abstract class Shape{
                     public abstract void draw();
@@ -408,7 +423,7 @@
                 </pre>
                     </td>
                     <td>
-                <pre>
+                        <pre>
                 Example:
                 public interface Drawable{
                     void draw();
@@ -417,15 +432,16 @@
                     </td>
                 </tr>
             </table>
-            
-            
-             
-            
-            
+
+
+
+
+
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 1 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

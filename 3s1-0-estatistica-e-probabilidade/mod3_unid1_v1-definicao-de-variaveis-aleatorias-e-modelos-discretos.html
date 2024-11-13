@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Variáveis aleatórias e modelos probabilísticos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis aleatórias e modelos probabilísticos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Variáveis aleatórias e modelos probabilísticos</h1>
@@ -32,7 +34,8 @@
                     <button class="btn waves-effect waves-light" type="button" name="action">Vídeo 1
                         <i class="material-icons right">send</i>
                     </button>
-                    <a href="https://www.youtube.com/watch?v=K1MXYc_89D8&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=8&ab_channel=UNIVESP" target="_blank">
+                    <a href="https://www.youtube.com/watch?v=K1MXYc_89D8&list=PLxI8Can9yAHdJq561NyRN9wZpTqVJn0Z0&index=8&ab_channel=UNIVESP"
+                        target="_blank">
                         Estatística - Aula 07 - Variáveis aleatórias<i class="material-icon">&#xE03C;</i>
                     </a>
                 </li>
@@ -63,7 +66,7 @@
             a   aA | aa     {Aa}      P(Aa) = 1/2
                             {aa}      P(aa) = 1/4
             </pre>
-            
+
             <p>Descrever o valor que corresponde ao resultado de determinado experimento.</p>
             <pre>
             🪙🪙        V.A.    Probabilidade
@@ -71,7 +74,7 @@
             🪙🪙        X = 1   P₍ₖᶜ₎ = 1/2
                        X = 2   P₍ᶜᶜ₎ = 1/4
             </pre>
-            
+
             <p>Qual a função que associa os diferentes valores da V.A. aos resultados possíveis?</p>
             <ul>
                 <li>Central de relacionamento com clientes com 6 atendentes.</li>
@@ -143,13 +146,14 @@
             </ul>
 
             <b>Variável Aleatória Contínua:</b>
-            <p>Pode tomar um número infinito de valores e esses valores podem ser associados a mensurações em uma escala continua.</p>
+            <p>Pode tomar um número infinito de valores e esses valores podem ser associados a mensurações em uma escala
+                continua.</p>
             <ul>
                 <li>Copo</li>
                 <li>Fita métrica para medir o copo.</li>
                 <li>P(X = 0,2000000...m) = 0</li>
                 <li>a) f(x) ≥ 0</li>
-                <li>b) ᵇₐ∫ f(x)dx = P(a < x ≤ b), b > a</li>
+                <li>b) ᵇₐ∫ f(x)dx = P(a < x ≤ b), b> a</li>
                 <li>c) ∫₋⁺∞ f(x) dx = 1</li>
             </ul>
 
@@ -198,7 +202,7 @@
                     <td>1/6</td>
                 </tbody>
             </table>
-            
+
             <p>Variável continua:</p>
             <p>γ = E₍ₓ₎ = ∑xᵢ·P(xᵢ)</p>
             <li>γ = E₍ₓ₎ =∫₋⁺∞ xf(x) dx</li>
@@ -245,8 +249,10 @@
             <li>δ² = [∑x²·P(x)]-γ² = E(x²)-[E(x)]²</li>
             <ul>
                 <li>Exemplo: lançamento de um dado.</li>
-                <li>δ² = (1 - 7/2)²·1/6 + (2 - 7/2)²·1/6 + (3 - 7/2)²·1/6 + (4 - 7/2)²·1/6 + (5 - 7/2)²·1/6 + (6 - 7/2)²·1/6 =</li>
-                <li>δ² = (2/2 - 7/2)²·1/6 + (4/2 - 7/2)²·1/6 + (6/2 - 7/2)²·1/6 + (8/2 - 7/2)²·1/6 + (10/2 - 7/2)²·1/6 + (12/2 - 7/2)²·1/6 =</li>
+                <li>δ² = (1 - 7/2)²·1/6 + (2 - 7/2)²·1/6 + (3 - 7/2)²·1/6 + (4 - 7/2)²·1/6 + (5 - 7/2)²·1/6 + (6 -
+                    7/2)²·1/6 =</li>
+                <li>δ² = (2/2 - 7/2)²·1/6 + (4/2 - 7/2)²·1/6 + (6/2 - 7/2)²·1/6 + (8/2 - 7/2)²·1/6 + (10/2 - 7/2)²·1/6 +
+                    (12/2 - 7/2)²·1/6 =</li>
                 <li>δ² = (- 5/2)²·1/6 + (- 3/2)²·1/6 + (- 1/2)²·1/6 + (1/2)²·1/6 + (3/2)²·1/6 + (5/2)²·1/6 =</li>
                 <li>δ² = 25/4 · 1/6 + 9/4 · 1/6 + 1/4 · 1/6 + 1/4 · 1/6 + 9/4 · 1/6 + 25/4 · 1/6 =</li>
                 <li>δ² = 25/24 + 9/24 + 1/24 + 1/24 + 9/24 + 25/24 =</li>
@@ -295,14 +301,14 @@
             <b>Desvio Padrão.</b>
             <p>Variância - Var(x)</p>
             <p>Desvio padrão = √variância</p>
-            
+
             <p>Mediana:</p>
             <ul>
                 <li>Valor numérico que separa o conjunto pela metade.</li>
                 <li>Conjunto {3, 3, 5, 7, 9}</li>
                 <li>Md = 5</li>
             </ul>
-            
+
             <p>Moda:</p>
             <ul>
                 <li>Valor numérico de maior frequência.</li>
@@ -315,4 +321,5 @@
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Árvore Binária de Busca.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Árvore Binária de Busca.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Árvore Binária de Busca.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=3koM42vL6js&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=3koM42vL6js&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 Estrutura de Dados - Aula 18 - Árvores binárias de pesquisa - Parte 3.
                 <i class="material-icons right"> send</i>
             </a>
@@ -47,7 +50,8 @@
             <ul>
                 <li>Problemas na remoção de um nó:</li>
                 <ul>
-                    <li>Temos que lidar com as subárvores desse nó A árvore resultante deve continuar sendo de busca.</li>
+                    <li>Temos que lidar com as subárvores desse nó A árvore resultante deve continuar sendo de busca.
+                    </li>
                     <ul>
                         <li>Nós da subárvore da esquerda têm chave menor que a do nó raiz.</li>
                         <li>Nós da subárvore da direita têm chave maior que a do nó raiz.</li>
@@ -56,8 +60,10 @@
                 <li>Como fazer?</li>
                 <ul>
                     <li>Se o nó a ser retirado possui no máximo um descendente, substitua-o por este.</li>
-                    <li>Se o nó possuir 2 descendentes, substituímos o nó a ser retirado pelo nó mais à direita da subárvore da esquerda.</li>
-                    <li>Alternativamente, substituímos o nó a ser retirado pelo nó mais à esquerda da subárvore da direita.</li>
+                    <li>Se o nó possuir 2 descendentes, substituímos o nó a ser retirado pelo nó mais à direita da
+                        subárvore da esquerda.</li>
+                    <li>Alternativamente, substituímos o nó a ser retirado pelo nó mais à esquerda da subárvore da
+                        direita.</li>
                 </ul>
                 <li>Ou seja...</li>
                 <ul>
@@ -139,16 +145,20 @@
             <p></p>
             <b>ABP - Balanceamento.</b>
             <ul>
-                <li>Podemos ter então a eficiência de uma busca binária, caso a árvore esteja balanceada Com a vantagem de ser uma estrutura dinâmica.</li>
+                <li>Podemos ter então a eficiência de uma busca binária, caso a árvore esteja balanceada Com a vantagem
+                    de ser uma estrutura dinâmica.</li>
             </ul>
             <img src="img/arvore-binaria-remocao12.png" alt="arvore-binaria-remocao12.png">
             <ul>
-                <li>Ou voltamos à busca sequencial, como em uma lista ligada Só que usando mais memória, pelo ponteiro extra.</li>
+                <li>Ou voltamos à busca sequencial, como em uma lista ligada Só que usando mais memória, pelo ponteiro
+                    extra.</li>
             </ul>
             <img src="img/arvore-binaria-balanceamento.png" alt="arvore-binaria-balanceamento.png">
             <ul>
-                <li>A boa notícia é que se os elementos que compõem a árvore forem obtidos aleatoriamente, espera-se um desempenho apenas 39% pior do que a árvore completamente balanceada.</li>
-                <li>Ou seja, a árvore em que as folhas aparecem no mesmo nível ou, no máximo, em dois níveis adjacentes.</li>
+                <li>A boa notícia é que se os elementos que compõem a árvore forem obtidos aleatoriamente, espera-se um
+                    desempenho apenas 39% pior do que a árvore completamente balanceada.</li>
+                <li>Ou seja, a árvore em que as folhas aparecem no mesmo nível ou, no máximo, em dois níveis adjacentes.
+                </li>
             </ul>
         </section>
     </main>
@@ -156,4 +166,5 @@
         <p>Diego Serafim de Sousa - 29 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

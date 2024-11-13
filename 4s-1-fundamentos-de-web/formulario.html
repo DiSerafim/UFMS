@@ -1,18 +1,20 @@
 <!-- Início do desenvolvimento do formulário. -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container mt-5">
         <h3>Formulário de Cadastro.</h3>
-        
+
         <form action="resultado.html" method="get">
-        <!-- dados pessoais -->
+            <!-- dados pessoais -->
             <fieldset class="border p-4 mb-4">
                 <legend class="w-auto">Dados Pessoais</legend>
 
@@ -35,15 +37,17 @@
                     <div class="col-sm-4">
                         <input type="date" class="form-control" name="data-nascimento" id="data-nascimento" required>
                     </div>
-                    
+
                     <label for="sexo" class="col-form-label">Sexo</label>
                     <div class="col-sm-4">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="masculino" name="sexo" value="masculino" required>
+                            <input class="form-check-input" type="radio" id="masculino" name="sexo" value="masculino"
+                                required>
                             <label class="form-check-label" for="masculino">M</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="feminino" name="sexo" value="feminino" required>
+                            <input class="form-check-input" type="radio" id="feminino" name="sexo" value="feminino"
+                                required>
                             <label class="form-check-label" for="feminino">F</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -56,7 +60,7 @@
                 <div class="form-group row">
                     <label for="estado-civil" class="col-sm-2 col-form-label">Est. Civil</label>
                     <div class="col-sm-4">
-                        <select  class="form-control" name="estado-civil" id="estado-civil" required>
+                        <select class="form-control" name="estado-civil" id="estado-civil" required>
                             <option value="solteiro">Solteiro</option>
                             <option value="casado">Casado</option>
                             <option value="viuvo">Viúvo</option>
@@ -79,7 +83,7 @@
                 <div class="form-group row">
                     <label for="website" class="col-sm-2 col-form-label">Website</label>
                     <div class="col-sm-10">
-                        <input type="url" class="form-control"  id="website" name="website">
+                        <input type="url" class="form-control" id="website" name="website">
                     </div>
                 </div>
 
@@ -161,111 +165,125 @@
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="login" id="login" required>
                     </div>
-                    
+
                     <label for="senha" class="col-form-label">Senha</label>
                     <div class="col-sm-4">
                         <input type="password" class="form-control" name="senha" id="senha" required>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label class="d-block">Deseja receber informações sobre os seguintes assuntos abaixo:</label>
-                    
+
                     <div class="row">
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+                                <input class="form-check-input" type="checkbox" id="tecnologia" name="interesses"
+                                    value="tecnologia">
                                 <label class="form-check-label" for="tecnologia">Tecnologia</label>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="esportes" name="interesses" value="esportes">
+                                <input class="form-check-input" type="checkbox" id="esportes" name="interesses"
+                                    value="esportes">
                                 <label class="form-check-label" for="esportes">Esportes</label>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="automoveis" name="interesses" value="automoveis">
+                                <input class="form-check-input" type="checkbox" id="automoveis" name="interesses"
+                                    value="automoveis">
                                 <label class="form-check-label" for="automoveis">Automóveis</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="culinaria" name="interesses" value="culinaria">
+                                <input class="form-check-input" type="checkbox" id="culinaria" name="interesses"
+                                    value="culinaria">
                                 <label class="form-check-label" for="culinaria">Culinária</label>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="politica" name="interesses" value="politica">
+                                <input class="form-check-input" type="checkbox" id="politica" name="interesses"
+                                    value="politica">
                                 <label class="form-check-label" for="politica">Política</label>
                             </div>
                         </div>
-                            
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="policial" name="interesses" value="policial">
+                                <input class="form-check-input" type="checkbox" id="policial" name="interesses"
+                                    value="policial">
                                 <label class="form-check-label" for="policial">Policial</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="tempo" name="interesses" value="tempo">
+                                <input class="form-check-input" type="checkbox" id="tempo" name="interesses"
+                                    value="tempo">
                                 <label class="form-check-label" for="tempo">Tempo</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="cultura" name="interesses" value="cultura">
+                                <input class="form-check-input" type="checkbox" id="cultura" name="interesses"
+                                    value="cultura">
                                 <label class="form-check-label" for="cultura">Cultura</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="economia" name="interesses" value="economia">
+                                <input class="form-check-input" type="checkbox" id="economia" name="interesses"
+                                    value="economia">
                                 <label class="form-check-label" for="economia">Economia</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="jogos" name="interesses" value="jogos">
+                                <input class="form-check-input" type="checkbox" id="jogos" name="interesses"
+                                    value="jogos">
                                 <label class="form-check-label" for="jogos">Jogos</label>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="educacao" name="interesses" value="educacao">
+                                <input class="form-check-input" type="checkbox" id="educacao" name="interesses"
+                                    value="educacao">
                                 <label class="form-check-label" for="educacao">Educação</label>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="viagem" name="interesses" value="viagem">
+                                <input class="form-check-input" type="checkbox" id="viagem" name="interesses"
+                                    value="viagem">
                                 <label class="form-check-label" for="viagem">Viagem</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="empregos" name="interesses" value="empregos">
+                                <input class="form-check-input" type="checkbox" id="empregos" name="interesses"
+                                    value="empregos">
                                 <label class="form-check-label" for="empregos">Empregos</label>
                             </div>
                         </div>
 
                         <div class="col-md-2 col-sm-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="moda" name="interesses" value="moda">
+                                <input class="form-check-input" type="checkbox" id="moda" name="interesses"
+                                    value="moda">
                                 <label class="form-check-label" for="moda">Moda e Estilo</label>
                             </div>
                         </div>
@@ -275,7 +293,8 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="aceitar-regras" name="regras" required>
-                        <label class="form-check-label" for="regras">Li as regras de cadastro e autorizo a criação do usuário</label>
+                        <label class="form-check-label" for="regras">Li as regras de cadastro e autorizo a criação do
+                            usuário</label>
                     </div>
                 </div>
             </fieldset>
@@ -289,4 +308,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

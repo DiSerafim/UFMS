@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Cd7yxV_wqHs&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=Cd7yxV_wqHs&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 Programação Orientada a Objetos - Java e Frameworks de Desenvolvimento.
                 <i class="material-icons right"> send</i>
             </a>
@@ -51,8 +54,12 @@
             <h2>POO e a Linguagem Java.</h2>
             <ul>
                 <li>Nesta disciplina, os conceitos de POO serão explorados utilizando a linguagem Java.</li>
-                <li>Um das razões é que a linguagem Java continua ainda muito popular, embora a utilização de linguagens como Python tem crescido nos últimos anos como mostra o ranking <a href="https://www.tiobe.com/tiobe-index" target="_blank" rel="noopener noreferrer">>> TIOBE</a></li>
-                <li>A facilidade de entendimento e a ampla utilização da linguagem em celulares, televisores, etc., ainda faz de Java uma linguagem de programação muito atual.</li>
+                <li>Um das razões é que a linguagem Java continua ainda muito popular, embora a utilização de linguagens
+                    como Python tem crescido nos últimos anos como mostra o ranking <a
+                        href="https://www.tiobe.com/tiobe-index" target="_blank" rel="noopener noreferrer">>> TIOBE</a>
+                </li>
+                <li>A facilidade de entendimento e a ampla utilização da linguagem em celulares, televisores, etc.,
+                    ainda faz de Java uma linguagem de programação muito atual.</li>
             </ul>
 
             <p>Informações relevantes sobre Java:</p>
@@ -60,7 +67,8 @@
                 <li>É uma Linguagem orientada a objetos.</li>
                 <li>Desenvolvida pela Sun Microsystems (hoje a Oracle).</li>
                 <li>Modelada no C++.</li>
-                <li>Projetada para ser pequena e simples, portável (para diferentes sistemas operacionais e arquiteturas).</li>
+                <li>Projetada para ser pequena e simples, portável (para diferentes sistemas operacionais e
+                    arquiteturas).</li>
             </ul>
 
             <p>Um programa Java executa em:</p>
@@ -115,29 +123,36 @@
 
             <p>Etapa 2: Compilação do programa Java em bytecodes.</p>
             <ul>
-                <li>O compilador vai transforma o código.java em código.class (bytecodes), que representam as tarefas a serem executadas na fase de execução.</li>
+                <li>O compilador vai transforma o código.java em código.class (bytecodes), que representam as tarefas a
+                    serem executadas na fase de execução.</li>
                 <li>A vantagem dos bytecodes é que eles são portáveis e independem de plataforma.</li>
             </ul>
 
             <p>Etapa 3: Carrega o programa Java em memória.</p>
             <ul>
-                <li>A Java Virtual Machine (JVM) armazena o programa em memória para executá-lo, efetuando 0 seu carregamento. O carregador de classe, pega o .class que têm os bytecodes do programa e os transfere para a memória principal</li>
+                <li>A Java Virtual Machine (JVM) armazena o programa em memória para executá-lo, efetuando 0 seu
+                    carregamento. O carregador de classe, pega o .class que têm os bytecodes do programa e os transfere
+                    para a memória principal</li>
             </ul>
 
             <p>Etapa 4: Verificar os bytecodes.</p>
             <ul>
-                <li>Enquanto as classes são carregadas, o verificador examina seus bytecodes para ter certeza que são válidas.</li>
+                <li>Enquanto as classes são carregadas, o verificador examina seus bytecodes para ter certeza que são
+                    válidas.</li>
             </ul>
-            
+
             <p>Etapa 5: Executar o programa Java.</p>
             <ul>
-                <li>A JVM executa OS bytecodes utilizando uma combinação de interpretação (Just in Time), conhecido como compilador Java HotSpot.</li>
-                <li>O Java HotSpot traduz os bytecodes para a linguagem de máquina, quando a JVM encontra novamente essas parte compiladas.</li>
+                <li>A JVM executa OS bytecodes utilizando uma combinação de interpretação (Just in Time), conhecido como
+                    compilador Java HotSpot.</li>
+                <li>O Java HotSpot traduz os bytecodes para a linguagem de máquina, quando a JVM encontra novamente
+                    essas parte compiladas.</li>
             </ul>
-            
+
             <p>Podemos executar em qualquer lugar (em SOs distintos)</p>
             <img src="img/java-jar.png" alt="java-jar.png">
-            <p>Na verdade, em muitos casos, um programa é distribuído na forma de um arquivo JAR, que significa Java Archive file.</p>
+            <p>Na verdade, em muitos casos, um programa é distribuído na forma de um arquivo JAR, que significa Java
+                Archive file.</p>
 
             <p>Exemplo de um programa em Java:</p>
             <pre>
@@ -165,8 +180,10 @@
             </pre>
             <ul>
                 <li>Esse código é a definição de uma classe.</li>
-                <li>Um pacote de instruções que especificam: que tipo de dados, que tipos de operações podem ser feitas.</li>
-                <li>Instruções dentro da definição de uma classe são agrupadas em um ou mais procedimentos chamados métodos.</li>
+                <li>Um pacote de instruções que especificam: que tipo de dados, que tipos de operações podem ser feitas.
+                </li>
+                <li>Instruções dentro da definição de uma classe são agrupadas em um ou mais procedimentos chamados
+                    métodos.</li>
                 <li>Todo programa Java tem que ter um método main em que a execução dele começa.</li>
             </ul>
 
@@ -187,7 +204,8 @@
             }
             </pre>
             <ul>
-                <li>Identificadores especiais em Java são chamados palavras reservadas, podendo ser utilizadas em locais pré-determinados.</li>
+                <li>Identificadores especiais em Java são chamados palavras reservadas, podendo ser utilizadas em locais
+                    pré-determinados.</li>
                 <li>Neste caso, criamos o identificador "Teste".</li>
             </ul>
 
@@ -280,31 +298,41 @@
             <h2>Download da Plataforma Java.</h2>
             <p>O universo Java é formado por 3 plataformas principais:</p>
             <ul>
-                <li><b>Java SE</b> (Java Plataform Standard Edition): Trata-se da base da plataforma e inclui o ambiente de execução e as bibliotecas mais comuns</li>
-                <li><b>Java EE</b> (Java Plataform Enterprise Edition): Voltada para o desenvolvimento de aplicações corporativas e para Internet.</li>
-                <li><b>Java ME</b> (Java Plataform Micro Edition): Utilizada para o desenvolvimento de aplicações para dispositivos móveis e embarcados</li>
+                <li><b>Java SE</b> (Java Plataform Standard Edition): Trata-se da base da plataforma e inclui o ambiente
+                    de execução e as bibliotecas mais comuns</li>
+                <li><b>Java EE</b> (Java Plataform Enterprise Edition): Voltada para o desenvolvimento de aplicações
+                    corporativas e para Internet.</li>
+                <li><b>Java ME</b> (Java Plataform Micro Edition): Utilizada para o desenvolvimento de aplicações para
+                    dispositivos móveis e embarcados</li>
             </ul>
 
-            <p>Um programa Java precisa de dois componentes para ser executado: a JVM (Javar Virtual Machine) e um conjunto de bibliotecas de classes</p>
+            <p>Um programa Java precisa de dois componentes para ser executado: a JVM (Javar Virtual Machine) e um
+                conjunto de bibliotecas de classes</p>
             <p>Para este disciplina, vamos usar o Java SE</p>
-            <p>Para realizar o download acesse o link abaixo e escolha a JVM indicada para o seu sistema operacional.</p>
-            <a href="https://www.oracle.com/br/java/technologies/javase-jdk15-downloads.html" target="_blank" rel="noopener noreferrer">Download aqui!</a>
+            <p>Para realizar o download acesse o link abaixo e escolha a JVM indicada para o seu sistema operacional.
+            </p>
+            <a href="https://www.oracle.com/br/java/technologies/javase-jdk15-downloads.html" target="_blank"
+                rel="noopener noreferrer">Download aqui!</a>
             <li>Após o download, prossiga em seguida com a instalação</li>
         </section>
 
         <section>
             <h2>Ambiente de Desenvolvimento Java e Testes.</h2>
-            <p>Nesta disciplina todos os códigos que vamos abordar e que serão disponibilizados, serão executados utilizando o ambiente de desenvolvimento conhecido como Netbeans IDE.</p>
-            <li>NetbeansIDE é um ambiente de desenvolvimento integrado e gratuito e de código aberto para desenvolvedores de software de inúmeras linguagens de programação, dentre elas Java.</li>
+            <p>Nesta disciplina todos os códigos que vamos abordar e que serão disponibilizados, serão executados
+                utilizando o ambiente de desenvolvimento conhecido como Netbeans IDE.</p>
+            <li>NetbeansIDE é um ambiente de desenvolvimento integrado e gratuito e de código aberto para
+                desenvolvedores de software de inúmeras linguagens de programação, dentre elas Java.</li>
             <ul>
                 <li>Funciona em vários sistemas operacionais (Linux, Windows e MacOS)</li>
             </ul>
             <li>Escolha o pacote para o seu Sistema Operacional no link:</li>
-            <a href="https://netbeans.apache.org/front/main/download/nb21/" target="_blank" rel="noopener noreferrer">Aqui!</a>
+            <a href="https://netbeans.apache.org/front/main/download/nb21/" target="_blank"
+                rel="noopener noreferrer">Aqui!</a>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

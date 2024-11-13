@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=oPlXecD-gZM&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Bancos de Dados - Aula 03 – Modelo Entidade-Relacionamento (MER) - Parte II. 
+            <a href="https://www.youtube.com/watch?v=oPlXecD-gZM&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Bancos de Dados - Aula 03 – Modelo Entidade-Relacionamento (MER) - Parte II.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -42,25 +45,29 @@
                 <li>Cardinalidades.</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Modelo Entidade-Relacionamento (MER).</h2>
             <p><b>Relacionamentos</b>: representam as associações existentes entre as entidades.</p>
-            <p><b>Heurística</b>: no discurso que descreve o mundo real, os relacionamentos são geralmente expressos por ações que envolvem entidades.</p>
+            <p><b>Heurística</b>: no discurso que descreve o mundo real, os relacionamentos são geralmente expressos por
+                ações que envolvem entidades.</p>
         </section>
 
         <section>
             <h2>Contexto didático.</h2>
             <b>Uma empresa:</b>
-            <p>(...) Um funcionário gerencia um departamento (...) Os departamentos possuem vários empregados e controlam uma série de projetos.</p>
-            <p>A gerência, a existência de empregados associados aos departamentos e o controle de projetos podem ser modelados como relacionamentos associados à entidade DEPARTAMENTO.</p>
+            <p>(...) Um funcionário gerencia um departamento (...) Os departamentos possuem vários empregados e
+                controlam uma série de projetos.</p>
+            <p>A gerência, a existência de empregados associados aos departamentos e o controle de projetos podem ser
+                modelados como relacionamentos associados à entidade DEPARTAMENTO.</p>
             <p></p>
             <p>No diagrama ER, os relacionamentos são representados por losangos.</p>
             <img src="img/losangos.png" alt="losangos">
             <p></p>
             <b>Conceitos:</b>
             <p>Um tipo relacionamento R entre n entidades, E1, E2,
-                ..., En, define um conjunto de associações – ou um conjunto relacionamento - entre entidades desses tipos entidade.</p>
+                ..., En, define um conjunto de associações – ou um conjunto relacionamento - entre entidades desses
+                tipos entidade.</p>
             <img src="img/entidades-para.png" alt="entidades-para.png">
             <p></p>
             <ul>
@@ -72,23 +79,27 @@
                 </ul>
                 <li>Exemplo:</li>
                 <ul>
-                    <li>um fornecedor fornece peças para um projeto. O relacionamento <b>FORNECE</b> envolve as entidades <b>FORNECEDOR</b>, <b>PEÇA</b> E <b>PROJETO</b>.</li>
+                    <li>um fornecedor fornece peças para um projeto. O relacionamento <b>FORNECE</b> envolve as
+                        entidades <b>FORNECEDOR</b>, <b>PEÇA</b> E <b>PROJETO</b>.</li>
                 </ul>
             </ul>
 
             <b>Relacionamento recursivo:</b>
-            <p>Ocorre quando um mesmo tipo entidade participa mais de uma vez do tipo relacionamento, assumindo papéis diferentes.</p>
+            <p>Ocorre quando um mesmo tipo entidade participa mais de uma vez do tipo relacionamento, assumindo papéis
+                diferentes.</p>
             <p>1- supervisor</p>
             <p>2- supervisionado</p>
             <img src="img/relacionamento-recursivo.png" alt="relacionamento-recursivo.png">
             <p></p>
-            <p><b>Cardinalidade</b>: especifica o número máximo de instâncias de relacionamento nas quais uma instância de entidade pode participar.</p>
+            <p><b>Cardinalidade</b>: especifica o número máximo de instâncias de relacionamento nas quais uma instância
+                de entidade pode participar.</p>
             <ul>
                 <li>1:1 (um para um).</li>
                 <li>1:N (um para muitos), N:1 (muitos para um).</li>
                 <li>M:N (muitos para muitos).</li>
             </ul>
-            <p>A cardinalidade está associada a um relacionamento e no diagrama ER é representada por 1, Me N (...) junto aos losangos.</p>
+            <p>A cardinalidade está associada a um relacionamento e no diagrama ER é representada por 1, Me N (...)
+                junto aos losangos.</p>
 
             <b>1:1 (um para um):</b>
             <p></p>
@@ -111,8 +122,11 @@
             <p></p>
 
             <b>Restrição de participação:</b>
-            <p>Especifica se uma entidade individual precisa, necessariamente, estar associada a outra entidade individual via um tipo relacionamento. Se a participação em um tipo relacionamento é obrigatória, ela é dita <b>TOTAL</b>, senão ela é dita <b>PARCIAL</b>.</p>
-            <p>No diagrama ER a participação total é representada por uma <b>linha dupla</b> que conecta o tipo entidade ao tipo relacionamento. A participação parcial é representada pela <b>linha simples</b>.</p>
+            <p>Especifica se uma entidade individual precisa, necessariamente, estar associada a outra entidade
+                individual via um tipo relacionamento. Se a participação em um tipo relacionamento é obrigatória, ela é
+                dita <b>TOTAL</b>, senão ela é dita <b>PARCIAL</b>.</p>
+            <p>No diagrama ER a participação total é representada por uma <b>linha dupla</b> que conecta o tipo entidade
+                ao tipo relacionamento. A participação parcial é representada pela <b>linha simples</b>.</p>
             <img src="img/restricao-e-participacao.png" alt="restricao-e-participacao.png">
             <p></p>
 
@@ -145,4 +159,5 @@
         <p>Diego Serafim de Sousa - 9 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

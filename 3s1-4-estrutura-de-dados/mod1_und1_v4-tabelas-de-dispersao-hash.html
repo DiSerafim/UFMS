@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Hash e Heap.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Hash e Heap.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Hash e Heap.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=jQ0r7P8rC1M&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 4 - 
-                Estruturas de Dados - Conceitos de Tabela Hash. 
+            <a href="https://www.youtube.com/watch?v=jQ0r7P8rC1M&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 4 -
+                Estruturas de Dados - Conceitos de Tabela Hash.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Ulisses Martins Dias.</p>
@@ -57,8 +60,10 @@
                 </ul>
                 <li>Seria possível efetuar uma busca em tempo melhor do que O(log(n))?</li>
                 <li>Quais restrições devem existir sobre os dados?</li>
-                <li>Tabelas de Hash (ou Tabelas Hash) permitem buscas em tempo constante, satisfeitas algumas restrições.</li>
-                <li>Essa estrutura pode ter vários nomes como: dicionários, mapas, arrays associativos, e assim por diante.</li>
+                <li>Tabelas de Hash (ou Tabelas Hash) permitem buscas em tempo constante, satisfeitas algumas
+                    restrições.</li>
+                <li>Essa estrutura pode ter vários nomes como: dicionários, mapas, arrays associativos, e assim por
+                    diante.</li>
                 <li>A princípio, a chave de busca pode ser de qualquer tipo.</li>
             </ul>
         </section>
@@ -66,15 +71,18 @@
         <section>
             <h2>Tipo Abstrato de Dados.</h2>
             <ul>
-                <li><b>retrieveltem(k)</b>: retorna uma entrada com chave igual a k, se ela existir. Caso contrário, retorna nulo.</li>
-                <li><b>insertltem(k, v)</b>: insere uma entrada v na chave k se a chave não existir. Caso contrário, atualiza o valor associado a k.</li>
+                <li><b>retrieveltem(k)</b>: retorna uma entrada com chave igual a k, se ela existir. Caso contrário,
+                    retorna nulo.</li>
+                <li><b>insertltem(k, v)</b>: insere uma entrada v na chave k se a chave não existir. Caso contrário,
+                    atualiza o valor associado a k.</li>
                 <li><b>deleteltem(k)</b>: remove a chave k e o valor associado a ela.</li>
             </ul>
             <b>Outros Métodos:</b>
             <ul>
                 <li><b>size()</b>: retorna o número de entradas.</li>
                 <li><b>keySet()</b>: retorna uma lista encadeada de todas as chaves armazenadas na tabela.</li>
-                <li><b>values()</b>: retorna uma coleção contendo todos os valores associados com as chaves armazenadas na tabela.</li>
+                <li><b>values()</b>: retorna uma coleção contendo todos os valores associados com as chaves armazenadas
+                    na tabela.</li>
                 <li><b>entrySet()</b>: retorna uma coleção contendo todas as entradas (chave-valor) da tabela.</li>
             </ul>
         </section>
@@ -83,15 +91,20 @@
             <h2>Implementação.</h2>
             <ul>
                 <li>A própria chave deve ser usada para organizar os dados em memória.</li>
-                <li>Cada entrada da estrutura é composta por um par "chave-valor" (k, v). A associação entre k e v define o mapeamento.</li>
+                <li>Cada entrada da estrutura é composta por um par "chave-valor" (k, v). A associação entre k e v
+                    define o mapeamento.</li>
                 <li>A chave é um identificador único e deve ser vista como um "endereço" para seu valor.</li>
-                <li>A tabela pode ser organizada em memória como um vetor, dado que este permite acesso em tempo constante.</li>
-                <li>As chaves podem ser de qualquer tipo de dados, mas para efetuarmos a busca no vetor, precisaremos de uma função que mapeie chaves em números inteiros.</li>
+                <li>A tabela pode ser organizada em memória como um vetor, dado que este permite acesso em tempo
+                    constante.</li>
+                <li>As chaves podem ser de qualquer tipo de dados, mas para efetuarmos a busca no vetor, precisaremos de
+                    uma função que mapeie chaves em números inteiros.</li>
             </ul>
             <img src="img/tabela-hash.png" alt="tabela-hash.png">
             <ul>
-                <li>Seja h a função que faz o mapeamento (também chamada de função de espalhamento) e k a chave, o endereço de memória será dado por h(k).</li>
-                <li>Se os valores retornados por h(k) forem bem distribuídos em um intervalo entre 0 e N-1, então precisamos de um vetor de capacidade N.</li>
+                <li>Seja h a função que faz o mapeamento (também chamada de função de espalhamento) e k a chave, o
+                    endereço de memória será dado por h(k).</li>
+                <li>Se os valores retornados por h(k) forem bem distribuídos em um intervalo entre 0 e N-1, então
+                    precisamos de um vetor de capacidade N.</li>
                 <li>Assumindo ausência de colisões, essa estrutura básica seria suficiente.</li>
             </ul>
             <img src="img/tabela-hash1.png" alt="tabela-hash1.png">
@@ -100,12 +113,15 @@
         <section>
             <h2>Funções de Hash.</h2>
             <ul>
-                <li>A função de hash h mapeia cada chave em um intervalo de 0 a N-1, onde Né a capacidade do arranjo.</li>
+                <li>A função de hash h mapeia cada chave em um intervalo de 0 a N-1, onde Né a capacidade do arranjo.
+                </li>
                 <li>É possível tratar colisões, mas a melhor estratégia por enquanto é tentar evitá-las.</li>
                 <li>Uma função de hash é boa se minimiza a ocorrência de colisões.</li>
                 <li>A primeira tarefa da função será transformar chaves de tipos arbitrários em inteiros.</li>
-                <li>Vamos assumir que queremos armazenar informações de funcionários de uma empresa e indexar essas informações pelo login único da pessoa.</li>
-                <li>O login pode ser o primeiro nome da pessoa, mas se este já foi escolhido por alguém, então outro deve ser selecionado pelo funcionário.</li>
+                <li>Vamos assumir que queremos armazenar informações de funcionários de uma empresa e indexar essas
+                    informações pelo login único da pessoa.</li>
+                <li>O login pode ser o primeiro nome da pessoa, mas se este já foi escolhido por alguém, então outro
+                    deve ser selecionado pelo funcionário.</li>
             </ul>
             <p>Uma função de hash pode primeiramente mapear os caracteres para inteiros:</p>
             <img src="img/tabela-hash2.png" alt="tabela-hash2.png">
@@ -127,31 +143,36 @@
             adriana     720
             ariadna     720
             </pre>
-            <p>Uma função de hash melhor levaria em conta a posição dos caracteres c₁ na cadeia <b>C = (Co, C1, C2,..., Ck-1).</b></p>
+            <p>Uma função de hash melhor levaria em conta a posição dos caracteres c₁ na cadeia <b>C = (Co, C1, C2,...,
+                    Ck-1).</b></p>
             <pre>C₀aᴷ⁻¹ + C₁aᴷ⁻² + C₂aᴷ⁻³ + ... + Cₖ₋₂a¹+Cₖ₋₁</pre>
             <p>Para algum <b>a</b> diferente de <b>0</b> ou <b>1</b>.</p>
             <ul>
                 <li>Por exemplo, com a = 3, teríamos os seguintes valores para orlando e odnalro:</li>
                 <img src="img/tabela-hash3.png" alt="tabela-hash3.png">
-                <li>Um valor de a alto (33, 37, 39 ou 41) tende a diminuir o número de colisões para algumas poucas.</li>
+                <li>Um valor de a alto (33, 37, 39 ou 41) tende a diminuir o número de colisões para algumas poucas.
+                </li>
             </ul>
             <p>Nesse caso, é possível fazer com que cada endereço tenha espaço para mais de uma entrada.</p>
             <img src="img/tabela-hash4.png" alt="tabela-hash4.png">
             <ul>
                 <li>Um valor de a alto (33, 37, 39 ou 41) pode levar a um overflow do intervalo dos inteiros.</li>
-                <li>A compressão dos valores pode fazer parte da função. O resto da divisão por N estabiliza os valores em um intervalo [0.. N-1].</li>
+                <li>A compressão dos valores pode fazer parte da função. O resto da divisão por N estabiliza os valores
+                    em um intervalo [0.. N-1].</li>
                 <pre>i mod N</pre>
                 <li>O tamanho do arranjo N pode aumentar ou diminuir o número de colisões:</li>
                 <ul>
                     <li>Se usarmos N = 1000, teremos muito menos colisões do que com N = 100.</li>
                 </ul>
-                <li>Para ajudar o espalhamento das chaves, é interessante usar um número primo para N. Isso diminui a chance de ocorrer padrões na distribuição de dados.</li>
+                <li>Para ajudar o espalhamento das chaves, é interessante usar um número primo para N. Isso diminui a
+                    chance de ocorrer padrões na distribuição de dados.</li>
                 <li>Por exemplo, se temos as chaves {200, 205, 210, 215, 220,..., 600}.</li>
                 <ul>
                     <li>Com N = 100, cada chave irá colidir com várias outras chaves.</li>
                     <li>Com N = 101 não teremos colisões.</li>
                 </ul>
-                <li>Na próxima aula, implementaremos esses conceitos em C++. Em seguida, veremos técnicas de tratamento de colisão.</li>
+                <li>Na próxima aula, implementaremos esses conceitos em C++. Em seguida, veremos técnicas de tratamento
+                    de colisão.</li>
             </ul>
         </section>
     </main>
@@ -159,4 +180,5 @@
         <p>Diego Serafim de Sousa - 24 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

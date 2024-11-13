@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>PROGRAMAÇÃO ORIENTADA A OBJETOS-T01-2024-1.</h1>
@@ -29,11 +31,11 @@
             <h2>Materiais</h2>
             <ul>
                 <li>Prof. Anderson Viçoso de Araújo.</li>
-                <li>Iniciado em	sexta, 3 mai 2024, 20:24</li>
-                <li>Estado	Finalizada</li>
-                <li>Concluída em	sexta, 3 mai 2024, 21:23</li>
-                <li>Tempo empregado	58 minutos 43 segundos</li>
-                <li>Avaliar	10,00 de um máximo de 10,00(100%)</li>
+                <li>Iniciado em sexta, 3 mai 2024, 20:24</li>
+                <li>Estado Finalizada</li>
+                <li>Concluída em sexta, 3 mai 2024, 21:23</li>
+                <li>Tempo empregado 58 minutos 43 segundos</li>
+                <li>Avaliar 10,00 de um máximo de 10,00(100%)</li>
             </ul>
         </section>
         <section id="conteudo">
@@ -41,7 +43,8 @@
 
             <section class="question">
                 <h3>Pergunta 1</h3>
-                <p>Qual dos conceitos Herança, Abstração, Encapsulamento ou Polimorfismo é apresentado no código a seguir:</p>
+                <p>Qual dos conceitos Herança, Abstração, Encapsulamento ou Polimorfismo é apresentado no código a
+                    seguir:</p>
                 <pre>
                     public class Student{
                         private String name;
@@ -58,7 +61,10 @@
 
                 <b class="answer">Resposta: Encapsulamento. ✅</b>
                 <p>Resolução:</p>
-                <li>Porque a classe Student possui um atributo name que é declarado como privado e acessado através de métodos públicos getName() e setName(). Dessa forma, o acesso direto ao atributo name é evitado, e a manipulação desse atributo é feita de forma controlada pelos métodos públicos, mantendo a integridade dos dados e seguindo o princípio de encapsulamento.</li>
+                <li>Porque a classe Student possui um atributo name que é declarado como privado e acessado através de
+                    métodos públicos getName() e setName(). Dessa forma, o acesso direto ao atributo name é evitado, e a
+                    manipulação desse atributo é feita de forma controlada pelos métodos públicos, mantendo a
+                    integridade dos dados e seguindo o princípio de encapsulamento.</li>
             </section>
 
             <section class="question">
@@ -67,13 +73,17 @@
                 <ul>
                     <li>a. Permite a definição de classes com atributos finais.</li>
                     <li>b. Permite a definição de classes com métodos estáticos.</li>
-                    <li>c. Permite a criação de classes genéricas que podem ser reutilizadas com diferentes tipos de dados.</li>
+                    <li>c. Permite a criação de classes genéricas que podem ser reutilizadas com diferentes tipos de
+                        dados.</li>
                     <li>d. Permite a definição de classes com mais de um construtor.</li>
                 </ul>
 
                 <b class="answer">Resposta: c. ✅</b>
                 <p>Resolução:</p>
-                <li>Permitem que classes, interfaces e métodos possam ser parametrizados com tipos específicos, tornando-os mais flexíveis e reutilizáveis. Isso possibilita a criação de estruturas de dados e algoritmos que podem ser utilizados com diferentes tipos de dados, proporcionando maior segurança de tipo e reusabilidade do código.</li>
+                <li>Permitem que classes, interfaces e métodos possam ser parametrizados com tipos específicos,
+                    tornando-os mais flexíveis e reutilizáveis. Isso possibilita a criação de estruturas de dados e
+                    algoritmos que podem ser utilizados com diferentes tipos de dados, proporcionando maior segurança de
+                    tipo e reusabilidade do código.</li>
             </section>
 
             <section class="question">
@@ -92,12 +102,16 @@
                         }
                     }
                 </pre>
-                <p>Nesse exemplo, a classe MinhaClasse é definida com um tipo genérico T. O construtor recebe um objeto do tipo T e o armazena em um atributo da classe. O método getObjeto() retorna o objeto armazenado.</p>
+                <p>Nesse exemplo, a classe MinhaClasse é definida com um tipo genérico T. O construtor recebe um objeto
+                    do tipo T e o armazena em um atributo da classe. O método getObjeto() retorna o objeto armazenado.
+                </p>
                 <p>Escolha uma opção: Verdadeiro ou Falso.</p>
 
                 <b class="answer">Resposta: Verdadeiro. ✅</b>
                 <p>Resolução:</p>
-                <li>O tipo genérico T é definido. O construtor recebe um objeto do tipo T e o armazena em um atributo da classe. O método getObjeto() retorna o objeto armazenado, respeitando assim os conceitos de generics em Java.</li>
+                <li>O tipo genérico T é definido. O construtor recebe um objeto do tipo T e o armazena em um atributo da
+                    classe. O método getObjeto() retorna o objeto armazenado, respeitando assim os conceitos de generics
+                    em Java.</li>
             </section>
 
             <section class="question">
@@ -125,16 +139,21 @@
                     <li>c. Escreve uma linha em branco no console do usuário.</li>
                     <li>d. Escreve “Printed in Superclass.” no console do usuário.</li>
                 </ul>
-                
+
                 <b class="answer">Resposta: d. ✅</b>
 
                 <p>Resolução:</p>
-                <li>Isso porque a classe Subclass estende a classe Superclass e, portanto, herda o método printMethod(). Quando o método main() é executado na classe Subclass, ele cria uma instância de Subclass e chama o método printMethod(). Como não há uma implementação diferente de printMethod() na classe Subclass, o método herdado da classe Superclass é executado, imprimindo "Printed in Superclass." no console.</li>
+                <li>Isso porque a classe Subclass estende a classe Superclass e, portanto, herda o método printMethod().
+                    Quando o método main() é executado na classe Subclass, ele cria uma instância de Subclass e chama o
+                    método printMethod(). Como não há uma implementação diferente de printMethod() na classe Subclass, o
+                    método herdado da classe Superclass é executado, imprimindo "Printed in Superclass." no console.
+                </li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 5</h3>
-                <p>Qual dos conceitos Herança, Abstração, Encapsulamento ou Polimorfismo é apresentado no código a seguir:</p>
+                <p>Qual dos conceitos Herança, Abstração, Encapsulamento ou Polimorfismo é apresentado no código a
+                    seguir:</p>
                 <pre>
                     class Bike{
                         int speedlimit=90;
@@ -153,24 +172,34 @@
                 <b class="answer">Resposta: Herança. ✅</b>
 
                 <p>Resolução:</p>
-                <p>Na classe SuperBike, ela herda da classe Bike, o que significa que ela adquire todas as propriedades e métodos da classe Bike. Portanto, quando você cria um objeto SuperBike e o atribui a uma referência do tipo Bike (Bike obj = new SuperBike();), você ainda pode acessar a variável speedlimit definida na classe Bike.</p>
-                <p>Ao executar System.out.println(obj.speedlimit);, você está acessando a variável speedlimit da classe Bike, que tem o valor 90.</p>
+                <p>Na classe SuperBike, ela herda da classe Bike, o que significa que ela adquire todas as propriedades
+                    e métodos da classe Bike. Portanto, quando você cria um objeto SuperBike e o atribui a uma
+                    referência do tipo Bike (Bike obj = new SuperBike();), você ainda pode acessar a variável speedlimit
+                    definida na classe Bike.</p>
+                <p>Ao executar System.out.println(obj.speedlimit);, você está acessando a variável speedlimit da classe
+                    Bike, que tem o valor 90.</p>
             </section>
 
             <section class="question">
                 <h3>Pergunta 6</h3>
-                <p>Java não possui herança múltipla. Somente é possível estender uma única classe, mas pode-se implementar várias interfaces em uma mesma classe. Já para interfaces é possível ter herança múltipla, onde várias interfaces herdam os métodos de suas interfaces pais.</p>
+                <p>Java não possui herança múltipla. Somente é possível estender uma única classe, mas pode-se
+                    implementar várias interfaces em uma mesma classe. Já para interfaces é possível ter herança
+                    múltipla, onde várias interfaces herdam os métodos de suas interfaces pais.</p>
                 <p>Escolha uma opção: Verdadeiro ou Falso.</p>
 
                 <b class="answer">Resposta: Verdadeiro. ✅</b>
 
                 <p>Resolução:</p>
-                <li>Em Java, uma classe só pode herdar de uma única classe pai, o que significa que a herança múltipla de classes não é permitida. No entanto, uma classe pode implementar várias interfaces, o que proporciona um mecanismo para alcançar comportamentos similares à herança múltipla, mas através da implementação de interfaces.</li>
+                <li>Em Java, uma classe só pode herdar de uma única classe pai, o que significa que a herança múltipla
+                    de classes não é permitida. No entanto, uma classe pode implementar várias interfaces, o que
+                    proporciona um mecanismo para alcançar comportamentos similares à herança múltipla, mas através da
+                    implementação de interfaces.</li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 7</h3>
-                <p>Marque a alternativa que apresenta uma sequência de passos com alterações no código do exemplo abaixo capaz de transformá-lo em um código que use o recurso Generics em Java.</p>
+                <p>Marque a alternativa que apresenta uma sequência de passos com alterações no código do exemplo abaixo
+                    capaz de transformá-lo em um código que use o recurso Generics em Java.</p>
                 <pre>
                     #1  import java.util.ArrayList;
                     
@@ -204,31 +233,31 @@
                 </pre>
                 <ul>
                     <li>a. Passo 1: substituir a linha de código #4 por:
-                    ArrayList(String> nomes = new String();
-                    Passo 2: substituir a linha de código #10 por:
-                    for (nome: nomes) {
-                    Passo 3:  Remover a linha de código #11</li>
-                    
+                        ArrayList(String> nomes = new String();
+                        Passo 2: substituir a linha de código #10 por:
+                        for (nome: nomes) {
+                        Passo 3: Remover a linha de código #11</li>
+
                     <li>b. Passo 1: substituir a linha de código #4 por:
-                    ArrayList(String> nomes = new String();
-                    Passo 2: substituir a linha de código #10 por:
-                    for (String nomes: nome) {
-                    Passo 3:  Remover a linha de código #11</li>
-                    
+                        ArrayList(String> nomes = new String();
+                        Passo 2: substituir a linha de código #10 por:
+                        for (String nomes: nome) {
+                        Passo 3: Remover a linha de código #11</li>
+
                     <li>c. Passo 1: substituir a linha de código #4 por:
-                    ArrayList(String> nomes = new ArrayList(String>();
-                    Passo 2: substituir a linha de código #10 por:
-                    for (String nome: nomes) {</li>
-                    
+                        ArrayList(String> nomes = new ArrayList(String>();
+                        Passo 2: substituir a linha de código #10 por:
+                        for (String nome: nomes) {</li>
+
                     <li>d. Passo 1: substituir a linha de código #4 por:
-                    ArrayList(String> nomes = new ArrayList(String>();
-                    Passo 2: substituir a linha de código #10 por:
-                    for (String nome: nomes) {
-                    Passo 3:  Remover a linha de código #11</li>
-                    
+                        ArrayList(String> nomes = new ArrayList(String>();
+                        Passo 2: substituir a linha de código #10 por:
+                        for (String nome: nomes) {
+                        Passo 3: Remover a linha de código #11</li>
+
                     <li>e. Passo 1: substituir a linha de código #4 por:
-                    String nomes = new ArrayList(String>();
-                    Passo 2:  Remover a linha de código #11</li>
+                        String nomes = new ArrayList(String>();
+                        Passo 2: Remover a linha de código #11</li>
                 </ul>
 
                 <b class="answer">Resposta: d. ✅</b>
@@ -272,29 +301,35 @@
                 <b class="answer">Resposta: c. Sim, é possível. ✅</b>
 
                 <p>Resolução:</p>
-                <li>O tipo curinga é usado para representar um tipo desconhecido. Ele pode ser usado em várias situações, como em listas ou métodos, quando não se sabe ou não se importa com o tipo específico dos elementos. Isso permite uma maior flexibilidade no uso de classes genéricas.</li>
+                <li>O tipo curinga é usado para representar um tipo desconhecido. Ele pode ser usado em várias
+                    situações, como em listas ou métodos, quando não se sabe ou não se importa com o tipo específico dos
+                    elementos. Isso permite uma maior flexibilidade no uso de classes genéricas.</li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 9</h3>
                 <p>Associe as palavras a seguir com o seu respectivo significado.</p>
                 <ul>
-                    <li>Palavra reservada utilizada para redefinir o controle de fluxo permitindo executar diferentes blocos de código com base em diferentes valores de entrada em Java. (...)</li>
+                    <li>Palavra reservada utilizada para redefinir o controle de fluxo permitindo executar diferentes
+                        blocos de código com base em diferentes valores de entrada em Java. (...)</li>
 
                     <li>Palavra reservada utilizada para definir uma interface em Java. (...)</li>
 
-                    <li>Palavra reservada utilizada para continuar a iteração do laço para o próximo passo em Java. (...)</li>
+                    <li>Palavra reservada utilizada para continuar a iteração do laço para o próximo passo em Java.
+                        (...)</li>
 
                     <li>Palavra reservada utilizada para definir herança em Java. (...)</li>
                 </ul>
                 <p>Opções: Extends, Interface, Switch, Continue.</p>
-                
+
                 <b class="answer">Resposta: . ✅</b>
                 <p>Resolução:</p>
                 <ul>
-                    <li>Palavra reservada utilizada para redefinir o controle de fluxo permitindo executar diferentes blocos de código com base em diferentes valores de entrada em Java. <b>Switch</b></li>
+                    <li>Palavra reservada utilizada para redefinir o controle de fluxo permitindo executar diferentes
+                        blocos de código com base em diferentes valores de entrada em Java. <b>Switch</b></li>
                     <li>Palavra reservada utilizada para definir uma interface em Java. <b>Interface</b></li>
-                    <li>Palavra reservada utilizada para continuar a iteração do laço para o próximo passo em Java. <b>Continue</b></li>
+                    <li>Palavra reservada utilizada para continuar a iteração do laço para o próximo passo em Java.
+                        <b>Continue</b></li>
                     <li>Palavra reservada utilizada para definir herança em Java. <b>Extends</b></li>
                 </ul>
             </section>
@@ -339,4 +374,5 @@
         <p>Diego Serafim de Sousa - 3 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

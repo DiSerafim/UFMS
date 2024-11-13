@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>TÉCNICAS AVANÇADAS DE DESENVOLVIMENTO DE SOFTWARE-T01-2024-2</h1>
@@ -27,20 +29,27 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <p>Neste módulo, você estudou o Modelo MVC (Model-View-Controller), uma arquitetura amplamente utilizada no desenvolvimento de software, principalmente em desenvolvimento Web. Vamos explorar sua aplicação prática?</p>
-            <p>O Modelo MVC é uma abordagem que separa as preocupações de uma aplicação em três componentes: Modelo, Visão (View) e Controlador (Controller). Agora, convido você a discutir como essa abordagem pode ser aplicada eficazmente em projetos reais.</p>
+            <p>Neste módulo, você estudou o Modelo MVC (Model-View-Controller), uma arquitetura amplamente utilizada no
+                desenvolvimento de software, principalmente em desenvolvimento Web. Vamos explorar sua aplicação
+                prática?</p>
+            <p>O Modelo MVC é uma abordagem que separa as preocupações de uma aplicação em três componentes: Modelo,
+                Visão (View) e Controlador (Controller). Agora, convido você a discutir como essa abordagem pode ser
+                aplicada eficazmente em projetos reais.</p>
         </section>
 
         <section id="conteudo">
             <h2>Conteúdo</h2>
             <p>O que fazer para participar do fórum:</p>
             <ol>
-                <li>Descreva um projeto de software: Web, Sistema, App etc. (real ou fictício) em que você consideraria apropriada a aplicação do Modelo MVC.</li>
-                <li>Explique como você dividiria as responsabilidades entre o Modelo, a Visão e o Controlador nesse projeto.</li>
+                <li>Descreva um projeto de software: Web, Sistema, App etc. (real ou fictício) em que você consideraria
+                    apropriada a aplicação do Modelo MVC.</li>
+                <li>Explique como você dividiria as responsabilidades entre o Modelo, a Visão e o Controlador nesse
+                    projeto.</li>
             </ol>
             <p>Questões para discussão:</p>
             <ol type="a">
-                <li>Quais são as vantagens de usar o Modelo MVC na organização de um projeto de desenvolvimento de software?</li>
+                <li>Quais são as vantagens de usar o Modelo MVC na organização de um projeto de desenvolvimento de
+                    software?</li>
                 <li>Quais são os desafios comuns encontrados ao implementar o Modelo MVC?</li>
             </ol>
         </section>
@@ -50,22 +59,28 @@
             <b>Projeto: Pizzaria</b>
             <p></p>
             <u>Descrição:</u>
-            <p>Um site para uma pizzaria, onde os clientes possam fazer pedidos online, e a pizzaria pode acompanhar e gerenciar esses pedido em tempo real. Um sistema com três áreas: Um portal para os clientes, um painel de gerenciamento e uma área de relatório onde é possível ver o andamento dos pedidos.</p>
+            <p>Um site para uma pizzaria, onde os clientes possam fazer pedidos online, e a pizzaria pode acompanhar e
+                gerenciar esses pedido em tempo real. Um sistema com três áreas: Um portal para os clientes, um painel
+                de gerenciamento e uma área de relatório onde é possível ver o andamento dos pedidos.</p>
             <u>Divisão MVC:</u>
             <ul>
                 <li>Model:</li>
                 <ul>
-                    <li>Ficaria responsável pela lógica e manipulação dos cados, como as entidades (pedido, cardápio, cliente e status do pedido) onde contem as informações do restaurante e métodos para gerenciar e atualizar.</li>
+                    <li>Ficaria responsável pela lógica e manipulação dos cados, como as entidades (pedido, cardápio,
+                        cliente e status do pedido) onde contem as informações do restaurante e métodos para gerenciar e
+                        atualizar.</li>
                     <li>Também é a parte que interage com o banco de dados o CRUD.</li>
                 </ul>
                 <li>View:</li>
                 <ul>
-                    <li>Aqui será o front-end a parte de interface de usuário(UI), onde ficará visível para todos, exceto a parte de administração.</li>
+                    <li>Aqui será o front-end a parte de interface de usuário(UI), onde ficará visível para todos,
+                        exceto a parte de administração.</li>
                     <li>Exibe em tempo real os pedidos, altera o status, atualiza o menu.</li>
                 </ul>
                 <li>Controller:</li>
                 <ul>
-                    <li>Aqui é a parte que ficará responsável por fazer a ponte entre o model e o view, como se fosse um garçon que faz a ligação entre o cliente e a cozinha. rsrs</li>
+                    <li>Aqui é a parte que ficará responsável por fazer a ponte entre o model e o view, como se fosse um
+                        garçon que faz a ligação entre o cliente e a cozinha. rsrs</li>
                     <li>o controller fica responsável por validar as informações, criar e ou atualizar um pedido</li>
                 </ul>
             </ul>
@@ -73,22 +88,26 @@
             <ul>
                 <li>Separa as responsabilidades:</li>
                 <ul>
-                    <li>O MVC organiza as responsabilidades de maneira clara. Cada camada pode ser desenvolvida e mantida independentemente, reduzindo os erros.</li>
+                    <li>O MVC organiza as responsabilidades de maneira clara. Cada camada pode ser desenvolvida e
+                        mantida independentemente, reduzindo os erros.</li>
                 </ul>
                 <li>Reutiliza código:</li>
                 <ul>
-                    <li>É possível reutilizar o model para diferentes views, como uma versão mobile ou web, sem alterar a lógica.</li>
+                    <li>É possível reutilizar o model para diferentes views, como uma versão mobile ou web, sem alterar
+                        a lógica.</li>
                 </ul>
                 <li>Manutenção e atualização fácil:</li>
                 <ul>
-                    <li>Em caso de ajustes, cada camada pode ser modificada independentemente, tornando o sistema flexível.</li>
+                    <li>Em caso de ajustes, cada camada pode ser modificada independentemente, tornando o sistema
+                        flexível.</li>
                 </ul>
             </ul>
             <u>Desafios MVC:</u>
             <ul>
                 <li>Complexidade na integração:</li>
                 <ul>
-                    <li>a separação exige planejamento para que a comunicação entre as partes funcione de maneira eficiente.</li>
+                    <li>a separação exige planejamento para que a comunicação entre as partes funcione de maneira
+                        eficiente.</li>
                 </ul>
                 <li>Sobrecarga no controller:</li>
                 <ul>
@@ -107,4 +126,5 @@
         </address>
     </footer>
 </body>
+
 </html>

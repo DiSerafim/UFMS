@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Aprofundando na Orientação a Objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Aprofundando na Orientação a Objetos.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=cjm9NUgJOAU&ab_channel=AGEADUFMS" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=cjm9NUgJOAU&ab_channel=AGEADUFMS" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 1 -
                 [UFMS Digital] Programação Orientada a Objetos - Módulo 2 - Unidade 3.
                 <i class="material-icons right"> send</i>
             </a>
@@ -48,7 +51,8 @@
                     <li>Similar a um diretório;</li>
                     <li>Um package contém uma coleção de classes que se relacionam logicamente;</li>
                 </ul>
-                <li>Para colocar uma classe dentro de um pacote, você deve criar o diretório, colocar a classe dentro do diretório e definir na classe o nome do diretório (pacote) logo no início da classe;</li>
+                <li>Para colocar uma classe dentro de um pacote, você deve criar o diretório, colocar a classe dentro do
+                    diretório e definir na classe o nome do diretório (pacote) logo no início da classe;</li>
                 <li>Exemplo:</li>
                 <ul>
                     <pre>package diretório;</pre>
@@ -59,9 +63,11 @@
         <section>
             <h2>Coleta de Lixo (Garbage Collection).</h2>
             <ul>
-                <li>Quando um objeto deixa de possuir referências válidas para ele, ele não pode ser mais acessado pelo programa;</li>
+                <li>Quando um objeto deixa de possuir referências válidas para ele, ele não pode ser mais acessado pelo
+                    programa;</li>
                 <li>O objeto inútil é chamado de lixo (garbage);</li>
-                <li>Java realiza periodicamente coleta de lixo automática, retornando uma memória de objeto para o sistema para uso futuro;</li>
+                <li>Java realiza periodicamente coleta de lixo automática, retornando uma memória de objeto para o
+                    sistema para uso futuro;</li>
                 <li>Em outras linguagens, o programador é responsável por realizar a coleta de lixo.</li>
             </ul>
         </section>
@@ -90,7 +96,9 @@
             <ul>
                 <li>Lembrando que os métodos fornecidos por Java são solicitações, e não demandas;</li>
                 <li>Isto é, a JVM fará o que puder para atender, sem garantias de que o fará;</li>
-                <li>Maneira mais simples de solicitar a coleta: <pre>System.gc()</pre>.</li>
+                <li>Maneira mais simples de solicitar a coleta:
+                    <pre>System.gc()</pre>.
+                </li>
             </ul>
         </section>
 
@@ -98,8 +106,10 @@
             <h2>Fazendo Limpeza Antes da Coleta.</h2>
             <ul>
                 <li>A classe Object possui o método <i>finalize()</i>;</li>
-                <li>O método <i>finalize()</i> tem sua execução garantida antes do coletor de lixo excluir um objeto;</li>
-                <li>Já que o coletor de lixo não tem execução garantida, <i>finalize()</i> pode nunca ser executado.</li>
+                <li>O método <i>finalize()</i> tem sua execução garantida antes do coletor de lixo excluir um objeto;
+                </li>
+                <li>Já que o coletor de lixo não tem execução garantida, <i>finalize()</i> pode nunca ser executado.
+                </li>
             </ul>
         </section>
     </main>
@@ -107,4 +117,5 @@
         <p>Diego Serafim de Sousa - 27 de abril de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=KuakqxxghF8&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=19&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 18 - Dependências Funcionais. 
+            <a href="https://www.youtube.com/watch?v=KuakqxxghF8&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=19&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 18 - Dependências Funcionais.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -42,20 +45,26 @@
         <section>
             <h2>Dependências funcionais.</h2>
             <ul>
-                <li>Uma dependência funcional (DF) é uma restrição imposta a dois conjuntos de atributos de um banco de dados.</li>
-                <li>Trata-se de uma restrição que é estabelecida pelo projetista do banco de dados, de acordo com as regras que valem no mundo real que está sendo modelado;</li>
-                <li>É uma ferramenta que permite estabelecer uma formalização para a avaliação da qualidade do projeto de banco de dados.</li>
+                <li>Uma dependência funcional (DF) é uma restrição imposta a dois conjuntos de atributos de um banco de
+                    dados.</li>
+                <li>Trata-se de uma restrição que é estabelecida pelo projetista do banco de dados, de acordo com as
+                    regras que valem no mundo real que está sendo modelado;</li>
+                <li>É uma ferramenta que permite estabelecer uma formalização para a avaliação da qualidade do projeto
+                    de banco de dados.</li>
             </ul>
             <p>Suponha que:</p>
             <ul>
                 <li>Nosso esquema de banco de dados relacional possua os atributos A, B, C e D;</li>
                 <li>E que ele seja composto de um único esquema de relação UNIVERSAL = {A, B, C, D}.</li>
             </ul>
-            <p>Uma dependência funcional, denotada por X 🢂 Y, estabelecida para dois conjuntos de atributos (X e Y) que são subconjuntos de um esquema de relação R, especifica uma restrição sobre as possíveis tuplas que podem ser formadas em um estado r de relação R.</p>
+            <p>Uma dependência funcional, denotada por X 🢂 Y, estabelecida para dois conjuntos de atributos (X e Y) que
+                são subconjuntos de um esquema de relação R, especifica uma restrição sobre as possíveis tuplas que
+                podem ser formadas em um estado r de relação R.</p>
             <ul>
                 <li>A restrição é que:</li>
                 <ul>
-                    <li>para quaisquer duas tuplas t₁ e t₂ em r que possuam t₁[X] = t₂[X], essas tuplas devem também possuir t₁[Y] = t₂[Y].</li>
+                    <li>para quaisquer duas tuplas t₁ e t₂ em r que possuam t₁[X] = t₂[X], essas tuplas devem também
+                        possuir t₁[Y] = t₂[Y].</li>
                 </ul>
             </ul>
             <ul>
@@ -66,7 +75,8 @@
                     <li>Y é determinado funcionalmente por X (ou Y é determinado por X)</li>
                     <li>Y é funcionalmente dependente de X</li>
                 </ul>
-                <li>O conjunto de atributos X é chamado de "lado esquerdo da DF" e o conjunto de atributos Y é chamado de "lado direito da DF".</li>
+                <li>O conjunto de atributos X é chamado de "lado esquerdo da DF" e o conjunto de atributos Y é chamado
+                    de "lado direito da DF".</li>
             </ul>
             <p>Exemplo:</p>
             <p>Para o nosso esquema hipotético UNIVERSAL, estabeleceremos a seguinte dependência funcional:</p>
@@ -77,32 +87,42 @@
             <p>Ex.:</p>
             <img src="img/dependencia-funcional1.png" alt="dependencia-funcional1.png">
             <pre>B 🢂 C</pre>
-            <p>Para os pares de tuplas nas quais os valores do atributo B são iguais (t2 e t3), os valores no atributo C também são iguais?</p>
+            <p>Para os pares de tuplas nas quais os valores do atributo B são iguais (t2 e t3), os valores no atributo C
+                também são iguais?</p>
             <i>- Sim, a instância de relação é válida.</i>
-            <p>X determina funcionalmente Y em um esquema de relação R se, e somente se, sempre que duas tuplas de r(R) concordarem nos seus valores-X, elas necessariamente concordam nos seus valores-Y.</p>
+            <p>X determina funcionalmente Y em um esquema de relação R se, e somente se, sempre que duas tuplas de r(R)
+                concordarem nos seus valores-X, elas necessariamente concordam nos seus valores-Y.</p>
             <p>Então note que:</p>
-            <p>Afirmar que X 🢂 Y vale em R não significa afirmar que Y 🢂 X vale em R. Ou a partir da validade da restrição X 🢂 Y nada pode ser dito sobre a validade da restrição Y 🢂 X.</p>
+            <p>Afirmar que X 🢂 Y vale em R não significa afirmar que Y 🢂 X vale em R. Ou a partir da validade da
+                restrição X 🢂 Y nada pode ser dito sobre a validade da restrição Y 🢂 X.</p>
             <p>Ex.:</p>
             <img src="img/dependencia-funcional2.png" alt="dependencia-funcional2.png">
-            <p>X determina funcionalmente Y em um esquema de relação R se, e somente se, sempre que duas tuplas de r(R) concordarem nos seus valores-X, elas necessariamente concordam nos seus valores-Y.</p>
+            <p>X determina funcionalmente Y em um esquema de relação R se, e somente se, sempre que duas tuplas de r(R)
+                concordarem nos seus valores-X, elas necessariamente concordam nos seus valores-Y.</p>
             <p>Então note que:</p>
-            <p>Se X é uma chave candidata de R, então X 🢂 Y para qualquer subconjunto de atributos Y de R. Ou seja, X 🢂 R.</p>
+            <p>Se X é uma chave candidata de R, então X 🢂 Y para qualquer subconjunto de atributos Y de R. Ou seja, X
+                🢂 R.</p>
             <p>Ex.:</p>
             <img src="img/depen.png" alt="dependencia-funcional3">
-            <p>Uma dependência funcional é uma propriedade semântica dos atributos, e por isso ela é derivada do conhecimento que o projetista do banco de dados tem do mundo real que está sendo modelado.</p>
-            <p>O principal uso das dependências funcionais é descrever um esquema de relação de forma mais detalhada, por meio da especificação de restrições em seus atributos que devem ser garantidas todo o tempo.</p>
-            <p>Considerando os seguintes esquemas (de baixa qualidade), vejamos quais dependências funcionais gostaríamos de estabelecer.</p>
+            <p>Uma dependência funcional é uma propriedade semântica dos atributos, e por isso ela é derivada do
+                conhecimento que o projetista do banco de dados tem do mundo real que está sendo modelado.</p>
+            <p>O principal uso das dependências funcionais é descrever um esquema de relação de forma mais detalhada,
+                por meio da especificação de restrições em seus atributos que devem ser garantidas todo o tempo.</p>
+            <p>Considerando os seguintes esquemas (de baixa qualidade), vejamos quais dependências funcionais
+                gostaríamos de estabelecer.</p>
             <img src="img/depend.png" alt="dependencia-funcional4">
             <p>Ex.:</p>
             <img src="img/dependencia-funcional5.png" alt="dependencia-funcional5.png">
             <p>Ex.:</p>
             <img src="img/dependencia-funcional6.png" alt="dependencia-funcional6">
-            <p>Uma dependência funcional é uma propriedade do esquema de relação R e não de um estado de relação de R em particular.</p>
+            <p>Uma dependência funcional é uma propriedade do esquema de relação R e não de um estado de relação de R em
+                particular.</p>
             <p>Ex.:</p>
             <img src="img/dependencia-funcional7.png" alt="dependencia-funcional7.png">
             <p>Ex.:</p>
             <img src="img/dependencia-funcional8.png" alt="dependencia-funcional8.png">
-            <p>Não pode haver instâncias de relações no banco de dados que violem as dependências funcionais estabelecidas pelo projetista do banco de dados.</p>
+            <p>Não pode haver instâncias de relações no banco de dados que violem as dependências funcionais
+                estabelecidas pelo projetista do banco de dados.</p>
             <ul>
                 <li>Devemos garantir que as dependências funcionais não estão sendo violadas:</li>
                 <ul>
@@ -114,7 +134,8 @@
 
         <section>
             <h2>Estes slides estão baseados na bibliografia:</h2>
-            <p>Mapeamento MER 🢂 Relacional Parte III: relacionamentos n-ários, especialização-generalização, agregação.</p>
+            <p>Mapeamento MER 🢂 Relacional Parte III: relacionamentos n-ários, especialização-generalização, agregação.
+            </p>
             <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
         </section>
     </main>
@@ -122,4 +143,5 @@
         <p>Diego Serafim de Sousa - 11 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BANCO DE DADOS-T01-2024-1</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANCO DE DADOS-T01-2024-1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>BANCO DE DADOS-T01-2024-1</h1>
@@ -28,13 +30,15 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <p>O MongoDB é um NoSQL orientado a documentos, o MongoDB possui funções que permite a realização de operações de CRUD (create, read, update, delete).</p>
+            <p>O MongoDB é um NoSQL orientado a documentos, o MongoDB possui funções que permite a realização de
+                operações de CRUD (create, read, update, delete).</p>
         </section>
 
         <section id="conteudo">
             <h2>Conteúdo</h2>
             <h3>Considere a collection funcionário que possui os atributos: nome, salário e sexo.</h3>
-            <p>Crie uma consulta para essa collection no MongoDB que retorne os funcionários que possuem salário maior ou igual a R$ 2000,00 e menor ou igual a R$ 5000,00,  e que são do sexo `M`.</p>
+            <p>Crie uma consulta para essa collection no MongoDB que retorne os funcionários que possuem salário maior
+                ou igual a R$ 2000,00 e menor ou igual a R$ 5000,00, e que são do sexo `M`.</p>
         </section>
 
         <section>
@@ -54,9 +58,11 @@
             <ul>
                 <li><b>db.funcionario</b>: Refere-se à collection funcionario.</li>
                 <li><b>find()</b>: Método utilizado para buscar documentos na collection.</li>
-                <li>{ <b>salario</b>: { <b>$gte</b>: 2000, <b>$lte</b>: 5000 }, <b>sexo</b>: 'M' }: Objeto de consulta que especifica as condições:</li>
+                <li>{ <b>salario</b>: { <b>$gte</b>: 2000, <b>$lte</b>: 5000 }, <b>sexo</b>: 'M' }: Objeto de consulta
+                    que especifica as condições:</li>
                 <ul>
-                    <li><b>salario</b>: { $gte: 2000, $lte: 5000 }: Filtra os documentos onde o campo salario é maior ou igual a 2000 e menor ou igual a 5000.</li>
+                    <li><b>salario</b>: { $gte: 2000, $lte: 5000 }: Filtra os documentos onde o campo salario é maior ou
+                        igual a 2000 e menor ou igual a 5000.</li>
                     <li><b>sexo</b>: 'M': Filtra os documentos onde o campo sexo é igual a 'M'.</li>
                 </ul>
             </ul>
@@ -66,4 +72,5 @@
         <p>Diego Serafim de Sousa - 22 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

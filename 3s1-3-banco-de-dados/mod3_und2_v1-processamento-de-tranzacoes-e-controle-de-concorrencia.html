@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – SGBDs Relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – SGBDs Relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – SGBDs Relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=3FgsyHRG4SQ&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 24 - Transações. 
+            <a href="https://www.youtube.com/watch?v=3FgsyHRG4SQ&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 24 - Transações.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Marques Peres.</p>
@@ -42,18 +45,24 @@
         <section>
             <h2>Transações.</h2>
             <ul>
-                <li>Um dos papéis de um SGBD é <b>processar transações</b>: um conjunto de várias operações que são executadas sobre os dados do banco de dados, e que devem ser vistas pelo usuário do sistema como uma única unidade de processamento.</li>
+                <li>Um dos papéis de um SGBD é <b>processar transações</b>: um conjunto de várias operações que são
+                    executadas sobre os dados do banco de dados, e que devem ser vistas pelo usuário do sistema como uma
+                    única unidade de processamento.</li>
                 <ul>
-                    <li>A transferência de valores entre contas correntes é uma operação única do ponto de vista de um cliente de um sistema bancário, porém, dentro do sistema de banco de dados, essa transferência envolve várias operações.</li>
+                    <li>A transferência de valores entre contas correntes é uma operação única do ponto de vista de um
+                        cliente de um sistema bancário, porém, dentro do sistema de banco de dados, essa transferência
+                        envolve várias operações.</li>
                 </ul>
                 <li>Uma transação forma uma única unidade lógica de trabalho.</li>
                 <ul>
-                    <li>É <b>essencial que todo o conjunto de operações da transação seja concluído</b>, ou que, no caso de um problema (falha), nenhuma das operações do conjunto tenha efeito sobre os dados.</li>
+                    <li>É <b>essencial que todo o conjunto de operações da transação seja concluído</b>, ou que, no caso
+                        de um problema (falha), nenhuma das operações do conjunto tenha efeito sobre os dados.</li>
                 </ul>
                 <li>O processamento das transações, realizado pelo SGBD deve garantir que:</li>
                 <ul>
                     <li>a execução de uma transação seja completa,</li>
-                    <li>seja possível executar várias transações de forma simultânea, sem que inconsistências de dados sejam geradas.</li>
+                    <li>seja possível executar várias transações de forma simultânea, sem que inconsistências de dados
+                        sejam geradas.</li>
                 </ul>
             </ul>
             <b>Arquitetura interna do SGDB:</b>
@@ -84,8 +93,11 @@
             <ul>
                 <li><b>Begin-transaction</b>: marca o início de uma transação.</li>
                 <li><b>End-transaction</b>: marca o fim de uma transação.</li>
-                <li><b>Commit-transaction</b>: sinal de término com sucesso - as alterações realizadas pela transação podem ser "permanentemente" gravadas no banco de dados.</li>
-                <li><b>Abort-transaction (rollback, l.e. reversão)</b>: sinal que a transação não terminou com sucesso - as alterações já realizadas pela transação não devem ter efeito sobre os dados do banco de dados, i.e, devem ser desfeitas.</li>
+                <li><b>Commit-transaction</b>: sinal de término com sucesso - as alterações realizadas pela transação
+                    podem ser "permanentemente" gravadas no banco de dados.</li>
+                <li><b>Abort-transaction (rollback, l.e. reversão)</b>: sinal que a transação não terminou com sucesso -
+                    as alterações já realizadas pela transação não devem ter efeito sobre os dados do banco de dados,
+                    i.e, devem ser desfeitas.</li>
                 <li><b>Undo</b>: desfaz uma operação.</li>
                 <li><b>Redo</b>: refaz uma operação.</li>
             </ul>
@@ -94,15 +106,19 @@
             <img src="img/transacao.png" alt="transacao.png">
             <ul>
                 <li>O sistema de recuperação de falhas precisa tomar algumas providências.</li>
-                <li>Transação deixa o sistema, com sucesso ou com falha. Os espaços e controles criados para ela são descartados no sistema.</li>
+                <li>Transação deixa o sistema, com sucesso ou com falha. Os espaços e controles criados para ela são
+                    descartados no sistema.</li>
             </ul>
             <p>Operações da lógica de implementação da transação que acessam os dados no banco de dados:</p>
             <ul>
-                <li><b>read(x)</b>: transfere o item de dados x do BD para um buffer local alocado à transação que executou a operação de read. O valor de x é colocado dentro de uma variável de programa.</li>
+                <li><b>read(x)</b>: transfere o item de dados x do BD para um buffer local alocado à transação que
+                    executou a operação de read. O valor de x é colocado dentro de uma variável de programa.</li>
             </ul>
             <p>Operações da lógica de implementação da transação que acessam os dados no banco de dados:</p>
             <ul>
-                <li><b>write(x)</b>: transfere o item de dados x do buffer local da transação que executou o write de volta para o BD. O valor da variável de programa é passado para o item de dado no BD (ainda no buffer - a gravação efetiva pode não ser imediata).</li>
+                <li><b>write(x)</b>: transfere o item de dados x do buffer local da transação que executou o write de
+                    volta para o BD. O valor da variável de programa é passado para o item de dado no BD (ainda no
+                    buffer - a gravação efetiva pode não ser imediata).</li>
             </ul>
             <pre>
             begin                                                         
@@ -135,26 +151,40 @@
         <section>
             <h2>Propriedades da Transação (ACID).</h2>
             <b>A-ATOMICIDADE:</b>
-            <p>Ou todas as operações da transação são refletidas corretamente no banco de dados, ou nenhuma delas o será.</p>
+            <p>Ou todas as operações da transação são refletidas corretamente no banco de dados, ou nenhuma delas o
+                será.</p>
             <img src="img/transacao1.png" alt="transacao1.png">
             <ul>
-                <li>Assegurar a <b>ATOMICIDADE</b> de uma transação é responsabilidade do SGBD, mais especificamente dos Componentes de Gerenciamento de Transações e de <b>Recuperação de Falhas</b>.</li>
+                <li>Assegurar a <b>ATOMICIDADE</b> de uma transação é responsabilidade do SGBD, mais especificamente dos
+                    Componentes de Gerenciamento de Transações e de <b>Recuperação de Falhas</b>.</li>
             </ul>
 
             <b>C-CONSISTÊNCIA:</b>
-            <p>A execução de uma transação preserva a consistência do banco de dados. Ela inicia a partir de um estado consistente do banco e dados e finaliza deixando o banco de dados novamente em um estado consistente.</p>
+            <p>A execução de uma transação preserva a consistência do banco de dados. Ela inicia a partir de um estado
+                consistente do banco e dados e finaliza deixando o banco de dados novamente em um estado consistente.
+            </p>
             <p>O resultado deve também atender as expectativas do processo real sob implementação.</p>
-            <ul><li>Assegurar a <b>CONSISTÊNCIA</b> de uma transação é responsabilidade do <b>programador</b>.s</li></ul>
+            <ul>
+                <li>Assegurar a <b>CONSISTÊNCIA</b> de uma transação é responsabilidade do <b>programador</b>.s</li>
+            </ul>
 
             <b>I-ISOLAMENTO:</b>
-            <p>Embora diversas transações possam ser executadas de maneira concorrente, o isolamento garante que cada transação siga seu curso sem considerar ações/operações executadas por outras transações concorrentes.</p>
-            <ul><li>Assegurar o isolamento é responsabilidade do <b>Controle de Concorrência</b>.</li></ul>
+            <p>Embora diversas transações possam ser executadas de maneira concorrente, o isolamento garante que cada
+                transação siga seu curso sem considerar ações/operações executadas por outras transações concorrentes.
+            </p>
+            <ul>
+                <li>Assegurar o isolamento é responsabilidade do <b>Controle de Concorrência</b>.</li>
+            </ul>
             <img src="img/transacao2.png" alt="transacao2.png">
 
             <p></p>
             <b>D - DURABILIDADE:</b>
-            <p>Depois que a transação finaliza com sucesso, as mudanças que ela faz no banco de dados devem persistir, mesmo se houver falhas no sistema.</p>
-            <ul><li>Assegurar a durabilidade é responsabilidade do componente do SGBD chamado de <b>Recuperador de Falhas</b>.</li></ul>
+            <p>Depois que a transação finaliza com sucesso, as mudanças que ela faz no banco de dados devem persistir,
+                mesmo se houver falhas no sistema.</p>
+            <ul>
+                <li>Assegurar a durabilidade é responsabilidade do componente do SGBD chamado de <b>Recuperador de
+                        Falhas</b>.</li>
+            </ul>
         </section>
 
         <section>
@@ -185,21 +215,28 @@
 
         <section>
             <h2>Teoria da serialização.</h2>
-            <p>O sistema de banco de dados deve controlar a execução concorrente de transações de forma a assegurar que:</p>
+            <p>O sistema de banco de dados deve controlar a execução concorrente de transações de forma a assegurar que:
+            </p>
             <ul>
-                <li>O resultado obtido após a execução concorrente de duas ou mais transações seja equivalente ao resultado obtido em alguma execução serial destas transações.</li>
+                <li>O resultado obtido após a execução concorrente de duas ou mais transações seja equivalente ao
+                    resultado obtido em alguma execução serial destas transações.</li>
             </ul>
-            <p>Uma execução concorrente deve ser serializável. Ou seja, considerando o mesmo conjunto de transações, uma execução concorrente deve ser equivalente a uma execução serial.</p>
+            <p>Uma execução concorrente deve ser serializável. Ou seja, considerando o mesmo conjunto de transações, uma
+                execução concorrente deve ser equivalente a uma execução serial.</p>
         </section>
 
         <section>
             <h2>Transações:</h2>
             <p>Estes slides estão baseados na bibliografia:</p>
-            <ul><li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808p., 2011.</li></ul>
+            <ul>
+                <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808p., 2011.
+                </li>
+            </ul>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 18 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Hash e Heap.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Hash e Heap.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Hash e Heap.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=2GFsHvenTXQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 3 - 
-                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 3. 
+            <a href="https://www.youtube.com/watch?v=2GFsHvenTXQ&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 -
+                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 3.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
@@ -44,8 +47,10 @@
         <section>
             <h2>Tabela de Dispersão (dicionário)</h2>
             <ul>
-                <li>Podemos representar a tabela por meio da estrutura de dados em Python, conhecida como dicionário;</li>
-                <li>Precisamos do par: <chave:valor> ou <k:v>, ambos k e v podem ser de qualquer tipo (int,string…);</li>
+                <li>Podemos representar a tabela por meio da estrutura de dados em Python, conhecida como dicionário;
+                </li>
+                <li>Precisamos do par: <chave:valor> ou <k:v>, ambos k e v podem ser de qualquer tipo (int,string…);
+                </li>
                 <ul>
                     <li>Exemplo, tabela com M=3:</li>
                     <ul>
@@ -61,7 +66,8 @@
                     </ul>
                 </ul>
             </ul>
-            <a href="https://pythontutor.com/render.html#mode=display" target="_blank" rel="noopener noreferrer">código ></a>
+            <a href="https://pythontutor.com/render.html#mode=display" target="_blank" rel="noopener noreferrer">código
+                ></a>
             <img src="img/tabela-dispersao.png" alt="tabela-dispersao.png">
             <ul>
                 <li>Vamos criar uma tabela com M=5 para d=[12,13,14,17];</li>
@@ -111,8 +117,11 @@
             <pre>tabela-de-dispersao2.py</pre>
             <img src="img/dispersao-python3.png" alt="dispersao-python3.png">
             <ul>
-                <li>Agora é só combinar os códigos e ter a implementação completa da inserção na tabela de dispersão com o método da divisão.</li>
-                <li>Podemos até melhorar a organização do código utilizando orientação a objeto para criar uma classe associada à tabela de dispersão e definir as funções para criar, inserir, buscar, remover e imprimir a tabela de dispersão.</li>
+                <li>Agora é só combinar os códigos e ter a implementação completa da inserção na tabela de dispersão com
+                    o método da divisão.</li>
+                <li>Podemos até melhorar a organização do código utilizando orientação a objeto para criar uma classe
+                    associada à tabela de dispersão e definir as funções para criar, inserir, buscar, remover e imprimir
+                    a tabela de dispersão.</li>
             </ul>
         </section>
 
@@ -124,12 +133,14 @@
         <section>
             <h2>Tratamento de Colisão (Endereçamento Aberto).</h2>
             <ul>
-                <li>Com as sondagens vamos ter que percorrer a tabela até encontrar uma posição disponível (“vazia”);</li>
+                <li>Com as sondagens vamos ter que percorrer a tabela até encontrar uma posição disponível (“vazia”);
+                </li>
                 <li>Aplicado em todas as operações (ex: inserção, remoção e busca);</li>
                 <li>Precisamos definir a estratégia de sondagem e ajustar:</li>
                 <ul>
                     <li>A função de dispersão;</li>
-                    <li>A função de inserção (busca ou remoção) que na ocorrência de colisão tem que continuar buscando uma posição vazia (inserir) ou o dado (busca e remoção).</li>
+                    <li>A função de inserção (busca ou remoção) que na ocorrência de colisão tem que continuar buscando
+                        uma posição vazia (inserir) ou o dado (busca e remoção).</li>
                 </ul>
             </ul>
             <b>Sondagem Linear (inserção).</b>
@@ -159,10 +170,14 @@
         <section>
             <h2>Resumo (implementações).</h2>
             <ul>
-                <li>Nas técnicas de sondagem temos que percorrer a tabela para, por exemplo, buscar um valor, custo O(M);</li>
-                <li>Já na técnica encadeada temos que percorrer uma lista para buscar um valor, O(L), onde L é o tamanho da lista;</li>
-                <li>O ideal é que L tenha um tamanho médio L/N , indicando uma distribuição equilibrada das N chaves nas listas;</li>
-                <li>Se a maior lista na tabela tem tamanho L = M, temos que o custo da busca fica, no pior caso, igual às técnicas de sondagem, ou seja, O(L)=O(M).</li>
+                <li>Nas técnicas de sondagem temos que percorrer a tabela para, por exemplo, buscar um valor, custo
+                    O(M);</li>
+                <li>Já na técnica encadeada temos que percorrer uma lista para buscar um valor, O(L), onde L é o tamanho
+                    da lista;</li>
+                <li>O ideal é que L tenha um tamanho médio L/N , indicando uma distribuição equilibrada das N chaves nas
+                    listas;</li>
+                <li>Se a maior lista na tabela tem tamanho L = M, temos que o custo da busca fica, no pior caso, igual
+                    às técnicas de sondagem, ou seja, O(L)=O(M).</li>
             </ul>
         </section>
 
@@ -171,9 +186,11 @@
             <ul>
                 <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian.</li>
                 <ul>
-                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.
+                    </li>
                 </ul>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                </li>
             </ul>
         </section>
     </main>
@@ -181,4 +198,5 @@
         <p>Diego Serafim de Sousa - 24 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

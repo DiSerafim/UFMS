@@ -10,7 +10,7 @@ public class TesteLeitura {
             fluxo = new FileInputStream("cliente.ser");
             objarq = new ObjectInputStream(fluxo);
 
-            while(true) {
+            while (true) {
                 cliente = (Cliente) objarq.readObject();
                 System.out.println(cliente);
             }
@@ -22,7 +22,7 @@ public class TesteLeitura {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
         }
-        finally{}
     }
 }

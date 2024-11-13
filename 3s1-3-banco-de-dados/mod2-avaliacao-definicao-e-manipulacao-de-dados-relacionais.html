@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BANCO DE DADOS-T01-2024-1.</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANCO DE DADOS-T01-2024-1.</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>BANCO DE DADOS-T01-2024-1.</h1>
@@ -29,11 +31,11 @@
             <h2>Materiais</h2>
             <ul>
                 <li>Prof. Vanessa Borges.</li>
-                <li>Iniciado em	quinta, 16 mai 2024, 19:12</li>
-                <li>Estado	Finalizada</li>
-                <li>Concluída em	quinta, 16 mai 2024, 20:50</li>
-                <li>Tempo empregado	1 hora 37 minutos</li>
-                <li>Avaliar	8,00 de um máximo de 10,00(80%)</li>
+                <li>Iniciado em quinta, 16 mai 2024, 19:12</li>
+                <li>Estado Finalizada</li>
+                <li>Concluída em quinta, 16 mai 2024, 20:50</li>
+                <li>Tempo empregado 1 hora 37 minutos</li>
+                <li>Avaliar 8,00 de um máximo de 10,00(80%)</li>
             </ul>
         </section>
         <section id="conteudo">
@@ -51,12 +53,16 @@
                 </pre>
                 <p>Com base nessas informações acima, avalie os comandos a seguir.</p>
                 <ul>
-                    <li>1. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p ON c.id=p.cliente_id GROUP BY c.id HAVING count(p.id)=0;</li>
-                    <li>2. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p WHERE p.cliente_id = c.id AND p.id_cliente=null;</li>
+                    <li>1. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p ON c.id=p.cliente_id GROUP BY c.id
+                        HAVING count(p.id)=0;</li>
+                    <li>2. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p WHERE p.cliente_id = c.id AND
+                        p.id_cliente=null;</li>
                     <li>3. SELECT id, nome FROM cliente c WHERE id NOT IN (SELECT cliente_id FROM pedido);</li>
-                    <li>4. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p ON p.cliente_id = c.id WHERE p.cliente_id is null;</li>
+                    <li>4. SELECT c.id, c.nome FROM cliente c LEFT JOIN pedido p ON p.cliente_id = c.id WHERE
+                        p.cliente_id is null;</li>
                 </ul>
-                <p>São comandos SQL que recuperam corretamente o id e o nome de todos os clientes que não realizaram pedidos:</p>
+                <p>São comandos SQL que recuperam corretamente o id e o nome de todos os clientes que não realizaram
+                    pedidos:</p>
                 <ul>
                     <li>a. 2 e 3</li>
                     <li>b. 2 e 4</li>
@@ -68,17 +74,23 @@
                 <b class="answer">Resposta: e. 1, 3 e 4. ✅</b>
 
                 <p>Resolução:</p>
-                <li>O design, a construção e a população do banco de dados são orientados para atender às necessidades de um sistema, aplicação ou organização específica. A finalidade determina as tabelas, os campos, os relacionamentos e os tipos de dados que serão incluídos no banco de dados.</li>
+                <li>O design, a construção e a população do banco de dados são orientados para atender às necessidades
+                    de um sistema, aplicação ou organização específica. A finalidade determina as tabelas, os campos, os
+                    relacionamentos e os tipos de dados que serão incluídos no banco de dados.</li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 2</h3>
-                <p>A cláusula LEFT JOIN em SQL retorna todas as linhas e colunas da tabela da esquerda, mesmo que não haja correspondência na tabela da direita.</p>
+                <p>A cláusula LEFT JOIN em SQL retorna todas as linhas e colunas da tabela da esquerda, mesmo que não
+                    haja correspondência na tabela da direita.</p>
                 <p>Escolha uma opção: Verdadeiro ou Falso.</p>
 
                 <b class="answer">Resposta: Verdadeiro. ✅</b>
                 <p>Resolução:</p>
-                <li>A cláusula LEFT JOIN em SQL retorna todas as linhas da tabela da esquerda (a primeira tabela mencionada na cláusula), junto com os dados correspondentes da tabela da direita (a segunda tabela mencionada). Se não houver correspondência na tabela da direita, os resultados da tabela da direita serão preenchidos com valores NULL.</li>
+                <li>A cláusula LEFT JOIN em SQL retorna todas as linhas da tabela da esquerda (a primeira tabela
+                    mencionada na cláusula), junto com os dados correspondentes da tabela da direita (a segunda tabela
+                    mencionada). Se não houver correspondência na tabela da direita, os resultados da tabela da direita
+                    serão preenchidos com valores NULL.</li>
             </section>
 
             <section class="question">
@@ -102,22 +114,30 @@
                 2   2       2   2       2   1
                 3   NULL
                 </pre>
-                <p>Considerando o script SQL e a instância acima apresentada, assinale o comportamento correto acerca do seguinte comando: DELETE FROM TAB3;</p>
+                <p>Considerando o script SQL e a instância acima apresentada, assinale o comportamento correto acerca do
+                    seguinte comando: DELETE FROM TAB3;</p>
                 <ul>
-                    <li>a. A remoção não irá ocorrer, pois o comando de remoção apresentado possui erros de sintaxe.</li>
+                    <li>a. A remoção não irá ocorrer, pois o comando de remoção apresentado possui erros de sintaxe.
+                    </li>
 
                     <li>b. Tuplas de TAB1 e TAB2 também serão removidas.</li>
 
-                    <li>c. Se a tupla a ser removida possuir uma referência em TAB1 ou TAB2 o SGBD, emitirá um erro e não realizará a remoção.</li>
+                    <li>c. Se a tupla a ser removida possuir uma referência em TAB1 ou TAB2 o SGBD, emitirá um erro e
+                        não realizará a remoção.</li>
 
                     <li>d. A remoção irá ocorrer normalmente, pois não há restrições.</li>
 
-                    <li>e. Se a tupla a ser removida possuir uma referência em TAB1 e TAB2 o SGBD, emitirá um erro e não realizará a remoção.</li>
+                    <li>e. Se a tupla a ser removida possuir uma referência em TAB1 e TAB2 o SGBD, emitirá um erro e não
+                        realizará a remoção.</li>
                 </ul>
 
                 <b class="answer">Resposta: d. ✅</b>
                 <p>Resolução:</p>
-                <li>A remoção de todas as tuplas da tabela TAB3 não depende de referências em TAB1 e TAB2, porque o comando DELETE FROM TAB3; é um comando de remoção simples que não viola nenhuma restrição de integridade referencial imposta pelas chaves estrangeiras na tabela TAB3. As referências em TAB1 e TAB2 são relevantes apenas quando se tentam remover tuplas de TAB1 ou TAB2 que são referenciadas em TAB3.</li>
+                <li>A remoção de todas as tuplas da tabela TAB3 não depende de referências em TAB1 e TAB2, porque o
+                    comando DELETE FROM TAB3; é um comando de remoção simples que não viola nenhuma restrição de
+                    integridade referencial imposta pelas chaves estrangeiras na tabela TAB3. As referências em TAB1 e
+                    TAB2 são relevantes apenas quando se tentam remover tuplas de TAB1 ou TAB2 que são referenciadas em
+                    TAB3.</li>
             </section>
 
             <section class="question">
@@ -133,7 +153,8 @@
                 4       Robótica                Ativo
                 5       Informação              Pendente  
                 </pre>
-                <p>A partir da tabela DEPARTAMENTO, assinale a alternativa que apresente um comando SQL que irá retornar a quantidade de departamentos que não estão ativos.</p>
+                <p>A partir da tabela DEPARTAMENTO, assinale a alternativa que apresente um comando SQL que irá retornar
+                    a quantidade de departamentos que não estão ativos.</p>
                 <ul>
                     <li>a. SELECT COUNT(*) FROM DEPARTAMENTO WHERE STATUS <> 'Ativo';</li>
                     <li>b. SELECT DISTINCT FROM DEPARTAMENTO WHERE STATUS = 'Inativo' OR STATUS='Pendente';</li>
@@ -141,12 +162,15 @@
                     <li>d. SELECT COUNT(*), STATUS FROM DEPARTAMENTO GROUP BY STATUS;</li>
                     <li>e. SELECT SUM(ID) FROM DEPARTAMENTO WHERE STATUS IN ('Inativo','Pendente');</li>
                 </ul>
-                
+
                 <b class="answer">Resposta: a. ✅</b>
 
                 <p>Resolução:</p>
-                <li>Este comando conta todas as linhas na tabela DEPARTAMENTO onde o valor da coluna STATUS não é 'Ativo'. Esta é a forma correta de contar os departamentos que têm um status diferente de 'Ativo'.</li>
-                <li>O símbolo <> em SQL é um operador de comparação que significa "diferente de". Ele é usado em condições WHERE para filtrar resultados que não atendem a uma determinada condição.</li>
+                <li>Este comando conta todas as linhas na tabela DEPARTAMENTO onde o valor da coluna STATUS não é
+                    'Ativo'. Esta é a forma correta de contar os departamentos que têm um status diferente de 'Ativo'.
+                </li>
+                <li>O símbolo <> em SQL é um operador de comparação que significa "diferente de". Ele é usado em
+                        condições WHERE para filtrar resultados que não atendem a uma determinada condição.</li>
             </section>
 
             <section class="question">
@@ -190,20 +214,26 @@
 
             <section class="question">
                 <h3>Pergunta 7</h3>
-                <p>A cláusula LEFT JOIN em SQL retorna todas as linhas da tabela da esquerda, desde que haja uma correspondência na tabela da direita. Porém, só retorna as colunas que possuam valores em comum.</p>
+                <p>A cláusula LEFT JOIN em SQL retorna todas as linhas da tabela da esquerda, desde que haja uma
+                    correspondência na tabela da direita. Porém, só retorna as colunas que possuam valores em comum.</p>
                 <p>Escolha uma opção: Verdadeiro ou Falso.</p>
 
                 <b class="answer">Resposta: Falso. ✅</b>
 
                 <p>Resolução:</p>
                 <ul>
-                    <li>A cláusula LEFT JOIN (ou LEFT OUTER JOIN) em SQL retorna todas as linhas da tabela da esquerda (a primeira tabela mencionada), mesmo que não haja correspondência na tabela da direita (a segunda tabela mencionada). Se não houver correspondência, os valores das colunas da tabela da direita serão NULL.</li>
+                    <li>A cláusula LEFT JOIN (ou LEFT OUTER JOIN) em SQL retorna todas as linhas da tabela da esquerda
+                        (a primeira tabela mencionada), mesmo que não haja correspondência na tabela da direita (a
+                        segunda tabela mencionada). Se não houver correspondência, os valores das colunas da tabela da
+                        direita serão NULL.</li>
                 </ul>
             </section>
 
             <section class="question">
                 <h3>Pergunta 8</h3>
-                <p>É utilizado para combinar o resultado de dois ou mais comandos SELECT. Cada comando SELECT deve conter o mesmo número de colunas, as colunas devem contar tipos similares de dados e devem estar na mesma ordem em cada comando SELECT. O operador SQL, em questão, é chamado:</p>
+                <p>É utilizado para combinar o resultado de dois ou mais comandos SELECT. Cada comando SELECT deve
+                    conter o mesmo número de colunas, as colunas devem contar tipos similares de dados e devem estar na
+                    mesma ordem em cada comando SELECT. O operador SQL, em questão, é chamado:</p>
                 <ul>
                     <li>a. INTO.</li>
                     <li>b. UNION.</li>
@@ -215,29 +245,37 @@
                 <b class="answer">Resposta: b. UNION. ✅</b>
 
                 <p>Resolução:</p>
-                <li>O operador UNION em SQL é utilizado para combinar o resultado de dois ou mais comandos SELECT. Cada comando SELECT deve conter o mesmo número de colunas, as colunas devem ter tipos similares de dados e devem estar na mesma ordem em cada comando SELECT. O UNION elimina as duplicatas por padrão, enquanto o UNION ALL inclui todas as duplicatas.</li>
+                <li>O operador UNION em SQL é utilizado para combinar o resultado de dois ou mais comandos SELECT. Cada
+                    comando SELECT deve conter o mesmo número de colunas, as colunas devem ter tipos similares de dados
+                    e devem estar na mesma ordem em cada comando SELECT. O UNION elimina as duplicatas por padrão,
+                    enquanto o UNION ALL inclui todas as duplicatas.</li>
             </section>
 
             <section class="question">
                 <h3>Pergunta 9</h3>
                 <p>A cláusula having está associada à cláusula group by.</p>
                 <p>Escolha uma opção: Verdadeiro ou Falso.</p>
-                
+
                 <b class="answer">Resposta: Verdadeiro. ✅</b>
                 <p>Resolução:</p>
                 <ul>
-                    <li>A cláusula HAVING em SQL é usada em conjunto com a cláusula GROUP BY para filtrar os resultados agregados. Enquanto a cláusula WHERE filtra linhas antes de qualquer agrupamento, a cláusula HAVING filtra grupos depois que o agrupamento é realizado. Portanto, HAVING é sempre usado com GROUP BY.</li>
+                    <li>A cláusula HAVING em SQL é usada em conjunto com a cláusula GROUP BY para filtrar os resultados
+                        agregados. Enquanto a cláusula WHERE filtra linhas antes de qualquer agrupamento, a cláusula
+                        HAVING filtra grupos depois que o agrupamento é realizado. Portanto, HAVING é sempre usado com
+                        GROUP BY.</li>
                 </ul>
 
             </section>
 
             <section class="question">
                 <h3>Pergunta 10</h3>
-                <p>Letícia é analista de sistemas e precisa remover todos os registros da tabela “pedido” que possuam o “preco” menor ou igual 100. Assinale a alternativa correta que permita a Letícia executar sua tarefa:</p>
+                <p>Letícia é analista de sistemas e precisa remover todos os registros da tabela “pedido” que possuam o
+                    “preco” menor ou igual 100. Assinale a alternativa correta que permita a Letícia executar sua
+                    tarefa:</p>
                 <ul>
                     <li>a. EXCLUIR FROM pedido WHERE preco <= 100;</li>
-                    <li>b. DELETE FROM pedido WHERE preco<=100;</li>
-                    <li>c. TRUNCATE FROM pedido WHERE LIKE preco<=100;</li>
+                    <li>b. DELETE FROM pedido WHERE preco<=100;< /li>
+                    <li>c. TRUNCATE FROM pedido WHERE LIKE preco<=100;< /li>
                     <li>d. DELETE * FROM pedido WHERE preco IS LESS THAN 100;</li>
                     <li>e. DROP pedido WHERE preco <= 100;</li>
                 </ul>
@@ -247,8 +285,10 @@
                 <p>Resolução:</p>
                 <ul>
                     <li>A cláusula DELETE FROM é utilizada para remover registros de uma tabela.</li>
-                    <li>Em seguida, é especificada a tabela da qual se deseja deletar registros, que no caso é "pedido".</li>
-                    <li>A condição WHERE preco <= 100 indica que apenas os registros em que o valor da coluna "preco" seja menor ou igual a 100 serão removidos.</li>
+                    <li>Em seguida, é especificada a tabela da qual se deseja deletar registros, que no caso é "pedido".
+                    </li>
+                    <li>A condição WHERE preco <= 100 indica que apenas os registros em que o valor da coluna "preco"
+                            seja menor ou igual a 100 serão removidos.</li>
                 </ul>
             </section>
     </main>
@@ -256,4 +296,5 @@
         <p>Diego Serafim de Sousa - 16 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

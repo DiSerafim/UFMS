@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Hash e Heap.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Hash e Heap.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Hash e Heap.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=QrYR4p44YrM&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 2. 
+            <a href="https://www.youtube.com/watch?v=QrYR4p44YrM&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                [UFMS Digital] Estrutura de Dados - Módulo 1 - Unidade 1 - Parte 2.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Dr. Jonathan de Andrade Silva.</p>
@@ -52,7 +55,8 @@
                 </ul>
                 <li>2. Sondagem por endereçamento encadeado:</li>
                 <ul>
-                    <li>Utilizar outras estruturas de dados para armazenar mais de um valor em uma chave (posição da tabela) com colisão</li>
+                    <li>Utilizar outras estruturas de dados para armazenar mais de um valor em uma chave (posição da
+                        tabela) com colisão</li>
                 </ul>
             </ul>
         </section>
@@ -83,7 +87,8 @@
         <section>
             <h2>Sondagem Linear.</h2>
             <ul>
-                <li>Caso ocorra a colisão em alguma posição, incrementar sequencialmente (linear) a posição até encontrar uma posição não ocupada.</li>
+                <li>Caso ocorra a colisão em alguma posição, incrementar sequencialmente (linear) a posição até
+                    encontrar uma posição não ocupada.</li>
                 <li>A ideia é que valores parecidos tendem a ficarem próximos (agrupamento);</li>
             </ul>
             <img src="img/sondagem-linear.png" alt="sondagem-linear.png">
@@ -92,7 +97,8 @@
         <section>
             <h2>Sondagem Linear (análise).</h2>
             <ul>
-                <li>Quando há uma colisão, temos que percorrer (no pior caso) a tabela inteira para encontrar uma posição disponível.</li>
+                <li>Quando há uma colisão, temos que percorrer (no pior caso) a tabela inteira para encontrar uma
+                    posição disponível.</li>
                 <li>À medida que o fator de carga (fc=N/M) tende a 1, as colisões aumentam.</li>
             </ul>
             <img src="img/sondagem-linear1.png" alt="sondagem-linear1.png">
@@ -104,11 +110,13 @@
                 <li>Vamos:</li>
                 <ul>
                     <li>Criar uma tabela M=5 vazia Create(5,0) com LP (Linear Probing);</li>
-                    <li>Aplicar inserção (Insert(v), busca Search(v)) e remoção (Remove(v)) de um ou conjunto de valores v;</li>
+                    <li>Aplicar inserção (Insert(v), busca Search(v)) e remoção (Remove(v)) de um ou conjunto de valores
+                        v;</li>
                     <li>Valores em v = [12,13,14, e 17].</li>
                 </ul>
                 <li>A sondagem permite formar "agrupamentos " colocando valores parecidos em posições próximas;</li>
-                <li>Esses agrupamentos, se muito grandes, tendem a ocupar muitos espaços na tabela necessitando que a sondagem caminhe toda a tabela para encontrar uma posição disponível.</li>
+                <li>Esses agrupamentos, se muito grandes, tendem a ocupar muitos espaços na tabela necessitando que a
+                    sondagem caminhe toda a tabela para encontrar uma posição disponível.</li>
             </ul>
             <img src="img/sondagem-linear2.png" alt="sondagem-linear2.png">
         </section>
@@ -117,8 +125,10 @@
             <h2>Sondagem Quadrática.</h2>
             <ul>
                 <li>Talvez possamos acelerar a sondagem linear se percorrermos em saltos largos (quadráticos);</li>
-                <li>A ideia da sondagem quadrática é quebrar os “agrupamentos grandes” de valores parecidos espalhando-os pela tabela;</li>
-                <li>Ao invés de incrementar uma unidade a cada passo, como na sondagem linear, incrementa com o quadrado do passo;</li>
+                <li>A ideia da sondagem quadrática é quebrar os “agrupamentos grandes” de valores parecidos
+                    espalhando-os pela tabela;</li>
+                <li>Ao invés de incrementar uma unidade a cada passo, como na sondagem linear, incrementa com o quadrado
+                    do passo;</li>
                 <ul>
                     <li>(dado + passo)%M → (dado + passo2)%M</li>
                 </ul>
@@ -141,15 +151,20 @@
             </ul>
             <img src="img/sondagem-dupla.png" alt="sondagem-dupla.png">
             <ul>
-                <li>Na sondagem linear ou quadrática F2 pode ser considerada uma leve alteração de F1 que considera o incremento do passo. Em algumas situações pode levar a ambos F2 e F1 produzirem valores idênticos dependendo do padrão das chaves.</li>
-                <li>A sondagem dupla é mais robusta que a linear e a quadrática, pelo fato de F2 ser uma função com padrão diferente de distribuição das chaves do que F1.</li>
+                <li>Na sondagem linear ou quadrática F2 pode ser considerada uma leve alteração de F1 que considera o
+                    incremento do passo. Em algumas situações pode levar a ambos F2 e F1 produzirem valores idênticos
+                    dependendo do padrão das chaves.</li>
+                <li>A sondagem dupla é mais robusta que a linear e a quadrática, pelo fato de F2 ser uma função com
+                    padrão diferente de distribuição das chaves do que F1.</li>
                 <ul>
                     <li>Ex: F1 lida com valores pares e F2 com valores ímpares.</li>
                 </ul>
-                <li>Comparando o número de colisões entre os 3 métodos de sondagem para os dados: [12,13,14,16 e 19] na tabela com M=7, teríamos colisão com d=19:</li>
+                <li>Comparando o número de colisões entre os 3 métodos de sondagem para os dados: [12,13,14,16 e 19] na
+                    tabela com M=7, teríamos colisão com d=19:</li>
                 <ul>
                     <li><b>Sondagem linear</b>: 3 colisões para encontrar a chave k=0;</li>
-                    <li><b>Sondagem quadrática</b>: muitas colisões, pois, a tentativa quadrática só vai gerar k={0,2,5,6} (posições ocupadas);</li>
+                    <li><b>Sondagem quadrática</b>: muitas colisões, pois, a tentativa quadrática só vai gerar
+                        k={0,2,5,6} (posições ocupadas);</li>
                     <li><b>Sondagem dupla</b>: 1 colisão e encontra k=3.</li>
                 </ul>
             </ul>
@@ -158,7 +173,8 @@
         <section>
             <h2>Resumo.</h2>
             <ul>
-                <li>Em geral os métodos de sondagem tem, no pior caso, a mesma complexidade nas operações de inserção, O(1), e busca, O(M).</li>
+                <li>Em geral os métodos de sondagem tem, no pior caso, a mesma complexidade nas operações de inserção,
+                    O(1), e busca, O(M).</li>
                 <ul>
                     <li>Entretanto, a frequência de colisões é menor na sondagem dupla.</li>
                 </ul>
@@ -171,7 +187,8 @@
             <h2>Endereçamento encadeado.</h2>
             <ul>
                 <li>Utilizar uma segunda estrutura de dados para armazenar ascolisões em uma posição da tabela;</li>
-                <li>A ideia é armazenar dados/valores “parecidos” em uma estrutura de dados, por exemplo, uma lista encadeada, na posição de colisão.</li>
+                <li>A ideia é armazenar dados/valores “parecidos” em uma estrutura de dados, por exemplo, uma lista
+                    encadeada, na posição de colisão.</li>
             </ul>
             <img src="img/enderecamento.png" alt="enderecamento.png">
             <li>O custo de inserir um elemento, tanto na Tabela quanto na Lista, continua com custo O(1).</li>
@@ -192,7 +209,8 @@
                 </ul>
                 <li>Tem como reduzir o custo da busca na estrutura de dados?</li>
                 <ul>
-                    <li>Usar estruturas de dados mais sofisticadas ao invés de uma lista encadeada, por exemplo árvore binária (veremos nessa disciplina).</li>
+                    <li>Usar estruturas de dados mais sofisticadas ao invés de uma lista encadeada, por exemplo árvore
+                        binária (veremos nessa disciplina).</li>
                 </ul>
             </ul>
         </section>
@@ -202,9 +220,11 @@
             <ul>
                 <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian.</li>
                 <ul>
-                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.</li>
+                    <li>Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955.
+                    </li>
                 </ul>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                </li>
             </ul>
         </section>
     </main>
@@ -212,4 +232,5 @@
         <p>Diego Serafim de Sousa - 24 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

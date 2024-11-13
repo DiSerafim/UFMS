@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Entrada e Saída (E/S).</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Entrada e Saída (E/S).</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Entrada e Saída (E/S).</h1>
@@ -28,9 +30,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Vc4zeg9jMsQ&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Sistemas Computacionais - Módulo 4. 
+            <a href="https://www.youtube.com/watch?v=Vc4zeg9jMsQ&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Sistemas Computacionais - Módulo 4.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Dra. Nahri Moreano.</p>
@@ -78,9 +81,11 @@
             <h2>Operações de E/S.</h2>
             <ul>
                 <li>SO atua como interface entre programas do usuário e dispositivos de E/S</li>
-                <li>Realização de operação de E/S requer comunicação entre processador e controlador do dispositivo de E/S</li>
+                <li>Realização de operação de E/S requer comunicação entre processador e controlador do dispositivo de
+                    E/S</li>
                 <li>Controlador possui registradores internos para armazenar dados, endereços e sinais de controle</li>
-                <li>Processador comunica-se com controlador lendo e escrevendo nos registradores, através do barramento</li>
+                <li>Processador comunica-se com controlador lendo e escrevendo nos registradores, através do barramento
+                </li>
             </ul>
         </section>
 
@@ -95,8 +100,10 @@
                 <li><b>E/S mapeada na memória</b>:</li>
                 <ul>
                     <li>Registradores do controlador são mapeados no espaço de endereçamento do processador</li>
-                    <li>Processador requisita operação de E/S executando instruções comuns de transferência de dados, nos endereços mapeados</li>
-                    <li>Acesso a endereço mapeado causa transferência de dado para registrador do controlador, através do barramento</li>
+                    <li>Processador requisita operação de E/S executando instruções comuns de transferência de dados,
+                        nos endereços mapeados</li>
+                    <li>Acesso a endereço mapeado causa transferência de dado para registrador do controlador, através
+                        do barramento</li>
                 </ul>
             </ul>
         </section>
@@ -119,9 +126,11 @@
             <ul>
                 <li>Ao realizar operação de E/S:</li>
                 <ul>
-                    <li>Para cada dado a ser transferido, processador repetidamente lê registradores do controlador de E/S, testando se operação de E/S terminou.</li>
+                    <li>Para cada dado a ser transferido, processador repetidamente lê registradores do controlador de
+                        E/S, testando se operação de E/S terminou.</li>
                 </ul>
-                <li>Processador fica em <b>espera ocupada</b> (busy waiting) ⇒ Desperdício de tempo do processador ⇒ Piora desempenho.</li>
+                <li>Processador fica em <b>espera ocupada</b> (busy waiting) ⇒ Desperdício de tempo do processador ⇒
+                    Piora desempenho.</li>
             </ul>
         </section>
 
@@ -130,7 +139,8 @@
             <ul>
                 <li>Processador:</li>
                 <ul>
-                    <li>Possui pino ligado ao barramento, por onde recebe sinal de interrupção do controlador de E/S</li>
+                    <li>Possui pino ligado ao barramento, por onde recebe sinal de interrupção do controlador de E/S
+                    </li>
                     <li>Testa se há interrupção, após executar cada instrução</li>
                 </ul>
                 <li>Quando controlador de E/S termina operação de E/S:</li>
@@ -138,8 +148,10 @@
                     <li>Gera sinal de interrupção, notificando processador</li>
                     <li>Envia pelo barramento identificação do dispositivo de E/S</li>
                 </ul>
-                <li>Processador executa rotina de tratamento da interrupção e transfere dado entre controlador e memória</li>
-                <li>Processador fica livre para executar outro processo, enquanto operação de E/S não termina ⇒ Melhora desempenho</li>
+                <li>Processador executa rotina de tratamento da interrupção e transfere dado entre controlador e memória
+                </li>
+                <li>Processador fica livre para executar outro processo, enquanto operação de E/S não termina ⇒ Melhora
+                    desempenho</li>
             </ul>
         </section>
 
@@ -148,11 +160,13 @@
             <ul>
                 <li><b>Controlador de DMA</b>:</li>
                 <ul>
-                    <li>Circuito que transfere dados entre memória e controlador do dispositivo de E/S, sem intervenção do processador</li>
+                    <li>Circuito que transfere dados entre memória e controlador do dispositivo de E/S, sem intervenção
+                        do processador</li>
                     <li>Gera interrupção para processador apenas quando operação completa de E/S termina</li>
                 </ul>
                 <li>Libera processador da tarefa de receber cada dado transferido e armazená-lo na memória</li>
-                <li>Processador fica mais livre para executar outro processo, enquanto operação de E/S não termina ⇒ Melhora desempenho</li>
+                <li>Processador fica mais livre para executar outro processo, enquanto operação de E/S não termina ⇒
+                    Melhora desempenho</li>
                 <li>Reduz quantidade de interrupções recebidas e tratadas pelo processador</li>
             </ul>
         </section>
@@ -200,4 +214,5 @@
         <p>Diego Serafim de Sousa - 16 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

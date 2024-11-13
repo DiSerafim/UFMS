@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Conceitos Avançados.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=m-Vfco5-MXc&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
-                Programação Orientada a Objetos - Mapas (Maps). 
+            <a href="https://www.youtube.com/watch?v=m-Vfco5-MXc&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
+                Programação Orientada a Objetos - Mapas (Maps).
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Júlio Cezar Estrella.</p>
@@ -51,17 +54,20 @@
         <section>
             <h2>Mapas.</h2>
             <ul>
-                <li>O uso de mapas é bastante interessante quando queremos buscar um objeto, considerando que temos alguma informação sobre ele.</li>
+                <li>O uso de mapas é bastante interessante quando queremos buscar um objeto, considerando que temos
+                    alguma informação sobre ele.</li>
                 <ul>
                     <li>Exemplo: Com a placa do carro ter todas as informações relevantes sobre o carro.</li>
                 </ul>
-                <li>Um mapa é composto por um conjunto de associações entre um objeto chave a um objeto valor, sendo equivalente ao conceito de dicionário, presente em outras linguagens de programação.</li>
+                <li>Um mapa é composto por um conjunto de associações entre um objeto chave a um objeto valor, sendo
+                    equivalente ao conceito de dicionário, presente em outras linguagens de programação.</li>
                 <li>Os objetos Map organizam seus dados em um código hash.</li>
                 <ul>
                     <li>O algoritmo transforma uma grande quantidade de dados em um número pequeno de informações.</li>
                     <li>O mecanismo de busca baseia-se em construir índices.</li>
                     <ul>
-                        <li>Exemplo: Em uma lista telefônica a letra seria o índice a ser procurado para encontrar mais facilmente o nome do titular da linha.</li>
+                        <li>Exemplo: Em uma lista telefônica a letra seria o índice a ser procurado para encontrar mais
+                            facilmente o nome do titular da linha.</li>
                     </ul>
                 </ul>
                 <li>Não podem conter chaves duplicadas.</li>
@@ -155,9 +161,11 @@
                 </ul>
                 <li>Métodos Importantes.</li>
                 <ul>
-                    <li><b>values()</b> - É uma Collection com todos os valores que foram associados a alguma das chaves.</li>
+                    <li><b>values()</b> - É uma Collection com todos os valores que foram associados a alguma das
+                        chaves.</li>
                     <li><b>keySet()</b> - Retorna um Set com as chaves do mapa especificado.</li>
-                    <li><b>entrySet()</b> - Retorna um conjunto de Maps contido no mapa configurado, podendo ser possível acessar suas chaves e valores.</li>
+                    <li><b>entrySet()</b> - Retorna um conjunto de Maps contido no mapa configurado, podendo ser
+                        possível acessar suas chaves e valores.</li>
                     <li><b>put (Key key, Value value)</b> - Associa um valor a uma chave específica.</li>
                 </ul>
             </ul>
@@ -239,13 +247,20 @@
             <p>Alguns métodos da classe HashTable:</p>
             <ul>
                 <li><b>boolean isEmpty()</b>: Testa se esta tabela de hash não mapeia chaves para valores.</li>
-                <li><b>Object remove(object key)</b>: remove a chave (e seu valor correspondente) desta tabela de hash.</li>
+                <li><b>Object remove(object key)</b>: remove a chave (e seu valor correspondente) desta tabela de hash.
+                </li>
                 <li><b>int size()</b>: Retorna o número de mapeamentos de valores-chave presentes em Hashtable.</li>
-                <li><b>void clear()</b>: Remove todos os mapeamentos de valores-chave do Hashtable e o torna vazio. Limpa esta tabela de hash para que não contenha chaves.</li>
-                <li><b>Object clone()</b>: Cria uma cópia superficial desta tabela de hash. Toda a estrutura da própria hashtable é copiada, mas as chaves e os valores não são clonados. Esta é uma operação relativamente cara.</li>
+                <li><b>void clear()</b>: Remove todos os mapeamentos de valores-chave do Hashtable e o torna vazio.
+                    Limpa esta tabela de hash para que não contenha chaves.</li>
+                <li><b>Object clone()</b>: Cria uma cópia superficial desta tabela de hash. Toda a estrutura da própria
+                    hashtable é copiada, mas as chaves e os valores não são clonados. Esta é uma operação relativamente
+                    cara.</li>
                 <li><b>String toString()</b>: Retorna a string equivalente a uma tabela hash.</li>
-                <li><b>boolean containsKey(Object key)</b>: Testa se o objeto especificado é uma chave nesta tabela de hash.</li>
-                <li><b>boolean containsValue(Object value)</b>: Testa se o objeto especificado é um valor nesta tabela de hash. Retorna verdadeiro se algum valor igual ao valor existir na tabela hash. Retorna falso se o valor não for encontrado.</li>
+                <li><b>boolean containsKey(Object key)</b>: Testa se o objeto especificado é uma chave nesta tabela de
+                    hash.</li>
+                <li><b>boolean containsValue(Object value)</b>: Testa se o objeto especificado é um valor nesta tabela
+                    de hash. Retorna verdadeiro se algum valor igual ao valor existir na tabela hash. Retorna falso se o
+                    valor não for encontrado.</li>
                 <li><b>Enumeration elements()</b>: Retorna uma enumeração dos valores contidos na tabela hash.</li>
             </ul>
 
@@ -287,8 +302,9 @@
                 <li>Os elementos são classificados de acordo com a ordem natural de suas chaves.</li>
                 <li>A classe TreeMap implementa a interface Map semelhante à classe HashMap.</li>
             </ul>
-            <p>A principal diferença entre elas é que o <b>HashMap</b> é uma coleção não ordenada, enquanto o <b>TreeMap</b> é classificado na ordem crescente de suas chaves.</p>
-            
+            <p>A principal diferença entre elas é que o <b>HashMap</b> é uma coleção não ordenada, enquanto o
+                <b>TreeMap</b> é classificado na ordem crescente de suas chaves.</p>
+
             <p>Declaração do TreeMap:</p>
             <ul>
                 <li>TreeMap(E> mapa = new Type(E>();</li>
@@ -299,7 +315,8 @@
             </ul>
 
             <p>Exemplo com TreeMap:</p>
-            <li>Armazenar os mapeamentos de chave e valor no TreeMap e obter um mapeamento de chave-valor classificado ao buscar os dados do TreeMap.</li>
+            <li>Armazenar os mapeamentos de chave e valor no TreeMap e obter um mapeamento de chave-valor classificado
+                ao buscar os dados do TreeMap.</li>
             <pre>
             public class TestTreeMap {
                 public static void main(String args[]) {
@@ -333,4 +350,5 @@
         <p>Diego Serafim de Sousa - 4 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

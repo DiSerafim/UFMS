@@ -17,11 +17,13 @@
 // ✅ Use o modificador de acesso “public” para todos os métodos e nenhum modificador (“package private”) para os atributos da classe.
 
 public class ContaCorrente {
-    // Variável de ponto flutuante juros que indique a porcentagem do rendimento da conta. Defina o valor inicial em 0,01;
+    // Variável de ponto flutuante juros que indique a porcentagem do rendimento da
+    // conta. Defina o valor inicial em 0,01;
     public float juros = 0.01f; // https://stackoverflow.com/questions/14513597/cannot-convert-from-double-to-float
     // Variável de ponto flutuante que indique o saldo;
     public float saldo = 0;
-    // Variável chamada limiteChequeEspecial em ponto flutuante, iniciada com o valor -200;
+    // Variável chamada limiteChequeEspecial em ponto flutuante, iniciada com o
+    // valor -200;
     public float limiteChequeEspecial = -200;
     // Variável de texto para o primeiro nome do cliente;
     public String primeiroNomeCliente;
@@ -36,7 +38,8 @@ public class ContaCorrente {
         System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
     }
 
-    // Método saque, que verifica se o saque pode ser realizado de acordo com o saldo atual e o limiteChequeEspecial.
+    // Método saque, que verifica se o saque pode ser realizado de acordo com o
+    // saldo atual e o limiteChequeEspecial.
     public void saque(float valor) {
         if (saldo - valor >= limiteChequeEspecial) {
             saldo -= valor;
@@ -46,7 +49,8 @@ public class ContaCorrente {
         }
     }
 
-    // Método rendimento que usa o valor do juros para fazer o saldo crescer caso o saldo não seja negativo;
+    // Método rendimento que usa o valor do juros para fazer o saldo crescer caso o
+    // saldo não seja negativo;
     public void rendimento() {
         if (saldo > 0) {
             saldo *= (1 + juros);
@@ -69,7 +73,8 @@ public class ContaCorrente {
         return numeroConta;
     }
 
-    // Método main, com uma instância da classe ContaCorrente e faça um depósito de R$100, um saque de R$125, execute a função rendimento e imprimir o saldo;
+    // Método main, com uma instância da classe ContaCorrente e faça um depósito de
+    // R$100, um saque de R$125, execute a função rendimento e imprimir o saldo;
     public static void main(String[] args) {
         ContaCorrente conta = new ContaCorrente();
         conta.deposito(100);

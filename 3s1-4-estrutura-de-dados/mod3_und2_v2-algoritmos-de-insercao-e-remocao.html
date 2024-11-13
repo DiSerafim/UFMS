@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Árvores Balanceadas.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Árvores Balanceadas.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – Árvores Balanceadas.</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=1JKucLqAPZ8&t=819s&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=1JKucLqAPZ8&t=819s&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 *Estruturas de Dados - Árvores AVL.
                 <i class="material-icons right"> send</i>
             </a>
@@ -51,7 +54,8 @@
         <section>
             <h2>Árvores AVL</h2>
             <ul>
-                <li>Nos algoritmos de <b>busca</b>, <b>inserção</b> e <b>remoção</b>, no pior caso, o número de comparações é proporcional à <b>altura da árvore</b>:</li>
+                <li>Nos algoritmos de <b>busca</b>, <b>inserção</b> e <b>remoção</b>, no pior caso, o número de
+                    comparações é proporcional à <b>altura da árvore</b>:</li>
                 <ul>
                     <li>As buscas são eficientes em árvores balanceadas.</li>
                     <li>Em árvores degeneradas, as operações deixam de ser eficientes.</li>
@@ -67,9 +71,11 @@
         <section>
             <h2>Conceitos Básicos.</h2>
             <ul>
-                <li><b>Fator de balanceamento</b>: é a diferença de altura entre as subárvores da direita e da esquerda.</li>
+                <li><b>Fator de balanceamento</b>: é a diferença de altura entre as subárvores da direita e da esquerda.
+                </li>
                 <li>Em árvores AVL, deve ficar no intervalo de <b>-1 a 1</b>.</li>
-                <li>As inserções e remoções seguem os algoritmos vistos anteriormente. Entretanto, se algum nó violar a propriedade do fator de balanceamente após uma inserção ou remoção, uma rotação deve ser feita.</li>
+                <li>As inserções e remoções seguem os algoritmos vistos anteriormente. Entretanto, se algum nó violar a
+                    propriedade do fator de balanceamente após uma inserção ou remoção, uma rotação deve ser feita.</li>
             </ul>
             <p>Fator de Balanceamento:</p>
             <img src="img/avl37.png" alt="avl37.png">
@@ -107,9 +113,11 @@
             <h2>Tipo Abstrato de Dados.</h2>
             <img src="img/avl41.png" alt="avl41.png">
             <ul>
-                <li>Apenas os métodos <b>insertAluno</b>, <b>deleteAluno</b> e <b>deleteNode</b> sofrem modificações.</li>
+                <li>Apenas os métodos <b>insertAluno</b>, <b>deleteAluno</b> e <b>deleteNode</b> sofrem modificações.
+                </li>
                 <ul>
-                    <li><b>is Taller</b> e <b>isShorter</b> servem para saber se a árvore cresceu na inserção ou decresceu na remoção (para gerenciar o <b>fator de balanceamento</b>).</li>
+                    <li><b>is Taller</b> e <b>isShorter</b> servem para saber se a árvore cresceu na inserção ou
+                        decresceu na remoção (para gerenciar o <b>fator de balanceamento</b>).</li>
                 </ul>
             </ul>
             <pre>
@@ -133,15 +141,19 @@
             <h2>Detalhes de Implementação.</h2>
             <p>Estudaremos a implementação de alguns métodos. Apenas a lógica implementada nos interessa.</p>
             <p>Métodos que não mudaram, como retrieve Aluno, não serão mencionados.</p>
-            <p>O método delete Aluno modifica, mas as ideias não mudam muito em relação ao que foi feito no método insertAluno.</p>
+            <p>O método delete Aluno modifica, mas as ideias não mudam muito em relação ao que foi feito no método
+                insertAluno.</p>
             <ul>
-                <li><b>Inserções</b> e <b>remoções</b> gerenciam o <b>fator de balanceamento</b> com <b>isTaller</b> e <b>isShorter</b>.</li>
+                <li><b>Inserções</b> e <b>remoções</b> gerenciam o <b>fator de balanceamento</b> com <b>isTaller</b> e
+                    <b>isShorter</b>.</li>
                 <ul>
                     <li>Inserções usam isTaller.</li>
                     <img src="img/avl43.png" alt="avl43.png">
-                    <li>Ao inserir uma folha, o fator de balanceamento é <b>zero</b>. Além disso, avisamos o nó pai sobre o aumento de tamanho.</li>
+                    <li>Ao inserir uma folha, o fator de balanceamento é <b>zero</b>. Além disso, avisamos o nó pai
+                        sobre o aumento de tamanho.</li>
                 </ul>
-                <li>Um nó interno que recebe a notificação de crescimento de uma das subárvores deve ajustar o fator de balanceamento.</li>
+                <li>Um nó interno que recebe a notificação de crescimento de uma das subárvores deve ajustar o fator de
+                    balanceamento.</li>
                 <ul>
                     <li>Note que a atualização do fator de balanceamento depende de qual filha cresceu.</li>
                     <img src="img/avl44.png" alt="avl44.png">
@@ -171,4 +183,5 @@
         <p>Diego Serafim de Sousa - 1 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

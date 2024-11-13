@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=IV3EY8rU80k&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 3. 
+            <a href="https://www.youtube.com/watch?v=IV3EY8rU80k&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Programação Orientada a Objetos - Módulo 1 - Unidade 3.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Prof. Dr. Anderson Viçoso de Araújo</p>
@@ -55,8 +58,9 @@
             <p>Exemplos:</p>
             <ul>
                 <li>Ao desenhar uma planta de uma casa, um arquiteto pode usar a
-                mesma planta para construir várias casas iguais;</li>
-                <li>Um formulário impressão/copiado e distribuído para várias pessoas preencherem, o formulário é um só (molde) mas as cópias preenchidas são diferentes (objetos)</li>
+                    mesma planta para construir várias casas iguais;</li>
+                <li>Um formulário impressão/copiado e distribuído para várias pessoas preencherem, o formulário é um só
+                    (molde) mas as cópias preenchidas são diferentes (objetos)</li>
             </ul>
             <p>Reusar classes existentes, poupa tempo e esforço.</p>
         </section>
@@ -107,7 +111,8 @@
                 </ul>
                 <li>A classe é o molde e o objeto é o produto moldado pela classe. Exemplos:</li>
                 <ul>
-                    <li>A classe pode ser imaginada como a planta de uma casa e a casa construída (física) é o objeto criado;</li>
+                    <li>A classe pode ser imaginada como a planta de uma casa e a casa construída (física) é o objeto
+                        criado;</li>
                     <li>Formulário de inscrição é o molde (classe) e as cópias preenchidas são os objetos.</li>
                 </ul>
                 <li>Pode representar um objeto do mundo real ou uma abstração:</li>
@@ -180,7 +185,8 @@
                     <li>Pessoa pes = new Pessoa();</li>
                     <ul>
                         <li>A JVM busca o arquivo Pessoa.class no disco e o carrega para a memória;</li>
-                        <li>A JVM cria um espaço na memória do tamanho do objeto e aponta uma referência (chamada de pes) para o objeto criado;</li>
+                        <li>A JVM cria um espaço na memória do tamanho do objeto e aponta uma referência (chamada de
+                            pes) para o objeto criado;</li>
                     </ul>
                 </ul>
                 <li>Não é possível destruir objetos diretamente da memória em Java:</li>
@@ -264,7 +270,7 @@
                     <li>Possui o modificador static;</li>
                     <li>Um valor único para todos os objetos/instâncias.</li>
                 </ul>
-                
+
                 <p>Atributos - Exemplo</p>
                 <li>Classe Pessoa, com os atributos nome e idade;</li>
                 <pre>
@@ -285,7 +291,8 @@
         <section>
             <h2>Métodos.</h2>
             <ul>
-                <li>São blocos de código separados que pertencem a um programa e tem por finalidade realizar uma tarefa específica.</li>                
+                <li>São blocos de código separados que pertencem a um programa e tem por finalidade realizar uma tarefa
+                    específica.</li>
                 <li>Geralmente correspondem à uma ação:</li>
                 <ul>
                     <li>somar, correr, imprimir, ler Arquivo, …</li>
@@ -293,12 +300,14 @@
                 <li>Podem retornar um valor ao código chamador;</li>
                 <li>O tipo do valor de retorno é definido antes do nome do método:</li>
                 <ul>
-                    <li>A palavra-chave void indica a ausência de retorno. Serve para definir um método que não retorna dado algum.</li>
+                    <li>A palavra-chave void indica a ausência de retorno. Serve para definir um método que não retorna
+                        dado algum.</li>
                 </ul>
                 <li>Evitar reescrever código para uma mesma ação toda vez que se desejar executá-la;</li>
                 <li>Podem ser declaradas em qualquer posição no código:</li>
                 <ul>
-                    <li>Diferentemente de outras linguagens que obrigam que a declaração ocorra antes da sua chamada/utilização.</li>
+                    <li>Diferentemente de outras linguagens que obrigam que a declaração ocorra antes da sua
+                        chamada/utilização.</li>
                 </ul>
                 <li>Sinônimos:</li>
                 <ul>
@@ -332,7 +341,8 @@
             <ul>
                 <li>O retorno dentro do método é realizado através da palavra reservada return:</li>
                 <ul>
-                    <li>O return pára a execução do método corrente e devolve o valor de retorno ao método chamador.</li>
+                    <li>O return pára a execução do método corrente e devolve o valor de retorno ao método chamador.
+                    </li>
                 </ul>
             </ul>
             <pre>
@@ -348,7 +358,8 @@
         <section>
             <h2>Parâmetros</h2>
             <ul>
-                <li>É a sequência de definições de variáveis separadas por vírgulas entre os parênteses na assinatura do método;</li>
+                <li>É a sequência de definições de variáveis separadas por vírgulas entre os parênteses na assinatura do
+                    método;</li>
                 <li>O código interno ao método pode usar as variáveis com valores passados no código chamador;</li>
                 <li>Um método pode ter nenhum, um ou mais parâmetros.</li>
             </ul>
@@ -384,4 +395,5 @@
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

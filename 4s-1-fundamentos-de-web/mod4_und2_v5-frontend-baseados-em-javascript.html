@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Frontend Javascript</h1>
@@ -23,14 +25,15 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=s8xJ2MbPoqU&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=15&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 5 - 
+            <a href="https://www.youtube.com/watch?v=s8xJ2MbPoqU&list=PLxI8Can9yAHdNDD3Fe05jYh2RZRb1STy7&index=15&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 5 -
                 Desenvolvimento Web - Introdução ao Docker – Parte 2
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Júlio Cezar Estrella. (UNIVESP)</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>Introdução ao Docker – Parte 2</h3>
@@ -41,7 +44,7 @@
                 <li>Revisão</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Componentes Principais</h2>
             <p>Docker Registry</p>
@@ -56,7 +59,7 @@
                 </ul>
             </ul>
         </section>
-        
+
         <section>
             <h2>Primeiros Passos</h2>
             <p>Ambiente</p>
@@ -144,14 +147,16 @@
                   \ V  V /  __/ |_) |
                    \_/\_/ \___|_.__/ 
             </pre>
-            <p>Como já temos um container e uma aplicação que podemos executar, agora vamos organizar para que não tenhamos que repetir todos os comandos novamente, cada vez que desejamos construir um container.</p>
+            <p>Como já temos um container e uma aplicação que podemos executar, agora vamos organizar para que não
+                tenhamos que repetir todos os comandos novamente, cada vez que desejamos construir um container.</p>
             <p>Vamos aprender um pouco sobre o dockerfile</p>
             <p>O dockerfile define uma imagem e é sempre baseado em uma imagem pai</p>
             <p>Saia do container com o comando <b>exit</b></p>
             <pre>
                 root@teste:/# exit
             </pre>
-            <p>Crie uma pasta <b>figura</b> fora do container, usando o gerenciador de arquivos de sua preferência no Windows ou Linux </p>
+            <p>Crie uma pasta <b>figura</b> fora do container, usando o gerenciador de arquivos de sua preferência no
+                Windows ou Linux </p>
             <pre>
                 └─$ mkdir figura
             </pre>
@@ -185,7 +190,8 @@
             <p><b>FROM</b> - informa qual a imagem pai usada para criar a nova</p>
             <p><b>RUN</b> - instala tudo o que desejamos na imagem</p>
             <p><b>COPY</b> - copia o arquivo entrada.sh para o sistema de arquivo do container (na pasta raiz)</p>
-            <p><b>ENTRYPOINT</b> - indica a imagem qual comando tem que ser executado quando um container baseado nesta imagem for inicializado</p>
+            <p><b>ENTRYPOINT</b> - indica a imagem qual comando tem que ser executado quando um container baseado nesta
+                imagem for inicializado</p>
             <b>Resultado:</b>
             <p>Uma imagem baseada na imagem do ubuntu com a tag latest e o programa figlet instalado</p>
             <p>Construção da imagem</p>
@@ -241,7 +247,7 @@
                     <li>docker ps -a</li>
                 </ul>
             </ul>
-            
+
         </section>
 
         <section>
@@ -249,7 +255,8 @@
             <ul>
                 <li>1.https://www.redbelt.com.br/blog/2021/02/18/docker-para-iniciantes/</li>
                 <li>2.https://www.docker.com/resources/what-container</li>
-                <li>3.https://medium.com/trainingcenter/docker-o-que-%C3%A9-docker-e-como-co me%C3%A7ar-58e04bdcb043</li>
+                <li>3.https://medium.com/trainingcenter/docker-o-que-%C3%A9-docker-e-como-co me%C3%A7ar-58e04bdcb043
+                </li>
                 <li>4.https://www.jlcp.com.br/introducao-a-cli-do-docker/</li>
             </ul>
         </section>
@@ -258,4 +265,5 @@
         <p>Diego Serafim de Sousa - 13 de Set de 2024</p>
     </footer>
 </body>
+
 </html>

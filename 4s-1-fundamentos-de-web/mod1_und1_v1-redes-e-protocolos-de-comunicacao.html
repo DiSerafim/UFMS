@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Introdução Web</h1>
@@ -23,14 +25,15 @@
 
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=se-icVQucuQ&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=3" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=se-icVQucuQ&list=PLxI8Can9yAHc1kkMrwfEjGEC6oe5ib5GP&index=3"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 Fundamentos de Internet e Web - Introdução às Redes de Computadores
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Júlio Cezar Estrela. (UNIVESP)</p>
         </section>
-        
+
         <section>
             <h2>Conteúdo</h2>
             <h3>Introdução às Redes de Computadores</h3>
@@ -44,7 +47,7 @@
                 <li>Internet e WWW.</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Introdução às Redes de Computadores.</h2>
             <b>Redes de Computadores e suas características.</b>
@@ -81,25 +84,34 @@
                 <li>Para um elemento computacional ser conectado a uma rede de dados é preciso:</li>
                 <ul>
                     <li>Uma <b>placa de rede</b>.</li>
-                    <li>E que esta placa de rede esteja ligada por algum <b>link</b> a um <b>elemento de comutação</b>.</li>
+                    <li>E que esta placa de rede esteja ligada por algum <b>link</b> a um <b>elemento de comutação</b>.
+                    </li>
                 </ul>
                 <li>É por meio da placa de rede que todos os sinais são transmitidos pelo cabo, ou pelo ar.</li>
-                <li>Em seguida, esses sinais são interpretados tanto pelo emissor quanto pelo  receptor para que as informações possam ser apresentadas aos usuários das aplicações.</li>
+                <li>Em seguida, esses sinais são interpretados tanto pelo emissor quanto pelo receptor para que as
+                    informações possam ser apresentadas aos usuários das aplicações.</li>
                 <li>Denominamos de elemento de comutação, no contexto de uma rede local, aquele que:</li>
                 <ul>
-                    <li>Vai receber dados em algum formato de um emissor, e vai comuta-lo e encaminhar o mesmo para o receptor da informação, estando ele ou não na mesma rede do emissor.</li>
+                    <li>Vai receber dados em algum formato de um emissor, e vai comuta-lo e encaminhar o mesmo para o
+                        receptor da informação, estando ele ou não na mesma rede do emissor.</li>
                     <li>Ex.:</li>
-                    <li>Suponha que o emissor A queira enviar um arquivo para o emissor B e que ambos estejam na mesma rede (rede local). O repasse dos dados de forma bastante simplista será feita por um elemento chamado <b>SWITCH</b></li>
+                    <li>Suponha que o emissor A queira enviar um arquivo para o emissor B e que ambos estejam na mesma
+                        rede (rede local). O repasse dos dados de forma bastante simplista será feita por um elemento
+                        chamado <b>SWITCH</b></li>
                     <ul>
-                        <li>Se A estiver em uma rede e B estiver em outra, será preciso que o outro elemento denominado <b>Roteador</b> se encarregue de encaminhar os dados /pacotes entre eles.</li>
+                        <li>Se A estiver em uma rede e B estiver em outra, será preciso que o outro elemento denominado
+                            <b>Roteador</b> se encarregue de encaminhar os dados /pacotes entre eles.</li>
                     </ul>
                 </ul>
                 <li>Como destacamos anteriormente, diversos são os elementos que compõem uma rede de computadores</li>
                 <ul>
-                    <li>Cada um desses elementos opera/funciona obedecendo regras, para que os usuários/computadores possam se comunicar</li>
+                    <li>Cada um desses elementos opera/funciona obedecendo regras, para que os usuários/computadores
+                        possam se comunicar</li>
                 </ul>
-                <li>Devido à complexidade envolvida, a concepção de uma rede considera que os dados são transportados utilizando-se de diversas camadas no processo de comunicação</li>
-                <li>Vamos abordar um exemplo, que apesar de não ser ligado ao ambiente computacional, servirá de base para você entender como tudo isso funciona</li>
+                <li>Devido à complexidade envolvida, a concepção de uma rede considera que os dados são transportados
+                    utilizando-se de diversas camadas no processo de comunicação</li>
+                <li>Vamos abordar um exemplo, que apesar de não ser ligado ao ambiente computacional, servirá de base
+                    para você entender como tudo isso funciona</li>
                 <li>Suponha os seguintes elementos para organizarmos alguns dados em camadas:</li>
                 <ul>
                     <li>1 palito de fósforo</li>
@@ -110,7 +122,8 @@
                 </ul>
             </ul>
             <b>Envio:</b>
-            <p>Suponha a sequência do <b>emissor</b>, o qual deseja enviar <b>um palito de fósforo</b> a um receptor:</p>
+            <p>Suponha a sequência do <b>emissor</b>, o qual deseja enviar <b>um palito de fósforo</b> a um receptor:
+            </p>
             <img src="img/redes.png" alt="redes.png">
             <p></p>
             <b>Recebimento:</b>
@@ -131,12 +144,13 @@
             (PC)         (Laptop)     (Smartphone)
             </pre>
         </section>
-        
+
         <section>
             <h2>Arquitetura em Camadas.</h2>
             <ul>
                 <li>O que acabamos de discutir anteriormente é a organização da comunicação na forma de camadas</li>
-                <li>Os computadores trocam informações obedecendo uma arquitetura em camadas, com cada uma tendo regras/protocolos bem estabelecidos</li>
+                <li>Os computadores trocam informações obedecendo uma arquitetura em camadas, com cada uma tendo
+                    regras/protocolos bem estabelecidos</li>
                 <li>Vamos tratar de forma simples de dois tipos de modelos de arquitetura em camadas</li>
                 <ul>
                     <li>Modelo OSI</li>
@@ -148,7 +162,8 @@
         <section>
             <h2>Modelo OSI.</h2>
             <ul>
-                <li>Modelo OSI(Open System Interconnection): é conhecido por ser um modelo de referência, que não foi implementado na prática. Ele possui as camadas descritas a seguir:</li>
+                <li>Modelo OSI(Open System Interconnection): é conhecido por ser um modelo de referência, que não foi
+                    implementado na prática. Ele possui as camadas descritas a seguir:</li>
                 <ul>
                     <li>7. Aplicação.</li>
                     <li>6. Apresentação.</li>
@@ -160,11 +175,13 @@
                 </ul>
             </ul>
         </section>
-    
+
         <section>
             <h2>Modelo TCP/IP</h2>
             <ul>
-                <li>Modelo TCP/IP é o padrão de comunicação na maioria das redes, sendo utilizado na prática por inúmeros elementos de comunicação em redes locais ou remotas. Diferentemente do modelo OSI, o TCP/IP possui 4 camadas:</li>
+                <li>Modelo TCP/IP é o padrão de comunicação na maioria das redes, sendo utilizado na prática por
+                    inúmeros elementos de comunicação em redes locais ou remotas. Diferentemente do modelo OSI, o TCP/IP
+                    possui 4 camadas:</li>
                 <ul>
                     <li>Aplicação.</li>
                     <li>Transporte.</li>
@@ -173,7 +190,7 @@
                 </ul>
             </ul>
         </section>
-        
+
         <section>
             <h2>Funções de cada camada do modelo TCP/IP:</h2>
             <ul>
@@ -222,9 +239,9 @@
                 <li>ISP global.</li>
                 <li>ISP regional.</li>
             </ul>
-           
+
         </section>
-    
+
         <section>
             <h2>Aplicações da Internet.</h2>
             <ul>
@@ -236,7 +253,8 @@
                     <li>Serviços e pagamentos on-line.</li>
                     <li>Aplicação para acesso seguro a dados sigilosos.</li>
                 </ul>
-                <li>Algumas das aplicações podem ser executadas fora do que chamamos de Web, ou WWW, pois são anteriores à Web como ela é conhecida hoje.</li>
+                <li>Algumas das aplicações podem ser executadas fora do que chamamos de Web, ou WWW, pois são anteriores
+                    à Web como ela é conhecida hoje.</li>
             </ul>
         </section>
 
@@ -251,4 +269,5 @@
         <p>Diego Serafim de Sousa - 21 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

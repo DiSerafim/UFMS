@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Interface Hardware/Software.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Interface Hardware/Software.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Interface Hardware/Software.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=6gVqqKx6c5g&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Sistemas Computacionais - Linguagens de montagem e de máquina. 
+            <a href="https://www.youtube.com/watch?v=6gVqqKx6c5g&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Sistemas Computacionais - Linguagens de montagem e de máquina.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Prof° ministrante: Alessandra Alaniz Macedo.</p>
@@ -52,8 +55,10 @@
         <section>
             <h2>LINGUAGEM DE MONTAGEM.</h2>
             <ul>
-                <li>Linguagem que usa muitos nomes simbólicos (mnemónicos), incluindo a atribuição de nomes em posições específicas da memória principal e das instruções para operar o computador (ex. Assembly)</li>
-                <li>Composta também de instruções que não são executadas diretamente, mas que são úteis para o montador produzir o <b>código de máquina</b></li>
+                <li>Linguagem que usa muitos nomes simbólicos (mnemónicos), incluindo a atribuição de nomes em posições
+                    específicas da memória principal e das instruções para operar o computador (ex. Assembly)</li>
+                <li>Composta também de instruções que não são executadas diretamente, mas que são úteis para o montador
+                    produzir o <b>código de máquina</b></li>
             </ul>
         </section>
 
@@ -62,9 +67,11 @@
             <ul>
                 <li>Consiste em instruções executadas diretamente pelo processador</li>
                 <ul>
-                    <li>Cada instrução é uma cadeia binária (0 e 1) que contém: um opcode (código de operação básica da instrução), referências a operandos e, possivelmente, bits relacionados à execução</li>
+                    <li>Cada instrução é uma cadeia binária (0 e 1) que contém: um opcode (código de operação básica da
+                        instrução), referências a operandos e, possivelmente, bits relacionados à execução</li>
                     <ul>
-                        <li>as instruções, bem como os endereços de memória, devem ser escritas na linguagem de máquina</li>
+                        <li>as instruções, bem como os endereços de memória, devem ser escritas na linguagem de máquina
+                        </li>
                     </ul>
                 </ul>
             </ul>
@@ -75,10 +82,13 @@
             <ul>
                 <li>Cada declaração de uma linguagem de montagem produz exatamente uma instrução de máquina</li>
                 <li>A linguagem de montagem é mais fácil de programar do que a linguagem de máquina</li>
-                <li>A utilização de nomes e endereços simbólicos em vez de binários ou hexadecimais faz uma enorme diferença</li>
+                <li>A utilização de nomes e endereços simbólicos em vez de binários ou hexadecimais faz uma enorme
+                    diferença</li>
                 <ul>
-                    <li>O programador de linguagem de montagem precisa se lembrar apenas dos nomes simbólicos porque o assembler os traduz para instruções de máquina</li>
-                    <li>O programador de linguagem de máquina deve sempre trabalhar com os valores numéricos dos endereços</li>
+                    <li>O programador de linguagem de montagem precisa se lembrar apenas dos nomes simbólicos porque o
+                        assembler os traduz para instruções de máquina</li>
+                    <li>O programador de linguagem de máquina deve sempre trabalhar com os valores numéricos dos
+                        endereços</li>
                 </ul>
             </ul>
         </section>
@@ -86,11 +96,15 @@
         <section>
             <h2>LINGUAGEM DE MÁQUINA x DE MONTAGEM.</h2>
             <ul>
-                <li>Toda arquitetura de computador tem uma ISA (Instruction Set Architecture), que é um conjunto de instruções, registradores e outras características visíveis para programadores de baixo nível</li>
+                <li>Toda arquitetura de computador tem uma ISA (Instruction Set Architecture), que é um conjunto de
+                    instruções, registradores e outras características visíveis para programadores de baixo nível</li>
                 <ul>
-                    <li>todas as máquinas têm uma linguagem de montagem ou assembly, uma representação simbólica da arquitetura do conjunto de instruções que utiliza nomes como ADD, SUB e MUL, em vez de números binários</li>
+                    <li>todas as máquinas têm uma linguagem de montagem ou assembly, uma representação simbólica da
+                        arquitetura do conjunto de instruções que utiliza nomes como ADD, SUB e MUL, em vez de números
+                        binários</li>
                 </ul>
-                <li>Um programa de baixo nível de abstração apresenta uma longa lista de números binários ou hexadecimais, um número por instrução para informar as instruções a executar e os operandos</li>
+                <li>Um programa de baixo nível de abstração apresenta uma longa lista de números binários ou
+                    hexadecimais, um número por instrução para informar as instruções a executar e os operandos</li>
             </ul>
         </section>
 
@@ -99,7 +113,8 @@
             <ul>
                 <li>Programar na linguagem de montagem demora mais do que em uma linguagem de alto nível, pois:</li>
                 <ul>
-                    <li>Leva mais tempo para depurar, além da manutenção mais complicada devido ao desempenho e acesso à máquina</li>
+                    <li>Leva mais tempo para depurar, além da manutenção mais complicada devido ao desempenho e acesso à
+                        máquina</li>
                     <li>É mais fácil que a linguagem de máquina, porém, ainda assim, tem suas dificuldades</li>
                 </ul>
             </ul>
@@ -114,10 +129,12 @@
         <section>
             <h2>USOS DA LINGUAGEM DE MONTAGEM.</h2>
             <ul>
-                <li>Localizar erros, analisando um código em linguagem de montagem gerado pelo compilador, ou a janela de montagem em um depurador</li>
+                <li>Localizar erros, analisando um código em linguagem de montagem gerado pelo compilador, ou a janela
+                    de montagem em um depurador</li>
                 <li>Criar compiladores, depuradores e outras ferramentas de desenvolvimento</li>
                 <li>Manipular sistemas embarcados, pois têm menos recursos do que PCs e mainframes</li>
-                <li>Construir drivers para hardware e códigos de sistemas que precisam acessar hardware, registradores de controle do sistema etc.</li>
+                <li>Construir drivers para hardware e códigos de sistemas que precisam acessar hardware, registradores
+                    de controle do sistema etc.</li>
                 <li>Acessar instruções que não são acessíveis a partir das linguagens de alto nível</li>
                 <li>Otimizar o tamanho do código para caber em uma cache</li>
                 <li>Otimizar código em desempenho checando a otimização feita pelo compilador</li>
@@ -129,20 +146,27 @@
         <section>
             <h2>LINGUAGEM DE ALTO-NÍVEL OU ASSEMBLY?</h2>
             <ul>
-                <li>Comumente, a melhor escolha recai sobre uma linguagem de alto nível para abstrair detalhes do computador e aumentar a produtividade dos programadores</li>
-                <li>Existem linguagens de programação não disponíveis em todas as plataformas, particularmente as baseadas em microprocessadores menores, em que a diversidade do mercado é maior</li>
-                <li>Se a aplicação a ser desenvolvida se destinar a ser portada para vários sistemas diferentes, este aspecto é essencial</li>
+                <li>Comumente, a melhor escolha recai sobre uma linguagem de alto nível para abstrair detalhes do
+                    computador e aumentar a produtividade dos programadores</li>
+                <li>Existem linguagens de programação não disponíveis em todas as plataformas, particularmente as
+                    baseadas em microprocessadores menores, em que a diversidade do mercado é maior</li>
+                <li>Se a aplicação a ser desenvolvida se destinar a ser portada para vários sistemas diferentes, este
+                    aspecto é essencial</li>
                 <li>A linguagem assembly é utilizada em situações especiais</li>
             </ul>
-            <p>Para construir uma rotina que necessite estar muito otimizada e que seja necessário manipular recursos físicos de tal forma que não consiga ser expressa na linguagem de alto nível</p>
+            <p>Para construir uma rotina que necessite estar muito otimizada e que seja necessário manipular recursos
+                físicos de tal forma que não consiga ser expressa na linguagem de alto nível</p>
         </section>
 
         <section>
             <h2>BIBLIOGRAFIA.</h2>
             <ul>
-                <li>Delgado, C.J. R. Arquitetura de Computadores, Cap 3 e 5. 5ª edição. Grupo GEN, 2017. 9788521633921</li>
-                <li>W. Stallings. Arquitetura e organização de computadores, Cap 11 e 12 de 731 páginas. Editora Pearson, 10° edição (2017). ISBN: 9788543020532</li>
-                <li>Corrêa, A. G. D. Organização e arquitetura de computadores. Unidade 3. Bibliografia Universitária Pearson. 187 páginas. Ed. Pearson. 1º edição (2017) ISBN: 9788543020327</li>
+                <li>Delgado, C.J. R. Arquitetura de Computadores, Cap 3 e 5. 5ª edição. Grupo GEN, 2017. 9788521633921
+                </li>
+                <li>W. Stallings. Arquitetura e organização de computadores, Cap 11 e 12 de 731 páginas. Editora
+                    Pearson, 10° edição (2017). ISBN: 9788543020532</li>
+                <li>Corrêa, A. G. D. Organização e arquitetura de computadores. Unidade 3. Bibliografia Universitária
+                    Pearson. 187 páginas. Ed. Pearson. 1º edição (2017) ISBN: 9788543020327</li>
             </ul>
         </section>
     </main>
@@ -150,4 +174,5 @@
         <p>Diego Serafim de Sousa - 10 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

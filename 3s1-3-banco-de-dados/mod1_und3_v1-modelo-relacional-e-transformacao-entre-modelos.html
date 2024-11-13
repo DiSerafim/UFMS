@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=yLuJbXcAvoc&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=6&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 05 – Modelo Relacional (R) – características, formalização e restrições. 
+            <a href="https://www.youtube.com/watch?v=yLuJbXcAvoc&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=6&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 05 – Modelo Relacional (R) – características, formalização e restrições.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -41,8 +44,10 @@
 
         <section>
             <h2>Modelo Relacional:</h2>
-            <p>Modelo de dados que representa um banco de dados como uma coleção de relações. Uma relação remete a uma tabela de valores, na qual cada linha representa uma coleção de valores (colunas) relacionados.</p>
-            <p>Uma linha representa um fato que tipicamente corresponde a uma entidade ou relacionamento do mundo real.</p>
+            <p>Modelo de dados que representa um banco de dados como uma coleção de relações. Uma relação remete a uma
+                tabela de valores, na qual cada linha representa uma coleção de valores (colunas) relacionados.</p>
+            <p>Uma linha representa um fato que tipicamente corresponde a uma entidade ou relacionamento do mundo real.
+            </p>
         </section>
 
         <section>
@@ -59,17 +64,20 @@
             <p></p>
             <b>Conceitos:</b>
             <ul>
-                <li>Um esquema de relação R(A1, A2 An) é composto de uma 2 relação de nome R e da lista de atributos A1, A2, ..., An.</li>
+                <li>Um esquema de relação R(A1, A2 An) é composto de uma 2 relação de nome R e da lista de atributos A1,
+                    A2, ..., An.</li>
                 <li>Cada atributo A, é o nome do papel desempenhado por um domínio D no esquema de relação R.</li>
                 <li>O grau de uma relação é o número n de atributos do esquema de relação que a define.</li>
             </ul>
             <b>Exemplo:</b>
-            <p>FUNCIONÁRIO (<b>ident</b>: longint; <b>nome</b>: string; <b>endereço</b>: string; <b>salário</b>: real; <b>dt_nasc</b>: date)</p>
+            <p>FUNCIONÁRIO (<b>ident</b>: longint; <b>nome</b>: string; <b>endereço</b>: string; <b>salário</b>: real;
+                <b>dt_nasc</b>: date)</p>
             <p>O relação <b>FUNCIONÁRIO</b> tem grau 5.</p>
 
             <b>Conceitos:</b>
             <ul>
-                <li>Uma relação (ou estado de uma relação) r, definida sob o esquema R(A1, A2, ..., An), é um conjunto de m-tuplas r = {t₁, t2, ..., tm}.</li>
+                <li>Uma relação (ou estado de uma relação) r, definida sob o esquema R(A1, A2, ..., An), é um conjunto
+                    de m-tuplas r = {t₁, t2, ..., tm}.</li>
                 <li>Cada m-tupla é uma lista ordenada de n valores t = (V1, V2, ..., Vn).</li>
                 <li>O jésimo valor da tupla t, o qual corresponde ao atributo A₁, é referenciado como t[A] ou t.A₁.</li>
             </ul>
@@ -77,10 +85,11 @@
             <p></p>
             <img src="img/ex1.png" alt="ex1.png">
         </section>
-        
+
         <section>
             <h2>Ordenação de tuplas em uma relação.</h2>
-            <p>Uma relação é definida como um conjunto de tuplas. Elementos de um conjunto não são ordenados. Assim, as tuplas em uma relação não possuem nenhuma ordenação.</p>
+            <p>Uma relação é definida como um conjunto de tuplas. Elementos de um conjunto não são ordenados. Assim, as
+                tuplas em uma relação não possuem nenhuma ordenação.</p>
             <b>Exemplo:</b>
             <p></p>
             <img src="img/tupla.png" alt="">
@@ -91,26 +100,33 @@
             <img src="img/tupla1.png" alt="tupla1.png">
             <p></p>
             <b>Valores e NULL nas tuplas:</b>
-            <p>Cada valor em uma tupla é um valor atômico. Assim, atributos compostos e atributos multivalorados não são permitidos.</p>
-            <p>Valores NULL são usados para representar os valores desconhecidos ou que não se aplicam àquele atributo naquela tupla.</p>
+            <p>Cada valor em uma tupla é um valor atômico. Assim, atributos compostos e atributos multivalorados não são
+                permitidos.</p>
+            <p>Valores NULL são usados para representar os valores desconhecidos ou que não se aplicam àquele atributo
+                naquela tupla.</p>
 
             <b>Restrições de domínio:</b>
-            <p>Restrições de domínio especificam que o valor de cada atributo A deve ser um valor atômico dentro de um domínio <b>dom(A)</b>, em todas as tuplas da relação.</p>
+            <p>Restrições de domínio especificam que o valor de cada atributo A deve ser um valor atômico dentro de um
+                domínio <b>dom(A)</b>, em todas as tuplas da relação.</p>
 
             <b>Restrições de chave:</b>
-            <p>Por definição, todos os elementos de um conjunto são distintos; logo, todas as tuplas em uma relação devem ser distintas, ou seja, duas tuplas quaisquer não podem ter a mesma combinação de valores para todos os seus atributos.</p>
+            <p>Por definição, todos os elementos de um conjunto são distintos; logo, todas as tuplas em uma relação
+                devem ser distintas, ou seja, duas tuplas quaisquer não podem ter a mesma combinação de valores para
+                todos os seus atributos.</p>
             <pre>
                 t₁[SK] <> t2[SK]
             </pre>
 
             <b>Superchave:</b>
-            <p>Qualquer conjunto de atributos SK. Toda relação tem pelo menos uma superchave – todos os seus atributos. Uma superchave pode ter atributos redundantes.</p>
+            <p>Qualquer conjunto de atributos SK. Toda relação tem pelo menos uma superchave – todos os seus atributos.
+                Uma superchave pode ter atributos redundantes.</p>
             <p>FUNCIONÁRIO:</p>
             <img src="img/superchave.png" alt="superchave.png">
             <p></p>
 
             <b>Chave:</b>
-            <p>É uma superchave de R sem atributos redundantes; i.e. é um conjunto de atributos mínimo capaz de garantir a restrição de unicidade.</p>
+            <p>É uma superchave de R sem atributos redundantes; i.e. é um conjunto de atributos mínimo capaz de garantir
+                a restrição de unicidade.</p>
             <p>FUNCIONÁRIO:</p>
             <img src="img/chave.png" alt="chave.png">
         </section>
@@ -125,18 +141,22 @@
             </ul>
             <p><b>Restrição de integridade de entidade</b>: o valor de uma chave primária não pode ser NULL.</p>
             <ul>
-                <li><b>Restrição de integridade referencial</b>: é específicada entre duas relações e usada para manter a consistência entre as suas tuplas.</li>
+                <li><b>Restrição de integridade referencial</b>: é específicada entre duas relações e usada para manter
+                    a consistência entre as suas tuplas.</li>
                 <ul>
-                    <li>Uma tupla de uma relação A que referencia uma relação B deve fazer a referência a uma <b>tupla existente</b> na relação B.</li>
+                    <li>Uma tupla de uma relação A que referencia uma relação B deve fazer a referência a uma <b>tupla
+                            existente</b> na relação B.</li>
                 </ul>
             </ul>
 
             <b>Chave estrangeira:</b>
             <ul>
-                <li>Considere dois esquemas de relação R₁ e R2. Um conjunto de atributos FK no esquema R₁ é uma chave estrangeira de R₁ que referencia R₂ se:</li>
+                <li>Considere dois esquemas de relação R₁ e R2. Um conjunto de atributos FK no esquema R₁ é uma chave
+                    estrangeira de R₁ que referencia R₂ se:</li>
                 <ul>
                     <li>os atributos em FK tem o mesmo domínio dos atributos da chave primária PK em R2;</li>
-                    <li>o valor de FK na tupla t₁ de um estado de r₁(R₁) ou ocorre como um valor de PK para alguma tupla t₂ de um estado de r₂(R2) ou é NULL.</li>
+                    <li>o valor de FK na tupla t₁ de um estado de r₁(R₁) ou ocorre como um valor de PK para alguma tupla
+                        t₂ de um estado de r₂(R2) ou é NULL.</li>
                 </ul>
             </ul>
             <pre>
@@ -157,4 +177,5 @@
         <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

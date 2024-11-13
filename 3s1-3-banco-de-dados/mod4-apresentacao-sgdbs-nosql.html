@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – SGBDs NoSQL.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – SGBDs NoSQL.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – SGBDs NoSQL.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=ME_tFTe9erA&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo Apresentação - 
-                [UFMS Digital] Banco de Dados - Módulo 4. 
+            <a href="https://www.youtube.com/watch?v=ME_tFTe9erA&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo Apresentação -
+                [UFMS Digital] Banco de Dados - Módulo 4.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Vanessa Borges.</p>
@@ -47,7 +50,8 @@
                 <li>Unidade 3 - Outros SGBDs.</li>
                 <li>Objetivo.</li>
                 <ul>
-                    <li>Conhecer princípios e a aplicação prática de sistemas gerenciadores de banco de dados NoSQL.</li>
+                    <li>Conhecer princípios e a aplicação prática de sistemas gerenciadores de banco de dados NoSQL.
+                    </li>
                 </ul>
             </ul>
         </section>
@@ -55,10 +59,14 @@
         <section>
             <h2>Banco de Dados NoSQL.</h2>
             <ul>
-                <li>NoSQL (Not Only SQL – não somente SQL) é um termo genérico definido para uma classe de banco de dados não relacionais (ACID).</li>
-                <li>O termo iniciou em 1998 como o nome de um banco de dados relacional de código aberto que não possuía uma interface SQL.</li>
-                <li>Em 2009 o termo foi utilizado por Eric Evans como nome de um evento para discutir bancos de dados open source distribuídos.</li>
-                <li>Essa foi uma tentativa de descrever o surgimento de um número crescente de banco de dados não relacional que não tinham a preocupação de fornecer garantias ACID.</li>
+                <li>NoSQL (Not Only SQL – não somente SQL) é um termo genérico definido para uma classe de banco de
+                    dados não relacionais (ACID).</li>
+                <li>O termo iniciou em 1998 como o nome de um banco de dados relacional de código aberto que não possuía
+                    uma interface SQL.</li>
+                <li>Em 2009 o termo foi utilizado por Eric Evans como nome de um evento para discutir bancos de dados
+                    open source distribuídos.</li>
+                <li>Essa foi uma tentativa de descrever o surgimento de um número crescente de banco de dados não
+                    relacional que não tinham a preocupação de fornecer garantias ACID.</li>
             </ul>
         </section>
 
@@ -93,7 +101,8 @@
                 <tr>
                     <td>Consistência</td>
                     <td>As regras de integridade garantem a consistência das informações. Consistência rígida.</td>
-                    <td>Não garante a consistência da informação, caso nenhuma informação seja atualizada, retornará o mesmo valor para todas as solicitações. Consistência eventual.</td>
+                    <td>Não garante a consistência da informação, caso nenhuma informação seja atualizada, retornará o
+                        mesmo valor para todas as solicitações. Consistência eventual.</td>
                 </tr>
             </table>
             <p></p>
@@ -101,7 +110,8 @@
             <p></p>
             <img src="img/consistencia-rigida.png" alt="consistencia-rigida.png">
             <ul>
-                <li>Se houver uma alteração de salário na Máquina 2, essa alteração só será persistida quando todos os nós do cluster forem atualizados.</li>
+                <li>Se houver uma alteração de salário na Máquina 2, essa alteração só será persistida quando todos os
+                    nós do cluster forem atualizados.</li>
                 <ul>
                     <li>Demanda grande esforço de replicação de dados entre os nós do cluster.</li>
                     <ul>
@@ -155,7 +165,8 @@
                 <tr>
                     <td>Uso de transações para garantir commits e rollbacks</td>
                     <td>🢂</td>
-                    <td>Não há uso de transações e o ACID é garantido apenas a nível de documento. Transações devem ser garantidas a nível de aplicação</td>
+                    <td>Não há uso de transações e o ACID é garantido apenas a nível de documento. Transações devem ser
+                        garantidas a nível de aplicação</td>
                 </tr>
                 <tr>
                     <td>Uso da linguagem de consulta SQL para manipular o banco</td>
@@ -212,4 +223,5 @@
         <p>Diego Serafim de Sousa - 20 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

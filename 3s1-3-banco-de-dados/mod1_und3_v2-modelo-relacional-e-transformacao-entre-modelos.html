@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=cQP-k9farRk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=7&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Bancos de Dados - Aula 06 – Mapeamento MER → Relacional - Parte I: entidades, atributos, chaves. 
+            <a href="https://www.youtube.com/watch?v=cQP-k9farRk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=7&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Bancos de Dados - Aula 06 – Mapeamento MER → Relacional - Parte I: entidades, atributos, chaves.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -42,12 +45,16 @@
 
         <section>
             <h2>Mapeamento:</h2>
-            <p>Uma forma de projetar um esquema de um banco de dados relacional (um projeto lógico) tendo como base o esquema de um projeto conceitual.</p>
-            <li>A maneira clássica de desenvolvimento de um banco de dados é por meio da construção de um modelo conceitual - independente de SGBD – o qual é posteriormente convertido, ou mapeado, para um projeto lógico que seja implementável no SGBD escolhido para desenvolvimento do sistema de banco de dados.</li>
+            <p>Uma forma de projetar um esquema de um banco de dados relacional (um projeto lógico) tendo como base o
+                esquema de um projeto conceitual.</p>
+            <li>A maneira clássica de desenvolvimento de um banco de dados é por meio da construção de um modelo
+                conceitual - independente de SGBD – o qual é posteriormente convertido, ou mapeado, para um projeto
+                lógico que seja implementável no SGBD escolhido para desenvolvimento do sistema de banco de dados.</li>
             <p></p>
             <img src="img/mapeamento.png" alt="mapeamento.png">
             <p></p>
-            <p>Ao implementarmos o projeto lógico no SGBD teremos <b>garantidas</b> algumas <b>restrições</b> que devem ser impostas aos dados.</p>
+            <p>Ao implementarmos o projeto lógico no SGBD teremos <b>garantidas</b> algumas <b>restrições</b> que devem
+                ser impostas aos dados.</p>
             <p>Exemplo:</p>
             <ul>
                 <li>Restrições de <b>domínio</b>.</li>
@@ -60,7 +67,8 @@
             <h2>Mapeando tipos entidade fortes (ou regulares):</h2>
             <ul>
                 <li>para cada tipo entidade forte em um MER é criada uma relação no modelo Relacional;</li>
-                <li>essa relação inclui todos os atributos simples, e os componentes simples dos atributos compostos, do tipo entidade forte;</li>
+                <li>essa relação inclui todos os atributos simples, e os componentes simples dos atributos compostos, do
+                    tipo entidade forte;</li>
                 <li>um atributo chave da entidade é escolhido como chave primária para a relação recém criada.</li>
             </ul>
             <img src="img/mapeando-entidade.png" alt="mapeando-entidade.png">
@@ -85,7 +93,9 @@
             <ul>
                 <li>Para cada um desses atributos é preciso criar uma nova relação.</li>
                 <ul>
-                    <li>Essa relação incluirá um atributo A correspondente ao atributo multivalorado, mais o atributo chave primária K da relação que representa o tipo entidade no qual o atributo multivalorado foi especificado;</li>
+                    <li>Essa relação incluirá um atributo A correspondente ao atributo multivalorado, mais o atributo
+                        chave primária K da relação que representa o tipo entidade no qual o atributo multivalorado foi
+                        especificado;</li>
                     <li>O atributo K será uma chave estrangeira na nova relação;</li>
                     <li>A chave primária dessa nova relação será a combinação dos atributos Ae K.</li>
                 </ul>
@@ -102,8 +112,11 @@
             <h2>Mapeando tipos entidade fracas.</h2>
             <ul>
                 <li>Para cada tipo entidade fraca em um MER é criada uma relação no modelo Relacional;</li>
-                <li>Essa relação inclui todos os atributos simples, e os componentes simples dos atributos compostos, do tipo entidade fraca; e inclui como atributo chave estrangeira, a chave da entidade forte associada à entidade fraca;</li>
-                <li>A chave primária da relação criada é a combinação do atributo chave da entidade forte com o atributo chave parcial da entidade fraca.</li>
+                <li>Essa relação inclui todos os atributos simples, e os componentes simples dos atributos compostos, do
+                    tipo entidade fraca; e inclui como atributo chave estrangeira, a chave da entidade forte associada à
+                    entidade fraca;</li>
+                <li>A chave primária da relação criada é a combinação do atributo chave da entidade forte com o atributo
+                    chave parcial da entidade fraca.</li>
             </ul>
             <p>DEPENDENTE:</p>
             <img src="img/mapeando-entidade-fraca.png" alt="mapeando-entidade-fraca.png">
@@ -127,4 +140,5 @@
         <p>Diego Serafim de Sousa - 8 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

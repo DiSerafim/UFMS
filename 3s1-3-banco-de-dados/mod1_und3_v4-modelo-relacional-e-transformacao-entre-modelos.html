@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=JKOGucl3KF0&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=9&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 4 - 
-                Bancos de Dados - Aula 08 – Mapeamento MER → Relacional - Parte III. 
+            <a href="https://www.youtube.com/watch?v=JKOGucl3KF0&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=9&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 4 -
+                Bancos de Dados - Aula 08 – Mapeamento MER → Relacional - Parte III.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -44,10 +47,14 @@
             <h2>Mapeando tipos relacionamento n-ários:</h2>
             <ul>
                 <li>Para cada tipo relacionamento n-ário, em que n > 2, crie uma nova relação S para representá-lo;</li>
-                <li>Inclua como chaves estrangeiras em S, as chaves primárias das relações que representam os tipos entidade participantes do relacionamento;</li>
-                <li>Inclua qualquer atributos simples, ou componentes simples de atributos compostos, como atributos de S;</li>
+                <li>Inclua como chaves estrangeiras em S, as chaves primárias das relações que representam os tipos
+                    entidade participantes do relacionamento;</li>
+                <li>Inclua qualquer atributos simples, ou componentes simples de atributos compostos, como atributos de
+                    S;</li>
                 <li>A chave primária de S é, usualmente, a combinação de todas as chaves estrangeiras em S;</li>
-                <li>Se a cardinalidade em qualquer participação de um tipo entidade é 1, então a chave primária de S não não deveria incluir a chave estrangeira que referencia a relação que representa esse tipo entidade.</li>
+                <li>Se a cardinalidade em qualquer participação de um tipo entidade é 1, então a chave primária de S não
+                    não deveria incluir a chave estrangeira que referencia a relação que representa esse tipo entidade.
+                </li>
             </ul>
             <p>Exemplo 1:</p>
             <img src="img/rela.png" alt="relacionamento enario">
@@ -67,7 +74,8 @@
         <section>
             <h2>Mapeando especializações ou generalizações:</h2>
             <ul>
-                <li>Converter cada especialização com m subclasses {S₁, S2, ..., Sm} e a superclasse C, cujos atributos são {k, a₁, ...., an} e a chave primária é k, em relações usando uma das seguintes opções:</li>
+                <li>Converter cada especialização com m subclasses {S₁, S2, ..., Sm} e a superclasse C, cujos atributos
+                    são {k, a₁, ...., an} e a chave primária é k, em relações usando uma das seguintes opções:</li>
                 <ul>
                     <li>1. Múltiplas relações: superclasse e subclasses;</li>
                     <li>2. Múltiplas relações: apenas subclasses;</li>
@@ -78,10 +86,13 @@
             <b>Múltiplas relações: superclasse e subclasses;</b>
             <p></p>
             <ul>
-                <li>Crie uma relação L para representar a superclasse C, e inclua em Los atributos Atrb(L) (k,a,a, = ..., an} e ea chave prímária PK(L) = k;</li>
-                <li>Crie uma relação Li para cada subclasse S₁, 1 <= i <= m, com os atributos Atrb(L₁) = {k} U {atrb(S)} e faça PK(L) = k;</li>
+                <li>Crie uma relação L para representar a superclasse C, e inclua em Los atributos Atrb(L) (k,a,a, =
+                    ..., an} e ea chave prímária PK(L) = k;</li>
+                <li>Crie uma relação Li para cada subclasse S₁, 1 <= i <=m, com os atributos Atrb(L₁)={k} U {atrb(S)} e
+                        faça PK(L)=k;</li>
             </ul>
-            <p>Esta opção funciona para qualquer tipo de especialização (total ou parcial, com restrição de <b>disjunção</b> ou de <b>sobreposição</b>).</p>
+            <p>Esta opção funciona para qualquer tipo de especialização (total ou parcial, com restrição de
+                <b>disjunção</b> ou de <b>sobreposição</b>).</p>
             <b>Ex. 1:</b>
             <p></p>
             <img src="img/disjuncao.png" alt="disjuncao.png">
@@ -97,54 +108,67 @@
             <img src="img/modelagem-alternativa.png" alt="modelagem-alternativa.png">
             <p>Mapeamento:</p>
             <img src="img/modelagem-alternativa3.png" alt="modelagem-alternativa3.png">
-            
+
             <p></p>
             <b>Múltiplas relações: apenas subclasses;</b>
-            <p>Crie uma relação L¡ para cada subclasse S₁, 1 <= i <= m, com os atributos Atrb(L₁) = {atributos de S;} U {k, a₁, ..., an} e PK(L₁) = k;</p>
-            <ul>
-                <li>Esta opção funciona <b>apenas</b> para especializações de <b>participação total</b>.</li>
-                <li>E é <b>recomendada</b> para especializações com <b>restrição de disjunção</b>. Se a especialização é de restrição de sobreposição, a mesma entidade individual pode ser duplicada em várias relações.</li>
-            </ul>
-            <p>Exemplo de especialização com participação total:</p>
-            <img src="img/especializacao-com-participacao-total.png" alt="especializacao-com-participacao-total.png">
-            <p>Mapeamento:</p>
-            <img src="img/mapeamento-com-participacao-total.png" alt="mapeamento-com-participacao-total.png">
-            <p></p>
+            <p>Crie uma relação L¡ para cada subclasse S₁, 1 <= i <=m, com os atributos Atrb(L₁)={atributos de S;} U {k,
+                    a₁, ..., an} e PK(L₁)=k;</p>
+                    <ul>
+                        <li>Esta opção funciona <b>apenas</b> para especializações de <b>participação total</b>.</li>
+                        <li>E é <b>recomendada</b> para especializações com <b>restrição de disjunção</b>. Se a
+                            especialização é de restrição de sobreposição, a mesma entidade individual pode ser
+                            duplicada em várias relações.</li>
+                    </ul>
+                    <p>Exemplo de especialização com participação total:</p>
+                    <img src="img/especializacao-com-participacao-total.png"
+                        alt="especializacao-com-participacao-total.png">
+                    <p>Mapeamento:</p>
+                    <img src="img/mapeamento-com-participacao-total.png" alt="mapeamento-com-participacao-total.png">
+                    <p></p>
 
-            <b>Relação única com um único atributo tipo;</b>
-            <p>Crie uma única relação L com os atributos Atrb(L) = {k, a₁, ..., an} U {atributos de S₁} U... U {atributos de Sm} U {t} e PK{L} = k.</p>
-            <p>O atributo té chamado atributo tipo (ou discriminador) e seu valor indica a subclasse à qual cada tupla pertence, se ela pertencer a alguma subclasse.</p>
-            <ul>
-                <li>Esta opção funciona somente para especializações cujas subclasses são disjuntas.</li>
-                <li>Esta opção pode gerar muitos valores NULL se as subclasses tiverem muitos atributos específicos.</li>
-            </ul>
-            <img src="img/especializacao-3.png" alt="">
-            <p>Mapeamento:</p>
-            <img src="img/mapeamento5.png" alt="mapeamento5.png">
+                    <b>Relação única com um único atributo tipo;</b>
+                    <p>Crie uma única relação L com os atributos Atrb(L) = {k, a₁, ..., an} U {atributos de S₁} U... U
+                        {atributos de Sm} U {t} e PK{L} = k.</p>
+                    <p>O atributo té chamado atributo tipo (ou discriminador) e seu valor indica a subclasse à qual cada
+                        tupla pertence, se ela pertencer a alguma subclasse.</p>
+                    <ul>
+                        <li>Esta opção funciona somente para especializações cujas subclasses são disjuntas.</li>
+                        <li>Esta opção pode gerar muitos valores NULL se as subclasses tiverem muitos atributos
+                            específicos.</li>
+                    </ul>
+                    <img src="img/especializacao-3.png" alt="">
+                    <p>Mapeamento:</p>
+                    <img src="img/mapeamento5.png" alt="mapeamento5.png">
 
-            <p></p>
-            <b>Relação única com vários atributos tipo.</b>
-            <p>Crie uma única relação L com os atributos Atrb(L) = {k, a₁, ..., an} U {atributos de S₁} U... U atributos de Sm} U {t1, t2, ..., tm} e PK(L) = k.</p>
-            <p>Cada t₁, 1 <= i <= m, é um atributo do tipo booleano que indica se uma tupla pertence a uma subclasse S₁.</p>
-            <ul>
-                <li>Esta opção é usada para uma especialização com restrição de <b>sobreposição</b>.</li>
-                <li>Ela também funciona para a restrição de disjunção.</li>
-            </ul>
-            <p>Exemplo:</p>
-            <img src="img/Especializacao6.png" alt="especializacao.png">
-            <p>Mapeamento:</p>
-            <img src="img/mapeamento6.png" alt="mapeamento6.png">
+                    <p></p>
+                    <b>Relação única com vários atributos tipo.</b>
+                    <p>Crie uma única relação L com os atributos Atrb(L) = {k, a₁, ..., an} U {atributos de S₁} U... U
+                        atributos de Sm} U {t1, t2, ..., tm} e PK(L) = k.</p>
+                    <p>Cada t₁, 1 <= i <=m, é um atributo do tipo booleano que indica se uma tupla pertence a uma
+                            subclasse S₁.</p>
+                            <ul>
+                                <li>Esta opção é usada para uma especialização com restrição de <b>sobreposição</b>.
+                                </li>
+                                <li>Ela também funciona para a restrição de disjunção.</li>
+                            </ul>
+                            <p>Exemplo:</p>
+                            <img src="img/Especializacao6.png" alt="especializacao.png">
+                            <p>Mapeamento:</p>
+                            <img src="img/mapeamento6.png" alt="mapeamento6.png">
         </section>
 
         <section>
             <h2>Mapeando Agregações.</h2>
             <p>Valem as mesmas regras.</p>
-            <p>Porém, ao mapear o tipo relacionamento do qual a abstração de agregação participa, usualmente, cria-se uma nova relação que recebe uma chave primária adequada proveniente do mapeamento obtido para o conteúdo da agregação e a chave primária do outro tipo entidade participante do relacionamento.</p>
+            <p>Porém, ao mapear o tipo relacionamento do qual a abstração de agregação participa, usualmente, cria-se
+                uma nova relação que recebe uma chave primária adequada proveniente do mapeamento obtido para o conteúdo
+                da agregação e a chave primária do outro tipo entidade participante do relacionamento.</p>
         </section>
 
         <section>
             <h2>Estes slides estão baseados na bibliografia:</h2>
-            <p>Mapeamento MER → Relacional Parte III: relacionamentos n-ários, especialização-generalização, agregação.</p>
+            <p>Mapeamento MER → Relacional Parte III: relacionamentos n-ários, especialização-generalização, agregação.
+            </p>
             <li>Elmasri, Ramez; Navathe, Shamkant B. Sistemas de Banco de Dados. Pearson, 6a edição, 808р., 2011.</li>
         </section>
     </main>
@@ -152,4 +176,5 @@
         <p>Diego Serafim de Sousa - 11 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

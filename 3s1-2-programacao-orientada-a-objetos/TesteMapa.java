@@ -15,16 +15,19 @@ public class TesteMapa {
             ObjectOutputStream fOut = new ObjectOutputStream(fluxo0ut); // cria o fluxo ObjectOutputStream
             fOut.writeObject(mapa); // usa o método writeObject
 
-            FileInputStream fluxoIn = new FileInputStream("myFile.ser"); // Cria o fluxo FileInputStream para fazer a leitura
-            ObjectInputStream fIn = new ObjectInputStream(fluxoIn); // Cria o fluxo ObjectInputStream para fazer a leitura
+            FileInputStream fluxoIn = new FileInputStream("myFile.ser"); // Cria o fluxo FileInputStream para fazer a
+                                                                         // leitura
+            ObjectInputStream fIn = new ObjectInputStream(fluxoIn); // Cria o fluxo ObjectInputStream para fazer a
+                                                                    // leitura
             @SuppressWarnings("unchecked")
-            TreeMap<Integer, String > mapaNovo = (TreeMap<Integer, String>)fIn.readObject(); // faz aleitura com readObject
-            
+            TreeMap<Integer, String> mapaNovo = (TreeMap<Integer, String>) fIn.readObject(); // faz aleitura com
+                                                                                             // readObject
+
             fIn.close(); // fecha
             fOut.close(); // fecha
 
             System.out.println(mapaNovo); // exibe o mapa
-            
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Fundamentos de Orientação a Objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Fundamentos de Orientação a Objetos.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=GHLFEhdk7Ys&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Programação Orientada a Objetos - Classes e Objetos. 
+            <a href="https://www.youtube.com/watch?v=GHLFEhdk7Ys&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Programação Orientada a Objetos - Classes e Objetos.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Júlio Cezar Estrella.</p>
@@ -52,7 +55,8 @@
         <section>
             <h2>Objetos.</h2>
             <ul>
-                <li>Trata-se de entidade que é capaz de salvar estado (informação) e que oferece um conjunto de operações (comportamentos) para verificar ou alterar esse estado</li>
+                <li>Trata-se de entidade que é capaz de salvar estado (informação) e que oferece um conjunto de
+                    operações (comportamentos) para verificar ou alterar esse estado</li>
                 <li>Em um modelo de sistema orientado a objetos:</li>
                 <ul>
                     <li>Os componentes dos sistemas são representados por objetos</li>
@@ -60,11 +64,14 @@
                 </ul>
                 <li>Associamos aos objetos:</li>
                 <ul>
-                    <li><b>Estado:</b> É definido pelas propriedades, ou seja, os atributos que ele possui e pelos valores que tais propriedades assumem</li>
-                    <li><b>Comportamento:</b> É definido pela forma como o objeto reage, quando seu estado muda e também o relacionamento com os outros objetos.</li>
+                    <li><b>Estado:</b> É definido pelas propriedades, ou seja, os atributos que ele possui e pelos
+                        valores que tais propriedades assumem</li>
+                    <li><b>Comportamento:</b> É definido pela forma como o objeto reage, quando seu estado muda e também
+                        o relacionamento com os outros objetos.</li>
                     <li><b>Identidade:</b> cada objeto é único.</li>
                 </ul>
-                <li>Os objetos indicam o quão capaz é o sistema de guardar informações sobre o que está sendo abstraído e em seguida interagir com ele.</li>
+                <li>Os objetos indicam o quão capaz é o sistema de guardar informações sobre o que está sendo abstraído
+                    e em seguida interagir com ele.</li>
                 <li>São entidades mais próximas do mundo real, ou seja o que conseguimos visualizar.</li>
                 <ul>
                     <li>Os objetos são uma forma de diminuir o gap semântico.</li>
@@ -75,7 +82,8 @@
             <ul>
                 <li>Ele traz modularidade e ocultação da informação (information hiding).</li>
                 <li>O encapsulamento cria um pacote de software cujos métodos e variáveis são relacionados.</li>
-                <li>A information hiding indica que, a única parte do objeto que pode ser acessada pelo mundo externo, deve ser feita por meio de operações.</li>
+                <li>A information hiding indica que, a única parte do objeto que pode ser acessada pelo mundo externo,
+                    deve ser feita por meio de operações.</li>
             </ul>
 
             <p>Exemplos:</p>
@@ -104,10 +112,12 @@
             <ul>
                 <li>Um molde de um quadro de pintura</li>
                 <ul>
-                    <li>Ele é a nossa classe ou tipo e define o formato, o tamanho, as cores e outras características dos objetos fabricados, ou seja, os quadros</li>
+                    <li>Ele é a nossa classe ou tipo e define o formato, o tamanho, as cores e outras características
+                        dos objetos fabricados, ou seja, os quadros</li>
                     <li>A classe é um molde para os objetos</li>
                 </ul>
-                <li>O molde é sempre o mesmo, mas os objetos gerados por ele são diferentes, tendo características variadas, embora respeite a estrutura do molde (classe)</li>
+                <li>O molde é sempre o mesmo, mas os objetos gerados por ele são diferentes, tendo características
+                    variadas, embora respeite a estrutura do molde (classe)</li>
             </ul>
 
             <p>Imaginem um molde de um quadro de 30 cm x 30 cm</p>
@@ -126,7 +136,8 @@
         <section>
             <h2>Classes</h2>
             <ul>
-                <li>As classes são moldes que permitem a criação de novos objetos e descrevem as características comuns de vários objetos</li>
+                <li>As classes são moldes que permitem a criação de novos objetos e descrevem as características comuns
+                    de vários objetos</li>
                 <li>Importante mencionar o termo instância, muito utilizado em POO</li>
                 <li><b>Instâncias</b></li>
                 <ul>
@@ -179,18 +190,23 @@
                 <li>Os atributos e métodos são membros de uma classe.</li>
                 <li>Para definir o tipo de acesso aos seus membros, utilizamos os modificadores de acesso:</li>
                 <ul>
-                    <li><b>Public:</b> Atributo ou método da classe que pode ser acessado por todas as entidades do sistema.</li>
-                    <li><b>Protected:</b> Atributo ou método que pode ser acessado somente por classes da mesma hierarquia e mesmo pacote.</li>
-                    <li><b>Private:</b> Atributo ou método da classe que pode ser acessado somente por métodos da própria classe.</li>
+                    <li><b>Public:</b> Atributo ou método da classe que pode ser acessado por todas as entidades do
+                        sistema.</li>
+                    <li><b>Protected:</b> Atributo ou método que pode ser acessado somente por classes da mesma
+                        hierarquia e mesmo pacote.</li>
+                    <li><b>Private:</b> Atributo ou método da classe que pode ser acessado somente por métodos da
+                        própria classe.</li>
                 </ul>
             </ul>
 
             <p>Importante: Escolher os tipos de acesso acabar por definir o escopo dos métodos e atributos.</p>
             <ul>
-                <li>Frequentemente os atributos são private. Desta forma, os métodos da própria classe é que são responsáveis por modificar e recuperar o estado dos atributos.</li>
+                <li>Frequentemente os atributos são private. Desta forma, os métodos da própria classe é que são
+                    responsáveis por modificar e recuperar o estado dos atributos.</li>
                 <ul>
                     <li>Tais métodos são públicos (como os setters e getters).</li>
-                    <li>Isso ajuda na estabilidade e segurança no acesso ao atributo, além de ocultá-lo (information hiding).</li>
+                    <li>Isso ajuda na estabilidade e segurança no acesso ao atributo, além de ocultá-lo (information
+                        hiding).</li>
                 </ul>
             </ul>
         </section>
@@ -207,22 +223,27 @@
             </ul>
 
             <p>Abstração:</p>
-            <li>Ignora o que não é relevante e concentra-se apenas nos aspectos principais do problema. Classes são abstrações de conceitos.</li>
-            
+            <li>Ignora o que não é relevante e concentra-se apenas nos aspectos principais do problema. Classes são
+                abstrações de conceitos.</li>
+
             <p>Encapsulamento:</p>
-            <li>Capacidade de implementar dados e procedimentos que se correlacionam numa mesma entidade. A ideia é não depender do funcionamento interno, mas sim da sua interface.</li>
+            <li>Capacidade de implementar dados e procedimentos que se correlacionam numa mesma entidade. A ideia é não
+                depender do funcionamento interno, mas sim da sua interface.</li>
             <p>Herança:</p>
             <li>Caracteriza-se pela hierarquização das classes em um sistema.</li>
 
             <p>Polimorfismo:</p>
             <ul>
-                <li>É um princípio em que um organismo pode surgir de formas distintas (conceito oriundo da Biologia). Indivíduos da mesma espécie possuem características similares.</li>
-                <li>Em POO, a mesma operação (método) comporta-se de modo diferente nas diferentes classes de uma hierarquia.</li>
+                <li>É um princípio em que um organismo pode surgir de formas distintas (conceito oriundo da Biologia).
+                    Indivíduos da mesma espécie possuem características similares.</li>
+                <li>Em POO, a mesma operação (método) comporta-se de modo diferente nas diferentes classes de uma
+                    hierarquia.</li>
             </ul>
 
             <p>Mensagens:</p>
             <ul>
-                <li>Quando um objeto emissor transmite uma requisição para um objeto receptor para que este execute um comportamento (método) desejado.</li>
+                <li>Quando um objeto emissor transmite uma requisição para um objeto receptor para que este execute um
+                    comportamento (método) desejado.</li>
                 <ul>
                     <li>O objeto receptor precisa já ter os métodos definidos.</li>
                     <li>Os métodos respondem a um retorno à chamada.</li>
@@ -232,7 +253,7 @@
 
         <section>
             <h2>Referências.</h2>
-            
+
             <p>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição</p>
             <p>2. Java Como Programar: Paul Deitel & Harvey Deitel - 8ª Edição</p>
         </section>
@@ -241,4 +262,5 @@
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

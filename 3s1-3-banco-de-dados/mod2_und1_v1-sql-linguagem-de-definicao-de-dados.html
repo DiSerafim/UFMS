@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=-HSyOYvksVw&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=14&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                Bancos de Dados - Aula 13 - Linguagem de consulta – SQL Parte I. 
+            <a href="https://www.youtube.com/watch?v=-HSyOYvksVw&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=14&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Bancos de Dados - Aula 13 - Linguagem de consulta – SQL Parte I.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Marques Peres.</p>
@@ -51,14 +54,18 @@
                 PROJETO(<b>numero</b>, nome, localizacao, dnumero)
                 TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
             </pre>
-            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas.
+                A chave primária, em cada relação, está sublinhada.</p>
 
             <b>SQL-Structured Query Language:</b>
             <ul>
-                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
-                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização
+                    de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da
+                    integridade e segurança da informação armazenada.</li>
             </ul>
-            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National
+                Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
             <ul>
                 <li>Sugestões de consulta para implementações comerciais:</li>
                 <ul>
@@ -83,7 +90,7 @@
                 </ul>
             </ul>
         </section>
-        
+
         <section>
             <h2>O comando CREATE permite criar objetos de banco de dados.</h2>
             <ul>
@@ -94,12 +101,14 @@
                 <li>CREATE VIEW.</li>
                 <li>CREATE TRIGGER.</li>
             </ul>
-            <p>O comando CREATE DOMAIN permite declarar um domínio especificando o seu nome para ser usado junto da criação de atributos.</p>
+            <p>O comando CREATE DOMAIN permite declarar um domínio especificando o seu nome para ser usado junto da
+                criação de atributos.</p>
             <pre>
                 CREATE DOMAIN TIPO_ID AS CHAR(4);
                 CREATE DOMAIN D_NUM AS INTEGER CHECK (D_NUM > 0 AND D_NUM <21)
             </pre>
-            <p>O comando CREATE TABLE é usado para especificar as relações do banco de dados, atribuindo-lhe um nome e listando seus atributos e restrições iniciais.</p>
+            <p>O comando CREATE TABLE é usado para especificar as relações do banco de dados, atribuindo-lhe um nome e
+                listando seus atributos e restrições iniciais.</p>
             <pre>
             CREATE TABLE FUNCIONARIO (
                 atributos...
@@ -182,7 +191,8 @@
             FROM ...
             GROUP BY ...
             </pre>
-            <p>Uma consulta SQL para extração de informação existente em relações do banco de dados. Retorna um conjunto de tuplas e cada uma delas será inserida na relação DEPTS_INFO pelo comando INSERT INTO.</p>
+            <p>Uma consulta SQL para extração de informação existente em relações do banco de dados. Retorna um conjunto
+                de tuplas e cada uma delas será inserida na relação DEPTS_INFO pelo comando INSERT INTO.</p>
         </section>
 
         <section>
@@ -201,7 +211,8 @@
             SET    salario salario * 1,1
             WHERE  dnumero IN (SELECT FROM WHERE ...);
             </pre>
-            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando UPDATE Indica que dnumero deve pertencer ao conjunto de tuplas retornado.</p>
+            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando UPDATE Indica que dnumero deve
+                pertencer ao conjunto de tuplas retornado.</p>
         </section>
 
         <section>
@@ -223,7 +234,8 @@
                 WHERE
             );
             </pre>
-            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando DELETE indica que dnumero deve pertencer ao conjunto de tuplas retornado.</p>
+            <p>Uma consulta SQL que retorna um conjunto de tuplas. A condição do comando DELETE indica que dnumero deve
+                pertencer ao conjunto de tuplas retornado.</p>
         </section>
 
         <section>
@@ -236,4 +248,5 @@
         <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

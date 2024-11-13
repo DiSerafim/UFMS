@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – Pilares da Programação Orientada a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Conceitos Avançados.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-        <a href="https://www.youtube.com/watch?v=vr581qxQ4SE&ab_channel=UNIVESP" target="_blank" type="button" name="action" class="btn waves-effect waves-light">
-                Vídeo 2 - 
-                Programação Orientada a Objetos - Coleções – Parte 1. 
+            <a href="https://www.youtube.com/watch?v=vr581qxQ4SE&ab_channel=UNIVESP" target="_blank" type="button"
+                name="action" class="btn waves-effect waves-light">
+                Vídeo 2 -
+                Programação Orientada a Objetos - Coleções – Parte 1.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Júlio Cezar Estrella.</p>
@@ -57,9 +60,11 @@
                 </ul>
             </ul>
             <ul>
-                <li>Com as Collections utilizamos estruturas de dados existentes, sem nos preocuparmos com a maneira como são implementadas.</li>
+                <li>Com as Collections utilizamos estruturas de dados existentes, sem nos preocuparmos com a maneira
+                    como são implementadas.</li>
                 <li>Java possui uma interface raiz chamada de Collections.</li>
-                <li>Elas são dinâmicas, isto é, podem crescer conforme a necessidade de expansão, diferente de arrays.</li>
+                <li>Elas são dinâmicas, isto é, podem crescer conforme a necessidade de expansão, diferente de arrays.
+                </li>
                 <li>Nós estudamos Generics antes, pois Collections utiliza Generics.</li>
             </ul>
         </section>
@@ -69,17 +74,21 @@
             <ul>
                 <li>Collection é o topo da API Collections, sendo disponível no pacote java.util.</li>
                 <li>Collections é a API que oferece diversas coleções (interfaces e classes concretas).</li>
-                <li>Interfaces e classes concretas que implementam a interface Collection, terão obrigatoriamente que fazer a implementação de diversos métodos que manipulam coleções de dados, tais como adicionar e remover elementos.</li>
+                <li>Interfaces e classes concretas que implementam a interface Collection, terão obrigatoriamente que
+                    fazer a implementação de diversos métodos que manipulam coleções de dados, tais como adicionar e
+                    remover elementos.</li>
             </ul>
             <ul>
                 <li>As Collections podem ser organizadas e/ou Ordenadas.</li>
                 <ul>
-                    <li>Quando organizadas: garante que as coleções serão percorridas na mesma ordem em que os elementos foram inseridos.</li>
+                    <li>Quando organizadas: garante que as coleções serão percorridas na mesma ordem em que os elementos
+                        foram inseridos.</li>
                     <ul>
                         <li>Exemplos:</li>
                         <ul>
                             <li><b>Organizada</b>: LinkedHashSet, ArrayList, Vector, LinkedList, LinkedHashMap.</li>
-                            <li><b>Não-Organizada</b>: HashSet, TreeSet, PriorityQueue, HashMap, HashTable, TreeMap.</li>
+                            <li><b>Não-Organizada</b>: HashSet, TreeSet, PriorityQueue, HashMap, HashTable, TreeMap.
+                            </li>
                         </ul>
                     </ul>
                 </ul>
@@ -87,7 +96,8 @@
 
             <ul>
                 <li>Nós estudamos Generics antes, pois Collections utiliza Generics.</li>
-                <li>O padrão Generics é aceitar qualquer tipo de elemento, incluindo elementos distintos (String, Double, Integer).</li>
+                <li>O padrão Generics é aceitar qualquer tipo de elemento, incluindo elementos distintos (String,
+                    Double, Integer).</li>
                 <ul>
                     <li>Também é possível especificar o tipo a ser aceito.</li>
                 </ul>
@@ -149,8 +159,10 @@
                 <li><b>Set</b>.</li>
                 <ul>
                     <li><b>HashSet</b>: Armazena elemento numa tabela Hash e sem garantias de ordem dos elementos.</li>
-                    <li><b>TreeSet</b>: Utiliza uma estrutura de árvore para armazenar os elementos. Mantém a ordem dos elementos.</li>
-                    <li><b>LinkedHashSet</b>: Utiliza a tabela hash como uma lista ligada. Mantém a ordem de inserções dos elementos.</li>
+                    <li><b>TreeSet</b>: Utiliza uma estrutura de árvore para armazenar os elementos. Mantém a ordem dos
+                        elementos.</li>
+                    <li><b>LinkedHashSet</b>: Utiliza a tabela hash como uma lista ligada. Mantém a ordem de inserções
+                        dos elementos.</li>
                 </ul>
                 <li><b>List</b>.</li>
                 <ul>
@@ -179,10 +191,13 @@
 
             <b>Exemplo de Collections com Generics.</b>
             <ul>
-                <li>Para mostrar um exemplo prático de uso de Collections, é importante discutir o For-each e o Iterator.</li>
+                <li>Para mostrar um exemplo prático de uso de Collections, é importante discutir o For-each e o
+                    Iterator.</li>
                 <ul>
-                    <li>For-each: Trata-se de um ciclo for, embora adaptado para ser utilizado em Collections. Server para percorrer todos os elementos de qualquer Collection contida na API Collections.</li>
-                    <li>Iterator: É uma interface presente no java.útil que permite percorrer coleções da API Collection, desde que implementam a Collection.</li>
+                    <li>For-each: Trata-se de um ciclo for, embora adaptado para ser utilizado em Collections. Server
+                        para percorrer todos os elementos de qualquer Collection contida na API Collections.</li>
+                    <li>Iterator: É uma interface presente no java.útil que permite percorrer coleções da API
+                        Collection, desde que implementam a Collection.</li>
                     <ul>
                         <li>Fornece métodos como.</li>
                         <ul>
@@ -228,11 +243,13 @@
 
             <p>1. Java Como Programar: Paul Deitel & Harvey Deitel - 10ª Edição</p>
             <p>2. Java Como Programar: Paul Deitel & Harvey Deitel 8ª Edição</p>
-            <a href="https://www.devmedia.com.br/api-collections-em-ja va-fundamentos-e-implementacao-basica/28445" target="_blank" rel="noopener noreferrer">3. Devemedia</a>
+            <a href="https://www.devmedia.com.br/api-collections-em-ja va-fundamentos-e-implementacao-basica/28445"
+                target="_blank" rel="noopener noreferrer">3. Devemedia</a>
         </section>
     </main>
     <footer>
         <p>Diego Serafim de Sousa - 4 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

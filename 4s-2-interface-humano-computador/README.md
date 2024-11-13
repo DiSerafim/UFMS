@@ -1,4 +1,5 @@
 # UFMS
+
 ## CRONOGRAMA DA TRILHA DE APRENDIZAGEM
 
 UFMS Digital
@@ -22,7 +23,7 @@ Professora Especialista: Lucineide Rodrigues da Silva
 📕 Leitura obrigatória
 BENYON, David. Interação Humano-computador. 2. ed. São Paulo: Pearson, 2011. ISBN 9788579361098. Capítulo 1. p. 3-12 [versão PDF]. Disponível na Biblioteca Digital da UFMS. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 📗 Leitura complementar
-ROCHA, Heloísa Vieira; BARANAUSKAS, Maria Cecília. Design e avaliação de interfaces humano-computador. São Paulo: UNICAMP, 2003.  Capítulo 1. p. 3-23. Disponível em: - <https://www.nied.unicamp.br/biblioteca/design-e-avaliacao-de-interfaces-humano-computador/>
+ROCHA, Heloísa Vieira; BARANAUSKAS, Maria Cecília. Design e avaliação de interfaces humano-computador. São Paulo: UNICAMP, 2003. Capítulo 1. p. 3-23. Disponível em: - <https://www.nied.unicamp.br/biblioteca/design-e-avaliacao-de-interfaces-humano-computador/>
 
 ▶️ Videoaula Obrigatória - Módulo 1 - Unidade 1
 [UFMS Digital] Interface Humano-computador - Módulo 1 - Unidade 1 - <https://www.youtube.com/watch?v=C6YZOYfSZ7o&ab_channel=AGEADUFMS>
@@ -41,7 +42,7 @@ BARRETO, Jeanine dos Santos; PASQUAL JÚNIOR, Paulo Antonio; BARBOZA, Fabrício 
 [UFMS Digital] Interface Humano-computador - Módulo 1 - Unidade 2 - <https://www.youtube.com/watch?v=cleyFrEq128&ab_channel=AGEADUFMS>
 
 ▶️ Videoaula Complementar - Módulo 1 - Unidade 2
-Interfaces Humano-Computador - Aula 01 -  Conceitos Fundamentais - <https://www.youtube.com/watch?v=grupku0OOQw&ab_channel=UNIVESP>
+Interfaces Humano-Computador - Aula 01 - Conceitos Fundamentais - <https://www.youtube.com/watch?v=grupku0OOQw&ab_channel=UNIVESP>
 
 Acessar no AVA
 💬 Fórum de Discussão do Módulo 1
@@ -53,7 +54,6 @@ Acessar no AVA
 📚 Módulo 2 – Design de IHC
 
 ## 💡 Unidade 1 - Processos de design de IHC
-
 
 📕 Leitura obrigatória
 SERPRO. Design Thinking: como a confiança criativa pode mudar (e impulsionar)a sua forma de resolver problemas. 2017. E-book. Acesso em: 29 set. 2023. p. 1-14. - <https://www.serpro.gov.br/menu/noticias/noticias-2017/ebookconfiancacriativa.pdf>
@@ -72,7 +72,7 @@ Interfaces Humano-Computador - Aula 03 - Design centrado no humano - <https://ww
 BENYON, David. Interação Humano-computador. 2. ed. São Paulo: Pearson, 2011. ISBN 9788579361098. Capítulo 4. p. 56-59 (item 4.5) [versão PDF]. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
 📗 Leituras complementares
-GRILLO, Guilherme Jun Yazaki; ROSATI, Gabriel Tavares Brayn; DA HORA, Jaqueline Matos; SOARES, Paulo Henrique de Souza; RODRIGUES, Kamila Rios da Hora. RetificAI: Um verificador de notícias falsas com base em IA e Aprendizado de Máquina. In: COMPETIÇÃO DE DESIGN - SIMPÓSIO BRASILEIRO DE FATORES HUMANOS EM SISTEMAS COMPUTACIONAIS (IHC), 21., 2022, Diamantina. Anais [...]. Porto Alegre: Sociedade Brasileira de Computação, 2022.  p. 146-150. Disponível em: <https://sol.sbc.org.br/index.php/ihc_estendido/article/view/22057>.
+GRILLO, Guilherme Jun Yazaki; ROSATI, Gabriel Tavares Brayn; DA HORA, Jaqueline Matos; SOARES, Paulo Henrique de Souza; RODRIGUES, Kamila Rios da Hora. RetificAI: Um verificador de notícias falsas com base em IA e Aprendizado de Máquina. In: COMPETIÇÃO DE DESIGN - SIMPÓSIO BRASILEIRO DE FATORES HUMANOS EM SISTEMAS COMPUTACIONAIS (IHC), 21., 2022, Diamantina. Anais [...]. Porto Alegre: Sociedade Brasileira de Computação, 2022. p. 146-150. Disponível em: <https://sol.sbc.org.br/index.php/ihc_estendido/article/view/22057>.
 
 W3C Brasil. Cartilha acessibilidade na Web: fascículo 2: benefícios, legislação e diretrizes da acessibilidade na Web. São Paulo: Comitê Gestor da Internet no Brasil, 2015. E-book. p. 7-34. Disponível em: <https://www.w3c.br/pub/Materiais/PublicacoesW3C/cartilha-w3cbr-acessibilidade-web-fasciculo-II.pdf>
 
@@ -97,7 +97,7 @@ Acessar no AVA
 BENYON, David. Interação Humano-computador. 2. ed. São Paulo: Pearson, 2011. ISBN 9788579361098. Capítulo 10. p. 149-162 [versão PDF]. - <https://pergamum.ufms.br/pergamum/biblioteca/index.php>
 
 📗 Leitura complementar
-TUBIN, Carla; RODRIGUEZ, João Pedro M.; DE MARCHI, Ana Carolina B. Interação por voz e por toque: uma comparação da experiência do usuário idoso em smartphones. In: SIMPÓSIO BRASILEIRO SOBRE FATORES HUMANOS EM SISTEMAS COMPUTACIONAIS (IHC), 20., 2021, Online. Anais [...]. Porto Alegre: Sociedade Brasileira de Computação, 2021.  p. 1-7. Disponível em: <https://dl.acm.org/doi/10.1145/3472301.3484366>
+TUBIN, Carla; RODRIGUEZ, João Pedro M.; DE MARCHI, Ana Carolina B. Interação por voz e por toque: uma comparação da experiência do usuário idoso em smartphones. In: SIMPÓSIO BRASILEIRO SOBRE FATORES HUMANOS EM SISTEMAS COMPUTACIONAIS (IHC), 20., 2021, Online. Anais [...]. Porto Alegre: Sociedade Brasileira de Computação, 2021. p. 1-7. Disponível em: <https://dl.acm.org/doi/10.1145/3472301.3484366>
 
 ▶️ Videoaulas Obrigatórias - Módulo 3 - Unidade 1
 [UFMS Digital] Interface Humano-computador - Módulo 3 - Unidade 1 - <https://www.youtube.com/watch?v=Elg0TojmJ5Y&ab_channel=AGEADUFMS>

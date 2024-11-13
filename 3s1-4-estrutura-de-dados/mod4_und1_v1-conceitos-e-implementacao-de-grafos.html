@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Page-Rank (Grafos).</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Page-Rank (Grafos).</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Page-Rank (Grafos).</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=XaVd82kEeCk&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
+            <a href="https://www.youtube.com/watch?v=XaVd82kEeCk&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
                 [UFMS Digital] Estrutura de Dados - Módulo 4 - Unidade 1.
                 <i class="material-icons right"> send</i>
             </a>
@@ -57,7 +60,8 @@
         <section>
             <h2>Grafos - Representação.</h2>
             <ul>
-                <li>Podemos formalizar a descrição das componentes de um grafo G como G = (V, A), onde V=conjunto de vértices e A=conjunto de arestas. Nesse exemplo temos um <b>Grafo Não Direcionado</b>.</li>
+                <li>Podemos formalizar a descrição das componentes de um grafo G como G = (V, A), onde V=conjunto de
+                    vértices e A=conjunto de arestas. Nesse exemplo temos um <b>Grafo Não Direcionado</b>.</li>
                 <ul>
                     <li>V = {1,2,3,4,5}</li>
                     <li>A = {A1,A2,A3,A4,A5,A6}</li>
@@ -65,7 +69,8 @@
             </ul>
             <img src="img/grafos.png" alt="grafos.png">
             <ul>
-                <li>Podemos ter também outro tipo de grafo em que as arestas são direcionadas. Nesse exemplo temos um <b>Grafo Direcionado/Orientado</b>.</li>
+                <li>Podemos ter também outro tipo de grafo em que as arestas são direcionadas. Nesse exemplo temos um
+                    <b>Grafo Direcionado/Orientado</b>.</li>
                 <ul>
                     <li>V = {1,2,3,4,5}</li>
                     <li>A = {A12,A15,A24,A32,A43,A45,A52,A55}</li>
@@ -73,7 +78,8 @@
             </ul>
             <img src="img/grafos1.png" alt="grafos1.png">
             <ul>
-                <li>Podemos representar os vértices e as arestas de um grafo por meio de dois tipos de estrutura de dados:</li>
+                <li>Podemos representar os vértices e as arestas de um grafo por meio de dois tipos de estrutura de
+                    dados:</li>
                 <ul>
                     <li>Lista de adjacências;</li>
                     <li>Matriz de adjacências.</li>
@@ -83,17 +89,21 @@
             <ul>
                 <li>Podemos ter um <b>Grafo Ponderado</b> em que há pesos (valores numéricos) nas arestas.</li>
                 <ul>
-                    <li>Um exemplo seria representar três cidades como vértices e a distância entre as cidades como os pesos das arestas que conectam as cidades.</li>
+                    <li>Um exemplo seria representar três cidades como vértices e a distância entre as cidades como os
+                        pesos das arestas que conectam as cidades.</li>
                 </ul>
             </ul>
             <img src="img/grafos3.png" alt="grafos3.png">
             <ul>
-                <li>Nota-se que existem alguns vértices de um grafo que podem ter mais ou menos arestas incidindo nos mesmos.</li>
-                <li>Por exemplo, o vértice 1 tem duas arestas de conexão, enquanto que o vértice 2 tem três arestas.</li>
+                <li>Nota-se que existem alguns vértices de um grafo que podem ter mais ou menos arestas incidindo nos
+                    mesmos.</li>
+                <li>Por exemplo, o vértice 1 tem duas arestas de conexão, enquanto que o vértice 2 tem três arestas.
+                </li>
             </ul>
             <img src="img/grafos4.png" alt="grafos4.png">
             <ul>
-                <li>O número de arestas em um vértice de um grafo não direcionado é determinado pelo <b>Grau do Vértice</b>.</li>
+                <li>O número de arestas em um vértice de um grafo não direcionado é determinado pelo <b>Grau do
+                        Vértice</b>.</li>
                 <li>Já em um grafo direcionado o Grau do Vértice tem dois tipos de informações:</li>
                 <ul>
                     <li>grau de entrada: n° de arestas que chegam em um vértice.</li>
@@ -113,31 +123,38 @@
                     </ul>
                 </ul>
                 <img src="img/grafos4.png" alt="grafos4.png">
-                <li>Um método simples e popular de caminhada em grafos é por meio do algoritmo de busca em largura <b>Breadth-First Search</b>.</li>
+                <li>Um método simples e popular de caminhada em grafos é por meio do algoritmo de busca em largura
+                    <b>Breadth-First Search</b>.</li>
             </ul>
         </section>
 
         <section>
             <h2>Grafos - Busca em Largura.</h2>
             <ul>
-                <li>Esse algoritmo mantém uma estrutura de dados chamada de <b>fronteira</b> para organizar os vértices a serem visitados a partir de um vértice inicial.</li>
+                <li>Esse algoritmo mantém uma estrutura de dados chamada de <b>fronteira</b> para organizar os vértices
+                    a serem visitados a partir de um vértice inicial.</li>
                 <ul>
                     <li>Essa fronteira é implementada por meio de uma <b>fila</b>.</li>
                 </ul>
             </ul>
             <img src="img/grafos4.png" alt="grafos4.png">
             <ul>
-                <li>Exemplo: iniciando no vértice 1 são armazenadas na fronteira os vértices 2 e 5, nessa ordem, em fila. Em seguida o algoritmo remove da fila o primeiro vértice e o vista, armazenando na fila da fronteira os demais vértices alcançáveis e assim por diante até alcançar o critério de parada.</li>
+                <li>Exemplo: iniciando no vértice 1 são armazenadas na fronteira os vértices 2 e 5, nessa ordem, em
+                    fila. Em seguida o algoritmo remove da fila o primeiro vértice e o vista, armazenando na fila da
+                    fronteira os demais vértices alcançáveis e assim por diante até alcançar o critério de parada.</li>
                 <ul>
                     <li>Encontrar o que busca ou visitar todos os nós..</li>
                 </ul>
             </ul>
             <ul>
-                <li>Exemplo no <a href="https://visualgo.net/en/dfsbfs?slide=1" target="_blank" rel="noopener noreferrer">VISUALGO</a>.</li>
+                <li>Exemplo no <a href="https://visualgo.net/en/dfsbfs?slide=1" target="_blank"
+                        rel="noopener noreferrer">VISUALGO</a>.</li>
                 <li>Existe outros sites também, por exemplo:</li>
                 <ul>
-                    <li><a href="https://www.cs.usfca.edu/~galles/visualization/BFS.html" target="_blank" rel="noopener noreferrer">CS.USFCA</a></li>
-                    <li><a href="https://workshape.github.io/visual-graph-algorithms/" target="_blank" rel="noopener noreferrer">Workshape</a></li>
+                    <li><a href="https://www.cs.usfca.edu/~galles/visualization/BFS.html" target="_blank"
+                            rel="noopener noreferrer">CS.USFCA</a></li>
+                    <li><a href="https://workshape.github.io/visual-graph-algorithms/" target="_blank"
+                            rel="noopener noreferrer">Workshape</a></li>
                 </ul>
             </ul>
         </section>
@@ -145,8 +162,10 @@
         <section>
             <h2>Referências</h2>
             <ul>
-                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092. Disponível na Biblioteca Digital da UFMS.</li>
-                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
+                <li>CORMEN, Thomas. Algoritmos: teoria e prática. Rio de Janeiro: GEN LTC, 2013. ISBN 9788595158092.
+                    Disponível na Biblioteca Digital da UFMS.</li>
+                <li>SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de dados e seus algoritmos. 3. ed. Rio de
+                    Janeiro, RJ: LTC, 2010. ISBN 9788521629955. Disponível na Biblioteca Digital da UFMS.</li>
             </ul>
         </section>
     </main>
@@ -154,4 +173,5 @@
         <p>Diego Serafim de Sousa - 3 de jun de 2024</p>
     </footer>
 </body>
+
 </html>

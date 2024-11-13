@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=oFti3s_Lc_o&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=16&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Bancos de Dados - Aula 15 - Linguagem de consulta – SQL Parte III. 
+            <a href="https://www.youtube.com/watch?v=oFti3s_Lc_o&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=16&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Bancos de Dados - Aula 15 - Linguagem de consulta – SQL Parte III.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Marques Peres.</p>
@@ -51,14 +54,18 @@
                 PROJETO(<b>numero</b>, nome, localizacao, dnumero)
                 TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
             </pre>
-            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas.
+                A chave primária, em cada relação, está sublinhada.</p>
 
             <b>SQL-Structured Query Language:</b>
             <ul>
-                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
-                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização
+                    de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da
+                    integridade e segurança da informação armazenada.</li>
             </ul>
-            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National
+                Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
             <ul>
                 <li>Sugestões de consulta para implementações comerciais:</li>
                 <ul>
@@ -73,9 +80,12 @@
         <section>
             <h2>Consultas Aninhadas e Sub-consultas.</h2>
             <ul>
-                <li>Existem consultas cuja implementação envolve o uso de informações retornadas por outras consultas.</li>
-                <li>Em alguns casos, essa demanda por ser resolvida por <b>consultas aninhadas</b>, ou <b>Sub-consultas</b>.</li>
-                <li><b>Sub-consultas</b> são blocos <b>SELECT-FROM-WHERE</b> especificados dentro de uma cláusula WHERE, de forma adequada.</li>
+                <li>Existem consultas cuja implementação envolve o uso de informações retornadas por outras consultas.
+                </li>
+                <li>Em alguns casos, essa demanda por ser resolvida por <b>consultas aninhadas</b>, ou
+                    <b>Sub-consultas</b>.</li>
+                <li><b>Sub-consultas</b> são blocos <b>SELECT-FROM-WHERE</b> especificados dentro de uma cláusula WHERE,
+                    de forma adequada.</li>
             </ul>
 
             <p>Exemplos:</p>
@@ -100,7 +110,8 @@
             <img src="img/tabela-sub-consulta.png" alt="tabela-sub-consulta.png">
             <p></p>
 
-            <b>Consulta 32: Liste os nomes dos funcionários que possuem salários maiores do que os salários de todos os funcionários do departamento 5.</b>
+            <b>Consulta 32: Liste os nomes dos funcionários que possuem salários maiores do que os salários de todos os
+                funcionários do departamento 5.</b>
             <pre>
                 SELECT nome
                 FROM FUNCIONARIO
@@ -109,7 +120,8 @@
                                      WHERE dnumero = 5);
             </pre>
 
-            <b>Consulta 33: Encontre os nomes de cada funcionário que possui um dependente com o mesmo nome que ele e do mesmo sexo que o dele.</b>
+            <b>Consulta 33: Encontre os nomes de cada funcionário que possui um dependente com o mesmo nome que ele e do
+                mesmo sexo que o dele.</b>
             <pre>
                 SELECT nome
                 FROM FUNCIONARIO AS F
@@ -172,4 +184,5 @@
         <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Definição de projetos</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Definição de projetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Definição de projetos.</h1>
@@ -68,35 +70,46 @@
 
             <b>Comprar produto no site:</b>
             <ul>
-                <li>A aplicação deve utilizar um carrinho de compras para conter os produtos selecionados pelo cliente para compra</li>
-                <li>O carrinho deve prover um campo para o código do desconto. Cada código fornece uma porcentagem ou valor fixo de desconto nos produtos</li>
-                <li>Se o cliente entrar um código de desconto inválido, a aplicação deve mostrar uma mensagem de erro</li>
-                <li>O carrinho de compras deve adicionar uma taxa de entrega se o cliente solicitar o envio de uma encomenda física</li>
+                <li>A aplicação deve utilizar um carrinho de compras para conter os produtos selecionados pelo cliente
+                    para compra</li>
+                <li>O carrinho deve prover um campo para o código do desconto. Cada código fornece uma porcentagem ou
+                    valor fixo de desconto nos produtos</li>
+                <li>Se o cliente entrar um código de desconto inválido, a aplicação deve mostrar uma mensagem de erro
+                </li>
+                <li>O carrinho de compras deve adicionar uma taxa de entrega se o cliente solicitar o envio de uma
+                    encomenda física</li>
             </ul>
 
             <b>Fazer pedido de almoço:</b>
             <ul>
                 <li>O cliente deve estar registrado no sistema para fazer o pedido de almoço</li>
-                <li>Se o cliente não está registrado, o sistema deve fornecer ao cliente opções para registro e continuar com o pedido ou sair</li>
+                <li>Se o cliente não está registrado, o sistema deve fornecer ao cliente opções para registro e
+                    continuar com o pedido ou sair</li>
                 <li>O sistema deve mostrar ao cliente as datas dos almoços</li>
-                <li>Se a data do almoço é a data atual e a hora passou do horário limite, o sistema deve informar ao cliente que é tarde para fazer o pedido. Cliente pode mudar a data do pedido ou cancelar pedido</li>
+                <li>Se a data do almoço é a data atual e a hora passou do horário limite, o sistema deve informar ao
+                    cliente que é tarde para fazer o pedido. Cliente pode mudar a data do pedido ou cancelar pedido</li>
             </ul>
 
             <b>Entregar ou coletar do almoço:</b>
             <ul>
                 <li>O cliente deve especificar se o pedido deve ser entregue ou coletado</li>
-                <li>Se o pedido é para ser entregue e ainda existe tempo de entrega disponível, o cliente deve fornecer uma localização válida de entrega</li>
+                <li>Se o pedido é para ser entregue e ainda existe tempo de entrega disponível, o cliente deve fornecer
+                    uma localização válida de entrega</li>
                 <li>O sistema deve mostrar os tempos de entrega disponíveis</li>
-                <li>Se não existe tempo de entrega disponível para entrega, o sistema deve notificar o cliente. O cliente deve indicar que vai coletar o almoço ou cancelar o pedido</li>
+                <li>Se não existe tempo de entrega disponível para entrega, o sistema deve notificar o cliente. O
+                    cliente deve indicar que vai coletar o almoço ou cancelar o pedido</li>
             </ul>
 
             <b>Confirmar pedido</b>
             <ul>
-                <li>Quando o cliente finalizar a escolha do almoço, o sistema deve apresentar os itens escolhidos, os preços individuais e o preço total (ver RN-12)</li>
+                <li>Quando o cliente finalizar a escolha do almoço, o sistema deve apresentar os itens escolhidos, os
+                    preços individuais e o preço total (ver RN-12)</li>
                 <li>O sistema deve confirmar com o cliente o pedido realizado</li>
                 <li>O cliente deve confirmar, editar ou cancelar o pedido</li>
-                <li>O sistema deve permitir ao cliente realizar pedidos adicionais do mesmo almoço na mesma ou outras datas (ver RN-03 e RN-04 sobre múltiplos pedidos)</li>
-                <li>RN-12: Preço total: soma dos preços de cada item, mais taxas do estado e do município, mais taxa de entrega</li>
+                <li>O sistema deve permitir ao cliente realizar pedidos adicionais do mesmo almoço na mesma ou outras
+                    datas (ver RN-03 e RN-04 sobre múltiplos pedidos)</li>
+                <li>RN-12: Preço total: soma dos preços de cada item, mais taxas do estado e do município, mais taxa de
+                    entrega</li>
             </ul>
 
             <b>Ver menu</b>
@@ -134,7 +147,8 @@
         <section id="requisitos-negocio">
             <h2>Requisitos de Dados: 4.1 Modelo lógico.</h2>
 
-            <p>Representação visual dos objetos de dados e seus relacionamentos (ex: diagrama de classes UML ou diagrama entidade relacionamento DER)</p>
+            <p>Representação visual dos objetos de dados e seus relacionamentos (ex: diagrama de classes UML ou diagrama
+                entidade relacionamento DER)</p>
 
             <pre>
             +----------+        +--------------+               +------+
@@ -187,7 +201,8 @@
                 </tr>
                 <tr>
                     <td>intervalo de hora de entrega</td>
-                    <td>hora de início, em intervalos de 15 minutos em que uma refeição solicitada deve ser entregue</td>
+                    <td>hora de início, em intervalos de 15 minutos em que uma refeição solicitada deve ser entregue
+                    </td>
                     <td>hora</td>
                     <td>hh:mm</td>
                     <td>horário local; hh = 0-23;mm= 00, 15, 30 ou 45</td>
@@ -216,7 +231,8 @@
                 </tr>
                 <tr>
                     <td>Finalidade</td>
-                    <td>Clientes querem ver a lista de pedidos nos últimos 6 meses para que ela possa solicitar um almoço que gostou</td>
+                    <td>Clientes querem ver a lista de pedidos nos últimos 6 meses para que ela possa solicitar um
+                        almoço que gostou</td>
                 </tr>
                 <tr>
                     <td>Usuário</td>
@@ -224,7 +240,8 @@
                 </tr>
                 <tr>
                     <td>Corpo</td>
-                    <td>Campos: id do pedido, data, itens pedidos, preço dos itens, impostos, taxa de entrega, preço total </td>
+                    <td>Campos: id do pedido, data, itens pedidos, preço dos itens, impostos, taxa de entrega, preço
+                        total </td>
                 </tr>
             </table>
         </section>
@@ -241,7 +258,8 @@
         <section>
             <h2>Interfaces Externas 5.1 Interfaces de usuário</h2>
             <p>Descreve características lógicas de cada interface de usuário que o sistema precisa</p>
-            <p>Ex: padrões, fontes, ícones, botões, cores, tamanho de tela, layout, atalhos, mensagens, validação de dados (ex, CEP, CPF)</p>
+            <p>Ex: padrões, fontes, ícones, botões, cores, tamanho de tela, layout, atalhos, mensagens, validação de
+                dados (ex, CEP, CPF)</p>
             <p>Pode incluir protótipo de telas</p>
             <ul>
                 Interfaces de usuário
@@ -258,9 +276,12 @@
                 <li>
                     IS-1 Interfaces de software
                     <ul>
-                        <li>IS-1.1: O Sistema de Almoço deve transmitir a quantidade de itens pedidos ao Sistema de Estoque</li>
-                        <li>IS-1.2: O Sistema de Almoço deve solicitar do Sistema de Estoque a quantidade de itens disponíveis</li>
-                        <li>IS-1.3: Quando o Sistema de Estoque notificar ao Sistema de Almoço que os itens não estão disponíveis, o Sistema de Almoço deve remover esse item do menu</li>
+                        <li>IS-1.1: O Sistema de Almoço deve transmitir a quantidade de itens pedidos ao Sistema de
+                            Estoque</li>
+                        <li>IS-1.2: O Sistema de Almoço deve solicitar do Sistema de Estoque a quantidade de itens
+                            disponíveis</li>
+                        <li>IS-1.3: Quando o Sistema de Estoque notificar ao Sistema de Almoço que os itens não estão
+                            disponíveis, o Sistema de Almoço deve remover esse item do menu</li>
                     </ul>
                 </li>
             </ul>
@@ -268,14 +289,17 @@
 
         <section>
             <h2>Interfaces Externas 5.3 Interfaces de hardware</h2>
-            <p>Descreve as características de cada interface entre os componentes de software e os componentes de hardware.</p>
-            <p>Deve-se detalhar como será realizada a troca de informações entre o software e o hardware específico. Por exemplo, como será o layout do arquivo que será fornecido para/pelo equipamento.</p>
+            <p>Descreve as características de cada interface entre os componentes de software e os componentes de
+                hardware.</p>
+            <p>Deve-se detalhar como será realizada a troca de informações entre o software e o hardware específico. Por
+                exemplo, como será o layout do arquivo que será fornecido para/pelo equipamento.</p>
         </section>
-        
+
         <section>
             <h2>6. Atributos de Qualidade</h2>
             <ul>
-                <li>Existem vários tipos de atributos de qualidade, normalmente relacionados a requisitos não funcionais.</li>
+                <li>Existem vários tipos de atributos de qualidade, normalmente relacionados a requisitos não
+                    funcionais.</li>
                 <li>Citaremos aqui a usabilidade, desempenho e segurança.</li>
                 <li>O mais importante é descrever esses requisitos e não categorizá-los.</li>
             </ul>
@@ -285,35 +309,42 @@
                 <li>Segurança</li>
             </ol>
         </section>
-        
+
         <section>
             <h2>Atributos de Qualidade 6.1 Usabilidade</h2>
-            <p>Lidam com facilidade de aprendizagem, facilidade de utilização, anulação de erros, eficiência das interações, acessibilidade</p>
+            <p>Lidam com facilidade de aprendizagem, facilidade de utilização, anulação de erros, eficiência das
+                interações, acessibilidade</p>
             <ul>
                 Requisitos de usabilidade
-                <li>USA-1: O sistema deve permitir que o cliente recupere pedidos anteriores com uma simples interação</li>
-                <li>USA-2: 95% dos novos usuários devem ser capazes de pedir um almoço sem erros na primeira tentativa</li>
-                <li>USA-3: O sistema deve ser acessível para pessoas com capacidade motora limitada (que só fazem uso do teclado). </li>
+                <li>USA-1: O sistema deve permitir que o cliente recupere pedidos anteriores com uma simples interação
+                </li>
+                <li>USA-2: 95% dos novos usuários devem ser capazes de pedir um almoço sem erros na primeira tentativa
+                </li>
+                <li>USA-3: O sistema deve ser acessível para pessoas com capacidade motora limitada (que só fazem uso do
+                    teclado). </li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Atributos de Qualidade 6.2 Desempenho</h2>
             <p>Requisitos de desempenho para operações do sistema</p>
             <ul>
                 Requisitos de desempenho
-                <li>DES-1: O sistema deve acomodar 400 usuários e no máximo 100 usuários concorrentes durante o pico de 9:00 as 10:00am, com sessão estimada em 8 minutos</li>
+                <li>DES-1: O sistema deve acomodar 400 usuários e no máximo 100 usuários concorrentes durante o pico de
+                    9:00 as 10:00am, com sessão estimada em 8 minutos</li>
                 <li>DES-2: 90% das páginas do sistema devem ser completamente abertas em 2 segundos</li>
-                <li>DES-3: O sistema deve apresentar mensagens de confirmação para os clientes numa média de 3 segundos e em no máximo 6 segundos.</li>
+                <li>DES-3: O sistema deve apresentar mensagens de confirmação para os clientes numa média de 3 segundos
+                    e em no máximo 6 segundos.</li>
             </ul>
         </section>
-        
+
         <section>
             <h2>Atributos de Qualidade 6.3 Segurança</h2>
             <p>Relacionados a segurança ou privacidade que restringem acesso ou uso do produto</p>
             <ul>
                 Requisitos de segurança
-                <li>SEG-1: Todas as transações envolvendo informações financeiras ou pessoais devem ser criptografadas</li>
+                <li>SEG-1: Todas as transações envolvendo informações financeiras ou pessoais devem ser criptografadas
+                </li>
                 <li>SEG-2: Clientes devem fazer login no sistema para todas as operações, exceto ver menu</li>
                 <li>SEG-3: O sistema deve permitir aos clientes verem apenas seus pedidos realizados</li>
                 <li>SEG-4: Apenas gerentes de menu devem ter permissão de alterar os menus</li>
@@ -331,4 +362,5 @@
         <p>Diego Serafim de Sousa - 12 de março de 2024</p>
     </footer>
 </body>
+
 </html>

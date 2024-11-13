@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 3 – SGBDs Relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 – SGBDs Relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 3 – SGBDs Relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Rj5d4pZIlGc&ab_channel=AGEADUFMS" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 1 - 
-                [UFMS Digital] Banco de Dados - Módulo 3. 
+            <a href="https://www.youtube.com/watch?v=Rj5d4pZIlGc&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Banco de Dados - Módulo 3.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Vanessa Borges.</p>
@@ -55,8 +58,12 @@
             <h2>Índices.</h2>
             <b>Indexação.</b>
             <ul>
-                <li>A ideia por trás de um índice ordenado é semelhante à que está por trás do índice usado em um livro, que lista termos importantes ao final, em ordem alfabética, junto com uma lista dos números de página onde o termo aparece no livro.</li>
-                <li>Podemos pesquisar o índice do livro em busca de certo termo em seu interior e encontrar uma lista de endereços — números de página, nesse caso — e usar esses endereços para localizar as páginas especificadas primeiro e depois procurar o termo em cada página citada.</li>
+                <li>A ideia por trás de um índice ordenado é semelhante à que está por trás do índice usado em um livro,
+                    que lista termos importantes ao final, em ordem alfabética, junto com uma lista dos números de
+                    página onde o termo aparece no livro.</li>
+                <li>Podemos pesquisar o índice do livro em busca de certo termo em seu interior e encontrar uma lista de
+                    endereços — números de página, nesse caso — e usar esses endereços para localizar as páginas
+                    especificadas primeiro e depois procurar o termo em cada página citada.</li>
                 <li>Um índice recupera os registros de forma rápida por meio de uma chave de pesquisa:</li>
                 <ul>
                     <li>Qualquer subconjunto dos campos de uma relação pode ser uma chave de pesquisa.</li>
@@ -67,7 +74,7 @@
             <p></p>
             <img src="img/indices.png" alt="indices.png">
         </section>
-        
+
         <section>
             <h2>Declaração de índices em SQL.</h2>
             <ul>
@@ -75,7 +82,8 @@
                 <ul>
                     <li>Implicitamente: isso ocorre quando se declara uma chave primária ou candidata;</li>
                     <ul>
-                        <li>A restrição de integridade PRIMARY KEY num comando CREATE TABLE ou ALTER TABLE corresponde à definição de uma chave primária em SQL.</li>
+                        <li>A restrição de integridade PRIMARY KEY num comando CREATE TABLE ou ALTER TABLE corresponde à
+                            definição de uma chave primária em SQL.</li>
                         <li>A restrição de UNIQUE corresponde à definição de uma chave candidata em SQL.</li>
                     </ul>
                     <li>Explicitamente: quando se usa o comando CREATE INDEX</li>
@@ -87,10 +95,14 @@
             <h2>Transações.</h2>
             <b>Processamento de transações e controle de concorrência.</b>
             <ul>
-                <li>Um dos papéis de um SGBD é processar transações: um conjunto de várias operações que são executadas sobre os dados do banco de dados, e que devem ser vistas pelo usuário do sistema como uma única unidade de processamento.</li>
+                <li>Um dos papéis de um SGBD é processar transações: um conjunto de várias operações que são executadas
+                    sobre os dados do banco de dados, e que devem ser vistas pelo usuário do sistema como uma única
+                    unidade de processamento.</li>
                 <li>Exemplo:</li>
                 <ul>
-                    <li>A transferência de valores entre contas correntes é uma operação única do ponto de vista de um cliente de um sistema bancário, porém, dentro do sistema de banco de dados, essa transferência envolve várias operações.</li>
+                    <li>A transferência de valores entre contas correntes é uma operação única do ponto de vista de um
+                        cliente de um sistema bancário, porém, dentro do sistema de banco de dados, essa transferência
+                        envolve várias operações.</li>
                 </ul>
             </ul>
         </section>
@@ -99,7 +111,8 @@
             <h2>Propriedades de uma transação.</h2>
             <ul>
                 <li>As transações devem possuir propriedades denominadas ACID.</li>
-                <li>Essas propriedades devem ser impostas pelos métodos de controle de concorrência e recuperação do SGBD.</li>
+                <li>Essas propriedades devem ser impostas pelos métodos de controle de concorrência e recuperação do
+                    SGBD.</li>
                 <li><b>A</b>tomicidade.</li>
                 <li><b>C</b>onsistência.</li>
                 <li><b>I</b>solamento.</li>
@@ -120,25 +133,30 @@
                 write_item(A);
                 .................... Falha!
             </pre>
-            <p>Assegurar a <b>ATOMICIDADE</b> de uma transação é <b>responsabilidade do SGBD</b>, mais especificamente dos componentes de Gerenciamento de Transações e de Recuperação de Falhas.</p>
+            <p>Assegurar a <b>ATOMICIDADE</b> de uma transação é <b>responsabilidade do SGBD</b>, mais especificamente
+                dos componentes de Gerenciamento de Transações e de Recuperação de Falhas.</p>
 
             <b>Consistência:</b>
             <ul>
-                <li>Garante que se o banco de dados for inicialmente consistente, a execução da transação (por si só) deixa o banco de dados em um estado consistente</li>
+                <li>Garante que se o banco de dados for inicialmente consistente, a execução da transação (por si só)
+                    deixa o banco de dados em um estado consistente</li>
             </ul>
             <img src="img/conscistencia.png" alt="conscistencia.png">
 
             <p></p>
             <b>Isolamento:</b>
             <ul>
-                <li>Garante que transações executadas concorrentemente sejam isoladas umas das outras, de modo que cada uma tenha a impressão de que nenhuma outra transação está sendo executada concorrentemente a ela.</li>
+                <li>Garante que transações executadas concorrentemente sejam isoladas umas das outras, de modo que cada
+                    uma tenha a impressão de que nenhuma outra transação está sendo executada concorrentemente a ela.
+                </li>
             </ul>
             <img src="img/isolamento.png" alt="isolamento.png">
 
             <p></p>
             <b>Durabilidade:</b>
             <ul>
-                <li>Garante que quando uma transação tiver sido confirmada (commit), as atualizações dessa transação não são perdidas, mesmo que haja uma falha no sistema.</li>
+                <li>Garante que quando uma transação tiver sido confirmada (commit), as atualizações dessa transação não
+                    são perdidas, mesmo que haja uma falha no sistema.</li>
             </ul>
             <p>É responsabilidade do subsistema de <b>recuperação a falhas</b> do SGBD.</p>
         </section>
@@ -146,11 +164,13 @@
         <section>
             <h2>Por que o controle de concorrência é necessário?</h2>
             <ul>
-                <li>Vários problemas podem acontecer quando transações simultâneas são executadas de uma maneira descontrolada.</li>
+                <li>Vários problemas podem acontecer quando transações simultâneas são executadas de uma maneira
+                    descontrolada.</li>
                 <ul>
                     <li><b>O problema da atualização perdida</b>.</li>
                     <ul>
-                        <li>Ocorre quando duas transações que acessam os mesmos itens do banco de dados têm suas operações intercaladas podendo resultar em itens do banco de dados com valor incorreto.</li>
+                        <li>Ocorre quando duas transações que acessam os mesmos itens do banco de dados têm suas
+                            operações intercaladas podendo resultar em itens do banco de dados com valor incorreto.</li>
                     </ul>
                 </ul>
             </ul>
@@ -161,9 +181,13 @@
             <h2>Controle de concorrência.</h2>
             <ul>
                 <li>Na prática, é impraticável testar a serialização de um plano de execução (schedule).</li>
-                <li>A técnica usada na maioria dos SGBDs comerciais é projetar protocolos (conjuntos de regras) que — se seguidos por toda transação individual ou se impostos por um subsistema de controle de concorrência do SGBD — garantirão a serialização de todos os schedules em que as transações participam.</li>
+                <li>A técnica usada na maioria dos SGBDs comerciais é projetar protocolos (conjuntos de regras) que — se
+                    seguidos por toda transação individual ou se impostos por um subsistema de controle de concorrência
+                    do SGBD — garantirão a serialização de todos os schedules em que as transações participam.</li>
                 <ul>
-                    <li>A técnica mais comum, chamada bloqueio em duas fases, é baseada no bloqueio de itens de dados para impedir que transações concorrentes interfiram umas com as outras, e na imposição de uma condição adicional que garanta a serialização.</li>
+                    <li>A técnica mais comum, chamada bloqueio em duas fases, é baseada no bloqueio de itens de dados
+                        para impedir que transações concorrentes interfiram umas com as outras, e na imposição de uma
+                        condição adicional que garanta a serialização.</li>
                 </ul>
             </ul>
         </section>
@@ -172,4 +196,5 @@
         <p>Diego Serafim de Sousa - 13 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

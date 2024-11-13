@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Projeto de Banco de Dados Relacional.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 1 - Projeto de Banco de Dados Relacional.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=Bt4UzD6yjF4&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=20&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
-                Bancos de Dados - Aula 19 - Formas Normais – Parte I. 
+            <a href="https://www.youtube.com/watch?v=Bt4UzD6yjF4&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=20&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
+                Bancos de Dados - Aula 19 - Formas Normais – Parte I.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Peres.</p>
@@ -42,7 +45,8 @@
         <section>
             <h2>Formas Normais.</h2>
             <ul>
-                <li>A qualidade de um projeto de banco de dados pode ser medida a partir da verificação da forma normal que ele alcança.</li>
+                <li>A qualidade de um projeto de banco de dados pode ser medida a partir da verificação da forma normal
+                    que ele alcança.</li>
                 <ul>
                     <li>Primeira forma normal.</li>
                     <li>Segunda forma normal.</li>
@@ -52,16 +56,24 @@
             </ul>
             <b>Normalização:</b>
             <ul>
-                <li>O processo de normalização é dirigido pela informação referente às dependências funcionais e às chaves dos esquemas de relações.</li>
-                <li>É um processo de análise e adequação dos esquemas de relações com o objetivo de minimizar redundâncias e anomalias de inserção, exclusão e alteração.</li>
+                <li>O processo de normalização é dirigido pela informação referente às dependências funcionais e às
+                    chaves dos esquemas de relações.</li>
+                <li>É um processo de análise e adequação dos esquemas de relações com o objetivo de minimizar
+                    redundâncias e anomalias de inserção, exclusão e alteração.</li>
             </ul>
-            <p>No processo de normalização, esquemas de relação que não satisfazem certas condições, são decompostos em esquemas de relação menores que satisfazem as tais condições e ainda possuem algumas propriedades desejáveis.</p>
+            <p>No processo de normalização, esquemas de relação que não satisfazem certas condições, são decompostos em
+                esquemas de relação menores que satisfazem as tais condições e ainda possuem algumas propriedades
+                desejáveis.</p>
             <ul>
-                <li>A forma normal de uma relação é a mais alta forma normal cujas condições são atendidas pela relação.</li>
-                <li>A forma normal de um projeto de banco de dados é aquela referente à sua relação em mais baixa forma normal.</li>
-                <li>Considerar apenas as formas normais não garante que o projeto de banco de dados está bom. É ainda preciso considerar algumas propriedades adicionais.</li>
+                <li>A forma normal de uma relação é a mais alta forma normal cujas condições são atendidas pela relação.
+                </li>
+                <li>A forma normal de um projeto de banco de dados é aquela referente à sua relação em mais baixa forma
+                    normal.</li>
+                <li>Considerar apenas as formas normais não garante que o projeto de banco de dados está bom. É ainda
+                    preciso considerar algumas propriedades adicionais.</li>
             </ul>
-            <p>O processo de normalização estudado será realizado por meio de decomposições das relações (em relações menores).</p>
+            <p>O processo de normalização estudado será realizado por meio de decomposições das relações (em relações
+                menores).</p>
             <p>Essa decomposição deve:</p>
             <pre>
                                                     Propriedade necessária.
@@ -90,7 +102,8 @@
             <ul>
                 <li>Primeira Forma Normal (1NF):</li>
                 <ul>
-                    <li>Não permite relações dentro de relações ou relações como valores de atributos dentro das tuplas.</li>
+                    <li>Não permite relações dentro de relações ou relações como valores de atributos dentro das tuplas.
+                    </li>
                     <li>O único valor permitido pela 1NF é o <b>valor atômico</b>.</li>
                 </ul>
             </ul>
@@ -108,23 +121,29 @@
         <section>
             <h2>Segunda Forma Normal (2NF):</h2>
             <p>É baseada no conceito de atributo primo e dependência funcional total.</p>
-            <p>Um atributo de um esquema de relação Ré chamado ATRIBUTO PRIMO de R se ele é membro de alguma chave candidata de R. Caso contrário ele é chamado ATRIBUTO NÃO PRIMO.</p>
+            <p>Um atributo de um esquema de relação Ré chamado ATRIBUTO PRIMO de R se ele é membro de alguma chave
+                candidata de R. Caso contrário ele é chamado ATRIBUTO NÃO PRIMO.</p>
             <p>Ex.:</p>
             <img src="img/forma-normal7.png" alt="forma-normal7.png">
             <ul>
-                <li>Segunda Forma Normal (2NF): é baseada no conceito de <b>atributo primo</b> e <b>dependência funcional total</b>.</li>
-                <li>A dependência funcional X 🢂 Y é uma <b>dependência funcional total</b> se ao remover qualquer atributo A de X a dependência funcional deixa de valer.</li>
+                <li>Segunda Forma Normal (2NF): é baseada no conceito de <b>atributo primo</b> e <b>dependência
+                        funcional total</b>.</li>
+                <li>A dependência funcional X 🢂 Y é uma <b>dependência funcional total</b> se ao remover qualquer
+                    atributo A de X a dependência funcional deixa de valer.</li>
                 <li>Ou seja, para qualquer A EX, (X - A) não determina funcionalmente Y.</li>
-                <li>Uma dependência funcional X 🢂 Y é uma <b>dependência funcional parcial</b> se para algum atributo A ∈ X, (X - A) 🢂 Y</li>
+                <li>Uma dependência funcional X 🢂 Y é uma <b>dependência funcional parcial</b> se para algum atributo A
+                    ∈ X, (X - A) 🢂 Y</li>
             </ul>
             <p>Ex.:</p>
             <img src="img/forma-normal8.png" alt="forma-normal8.png">
             <img src="img/forma-normal9.png" alt="forma-normal9.png">
             <p></p>
             <b>Segunda Forma Normal (2NF):</b>
-            <p>Um esquema de relação R está na 2NF se todo atributo não primo A em R tem dependência funcional total da chave primária (ou de qualquer chave) de R.</p>
+            <p>Um esquema de relação R está na 2NF se todo atributo não primo A em R tem dependência funcional total da
+                chave primária (ou de qualquer chave) de R.</p>
             <p>ou, escrevendo de uma outra forma ...</p>
-            <p>Um esquema de relação R está na 2NF se todo atributo não primo A em R não depender parcialmente de qualquer chave de R.</p>
+            <p>Um esquema de relação R está na 2NF se todo atributo não primo A em R não depender parcialmente de
+                qualquer chave de R.</p>
             <p>Ex.:</p>
             <img src="img/forma-normal10.png" alt="forma-normal10.png">
             <p></p>
@@ -143,4 +162,5 @@
         <p>Diego Serafim de Sousa - 11 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 – Definição e manipulação de dados relacionais.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 2 – Definição e manipulação de dados relacionais.</h1>
@@ -27,9 +29,10 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=qxoBxi7LpXk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=17&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 3 - 
-                Bancos de Dados - Aula 16 - Linguagem de consulta – SQL Parte IV. 
+            <a href="https://www.youtube.com/watch?v=qxoBxi7LpXk&list=PLxI8Can9yAHeHQr2McJ01e-ANyh3K0Lfq&index=17&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 3 -
+                Bancos de Dados - Aula 16 - Linguagem de consulta – SQL Parte IV.
                 <i class="material-icons right"> send</i>
             </a>
             <p>Professor ministrante: Sarajane Marques Peres.</p>
@@ -51,14 +54,18 @@
                 PROJETO(<b>numero</b>, nome, localizacao, dnumero)
                 TRABALHA_EM(<b>pnumero</b>, <b>fident</b>, horas)
             </pre>
-            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas. A chave primária, em cada relação, está sublinhada.</p>
+            <p>Algumas simplificações nos nomes de variáveis foram realizadas para facilitar o uso delas nas consultas.
+                A chave primária, em cada relação, está sublinhada.</p>
 
             <b>SQL-Structured Query Language:</b>
             <ul>
-                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização de dados.</li>
-                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da integridade e segurança da informação armazenada.</li>
+                <li>Linguagem de banco de dados com recursos para definição de dados, consulta aos dados e atualização
+                    de dados.</li>
+                <li>Permite especificar restrições que devem ser impostas aos dados possibilitando a implementação da
+                    integridade e segurança da informação armazenada.</li>
             </ul>
-            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
+            <p>SQL é uma linguagem padrão para SGBDs comerciais. Há um padrão, estabelecido pelo American National
+                Standards Institute (ANSI) e pela International Standards Organization (ISO).</p>
             <ul>
                 <li>Sugestões de consulta para implementações comerciais:</li>
                 <ul>
@@ -79,9 +86,11 @@
             </ul>
             <p>Cada SGBD disponibiliza formas diferentes de implementar restrições usando SQL.</p>
             <ul>
-                <li>Para implementação de restrições que não são possíveis considerando apenas o modelo de dados, há algumas opções:</li>
+                <li>Para implementação de restrições que não são possíveis considerando apenas o modelo de dados, há
+                    algumas opções:</li>
                 <ul>
-                    <li>usar recursos da linguagem de programação escolhida para implementar a aplicação que acessará o banco de dados, ou de outros aplicativos de construção de sistemas;</li>
+                    <li>usar recursos da linguagem de programação escolhida para implementar a aplicação que acessará o
+                        banco de dados, ou de outros aplicativos de construção de sistemas;</li>
                     <li>usar a linguagem de programação de propósito geral que está disponível no SGBD;</li>
                     <li>usar recursos avançados de SQL;</li>
                     <li>combinar os recursos das opções supracitadas.</li>
@@ -97,9 +106,11 @@
                 CREATE ASSERTION NOME_RESTRICAO
                 CHECK (NOT EXISTS (...));
             </pre>
-            <p>Se o NOT EXISTS é <b>FALSO</b>, então a restrição da asserção foi violada !!! O banco de dados estaria em um estado inconsistente em relação às restrições do mundo modelado.</p>
+            <p>Se o NOT EXISTS é <b>FALSO</b>, então a restrição da asserção foi violada !!! O banco de dados estaria em
+                um estado inconsistente em relação às restrições do mundo modelado.</p>
             <b>* Exemplo:</b>
-            <p><b>Restrição</b>: o salário de um funcionário não pode ser maior do que o salário do gerente do departamento para o qual o funcionário trabalha.</p>
+            <p><b>Restrição</b>: o salário de um funcionário não pode ser maior do que o salário do gerente do
+                departamento para o qual o funcionário trabalha.</p>
             <pre>
                 CREATE ASSERTION RESTRICAO_SALARIO
                 CHECK (NOT EXISTS (SELECT *
@@ -115,7 +126,8 @@
 
             <b>Regras ativas (gatilhos):</b>
             <ul>
-                <li>Especificações em SQL que permitem implementar ações que são executadas quando determinados eventos ocorrem e quando determinadas condições são satisfeitas.</li>
+                <li>Especificações em SQL que permitem implementar ações que são executadas quando determinados eventos
+                    ocorrem e quando determinadas condições são satisfeitas.</li>
             </ul>
         </section>
 
@@ -124,19 +136,25 @@
             <b>Evento:</b>
             <ul>
                 <li>Geralmente operações de alteração aplicadas ao banco de dados (insert, update, delete).</li>
-                <p><b>BEFORE</b> - significa que o gatilho deverá ser executado antes do evento ter efeito no banco de dados.</p>
-                <p><b>AFTER</b> - significa que o gatilho deverá ser executado depois do evento ter efeito no banco de dados.</p>
+                <p><b>BEFORE</b> - significa que o gatilho deverá ser executado antes do evento ter efeito no banco de
+                    dados.</p>
+                <p><b>AFTER</b> - significa que o gatilho deverá ser executado depois do evento ter efeito no banco de
+                    dados.</p>
             </ul>
             <p><b>Condição</b>:</p>
             <ul>
-                <li>Determina se a regra especificada na <b>ação</b> deveria ser executada a partir da verificação de uma condição. Se nenhuma condição é especificada, a <b>ação</b> será executada de acordo com a ocorrência do <b>evento</b>.</li>
+                <li>Determina se a regra especificada na <b>ação</b> deveria ser executada a partir da verificação de
+                    uma condição. Se nenhuma condição é especificada, a <b>ação</b> será executada de acordo com a
+                    ocorrência do <b>evento</b>.</li>
             </ul>
             <p><b>Ação</b>:</p>
             <ul>
-                <li>A ação é uma sequência de declarações em SQL, transações de banco de dados ou chamadas a funções implementadas no SGBD ou fora dele.</li>
+                <li>A ação é uma sequência de declarações em SQL, transações de banco de dados ou chamadas a funções
+                    implementadas no SGBD ou fora dele.</li>
             </ul>
             <b>* Exemplo:</b>
-            <p><b>Gatilho</b>: Sempre que o salário de um funcionário é maior do que o salário de seu supervisor direto, o supervisor precisa ser avisado.</p>
+            <p><b>Gatilho</b>: Sempre que o salário de um funcionário é maior do que o salário de seu supervisor direto,
+                o supervisor precisa ser avisado.</p>
             <pre>
                 CREATE TRIGGER VIOLACAO_SALARIO
                 BEFORE INSERT OR UPDATE OF salario, supident ON
@@ -152,7 +170,8 @@
             <b>Visões (ou views):</b>
             <ul>
                 <li>Uma tabela única (geralmente virtual e temporária) derivada de outras tabelas.</li>
-                <li>Tabela que pode ser consultada de forma livre, mas que está limitada no que diz respeito à ações de inserção de dados.</li>
+                <li>Tabela que pode ser consultada de forma livre, mas que está limitada no que diz respeito à ações de
+                    inserção de dados.</li>
                 <li>Usadas para <b>otimização</b> e para <b>segurança</b>.</li>
             </ul>
             <b>Exemplos:</b>
@@ -189,4 +208,5 @@
         <p>Diego Serafim de Sousa - 15 de maio de 2024</p>
     </footer>
 </body>
+
 </html>

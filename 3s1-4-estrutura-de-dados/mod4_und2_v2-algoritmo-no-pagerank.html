@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 4 – Page-Rank (Grafos).</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Page-Rank (Grafos).</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Módulo 4 – Page-Rank (Grafos).</h1>
@@ -27,8 +29,9 @@
         </section>
         <section id="materiais">
             <h2>Materiais</h2>
-            <a href="https://www.youtube.com/watch?v=B8I-gvKBwes&ab_channel=UNIVESP" class="btn waves-effect waves-light" target="_blank" type="button" name="action">
-                Vídeo 2 - 
+            <a href="https://www.youtube.com/watch?v=B8I-gvKBwes&ab_channel=UNIVESP"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 2 -
                 Estruturas de Dados - Grafos (PageRank).
                 <i class="material-icons right"> send</i>
             </a>
@@ -51,72 +54,93 @@
             <h2>Introdução.</h2>
             <ul>
                 <li>Iniciaremos o estudo de uma aplicação prática de grafos, o <b>PageRank</b>.</li>
-                <li>O <b>PageRank</b> é uma métrica criada pelos fundadores do Google e nomeada em referência a <b>Larry Page</b>. A métrica é usada para avaliar a relevância de páginas Web.</li>
+                <li>O <b>PageRank</b> é uma métrica criada pelos fundadores do Google e nomeada em referência a <b>Larry
+                        Page</b>. A métrica é usada para avaliar a relevância de páginas Web.</li>
                 <li>A métrica estima uma "popularidade" com a quantidade e qualidade dos links para uma página.</li>
             </ul>
             <p></p>
             <ol>
-                <li>Cada <b>link</b> que uma página <b>p</b> recebe de outras páginas é um <b>voto de suporte</b>, sendo esse voto utilizado para computar o PageRank.</li>
+                <li>Cada <b>link</b> que uma página <b>p</b> recebe de outras páginas é um <b>voto de suporte</b>, sendo
+                    esse voto utilizado para computar o PageRank.</li>
                 <ul>
-                    <li>Receber links aumenta a autoridade de <b>p</b>. Em outras palavras, existem muitas outras páginas recomendando <b>p</b> para seus usuários.</li>
+                    <li>Receber links aumenta a autoridade de <b>p</b>. Em outras palavras, existem muitas outras
+                        páginas recomendando <b>p</b> para seus usuários.</li>
                 </ul>
-                <li>Receber <b>links</b> de páginas com <b>PageRank alto</b> é <b>melhor</b> do que links de páginas com PageRank baixo.</li>
+                <li>Receber <b>links</b> de páginas com <b>PageRank alto</b> é <b>melhor</b> do que links de páginas com
+                    PageRank baixo.</li>
                 <ul>
-                    <li>O <b>voto de suporte</b> de links vindos de páginas com PageRank alto é mais valioso, dado que elas possuem mais autoridade. É o que entendemos por links de qualidade.</li>
+                    <li>O <b>voto de suporte</b> de links vindos de páginas com PageRank alto é mais valioso, dado que
+                        elas possuem mais autoridade. É o que entendemos por links de qualidade.</li>
                 </ul>
-                <li>Páginas que possuem <b>muitos links</b> para outras páginas fornecem um <b>peso menor</b> do que páginas com poucos links.</li>
+                <li>Páginas que possuem <b>muitos links</b> para outras páginas fornecem um <b>peso menor</b> do que
+                    páginas com poucos links.</li>
                 <ul>
-                    <li>Uma página que recomenda demais deve ser levada menos em conta do que páginas que recomendam menos.</li>
+                    <li>Uma página que recomenda demais deve ser levada menos em conta do que páginas que recomendam
+                        menos.</li>
                     <li>O peso do seu voto de suporte é distribuído entre as páginas que ela recomenda.</li>
                 </ul>
             </ol>
-            <p>Para entender essas regras, vamos supor que queremos saber quais alunos entendem de Estruturas de Dados.</p>
+            <p>Para entender essas regras, vamos supor que queremos saber quais alunos entendem de Estruturas de Dados.
+            </p>
             <img src="img/pagerank12.png" alt="pagerank12.png">
-            <p>Entretanto, os colegas de classe não são autoridades em Estruturas de Dados, dado que estão aprendendo sobre o assunto.</p>
+            <p>Entretanto, os colegas de classe não são autoridades em Estruturas de Dados, dado que estão aprendendo
+                sobre o assunto.</p>
             <img src="img/pagerank13.png" alt="pagerank13.png">
-            <p>Supondo que temos dois professores, um deles deu voto de suporte para um aluno e o outro distribuiu seu voto para vários alunos.</p>
+            <p>Supondo que temos dois professores, um deles deu voto de suporte para um aluno e o outro distribuiu seu
+                voto para vários alunos.</p>
             <img src="img/pagerank14.png" alt="pagerank14.png">
         </section>
 
         <section>
             <h2>Modelo Simplificado.</h2>
-            <p>Vamos assumir que temos um conjunto de <b>N</b> páginas web que se ligam por meio de <b>links</b>. Computaremos um modelo simplificado do PageRank de cada página de maneira iterativa.</p>
+            <p>Vamos assumir que temos um conjunto de <b>N</b> páginas web que se ligam por meio de <b>links</b>.
+                Computaremos um modelo simplificado do PageRank de cada página de maneira iterativa.</p>
             <img src="img/pagerank15.png" alt="pagerank15.png">
             <p>Calculando em um cenário simples.</p>
             <img src="img/pagerank16.png" alt="pagerank16.png">
             <ul>
                 <li>Considerações sobre o Modelo</li>
                 <ul>
-                    <li>Links de uma página para si mesma serão ignorados. Isso faz com que o grafo que representará as páginas web não tenha self- loops.</li>
+                    <li>Links de uma página para si mesma serão ignorados. Isso faz com que o grafo que representará as
+                        páginas web não tenha self- loops.</li>
                     <li>Múltiplos links de uma página para outra serão tratados como apenas um link.</li>
-                    <li>Os PageRanks transferidos de uma página para outra, em cada iteração, são igualmente distribuídos entre todos os links de saída.</li>
-                    <li>Assumiremos que não existem páginas sem links, pois isso impediria que o PageRank da página fosse distribuído.</li>
+                    <li>Os PageRanks transferidos de uma página para outra, em cada iteração, são igualmente
+                        distribuídos entre todos os links de saída.</li>
+                    <li>Assumiremos que não existem páginas sem links, pois isso impediria que o PageRank da página
+                        fosse distribuído.</li>
                 </ul>
                 <li>Interpretação dos valores</li>
                 <ul>
-                    <li>Os PageRanks são uma distribuição de probabilidade. Note que em todas as iterações a soma dos valores resulta em 1 (um).</li>
-                    <li>Uma interpretação dos valores seria que queremos entender onde chegaria alguém que navega na internet, clicando em links ao acaso.</li>
+                    <li>Os PageRanks são uma distribuição de probabilidade. Note que em todas as iterações a soma dos
+                        valores resulta em 1 (um).</li>
+                    <li>Uma interpretação dos valores seria que queremos entender onde chegaria alguém que navega na
+                        internet, clicando em links ao acaso.</li>
                 </ul>
             </ul>
             <p>Problemas com o modelo simplificado.</p>
             <ul>
                 <li>Páginas sem links de saída tendem a drenar os PageRanks da rede.</li>
                 <img src="img/pagerank17.png" alt="pagerank17.png">
-                <li>Páginas que formam um ciclo, sem conexão com as outras páginas, tendem a bloquear PageRanks dentro do ciclo e ficar em looping infinito..</li>
+                <li>Páginas que formam um ciclo, sem conexão com as outras páginas, tendem a bloquear PageRanks dentro
+                    do ciclo e ficar em looping infinito..</li>
                 <img src="img/pagerank18.png" alt="pagerank18.png">
             </ul>
         </section>
 
         <section>
             <h2>PageRank.</h2>
-            <p>Uma nova variável chamada de <b>fator de amortecimento</b> (<b>damping factor</b>) foi inserida no modelo para superar os problemas:</p>
+            <p>Uma nova variável chamada de <b>fator de amortecimento</b> (<b>damping factor</b>) foi inserida no modelo
+                para superar os problemas:</p>
             <img src="img/pagerank19.png" alt="pagerank19.png">
             <ul>
                 <li>Fator de Amortecimento</li>
                 <ul>
-                    <li>O fator de amortecimento representa a ideia de que um usuário que navega ao acaso eventualmente parará de clicar em links para ir para outro lugar.</li>
-                    <li>O fator de amortecimento seria a probabilidade de continuar seguindo os links, recebendo um valor entre 0 (zero) e 1 (um).</li>
-                    <li>Em geral, o fator de amortecimento é configurado como <b>0.85</b>. Nesse caso, todas as páginas recebem <b>a mesma chance</b> de serem visitadas ao acaso.</li>
+                    <li>O fator de amortecimento representa a ideia de que um usuário que navega ao acaso eventualmente
+                        parará de clicar em links para ir para outro lugar.</li>
+                    <li>O fator de amortecimento seria a probabilidade de continuar seguindo os links, recebendo um
+                        valor entre 0 (zero) e 1 (um).</li>
+                    <li>Em geral, o fator de amortecimento é configurado como <b>0.85</b>. Nesse caso, todas as páginas
+                        recebem <b>a mesma chance</b> de serem visitadas ao acaso.</li>
                 </ul>
             </ul>
             <p>Calculando em um cenário simples.</p>
@@ -127,4 +151,5 @@
         <p>Diego Serafim de Sousa - 4 de jun de 2024</p>
     </footer>
 </body>
+
 </html>
