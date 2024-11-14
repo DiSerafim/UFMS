@@ -37,7 +37,7 @@ Este repositório contém os materiais de estudo, atividades e protótipos desen
 MATTOS, Antônio Carlos Marques. Sistemas de informação: uma visão executiva. 2. São Paulo: Saraiva Uni, 2005. ISBN 8502049801. Capítulo 1 - p. 9-11. Disponível na Biblioteca Digital da UFMS.
 
 📗 **Leitura complementar:**  
-STAIR, Ralph M et al. Princípios de sistemas de informação. 4. São Paulo: Cengage Learning Brasil, 2021. ISBN 9786555584165. Capítulo 1 -  p. 2-27. Disponível na Biblioteca Digital da UFMS.
+STAIR, Ralph M et al. Princípios de sistemas de informação. 4. São Paulo: Cengage Learning Brasil, 2021. ISBN 9786555584165. Capítulo 1 - p. 2-27. Disponível na Biblioteca Digital da UFMS.
 
 ▶️ **Videoaula Obrigatória - Unidade 1**  
 💻 https://www.youtube.com/watch?v=Glcz_LAPUW0&ab_channel=AGEADUFMS
@@ -98,7 +98,7 @@ Acessar no AVA
 ### 💡 Unidade 1 - Modelos de dados e de informação e Armazenagem e processamento em nuvem
 
 📕 **Leitura obrigatória:**  
-MATTOS, Antonio Carlos Marques. Sistemas de informação: uma visão executiva. 2. São Paulo: Saraiva Uni, 2005. ISBN 9788502183469. Capítulo 5 -  p. 24-29. Disponível na Biblioteca Digital da UFMS.
+MATTOS, Antonio Carlos Marques. Sistemas de informação: uma visão executiva. 2. São Paulo: Saraiva Uni, 2005. ISBN 9788502183469. Capítulo 5 - p. 24-29. Disponível na Biblioteca Digital da UFMS.
 
 📗 **Leitura complementar:**  
 STAIR, Ralph M et al. Princípios de sistemas de informação. 4. São Paulo: Cengage Learning Brasil, 2021. ISBN 9786555584165. Capítulo 5 - p. 170-205. Disponível na Biblioteca Digital da UFMS.
@@ -114,7 +114,7 @@ LACERDA, Matheus; FEITOSA, Robson. Segurança de Dados em Nuvem através de Apre
 MATTOS, Antonio Carlos Marques. Sistemas de informação: uma visão executiva. 2. São Paulo: Saraiva Uni, 2005. ISBN 9788502183469. Capítulo 7 - p. 34-43. Disponível na Biblioteca Digital da UFMS.
 
 📗 **Leitura complementar:**  
-OLIVEIRA, Lucas da Silva; VASCONCELOS, Aline Pires Vieira de; SANTOS, Rodrigo Pereira dos. Um método para geração de modelo arquitetural de sistemas de sistemas de informação a partir da análise de modelos de processos de negócio. In: Simpósio Brasileiro de Sistemas de Informação, 2022, Anais […]. Porto Alegre: Sociedade Brasileira de Computação, 2022. Disponível em: https://link.ufms.br/Zv64J. Acesso em: 09 nov. 2023. 
+OLIVEIRA, Lucas da Silva; VASCONCELOS, Aline Pires Vieira de; SANTOS, Rodrigo Pereira dos. Um método para geração de modelo arquitetural de sistemas de sistemas de informação a partir da análise de modelos de processos de negócio. In: Simpósio Brasileiro de Sistemas de Informação, 2022, Anais […]. Porto Alegre: Sociedade Brasileira de Computação, 2022. Disponível em: https://link.ufms.br/Zv64J. Acesso em: 09 nov. 2023.
 
 ▶️ **Videoaula Obrigatória - Unidade 2**  
 💻 https://www.youtube.com/watch?v=PV89jbTwutc&ab_channel=AGEADUFMS
