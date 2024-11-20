@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMAS DE INFORMAÇÃO-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Arquitetura e Componentes, Arquitetura Cliente-Servidor, Segurança em Sistemas de Informação</h1>
+        <h2>💡 Unidade 2 - Segurança em sistemas de informação
+        </h2>
+        <p>Prof° Especialista: Awdren de Lima Fontão.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SISTEMAS DE INFORMAÇÃO
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="830" src="https://www.youtube.com/embed/ew0ENYSSgRo"
+                title="[UFMS Digital] Sistemas de Informação - Módulo 2 - Unidade 2" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=ew0ENYSSgRo&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Sistemas de Informação - Módulo 2 - Unidade 2 - Segurança em sistemas de informação
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Awdren de Lima Fontão</p>
+        </section>
+
+        <section>
+            <h2>Antes de tudo…</h2>
+            <p>Vamos falar de alguns exemplos de sistemas complexos que são baseados em software…</p>
+            <b>Aviação</b>
+            <figure>
+                <img src="img/aviacao.png" alt="Segurança em Sistemas" title="Segurança em Sistemas">
+            </figure>
+            <b>Lojas de Apps</b>
+            <figure>
+                <img src="img/apps.png" alt="Lojas de Apps" title="Lojas de Apps">
+            </figure>
+            <b>Sistemas baseados em IA</b>
+            <figure>
+                <img src="img/ia.webp" alt="Sistemas baseados em IA" title="Sistemas baseados em IA">
+                <figcaption>
+                    https://5d77b6650f30653298b56a83.static-01.com/l/images/fdc2df84f6c70e7291f280e6b62119568a7ecf70.png
+                </figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Segurança?</h2>
+            <ul>
+                <li>Segundo o dicionário:</li>
+                <ul>
+                    <li>segurança</li>
+                    <li>substantivo feminino</li>
+                    <ol>
+                        <li>ação ou efeito de tornar(-se) seguro; estabilidade, firmeza.</li>
+                        <li>estado, qualidade ou condição de quem ou do que está livre de perigos, incertezas,
+                            assegurado
+                            de danos e riscos eventuais; situação em que nada há a temer.</li>
+                    </ol>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E em um SI?</h2>
+            <ul>
+                <li>Expor ao risco de vida;</li>
+                <li>Preconceito;</li>
+                <li>Apoio à decisões incorretas;</li>
+                <li>Injustiça;</li>
+                <li>Exposição de dados -> informações...</li>
+            </ul>
+            <figure>
+                <img src="img/si.png" alt="Segurança em SI" title="Segurança em SI">
+            </figure>
+            <b>Ameaça</b>
+            <ul>
+                <li>É uma causa potencial de um incidente indesejado, que pode resultar em dano para um sistema ou
+                    organização (ISO, 2009);</li>
+                <li>É um agente externo ao ativo de informação, que se aproveitando de vulnerabilidades, poderá quebrar
+                    a confidencialidade, integridade ou disponibilidade da informação suportada ou utilizada por esse
+                    ativo.</li>
+            </ul>
+            <b>Vulnerabilidade</b>
+            <ul>
+                <li>É a fragilidade de um ativo ou grupo de ativos que pode ser explorada por uma ou mais ameaças NBR
+                    ISO/IEC 27002 (2013);</li>
+                <li>Entrada do usuário, dados sensíveis.</li>
+            </ul>
+            <b>Impacto de incidentes</b>
+            <ul>
+                <li>Potenciais prejuízos causados ao negócio por um incidente;</li>
+                <li>Prejuízos podem significar perdas financeiras, desgaste da imagem na organização perante o mercado
+                    ou perda de recursos/colaboradores.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Os processos devem cobrir…</h2>
+            <figure>
+                <img src="img/processos-si.png" alt="processos-si" title="processos-si">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Limites de confiança</h2>
+            <ul>
+                <li>No que você deve confiar?</li>
+                <li>No que você não deve confiar?</li>
+            </ul>
+            <figure>
+                <img src="img/limites-si.png" alt="limites-si" title="limites-si">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Arquitetura segura do sistema</h2>
+            <p>Clarificação de restrições e atributos de qualidade relacionados a sistemas seguros, explicitando
+                prioridades e combatendo subjetividades, envolvendo especialistas;</p>
+            <p>Garantindo que, de fato, todas as restrições e atributos de qualidade identificados sejam levados em
+                conta na avaliação das propostas de design.</p>
+            <figure>
+                <img src="img/seguranca-si.png" alt="Segurança" title="Segurança">
+            </figure>
+            <p><b>Authentication</b> indicando que devem haver meios claros de assegurar que os usuários são quem
+                afirmam ser
+                antes de terem acesso a dados sensíveis ou confidenciais.</p>
+            <p><b>Nonrepudiation</b>, provendo “evidências confiáveis” de que ações sensíveis tenham sido completadas em
+                todos
+                os agentes envolvidos (incluindo, por exemplo, em um sistema cliente/servidor, ambos os lados).</p>
+            <figure>
+                <img src="img/seguranca-si-1.png" alt="Segurança" title="Segurança">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR ISO/IEC 27002: tecnologia da informação: técnicas de
+                segurança: código de prática para controles de segurança da informação. Rio de Janeiro: ABNT,
+                2013.</cite>
+            <p></p>
+            <cite>LAUDON, Kenneth C; LAUDON, Jane Price. Sistemas de informação gerenciais. 9. ed. São Paulo: Pearson,
+                2011.</cite>
+            <p></p>
+            <cite>STAIR, Ralph M et al. Princípios de sistemas de informação. 4. São Paulo: Cengage Learning Brasil,
+                2021. </cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 19 de nov de 2024</p>
+        </address>
+    </footer>
+</body>
+
+</html>
