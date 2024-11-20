@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMAS DE INFORMAÇÃO-T01-2024-2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Arquitetura e Componentes, Arquitetura Cliente-Servidor, Segurança em Sistemas de Informação</h1>
+        <h2>💡 Unidade 1 - O que é arquitetura de componentes de sistemas de informação e Arquitetura cliente-servidor
+        </h2>
+        <p>Prof° Especialista: Awdren de Lima Fontão.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SISTEMAS DE INFORMAÇÃO
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <iframe width="100%" height="830" src="https://www.youtube.com/embed/OjeeiSfckMk"
+                title="[UFMS Digital] Sistemas de Informação - Módulo 2 - Unidade 1" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <a href="https://www.youtube.com/watch?v=OjeeiSfckMk&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                [UFMS Digital] Sistemas de Informação - Módulo 2 - Unidade 1 - O que é arquitetura de componentes de
+                sistemas de informação e Arquitetura cliente-servidor
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Awdren de Lima Fontão</p>
+        </section>
+
+        <section>
+            <h2>Componente de sistema</h2>
+            <p>Um componente arquitetural, no contexto de arquitetura de software ou sistemas, refere-se a uma parte
+                identificável, modular e intercambiável de um sistema maior.</p>
+            <figure>
+                <img src="img/Arquitetura+Baseada+em+Componentes.jpg" alt="Arquitetura+Baseada+em+Componentes"
+                    title="Arquitetura Baseada em Componentes">
+
+            </figure>
+        </section>
+
+        <section>
+            <h2>Arquitetura de sistema</h2>
+            <p>"Arquitetura: os conceitos e regras que definem a estrutura, o comportamento semântico e os
+                relacionamentos entre as partes de um sistema; um plano de algo a ser construído. Inclui os elementos
+                que constituem o fato, os relacionamentos entre esses elementos, as restrições que afetam esses
+                relacionamentos, um foco nas partes do fato e um foco no fato como um todo." (Valente, 2020)</p>
+        </section>
+
+        <section>
+            <h2>Arquitetura de sistema de informação</h2>
+            <p>A arquitetura de sistemas de informação refere-se à estrutura organizacional e ao design dos
+                componentes que compõem um sistema de informação.</p>
+            <p>Ela define como os processos, dados, tecnologias e interfaces estão organizados para atender aos
+                objetivos organizacionais.</p>
+        </section>
+
+        <section>
+            <h2>Níveis de Abstração</h2>
+            <p>Além dos pontos de vista, uma arquitetura de sistema requer níveis de especificação.</p>
+            <p>À medida que é desenvolvida, a arquitetura evolui de uma especificação geral e abstrata para uma
+                especificação detalhada e mais específica.</p>
+            <ol>
+                <li>Nível do <b>modelo</b>: o sistema e seus agentes;</li>
+                <li>Nível da <b>análise</b>: particionamento inicial do sistema para estabelecer uma abordagem
+                    conceitual;</li>
+                <li>Nível do <b>design</b>: produção do modelo de análise para hardware, software e pessoas;</li>
+                <li>Nível de <b>implementação</b>: produção do modelo de design para configurações específicas.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Princípios de design arquitetural</h2>
+            <ul>
+                <li><b>Modularidade:</b></li>
+                <ul>
+                    <li>Divida o sistema em módulos independentes, promovendo facilidade de manutenção e reusabilidade.
+                    </li>
+                </ul>
+                <li><b>Encapsulamento:</b></li>
+                <ul>
+                    <li>Proteja a implementação interna dos módulos, expondo apenas interfaces necessárias. Isso
+                        facilita a evolução sem afetar outros componentes.</li>
+                </ul>
+                <li><b>Coesão e acoplamento:</b></li>
+                <ul>
+                    <li>Busque alta coesão dentro dos módulos (funcionalidades relacionadas) e baixo acoplamento entre
+                        módulos (dependências mínimas).</li>
+                </ul>
+                <li><b>Abstração:</b></li>
+                <ul>
+                    <li>Represente conceitos complexos de maneira simplificada, focando naquilo que é essencial para o
+                        entendimento e utilização.</li>
+                </ul>
+                <li><b>Reusabilidade:</b></li>
+                <ul>
+                    <li>Desenvolva componentes que possam ser reaproveitados em diferentes partes do sistema ou em
+                        projetos futuros.</li>
+                </ul>
+                <li><b>Separation of Concerns (Separação de preocupações):</b></li>
+                <ul>
+                    <li>Divida o sistema em partes que se concentram em preocupações específicas, facilitando a
+                        compreensão e manutenção.</li>
+                </ul>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>Modelo cliente-servidor</h2>
+            <p>O modelo cliente-servidor é uma arquitetura de software que divide as funcionalidades do sistema entre
+                duas partes distintas:</p>
+            <ul>
+                <li>o <b>cliente</b>, que solicita serviços;</li>
+                <li>o <b>servidor</b>, que fornece esses serviços.</li>
+            </ul>
+            <b>Princípio básico:</b>
+            <ul>
+                <li>Estabelece uma clara separação entre as responsabilidades do cliente e do servidor, promovendo a
+                    distribuição de tarefas.</li>
+            </ul>
+            <b>Comunicação entre cliente e servidor:</b>
+            <ul>
+                <li>A interação ocorre por meio de requisições do cliente e respostas do servidor, geralmente via rede.
+                </li>
+            </ul>
+            <figure>
+                <img src="img/principios-de-design-arquitetural.png" alt="Princípios de design arquitetural"
+                    title="Princípios de design arquitetural">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Vantagens do cliente-servidor</h2>
+            <ul>
+                <li><b>Escalabilidade:</b></li>
+                <ul>
+                    <li>Permite a escalabilidade horizontal e vertical, distribuindo a carga entre múltiplos servidores
+                        ou aumentando os recursos de um servidor central.</li>
+                </ul>
+                <li><b>Flexibilidade:</b></li>
+                <ul>
+                    <li>Facilita a atualização independente do cliente e do servidor, pois as mudanças em uma parte não
+                        necessariamente afetam a outra.</li>
+                </ul>
+                <li><b>Centralização de dados e lógica:</b></li>
+                <ul>
+                    <li>O servidor centraliza a lógica de negócios e a gestão de dados, assegurando consistência e
+                        centralização das regras.</li>
+                </ul>
+                <li><b>Manutenção facilitada:</b></li>
+                <ul>
+                    <li>Possibilita atualizações e manutenções mais eficientes, já que as alterações podem ser
+                        implementadas no servidor, sem afetar diretamente os clientes.</li>
+                </ul>
+                <li><b>Exemplos de aplicações práticas:</b></li>
+                <ul>
+                    <li>Websites, sistemas de e-commerce, aplicações bancárias online são exemplos comuns que seguem o
+                        modelo cliente-servidor.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Trade-offs e decisões de design</h2>
+            <p>Na engenharia de sistemas, trade-offs representam escolhas entre diferentes elementos do design, onde
+                melhorar um aspecto muitas vezes implica em sacrificar outro.</p>
+            <figure>
+                <img src="img/trade-offs.png" alt="trade-offs" title="Trade-offs">
+            </figure>
+            <ul>
+                <li><b>Importância nas decisões de design:</b></li>
+                <ul>
+                    <li>São inerentes ao processo de design, pois raramente é possível otimizar todos os aspectos
+                        simultaneamente.</li>
+                </ul>
+                <li><b>Abordagem consciente:</b></li>
+                <ul>
+                    <li>O arquiteto deve tomar decisões conscientes, considerando as implicações de trade-offs para
+                        garantir que as escolhas estejam alinhadas com os objetivos do sistema.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Alguns exemplos</h2>
+            <ul>
+                <li><b>Desempenho vs. eficiência de desenvolvimento:</b></li>
+                <ul>
+                    <li>A busca por um desempenho superior pode aumentar a complexidade do código, afetando a eficiência
+                        do desenvolvimento.</li>
+                </ul>
+                <li><b>Flexibilidade vs. segurança:</b></li>
+                <ul>
+                    <li>Um sistema altamente flexível pode ser mais difícil de proteger contra ameaças de segurança,
+                        enquanto medidas rigorosas de segurança podem restringir a flexibilidade.</li>
+                </ul>
+                <li><b>Custo vs. qualidade:</b></li>
+                <ul>
+                    <li>A redução de custos pode levar a compromissos na qualidade do software, impactando a satisfação
+                        do usuário e a manutenção futura.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusão</h2>
+            <p><b>Organização sólida:</b> a arquitetura de sistemas de informação oferece uma estrutura organizacional
+                sólida, crucial para a construção e evolução de sistemas eficientes;</p>
+            <p><b>Tomada de decisões eficaz:</b> uma arquitetura bem projetada facilita a tomada de decisões eficaz,
+                promovendo a escalabilidade, a manutenibilidade e a adaptação contínua do sistema;</p>
+            <p><b>Impacto nos resultados:</b> compreender e aplicar os princípios arquiteturais é fundamental para o
+                sucesso de projetos de sistemas de informação, influenciando diretamente a qualidade, a eficiência e a
+                capacidade de inovação do software desenvolvido.</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>LAUDON, Kenneth C; LAUDON, Jane Price. Sistemas de informação gerenciais. 9 ed. São Paulo: Pearson,
+                2011.</cite>
+            <p></p>
+            <cite>PUTMAN, J. Architecting with RM-ODP. Prentice Hall PTR. referenciado o iso/iec 10746-2: information
+                technology - open distributed processing - reference model: Foundations, 2001.</cite>
+            <p></p>
+            <cite>STAIR, R.; REYNOLDS, G. Fundamentals of information systems. Cengage Learning, 2018.</cite>
+            <p></p>
+            <cite>VALENTE, Marco Tulio. Engenharia de software moderna: princípios e práticas para desenvolvimento de
+                software com produtividade. Editora Independente, 2020.</cite>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 19 de nov de 2024</p>
+        </address>
+    </footer>
+</body>
+
+</html>
