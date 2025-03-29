@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução a orientação a objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução a orientação a objetos</h1>
+        <h2>💡 Unidade 1 - Revisão dos modelos de processos de desenvolvimento de software.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=XpY7RFNwaAo&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Análise e Projeto de Software Orientado a Objetos - Módulo 1 - Unidade 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Revisão dos modelos de processos de desenvolvimento de software</h3>
+            <ul>
+                <li>Histórico da Orientação a Objetos (OO);</li>
+                <li>Modelo em Cascata;</li>
+                <li>Modelo de Prototipação;</li>
+                <li>Modelo incremental;</li>
+                <li>Métodos ágeis;</li>
+                <li>Vantagens do Desenvolvimento OO.</li>
+                <li>Desafios</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Histórico de OO.</h2>
+            <ul>
+                <li>1967 - Criação da linguagem Simula 67;</li>
+                <li>1972 - Linguagem Smalltalk introduz o termo Programação Orientada a Objetos;</li>
+                <li>1983 - Disponibilização da primeira versão do C++;</li>
+                <li>1988 - Eiffel surge como primeira Linguagem OO “Pura”;</li>
+                <li>1995 - Lançamento da primeira versão da linguagem Java;</li>
+                <li>2000+ - C# e outras linguagens modernas adotam e expandem os princípios OO.</li>
+                <li>...</li>
+                <li>Surgimento concomitante de múltiplos Métodos de análise e projeto OO;</li>
+                <li>Crescimento da dificuldade de comunicação entre analistas e projetistas de software;</li>
+                <li>A Linguagem de Modelagem Unificada (UML) surgiu com o intuito de criar uma notação completa e
+                    padronizada para o desenvolvimento de Software OO.</li>
+            </ul>
+            <b>Histórico de OO: OO Puro?</b>
+            <ul>
+                <li>Tudo é um objeto;</li>
+                <li>Classes e instâncias;</li>
+                <li>Encapsulamento;</li>
+                <li>Herança;</li>
+                <li>Polimorfismo;</li>
+                <li>Abstração;</li>
+                <li>Ex. Smalltalk, Eiffel, Ruby, Scala, Kotlin*</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo em Cascata.</h2>
+            <ul>
+                <li>Fluxo sequencial idealista;</li>
+                <li>Incerteza natural dificulta definição precipitada de todos os requisitos;</li>
+                <li>Longa espera por uma versão executável do software.</li>
+            </ul>
+
+            <figure>
+                <img src="img/modelo-em-cascata.png" alt="modelo-em-cascata" title="modelo-em-cascata">
+                <p></p>
+                <figcaption></figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Modelo de Prototipação.</h2>
+            <p>Protótipos iniciais desconsideram qualidade global e manutenibilidade a longo prazo;</p>
+            <p>Implementação comprometida pelo objetivo de produzir protótipos rapidamente.</p>
+
+            <figure>
+                <img src="img/modelo-de-prototipacao.png" alt="modelo-de-prototipação" title="modelo-de-prototipação">
+                <p></p>
+                <figcaption></figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Modelo incremental</h2>
+            <li>Combina elementos dos modelos Cascata e de Prototipação</li>
+            <li>Objetiva explorar junto ao usuário os requisitos do Software de maneira incremental até obter um produto
+                completo;</li>
+            <li>Iniciado pelo fundamento do Mínimo Produto Viável, evolui adicionando novas características a partir do
+                ponto de vista do usuário;</li>
+            <li>Útil quando a especificação dos requisitos é muito complexa ou mutável.</li>
+        </section>
+
+        <section>
+            <h2>Métodos ágeis</h2>
+            <ul>
+                <li>Manifesto Ágil;</li>
+                <li>Incrementais e Iterativos;</li>
+                <li>Desenvolvimento e Entrega Contínuos;</li>
+                <li>Cultura Colaborativa;</li>
+                <li>Flexibilidade e resposta às mudanças de escopo e ambiente;</li>
+                <li>Ex. Scrum, XP e Kanban.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Vantagens do Desenvolvimento OO.</h2>
+            <ul>
+                <li>Reutilização propiciada pelo encapsulamento de métodos e dados;</li>
+                <li>Extensibilidade dada pelo uso de herança e baixo acoplamento das classes;</li>
+                <li>Manutenibilidade facilitada pela modularização natural nas classes;</li>
+                <li>Melhor comunicação entre desenvolvedores e usuários;</li>
+                <li>Análise dedicada à concretização da “Essência” do Sistema, reduzindo erros em fases posteriores;
+                </li>
+                <li>Notação constante da análise à implementação;</li>
+                <li>Menor Resiliência a Mudanças.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Problemas e Desafios.</h2>
+            <ul>
+                <li>Complexidade Inicial*;</li>
+                <li>Desempenho;</li>
+                <li>Planejamento detalhado;</li>
+                <li>Dependências e Acoplamento;</li>
+                <li>Manutenção de Legados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>BOOCH, Grady; RUMBAUGH, James; JACOBSON, Ivar. UML: Guia do Usuário. 2. ed., rev. e atual. Rio de Janeiro: Elsevier, 2012. ISBN 9788535217841.</cite>
+            <br>
+            <cite>FOWLER, Martin. UML essencial: um breve guia para linguagem padrão. 3. ed. Porto Alegre: Bookman, 2011. ISBN 9788560031382.</cite>
+            <br>
+            <cite>LARMAN, Craig. Utilizando UML e padrões: uma introdução à análise e ao projeto orientados a objetos e desenvolvimento iterativo. Porto Alegre: Bookman, 2011. ISBN 9788577800476.</cite>
+            <br>
+            <cite>SCHACH, Stephen R. Object-oriented & classical software engineering. 7. ed. Boston: Mcgraw-hill Higher Education, 2007. ISBN 9780073191263.</cite>
+            <br>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. Rio de Janeiro: GEN LTC, 2014. ISBN 9788595153653.</cite>
+            <br>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. 3. ed. Rio de Janeiro. Elsevier, 2015. ISBN 9788535279849.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de mar de 2025</p>
+    </footer>
+</body>
+
+</html>
