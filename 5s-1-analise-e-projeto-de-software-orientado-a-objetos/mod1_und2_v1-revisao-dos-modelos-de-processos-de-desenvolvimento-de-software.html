@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução a orientação a objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução a orientação a objetos</h1>
+        <h2>💡 Unidade 2 - Conceitos de orientação a objetos.</h2>
+        <p>Professor Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=wW_jUb-w4L0&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Vídeo 1 -
+                Análise e Projeto de Software Orientado a Objetos - Módulo 1 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Conceitos de Orientação a Objetos</h3>
+            <ul>
+                <li>Abstração;</li>
+                <li>Objetos;</li>
+                <li>Atributos;</li>
+                <li>Métodos;</li>
+                <li>Classes;</li>
+                <li>Encapsulamento;</li>
+                <li>Mensagens;</li>
+                <li>Relacionamentos;</li>
+                <li>Herança e Polimorfismo.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Abstração.</h2>
+            <ul>
+                <li>Mecanismo usado em análise de domínio para representar o escopo;</li>
+                <li>Consiste em observar um recorte da realidade e representá-lo, considerando entidades, ações e
+                    caracterizações necessárias para uma determinada aplicação, deixando de fora aspectos que se julgue
+                    irrelevantes pro contexto;</li>
+                <li>Um mesmo cenário pode ser abstraído de formas diferentes, dependendo do interesse do observador na
+                    análise.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Objetos.</h2>
+            <ul>
+                <li>Abstração de uma entidade da realidade que possui características e operações inerentes no contexto
+                    observado;</li>
+                <li>Num sistema, compõe-se da representação de um estado interno, com valores armazenados e modificados
+                    (atributos), e de seu comportamento, como um conjunto de ações pré-definidas que é capaz de executar
+                    (métodos);</li>
+                <li>Objetos podem ser construídos, ser modificados, desempenhar ações e ser destruídos ao longo da
+                    execução de um sistema.</li>
+            </ul>
+
+            <figure>
+                <img src="img/objeto.png" alt="objeto" title="objeto">
+                <p></p>
+                <figcaption></figcaption>
+            </figure>
+            <b>Ponto de ônibus</b>
+            <ul>
+                <li>Identificação de elementos reais;</li>
+                <li>O elemento como objeto;</li>
+                <li>A representação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Atributos.</h2>
+            <ul>
+                <li>Representam os elementos de dados que caracterizam um objeto;</li>
+                <li>Descrevem características e informações que só devem ser manipuladas por operações inerentes ao
+                    objeto;</li>
+                <li>São variáveis que descrevem o estado de um objeto, ou seja, caracterizam o objeto num dado momento.
+                </li>
+            </ul>
+
+            <figure>
+                <img src="img/atributos.png" alt="atributos" title="atributos">
+                <p></p>
+                <figcaption></figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Métodos</h2>
+            <ul>
+                <li>Também chamados de Operações, podem alterar o estado de um objeto;</li>
+                <li>Procedimentos definidos e declarados que atuam em um objeto;</li>
+                <li>Descrevem uma sequência de ações a ser executada por um objeto, especificando como fazer alguma
+                    atividade;</li>
+                <li>Junto aos atributos, compõem os objetos, não podendo ser considerados isoladamente.</li>
+            </ul>
+
+            <figure>
+                <img src="img/metodos.png" alt="métodos" title="métodos">
+                <p></p>
+                <figcaption></figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Classes</h2>
+            <ul>
+                <li>Agrupamento de objetos que compartilham a mesma estrutura, sendo representados pelo mesmo conjunto
+                    de atributos e métodos;</li>
+                <li>Abstrai um conjunto de objetos similares dentro do escopo representado;</li>
+                <li>A instanciação de uma Classe se torna um Objeto, dando valores próprios a cada um dos atributos
+                    elencados.</li>
+            </ul>
+
+            <figure>
+                <img src="img/classes.png" alt="classes" title="classes">
+                <p></p>
+                <figcaption>Fonte: Elaboração própria</figcaption>
+            </figure>
+
+            <ul>
+                <li>Ponto De Ônibus Avenida Central:</li>
+                <li>Localização: "Avenida Central, 123"</li>
+                <li>Abrigo: true</li>
+                <li>Horários: ["08:30", "09:30", "10:30"]</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Encapsulamento.</h2>
+            <ul>
+                <li>Característica que consiste em esconder e proteger detalhes de implementação entre as entidades do
+                    sistema;</li>
+                <li>Em OO, é alcançado pela privacidade dos Atributos de um Objeto, em contraparte à publicidade de seus
+                    Métodos;</li>
+                <li>Restringe a visibilidade e acesso às regras e características dos Atributos de um Objeto, enquanto
+                    aumenta legibilidade e manutenibilidade das Operações pela modularização e responsabilização.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mensagens.</h2>
+            <ul>
+                <li>Compõem o mecanismo que permite a comunicação entre objetos, respeitando o encapsulamento e mesmo
+                    assim criando interoperabilidade de objetos diferentes;</li>
+                <li>São compostos por um nome simbólico (Seletor) que descreve a operação que o objeto emissor deseja
+                    que o objeto receptor execute, e um conjunto de argumentos que a mensagem carrega, com ordem
+                    definida, necessários para a execução correta do método (Parâmetros).</li>
+            </ul>
+
+            <figure>
+                <img src="img/mensagens1.png" alt="mensagens" title="mensagens">
+            </figure>
+
+            <figure>
+                <img src="img/mensagens.png" alt="mensagens" title="mensagens">
+            </figure>
+        </section>
+
+        <section>
+            <h2>Relacionamentos.</h2>
+            <ul>
+                <li>Objetos podem possuir relações expressas um com outro;</li>
+                <li>Em geral, se dão quando uma característica de uma entidade representada possui tal complexidade que
+                    se torna um objeto à parte;</li>
+                <li>Exemplo: um Ônibus possua uma parada “Ponto_de_Onibus”. Estes elementos apresentam características
+                    suficientes para que possuam uma conexão de relação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Herança e Polimorfismo.</h2>
+            <ul>
+                <li>Herança é o nome dado ao mecanismo que permite definir uma nova Classe (Subclasse) a partir de uma
+                    classe pré-existente (Superclasse);</li>
+                <li>Nesse caso, a Subclasse herda todas as características da Superclasse, seus atributos e métodos;
+                </li>
+                <li>A Subclasse pode possuir outros atributos adicionais, bem como sobrescrever métodos herdados ou
+                    adicionar novas operações.</li>
+            </ul>
+
+            <figure>
+                <img src="img/heranca-e-polimorfismo.png" alt="herança e polimorfismo" title="herança e polimorfismo">
+            </figure>
+
+            <ul>
+                <li>Quando um Objeto recebe uma mensagem solicitando a execução de um método, a procura pela operação
+                    determinada começa na classe do Objeto receptor e, caso sua implementação não se encontre ali, a
+                    busca continua na Superclasse;</li>
+                <li>Uma Subclasse pode herdar de múltiplas Superclasses, absorvendo as características de todas elas.
+                    Herança e Polimorfismo</li>
+                <li>O Polimorfismo em OO diz respeito à qualidade de um objeto ser capaz de assumir formas diferentes;
+                </li>
+                <li>Um objeto que instancia uma Subclasse numa cadeia de Herança, por exemplo, pode sobrescrever a
+                    execução de um método, mantendo sua assinatura (Overriding);</li>
+                <li>Nesse caso, é possível invocar ambas as versões do método (com o uso do operador Super, por
+                    exemplo). Herança e Polimorfismo</li>
+                <li>Uma classe pode apresentar mais de um método com o mesmo seletor, sobrecarga de método, mas com
+                    diferentes assinaturas (Overloading);</li>
+                <li>Nesse caso, o método a ser executado é selecionado em tempo de execução, observando-se a assinatura
+                    que melhor satisfaz a mensagem enviada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>BOOCH, Grady; RUMBAUGH, James; JACOBSON, Ivar. UML: guia do usuário. 2. ed., rev. e atual. Rio de
+                Janeiro: Elsevier, 2012. ISBN 9788535217841.</cite>
+            <p></p>
+            <cite>FOWLER, Martin. UML essencial: um breve guia para linguagem padrão. 3. ed. Porto Alegre: Bookman,
+                2011. ISBN 9788560031382.</cite>
+            <p></p>
+            <cite>LARMAN, Craig. Utilizando UML e padrões: uma introdução à análise e ao projeto orientados a objetos e
+                desenvolvimento iterativo. Porto Alegre: Bookman, 2011. ISBN 9788577800476.</cite>
+            <p></p>
+            <cite>SCHACH, Stephen R. Object-oriented & classical software engineering. 7. ed. Boston: Mcgraw-hill Higher
+                Education, 2007. ISBN 9780073191263.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem
+                com UML, OCL e IFML. Rio de Janeiro: GEN LTC, 2014. ISBN 9788595153653.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem
+                com UML, OCL e IFML. 3. ed. Rio de Janeiro:: Elsevier, 2015. ISBN 9788535279849.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de mar de 2025</p>
+    </footer>
+</body>
+
+</html>
