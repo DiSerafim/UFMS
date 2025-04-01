@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução a orientação a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução a orientação a objetos</h1>
+        <h2>📍 Checkout de Presença do Módulo 1 - Introdução a orientação a objetos</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva..</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve a oportunidade de explorar conceitos fundamentais relacionados à orientação a
+                objetos e revisar modelos de processos de desenvolvimento de software. Agora, chegou o momento de
+                consolidar esse conhecimento por meio de uma atividade prática.</p>
+            <p>A habilidade de conceber e compreender os princípios da orientação a objetos é essencial para qualquer
+                desenvolvedor de software. Ao entender como os objetos interagem e se comunicam em um sistema, você será
+                capaz de projetar e implementar soluções mais eficientes e flexíveis.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Para esta atividade de checkout, convido você a elaborar um pequeno resumo executivo de um aplicativo que
+                gostaria de desenvolver, podem ser utilizadas propostas já enviadas em outras disciplinas ou projeto
+                integrador. Neste resumo, é importante incluir:</p>
+            <ul>
+                <li>Uma visão de alto nível do aplicativo, destacando sua utilidade e público-alvo;</li>
+                <li>Requisitos genéricos que o aplicativo deve atender.</li>
+            </ul>
+            <p>Passos para realização da atividade:</p>
+            <ul>
+                <li>Definição da Visão do Aplicativo: Descreva de forma sucinta qual é a proposta do aplicativo, seu
+                    propósito e os benefícios que trará aos usuários. Considere também qual seria o público-alvo desse
+                    aplicativo.</li>
+                <li>Levantamento de Requisitos Genéricos: Liste os requisitos essenciais que o aplicativo deve cumprir.
+                    Pense em funcionalidades básicas, interfaces de usuário, integração com outros sistemas, entre
+                    outros aspectos relevantes.</li>
+                <li>Descrição do Fluxo de Funcionamento: Esboce um breve fluxo de como o usuário interage com o
+                    aplicativo de acordo com seu principal requisito.</li>
+                <li>Considerações Finais: Encerre o resumo com suas considerações finais sobre o potencial do aplicativo
+                    e possíveis desafios a serem enfrentados durante o desenvolvimento.</li>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Resumo Executivo: Aplicativo MeuBond.</b>
+            <ol>
+                <li>Visão:</li>
+                <ul>
+                    <li>Proposta: Desenvolver um sistema de rastreamento em tempo real de ônibus, integrando GPS e IoT
+                        para fornecer informações precisas sobre localização, rotas e horários de chegada.</li>
+                    <li>Público-alvo: Usuários de transporte público, empresas de ônibus, prefeitura.</li>
+                    <li>Benefícios: Redução do tempo de espera nas paradas, otimização do planejamento das viagens,
+                        transparência no sistema de transporte</li>
+                </ul>
+                <li>Requisitos Genéricos:</li>
+                <ul>
+                    <li>Funcionais:</li>
+                    <ul>
+                        <li>Rastreamento em tempo real pelo GPS.</li>
+                        <li>Mapa interativo com rotas e paradas.</li>
+                        <li>Estimativa de chegada (ETA) baseado em tráfego.</li>
+                    </ul>
+                    <li>Não funcionais:</li>
+                    <ul>
+                        <li>Baixa latência (segundos para atualizações).</li>
+                        <li>Modo Offline para áreas com conexão instável.</li>
+                        <li>Compatibilidade com Android e iOS</li>
+                    </ul>
+                    <li>Interfaces:</li>
+                    <ul>
+                        <li>Administração com Mapa (Google Maps API ou Open Street Map).</li>
+                        <li>Notificação push para avisos de chegada.</li>
+                    </ul>
+                </ul>
+                <li>Fluxo de funcionamento:</li>
+                <ul>
+                    <li>Acesso: Usuário abre o app seleciona uma parada.</li>
+                    <li>Geolocalização: App detecta a parada mais próxima automaticamente.</li>
+                    <li>Dados em tempo real: Exibe ônibus próximos, rotas e ETAs.</li>
+                    <li>Notificação: Alerta quando o ônibus estiver a 5 minutos da parada.</li>
+                </ul>
+                <li>Considerações finais:</li>
+                <ul>
+                    <li>Potencial:</li>
+                    <ul>
+                        <li>Melhoria significativa na mobilidade urbana.</li>
+                        <li>Parceria com o governo para a integração a sistemas existentes.</li>
+                    </ul>
+                    <li>Desafios:</li>
+                    <ul>
+                        <li>Dependência de infraestrutura de IoT nos ônibus.</li>
+                        <li>Consumo de bateria do app devido ao GPS ativo.</li>
+                    </ul>
+                </ul>
+            </ol>
+            <p>Tecnologias:</p>
+            <ul>
+                <li>Backend: Java(Spring Boot) para escalabilidade.</li>
+                <li>Frontend: Fluter (cross-platform).</li>
+                <li>Banco de dados: Firebase Realtime Database para sincronização instantânea.</li>
+                <li>IoT: Dispositivos GPS com chip 4G nos ônibus.</li>
+            </ul>
+            <p>Relacionamento com OO:</p>
+            <ul>
+                <li>Abstração: Classes como (ônibus, parada e rota) modelam entidades do mundo real.</li>
+                <li>Herança: Diferentes tipos de veículos (ônibus, micro-ônibus) podem herdar de Veículo.</li>
+                <li>Polimorfismo: Métodos como calcularETA() têm como comportamentos distintos para cada rota (tráfego,
+                    horário de pico).</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 31 de mar de 2025</p>
+    </footer>
+</body>
+
+</html>
