@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introdução a orientação a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Introdução a orientação a objetos</h1>
+        <h2>✅ [A1] Avaliação do Módulo 1</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+        <p>Fecha: terça, 7 dez 2024, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Prof° Especialista: Dr. Arthur Caldeira Sanches.</li>
+                <li>Iniciado em sexta, 29 nov 2024, 20:23</li>
+                <li>Estado Finalizada</li>
+                <li>Concluída em sexta, 29 nov 2024, 20:55</li>
+                <li>Tempo empregado 31 minutos 42 segundos</li>
+                <li>Avaliar 8,00 de um máximo de 10,00(80%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Os métodos ágeis priorizam:</p>
+                <ul>
+                    <li>a. Documentação extensa e detalhada.</li>
+                    <li><b>b. Adaptação a mudanças de escopo.</b></li>
+                    <li>c. Uso de metodologias rígidas.</li>
+                    <li>d. Entregas anuais.</li>
+                    <li>e. Reuniões formais e frequentes.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Explicação:</p>
+                <ul>
+                    <li>Os métodos ágeis (como Scrum, XP, Kanban) têm como princípios fundamentais:</li>
+                    <ol>
+                        <li>Flexibilidade para aceitar mudanças de requisitos (priorizando a adaptação sobre o
+                            planejamento rígido).</li>
+                        <li>Entregas incrementais e frequentes (semanais/mensais, não anuais).</li>
+                        <li>Valorizar indivíduos e interações mais que processos burocráticos (reuniões são objetivas,
+                            como stand-ups diárias).</li>
+                        <li>Documentação suficiente, mas não extensa (o foco é software funcionando).</li>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Herança permite que uma classe derive características de outra classe.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>Explicação:</p>
+                <ul>
+                    <li>Herança é um dos pilares da Orientação a Objetos (OO) que permite que uma classe (chamada
+                        subclasse ou classe filha) herde atributos e métodos de outra classe (chamada superclasse ou
+                        classe pai). Isso promove:</li>
+                    <ul>
+                        <li>Reutilização de código (evita repetição).</li>
+                        <li>Hierarquia entre classes (ex.: Animal → Cachorro).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>O conceito de classe em orientação a objetos representa:</p>
+                <ul>
+                    <li>a. Um método específico de um objeto.</li>
+                    <li>b. Um código sem atributos.</li>
+                    <li>c. Uma única instância de um objeto.</li>
+                    <li><b>d. Um grupo de objetos que compartilham estrutura e comportamento.</b></li>
+                    <li>e. Uma variável global.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+                <p>Explicação:</p>
+                <ul>
+                    <li>Em Orientação a Objetos, uma classe é:</li>
+                    <ol>
+                        <li>Modelo/Projeto (Blueprint) que define:</li>
+                        <ul>
+                            <li>Atributos (dados)</li>
+                            <li>Métodos (comportamentos)</li>
+                            <li>Que serão compartilhados por todos os objetos criados a partir dela</li>
+                        </ul>
+                        <li>Exemplo Prático (java):</li>
+                        <pre>
+                        // Classe Pessoa (modelo)
+                        class Pessoa {
+                            // Atributos (estrutura)
+                            String nome;
+                            int idade;
+
+                            // Métodos (comportamento)
+                            void falar() {
+                                System.out.println("Olá, meu nome é " + nome);
+                            }
+                        }
+                        </pre>
+                        <li>Relação Classe-Objeto:</li>
+                        <ul>
+                            <li>Classe = Molde (ex.: "Pessoa")</li>
+                            <li>Objeto = Instância concreta (ex.: Pessoa pessoa1 = new Pessoa();)</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Qual é a principal função dos métodos em um objeto?</p>
+                <ul>
+                    <li><b>a. Realizar operações que alteram o estado do objeto.</b></li>
+                    <li>b. Definir as características fixas de um objeto.</li>
+                    <li>c. Impedir a comunicação entre objetos.</li>
+                    <li>d. Armazenar dados sem modificações.</li>
+                    <li>e. Servir apenas como placeholders.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>Explicação:</p>
+                <ul>
+                    <li>Métodos em Orientação a Objetos são as ações/comportamentos de um objeto, com as seguintes
+                        funções principais:</li>
+                    <ol>
+                        <li>Modificar o estado interno (atributos) do objeto (java):</li>
+                        <pre>
+                        class ContaBancaria {
+                            private double saldo; // estado interno
+                            
+                            // MÉTODO que altera o estado
+                            void depositar(double valor) {
+                                this.saldo += valor; // altera o atributo 'saldo'
+                            }
+                        }
+                        </pre>
+                        <li>Realizar operações baseadas no estado atual (java):</li>
+                        <pre>
+                        double verificarSaldo() {
+                            return this.saldo; // consulta sem modificar
+                        }
+                        </pre>
+                        <li>Encapsular lógica (ocultar detalhes de implementação) (java):</li>
+                        <pre>
+                        void transferir(Conta destino, double valor) {
+                            if (this.saldo >= valor) {
+                                this.sacar(valor);
+                                destino.depositar(valor);
+                            }
+                        }
+                        </pre>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual é um dos principais desafios do Desenvolvimento Orientado a Objetos?</p>
+                <ul>
+                    <li>a. Baixo custo de desenvolvimento.</li>
+                    <li><b>b. Complexidade inicial elevada.</b></li>
+                    <li>c. Facilidade em integração.</li>
+                    <li>d. Simplicidade no design.</li>
+                    <li>e. Resiliência a mudanças.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>Explicação:</p>
+                <ul>
+                    <li>O Desenvolvimento Orientado a Objetos (OOD) apresenta como um de seus principais desafios a
+                        complexidade inicial elevada, devido a:</li>
+                    <ol>
+                        <li>Custo de abstração inicial:</li>
+                        <ul>
+                            <li>Necessidade de modelar classes, hierarquias e relações antes da implementação</li>
+                            <li>Exemplo: Projetar uma hierarquia de classes para um sistema bancário requer análise
+                                profunda de entidades (Conta, Cliente, Transação etc.)</li>
+                        </ul>
+                        <li>Curva de aprendizado:</li>
+                        <ul>
+                            <li>Domínio de conceitos como herança, polimorfismo e encapsulamento</li>
+                            <li>Padrões de projeto (Design Patterns) acrescentam outra camada de complexidade</li>
+                        </ul>
+                        <li>Sobredesign comum:</li>
+                        <ul>
+                            <li>Tendência a criar estruturas excessivamente complexas para cenários simples</li>
+                            <li>Exemplo: Usar herança múltipla quando uma composição seria suficiente</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Associe os conceitos aos seus respectivos exemplos:</p>
+                <pre>
+                Focar nos aspectos relevantes de uma entidade, ignorando os detalhes não essenciais (...).
+                Permitir que um método tenha diferentes implementações em subclasses (...).
+                Definir uma estrutura comum para objetos com atributos e métodos (...).
+                Criar uma subclasse que reutiliza atributos e métodos de uma superclasse (...).
+                Ocultar detalhes internos de um objeto e expor apenas as funcionalidades essenciais (...).                    
+                </pre>
+                <p>Opções: Abstração, Polimorfismo, Classe, Herança, Encapsulamento.</p>
+
+                <b class="answer">Resposta: .. ✅</b>
+
+                <p>Explicação:</p>
+                <pre>
+                Focar nos aspectos relevantes de uma entidade, ignorando os detalhes não essenciais <b>Abstração</b>.
+                Permitir que um método tenha diferentes implementações em subclasses <b>Polimorfismo</b>.
+                Definir uma estrutura comum para objetos com atributos e métodos <b>Classe</b>.
+                Criar uma subclasse que reutiliza atributos e métodos de uma superclasse <b>Herança</b>.
+                Ocultar detalhes internos de um objeto e expor apenas as funcionalidades essenciais <b>Encapsulamento</b>.                    
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Qual das opções é uma vantagem da abordagem orientada a objetos em relação à manutenção?</p>
+                <ul>
+                    <li>a. Maior dependência de linguagens específicas.</li>
+                    <li>b. Requisitos mais rígidos para alteração.</li>
+                    <li>c. Menor modularidade.</li>
+                    <li><b>d. Facilitação da manutenção através da modularização das classes.</b></li>
+                    <li>e. Dificuldade em encontrar bugs.</p>
+                    </li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>Explicação:</p>
+                <ul>
+                    <li>A Orientação a Objetos (OO) oferece vantagens significativas para a manutenção de software,
+                        principalmente devido à:</li>
+                    <ol>
+                        <li>Modularização:</li>
+                        <ul>
+                            <li>Classes encapsulam comportamentos e estados relacionados</li>
+                            <li>Exemplo: Alterar a classe CalculadoraImposto não afeta RelatorioFinanceiro</li>
+                        </ul>
+                        <li>Princípios que facilitam a manutenção:</li>
+                        <ul>
+                            <li>Encapsulamento: Mudanças internas numa classe não afetam outras (java)</li>
+                            <pre>
+                            public class ContaBancaria {
+                                private double saldo; // Alterar tipo para BigDecimal afeta só esta classe
+                                public void depositar(double valor) { ... }
+                            }
+                            </pre>
+                            <li>Baixo acoplamento: Classes se comunicam através de interfaces bem definidas</li>
+                            <li>Alta coesão: Cada classe tem responsabilidade única</li>
+                        </ul>
+                        <li>Benefícios práticos:</li>
+                        <ul>
+                            <li>Correção de bugs em classes específicas sem impactar o sistema todo</li>
+                            <li>Adição de funcionalidades via novas classes (Open/Closed Principle)</li>
+                            <li>Melhor legibilidade e organização do código</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Como a herança é utilizada em orientação a objetos?</p>
+                <ul>
+                    <li>a. Para eliminar redundâncias entre classes.</li>
+                    <li>b. Para descrever relações estáticas entre classes.</li>
+                    <li>c. Para isolar funcionalidades específicas.</li>
+                    <li><b>d. Para criar uma nova classe a partir de uma existente.</b></li>
+                    <li>e. Para definir interfaces complexas.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+
+                <p>Explicação:</p>
+                <ul>
+                    <li>A herança em Orientação a Objetos é um mecanismo que permite:</li>
+                    <ol>
+                        <li>Criar subclasses baseadas em classes existentes (superclasses) (java):</li>
+                        <pre>
+                        class Veiculo {  // Superclasse
+                            void mover() { System.out.println("Movendo"); }
+                        }
+                        class Carro extends Veiculo {  // Subclasse
+                            void acelerar() { System.out.println("Acelerando"); }
+                        }
+                        </pre>
+                        <li>Propósitos principais:</li>
+                        <ul>
+                            <li>Reutilização de código: A subclasse herda atributos e métodos da superclasse</li>
+                            <li>Extensão de funcionalidades: A subclasse pode adicionar novos comportamentos</li>
+                            <li>Especialização: Refinar o comportamento da superclasse (via @Override)</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>O que é um objeto em orientação a objetos?</p>
+                <ul>
+                    <li>a. Um código sem estrutura.</li>
+                    <li>b. Um valor primitivo.</li>
+                    <li>c. Um método que não tem retorno.</li>
+                    <li><b>d. Uma instância de uma classe, com atributos e métodos.</b></li>
+                    <li>e. Uma variável global.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>Explicação:</p>
+                <ul>
+                    <li>Em Orientação a Objetos (OO), um objeto é:</li>
+                    <ol>
+                        <li>Instância concreta de uma classe</li>
+                        <ul>
+                            <li>Representa um elemento específico do domínio do problema</li>
+                            <li>Exemplo: Se Carro é uma classe, meuFuscaVermelho é um objeto</li>
+                        </ul>
+                        <li>Compõe-se de:</li>
+                        <ul>
+                            <li>Atributos (estado): Dados armazenados (java)</li>
+                            <pre>
+                            // Atributos de um objeto "ContaBancaria"
+                            String titular;
+                            double saldo;
+                            </pre>
+                            <li>Métodos (comportamento): Operações que pode executar (java)</li>
+                            <pre>
+                            void depositar(double valor) { 
+                                this.saldo += valor; 
+                            }
+                            </pre>
+                        </ul>
+                        <li>Analogia Prática:</li>
+                        <ul>
+                            <li>Classe = Receita de bolo (molde)</li>
+                            <li>Objeto = Bolo físico feito com essa receita</li>
+                        </ul>
+                    </ol>
+                </ul>
+                <p>Exemplo em Código (python):
+                <p>
+                <pre>
+                class Pessoa:  # Classe
+                def __init__(self, nome, idade):
+                self.nome = nome  # Atributo
+                self.idade = idade  # Atributo
+                
+                def apresentar(self):  # Método
+                print(f"Olá, sou {self.nome}!")
+                # Objetos (instâncias):
+                pessoa1 = Pessoa("Ana", 30) # Objeto 1
+                pessoa2 = Pessoa("João", 25) # Objeto 2
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Encapsulamento significa que todos os atributos de um objeto são públicos.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>Explicação:</p>
+                <ul>
+                    <li>O encapsulamento em Orientação a Objetos é justamente o princípio que:</li>
+                    <ol>
+                        <li>Protege os atributos de um objeto, tornando-os privados (ou protegidos) na maioria dos casos
+                            (java):</li>
+                        <pre>
+                        public class ContaBancaria {
+                            private double saldo; // Atributo PRIVADO (não público)
+                            
+                            public void depositar(double valor) { // Método público para acesso controlado
+                                if (valor > 0) {
+                                    this.saldo += valor;
+                                }
+                            }
+                        }
+                        </pre>
+                        <li>Expõe apenas métodos públicos para interação segura:</li>
+                        <ul>
+                            <li>Getters (acesso) e setters (modificação) controlados.</li>
+                            <li>Exemplo: getSaldo() pode ter regras de auditoria antes de retornar o valor.</li>
+                        </ul>
+                        <li>Objetivos do encapsulamento:</li>
+                        <ul>
+                            <li>Evitar acesso direto e inconsistente ao estado interno.</li>
+                            <li>Permitir validações/alterações centralizadas (ex.: não permitir saldo < 0).</li>
+                            <li>Reduzir acoplamento entre classes.</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 1 de abr de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
