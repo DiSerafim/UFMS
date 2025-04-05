@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Análise orientada a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Análise orientada a objetos</h1>
+        <h2>📍 Checkout de Presença.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve a oportunidade de aprofundar seus conhecimentos na Análise Orientada a Objetos:
+                processos de análise e linguagem unificada. Agora, chegou o momento de aplicar esses conceitos de forma
+                prática por meio de uma atividade de modelagem conceitual.</p>
+            <p>A análise orientada a objetos é uma abordagem fundamental no desenvolvimento de software, permitindo a
+                compreensão e representação dos sistemas de forma mais eficiente e precisa. A linguagem unificada (UML)
+                é uma ferramenta poderosa para expressar esses conceitos de forma visual e padronizada.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Para esta atividade de checkout, convido você a criar um modelo conceitual, utilizando elementos da UML
+                para representar os objetos do sistema proposto na atividade do módulo anterior. Seu modelo deve incluir
+                classes, relacionamentos e atributos relevantes para a compreensão do sistema.</p>
+            <p>Passos para realização da atividade:</p>
+            <ol>
+                <li>Definição do Escopo do Modelo Conceitual: Estabeleça o escopo do modelo, identificando os principais
+                    objetos e entidades que fazem parte do sistema proposto na atividade do módulo anterior.</li>
+                <li>Identificação das Classes e Atributos: Liste as classes que compõem o sistema e seus atributos
+                    correspondentes. Certifique-se de incluir todos os atributos para descrever completamente cada
+                    classe.</li>
+                <li>Modelagem dos Relacionamentos: Desenhe os relacionamentos entre as classes, indicando a natureza e o
+                    tipo de associação entre elas. Considere a cardinalidade e a multiplicidade dos relacionamentos.
+                </li>
+                <li>Validação do Modelo: Revise o modelo conceitual criado, verificando se ele representa de forma
+                    precisa e clara os objetos e relacionamentos do sistema proposto.</li>
+                <li>Exportação para PDF: Após a conclusão do modelo conceitual, exporte-o para um arquivo PDF,
+                    garantindo que ele esteja legível e bem formatado.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Modelo conceitual UML para o Sistema de App Delivery.</b>
+            <ol>
+                <li>Definição do Escopo do Modelo Conceitual:</li>
+                <ul>
+                    <li>Este modelo foi desenvolvido para um sistema de delivery em um projeto da Trybe, com foco nas
+                        principais entidades e seus relacionamentos. Seu escopo inclui:</li>
+                    <ul>
+                        <li>Gestão de usuários (clientes, vendedores e administrador).</li>
+                        <li>Processo de compra (produtos, pedidos, checkout).</li>
+                        <li>Acompanhamento de pedidos.</li>
+                        <li>Comunicação em tempo real.</li>
+                    </ul>
+                </ul>
+                <li>Identificação das Classes e Atributos:</li>
+                <ul>
+                    <li>User:</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>name: String.</li>
+                        <li>email: String.</li>
+                        <li>password: String (hash md5).</li>
+                        <li>role: Enum[customer, seller, admin].</li>
+                        <li>createdAt: DateTime.</li>
+                        <li>updatedAt: DateTime.</li>
+                    </ul>
+                    <li>Customer:</li>
+                    <ul>
+                        <li>DeliveryAddress: String.</li>
+                    </ul>
+                    <li>Seller:</li>
+                    <ul>
+                        <li>storeId: Integer (FK).</li>
+                    </ul>
+                    <li>Product:</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>name: String.</li>
+                        <li>price: Decimal.</li>
+                        <li>imageUrl: String.</li>
+                        <li>stock: Integer.</li>
+                        <li>category: String.</li>
+                    </ul>
+                    <li>Order:</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>customerId: Integer (FK).</li>
+                        <li>sellerId: Integer (FK).</li>
+                        <li>totalPrice: Decimal.</li>
+                        <li>deliveryAddress: String.</li>
+                        <li>status: Enum [pending, preparing, in_transit, delivered].</li>
+                        <li>createdAt: DateTime.</li>
+                        <li>updatedAt: DateTime.</li>
+                    </ul>
+                    <li>OrderItem:</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>orderId: Integer (FK).</li>
+                        <li>productId: Integer (FK).</li>
+                        <li>quantity: Integer.</li>
+                        <li>unitPrice: Decimal.</li>
+                    </ul>
+                    <li>shoppingCart:</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>customerId: Integer (FK).</li>
+                        <li>createdAt: DateTime.</li>
+                    </ul>
+                    <li>CartItem:</li>
+                    <ul>
+                        <li>id: Integer(PK).</li>
+                        <li>cartId: Integer(FK).</li>
+                        <li>productId: Integer(FK).</li>
+                        <li>quantity: Integer.</li>
+                    </ul>
+                </ul>
+                <li>Modelagem dos Relacionamentos:</li>
+                <ul>
+                    <li>User (customer, seller, admin).</li>
+                    <ul>
+                        <li>Todo usuário tem uma função específica.</li>
+                    </ul>
+                    <li>Customer → Order (1:N).</li>
+                    <ul>
+                        <li>Um cliente pode ter vários pedidos.</li>
+                        <li>Um pedido pertence a um único cliente.</li>
+                    </ul>
+                    <li>Seller → Order (1:N).</li>
+                    <ul>
+                        <li>Um vendedor pode ter vários pedidos.</li>
+                        <li>Um pedido é atendido por um único vendedor.</li>
+                    </ul>
+                    <li>Order → OrderItem (1:N).</li>
+                    <ul>
+                        <li>Um pedido contém vários itens.</li>
+                        <li>Um item pertence a um único pedido.</li>
+                    </ul>
+                    <li>Product → OrderItem (1:N).</li>
+                    <ul>
+                        <li>Um produto pode aparecer em vários itens de pedido.</li>
+                        <li>Um item de pedido referência um único produto.</li>
+                    </ul>
+                    <li>Customer → ShoppingCart (1:1).</li>
+                    <ul>
+                        <li>Um cliente tem um carrinho ativo.</li>
+                        <li>Um carrinho pertence a um único cliente.</li>
+                    </ul>
+                    <li>ShoppingCart → CartItem (1:N).</li>
+                    <ul>
+                        <li>Um carrinho contém vários itens.</li>
+                        <li>Um item pertence a um único carrinho.</li>
+                    </ul>
+                    <li>Product → CartItem (1:N).</li>
+                    <ul>
+                        <li>Um produto pode estar em vários carrinhos.</li>
+                        <li>Um item do carrinho referência um único produto.</li>
+                    </ul>
+                </ul>
+                <li>Validação do Modelo:</li>
+                <ol>
+                    <li>Este modelo representa um sistema de delivery.</li>
+                    <li>Mostra os relacionamentos essenciais.</li>
+                    <li>Mostra a cardinalidade entre as entidades.</li>
+                    <li>Inclui os atributos essenciais para cada classe.</li>
+                    <li>Segue o princípio de orientação a objetos.</li>
+                    <ul>
+                        <li>Encapsulamento (atributos privados), Herança (especialização de User), Polimorfismo
+                            (tratamento uniforme de diferentes tipos de User).</li>
+                    </ul>
+                </ol>
+            </ol>
+            <br>
+            <br>
+            <p>Representação:</p>
+            <br>
+            <img src="img/diagrama-de-classe-app-delivery.png" alt="diagrama-de-classe-app-delivery"
+                title="diagrama-de-classe-app-delivery">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 04 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
