@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Projeto Orientado a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Projeto Orientado a Objetos.</h1>
+        <h2>💡 Unidade 1 - Desenho de Projeto Orientado a Objetos.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=jr-g8pUTqMs&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Análise e Projeto de Software Orientado a Objetos - Módulo 2 - Unidade 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Desenho de Projeto Orientado a Objetos.</h3>
+            <ul>
+                <li>Projeto de Software como disciplina;</li>
+                <li>Modelagem como Técnica de Projeto;</li>
+                <li>Princípios de Modelagem para Projeto;</li>
+                <li>Uso de Diagramas em Projeto;</li>
+                <li>Diagrama de Comunicação;</li>
+                <li>Diagrama de Classes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projeto de Software como disciplina.</h2>
+            <ul>
+                <li>O Projeto visa a elaboração de uma solução para o problema identificado e descrito na
+                    <b>análise</b>;
+                </li>
+                <li>Também é preciso projetar uma arquitetura de software que supra de maneira concreta o propósito do
+                    sistema;</li>
+                <li>É a fase em que são firmados os detalhes de <b>“como”</b> o sistema pode e deve ser implementado.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelagem como Técnica de Projeto.</h2>
+            <ul>
+                <li>Como sequência do processo de Análise, o Projeto é responsável por apresentar, de maneira
+                    compreensível, como as entidades modeladas interagem entre si e operam o sistema;</li>
+                <li>Os modelos de Projeto representam características de software que ajudam os profissionais a
+                    construí-lo efetivamente: a arquitetura, a interface do usuário e os componentes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Princípios de Modelagem para Projeto.</h2>
+            <ul>
+                <li>O projeto deve estar relacionado ao modelo de análise;</li>
+                <li>Sempre considere a arquitetura do sistema a ser construído;</li>
+                <li>O projeto dos dados é tão importante quanto o projeto de funções de processamento;</li>
+                <li>As interfaces (tanto externas quanto internas) precisam ser projetadas com cuidado;</li>
+                <li>O projeto de interface do usuário deve estar sintonizado com as necessidades do usuário final.</li>
+                <li>O projeto em nível de componente deve ser funcionalmente independente;</li>
+                <li>Os componentes devem ser fracamente acoplados uns aos outros e ao ambiente externo;</li>
+                <li>Modelos de projeto devem ser facilmente compreensíveis;</li>
+                <li>O projeto deve ser desenvolvido iterativamente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Uso de Diagramas em Projeto.</h2>
+            <ul>
+                <li>No desenvolvimento orientado a objetos, o projeto é conduzido utilizando basicamente dois tipos
+                    principais de diagramas UML, Diagramas de Comunicação e o Diagrama de Classes;</li>
+                <li>Pode-se dizer que o núcleo do Projeto de Software Orientado a Objetos é o Diagrama de Classes, mas o
+                    uso de Diagramas de Comunicação é importante para trazer uma abordagem dinâmica da execução de
+                    operações no sistema.</li>
+            </ul>
+            <b>Do Conceitual → Projeto</b>
+            <p></p>
+            <img src="img/diagrama-em-projetos.png" alt="diagrama-em-projetos" title="diagrama-em-projetos">
+        </section>
+
+        <section>
+            <h2>Diagrama de Comunicação.</h2>
+            <ul>
+                <li>Simbolizam a interação/colaboração entre objetos através do envio de mensagens, que resultam na
+                    ativação de métodos para realizar as ações necessárias;</li>
+                <li>Um Diagrama de Comunicação é uma especialização do Diagrama de Interação do UML;</li>
+                <li>É comum que Modeladores UML novatos não prestem atenção suficiente nos diagramas de comunicação. É
+                    importante atentar-se à modelagem dinâmica, tanto quanto à estática.</li>
+                <li>A notação da UML para comunicação entre objetos é ilustrada a seguir:</li>
+                <ul>
+                    <li><b>obj1</b> é uma instância da classe <b>Classe1</b>;</li>
+                    <li><b>obj2</b> é uma instância da classe <b>Classe2</b>;</li>
+                    <li>A <b>mensagem1</b> está sendo enviada pelo objeto <b>obj1</b> ao objeto <b>obj2</b>, passando
+                        dois parâmetros.</li>
+                </ul>
+                <p></p>
+                <img src="img/diagrama-de-comunicacao.png" alt="diagrama-de-comunicação"
+                    title="diagrama-de-comunicação">
+                <p></p>
+                <li>O Diagrama de Comunicação mostra a comunicação entre vários objetos para realizar um certo
+                    comportamento desejado;</li>
+                <li>A ordem em que as mensagens são enviadas é frequentemente muito importante e, por isso, as mensagens
+                    são enumeradas nos diagramas.</li>
+            </ul>
+            <b>Diagramas de Comunicação Businho</b>
+            <p></p>
+            <img src="img/diagrama-de-comunicacao-businho.png" alt="diagrama-de-comunicação-businho"
+                title="diagrama-de-comunicação-businho">
+            <p></p>
+            <ol>
+                <li>Atualiza ponto de parada</li>
+                <li>Atualizar a última data da manutenção do businho</li>
+                <li>Atualizar pessoa</li>
+                <li>Cadastrar businho</li>
+                <li>Cadastrar pessoa</li>
+                <li>Cadastrar ponto de parada</li>
+                <li>Consultar Disponibilidade do Businho para uso</li>
+                <li>Consultar Pontos de Parada</li>
+                <li>Desembarcar do Businho</li>
+                <li>Embarcar no Businho</li>
+                <li>Enviar feedback</li>
+                <li>Escolha de Ponto de Parada</li>
+                <li>Excluir pessoas</li>
+                <li>Favoritar ponto de parada</li>
+                <li>Fazer login</li>
+                <li>Fazer logout</li>
+                <li>Gerar relatórios de horas trabalhadas</li>
+                <li>Informar começo e fim do trabalho</li>
+                <li>Ler pessoas</li>
+                <li>Recuperar senha</li>
+                <li>Remover businho</li>
+                <li>Remover ponto de parada</li>
+                <li>Verificar posição atual do Businho</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Diagrama de Classes.</h2>
+            <ul>
+                <li>Enquanto na Análise, a abordagem das Classes consiste em representar as características das Entidades abstraídas, no Projeto, o Diagrama de Classes busca apresentar as responsabilidades e assinaturas dos métodos do sistema;</li>
+                <li>A identificação dos receptores de mensagens nos Diagramas de Comunicação possibilita responsabilizar as classes pelos métodos correspondentes.</li>
+            </ul>
+            <img src="img/diagrama-de-classes.png" alt="diagrama-de-classes" title="diagrama-de-classes">
+        </section>
+
+        <section>
+            <h2>Projeto de software OO</h2>
+            <ul>
+                <li>No projeto, utilizamos técnicas de modelagem para representar a arquitetura, a interface do usuário e os componentes do sistema.</li>
+                <li>Busca-se compreender o problema identificado nas fases de análise, identificar o comportamento e interação entre os objetos e propor uma solução mapeada em linguagem de programação orientada a objetos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>BOOCH, Grady; RUMBAUGH, James; JACOBSON, Ivar. UML: Guia do usuário. 2. ed., rev. e atual. Rio de Janeiro, Elsevier, 2012. ISBN 9788535217841.</cite>
+            <p></p>
+            <cite>FOWLER, Martin. UML essencial: um breve guia para linguagem padrão. 3. ed. Porto Alegre: Bookman, 2011. ISBN 9788560031382.</cite>
+            <p></p>
+            <cite>LARMAN, Craig. Utilizando UML e padrões: uma introdução à análise e ao projeto orientados a objetos e desenvolvimento iterativo. Porto Alegre: Bookman, 2011. ISBN 9788577800476.</cite>
+            <p></p>
+            <cite>SCHACH, Stephen R. Object-oriented & classical software engineering. 7. ed. Boston:: Mcgraw-hill Higher Education, 2007. ISBN 9780073191263.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. Rio de Janeiro: GEN LTC, 2014. ISBN 9788595153653.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. 3. ed. Rio de Janeiro: Elsevier, 2015. ISBN 9788535279849.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
