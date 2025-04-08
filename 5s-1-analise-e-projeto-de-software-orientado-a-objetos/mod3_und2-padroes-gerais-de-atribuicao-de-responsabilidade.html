@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Projeto Orientado a Objetos.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Projeto Orientado a Objetos.</h1>
+        <h2>💡 Unidade 2 - Padrões Gerais de Atribuição de Responsabilidades - GRASP.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=un0KgCw1R1g&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                Análise e Projeto de Software Orientado a Objetos - Módulo 3 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Padrões Gerais de Atribuição de Responsabilidades - GRASP.</h3>
+            <ul>
+                <li>Responsabilidades e Métodos;</li>
+                <li>Padrões GRASP;</li>
+                <li>Padrão Especialista na Informação;</li>
+                <li>Padrão Criador;</li>
+                <li>Padrão Baixo Acoplamento;</li>
+                <li>Padrão Alta Coesão;</li>
+                <li>Padrão Controlador</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Responsabilidades e Métodos.</h2>
+            <ul>
+                <li>Responsabilidade é “um contrato ou obrigação de um tipo ou classe” e está relacionada com o
+                    comportamento dos objetos;</li>
+                <li>Divide-se em dois tipos básicos: de conhecer (alguma coisa) e de fazer (alguma coisa);</li>
+                <li>Responsabilidades são atribuídas aos objetos do sistema durante o projeto OO;</li>
+                <li>A distribuição dos métodos é influenciada pela granularidade da responsabilidade.</li>
+                <li>Métodos são implementados para cumprir responsabilidades, podendo agir sozinhos ou em colaboração
+                    com outros métodos e objetos;</li>
+                <li>Diagramas de interação (bem como sequência e comunicação) mostram decisões na atribuição de
+                    responsabilidades a objetos (implementadas como métodos).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Padrões GRASP.</h2>
+            <ul>
+                <li>Os padrões GRASP (General Responsibility Assignment Software Patterns) oferecem guias práticos para
+                    a tomada de decisões na atribuição de responsabilidades e alocação de métodos;</li>
+                <li>O conjunto possui nove padrões, mas os mais comuns são: Especialista na Informação, Criador, Baixo
+                    Acoplamento, Alta Coesão e Controlador;</li>
+                <li>Os padrões GRASP (General Responsibility Assignment Software Patterns) oferecem guias práticos para
+                    a tomada de decisões na atribuição de responsabilidades e alocação de métodos;</li>
+                <li>O nome foi escolhido por sugerir a importância de compreender (grasp) esses princípios para projetar
+                    com sucesso softwares OO.</li>
+            </ul>
+            <b>Base para Exemplos</b>
+            <p></p>
+            <img src="img/padrao-grasp.png" alt="padrao-grasp" title="padrão-grasp">
+        </section>
+
+        <section>
+            <h2>Padrão Especialista na Informação.</h2>
+            <ul>
+                <li>Consiste em atribuir responsabilidade para o especialista na informação — a classe que tem a
+                    informação necessária para cumprir a responsabilidade;</li>
+                <li>É o padrão mais utilizado na atribuição de responsabilidades;</li>
+                <li>Favorece baixo acoplamento e mantém o encapsulamento;</li>
+                <li>Comportamento é distribuído por meio das classes, que tem a informação necessária para cumprir a
+                    responsabilidade.</li>
+                <ul>
+                    <li>Ex. Qual classe tem a responsabilidade de calcular taxa de ocupação?</li>
+                </ul>
+            </ul>
+            <b>Base para Exemplos</b>
+            <p></p>
+            <img src="img/padrao-especialista-na-informacao.png" alt="padrao-especialista-na-informação"
+                title="padrão-especialista-na-informação">
+        </section>
+
+        <section>
+            <h2>Padrão Criador.</h2>
+            <ul>
+                <li>Consiste em atribuir à classe B a responsabilidade de criar uma instância da classe A se:</li>
+                <ul>
+                    <li>B agrega instâncias de A;</li>
+                    <li>B contém instâncias de A;</li>
+                    <li>B registra instâncias de A;</li>
+                    <li>B tem os dados de inicialização para criar instâncias de A (B portanto é um especialista na
+                        criação de A);</li>
+                </ul>
+                <li>Ex. Qual classe deveria criar uma instância de Ônibus?</li>
+            </ul>
+            <b>Base para Exemplos</b>
+            <p></p>
+            <img src="img/padrao-criador.png" alt="padrao-criador" title="padrão-criador.">
+            <p>Não aumenta o acoplamento porque a classe criada provavelmente já é visível para a classe criadora (por
+                causa das associações existentes entre elas).</p>
+        </section>
+
+        <section>
+            <h2>Padrão Baixo Acoplamento.</h2>
+            <ul>
+                <li>Consiste em atribuir a responsabilidade de modo que o acoplamento (dependência entre classes)
+                    permaneça baixo;</li>
+                <li>Responsabilidade não é (ou é pouco) afetada por mudanças em outros componentes e se torna mais
+                    simples de entender isoladamente;</li>
+                <li>Aumenta chances de reuso.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Padrão Alta Coesão.</h2>
+            <ul>
+                <li>Consiste em atribuir a responsabilidade de modo que a coesão (o quanto as responsabilidades de uma
+                    classe são fortemente relacionadas) permaneça alta;</li>
+                <li>Uma classe com alta coesão tem um número relativamente pequeno de métodos, com funcionalidades
+                    altamente relacionadas e não executa muito trabalho;</li>
+                <li>Se a tarefa for grande, um objeto irá colaborar com outros objetos para dividir o esforço.</li>
+                <li>Aumenta a clareza e a compreensão do projeto, além de simplificar a manutenção;</li>
+                <li>Uma classe altamente coesa também não depende de muitas outras classes, pois possui funcionalidades
+                    altamente relacionadas, favorecendo o baixo acoplamento;</li>
+                <li>Uma classe altamente coesa pode ser usada para uma finalidade muito específica, facilitando o reuso.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Padrão Controlador</h2>
+            <ul>
+                <li>Consiste em atribuir a responsabilidade de tratar um evento do sistema para uma classe
+                    “controladora”, representando:</li>
+                <li>o sistema como um todo (facade controller);</li>
+                <li>o negócio ou organização com um todo (facade controller);</li>
+                <li>uma coisa ou papel de uma pessoa do mundo real envolvida diretamente com a tarefa (role controller);
+                </li>
+                <li>um “tratador” (handler) artificial para todos os eventos de um caso de uso (use-case controller).
+                </li>
+                <li>Garante que a lógica da aplicação não seja tratada na camada de interface – apoia a reutilização da
+                    lógica em aplicações futuras e possibilita a substituição futura da interface com o usuário,
+                    aumentando a chance de reuso;</li>
+                <li>Melhor controle sobre o estado do caso de uso para garantir que as operações do sistema ocorram em
+                    uma sequência válida.</li>
+                <li>Se mal projetada, uma classe Controladora terá coesão baixa – falta de foco e tratamento de muitas
+                    áreas de responsabilidade;</li>
+                <li>Uma única classe controladora recebe todos os eventos de sistema (e há muitos eventos) – em geral
+                    ocorre com “controlador de fachada” (facade controller);</li>
+                <li>O próprio controlador executa muitas das tarefas necessárias para atender ao evento de sistema, sem
+                    delegar o trabalho.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <li>BOOCH, Grady; RUMBAUGH, James; JACOBSON, Ivar. UML: Guia do Usuário. 2. ed., rev. e atual. Rio de Janeiro: Elsevier, 2012. ISBN 9788535217841.</li>
+            <p></p>
+            <li>FOWLER, Martin. UML Essencial: Um Breve Guia para Linguagem Padrão. 3. ed. Porto Alegre: Bookman, 2011. SBN 9788560031382.</li>
+            <p></p>
+            <li>LARMAN, Craig. Utilizando UML e padrões: uma introdução à análise e ao projeto orientados a objetos e desenvolvimento iterativo. Porto Alegre: Bookman, 2011. ISBN 9788577800476.</li>
+            <p></p>
+            <li>SCHACH, Stephen R. Object-oriented & Classical Software Engineering. 7. ed. Boston: Mcgraw-hill Higher Education, 2007. ISBN 9780073191263.</li>
+            <p></p>
+            <li>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. 3. ed. Rio de Janeiro: GEN LTC, 2014. ISBN 9788595153653.</li>
+            <p></p>
+            <li>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem com UML, OCL e IFML. Rio de Janeiro: Elsevier, 2015. ISBN 9788535279849.</li>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
