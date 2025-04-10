@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Projeto orientado a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Projeto orientado a objetos</h1>
+        <h2>💬 Fórum de Discussão</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste fórum, vamos explorar o design de software orientado a objetos e os padrões gerais de atribuição de responsabilidades (GRASP). Esses padrões são fundamentais para a criação de sistemas robustos e flexíveis e é importante compreendê-los para projetar soluções eficientes e de fácil manutenção.</p>
+            <p>Sua tarefa é escolher um dos padrões GRASP, como Criador, Controlador, Especialista da Informação ou outros, e discutir sua importância e aplicação no Projeto (design) de software. Busque e compartilhe exemplos práticos de como esse padrão é utilizado para atribuir responsabilidades às classes e promover um design coeso e flexível.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Questões:</p>
+            <p>Adicionalmente, proponha uma questão que estimule a reflexão sobre como a aplicação dos padrões GRASP pode contribuir para a melhoria da qualidade e da eficiência dos sistemas de software.</p>
+            <ol>
+                <li>Qual padrão GRASP você considera mais relevante para o design de software?</li>
+                <li>Como ele pode ser aplicado para melhorar a qualidade dos sistemas?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>Ex.: Especialista da Informação.</b>
+            <p>1 - Qual padrão GRASP você considera mais relevante para o design de software?</p>
+            <ul>
+                <li>O especialista, pois determina que uma classe deve ser responsável por uma operação e se ela possui os dados necessários para realizar a operação.</li>
+                <ul>
+                    <li>Baseia outros padrões GRASP, como criador ou controlador.</li>
+                    <li>Reflete o princípio de encapsulamento da POO, mantendo dados e comportamentos relacionados juntos.</li>
+                    <li>Reduz a complexidade ao atribuir responsabilidades de forma intuitiva, quem tem os dados executa a ação.</li>
+                </ul>
+            </ul>
+
+            <p>2 - Como ele pode ser aplicado para melhorar a qualidade dos sistemas?</p>
+            <ul>
+                <li>A aplicação do especialista, melhora a qualidade.</li>
+            </ul>
+            <p>Ex.:</p>
+            <pre>
+            class Cart {
+                constructor () {
+                    this.items = []; // { product, price, quantity }
+                };
+
+                // O carrinho é o especialista pois tem os dados necessários
+                calculateTotal () {
+                    return this.itens.reduce(
+                        (total, item) => total + (item.price * item.quantity), 0
+                    );
+                };
+            };
+            </pre>
+            <ul>
+                <li>Benefícios:</li>
+                <ul>
+                    <li>Coesão: A lógica de cálculo fica dentro da classe que possui os dados (items).</li>
+                    <li>Baixo acoplamento: Nenhuma classe externa precisa acessar items diretamente.</li>
+                    <li>Manutenção simplificada: Alterações, ex.: Adicionar descontos, são locais.</li>
+                </ul>
+            </ul>
+            <p>Reflexão:</p>
+            <ul>
+                <li>O especialista pode prevenir vazamento de detalhes internos (ex.: export arrays como items ou objetos internos).</li>
+                <li>O especialista promove uma organização clara, dados e comportamentos ficam juntos.</li>
+                <li>Redux os bugs, minimiza o acesso indevido a estados internos.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 09 de abr de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
