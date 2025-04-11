@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Projeto orientado a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Projeto orientado a objetos</h1>
+        <h2>✅ [A3] Avaliação</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em quinta, 10 abr 2025, 20:48</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em quinta, 10 abr 2025, 21:47</li>
+                <li>⏳ Tempo empregado 58 minutos 54 segundos</li>
+                <li>🎯 Avaliar 9,60 de um máximo de 10,00(96%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Uma das desvantagens do padrão Controlador é que, se mal projetado, pode ter baixa coesão e tratar
+                    muitas áreas de responsabilidade.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <p>O padrão Controlador no GRASP tem como principal função coordenar operações do sistema (ex: em uma
+                    camada de serviços ou handlers), mas se mal aplicado, pode cair em armadilhas de design:</p>
+                <ol>
+                    <li>Baixa Coesão:</li>
+                    <ul>
+                        <li>Um controlador que gerencia múltiplas responsabilidades (ex: PedidoController que processa
+                            pagamentos, atualiza estoque e envia e-mails) viola o princípio da alta coesão.</li>
+                        <li>Isso dificulta a manutenção e testes.</li>
+                    </ul>
+                    <li>Acoplamento Excessivo:</li>
+                    <ul>
+                        <li>O controlador pode acabar centralizando demais a lógica, tornando-se um "God Object" (classe
+                            que faz tudo).</li>
+                    </ul>
+                </ol>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Associe cada padrão GRASP com sua definição correspondente:</p>
+                <pre>
+                Responsabilidade atribuída à classe que possui a informação necessária para cumprir uma responsabilidade (...).
+                Tratar eventos do sistema e gerenciar a lógica de aplicação (...).
+                Atribuir responsabilidades de modo que as funcionalidades de uma classe sejam altamente relacionadas (...).
+                Manter a dependência entre classes o mais baixo possível (...).
+                Atribuição de responsabilidade para criar instâncias de uma classe específica (...).
+                </pre>
+                <p>Opções: Criador, Alta Coesão, Controlador, Baixo Acoplamento, Especialista na Informação.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Responsabilidade atribuída à classe que possui a informação necessária para cumprir uma responsabilidade <b>Especialista na Informação</b>.
+                Tratar eventos do sistema e gerenciar a lógica de aplicação <b>Controlador</b>.
+                Atribuir responsabilidades de modo que as funcionalidades de uma classe sejam altamente relacionadas <b>Alta Coesão</b>.
+                Manter a dependência entre classes o mais baixo possível <b>Baixo Acoplamento</b>.
+                Atribuição de responsabilidade para criar instâncias de uma classe específica <b>Criador</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <pre>
+                <b>Definição</b>                                               | <b>Padrão GRASP</b>
+                Classe com informações para cumprir a responsabilidade. | Especialista da Informação
+                Gerencia eventos e lógica do sistema.	                | Controlador
+                Funcionalidades internas fortemente relacionadas.       | Alta Coesão
+                Minimizar dependências entre classes.	                | Baixo Acoplamento
+                Responsável por criar instâncias de outra classe.       | Criador
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>No contexto de GRASP, o que significa quem deveria ser "Criador"?</p>
+                <ul>
+                    <li>a. Uma interface de usuário especializada.</li>
+                    <li><b>b. Uma classe que conhece as informações necessárias para inicializar uma instância de uma
+                            classe.</b></li>
+                    <li>c. Um padrão que diminui o acoplamento entre classes.</li>
+                    <li>d. Uma classe que armazena todas as informações do sistema.</li>
+                    <li>e. Um método que é especialista em processamento de dados.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O padrão Criador (Creator) no GRASP define que a responsabilidade de criar instâncias de uma
+                        classe deve ser atribuída à classe que:</li>
+                    <ul>
+                        <li>Contém os dados necessários para a criação OU</li>
+                        <li>Agrega a instância a ser criada OU</li>
+                        <li>Usa diretamente a instância OU</li>
+                        <li>Registra a instância em seu sistema</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Qual das seguintes opções é uma responsabilidade atribuída ao padrão Controlador?</p>
+                <ul>
+                    <li><b>a. Tratar eventos de sistema.</b></li>
+                    <li>b. Gerenciar a interface do usuário diretamente.</li>
+                    <li>c. Armazenar dados de configuração.</li>
+                    <li>d. Sincronizar dados entre módulos.</li>
+                    <li>e. Criar instâncias de objetos.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O padrão Controlador (Controller) no GRASP tem como principal responsabilidade:</li>
+                    <ul>
+                        <li>Receber e tratar eventos do sistema (ex: ações do usuário, requisições HTTP, mensagens).
+                        </li>
+                        <li>Coordenar a lógica de aplicação, delegando tarefas específicas a outras classes (como
+                            serviços ou especialistas).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>O que são “responsabilidades” em um projeto orientado a objetos?</p>
+                <ul>
+                    <li>a. Apenas os atributos de uma classe.</li>
+                    <li>b. Regras de negócio externas ao sistema.</li>
+                    <li><b>c. Contratos ou obrigações de um tipo ou classe.</b></li>
+                    <li>d. Métodos que os objetos não podem implementar.</li>
+                    <li>e. Funções de interface de usuário.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Em projetos orientados a objetos, "responsabilidades" referem-se às tarefas, comportamentos ou
+                        obrigações que uma classe ou objeto deve cumprir para colaborar com o sistema. Isso inclui:</li>
+                    <ul>
+                        <li>O que uma classe sabe (seus atributos e estados).</li>
+                        <li>O que uma classe faz (seus métodos e operações).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>O padrão Baixo Acoplamento favorece a reusabilidade do código ao reduzir a dependência entre as
+                    classes.</p>
+                <p>Escolha uma opção: Verdadeiro, Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O padrão Baixo Acoplamento (Low Coupling) favorece a reusabilidade do código porque reduz as
+                        dependências entre as classes. Quando as classes são menos dependentes umas das outras, elas se
+                        tornam mais modulares e fáceis de reutilizar em diferentes contextos, sem a necessidade de
+                        modificar várias partes do código. Isso também facilita a manutenção e a escalabilidade do
+                        sistema.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Qual é a principal característica de uma classe com alta coesão?</p>
+                <ul>
+                    <li>a. Não possuir métodos estáticos.</li>
+                    <li>b. Possuir muitos métodos não relacionados.</li>
+                    <li><b>c. Ter funcionalidades altamente relacionadas.</b></li>
+                    <li>d. Depender de muitas outras classes.</li>
+                    <li>e. Ser responsável por várias tarefas diferentes.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Alta coesão significa que uma classe tem uma única responsabilidade bem definida e que todos os
+                        seus métodos e atributos estão fortemente relacionados a esse propósito. Isso torna a classe
+                        mais focada, fácil de entender, manter e reutilizar.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Associe cada princípio de modelagem para projeto com sua descrição:</p>
+                <pre>
+                Esses elementos precisam ser projetados cuidadosamente (...).
+                Levar em consideração durante o projeto (...).
+                Estar relacionado ao problema identificado (...).
+                Desenvolvido em ciclos, permitindo ajustes contínuos (...).
+                É tão importante quanto o das funções de processamento (...).
+                </pre>
+                <p>Opções: Projeto de dados, Considerar a arquitetura do sistema, Relacionar-se ao modelo de análise,
+                    Projeto iterativo, Interfaces externas e internas.</p>
+
+                <b class="answer">Resposta: ✅</b>
+
+                <pre>
+                Esses elementos precisam ser projetados cuidadosamente <b>Projeto de dados</b>. ❌
+                Levar em consideração durante o projeto <b>Considerar a arquitetura do sistema</b>. ✅
+                Estar relacionado ao problema identificado <b>Relacionar-se ao modelo de análise</b>. ✅
+                Desenvolvido em ciclos, permitindo ajustes contínuos <b>Projeto iterativo</b>. ✅
+                É tão importante quanto o das funções de processamento <b>Interfaces externas e internas</b>. ❌
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Projeto de dados requer cuidado porque define como a informação será armazenada e acessada.</li>
+                    <li>Arquitetura do sistema deve ser considerada desde o início para evitar retrabalho.</li>
+                    <li>Modelo de análise é a base para o projeto, garantindo alinhamento com as necessidades do
+                        usuário.</li>
+                    <li>Projeto iterativo enfatiza ciclos de refinamento contínuo.</li>
+                    <li>Interfaces (tanto internas quanto externas) são tão vitais quanto a lógica de processamento para
+                        integração e usabilidade.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Os padrões GRASP (General Responsibility Assignment Software Patterns) incluem guias práticos para a
+                    tomada de decisões na atribuição de responsabilidades e alocação de métodos.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Os padrões GRASP (General Responsibility Assignment Software Patterns) são justamente um
+                        conjunto de princípios que ajudam na tomada de decisões sobre atribuição de responsabilidades em
+                        projetos orientados a objetos. Eles fornecem guias práticos para:</li>
+                    <ul>
+                        <li>Definir quais classes devem ser responsáveis por determinadas operações.</li>
+                        <li>Alocar métodos de forma coesa e com baixo acoplamento.</li>
+                        <li>Resolver problemas comuns de design, como quem deve criar um objeto (Creator), como
+                            controlar o acesso a recursos (Controller), entre outros.</li>
+                    </ul>
+                    <li>Exemplos de Padrões GRASP:</li>
+                    <ul>
+                        <li>Expert (Especialista) → Atribuir responsabilidades à classe com mais informação para
+                            cumpri-las.</li>
+                        <li>Creator (Criador) → Definir qual classe deve instanciar outra.</li>
+                        <li>Controller (Controlador) → Centralizar a gestão de fluxo do sistema.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Qual é a principal vantagem do padrão Baixo Acoplamento?</p>
+                <ul>
+                    <li>a. Facilita a substituição futura da interface com o usuário.</li>
+                    <li>b. Aumenta o número de métodos em uma classe.</li>
+                    <li>c. Aumenta a coesão das classes.</li>
+                    <li><b>d. Reduz a dependência entre classes.</b></li>
+                    <li>e. Diminui a quantidade de atributos nas classes.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O Baixo Acoplamento tem como objetivo minimizar as dependências entre classes, o que traz benefícios como:</li>
+                    <ul>
+                        <li>Facilidade de manutenção: Mudanças em uma classe afetam menos outras partes do sistema.</li>
+                        <li>Reusabilidade: Classes menos dependentes podem ser reaproveitadas em outros contextos.</li>
+                        <li>Flexibilidade: Substituição ou modificação de componentes sem impactar o sistema como um todo.</li>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 10 de abr de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
