@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Projeto orientado a objetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Projeto orientado a objetos</h1>
+        <h2>📍 Checkout de Presença.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve a oportunidade de explorar o Projeto Orientado a Objetos: desenho de projeto e
+                padrões gerais de atribuição de responsabilidades (GRASP). Agora, é hora de aplicar esses conceitos por
+                meio da elaboração de um Diagrama de Classes da UML para o sistema proposto nas atividades dos dois
+                módulos anteriores.</p>
+            <p>Contextualização da Atividade:</p>
+            <ul>
+                <li>A atividade proposta consiste na criação de um Diagrama de Classes da UML que represente o sistema
+                    proposto nas atividades dos módulos anteriores. Este diagrama deve oferecer uma visão de
+                    implementação do sistema, evoluindo o modelo conceitual desenvolvido anteriormente e incluindo as
+                    responsabilidades de cada classe, seguindo os padrões GRASP.</li>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Passos para realização da atividade:</p>
+            <ol>
+                <li>Definição do Escopo do Diagrama de Classes: Identifique o escopo do sistema a ser representado no
+                    diagrama, considerando as funcionalidades e entidades principais.</li>
+                <li>Desenho do Diagrama de Classes: Utilizando uma ferramenta UML de sua escolha, crie o Diagrama de
+                    Classes que represente de forma completa o sistema proposto. Certifique-se de incluir todas as
+                    classes relevantes, seus atributos e relacionamentos, lembre-se de usar como base inicial seu modelo
+                    conceitual proposto no módulo anterior.</li>
+                <li>A atribuição de Responsabilidades, ou seja, a inserção dos métodos das classes devem ser realizadas,
+                    utilizando os Padrões GRASP. Considere principalmente o Especialista na Informação, Alta Coesão e
+                    Baixo Acoplamento.</li>
+                <li>Validação e Evolução do Modelo Conceitual: Revise o diagrama criado, garantindo que ele ofereça uma
+                    visão clara e precisa do sistema proposto. Certifique-se de que o modelo evolui adequadamente a
+                    partir do modelo conceitual desenvolvido anteriormente.</li>
+                <li>Exportação para PDF: Após a conclusão do Diagrama de Classes, exporte-o para um arquivo PDF,
+                    assegurando que ele esteja legível e bem formatado.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Modelo conceitual UML - Sistema de App Delivery.</b>
+            <ol>
+                <li>Definição do Escopo do Diagrama de Classes: Identifique o escopo do sistema a ser representado no
+                    diagrama, considerando as funcionalidades e entidades principais.</li>
+                <ul>
+                    <li>Este modelo foi desenvolvido para representar um sistema de entrega online, com funcionalidades
+                        de gerenciamento de usuários (clientes, vendedores, e admins), controle de pedidos e carrinho de
+                        compras e status de pedidos. Utiliza uma abordagem orientada a objetos com o auxílio da UML,
+                        visando maior clareza e padronização na modelagem de sistemas.</li>
+                    <ul>
+                        <li>Gestão de usuários (clientes, vendedores e administrador).</li>
+                        <li>Processo de compra (produtos, pedidos, checkout).</li>
+                        <li>Acompanhamento de pedidos.</li>
+                        <li>Comunicação em tempo real.</li>
+                    </ul>
+                </ul>
+                <li>Desenho do Diagrama de Classes: Utilizando uma ferramenta UML de sua escolha, crie o Diagrama de
+                    Classes que represente de forma completa o sistema proposto. Certifique-se de incluir todas as
+                    classes relevantes, seus atributos e relacionamentos, lembre-se de usar como base inicial seu modelo
+                    conceitual proposto no módulo anterior.</li>
+                <ul>
+                    <li>Classe User (Armazena os dados do usuário):</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>name: String.</li>
+                        <li>email: String.</li>
+                        <li>password: String (hash md5).</li>
+                        <li>role: Enum[customer, seller, admin].</li>
+                        <li>createdAt: DateTime.</li>
+                        <li>updatedAt: DateTime.</li>
+                    </ul>
+                    <li>Subclasse Customer (Representa o cliente):</li>
+                    <ul>
+                        <li>deliveryAddress: String.</li>
+                    </ul>
+                    <li>Subclasse Seller (Representa o vendedor):</li>
+                    <ul>
+                        <li>storeId: Integer (FK).</li>
+                    </ul>
+                    <li>Class Product (Representa os produtos a venda):</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>name: String.</li>
+                        <li>price: Decimal.</li>
+                        <li>imageUrl: String.</li>
+                        <li>stock: Integer.</li>
+                        <li>category: String.</li>
+                    </ul>
+                    <li>Classe Order (Representa os pedidos feitos pelos clientes):</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>customerId: Integer (FK).</li>
+                        <li>sellerId: Integer (FK).</li>
+                        <li>totalPrice: Decimal.</li>
+                        <li>deliveryAddress: String.</li>
+                        <li>status: Enum [pending, preparing, in_transit, delivered].</li>
+                        <li>createdAt: DateTime.</li>
+                        <li>updatedAt: DateTime.</li>
+                    </ul>
+                    <li>Classe OrderItem (Armazena informação sobre um pedido):</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>orderId: Integer (FK).</li>
+                        <li>productId: Integer (FK).</li>
+                        <li>quantity: Integer.</li>
+                        <li>unitPrice: Decimal.</li>
+                    </ul>
+                    <li>Classe ShoppingCart (Representa as compras de um cliente):</li>
+                    <ul>
+                        <li>id: Integer (PK).</li>
+                        <li>customerId: Integer (FK).</li>
+                        <li>createdAt: DateTime.</li>
+                    </ul>
+                    <li>Classe CartItem (Armazena os items adicionados por um cliente):</li>
+                    <ul>
+                        <li>id: Integer(PK).</li>
+                        <li>cartId: Integer(FK).</li>
+                        <li>productId: Integer(FK).</li>
+                        <li>quantity: Integer.</li>
+                    </ul>
+                </ul>
+                <li>A atribuição de Responsabilidades, ou seja, a inserção dos métodos das classes devem ser realizadas,
+                    utilizando os Padrões GRASP. Considere principalmente o Especialista na Informação, Alta Coesão e
+                    Baixo Acoplamento.</li>
+                <ul>
+                    <li>Relacionamentos:</li>
+                    <ul>
+                        <li>User é a classe base de Customer e Seller.</li>
+                        <li>Customer (1:N) Order | "Um para muitos".</li>
+                        <li>Seller (1:N) Order | "Um para muitos".</li>
+                        <li>Order (1:N) OrderItem | "Um para muitos".</li>
+                        <li>Product (1:N) OrderItem | "Um para muitos".</li>
+                        <li>Customer (1:1) ShoppingCart | "Um para um".</li>
+                        <li>ShoppingCart (1:N) CartItem | "Um para muitos".</li>
+                        <li>Product (1:N) CartItem | "Um para muitos".</li>
+                    </ul>
+                </ul>
+                <li>Validação e Evolução do Modelo Conceitual: Revise o diagrama criado, garantindo que ele ofereça uma
+                    visão clara e precisa do sistema proposto. Certifique-se de que o modelo evolui adequadamente a
+                    partir do modelo conceitual desenvolvido anteriormente.</li>
+                <ol>
+                    <li>O modelo tem uma organização clara das classes e heranças.</li>
+                    <li>Relacionamentos definidos e com cardinalidade.</li>
+                    <li>Aplica o princípio de orientação a objetos.</li>
+                    <ul>
+                        <li>Encapsulamento (atributos organizados por classe), Herança ('User' como superclasse),
+                            Polimorfismo (possível uso futuro para tratamento uniforme de diferentes 'roles').</li>
+                    </ul>
+                </ol>
+            </ol>
+            <br>
+            <br>
+            <p>Representação:</p>
+            <br>
+            <img src="img/diagrama-de-classe-app-delivery.png" alt="diagrama-de-classe-app-delivery"
+                title="diagrama-de-classe-app-delivery">
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
