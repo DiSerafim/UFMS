@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 – Prática da análise e projeto.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Prática da análise e projeto.</h1>
+        <h2>💡 Unidade 2 - Implementação orientada a objetos.</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=Q5knEKp6jts&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                [UFMS Digital] Análise e Projeto de Software Orientado a Objetos - Módulo 4 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Luciano Édipo Pereira da Silva.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <ul>
+                <li>Agenda</li>
+                <ul>
+                    <li>Ambientes DEV:</li>
+                    <ul>
+                        <li>Preparação;</li>
+                        <li>Uso;</li>
+                    </ul>
+                    <li>Documentação;</li>
+                    <li>Exemplos práticos e suas versões em código.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo conceitual</h2>
+            <img src="img/diagrama-meu-bond.png" alt="Modelo conceitual" title="Modelo conceitual">
+        </section>
+
+        <section>
+            <h2>Diagrama de classes.</h2>
+            <img src="img/diagrama-de-classes-meu-bond.png" alt="Diagrama de classes" title="Diagrama de classes">
+        </section>
+
+        <section>
+            <h2>Modelagem do Sistema.</h2>
+            <ul>
+                <li>Criação do Diagrama de Casos de Uso: Identificar os principais atores e suas interações com o
+                    sistema.</li>
+                <li>Detalhamento com Diagramas de Classes e Diagramas de Comunicação:</li>
+                <ul>
+                    <li>Diagrama de Classes: Definição de classes, atributos, métodos e relacionamentos.</li>
+                    <li>Diagrama de Comunicação: Mostrar as interações entre os objetos no sistema.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Design (desenho) e Arquitetura.</h2>
+            <ul>
+                <li>Definição da Arquitetura do Sistema: Escolher um padrão arquitetural (por exemplo, MVC -
+                    Model-View-Controller).</li>
+                <li>Aplicação dos Padrões de Projeto GRASP: Explicar alguns padrões, como "Especialista na Informação" e
+                    "Controller", e como eles ajudam na atribuição de responsabilidades.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Implementação, Teste e Validação.</h2>
+            <ul>
+                <li>Transição do Modelo para o Código: Uso das ferramentas CASE para gerar esboços de código.</li>
+                <li>Boas Práticas na Codificação: Importância dos princípios SOLID para manter o código limpo e
+                    sustentável.</li>
+                <li>Desenvolvimento de Testes Unitários e de Integração: Garantir que cada componente do sistema
+                    funcione corretamente.</li>
+                <li>Ferramentas de Teste: Breve introdução a ferramentas como JUnit para Java.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Localizador de Transporte Municipal</h2>
+            <b>Base para Análise Textual</b>
+
+            <p>O sistema "Localizador de Transporte Municipal" deve ser projetado para gerenciar e fornecer informações
+                em tempo real sobre múltiplas linhas circulares de ônibus operando em uma cidade. Este sistema deve
+                permitir que passageiros acessem informações sobre diferentes linhas circulares de ônibus, como
+                localização atual dos veículos, intervalo entre voltas, e estimativas de tempo para chegada nos pontos
+                de parada ao longo de cada linha.</p>
+            <p>O sistema deve fornecer mapas interativos mostrando o trajeto completo de cada linha e a localização em
+                tempo real dos ônibus, bem como as linhas ativas. Além disso, oferece estimativas da próxima passagem
+                nos pontos de parada, permitindo que os cidadãos planejem suas viagens com eficiência.</p>
+            <p>Funcionalidades adicionais incluem notificar os usuários sobre atrasos ou alterações no serviço e exibir
+                a lotação atual de cada ônibus, bem como a lotação total de cada linha.</p>
+            <b>Atividade 1-Identificação das Classes de Análise</b>
+            <ul>
+                <li>Atividade 1.1-Extração de Classes Candidatas</li>
+                <ul>
+                    <li>sistema</li>
+                    <li>Localizador de Transporte Municipal</li>
+                    <li>informações</li>
+                    <li>linhas circulares</li>
+                    <li>ônibus</li>
+                    <li>cidade</li>
+                    <li>passageiros</li>
+                    <li>localização</li>
+                    <li>veículos</li>
+                    <li>intervalo</li>
+                    <li>voltas</li>
+                    <li>estimativas de tempo</li>
+                    <li>pontos de parada</li>
+                    <li>mapas interativos</li>
+                    <li>trajeto</li>
+                    <li>cidadãos</li>
+                    <li>viagens</li>
+                    <li>funcionalidades</li>
+                    <li>usuários</li>
+                    <li>atrasos</li>
+                    <li>alterações</li>
+                    <li>serviço</li>
+                    <li>lotação atual</li>
+                    <li>lotação total</li>
+                </ul>
+                <li>Atividade 1.2: Eliminação de Classes Inapropriadas</li>
+                <ul>
+                    <li>sistema</li>
+                    <li>Localizador de Transporte Municipal (visão genérica do escopo)</li>
+                    <li>informações (visão genérica de dados)</li>
+                    <li>linhas circulares</li>
+                    <li>ônibus</li>
+                    <li>cidade (visão genérica de escopo)</li>
+                    <li>passageiros (sinônimo de usuários)</li>
+                    <li>localização (atributo de ônibus)</li>
+                    <li>veículos (sinônimo de ônibus)</li>
+                    <li>intervalo (atributo de linha)</li>
+                    <li>voltas (representação de um estado)</li>
+                    <li>estimativas de tempo (informação de parada)</li>
+                    <li>pontos de parada</li>
+                    <li>mapas interativos (visão genérica de escopo)</li>
+                    <li>trajeto</li>
+                    <li>trajeto</li>
+                    <li>cidadãos (sinônimo de usuários)</li>
+                    <li>viagens (visão genérica de escopo)</li>
+                    <li>funcionalidades (visão genérica de escopo)</li>
+                    <li>usuários</li>
+                    <li>atrasos (representação de um status)</li>
+                    <li>alterações (representação de um status)</li>
+                    <li>serviço (visão genérica de escopo)</li>
+                    <li>lotação atual (atributo de ônibus)</li>
+                    <li>lotação total (representação de um status)</li>
+                    <p>Ou seja</p>
+                    <li>sistema</li>
+                    <li>linhas circulares + linha</li>
+                    <li>ônibus</li>
+                    <li>localização (atributo)</li>
+                    <li>intervalo (atributo)</li>
+                    <li>estimativas de tempo (atributo)</li>
+                    <li>pontos de ônibus ponto de parada</li>
+                    <li>trajeto</li>
+                    <li>usuários usuário</li>
+                    <li>lotação atual (atributo)</li>
+                    <li>lotação total (atributo)</li>
+                </ul>
+            </ul>
+
+            <b>Atividade 2: Identificação dos Relacionamentos entre Classes</b>
+            <ul>
+                <li>Atividade 2.1: Identificação de Associações</li>
+                <ul>
+                    <li>Diretrizes: Existência independente,</li>
+                    <ul>
+                        <li>linha - trajeto</li>
+                        <li>linha - ônibus</li>
+                        <li>trajeto-ponto de parada</li>
+                        <li>usuário - ônibus</li>
+                    </ul>
+                </ul>
+                <li>Atividade 2.2: Identificação de Agregações</li>
+                <ul>
+                    <li>Agregação: O "todo" pode existir sem suas partes, mas as partes têm uma existência mais
+                        significativa.</li>
+                    <ul>
+                        <li>trajeto contém ônibus</li>
+                        <li>trajeto contém pontos de parada</li>
+                    </ul>
+                </ul>
+                <li>Atividade 2.3: Identificação de Heranças</li>
+                <ul>
+                    <li>Análise de Domínio: Tipos de Linhas.</li>
+                </ul>
+            </ul>
+
+            <b>Atividade 3: Identificação dos atributos das Classes.</b>
+            <ul>
+                <li>Inserir as identificadas nas etapas anteriores</li>
+                <li>Análise de Domínio</li>
+                <ul>
+                    <li>Nome → Usuário</li>
+                    <li>Capacidade → Ônibus</li>
+                    <li>Parada Inicial→ Trajeto</li>
+                    <li>... → ...</li>
+                </ul>
+                <li>Refinar seguindo as diretrizes:</li>
+                <img src="img/diretrizes.png" alt="diretrizes" title="diretrizes">
+            </ul>
+
+
+
+
+
+
+
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>BOOCH, Grady; RUMBAUGH, James; JACOBSON, Ivar. UML: guia do usuário. 2. ed., rev. e atual. Rio de
+                Janeiro: Elsevier, 2012. ISBN 9788535217841.</cite>
+            <p></p>
+            <cite>FOWLER, Martin. UML essencial: um breve guia para linguagem Padrão. 3. ed. Porto Alegre: Bookman,
+                2011. ISBN 9788560031382.</cite>
+            <p></p>
+            <cite>LARMAN, Craig. Utilizando UML e padrões: uma introdução à análise e ao projeto orientados a objetos e
+                desenvolvimento iterativo. Porto Alegre: Bookman, 2011. ISBN 9788577800476.</cite>
+            <p></p>
+            <cite>SCHACH, Stephen R. Object-oriented & Classical Software Engineering. 7. ed. Boston: Mcgraw-hill Higher
+                Education, 2007. ISBN 9780073191263.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem
+                com UML, OCL e IFML. 3. ed. Rio de Janeiro: GEN LTC, 2014. ISBN 9788595153653.</cite>
+            <p></p>
+            <cite>WAZLAWICK, Raul Sidnei. Análise e design orientados a objetos para sistemas de informação: modelagem
+                com UML, OCL e IFML. Rio de Janeiro: Elsevier, 2015. ISBN 9788535279849.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
