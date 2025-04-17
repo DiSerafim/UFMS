@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Prática da análise e projeto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 - Prática da análise e projeto</h1>
+        <h2>✅ [A4] Avaliação</h2>
+        <p>Prof° Especialista: Luciano Édipo Pereira da Silva.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>ANÁLISE E PROJETO DE SOFTWARE ORIENTADO A OBJETOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em quarta, 16 abr 2025, 21:34</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em quarta, 16 abr 2025, 23:05</li>
+                <li>⏳ Tempo empregado 1 hora 31 minutos</li>
+                <li>🎯 Avaliar 7,60 de um máximo de 10,00(76%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Assinale a opção que representa uma situação inconsistente com o modelo conceitual a seguir:</p>
+                <img src="img/unnamed.png" alt="">
+                <p>Elaboração do autor.</p>
+                <ul>
+                    <li>a. Existe uma instância de Carro associada a uma instância de Placa.</li>
+                    <li><b>b. Existe uma instância de Carro que não está associada à nenhuma instância de
+                            Fabricante.</b></li>
+                    <li>c. Existe uma instância de Pessoa associada a uma instância de Carro.</li>
+                    <li>d. Existe uma instância de Fabricante que não está associada à nenhuma instância de Carro.</li>
+                    <li>e. Existe uma instância de Pessoa associada a três instâncias de Carro.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Pessoa ↔ Carro:</li>
+                    <ul>
+                        <li>Uma pessoa (1) pode possuir zero ou mais carros (0..), e um carro pode ser possuído por uma
+                            ou mais pessoas (1..).</li>
+                    </ul>
+                    <li>Carro ↔ Fabricante:</li>
+                    <ul>
+                        <li>Um carro (0..*) deve estar associado a exatamente 1 fabricante (1).</li>
+                        <li>➤ Isso significa que todo carro deve ter um fabricante.</li>
+                    </ul>
+                    <li>Carro ↔ Placa:</li>
+                    <ul>
+                        <li>Um carro pode ter no máximo uma placa (0..1) e uma placa pertence a exatamente um carro (1).
+                        </li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Considere o seguinte texto:</p>
+                <p>“Cada curso oferece uma série de disciplinas. Cada uma pode ter um ou mais módulos, mas uma mesma
+                    disciplina pode ser ofertada em diferentes cursos com diferentes números de módulos. Cada disciplina
+                    é ofertada por um professor. Eventualmente dois cursos podem ofertar a mesma disciplina. Nesse caso,
+                    o professor pode ser o mesmo ou pode ser outro.”</p>
+                <p>Qual dos modelos conceituais abaixo melhor representa esta situação?</p>
+                <p>Imagens elaboradas pelo autor.</p>
+                <ul>
+                    <li>a. Modelo 1</li>
+                    <img src="img/unnamed (1).png" alt="unnamed (1).png">
+                    <p></p>
+                    <li>b. Modelo 2</li>
+                    <img src="img/unnamed (2).png" alt="unnamed (2).png">
+                    <p></p>
+                    <li>c. Modelo 3</li>
+                    <img src="img/unnamed (3).png" alt="unnamed (3).png">
+                    <p></p>
+                    <li><b>d. Modelo 4</b></li>
+                    <img src="img/unnamed (4).png" alt="unnamed (4).png">
+                    <p></p>
+                    <li>e. Nenhuma das alternativas.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Mostra a relação entre Curso, Disciplina e Professor através de Disciplina_Ofertada.</li>
+                    <li>Permite que a mesma disciplina em cursos diferentes tenha professores diferentes.</li>
+                    <li>Representa corretamente os módulos associados às disciplinas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Qual/Quais situação(ões) a seguir poderia(m) ser modelada(s) como agregação entre conceitos?</p>
+                <ul>
+                    <li>I. Um pai e seus filhos.</li>
+                    <li>II. Um álbum e suas músicas.</li>
+                    <li>III. Um círculo e seus pontos.</li>
+                    <li>IV. Uma locação e seu cliente.</li>
+                </ul>
+                <ul>
+                    <li><b>a. Apenas II e III.</b></li>
+                    <li>b. Apenas II e IV.</li>
+                    <li>c. Apenas III.</li>
+                    <li>d. Apenas I e IV.</li>
+                    <li>e. Apenas II.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ❌</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li><b>Agregação</b> é um tipo de associação que indica um relacionamento "todo-parte", onde a parte
+                        pode existir independentemente do todo. É representada por um losango vazio na UML.</li>
+                    <ul>
+                        <li>Ex.: um álbum e suas músicas (as músicas existem sem o álbum), um círculo e seus pontos (os
+                            pontos existem sem o círculo).</li>
+                    </ul>
+                </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Faça as associações corretas:</p>
+                <pre>
+                Coleção de cenários relacionados típicos de fracasso que descreve a resposta do sistema quando ocorre alguma exceção (...).
+                Coleção de cenários relacionados típicos de sucesso e fracasso que descreve a utilização do sistema para atingir um objetivo específico (...).
+                Sequência de ações específicas e interações entre atores e o sistema (...).
+                Evento que impede que o caso de uso possa acontecer (...).
+                Algo que possui comportamento e interage com o sistema (...).
+                </pre>
+                <p>Opções: Cenário, Fluxo Alternativo, Exceção, Ator, Caso de Uso.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Coleção de cenários relacionados típicos de fracasso que descreve a resposta do sistema quando ocorre alguma exceção <b>Exceção</b>❌.
+                Coleção de cenários relacionados típicos de sucesso e fracasso que descreve a utilização do sistema para atingir um objetivo específico <b>Caso de Uso</b>✅.
+                Sequência de ações específicas e interações entre atores e o sistema <b>Cenário</b>✅.
+                Evento que impede que o caso de uso possa acontecer <b>Fluxo Alternativo</b>❌.
+                Algo que possui comportamento e interage com o sistema <b>Ator</b>✅.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Exceção (Descreve respostas a falhas, erros ou situações anormais.)</li>
+                    <li>Caso de Uso (Agrupa fluxos principais, alternativos e exceções para um objetivo.)</li>
+                    <li>Cenário (Representa uma instância concreta de execução, como um fluxo específico dentro de um
+                        caso de uso.)</li>
+                    <li>Fluxo Alternativo (inclui condições que desviam o fluxo principal.)</li>
+                    <li>Ator (Qualquer entidade externa que interaja com o sistema, como usuários ou outros sistemas.)
+                    </li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Considere o diagrama de atividades que representa o funcionamento do negócio de uma loja de sapatos,
+                    conforme a figura a seguir:</p>
+                <img src="img/unnamed (5).png" alt="unnamed (5).png">
+                <p>Elaboração do autor.</p>
+                <p>Escolha qual opção indica uma representação adequada para registrar o pagamento, finalizar a venda e
+                    entregar os sapatos logo depois que o cliente pagar os sapatos:</p>
+                <ul>
+                    <li><b>a. Incluir as atividades "Registrar Pagamento", "Finalizar Venda" e "Entregar Sapatos" na
+                            raia Vendedor.</b></li>
+                    <li>b. Incluir a atividade "Registrar Pagamento" na raia Vendedor e incluir a atividade "Finalizar
+                        Venda" na raia Cliente.</li>
+                    <li>c. Incluir as atividades "Registrar Pagamento" e "Finalizar Venda" na raia Cliente e incluir a
+                        atividade "Entregar Sapatos" na raia Vendedor.</li>
+                    <li>d. Incluir as atividades "Registrar Pagamento" e "Entregar Sapatos" na raia Vendedor e incluir
+                        atividade "Finalizar Venda" na raia Cliente.</li>
+                    <li>e. Incluir a atividade "Registrar Pagamento" na raia Cliente e incluir as atividades "Finalizar
+                        Venda" e "Entregar sapatos" na raia Vendedor.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Todas as atividades mencionadas são de responsabilidade do Vendedor (processamento do pagamento,
+                        conclusão da venda e entrega).</li>
+                    <li>O Cliente não participa ativamente dessas etapas no contexto do diagrama de atividades (sua ação
+                        principal é "Pagar sapatos", que já está representada).</li>
+                    <li>As outras opções distribuem as atividades de forma incoerente com as responsabilidades reais do
+                        fluxo.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>De acordo com o caso de uso abaixo, responda (quadro elaborado pelo autor):</p>
+                <p>O que acontece se o usuário tentar cadastrar um fornecedor com um nome que já existe no banco de
+                    dados? Escolha a alternativa correta:</p>
+                <img src="img/unnamed (6).png" alt="unnamed (6).png">
+                <ul>
+                    <li><b>a. O sistema informa que já existe um registro cadastrado com o mesmo nome e volta ao passo 2
+                            do fluxo principal.</b></li>
+                    <li>b. O sistema limpa os campos preenchidos e volta ao passo 3 do fluxo principal.</li>
+                    <li>c. O sistema verifica se existem campos obrigatórios não preenchidos.</li>
+                    <li>d. O sistema retorna ao ambiente padrão do sistema.</li>
+                    <li>e. O sistema informa que o cadastro foi efetuado com sucesso.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>No passo 6 do fluxo principal, o sistema verifica se já existe um cadastro com o mesmo nome.
+                    </li>
+                    <li>Se existir, o Fluxo Alternativo [6a] é acionado.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Qual/Quais situação(ões) a seguir poderia(m) ser modelada(s) como agregação entre conceitos?</p>
+                <ul>
+                    <li>I. Uma receita e seus ingredientes.</li>
+                    <li>II. Uma venda e seu cliente.</li>
+                    <li>III. Um supervisor e seus subordinados.</li>
+                    <li>IV. Um curso e suas disciplinas.</li>
+                </ul>
+                <ul>
+                    <li>a. Apenas II e III.</li>
+                    <li>b. Apenas III.</li>
+                    <li>c. Apenas I e III.</li>
+                    <li><b>d. Apenas I e IV.</b></li>
+                    <li>e. Apenas I.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Os ingredientes existem independentemente da receita (ex.: sal, açúcar). A receita é composta
+                        por ingredientes, mas eles não dependem dela para existir.</li>
+                    <li>As disciplinas existem independentemente do curso (ex.: Matemática pode ser parte de vários
+                        cursos). O curso é composto por disciplinas, mas elas não dependem dele.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>De acordo com o caso de uso abaixo, responda (quadro elaborado pelo autor):</p>
+                <img src="img/unnamed (7).png" alt="img 7">
+                <p>Qual é a ação correta que o sistema deve tomar se o usuário clicar em "cancelar registro" durante o
+                    cadastro de um fornecedor? Escolha a alternativa correta:</p>
+                <ul>
+                    <li>a. O sistema retorna ao passo 3 do fluxo principal.</li>
+                    <li>b. O sistema armazena os dados preenchidos.</li>
+                    <li><b>c. O ambiente de cadastro se fecha e o sistema volta ao passo 9 do fluxo principal.</b></li>
+                    <li>d. O sistema verifica se existem campos obrigatórios não preenchidos.</li>
+                    <li>e. O sistema solicita confirmação para cancelar o registro.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>De acordo com a imagem abaixo, qual(is) característica(s) de OO este fragmento de modelagem
+                    representa? Selecione duas alternativas corretas:</p>
+                <p>Obs.: Cada alternativa errada que for marcada anula a pontuação que seria recebida por uma
+                    alternativa correta.</p>
+                <img src="img/unnamed (8).png" alt="img 8">
+                <ul>
+                    <li>a. Composição.</li>
+                    <li><b>b. Herança Simples.</b>✅</li>
+                    <li>c. Herança Múltipla.</li>
+                    <li><b>d. Agregação.</b>❌</li>
+                    <li>e. Associação simples.</li>
+                </ul>
+
+                <b class="answer">Resposta: b ✅, d ❌.</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Herança Simples (relação entre Veículo e seus subtipos):</li>
+                    <ul>
+                        <li>A imagem mostra que Carro, Caminhão e Moto são tipos específicos de Veículo, indicando uma
+                            relação de generalização/especialização. Isso é um exemplo claro de herança simples, onde as
+                            classes derivadas herdam de uma única classe base (Veículo).</li>
+                    </ul>
+                    <li>Agregação (relação entre Veículo e Peças):</li>
+                    <ul>
+                        <li>A relação entre Veículo e Peças sugere um relacionamento "todo-parte", onde as peças podem
+                            existir independentemente do veículo. Isso caracteriza uma agregação, representada por um
+                            losango vazio em diagramas UML.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>De acordo com o caso de uso abaixo, responda (quadro elaborado pelo autor):</p>
+                <img src="img/unnamed (7).png" alt="img 7">
+                <p>Desconsiderando reentradas em fluxos alternativos ou loops, quantos cenários únicos existem neste
+                    caso de uso?</p>
+                <ul>
+                    <li>a. 5</li>
+                    <li>b. 2</li>
+                    <li>c. 1</li>
+                    <li>d. Nenhum</li>
+                    <li><b>e. 6</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Cada fluxo alternativo representa um desvio distinto do fluxo principal, resultando em 6
+                        cenários únicos (1 fluxo principal + 5 fluxos alternativos).</li>
+                    <ul>
+                        <li>Fluxo Principal Completo (passos 1 a 9):</li>
+                        <ul>
+                            <li>Cadastro bem-sucedido sem desvios.</li>
+                        </ul>
+                        <li>Fluxo Alternativo [5a]:</li>
+                        <ul>
+                            <li>Campos obrigatórios não preenchidos (passo 5 → 5a.1 → 5a.2 → volta ao passo 3).</li>
+                        </ul>
+                        <li>Fluxo Alternativo [6a]:</li>
+                        <ul>
+                            <li>Nome do fornecedor já cadastrado (passo 6 → 6a.1 → 6a.2 → volta ao passo 2).</li>
+                        </ul>
+                        <li>Fluxo Alternativo [2a]:</li>
+                        <ul>
+                            <li>Cancelamento do registro (passo 2 → 2a.1 → 2a.2 → passo 9).</li>
+                        </ul>
+                        <li>Fluxo Alternativo [3a]:</li>
+                        <ul>
+                            <li>Limpeza dos campos (passo 3 → 3a.1 → 3a.2 → 3a.3 → volta ao passo 3).</li>
+                        </ul>
+                        <li>Fluxo Alternativo [5b]:</li>
+                        <ul>
+                            <li>Campos não obrigatórios não preenchidos (passo 5 → 5b.1 → 5b.2 → 5b.3 → passo 9).</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 17 de abr de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
