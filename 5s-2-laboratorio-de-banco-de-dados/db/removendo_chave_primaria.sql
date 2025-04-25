@@ -1,0 +1,1 @@
+ALTER TABLE clientes DROP CONSTRAINT clientes_pkey;

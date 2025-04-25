@@ -1,0 +1,1 @@
+ALTER TABLE alunos ADD COLUMN status VARCHAR(20) DEFAULT 'ativo';

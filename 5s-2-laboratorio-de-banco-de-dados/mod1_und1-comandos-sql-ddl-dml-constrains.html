@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL</h1>
+        <h2>💡 Unidade 1 - Comandos SQL (DDL e DML), Constraints.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=tKTVajEFWHs&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 1 - Unidade 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Experiência prática com sistemas de gerenciamento de banco de dados (SGBD), com foco na aplicação dos
+                comandos SQL.</h3>
+            <ul>
+                <a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">Instalação</a>
+            </ul>
+            <img src="img/postgresql.png" alt="postgresql" title="postgresql">
+        </section>
+
+        <section>
+            <h2>PostgreSQL.</h2>
+            <img src="img/postgresql1.png" alt="postgresql" title="postgresql">
+            <p></p>
+            <ul>
+                <li>O PostgreSQL é um Sistema de Gerenciamento de Banco de Dados <b>Relacional</b> (SGBDR).</li>
+                <li>Isso significa que ele gerencia <b>dados armazenados em tabelas</b>.</li>
+                <li>Embora o conceito de armazenar dados em tabelas seja comum atualmente, existem outras formas de
+                    organizar bancos de dados, como bancos de dados orientados a objetos ou NoSQL.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tabelas.</h2>
+            <ul>
+                <li>Em Banco de Dados utilizamos termos baseados em álgebra relacional.</li>
+                <li>Cada <b>tabela (relação)</b> no PostgreSQL é uma coleção nomeada de <b>linhas (ou tuplas)</b>.</li>
+                <li>Todas as linhas de uma tabela compartilham o mesmo conjunto de <b>colunas (ou atributos)</b>, que
+                    são campos nomeados e armazenam um tipo especíﬁco de dado (ex: inteiros, strings, datas, etc.).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>DDL.</h2>
+            <ul>
+                <li>A <b>Data Deﬁnition Language</b> (DDL) é usada para deﬁnir e modiﬁcar a estrutura do banco de dados.
+                </li>
+                <li>Os comandos DDL não manipulam os dados em si, mas sim os objetos que armazenam esses dados, como
+                    tabelas, índices e esquemas.</li>
+                <li>A execução de um comando DDL geralmente resulta em uma mudança no esquema ou estrutura do banco de
+                    dados.</li>
+                <li>Com DDL, podemos criar, alterar e remover objetos de banco de dados, como tabelas e índices.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Cenário.</h2>
+            <ul>
+                <li>Para os exemplos a seguir, considere o cenário de um sistema de gestão acadêmica para uma
+                    universidade.</li>
+                <li>Esse sistema será responsável por gerenciar alunos, cursos, professores e matrículas.</li>
+                <li>A universidade precisa de um sistema que organize as informações de alunos, cursos, professores e
+                    matrículas. O sistema deve permitir:</li>
+                <ul>
+                    <li><b>Alunos:</b> Os alunos têm um número de matrícula único, nome, data de nascimento, e-mail, e
+                        podem
+                        estar
+                        matriculados em vários cursos.</li>
+                    <li><b>Cursos:</b> Cada curso tem um código único, nome, descrição e carga horária.</li>
+                    <li><b>Professores:</b> Os professores têm um identificador único, nome, e-mail, e podem ministrar
+                        vários
+                        cursos.</li>
+                    <li><b>Matrículas:</b> Os alunos podem se matricular em diversos cursos, e cada matrícula registra o
+                        semestre e
+                        o ano em que o aluno se matriculou naquele curso.</li>
+                </ul>
+                <li><b>Alunos:</b> Tabela alunos</li>
+                <ul>
+                    <li>Atributos: id_aluno, nome, data_nascimento, email</li>
+                </ul>
+                <li><b>Cursos:</b> Tabela cursos</li>
+                <ul>
+                    <li>Atributos: id_curso, nome_curso, descrição, carga_horaria</li>
+                </ul>
+                <li><b>Professores:</b> Tabela professores</li>
+                <ul>
+                    <li>Atributos: id_professor, nome, email</li>
+                </ul>
+                <li><b>Matrículas:</b> Tabela matriculas</li>
+                <ul>
+                    <li>Atributos: id_matricula, id_aluno, id_curso, semestre, ano</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Constraints.</h2>
+            <ul>
+                <li>Constraints, ou Restrições, são regras específicas aplicadas às colunas de uma tabela, ou à tabela
+                    como um todo, para garantir a integridade e consistência dos dados.</li>
+                <li>Essas restrições permitem um grande controle sobre os dados armazenados, garantindo que somente
+                    dados válidos sejam inseridos.</li>
+                <li>Caso um usuário tente armazenar dados em uma coluna de forma a violar uma restrição, um erro será
+                    gerado.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reﬂetindo sobre restrições.</h2>
+            <ul>
+                <li>Quais restrições teremos nas entidades e atributos apresentados para o cenário do <b>sistema de
+                        gestão
+                        acadêmica universitária?</b></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Criação das tabelas (relações).</h2>
+            <p>DDL para criar a estrutura do banco.</p>
+            <pre>
+                CREATE TABLE alunos (
+                    id_aluno SERIAL PRIMARY KEY,
+                    nome VARCHAR(100) NOT NULL,
+                    data_nascimento DATE,
+                    email VARCHAR(100) UNIQUE
+                );
+                
+                CREATE TABLE cursos (
+                    id_curso SERIAL PRIMARY KEY,
+                    nome_curso VARCHAR(100) NOT NULL,
+                    descricao TEXT,
+                    carga_horaria INT
+                );
+                
+                CREATE TABLE professores (
+                    id_professor SERIAL PRIMARY KEY,
+                    nome VARCHAR(100) NOT NULL,
+                    email VARCHAR(100) UNIQUE
+                );
+                
+                CREATE TABLE matriculas (
+                    id_matricula SERIAL PRIMARY KEY,
+                    id_aluno INT REFERENCES alunos(id_aluno),
+                    id_curso INT REFERENCES cursos(id_curso),
+                    semestre VARCHAR(6),
+                    ano INT
+                );
+            </pre>
+        </section>
+
+        <section>
+            <h2>Default.</h2>
+            <p>O valor <b>DEFAULT</b> em SQL é utilizado para deﬁnir um valor padrão que será atribuído automaticamente
+                a uma
+                coluna quando nenhum valor explícito for fornecido durante a inserção de um novo registro.</p>
+            <p>Isso ajuda a garantir que uma coluna tenha um valor deﬁnido mesmo quando o usuário não fornece um valor
+                ao inserir dados.</p>
+        </section>
+
+        <section>
+            <h2>Alterar tabela.</h2>
+            <p>O comando <b>ALTER TABLE</b> permite modiﬁcar a estrutura de uma tabela existente, como adicionar,
+                remover ou alterar colunas.</p>
+            <p>A<b>LTER TABLE</b> alunos <b>ADD COLUMN</b> status VARCHAR(20) <b>DEFAULT</b> 'ativo';</p>
+            <p>Adicionar coluna em uma tabela:</p>
+            <pre>
+            ALTER TABLE nome_da_tabela
+            ADD COLUMN nova_coluna tipo_de_dado;
+
+            Exemplo: Adiciona uma nova coluna telefone à tabela alunos.
+
+            <b>ALTER TABLE</b> alunos <b>ADD COLUMN</b> telefone VARCHAR(15);
+            </pre>
+            <p>Para alterar o tipo de dado de uma coluna existente, usamos ALTER TABLE com a cláusula ALTER COLUMN.</p>
+            <pre>
+            ALTER TABLE alunos
+            ALTER COLUMN nome
+            TYPE TEXT;
+
+            <i>Esse comando altera o tipo de dado da coluna nome de VARCHAR(100) para TEXT, permitindo armazenar um volume maior de texto.</i>
+            </pre>
+
+            <p>Para renomear uma coluna, usamos ALTER TABLE com a cláusula RENAME COLUMN.</p>
+            <pre>
+            ALTER TABLE alunos
+            RENAME COLUMN data_nascimento TO nascimento;
+            
+            <i>Esse comando renomeia a coluna data_nascimento para nascimento na tabela alunos.</i>
+            </pre>
+
+            <p>Modiﬁcar o valor padrão (default) de um atributo (coluna):</p>
+            <pre>
+            ALTER TABLE alunos
+            ALTER COLUMN status
+            SET DEFAULT 'pendente';
+
+            <i>Agora, ao inserir um aluno sem especiﬁcar o status, o valor padrão será 'pendente' em vez de 'ativo'.</i>
+            </pre>
+
+            <p>Remover o valor padrão (default) de um atributo (coluna):</p>
+            <pre>
+            ALTER TABLE alunos
+            ALTER COLUMN status
+            DROP DEFAULT;
+
+            <i>A coluna status não terá mais um valor padrão, e será obrigatório informar um valor durante as inserções, ou o valor será NULL se permitido.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Remover colunas da tabela.</h2>
+            <p>Para remover uma coluna de uma tabela, usamos o comando ALTER TABLE com a cláusula DROP COLUMN.</p>
+            <pre>
+            ALTER TABLE alunos
+            DROP COLUMN telefone;
+            
+            <i>Exemplo: Esse comando remove a coluna telefone da tabela alunos. Todos os dados armazenados nessa coluna serão permanentemente excluídos.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Remover restrições.</h2>
+            <p>No PostgreSQL, a cláusula DROP CONSTRAINT é usada para remover uma restrição (constraint) de uma tabela
+                existente.</p>
+            <pre>
+                ALTER TABLE nome_da_tabela
+                DROP CONSTRAINT nome_da_restrição;
+
+                <i>Em nome_da_restrição, você deve fornecer o nome da restrição que deseja remover.</i>
+            </pre>
+            <p>Considere a seguinte tabela:</p>
+            <pre>
+            CREATE TABLE clientes (
+                <b>id SERIAL PRIMARY KEY</b>,
+                nome VARCHAR(100),
+                email VARCHAR(100)
+            );
+            
+            <i>Se você quiser remover essa chave primária, pode usar o seguinte comando:</i>
+
+            ALTER TABLE clientes
+            DROP CONSTRAINT clientes_pkey;
+            
+            <i>Nota: O nome da restrição é automaticamente gerado pelo PostgreSQL quando você cria uma chave primária (geralmente no formato 'nome_da_tabela'_pkey).</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>DML.</h2>
+            <p>A DML (Data Manipulation Language) é uma parte da linguagem SQL usada para manipular dados dentro das
+                tabelas do banco de dados.</p>
+            <p>A DML permite que você insira, atualize, exclua e consulte os dados armazenados.</p>
+        </section>
+
+        <section>
+            <h2>INSERT.</h2>
+            <ul>
+                <li>O comando INSERT é usado para inserir novos dados (uma ou mais linhas/tuplas) em uma tabela
+                    especíﬁca.</li>
+                <ul>
+                    <li>INSERT INTO nome_da_tabela (coluna1, coluna2, coluna3, ...)</li>
+                    <li>VALUES (valor1, valor2, valor3, ...);</li>
+                </ul>
+                <li>O <b>INSERT</b> especiﬁca a ação, enquanto <b>INTO</b> indica o local onde esses dados serão
+                    inseridos (neste
+                    caso, uma tabela especíﬁca).</li>
+                <li><b>VALUES</b> indica que os valores fornecidos nas próximas linhas serão inseridos nas colunas
+                    correspondentes.INSERT</li>
+                <li>Agora, vamos inserir linhas em cada uma das tabelas que criamos anteriormente para o nosso cenário
+                    do <b>sistema de gestão acadêmica universitária</b>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Inserção de linhas na tabela.</h2>
+            <pre>
+            INSERT INTO alunos (nome, data_nascimento, email)
+            VALUES
+            ('João Silva', '1999-05-10', 'joao.silva@email.com'),
+            ('Maria Oliveira', '2000-08-23', 'maria.oliveira@email.com'),
+            ('Pedro Santos', '1998-12-02', 'pedro.santos@email.com'),
+            ('Ana Costa', '1997-03-15', 'ana.costa@email.com'),
+            ('Carlos Mendes', '2001-11-09', 'carlos.mendes@email.com');
+            
+
+            INSERT INTO cursos (nome_curso, descricao, carga_horaria)
+            VALUES
+            ('Engenharia de Software', 'Curso de engenharia focado em
+            desenvolvimento de software', 4000),
+            ('Ciência da Computação', 'Curso voltado ao estudo de algoritmos e
+            sistemas computacionais', 3600),
+            ('Administração', 'Curso de gestão e administração empresarial', 3000);
+            
+
+            INSERT INTO professores (nome, email)
+            VALUES
+            ('Carlos Almeida', 'c.almeida@universidade.com'),
+            ('Mariana Souza', 'm.souza@universidade.com'),
+            ('Paulo Ferreira', 'p.ferreira@universidade.com'),
+            ('Fernanda Lima', 'f.lima@universidade.com'),
+            ('Rafael Gomes', 'r.gomes@universidade.com');
+            
+
+            INSERT INTO matriculas (id_aluno, id_curso, semestre, ano)
+            VALUES
+            (1, 1, '2024/1', 2024), -- João Silva matriculado em ES
+            (2, 2, '2024/1', 2024), -- Maria Oliveira matriculada em CC
+            (3, 3, '2024/1', 2024), -- Pedro Santos matriculado em Administração
+            (4, 1, '2024/1', 2024), -- Ana Costa matriculada em ES
+            (5, 2, '2024/1', 2024); -- Carlos Mendes matriculado em CC
+            
+
+            <i>O que acontece se não informar o ID da tabela na inserção?</i>
+
+            INSERT INTO alunos (nome, data_nascimento, email)
+            VALUES
+            ('Lucas Pereira', '2002-04-15', 'lucas.pereira@email.com'),
+            ('Fernanda Alves', '2001-09-07', 'fernanda.alves@email.com');
+            
+
+            INSERT INTO alunos (nome, data_nascimento, email)
+            VALUES
+            ('Lucas Pereira', '2002-04-15', 'lucas.pereira@email.com'),
+            ('Fernanda Alves', '2001-09-07', 'fernanda.alves@email.com');
+            
+            <i>Neste caso, como o campo id_aluno é do tipo SERIAL, ele será automaticamente incrementado pelo PostgreSQL, e os dois novos alunos serão inseridos com IDs gerados sequencialmente.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Alterar registros na tabela</h2>
+            <p>O comando UPDATE é utilizado para alterar valores em uma ou mais colunas para as linhas que atendem a uma
+                condição.</p>
+            <pre>
+            UPDATE nome_da_tabela
+            SET coluna1 = valor1, coluna2 = valor2
+            WHERE condição;
+            </pre>
+
+            <p><b>SET:</b> Especiﬁca as colunas que você deseja modiﬁcar e os novos valores que serão atribuídos.</p>
+            <p><b>WHERE:</b> Deﬁne a condição que determina quais linhas serão atualizadas. Sem ele, todas as linhas da
+                tabela
+                serão modiﬁcadas.</p>
+        </section>
+
+        <section>
+            <h2>Excluir dados na tabela.</h2>
+            <p>O comando <b>DELETE</b> é usado para remover registros (linhas) de uma tabela que atendem a uma condição
+                específica.</p>
+            <p>O DELETE exclui permanentemente as linhas, a menos que haja alguma proteção, como uma transação ativa que
+                possa ser revertida.</p>
+            <pre>
+            DELETE FROM nome_da_tabela
+            WHERE condição;
+            
+            <i>Atenção! Sem o WHERE, todas as linhas da tabela serão removidas!Excluir dados na tabela</i>
+            </pre>
+            <p>Neste exemplo, o registro do aluno chamado "João Silva" será removido da tabela alunos. A cláusula WHERE
+                é utilizada para especificar qual linha deve ser excluída.</p>
+            <pre>
+            DELETE FROM alunos
+            WHERE nome = 'João Silva';
+            </pre>
+        </section>
+
+        <section>
+            <h2>Truncate.</h2>
+            <p>O comando TRUNCATE é utilizado para remover todas as linhas de uma tabela, mas mantendo a estrutura da
+                tabela intacta.</p>
+            <p>Ao contrário do DELETE, que remove as linhas uma por uma e pode gerar registros de transação, o TRUNCATE
+                é mais rápido e eﬁciente porque não gera logs de exclusão individual e libera o espaço de armazenamento
+                de maneira imediata.</p>
+            <pre>
+            <b>TRUNCATE TABLE</b> nome_da_tabela;Truncate
+            </pre>
+
+            <p>Qual a diferença entre os dois comandos?</p>
+            <pre>
+            <b>DELETE FROM</b> alunos (sem usar o where)
+            <b>TRUNCATE TABLE</b> nome_da_tabela;Truncate
+            </pre>
+
+            <p>O DELETE é <b>mais lento</b> porque executa a exclusão de cada linha individualmente, e cada exclusão
+                gera registros de log no sistema de transações.</p>
+            <p>O TRUNCATE <b>libera o espaço</b> de armazenamento de todas as linhas de uma só vez.</p>
+            <img src="img/truncate.png" alt="truncate" title="truncate">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>BOSON TREINAMENTOS. Constraints no PostgreSQL (Restrições). Disponível em: https://link.ufms.br/WMPJE.
+                Acesso em 11 jun. 2024.</cite>
+            <p></p>
+            <cite>POSTGRESQL. Tradução da Documentação para o Português do Brasil. Disponível em:
+                https://link.ufms.br/TmjaJ. Acesso em mai. de 2024. Trecho a ser lido: Capítulo 3. Seção 3.2.</cite>
+            <p></p>
+            <cite>Silberschatz, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. Isbn 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo
+                4.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+ALTER TABLE alunos ALTER COLUMN status SET DEFAULT 'pendente';
