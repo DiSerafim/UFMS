@@ -2,7 +2,7 @@
 
 ## Disciplina: Laboratório de Banco de Dados  
 **Carga Horária:** 68h  
-**Professora Especialista:** Esteic Janaina Santos Batista
+**Professora Especialista:** Esteice Janaina Santos Batista
 
 ---
 

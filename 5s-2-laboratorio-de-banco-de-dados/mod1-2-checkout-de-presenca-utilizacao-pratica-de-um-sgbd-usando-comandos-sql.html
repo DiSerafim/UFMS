@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>O primeiro passo para aprender SQL é entender que essa se trata de uma linguagem declarativa, com a qual
+                nos preocupamos menos em como as coisas são feitas e nosso trabalho passa a ser informar o que queremos
+                fazer combinando um conjunto de comandos disponibilizado por ela. Os comandos da linguagem SQL são
+                divididos em conjuntos e essa separação é feita de acordo com o que cada comando faz. Comandos que fazem
+                atividades similares são agrupados no mesmo conjunto.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Com base na citação anterior, descreva o significado das siglas e a diferença com exemplos entre as
+                linguagens DML e DDL.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <p>DML - Data Manipulation Language:</p>
+            <ul>
+                <li>Comandos para manipular dados:</li>
+                <ul>
+                    <li>INSERT, UPDATE, DELETE e SELECT.</li>
+                    <li>Ex.:</li>
+                    <ul>
+                        <li>INSERT INTO clientes (nome) VALUES ('João')</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <p>DDL - Data Definition Language:</p>
+            <ul>
+                <li>Comandos para definir estruturas:</li>
+                <ul>
+                    <li>CRETE, ALTER e DROP.</li>
+                    <li>Ex.:</li>
+                    <ul>
+                        <li>CREATE TABLE clientes (id INT PRIMARY KEY)</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <p>Diferença:</p>
+            <ul>
+                <li>DML opera dados existentes, e DDL define a estrutura do banco de dados.</li>
+                <li>DML é transacional, pode ser desfeito com ROLLBACK, DDL é auto-commit, execução imediata (não reversível).</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 27 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
