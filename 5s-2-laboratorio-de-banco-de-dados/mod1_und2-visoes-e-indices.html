@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL</h1>
+        <h2>💡 Unidade 2 - Visões e Índices.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=GKi8LdQGAPM&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 1 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Experiência prática com sistemas de gerenciamento de banco de dados (SGBD), com foco na aplicação dos
+                comandos SQL.</h3>
+            <ul>
+                <a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">Instalação</a>
+            </ul>
+            <img src="img/postgresql.png" alt="postgresql" title="postgresql">
+        </section>
+
+        <section>
+            <h2>Consultar tabelas.</h2>
+            <P>A consulta SELECT é a instrução mais usada na SQL.</P>
+            <P>Ela permite consultar e extrair dados de uma ou mais tabelas em um banco de dados, retornando os
+                resultados em forma de tabela.</P>
+            <pre>
+            SELECT coluna1, coluna2
+            FROM nome_da_tabela
+            WHERE condição;
+            </pre>
+            <ul>
+                <li><b>SELECT:</b> Define as colunas a serem exibidas.</li>
+                <li><b>FROM:</b> Define a tabela de onde os dados serão extraídos.</li>
+                <li><b>WHERE:</b> Define a condição (filtro) para selecionar os dados desejados.</li>
+            </ul>
+            <pre>
+            SELECT nome, email
+            FROM alunos
+            WHERE idade > 18;
+
+            <i>Consulta o nome e e-mail dos alunos que têm mais de 18 anos.</i>
+            </pre>
+
+            <p>Se desejar que todas as colunas de uma tabela sejam retornadas, basta usar o * após o SELECT.</p>
+            <pre>
+            SELECT * FROM alunos;
+
+            <i>Retorna todas as colunas da tabela alunos (nome, email, idade, etc.).</i>
+            </pre>
+
+            <p>Operadores Comuns na Cláusula WHERE:</p>
+            <ul>
+                <li><b>=</b> Igualdade.</li>
+                <li>
+                    <b>
+                        <>
+                    </b> ou <b>!=</b> Diferente.
+                </li>
+                <li><b>></b> e <b>
+                        < </b> Maior e menor.</li>
+                <li><b>BETWEEN</b>: Dentro de um intervalo de valores.</li>
+                <li><b>LIKE</b>: Busca por padrões (ex: %abc%).</li>
+            </ul>
+            <pre>
+            SELECT nome
+            FROM alunos
+            WHERE nome <b>LIKE</b> 'João%';
+
+            <i>Retorna os alunos cujos nomes começam com "João".</i>
+            </pre>
+
+            <pre>
+                SELECT nome, idade
+                FROM alunos
+                WHERE idade <b>BETWEEN</b> 18 <b>AND</b> 25;
+
+                <i>A consulta retorna o nome e a idade dos alunos que têm entre 18 e 25 anos, inclusive.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultar tabelas: JOIN.</h2>
+            <p>O JOIN é usado para combinar dados de duas ou mais tabelas com base em uma condição que relaciona colunas
+                dessas tabelas.</p>
+            <p>Ele permite consultar e unir dados de diferentes fontes em um banco de dados relacional.</p>
+            <p>O INNER JOIN retorna apenas as linhas que têm correspondências em ambas as tabelas com base na condição
+                de junção.</p>
+            <pre>
+            SELECT coluna1, coluna2
+            FROM tabela1
+            INNER JOIN tabela2 ON tabela1.coluna_comum = tabela2.coluna_comum;
+            </pre>
+
+            <p>Neste exemplo, o comando retorna o nome dos alunos que estão matriculados e o respectivo ID do curso. O
+                INNER JOIN combina as tabelas alunos e matriculas onde os IDs dos alunos são correspondentes nas duas
+                tabelas. Somente os alunos com uma matrícula são retornados.</p>
+            <pre>
+            SELECT alunos.nome, matriculas.id_curso
+            FROM alunos
+            INNER JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno;
+            </pre>
+
+            <p>Agora, vamos adicionar outra tabela, cursos, para obter também o nome do curso:</p>
+            <pre>
+            SELECT alunos.nome, cursos.nome_curso
+            FROM alunos
+            INNER JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno
+            INNER JOIN cursos ON matriculas.id_curso = cursos.id_curso;
+            </pre>
+
+            <p>O <b>LEFT JOIN</b> retorna todas as linhas da tabela à esquerda (tabela1), mesmo que não haja
+                correspondência na tabela à direita (tabela2). Se não houver correspondência, os valores da tabela à
+                direita serão NULL.</p>
+            <pre>
+            SELECT coluna1, coluna2
+            FROM tabela1
+            LEFT JOIN tabela2 ON tabela1.coluna_comum = tabela2.coluna_comum;
+            </pre>
+
+            <p>Inserções nas nossas tabelas para o exemplo a seguir:</p>
+            <pre>
+            INSERT INTO alunos (nome)
+            VALUES ('Ana Souza');
+            INSERT INTO cursos (nome_curso)
+            VALUES ( 'Sistemas de Informação');
+            </pre>
+
+            <p>Vamos buscar todos os alunos, incluindo aqueles que não estão matriculados em nenhum curso, utilizando o
+                LEFT JOIN entre as tabelas alunos e matriculas.</p>
+            <pre>
+            SELECT alunos.nome, matriculas.id_curso
+            FROM alunos
+            LEFT JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno;
+            </pre>
+            <img src="img/left-join.png" alt="left-join" title="left-join">
+
+            <p>O RIGHT JOIN retorna todas as linhas da tabela à direita (tabela2), mesmo que não haja correspondência na
+                tabela à esquerda (tabela1). Se não houver correspondência, os valores da tabela à esquerda serão NULL.
+            </p>
+            <pre>
+                SELECT coluna1, coluna2
+                FROM tabela1
+                RIGHT JOIN tabela2 ON tabela1.coluna_comum = tabela2.coluna_comum;
+            </pre>
+
+            <p>Vamos buscar todos os cursos, incluindo aqueles que não têm alunos matriculados, utilizando o RIGHT JOIN
+                entre as tabelas alunos e matriculas.</p>
+            <pre>
+                SELECT alunos.nome, matriculas.id_curso
+                FROM alunos
+                RIGHT JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno;
+            </pre>
+
+            <p>O <b>FULL OUTER JOIN</b> retorna todas as linhas de ambas as tabelas.</p>
+            <p>Quando não há correspondência entre as tabelas, os valores das colunas sem correspondência são exibidos
+                como NULL.</p>
+            <pre>
+            SELECT coluna1, coluna2
+            FROM tabela1
+            FULL OUTER JOIN tabela2 ON tabela1.coluna_comum = tabela2.coluna_comum;
+            </pre>
+
+            <p>Vamos buscar todos os alunos e todos os cursos, incluindo os alunos que não estão matriculados e os
+                cursos que não têm alunos, utilizando o FULL OUTER JOIN entre as tabelas alunos e matriculas.</p>
+            <pre>
+            SELECT alunos.nome, matriculas.id_curso
+            FROM alunos
+            FULL OUTER JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno;
+            </pre>
+
+        </section>
+
+        <section>
+            <h2>Consultar tabelas: AS.</h2>
+            <p>O <b>AS</b> é uma palavra-chave usada em SQL para renomear colunas (atribuir um alias/nome alternativo)
+                ou tabelas temporariamente no resultado de uma consulta.</p>
+            <p>O uso de AS torna o resultado da consulta mais legível e compreensível, especialmente quando se deseja
+                dar um nome mais significativo às colunas ou quando se trabalha com junções entre tabelas com nomes de
+                colunas semelhantes.</p>
+            <pre>
+            SELECT coluna_original AS alias_coluna
+            FROM nome_da_tabela;
+            
+            <i>coluna_original: O nome da coluna na tabela original.</i>
+            <i>alias_coluna: O novo nome (alias) que será exibido no resultado da consulta.</i>
+            
+            SELECT alunos.nome AS aluno, cursos.nome_curso AS curso
+            FROM alunos
+            INNER JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno
+            INNER JOIN cursos ON matriculas.id_curso = cursos.id_curso;
+            
+            <i>alunos.nome AS aluno: O nome da coluna nome da tabela alunos será exibido no resultado como aluno.</i>
+            <i>cursos.nome_curso AS curso: O nome da coluna nome_curso da tabela cursos será exibido como curso.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Para refletir.</h2>
+            <p>Como selecionar todos os nomes dos alunos e o nome de seus cursos, incluindo os alunos que não estão
+                vinculados a nenhum curso?</p>
+            <pre>
+            SELECT alunos.nome AS nome_aluno, cursos.nome_curso
+            FROM alunos
+            LEFT JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno
+            LEFT JOIN cursos ON matriculas.id_curso = cursos.id_curso;
+            </pre>
+
+            <p>Como selecionar todos os nomes dos alunos e o nome de seus cursos, incluindo os cursos que não possuem
+                alunos matriculados?</p>
+            <pre>
+            SELECT alunos.nome AS nome_aluno, cursos.nome_curso
+            FROM alunos
+            RIGHT JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno
+            RIGHT JOIN cursos ON matriculas.id_curso = cursos.id_curso;
+            </pre>
+
+            <p>Como selecionar todos os nomes dos alunos e o nome de seus cursos, incluindo os alunos que não estão
+                matriculados em nenhum curso e cursos que não possuem nenhum aluno matriculado?</p>
+            <pre>
+            SELECT alunos.nome AS nome_aluno, cursos.nome_curso
+            FROM alunos
+            FULL OUTER JOIN matriculas ON alunos.id_aluno = matriculas.id_aluno
+            FULL OUTER JOIN cursos ON matriculas.id_curso = cursos.id_curso;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: Distinct.</h2>
+            <p>O <b>DISTINCT</b> é uma palavra-chave em SQL usada para remover valores duplicados de uma consulta.
+                Quando você utiliza DISTINCT, apenas as linhas com valores únicos para as colunas especificadas serão
+                retornadas.</p>
+            <pre>
+                SELECT DISTINCT coluna1, coluna2
+                FROM nome_da_tabela;
+            </pre>
+
+            <p>Imagine que você tem as tabelas matriculas e cursos e deseja selecionar os diferentes cursos em que os
+                alunos estão matriculados, sem repetir os mesmos cursos.</p>
+            <pre>
+            SELECT DISTINCT cursos.nome_curso
+            FROM cursos
+            INNER JOIN matriculas ON cursos.id_curso = matriculas.id_curso;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: ordenação de resultados.</h2>
+            <p>A cláusula ORDER BY é usada para ordenar os resultados de uma consulta com base nos valores de uma ou
+                mais colunas.</p>
+            <p>A ordenação pode ser feita em ordem crescente (padrão) ou ordem decrescente.</p>
+            <pre>
+            SELECT coluna1, coluna2
+            FROM nome_da_tabela
+            ORDER BY coluna1 [ASC|DESC], coluna2 [ASC|DESC];
+            </pre>
+            <ul>
+                <li><b>ORDER BY:</b> Define a coluna pela qual os resultados serão ordenados.</li>
+                <li><b>ASC:</b> Ordem crescente (padrão). Não precisa ser explicitamente especificado.</li>
+                <li><b>DESC:</b> Ordem decrescente.</li>
+            </ul>
+            <pre>
+            SELECT nome, idade
+            FROM alunos
+            ORDER BY nome ASC;
+
+
+            SELECT nome, idade
+            FROM alunos
+            ORDER BY idade DESC;
+
+
+            SELECT nome, idade
+            FROM alunos
+            ORDER BY idade ASC, nome ASC;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: funções agregadas.</h2>
+            <p>As funções agregadas em SQL são usadas para realizar cálculos em um conjunto de valores e retornar um
+                único valor.</p>
+            <p>Elas são amplamente utilizadas em consultas que envolvem agrupamento de dados com a cláusula <b>GROUP
+                    BY</b>.</p>
+            <p>As funções agregadas ajudam a resumir grandes volumes de dados.</p>
+
+            <p>Principais Funções Agregadas:</p>
+            <ul>
+                <li><b>COUNT():</b> Conta o número de linhas ou valores.</li>
+                <li><b>SUM():</b> Calcula a soma dos valores de uma coluna numérica.</li>
+                <li><b>AVG():</b> Retorna a média dos valores de uma coluna numérica.</li>
+                <li><b>MAX():</b> Retorna o valor máximo de uma coluna.</li>
+                <li><b>MIN():</b> Retorna o valor mínimo de uma coluna.</li>
+            </ul>
+
+            <pre>
+            <i>Retorna o número total de alunos na tabela alunos:</i>
+            SELECT COUNT(*) AS total_alunos
+            FROM alunos;
+
+            
+            <i>Calcula a média das notas de uma tabela de avaliações:</i>
+            SELECT AVG(nota) AS media_notas
+            FROM notas;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: agrupamentos.</h2>
+            <p>O <b>GROUP BY</b> é usado em SQL para agrupar linhas que têm os mesmos valores em colunas específicas.
+            </p>
+            <p>Ele é comumente usado com funções agregadas para realizar cálculos em cada grupo de linhas.</p>
+            <pre>
+            SELECT coluna1, função_agregada(coluna2)
+            FROM nome_da_tabela
+            GROUP BY coluna1;
+            </pre>
+
+            <p>Vamos supor que temos uma tabela de matriculas e queremos saber quantos alunos estão matriculados em cada
+                curso:</p>
+            <pre>
+            SELECT cursos.nome_curso, COUNT(matriculas.id_aluno) AS total_alunos
+            FROM cursos
+            LEFT JOIN matriculas ON cursos.id_curso = matriculas.id_curso
+            GROUP BY cursos.nome_curso;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: filtros em agrupamento.</h2>
+            <p>O <b>HAVING</b> é usado para filtrar grupos criados pelo GROUP BY.</p>
+            <p>Diferente da cláusula WHERE, HAVING é aplicado após o agrupamento, permitindo filtrar grupos com base em
+                condições nas funções agregadas.</p>
+            <pre>
+            SELECT coluna1, função_agregada(coluna2)
+            FROM nome_da_tabela
+            GROUP BY coluna1
+            HAVING condição;
+            </pre>
+
+            <p>Vamos modificar o exemplo anterior para exibir apenas cursos com mais de 1 aluno matriculado:</p>
+            <pre>
+            SELECT cursos.nome_curso, COUNT(matriculas.id_aluno) AS total_alunos
+            FROM cursos
+            LEFT JOIN matriculas ON cursos.id_curso = matriculas.id_curso
+            GROUP BY cursos.nome_curso
+            HAVING COUNT(matriculas.id_aluno) > 1;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: verificação IN.</h2>
+            <p><b>IN</b> e <b>NOT</b> <b>IN</b> são operadores utilizados para comparar um valor com uma lista de
+                valores específicos ou com o resultado de uma subconsulta.</p>
+            <p>Eles são usados para verificar se um valor existe ou não em um conjunto de valores.</p>
+            <pre>
+            SELECT coluna1
+            FROM nome_da_tabela
+            WHERE coluna1 IN (valor1, valor2, valor3);
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: subconsulta.</h2>
+            <p>Subconsulta, também conhecida como consulta aninhada, é uma consulta SQL que é inserida dentro de outra
+                consulta SQL.</p>
+            <p>A subconsulta pode ser usada para fornecer dados à consulta principal ou para comparar valores retornados
+                pela subconsulta com aqueles da consulta externa.</p>
+
+            <ul>
+                <li>Subconsultas de <b>Linha Única:</b> Retornam apenas uma linha e uma coluna.</li>
+                <li>Subconsultas de <b>Múltiplas Linhas:</b> Retornam várias linhas, mas apenas uma coluna.</li>
+                <li>Subconsultas de <b>Múltiplas Colunas:</b> Retornam mais de uma coluna.</li>
+            </ul>
+
+            <p>Imagine que temos uma tabela de alunos e matriculas. Se quisermos encontrar o nome dos alunos
+                matriculados no curso de ID 2, usamos uma subconsulta para encontrar os IDs dos alunos matriculados no
+                curso, e então a consulta externa seleciona os nomes.</p>
+            <pre>
+            SELECT nome
+            FROM alunos
+            WHERE id_aluno IN (SELECT id_aluno FROM matriculas
+            WHERE id_curso = 2);
+            
+            SELECT nome
+            FROM alunos
+            WHERE id_aluno IN (SELECT id_aluno FROM matriculas WHERE id_curso = 2);
+
+            <i>A subconsulta retorna os IDs dos alunos matriculados no curso de ID 2.</i>
+            <i>A consulta externa usa o operador IN para buscar os nomes dos alunos cujo id_aluno está presente na lista de IDs retornada pela subconsulta.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Consultas: verificação em subconsultas.</h2>
+            <p>EXISTS e NOT EXISTS são usados para testar se existe ou não uma linha correspondente no resultado da
+                subconsulta.</p>
+            <pre>
+            SELECT coluna1
+            FROM nome_da_tabela
+            WHERE EXISTS (subconsulta);
+            </pre>
+            <ul>
+                <li><b>EXISTS:</b> Retorna TRUE se a subconsulta retornar pelo menos uma linha.</li>
+            </ul>
+            <p>Retorna os nomes dos alunos que têm matrícula em algum curso.</p>
+            <pre>
+            SELECT nome
+            FROM alunos
+            WHERE EXISTS (SELECT 1 FROM matriculas WHERE alunos.id_aluno = matriculas.id_aluno);
+            </pre>
+        </section>
+
+        <section>
+            <h2>Visão de Banco de Dados.</h2>
+            <p>Uma <b>view</b> (ou visão) é uma consulta armazenada que atua como uma tabela virtual.</p>
+            <p>Ela não armazena os dados diretamente, mas sim a consulta que gera os dados toda vez que a view é
+                acessada.</p>
+            <p>As views permitem simplificar consultas complexas, melhorar a segurança e organizar a visualização de
+                dados.</p>
+            <p>Uma view armazena a consulta e executa essa consulta sempre que a view é acessada.</p>
+            <p>Não contém dados reais, mas o resultado de uma consulta.</p>
+            <p>As views podem ser usadas repetidamente em consultas, sem a necessidade de reescrever a lógica.</p>
+            <p>As views podem restringir o acesso a dados sensíveis, exibindo apenas as colunas e linhas necessárias
+                para cada usuário.</p>
+            <pre>
+                CREATE VIEW nome_da_view AS
+                SELECT coluna1, coluna2
+                FROM nome_da_tabela
+                WHERE condição;
+            </pre>
+            <ul>
+                <li><b>CREATE VIEW:</b> Comando para criar a view.</li>
+                <li><b>nome_da_view:</b> Nome da view que você deseja criar.</li>
+                <li><b>SELECT:</b> A consulta SQL que define o que a view vai exibir.</li>
+            </ul>
+
+            <p>Imagine que você tem uma tabela de alunos e quer criar uma view que exibe apenas os alunos maiores de 18
+                anos.</p>
+            <pre>
+            CREATE VIEW view_alunos_maiores AS
+            SELECT nome, idade
+            FROM alunos
+            WHERE idade >= 18;
+
+
+            <i>A view view_alunos_maiores exibe o nome e a idade dos alunos que têm 18 anos ou mais.</i>
+            <i>Agora, toda vez que você acessar essa view, ela executará a consulta definida.</i>
+            <i>Uma vez criada, você pode consultar a view como se fosse uma tabela normal:</i>
+            
+            SELECT * FROM view_alunos_maiores;
+            </pre>
+
+            <p>Imagine que você quer alterar a view para incluir apenas alunos maiores de 21 anos.</p>
+            <p>Em vez de usar DROP VIEW e depois recriar a view, você pode usar CREATE OR REPLACE VIEW para substituí-la
+                diretamente:</p>
+            <pre>
+            CREATE OR REPLACE VIEW view_alunos_maiores AS
+            SELECT nome, idade
+            FROM alunos
+            WHERE idade >= 21;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Índices.</h2>
+            <p>Definição: Um <b>índice</b> é uma estrutura de dados que melhora a velocidade de operações de consulta em
+                uma tabela.</p>
+            <p>Objetivo: Facilitar a busca de informações em uma tabela sem precisar percorrer todas as linhas.</p>
+            <p>Funcionamento Básico: Similar ao índice de um livro, que aponta para onde encontrar informações
+                específicas sem precisar ler todo o conteúdo.</p>
+        </section>
+
+        <section>
+            <h2>Tipos de índices no PostgreSQL.</h2>
+            <ul>
+                <li><b>B-Tree (Árvore B):</b> o tipo de índice mais comum, utilizado para comparações de igualdade e
+                    intervalos de valores (=, >, menor). </li>
+                <li><b>GiST (Generalized Search Tree):</b> Ideal para buscas complexas, como consultas espaciais, com
+                    operadores mais avançados.</li>
+                <li><b>GIN (Generalized Inverted Index):</b> Usado para acelerar consultas com muitas colunas ou dados
+                    como arrays e buscas de texto completo.</li>
+                <li><b>Hash:</b> Utilizado para comparações de igualdade (=), mas com desempenho inferior ao B-Tree na
+                    maioria dos casos.</li>
+            </ul>
+
+            <b>B-Tree (Árvore B):</b>
+            <p>
+                O tipo de índice mais comum, utilizado para comparações de igualdade e intervalos de valores (=, >,
+                menor).
+            </p>
+            <p>Funciona como uma árvore que organiza os dados de forma ordenada, permitindo encontrar
+                rapidamente um valor específico.</p>
+            <p>Quando é usada?: Quando você quer comparar valores. Por exemplo, se você estiver buscando por
+                alunos que tenham idade maior que 20 anos (> 20) ou igual a 20 (= 20), o índice B-Tree pode
+                acelerar essa busca.</p>
+
+            <img src="img/b-tree.png" alt="b-tree" title="b-tree">
+
+            <p>Exemplo da B-Tree (Árvore B) no SQL: vamos supor que temos uma tabela de funcionarios e queremos
+                acelerar as consultas relacionadas à coluna salario.</p>
+            <pre>
+            CREATE INDEX idx_salario_btree ON funcionarios(salario);
+            SELECT nome, salario
+            FROM funcionarios
+            WHERE salario > 6000;
+
+            <i>A tabela funcionarios contém um campo de salario numérico.</i>
+            <i>Criamos um índice B-Tree na coluna salario com o comando CREATE INDEX.</i>
+            <i>Quando você faz uma consulta buscando por salários maiores que 6000, o PostgreSQL usa o índice B-Tree para encontrar rapidamente os resultados, em vez de percorrer toda a tabela.</i>
+            </pre>
+
+            <b>GiST (Generalized Search Tree):</b>
+            <p>É uma estrutura de índice projetada para suportar consultas complexas que vão além de comparações
+                simples de igualdade, como em bancos de dados que lidam com dados espaciais, documentos
+                textuais, gráficos, ou outros tipos de dados que possuem mais complexidade</p>
+            <p>Objetivo: Facilitar a execução de consultas complexas, como "busca de proximidade" (distância
+                geográfica), "interseção" (geometria), entre outros.</p>
+            <p>Uso comum: Consultas que envolvem operações mais avançadas, como encontrar todos os pontos de
+                interesse dentro de uma determinada área geográfica (consultas espaciais), realizar buscas de
+                texto completo, ou consultas que envolvem formas e interseções.</p>
+
+            <img src="img/gist.png" alt="gist" title="gist">
+            <p></p>
+            <img src="img/gist1.png" alt="gist" title="gist">
+
+            <p>Exemplo do índice GiST (Generalized Search Tree) no SQL</p>
+            <p>Cenário: tabela que armazena a localização dos funcionários usando coordenadas geométricas
+                (latitude e longitude).</p>
+            <p>Aplicamos o índice GiST para acelerar buscas espaciais.</p>
+            <pre>
+            CREATE TABLE localizacoes_funcionarios (
+                id SERIAL PRIMARY KEY,
+                nome VARCHAR(100),
+                localizacao GEOGRAPHY(POINT, 4326) -- Latitude e Longitude
+            );
+            
+            INSERT INTO localizacoes_funcionarios (nome, localizacao)
+            VALUES
+            ('Ana', ST_GeographyFromText('POINT(-46.6333 -23.5505)')), -- SP
+            ('Carlos', ST_GeographyFromText('POINT(-43.1729 -22.9068)')); -- RJ
+            
+            CREATE INDEX idx_localizacao_gist ON localizacoes_funcionarios
+            USING GiST (localizacao);
+            SELECT nome
+            FROM localizacoes_funcionarios
+            WHERE ST_DWithin(localizacao,
+            ST_GeographyFromText('POINT(-46.6333 -23.5505)'), 100000); -- Raio
+            de 100 km de SP
+            </pre>
+
+            <p>No exemplo do índice GiST (Generalized Search Tree) no SQL:</p>
+            <ul>
+                <li>Estamos armazenando a localização dos funcionários usando o tipo de dado Geography
+                    (coordenadas de latitude e longitude).</li>
+                <li>Criamos um índice GiST na coluna localizacao com o comando CREATE INDEX ... USING GiST.</li>
+                <li>A consulta usa a função ST_DWithin para encontrar todos os funcionários que estão dentro de
+                    um raio de 100 km a partir de São Paulo (-46.6333, -23.5505) com o índice GiST para acelerar
+                    a busca espacial, verificando apenas as áreas próximas.</li>
+            </ul>
+
+            <b>GIN (Generalized Inverted Index):</b>
+            <p>É um índice que trabalha com conjuntos de dados complexos, como listas, arrays, ou até mesmo documentos
+                que contêm múltiplas palavras.</p>
+            <p>Ele permite buscas rápidas em colunas que contêm múltiplos valores, como arrays ou textos, otimizando
+                operações como a verificação de existência de um valor ou buscas baseadas em diversos termos.</p>
+
+            <p>Array e Listas: otimizar consultas que verificam se um determinado valor está presente na lista.</p>
+            <p>Buscas de Texto Completo: acelerar busca por palavras específicas em documentos armazenados em uma coluna
+            </p>
+            <p>Chaves e Dados Complexos: colunas que contêm objetos JSON ou outros tipos de dados que podem ser
+                complexos e precisam ser analisados de forma eficiente.</p>
+
+            <p>Como funciona o GIN (Generalized Inverted Index):</p>
+            <p>Imagine uma coluna de texto que contém várias palavras em cada entrada, ou uma coluna de array que
+                armazena várias tags ou valores em uma linha. O GIN cria uma estrutura que indexa cada elemento
+                separadamente e armazena os locais onde esses elementos aparecem.</p>
+            <p>Ao invés de percorrer toda a tabela para encontrar uma palavra ou um valor específico, o GIN rapidamente
+                encontra os documentos ou linhas que contêm aquele termo ou valor.</p>
+
+            <li>Exemplo para o GIN (Generalized Inverted Index):</li>
+            <li>Suponha que você tem uma tabela onde cada linha contém uma lista de habilidades de diferentes
+                funcionários. Algo como:</li>
+            <pre>
+            CREATE TABLE funcionarios ( id serial PRIMARY KEY, nome VARCHAR(100), habilidades TEXT[]);
+            </pre>
+
+            <p>Alguns funcionários podem ter várias habilidades listadas em um array na coluna habilidades. Por exemplo:
+            </p>
+            <pre>
+            INSERT INTO funcionarios (nome, habilidades)
+            VALUES ('Ana', ARRAY['SQL', 'Python', 'Java']), ('Carlos', ARRAY['C++', 'Python']) ;
+            </pre>
+
+
+            <p>Criação de um índice GIN na coluna habilidades:</p>
+            <pre>
+            CREATE INDEX idx_habilidades_gin ON funcionarios USING GIN (habilidades);
+            SELECT nome
+            FROM funcionarios
+            WHERE habilidades @> ARRAY['Python'];
+            </pre>
+
+            <p></p>
+            <img src="img/gin.png" alt="gin" title="gin">
+
+            <p>Agora, imagine que você quer encontrar rapidamente todos os funcionários que têm a habilidade 'Python'.
+            </p>
+            <p>Sem um índice GIN, a busca teria que percorrer todas as linhas e verificar se cada array contém 'Python'.
+            </p>
+            <p>Com um índice GIN, o banco de dados sabe exatamente onde 'Python' aparece e pode realizar a consulta
+                muito mais rápido.</p>
+
+            <b>Hash:</b>
+            <p>O índice Hash é uma estrutura de dados que mapeia valores para uma localização específica no
+                armazenamento, de forma que as buscas por igualdade (como =) sejam muito rápidas.</p>
+            <p>No contexto de bancos de dados, o índice Hash funciona bem para consultas que fazem comparações exatas.
+            </p>
+            <p>No entanto, ele não é tão eficiente para operações de intervalo (como >, menor, BETWEEN), onde índices
+                como B-Tree são mais apropriados.</p>
+            <p>Um índice Hash usa uma função de "hash" para transformar um valor de uma coluna (como um número ou texto)
+                em uma chave única, que aponta para o local onde esse valor está armazenado.</p>
+            <p>Por exemplo, se você procurar um número de identificação específico ou um valor exato, o índice Hash pode
+                rapidamente localizar esse valor sem ter que percorrer toda a tabela.</p>
+
+            <img src="img/hash.png" alt="hash" title="hash">
+            <pre>
+            CREATE INDEX nome_do_indice ON nome_da_tabela USING HASH (coluna);
+            
+            CREATE INDEX idx_alunos_email_hash ON alunos USING HASH (email);
+            </pre>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>POSTGRESQL. Tradução da Documentação para o Português do Brasil. Disponível em:
+                https://link.ufms.br/TmjaJ. Acesso em: maio de 2024. Trecho a ser lido: Capítulo 3. Seção 3.2.</cite>
+            <p></p>
+            <cite>Silberschatz, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. Isbn 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo
+                4.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 26 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
