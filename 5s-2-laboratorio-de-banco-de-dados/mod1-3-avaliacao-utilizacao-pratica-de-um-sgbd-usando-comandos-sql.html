@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Utilização prática de um SGBD usando Comandos SQL</h1>
+        <h2>✅ [A1] Avaliação</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59killal</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em domingo, 27 abr 2025, 20:02</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em domingo, 27 abr 2025, 20:59</li>
+                <li>⏳ Tempo empregado 56 minutos 33 segundos</li>
+                <li>🎯 Avaliar 10,00 de um máximo de 10,00(100%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>De acordo com a tabela Curso a seguir, qual é o comando SQL que lista o nome_curso e preco_curso de
+                    todos os cursos cadastrados.</p>
+                <pre>
+                    CREATE TABLE CURSO
+                    (cod_curso SERIAL PRIMARY KEY,
+                    nome_curso VARCHAR(100) NOT NULL,
+                    preco_curso NUMERIC(12,2) NOT NULL,
+                    pre_requisito INTEGER);
+                </pre>
+                <ul>
+                    <li><b>a. SELECT nome_curso, preco_curso FROM CURSO;</b></li>
+                    <li>b. UPDATE nome_curso, preco_curso FROM CURSO;</li>
+                    <li>c. SELECT nome_curso, preco_curso WHERE CURSO;</li>
+                    <li>d. SELECT nome_curso, preco_curso OF CURSO;</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O comando <b>SELECT</b> é usado para consultar dados no <b>SQL</b>.</li>
+                    <li>Devemos especificar as colunas desejadas (nome_curso, preco_curso) após o SELECT.</li>
+                    <li>A cláusula <b>FROM</b> indica a tabela de origem dos dados (CURSO).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Qual comando SQL pode ser usado para alterar o nome de uma coluna em uma tabela?</p>
+                <ul>
+                    <li>a. RENAME COLUMN</li>
+                    <li>b. ALTER COLUMN</li>
+                    <li>c. MODIFY COLUMN</li>
+                    <li><b>d. ALTER TABLE</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>ALTER TABLE em conjunto com RENAME COLUMN.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Qual comando SQL é utilizado para apagar completamente uma tabela e todos os seus registros do banco
+                    de dados?</p>
+                <ul>
+                    <li>a. REMOVE</li>
+                    <li><b>b. DROP TABLE</b></li>
+                    <li>c. DELETE</li>
+                    <li>d. TRUNCATE</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>DROP TABLE é usado para apagar completamente uma tabela do banco de dados, incluindo:</li>
+                    <ul>
+                        <li>Todos os registros (dados);</li>
+                        <li>A estrutura da tabela (colunas, chaves, índices);</li>
+                        <li>Suas dependências (como chaves estrangeiras em outras tabelas).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Qual comando SQL é usado para selecionar dados de uma tabela?</p>
+                <ul>
+                    <li>a. QUERY</li>
+                    <li>b. FETCH</li>
+                    <li><b>c. SELECT</b></li>
+                    <li>d. GET</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>SELECT é o principal comando SQL para consultar e selecionar dados de uma tabela ou várias
+                        tabelas em um banco de dados relacional. Ele permite:</li>
+                    <ul>
+                        <li>Recuperar registros específicos;</li>
+                        <li>Filtrar dados com condições (WHERE);</li>
+                        <li>Ordenar resultados (ORDER BY);</li>
+                        <li>Agrupar informações (GROUP BY);</li>
+                        <li>Juntar tabelas (JOIN).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Associe as operações DML com suas definições:</p>
+                <pre>
+                UPDATE (...).
+                INSERT (...).
+                DELETE (...).
+                </pre>
+                <p>Opções: Modifica valores existentes em uma tabela, Adiciona novos registros a uma tabela, Remove
+                    registros existentes de uma tabela.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                UPDATE <b>Modifica valores existentes em uma tabela</b>.
+                INSERT <b>Adiciona novos registros a uma tabela</b>.
+                DELETE <b>Remove registros existentes de uma tabela</b>.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Qual comando SQL é utilizado para adicionar uma nova coluna a uma tabela existente?</p>
+                <ul>
+                    <li>a. INSERT COLUMN</li>
+                    <li>b. ADD COLUMN</li>
+                    <li>c. MODIFY TABLE</li>
+                    <li><b>d. ALTER TABLE ADD</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>ALTER TABLE combinado com ADD é usado para adicionar uma nova coluna a uma tabela existente em
+                        SQL.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>O comando SELECT DISTINCT em uma consulta SQL serve para remover valores duplicados dos resultados.
+                </p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>SELECT DISTINCT é usado em SQL para retornar apenas valores únicos em um conjunto de resultados,
+                        eliminando duplicatas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Qual comando SQL é utilizado para combinar dados de duas tabelas com base em uma coluna comum?</p>
+                <ul>
+                    <li><b>a. JOIN</b></li>
+                    <li>b. UNION</li>
+                    <li>c. LINK</li>
+                    <li>d. MERGE</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>JOIN em SQL é utilizado para combinar dados de duas ou mais tabelas com base em uma coluna comum
+                        (geralmente uma chave primária ou estrangeira). Ele permite criar relacionamentos entre tabelas
+                        diferentes em uma única consulta.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Qual comando SQL é utilizado para deletar um registro específico em uma tabela?</p>
+                <ul>
+                    <li>a. DROP</li>
+                    <li><b>b. DELETE</b></li>
+                    <li>c. REMOVE</li>
+                    <li>d. CLEAR</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>DELETE é utilizado em SQL para remover um ou mais registros específicos de uma tabela, mantendo
+                        a estrutura da tabela intacta.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Qual comando SQL é usado para remover uma constraint de uma tabela?</p>
+                <ul>
+                    <li>a. DELETE CONSTRAINT</li>
+                    <li>b. REMOVE CONSTRAINT</li>
+                    <li>c. ALTER CONSTRAINT</li>
+                    <li><b>d. DROP CONSTRAINT</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>ALTER TABLE combinado com DROP CONSTRAINT é usado para remover uma constraint (restrição) de uma
+                        tabela existente em SQL.</li>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 27 de abr de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
