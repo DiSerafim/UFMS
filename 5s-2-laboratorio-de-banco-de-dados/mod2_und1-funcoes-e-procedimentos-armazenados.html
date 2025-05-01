@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 – Utilização prática de um SGBD usando Funções.</h1>
+        <h2>💡 Unidade 1 - Funções e Procedimentos armazenados.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=cFE6vrbByEs&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 2 - Unidade 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Funções e procedimentos no PostgreSQL.</h3>
+            <ul>
+                <li>Explorar como funções e procedimentos armazenados podem encapsular regras de negócio diretamente no
+                    banco de dados, promovendo a reutilização e a eficiência.</li>
+                <li>Entender o que são essas estruturas, suas utilidades práticas e por que são fundamentais para o
+                    gerenciamento de sistemas robustos de banco de dados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Definição.</h2>
+            <ul>
+                <li>Função: um bloco de código SQL que executa operações no banco de dados, retorna um valor e pode ser
+                    chamado por queries.</li>
+                <li>Procedimento armazenado: um bloco de código SQL que executa uma série de operações, mas não
+                    necessariamente retorna um valor.</li>
+            </ul>
+            <p>Exemplo: calcular total de créditos de um aluno.</p>
+        </section>
+
+        <section>
+            <h2>Importância das funções e procedimentos.</h2>
+            <ul>
+                <li>Reutilização de Código:</li>
+                <ul>
+                    <li>Escrever uma vez, usar em várias partes do sistema.</li>
+                </ul>
+                <li>Eficiência:</li>
+                <ul>
+                    <li>Funções executam diretamente no servidor, eliminando a necessidade de transferir dados.</li>
+                </ul>
+                <li>Manutenção Centralizada:</li>
+                <ul>
+                    <li>Qualquer alteração é feita diretamente no banco de dados, afetando todas as partes do sistema
+                        que usam aquela função.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo de aplicação.</h2>
+            <ul>
+                <li>Alunos se inscrevem em cursos a partir de um sistema da universidade.</li>
+                <ul>
+                    <li><b>Requisitos:</b> número máximo de créditos permitidos, número mínimo de disciplinas por
+                        semestre, entre outros.</li>
+                    <li><b>Sem encapsular:</b> reescrever todas as regras e validações todas as vezes que precisássemos
+                        realizar uma inscrição.</li>
+                    <li><b>Solução:</b> criar uma função no banco de dados chamada inscreveAluno, que verifica se o
+                        aluno cumpre todos os requisitos para se inscrever e, em seguida, realiza a inscrição no curso.
+                    </li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Sintaxe de uma função.</h2>
+            <pre>
+            CREATE FUNCTION function_name(param1 type1, param2 type2)
+            RETURNS return_type AS $$
+            BEGIN
+                -- Corpo da função
+            END;
+            $$ LANGUAGE plpgsql;
+
+
+            -- Função somar números
+            CREATE FUNCTION somar_numeros(a INT, b INT)
+            RETURNS INT AS $$
+            BEGIN
+                RETURN a + b;
+            END;
+            $$ LANGUAGE plpgsql;
+            </pre>
+            <ul>
+                <li><b>CREATE FUNCTION somar_numeros(a INT, b INT):</b> Estamos criando uma função chamada somar_numeros
+                    que recebe dois números inteiros (a e b).</li>
+                <li><b>RETURNS INT:</b> A função vai retornar (devolver) um número inteiro.</li>
+                <li><b>AS BEGIN...END:</b> Este é o corpo da função. Entre o BEGIN e o END, colocamos a lógica que vai
+                    ser executada.</li>
+                <li><b>RETURN a + b:</b> A função simplesmente pega os valores de a e b, soma esses números e devolve o
+                    resultado.</li>
+                <li><b>LANGUAGE plpgsql:</b> A linguagem usada para escrever a função.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de retorno em funções no PostgreSQL.</h2>
+            <p>No PostgreSQL, as funções podem retornar diferentes tipos de dados, dependendo da necessidade da
+                aplicação e da lógica que você deseja implementar.</p>
+            <p>Cada tipo de retorno tem sua aplicação específica.</p>
+            <ul>
+                <li><b>Escalares</b></li>
+                <ul>
+                    <li>Definição: são valores simples, como inteiros, números de ponto flutuante, texto, etc. Esse é o
+                        tipo de retorno mais comum e simples.</li>
+                    <li>Quando utilizar: usamos funções escalares quando queremos que a função execute algum cálculo ou
+                        transformação e devolva um único valor como resultado. </li>
+                </ul>
+                <pre>
+                CREATE FUNCTION calcular_desconto(preco NUMERIC, desconto NUMERIC)
+                RETURNS NUMERIC AS $$
+                BEGIN
+                    RETURN preco * (1 - desconto / 100);
+                END;
+                $$ LANGUAGE plpgsql;
+                
+                -- Chamada:
+                SELECT calcular_desconto(100, 12); -- Retorna 88.00000000000000000000
+                </pre>
+
+                <li><b>Tabelas (SETOF)</b></li>
+                <ul>
+                    <li>Definição: funções que retornam conjuntos de registros, ou seja, várias linhas de uma tabela, ao
+                        invés de um único valor.</li>
+                    <li>Quando utilizar: essas funções são úteis quando queremos que a função se comporte como uma
+                        tabela e retorne múltiplas linhas, como em consultas que podem retornar resultados dinâmicos.
+                    </li>
+                </ul>
+                <pre>
+                CREATE FUNCTION buscar_alunos_por_curso(curso_nome TEXT)
+                RETURNS SETOF cursos AS $$
+                BEGIN
+                    RETURN QUERY SELECT * FROM cursos WHERE nome_curso = curso_nome;
+                END;
+                $$ LANGUAGE plpgsql;
+                
+                -- Chamada:
+                SELECT * FROM buscar_alunos_por_curso('Engenharia');
+                </pre>
+
+                <li><b>Arrays</b></li>
+                <ul>
+                    <li>Definição: funções que retornam arrays (vetores) de valores. Arrays podem conter qualquer tipo
+                        de dados, como inteiros, texto ou até mesmo registros.</li>
+                    <li>Quando utilizar: quando queremos retornar uma coleção de valores de uma única função, mas
+                        organizados em uma estrutura de array.</li>
+                </ul>
+                <pre>
+                -- Tabela:
+                CREATE TABLE alunos (
+                    id SERIAL PRIMARY KEY,
+                    nome TEXT NOT NULL,
+                    curso TEXT NOT NULL,
+                    nota INTEGER
+                );
+                
+                -- Inserindo dados na tabela
+                INSERT INTO alunos (nome, curso, nota) VALUES
+                ('João Silva', 'Engenharia', 85),
+                ('Maria Souza', 'Medicina', 90),
+                ('Carlos Andrade', 'Engenharia', 75),
+                ('Ana Lima', 'Direito', 88),
+                ('Paulo Mendes', 'Medicina', 92);
+
+
+                -- Função:
+                CREATE FUNCTION listar_notas_curso(curso_nome TEXT)
+                RETURNS INTEGER[] AS $$
+                DECLARE
+                    notas INTEGER[];
+                BEGIN
+                    -- Seleciona todas as notas dos alunos do curso e armazena no array
+                    SELECT array_agg(nota) INTO notas
+                    FROM alunos WHERE curso = curso_nome;
+
+                    -- Retorna o array de notas
+                    RETURN notas;
+                END;
+                $$ LANGUAGE plpgsql;
+
+                -- Chamada:
+                SELECT listar_notas_curso('Medicina'); -- {90,92}
+                </pre>
+
+                <li><b>Record (Registro)</b></li>
+                <ul>
+                    <li>Definição: funções que retornam um único registro, ou seja, uma linha de dados com múltiplas
+                        colunas. O tipo RECORD é usado quando não sabemos previamente a estrutura exata do retorno.</li>
+                    <li>Quando utilizar: quando queremos retornar uma linha específica contendo múltiplos valores, mas
+                        não
+                        queremos definir uma tabela específica para o retorno.</li>
+                </ul>
+                <pre>
+                CREATE FUNCTION buscar_informacoes_aluno(aluno_id INT)
+                RETURNS RECORD AS $$
+                DECLARE
+                    resultado RECORD;
+                BEGIN
+                    -- Seleciona todas as informações do aluno com o ID fornecido
+                    SELECT nome, curso, nota INTO resultado
+                    FROM alunos WHERE id = aluno_id;
+                
+                    -- Retorna o resultado
+                    RETURN resultado;
+                END;
+                $$ LANGUAGE plpgsql;
+                
+                -- Chamada:
+                SELECT * FROM buscar_informacoes_aluno(2) AS (nome TEXT, curso TEXT, nota INT); -- "Maria Souza"	"Medicina"	90
+                </pre>
+                <li>Para chamar uma função que retorna um RECORD, precisamos especificar as colunas do retorno na
+                    consulta, porque o PostgreSQL precisa saber quais colunas estarão presentes no RECORD.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Chamando funções no PostgreSQL.</h2>
+            <ul>
+                <li>Sintaxe: Para chamar uma função, usamos o comando SELECT seguido pelo nome da função e seus
+                    parâmetros entre parênteses.</li>
+                <ul>
+                    <li>Ex.: SELECT nome_da_funcao(param1, param2);</li>
+                </ul>
+                <li>Isso faz com que o PostgreSQL execute a função e retorne o valor calculado ou os dados que a função
+                    está programada para retornar.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Procedimentos (Procedures).</h2>
+            <p>Procedimentos não retornam um valor diretamente, como as funções.</p>
+            <p>Eles são usados para executar tarefas que não exigem um retorno de valor, como inserções, atualizações ou
+                execuções de operações complexas.</p>
+            <pre>
+            CREATE PROCEDURE adicionar_aluno(nome TEXT, curso TEXT)
+            LANGUAGE plpgsql AS $$
+            BEGIN
+                INSERT INTO alunos(nome, curso) VALUES (nome, curso);
+            END;
+            $$;
+            
+            -- Chamada:
+            CALL adicionar_aluno('João', 'Física'); -- Query returned successfully
+            </pre>
+        </section>
+
+        <section>
+            <h2>Alterar função.</h2>
+            <p>Você pode precisar alterar uma função para modificar sua lógica, mudar os tipos de parâmetros ou ajustar
+                seu tipo de retorno.</p>
+            <p>No PostgreSQL, para modificar o código de uma função (corpo), usa-se <b>CREATE OR REPLACE FUNCTION</b>.
+            </p>
+            <p>Para ajustar propriedades, como o proprietário, usa-se <b>ALTER FUNCTION</b>.</p>
+            <pre>
+            ALTER FUNCTION minha_funcao(INTEGER)
+            OWNER TO novo_proprietario;
+            CREATE OR REPLACE FUNCTION minha_funcao(param1 INT)
+            RETURNS INT AS $$
+            BEGIN
+                RETURN param1 * 2;
+            END;
+            $$ LANGUAGE plpgsql;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Exclusão de funções.</h2>
+            <p>Às vezes, uma função pode não ser mais necessária, ou pode ser necessário remover uma função para evitar
+                que ela seja usada por outros sistemas ou por motivos de segurança.</p>
+            <p>Para excluir uma função no PostgreSQL, você usa o comando <b>DROP FUNCTION</b>.</p>
+            <p>É importante especificar os tipos de parâmetros que a função aceita ao excluí-la, pois podem existir
+                várias funções com o mesmo nome, mas com parâmetros diferentes.</p>
+            <ul>
+                <li>Excluir uma função com um parâmetro inteiro:</li>
+                <ul>
+                    <li>DROP FUNCTION minha_funcao(INTEGER);</li>
+                </ul>
+                <li>Excluir uma função que não aceita parâmetros:</li>
+                <ul>
+                    <li>DROP FUNCTION minha_funcao();</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exclusão de procedimentos.</h2>
+            <p>O comando para excluir um procedimento é DROP PROCEDURE.</p>
+            <pre>
+            DROP PROCEDURE meu_procedimento(INTEGER, TEXT);
+            </pre>
+            <p><b>Cuidado</b>: Ao excluir uma função ou procedimento, qualquer código que dependa dele deixará de
+                funcionar. Se houver dependências, é importante verificar antes de executar o DROP</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>POSTGRESQL. Tradução da Documentação para o Português do Brasil. Disponível em:
+                https://link.ufms.br/8Aaxp. Acesso em: 05 maio 2024. Trecho a ser lido: Capítulo 31. Seção 31.4</cite>
+            <p></p>
+            <cite>SILBERSCHATZ, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. ISBN 9788595157552. Disponível na Biblioteca Digital da UFMS Trecho a ser lido: Capítulo 5.
+                Seção 5.2.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de abr de 2025</p>
+    </footer>
+</body>
+
+</html>
