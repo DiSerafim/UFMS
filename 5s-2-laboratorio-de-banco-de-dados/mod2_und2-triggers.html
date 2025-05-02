@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 – Utilização prática de um SGBD usando Funções.</h1>
+        <h2>💡 Unidade 2 - Triggers.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=iH5jm5ShLV8&ab_channel=AGEADUFMS"
+                class="btn waves-effect waves-light" target="_blank" type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 2 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conteúdo</h2>
+            <h3>Introdução às triggers.</h3>
+            <ul>
+                <li><b>Triggers</b> são pequenas rotinas programadas no banco de dados, semelhantes às conhecidas
+                    <b>Stored Procedures</b>.
+                </li>
+                <li>Porém, como o nome indica (trigger = gatilho), uma trigger pode ser disparada em resposta a um
+                    determinado evento.</li>
+                <li>Geralmente esse evento é uma alteração na tabela, causada pelos comandos <b>insert</b>,
+                    <b>delete</b> ou <b>update</b>.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Utilização de triggers no PostgreSQL.</h2>
+            <ul>
+                <li>Aplicações de triggers no PostgreSQL:</li>
+                <ul>
+                    <li>Manutenção da integridade dos dados.</li>
+                    <li>Atualização automática de tabelas.</li>
+                    <li>Envio de notificações ou alertas.</li>
+                    <li>Realização de auditorias de mudanças no banco de dados.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Criando uma trigger no PostgreSQL.</h2>
+            <p>Sintaxe básica de criação de uma trigger:</p>
+            <pre>
+            CREATE TRIGGER trigger_name
+            BEFORE INSERT ON table_name
+            FOR EACH ROW
+            EXECUTE FUNCTION function_name();
+            </pre>
+            <ul>
+                <li><b>BEFORE/AFTER:</b> Define se a trigger será disparada antes ou depois do evento.</li>
+                <li><b>FOR EACH ROW:</b> Define que a ação será executada para cada linha afetada.</li>
+                <li><b>EXECUTE FUNCTION:</b> Chama a função que será executada quando a trigger for disparada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tipos de eventos que disparam triggers.</h2>
+            <ul>
+                <li>Tipos de eventos: INSERT, UPDATE, DELETE</li>
+                <li>Exemplos:</li>
+                <ul>
+                    <li><b>AFTER INSERT:</b> Uma trigger disparada após uma inserção de dados.</li>
+                    <li><b>BEFORE UPDATE:</b> Uma trigger disparada antes de uma atualização.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo prático de trigger: auditoria.</h2>
+            <p>Exemplo de trigger para auditoria de inserções:</p>
+            <pre>
+            CREATE TRIGGER auditar_insercao
+            AFTER INSERT ON alunos
+            FOR EACH ROW
+            EXECUTE FUNCTION log_insercoes();
+            </pre>
+            <p>A função <b>log_insercoes</b> grava o evento em uma tabela de auditoria.</p>
+        </section>
+
+        <section>
+            <h2>Alterar uma trigger.</h2>
+            <ul>
+                <li>O comando <b>ALTER TRIGGER</b> no PostgreSQL permite alterar o nome de uma trigger existente.</li>
+                <li>No entanto, ele não permite modificar a lógica interna da trigger, como o código da função
+                    associada.</li>
+                <li>Se você quiser alterar a função que a trigger executa, terá que excluir a trigger antiga e criar uma
+                    nova com a lógica modificada.</li>
+                <li>Suponha que você tenha uma trigger chamada <b>auditar_insercao</b> na <b>tabela alunos</b>, e deseja
+                    mudar seu nome para <b>auditar_novas_insercoes</b>.</li>
+            </ul>
+            <pre>
+            ALTER TRIGGER auditar_insercao
+            ON alunos
+            RENAME TO auditar_novas_insercoes;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Desativando uma trigger.</h2>
+            <ul>
+                <li>Se você precisar desativar uma trigger temporariamente, o comando <b>DISABLE TRIGGER</b> é usado.
+                </li>
+                <li>Quando uma trigger está desativada, ela não será executada até que seja reativada.</li>
+                <li>Vamos desativar a trigger <b>auditar_insercao</b> na tabela <b>alunos</b>.</li>
+                <pre>
+                ALTER TABLE alunos
+                DISABLE TRIGGER auditar_insercao;
+                </pre>
+                <li>Você pode reativar a trigger usando o comando <b>ENABLE TRIGGER</b>.</li>
+                <pre>
+                ALTER TABLE alunos
+                ENABLE TRIGGER auditar_insercao;
+                </pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Excluindo uma trigger.</h2>
+            <ul>
+                <li>O comando <b>DROP TRIGGER</b> permite que você remova permanentemente uma trigger do banco de dados.
+                </li>
+                <li>Vamos remover a trigger <b>auditar_insercao</b> da tabela <b>alunos</b>:</li>
+                <pre>
+                DROP TRIGGER IF EXISTS auditar_insercao
+                ON alunos;
+                </pre>
+                <li><b>DROP TRIGGER IF EXISTS:</b> Remove a trigger se ela existir. O uso de <b>IF EXISTS</b> evita um
+                    erro caso a trigger não exista.</li>
+                <li><b>auditar_insercao:</b> Nome da trigger a ser excluída.</li>
+                <li><b>ON alunos:</b> Especifica a tabela à qual a trigger está associada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FOR EACH STATEMENT.</h2>
+            <ul>
+                <li>A cláusula <b>FOR EACH ROW</b> não é a única possibilidade ao criar triggers no PostgreSQL.</li>
+                <li>Além dela, você também pode usar <b>FOR EACH STATEMENT</b>.</li>
+                <li>FOR EACH ROW:</li>
+                <ul>
+                    <li><b>O que faz:</b> executa a ação da trigger para cada linha que é afetada pelo evento (inserção,
+                        atualização ou exclusão).</li>
+                    <li><b>Quando usar:</b> quando você precisa que a trigger seja disparada individualmente para cada
+                        linha alterada. Por exemplo, ao inserir vários registros de uma vez, a trigger será acionada
+                        separadamente para cada linha inserida.</li>
+                </ul>
+                <li>Neste exemplo, se você inserir 10 registros de uma vez na tabela alunos, a trigger será executada 10
+                    vezes, uma para cada linha inserida.</li>
+                <pre>
+                CREATE TRIGGER log_insercao_aluno
+                AFTER INSERT ON alunos
+                FOR EACH ROW
+                EXECUTE FUNCTION log_insercoes();
+                </pre>
+                <li>FOR EACH STATEMENT:</li>
+                <ul>
+                    <li><b>O que faz:</b> executa a ação da trigger apenas uma vez para o comando inteiro,
+                        independentemente de quantas linhas foram afetadas.</li>
+                    <li><b>Quando usar:</b> quando você deseja que a trigger seja acionada uma única vez para um comando
+                        SQL, mesmo que o comando modifique várias linhas. </li>
+                </ul>
+                <li>Neste exemplo, se você inserir 10 registros de uma vez na tabela alunos, a trigger será acionada
+                    apenas uma vez, independentemente de quantas linhas foram inseridas.</li>
+                <pre>
+                CREATE TRIGGER log_insercao_aluno
+                AFTER INSERT ON alunos
+                FOR EACH STATEMENT
+                EXECUTE FUNCTION log_insercoes();
+                </pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>POSTGRESQL. Tradução da Documentação para o Português do Brasil. Disponível em:
+                https://link.ufms.br/8Aaxp. Acesso em: 05 maio 2024. Trecho a ser lido: Capítulo 3. Seção 3.2.</cite>
+            <p></p>
+            <cite>SILBERSCHATZ, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. ISBN 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo 5.
+                Seção 5.3.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 01 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>

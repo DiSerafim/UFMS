@@ -1,0 +1,4 @@
+CREATE TRIGGER auditar_insercao
+AFTER INSERT ON alunos
+FOR EACH ROW
+EXECUTE FUNCTION log_insercoes();
