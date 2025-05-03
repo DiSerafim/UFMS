@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Utilização prática de um SGBD usando Funções.</h1>
+        <h2>💬 Fórum de Discussão</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>LABORATÓRIO DE BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre funções, procedimentos armazenados e gatilhos.</p>
+            <p>Aprendemos que ao trabalharmos com o SGBD PostgreSQL não temos necessariamente a função Stored Procedure
+                (SP) definida, como podemos encontrar em diversos outros tipos de SGBD’s. Esasas , na realidade,
+                pequenos trechos de código armazenados do lado do servidor de uma base de dados. Ao contrário do que
+                acontece em outras bases de dados, as SPs no Postgres são definidas como FUNCTIONS, assim como as
+                triggers, tornando esse recurso um pouco mais complicado, dependendo inclusive do seu tipo de retorno.
+            </p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Nesse fórum, vamos discutir/compartilhar alguns pontos:</p>
+            <ol>
+                <li>Na sua percepção, para que tarefa você pode usar uma Função de banco de dados?</li>
+                <li>Descreva algum exemplo onde podemos usar Trigger?</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>...</b>
+            <p>1 - Na sua percepção, para que tarefa você pode usar uma Função de banco de dados?</p>
+            <ul>
+                <li>Para encapsulamento de lógica que são frequentemente utilizados.</li>
+                <li>Para a segurança permitindo o controle de permissões.</li>
+                <li>Para a performance reduzindo a quantidade de dados trafegados entre aplicações.</li>
+            </ul>
+            <p>Ex. calcular o valor total de um pedido:</p>
+            <pre>
+            CREATE OR REPLACE FUNCTION calcular_total_pedido(pedido_id integer)
+            RETURNs numeric AS $$
+            DECLARE
+                total numeric;
+            BEGIN
+                SELECT SUM(quantidade * preco_unitario) * (1 - COALESCE(desconto, 0))
+                INTO total
+                FROM itens_pedido
+                JOIN produtos ON itens_pedido.produto_id = produtos.id
+                WHERE itens_pedido.pedido_id = calcular_total_pedido.pedido_id;
+
+                RETURN total;
+            END;
+            $$ LANGUAGE plpgsql;
+            </pre>
+
+            <p>2 - Descreva algum exemplo onde podemos usar Trigger?</p>
+            <ul>
+                <li>Na manutenção de integridade, quando as constraints padrão não são suficientes.</li>
+                <li>Em auditoria para registrar automaticamente alterações em tabelas.</li>
+                <li>Na manutenção de dados, para atualizar de forma automática campos calculados e resumos.</li>
+            </ul>
+            <p>Ex. trigger para registrar histórico de alterações de preços:</p>
+            <pre>
+            CREATE OR REPLACE FUNCTION registrar_historico_preco()
+            RETURNs TRIGGER AS $$
+            BEGIN
+                IF NEW.preco <> OLD.preco THEN
+                    INSERT INTO historico_precos(produto_id, preco_antigo, preco_novo, data_alteracao, usuario)
+                    VALUES (OLD.id, OLD.preco, NEW.preco, NOW(), current_user);
+                END IF;
+                RETURN NEW;
+            END;
+            $$ LANGUAGE plpgsql;
+            
+            CREATE TRIGGER tr_historico_preco
+            BEFORE UPDATE ON produtos
+            FOR EACH ROW
+            EXECUTE FUNCTION registrar_historico_preco();
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 21 de mai de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
