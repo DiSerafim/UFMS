@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Utilização prática de um SGBD usando Funções.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Um dos recursos mais utilizados pelos desenvolvedores em Banco de dados é a Stored Procedure, pois mantém
+                concentrada a lógica necessária para determinadas funções, o que garante agilidade no retorno de
+                informações importantes.</p>
+            <p>Ao trabalharmos com o SGBDOR (Sistema Gerenciador de Banco de Dados Objeto Relacional) PostgreSQL não
+                temos necessariamente a função Stored Procedure (SP) definida, como podemos encontrar em diversos outros
+                tipos de SGBD’s. Elas são, na realidade, pequenos trechos de código armazenados do lado do servidor de
+                uma base de dados. Ao contrário do que acontece em outras bases de dados, as SPs no Postgres são
+                definidas como FUNCTIONS, assim como as triggers, tornando esse recurso um pouco mais complicado,
+                dependendo inclusive do seu tipo de retorno. Essas funções possuem características importantes e
+                diferentes, mas criadas de igual forma. Trabalhar com a criação destes pequenos trechos de código é, de
+                certa forma, uma boa prática, pois podemos deixar códigos bastante complexos atuando do lado do servidor
+                que poderão ser utilizados por várias aplicações, evitando assim a necessidade de replicá-los em cada
+                uma dessas aplicações.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Com base na citação anterior, responda às seguintes questões:</p>
+            <ul>
+                <li>Descreva em um documento no Word os benefícios de se usar Functions e Triggers no PostgreSQL com
+                    relação ao processamento ser feito no servidor.</li>
+                <li>Descreva em um documento no Word o que diferencia a chamada das Triggers e das Functions
+                    tradicionais no PostgreSQL.</li>
+            </ul>
+            <p>Sua resposta deve ser produzida no formato de texto .docx, e deve conter até 100 palavras.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <ol>
+                <li>Descreva em um documento no Word os benefícios de se usar Functions e Triggers no PostgreSQL com
+                    relação ao processamento ser feito no servidor.</li>
+                <ol>
+                    <li>Benefícios das functions:</li>
+                    <ul>
+                        <li>As funções são executadas no servidor do banco de dados, reduzindo a latência de rede e o
+                            trafego entre a aplicação e o SGBD, melhorando a performance.</li>
+                        <li>A criação de funções permite a sua reutilização, evitando a duplicação de código e lógica.
+                        </li>
+                        <li>O uso de funções permite restringir o acesso direto as tabelas, dando permissão apenas para
+                            executar funções específicas, tornando mais seguro.</li>
+                        <li>Alterações feitas diretamente na lógica facilitando a manutenção.</li>
+                        <li>Operações dentro de funções podem ser encapsuladas em transações garantindo sua atomicidade.
+                        </li>
+                    </ul>
+                    <li>Benefícios das triggers:</li>
+                    <ul>
+                        <li>Automatização, executam ações automaticamente em respostas a eventos (INSERT, UPDATE,
+                            DELETE).</li>
+                        <li>Permite rastrear alterações em tabelas com auditoria e logs, sem intervenção manual.</li>
+                        <li>Implementa regra de validação complexa como verificar condições em múltiplas tabelas.</li>
+                        <li>Atualização de dados derivados, mantêm campos calculados ou resumos sempre sincronizados.
+                        </li>
+                    </ul>
+                </ol>
+                <li>Descreva em um documento no Word o que diferencia a chamada das Triggers e das Functions
+                    tradicionais no PostgreSQL.</li>
+                <ol>
+                    <li>Functions:</li>
+                    <ul>
+                        <li>Chamada:</li>
+                        <ul>
+                            <li>São executadas explicitamente por comandos SQL(SELECT, INSERT, etc.) ou aplicações.</li>
+                        </ul>
+                        <li>Retorno:</li>
+                        <ul>
+                            <li>Pode retornar valores (tabelas, escalares) ou não (VOID).</li>
+                        </ul>
+                        <li>Parâmetros:</li>
+                        <ul>
+                            <li>Recebe parâmetro definido na chamada.</li>
+                        </ul>
+                        <li>Controle:</li>
+                        <ul>
+                            <li>Chamadas sob demanda.</li>
+                        </ul>
+                    </ul>
+                    <p>Exemplo:</p>
+                    <pre>
+                    SELECT calcular_desconto(cliente_id);
+                    </pre>
+                    <li>Triggers:</li>
+                    <ul>
+                        <li>Chamada:</li>
+                        <ul>
+                            <li>Disparados automaticamente por eventos (INSERT, UPDATE, DELETE) em tabelas.</li>
+                        </ul>
+                        <li>Retorno:</li>
+                        <ul>
+                            <li>Retorna um tipo TRIGGER e não podem retornar dados diretamente.</li>
+                        </ul>
+                        <li>Parâmetros:</li>
+                        <ul>
+                            <li>Acessam os dados do evento através das variáveis NEW e OLD.</li>
+                        </ul>
+                        <li>Controle:</li>
+                        <ul>
+                            <li>A execução é automática, sem intervenção direta do usuário.</li>
+                        </ul>
+                    </ul>
+                    <p>Exemplo:</p>
+                    <pre>
+                    CREATE TRIGGER tr_auditoria AFTER UPDATE ON produtos.
+                    </pre>
+                </ol>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
