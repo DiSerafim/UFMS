@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Utilização prática de um SGBD usando Funções</h1>
+        <h2>✅ [A2] Avaliação</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em sábado, 3 mai 2025, 21:23</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em sábado, 3 mai 2025, 22:18</li>
+                <li>⏳ Tempo empregado 54 minutos 28 segundos</li>
+                <li>🎯 Avaliar 9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Qual das seguintes opções NÃO é um tipo de evento que pode disparar um trigger em PostgreSQL?</p>
+                <ul>
+                    <li>a. DELETE</li>
+                    <li><b>b. SELECT</b></li>
+                    <li>c. UPDATE</li>
+                    <li>d. INSERT</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Em PostgreSQL, os triggers são acionados por operações de INSERT, UPDATE e DELETE, mas não por
+                        SELECT, pois consultas de leitura não modificam os dados.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Qual das seguintes opções é verdadeira sobre triggers em PostgreSQL?</p>
+                <ul>
+                    <li>a. Triggers são executados manualmente pelo administrador do banco de dados.</li>
+                    <li>b. Triggers são utilizados apenas para leitura de dados.</li>
+                    <li>c. Triggers não podem acessar outras tabelas.</li>
+                    <li><b>d. Triggers podem ser usados para validar dados antes de uma inserção.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Triggers do tipo BEFORE INSERT são comumente usados para:</li>
+                    <ul>
+                        <li>Validar regras de negócio (ex.: checar se um e-mail é válido).</li>
+                        <li>Rejeitar operações se os dados forem inválidos (usando RAISE EXCEPTION).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Qual é a sintaxe correta para criar uma função que retorna um tipo TABLE em PostgreSQL?</p>
+                <ul>
+                    <li>a. CREATE FUNCTION function_name() RETURNS SETOF table_name AS</li>
+                    <ul>
+                        <li>LANGUAGE plpgsql;</li>
+                    </ul>
+                    <li>b. CREATE FUNCTION function_name() RETURNS TABLE AS</li>
+                    <ul>
+                        <li>LANGUAGE plpgsql;</li>
+                    </ul>
+                    <li><b>c. CREATE FUNCTION function_name() RETURNS TABLE (column1 type1, column2 type2) AS</b></li>
+                    <ul>
+                        <li>LANGUAGE plpgsql;</li>
+                    </ul>
+                    <li>d. CREATE FUNCTION function_name() RETURNS RECORD AS</li>
+                    <ul>
+                        <li>LANGUAGE plpgsql;</li>
+                    </ul>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Permite definir explicitamente a estrutura da tabela retornada</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Como você desativa temporariamente um trigger em PostgreSQL?</p>
+                <ul>
+                    <li>a. DELETE TRIGGER trigger_name</li>
+                    <li>b. DISABLE TRIGGER trigger_name</li>
+                    <li>c. UPDATE TRIGGER trigger_name SET DISABLE</li>
+                    <li><b>d. ALTER TABLE table_name DISABLE TRIGGER trigger_name</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A sintaxe correta para desativar um trigger temporariamente é:</li>
+                    <pre>ALTER TABLE nome_da_tabela DISABLE TRIGGER nome_do_trigger;</pre>
+                    <li>Para desativar todos os triggers de uma tabela:</li>
+                    <pre>ALTER TABLE nome_da_tabela DISABLE TRIGGER ALL;</pre>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual a finalidade de um trigger BEFORE UPDATE em PostgreSQL?</p>
+                <ul>
+                    <li>a. Executar uma ação depois de um registro ser inserido</li>
+                    <li>b. Executar uma ação antes de um registro ser deletado</li>
+                    <li><b>c. Executar uma ação antes de um registro ser atualizado</b></li>
+                    <li>d. Executar uma ação depois de um registro ser atualizado</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+                <b class="answer">Resposta: c. ✅</b>
+                <ul>
+                    <li>Executar ações antes que a operação de UPDATE seja concluída</li>
+                    <ul>
+                        <li>O trigger é acionado após a solicitação de atualização, mas antes que as alterações sejam
+                            efetivamente aplicadas ao banco de dados</li>
+                    </ul>
+                    <li>Casos de uso comuns:</li>
+                    <ul>
+                        <li>Validar os novos valores antes da atualização</li>
+                        <li>Modificar os valores que serão armazenados</li>
+                        <li>Realizar verificações de integridade complexas</li>
+                        <li>Registrar informações de auditoria</li>
+                        <li>Impedir a atualização em certas condições (lançando uma exceção)</li>
+                    </ul>
+                    <li>Diferença chave:</li>
+                    <ul>
+                        <li>BEFORE UPDATE: Executa ANTES da operação</li>
+                        <li>AFTER UPDATE: Executa DEPOIS que a operação já foi concluída</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>No PostgreSQL, a cláusula FOR EACH ROW em triggers executa a ação da trigger apenas uma vez,
+                    independentemente de quantas linhas forem afetadas pelo comando SQL.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>FOR EACH ROW faz com que o trigger seja executado uma vez para cada linha afetada pelo comando
+                        SQL</li>
+                    <li>Exemplo: Se um UPDATE afetar 100 linhas, o trigger será executado 100 vezes (uma para cada
+                        linha)</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Qual é a finalidade do comando LANGUAGE ao criar uma função em PostgreSQL?</p>
+                <ul>
+                    <li>a. Define o idioma do banco de dados</li>
+                    <li><b>b. Define a linguagem de programação utilizada na função</b></li>
+                    <li>c. Define o conjunto de dados retornados pela função</li>
+                    <li>d. Define os parâmetros da função</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>LANGUAGE em funções PostgreSQL especifica qual linguagem de procedimento será usada para
+                        escrever o corpo da função. As principais características são:</li>
+                    <ul>
+                        <li>Finalidade principal:</li>
+                        <ul>
+                            <li>Indica ao PostgreSQL qual interpretador/processador usar para executar o código da
+                                função</li>
+                            <li>Determina a sintaxe e capacidades disponíveis no corpo da função</li>
+                        </ul>
+                        <li>Linguagens comuns:</li>
+                        <ul>
+                            <li>plpgsql (Padrão, linguagem procedural do PostgreSQL)</li>
+                            <li>sql (Para funções simples em SQL puro)</li>
+                            <li>plpython, plperl, pljava (Para outras linguagens)</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Associe as características das funções e procedimentos com suas definições:</p>
+                <pre>
+                Altera propriedades de uma função, como o proprietário (...).
+                Executa operações, mas não retorna valores (...).
+                Executa operações no banco de dados e retorna um valor (...).
+                Permite modificar uma função existente sem precisar removê-la primeiro (...).
+                </pre>
+                <p>Opções: CREATE OR REPLACE FUNCTION, Função, ALTER FUNCTION, Procedimento.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Altera propriedades de uma função, como o proprietário <b>ALTER FUNCTION</b>.
+                Executa operações, mas não retorna valores <b>Procedimento</b>.
+                Executa operações no banco de dados e retorna um valor <b>Função</b>.
+                Permite modificar uma função existente sem precisar removê-la primeiro <b>CREATE OR REPLACE FUNCTION</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>→ ALTER FUNCTION</li>
+                    <ul>
+                        <li>(Comando usado para modificar propriedades de uma função existente, como dono, schema ou
+                            atributos de segurança)</li>
+                    </ul>
+                    <li>→ PROCEDURE</li>
+                    <ul>
+                        <li>(No PostgreSQL, procedimentos são criados com CREATE PROCEDURE e não retornam valores,
+                            diferentemente das funções. São usados para ações como transações ou DML.)</li>
+                    </ul>
+                    <li>→ FUNCTION</li>
+                    <ul>
+                        <li>(Funções são definidas com CREATE FUNCTION, realizam operações e retornam um valor através
+                            de RETURNS.)</li>
+                    </ul>
+                    <li>→ CREATE OR REPLACE FUNCTION</li>
+                    <ul>
+                        <li>(Esta sintaxe atualiza a definição de uma função mantendo suas permissões e dependências
+                            intactas.)</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Associe os tipos de retorno de funções com suas descrições:</p>
+                <pre>
+                Retorna um conjunto de registros, ou seja, várias linhas (...).
+                Retorna uma coleção de valores organizados em uma estrutura de array (...).
+                Retorna um único valor simples, como um número inteiro ou texto (...).
+                Retorna um registro com múltiplas colunas (...).                
+                </pre>
+                <p>Opções: Escalar, SETOF, Array, Record.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Retorna um conjunto de registros, ou seja, várias linhas <b>SETOF</b>.
+                Retorna uma coleção de valores organizados em uma estrutura de array <b>Array</b>.
+                Retorna um único valor simples, como um número inteiro ou texto <b>Escalar</b>.
+                Retorna um registro com múltiplas colunas <b>Record</b>.                
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>→ SETOF ou RETURNS TABLE</li>
+                    <ul>
+                        <li>(Exemplo: RETURNS SETOF tabela ou RETURNS TABLE(col1 tipo1, col2 tipo2) - usado para funções
+                            que retornam múltiplas linhas como resultados)</li>
+                    </ul>
+                    <li>→ ARRAY</li>
+                    <ul>
+                        <li>(Exemplo: RETURNS INTEGER[] - retorna um array de inteiros, útil para agregações ou listas
+                            de valores)</li>
+                    </ul>
+                    <li>→ Scalar (tipos básicos)</li>
+                    <ul>
+                        <li>(Exemplo: RETURNS INTEGER, RETURNS VARCHAR, RETURNS BOOLEAN - para funções que devolvem um
+                            único valor atômico)</li>
+                    </ul>
+                    <li>→ RECORD ou COMPOSITE TYPE</li>
+                    <ul>
+                        <li>(Exemplo: RETURNS RECORD ou RETURNS meu_tipo_composto - usado quando a função retorna uma
+                            linha com várias colunas de tipos diferentes)</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Qual a principal função de um trigger em PostgreSQL?</p>
+                <ul>
+                    <li>a. Realizar backup do banco de dados</li>
+                    <li>b. Permitir a criação de índices</li>
+                    <li>c. Criar novas tabelas</li>
+                    <li><b>d. Executar automaticamente uma ação em resposta a um evento</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Executar automaticamente ações quando ocorrem eventos específicos no banco de dados, como:</li>
+                    <ul>
+                        <li>Operações DML: INSERT, UPDATE ou DELETE</li>
+                        <li>Operações DDL: CREATE, ALTER ou DROP (em versões mais recentes)</li>
+                    </ul>
+                    <li>Características essenciais:</li>
+                    <ul>
+                        <li>São acionados automaticamente pelo SGBD</li>
+                        <li>Operam no nível do banco de dados, não da aplicação</li>
+                        <li>Podem ser executados antes (BEFORE) ou depois (AFTER) do evento principal</li>
+                        <li>Trabalham no contexto da transação em curso</li>
+                    </ul>
+                    <li>Casos de uso típicos:</li>
+                    <ul>
+                        <li>Validação complexa de dados</li>
+                        <li>Manutenção de dados derivados (ex.: atualizar totais)</li>
+                        <li>Auditoria/log de alterações</li>
+                        <li>Replicação de dados entre tabelas</li>
+                        <li>Aplicação de regras de negócio complexas</li>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 03 de mai de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
