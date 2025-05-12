@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Introdução a Conceitos de Processamento de Transações e Controle de Concorrência.</h1>
+        <h2>💡 Unidade 2 - Mapeamento OR e Conexão com Aplicação com Banco de Dados.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=Jq6utNaRBxw" class="btn waves-effect waves-light" target="_blank"
+                type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 3 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conexão com banco.</h2>
+            <p>A conexão de uma aplicação com um banco de dados é o processo que permite que uma aplicação interaja com
+                um banco de dados para realizar operações, como inserir, consultar, atualizar ou deletar dados.</p>
+            <p>Em termos práticos, ela é a ponte que permite que o código da aplicação troque informações com um banco
+                de dados relacional ou não-relacional.</p>
+            <p><b>JDBC (Java Database Connectivity)</b> é uma API de baixo nível para conexão com bancos de dados em
+                Java para executar comandos SQL.</p>
+            <p>Embora seja muito poderoso, o JDBC requer que os desenvolvedores <b>gerenciem manualmente as
+                    conexões</b>, preparem consultas e lidem com o tratamento de exceções de baixo nível.</p>
+            <p>O JDBC fornece uma interface direta para o banco de dados, permitindo abrir conexões, executar comandos
+                SQL (como SELECT, INSERT, UPDATE) e recuperar resultados.</p>
+            <pre>
+            package com.example;
+
+            import java.sql.Statement;
+            import java.sql.Connection;
+            import java.sql.DriverManager;
+            import java.sql.ResultSet;
+            import java.sql.SQLException;
+            
+            /*
+                * Hello world!
+                * 
+            */
+            
+            public class App 
+            {
+                
+                public static void main(String[] args)
+                {
+                    try {
+                        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Aulas",
+                        "postgres", "serafim86");
+                        
+                        if (conexao != null) {
+                            System.out.println("Banco de dados conectado com sucesso!");
+                            Statement stm = conexao.createStatement();
+                            
+                            // Chama a função consultaDados para buscar os dados
+                            consultaDados(stm);
+                            stm.close();
+                        } else {
+                            System.out.println("Conexão falhou!");
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                };
+            
+                public static void consultaDados(Statement stm){
+                    String query = "SELECT * FROM alunos;";
+                    try {
+                        ResultSet result = stm.executeQuery(query);
+                        while (result.next()) {
+                            System.out.println(result.getString("nome"));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                };
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Exemplo de Conexão JDBC com Java.</h2>
+            <b>Estabelecer a conexão</b>
+            <p>Para estabelecer a conexão, você precisa da URL do banco de dados, nome de usuário e senha.</p>
+            <pre>
+            Connection conn = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/meuBanco", "usuario", "senha"
+            );
+            </pre>
+
+            <b>Criar uma instrução (Statement)</b>
+            <p>Um Statement é usado para executar consultas e comandos SQL</p>
+            <pre>
+            Statement stmt = conn.createStatement();
+            </pre>
+
+            <b>Executar uma consulta</b>
+            <p>Você pode executar consultas SQL como SELECT, INSERT, UPDATE e DELETE usando o objeto Statement.</p>
+            <p>Exemplo de um comando SQL para recuperar dados:</p>
+            <pre>
+            ResultSet rs = stmt.executeQuery("SELECT * FROM clientes");
+            stmt.executeUpdate("INSERT INTO clientes (nome, email) VALUES ('João', 'joao@email.com')");
+            </pre>
+
+            <b>Processar os resultados</b>
+            <p>Você pode processar os dados do ResultSet para exibi-los ou manipulá-los.</p>
+            <pre>
+            while (rs.next()) {
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                System.out.println("Nome: " + nome + ", Email: " + email);
+            }
+            </pre>
+
+            <b>Fechar a conexão</b>
+            <p>Após terminar as operações com o banco de dados, é importante fechar a conexão para liberar recursos.</p>
+            <pre>
+                rs.close();
+                stmt.close();
+                conn.close();
+            </pre>
+
+            <b>Resumo de como o JDBC funciona:</b>
+            <ul>
+                <li><b>Connection</b>: é o objeto responsável por gerenciar a conexão com o banco de dados.</li>
+                <li><b>Statement</b> ou <b>PreparedStatement</b>: são objetos usados para enviar consultas SQL ao banco
+                    de dados.</li>
+                <li><b>ResultSet</b>: armazena os resultados das consultas SQL (usado para SELECT).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mapeamento Objeto-Relacional (OR).</h2>
+            <p>O Mapeamento Objeto-Relacional (OR), ou ORM (Object-Relational Mapping), é uma técnica utilizada para
+                converter dados entre sistemas de tipos incompatíveis usando orientação a objetos.</p>
+            <p>Ele cria uma "ponte" entre o mundo dos objetos nas linguagens de programação (como Java) e o mundo dos
+                bancos de dados relacionais (como PostgreSQL ou MySQL).</p>
+            <p>No Java, você trabalha com objetos, enquanto os bancos de dados utilizam tabelas.</p>
+            <p>O Mapeamento OR facilita a tarefa de transformar (ou mapear) essas classes e objetos em tabelas e
+                registros de forma automática, sem que você tenha que escrever todo o código SQL manualmente.</p>
+            <p>Isso economiza tempo, reduz erros e mantém o foco do desenvolvimento no código orientado a objetos.</p>
+        </section>
+
+        <section>
+            <h2>Por que usar Mapeamento OR?.</h2>
+            <ul>
+                <li><b>Automatiza a interação com o banco de dados:</b> Você pode trabalhar diretamente com objetos no
+                    seu código Java, e o Mapeamento OR se encarrega de traduzir as operações com esses objetos para o
+                    banco de dados.</li>
+                <li><b>Reduz a necessidade de SQL manual:</b> A maioria das operações SQL (inserir, atualizar, deletar)
+                    pode ser feita através do código Java.</li>
+                <li><b>Facilita a manutenção:</b> Ao mapear as entidades (classes Java) diretamente para as tabelas, o
+                    código fica mais organizado e fácil de manter.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Relacionamento entre as classes.</h2>
+            <p>Além de mapear as classes para tabelas, o Mapeamento OR também permite que você defina relacionamentos
+                entre as classes, como no banco de dados.</p>
+            <p>Por exemplo, você pode ter uma relação entre Cliente e Produto, onde um cliente pode comprar vários
+                produtos.</p>
+            <p>Com a anotação <b>@OneToMany</b>, definimos que um cliente pode comprar vários produtos e o Mapeamento OR
+                vai gerenciar isso, criando uma tabela de relacionamento no banco de dados para armazenar essas
+                informações.</p>
+
+            <b>@OneToOne (Um-para-Um)</b>
+            <p>Define um relacionamento de "Um-para-Um" entre duas entidades. Isso significa que uma instância de uma
+                entidade está associada a no máximo uma instância de outra entidade.</p>
+            <b>@ManyToMany (Muitos-para-Muitos)</b>
+            <p>Define um relacionamento "Muitos-para-Muitos", onde várias instâncias de uma entidade estão associadas a
+                várias instâncias de outra entidade. Esse tipo de relacionamento geralmente envolve uma tabela
+                intermediária.</p>
+
+            <pre>
+            @Entity
+            public class Cliente {
+                @Id
+                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                private Long id;
+                private String nome;
+                <b>@OneToMany</b>
+                private List &lt;Produto> produtosComprados;
+                    // Construtores, Getters e Setters
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Benefícios práticos.</h2>
+            <p>Você não precisa escrever comandos SQL para inserir, atualizar, ou deletar registros. Tudo isso é feito
+                através das operações normais com os objetos Java.</p>
+            <p>A estrutura do banco de dados fica "escondida", e você pode focar no código orientado a objetos, enquanto
+                o Mapeamento OR cuida de como esses objetos se relacionam com o banco de dados.</p>
+            <p>Exemplo: Se você quiser adicionar um novo cliente ao banco de dados, basta criar uma instância da classe
+                Cliente e salvar:</p>
+            <pre>
+            Cliente cliente = new Cliente();
+            cliente.setNome("João");
+            cliente.setEmail("joao@gmail.com");
+
+            // A linha abaixo insere o cliente no banco de dados
+            entityManager.persist(cliente);
+            </pre>
+        </section>
+
+        <section>
+            <h2>Conexão com banco.</h2>
+            <p>Conectar um aplicativo Java a um banco de dados envolve várias ferramentas e tecnologias, cada uma
+                desempenhando um papel específico.</p>
+        </section>
+
+        <section>
+            <h2>Conexão com banco: Maven.</h2>
+            <p>Maven é uma ferramenta de automação de build e gerenciamento de dependências para projetos Java. Sua
+                principal função é facilitar o processo de construção, gerenciamento e integração de bibliotecas em
+                projetos Java.</p>
+            <p>Maven baixa e gerencia automaticamente as bibliotecas necessárias para o projeto, como as bibliotecas de
+                JPA, Hibernate, e JDBC. Ao invés de adicionar manualmente essas bibliotecas ao projeto, o Maven permite
+                que você defina todas as dependências em um arquivo chamado pom.xml.</p>
+            <img src="img/maven.png" alt="maven" title="maven">
+        </section>
+
+        <section>
+            <h2>Conexão com banco: JPA.</h2>
+            <p><b>JPA (Java Persistence API)</b> é a especificação oficial da Java EE para o mapeamento
+                objeto-relacional (ORM). Ele define um conjunto de regras para gerenciar persistência de dados em bancos
+                de dados relacionais através de objetos Java.</p>
+            <p>Permite que você defina entidades Java (classes) que correspondem a tabelas no banco de dados (ORM).</p>
+            <p>O JPA abstrai a camada de persistência, permitindo que os desenvolvedores manipulem os dados no banco de
+                dados como objetos Java, sem precisar escrever consultas SQL diretamente.</p>
+            <img src="img/jpa.png" alt="jpa" title="jpa">
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>POSTGRESQL. Tradução da Documentação para o Português do Brasil.  Disponível em: https://link.ufms.br/Yk4kw Acesso em: 03 maio 2024. Trecho a ser lido: Capítulo 6.</cite>
+            <p></p>
+            <cite>SILBERSCHATZ, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN LTC, 2020. ISBN 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo 24.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
