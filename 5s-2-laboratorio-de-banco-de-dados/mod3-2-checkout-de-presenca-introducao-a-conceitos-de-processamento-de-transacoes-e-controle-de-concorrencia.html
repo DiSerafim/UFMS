@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Introdução a Conceitos de Processamento de Transações e Controle de Concorrência.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>As transações são um grupo que contém uma ou mais operações lógicas, como, por exemplo, uma transferência
+                de uma conta bancária para outra. Nesse caso, as operações são, respectivamente de criação, leitura,
+                atualização e deleção (ou, em Inglês, a sigla CRUD – Create – Read – Update – Delete).</p>
+            <p>Contudo, o principal problema de uma base de dados que não usa a estrutura ACID é a abundante quantidade
+                de dados que é processada diariamente, além da lentidão que eles podem ter ao serem processados. E, você
+                não quer esperar um tempo longo para realizar uma transferência bancária, não é?</p>
+            <p>Por isso, para simplificar esses procedimentos, é utilizada a estrutura ACID, para que os dados sejam
+                armazenados de uma forma segura e que garanta o processamento dos dados de forma eficiente no servidor.
+            </p>
+            <p>A sigla ACID define os quatro pilares necessários para a realização de uma transação em um sistema de
+                banco de dados. São elas:</p>
+            <ul>
+                <li>Atomicidade;</li>
+                <li>Consistência;</li>
+                <li>Isolamento;</li>
+                <li>Durabilidade.</li>
+            </ul>
+            <p>Se as quatro propriedades exibidas acima forem seguidas de forma correta, as suas transações estão
+                compatíveis com a estrutura ACID. Esse é o conceito de ACID Compliance, estar em conformidade com os
+                pilares das transações.</p>
+
+            <p>DEVMEDIA. O que é ACID e porque usar em Bancos de Dados?. Disponível em: <a
+                    href="https://blog.betrybe.com/tecnologia/acid-porque-usar/" target="_blank"
+                    rel="noopener noreferrer"> aqui</a> . Acesso em: 28 mai 2024</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Com base na citação anterior, responda às seguintes questões:</p>
+            <ul>
+                <li>Descreva o que é Atomicidade.</li>
+                <li>Descreva o que diferencia o Isolamento da Durabilidade.</li>
+            </ul>
+            <p>Sua resposta deve ser postada no espaço para a tarefa do AVA, em um documento do Word, no formato de texto .docx, e deve conter até 100 palavras.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <ol>
+                <li>Descreva o que é Atomicidade.</li>
+                <ul>
+                    <li>A atomicidade é a propriedade que garante que todas as operações de uma transação sejam
+                        concluídas (COMMIT) com sucesso ou, em caso de
+                        falha, nenhuma delas será aplicada (ROLLBACK). É o conceito de "tudo ou nada".</li>
+                    <ul>
+                        <li>Exemplo: Em uma transação bancária, o débito de uma conta e o crédito de outra devem ocorrer
+                            juntos ou nenhum deles deve acontecer.</li>
+
+                        <ul>
+                            <li>Débito de R$500,00 da conta A.</li>
+                            <li>Crédito de R$500,00 na conta B.</li>
+                        </ul>
+                        <li>Se o sistema falhar após o débito da conta A e antes do crédito na conta B, a atomicidade
+                            garante que a transação inteira seja cancelada. O saldo da conta A é restaurado e nenhum
+                            valor é creditado na conta B.</li>
+                    </ul>
+                </ul>
+                <li>Descreva o que diferencia o Isolamento da Durabilidade.</li>
+                <b>Isolamento</b>
+                <ul>
+                    <li>O isolamento garante que as transações concorrentes executadas de forma simultaneamente, não
+                        interfiram umas nas outras. Cada transação age como se fosse a única sendo executada no banco de
+                        dados, mesmo que outras estejam sendo executadas no momento. Evitando problemas como:</li>
+                    <ul>
+                        <li>Leitura suja: Ler dados de uma transação não confirmada.</li>
+                        <li>Leitura não repetível: Dados alterados por outra transação durante uma mesma operação.</li>
+                    </ul>
+                    <li>Ex.:</li>
+                    <ul>
+                        <li>Se duas transações tentam atualizar o saldo da mesma conta ao mesmo tempo, o isolamento
+                            garante que somente uma verá o resultado final após a outra ser concluída (Como uma
+                            transação feita no caixa eletrônico).</li>
+                    </ul>
+                    <li>Gerencia <b>concorrência</b> entre transações.</li>
+                    <li>Evita interferência entre operações simultâneas.</li>
+                </ul>
+                <b>Durabilidade</b>
+                <ul>
+                    <li>A durabilidade garante que uma vez confirmada uma transação (COMMIT) seus efeitos persistirão
+                        permanentemente no banco de dados, mesmo em casos de falhas do sistema como queda de energia. Os
+                        dados são salvos em armazenamento não volátil como disco rígido.</li>
+                    <li>Ex.:</li>
+                    <ul>
+                        <li>Após uma transferência bancária ser confirmada os novos dados da conta A e conta B devem
+                            permanecer atualizados mesmo que o servidor do banco de dados reinicie subitamente</li>
+                    </ul>
+                    <li>Garante <b>persistência</b> dos dados após confirmação.</li>
+                    <li>Protege contra perda de dados por falhas físicas ou lógicas.</li>
+                </ul>
+            </ol>
+            <p><b>Atomicidade:</b> "Tudo ou nada".</p>
+            <p><b>Isolamento:</b> Transações não se atrapalham.</p>
+            <p><b>Durabilidade:</b> Dados salvos para sempre após confirmação.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
