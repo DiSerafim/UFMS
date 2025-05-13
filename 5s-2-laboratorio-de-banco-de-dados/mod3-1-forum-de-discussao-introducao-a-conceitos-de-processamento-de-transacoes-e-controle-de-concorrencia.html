@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Introdução a Conceitos de Processamento de Transações e Controle de Concorrência.</h1>
+        <h2>💬 Fórum de Discussão</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>LABORATÓRIO DE BANCO DE DADOS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre os conceitos iniciais sobre processamento de transações e controle de
+                concorrência.</p>
+            <p>Aprendemos que uma transação é uma sequência de operações executadas como uma única unidade lógica de
+                trabalho.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Nesse fórum, refletir sobre o conceito de transação de banco de dados e elaborar um exemplo com base em
+                uma das propriedades - ACID - destes. A atividade está dividida em duas etapas:</p>
+            <ol>
+                <li>Descreva com suas palavras o que é uma transação de banco de dados.</li>
+                <li>De acordo com o significado da sigla ACID (Atomicidade, Consistência, Isolamento e Durabilidade),
+                    descreva um exemplo prático para uma delas com relação à transação de banco de dados.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>...</b>
+            <p>1 - Descreva com suas palavras o que é uma transação de banco de dados.</p>
+            <ul>
+                <li>Transação de banco de dados é uma sequência de operações como INSERT, UPDATE e DELETE. Ela garante
+                    que todas as operações sejam concluídas com sucesso (COMMIT) ou em caso de falha, nenhuma ação seja
+                    aplicada (ROLLBACK). Evitando inconsistências como saldos negativos em contas bancárias após uma
+                    transferência com erros e incompleta. Uma transação é tudo ou nada, ou todas ações são executadas ou
+                    nenhuma é persistida no banco de dados.</li>
+            </ul>
+
+            <p>2 - De acordo com o significado da sigla ACID (Atomicidade, Consistência, Isolamento e Durabilidade),
+                descreva um exemplo prático para uma delas com relação à transação de banco de dados.</p>
+            <b>Atomicidade:</b>
+            <ul>
+                <li>Garante que uma transação seja indivisível, em caso de falha, nenhuma ação será aplicada. É o
+                    conceito de "tudo ou nada".</li>
+            </ul>
+            <b>Ex.: Transferência bancária entre duas contas.</b>
+            <ul>
+                <li>Débito de R$500,00 da conta A.</li>
+                <li>Crédito de R$500,00 na conta B.</li>
+            </ul>
+            <p>Se o sistema falhar após o débito da conta A e antes do crédito na conta B, a atomicidade garante que a transação inteira seja cancelada. O saldo da conta A é restaurado e nenhum valor é creditado na conta B.</p>
+            <ul>
+                <li>Sem atomicidade a conta A perderia R$500,00 e a conta B não receberia o valor.</li>
+                <li>Com atomicidade o banco da dados retorna ao estado anterior a transação mantendo a integridade dos dados.</li>
+            </ul>
+            <p>A atomicidade é essencial para operações críticas como transações financeiras onde falhas parciais podem gerar prejuízos irreversíveis.</p>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 12 de mai de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
