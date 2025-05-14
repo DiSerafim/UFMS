@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Introdução a Conceitos de Processamento de Transações e Controle de Concorrência</h1>
+        <h2>✅ [A2] Avaliação</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em terça, 13 mai 2025, 19:13</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em terça, 13 mai 2025, 20:30</li>
+                <li>⏳ Tempo empregado 1 hora 17 minutos</li>
+                <li>🎯 Avaliar 9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>O que acontece ao iniciar uma transação com BEGIN no PostgreSQL?</p>
+                <ul>
+                    <li><b>a. A transação começa e todas as operações seguintes fazem parte dela até o COMMIT ou
+                            ROLLBACK.</b></li>
+                    <li>b. A transação inicia e os dados são automaticamente salvos.</li>
+                    <li>c. Os dados são imediatamente gravados no banco.</li>
+                    <li>d. A transação é iniciada, mas não é possível executar comandos até um COMMIT.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Quando você inicia uma transação com BEGIN no PostgreSQL, todas as operações subsequentes (como
+                        INSERT, UPDATE, DELETE) são agrupadas em uma unidade lógica.</li>
+                    <li>As alterações não são finalizadas imediatamente no banco de dados. Elas permanecem temporárias
+                        até que um COMMIT confirme as mudanças ou um ROLLBACK as desfaça.</li>
+                    <li>Isso garante atomicidade: ou todas as operações da transação são aplicadas (commit), ou nenhuma
+                        é (rollback).</li>
+                </ul>
+                <pre>
+                BEGIN;  
+                UPDATE conta SET saldo = saldo - 100 WHERE id = 1;  
+                UPDATE conta SET saldo = saldo + 100 WHERE id = 2;  
+                COMMIT; -- Confirma as alterações  
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Como um savepoint é utilizado em uma transação no PostgreSQL?</p>
+                <ul>
+                    <li><b>a. Para marcar um ponto na transação que permite reverter apenas até esse ponto usando
+                            ROLLBACK TO</b></li>
+                    <li>b. Para confirmar parcialmente as operações realizadas</li>
+                    <li>c. Para reiniciar uma transação a partir do início</li>
+                    <li>d. Para finalizar uma transação sem aplicar alterações</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O SAVEPOINT é usado para criar um ponto de restauração nomeado dentro de uma transação.</li>
+                    <li>Se ocorrer um erro ou uma condição específica, você pode reverter apenas parte da transação
+                        usando ROLLBACK TO [nome_do_savepoint], mantendo as operações válidas feitas antes do savepoint.
+                    </li>
+                    <li>Isso permite controle granular em transações complexas, onde é necessário desfazer apenas certas
+                        etapas, sem cancelar toda a transação.</li>
+                </ul>
+                <pre>
+                BEGIN;
+                INSERT INTO clientes (nome) VALUES ('Maria');
+                SAVEPOINT ponto1;
+                UPDATE pedido SET valor = 100 WHERE id = 1;
+                
+                -- Se ocorrer um erro no UPDATE:
+                ROLLBACK TO ponto1;
+
+                -- O INSERT de 'Maria' permanece válido, e a transação continua
+                COMMIT;
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Para configurar uma conexão JDBC em uma aplicação Java, qual das seguintes opções é necessária?</p>
+                <ul>
+                    <li>a. Instalar um servidor de aplicação Java.</li>
+                    <li>b. Utilizar a anotação @JDBCConnection na classe.</li>
+                    <li><b>c. Carregar o driver JDBC e fornecer a URL do banco de dados, usuário e senha.</b></li>
+                    <li>d. Configurar um servidor FTP para a transferência de dados.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Para configurar uma conexão JDBC em Java, é essencial:</li>
+                    <li>Carregar o driver JDBC adequado ao banco de dados (ex: Class.forName("org.postgresql.Driver") ou
+                        via dependência automática em JDBC 4.0+).</li>
+                    <li>Fornecer a URL de conexão, usuário e senha para estabelecer a comunicação com o banco via
+                        DriverManager.getConnection(url, user, password).</li>
+                </ul>
+                <pre>
+                // Carrega o driver (JDBC 4.0)
+                Class.forName("org.postgresql.Driver");
+
+                // Configura URL, usuário e senha
+                String url = "jdbc:postgresql://localhost:5432/meu_banco";
+                Connection conexao = DriverManager.getConnection(url, "usuario", "senha");
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Qual é o comportamento padrão do PostgreSQL em relação a transações?</p>
+                <ul>
+                    <li>a. Ele permite apenas uma transação por conexão.</li>
+                    <li>b. Ele opera automaticamente em modo de transação explícita.</li>
+                    <li>c. Ele sempre exige o uso de BEGIN para qualquer comando.</li>
+                    <li><b>d. Ele opera no modo de transação implícita, em que cada comando automaticamente sofre um
+                            “COMMIT”, salvando as alterações no banco de dados de forma permanente.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Por padrão, o PostgreSQL utiliza o modo de transação implícita (auto-commit). Isso significa
+                        que, se você não iniciar uma transação explicitamente com BEGIN ou START TRANSACTION, cada
+                        comando SQL (como INSERT, UPDATE, DELETE) é tratado como uma transação única e isolada, sendo
+                        automaticamente confirmado (COMMIT) após sua execução.</li>
+                    <li>Por exemplo, ao executar DELETE FROM tabela WHERE id = 1;, a exclusão é imediatamente
+                        permanente, sem necessidade de COMMIT explícito.</li>
+                </ul>
+                <pre>
+                -- Modo implícito (padrão)
+                INSERT INTO clientes (nome) VALUES ('João'); -- Commit automático!
+
+                -- Modo explícito (requer BEGIN):
+                BEGIN;
+                UPDATE produtos SET preco = 50 WHERE id = 1;
+                COMMIT;
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual das seguintes opções é uma anotação usada no Hibernate para mapear uma classe Java para uma
+                    tabela do PostgreSQL?</p>
+                <ul>
+                    <li><b>a. @Entity</b></li>
+                    <li>b. @PrimaryKey</li>
+                    <li>c. @Table</li>
+                    <li>d. @Column</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <ul>
+                    <li>@Entity: É a anotação obrigatória para marcar uma classe Java como uma entidade persistente,
+                        indicando que ela será mapeada para uma tabela no banco de dados. Sem ela, o Hibernate não
+                        reconhece a classe como parte do modelo de dados.</li>
+                </ul>
+                <pre>
+                @Entity
+                @Table(name = "clientes"); // Opcional
+                public class Cliente {
+                    @Id
+                    private Long id;
+                    @Column(name = "nome_completo")
+                    private String nome;
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Se um COMMIT for executado com sucesso, o que acontece com a transação?</p>
+                <ul>
+                    <li>a. O banco de dados entra em modo de apenas leitura.</li>
+                    <li>b. A transação entra em espera por mais comandos.</li>
+                    <li><b>c. A transação é finalizada e as alterações são aplicadas ao banco de dados.</b></li>
+                    <li>d. Ela permanece ativa até que um novo comando seja emitido.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O comando COMMIT finaliza uma transação com sucesso, tornando todas as alterações realizadas
+                        durante ela permanentes no banco de dados.</li>
+                    <li>Após o COMMIT, a transação é encerrada e não pode mais sofrer ROLLBACK (a menos que haja um
+                        recurso específico de flashback ou backups).</li>
+                </ul>
+                <pre>
+                BEGIN;
+                UPDATE conta SET saldo = saldo - 200 WHERE id = 1;
+                UPDATE conta SET saldo = saldo + 200 WHERE id = 2;
+                COMMIT; -- Aqui, as alterações são salvas permanentemente!
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Quando um ROLLBACK é automaticamente executado no PostgreSQL?</p>
+                <ul>
+                    <li><b>a. Quando a conexão com o banco de dados é fechada</b></li>
+                    <li>b. Quando a transação é explicitamente finalizada com COMMIT</li>
+                    <li>c. Quando ocorre um erro durante a execução da transação</li>
+                    <li>d. Quando a transação excede o tempo limite configurado</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ❌</b>
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O PostgreSQL executa um ROLLBACK automático se uma conexão for encerrada (ex.: cliente
+                        desconecta, falha de rede) enquanto uma transação está em aberto. Isso garante que alterações
+                        não confirmadas não persistam no banco.</li>
+                    <li>Exemplo: Se você inicia uma transação com BEGIN, faz um INSERT, mas fecha a conexão antes de um
+                        COMMIT, o PostgreSQL reverte automaticamente a inserção.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Associe as anotações do Hibernate com suas funções correspondentes:</p>
+                <pre>
+                Define a chave primária da tabela (...).
+                Indica que o valor do campo será gerado automaticamente pelo banco de dados (...).
+                Especifica o relacionamento de "um para muitos" entre duas entidades (...).
+                Define que uma classe será mapeada para uma tabela (...).
+                </pre>
+                <p>Opções: @Id, @GeneratedValue, @OneToMany, @Entity.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Define a chave primária da tabela <b>@Id</b>.
+                Indica que o valor do campo será gerado automaticamente pelo banco de dados <b>@GeneratedValue</b>.
+                Especifica o relacionamento de "um para muitos" entre duas entidades <b>@OneToMany</b>.
+                Define que uma classe será mapeada para uma tabela <b>@Entity</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <pre>
+                @Entity
+                public class Pedido {
+                    @Id
+                    @GeneratedValue(strategy = GenerationType.IDENTITY)
+                    private Long id;
+
+                    @OneToMany(mappedBy = "pedido")
+                    private List &lt;Item> itens;
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Qual é a função do comando COMMIT em uma transação no PostgreSQL?</p>
+                <ul>
+                    <li><b>a. Finalizar a transação e aplicar as alterações ao banco de dados</b></li>
+                    <li>b. Cancelar todas as operações realizadas na transação</li>
+                    <li>c. Ignorar as alterações e continuar a transação</li>
+                    <li>d. Finalizar a transação e reverter as alterações</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O comando COMMIT finaliza uma transação com sucesso, tornando todas as alterações realizadas
+                        durante a transação permanentes no banco de dados. Após o COMMIT, não é possível reverter as
+                        mudanças (a menos que haja recursos específicos de recuperação, como backups).</li>
+                </ul>
+                <pre>
+                BEGIN;
+                UPDATE conta SET saldo = 500 WHERE id = 1;
+                COMMIT; -- As alterações são salvas permanentemente!
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Para estabelecer uma conexão Java com um banco de dados PostgreSQL usando JDBC, qual URL de conexão é
+                    correta?</p>
+                <ul>
+                    <li>a. jdbc:mysql://localhost:5432/mydb</li>
+                    <li>b. jdbc:oracle:thin:@localhost:1521:mydb</li>
+                    <li>c. jdbc:sqlserver://localhost:1433;databaseName=mydb</li>
+                    <li><b>d. jdbc:postgresql://localhost:5432/mydb</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A URL de conexão JDBC para PostgreSQL segue o formato:</li>
+                    <li>jdbc:postgresql://[host]:[port]/[database], onde:</li>
+                    <ul>
+                        <li><b>postgresql</b> indica o driver específico do PostgreSQL.</li>
+                        <li><b>localhost</b> é o host onde o banco está hospedado.</li>
+                        <li><b>5432</b> é a porta padrão do PostgreSQL.</li>
+                        <li><b>mydb</b> é o nome do banco de dados.</li>
+                    </ul>
+                </ul>
+                <pre>
+                String url = "jdbc:postgresql://localhost:5432/mydb";  
+                Connection conexao = DriverManager.getConnection(url, "usuario", "senha");  
+                </pre>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 13 de mai de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
