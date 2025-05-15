@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Controle de Concorrência e Administração de Banco de Dados.</h1>
+        <h2>💡 Unidade 2 - Tarefas e Funções do Database Administrator (DBA).</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=LZ5gYh-I9CM" class="btn waves-effect waves-light" target="_blank"
+                type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 4 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>O que é um DBA?.</h2>
+            <p>O <b>Database Administrator</b> (DBA) é o profissional responsável pela administração e manutenção dos
+                bancos de
+                dados de uma organização.</p>
+            <p>Seu papel envolve garantir que os dados sejam armazenados, acessados e manipulados de forma eficiente e
+                segura.</p>
+            <p><b>Responsabilidades principais:</b> O DBA gerencia o banco de dados, realiza backups, monitora o
+                desempenho,
+                define políticas de segurança e otimiza o acesso aos dados.</p>
+            <p>Ele também administra as permissões de usuários, assegurando que apenas pessoas autorizadas possam
+                acessar ou modificar informações sensíveis.</p>
+        </section>
+
+        <section>
+            <h2>Por que o papel do DBA é fundamental?.</h2>
+            <p><b>Integridade dos dados:</b> O DBA é responsável por garantir que os dados estejam sempre precisos e
+                consistentes, evitando erros que possam comprometer a qualidade da informação.</p>
+            <p><b>Segurança dos dados:</b> O DBA define políticas de acesso e protege os dados contra acessos não
+                autorizados ou atividades maliciosas, como fraudes ou invasões.</p>
+            <p><b>Disponibilidade:</b> O DBA mantém o banco de dados disponível para os usuários, prevenindo e
+                solucionando falhas para que o sistema funcione continuamente. Isso é essencial para as operações
+                diárias da empresa, evitando interrupções que podem resultar em prejuízos financeiros.</p>
+        </section>
+
+        <section>
+            <h2>Impacto nas organizações.</h2>
+            <p><b>Continuidade dos negócios:</b> O trabalho do DBA é essencial para garantir que as operações da empresa
+                não sejam interrompidas. Se o banco de dados estiver fora do ar ou corrompido, isso pode paralisar
+                atividades essenciais, afetando diretamente os resultados da organização.</p>
+            <p><b>Proteção das informações:</b> A segurança dos dados é uma preocupação crescente nas empresas. O DBA
+                garante que dados críticos, como informações de clientes e transações financeiras, estejam protegidos
+                contra perda ou roubo.</p>
+            <p><b>Otimização de desempenho:</b> O DBA monitora e ajusta o banco de dados para melhorar o desempenho das
+                aplicações que dependem dele. Isso inclui a otimização de consultas, a reorganização de índices e a
+                alocação eficiente de recursos de hardware.</p>
+        </section>
+
+        <section>
+            <h2>Principais Tarefas e Responsabilidades do DBA.</h2>
+            <p><b>Definição de Esquema:</b> criar e manter o esquema inicial do banco de dados utilizando DDL (Data
+                Definition Language).</p>
+            <p><b>Estrutura de Armazenamento e Definição de Métodos de Acesso:</b> como os dados são armazenados em
+                disco, incluindo o uso de índices para melhorar a eficiência das consultas.</p>
+            <ul>
+                <li>Tarefa do DBA: Escolher a estrutura de armazenamento adequada e definir índices para melhorar a
+                    performance de buscas.</li>
+            </ul>
+            <p><b>Modificação de Esquema e Organização Física:</b> adaptar o banco de dados às mudanças nas necessidades
+                do negócio.</p>
+            <ul>
+                <li>Tarefa do DBA: Atualizar o esquema e reorganizar o armazenamento dos dados para manter a eficiência.
+                </li>
+            </ul>
+            <p><b>Concessão de Autorizações para Acesso aos Dados:</b> garantir que diferentes usuários tenham apenas os
+                acessos necessários às informações.</p>
+            <ul>
+                <li>Tarefa do DBA: Utilizar comandos como GRANT e REVOKE para definir quem pode acessar, modificar ou
+                    excluir dados.</li>
+            </ul>
+            <p><b>Manutenção de Rotina:</b> criar cópias de segurança dos dados periodicamente.</p>
+            <ul>
+                <li>Tarefa do DBA: Realizar backups regulares e monitorar o espaço em disco.</li>
+                <li>Política de recuperação de desastres.</li>
+                <li>Monitoramento de Tarefas: Garantir que as operações de usuários não afetem a performance global do
+                    sistema.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Importância dos Backups.</h2>
+            <p>Realizar backups periódicos é essencial para garantir a segurança e a integridade dos dados em um banco
+                de dados. Os motivos para essa prática incluem:</p>
+            <ul>
+                <li>Prevenção contra Perda de Dados:</li>
+                <ul>
+                    <li>Incidentes como falhas de hardware, ataques cibernéticos, ou erros humanos podem resultar na
+                        perda de dados importantes. Ter backups regulares garante que seja possível restaurar as
+                        informações ao estado anterior ao incidente.</li>
+                </ul>
+            </ul>
+            <p>Recuperação de Desastres:</p>
+            <ul>
+                <li>Em casos de desastres, como incêndios ou enchentes, onde a infraestrutura física é danificada, os
+                    backups permitem a restauração dos dados em um novo local. Isso é vital para a continuidade dos
+                    negócios.</li>
+            </ul>
+            <p>Proteção contra Erros Humanos:</p>
+            <ul>
+                <li>É comum que erros ocorram durante operações no banco de dados, como exclusões ou modificações
+                    acidentais. Com um backup, é possível reverter para um estado anterior.</li>
+            </ul>
+            <p>Cumprimento de Normas e Regulamentações:</p>
+            <ul>
+                <li>Em muitos setores, existe a exigência legal de manter cópias de dados para fins de conformidade.
+                    Realizar backups periódicos ajuda a atender a essas normas.</li>
+            </ul>
+            <p>Realizar esses backups regularmente, de preferência automatizando o processo, é uma prática recomendada
+                para qualquer administrador de banco de dados. Isso ajuda a minimizar os impactos de falhas e a garantir
+                a segurança das informações.</p>
+        </section>
+
+        <section>
+            <h2>Backup no PostgreSQL.</h2>
+            <p>Para realizar um backup de um banco de dados no PostgreSQL, é utilizado o comando <b>pg_dump</b>.</p>
+            <p>Este comando cria um arquivo com uma cópia do banco de dados, que pode ser utilizado para restaurar os
+                dados posteriormente.</p>
+            <pre>pg_dump -U usuario -W -F c -b -v -f /caminho/do/backup/meuBanco.backup meuBanco</pre>
+            <ul>
+                <li><b>-U usuario:</b> Nome do usuário do banco de dados.</li>
+                <li><b>-W:</b> Solicita a senha do usuário antes de executar o backup.</li>
+                <li><b>-F c:</b> Especifica o formato do backup. Nesse caso, o formato é "custom" (c), que permite uma
+                    restauração mais rápida e flexível.</li>
+                <li><b>-b:</b> Inclui os dados binários no backup.</li>
+                <li><b>-v:</b> Ativa o modo verboso, exibindo informações detalhadas sobre o processo.</li>
+                <li><b>-f /caminho/do/backup/meuBanco.backup:</b> Especifica o local e o nome do arquivo de backup.</li>
+                <li><b>meuBanco:</b> Nome do banco de dados a ser copiado.</li>
+            </ul>
+            <p>Para fazer o backup do banco de dados "loja", o comando seria:</p>
+            <pre>pg_dump -U postgres -W -F c -b -v -f /home/usuario/backup/loja.backup loja</pre>
+            <p>Após a execução, será solicitado que o usuário informe a senha do banco de dados, e o arquivo
+                "loja.backup" será criado no diretório especificado</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>Silberschatz, Abraham; Korth, Henry F.; Sudarshan, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. Isbn 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo 1.
+                Seção 1.8.2</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
