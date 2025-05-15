@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Controle de Concorrência e Administração de Banco de Dados.</h1>
+        <h2>💡 Unidade 1 - Segurança e Autorização em Banco de Dados.</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=4dxI_Y2Xvcs" class="btn waves-effect waves-light" target="_blank"
+                type="button" name="action">
+                [UFMS Digital] Laboratório de Banco de Dados - Módulo 4 - Unidade 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof.ª ministrante: Esteice Janaina Santos Batista.</p>
+        </section>
+
+        <section>
+            <h2>Conceito de Segurança em Banco de Dados.</h2>
+            <p>Segurança em banco de dados envolve a aplicação de políticas e mecanismos que garantem a proteção dos
+                dados contra acessos não autorizados.</p>
+            <p>Utiliza mecanismos de autorização para controlar quem pode acessar ou manipular informações específicas
+                no banco de dados.</p>
+            <p>Exemplo: sistema financeiro.</p>
+        </section>
+
+        <section>
+            <h2>Mecanismos de Autorização.</h2>
+            <p>No contexto de segurança em bancos de dados, privilégios são permissões que podem ser concedidas a
+                usuários para realizar operações específicas em um banco de dados.</p>
+            <p>Esses privilégios garantem o controle sobre quem pode acessar e modificar os dados ou os esquemas.</p>
+            <p>Permissões são concedidas para ações específicas: leitura (<b>SELECT</b>), inserção (<b>INSERT</b>),
+                atualização (<b>UPDATE</b>) e exclusão (<b>DELETE</b>).</p>
+            <p>A manipulação de esquemas em SQL envolve permissões que permitem aos usuários modificar a estrutura do
+                banco de dados, criando ou alterando objetos, como tabelas, índices, visões, etc.</p>
+            <ul>
+                <li><b>CREATE:</b> Permissão para criar novos objetos no banco de dados, como tabelas, índices ou
+                    visões.</li>
+                <li><b>ALTER:</b>Permissão para modificar a estrutura de objetos existentes, como adicionar ou remover
+                    colunas em uma tabela.</li>
+                <li><b>DROP:</b> Permissão para excluir objetos do banco de dados, como tabelas ou visões</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Comando GRANT.</h2>
+            <p>O comando GRANT em SQL é usado para conceder privilégios a usuários ou papéis (roles). A sintaxe básica é
+                a seguinte:</p>
+            <pre>
+            GRANT lista de privilégios> ON nome da tabela ou view> TO usuário ou role>;
+            </pre>
+            <b>Exemplos de uso do comando GRANT.</b>
+            <p>Concedendo o privilégio de leitura a um usuário:</p>
+            <pre>
+            GRANT SELECT ON tabela_clientes TO usuario_leitura;
+            
+            <i>Neste exemplo, o usuário usuario_leitura poderá realizar consultas (SELECT) na tabela tabela_clientes.</i>
+            </pre>
+            <p>Concedendo o privilégio de atualização em colunas específicas:</p>
+            <pre>
+            GRANT UPDATE (preco) ON tabela_produtos TO usuario_atualizador;
+            
+            <i>Aqui, o privilégio UPDATE é concedido apenas para a coluna preco na tabela tabela_produtos.</i>
+            <i>O usuário usuario_atualizador poderá modificar os preços, mas não terá permissão para atualizar outras colunas.</i>
+            </pre>
+            <p>Para conceder privilégios de SELECT e UPDATE ao usuário na tabela tabela_vendas, você pode usar o comando
+                GRANT da seguinte forma:</p>
+            <pre>
+            GRANT SELECT, UPDATE ON tabela_vendas TO usuario_completo;
+            </pre>
+            <p>Concedendo todos os privilégios disponíveis:</p>
+            <pre>
+            GRANT ALL PRIVILEGES ON tabela_vendas TO usuario_completo;
+            
+            <i>O usuário usuario_completo receberá todos os privilégios (como SELECT, INSERT, UPDATE, DELETE) sobre a tabela tabela_vendas.</i>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Comando REVOKE.</h2>
+            <p>O comando REVOKE é usado para remover privilégios que foram concedidos anteriormente a um usuário ou
+                papel. A sintaxe básica é:</p>
+            <pre>
+            REVOKE &lt;lista de privilégios> ON &lt;nome da tabela ou view> FROM &lt;usuário ou role>;
+            </pre>
+
+            <b>Exemplos de uso do comando REVOKE</b>
+
+            <p>Removendo o privilégio de leitura de um usuário:</p>
+            <pre>
+            REVOKE SELECT ON tabela_clientes FROM usuario_leitura;
+
+            <i>Este comando revoga o privilégio SELECT do usuário usuario_leitura na tabela tabela_clientes, impedindo-o de realizar consultas na tabela.</i>
+            </pre>
+
+            <p>Revogando todos os privilégios concedidos:</p>
+            <pre>
+            REVOKE ALL PRIVILEGES ON tabela_vendas FROM usuario_completo;
+            
+            <i>Neste exemplo, o comando remove todos os privilégios concedidos anteriormente ao usuário usuario_completo na tabela tabela_vendas.</i>
+            </pre>
+
+            <b>Implicações do comando REVOKE</b>
+            <p>Ao revogar privilégios, especialmente quando se usa o comando REVOKE ALL PRIVILEGES, os usuários ou
+                papéis afetados perdem o acesso para executar ações específicas nos objetos do banco de dados.</p>
+            <p>Além disso, quando um privilégio é revogado de um usuário que o concedeu a outro, todos os privilégios
+                concedidos por esse usuário também são revogados (revogação em cascata).</p>
+        </section>
+
+        <section>
+            <h2>Roles (papéis) no controle de acesso.</h2>
+            <p>Roles (papéis) no controle de acesso são uma forma de simplificar e organizar a administração de
+                permissões em um banco de dados, especialmente em cenários com muitos usuários e diferentes níveis de
+                acesso.</p>
+            <p>Em vez de conceder privilégios individualmente a cada usuário, os privilégios podem ser agrupados em um
+                "role" (papel), e então o role é atribuído aos usuários.</p>
+            <p>Isso facilita a administração, pois os privilégios podem ser gerenciados centralmente através dos roles.
+            </p>
+            <b>Vantagens de usar roles</b>
+            <p>Facilitam a administração de permissões: ao invés de configurar privilégios para cada usuário
+                separadamente, os privilégios podem ser atribuídos a um role, e o role é então concedido aos usuários.
+            </p>
+            <p>Escalabilidade: permitem gerenciar permissões de forma eficiente em ambientes com muitos usuários.</p>
+            <p>Segurança centralizada: permissões são gerenciadas em um único lugar, reduzindo o risco de configurações
+                de acesso incorretas.</p>
+            <b>Criação e concessão de roles</b>
+            <p></p>
+            <i>Criando um role</i>
+            <p>O comando CREATE ROLE é usado para criar um novo role no banco de dados:</p>
+            <pre>
+            CREATE ROLE instrutor;
+            </pre>
+            <i>Concedendo privilégios a um role</i>
+            <p>Este comando concede ao role instrutor o privilégio de leitura (SELECT) na tabela tabela. Qualquer
+                usuário associado ao role instrutor terá essa permissão.</p>
+            <pre>
+            GRANT SELECT ON tabela TO instrutor;
+            </pre>
+            <i>Associando um role a um usuário</i>
+            <p>Depois de configurar os privilégios do role, ele pode ser associado a um usuário com o comando GRANT.</p>
+            <pre>
+            GRANT instrutor TO usuario;
+            
+            <i>Esse comando concede ao usuário todos os privilégios do role instrutor. A partir desse momento, o usuário terá as mesmas permissões configuradas no role.</i>
+            </pre>
+            <b>Exemplos de roles</b>
+            <pre>
+            CREATE ROLE DBA;
+            GRANT ALL PRIVILEGES ON banco_de_dados TO DBA;
+            GRANT DBA TO admin;
+
+
+            CREATE ROLE Estagiario;
+            GRANT SELECT ON clientes TO Estagiario;
+            GRANT Estagiario TO Joao;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Autorização sobre views.</h2>
+            <p>Vantagens de usar views para controle de acesso</p>
+            <ul>
+                <li>Simplificação das consultas</li>
+                <li>Manutenção da segurança</li>
+                <li>Controle granular de acesso aos dados</li>
+            </ul>
+            <p>Vamos criar uma view que mostra apenas os dados dos funcionários que são gerentes.</p>
+            <pre>
+            CREATE VIEW gerentes AS
+            SELECT nome, salario
+            FROM funcionarios
+            WHERE cargo = 'Gerente';
+            </pre>
+            <p>Concedendo privilégios em views</p>
+            <pre>
+            GRANT SELECT ON gerentes TO usuario;
+            </pre>
+            <b>Autorização em nível de linha</b>
+            <p>É um mecanismo de controle de acesso que permite definir quais linhas (ou tuplas) de uma tabela um
+                usuário pode visualizar ou manipular.</p>
+            <p>Diferente dos privilégios tradicionais, que aplicam permissões à tabela inteira ou a colunas específicas,
+                a autorização em nível de linha oferece uma maneira de controlar o acesso com maior precisão.</p>
+            <pre>
+            CREATE VIEW vendas_vendedor1 AS
+            SELECT * FROM registros_vendas WHERE vendedor_id = 1;
+            GRANT SELECT ON vendas_vendedor1 TO vendedor1_user;
+            </pre>
+        </section>
+
+        <section>
+            <h2>Práticas de segurança recomendadas.</h2>
+            <p>Princípio do mínimo privilégio: conceder aos usuários apenas os privilégios estritamente necessários para
+                a execução de suas tarefas.</p>
+            <p>Auditoria e registro de acessos: auditoria é o processo de monitorar e registrar atividades realizadas no
+                banco de dados, como operações de leitura, escrita, atualização e exclusão. As informações registradas
+                incluem o usuário que realizou a operação, o momento em que ocorreu e o tipo de ação executada.</p>
+        </section>
+
+        <section>
+            <h2>Praticando.</h2>
+            <p>Lista os nomes de todos os usuários (roles com privilégio de login) existentes no banco de dados
+                PostgreSQL. A consulta retorna a coluna usename, que contém os nomes dos usuários registrados no
+                sistema.</p>
+            <pre>
+            SELECT usename FROM pg_catalog.pg_user;
+            </pre>
+            <ul>
+                <li>pg_catalog.pg_user:</li>
+                <ul>
+                    <li>É uma visão do sistema (system view) do PostgreSQL que armazena informações sobre usuários (ou
+                        "roles" que podem fazer login).</li>
+                    <li>Está localizada no schema pg_catalog, que contém tabelas e visões internas do PostgreSQL.</li>
+                </ul>
+                <li>Coluna usename:</li>
+                <ul>
+                    <li>Representa o nome do usuário (equivalente ao "username" no contexto de autenticação).</li>
+                </ul>
+            </ul>
+            <p>Use o comando CREATE ROLE para criar cada papel.</p>
+            <pre>
+            -- Papel do diretor (com permissão de login)
+            CREATE ROLE diretor WITH LOGIN PASSWORD 'diretor';
+
+            -- Papel do monitor (sem login, apenas para agrupar permissões)
+            CREATE ROLE monitor NOLOGIN;
+            </pre>
+
+            <p>Permissão de leitura (SELECT) para o usuário/role assistente em todas as tabelas existentes no esquema
+                (schema) public do banco de dados.</p>
+            <pre>
+            GRANT SELECT ON ALL TABLES IN SCHEMA public TO assistente;
+            </pre>
+            <p>Dando aceso a tabela 'clientes'</p>
+            <pre>
+            GRANT SELECT ON clientes TO assistente;
+            </pre>
+            <p>O papel do diretor é ser assistente</p>
+            <pre>
+            GRANT assistente TO diretor;
+            </pre>
+            <p>Verifica o papel do diretor</p>
+            <pre>
+            SELECT 
+            roleid::regrole AS papel,
+            member::regrole AS membro,
+            admin_option AS admin
+            FROM pg_catalog.pg_auth_members
+            WHERE member = 'diretor'::regrole;
+
+            -- Saída
+            "role_name"	    "membro"	"admin"
+            "assistente"    "diretor"	false
+            </pre>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>SILBERSCHATZ, Abraham; KORTH, Henry F.; SUDARSHAN, S. Sistema de Banco de Dados. Rio de Janeiro: GEN
+                LTC, 2020. ISBN 9788595157552. Disponível na Biblioteca Digital da UFMS. Trecho a ser lido: Capítulo 4.
+                Seção 4.7.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
