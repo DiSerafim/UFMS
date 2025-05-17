@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATÓRIO DE BANCO DE DADOS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 - Controle de Concorrência e Administração de Banco de Dados</h1>
+        <h2>✅ [A4] Avaliação</h2>
+        <p>Prof.ª Especialista: Esteice Janaina Santos Batista.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>LABORATÓRIO DE BANCO DE DADOS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em sexta, 16 mai 2025, 19:55</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em sexta, 16 mai 2025, 21:05</li>
+                <li>⏳ Tempo empregado 1 hora 10 minutos</li>
+                <li>🎯 Avaliar 10,00 de um máximo de 10,00(100%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Uma política de segurança que concede privilégios amplos a todos os usuários é uma prática
+                    recomendada, pois facilita a administração dos bancos de dados.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Conceder privilégios amplos a todos os usuários não é uma prática recomendada. Pelo contrário,
+                        essa abordagem compromete a segurança do banco de dados. A boa prática é aplicar o princípio do
+                        menor privilégio, ou seja, cada usuário deve ter apenas os acessos necessários para realizar
+                        suas funções. Isso reduz o risco de acessos indevidos, vazamento de dados ou alterações não
+                        autorizadas.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Considere as seguintes práticas aplicadas ao princípio do privilégio mínimo em um ambiente de banco
+                    de dados:</p>
+                <ul>
+                    <li>I. O administrador de banco de dados (DBA) possui permissões para modificar a estrutura do banco
+                        e realizar backups, mas só tem acesso aos dados confidenciais dos usuários quando isso for
+                        indispensável para executar suas responsabilidades.</li>
+                    <li>II. Um desenvolvedor é autorizado a acessar e alterar somente as tabelas e visualizações
+                        necessárias para desenvolver e testar os sistemas sob sua responsabilidade.</li>
+                    <li>III. As permissões são atribuídas apenas aos objetos do banco de dados que são essenciais para
+                        cada usuário ou função desempenhar sua tarefa.</li>
+                </ul>
+                <p>Quais das práticas acima estão em conformidade com o princípio do privilégio mínimo?</p>
+                <ul>
+                    <li>a. I e II, apenas. </li>
+                    <li>b. I e III, apenas.</li>
+                    <li><b>c. I, II e III.</b></li>
+                    <li>d. II e III, apenas.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O princípio do privilégio mínimo recomenda conceder aos usuários apenas as permissões
+                        estritamente necessárias para realizarem suas funções, nada além disso.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Qual é a função do comando pg_dump no PostgreSQL?</p>
+                <ul>
+                    <li>a. Monitorar o desempenho do banco de dados.</li>
+                    <li>b. Realizar consultas SQL no banco de dados.</li>
+                    <li>c. Restaurar um banco de dados a partir de um arquivo de backup.</li>
+                    <li><b>d. Fazer o backup de um banco de dados, exportando sua estrutura e dados para um arquivo.</b>
+                    </li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O comando pg_dump é uma ferramenta do PostgreSQL usada para:</li>
+                    <ul>
+                        <li>Criar backups lógicos do banco de dados;</li>
+                        <li>Exportar estrutura (schemas) e dados para um arquivo .sql, .tar ou .custom;</li>
+                        <li>Esse arquivo pode posteriormente ser usado para restaurar o banco com o comando psql ou
+                            pg_restore, dependendo do formato.</li>
+                    </ul>
+                </ul>
+                <pre>
+                pg_dump -U usuario -d nome_do_banco -f backup.sql
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Associe os comandos de SQL com suas descrições:</p>
+                <pre>
+                Criar um novo objeto (...).
+                Remover permissões de um usuário (...).
+                Conceder permissões a um usuário (...).
+                Remover um objeto do banco de dados (...).
+                </pre>
+                <p>Opções: DROP, CREATE, GRANT, REVOKE.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Criar um novo objeto <b>CREATE</b>.
+                Remover permissões de um usuário <b>REVOKE</b>.
+                Conceder permissões a um usuário <b>GRANT</b>.
+                Remover um objeto do banco de dados <b>DROP</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>CREATE → Cria objetos como tabelas, views, bancos, etc.</li>
+                    <li>REVOKE → Retira permissões que foram concedidas.</li>
+                    <li>GRANT → Concede permissões para usuários.</li>
+                    <li>DROP → Apaga objetos do banco, como tabelas ou bancos inteiros.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Associe cada tarefa do DBA (Administrador de Banco de Dados) com seu respectivo impacto na
+                    organização:</p>
+                <pre>
+                Estrutura o banco de dados para atender às necessidades específicas da organização, facilitando o armazenamento e a recuperação de informações (...).
+                Define quem pode acessar ou modificar dados, garantindo a segurança das informações (...).
+                Melhora a eficiência do sistema e evita gargalos, otimizando os recursos (...).
+                Garante que dados possam ser recuperados em caso de falhas ou perda de dados (...).
+                </pre>
+                <p>Opções: Projeto e Criação de Banco de Dados, Backup e Recuperação de Dados, Concessão de Autorizações
+                    e Controle de Acesso, Ajuste e Monitoramento de Desempenho.</p>
+
+                <b class="answer">Resposta: ✅</b>
+
+                <pre>
+                Estrutura o banco de dados para atender às necessidades específicas da organização, facilitando o armazenamento e a recuperação de informações <b>Projeto e Criação de Banco de Dados</b>.
+                Define quem pode acessar ou modificar dados, garantindo a segurança das informações <b>Concessão de Autorizações e Controle de Acesso</b>.
+                Melhora a eficiência do sistema e evita gargalos, otimizando os recursos <b>Ajuste e Monitoramento de Desempenho</b>.
+                Garante que dados possam ser recuperados em caso de falhas ou perda de dados <b>Backup e Recuperação de Dados</b>.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Qual é a principal responsabilidade de um Database Administrator (DBA)?</p>
+                <ul>
+                    <li>a. Realizar apenas o backup dos dados.</li>
+                    <li>b. Criar relatórios para o setor financeiro.</li>
+                    <li>c. Gerenciar a equipe de desenvolvimento.</li>
+                    <li><b>d. Administrar e manter os bancos de dados, garantindo segurança e desempenho.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A principal responsabilidade de um DBA (Database Administrator) é assegurar que o banco de dados
+                        funcione corretamente, esteja seguro, com bom desempenho e disponível para os usuários
+                        autorizados. Isso inclui:</li>
+                    <ul>
+                        <li>Gerenciar permissões de acesso;</li>
+                        <li>Realizar backups e recuperações;</li>
+                        <li>Monitorar e otimizar o desempenho;</li>
+                        <li>Garantir a integridade e segurança dos dados;</li>
+                        <li>Instalar, configurar e atualizar o sistema de gerenciamento de banco de dados (SGBD).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>O DBA é responsável por assegurar a integridade dos dados, protegendo-os contra acessos não
+                    autorizados.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O DBA (Administrador de Banco de Dados) é sim responsável por assegurar a integridade dos dados,
+                        o que inclui:</li>
+                    <ul>
+                        <li>Proteção contra acessos não autorizados, por meio da configuração de permissões de acesso;
+                        </li>
+                        <li>Implementação de políticas de segurança, como autenticação, criptografia e auditoria;</li>
+                        <li>Definição de restrições e regras de integridade para garantir a consistência dos dados.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Qual comando é usado para remover permissões previamente concedidas em SQL?</p>
+                <ul>
+                    <li>a. CREATE</li>
+                    <li><b>b. REVOKE</b></li>
+                    <li>c. ALTER</li>
+                    <li>d. GRANT</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>REVOKE é o comando SQL utilizado para remover permissões que foram previamente concedidas a
+                        usuários ou funções no banco de dados.</li>
+                </ul>
+                <pre>
+                REVOKE SELECT ON clientes FROM 'joão';
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>A segurança em banco de dados consiste em aplicar políticas que protegem os dados apenas contra
+                    acessos externos.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A segurança em banco de dados não protege apenas contra acessos externos, mas também contra:
+                    </li>
+                    <ul>
+                        <li>Acessos internos não autorizados (por exemplo, funcionários com permissões inadequadas);
+                        </li>
+                        <li>Modificações acidentais ou maliciosas;</li>
+                        <li>Vazamento de dados sensíveis;</li>
+                        <li>Ataques cibernéticos (como SQL Injection);</li>
+                        <li>Perda de dados por falhas ou desastres.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Por que é importante que o DBA realize backups periódicos?</p>
+                <ul>
+                    <li>a. Para reduzir os custos de armazenamento.</li>
+                    <li>b. Para melhorar o desempenho do banco de dados.</li>
+                    <li>c. Para aumentar a velocidade de consulta.</li>
+                    <li><b>d. Para proteger os dados contra perda em caso de falhas.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Realizar backups periódicos é uma das funções mais críticas de um DBA (Administrador de Banco de Dados), pois garante que, em caso de:</li>
+                    <ul>
+                        <li>Falhas no sistema</li>
+                        <li>Erros humanos</li>
+                        <li>Ataques cibernéticos (como ransomware)</li>
+                        <li>Desastres naturais ou apagões</li>
+                    </ul>
+                </ul>
+                <p>...os dados possam ser recuperados de forma rápida e segura. Isso minimiza os prejuízos e garante a continuidade das operações da organização.</p>
+                <p>🔁 Backups permitem restaurar o banco à última versão salva com integridade, evitando perda total ou parcial das informações.</p>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 16 de mai de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
