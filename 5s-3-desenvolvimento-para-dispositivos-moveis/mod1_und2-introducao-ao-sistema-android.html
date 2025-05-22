@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos do Desenvolvimento para Dispositivos Móveis</h1>
+        <h2>💡 Unidade 2 - Introdução ao Sistema Android.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=vtmgNL3thGM" class="btn waves-effect waves-light" target="_blank"
+                type="button" name="action"
+                title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 1 - Unidade 2">
+                [UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 1 - Unidade 2
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Plataforma Android.</h2>
+            <ul>
+                <li>Produto da <b>OHA</b> - Open Handset Alliance.</li>
+                <li><b>OHA:</b></li>
+                <ul>
+                    <li>Consórcio entre empresas de hardware, software e telecomunicações;</li>
+                    <li>Criar padrões abertos para telefonia móvel;</li>
+                    <li>Paridade de privilégios (terceiros e licenciados).</li>
+                </ul>
+                <li><b>AOSP</b> - Android Open Source Project.</li>
+                <li>S.O. móvel de código aberto.</li>
+                <li>Construído sob o Kernel Linux.</li>
+                <li>Primeiro smartphone - 2008.</li>
+                <li>Segurança:</li>
+                <ul>
+                    <li>Cada app tem um usuário;</li>
+                    <li>Sandbox;</li>
+                    <li>Permissões.</li>
+                </ul>
+            </ul>
+            <img src="img/plataforma_android.webp" alt="Plataforma android" title="Plataforma android">
+            <figcaption>https://medium.com/android-dev-br/android-view-pr%C3%B3logo-d44a89c14fd1</figcaption>
+        </section>
+
+        <section>
+            <h2>Arquitetura Android.</h2>
+            <p>Arquitetura da plataforma Android</p>
+            <img src="img/arquitetura_android.svg" alt="Arquitetura Android" title="Arquitetura Android">
+            <figcaption>https://source.android.com/docs/core/architecture?hl=pt-br</figcaption>
+            <p>Arquitetura da plataforma Android</p>
+            <img src="img/arquitetura_android1.png" alt="Arquitetura Android" title="Arquitetura Android">
+            <figcaption>https://materialpublic.imd.ufrn.br/curso/disciplina/3/66/1/6</figcaption>
+        </section>
+
+        <section>
+            <h2>Android Studio.</h2>
+            <img src="img/android-studio.png" alt="android-studio" title="android-studio">
+            <figcaption>https://www.treinaweb.com.br/blog/google-lanca-o-android-studio-2-3</figcaption>
+            <p>Instalação <a href="https://developer.android.com/studio" target="_blank" rel="noopener noreferrer"> →
+                    kali Linux</a></p>
+            <pre>
+            sudo apt update && sudo apt full-upgrade -y
+            sudo apt install openjdk-17-jdk -y
+            sudo dpkg --add-architecture i386
+            sudo apt update
+            sudo apt install libncurses6:i386 libstdc++6:i386 zlib1g:i386 mesa-utils libgl1-mesa-glx -y
+            wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.20/android-studio-2023.2.1.20-linux.tar.gz
+            # Extraia para /opt/ (recomendado para instalações globais)
+            sudo tar -xzf android-studio-*.tar.gz -C /opt/
+            sudo chown -R $USER:$USER /opt/android-studio  # Permissão de usuário
+            echo 'export ANDROID_HOME="$HOME/Android/Sdk"' >> ~/.bashrc
+            echo 'export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/opt/android-studio/bin"' >> ~/.bashrc
+            source ~/.bashrc
+
+            sudo apt install qemu-kvm libvirt-daemon-system virt-manager -y
+            sudo adduser $USER kvm
+            sudo systemctl enable --now libvirtd
+
+            egrep -c '(vmx|svm)' /proc/cpuinfo  # Saída > 0 = sucesso
+            sudo apt install cpu-checker -y
+            kvm-ok  # Deve mostrar "KVM acceleration can be used"
+
+            # Abrir o aplicativo:
+            /opt/android-studio/bin/studio.sh
+
+            # Criar atalho no menu do sistema:
+
+            sudo nano /usr/share/applications/android-studio.desktop
+
+            #Cole o seguinte conteúdo:
+
+            [Desktop Entry]
+            Version=1.0
+            Type=Application
+            Name=Android Studio
+            Exec=/opt/android-studio/bin/studio.sh
+            Icon=/opt/android-studio/bin/studio.png
+            Comment=Android Studio IDE
+            Categories=Development;IDE;
+            Terminal=false
+            </pre>
+        </section>
+
+        <section>
+            <h2>Criando projetos.</h2>
+            <img src="img/criando-projetos.png" alt="criando-projetos" title="criando-projetos">
+            <p></p>
+            <img src="img/criando-projetos1.png" alt="criando-projetos" title="criando-projetos">
+        </section>
+
+        <section>
+            <h2>Emulador (AVD).</h2>
+            <img src="img/emulador-avd.png" alt="emulador" title="emulador">
+        </section>
+
+        <section>
+            <h2>Android Studio.</h2>
+            <img src="img/android-window.png" alt="android-window" title="android-window">
+            <ul>
+                <li><b>A – Menu Bar</b> – Contém uma variedade de menus para realizar tarefas dentro do ambiente.</li>
+                <li><b>B – Toolbar</b> – Uma seleção de atalhos para ações realizadas com frequência. Pode ser
+                    personalizada clicando com o botão direito.</li>
+                <li><b>C – Navigation Bar</b> – Oferece uma maneira conveniente de navegar pelos arquivos e pastas que
+                    constituem o projeto. Clicar em um elemento na barra de navegação abrirá um menu que lista as
+                    subpastas e arquivos.</li>
+                <li><b>D – Editor Window</b> – Exibe o conteúdo do arquivo no qual se está trabalhando atualmente. Ao
+                    editar código, o editor de código aparecerá. Ao trabalhar em um arquivo de layout da interface do
+                    usuário, a ferramenta Editor de Layout aparecerá.</li>
+                <li><b>E – Status Bar</b> – Exibe mensagens informativas sobre o projeto e as atividades do Android
+                    Studio.</li>
+                <li><b>F – Project Tool Window</b> – Fornece uma visão geral hierárquica da estrutura do arquivo do
+                    projeto, permitindo a navegação para pastas e arquivos específicos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <cite>ANDROID DEVELOPERS. Android Studio. Disponível em: https://link.ufms.br/0h5C2. Acesso em: 01 maio 2024.</cite>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37. Acesso em: 02 mai. 2024.</cite>
+            <p></p>
+            <cite>SMYTH, Neil. Android Studio 3.4 development essentials - Java edition: developing Android 9 apps using Android Studio 3.4, Java and Android Jetpack. 1. ed. Payload Media, 2019. ISBN: 9780960010974. Disponível na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
