@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 1 - Fundamentos do Desenvolvimento para Dispositivos Móveis.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre a estrutura do Android, o ambiente de desenvolvimento Android Studio e o uso dos emuladores.</p>
+            <p>Conhecer a estrutura de pastas de um projeto de aplicativo é fundamental para qualquer programador. A estrutura de pastas segue uma convenção que organiza o código-fonte, recursos e configurações de maneira lógica. Além disso, uma estrutura de pastas bem organizada torna mais fácil a manutenção do código.</p>
+            <p>A Figura 1 apresenta a estrutura básica de qualquer projeto nativo para ambiente Android. Estão destacados os nomes das principais pastas do projeto.</p>
+            <img src="img/estrutura-de-pastas.png" alt="estrutura-de-pastas" title="estrutura-de-pastas">
+            <p>Figura 1 - Estrutura de Pastas - Projeto de Aplicativo Android</p>
+            <p>Descrição da imagem</p>
+            <p>A imagem mostra a estrutura de pastas de um projeto Android, dentro do Android Studio. À esquerda, há uma visualização da árvore de pastas do projeto, destacando a pasta principal chamada "app". Dentro dessa pasta, há subpastas como "manifests", "java", "java (generated)", e "res". Dentro da pasta "res", estão outras subpastas: "drawable", "layout", "mipmap", e "values".</p>
+            <p>À direita da estrutura de pastas, há uma legenda colorida com caixas que correspondem a cada uma dessas pastas. As cores e suas respectivas pastas são as seguintes:</p>
+            <ul>
+                <li><b style="color: green;">Verde</b> para "Pasta de Manifestos" (representando a pasta "manifests"),</li>
+                <li><b style="color: blue;">Azul</b> para "Pasta Java" (representando a pasta "java"),</li>
+                <li><b style="color: hsl(37, 100%, 50%);">Amarelo</b> para "Pasta de Recursos" (representando a pasta "res"),</li>
+                <li><b style="color: orangered;">Laranja</b> para "Pasta de Drawable" (representando a subpasta "drawable"),</li>
+                <li><b style="color: #add8e6;">Azul claro</b> para "Pasta de Layout" (representando a subpasta "layout"),</li>
+                <li><b style="color: gray;">Cinza</b> para "Pasta de Mipmap" (representando a subpasta "mipmap"),</li>
+                <li><b style="color: #000;">Preto</b> para "Pasta de Values" (representando a subpasta "values").</li>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Linhas coloridas conectam as caixas da legenda à pasta correspondente na estrutura de diretórios à esquerda, ajudando a identificar visualmente cada parte do projeto.</p>
+            <p>Sua tarefa é explorar a estrutura do projeto de aplicativos Android e explicar cada uma das pastas.</p>
+            <p>Orientações para elaboração e entrega da atividade:</p>
+            <ol>
+                <li>Abra o Android Studio.</li>
+                <li>Crie um projeto escolhendo a opção “Empty Views Activity”.</li>
+                <li>Explore na estrutura do projeto cada uma das 7 pastas destacadas na figura.</li>
+                <li>Elabore um texto explicando a utilidade e a importância dos arquivos que podem fazer parte de cada uma das pastas.</li>
+                <li>Crie um parágrafo por pasta.</li>
+                <li>Escreva o texto diretamente no espaço da atividade do AVA.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <ol>
+                <li>Abra o Android Studio.</li>
+                <li>Crie um projeto escolhendo a opção “Empty Views Activity”.</li>
+                <img src="img/android-studio-open.png" alt="android-studio-open" title="android-studio-open">
+                <p></p>
+                <li>Explore na estrutura do projeto cada uma das 7 pastas destacadas na figura.</li>
+                <li>Elabore um texto explicando a utilidade e a importância dos arquivos que podem fazer parte de cada uma das pastas.</li>
+                <li>Crie um parágrafo por pasta.</li>
+                <ul>
+                    <li><b style="color: green;">manifests:</b></li>
+                    <ul>
+                        <li>Pasta que contém o <i>AndroidManifest.xml</i>, esse arquivo define:</li>
+                        <ul>
+                            <li><b>Permissões</b> exigidas pelo app, ex.: câmera, localização.</li>
+                            <li><b>Componentes</b> do app (activities, services, broadcast receivers).</li>
+                            <li><b>Versão mínima</b> do android compatível.</li>
+                        </ul>
+                    </ul>
+                    <li><b style="color: blue;">java:</b></li>
+                    <ul>
+                        <li>Pasta que armazena todo o código-fonte em Java/Kotlin do projeto:</li>
+                        <ul>
+                            <li><b>Classes</b>. Ex.: <i>MainActivity</i>.</li>
+                            <li><b>Lógica de negócio</b>, código que controla a interação com o usuário e dados.</li>
+                            <li><b>Pacotes</b>, que organizam o código por funcionalidades.</li>
+                        </ul>
+                    </ul>
+                    <li><b style="color: hsl(37, 100%, 50%);">res:</b></li>
+                    <ul>
+                        <li>Pasta que agrupa os recursos no-code, como imagens, layouts e strings. É dividida em subpastas (drawable, layout, mipmap, values).</li>
+                    </ul>
+                    <li><b style="color: orangered;">drawable:</b></li>
+                    <ul>
+                        <li>Pasta que armazena arquivos de imagem e shapes XML usados na interface. Ex.: ícones de btn, backgrounds.</li>
+                    </ul>
+                    <li><b style="color: #add8e6;">layout:</b></li>
+                    <ul>
+                        <li>Pasta que contém arquivos XML que definem a estrutura das telas. Ex.: activity_main.xml. Esses arquivos são usados para criar a UI do app.</li>
+                    </ul>
+                    <li><b style="color: gray;">mipmap:</b></li>
+                    <ul>
+                        <li>Pasta que guarda os ícones do app em diferentes densidades de tela. Ex.: hdpi, xhdpi, etc. O android usa automaticamente a versão adequada para cada dispositivo.</li>
+                    </ul>
+                    <li><b style="color: #000;">values:</b></li>
+                    <ul>
+                        <li>Pasta que contém arquivos XML para centralizar configurações, como:</li>
+                        <ul>
+                            <li><b>strings.xml:</b> Textos usados no app.</li>
+                            <li><b>colors.xml:</b> Cores padrão do app.</li>
+                            <li><b>styles.xml:</b> Temas e estilos reutilizáveis.</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Escreva o texto diretamente no espaço da atividade do AVA.</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 23 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
