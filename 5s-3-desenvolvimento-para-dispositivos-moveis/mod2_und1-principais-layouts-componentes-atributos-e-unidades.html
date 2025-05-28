@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Construção da Interface Gráfica de Aplicativos.</h1>
+        <h2>💡 Unidade 1 - Principais Layouts, Componentes, Atributos e Unidades.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <a href="https://www.youtube.com/watch?v=NCKAQOcWCmg" class="btn waves-effect waves-light" target="_blank"
+                type="button" name="action">
+                [UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 2 - Unidade 1 - Vídeo 1
+                <i class="material-icons right"> send</i>
+            </a>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Gerenciador de layout.</h2>
+            <ul>
+                <li>Um gerenciador de layout no Android serve para definir a organização visual dos elementos de
+                    interface do usuário na tela.</li>
+                <li>Ele determina como os componentes visuais, chamados Views, como botões, textos e imagens, serão
+                    posicionados e exibidos no dispositivo móvel.</li>
+                <li>Os gerenciadores de layout são essenciais para:</li>
+                <ul>
+                    <li>Organizar os elementos na tela, seja em linhas, colunas ou sobreposições.</li>
+                    <li>Ajustar o tamanho e a posição dos elementos para diferentes tamanhos de tela e orientações.</li>
+                    <li>Gerenciar o espaço entre os elementos, conhecido como "padding" e "margin".</li>
+                    <li>Definir como os elementos reagirão a mudanças no tamanho da tela, garantindo que a interface
+                        seja responsiva e adaptável.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Dimensionamento: largura e altura.</h2>
+            <ul>
+                <li>Propriedades básicas para qualquer layout ou componente:</li>
+                <ul>
+                    <li>android:layout_width</li>
+                    <li>android:layout_height</li>
+                </ul>
+                <li>Podem ser:</li>
+                <ul>
+                    <li>match_parent – se adapta ao ancestral</li>
+                    <li>wrap_content – se adapta ao conteúdo</li>
+                    <li>valores numéricos: dp (componentes), sp (texto).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Margin e Padding.</h2>
+            <ul>
+                <li>Atributos mais utilizados no posicionamento de componentes:</li>
+                <ul>
+                    <li>android:layout_margin - margem externa</li>
+                    <li>android:padding - margem interna</li>
+                </ul>
+                <li>Ambos suportam os sufixos:</li>
+                <ul>
+                    <li>Top</li>
+                    <li>Bottom</li>
+                    <li>Left</li>
+                    <li>Right</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Principais tipos - gerenciador de layout.</h2>
+            <ul>
+                <li>Relative Layout</li>
+                <li>Constraint Layout</li>
+                <li>Linear Layout</li>
+                <li>Frame Layout</li>
+                <li>Grid Layout</li>
+                <li>Table Layout</li>
+            </ul>
+
+            <img src="img/gerenciador-de-layout.jpg" alt="gerenciador-de-layout.jpg" title="gerenciador-de-layout.jpg">
+            <figcaption>https://www.codeproject.com/Articles/1227733/Xamarin-Notes-Xamarin-Forms-Layouts</figcaption>
+            <p></p>
+            <b>Layouts: Relative Layout</b>
+            <ul>
+                <li>Usado para layouts flexíveis e complexos.</li>
+                <li>A posição de cada componente está relacionada com outro componente.</li>
+                <li>Atributos importantes:</li>
+                <li>android:layout_above</li>
+                <li>android:layout_toRightOf</li>
+                <li>android:layout_alighParentTop</li>
+                <li>android:layout_centerInParent</li>
+            </ul>
+            <b>Layouts: Constraint Layout</b>
+            <ul>
+                <li>Usado para layouts flexíveis e complexos.</li>
+                <li>Necessita definição de restrições/regras de posicionamento entre os componentes e a tela.</li>
+                <li>Mais flexível que Relative Layout e mais fácil de usar com o editor de layout do Android Studio.
+                </li>
+                <ul>
+                    <li>Uma evolução do Relative Layout.</li>
+                </ul>
+            </ul>
+            <b>Layouts: Linear Layout</b>
+            <ul>
+                <li>Dispõe os componentes na vertical ou na horizontal.</li>
+                <li>Requer aninhamento de outros layouts para determinadas funções.</li>
+                <li>Atributos importantes:</li>
+                <ul>
+                    <li>android:layout_weight (atribui peso ao componente) - ocupa espaço restante</li>
+                    <li>android:orientation = vertical | horizontal</li>
+                    <li>android:layout_gravity (externo) - componente</li>
+                    <li>android:gravity (interno) - conteúdo</li>
+                </ul>
+            </ul>
+            <b>Layouts: Frame Layout</b>
+            <ul>
+                <li>Simples de utilizar.</li>
+                <li>Usado quando se deseja colocar apenas um único elemento dentro dele.</li>
+                <li>Funciona como camadas.</li>
+                <li>Suporta sobreposição de componentes.</li>
+                <li>Atributos importantes:</li>
+                <ul>
+                    <li>android:layout_gravity (externo)</li>
+                    <li>android:gravity (interno)</li>
+                </ul>
+            </ul>
+            <b>Layouts: Grid Layout</b>
+            <ul>
+                <li>Dispõe os componentes em grade.</li>
+                <li>Atributos importantes:</li>
+                <ul>
+                    <li>android:columnCount</li>
+                    <li>android:rowCount</li>
+                    <li>android:layout_row</li>
+                    <li>android:layout_column</li>
+                    <li>android:layout_rowSpan</li>
+                    <li>android:column_span</li>
+                    <li>android:layout_gravity</li>
+                </ul>
+            </ul>
+            <b>Layouts: Table Layout</b>
+            <ul>
+                <li>Mais fácil de controlar que o Grid Layout.</li>
+                <li>Atributos importantes:</li>
+                <ul>
+                    <li>TableRow - linha da tabela.</li>
+                    <li>android:stretchColumns - quais colunas irão expandir seu conteúdo.</li>
+                    <li>android:layout_span - quantas colunas o componente ocupará.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section> 
+            <p></p>
+            <cite>ADAPTY. Android Layouts and Views. 2024. Disponível em: https://link.ufms.br/ulduh. Acesso em: 03 mai
+                2024.</cite>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37.
+                Acesso em: 02 mai. 2024.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>
