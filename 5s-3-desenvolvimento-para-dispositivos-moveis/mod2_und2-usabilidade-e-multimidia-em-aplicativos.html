@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Construção da Interface Gráfica de Aplicativos.</h1>
+        <h2>💡 Unidade 2 - Usabilidade e Multimídia em Aplicativos.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Css-ZbRaORE" frameborder="0"
+                    title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 2 - Unidade 2 - Vídeo 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title">[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 2 -
+                Unidade 2 - Vídeo 1</p>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Principais componentes visuais.</h2>
+            <ul>
+                <li>TextView</li>
+                <li>EditText</li>
+                <li>Button</li>
+                <li>Spinner</li>
+                <li>RadioButton</li>
+                <li>CheckBox, Switch, ToggleButton</li>
+                <li>ProgressBar, RatingBar </li>
+            </ul>
+            <img src="img/componentes-visuais.jpg" alt="componente visuais" title="componentes visuais">
+            <figcaption>https://www.notreepoque.bj/wp-content/uploads/2023/02/IMG-20230131-WA0186.jpg</figcaption>
+        </section>
+
+        <section>
+            <h2>Componentes e Atributos.</h2>
+            <ul>
+                <li><b>TextView</b> – exibição básica de texto.</li>
+                <li>Atributos:</li>
+                <ul>
+                    <li>android:text – texto exibido</li>
+                    <li>android:autolink – criação de texto “clicável”</li>
+                    <li>android:typeface - modificação de fonte</li>
+                    <li>android:maxLines – máximo de linhas</li>
+                    <li>android:ellipsize – reticências – indica que continua</li>
+                </ul>
+                <li><b>EditText</b> – responsável por receber entrada de texto do usuário.</li>
+                <li>Tipos: simples, senha, número, e-mail...</li>
+                <li>Customiza campos e teclados.</li>
+                <li>Atributos:</li>
+                <ul>
+                    <li>android:hint – dicas de preenchimento</li>
+                    <li>android:inputType – define o tipo de campo</li>
+                    <li>android:digits – permite dizer quais números são permitidos</li>
+                </ul>
+                <li><b>Button</b> – executa uma ação ao toque ou clique.</li>
+                <li>Atributos:</li>
+                <ul>
+                    <li>android:backgroundTint – cor principal do botão</li>
+                    <li>android:text – rótulo do botão</li>
+                    <li>app:icon – ícone do botão</li>
+                    <li>android:onClick – ação de clique (toque)</li>
+                </ul>
+                <li><b>Spinner</b> – uma lista dialog ou dropdown.</li>
+                <li><b>RadioButton</b> – escolha única.</li>
+                <ul>
+                    <li><b>RadioGroup</b> – agrupa radios.</li>
+                </ul>
+                <li><b>CheckBox</b>, <b>Switch</b> e <b>ToggleButton</b> – escolhas múltiplas.</li>
+                <li><b>ProgressBar</b> (2 tipos) – barra de progresso.</li>
+                <li><b>RatingBar</b> – barra de avaliação.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Multimídia no Aplicativo - Imagens.</h2>
+            <ul>
+                <li>Passos:</li>
+                <ol>
+                    <li>Copie o arquivo de imagem na pasta “drawable” em “res”;</li>
+                    <li>Adicione um componente ImageView à sua activity;</li>
+                    <li>Ajuste o posicionamento do componente;</li>
+                    <li>Na propriedade srcCompat adicione:</li>
+                    <ul>
+                        <li>@drawable/imagem</li>
+                    </ul>
+                    <li>Definir posicionamento e tamanho da imagem no componente usando scaleType.</li>
+                </ol>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Atributos importantes do ImageView.</h2>
+            <pre>
+            <b>Atributo</b>                <b>Função</b>
+            baseline                Deslocamento da linha de base
+            cropToPadding           Corta a imagem para caber em seu padding
+            maxHeight               Altura máxima
+            maxWidth                Largura máxima
+            scaleType               Controla como a imagem é redimensionada ou movida
+            src/srcCompat           Define a imagem do conteúdo
+            tint                    A cor de tonalidade da imagem
+            </pre>
+        </section>
+
+        <section>
+            <h2>Multimídia no Aplicativo - Sons, Músicas.</h2>
+            <ul>
+                <li>Um dos componentes mais importantes de mídia no Android é a classe MediaPlayer. </li>
+                <li>Um objeto dessa classe pode buscar, decodificar e reproduzir áudio e vídeo com uma quantidade mínima
+                    de configuração. </li>
+                <li>Ele é compatível com várias fontes de mídia diferentes, como:</li>
+                <ul>
+                    <li>Recursos locais;</li>
+                    <li>URIs internos;</li>
+                    <li>URLs externos (streaming).</li>
+                </ul>
+                <li>Passos:</li>
+                <ol>
+                    <li>Crie uma pasta “raw”, dentro de “res”;</li>
+                    <li>Copie o arquivo de som (mp3, wav) na pasta "raw";</li>
+                    <li>Adicione um MediaPlayer à sua Activity;</li>
+                    <li>MediaPlayer mp;</li>
+                    <li>No onCreate da activity, crie o MediaPlayer:</li>
+                    <ul>
+                        <li>mp = MediaPlayer.create(MainActivity.this, R.raw.som); </li>
+                    </ul>
+                    <li>Inicie o som com start():</li>
+                    <ul>
+                        <li>mp.start();</li>
+                    </ul>
+                </ol>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Métodos importantes do MediaPlayer.</h2>
+            <pre>
+            <b>Método</b>                  <b>Função</b>
+            isPlaying()             Verifica se existe um áudio/vídeo tocando
+            getDuration()           Retorna a duração do arquivo em milissegundos
+            getCurrentPosition()    Retorna a posição atual da reprodução em milissegundos
+            stop()                  Para a reprodução
+            release()               Libera o recurso associado ao MediaPlayer
+            seekTo(int)             Posiciona a reprodução na posição passada por 
+            parâmetro
+            </pre>
+        </section>
+
+        <section>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37.
+                Acesso em: 04 mai. 2024.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de mai de 2025</p>
+    </footer>
+</body>
+
+</html>

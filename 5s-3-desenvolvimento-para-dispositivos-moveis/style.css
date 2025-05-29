@@ -1,12 +1,24 @@
 body {
-  font-family: "Poppins",sans-serif, Inter, Arial, "Helvetica Neue", Helvetica;
+  font-family: "Poppins", sans-serif, Inter, Arial, "Helvetica Neue", Helvetica;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
   max-width: 1700px;
   margin: 0 auto;
   padding: 3rem;
-  background: linear-gradient(to left, rgb(236, 228, 228), white, white, white, white, white, white, white, white, rgb(236, 228, 228));
+  background: linear-gradient(
+    to left,
+    rgb(236, 228, 228),
+    white,
+    white,
+    white,
+    white,
+    white,
+    white,
+    white,
+    white,
+    rgb(236, 228, 228)
+  );
 }
 
 html {
@@ -78,21 +90,39 @@ img {
 /* Materiais */
 #materiais {
   margin-bottom: 10px;
+  position: sticky;
+  top: -5rem;
+  background-color: white;
+  z-index: 999;
+  padding: 10px;
+}
+
+.video-container {
+  background-color: red;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .material-icons.right {
   vertical-align: middle;
 }
 
-#materiais a {
+#materiais .title {
   text-decoration: none;
   color: white;
   max-width: 95%;
   text-overflow: ellipsis;
-}
-
-#materiais a:hover {
-  text-decoration: line-through;
 }
 
 .material-icon {
@@ -118,7 +148,8 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-th, td {
+th,
+td {
   border: 1px solid black;
   padding: 5px;
 }
@@ -162,7 +193,8 @@ footer {
 }
 
 /* css do button inicio */
-.btn {
+.btn,
+.title {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -179,11 +211,12 @@ footer {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #2CBBAD;
+  background-color: #2cbbad;
   text-decoration: none;
 }
 
@@ -192,7 +225,8 @@ footer {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.btn.disabled, .btn:disabled {
+.btn.disabled,
+.btn:disabled {
   opacity: 0.65;
 }
 
@@ -218,75 +252,74 @@ footer {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card h2 {
+}
+
+.card h2 {
   font-size: 18px;
   margin-bottom: 10px;
-  }
-  
-  .card p {
+}
+
+.card p {
   font-size: 16px;
   margin-bottom: 20px;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
   width: 100%;
   height: 10px;
   background-color: #ccc;
   border-radius: 10px;
-  }
-  
-  .progress-bar-inner {
+}
+
+.progress-bar-inner {
   width: 0;
   height: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border-radius: 10px;
   transition: width 0.5s ease-in-out;
-  }
-  
-  .card ul {
+}
+
+.card ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  }
-  
-  .card li {
+}
+
+.card li {
   font-size: 14px;
   margin-bottom: 10px;
-  }
-  
-  .material-container {
+}
+
+.material-container {
   margin-top: 20px;
-  }
-  
-  .material-container h3 {
+}
+
+.material-container h3 {
   font-size: 16px;
   margin-bottom: 10px;
-  }
-  
-  .material-container p {
+}
+
+.material-container p {
   font-size: 14px;
   margin-bottom: 10px;
   color: #666;
-  }
-  
-  .material-container video {
+}
+
+.material-container video {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  }
-  
-  .next-material {
-  background-color: #4CAF50;
+}
+
+.next-material {
+  background-color: #4caf50;
   color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  }
-  
-  .next-material:hover {
+}
+
+.next-material:hover {
   background-color: #3e8e41;
-  }
-  
+}
