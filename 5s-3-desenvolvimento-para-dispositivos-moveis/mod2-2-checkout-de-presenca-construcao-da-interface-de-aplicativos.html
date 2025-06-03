@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Construção da Interface Gráfica de Aplicativos.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre os principais gerenciadores de layout, os componentes da interface
+                gráfica e seus atributos.</p>
+            <p>Considere a captura de tela presente na Figura 2. Trata-se de um aplicativo de conversão de valores de
+                uma unidade monetária de origem para outra de destino. O aplicativo foi desenvolvido em Java para
+                computadores (desktop).</p>
+            <img src="img/conversor-de-moeda.png" alt="conversor-de-moeda" title="conversor-de-moeda">
+            <figcaption>Figura 2 - Aplicativo Conversor de Moedas</figcaption>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <b>Descrição da imagem</b>
+            <p>A imagem mostra a interface de um programa chamado "Conversor de Moedas". No topo, há opções para
+                selecionar a "Moeda de entrada" e a "Moeda de saída", com o Dólar (US) e Reais (BR) selecionados,
+                respectivamente. O valor a ser convertido é $250,60.</p>
+            <p>Abaixo, há botões para "Converter" ou "Limpar" os campos. O campo "Valor convertido ($):" está vazio,
+                aguardando o resultado da conversão. No canto inferior direito, há uma nota sobre a cotação do dia.</p>
+            <p>Sua tarefa é elaborar uma interface gráfica para aplicativo móvel, equivalente à deste aplicativo de
+                computador, no Android Studio.</p>
+            <p>Orientações para elaboração e entrega da atividade:</p>
+            <ol>
+                <li>Recrie essa interface para ambiente Android.</li>
+                <li>Escolha o gerenciador de layout que achar mais conveniente.</li>
+                <li>Selecione os componentes visuais correspondentes.</li>
+                <li>Customize os atributos (largura, altura, tamanho do texto, cores) dos componentes.</li>
+                <li>Considerando que smartphones podem ser utilizados tanto na horizontal quanto na vertical, você deve
+                    organizar os componentes de acordo com a orientação de tela escolhida.</li>
+                <li>Não é preciso fazer nenhuma implementação em Java.</li>
+                <li>Copie o conteúdo (código) do arquivo XML do layout elaborado por você.</li>
+                <li>Submeta o conteúdo do seu arquivo layout na tarefa do AVA.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <img src="img/conversor-desenvolvido.png" alt="conversor-desenvolvido" title="conversor-desenvolvido">
+            <pre>
+            &lt;?xml version="1.0" encoding="utf-8"?>
+            &lt;ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                tools:context=".MainActivity">
+
+                &lt;LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    &lt;TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Conversor de Moedas"
+                        android:textAlignment="center"
+                        android:textSize="28dp"
+                        android:textStyle="bold" />
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Moeda de entrada:"
+                            android:textSize="18dp" />
+
+                        &lt;Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/moedas_array" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Valor ($):"
+                            android:textSize="18dp" />
+
+                        &lt;Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Moeda de saída:"
+                            android:textSize="18dp" />
+
+                        &lt;Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;Button
+                            android:id="@+id/button"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Converter" />
+
+                        &lt;View
+                            android:id="@+id/view"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        &lt;Button
+                            android:id="@+id/button2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Limpar" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Valor convertido ($):"
+                            android:textSize="18dp" />
+
+                        &lt;TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="TextView"
+                            android:textSize="18dp" />
+                    &lt;/LinearLayout>
+
+                    &lt;TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cotação do dia DD/MM/AAAA"
+                        android:textAlignment="textEnd" />
+
+                &lt;/LinearLayout>
+            &lt;/ScrollView>
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 02 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
