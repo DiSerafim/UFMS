@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Construção da Interface Gráfica de Aplicativos</h1>
+        <h2>✅ [A2] Avaliação</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em terça, 3 jun 2025, 19:25</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em terça, 3 jun 2025, 20:05</li>
+                <li>⏳ Tempo empregado 40 minutos 18 segundos</li>
+                <li>🎯 Avaliar 9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Para que propósito deve ser usado um componente TextView?</p>
+                <ul>
+                    <li>a. Para ver documentos de texto.</li>
+                    <li><b>b. Para exibir um texto que o usuário não pode editar.</b></li>
+                    <li>c. Para servir como caixa de entrada de texto.</li>
+                    <li>d. Para exibir um botão que o usuário pode clicar.</li>
+                    <li>e. Para permitir que o usuário do aplicativo selecione texto.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O TextView é um componente da interface do usuário no Android usado para exibir texto estático, ou seja, texto que o usuário não pode modificar diretamente. Ele é comumente usado para mostrar títulos, descrições, mensagens, rótulos, entre outros.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Este valor faz com que o componente se ajuste ao tamanho do seu conteúdo. Ou seja, o componente será grande o suficiente apenas para acomodar o conteúdo que contém, sem espaço extra. Se layout_width ou layout_height estiverem definidos assim, o componente será tão largo ou tão alto quanto necessário para envolver seu conteúdo:</p>
+                <ul>
+                    <li>a. fill_content.</li>
+                    <li>b. match_parent.</li>
+                    <li>c. match_content.</li>
+                    <li>d. wrap_parent.</li>
+                    <li><b>e. wrap_content.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>No desenvolvimento Android, ao usar <b>wrap_content</b> em <b>layout_width</b> ou <b>layout_height</b>, você está dizendo ao sistema:</li>
+                    <ul>
+                        <li>“Ajuste o tamanho do componente exatamente ao tamanho do conteúdo que ele contém.”</li>
+                    </ul>
+                    <li>wrap_content → o componente será apenas tão grande quanto o necessário para mostrar seu conteúdo.</li>
+                    <li>match_parent → o componente vai ocupar todo o espaço disponível no pai.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Considerando os componentes básicos de interface gráfica do desenvolvimento Android, associe os nomes dos componentes ao texto de descrição correspondente.</p>
+                <pre>
+                Um componente que mostra uma classificação em estrelas para o usuário avaliar alguma coisa (...).
+                Permite ao usuário escolher um item de uma lista fechada e passa a exibir o texto do item escolhido (...).
+                Um elemento da interface do usuário para inserir e modificar texto (...).
+                Um elemento da interface do usuário que indica o andamento de uma operação (...).
+                </pre>
+                <p>Opções: RatingBar, Spinner, EditText, ProgressBar.</p>
+
+                <b class="answer">Resposta:  ✅</b>
+                <pre>
+                Um componente que mostra uma classificação em estrelas para o usuário avaliar alguma coisa <b>RatingBar</b>.
+                Permite ao usuário escolher um item de uma lista fechada e passa a exibir o texto do item escolhido <b>Spinner</b>.
+                Um elemento da interface do usuário para inserir e modificar texto <b>EditText</b>.
+                Um elemento da interface do usuário que indica o andamento de uma operação <b>ProgressBar</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Mostra uma classificação em estrelas	<b>RatingBar</b></li>
+                    <li>Permite escolher item de uma lista fechada	<b>Spinner</b></li>
+                    <li>Inserir e modificar texto	<b>EditText</b></li>
+                    <li>Indica o andamento de uma operação	<b>ProgressBar</b></li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Os componentes Checkbox, Switch e ToggleButton são utilizados para situações de opções não exclusivas.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Falso. ❌</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li><b>Checkbox:</b> usado geralmente para opções não exclusivas, onde o usuário pode marcar várias opções ao mesmo tempo (ex: "Aceito receber e-mails", "Aceito os termos").</li>
+                    <li><b>Switch e ToggleButton:</b> usados normalmente para ativar ou desativar uma única funcionalidade, representando opções individuais, mas não necessariamente múltiplas ao mesmo tempo.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Esses dois gerenciadores de layouts oferecem flexibilidade na criação de layouts complexos com posicionamento relativo, o que pode ser particularmente útil na criação de designs responsivos que precisam se adaptar a diferentes tamanhos de tela. Ambos permitem posicionar componentes em relação a outros ou ao layout pai. Pode-se também alinhar componentes nas laterais, na parte superior ou inferior de outros componentes ou do contêiner de layout.</p>
+                <ul>
+                    <li>a. Constraint Layout e Grid Layout.</li>
+                    <li>b. Constraint Layout e Table Layout.</li>
+                    <li>c. Constraint Layout e Linear Layout.</li>
+                    <li><b>d. Constraint Layout e Relative Layout.</b></li>
+                    <li>e. Constraint Layout e Frame Layout.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <ul>
+                    <li><b>RelativeLayout</b>	Permite posicionar elementos <b>relativamente entre si</b> e ao pai.</li>
+                    <li><b>ConstraintLayout</b>	Mais moderno e flexível. Permite <b>posicionamento relativo mais avançado</b>, alinhamentos complexos, e <b>melhor desempenho</b> em alguns casos.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>NÃO é um atributo útil do componente ImageView:</p>
+                <ul>
+                    <li>a. layout_width.</li>
+                    <li>b. layout_height.</li>
+                    <li>c. src.</li>
+                    <li>d. scaleType.</li>
+                    <li><b>e. Nenhuma das alternativas.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Todos os atributos listados são úteis e válidos para o componente ImageView no Android:</li>
+                    <ul>
+                        <li><b>layout_width</b>	Define a largura da imagem no layout.</li>
+                        <li><b>layout_height</b>	Define a altura da imagem no layout.</li>
+                        <li><b>src</b>	Especifica a imagem que será exibida no ImageView.</li>
+                        <li><b>scaleType</b>	Controla como a imagem será escalada/dimensionada dentro do ImageView.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Classe utilizada para reprodução de sons/músicas em aplicativo Android:</p>
+                <ul>
+                    <li>a. MultimidiaPlayer.</li>
+                    <li>b. MidiaPlayer.</li>
+                    <li>c. MusicPlayer.</li>
+                    <li>d. SoundPlayer.</li>
+                    <li><b>e. MediaPlayer.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <pre>
+                MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.som);
+                mediaPlayer.start();                    
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>As unidades recomendadas para dimensionar texto e componentes, respectivamente, no Android são:</p>
+                <ul>
+                    <li>a. sp e px.</li>
+                    <li>b. pt e px.</li>
+                    <li>c. px e pt.</li>
+                    <li><b>d. sp e dp.</b></li>
+                    <li>e. dp e sp.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li><b>sp</b> (scale-independent pixels) → usada para tamanho de texto</li>
+                    <ul>
+                        <li>Respeita as configurações de acessibilidade do usuário (ex: tamanho de fonte maior).</li>
+                    </ul>
+                    <li><b>dp</b> (density-independent pixels) → usada para tamanho de componentes (layouts, botões, margens etc.)</li>
+                    <ul>
+                        <li>Garante que o layout fique consistente em diferentes densidades de tela.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Tipo de gerenciador de layout com divisões internas chamadas de Row:</p>
+                <ul>
+                    <li>a. Relative Layout.</li>
+                    <li>b. Linear Layout.</li>
+                    <li>c. Frame Layout.</li>
+                    <li>d. Constraint Layout.</li>
+                    <li><b>e. Table Layout.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O <b>TableLayout</b> é um <b>gerenciador de layout</b> no Android que organiza os componentes em linhas (<b>Row</b>) e colunas, semelhante a uma tabela HTML.</li>
+                    <ul>
+                        <li>Cada linha é representada por um <b>TableRow</b>.</li>
+                        <li>Dentro de cada TableRow, você pode colocar células (componentes como <b>TextView</b>, <b>EditText</b>, etc.).</li>
+                        <li>Muito usado quando se quer um <b>layout em formato de grade ou tabela</b>.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>O componente RadioButton é uma forma comum de permitir que os usuários façam uma única seleção em uma lista de opções.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O RadioButton é usado em Android (e outras interfaces gráficas) para permitir que o usuário selecione <b>apenas uma opção entre várias</b>.</li>
+                    <ul>
+                        <li>Ele normalmente é usado dentro de um RadioGroup, que garante que <b>somente uma opção seja selecionada por vez</b>.</li>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 3 de jun de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
