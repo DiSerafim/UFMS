@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Implementação de Aplicativos.</h1>
+        <h2>💡 Unidade 1 - Tratamento de Eventos.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/lsYYaGk8oBw" frameborder="0"
+                    title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 1 - Vídeo 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 1 - Vídeo 1">[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 1 - Vídeo 1</p>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Eventos.</h2>
+            <ul>
+                <li>Normalmente um usuário interage com uma interface gráfica do aplicativo para indicar a tarefa que o software deve realizar.</li>
+                <li>Quando um usuário interage com um componente GUI, essa interação é conhecida como evento. </li>
+                <li>Um evento geralmente guia o programa na realização de uma tarefa.</li>
+                <li>Guiam os fluxos de controle da aplicação, por sinais externos.</li>
+                <li>Eventos comuns:</li>
+                <ul>
+                    <li>Clicar/tocar;</li>
+                    <li>Digitar em um campo de texto;</li>
+                    <li>Selecionar um item de menu;</li>
+                    <li>Fechar uma janela;</li>
+                    <li>Arrastar um objeto.</li>
+                </ul>
+                <li>No Android, uma Activity é responsável por controlar todos os eventos da tela. </li>
+                <li>Uma Activity é basicamente uma classe gerenciadora de UI (Interface com o Usuário). </li>
+                <li>Todo aplicativo Android começa por uma Activity.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Manipulação de eventos de clique.</h2>
+            <ul>
+                <li>Formas de desenvolver:</li>
+                <ul>
+                    <li>Através do XML no atributo onClick;</li>
+                    <li>Implementação da interface na classe;</li>
+                    <li>Implementação anônima da interface no método set;</li>
+                    <li>Implementação anônima da interface como atributo.</li>
+                </ul>
+                <li>Implementação pelo atributo onClick do componente:</li>
+                <ol>
+                    <li>Selecionar o atributo;</li>
+                    <li>Definir nome do método;</li>
+                    <li>Acessar a classe Java da Activity em questão;</li>
+                    <li>Implementar métodos específicos para o evento de cada componente (ou um método geral).</li>
+                </ol>
+                <li>Implementação da interface na classe:</li>
+                <ol>
+                    <li>Tornar a classe uma implementação da interface OnClickListener (cuidar para escolher o da View);</li>
+                    <li>Implementar método onClick();</li>
+                    <ul>
+                        <li>Torna-se o método único para todos os componentes.</li>
+                    </ul>
+                    <li>Selecionar, por meio de condições, o código do componente a </li>
+                    <li>capturar o evento;</li>
+                    <li>Apontar o setOnClickListener de cada componente para a própria classe (this).</li>
+                </ol>
+            </ul>
+        </section>
+
+        <section> 
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37. Acesso em: 06 mai. 2024.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 4 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
