@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Implementação de Aplicativos.</h1>
+        <h2>💡 Unidade 2 - Aplicativos com Múltiplas Telas.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/oFxmXO99FzM" frameborder="0"
+                    title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 2 - Vídeo 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title"
+                title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 2 - Vídeo 1">[UFMS
+                Digital] Desenvolvimento Dispositivos Móveis - Módulo 3 - Unidade 1 - Vídeo 1</p>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Activity.</h2>
+            <ul>
+                <li>É uma tela visível, relação quase de um para um.</li>
+                <li>Se uma aplicação precisar de uma interface, terá ao menos uma Activity.</li>
+                <li>Aplicações Android geralmente contém mais de uma.</li>
+                <li>Cada Activity responde a eventos do usuário e do sistema.</li>
+                <li>Emprega uma ou mais Views para apresentar os elementos de UI para o usuário.</li>
+                <li>Classe herdada pelo programador.</li>
+            </ul>
+            <b>Activity - ciclo de vida</b>
+            <ul>
+                <li>É muito importante entender o ciclo de vida de uma Activity, isto é, os possíveis estados em que ela
+                    se encontra, que podem ser:</li>
+                <ul>
+                    <li>Executando; </li>
+                    <li>Temporariamente interrompida em segundo plano; </li>
+                    <li>Completamente destruída.</li>
+                </ul>
+                <li>O sistema operacional cuida desse ciclo de vida.</li>
+                <ul>
+                    <li>Mas é importante levar cada estado possível em consideração para desenvolver uma aplicação mais
+                        robusta.</li>
+                </ul>
+                <img src="img/basic-lifecycle.webp" alt="basic-lifecycle" title="ciclo de vida">
+                <figcaption>https://i0.wp.com/developer.android.com/images/training/basics/basic-lifecycle.png
+                </figcaption>
+            </ul>
+            <b>Aplicativos com mais Activities.</b>
+            <p>Em geral, aplicativos possuem diversas telas (UI).</p>
+            <p>Portanto, os aplicativos precisam possuir formas de permitir a navegação do usuário entre essas telas.
+            </p>
+            <img src="img/navigation-principles-start-destination.png" alt="Princípios de navegação"
+                title="Princípios de navegação">
+            <p></p>
+            <figcaption>
+                https://developer.android.com/static/images/topic/libraries/architecture/navigation-principles-start-destination.png?hl=pt-br
+            </figcaption>
+        </section>
+
+        <section>
+            <h2>Intents.</h2>
+            <p>Formalmente, definidas como mensagens enviadas por um componente da aplicação (uma Activity, por exemplo)
+                para o Android.</p>
+            <p>Informam a intenção de inicializar outro componente da mesma aplicação ou de outra.</p>
+            <p>Ex: Chamar outra tela.</p>
+            <img src="img/itents.png" alt="itents" title="itents">
+            <ul>
+                <li>Há dois tipos de intents:</li>
+                <ul>
+                    <li>dntents explícitas;</li>
+                    <li>dntents implícitas.</li>
+                </ul>
+            </ul>
+            <b>Intents explícitas</b>
+            <ul>
+                <li>Especificam o componente a iniciar pelo nome de classe totalmente qualificado. </li>
+                <li>Normalmente, usa-se uma Intent explícita para iniciar um componente no próprio aplicativo, porque se
+                    sabe o nome de classe da Activity. </li>
+                <li>Ex: iniciar uma nova Activity em resposta a uma ação do usuário ou iniciar um serviço para baixar um
+                    arquivo em segundo plano.</li>
+            </ul>
+            <b>Intents implícitas</b>
+            <ul>
+                <li>Não nomeiam nenhum componente específico, mas declaram uma ação geral a realizar, o que permite que
+                    um componente de outro aplicativo a processe. </li>
+                <li>Ex: exibir ao usuário uma localização em um mapa - solicita a outro aplicativo.</li>
+            </ul>
+            <b>Navegação entre telas com Intents</b>
+            <ul>
+                <li>Criar o método para invocar as outras telas.</li>
+            <pre>
+            dntent it = new Intent(Tela_origem.this, Tela_destino.class);
+            dtartActivity(it);
+            </pre>
+                <li>Associar ao onClick do componente desejado.</li>
+            </ul>
+        </section>
+
+        <section>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37.
+                Acesso em: 06 mai. 2024.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
