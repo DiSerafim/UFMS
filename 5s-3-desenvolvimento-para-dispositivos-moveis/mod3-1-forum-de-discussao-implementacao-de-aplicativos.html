@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Implementação de Aplicativos</h1>
+        <h2>💬 Fórum de Discussão</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p></p>
+            <ul>
+                <li>
+                    <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS
+                        <span class="status concluida">Concluído</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre como implementar o tratamento de eventos de interação do usuário em
+                aplicativos, como criar aplicativos com mais telas, bem como fazer a navegação entre as telas.</p>
+            <p>O tratamento de eventos é um conceito fundamental na programação que permite que os aplicativos respondam
+                a ações do usuário. A capacidade de gerenciar eventos de forma eficaz é crucial para o desenvolvimento
+                de aplicativos modernos, sejam eles web, desktop ou móveis.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Considerando a tela de cadastro elaborada para a atividade do fórum do módulo anterior, implemente o
+                tratamento de evento de clique (toque) dos botões “Cadastrar”, “Limpar” e “Cancelar”, da seguinte forma:
+            </p>
+            <ul>
+                <li>No botão “Cadastrar”: deve ser verificado se todos os campos de entrada de dados estão preenchidos.
+                    Caso positivo: informar ao usuário a mensagem “Cadastro realizado com sucesso!”. Caso negativo:
+                    informar ao usuário a mensagem “Cadastro não realizado. Verifique os dados inseridos!”.</li>
+                <li>No botão “Limpar”: devem ser apagados os dados que já estejam inseridos ou selecionados nos campos
+                    de entrada.</li>
+                <li>No botão “Cancelar”: deve ser fechada a tela de cadastro.</li>
+            </ul>
+            <p>Comente e discuta com os colegas no fórum como foi a implementação dos eventos de clique dos três botões
+                da tela de cadastro. Você teve alguma dificuldade? Qual foi a forma escolhida para informar o usuário
+                sobre o sucesso ou fracasso do cadastro?</p>
+        </section>
+
+        <section>
+            <h2>Resolução.</h2>
+            <b>📱 activity_main.xml</b>
+            <pre>
+            &lt;?xml version="1.0" encoding="utf-8"?>
+            &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                tools:context=".MainActivity">
+
+                &lt;EditText
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nome"
+                    android:inputType="text"
+                    android:padding="15dp" />
+
+                &lt;EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="text"
+                    android:padding="15dp" />
+
+                &lt;EditText
+                    android:id="@+id/etTelefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Telefone"
+                    android:inputType="text"
+                    android:padding="15dp" />
+
+                &lt;LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp"
+                    android:orientation="horizontal">
+
+                    &lt;Button
+                        android:id="@+id/btCadastrar"
+                        android:layout_width="111dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="#4CAF50"
+                        android:backgroundTint="#4CAF50"
+                        android:backgroundTintMode="add"
+                        android:text="Cadastrar" />
+
+                    &lt;Button
+                        android:id="@+id/btLimpar"
+                        android:layout_width="96dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Limpar" />
+
+                    &lt;Button
+                        android:id="@+id/btCancelar"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cancelar" />
+                &lt;/LinearLayout>
+            &lt;/LinearLayout>
+            </pre>
+            <b>MainActivity.java</b>
+            <pre>
+            package com.example.cadastrodeusuarios;
+
+            import android.os.Bundle;
+            import android.text.TextUtils;
+            import android.widget.Button;
+            import android.widget.EditText;
+            import android.widget.Toast;
+            
+            import androidx.activity.EdgeToEdge;
+            import androidx.appcompat.app.AppCompatActivity;
+            import androidx.core.graphics.Insets;
+            import androidx.core.view.ViewCompat;
+            import androidx.core.view.WindowInsetsCompat;
+            
+            public class MainActivity extends AppCompatActivity {
+            
+                EditText etNome, etEmail, etTelefone;
+                Button btCadastrar, btLimpar, btCancelar;
+            
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    EdgeToEdge.enable(this);
+                    setContentView(R.layout.activity_main);
+                    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                        return insets;
+                    });
+            
+                    // Vinculando os campos
+                    etNome = findViewById(R.id.etNome);
+                    etEmail = findViewById(R.id.etEmail);
+                    etTelefone = findViewById(R.id.etTelefone);
+                    btCadastrar = findViewById(R.id.btCadastrar);
+                    btLimpar = findViewById(R.id.btLimpar);
+                    btCancelar = findViewById(R.id.btCancelar);
+            
+                    // Botão Cadastrar
+                    btCadastrar.setOnClickListener(view -> {
+                        String nome = etNome.getText().toString();
+                        String email = etEmail.getText().toString();
+                        String telefone = etTelefone.getText().toString();
+            
+                        if (TextUtils.isEmpty(nome) || TextUtils.isEmpty(email) || TextUtils.isEmpty(telefone)) {
+                            Toast.makeText(this, "Cadastro não realizado. Verifique os dados inseridos!", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
+                        }
+                    });
+            
+                    // Botão Limpar
+                    btLimpar.setOnClickListener(view -> {
+                        etNome.setText("");
+                        etEmail.setText("");
+                        etTelefone.setText("");
+                    });
+            
+                    // Botão Cancelar
+                    btCancelar.setOnClickListener(view -> {
+                        finish();
+                    });
+                }
+            }
+            </pre>
+            <img src="img/tela-cadastro-de-usuario.png" alt="tela de cadastro" title="tela de cadastro">
+            <ul>
+                <li>Como foi a implementação dos eventos de clique dos três botões da tela de cadastro.</li>
+                <ul>
+                    <li>No botão <b>Cadastrar</b> utilizei <b>TextUtils.isEmpty()</b> para verificar se todos os campos
+                        input estavam preenchidos e utilizei o <i>Toast</i> para exibir a mensagem "Cadastro realizado
+                        com sucesso!" e se caso algum campo estivesse vazio exibiria "Cadastro não realizado. Verifique
+                        os dados inseridos!"</li>
+                    <li>No botão <b>Limpar</b> utilizei o <b>setText("")</b> nos inputs.</li>
+                    <li>No botão <b>Cancelar</b> utilizei <b>finish()</b> para encerrar o Activity</li>
+                </ul>
+                <li>Você teve alguma dificuldade?</li>
+                <ul>
+                    <li>A maior dificuldade foi lembrar os ids de forma correta.</li>
+                </ul>
+                <li>Qual foi a forma escolhida para informar o usuário sobre o sucesso ou fracasso do cadastro?</li>
+                <ul>
+                    <li><b>Toast.makeText()</b> para criar o alerta.</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 7 de jun de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
