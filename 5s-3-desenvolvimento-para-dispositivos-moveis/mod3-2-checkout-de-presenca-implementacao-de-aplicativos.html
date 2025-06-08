@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Implementação de Aplicativos.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre programação de aplicativos, o tratamento de eventos do usuário e
+                construção de aplicativos com mais de uma tela.</p>
+            <p>O tratamento de eventos permite que os desenvolvedores criem interfaces de usuário interativas e
+                dinâmicas, onde a lógica de resposta é separada da sequência principal do programa, promovendo assim uma
+                arquitetura de software mais limpa e modular.</p>
+            <p>Sua tarefa é implementar os eventos e a programação das funcionalidades do aplicativo de conversão de
+                moedas, cuja interface gráfica foi criada no módulo anterior.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Orientações para elaboração e entrega da atividade:</p>
+            <ol>
+                <li>Abra seu projeto de aplicativo conversor de moedas do módulo anterior.</li>
+                <li>Implemente os métodos de clique dos botões “Converter” e “Limpar”.</li>
+                <li>O botão “Converter” deverá realizar o cálculo de conversão do valor em dólares (US$) para reais
+                    (R$), ou de reais (R$) para dólares (US$), de acordo com a seleção do usuário, e exibir o resultado
+                    no componente adequado.</li>
+                <li>Pode-se considerar a taxa de conversão: 1 dólar = 5 reais.</li>
+                <li>O botão “Limpar” deverá remover o conteúdo dos campos de textos e desfazer a seleção nas caixas de
+                    seleção.</li>
+                <li>Copie o código Java, da classe principal, desenvolvido.</li>
+                <li>Submeta o conteúdo do código no espaço da tarefa no AVA.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <img src="img/conversor-de-moeda1.png" alt="conversor-de-moeda" title="conversor-de-moeda">
+            <p></p>
+            <b>MainActivity.java:</b>
+            <pre>
+            package com.example.conversordemoeda;
+
+            import android.os.Bundle;
+            import android.view.View;
+            import android.widget.ArrayAdapter;
+            import android.widget.Button;
+            import android.widget.EditText;
+            import android.widget.Spinner;
+            import android.widget.TextView;
+            
+            import androidx.activity.EdgeToEdge;
+            import androidx.appcompat.app.AppCompatActivity;
+            import androidx.core.graphics.Insets;
+            import androidx.core.view.ViewCompat;
+            import androidx.core.view.WindowInsetsCompat;
+            
+            public class MainActivity extends AppCompatActivity {
+            
+                private Spinner spEntrada, spSaida;
+                private EditText etValor;
+                private TextView tvResultado;
+                private Button btConverter, btLimpar;
+            
+                private final double TAXA_CONVERSAO = 5.0;
+            
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    EdgeToEdge.enable(this);
+                    setContentView(R.layout.activity_main);
+                    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                        return insets;
+                    });
+            
+                    spEntrada = findViewById(R.id.spEntrada);
+                    spSaida = findViewById(R.id.spSaida);
+                    etValor = findViewById(R.id.etValor);
+                    tvResultado = findViewById(R.id.tvResultado);
+                    btConverter = findViewById(R.id.btConverter);
+                    btLimpar = findViewById(R.id.btLimpar);
+            
+                    // Prenche o spinner
+                    String[] moedas = { "Dolar (US$)", "Real (R$)" };
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, moedas);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spEntrada.setAdapter(adapter);
+                    spSaida.setAdapter(adapter);
+            
+                    // Btn Converter
+                    btConverter.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String moedaOrigem = spEntrada.getSelectedItem().toString();
+                            String moedaSaida = spSaida.getSelectedItem().toString();
+                            String valorStr = etValor.getText().toString();
+            
+                            if (!valorStr.isEmpty()) {
+                                double valor = Double.parseDouble(valorStr);
+                                double resultado;
+            
+                                if (moedaOrigem.equals("Dolar (US$)") && moedaSaida.equals("Real (R$)")) {
+                                    resultado = valor * TAXA_CONVERSAO;
+                                    tvResultado.setText(String.format("R$ %.2f", resultado));
+                                } else if (moedaOrigem.equals("Real (R$)") && moedaSaida.equals("Dolar (US$)")) {
+                                    resultado = valor / TAXA_CONVERSAO;
+                                    tvResultado.setText(String.format("US$ %.2f", resultado));
+                                } else {
+                                    tvResultado.setText("Insita um valor válido!");
+                                }
+                            }
+                        }
+                    });
+            
+                    // Btn Limpar
+                    btLimpar.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            etValor.setText("");
+                            tvResultado.setText("");
+                            spEntrada.setSelection(0);
+                            spSaida.setSelection(0);
+                        }
+                    });
+                }
+            }
+            </pre>
+            <b>activity_main.xml:</b>
+            <pre>
+            &lt;?xml version="1.0" encoding="utf-8"?>
+            &lt;ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                tools:context=".MainActivity">
+
+                &lt;LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    &lt;TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Conversor de Moedas"
+                        android:textAlignment="center"
+                        android:textColor="#4675DA"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Moeda de entrada:"
+                            android:textSize="18sp" />
+
+                        &lt;Spinner
+                            android:id="@+id/spEntrada"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Valor ($):"
+                            android:textSize="18sp" />
+
+                        &lt;EditText
+                            android:id="@+id/etValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Digite o Valor"
+                            android:inputType="numberDecimal"
+                            android:textSize="12dp" />
+
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Moeda de saída:"
+                            android:textSize="18dp" />
+
+                        &lt;Spinner
+                            android:id="@+id/spSaida"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="40dp"
+                        android:orientation="horizontal">
+
+                        &lt;Button
+                            android:id="@+id/btConverter"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="#4675DA"
+                            android:padding="10dp"
+                            android:text="Converter" />
+
+                        &lt;View
+                            android:id="@+id/view"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        &lt;Button
+                            android:id="@+id/btLimpar"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="#999999"
+                            android:padding="10dp"
+                            android:text="Limpar" />
+                    &lt;/LinearLayout>
+
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        &lt;TextView
+                            android:id="@+id/tvResultado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="14dp"
+                            android:text="Valor convertido ($):"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    &lt;/LinearLayout>
+
+                    &lt;TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cotação do dia DD/MM/AAAA"
+                        android:textAlignment="textEnd"
+                        android:textColor="#888888" />
+
+                &lt;/LinearLayout>
+            &lt;/ScrollView>
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 7 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
