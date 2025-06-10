@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 - Implementação de Aplicativos</h1>
+        <h2>✅ [A3] Avaliação</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em segunda, 9 jun 2025, 18:57</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em segunda, 9 jun 2025, 20:26</li>
+                <li>⏳ Tempo empregado 1 hora 28 minutos</li>
+                <li>🎯 Avaliar 9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Para usar um componente do tipo EditText ou TextView por código em um arquivo .java:</p>
+                <ul>
+                    <li>a. É necessário referenciar o nome do componente no layout.</li>
+                    <li>b. Não é possível.</li>
+                    <li>c. É preciso referenciar a ordem do componente no layout.</li>
+                    <li><b>d. É preciso referenciar o id do componente no layout.</b></li>
+                    <li>e. Não é necessário nada de especial.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Para acessar um componente como <b>EditText</b> ou <b>TextView</b> no código Java, você precisa
+                        primeiro atribuir um <b>android:id</b> ao componente no layout XML e depois utilizar esse ID com
+                        o método <b>findViewById()</b> no seu código Java. Exemplo:</li>
+                    <pre>EditText meuEditText = findViewById(R.id.meu_edit_text);</pre>
+                    <ul>
+                        <li><b>meu_edit_text</b> é o id definido no arquivo XML.</li>
+                        <li>O método <b>findViewById()</b> busca esse componente pelo ID no layout.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Considerando os estados do ciclo de vida de uma Activity no Android, associe os nomes dos estados ao
+                    texto de descrição correspondente.</p>
+                <pre>
+                Chamado quando a Activity não está mais visível para o usuário. Pode-se usar este método para liberar recursos ou ajustar funcionalidades que não são necessárias enquanto a Activity não está ativa (...).
+                Este é o último método que é chamado antes da Activity ser destruída pelo sistema. Aqui, deve-se realizar a limpeza final e liberação dos recursos remanescentes (...).
+                Este estado é alcançado quando o sistema está prestes a exibir outra Activity. É usado para pausar operações que não devem continuar (como parar animações) enquanto a Activity não está no topo da pilha (...).
+                </pre>
+                <p>Opções: onPause(), onDestroy(), onStop().</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Chamado quando a Activity não está mais visível para o usuário. Pode-se usar este método para liberar recursos ou ajustar funcionalidades que não são necessárias enquanto a Activity não está ativa <b>onStop()</b>.
+                Este é o último método que é chamado antes da Activity ser destruída pelo sistema. Aqui, deve-se realizar a limpeza final e liberação dos recursos remanescentes <b>onDestroy()</b>.
+                Este estado é alcançado quando o sistema está prestes a exibir outra Activity. É usado para pausar operações que não devem continuar (como parar animações) enquanto a Activity não está no topo da pilha <b>onPause()</b>.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Em qual dos seguintes casos NÃO é preciso tratar eventos de clique para um botão?</p>
+                <ul>
+                    <li>a. Quando o botão modifica o texto de um TextView.</li>
+                    <li>b. Quando o botão abre uma nova Activity.</li>
+                    <li>c. Quando o botão realiza uma operação de cálculo.</li>
+                    <li><b>d. Quando o botão não utiliza ícones.</b></li>
+                    <li>e. Quando o botão é usado apenas para exibir informações.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O tratamento de eventos de clique em um botão é necessário sempre que deseja que algo aconteça
+                        ao clicar nele, como:</li>
+                    <ul>
+                        <li><b>Modificar um TextView</b> → precisa de evento de clique.</li>
+                        <li><b>Abrir uma nova Activit</b>y → precisa de evento de clique.</li>
+                        <li><b>Realizar um cálculo</b> → precisa de evento de clique.</li>
+                        <li><b>Exibir informações</b> (mesmo que seja só um Toast ou Dialog) → precisa de evento de
+                            clique.</li>
+                    </ul>
+                    <li>Ter ou não ícones no botão não tem relação com o tratamento de eventos. Um botão pode ter um
+                        ícone apenas como parte do layout visual, mas isso não interfere na lógica de cliques. Portanto,
+                        não é necessário tratar o clique só porque o botão tem ou não tem um ícone.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Considerando o seguinte código Java para tratamento de eventos, assinale a alternativa que completa
+                    corretamente as lacunas:</p>
+                <pre>
+                public class TelaPrincipal extends AppCompatActivity implements ______ {                
+                    public void ______ (View v) {
+                        ...
+                    }
+                }
+                </pre>
+                <ul>
+                    <li><b>a. View.OnClickListener, onClick()</b>.</li>
+                    <li>b. View.OnTouchListener, onTouch().</li>
+                    <li>c. View.OnClickListener, onTouch().</li>
+                    <li>d. View.OnTouchListener, onClick().</li>
+                    <li>e. Nenhuma das alternativas.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+                <pre>
+                public class TelaPrincipal extends AppCompatActivity implements View.OnClickListener {
+                    public void onClick(View v) {
+                        // código que trata o clique
+                    }
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual método é comumente usado para preparar um botão de forma que sejam tratados seus eventos de
+                    clique?</p>
+                <ul>
+                    <li>a. onButtonClick().</li>
+                    <li><b>b. setOnClickListener().</b></li>
+                    <li>c. setSensorListener().</li>
+                    <li>d. onButtonPressed().</li>
+                    <li>e. handleButtonClick().</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <ul>
+                    <li>Esse método permite registrar um ouvinte (listener) que será chamado quando o botão for clicado.
+                        Exemplo:</li>
+                </ul>
+                <pre>
+                Button meuBotao = findViewById(R.id.meu_botao);
+                meuBotao.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Código a ser executado quando o botão for clicado
+                    }
+                });
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>O que o método setOnClickListener() espera como argumento?</p>
+                <ul>
+                    <li><b>a. Um objeto que implementa View.OnClickListener.</b></li>
+                    <li>b. Um objeto Button.</li>
+                    <li>c. Uma String.</li>
+                    <li>d. Um objeto View.</li>
+                    <li>e. Um objeto Spinner.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O método setOnClickListener() espera receber como argumento um objeto que implementa a interface
+                        View.OnClickListener, que define o método onClick(View v) para tratar o evento de clique.</li>
+                </ul>
+                <pre>
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Código executado ao clicar no botão
+                    }
+                });                    
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Se deseja-se que um botão responda a eventos de clique, qual das seguintes afirmações deve ser
+                    verdadeira?</p>
+                <ul>
+                    <li><b>a. O botão deve ter o atributo android: onClick preenchido com o nome do método que tratará
+                            os cliques.</b></li>
+                    <li>b. O botão deve ter o atributo android: click preenchido com o nome do método que tratará os
+                        cliques.</li>
+                    <li>c. O botão deve ter o atributo android: onClickListener() com o nome do método que tratará os
+                        cliques.</li>
+                    <li>d. O botão deve ter o atributo android: clickable="false".</li>
+                    <li>e. O botão deve ter o atributo android: clickable preenchido com o nome do método que tratará os
+                        cliques.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>No XML de layout do Android, para que um botão responda a eventos de clique declarativamente,
+                        usa-se o atributo android:onClick, indicando o nome do método que será chamado na Activity para
+                        tratar o clique.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>As seguintes instruções são responsáveis por abrir uma nova tela no aplicativo Android:</p>
+                <pre>
+                Intent it = new Intent(Tela_origem.this, Tela_destino.class);
+                
+                startActivity(it);
+                </pre>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Essas instruções criam uma Intent para abrir a Tela_destino a partir da Tela_origem e, em
+                        seguida, iniciam a nova Activity com startActivity(it).</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Método utilizado para finalizar a Activity atual e consequentemente retomar a anterior.</p>
+                <ul>
+                    <li>a. close().</li>
+                    <li>b. quit().</li>
+                    <li><b>c. finish().</b></li>
+                    <li>d. end().</li>
+                    <li>e. dispose().</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O método finish() é usado para finalizar a Activity atual e retornar para a Activity anterior na
+                        pilha.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Qual é a assinatura correta do método onClick(), que é necessário implementar ao usar
+                    View.OnClickListener?</p>
+                <ul>
+                    <li>a. private void onClick(View v).</li>
+                    <li>b. protected void onClick(View v).</li>
+                    <li>c. protected void onClick(Button b).</li>
+                    <li><b>d. public void onClick(View v).</b></li>
+                    <li>e. public boolean onClick(View v).</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 9 de jun de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
