@@ -28,6 +28,13 @@ h2 {
   padding: 10px;
 }
 
+pre {
+  white-space: pre-wrap;
+  max-width: 100%;
+  background-color: #f9f9f9;
+  padding: 1em;
+}
+
 /* Disciplinas */
 #disciplinas ul {
   list-style: none;

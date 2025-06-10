@@ -33,6 +33,13 @@ img {
   box-shadow: 0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
+pre {
+  white-space: pre-wrap;
+  max-width: 100%;
+  background-color: #f9f9f9;
+  padding: 1em;
+}
+
 .btn.disabled, .btn:disabled {
   opacity: 0.65;
 }
