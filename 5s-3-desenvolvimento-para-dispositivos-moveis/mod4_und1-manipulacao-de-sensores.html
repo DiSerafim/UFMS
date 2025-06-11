@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Recursos de Hardware no Smartphone.</h1>
+        <h2>💡 Unidade 1 - Manipulação de Sensores.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LDdWGA4rmzY" frameborder="0"
+                    title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 1 - Vídeo 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title"
+                title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 1 - Vídeo 1">[UFMS
+                Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 1 - Vídeo 1</p>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Sensores do Dispositivo.</h2>
+            <img src="img/iot-sensors.webp" alt="Sensores" title="iot-sensors">
+            <figcaption>https://www.mokosmart.com/pt/internet-of-things-sensors/</figcaption>
+            <p></p>
+            <b>Sensores - Classes</b>
+            <ul>
+                <li>Existem basicamente quatro classes fundamentais:</li>
+                <ul>
+                    <li>SensorManager</li>
+                    <ul>
+                        <li>Usada para criar uma instância do serviço do sensor. </li>
+                        <li>Oferece vários métodos para acessar e listar sensores, registrar e cancelar o registro de
+                            listeners de eventos do sensor e coletar informações de orientação. </li>
+                    </ul>
+                    <li>Sensor</li>
+                    <ul>
+                        <li>Cria uma instância de um sensor específico. </li>
+                        <li>Oferece vários métodos que permitem determinar os recursos de um sensor.</li>
+                    </ul>
+                    <li>SensorEvent</li>
+                    <ul>
+                        <li>Encapsula as informações de um evento ocasionado por um sensor (dados brutos do sensor, tipo
+                            de sensor do evento, precisão dos dados e data/hora do evento).</li>
+                    </ul>
+                    <li>SensorEventListener</li>
+                    <ul>
+                        <li>Recebe notificações do SensorManager quando há novos dados em um sensor.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Tipos de Sensores</b>
+            <ul>
+                <li><b>TYPE_ACCELEROMETER</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a força de aceleração em m/s² nos três eixos físicos (x, y, z)</li>
+                    <li><i>Usos comuns:</i> Detecção de movimento</li>
+                </ul>
+                <li><b>TYPE_AMBIENT_TEMPERATURE</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a temperatura ambiente em graus Celsius (°C)</li>
+                    <li><i>Usos comuns:</i> Monitoramento da temperatura do ar</li>
+                </ul>
+                <li><b>TYPE_GRAVITY</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Software ou Hardware</li>
+                    <li><i>Descrição:</i> Mede a força da gravidade em m/s² nos três eixos</li>
+                    <li><i>Usos comuns:</i> Detecção de movimento</li>
+                </ul>
+                <li><b>TYPE_GYROSCOPE</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a taxa de rotação em rad/s em torno dos três eixos</li>
+                    <li><i>Usos comuns:</i> Detecção de rotação (giro, volta, etc.)</li>
+                </ul>
+                <li><b>TYPE_LIGHT</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede o nível de luz ambiente (iluminação) em lux</li>
+                    <li><i>Usos comuns:</i> Controle do brilho da tela</li>
+                </ul>
+                <li><b>TYPE_LINEAR_ACCELERATION</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Software ou Hardware</li>
+                    <li><i>Descrição:</i> Mede a força de aceleração em m/s² nos três eixos, sem gravidade</li>
+                    <li><i>Usos comuns:</i> Monitoramento da aceleração em um único eixo</li>
+                </ul>
+                <li><b>TYPE_MAGNETIC_FIELD</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede o campo geomagnético do ambiente para os três eixos</li>
+                    <li><i>Usos comuns:</i> Criação de uma bússola</li>
+                </ul>
+                <li><b>TYPE_ORIENTATION</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Software</li>
+                    <li><i>Descrição:</i> Mede os graus de rotação em torno dos três eixos</li>
+                    <li><i>Usos comuns:</i> Determinação da posição do dispositivo</li>
+                </ul>
+                <li><b>TYPE_PRESSURE</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a pressão do ar ambiente em hPa ou mbar</li>
+                    <li><i>Usos comuns:</i> Monitoramento das mudanças na pressão do ar</li>
+                </ul>
+                <li><b>TYPE_PROXIMITY</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a proximidade de um objeto em cm com relação à tela de um dispositivo
+                    </li>
+                    <li><i>Usos comuns:</i> Posição do aparelho durante uma chamada</li>
+                </ul>
+                <li><b>TYPE_RELATIVE_HUMIDITY</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Hardware</li>
+                    <li><i>Descrição:</i> Mede a umidade relativa do ar em porcentagem (%)</li>
+                    <li><i>Usos comuns:</i> Monitoramento de umidade ambiente</li>
+                </ul>
+                <li><b>TYPE_ROTATION_VECTOR</b></li>
+                <ul>
+                    <li><i>Tipo:</i> Software ou Hardware</li>
+                    <li><i>Descrição:</i> Mede a orientação de um dispositivo</li>
+                    <li><i>Usos comuns:</i> Detecção de movimento e de rotação</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Testando sensor de temperatura e umidade</h2>
+            <pre>
+            package com.example.testandosensores;
+
+            import android.hardware.Sensor;
+            import android.hardware.SensorEvent;
+            import android.hardware.SensorEventListener;
+            import android.hardware.SensorManager;
+            import android.os.Bundle;
+            import android.util.Log;
+            import android.widget.Toast;
+            
+            import androidx.activity.EdgeToEdge;
+            import androidx.appcompat.app.AppCompatActivity;
+            import androidx.core.graphics.Insets;
+            import androidx.core.view.ViewCompat;
+            import androidx.core.view.WindowInsetsCompat;
+            
+            public class MainActivity extends AppCompatActivity implements SensorEventListener {
+            
+                private SensorManager sensorManager;
+                private Sensor sensorTemperatura, sensorUmidade;
+            
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    EdgeToEdge.enable(this);
+                    setContentView(R.layout.activity_main);
+                    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                        return insets;
+                    });
+            
+                    sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+                    sensorTemperatura = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+                    sensorUmidade = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
+            
+                    if (sensorTemperatura != null) {
+                        sensorManager.registerListener(this, sensorTemperatura, sensorManager.SENSOR_DELAY_NORMAL);
+                    } else {
+                        Toast.makeText(this, "Sensor de temperatura indisponível", Toast.LENGTH_LONG).show();
+                    }
+            
+                    if (sensorUmidade != null) {
+                        sensorManager.registerListener(this, sensorUmidade, sensorManager.SENSOR_DELAY_NORMAL);
+                    } else {
+                        Toast.makeText(this, "Sensor de umidade indisponível", Toast.LENGTH_LONG).show();
+                    }
+                    }
+            
+                @Override
+                public void onSensorChanged(SensorEvent event) {
+                    Log.i("Sensor", "Valor de temperatura " + event.values[0] + "Cº");
+                    Log.i("Sensor", "Valor da umidade " + event.values[0] + "%");
+                }
+            
+                @Override
+                public void onAccuracyChanged(Sensor sensor, int i) {
+            
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37.
+                Acesso em: 10 mai. 2024.</cite>
+            <p></p>
+            <cite>MAJUMDER, Sumit; DEEN, M. Jamal. Smartphone sensors for health monitoring and diagnosis. Sensors, v.
+                19, n. 9, 2019.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
