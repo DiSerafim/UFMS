@@ -10,13 +10,6 @@ body {
     to left,
     rgb(236, 228, 228),
     white,
-    white,
-    white,
-    white,
-    white,
-    white,
-    white,
-    white,
     rgb(236, 228, 228)
   );
 }
@@ -44,13 +37,17 @@ img {
   max-width: 100%;
   display: block;
   box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  float: left;
+  left: 0 !important;
 }
 
 pre {
   white-space: pre-wrap;
   max-width: 100%;
   background-color: #f9f9f9;
-  padding: 1em;
 }
 
 /* Disciplinas */

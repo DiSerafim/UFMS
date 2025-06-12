@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Recursos de Hardware no Smartphone.</h1>
+        <h2>💡 Unidade 2 - Armazenamento Persistente.</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/F2mvTTIgPgY" frameborder="0"
+                    title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 2 - Vídeo 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title"
+                title="[UFMS Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 2 - Vídeo 1">[UFMS
+                Digital] Desenvolvimento Dispositivos Móveis - Módulo 4 - Unidade 2 - Vídeo 1</p>
+            <p>Prof° ministrante: Dr. Rafael dos Passos Canteri.</p>
+        </section>
+
+        <section>
+            <h2>Tipos de persistência de dados.</h2>
+            <ul>
+                <li><b>Shared Preferences/Data Store:</b> armazenar dados primitivos em pares chave-valor. Semelhante a um Hashmap;</li>
+                <li><b>Internal Storage:</b> armazenar dados privados na memória do dispositivo (com persistência de objetos);</li>
+                <li><b>External Storage:</b> armazenar dados privados/públicos em uma memória externa (compartilhada);</li>
+                <li><b>SQLite Databases:</b> armazenar dados estruturados em um banco de dados privado.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Banco de Dados SQLite.</h2>
+            <ul>
+                <li>O SQLite é uma biblioteca que implementa um BD com as seguintes características:</li>
+                <ul>
+                    <li><b>Transacional:</b> permite executar um conjunto de operações e só efetivá-las quando todas foram bem sucedidas;</li>
+                    <li><b>Autocontido:</b> mínima dependência do SO;</li>
+                    <li><b>Trabalha localmente</b>: não fica hospedado em um servidor;</li>
+                    <li>Não precisa ser instalado ou configurado;</li>
+                    <li>Fica em um arquivo no armazenamento interno.</li>
+                </ul>
+                <li>Permite ainda:</li>
+                <ul>
+                    <li>Criar tabelas com PK e FK;</li>
+                    <li>Views;</li>
+                    <li>Índices;</li>
+                    <li>Triggers.</li>
+                </ul>
+                <li>Tipos de dados suportados:</li>
+                <ul>
+                    <li>Null, Integer, Real, Text, Blob.</li>
+                </ul>
+                <li>Para trabalhar com SQLite é preciso criar uma classe que herde SQLiteOpenHelper.</li>
+                <li>Opcional:</li>
+                <ul>
+                    <li>Criar classes abstratas e estáticas para representar cada tabela do BD;</li>
+                    <li>Campos das tabelas do BD tornam-se atributos das classes.</li>
+                </ul>
+                <li>Métodos:</li>
+                <ul>
+                    <li><b>onCreate():</b> para criar um banco;</li>
+                    <li><b>onUpgrade():</b> para atualizar um banco;</li>
+                    <li><b>execSQL():</b> executa uma instrução SQL que não seja um Select;</li>
+                    <li><b>query():</b> realiza uma consulta no banco.</li>
+                </ul>
+                <li>Objeto SQLiteDatabase:</li>
+                <ul>
+                    <li>Permite executar os comandos SQL.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>CRUD Android</h2>
+            <b>activity_main.xml</b>
+            <pre>
+            &lt;?xml version="1.0" encoding="utf-8"?>
+            &lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:orientation="vertical"
+                android:textAlignment="center"
+                tools:context=".MainActivity">
+            
+                &lt;TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Crud Android"
+                    android:textAlignment="center"
+                    android:textColor="#3F51B5"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            
+                &lt;EditText
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nome"
+                    android:inputType="text"
+                    android:textAlignment="textStart" />
+            
+                &lt;EditText
+                    android:id="@+id/etRA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="RA"
+                    android:inputType="text"
+                    android:textAlignment="textStart" />
+            
+                &lt;TextView
+                    android:id="@+id/tvResultado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            
+                &lt;Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="inserir"
+                    android:text="INSERIR" />
+            
+                &lt;Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="apagar"
+                    android:text="APAGAR" />
+            
+                &lt;Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="atualizar"
+                    android:text="ATUALIZAR" />
+            
+                &lt;Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="buscarTudo"
+                    android:text="BUSCAR TUDO" />
+            
+            &lt;/LinearLayout>
+            </pre>
+
+            <b>MainActivity.java</b>
+            <pre>
+            package com.example.crud_android;
+
+            import android.content.ContentValues;
+            import android.database.Cursor;
+            import android.database.sqlite.SQLiteDatabase;
+            import android.os.Bundle;
+            import android.view.View;
+            import android.widget.EditText;
+            import android.widget.TextView;
+
+            import androidx.activity.EdgeToEdge;
+            import androidx.appcompat.app.AppCompatActivity;
+            import androidx.core.graphics.Insets;
+            import androidx.core.view.ViewCompat;
+            import androidx.core.view.WindowInsetsCompat;
+
+            public class MainActivity extends AppCompatActivity {
+
+                private EditText etNome, etRA;
+                private TextView tvResultado;
+                private SQLiteDatabase banco;
+
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    EdgeToEdge.enable(this);
+                    setContentView(R.layout.activity_main);
+                    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                        return insets;
+                    });
+
+                    // Associa aos componentes da tela
+                    etNome = (EditText) findViewById(R.id.etNome);
+                    etRA = (EditText) findViewById(R.id.etRA);
+                    tvResultado = (TextView) findViewById(R.id.tvResultado);
+
+                    // Gerenciador
+                    GerenciadoraBD gerenciadoraBD = new GerenciadoraBD(this);
+
+                    // Liga o gerenciador ao banco
+                    banco = gerenciadoraBD.getWritableDatabase();
+                }
+
+                // Assinaturas dos métodos Inseri, Apagar, Atualizar e Buscar
+                public void inserir(View v) {
+                    // Tratamento de campos vazios
+                    if (etNome.getText().toString().isEmpty() || etRA.getText().toString().isEmpty()) {
+                        tvResultado.setText("Preencha todos os campos!");
+                        return;
+                    }
+                    try {
+                        ContentValues valores = new ContentValues();
+                        // Tabela em que valores serão inseridos
+                        valores.put(GerenciadoraBD.TBAluno.NOME, etNome.getText().toString());
+                        valores.put(GerenciadoraBD.TBAluno.RA, Integer.valueOf(etRA.getText().toString()));
+
+                        // Isere os valores no banco
+                        banco.insert(GerenciadoraBD.TBAluno.TABELA, null, valores);
+                        tvResultado.setText("Dados inseridos!");
+                    } catch (NumberFormatException e) {
+                        tvResultado.setText("RA deve ser um número!");
+                    }
+                }
+
+                public void apagar(View v) {
+                    String calusulaWhere = "RA = ?";
+                    String[] argumentoWhere = {etRA.getText().toString()};
+                    banco.delete(GerenciadoraBD.TBAluno.TABELA, calusulaWhere, argumentoWhere);
+                }
+
+                public void atualizar(View v) {
+                    ContentValues valores = new ContentValues();
+                    valores.put(GerenciadoraBD.TBAluno.NOME, etNome.getText().toString());
+
+                    String clausulaWhere = "RA = ?";
+                    String[] argumentoWhere = {etRA.getText().toString()};
+
+                    banco.update(GerenciadoraBD.TBAluno.TABELA, valores, clausulaWhere, argumentoWhere);
+                }
+
+                public void buscarTudo(View v) {
+                    String[] colunas = {GerenciadoraBD.TBAluno.NOME, GerenciadoraBD.TBAluno.RA};
+                    String selecao = "";
+                    String[] argumentos = null;
+                    String groupBy = null;
+                    String having = null;
+                    String orderBy = GerenciadoraBD.TBAluno._ID + " ASC"; // ou DESC
+
+                    Cursor cursor;
+
+                    cursor = banco.query(GerenciadoraBD.TBAluno.TABELA, colunas, selecao, argumentos, groupBy, having, orderBy);
+
+                    String nome;
+                    int ra;
+
+                    while (cursor.moveToNext()) {
+                        nome = cursor.getString(cursor.getColumnIndex(GerenciadoraBD.TBAluno.NOME));
+                        ra = cursor.getInt(cursor.getColumnIndex(GerenciadoraBD.TBAluno.RA));
+
+                        tvResultado.setText(tvResultado.getText() + "Nome: " + nome + " / " + "RA: " + ra + "\n");
+                    }
+                }
+            }
+            </pre>
+
+            <b>GerenciadoraDB.java</b>
+            <pre>
+            package com.example.crud_android;
+
+            import android.content.Context;
+            import android.database.sqlite.SQLiteDatabase;
+            import android.database.sqlite.SQLiteOpenHelper;
+            import android.provider.BaseColumns;
+
+            public class GerenciadoraBD extends SQLiteOpenHelper {
+
+                // Cria as constants com 'static final'
+                public static final String NOME_BANCO = "primeiro_bd";
+                public  static final int VERSAO = 2;
+
+                // Classes abstratas
+                public static abstract class TBAluno implements BaseColumns {
+                    // Atributos da classe (nome dos campos)
+                    public static final String TABELA = "Aluno";
+                    public static final String NOME = "Nome";
+                    public static final String RA = "RA";
+
+                }
+
+                // Implementa o construtor da classe
+                public GerenciadoraBD(Context context) {
+                    super(context, NOME_BANCO, null, VERSAO);
+                }
+                @Override
+                public void onCreate(SQLiteDatabase sqLiteDatabase) {
+                    // SQL de construção do DB
+                    StringBuilder builder = new StringBuilder();
+                    String sql = builder.append("CREATE TABLE " + TBAluno.TABELA)
+                            .append("(")
+                            .append(TBAluno._ID + " INTEGER PRIMARY KEY, ")
+                            .append(TBAluno.NOME + " TEXT NOT NULL, ")
+                            .append(TBAluno.RA + " INTEGER NOT NULL ")
+                            .append(")").toString();
+                    sqLiteDatabase.execSQL(sql);
+                }
+
+                @Override
+                public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+                }
+            }
+            </pre>
+        </section>
+
+        <section>
+            <h2>Resultado</h2>
+            <img src="img/crud-android.png" alt="crud-android.png" title="crud-android.png">
+        </section>
+
+        <section>
+            <p></p>
+            <cite>GOOGLE. Android developers documentation. Versão 12. 2024. Disponível em: https://link.ufms.br/quv37. Acesso em: 10 mai. 2024.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 11 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
