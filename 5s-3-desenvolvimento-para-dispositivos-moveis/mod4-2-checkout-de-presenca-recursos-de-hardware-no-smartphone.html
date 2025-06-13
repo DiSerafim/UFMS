@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 - Recursos de Hardware no Smartphone.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre sensores dos dispositivos móveis e persistência de dados.</p>
+            <p>Os sensores são componentes vitais que transformam dispositivos móveis em ferramentas poderosas para uma
+                ampla gama de aplicações, desde entretenimento e produtividade até saúde e segurança. Portanto, saber
+                criar aplicativos que os implementam é uma habilidade essencial do desenvolvedor.</p>
+            <p>Sua tarefa é criar um aplicativo que seja capaz de receber dados dos sensores do aparelho e reagir de
+                acordo.</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Orientações para elaboração e entrega da atividade:</p>
+            <ol>
+                <li>Desenvolva um aplicativo Android que mostra ao usuário, via componentes de interface gráfica, os
+                    valores recebidos pelos sensores de temperatura, de luz e de umidade.</li>
+                <li>Os valores de cada um dos três sensores deverão ser exibidos em componente próprio junto à sua
+                    unidade de medida.</li>
+                <ol>
+                    <li>Temperatura: ºC;</li>
+                    <li>Luz: lux;</li>
+                    <li>Umidade: %.</li>
+                </ol>
+                <li>Realize capturas de tela de seu emulador, demonstrando o resultado da interação com os sensores
+                    requisitados.</li>
+                <li>Crie um arquivo no editor de texto de sua preferência (ex: LibreOffice Writer, Microsoft Word) e
+                    insira as capturas de tela realizadas.</li>
+                <li>Copie também, para o arquivo de texto, o código Java, da classe principal, desenvolvido.</li>
+                <li>Envie o arquivo de texto no espaço da tarefa do AVA.</li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Aplicativo de Monitoramento de Sensores Android</b>
+
+            <pre>
+            package com.example.aplicativodemonitoramentodesensoresandroid;
+
+            import android.hardware.Sensor;
+            import android.hardware.SensorEvent;
+            import android.hardware.SensorEventListener;
+            import android.hardware.SensorManager;
+            import android.os.Bundle;
+            import android.widget.TextView;
+
+            import androidx.activity.EdgeToEdge;
+            import androidx.appcompat.app.AppCompatActivity;
+            import androidx.core.graphics.Insets;
+            import androidx.core.view.ViewCompat;
+            import androidx.core.view.WindowInsetsCompat;
+
+            public class MainActivity extends AppCompatActivity implements SensorEventListener {
+                private SensorManager sensorManager;
+                private Sensor tempSensor, lightSensor, humiditySensor;
+                private TextView tvTemp, tvLight, tvHumidity;
+
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    EdgeToEdge.enable(this);
+                    setContentView(R.layout.activity_main);
+                    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                        return insets;
+                    });
+
+                    // Inicializa os TextViews
+                    tvTemp = findViewById(R.id.tvTemperature);
+                    tvLight = findViewById(R.id.tvLight);
+                    tvHumidity = findViewById(R.id.tvHumidity);
+
+                    // Configura o SensorManager
+                    sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+                    // Pega os sensores e sua disponibilidade
+                    tempSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+                    lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+                    humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
+
+                    // Tratamento de sensores
+                    if (tempSensor == null) tvTemp.setText("Sensor de temperaura não disponível");
+                    if (lightSensor == null) tvLight.setText("Sensor de lux não disponível");
+                    if (humiditySensor == null) tvHumidity.setText("Sensor de humidade não disponível");
+                }
+
+                @Override
+                protected void onResume() {
+                    super.onResume();
+
+                    // Registra listeners com taxa de atualização
+                    if (tempSensor != null) sensorManager.registerListener(this, tempSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                    if (lightSensor != null) sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+                    if (humiditySensor != null) sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_NORMAL);
+                }
+
+                @Override
+                protected void onPause() {
+                    super.onPause();
+                    sensorManager.unregisterListener(this);
+                }
+
+                @Override
+                public void onSensorChanged(SensorEvent sensorEvent) {
+                    // Atualiza os TextViews de acordo com o sensor
+                    switch (sensorEvent.sensor.getType()) {
+                        case Sensor.TYPE_AMBIENT_TEMPERATURE:
+                            tvTemp.setText(String.format("Temperature: %.1f ºC", sensorEvent.values[0]));
+                            break;
+                        case Sensor.TYPE_LIGHT:
+                            tvLight.setText(String.format("Luz: %.0f lux", sensorEvent.values[0]));
+                            break;
+                        case Sensor.TYPE_RELATIVE_HUMIDITY:
+                            tvHumidity.setText(String.format("Umidade: %.0f%%", sensorEvent.values[0]));
+                            break;
+                    }
+                }
+
+                @Override
+                public void onAccuracyChanged(Sensor sensor, int i) {
+
+                }
+            }
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 12 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
