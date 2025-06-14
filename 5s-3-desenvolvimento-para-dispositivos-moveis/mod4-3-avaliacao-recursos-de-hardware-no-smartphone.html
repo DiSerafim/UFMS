@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 - Recursos de Hardware no Smartphone</h1>
+        <h2>✅ [A4] Avaliação</h2>
+        <p>Prof° Especialista: Dr. Rafael dos Passos Canteri.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>DESENVOLVIMENTO PARA DISPOSITIVOS MÓVEIS.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em sexta, 13 jun 2025, 19:46</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em sexta, 13 jun 2025, 20:53</li>
+                <li>⏳ Tempo empregado 1 hora 6 minutos</li>
+                <li>🎯 Avaliar 8,00 de um máximo de 10,00(80%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Em Android, um Toast…</p>
+                <ul>
+                    <li>a. Exibe uma mensagem na central de notificações.</li>
+                    <li>b. Exibe a mensagem em uma caixa de diálogo separada.</li>
+                    <li><b>c. Exibe a mensagem na Activity e desaparece automaticamente após um tempo.</b></li>
+                    <li>d. Exibe a mensagem na Activity e reaparece recorrentemente.</li>
+                    <li>e. Exibe a mensagem na Activity e não desaparece automaticamente.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Um Toast no Android é um pequeno aviso que:</li>
+                    <ul>
+                        <li>Aparece na parte inferior da tela por padrão (dentro da Activity atual)</li>
+                        <li>Some automaticamente após um curto período (2-3 segundos)</li>
+                        <li>Não requer interação do usuário</li>
+                        <li>É implementado com uma única linha de código:</li>
+                    </ul>
+                </ul>
+                <pre>Toast.makeText(context, "Mensagem", Toast.LENGTH_SHORT).show();</pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Assinale a linha de código correta que está preparando um aplicativo para interagir com os sensores
+                    do dispositivo Android, chamando o serviço de sistema.</p>
+
+                <ul>
+                    <li>a. sensorChannel = (SensorChannel) getSystemService(SENSOR_SERVICE);.</li>
+                    <li>b. sensor = (Sensor) getSystemService(SENSOR_SERVICE);.</li>
+                    <li><b>c. sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);.</b></li>
+                    <li>d. sensorEventListener = (SensorEventListener) getSystemService(SENSOR_SERVICE);.</li>
+                    <li>e. sensorEvent = (SensorEvent) getSystemService(SENSOR_SERVICE);.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Em Android, o acesso aos sensores é feito através do <b>SensorManager</b>, que é um serviço do
+                        sistema.</li>
+                    <li>O método <b>getSystemService()</b> retorna uma instância do <b>SensorManager</b> quando passamos
+                        a constante <b>SENSOR_SERVICE</b>.</li>
+                    <li>A conversão ((<b>SensorManager</b>)) é necessária porque <b>getSystemService()</b> retorna um
+                        <b>Object</b>.
+                    </li>
+                </ul>
+                <p>Exemplo:</p>
+                <pre>
+                public class SensorActivity extends Activity implements SensorEventListener {
+                    private SensorManager <b>sensorManager</b>;
+                    private Sensor accelerometer;
+                
+                    @Override
+                    protected void onCreate(Bundle savedInstanceState) {
+                        super.onCreate(savedInstanceState);
+                        setContentView(R.layout.activity_main);
+                        
+                        // Linha correta para obter o serviço
+                        <b>sensorManager</b> = (SensorManager) getSystemService(SENSOR_SERVICE);
+                        
+                        // Obter sensor específico
+                        accelerometer = <b>sensorManager</b>.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                    }
+                
+                    @Override
+                    protected void onResume() {
+                        super.onResume();
+                        // Registrar listener
+                        <b>sensorManager</b>.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+                    }
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Assinale a alternativa que <b>NÃO</b> contém um sensor comumente presente em smartphones:</p>
+                <ul>
+                    <li><b>a. Sensor de temperatura.</b></li>
+                    <li>b. Sensor de umidade.</li>
+                    <li>c. Sensor de proximidade.</li>
+                    <li>d. Sensor de luminosidade.</li>
+                    <li>e. Nenhuma das alternativas.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ❌</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Embora existam sensores de temperatura em alguns smartphones, não são comuns na maioria dos
+                        dispositivos de consumo. Quando presentes, geralmente medem a temperatura interna da
+                        bateria/CPU, não a ambiente.</li>
+                </ul>
+                <p>Exemplo:</p>
+                <pre>
+                SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
+                // Verifica se o sensor de temperatura existe
+                boolean hasTempSensor = manager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE) != null;
+                Toast.makeText(this, "Tem sensor de temperatura? " + hasTempSensor, Toast.LENGTH_SHORT).show();
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Objeto responsável por encapsular as informações de um evento ocasionado por um sensor:</p>
+                <ul>
+                    <li>a. ManagerSensor.</li>
+                    <li>b. EventSensor.</li>
+                    <li>c. Sensor.</li>
+                    <li><b>d. SensorEvent.</b></li>
+                    <li>e. SensorManager.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+
+                <ul>
+                    <li>O que é SensorEvent?</li>
+                    <ul>
+                        <li>Classe do Android que contém os dados brutos do sensor quando ocorre uma mudança</li>
+                        <li>Armazena:</li>
+                        <ul>
+                            <li>Valores do sensor (<b>values[]</b>)</li>
+                            <li>Tipo de sensor (<b>sensor</b>)</li>
+                            <li>Precisão (<b>accuracy</b>)</li>
+                            <li>Timestamp (<b>timestamp</b>)</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <p>Exemplo:</p>
+                <pre>
+                @Override
+                public void onSensorChanged(<b>SensorEvent</b> event) {
+                    // event é uma instância de <b>SensorEvent</b>
+                    float x = event.values[0]; // Dados do sensor
+                    int type = event.sensor.getType(); // Tipo (ex: ACCELEROMETER)
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Métodos abstratos que precisam ser sobrescritos ao implementar a interface SensorEventListener na
+                    classe.</p>
+                <ul>
+                    <li>a. onUpdated() e onAccuracyChanged().</li>
+                    <li><b>b. onSensorChanged() e onAccuracyChanged().</b></li>
+                    <li>c. onDeleted() e onAccuracyChanged().</li>
+                    <li>d. onSensorChanged() e onUpdated().</li>
+                    <li>e. onSensorChanged() e onCreated().</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Ao implementar a interface SensorEventListener no Android, você deve sobrescrever estes dois
+                        métodos:</li>
+                    <ul>
+                        <li>onSensorChanged(SensorEvent event)</li>
+                        <ul>
+                            <li>Chamado quando os valores do sensor mudam</li>
+                            <li>Fornece os dados atualizados via objeto SensorEvent</li>
+                        </ul>
+                        <li>Exemplo:</li>
+                        <pre>
+                        @Override
+                        public void <b>onSensorChanged</b>(SensorEvent event) {
+                            float x = event.values[0]; // Valor do eixo X (para acelerômetro)
+                        }
+                        </pre>
+                        <li>onAccuracyChanged(Sensor sensor, int accuracy)</li>
+                        <ul>
+                            <li>Chamado quando a precisão do sensor muda</li>
+                            <li>Níveis comuns: SENSOR_STATUS_ACCURACY_LOW, SENSOR_STATUS_ACCURACY_MEDIUM, etc.</li>
+                        </ul>
+                        <li>Exemplo:</li>
+                        <pre>
+                        @Override
+                        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                            if (accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
+                                Log.w("Sensor", "Dados não confiáveis");
+                            }
+                        }
+                        </pre>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Método responsável por obter o sensor padrão para um determinado tipo:</p>
+                <ul>
+                    <li>a. getSensor().</li>
+                    <li><b>b. getDefaultSensor().</b></li>
+                    <li>c. getSystemService().</li>
+                    <li>d. getSystemSensor().</li>
+                    <li>e. getSensorEvent().</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O método <b>getDefaultSensor()</b> pertence à classe <b>SensorManager</b> e é usado para obter o
+                        sensor padrão de um tipo específico. Aqui está como ele funciona:</li>
+                    <ul>
+                    </ul>
+                    <li>Sintaxe:</li>
+                    <pre>Sensor sensor = sensorManager.<b>getDefaultSensor</b>(Sensor.TYPE_ACCELEROMETER);</pre>
+                    <li>Parâmetros:</li>
+                    <ul>
+                        <li>Recebe uma constante que representa o tipo de sensor (ex: <b>Sensor.TYPE_ACCELEROMETER</b>,
+                            <b>Sensor.TYPE_LIGH</b>T)
+                        </li>
+                    </ul>
+                    <li>Retorno:</li>
+                    <ul>
+                        <li>Retorna uma instância de <b>Sensor</b> correspondente ao tipo solicitado</li>
+                        <li>Retorna <b>null</b> se o sensor não estiver disponível no dispositivo</li>
+                    </ul>
+                </ul>
+                <p>Exemplo completo:</p>
+                <pre>
+                <b>SensorManager</b> sensorManager = (<b>SensorManager</b>) getSystemService(SENSOR_SERVICE);
+                Sensor lightSensor = sensorManager.<b>getDefaultSensor</b>(Sensor.TYPE_LIGHT);
+
+                if (lightSensor != null) {
+                    // Sensor disponível, pode registrar o listener
+                    sensorManager.registerListener(this, lightSensor, <b>SensorManager</b>.SENSOR_DELAY_NORMAL);
+                } else {
+                    // Sensor não disponível neste dispositivo
+                    Toast.makeText(this, "Sensor de luminosidade não disponível", Toast.LENGTH_SHORT).show();
+                }
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Classe base utilizada para gerenciar a criação e o gerenciamento de versões de banco de dados SQLite.
+                </p>
+                <ul>
+                    <li><b>a. SQLiteOpenHelper.</b></li>
+                    <li>b. SQLiteCursor.</li>
+                    <li>c. SQLiteProgram.</li>
+                    <li>d. SQLite.</li>
+                    <li>e. SQLiteStatement.</li>
+                </ul>
+
+                <b class="answer">Resposta: d. ❌</b>
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>SQLiteOpenHelper é a classe base do Android para gerenciar bancos de dados SQLite, responsável
+                        por:</li>
+                    <ul>
+                        <li>Criação do banco de dados</li>
+                        <li>Atualização de versão</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Tipos de dados suportados pelo SQLite:</p>
+                <ul>
+                    <li>a. Integer.</li>
+                    <li>b. Real. </li>
+                    <li>c. Text.</li>
+                    <li>d. Blob.</li>
+                    <li><b>e. Todas as alternativas estão corretas.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: e. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O SQLite suporta os seguintes tipos de dados nativos (conhecidos como "storage classes"),
+                        conforme documentação oficial:</li>
+                    <ul>
+                        <li>Números inteiros com sinal (1, 2, 3, 4, 6 ou 8 bytes)</li>
+                        <li>Números de ponto flutuante (8-byte IEEE)</li>
+                        <li>Strings de caracteres (codificação UTF-8, UTF-16BE ou UTF-16LE)</li>
+                        <li>Dados binários (armazenados exatamente como inseridos)</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Acelerômetro, Giroscópio e Magnetômetro são tipos de sensores de movimento presentes nos smartphones
+                    cujos eventos podem ser tratados nos aplicativos.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Os três sensores mencionados (Acelerômetro, Giroscópio e Magnetômetro) são de fato sensores de
+                        movimento comumente presentes em smartphones Android e iOS, e seus eventos podem ser tratados em
+                        aplicativos.</li>
+                    <ul>
+                        <li>Acelerômetro</li>
+                        <ul>
+                            <li>Mede a aceleração linear (incluindo a gravidade) nos eixos X, Y e Z.</li>
+                        </ul>
+                        <li>Giroscópio</li>
+                        <ul>
+                            <li>Mede a velocidade angular (rotação) nos eixos X, Y e Z.</li>
+                        </ul>
+                        <li>Magnetômetro (Sensor de Campo Magnético)</li>
+                        <ul>
+                            <li>Detecta o campo magnético da Terra (bússola).</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Classe que oferece vários métodos para acessar e listar sensores, registrar e cancelar o registro de
+                    listeners de eventos do sensor e coletar informações de orientação.</p>
+                <ul>
+                    <li>a. Sensor.</li>
+                    <li><b>b. SensorManager.</b></li>
+                    <li>c. SensorEvent.</li>
+                    <li>d. SensorEventListener.</li>
+                    <li>e. SensorChannel.</li>
+                </ul>
+
+                <b class="answer">Resposta: b. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A classe SensorManager é o componente central do Android para interação com sensores. Ela
+                        fornece:</li>
+                    <ul>
+                        <li>Acesso aos sensores disponíveis:</li>
+                        <pre>List &lt;Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);</pre>
+                        <li>Registro de listeners:</li>
+                        <pre>sensorManager.registerListener(listener, sensor, rate);</pre>
+                        <li>Cancelamento de listeners:</li>
+                        <pre>sensorManager.unregisterListener(listener);</pre>
+                        <li>Obtenção do sensor padrão:</li>
+                        <pre>Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);</pre>
+                        <li>Métodos de orientação (depreciados, mas ainda relevantes):</li>
+                        <pre>
+                        float[] rotationMatrix = new float[9];
+                        sensorManager.getRotationMatrix(rotationMatrix, null, accelerometerData, magnetometerData);
+                        </pre>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 13 de jun de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
