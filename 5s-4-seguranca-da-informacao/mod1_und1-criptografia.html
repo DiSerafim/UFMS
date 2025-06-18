@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança da Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 – Segurança da informação</h1>
+        <h2>💡 Unidade 1 - Criptografia.</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>Segurança da Informação.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/bPLb_XBTeZQ" frameborder="0"
+                    title="[UFMS Digital] Segurança da Informação - Módulo 2 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Segurança da Informação - Módulo 2 - Unidade 1">[UFMS Digital]
+                Segurança da Informação - Módulo 2 - Unidade 1</p>
+
+            <p>Prof° ministrante: Dionisio Machado Leite Filho.</p>
+        </section>
+
+        <section>
+            <h2>Introdução.</h2>
+            <p>Sistemas de comunicação como a Internet são controlados por computadores em rede, pelos quais a
+                informação trafega desde a origem onde ela está armazenada ou foi criada até o destino onde o
+                solicitante da informação se encontra.</p>
+            <p>Muitas vezes há mais de um computador que repassa a informação entre a origem e o destino, principalmente
+                quando estão geograficamente distantes.</p>
+            <p>Problemas de sigilo e autenticidade</p>
+        </section>
+
+        <section>
+            <h2>Modelos de modificação de informação.</h2>
+            <img src="img/nodelo-de-modificacao-de-informacao.png" alt="nodelo-de-modificacao-de-informacao"
+                title="nodelo-de-modificacao-de-informacao">
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Criptografia.</h2>
+            <p>Algoritmos criptográficos basicamente objetivam esconder informações sigilosas de qualquer pessoa
+                desautorizada a lê-las, isto é, de qualquer pessoa que não conheça a chamada chave secreta de
+                criptografia.</p>
+            <p>Conjunto de princípios e técnicas para cifrar a escrita, torná-la ininteligível para os que não tenham
+                acesso às convenções combinadas.</p>
+        </section>
+
+        <section>
+            <h2>Criptografia simétrica.</h2>
+            <ul>
+                <li>Também chamada de criptografia convencional ou criptografia de chave única;</li>
+                <li>Remetente e destinatário compartilham uma chave comum;</li>
+                <li>Todos os algoritmos de criptografia clássicos são chaves privadas;</li>
+                <li>Antes da criação da chave pública, nos anos 1970, era o único tipo de criptografia em uso;</li>
+                <li>Esse continua sendo, de longe, o mais usado dos dois tipos de criptografia.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Termos básicos.</h2>
+            <ul>
+                <li><b>Texto claro:</b> mensagem ou dados originais</li>
+                <li><b>Texto cifrado:</b> mensagem embaralhada, produzida como saída.</li>
+                <li><b>Cifra</b> – algoritmo para transformar texto claro em cifrado;</li>
+                <li><b>Chave</b> – informação usada na cifra, conhecida somente pelo remetente e pelo destinatário;</li>
+                <li><b>Cifrar</b> (criptografar) - converter texto claro em cifrado;</li>
+                <li><b>Decifrar</b> (decriptografar) – recuperar um texto claro a partir do texto cifrado.</li>
+                <li><b>criptografia</b> – estudo dos princípios e métodos da criptografia;</li>
+                <li><b>criptoanálise</b> (quebra de código) – estudo dos princípios e métodos para decifrar um texto
+                    criptografado sem o conhecimento da chave;</li>
+                <li><b>criptologia</b> – abrange as áreas de criptografia e criptoanálise.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelo de chave simétrica.</h2>
+            <img src="img/modelo-de-chave-simetrica.jpeg" alt="modelo-de-chave-simetrica"
+                title="modelo-de-chave-simetrica">
+            <p></p>
+            <figcaption>https://repository-images.githubusercontent.com/282247852/51e62280-cdb6-11ea-9d80-18b09d0c3841
+            </figcaption>
+        </section>
+
+        <section>
+            <h2>Requisitos.</h2>
+            <p>Há dois requisitos para o uso seguro da criptografia convencional: um algoritmo de criptografia forte e
+                uma chave secreta conhecida somente pelo emissor e pelo receptor;</p>
+            <ul>
+                <li>Matematicamente, temos:</li>
+                <ul>
+                    <li>Y = EK(X)</li>
+                    <li>X = DK(Y)</li>
+                </ul>
+                <li>pressupõe que o algoritmo de criptografia seja conhecido;</li>
+                <li>implica um canal seguro de distribuição de chave.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Caracterização.</h2>
+            <ul>
+                <li>Um sistema de criptografia é caracterizado por:</li>
+                <ul>
+                    <li>Tipo de operações de criptografia usadas:</li>
+                    <ul>
+                        <li>substituição / transposição / produto;</li>
+                    </ul>
+                    <li>Número de chaves usadas:</li>
+                    <ul>
+                        <li>Chave única ou privada / duas chaves ou chave pública;</li>
+                    </ul>
+                    <li>Modo pelo qual o texto claro é processado:</li>
+                    <ul>
+                        <li>bloco / fluxo.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Criptoanálise.</h2>
+            <ul>
+                <li>Tem por objetivo a recuperação da chave, além da mensagem;</li>
+                <li>Técnicas gerais:</li>
+                <ul>
+                    <li>Ataque criptoanalítico;</li>
+                    <ul>
+                        <li>Apenas texto cifrado:</li>
+                        <ul>
+                            <li>somente algoritmo e texto cifrado conhecidos, é estatístico, conhece ou pode identificar
+                                texto claro;</li>
+                        </ul>
+                        <li>Texto claro conhecido:</li>
+                        <ul>
+                            <li>texto claro e texto cifrado conhecido/suspeito;</li>
+                        </ul>
+                        <li>Texto claro escolhido:</li>
+                        <ul>
+                            <li>seleciona o texto claro e obtém texto cifrado.</li>
+                        </ul>
+                        <li>Texto cifrado escolhido:</li>
+                        <ul>
+                            <li>seleciona texto cifrado e obtém texto claro;</li>
+                        </ul>
+                        <li>Texto escolhido:</li>
+                        <ul>
+                            <li>seleciona o texto claro ou cifrado para criptografar ou descriptografar.</li>
+                        </ul>
+                    </ul>
+                    <li>Ataque por força bruta.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Cifras de substituição clássicas.</h2>
+            <p>Em que as letras de texto claro são substituídas por outras letras ou por números ou símbolos;</p>
+            <p>Texto claro for visto como uma sequência de bits, então a substituição envolve substituir padrões de bits
+                de texto claro por padrões de bits de texto cifrado.</p>
+            <b>Cifra de César</b>
+            <img src="img/cifra-de-cesar.png" alt="cifra-de-cesar" title="cifra-de-cesar">
+            <figcaption>
+                https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjddIQuozF5VeLmv7Y7IKS6mtgRexaTO71IwWQRhsauiZk1BbJdumgNnwuLzTf5bywBIQwHczn1nGbw2NcLbSVcIt8V55wurRG0SDKB4k1kX9H2fR2kxLMe4gjw5NrYEXMBjUpn/s1600/Cifra+de+Cesar.png
+            </figcaption>
+            <ul>
+                <li>Cifra mais antiga de que temos conhecimento;</li>
+                <li>Usada primeiramente para fins militares;</li>
+                <li>Substitui cada letra pela que fica três posições adiante no alfabeto;</li>
+                <li>Exemplo:</li>
+                <ul>
+                    <li>MEET ME AFTER THE TOGA PARTY</li>
+                    <ul>
+                        <li>PHHW PH DIWHU WKH WRJD SDUWB</li>
+                    </ul>
+                </ul>
+                <li>Matematicamente, dá a cada letra um número:</li>
+                <li>a b c d e f g h i j k l m n o p q r s t u v w x y z</li>
+                <li>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25</li>
+                <li>os algoritmos de César são:</li>
+                <li>c = E(p) = (p + k) mod (26)</li>
+                <li>p = D(c) = (c – k) mod (26)</li>
+            </ul>
+            <b>Cifra monoalfabética</b>
+            <img src="img/cifra-monoalfabetica.png" alt="Cifra monoalfabética" title="cifra monoalfabética">
+            <figcaption>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ROT13.png/330px-ROT13.png</figcaption>
+            <ul>
+                <li>Não somente desloca o alfabeto;</li>
+                <li>Poderia embaralhar as letras arbitrariamente;</li>
+                <li>Cada letra de texto claro mapeia para uma letra de texto cifrado aleatória;</li>
+                <li>Assim a chave pode ter até 26 letras de extensão;</li>
+                <li>Exemplo: texto plano: “Um texto a ser cifrado”</li>
+                <li>chave: “cifra”</li>
+                <li>Umtextoasercifrado</li>
+                <li>cifracifracifracifraci</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>STALLINGS, William. Criptografia e segurança de redes: princípios e práticas. 6. ed. São Paulo:
+                Pearson,2015.1 recurso online. ISBN 9788543005898.</cite>
+            <cite>TERADA, Routo. Segurança de dados: criptografia em redes de computador. 2. São Paulo: Blucher, 2008. 1
+                recurso online. ISBN 9788521215400.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
