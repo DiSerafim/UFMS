@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança da Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 – Segurança da informação</h1>
+        <h2>💡 Unidade 2 - Comunicação segura.</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>Segurança da Informação.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CRrMWctoWEs" frameborder="0"
+                    title="[UFMS Digital] Segurança da Informação - Módulo 2 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Segurança da Informação - Módulo 2 - Unidade 2">[UFMS Digital]
+                Segurança da Informação - Módulo 2 - Unidade 2</p>
+
+            <p>Prof° ministrante: Dionisio Machado Leite Filho.</p>
+        </section>
+
+        <section>
+            <h2>Contextualização.</h2>
+            <p>A comunicação segura passa tanto pelos protocolos que compõem a rede como pelas aplicações em geral.</p>
+            <p>Há a falsa impressão que apenas a utilização de criptografia resolve todos os problemas da comunicação
+                segura.</p>
+            <p>Lembrar que a segurança reside em disponibilidade, integridade e confiabilidade.</p>
+            <b>Contexto geral da rede</b>
+            <img src="img/contexto-geral-de-rede.webp" alt="contexto-geral-de-rede." title="contexto-geral-de-rede.">
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Vulnerabilidades do TCP/IP.</h2>
+            <img src="img/syn-flood-attack-diagram.avif" alt="ataque syn" title="ataque syn">
+            <figcaption>https://www.akamai.com/site/pt/images/article/2022/syn-flood-attack-diagram.png</figcaption>
+            <p>TCP/IP - anos 1980, segurança não era uma prioridade, já que quase todos os envolvidos se conheciam ou
+                trabalhavam para o governo, para uma grande empresa ou para uma universidade.</p>
+            <p>1990 - a segurança tornou-se um problema sério devido às vulnerabilidades do TCP/IP e ao aumento
+                considerável de sistemas que utilizam a Internet.</p>
+            <p>Algumas vulnerabilidades: falsificação de IP, sequestro de conexão, ataques de ICMP, ataques TCP SYN e
+                ataques de RIP.</p>
+            <ul>
+                <li><b>Falsificação de IP</b> é uma técnica na qual os agressores enviam pacotes para a vítima ou focam
+                    um computador, utilizando um endereço de origem falso.</li>
+                <img src="img/falsificacao-de-ip.png" alt="Falsificação de IP" title="Falsificação de IP">
+                <p></p>
+                <li><b>Adivinhação de sequenciamento</b> - handshake de três passos, o computador de origem envia um
+                    número de sequenciamento para o computador destino como parte do pacote SYN inicial. O computador
+                    destino cria seu próprio número de sequenciamento e o entrega ao computador de origem.</li>
+                <li><b>Sequestro de conexão</b> - controlar uma conexão existente entre os computadores de origem e
+                    destino, usando o sequestro de conexão. Para isso, o agressor dessincroniza uma série de pacotes
+                    entre o computador de origem e o destino. Pacotes extras enviados a uma das vítimas com os mesmos
+                    números de sequenciamento dos pacotes autênticos forçam a vítima a escolher qual aceitar.</li>
+                <img src="img/sequestro-de-conexao.webp" alt="Sequestro de conexão" title="Sequestro de conexão">
+                <p></p>
+                <li><b>Ataque de ICMP</b> - os pacotes são usados para enviar informações de conexão fraudulentas
+                    visando DoS.</li>
+                <img src="img/ataque-icmp.avif" alt="Ataque de ICMP" title="Ataque de ICMP">
+                <figcaption>https://www.akamai.com/site/pt/images/article/2022/what-is-an-icmp-flood-attack-image.png
+                </figcaption>
+                <p>...</p>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Assinatura digital.</h2>
+            <ul>
+                <li>Uma assinatura digital permite comprovar a autenticidade e a integridade de uma informação.</li>
+                <li>A assinatura digital baseia-se no fato de que apenas o dono conhece a <b>chave privada</b>.</li>
+                <li>A verificação da assinatura é feita com o uso da chave pública, pois se o texto foi codificado com a
+                    chave privada, somente a chave pública correspondente pode decodificá-lo.</li>
+                <li>A <b>chave pública</b> pode ser livremente divulgada.</li>
+            </ul>
+            <img src="img/assinatura-digital.png" alt="Assinatura Digital" title="Assinatura Digital">
+            <figcaption>
+                https://www.researchgate.net/profile/Pedro-Henriques-5/publication/268356742/figure/fig7/AS:669423811710990@1536614482540/Figura-23-Processo-de-verificacao-de-assinatura-digital.ppm
+            </figcaption>
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Certificado digital.</h2>
+            <p>O certificado digital é um documento eletrônico que contém dados sobre a pessoa ou entidade que o utiliza
+                para comprovação mútua de autenticidade.</p>
+            <p>Com a função parecida a de um RG ou CPF, permite que uma transação realizada via internet torne-se
+                perfeitamente segura, já que as partes envolvidas deverão apresentar mutuamente suas credenciais,
+                comprovando suas identidades.</p>
+            <p>Usuário tem a opção de utilizar sua assinatura digital, garantindo, numa troca de documentos,
+                autenticação, sigilo e integridade de conteúdo.</p>
+            <img src="img/certificado-digital.gif" alt="Certificado digital" title="Certificado digital">
+            <figcaption>https://consultasaj.tjam.jus.br/WebHelp/figuras/esquema2.gif</figcaption>
+            <p>..</p>
+        </section>
+
+        <section>
+            <h2>Autoridade certificadora.</h2>
+            <p>No Brasil, o órgão da autoridade certificadora raiz é o ICP-Brasil (AC-Raiz).</p>
+            <p>Outras autoridades certificadoras: Serpro (AC-SERPRO), Caixa Econômica Federal (AC-CAIXA), Serasa
+                Experian (AC-SERASA), Receita Federal do Brasil, (AC-RFB), Certisign (AC-Certisign), Imprensa Oficial do
+                Estado de São Paulo (AC-IOSP), Autoridade Certificadora da Justiça (AC-JUS), Autoridade Certificadora da
+                Presidência da República (AC-PR) e Casa da Moeda do Brasil (AC-CMB).</p>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>BASTA, Alfred; BASTA, Nadine; BROWN, Mary. Segurança de computadores e teste de invasão. São Paulo:
+                Cengage Learning, 2014. 1 recurso online. ISBN 9788522121366. </cite>
+            <cite>MACHADO, Felipe Nery Rodrigues. Segurança da informação: princípios e controle de ameaças. São Paulo:
+                Erica, 2019. 1 recurso online. (Eixos). ISBN 9788536531212.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 18 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
