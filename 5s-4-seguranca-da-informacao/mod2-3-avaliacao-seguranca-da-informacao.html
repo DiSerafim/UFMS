@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEGURANÇA DA INFORMAÇÃO</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Segurança da informação</h1>
+        <h2>✅ [A2] Avaliação</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SEGURANÇA DA INFORMAÇÃO.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em quinta, 19 jun 2025, 20:42</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em quinta, 19 jun 2025, 21:22</li>
+                <li>⏳ Tempo empregado 40 minutos 35 segundos</li>
+                <li>🎯 Avaliar 9,00 de um máximo de 10,00(90%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <p>Associe os termos a seguir com a sua definição:</p>
+                <pre>
+                Mensagem ou dados originais <b>(...)</b>.
+                Algoritmo para transformar texto claro em cifrado <b>(...)</b>.
+                Mensagem embaralhada, produzida como saída <b>(...)</b>.
+                Informação usada na cifra, conhecida somente pelo remetente e pelo destinatário <b>(...)</b>.
+                </pre>
+                <p>Opções: Texto claro, Cifra, Texto cifrado, Chave.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Mensagem ou dados originais <b>Texto claro</b>.
+                Algoritmo para transformar texto claro em cifrado <b>Cifra</b>.
+                Mensagem embaralhada, produzida como saída <b>Texto cifrado</b>.
+                Informação usada na cifra, conhecida somente pelo remetente e pelo destinatário <b>Chave</b>.
+                </pre>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Identificação de ativos (classificação de dados sensíveis)</li>
+                    <li>Atribuição de valores (definir criticidade)</li>
+                    <li>Políticas de segurança (controles para proteger a Tríade CIA)</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Como é chamado o método criptográfico que gera um resultado único e de tamanho fixo,
+                    independentemente do tamanho da informação original?</p>
+                <ul>
+                    <li>a. Criptografia de chave simétrica.</li>
+                    <li>b. Cifra de César.</li>
+                    <li>c. Algoritmo de substituição.</li>
+                    <li><b>d. Função de resumo (hash).</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Uma função de resumo (hash) é um método criptográfico que:</li>
+                    <ul>
+                        <li>Gera um <b>resultado único</b> (digest) de tamanho fixo (ex.: SHA-256 sempre produz 256
+                            bits).</li>
+                        <li>É <b>determinístico</b>: a mesma entrada sempre produz o mesmo hash.</li>
+                        <li><b>Não é reversível</b>: não permite recuperar os dados originais a partir do hash.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <p>Como um sistema de criptografia pode ser caracterizado?</p>
+                <ul>
+                    <li>a. Pelo número de operações de criptografia usadas e pelo tamanho das chaves.</li>
+                    <li>b. Pelo tipo de operações de criptografia usadas e pela complexidade dos algoritmos utilizados.
+                    </li>
+                    <li>c. Pelo tamanho das chaves e pela complexidade dos algoritmos utilizados.</li>
+                    <li><b>d. Pelo tipo de operações de criptografia usadas e pelo número de chaves usadas.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Um sistema de criptografia é caracterizado principalmente por dois aspectos fundamentais:</li>
+                    <ol>
+                        <li>Tipo de operações de criptografia usadas:</li>
+                        <ul>
+                            <li>Substituição: Troca de unidades do texto claro por unidades do texto cifrado (ex.: Cifra
+                                de César).</li>
+                            <li>Transposição: Reordenação das unidades do texto claro (ex.: permutação de colunas).</li>
+                            <li>Operações modernas: Combinações complexas como XOR, substituição-permutação (ex.: AES).
+                            </li>
+                        </ul>
+                        <li>Número de chaves usadas:</li>
+                        <ul>
+                            <li>Criptografia simétrica: Usa uma única chave (ex.: AES, DES).</li>
+                            <li>Criptografia assimétrica: Usa par de chaves (pública/privada) (ex.: RSA, ECC).</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>Entre as vulnerabilidades do TCP/IP estão ataques TCP SYN, falsificação de IP, sequestro de
+                    conexão, ataques de RIP e ataques de ICMP.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O conjunto de protocolos TCP/IP (base da internet) possui vulnerabilidades conhecidas, incluindo
+                        os ataques mencionados:</li>
+                    <ol>
+                        <li>Ataque TCP SYN (SYN Flood):</li>
+                        <ul>
+                            <li>Explora o three-way handshake do TCP, enviando múltiplos SYN sem completar a conexão,
+                                sobrecarregando o servidor.</li>
+                        </ul>
+                        <li>Falsificação de IP (IP Spoofing):</li>
+                        <ul>
+                            <li>Ataque onde o invasor envia pacotes com endereço IP de origem falsificado para mascarar
+                                sua identidade ou simular outra máquina.</li>
+                        </ul>
+                        <li>Sequestro de conexão (Session Hijacking):</li>
+                        <ul>
+                            <li>Interceptação de uma sessão TCP legítima através do roubo de cookies/session IDs ou
+                                injeção de pacotes.</li>
+                        </ul>
+                        <li>Ataques de RIP (Routing Information Protocol):</li>
+                        <ul>
+                            <li>Protocolo de roteamento vulnerável a anúncios falsos de rotas, redirecionando tráfego
+                                para máquinas maliciosas.</li>
+                        </ul>
+                        <li>Ataques de ICMP (ex.: Ping of Death, Smurf Attack):</li>
+                        <ul>
+                            <li>Explora mensagens ICMP para causar negação de serviço (DoS) ou mapeamento de rede.</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Qual é a responsabilidade principal do Protocolo de Internet (IP)?</p>
+                <ul>
+                    <li>a. Garantir a entrega dos pacotes ao destino.</li>
+                    <li>b. Validar os pacotes de dados.</li>
+                    <li>c. Estabelecer conexões entre computadores.</li>
+                    <li><b>d. Enviar dados de um computador de origem para um computador destino.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O Protocolo de Internet (IP) tem como função principal:</li>
+                    <ul>
+                        <li>Roteamento de pacotes: Encaminhar dados (na forma de pacotes) da origem ao destino com base
+                            em endereços IP.</li>
+                        <li>Entrega best-effort: O IP não garante que os pacotes chegarão (isso é função de protocolos
+                            como TCP), apenas faz o possível para entregá-los.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>A informação trafega por computadores em rede, desde a origem até o destino, ao longo da Internet
+                    passando por diferentes dispositivos.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A afirmação descreve corretamente como os dados trafegam na Internet:</li>
+                    <ol>
+                        <li>Da origem ao destino:</li>
+                        <ul>
+                            <li>Quando você envia dados (ex.: um e-mail ou acesso a um site), as informações são
+                                divididas em pacotes que viajam desde seu dispositivo (origem) até o servidor ou
+                                dispositivo de destino.</li>
+                        </ul>
+                        <li>Passando por diferentes dispositivos:</li>
+                        <ul>
+                            <li>Os pacotes transitam por uma série de roteadores, switches e, em alguns casos, firewalls
+                                ou outros dispositivos de rede, que encaminham os dados com base em endereços IP e
+                                tabelas de roteamento.</li>
+                        </ul>
+                        <li>Internet como rede de redes:</li>
+                        <ul>
+                            <li>A Internet é uma interconexão de redes heterogêneas, onde os pacotes podem percorrer
+                                múltiplos autonomous systems (AS) até chegar ao destino.</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>O conjunto de princípios e técnicas para cifrar a escrita, torná-la ininteligível para os que não
+                    tenham acesso às convenções combinadas é chamado de:</p>
+                <ul>
+                    <li>a. Criptoanálise.</li>
+                    <li>b. Criptologia.</li>
+                    <li>c. Cripto-algoritmo.</li>
+                    <li><b>d. Criptografia.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A criptografia é definida como:</li>
+                    <ul>
+                        <li>O conjunto de princípios e técnicas para transformar dados legíveis (texto claro) em formato
+                            ilegível (texto cifrado), usando algoritmos e chaves.</li>
+                        <li>Objetivo: Garantir confidencialidade, tornando a informação acessível apenas a quem possui
+                            as "convenções combinadas" (ex.: chaves criptográficas).</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>Como é realizada a verificação da assinatura digital?</p>
+                <ul>
+                    <li>a. A verificação é feita com o uso da chave privada do destinatário.</li>
+                    <li>b. A verificação é feita com o uso da chave privada do remetente.</li>
+                    <li><b>c. A verificação é feita com o uso da chave pública do remetente.</b></li>
+                    <li>d. A verificação é feita com o uso da chave pública do destinatário.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A assinatura digital segue um processo assimétrico baseado em criptografia de chave pública:
+                    </li>
+                    <ol>
+                        <li>Assinatura (remetente):</li>
+                        <ul>
+                            <li>O remetente cria um hash (resumo criptográfico) da mensagem.</li>
+                            <li>Cifra esse hash com sua chave privada (isso gera a assinatura digital).</li>
+                        </ul>
+                        <li>Verificação (destinatário):</li>
+                        <ul>
+                            <li>O destinatário decifra a assinatura usando a chave pública do remetente para obter o
+                                hash original.</li>
+                            <li>Gera um novo hash a partir da mensagem recebida e compara com o hash decifrado.</li>
+                            <li>Se forem iguais, a assinatura é autêntica e a mensagem não foi alterada.</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>Qual é o termo que descreve o processo em que as letras do texto claro são substituídas por outras
+                    letras, números ou símbolos, ou onde o texto claro é visto como uma sequência de bits e substituído
+                    por padrões de bits de texto cifrado?</p>
+
+                <ul>
+                    <li>a. Criptografia de chave pública</li>
+                    <li>b. Criptoanálise.</li>
+                    <li>c. Substituição monoalfabética.</li>
+                    <li><b>d. Criptografia de substituição.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O termo "criptografia de substituição" descreve exatamente o processo mencionado na pergunta:
+                    </li>
+                    <ul>
+                        <li>Substituição de unidades do texto claro (letras, números, bits) por outras unidades do texto
+                            cifrado, seguindo regras fixas ou dinâmicas.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>Quando a função de hashing está envolvida, um algoritmo de criptografia é usado. A assinatura digital
+                    é o valor hash criptografado de uma mensagem.</p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ❌</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>A afirmação descreve corretamente o processo básico de criação de uma assinatura digital usando
+                        funções de hashing e criptografia assimétrica:</li>
+                    <ol>
+                        <li>Função de Hashing:</li>
+                        <ul>
+                            <li>Gera um resumo único (hash) da mensagem (ex.: SHA-256).</li>
+                            <li>Este hash é de tamanho fixo e representa a mensagem de forma irreversível.</li>
+                        </ul>
+                        <li>Criptografia do Hash:</li>
+                        <ul>
+                            <li>O hash é criptografado com a chave privada do remetente (não com um algoritmo
+                                simétrico).</li>
+                            <li>Isso produz a assinatura digital, que só pode ser verificada com a chave pública
+                                correspondente.</li>
+                        </ul>
+                    </ol>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 19 de Jun de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
