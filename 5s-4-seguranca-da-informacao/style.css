@@ -327,3 +327,30 @@ footer {
 .next-material:hover {
   background-color: #3e8e41;
 }
+
+/* Cifra de César */
+.cont {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+textarea,
+input,
+button {
+  white-space: pre-wrap;
+  max-width: 90%;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.result {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEGURANÇA DA INFORMAÇÃO.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Segurança da informação.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>SEGURANÇA DA INFORMAÇÃO.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você aprendeu sobre criptografia e alguns de seus algoritmos, bem como comunicação segura.
+            </p>
+            <p>Dentro desse contexto está a criptografia que é, sem dúvida, algo que chama atenção na área de segurança.
+                Sendo assim, visite a Seção 2.1 - “Modelo de cifra simétrica” e a Seção 2.2 - “Técnicas de Substituição”
+                do Capítulo 2 - “Técnicas clássicas de encriptação” do Livro de STALLINGS, William. Criptografia e
+                segurança de redes: princípios e práticas. 6. ed. São Paulo: Pearson, 2015. 1 recurso online. ISBN
+                9788543005898. (Disponível na Biblioteca Digital da UFMS).</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Realize a seguinte atividade:</p>
+            <ol>
+                <li>Desenvolva um algoritmo de criptografia com base na leitura disponibilizada. Para esta atividade, a
+                    sugestão é que você desenvolva um algoritmo de substituição por deslocamento (cifra de César) ou um
+                    algoritmo de chave simples.</li>
+                <li>Desenvolva também o algoritmo para descriptografar. A sugestão é que você utilize a lógica inversa.
+                </li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Cifra de César</b>
+            <p>Algoritmo de substituição por deslocamento.</p>
+            <div class="cont">
+                <div>
+                    <label for="texto">Texto:</label>
+                    <textarea id="texto" rows="4" cols="50"></textarea>
+                </div>
+
+                <div>
+                    <label for="deslocamento">Deslocamento:</label>
+                    <input type="number" id="deslocamento" value="3" min="1" max="25">
+                </div>
+
+                <div>
+                    <button onclick="criptografar()">Criptografar</button>
+                    <button onclick="descriptografar()">Descriptografar</button>
+                </div>
+
+                <div class="result">
+                    <strong>Resultado:</strong>
+                    <div id="resultado">.</div>
+                </div>
+            </div>
+
+            <script>
+                function cifraCesar(texto, deslocamento, operacao) {
+                    let resultado = "";
+                    for (let index = 0; index < texto.length; index++) {
+                        let letra = texto[index];
+
+                        if (letra.match(/[a-z]/i)) {
+                            const base = letra === letra.toUpperCase() ? "A".charCodeAt(0) : "a".charCodeAt(0);
+                            const codigo = letra.charCodeAt(0);
+
+                            // Aplica o deslocamento
+                            let novoCodigo = "";
+
+                            if (operacao === "criptografar") {
+                                novoCodigo = (codigo - base + deslocamento) % 26 + base;
+                            } else {
+                                novoCodigo = (codigo - base - deslocamento + 26) % 26 + base;
+                            }
+
+                            resultado += String.fromCharCode(novoCodigo);
+                        } else {
+                            resultado += letra;
+                        }
+                    }
+                    return resultado;
+                }
+
+                function criptografar() {
+                    const texto = document.getElementById("texto").value;
+                    const deslocamento = parseInt(document.getElementById("deslocamento").value);
+                    const textoCriptografado = cifraCesar(texto, deslocamento, "criptografar");
+                    document.getElementById("resultado").textContent = textoCriptografado;
+                }
+
+                function descriptografar() {
+                    const texto = document.getElementById("texto").value;
+                    const deslocamento = parseInt(document.getElementById("deslocamento").value);
+                    const textoCriptografado = cifraCesar(texto, deslocamento, "descriptografar");
+                    document.getElementById("resultado").textContent = textoCriptografado
+                }
+            </script>
+            <p>Explicação:</p>
+            <ul>
+                <li>Criptografia:</li>
+                <ul>
+                    <li>Cada letra é deslocada N posições para frente.</li>
+                </ul>
+                <li>Descriptografia:</li>
+                <ul>
+                    <li>Cada letra é deslocada N posições para trás.</li>
+                </ul>
+                <li>Mantém maiúsculas, minúsculas e ignora números.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 19 de Jun de 2025</p>
+    </footer>
+</body>
+
+</html>
