@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança da Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Prevenção de ataques</h1>
+        <h2>💡 Unidade 1 - Autenticação e autorização.</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>Segurança da Informação.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ipEvc8MxJsQ" frameborder="0"
+                    title="[UFMS Digital] Segurança da Informação - Módulo 3 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Segurança da Informação - Módulo 3 - Unidade 1">[UFMS Digital]
+                Segurança da Informação - Módulo 3 - Unidade 1</p>
+
+            <p>Prof° ministrante: Dionisio Machado Leite Filho.</p>
+        </section>
+
+        <section>
+            <h2>Introdução.</h2>
+            <ul>
+                <li>Regras de acesso às redes, sistemas e bancos de dados armazenados em servidores de uma rede.</li>
+                <li>Padrões de procedimentos, por meio da utilização de ferramentas que possam bloquear ao máximo
+                    ataques externos aos computadores da rede.</li>
+                <li>Políticas que estabeleçam os critérios para identificar quem internamente está utilizando os
+                    recursos de uma rede de computadores, bem como o registro de quando e o que foi executado ou
+                    realizado.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Controle de acesso.</h2>
+            <p>Gerenciamento da visualização de informações e da utilização dos recursos digitais de uma rede de
+                computadores.</p>
+            <ul>
+                <li>Considerando as propriedades da segurança da informação - confidencialidade, integridade e
+                    disponibilidade.</li>
+                <li>Prevenir a visualização não autorizada dos dados (<b>confidencialidade</b>); impedir qualquer
+                    modificação não autorizada de dados (<b>integridade</b>). Assegurar que os dados sejam acessado por
+                    entes autorizados (<b>disponibilidade</b>).</li>
+                <li>Controle de acessos deve observar dois pontos: a identificação do usuário que se conecta em uma rede
+                    e sua autenticidade.</li>
+                <li>Para que um usuário seja capaz de acessar um recurso de uma rede, deve ser determinado se essa
+                    pessoa é quem ela diz ser.</li>
+                <li>Credenciais necessárias.</li>
+                <li>Direitos e privilégios necessários para executar as ações desejadas.</li>
+            </ul>
+            <b>Exemplo - controle</b>
+            <img src="img/controle.png" alt="controle" title="controle">
+            <p></p>
+            <b>Identificação</b>
+            <ul>
+                <li>Identidade => verificada durante o processo de autenticação.</li>
+                <li>Autenticação - processo de duas etapas: primeiro a inserção de informações consideradas públicas (um
+                    nome de usuário, número de funcionário, ou número de conta, identificação de um departamento, ou uma
+                    característica biométrica) e depois a inserção de algum tipo de informação privada (senha).</li>
+                <li>Nomes de usuários de rede baseados no nome próprio do funcionário, porém criando regras de formação
+                    deste formato de nome.</li>
+            </ul>
+            <b>Identificação - nomes</b>
+            <img src="img/nomes.png" alt="Identificação - nomes" title="Identificação - nomes">
+            <p>...</p>
+            <b>Identificação - biometria</b>
+            <img src="img/biometria.png" alt="Identificação - biometria" title="Identificação - biometria">
+            <p>...</p>
+            <b>Autenticação</b>
+            <ul>
+                <li>Existem três tipos gerais de autenticação para uma pessoa: algo que ela saiba, algo que ela possua,
+                    algo que ela seja.</li>
+                <li>Senha, PIN (como em alguns telefones celulares), o nome da mãe ou segredo tipo de cofre.</li>
+                <li>A desvantagem deste método é que uma terceira pessoa pode obter o conhecimento dessa senha e ter
+                    acesso não autorizado a um sistema.</li>
+            </ul>
+            <b>Autenticação - rede</b>
+            <img src="img/autenticacao.png" alt="Autenticação - rede" title="Autenticação - rede">
+            <p>...</p>
+            <ul>
+                <li>Como trocar informação entre dois nós de rede de forma segura? Criptografia.</li>
+                <li>Troca de chaves - Diffie-Hellman.</li>
+                <li>Com base em números primos grandes.</li>
+                <li>TA = G^SA mod p</li>
+                <li>TB = G^SB mod p</li>
+                <li>Princípio utilizado pelo RSA.</li>
+            </ul>
+            <b>Autenticação - rede - firewall</b>
+            <ul>
+                <li>Firewall - mecanismo de segurança realizado em hardware ou software (mais utilizado).</li>
+                <li>Implementa um conjunto de regras ou instruções.</li>
+                <li>Faz a análise do tráfego de rede. </li>
+                <li>Determina de acordo com as regras implementadas quais são as operações de transmissão ou recepção de
+                    dados que podem ser executadas.</li>
+                <li>Um firewall é uma ferramenta que suporta e reforça uma política de segurança de rede.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>MACHADO, Felipe Nery Rodrigues. Segurança da informação: princípios e controle de ameaças. São Paulo:
+                Erica, 2019. 1 recurso online. (Eixos). ISBN 9788536531212.</cite>
+            <p></p>
+            <cite>TERADA, Routo. Segurança de dados: criptografia em redes de computador. 2. São Paulo: Blucher, 2008. 1
+                recurso online. ISBN 9788521215400.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
