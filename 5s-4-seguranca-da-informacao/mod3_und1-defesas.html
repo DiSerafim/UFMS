@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança da Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 – Ambientes seguros</h1>
+        <h2>💡 Unidade 1 - Defesas.</h2>
+        <p>Prof° Especialista: Dionisio Machado Leite Filho.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>Segurança da Informação.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Ph6g5VcSZRE" frameborder="0"
+                    title="[UFMS Digital] Segurança da Informação - Módulo 4 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Segurança da Informação - Módulo 4 - Unidade 1">[UFMS Digital]
+                Segurança da Informação - Módulo 4 - Unidade 1</p>
+
+            <p>Prof° ministrante: Dionisio Machado Leite Filho.</p>
+        </section>
+
+        <section>
+            <h2>Tratando incidentes.</h2>
+            <ul>
+                <li>Incidente - evento que teste as soluções de segurança em funcionamento em uma rede.</li>
+                <li>Um incidente de segurança pode ter um ou mais resultados e, entre as consequências negativas da
+                    ocorrência de um incidente, estão a fraude, o vazamento de informações ou a destruição de recursos
+                    de uma rede.</li>
+                <li>Solução - sistemas de detecção de intrusão (IDSs) e firewall.</li>
+            </ul>
+            <b>Identificação</b>
+            <ul>
+                <li>A execução de um processo incomum, usando os recursos da rede (DoS).</li>
+                <li>Um padrão nas reclamações de empregados sobre o mau funcionamento do computador.</li>
+                <li>Um aumento incomum na solicitação de recursos, resultando na redução de velocidade de uma rede.</li>
+                <li>Uma solicitação de autenticação por um endereço IP que não faz parte da rede.</li>
+            </ul>
+            <b>Procedimentos</b>
+            <ul>
+                <li>Segurança em camadas, envolvendo vários controles preventivos.</li>
+                <li>Implementação de ferramentas de monitoramento adequadas na rede.</li>
+                <li>Armazenamento de arquivos confidenciais em uma área segura.</li>
+                <li>Leitura dos registros de sistema para todos os recursos na rede, regularmente, coletando informações
+                    de vários registros e comparando-as em busca de possíveis ataques.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Firewall.</h2>
+            <p>Firewall é um mecanismo de segurança realizado em hardware ou software que possui/implementa um conjunto
+                de regras ou instruções.</p>
+            <ul>
+                <li>Faz a análise do tráfego de rede. </li>
+                <li>Determina quais são as operações de transmissão ou recepção de dados que podem ser executadas. </li>
+                <li>“Parede de fogo” - barreira de defesa.</li>
+                <li>As ações de um firewall têm basicamente duas regras: </li>
+                <ul>
+                    <li>Todo tráfego é bloqueado, exceto o que está explicitamente autorizado; </li>
+                    <li>Todo tráfego é permitido, exceto o que está explicitamente bloqueado.</li>
+                </ul>
+                <li>Podem atuar como reforço nos procedimentos de autenticação de usuários.</li>
+                <li>Filtragem de pacotes; Firewall de aplicação ou proxy de serviços (Proxy); Filtro de conteúdo.</li>
+            </ul>
+            <img src="img/firewal.png" alt="firewal" title="Firewall">
+            <figcaption>
+                https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuCvJ2ehmiKiJ5XbmfuaxirsSa923pDSF5sTINen4m7gSEzM6H
+            </figcaption>
+            <p></p>
+        </section>
+
+        <section>
+            <h2>Antivírus</h2>
+            <ul>
+                <li>Programa de computador que detecta, evita e atua na neutralização ou remoção de programas
+                    mal-intencionados, tais como vírus, backdoors, rootkits, trojans, worms, adwares e spywares, entre
+                    outros.</li>
+                <li>Possui banco de dados próprio, onde estão armazenadas as informações a respeito das ameaças
+                    encontradas nos mais diversos ambientes virtuais - assinaturas de vírus.</li>
+                <li>Informações atualizadas diária e constantemente, a partir de pesquisa e acompanhamento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Análise heurística.</h2>
+            <ul>
+                <li>Conjunto de técnicas para identificar vírus desconhecidos.</li>
+                <li>Programas maliciosos podem utilizar padrão de nomes de vírus específicos para o que é detectado pela
+                    heurística.</li>
+                <li>Análise heurística - capacidade de novos vírus serem detectados antes mesmo de o fabricante de
+                    antivírus poder detê-los e atualizar o seu programa com as novas informações para a detecção dessa
+                    “novidade”.</li>
+                <li>Outro método de capturar novos vírus é a verificação de integridade.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Arquivos executáveis.</h2>
+            <ul>
+                <li>Arquivos que realizam comandos. </li>
+                <li>Eles não são necessariamente um vírus ou uma ameaça.</li>
+                <li>Grande parte dos programas são arquivos executáveis. </li>
+                <li>O próprio sistema operacional tem seus programas executáveis. </li>
+                <li>As extensões comuns para esses arquivos são EXE, BAT, SCR, DLL e COM.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Funções dos programas antivírus.</h2>
+            <ul>
+                <li>Identificar e eliminar uma boa quantidade de vírus;</li>
+                <li>Analisar os arquivos de downloads; </li>
+                <li>Verificar continuamente os discos rígidos do computador e mídias removíveis de forma transparente ao
+                    usuário;</li>
+                <li>Procurar e detectar vírus, spywares e trojans em arquivos anexados aos e-mails; </li>
+                <li>Criar um disco de verificação (disco de boot) que poderá ser utilizado caso algum vírus seja mais
+                    esperto e anule o antivírus instalado no computador.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>BASTA, Alfred; BASTA, Nadine; BROWN, Mary. Segurança de computadores e teste de invasão. São Paulo:
+                Cengage Learning, 2014. 1 recurso online. ISBN 9788522121366.</cite>
+            <p></p>
+            <cite>MACHADO, Felipe Nery Rodrigues. Segurança da informação: princípios e controle de ameaças. São Paulo:
+                Erica, 2019. 1 recurso online. (Eixos). ISBN 9788536531212.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de jun de 2025</p>
+    </footer>
+</body>
+
+</html>
