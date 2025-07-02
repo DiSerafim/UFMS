@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 – Teste de Software</h1>
+        <h2>💡 Unidade 1 - Técnicas de Teste de Software.</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PhL04K8zM-w" frameborder="0"
+                    title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 2 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 2 - Unidade 1">
+                [UFMS Digital] Verificação, Validação e Teste de Software - Módulo 2 - Unidade 1</p>
+
+            <p>Prof° ministrante: Leonardo Souza Silva.</p>
+        </section>
+
+        <section>
+            <h2>Em nossa última aula.</h2>
+            <ul>
+                <li>Teste é o processo de executar um programa com a intenção de encontrar erros;</li>
+                <li>Deve ser conduzido de maneira sistemática;</li>
+                <li>Terminologia:</li>
+                <ul>
+                    <li>Defeito, Erro e Falha;</li>
+                </ul>
+            </ul>
+            <p>Mostram que o software tem erro, mas não provam que ele nunca falhará. Testes bem planejados podem
+                remover em média 60% dos defeitos de um programa.</p>
+        </section>
+
+        <section>
+            <h2>Atividade de Teste</h2>
+            <img src="img/atividade-de-teste.png" alt="atividade-de-teste.png" title="atividade-de-teste.png">
+            <figcaption>
+                https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSIvE1nARdODFe7OoJv2fYFE8wvdwpxWsTfci9qcyvHwk5T-27n
+            </figcaption>
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Defeitos no processo de desenvolvimento.</h2>
+            <ul>
+                <li>Gerados na comunicação e na transformação de informações;</li>
+                <li>A maioria se encontra em partes do código raramente; executadas;</li>
+                <li>Quanto mais cedo o defeito for revelado, menor o custo de correção do defeito e maior a
+                    probabilidade de correção adequada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Fases do Teste de Software.</h2>
+            <ul>
+                <li>Teste de Unidade;</li>
+                <li>Teste de Integração, e</li>
+                <li>Teste de Sistema.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Etapas do Teste de Software.</h2>
+            <ul>
+                <li>Planejamento;</li>
+                <li>Projeto de Casos de Teste;</li>
+                <li>Execução do Programa com os Casos de Teste;</li>
+                <li>Análise dos Resultados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Caso de Teste.</h2>
+            <ul>
+                <li>Especificação de uma entrada para um software e a correspondente saída esperada.</li>
+                <ul>
+                    <li>Entrada — Conjunto de dados necessários para execução;</li>
+                    <li>Saída esperada — Resultado da execução do programa.</li>
+                </ul>
+                <li>Bom caso de teste:</li>
+                <ul>
+                    <li>Aquele que tem alta probabilidade de revelar um erro.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste Funcional - Critérios.</h2>
+            <ul>
+                <li>Particionamento de Equivalência;</li>
+                <li>Análise do Valor Limite;</li>
+                <li>Grafo Causa-Efeito;</li>
+                <li>Error guessing;</li>
+                <li>Outros</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projeto de Casos de Teste.</h2>
+            <ul>
+                <li>Pode ser tão difícil quanto o projeto do produto;</li>
+                <li>Bom mecanismo para a prevenção de defeitos;</li>
+                <li>Eficaz em identificar erros;</li>
+                <li>Características desejáveis:</li>
+                <ul>
+                    <li>Deve ser finito e ter custo de aplicação razoável.</li>
+                </ul>
+                <li>Condução de maneira sistemática e planejada.</li>
+                <ul>
+                    <li>Técnica - como devemos aplicar os testes?</li>
+                    <li>Critério - quando devemos parar de aplicar os testes.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Técnicas e Critérios de Teste.</h2>
+            <ul>
+                <li>Necessário usar um subconjunto reduzido de D(P);</li>
+                <ul>
+                    <li>Um subdomínio de D(P) é um subconjunto do domínio de entrada que contém "dados semelhantes".
+                    </li>
+                    <ul>
+                        <li>Exemplo → Rotina que valida um CPF.</li>
+                    </ul>
+                </ul>
+                <li>Ao estabelecer subdomínios de D(P) reduzimos o conjunto T ao mesmo tempo, em que representamos seus
+                    elementos.</li>
+                <li>Outra alternativa: teste aleatório.</li>
+                <ul>
+                    <li>Grande número de casos de teste;</li>
+                    <li>Representação probabilística.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Critérios de Teste de Software.</h2>
+            <ul>
+                <li>Funcional:</li>
+                <ul>
+                    <li>Requisitos funcionais.</li>
+                </ul>
+                <li>Estrutural:</li>
+                <ul>
+                    <li>Estrutura interna do programa.</li>
+                </ul>
+                <li>Baseado em Erros (ou Defeitos):</li>
+                <ul>
+                    <li>Erros mais frequentes cometidos durante o processo de desenvolvimento.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste Funcional.</h2>
+            <ul>
+                <li><b>Caixa-preta</b> (do inglês: Black Box).</li>
+                <li>Conhecendo a especificação de função de um produto executa e demonstra a correta operação baseado
+                    somente na especificação, não se preocupando com aspectos de lógica interna.</li>
+                <li>Procurar descobrir:</li>
+                <ul>
+                    <li>Funções incorretas ou ausentes, erros de interface, erros nas estruturas de dados ou no acesso a
+                        BD, dentre outros.</li>
+                </ul>
+            </ul>
+            <b>Teste Funcional - Critérios</b>
+            <ul>
+                <li>Particionamento de Equivalência;</li>
+                <li>Análise do Valor Limite;</li>
+                <li>Grafo Causa-Efeito;</li>
+                <li>Error guessing;</li>
+                <li>Outros</li>
+            </ul>
+            <b>Teste Funcional — Aplicação</b>
+            <ul>
+                <li>Identificar classes de equivalência;</li>
+                <ul>
+                    <li>Condições de entrada; e</li>
+                    <li>Classes válidas e inválidas.</li>
+                </ul>
+                <li>Definir os casos de Teste:</li>
+                <ul>
+                    <li>Enumerar as classes de equivalência;</li>
+                    <li>Casos de teste para as classes válidas; e</li>
+                    <li>Casos de teste para as classes inválidas.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste Estrutural.</h2>
+            <ul>
+                <li>Caixa-branca (do inglês: White Box).</li>
+                <li>Conhecendo os detalhes internos de um produto, testes são executados para verificar a execução de
+                    todas as estruturas que compõe os caminhos lógicos.</li>
+                <li>Casos de teste visam percorrer todos os caminhos internos possíveis de um programa.</li>
+                <ul>
+                    <li>Verificam condições e/ou laços, e</li>
+                    <li>Definições e uso das variáveis.</li>
+                </ul>
+                <li>Maioria dos critérios utiliza uma representação de programa</li>
+                <ul>
+                    <li>Grafo de Fluxo de Controle (GFC) ou Grafo de Programa.</li>
+                </ul>
+                <li>Grafo é uma estrutura matemática composta por vértices (nós) e arcos (arestas).</li>
+                <ul>
+                    <li>Grafo de Programa → G = (N, E, s)</li>
+                    <ul>
+                        <li>N representa o conjunto de nós,</li>
+                        <li>E conjunto de arcos,</li>
+                        <li>s o nó de entrada.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Teste Estrutural — Grafo de Programa</b>
+            <ul>
+                <li>Nós → Blocos “indivisíveis”</li>
+                <ul>
+                    <li>Sem desvio para o meio do bloco;</li>
+                    <li>Uma vez que o primeiro comando do bloco é executado, os demais comandos são executados
+                        sequencialmente.</li>
+                </ul>
+                <li>Arestas ou Arcos:</li>
+                <ul>
+                    <li>Representam o fluxo de controle entre os nós.</li>
+                </ul>
+            </ul>
+            <img src="img/grafo.jpg" alt="grafo" title="grafo">
+            <figcaption>
+                https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixBvZqlIISzU5ZnKTW3vaMFD6bUwUTpDMP_QRxPUNbj-zEvOO3ZpCWPvM8IZlKdjQ-eINmP3qikGgRvhFBoE6jH2f66OL1RwE4NdayFcc7nX5dDSC91T5yR_vfDcYWcsLsiGw3wxAQi-ai/s320/image006-700710.jpg
+            </figcaption>
+            <p>...</p>
+            <b>Teste Estrutural — Critérios</b>
+            <ul>
+                <li>Baseados em Fluxo de Controle</li>
+                <ul>
+                    <li>Todos-nós, todas-arestas e todos-caminhos.</li>
+                </ul>
+                <li>Baseados em Fluxo de Dados</li>
+                <ul>
+                    <li>Rapps e Weyuker</li>
+                    <ul>
+                        <li>Todas-defs, todos-usos, todos-p-usos, dentre outros.</li>
+                    </ul>
+                    <li>Maldonado</li>
+                    <ul>
+                        <li>Todos-potenciais-usos, todos-potenciais-usos/DU, outros.</li>
+                    </ul>
+                </ul>
+                <li>Baseados em Complexidade</li>
+                <ul>
+                    <li>Critério de MacCabe.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste Baseado em Erros (ou Defeitos)</h2>
+            <ul>
+                <li>Defeitos típicos são usados na definição dos requisitos de teste.</li>
+                <ul>
+                    <li>O programa a ser testado é alterado diversas vezes, criando um conjunto de programas
+                        alternativos (mutantes).</li>
+                    <ul>
+                        <li>Defeitos são inseridos no programa original.</li>
+                    </ul>
+                </ul>
+                <li>Requisitos são derivados a partir dos erros frequentemente cometidos durante o processo de
+                    desenvolvimento.</li>
+                <li>Casos de teste devem mostrar diferença de comportamento entre o programa original e os programas
+                    mutantes.</li>
+                <li>Critérios</li>
+                <ul>
+                    <li>Semeadura de Erros,</li>
+                    <li>Teste de Mutação</li>
+                    <ul>
+                        <li>Análise de Mutantes (unidade);</li>
+                        <li>Mutação de Interface (integração).</li>
+                    </ul>
+                </ul>
+                <li>Hipótese do Programador Competente</li>
+                <ul>
+                    <li>Um programa, produzido por um programador experiente, está correto ou está “próximo” do correto
+                        (desvios sintáticos).</li>
+                </ul>
+                <li>Efeito do Acoplamento</li>
+                <ul>
+                    <li>Casos de teste capazes de revelar erros simples, podem revelar erros mais complexos.</li>
+                </ul>
+                <li>Aplicação do Teste de Mutação</li>
+                <ul>
+                    <li>Geração dos mutantes;</li>
+                </ul>
+            </ul>
+            <img src="img/mutantes.png" alt="mutantes" title="mutantes">
+            <p>...</p>
+            <ul>
+                <li>Aplicação do Teste de Mutação</li>
+                <ul>
+                    <li>Execução do programa em teste;</li>
+                    <li>Execução dos mutantes;</li>
+                    <ul>
+                        <li>Mutante morto e mutante vivo;</li>
+                    </ul>
+                    <li>Análise dos mutantes.</li>
+                    <ul>
+                        <li>Mutante equivalente;</li>
+                        <li>Inclusão de novos casos de teste;</li>
+                        <li>Escore de mutação</li>
+                    </ul>
+                </ul>
+                <li>Escore de mutação</li>
+                <pre>
+                ms(P,T) = DM(P,T) / M(P) - EM(P)
+
+                Fonte: Delamaro (2016)
+                </pre>
+                <li>Onde:</li>
+                <ul>
+                    <li>DM(P,T): número de mutantes mortos pelo conjunto de casos de teste T;</li>
+                    <li>M(P): número total de mutantes gerados a partir do programa P; e</li>
+                    <li>EM(P): número de mutantes gerados que são equivalentes a P.</li>
+                </ul>
+            </ul>
+            <p>Exemplo</p>
+            <pre>
+            void main()
+            {
+            int x, y, pow;
+            float z, ans;
+
+                scanf("%d %d", &x, &y);
+                if (y >= 0)
+                    pow = y;
+                else
+                    pow = -y;
+                z = 1;
+                while (pow-- > 0)
+                Z = Z * X;
+                if (y < 0)
+                    z = 1 / z;
+                ans = z + 1;
+                printf("%-5.2f", ans);
+            }
+
+            Fonte: Delamaro (2016)
+            </pre>
+            <ul>
+                <li>Operadores de mutação (Delamaro, 2016):</li>
+                <ul>
+                    <li>SSDL: eliminação de comandos;</li>
+                    <li>ORRN: troca de operador relacional;</li>
+                    <li>STRI: armadilha em condição de comando if; e</li>
+                    <li>Vsrr: troca de variáveis escalares.</li>
+                </ul>
+            </ul>
+            <img src="img/operador-orrn.png" alt="operador-ORRN" title="operador-ORRN">
+            <p>...</p>
+            <img src="img/operador-orrn1.png" alt="operador-ORRN" title="operador-ORRN">
+            <p>...</p>
+            <img src="img/operador-orrn2.png" alt="operador-ORRN" title="operador-ORRN">
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Nesta aula...</h2>
+            <ul>
+                <li>Entendemos a Atividade e as Fases do Teste de Software.</li>
+                <ul>
+                    <li>Reforçamos a importância dos requisitos.</li>
+                    <li>Projeto de Casos de Teste.</li>
+                </ul>
+                <li>Conhecemos as Técnicas e Critérios de Teste de Software.</li>
+                <ul>
+                    <li>Funcional, Estrutural e Baseado em Erros (ou Defeitos).</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>BARBOSA, Ellen Francine et al. Introdução ao teste de software. João Pessoa: UFRJ/CEFET, 2000, Anais Simpósio Brasileiro de Engenharia de Software (SBES).</cite>
+            <p></p>
+            <cite>DELAMARO, Márcio Eduardo. Introdução ao teste de software. 2. Rio de Janeiro: GEN LTC, 2016. 1 recurso online. (SBC (Sociedade Brasileira de Computação)). ISBN 9788595155732.  Capítulo 1. Disponível na 
+                Biblioteca Digital da UFMS. 
+                </cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 01 de jul de 2025</p>
+    </footer>
+</body>
+
+</html>
