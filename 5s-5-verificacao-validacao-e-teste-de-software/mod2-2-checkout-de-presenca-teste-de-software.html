@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Teste de Software.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <p>Neste módulo, você teve uma visão mais detalhada do processo de Teste de Software e agora sabe os passos
+                envolvidos no processo de teste de um software, os tipos de teste e, principalmente, a planejar a
+                atividade de teste de software.</p>
+            <p>Agora você já aprendeu a importância que os Requisitos de Software possuem para a atividade de Teste de
+                Software, em especial para o Planejamento de Casos de Teste, por isso, convido você a praticar esses
+                conceitos, a partir da situação do cenário apresentado a seguir:</p>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Realize a seguinte atividade:</p>
+            <ul>
+                <li>Cenário: Uma rotina do programa de folha de pagamento irá calcular o pagamento semanal dos
+                    trabalhadores de uma empresa tendo como entrada a quantidade de horas trabalhadas pelo funcionário e
+                    o valor pago pela hora de trabalho. O Analista do Sistema informou para você que a regra de negócio
+                    estabelecida para a rotina é a de que um trabalhador não pode trabalhar mais do que 40 horas
+                    semanais e, que, o valor pago pela hora trabalhada varia de $10 até $50 inclusive.</li>
+                <li>A partir do cenário apresentado você deve:</li>
+                <ol>
+                    <li>Estabelecer o conjunto de requisitos que devem ser observados pela rotina, anote esses
+                        requisitos na sua resposta.</li>
+                    <li>Construir um conjunto de casos de teste para execução dos testes funcionais da rotina
+                        mencionada, não esqueça de anotar na sua resposta os casos de teste que você planejou,
+                        sinalizando qual a saída esperada.</li>
+                </ol>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>...</b>
+            <ol>
+                <li>Estabelecer o conjunto de requisitos que devem ser observados pela rotina, anote esses requisitos na
+                    sua resposta.</li>
+                <ul>
+                    <li>Rotina</li>
+                    <ol>
+                        <li>Quantidade de horas trabalhadas pelo funcionário <= 40 horas semanais.</li>
+                        <li>Valor pago pela hora de trabalho varia de $10 até $50.</li>
+                        <li>Pagamento semanal:</li>
+                        <ul>
+                            <li>total = horasTrabalhadas * valorHora.</li>
+                        </ul>
+                        <li>Não pode trabalhar mais do que 40 horas semanais.</li>
+                    </ol>
+                </ul>
+                <li>Construir um conjunto de casos de teste para execução dos testes funcionais da rotina mencionada,
+                    não esqueça de anotar na sua resposta os casos de teste que você planejou, sinalizando qual a saída
+                    esperada.</li>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Caso de teste</th>
+                            <th>Horas trabalhadas</th>
+                            <th>Valor hora</th>
+                            <th>Saída esperada</th>
+                            <th>Resultado esperado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>40</td>
+                            <td>50</td>
+                            <td>40 * 50</td>
+                            <td>$2000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>35</td>
+                            <td>25</td>
+                            <td>35 * 25</td>
+                            <td>$875</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>10</td>
+                            <td>0 * 10</td>
+                            <td>$0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>41</td>
+                            <td>20</td>
+                            <td>Erro</td>
+                            <td>Número de horas excedente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ol>
+            <ul>
+                <li>Estes casos de testes cobrem</li>
+                <ul>
+                    <li>Valores válidos</li>
+                    <li>Valores inválidos</li>
+                </ul>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de Jun de 2025</p>
+    </footer>
+</body>
+
+</html>
