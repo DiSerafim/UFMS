@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 2 - Teste de Software.</h1>
+        <h2>✅ [A2] Avaliação</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+        <p>Fecha: sábado, 12 jul 2025, 23:59</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE..
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>📅 Iniciado em quinta, 3 jul 2025, 20:09</li>
+                <li>✅ Estado Finalizada</li>
+                <li>📅 Concluída em quinta, 3 jul 2025, 21:08</li>
+                <li>⏳ Tempo empregado 59 minutos 19 segundos</li>
+                <li>🎯 Avaliar 10,00 de um máximo de 10,00(100%)</li>
+            </ul>
+        </section>
+        <section id="conteudo">
+            <h2>Questionário ✅ ❌</h2>
+            <section class="question">
+                <h3>Pergunta 1</h3>
+                <pre>
+                Relacione a fase da atividade de teste com o seu objetivo.
+                Foco nas menores unidades de um programa: funções, procedimentos, métodos ou classes (...).
+                Verificar se a interação entre as diversas partes do software funcionam de maneira adequada e nãoleva o software a erros (...).
+                </pre>
+                <p>Opções: Teste de Unidade, Teste de Integração.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                    Foco nas menores unidades de um programa: funções, procedimentos, métodos ou classes <b>Teste de Unidade</b>.
+                    Verificar se a interação entre as diversas partes do software funcionam de maneira adequada e não leva o software a erros <b>Teste de Integração</b>.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 2</h3>
+                <p>Marque a afirmação correta a respeito da introdução de defeitos no processo de desenvolvimento de um
+                    software.</p>
+                <ul>
+                    <li>a. São gerados na comunicação entre a equipe de desenvolvimento.</li>
+                    <li>b. É resultado da tradução incorreta de informações.</li>
+                    <li>c. Quanto antes a presença do defeito for revelada, menor o curso de correção.</li>
+                    <li><b>d. Todas as afirmações estão corretas.</b></li>
+                </ul>
+
+                <b class="answer">Resposta: d. ✅</b>
+                <ul>
+                    <li>Erros de entendimento entre analistas, desenvolvedores e testadores geram defeitos.</li>
+                    <li>Falhas na interpretação de requisitos e na documentação também causam defeitos.</li>
+                    <li>Defeitos detectados no início custam menos para serem corrigidos do que os encontrados nas fases
+                        finais.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 3</h3>
+                <pre>
+                Relacione a técnica de teste de software com a sua descrição:
+                Não considera os detalhes de implementação e o software é avaliado do ponto de vista do usuário (...).
+                Estabelece os requisitos de teste com base em dada implementação, requerendo a execução de partes ou de componentes elementares do programa (...).
+                Utiliza defeitos típicos do processo de implementação de software para serem derivados os requisitos de teste (...).
+                </pre>
+                <p>Opções: Teste Estrutural (Caixa-Branca), Teste Funcional ou (Caixa-Preta), Teste de Mutação.</p>
+
+                <b class="answer">Resposta: ✅</b>
+                <pre>
+                Relacione a técnica de teste de software com a sua descrição:
+                Não considera os detalhes de implementação e o software é avaliado do ponto de vista do usuário <b>Teste Funcional ou (Caixa-Preta)</b>.
+                Estabelece os requisitos de teste com base em dada implementação, requerendo a execução de partes ou de componentes elementares do programa <b>Teste Estrutural (Caixa-Branca)</b>.
+                Utiliza defeitos típicos do processo de implementação de software para serem derivados os requisitos de teste <b>Teste de Mutação</b>.
+                </pre>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 4</h3>
+                <p>No Teste de Software, o critério de análise do valor limite que avalia o comportamento do software
+                    indicando entradas com valores próximos aos limites especificados, valor máximo e mínimo, por
+                    exemplo, é utilizado em qual técnica de teste?</p>
+                <ul>
+                    <li>a. Caixa Branca.</li>
+                    <li>b. Caixa Cinza.</li>
+                    <li><b>c. Caixa Preta.</b></li>
+                    <li>d. Nenhuma das técnicas mencionadas.</li>
+                </ul>
+
+                <b class="answer">Resposta: c. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O critério de Análise de Valores Limite (Boundary Value Analysis) é uma técnica de teste de
+                        Caixa Preta.</li>
+                    <li>Na Caixa Preta, o foco é testar as funcionalidades do sistema conforme os requisitos, sem
+                        conhecimento da implementação interna.</li>
+                    <li>Avalia-se especialmente os limites das entradas e saídas, como valores máximos e mínimos
+                        permitidos, buscando falhas comuns nessas fronteiras.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 5</h3>
+                <p>Os elementos que compõem a descrição de um Caso de Uso e que podem influenciar no projeto de Casos de
+                    Teste são: quem interage com o sistema (ator), o fluxo dos eventos ou ações e as pré e
+                    pós-condições.</p>
+                <p>Escolha uma opção: <b>Verdadeiro</b> ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Os Casos de Uso descrevem como os usuários (atores) interagem com o sistema e são fundamentais
+                        para o desenvolvimento de Casos de Teste, pois fornecem:</li>
+                    <ul>
+                        <li><b>Atores:</b> Quem interage com o sistema;</li>
+                        <li><b>Fluxo de eventos:</b> As ações realizadas durante a interação;</li>
+                        <li><b>Pré-condições:</b> O que deve ser verdadeiro antes da execução do caso de uso;</li>
+                        <li><b>Pós-condições:</b> O que deve ser garantido após a execução.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 6</h3>
+                <p>Selecione a alternativa que não compõem as etapas de Teste de Software.</p>
+                <ul>
+                    <li><b>a. Levantamento de Requisitos.</b></li>
+                    <li>b. Análise dos Resultados.</li>
+                    <li>c. Execução.</li>
+                    <li>d. Projeto de Casos de Teste.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O Levantamento de Requisitos faz parte da fase de Análise de Requisitos no processo de
+                        desenvolvimento de software, não é uma etapa específica do Teste de Software.</li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 7</h3>
+                <p>Selecione o teste no qual os requisitos de teste são derivados a partir dos defeitos frequentemente
+                    cometidos durante o processo de desenvolvimento.</p>
+                <ul>
+                    <li><b>a. Teste Baseado em Defeitos.</b></li>
+                    <li>b. Teste Aleatório.</li>
+                    <li>c. Teste Estrutural.</li>
+                    <li>d. Teste Funcional.</li>
+                </ul>
+
+                <b class="answer">Resposta: a. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Teste Baseado em Defeitos: Tem como objetivo identificar falhas comuns que costumam ocorrer
+                        durante o desenvolvimento. Os requisitos de teste são criados com base no histórico de erros,
+                        defeitos típicos e falhas frequentes encontradas em projetos anteriores ou na prática da equipe.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 8</h3>
+                <p>No contexto do Teste de Software, os Casos de Uso podem apoiar o entendimento dos requisitos
+                    funcionais.</p>
+                <p>Escolha uma opção: <b>Verdadeiro</b> ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Os Casos de Uso são uma técnica amplamente utilizada para descrever os requisitos funcionais de
+                        um sistema. Eles representam interações entre o usuário (ator) e o sistema, mostrando os fluxos
+                        de ações necessários para alcançar um determinado objetivo.</li>
+                    <ul>
+                        <li>Na prática do Teste de Software, os Casos de Uso ajudam a:</li>
+                        <li>Entender o comportamento esperado do sistema;</li>
+                        <li>Identificar cenários de teste baseados nos fluxos normais e alternativos;</li>
+                        <li>Garantir que os requisitos funcionais sejam cobertos pelos testes.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 9</h3>
+                <p>No Teste de Software, o particionamento de equivalência tem por objetivo reduzir o número de casos de
+                    teste, separando as entradas em válidas e inválidas.</p>
+                <p>Escolha uma opção: <b>Verdadeiro</b> ou Falso.</p>
+
+                <b class="answer">Resposta: Verdadeiro. ✅</b>
+
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>O Particionamento de Equivalência é uma técnica de teste de software do tipo Caixa Preta, cujo
+                        objetivo é reduzir o número de casos de teste, sem comprometer a cobertura dos cenários
+                        importantes.</li>
+                    <li>➡️ Essa técnica consiste em dividir as entradas possíveis em classes de equivalência, onde se
+                        assume que testar um valor de cada classe é suficiente para representar o comportamento de todos
+                        os outros valores dessa classe.</li>
+                    <li>As classes são normalmente divididas em:</li>
+                    <ul>
+                        <li>Entradas válidas: valores que o sistema deve aceitar.</li>
+                        <li>Entradas inválidas: valores que o sistema deve rejeitar ou tratar com erro.</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section class="question">
+                <h3>Pergunta 10</h3>
+                <p>O estilo normalmente adotado para o registro do conteúdo de um Caso de Uso é o chamado cenário
+                    principal de sucesso. Dessa forma, não é necessário considerar os fluxos alternativos ou exceções no
+                    projeto de Casos de Teste.</p>
+                <p>Escolha uma opção: Verdadeiro ou <b>Falso</b>.</p>
+
+                <b class="answer">Resposta: Falso. ✅</b>
+                <p>📌 Explicação:</p>
+                <ul>
+                    <li>Embora o cenário principal de sucesso (ou fluxo principal) seja o caminho mais comum e desejado
+                        de execução de um Caso de Uso, os fluxos alternativos e as exceções também são fundamentais no
+                        projeto de Casos de Teste.</li>
+                    <li>Testar apenas o fluxo principal não garante a cobertura completa dos comportamentos esperados do
+                        sistema. É importante testar também:</li>
+                        <ul>
+                            <li>Fluxos alternativos: variações válidas do comportamento principal.</li>
+                            <li>Fluxos de exceção: situações anormais ou erros que o sistema deve tratar adequadamente.</li>
+                        </ul>
+                    <li>Exemplo:</li>
+                    <ul>
+                        <li>Fluxo principal: Login bem-sucedido.</li>
+                        <li>Fluxo alternativo: Usuário esqueceu a senha e usa o recurso “Esqueci minha senha”.</li>
+                        <li>Fluxo de exceção: Usuário digita senha incorreta três vezes e a conta é bloqueada.</li>
+                    </ul>
+                </ul>
+            </section>
+    </main>
+    <footer>
+        <address>
+            <p>&copy; Diego Serafim de Sousa - 03 de Jul de 2025</p>
+        </address>
+    </footer>
+</body>
+
+</html>
