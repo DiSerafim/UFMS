@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Verificação e Validação</h1>
+        <h2>💡 Unidade 2 - Ferramentas e Automação de Testes.</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/h2Fgn3l5aXM" frameborder="0"
+                    title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 2">
+                [UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 2</p>
+            <p>Prof° ministrante: Leonardo Souza Silva.</p>
+        </section>
+
+        <section>
+            <h2>Neste ponto da disciplina...</h2>
+            <ul>
+                <li>Entendemos o que é Qualidade de Software;</li>
+                <li>Compreendemos como as atividades de Verificação, Validação e Teste de Software podem apoiar o
+                    processo de desenvolvimento e manutenção.</li>
+                <ul>
+                    <li>Objetivo é construir um software com qualidade.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ferramentas e Automação de Teste.</h2>
+            <ul>
+                <li>O processo de Teste de Software pode ser apoiado pelo uso de ferramentas:</li>
+                <ul>
+                    <li>Apoio ao Testador na execução do plano de testes;</li>
+                    <li>Implementação de alguns tipos de teste e critérios;</li>
+                    <li>Suporte a diferentes linguagens, e</li>
+                    <li>Automação do processo de teste.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ferramentas de Teste de Software.</h2>
+            <img src="img/ferramenta-de-teste-de-software.png" alt="ferramenta-de-teste-de-software."
+                title="ferramenta-de-teste-de-software.">
+            <p>...</p>
+            <b>JUnit</b>
+            <ul>
+                <li>Framework de teste popular, permite documentar e executar casos de teste de forma automática;</li>
+                <li>Relata quais casos de teste não se comportaram conforme a especificação;</li>
+                <li>Não é possível acompanhar a cobertura do código pelos casos de teste;</li>
+                <li>Pode ser usado mesmo se o bytecode e a especificação do programa estejam disponíveis.</li>
+            </ul>
+            <p><b>JaBUTi</b> (Java Bytecode Understanding and Testing)</p>
+            <ul>
+                <li>Apoia a aplicação de critérios de teste estruturais;</li>
+                <li>Não necessita do código-fonte → bytecode;</li>
+                <li>Pode ser com qualquer linguagem que gere um código objetivo compatível com a especificação da JVM.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>E na prática?</h2>
+            <b>calculaMedia.py (Módulo 1 - Unidade 2)</b>
+            <p>Para demonstrar o funcionamento de uma ferramenta, vamos usar o programa calculaMedia.py e a ferramenta
+                Pytest.</p>
+            <img src="img/calcula-media.png" alt="calcula-media" title="calcula-media">
+            <p>...</p>
+            <p>Ambiente de trabalho que permite escrever, de maneira muito fácil, testes para aplicações e bibliotecas
+                em linguagem Python.</p>
+            <ul>
+                <li>Permite a execução de teste de unidade (Python).</li>
+                <li>Mais informações: <a href="https://docs.pytest.org/en/stable/" target="_blank"
+                        rel="noopener noreferrer">https://docs.pytest.org/en/stable/</a></li>
+            </ul>
+            <b>Passos necessários</b>
+            <ul>
+                <li>Configuração do ambiente;</li>
+                <li>Instalação do Pytest;</li>
+                <li>Construção do programa de teste com os casos de teste.</li>
+                <li>Execução do teste.</li>
+            </ul>
+            <p>A descrição detalhada dos passos seguidos para realização deste teste pode ser encontrada <a href="https://docs.google.com/document/d/1XQeq-x7nmvkQovoDFsPXSMDUm0qMXN_ss5hee_8NVV0/edit?tab=t.0" target="_blank" rel="noopener noreferrer">neste tutorial</a>.</p>
+            <b>Configuração do Ambiente</b>
+            <img src="img/instalacao.png" alt="instalacao" title="instalacao">
+            <p>...</p>
+            <p>Criar os diretórios app e tests</p>
+            <img src="img/instalacao1.png" alt="instalacao" title="instalacao">
+            <p>...</p>
+            <p>Instalação</p>
+            <img src="img/instalacao2.png" alt="instalacao" title="instalacao">
+            <p>...</p>
+            <p>Criação dos Casos de Teste</p>
+            <img src="img/criacao-de-teste.png" alt="criacao-de-teste." title="criacao-de-teste.">
+            <p>...</p>
+            <p>Execução</p>
+            <img src="img/execucao.png" alt="execucao.png" title="execucao.png">
+            <p>...</p>
+            <img src="img/execucao1.png" alt="execucao.png" title="execucao.png">
+            <p>...</p>
+            <img src="img/execucao2.png" alt="execucao.png" title="execucao.png">
+            <p>...</p>
+            <img src="img/execucao3.png" alt="execucao.png" title="execucao.png">
+            <p>...</p>
+            <p>Ex.: calculaMedia.py</p>
+            <ul>
+                <li>Objetivo de dar um primeiro contato com esse tipo de ferramenta;</li>
+                <li>Outras ferramentas surgindo e em uso pelos desenvolvedores de software;</li>
+                <ul>
+                    <li>Cobertura de Código:</li>
+                    <ul>
+                        <li>Coverage, Codecov, dentre outras.</li>
+                    </ul>
+                </ul>
+                <li>Integração com repositórios, por exemplo, GitHub.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Para finalizar...</h2>
+            <ul>
+                <li>Entendemos o uso de ferramentas e da automação na atividade de teste de software.</li>
+                <li>Compreendemos sua importância para o processo de teste e manutenção de software.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>BENNETT, Keith H.; RAJLICH, Václav T. Software maintenance and evolution: a roadmap. In: Proceedings of the Conference on the Future of Software Engineering. 2000. p. 73-87.</cite>
+            <p></p>
+            <cite>DELAMARO, Márcio Eduardo. Introdução ao teste de software. 2. Rio de Janeiro: GEN LTC, 2016. 1 recurso online. (SBC (Sociedade Brasileira de Computação)). ISBN 9788595155732.  Capítulo 1. Disponível na Biblioteca Digital da UFMS. </cite>
+            <p></p>
+            <cite>Pytest - helps you write better programs. Disponível em: https://docs.pytest.org/en/stable/index.html. Acesso em: 25 mar. 2025.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 09 de jul de 2025</p>
+    </footer>
+</body>
+
+</html>
