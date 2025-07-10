@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 3 – Verificação e Validação</h1>
+        <h2>💡 Unidade 1 - Documentação de Teste de Software.</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/g1sJeSFK5wc" frameborder="0"
+                    title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+
+            <p class="title" title="[UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 1">
+                [UFMS Digital] Verificação, Validação e Teste de Software - Módulo 4 - Unidade 1</p>
+            <p>Prof° ministrante: Leonardo Souza Silva.</p>
+        </section>
+
+        <section>
+            <h2>Ao longo da disciplina...</h2>
+            <ul>
+                <li>Entendemos o que é Qualidade de Software;</li>
+                <li>Discutimos as atividades de Verificação, Validação e Teste de Software, e</li>
+                <li>Compreendemos a importância da Documentação de Teste de Software no contexto do processo de
+                    desenvolvimento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Manutenção de Software.</h2>
+            <p>Até o momento, discutimos atividades realizadas ANTES da entrega do software.</p>
+            <pre>
+            “Não importa onde você se encontre no ciclo de vida do sistema, o sistema se modificará, e o desejo de mudá-lo persistirá em todo o ciclo de vida dele” (Pressman)
+            </pre>
+            <ul>
+                <li>Manutenção se caracteriza por ocorrer APÓS a entrega do software.</li>
+                <ul>
+                    <li>Mesmo com qualidade, é preciso realizar manutenção;</li>
+                </ul>
+                <li>Manutenção não é corrigir defeitos;</li>
+                <ul>
+                    <li>Aproximadamente 24% do esforço é correção de defeitos.</li>
+                    <li>Maior esforço: Preventiva e Perfectiva.</li>
+                </ul>
+                <li>Custo é maior do que o custo de desenvolvimento.</li>
+            </ul>
+            <p>Distribuição do Esforço — <b>Manutenção</b></p>
+            <img src="img/distribuicao-de-esforco.png" alt="Distribuição do Esforço" title="Distribuição do Esforço">
+            <p>...</p>
+            <p>Manutenção de Software - <b>Definição</b></p>
+            <p>Processo de modificar um sistema de software ou componente, depois da entrega, para corrigir falhas,
+                melhorar desempenho ou outros atributos, ou adaptar a mudanças no ambiente.</p>
+            <pre>
+                (IEEE Std 620.12)
+            </pre>
+        </section>
+
+        <section>
+            <h2>Tipos de Manutenção de Software.</h2>
+            <ul>
+                <li>Correção</li>
+                <ul>
+                    <li>Corretiva,</li>
+                    <ul>
+                        <li>Corrige defeitos reportados ou identificados a partir do uso do software.</li>
+                    </ul>
+                    <li>Emergencial.</li>
+                    <ul>
+                        <li>Em alguns casos, é preciso reparar/restaurar um software para manter seu funcionamento até
+                            que a manutenção corretiva seja realizada.</li>
+                    </ul>
+                    <li>Preventiva</li>
+                    <ul>
+                        <li>Melhoram a manutenibilidade do software, buscam evitar problemas que poderiam impedir o
+                            funcionamento do software.</li>
+                    </ul>
+                </ul>
+                <li>Evolução</li>
+                <ul>
+                    <li>Adaptativa, e</li>
+                    <ul>
+                        <li>Responde a mudanças no ambiente ou domínio do problema, por exemplo, alterações na
+                            legislação ou a evolução de um SO.</li>
+                    </ul>
+                    <li>Perfectiva</li>
+                    <ul>
+                        <li>Promove melhorias no software, tanto no aspecto funcional como não funcional.</li>
+                    </ul>
+                </ul>
+            </ul>
+            <img src="img/tipos-de-manutencao.png" alt="tipos-de-manutencao" title="tipos-de-manutencao">
+            <p>...</p>
+        </section>
+
+        <section>
+            <h2>Engenharia Reversa.</h2>
+            <p>Processo de analisar o software visando construir uma documentação (descrição de componentes e
+                relacionamentos), diante da ausência de documentos atualizados ou mesmo de documentação do projeto.</p>
+            <ul>
+                <li>Obter uma descrição de alto nível a partir do código.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reengenharia.</h2>
+            <ul>
+                <li>Envolve examinar um software existente, que possua ou não documentação de projeto, visando realizar
+                    uma nova implementação.</li>
+                <ul>
+                    <li>Atualização de tecnologia;</li>
+                    <ul>
+                        <li>Estender a expectativa de uso do sistema;</li>
+                    </ul>
+                    <li>Melhorar futuras manutenções;</li>
+                    <li>Questões contratuais.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Refatoração (Refactoring).</h2>
+            <p>“É uma mudança na estrutura interna do software visando torná-lo mais fácil de entender ou modificar sem
+                alterar o seu comportamento externo”</p>
+            <pre>
+                (Martin Fowler)
+            </pre>
+        </section>
+
+        <section>
+            <h2>Gerenciamento de Configuração de Software.</h2>
+            <ul>
+                <li>As atividades de manutenção acontecem muitas vezes em paralelo às atividades de desenvolvimento.
+                </li>
+                <li>Arte de identificar, organizar e controlar modificações no software que está sendo construído
+                    (Babich).</li>
+                <ul>
+                    <li>Maximizar a produtividade e minimizar ocorrência de erros.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Normas relacionadas.</h2>
+            <ul>
+                <li>NBR ISO/IEC 12207</li>
+                <ul>
+                    <li>Estrutura para processos de ciclo de vida de software.</li>
+                </ul>
+                <li>ISO/IEC 14764</li>
+                <ul>
+                    <li>Gerenciamento do processo de manutenção.</li>
+                </ul>
+                <li>IEEE 1219</li>
+                <ul>
+                    <li>Processo iterativo para o gerenciamento e execução de atividades de manutenção de software.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Desafios.</h2>
+            <ul>
+                <li>Estabilidade da equipe;</li>
+                <li>Responsabilidade contratual;</li>
+                <li>Habilidade do pessoal de manutenção, e</li>
+                <li>Idade e estrutura do sistema.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste de Regressão.</h2>
+            <ul>
+                <li>Não é realizado durante o processo de desenvolvimento.</li>
+                <li>Realizado durante a Manutenção de Software.</li>
+                <ul>
+                    <li>Avaliar se defeitos não foram incluídos.</li>
+                    <li>Mostrar que os novos requisitos, se for o caso, foram implementados adequadamente e que os
+                        requisitos anteriormente testados continuam válidos.</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Para finalizar...</h2>
+            <ul>
+                <li>Manutenção é um processo que ocorre APÓS a entrega do software.</li>
+                <ul>
+                    <li>Atenção aos desafios associados.</li>
+                </ul>
+                <li>Apresentamos o Teste de Regressão.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Referências:</h2>
+            <p></p>
+            <cite>BENNETT, Keith H.; RAJLICH, Václav T. Software maintenance and evolution: a roadmap. In: Proceedings
+                of the Conference on the Future of Software Engineering. 2000. p. 73-87.</cite>
+            <p></p>
+            <cite>DELAMARO, Márcio Eduardo. Introdução ao teste de software. 2. Rio de Janeiro: GEN LTC, 2016. 1 recurso
+                online. (SBC (Sociedade Brasileira de Computação)). ISBN 9788595155732. Capítulo 1. Disponível na
+                Biblioteca Digital da UFMS. </cite>
+            <p></p>
+            <cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo, SP: Pearson, 2018. ISBN 9788543024974.
+                E-book. Capítulo 9. Disponível na Biblioteca Digital da UFMS.</cite>
+            <p></p>
+            <cite>WASHIZAKI, H, eds., Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0,
+                IEEE Computer Society, 2024. Disponível em: www.swebok.org.</cite>
+            <p></p>
+            <cite>ZANIN, Aline; JÚNIOR, Paulo A P.; ROCHA, Breno C.; et al. Qualidade de software. Porto Alegre: SAGAH,
+                2018. E-book. p.42. ISBN 9788595028401. Capítulo Revisão das Técnicas Formais e de Software. Disponível
+                na Biblioteca Digital da UFMS.</cite>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 09 de jul de 2025</p>
+    </footer>
+</body>
+
+</html>
