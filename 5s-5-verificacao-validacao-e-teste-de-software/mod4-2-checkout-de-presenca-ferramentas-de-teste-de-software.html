@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Módulo 4 - Ferramentas de Teste de Software.</h1>
+        <h2>📍 Checkout de Presença</h2>
+        <p>Prof° Especialista: Leonardo Souza Silva.</p>
+    </header>
+    <main>
+        <section id="disciplinas">
+            <h2>Disciplinas</h2>
+            <p>VERIFICAÇÃO, VALIDAÇÃO E TESTE DE SOFTWARE.
+                <span class="status concluida">Concluído</span>
+            </p>
+        </section>
+
+        <section id="materiais">
+            <h2>Materiais</h2>
+            <ul>
+                <li>Neste módulo, você aprendeu sobre manutenção de software e ferramentas automatizadas de teste. Dessa forma, estamos chegando próximo do fim da disciplina de Verificação, Validação e Teste e eu gostaria de convidá-lo a fazer uma última atividade.</li>
+                <li>Foi dada a você a tarefa de testar um programa desenvolvido em linguagem Python que recebe como entrada três valores inteiros. Cada valor corresponde ao lado de um triângulo e a partir dos valores informados na entrada o programa deverá informar qual o tipo de triângulo formado: equilátero — caso os três lados sejam iguais; isósceles — caso o triângulo possua dois lados iguais; e escaleno — caso os três lados sejam diferentes.</li>
+                <li>Código do Programa:</li>
+                <pre>
+                #programa Triangle
+                #  Leitura dos lados
+                print("Problema dos Triangulos\n")
+                ladoA = input('Digite o lado A: ')
+                ladoB = input('Digite o lado B: ')
+                ladoC = input('Digite o lado C: ')
+                #verifica se os valores digitados são válidos
+                if (ladoA.isdigit() and ladoB.isdigit() and ladoC.isdigit()):
+                    #testa os lados dos triangulos
+                    if (ladoA == ladoB) and (ladoA == ladoC):
+                    print("Triangulo EQUILATERO")
+                    elif ((ladoA == ladoB) or (ladoA == ladoC) or (ladoB == ladoC)):
+                    print("Triangulo ISOCELES")
+                    else:
+                    print("Triangulo ESCALENO")    
+                else:
+                    print("Ha pelo menos uma entrada invalida!!!")
+                </pre>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo</h2>
+            <p>Realize a seguinte atividade:</p>
+            <ul>
+                <li>Então, para fecharmos este módulo você deverá:</li>
+                <ol>
+                    <li>Estabelecer os requisitos de software e planejar a atividade de teste para esse programa.</li>
+                    <li>Construir um conjunto de casos de teste que permita a você avaliar o programa.</li>
+                    <li>Executar o plano de teste que você construiu. (orientações a seguir)</li>
+                    <li>Elaborar um parecer sobre o programa testado informando “que não foram encontrados defeitos”, “que foram encontrados” ou mesmo fazendo sugestões, se você julgar necessário, por exemplo, “o programa poderia avisar se a entrada for inválida”.</li>
+                </ol>
+                <li>Para executar o plano de teste construído por você eu sugiro que utilize o Google Colab, para isso, siga os passos abaixo:</li>
+                <ol>
+                    <li>Abra o seu navegador e vá para o endereço: https://colab.google/ ;</li>
+                    <li>Depois clique no botão New Notebook;</li>
+                    <li>Uma nova aba será aberta e o ambiente para execução do código será carregado.</li>
+                    <li>Copie o código acima e cole-o no campo onde há a indicação “Comece a programa ou gere o código com IA”.</li>
+                    <li>Após colar o código, basta clicar no botão à esquerda para executar o código.</li>
+                    <li>Você pode executar o código quantas vezes forem necessárias até cobrir todos os casos de teste planejados para você. IMPORTANTE!!!: Não se esqueça de a cada execução, comparar a saída do programa com a saída esperada por você quando planejou o caso de teste. Faça suas anotações, elas serão importantes na hora de construir o parecer.</li>
+                    <li>Por fim, escreva um parecer dizendo sua avaliação a respeito do programa, se foram revelados defeitos ou não.</li>
+                </ol>
+                <li>Para ajudá-lo a se organizar para essa atividade um documento modelo será disponibilizado, sinta-se à vontade para usá-lo ou modificá-lo. MODELO:</li>
+                <pre>
+                Modelo — Checkout — Módulo 4
+                Requisitos
+                
+                O programa deve receber 3 valores inteiros como entrada, representando os lados de um triângulo.
+                Os valores devem ser numéricos e positivos.
+                O programa deve identificar corretamente o tipo de triângulo:
+                Equilátero: todos os lados iguais.
+                Isósceles: dois lados iguais.
+                Escaleno: todos os lados diferentes.
+
+                O programa deve informar quando a entrada for inválida (caracteres não numéricos).
+
+                (Sugestão de melhoria): atualmente o código não verifica se os lados informados realmente formam um triângulo válido segundo a Regra do Triângulo.
+
+                {Comentário: Os requisitos foram analisados com base no código fornecido. O comportamento esperado foi interpretado a partir das instruções e da lógica do programa.}
+
+                Casos de Teste
+                DOMÍNIO
+                SUBDOMÍNIO
+                EXEMPLO DE CASO DE TESTE
+                SAÍDA ESPERADA
+                SAÍDA
+                
+                Escaleno
+                Válido
+                4,5,6
+                Triângulo ESCALENO
+                Triângulo ESCALENO
+
+                Isósceles
+                Válido
+                5,5,3
+                Triângulo ISÓSCELES
+                Triângulo ISÓSCELES
+
+                Equilátero
+                Válido
+                3,3,3
+                Triângulo EQUILÁTERO
+                Triângulo EQUILÁTERO
+                Não é Triângulo
+
+                Soma de dois lados ≤ terceiro
+                1,2,3
+                (Entrada inválida como triângulo)
+                Triângulo ESCALENO (erro)
+
+                Entradas Inválidas
+                Letras ou símbolos
+
+                'a', 2, 3
+                Ha pelo menos uma entrada inválida!!!
+                Ha pelo menos uma entrada inválida!!!
+
+                Zero ou negativo
+
+                0,5,5
+                (Deveria ser inválido)
+                Triângulo ISÓSCELES (erro)
+
+                Parece
+                O programa reconhece corretamente o tipo de triângulo com base na igualdade dos lados e também trata entradas não numéricas. No entanto, ele não verifica se os valores realmente formam um triângulo válido, segundo a Regra do Triângulo. Além disso, aceita valores zero ou negativos como válidos, o que não faz sentido no contexto de lados de um triângulo.
+                </pre>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <h2>Resolução</h2>
+            <b>Requisitos:</b>
+            <ul>
+                <li>O programa deve receber três valores inteiros positivos como entrada para representar os lados de um triângulo.</li>
+                <li>O programa deve classificar o triângulo como:</li>
+                <ul>
+                    <li>Equilátero - três lados iguais</li>
+                    <li>Isósceles - dois lados iguais</li>
+                    <li>Escaleno - três lados diferentes</li>
+                </ul>
+                <li>O programa também deve informar quando houver entradas inválidas como caracteres não numéricos</li>
+            </ul>
+            <b>Casos de teste:</b>
+            <ul>
+                <li>Triângulo válido:</li>
+                <ul>
+                    <li>Escaleno</li>
+                    <li>Ex. de entrada:</li>
+                    <ul>
+                        <li>4, 5, 6</li>
+                        <ul>
+                            <li>Saída esperada</li>
+                            <ul>
+                                <li>Triângulo ESCALENO</li>
+                            </ul>
+                            <li>Saída obtida</li>
+                            <ul>
+                                <li>Triângulo ESCALENO</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Triângulo válido:</li>
+                <ul>
+                    <li>Isósceles</li>
+                    <li>Ex. de entrada:</li>
+                    <ul>
+                        <li>5, 5, 3</li>
+                        <ul>
+                            <li>Saída esperada</li>
+                            <ul>
+                                <li>Triângulo ISÓSCELES</li>
+                            </ul>
+                            <li>Saída obtida</li>
+                            <ul>
+                                <li>Triângulo ISÓSCELES</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Triângulo válido:</li>
+                <ul>
+                    <li>Equilátero</li>
+                    <li>Ex. de entrada:</li>
+                    <ul>
+                        <li>3, 3, 3</li>
+                        <ul>
+                            <li>Saída esperada</li>
+                            <ul>
+                                <li>Triângulo EQUILÁTERO</li>
+                            </ul>
+                            <li>Saída obtida</li>
+                            <ul>
+                                <li>Triângulo EQUILÁTERO</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Não é um triângulo:</li>
+                <ul>
+                    <li>Soma dos dois lados ≤ terceiro lado</li>
+                    <li>Ex. de entrada:</li>
+                    <ul>
+                        <li>1, 2, 3</li>
+                        <ul>
+                            <li>Saída esperada</li>
+                            <ul>
+                                <li>Entrada inválida</li>
+                            </ul>
+                            <li>Saída obtida</li>
+                            <ul>
+                                <li>Triângulo ESCALENO (erro)</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <li>Entrada inválida:</li>
+                <ul>
+                    <li>Letras ou zero</li>
+                    <li>Ex. de entrada:</li>
+                    <ul>
+                        <li>a, 0, 3</li>
+                        <ul>
+                            <li>Saída esperada</li>
+                            <ul>
+                                <li>Ha pelo menos uma entrada invalida!!!</li>
+                            </ul>
+                            <li>Saída obtida</li>
+                            <ul>
+                                <li>Ha pelo menos uma entrada invalida!!!</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <b>Parecer</b>
+            <ul>
+                <li>O programa cumpre os requisitos parcialmente:</li>
+                <ul>
+                    <li>Classifica os triângulos de acordo com a igualdade dos lados</li>
+                    <li>Trata as entradas não numéricas</li>
+                </ul>
+                <li>Apresenta algumas falhas</li>
+                <ul>
+                    <li>Não verifica se os valores formam um triângulo válido de acordo com a regra de um triângulo</li>
+                    <li>Aceita o valor zero e números negativos.</li>
+                </ul>
+                <li>É necessário implementar a verificação  da regra do triângulo</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Diego Serafim de Sousa - 10 de Jul de 2025</p>
+    </footer>
+</body>
+
+</html>
