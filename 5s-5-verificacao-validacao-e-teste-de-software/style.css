@@ -2,20 +2,20 @@ body {
   font-family: "Poppins", sans-serif, Inter, Arial, "Helvetica Neue", Helvetica;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: #001a1e;
   max-width: 1700px;
   margin: 0 auto;
   padding: 3rem;
   background: linear-gradient(
     to left,
-    rgb(236, 228, 228),
-    white,
-    rgb(236, 228, 228)
+    rgb(228, 234, 236),
+    #e7f3f5,
+    rgb(228, 234, 236)
   );
 }
 
 html {
-  background: linear-gradient(to left, #245, red, #245);
+  background: linear-gradient(to left, #245, #e7f3f5, #245);
 }
 
 /* Seções */
@@ -24,6 +24,7 @@ section {
   padding: 0 20px 20px 20px;
   border: 1px solid #ddd;
   box-shadow: rgba(0, 0, 0, 0.03) 5px 5px;
+  background-color: #e7f3f5;
 }
 
 h2 {
