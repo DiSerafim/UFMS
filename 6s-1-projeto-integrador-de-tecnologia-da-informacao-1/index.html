@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>UFMS Digital - Trilha de Aprendizagem</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a página home */
+        .hero {
+            background: linear-gradient(135deg, #6da7e2, #245);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .semestre {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #6da7e2;
+        }
+
+        .semestre-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .semestre-header:hover {
+            background-color: #f0f7ff;
+        }
+
+        .semestre-header h2 {
+            margin: 0;
+            color: #245;
+            font-size: 1.8em;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .semestre-badge {
+            background-color: #6da7e2;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .semestre-content {
+            display: block;
+        }
+
+        .disciplina {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .disciplina-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .disciplina-header:hover {
+            background-color: #e7f3f5;
+        }
+
+        .disciplina-header h3 {
+            margin: 0;
+            color: #6da7e2;
+            font-size: 1.4em;
+        }
+
+        .disciplina-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .modulos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .modulo-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .modulo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modulo-header {
+            background: linear-gradient(135deg, #6da7e2, #245);
+            color: white;
+            padding: 12px 15px;
+            font-weight: 600;
+        }
+
+        .modulo-body {
+            padding: 15px;
+        }
+
+        .unidade-item {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .unidade-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .unidade-titulo {
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .unidade-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-left: 25px;
+        }
+
+        .link-aula {
+            background-color: #e7f3f5;
+            color: #6da7e2;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .link-aula:hover {
+            background-color: #6da7e2;
+            color: white;
+            text-decoration: none;
+        }
+
+        .link-aula i {
+            font-size: 16px;
+        }
+
+        .status-chip {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 5px;
+        }
+
+        .status-concluido {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .status-andamento {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .status-pendente {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s;
+        }
+
+        .expandido .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .semestre-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .modulos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .disciplina-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background: linear-gradient(135deg, #026eda, #245); margin-bottom: 30px;">
+        <h1 style="font-size: 2.2em; color: white; text-align: center;">UFMS DIGITAL</h1>
+        <h2 style="font-size: 1.5em; color: white; text-align: center; font-weight: 300;">Trilha de Aprendizagem -
+            Tecnologia da Informação</h2>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>📚 Cronograma da Trilha de Aprendizagem</h1>
+            <p>Navegue pelos semestres, disciplinas e aulas. Todo o conteúdo organizado para seu estudo.</p>
+        </section>
+
+        <!-- =========================================== -->
+        <!-- SEMESTRE 6 - PROJETO INTEGRADOR I           -->
+        <!-- =========================================== -->
+        <section class="semestre" id="semestre6">
+            <div class="semestre-header" onclick="toggleSemestre('semestre6-content')">
+                <h2>🎓 6º Semestre</h2>
+                <span class="semestre-badge">Em andamento</span>
+                <span class="material-icons expand-icon">expand_more</span>
+            </div>
+
+            <div id="semestre6-content" class="semestre-content">
+                <!-- Disciplina: Projeto Integrador I -->
+                <div class="disciplina">
+                    <div class="disciplina-header" onclick="toggleDisciplina('pi1-content')">
+                        <h3>📊 Projeto Integrador de Tecnologia da Informação I</h3>
+                        <span class="disciplina-badge">90h</span>
+                        <span class="material-icons expand-icon">expand_more</span>
+                    </div>
+
+                    <div id="pi1-content" class="disciplina-content">
+                        <div class="modulos-grid">
+                            <!-- Módulo 1 -->
+                            <div class="modulo-card">
+                                <div class="modulo-header">
+                                    Módulo 1 - Introdução e planejamento
+                                </div>
+                                <div class="modulo-body">
+                                    <!-- Unidade 1 -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💡 Unidade 1 - Introdução</span>
+                                            <span class="status-chip status-concluido">Concluído</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="mod1_und1-introducao-ao-desenvolvimento-de-projetos-integradores.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 1
+                                            </a>
+                                            <!-- <a href="mod1_und1-introducao-ao-desenvolvimento-de-projetos-integradores.html#materiais"
+                                                class="link-aula">
+                                                <i class="material-icons">video_library</i> Vídeo
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Unidade 2 -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📌 Unidade 2 - Planejamento</span>
+                                            <span class="status-chip status-concluido">Concluído</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="mod1_und2-planejamento-das-atividades-do-projeto-integrador-1.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 2
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 2 (Placeholder) -->
+                            <div class="modulo-card">
+                                <div class="modulo-header">
+                                    Módulo 2 - Protótipos para resolução de problema
+                                </div>
+                                <div class="modulo-body">
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💡 Unidade 1 - Identificação de demandas</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📌 Unidade 2 - Mapa mental e requisitos</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 3 (Placeholder) -->
+                            <div class="modulo-card">
+                                <div class="modulo-header">
+                                    Módulo 3 - Desenvolvimento da solução
+                                </div>
+                                <div class="modulo-body">
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💡 Unidade 1 - Modelagem da solução</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📌 Unidade 2 - Diagrama DER</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 4 (Placeholder) -->
+                            <div class="modulo-card">
+                                <div class="modulo-header">
+                                    Módulo 4 - Validação da solução
+                                </div>
+                                <div class="modulo-body">
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💡 Unidade 1 - Diagramas UML</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📌 Unidade 2 - Relatório final</span>
+                                            <span class="status-chip status-pendente">Pendente</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
+                                                breve</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disciplina: Verificação, Validação e Teste de Software -->
+                <div class="disciplina">
+                    <div class="disciplina-header" onclick="toggleDisciplina('testes-content')">
+                        <h3>🔍 Verificação, Validação e Teste de Software</h3>
+                        <span class="disciplina-badge">60h</span>
+                        <span class="material-icons expand-icon">expand_more</span>
+                    </div>
+
+                    <div id="testes-content" class="disciplina-content">
+                        <div class="modulos-grid">
+                            <!-- Módulo 1 -->
+                            <div class="modulo-card">
+                                <div class="modulo-header">
+                                    Módulo 1 - Conceitos Iniciais
+                                </div>
+                                <div class="modulo-body">
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💡 Unidade 1 - Qualidade de Software</span>
+                                            <span class="status-chip status-concluido">Concluído</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="https://www.youtube.com/watch?v=F2kWAyE1r6E" target="_blank"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Vídeo
+                                            </a>
+                                            <a href="README-verificacao-validacao-e-teste-de-software.md"
+                                                class="link-aula">
+                                                <i class="material-icons">menu_book</i> README
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================== -->
+        <!-- SEMESTRE 5 (Placeholder para expansão futura) -->
+        <!-- =========================================== -->
+        <section class="semestre" id="semestre5">
+            <div class="semestre-header" onclick="toggleSemestre('semestre5-content')">
+                <h2>⏳ 5º Semestre</h2>
+                <span class="semestre-badge">Previsto</span>
+                <span class="material-icons expand-icon">expand_more</span>
+            </div>
+
+            <div id="semestre5-content" class="semestre-content" style="display: none;">
+                <div class="disciplina">
+                    <div class="disciplina-header">
+                        <h3>📚 Disciplinas a serem adicionadas</h3>
+                    </div>
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        <i class="material-icons" style="font-size: 48px; color: #ccc;">construction</i>
+                        <p>Em desenvolvimento - Conteúdo será adicionado em breve</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================== -->
+        <!-- SEMESTRE 4 (Placeholder para expansão futura) -->
+        <!-- =========================================== -->
+        <section class="semestre" id="semestre4">
+            <div class="semestre-header" onclick="toggleSemestre('semestre4-content')">
+                <h2>⏳ 4º Semestre</h2>
+                <span class="semestre-badge">Previsto</span>
+                <span class="material-icons expand-icon">expand_more</span>
+            </div>
+
+            <div id="semestre4-content" class="semestre-content" style="display: none;">
+                <div class="disciplina">
+                    <div class="disciplina-header">
+                        <h3>📚 Disciplinas a serem adicionadas</h3>
+                    </div>
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        <i class="material-icons" style="font-size: 48px; color: #ccc;">construction</i>
+                        <p>Em desenvolvimento - Conteúdo será adicionado em breve</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================== -->
+        <!-- Links Rápidos e Utilitários                 -->
+        <!-- =========================================== -->
+        <section style="margin-top: 40px;">
+            <h2 style="border-left-color: #28a745;">🔗 Links Rápidos</h2>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <a href="README-verificacao-validacao-e-teste-de-software.md" class="link-aula"
+                    style="font-size: 1rem; padding: 10px 20px;">
+                    <i class="material-icons">menu_book</i> README - Teste de Software
+                </a>
+                <a href="style.css" class="link-aula" style="font-size: 1rem; padding: 10px 20px;">
+                    <i class="material-icons">palette</i> style.css
+                </a>
+                <a href="#" onclick="expandirTodos()" class="link-aula"
+                    style="font-size: 1rem; padding: 10px 20px; background-color: #245;">
+                    <i class="material-icons">unfold_more</i> Expandir tudo
+                </a>
+                <a href="#" onclick="recolherTodos()" class="link-aula"
+                    style="font-size: 1rem; padding: 10px 20px; background-color: #6c757d;">
+                    <i class="material-icons">unfold_less</i> Recolher tudo
+                </a>
+            </div>
+        </section>
+
+        <!-- Estatísticas -->
+        <section class="footer-info">
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+                <div>
+                    <strong style="font-size: 2em; color: #6da7e2;">2</strong>
+                    <p>Disciplinas</p>
+                </div>
+                <div>
+                    <strong style="font-size: 2em; color: #6da7e2;">2</strong>
+                    <p>Unidades Concluídas</p>
+                </div>
+                <div>
+                    <strong style="font-size: 2em; color: #6da7e2;">8</strong>
+                    <p>Unidades Previstas</p>
+                </div>
+                <div>
+                    <strong style="font-size: 2em; color: #6da7e2;">150h</strong>
+                    <p>Carga Horária</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 2026 | UFMS Digital - Tecnologia da Informação</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">📌 Clique nos cabeçalhos para expandir/recolher as seções</p>
+    </footer>
+
+    <script>
+        // Funções para expandir/recolher semestres
+        function toggleSemestre(contentId) {
+            var content = document.getElementById(contentId);
+            var header = content.previousElementSibling;
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                header.classList.add('expandido');
+            } else {
+                content.style.display = "none";
+                header.classList.remove('expandido');
+            }
+        }
+
+        // Funções para expandir/recolher disciplinas
+        function toggleDisciplina(contentId) {
+            var content = document.getElementById(contentId);
+            var header = content.previousElementSibling;
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                header.classList.add('expandido');
+            } else {
+                content.style.display = "none";
+                header.classList.remove('expandido');
+            }
+        }
+
+        // Expandir todos os semestres e disciplinas
+        function expandirTodos() {
+            // Semestres
+            document.querySelectorAll('.semestre-content').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.semestre-header').forEach(el => {
+                el.classList.add('expandido');
+            });
+
+            // Disciplinas
+            document.querySelectorAll('.disciplina-content').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.disciplina-header').forEach(el => {
+                el.classList.add('expandido');
+            });
+        }
+
+        // Recolher todos os semestres e disciplinas
+        function recolherTodos() {
+            // Exceto o primeiro semestre que pode ficar aberto por padrão
+            document.querySelectorAll('.semestre-content').forEach(el => {
+                if (el.id !== 'semestre6-content') {
+                    el.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('.semestre-header').forEach(el => {
+                if (el.previousElementSibling?.id !== 'semestre6-content') {
+                    el.classList.remove('expandido');
+                }
+            });
+
+            // Recolher disciplinas
+            document.querySelectorAll('.disciplina-content').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.disciplina-header').forEach(el => {
+                el.classList.remove('expandido');
+            });
+        }
+
+        // Inicializar: primeiro semestre expandido por padrão
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('semestre6-content').style.display = 'block';
+            document.getElementById('pi1-content').style.display = 'block';
+            document.getElementById('testes-content').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

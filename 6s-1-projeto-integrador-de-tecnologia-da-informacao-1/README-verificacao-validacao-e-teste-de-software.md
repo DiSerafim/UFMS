@@ -1,3 +1,12 @@
+<div align="right">
+    <a href="index.html">🏠 Início</a> | 
+    <a href="mod1_und1-introducao-ao-desenvolvimento-de-projetos-integradores.html">⬅️ Anterior</a> | 
+    <a href="mod1_und2-planejamento-das-atividades-do-projeto-integrador-1.html">➡️ Próxima</a>
+</div>
+
+<br>
+
+
 # CRONOGRAMA DA TRILHA DE APRENDIZAGEM
 
 **UFMS Digital**
