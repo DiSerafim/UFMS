@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Fórum</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o fórum */
+        .forum-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .forum-header {
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .forum-header h2 {
+            color: white;
+            margin: 0 0 10px 0;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .forum-header p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        .info-card {
+            background-color: #e8f0fe;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: #0066cc;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .tema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tema-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tema-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tema-card h4 {
+            color: #0066cc;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .tema-card .tema-titulo {
+            font-weight: 600;
+            color: #245;
+            margin-bottom: 8px;
+        }
+
+        .tema-card .tema-descricao {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e7f3f5;
+            color: #0066cc;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .postagem-exemplo {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .postagem-exemplo .autor {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .postagem-exemplo .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0066cc, #245);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .postagem-exemplo .autor-info h5 {
+            margin: 0;
+            color: #245;
+            font-size: 1.1em;
+        }
+
+        .postagem-exemplo .autor-info p {
+            margin: 2px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .postagem-exemplo .conteudo {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-resposta {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-resposta:hover {
+            background-color: #218838;
+        }
+
+        .btn-resposta i {
+            font-size: 18px;
+        }
+
+        .grupo-info {
+            background-color: #f0f7ff;
+            border: 1px solid #0066cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .grupo-info h4 {
+            color: #0066cc;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .aviso {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .aviso strong {
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .tema-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .postagem-exemplo .autor {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 1 - Introdução e planejamento de projetos integradores</h2>
+        <h3>💬 Fórum de Discussão do Módulo 1</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva | Tutor: Gregório Takashi Higashikawa</p>
+        <span class="status concluida">Ativo</span>
+    </header>
+
+
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und2-planejamento-das-atividades-do-projeto-integrador-1.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Unidade 2
+            </a>
+
+            <span class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #ccc; color: #666; padding: 8px 15px; border-radius: 4px; cursor: not-allowed;">
+                Próxima <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </span>
+        </div>
+
+    </div>
+    <!-- Navegação entre páginas -->
+
+
+    <main>
+        <!-- Informações principais do fórum -->
+        <section class="forum-header">
+            <h2>💬 Identificação de Demandas Sociais - City-Tour</h2>
+            <p><i class="material-icons" style="font-size: 16px; vertical-align: middle;">calendar_today</i> Postagem
+                até: 12 jul. 2025</p>
+        </section>
+
+        <!-- Orientações importantes -->
+        <section>
+            <h2>📋 Orientações para participação</h2>
+
+            <div class="aviso">
+                <strong>⚠️ Atenção:</strong> Este fórum foi projetado para ser executado individualmente por um
+                estudante, mas é permitido a montagem de um grupo de estudantes de até cinco membros para executar esta
+                atividade do fórum. Para a formação dos grupos, é importante que os alunos morem na mesma cidade,
+                compartilhando a atividade de city-tour.
+            </div>
+
+            <div class="info-card">
+                <h3>🎯 Objetivo do Fórum</h3>
+                <p>Planejar e executar um <strong>city-tour pelo seu bairro ou cidade</strong> para identificar e
+                    registrar informações sobre possíveis demandas/problemas na sua região. Você pode visitar vários
+                    locais (sem restrição de quantidade), mas sempre visando ao objetivo de identificar possíveis
+                    demandas/problemas sociais, e deve analisar estas demandas para escolher apenas uma demanda (que
+                    será tema do seu projeto integrador).</p>
+            </div>
+
+            <div class="info-card" style="border-left-color: #28a745;">
+                <h3>📝 O que você deve fazer</h3>
+                <p>Após a realização do city-tour, você deve compartilhar com os colegas <strong>o tema que
+                        escolheu</strong>, baseado nas demandas sociais ou problemáticas identificadas em sua localidade
+                    durante o passeio pelo bairro ou cidade. Explique a motivação ou justificativa da sua escolha para a
+                    demanda ou problema selecionado. Interaja com os colegas, oferecendo opiniões e ajudando a pensar em
+                    problemas sociais para os quais possamos desenvolver soluções.</p>
+            </div>
+
+            <div class="grupo-info">
+                <h4><i class="material-icons">people</i> Formação de Grupos</h4>
+                <p>Para a formação dos grupos, é importante que os alunos morem na mesma cidade, compartilhando a
+                    atividade de city-tour (neste caso de grupo, os estudantes devem se organizar para a troca de
+                    informações e experiências, e apresentar o resultado de cada atividade de forma individual).</p>
+                <p><strong>Máximo de 5 membros por grupo.</strong></p>
+            </div>
+        </section>
+
+        <!-- Temas inspiradores -->
+        <section>
+            <h2>💡 Temas Inspiradores para seu Projeto</h2>
+            <p>Exemplos de temas (demandas sociais) e respectivos projetos integradores:</p>
+
+            <div class="tema-grid">
+                <!-- Tema 1 -->
+                <div class="tema-card">
+                    <h4>🩸 Comunidade Solidária</h4>
+                    <div class="tema-titulo">Site para Doação de Sangue</div>
+                    <div class="tema-descricao">Implementar um Site para a gestão do cadastro de possíveis doadores de
+                        sangue e, havendo demandas específicas, que estes serão convocados para realizar a doação.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">saúde</span>
+                        <span class="tag">solidariedade</span>
+                    </div>
+                </div>
+
+                <!-- Tema 2 -->
+                <div class="tema-card">
+                    <h4>🛍️ Comunidade Solidária</h4>
+                    <div class="tema-titulo">Site para Loja virtual de autônomos</div>
+                    <div class="tema-descricao">Gestão de produtos e serviços oferecidos por autônomos no seu bairro:
+                        marmitas, lavagem de roupa, limpeza, serviços de mecânico, encanador, eletricista, pedreiro,
+                        pintor, etc.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">economia local</span>
+                        <span class="tag">autônomos</span>
+                    </div>
+                </div>
+
+                <!-- Tema 3 -->
+                <div class="tema-card">
+                    <h4>⚽ Comunidade Solidária</h4>
+                    <div class="tema-titulo">Campo de futebol solidário / Quadra de esportes</div>
+                    <div class="tema-descricao">Gestão dos horários disponíveis para utilização, tipo de atividade,
+                        itens obrigatórios, e cadastro de patrocinadores para eventos sociais.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">esporte</span>
+                        <span class="tag">lazer</span>
+                    </div>
+                </div>
+
+                <!-- Tema 4 -->
+                <div class="tema-card">
+                    <h4>📚 Educação para todos</h4>
+                    <div class="tema-titulo">Portal do livros novos e usados</div>
+                    <div class="tema-descricao">Gestão do processo de doação ou empréstimo de livros usados, cadastrando
+                        doadores, voluntários e livros (código, título, autor, editora, área de concentração).</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">educação</span>
+                        <span class="tag">leitura</span>
+                    </div>
+                </div>
+
+                <!-- Tema 5 -->
+                <div class="tema-card">
+                    <h4>👨‍🏫 Educação para todos</h4>
+                    <div class="tema-titulo">Portal do professor voluntário</div>
+                    <div class="tema-descricao">Gestão do registro de professores voluntários por área de conhecimento,
+                        estudantes interessados em aulas particulares, turmas, horários e locais disponíveis.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">voluntariado</span>
+                        <span class="tag">ensino</span>
+                    </div>
+                </div>
+
+                <!-- Tema 6 -->
+                <div class="tema-card">
+                    <h4>🍛 Fome Zero</h4>
+                    <div class="tema-titulo">Produção de quentinhas</div>
+                    <div class="tema-descricao">Gestão do cadastro de famílias necessitadas, apoiadores e fornecedores.
+                        Organização de doações de ingredientes, montagem de equipes para produção e distribuição.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">segurança alimentar</span>
+                        <span class="tag">solidariedade</span>
+                    </div>
+                </div>
+
+                <!-- Tema 7 -->
+                <div class="tema-card">
+                    <h4>♻️ Lixo reciclável</h4>
+                    <div class="tema-titulo">Coleta de lixo eletrônico</div>
+                    <div class="tema-descricao">Gestão do cadastro de doadores, dispositivos doados, localização, melhor
+                        horário para coleta, e locais de destinação dos dispositivos recolhidos.</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">sustentabilidade</span>
+                        <span class="tag">e-lixo</span>
+                    </div>
+                </div>
+
+                <!-- Tema 8 -->
+                <div class="tema-card">
+                    <h4>🌱 Lixo reciclável</h4>
+                    <div class="tema-titulo">Coleta e tratamento de lixo reciclável</div>
+                    <div class="tema-descricao">Gestão do processo de coleta e tratamento, cadastrando doadores (tipo e
+                        quantidade), empresas de reciclagem, e voluntários (dia e hora disponíveis).</div>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">reciclagem</span>
+                        <span class="tag">meio ambiente</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemplo de postagem -->
+        <section>
+            <h2>📝 Exemplo de Postagem</h2>
+
+            <div class="postagem-exemplo">
+                <div class="autor">
+                    <div class="avatar">JS</div>
+                    <div class="autor-info">
+                        <h5>Diego Serafim</h5>
+                        <p><i class="material-icons" style="font-size: 14px;">location_on</i> Belém, PA</p>
+                        <p><i class="material-icons" style="font-size: 14px;">calendar_today</i> 15 mar. 2025</p>
+                    </div>
+                </div>
+
+                <div class="conteudo">
+                    <h4 style="color: #245; margin-top: 0;">Tema escolhido: Coleta de Lixo Eletrônico</h4>
+
+                    <p><strong>📍 City-tour realizado:</strong> Bairro Cabanagem, Belém - PA</p>
+
+                    <p><strong>🔍 Demandas identificadas:</strong> Durante o city-tour, observei que muitos moradores
+                        descartam equipamentos eletrônicos (celulares, computadores, pilhas) no lixo comum, sem saber
+                        onde descartar corretamente. Também notei acúmulo de lixo eletrônico em terrenos baldios.</p>
+
+                    <p><strong>🎯 Tema escolhido:</strong> Site para Coleta de Lixo Eletrônico</p>
+
+                    <p><strong>💡 Justificativa:</strong> Escolhi este tema porque é um problema crescente no bairro. O
+                        descarte incorreto causa danos ao meio ambiente e à saúde da população. Um site pode conectar
+                        doadores a pontos de coleta e recicladores, facilitando o processo e conscientizando a
+                        comunidade.</p>
+
+                    <p><strong>🤝 Interação com colegas:</strong> Alguém mais identificou problemas relacionados a
+                        lixo/reciclagem? Quais soluções vocês estão pensando?</p>
+
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button class="btn-resposta" onclick="alert('Função de resposta seria implementada aqui')">
+                            <i class="material-icons">reply</i> Responder
+                        </button>
+                        <button class="btn-resposta" style="background-color: #6c757d;"
+                            onclick="alert('Função de curtida seria implementada aqui')">
+                            <i class="material-icons">thumb_up</i> Curtir (5)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 20px;">
+                <h3>📌 Estrutura sugerida para sua postagem:</h3>
+                <ol>
+                    <li><strong>📍 City-tour realizado:</strong> Onde você foi? Quais locais visitou?</li>
+                    <li><strong>🔍 Demandas identificadas:</strong> Quais problemas/demandas sociais você observou?</li>
+                    <li><strong>🎯 Tema escolhido:</strong> Qual demanda você selecionou para seu projeto?</li>
+                    <li><strong>💡 Justificativa:</strong> Por que escolheu este tema? Qual a motivação?</li>
+                    <li><strong>🤝 Interação:</strong> Convide colegas para interagir e compartilhar experiências.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Instruções para participação -->
+        <section>
+            <h2>✅ Como participar</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div
+                    style="display: flex; gap: 15px; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
+                    <div
+                        style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                        1</div>
+                    <div><strong>Planeje seu city-tour:</strong> Escolha um bairro ou região da sua cidade para visitar
+                        e identificar demandas sociais.</div>
+                </div>
+
+                <div
+                    style="display: flex; gap: 15px; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
+                    <div
+                        style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                        2</div>
+                    <div><strong>Execute o city-tour:</strong> Visite os locais, converse com moradores, observe
+                        problemas e registre tudo (fotos, anotações).</div>
+                </div>
+
+                <div
+                    style="display: flex; gap: 15px; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
+                    <div
+                        style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                        3</div>
+                    <div><strong>Analise as demandas:</strong> Liste todos os problemas identificados e escolha UM para
+                        ser tema do seu projeto.</div>
+                </div>
+
+                <div
+                    style="display: flex; gap: 15px; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
+                    <div
+                        style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                        4</div>
+                    <div><strong>Compartilhe no fórum:</strong> Poste sua escolha com justificativa, seguindo a
+                        estrutura sugerida.</div>
+                </div>
+
+                <div
+                    style="display: flex; gap: 15px; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 6px;">
+                    <div
+                        style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                        5</div>
+                    <div><strong>Interaja com colegas:</strong> Comente as postagens dos outros, ofereça opiniões e
+                        sugestões.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de discussões -->
+        <section>
+            <h2>💬 Discussões ativas</h2>
+
+            <div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                <div
+                    style="background-color: #f8f9fa; padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: 600; display: flex; gap: 15px;">
+                    <span style="flex: 3;">Tópico</span>
+                    <span style="flex: 1;">Autor</span>
+                    <span style="flex: 1;">Última mensagem</span>
+                    <span style="flex: 0.5;">Comentários</span>
+                </div>
+
+                <div
+                    style="padding: 15px; border-bottom: 1px solid #ddd; display: flex; gap: 15px; align-items: center;">
+                    <div style="flex: 3;">
+                        <a href="#" style="color: #0066cc; font-weight: 500; text-decoration: none;"
+                            onclick="alert('Esta funcionalidade seria implementada com backend')">💬 Fórum de Discussão
+                            do Módulo 1 - Introdução e planejamento de projetos integradores</a>
+                        <div><small>por TUTOR(a) GREGÓRIO TAKASHI HIGASHIKAWA</small></div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 500;">Gregório Takashi</div>
+                        <div><small style="color: #666;">Tutor</small></div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div>LUIZ FERNANDO</div>
+                        <div><small style="color: #666;">12 jul. 2025</small></div>
+                    </div>
+                    <div style="flex: 0.5; text-align: center;">
+                        <span
+                            style="background-color: #0066cc; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.9em;">123</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
+                <strong>🔒 Aviso:</strong> A data limite para postagem neste fórum foi atingida, portanto, você não
+                poderá mais postar nela. Esta é uma visualização de exemplo.
+            </div>
+        </section>
+
+        <!-- Botão para criar nova postagem (desabilitado) -->
+        <div style="text-align: center; margin: 30px 0;" class="no-print">
+            <button class="btn-resposta" style="background-color: #6c757d; padding: 12px 30px; font-size: 1.1em;"
+                onclick="alert('Postagem encerrada - Exemplo visual')">
+                <i class="material-icons">add_comment</i> Criar nova postagem
+            </button>
+            <p style="margin-top: 5px; color: #666; font-size: 0.9em;">(Funcionalidade desabilitada - prazo encerrado)
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Atividade: Fórum de Discussão do Módulo 1 - City-tour e escolha do
+            tema</p>
+    </footer>
+
+    <script>
+        // Script para controlar interações (simulação)
+        document.addEventListener('DOMContentLoaded', function () {
+            // Efeito visual nos cards de tema
+            const cards = document.querySelectorAll('.tema-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    // Apenas efeito visual de seleção
+                    this.style.backgroundColor = '#e7f3f5';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '#f8f9fa';
+                    }, 200);
+                });
+            });
+
+            // Botões de exemplo apenas mostram alerta informativo
+            const botoes = document.querySelectorAll('.btn-resposta');
+            botoes.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    if (this.getAttribute('onclick')) return; // Mantém o onclick original
+                    e.preventDefault();
+                    alert('Esta é uma simulação visual. A funcionalidade completa requer integração com backend.');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
