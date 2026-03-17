@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Checkout de Presença</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para checkout de presença */
+        .checkout-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 20px;
+        }
+
+        .checkout-header h2 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .progresso-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .progresso-barra {
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progresso-preenchido {
+            height: 100%;
+            background: linear-gradient(90deg, #0066cc, #28a745);
+            width: 33%;
+            border-radius: 10px;
+            position: relative;
+            animation: progress-animation 1s ease-out;
+        }
+
+        @keyframes progress-animation {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 33%;
+            }
+        }
+
+        .checkpoint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .checkpoint-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .checkpoint-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkpoint-card.concluido {
+            border-left: 4px solid #28a745;
+            background-color: #f0fff0;
+        }
+
+        .checkpoint-card.pendente {
+            border-left: 4px solid #ffc107;
+            background-color: #fff9e6;
+        }
+
+        .checkpoint-card .status-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .checkpoint-card .status-icon .material-icons.concluido {
+            color: #28a745;
+        }
+
+        .checkpoint-card .status-icon .material-icons.pendente {
+            color: #ffc107;
+        }
+
+        .checkpoint-card h4 {
+            color: #245;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-right: 40px;
+        }
+
+        .checkpoint-card p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .checkpoint-card .data-limite {
+            font-size: 0.9em;
+            color: #dc3545;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-checkout {
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-checkout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-checkout:active {
+            transform: translateY(0);
+        }
+
+        .btn-checkout i {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .confirmacao-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: modal-appear 0.3s ease-out;
+        }
+
+        @keyframes modal-appear {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content .material-icons {
+            font-size: 60px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .modal-content h3 {
+            color: #245;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .modal-btn.confirm {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modal-btn.confirm:hover {
+            background-color: #218838;
+        }
+
+        .modal-btn.cancel {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .modal-btn.cancel:hover {
+            background-color: #c82333;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: #0066cc;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item .timeline-marker {
+            position: absolute;
+            left: 12px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #0066cc;
+            z-index: 2;
+        }
+
+        .timeline-item.concluido .timeline-marker {
+            background: #28a745;
+            border-color: #28a745;
+        }
+
+        .timeline-item.pendente .timeline-marker {
+            background: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .timeline-item .timeline-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .timeline-item .timeline-content h4 {
+            margin: 0 0 5px 0;
+            color: #245;
+        }
+
+        .timeline-item .timeline-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .checkpoint-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-checkout {
+                max-width: 100%;
+            }
+
+            .modal-content {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 1 - Introdução e planejamento de projetos integradores</h2>
+        <h3>📍 Checkout de Presença do Módulo 1</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+        <span class="status andamento">Em andamento</span>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-1-forum-de-discussao-introducao-e-planejamento-de-projetos-integradores.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Forum
+            </a>
+
+            <a href="mod1-3-avaliacao.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Avaliação <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+
+    </div>
+    <!-- Navegação entre páginas -->
+
+    <main>
+        <div class="checkout-container">
+            <!-- Cabeçalho -->
+            <div class="checkout-header">
+                <h2>📍 Registro de Frequência e Progresso</h2>
+                <p>Confirme sua participação nas atividades do Módulo 1 e acompanhe seu progresso</p>
+            </div>
+
+            <!-- Barra de progresso -->
+            <div class="progresso-container">
+                <h3>📊 Progresso no Módulo 1</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>Atividades concluídas: <strong>2 de 6</strong></span>
+                    <span><strong>33%</strong></span>
+                </div>
+                <div class="progresso-barra">
+                    <div class="progresso-preenchido"></div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span
+                            style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background-color: #28a745;"></span>
+                        <span>Concluído</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span
+                            style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background-color: #ffc107;"></span>
+                        <span>Pendente</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span
+                            style="display: inline-block; width: 16px; height: 16px; border-radius: 4px; background-color: #6c757d;"></span>
+                        <span>Bloqueado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkpoints do Módulo -->
+            <h3>✅ Checkpoints de Conclusão</h3>
+            <p>Registre sua presença em cada etapa do módulo clicando nos botões correspondentes</p>
+
+            <div class="checkpoint-grid">
+                <!-- Unidade 1 -->
+                <div class="checkpoint-card concluido">
+                    <div class="status-icon">
+                        <i class="material-icons concluido">check_circle</i>
+                    </div>
+                    <h4>📖 Unidade 1 - Introdução</h4>
+                    <p>Introdução ao desenvolvimento de projetos integradores</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite">
+                            <i class="material-icons" style="font-size: 16px;">check</i>
+                            Concluído em 10/03/2026
+                        </span>
+                        <a href="mod1_und1-introducao-ao-desenvolvimento-de-projetos-integradores.html"
+                            class="link-aula" style="font-size: 0.85em;">Revisar</a>
+                    </div>
+                </div>
+
+                <!-- Unidade 2 -->
+                <div class="checkpoint-card concluido">
+                    <div class="status-icon">
+                        <i class="material-icons concluido">check_circle</i>
+                    </div>
+                    <h4>📌 Unidade 2 - Planejamento</h4>
+                    <p>Planejamento das atividades do projeto integrador I</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite">
+                            <i class="material-icons" style="font-size: 16px;">check</i>
+                            Concluído em 12/03/2026
+                        </span>
+                        <a href="mod1_und2-planejamento-das-atividades-do-projeto-integrador-1.html" class="link-aula"
+                            style="font-size: 0.85em;">Revisar</a>
+                    </div>
+                </div>
+
+                <!-- Fórum -->
+                <div class="checkpoint-card pendente">
+                    <div class="status-icon">
+                        <i class="material-icons pendente">schedule</i>
+                    </div>
+                    <h4>💬 Fórum de Discussão</h4>
+                    <p>City-tour e escolha do tema do projeto</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite">
+                            <i class="material-icons" style="font-size: 16px;">event</i>
+                            Data limite: 12/07/2025
+                        </span>
+                        <a href="forum-modulo1.html" class="link-aula" style="font-size: 0.85em;">Acessar</a>
+                    </div>
+                </div>
+
+                <!-- Checkout de Presença (atual) -->
+                <div class="checkpoint-card pendente">
+                    <div class="status-icon">
+                        <i class="material-icons pendente">schedule</i>
+                    </div>
+                    <h4>📍 Checkout de Presença</h4>
+                    <p>Registro de frequência do Módulo 1 (você está aqui)</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite">
+                            <i class="material-icons" style="font-size: 16px;">event</i>
+                            Pendente
+                        </span>
+                        <button onclick="abrirModal()" class="link-aula"
+                            style="background-color: #28a745; color: white; border: none; cursor: pointer;">Registrar</button>
+                    </div>
+                </div>
+
+                <!-- Avaliação (bloqueado) -->
+                <div class="checkpoint-card" style="opacity: 0.6;">
+                    <div class="status-icon">
+                        <i class="material-icons" style="color: #6c757d;">lock</i>
+                    </div>
+                    <h4>✅ Questionário de Avaliação</h4>
+                    <p>Avaliação do Módulo 1 (disponível após checkout)</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite" style="color: #6c757d;">
+                            <i class="material-icons" style="font-size: 16px;">lock</i>
+                            Bloqueado
+                        </span>
+                        <span class="link-aula"
+                            style="background-color: #6c757d; color: white; cursor: not-allowed;">Indisponível</span>
+                    </div>
+                </div>
+
+                <!-- Módulo 2 (bloqueado) -->
+                <div class="checkpoint-card" style="opacity: 0.6;">
+                    <div class="status-icon">
+                        <i class="material-icons" style="color: #6c757d;">lock</i>
+                    </div>
+                    <h4>➡️ Módulo 2</h4>
+                    <p>Protótipos para resolução de problema (disponível após avaliação)</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="data-limite" style="color: #6c757d;">
+                            <i class="material-icons" style="font-size: 16px;">lock</i>
+                            Bloqueado
+                        </span>
+                        <span class="link-aula"
+                            style="background-color: #6c757d; color: white; cursor: not-allowed;">Indisponível</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão principal de checkout -->
+            <button class="btn-checkout" onclick="abrirModal()">
+                <i class="material-icons">check_circle</i>
+                REGISTRAR PRESENÇA NO MÓDULO 1
+            </button>
+
+            <!-- Timeline de progresso -->
+            <div class="timeline">
+                <h3>📅 Linha do Tempo do Módulo 1</h3>
+
+                <div class="timeline-item concluido">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>📖 Unidade 1 - Introdução</h4>
+                        <p>Concluído em 10/03/2026</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item concluido">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>📌 Unidade 2 - Planejamento</h4>
+                        <p>Concluído em 12/03/2026</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item pendente">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>💬 Fórum de Discussão</h4>
+                        <p>Postagem realizada? Aguardando confirmação</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item pendente">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>📍 Checkout de Presença</h4>
+                        <p>Registro pendente - Clique no botão acima</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>✅ Questionário de Avaliação</h4>
+                        <p>Disponível após checkout</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>➡️ Módulo 2</h4>
+                        <p>Próxima etapa - Protótipos para resolução de problema</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações adicionais -->
+            <div class="info-card" style="margin-top: 30px;">
+                <h3>ℹ️ Sobre o Checkout de Presença</h3>
+                <p>O checkout de presença tem dupla finalidade:</p>
+                <ul>
+                    <li><strong>📊 Computar a frequência</strong> do estudante no módulo</li>
+                    <li><strong>📝 Registrar o desempenho acadêmico</strong> referente aos conteúdos do módulo</li>
+                </ul>
+                <p>Ao confirmar sua presença, você estará apto a realizar a avaliação do módulo e prosseguir para o
+                    próximo conteúdo.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmação -->
+    <div id="confirmacaoModal" class="confirmacao-modal">
+        <div class="modal-content">
+            <i class="material-icons">check_circle</i>
+            <h3>Confirmar Presença</h3>
+            <p>Deseja realmente registrar sua presença no Módulo 1?</p>
+            <p style="font-size: 0.9em; color: #666;">As unidades 1 e 2 já foram concluídas. O fórum ainda está
+                pendente.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" onclick="confirmarPresenca()">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">check</i> Confirmar
+                </button>
+                <button class="modal-btn cancel" onclick="fecharModal()">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">close</i> Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de sucesso -->
+    <div id="sucessoModal" class="confirmacao-modal">
+        <div class="modal-content">
+            <i class="material-icons" style="color: #28a745;">celebration</i>
+            <h3>Presença Registrada!</h3>
+            <p>Checkout realizado com sucesso!</p>
+            <p style="font-size: 0.9em;">Agora você pode acessar a avaliação do módulo 1.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <a href="avaliacao-modulo1.html" class="btn-resposta"
+                    style="background-color: #28a745; text-decoration: none;">
+                    <i class="material-icons">assignment</i> Ir para Avaliação
+                </a>
+                <button class="btn-resposta" style="background-color: #6c757d;" onclick="fecharModalSucesso()">
+                    Continuar aqui
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">📍 Checkout de Presença - Módulo 1</p>
+    </footer>
+
+    <script>
+        // Abrir modal de confirmação
+        function abrirModal() {
+            document.getElementById('confirmacaoModal').style.display = 'flex';
+        }
+
+        // Fechar modal de confirmação
+        function fecharModal() {
+            document.getElementById('confirmacaoModal').style.display = 'none';
+        }
+
+        // Fechar modal de sucesso
+        function fecharModalSucesso() {
+            document.getElementById('sucessoModal').style.display = 'none';
+        }
+
+        // Confirmar presença
+        function confirmarPresenca() {
+            fecharModal();
+
+            // Mostrar modal de sucesso
+            setTimeout(function () {
+                document.getElementById('sucessoModal').style.display = 'flex';
+
+                // Atualizar status dos cards (simulação)
+                const cards = document.querySelectorAll('.checkpoint-card');
+                cards[3].classList.remove('pendente');
+                cards[3].classList.add('concluido');
+                cards[3].querySelector('.status-icon i').textContent = 'check_circle';
+                cards[3].querySelector('.status-icon i').className = 'material-icons concluido';
+                cards[3].querySelector('.data-limite').innerHTML = '<i class="material-icons" style="font-size: 16px;">check</i> Concluído hoje';
+
+                // Ativar avaliação (simulação)
+                cards[4].style.opacity = '1';
+                cards[4].querySelector('.status-icon i').textContent = 'schedule';
+                cards[4].querySelector('.status-icon i').className = 'material-icons pendente';
+                cards[4].querySelector('.data-limite').innerHTML = '<i class="material-icons" style="font-size: 16px;">event</i> Disponível';
+                cards[4].querySelector('.link-aula').outerHTML = '<a href="avaliacao-modulo1.html" class="link-aula" style="font-size: 0.85em;">Acessar</a>';
+
+                // Atualizar barra de progresso
+                document.querySelector('.progresso-preenchido').style.width = '50%';
+                document.querySelector('.progresso-container strong').textContent = '3 de 6';
+            }, 300);
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = function (event) {
+            var modalConfirmacao = document.getElementById('confirmacaoModal');
+            var modalSucesso = document.getElementById('sucessoModal');
+
+            if (event.target == modalConfirmacao) {
+                modalConfirmacao.style.display = 'none';
+            }
+            if (event.target == modalSucesso) {
+                modalSucesso.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
