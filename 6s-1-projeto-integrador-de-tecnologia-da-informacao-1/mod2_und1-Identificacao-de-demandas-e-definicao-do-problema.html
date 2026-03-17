@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Módulo 2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o Módulo 2 */
+        .passo-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .passo-titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .passo-titulo h3 {
+            margin: 0;
+            color: #0066cc;
+            font-size: 1.3em;
+        }
+
+        .passo-titulo .passo-numero {
+            background-color: #0066cc;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .passo-conteudo {
+            padding-left: 40px;
+        }
+
+        .pergunta-exemplo {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .pergunta-exemplo strong {
+            color: #856404;
+            font-style: normal;
+        }
+
+        .checklist-recursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .recurso-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .recurso-item i {
+            color: #0066cc;
+        }
+
+        .dica-card {
+            background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #0066cc;
+        }
+
+        .dica-card h4 {
+            color: #0066cc;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .exemplo-visita {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .exemplo-visita h4 {
+            color: #245;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .imagem-exemplo {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #999;
+        }
+
+        .imagem-exemplo i {
+            font-size: 48px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .observacoes-lista {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .observacoes-lista li {
+            margin-bottom: 8px;
+        }
+
+        .ciclo-diagrama {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .ciclo-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+        }
+
+        .ciclo-item .material-icons {
+            font-size: 36px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .ciclo-seta {
+            color: #0066cc;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .passo-conteudo {
+                padding-left: 20px;
+            }
+
+            .checklist-recursos {
+                grid-template-columns: 1fr;
+            }
+
+            .ciclo-diagrama {
+                flex-direction: column;
+            }
+
+            .ciclo-seta {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 2 - Protótipos para resolução de problema</h2>
+        <h3>🔍 Unidade 1 - Identificação de demandas e definição do problema</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+        <span class="status andamento">Em andamento</span>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-3-avaliacao.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Avaliação Und 1
+            </a>
+
+            <a href="mod1-1-forum-de-discussao-introducao-e-planejamento-de-projetos-integradores.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Discussão <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo da aula (placeholder - substituir pelo ID correto quando disponível) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/BlGBOa-Zcs4" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 1">
+                [UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 1
+            </p>
+
+            <p>Prof° ministrante: Carlos Alberto da Silva</p>
+            <p>📅 30 de jul. de 2024</p>
+        </section>
+
+        <!-- Introdução ao Módulo 2 -->
+        <section>
+            <h2>🎯 Visão Geral do Módulo 2</h2>
+
+            <div style="overflow-x: auto;">
+                <table>
+                    <tr>
+                        <th>Módulo</th>
+                        <th>Foco</th>
+                        <th>Entregável</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 1</strong></td>
+                        <td>Planejamento de ações</td>
+                        <td>Plano de ação concluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 2</strong></td>
+                        <td>Protótipo do Problema</td>
+                        <td><strong>Definição do problema/tema ← VOCÊ ESTÁ AQUI</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 3</strong></td>
+                        <td>Desenvolvimento da Solução</td>
+                        <td>Título e especificação da solução</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 4</strong></td>
+                        <td>Validação da solução</td>
+                        <td>Modelagem DER e UML</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-card" style="margin-top: 20px;">
+                <strong>📌 Objetivo desta unidade:</strong>
+                <p>Executar o plano de ação desenvolvido no Módulo 1, realizar as visitas in loco, coletar informações
+                    e, a partir dos dados obtidos, <strong>definir claramente o problema (demanda social)</strong> que
+                    será tratado no projeto integrador.</p>
+            </div>
+        </section>
+
+        <!-- Passo 5A -->
+        <section>
+            <h2>📋 Executando a visita: PASSO 5 (A)</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5A</span>
+                    <h3>Elabore o questionário específico</h3>
+                </div>
+
+                <div class="passo-conteudo">
+                    <p>Elabore o questionário (roteiro de perguntas) para fazer na visita in loco, começando com o que é
+                        específico:</p>
+
+                    <ul>
+                        <li><strong>O que você deve conhecer</strong> para entender melhor o desafio em questão?</li>
+                        <li><strong>O que você espera entender</strong> sobre as motivações e frustrações das pessoas
+                            entrevistadas?</li>
+                        <li><strong>O que você quer saber</strong> a respeito de suas atividades?</li>
+                    </ul>
+
+                    <div class="pergunta-exemplo">
+                        <strong>💡 Por exemplo:</strong> "Explique como esse procedimento é realizado hoje na
+                        instituição?"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passo 5B -->
+        <section>
+            <h2>📋 Executando a visita: PASSO 5 (B)</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5B</span>
+                    <h3>Amplie o questionário</h3>
+                </div>
+
+                <div class="passo-conteudo">
+                    <p>Amplie o questionário (roteiro de perguntas):</p>
+
+                    <ul>
+                        <li><strong>Quais são as perguntas</strong> que podem ajudar a entender as esperanças, os medos
+                            e as ambições dos entrevistados?</li>
+                    </ul>
+
+                    <div class="pergunta-exemplo">
+                        <strong>💡 Por exemplo:</strong> "Desenhe esse espaço(s), aponte o que gosta e o que pode
+                        melhorar."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passo 5C -->
+        <section>
+            <h2>📋 Executando a visita: PASSO 5 (C)</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5C</span>
+                    <h3>Aprofunde a conversa</h3>
+                </div>
+
+                <div class="passo-conteudo">
+                    <p>Aprofunde a conversa durante a visita in loco:</p>
+
+                    <ul>
+                        <li><strong>Ouça e elabore questões não previstas</strong> que permitam aprofundar o assunto
+                        </li>
+                    </ul>
+
+                    <div class="pergunta-exemplo">
+                        <strong>💡 Por exemplo:</strong> "Investigue o melhor, normal e pior dia em que a demanda se
+                        apresenta. Como acontece? Por quê? Quem está lá? Por que isso o atrapalha? Fale sobre ideias e
+                        sugestões para melhoria deste cenário."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passo 6 -->
+        <section>
+            <h2>📋 Executando a visita: PASSO 6</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">6</span>
+                    <h3>Faça um checklist (resumo)</h3>
+                </div>
+
+                <div class="passo-conteudo">
+                    <p>Utilize o seu checklist para definir o que você vai observar em campo e inclua os recursos que
+                        serão necessários para o registro, o público de interesse e as questões norteadoras do bate papo
+                        inicial.</p>
+
+                    <div class="pergunta-exemplo">
+                        <strong>💡 Por exemplo:</strong> roteiro de perguntas; contato dos participantes; idade dos
+                        participantes; insumos necessários.
+                    </div>
+
+                    <h4>🛠️ Recursos sugeridos para a visita:</h4>
+                    <div class="checklist-recursos">
+                        <div class="recurso-item">
+                            <i class="material-icons">edit_note</i> Caderno de anotações
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">edit</i> Canetas
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">note_alt</i> Notas adesivas
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">smartphone</i> Celular para fotos
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">camera_alt</i> Câmera fotográfica
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">battery_full</i> Baterias extras
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">mic</i> Gravador de voz
+                        </div>
+                        <div class="recurso-item">
+                            <i class="material-icons">contact_page</i> Contato dos participantes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passo 7 -->
+        <section>
+            <h2>📋 Executando a visita: PASSO 7</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">7</span>
+                    <h3>Elabore notas de inspiração</h3>
+                </div>
+
+                <div class="passo-conteudo">
+                    <p>Elabore notas de inspiração a partir da sua visão da realidade:</p>
+
+                    <ul>
+                        <li>Enquanto você estiver entrevistando/batendo papo, <strong>documente o que vê</strong> nessa
+                            observação de campo.</li>
+                        <li><strong>Separe suas observações de suas interpretações</strong>, para que você possa saber o
+                            que viu e escutou, e o que pensou que aquilo significava para as pessoas envolvidas.</li>
+                        <li>Procure no local por <strong>adaptações que as pessoas possam ter criado</strong> para
+                            atingir melhor seus objetivos.</li>
+                    </ul>
+
+                    <div class="dica-card">
+                        <h4><i class="material-icons">lightbulb</i> Dica importante:</h4>
+                        <p>Use duas colunas em seu caderno: uma para <strong>observações (fatos)</strong> e outra para
+                            <strong>interpretações (insights)</strong>. Isso ajuda a não misturar o que você viu com o
+                            que você pensou sobre o que viu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciclo de desenvolvimento -->
+        <section>
+            <h2>🔄 Ciclo de desenvolvimento</h2>
+
+            <div class="info-card">
+                <p>O estudante deve <strong>monitorar e produzir as adequações necessárias</strong> para a correta
+                    execução do seu plano de ação.</p>
+                <p><strong>⇒ Acompanhar os objetivos gerais e específicos.</strong></p>
+                <p style="text-align: right; margin-bottom: 0;"><small>Montagem: Carlos Alberto da Silva, 2024</small>
+                </p>
+            </div>
+
+            <div class="ciclo-diagrama">
+                <div class="ciclo-item">
+                    <i class="material-icons">assignment</i>
+                    <h4>Planejar</h4>
+                    <p>Plano de ação (Módulo 1)</p>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">travel_explore</i>
+                    <h4>Executar</h4>
+                    <p>Visitas in loco (Módulo 2)</p>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">monitor</i>
+                    <h4>Monitorar</h4>
+                    <p>Adequações necessárias</p>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">psychology</i>
+                    <h4>Analisar</h4>
+                    <p>Definir o problema</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dicas para execução -->
+        <section>
+            <h2>💡 Dicas para execução deste trabalho</h2>
+
+            <div class="dica-card" style="background: #fff3cd; border-color: #ffc107;">
+                <h4 style="color: #856404;"><i class="material-icons">tips_and_updates</i> Dicas importantes:</h4>
+
+                <ul>
+                    <li>Execute o plano de ação para <strong>monitorar se tudo o que foi planejado foi
+                            executado</strong>, como: Metodologia, Etapas e Cronograma.</li>
+                    <li>Esta fase de execução pode exigir a <strong>inclusão de nova(s) etapa(s) ou mesmo a exclusão de
+                            etapa(s)</strong>. A inclusão ou exclusão de metodologia(s) (planejadas) reflete no
+                        cronograma com mais etapa(s), ou menos, conforme o(s) caso(s).</li>
+                    <li><strong>Seja organizado:</strong> agende, visite e registre tudo que aconteceu na(s) visita(s)
+                        in loco (e se necessário: mais agendamentos, visitas e registros).</li>
+                </ul>
+
+                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                    <strong>⇒ Desta execução do plano de ação ... sairá o problema (demanda social) a ser
+                        tratado.</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemplo prático: Transporte Coletivo -->
+        <section>
+            <h2>🚌 Exemplo Prático: Transporte Coletivo</h2>
+
+            <div class="exemplo-visita">
+                <h4>Execução do plano de ação (visita in loco) para demandas sociais em transporte coletivo</h4>
+
+                <ul>
+                    <li><strong>Visitei meu bairro</strong> - observei pontos de ônibus e fluxo de passageiros</li>
+                    <li><strong>Coletei informações dos usuários</strong> do sistema de ônibus coletivo</li>
+                    <li><strong>Conversei e registrei os desejos</strong> (minha motivação), sonhos e pesadelos dos
+                        usuários</li>
+                </ul>
+
+                <div class="imagem-exemplo">
+                    <i class="material-icons">directions_bus</i>
+                    <p><strong>Imagem do problema:</strong> um ponto de ônibus lotado</p>
+                    <p style="font-size: 0.8em; color: #666;">Fonte: Unsplash</p>
+                </div>
+
+                <h4>Observações sobre um ponto de ônibus lotado:</h4>
+
+                <div class="observacoes-lista">
+                    <ul>
+                        <li>⏱️ <strong>Tempo de espera/perdido?</strong> - Usuários relatam espera de 30 a 50 minutos
+                        </li>
+                        <li>🚍 <strong>Ônibus adiantado, quebrado, ou atrasado?</strong> - Frota antiga com quebras
+                            frequentes</li>
+                        <li>☀️ <strong>Cliente(s) no sol, na chuva, ... desnecessário?</strong> - Pontos sem cobertura
+                            adequada</li>
+                        <li>📅 <strong>Cliente(s) do serviço:</strong> não chega ou chega atrasado no seu compromisso
+                        </li>
+                        <li>💰 <strong>Concessionária não fatura</strong> - Passageiros desistem do transporte</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" style="background-color: #f0f7ff;">
+                    <strong>⇒ Desafios (Problemas) do transporte público identificados:</strong>
+                    <ul>
+                        <li>Ponto de ônibus cheio</li>
+                        <li>Ônibus quebrado</li>
+                        <li>Clientes nervosos</li>
+                        <li>Motorista sem comunicação com empresa (concessionária)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visão Geral do Projeto Integrador -->
+        <section>
+            <h2>📊 Visão Geral do Projeto Integrador</h2>
+
+            <div style="overflow-x: auto;">
+                <table>
+                    <tr>
+                        <th>Módulo</th>
+                        <th>Foco</th>
+                        <th>Exemplo (Transporte Coletivo)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 1</strong></td>
+                        <td>Planejar</td>
+                        <td>City-tour no meu bairro: desafios do Transporte Coletivo (demanda social)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 2</strong></td>
+                        <td>Problemas</td>
+                        <td>Ponto de ônibus cheio | Ônibus quebrado | Clientes nervosos | Motorista sem comunicação</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 3</strong></td>
+                        <td>Solução</td>
+                        <td>A definir com base nos problemas identificados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 4</strong></td>
+                        <td>Modelagem</td>
+                        <td>DER e UML da solução proposta</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="note" style="margin-top: 20px;">
+                <strong>🎯 Objetivo desta unidade:</strong> A partir da execução do plano de ação e coleta de
+                informações, <strong>definir claramente o problema</strong> que será resolvido pelo seu projeto.
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências da Unidade</h2>
+
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020. ISBN 9788550814377. Disponível na Biblioteca Digital da UFMS.
+                    <strong>Trecho a ser lido: Capítulos 2 e 3</strong>.</cite></p>
+
+            <p><cite>INSTITUTO EDUCADIGITAL. Design Thinking para Educadores. Versão em Português: Instituto
+                    Educadigital, 2014. Disponível em: <a href="https://link.ufms.br/oLTm1"
+                        target="_blank">https://link.ufms.br/oLTm1</a>. Acesso em: 5 abr. 2024.</cite></p>
+        </section>
+
+        <!-- Licenciamento -->
+        <section>
+            <h2>📜 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Módulo 2 - Unidade 1: Identificação de demandas e definição do
+            problema</p>
+    </footer>
+
+    <script>
+        // Script para controle do sticky no mobile (igual ao das outras páginas)
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var materiais = document.getElementById('materiais');
+                if (!materiais) return;
+
+                function isMobile() {
+                    return window.innerWidth <= 768;
+                }
+
+                function updateSticky() {
+                    if (!isMobile()) {
+                        materiais.classList.remove('sticky');
+                        return;
+                    }
+
+                    var rect = materiais.getBoundingClientRect();
+
+                    if (rect.top <= 0) {
+                        materiais.classList.add('sticky');
+                    } else {
+                        materiais.classList.remove('sticky');
+                    }
+                }
+
+                var ticking = false;
+
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateSticky();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+
+                window.addEventListener('resize', updateSticky);
+                updateSticky();
+            });
+        })();
+    </script>
+</body>
+
+</html>
