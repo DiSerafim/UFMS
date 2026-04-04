@@ -7,266 +7,6 @@
     <title>UFMS Digital - Trilha de Aprendizagem</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos específicos para a página home */
-        .hero {
-            background: linear-gradient(135deg, #6da7e2, #245);
-            color: white;
-            padding: 50px 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .semestre {
-            background-color: white;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #6da7e2;
-        }
-
-        .semestre-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .semestre-header:hover {
-            background-color: #f0f7ff;
-        }
-
-        .semestre-header h2 {
-            margin: 0;
-            color: #245;
-            font-size: 1.8em;
-            border-left: none;
-            padding-left: 0;
-        }
-
-        .semestre-badge {
-            background-color: #6da7e2;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .semestre-content {
-            display: block;
-        }
-
-        .disciplina {
-            background-color: #f8f9fa;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-        }
-
-        .disciplina-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .disciplina-header:hover {
-            background-color: #e7f3f5;
-        }
-
-        .disciplina-header h3 {
-            margin: 0;
-            color: #6da7e2;
-            font-size: 1.4em;
-        }
-
-        .disciplina-badge {
-            background-color: #28a745;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8em;
-        }
-
-        .modulos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .modulo-card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .modulo-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .modulo-header {
-            background: linear-gradient(135deg, #6da7e2, #245);
-            color: white;
-            padding: 12px 15px;
-            font-weight: 600;
-        }
-
-        .modulo-body {
-            padding: 15px;
-        }
-
-        .unidade-item {
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #eee;
-        }
-
-        .unidade-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .unidade-titulo {
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .unidade-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-left: 25px;
-        }
-
-        .link-aula {
-            background-color: #e7f3f5;
-            color: #6da7e2;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            transition: background-color 0.3s;
-        }
-
-        .link-aula:hover {
-            background-color: #6da7e2;
-            color: white;
-            text-decoration: none;
-        }
-
-        .link-aula i {
-            font-size: 16px;
-        }
-
-        .status-chip {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.7em;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-left: 5px;
-        }
-
-        .status-concluido {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .status-andamento {
-            background-color: #ffc107;
-            color: #333;
-        }
-
-        .status-pendente {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .expand-icon {
-            transition: transform 0.3s;
-        }
-
-        .expandido .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        .footer-info {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 30px 15px;
-            }
-
-            .hero h1 {
-                font-size: 1.8em;
-            }
-
-            .semestre-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .modulos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .disciplina-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -289,7 +29,6 @@
         <section class="semestre" id="semestre6">
             <div class="semestre-header" onclick="toggleSemestre('semestre6-content')">
                 <h2>🎓 6º Semestre</h2>
-                <span class="semestre-badge">Em andamento</span>
                 <span class="material-icons expand-icon">expand_more</span>
             </div>
 
@@ -310,6 +49,19 @@
                                     Módulo 1 - Introdução e planejamento de projetos integradores
                                 </div>
                                 <div class="modulo-body">
+                                    <!-- Forum de discussão -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>💬 Forum de discussão</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="forum-de-discussao-introducao-e-planejamento-de-projetos-integradores.html"
+                                                class="link-aula">
+                                                <i class="material-icons">forum</i> Fórum
+                                            </a>
+                                        </div>
+                                    </div>
+
                                     <!-- Unidade 1 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
@@ -320,10 +72,6 @@
                                                 class="link-aula">
                                                 <i class="material-icons">play_circle</i> Aula 1
                                             </a>
-                                            <!-- <a href="mod1_und1-introducao-ao-desenvolvimento-de-projetos-integradores.html#materiais"
-                                                class="link-aula">
-                                                <i class="material-icons">video_library</i> Vídeo
-                                            </a> -->
                                         </div>
                                     </div>
 
@@ -340,24 +88,10 @@
                                         </div>
                                     </div>
 
-                                    <!-- Forum de discussão -->
-                                    <div class="unidade-item">
-                                        <div class="unidade-titulo">
-                                            <span>💬 Fórum - Módulo 1</span>
-                                        </div>
-                                        <div class="unidade-links">
-                                            <a href="mod1-1-forum-de-discussao-introducao-e-planejamento-de-projetos-integradores.html"
-                                                class="link-aula">
-                                                <i class="material-icons">forum</i> Acessar Fórum
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Dentro da disciplina Projeto Integrador I, após o fórum -->
+                                    <!-- Checkout de Presença -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
                                             <span>📍 Checkout de Presença - Módulo 1</span>
-                                            <span class="status-chip status-andamento">Pendente</span>
                                         </div>
                                         <div class="unidade-links">
                                             <a href="mod1-2-checkout-de-presenca.html" class="link-aula">
@@ -366,72 +100,107 @@
                                         </div>
                                     </div>
 
-                                    <div class="unidade-item">
+                                    <!-- <div class="unidade-item">
                                         <div class="unidade-titulo">
                                             <span>✅ Avaliação - Módulo 1</span>
-                                            <span class="status-chip status-pendente">Bloqueado</span>
                                         </div>
                                         <div class="unidade-links">
                                             <a href="mod1-3-avaliacao.html" class="link-aula">
                                                 <i class="material-icons">check_circle</i>Questionário de Avaliação
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
-                            <!-- Módulo 2 (Placeholder) -->
+                            <!-- Módulo 2 -->
                             <div class="modulo-card">
                                 <div class="modulo-header">
                                     Módulo 2 - Protótipos para resolução de problema
                                 </div>
                                 <div class="modulo-body">
+                                    <!-- Unidade 1 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
-                                            <span>💡 Und. 1 - Identificação de demandas</span>
-                                        </div>
-                                        <a href="mod2_und1-Identificacao-de-demandas-e-definicao-do-problema.html"
-                                            class="link-aula">
-                                            <i class="material-icons">play_circle</i> Aula 1
-                                        </a>
-                                    </div>
-                                    <div class="unidade-item">
-                                        <div class="unidade-titulo">
-                                            <span>📌 Unidade 2 - Mapa mental e requisitos</span>
-                                            <span class="status-chip status-pendente">Pendente</span>
+                                            <span>💡 Und. 1 - Identificação de demandas e definição do problema</span>
                                         </div>
                                         <div class="unidade-links">
-                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
-                                                breve</span>
+                                            <a href="mod2_und1-Identificacao-de-demandas-e-definicao-do-problema.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 1
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Unidade 2 -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📌 Und. 2 - Mapa mental/conceitual, requisitos e definição do
+                                                problema</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="mod2_und2-mapa-mental-conceitual-requisitos-e-definicao-do-problema.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 2
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Checkout de Presença -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📍 Checkout de Presença - Módulo 2</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="mod2-2-checkout-de-presenca.html" class="link-aula">
+                                                <i class="material-icons">check_circle</i> Registrar Presença
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Módulo 3 (Placeholder) -->
+                            <!-- Módulo 3 -->
                             <div class="modulo-card">
                                 <div class="modulo-header">
                                     Módulo 3 - Desenvolvimento da solução
                                 </div>
                                 <div class="modulo-body">
+                                    <!-- Unidade 1 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
-                                            <span>💡 Unidade 1 - Modelagem da solução</span>
-                                            <span class="status-chip status-pendente">Pendente</span>
+                                            <span>💡 Und. 1 - Modelagem e projeto da solução (tema)</span>
                                         </div>
                                         <div class="unidade-links">
-                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
-                                                breve</span>
+                                            <a href="mod3_und1-modelagem-e-projeto-da-solucao-tema.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 1
+                                            </a>
                                         </div>
                                     </div>
+
+                                    <!-- Unidade 2 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
-                                            <span>📌 Unidade 2 - Diagrama DER</span>
-                                            <span class="status-chip status-pendente">Pendente</span>
+                                            <span>📌 Und. 2 - Repensar e reajustar a solução (diagrama DER)</span>
                                         </div>
                                         <div class="unidade-links">
-                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
-                                                breve</span>
+                                            <a href="mod3_und2-repensar-e-ajustar-a-solucao-diagrama-der.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 2
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Checkout de Presença -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📍 Checkout de Presença - Módulo 3</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="mod3-2-checkout-de-presenca.html" class="link-aula">
+                                                <i class="material-icons">check_circle</i> Registrar Presença
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -443,24 +212,41 @@
                                     Módulo 4 - Validação da solução
                                 </div>
                                 <div class="modulo-body">
+                                    <!-- Unidade 1 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
-                                            <span>💡 Unidade 1 - Diagramas UML</span>
-                                            <span class="status-chip status-pendente">Pendente</span>
+                                            <span>💡 Und. 1 - Modelagem de diagramas UML</span>
                                         </div>
                                         <div class="unidade-links">
-                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
-                                                breve</span>
+                                            <a href="mod4_und1-modelagem-de-diagrama-uml.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 1
+                                            </a>
                                         </div>
                                     </div>
+
+                                    <!-- Unidade 2 -->
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
-                                            <span>📌 Unidade 2 - Relatório final</span>
-                                            <span class="status-chip status-pendente">Pendente</span>
+                                            <span>📌 Und. 2 - Relatório e apresentação final da solução (protótipo)</span>
                                         </div>
                                         <div class="unidade-links">
-                                            <span class="link-aula" style="opacity: 0.5; cursor: not-allowed;">Em
-                                                breve</span>
+                                            <a href="mod4_und2-relatorio-de-apresentacao-final-da-solucao.html"
+                                                class="link-aula">
+                                                <i class="material-icons">play_circle</i> Aula 2
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Checkout de Presença -->
+                                    <div class="unidade-item">
+                                        <div class="unidade-titulo">
+                                            <span>📍 Checkout de Presença - Módulo 4</span>
+                                        </div>
+                                        <div class="unidade-links">
+                                            <a href="#" class="link-aula">
+                                                <i class="material-icons">check_circle</i> Registrar Presença
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -488,7 +274,6 @@
                                     <div class="unidade-item">
                                         <div class="unidade-titulo">
                                             <span>💡 Unidade 1 - Qualidade de Software</span>
-                                            <span class="status-chip status-concluido">Concluído</span>
                                         </div>
                                         <div class="unidade-links">
                                             <a href="https://www.youtube.com/watch?v=F2kWAyE1r6E" target="_blank"
@@ -515,7 +300,6 @@
         <section class="semestre" id="semestre5">
             <div class="semestre-header" onclick="toggleSemestre('semestre5-content')">
                 <h2>⏳ 5º Semestre</h2>
-                <span class="semestre-badge">Previsto</span>
                 <span class="material-icons expand-icon">expand_more</span>
             </div>
 
@@ -538,7 +322,6 @@
         <section class="semestre" id="semestre4">
             <div class="semestre-header" onclick="toggleSemestre('semestre4-content')">
                 <h2>⏳ 4º Semestre</h2>
-                <span class="semestre-badge">Previsto</span>
                 <span class="material-icons expand-icon">expand_more</span>
             </div>
 
