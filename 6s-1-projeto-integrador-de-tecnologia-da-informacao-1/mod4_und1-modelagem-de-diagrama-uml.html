@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Módulo 4</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o Módulo 4 */
+        .visao-geral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .modulo-card-pequeno {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .modulo-card-pequeno h4 {
+            color: #0066cc;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .diagrama-container {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .diagrama-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .ferramentas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .ferramenta-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .ferramenta-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ferramenta-card .material-icons {
+            font-size: 40px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .ferramenta-card h4 {
+            color: #245;
+            margin: 10px 0 5px;
+        }
+
+        .ferramenta-card a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .ferramenta-card a:hover {
+            text-decoration: underline;
+        }
+
+        .dicas-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dicas-box h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .referencias-pesquisa {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .referencias-pesquisa h4 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .visao-geral-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 4 - Validação da solução</h2>
+        <h3>📊 Unidade 1 - Modelagem de diagramas UML</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Checkout P. Mod 3
+            </a>
+
+            <a href="mod4_und2-relatorio-de-apresentacao-final-da-solucao.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 4 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo da aula (placeholder - substituir pelo ID correto quando disponível) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FRfbniPGgWc" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 4 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 4 - Unidade 1">
+                [UFMS Digital] Projeto Integrador I (TIN) - Módulo 4 - Unidade 1
+            </p>
+
+            <p>Prof° ministrante: Carlos Alberto da Silva</p>
+        </section>
+
+        <!-- Visão Geral do Projeto Integrador -->
+        <section>
+            <h2>🔭 Visão Geral do Projeto Integrador</h2>
+
+            <div class="visao-geral-grid">
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">play_circle</i> MÓDULO 2 / Unidade 1</h4>
+                    <p>Executar o Plano de ação, a escolha do local, e fazer observação in loco (city-tour).</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">auto_awesome</i> MÓDULO 2 / Unidade 2</h4>
+                    <p>Estudo sobre o problema escolhido após visita a campo. Definição do tema (problema).</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">lightbulb</i> MÓDULO 3 / Unidade 1</h4>
+                    <p>Desenvolver ideias de soluções.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">edit</i> MÓDULO 3 / Unidade 2</h4>
+                    <p>Repensar e ajustar a solução para o relatório parcial.</p>
+                </div>
+                <div class="modulo-card-pequeno" style="border-left-color: #28a745;">
+                    <h4><i class="material-icons">account_tree</i> MÓDULO 4 / Unidade 1</h4>
+                    <p><strong>Modelagem da solução proposta: mapa conceitual e DER ← VOCÊ ESTÁ AQUI</strong></p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">check_circle</i> MÓDULO 4 / Unidade 2</h4>
+                    <p>Validar a solução. Entrega da modelagem da solução final (relatório final).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relembrando a solução -->
+        <section>
+            <h2>🔄 Relembrando… a solução</h2>
+
+            <div class="info-card">
+                <p>Na Unidade anterior, foram apresentadas as técnicas e ferramentas para o desenvolvimento da
+                    <strong>solução final para o problema da demanda social</strong>.
+                </p>
+                <p>Nesta Unidade, o estudante deve <strong>modelar esta solução inovadora por meio de diagramas
+                        UML</strong>:</p>
+                <ul>
+                    <li><strong>Caso de uso</strong></li>
+                    <li><strong>de sequência</strong></li>
+                    <li><strong>de classes</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Modelagem da solução (refinando) -->
+        <section>
+            <h2>⚙️ Modelagem da solução (refinando)</h2>
+
+            <div class="info-card">
+                <h3>Interações sucessivas</h3>
+                <p>Criação e identificação de melhorias nos protótipos a partir da sua própria visão (ou da visão mais
+                    técnica).</p>
+
+                <h3 style="margin-top: 15px;">Testar a solução por meio da modelagem de UML</h3>
+                <p>Pode haver a necessidade de melhorias dos modelos propostos para validar esta solução (documentar
+                    estas melhorias/modificações).</p>
+            </div>
+        </section>
+
+        <!-- Ferramentas para Mapas Conceituais -->
+        <section>
+            <h2>🗺️ Ferramentas para elaborar Mapa Conceitual</h2>
+
+            <div class="ferramentas-grid">
+                <div class="ferramenta-card">
+                    <i class="material-icons">mind_map</i>
+                    <h4>MindMeister</h4>
+                    <a href="http://www.mindmeister.com/pt" target="_blank">www.mindmeister.com</a>
+                </div>
+                <div class="ferramenta-card">
+                    <i class="material-icons">share</i>
+                    <h4>Coggle</h4>
+                    <a href="https://coggle.it/" target="_blank">coggle.it</a>
+                </div>
+                <div class="ferramenta-card">
+                    <i class="material-icons">device_hub</i>
+                    <h4>Cmap Tools</h4>
+                    <a href="https://cmap.ihmc.us/cmaptools/" target="_blank">cmap.ihmc.us</a>
+                </div>
+            </div>
+
+            <div class="diagrama-container">
+                <h3>Exemplo de Mapa Conceitual</h3>
+                <pre style="text-align: left;">
+┌─────────────────────────────────────────────────────────────────┐
+│                    TRANSPORTE COLETIVO                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐     │
+│  │   Usuários   │    │ Concessionária│    │  Prefeitura  │     │
+│  │              │    │              │    │              │     │
+│  │ • Moradores  │◄──►│ • Frota      │◄──►│ • Licenças   │     │
+│  │ • Estudantes │    │ • Linhas     │    │ • Fiscalização│     │
+│  │ • Idosos     │    │ • Horários   │    │ • Obrigações │     │
+│  └──────────────┘    └──────────────┘    └──────────────┘     │
+│         │                   │                   │              │
+│         ▼                   ▼                   ▼              │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                    APP BOLU                              │   │
+│  │  • Login • Consulta de Linhas/Itinerários/Pontos        │   │
+│  │  • Atualização em tempo real • Monitoramento            │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+                </pre>
+                <p><small>2a versão - MC | Montagem: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+        </section>
+
+        <!-- Ferramentas para Diagramas UML -->
+        <section>
+            <h2>📐 Ferramentas para elaborar Diagramas UML</h2>
+
+            <div class="ferramentas-grid">
+                <div class="ferramenta-card">
+                    <i class="material-icons">draw</i>
+                    <h4>Lucidchart</h4>
+                    <a href="https://lucid.app/" target="_blank">lucid.app</a>
+                </div>
+                <div class="ferramenta-card">
+                    <i class="material-icons">computer</i>
+                    <h4>Astah</h4>
+                    <a href="https://astah.net/" target="_blank">astah.net</a>
+                </div>
+                <div class="ferramenta-card">
+                    <i class="material-icons">cloud</i>
+                    <h4>draw.io</h4>
+                    <a href="https://app.diagrams.net/" target="_blank">diagrams.net</a>
+                </div>
+            </div>
+
+            <div class="diagrama-container">
+                <h3>Exemplo de Diagrama de Classes</h3>
+                <pre style="text-align: left;">
+┌─────────────────────────────────────────────────────────────────────────┐
+│                            Pessoas                                     │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ <<PK>> CPF : int                                               │   │
+│  │ Nome-Usuario : string                                          │   │
+│  │ Endereço : string                                              │   │
+│  │ Bairro : string                                                │   │
+│  │ Cidade : string                                                │   │
+│  │ Telefone : string                                              │   │
+│  │ E-mail : string                                                │   │
+│  │ Status : string                                                │   │
+│  ├─────────────────────────────────────────────────────────────────┤   │
+│  │ + Login() : bool                                               │   │
+│  │ + Consultar-LIP() : char                                       │   │
+│  │ + Logout() : bool                                              │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              ▲                                         │
+│                              │                                         │
+│  ┌───────────────────────────┴───────────────────────────────┐         │
+│  │                         Usuario                           │         │
+│  │  ┌─────────────────────────────────────────────────────┐ │         │
+│  │  │ <<PK>> CPF : int                                    │ │         │
+│  │  │ <<PK>> id-usuario : string                          │ │         │
+│  │  │ Senha : string                                      │ │         │
+│  │  │ Data-cadastro : string                              │ │         │
+│  │  └─────────────────────────────────────────────────────┘ │         │
+│  └───────────────────────────────────────────────────────────┘         │
+└─────────────────────────────────────────────────────────────────────────┘
+                </pre>
+                <p><small>2a versão - DS | Montagem: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+
+            <div class="diagrama-container">
+                <h3>Exemplo de Diagrama de Caso de Uso</h3>
+                <pre style="text-align: left;">
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    Diagrama de Caso de Uso - App BOLU                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   ┌─────────────┐                       ┌─────────────────┐             │
+│   │  Usuários   │                       │ Concessionárias │             │
+│   │             │                       │                 │             │
+│   │             │                       │                 │             │
+│   │   ┌───────┐│                       │   ┌─────────┐   │             │
+│   │   │Login  ││                       │   │Atualizar│   │             │
+│   │   └───┬───┘│                       │   │Linhas/  │   │             │
+│   │       │   │                       │   │Itinerá- │   │             │
+│   │   ┌───▼───┐│                       │   │rios/    │   │             │
+│   │   │Consult││                       │   │Pontos   │   │             │
+│   │   │Linhas/││                       │   └─────┬───┘   │             │
+│   │   │Itinerá││                       │         │       │             │
+│   │   │rios/  ││                       │   ┌─────▼───┐   │             │
+│   │   │Pontos ││                       │   │Monitorar│   │             │
+│   │   └───┬───┘│                       │   │e veri-  │   │             │
+│   │       │   │                       │   │ficar    │   │             │
+│   │   ┌───▼───┐│                       │   └─────────┘   │             │
+│   │   │Logout ││                       │                 │             │
+│   │   └───────┘│                       └─────────────────┘             │
+│   └─────────────┘                                                      │
+│                                                                         │
+│   ┌─────────────────────────────────────────────────────────────┐       │
+│   │                     Prefeitura(s)                           │       │
+│   │   ┌─────────────────────────────────────────────────────┐   │       │
+│   │   │ Monitorar e verificar Linhas/Itinerários/Pontos    │   │       │
+│   │   └─────────────────────────────────────────────────────┘   │       │
+│   └─────────────────────────────────────────────────────────────┘       │
+└─────────────────────────────────────────────────────────────────────────┘
+                </pre>
+                <p><small>2a versão DCU | Montagem: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+
+            <div class="diagrama-container">
+                <h3>Exemplo de Diagrama de Sequência</h3>
+                <pre style="text-align: left;">
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    sd App BOLU                                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  Usuário(s)      Interface App BOLU          Servidor BD                │
+│     │                  │                          │                    │
+│     │ 1: Login-Usuário │                          │                    │
+│     ├─────────────────►│                          │                    │
+│     │                  │ 2.1: Verifica-CPF        │                    │
+│     │                  ├─────────────────────────►│                    │
+│     │                  │                          │ 2.1.1: CPF válido  │
+│     │                  │◄─────────────────────────┤                    │
+│     │                  │                          │                    │
+│     │ 2.1.1: Solicita-Senha                       │                    │
+│     │◄─────────────────┤                          │                    │
+│     │ 2.1.1.1: Informa-Senha                      │                    │
+│     ├─────────────────►│                          │                    │
+│     │                  │ 2.1.1.2: Verifica-Senha  │                    │
+│     │                  ├─────────────────────────►│                    │
+│     │                  │                          │ 2.1.1.2.1: OK      │
+│     │                  │◄─────────────────────────┤                    │
+│     │ 2.2: Apresenta Opções BOLU                  │                    │
+│     │◄─────────────────┤                          │                    │
+│     │                  │                          │                    │
+│     │ 3: Solicita-Consulta-Linha-Itinerário-Ponto│                    │
+│     ├─────────────────►│                          │                    │
+│     │                  │ 3.1: Consulta-L-I-P      │                    │
+│     │                  ├─────────────────────────►│                    │
+│     │                  │                          │ 3.1.1: Informação  │
+│     │                  │◄─────────────────────────┤                    │
+│     │ 3.2: Visualização-Horário(s)                │                    │
+│     │◄─────────────────┤                          │                    │
+│     │                  │                          │                    │
+│     │ 5: Logout()      │                          │                    │
+│     ├─────────────────►│                          │                    │
+└─────────────────────────────────────────────────────────────────────────┘
+                </pre>
+                <p><small>2a versão - DS | Montagem: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+        </section>
+
+        <!-- Exemplo prático do Projeto Integrador do Professor -->
+        <section>
+            <h2>🚍 Exemplo Prático: Projeto Integrador do Professor</h2>
+
+            <div class="info-card">
+                <h3>Visão Geral do Projeto</h3>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <tr>
+                            <th>Módulo</th>
+                            <th>Foco</th>
+                            <th>Entregável</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 1</strong></td>
+                            <td>Planejar</td>
+                            <td>Desafios do Transporte Coletivo (demanda social)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 2</strong></td>
+                            <td>Problema</td>
+                            <td>Título: Ponto de ônibus cheio - propor uma melhoria por meio de software para
+                                comunicação entre usuários e concessionária</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 3</strong></td>
+                            <td>Solução</td>
+                            <td>Software para mobile: BOLU (Bus On Line User)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Módulo 4</strong></td>
+                            <td>Modelagem</td>
+                            <td>Mapa conceitual, DER, diagramas UML para: caso de uso, de sequência e de classes</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="referencias-pesquisa">
+                <h4><i class="material-icons">search</i> Temas pesquisados pelo Professor</h4>
+                <p>Para fundamentar a solução, foram pesquisadas as seguintes referências acadêmicas e técnicas:</p>
+                <ul>
+                    <li>AGOSTINI, L. et al. Smart Station: Um sistema pervasivo de notificação em paradas de ônibus para
+                        pessoas com deficiência visual. <em>Revista de Informática Aplicada</em>, v. 12, n. 2, 2017.
+                    </li>
+                    <li>CASTRO, V. C de. et al. Online Monitoring For Public Transport Using Mobile Applications.
+                        <em>IEEE Latin America Transactions</em>, vol. 16, No. 6, junho 2018.
+                    </li>
+                    <li>DA SILVA, R. J.; URSSI, N. J. UrbX–Como os aplicativos móveis potencializam a vida urbana.
+                        <em>Revista de Iniciação Científica, Tecnológica e Artística</em>, São Paulo, v. 5, n. 1, 2015.
+                    </li>
+                    <li>GOOGLE PLAY. <strong>Olha o Ônibus</strong>. Disponível em:
+                        https://play.google.com/store/apps/details?id=br.com.projetoslabex.olhaoonibus. Acesso em: 15
+                        set. 2018.</li>
+                    <li>MORAIS, D. M. G.; DIGIAMPIETRI, L. A. A computational model for urban transportation systems
+                        simulation. <em>Revista de Informática Teórica e Aplicada – RITA</em>, v. 25, n. 3, p. 39-61,
+                        2018.</li>
+                    <li>PEREIRA, M. et al. Mobile App Development For Bus Monitoring in Macaé-RJ. <em>Revista Tecnologia
+                            e Sociedade</em>. v. 14, n. 33, p. 1-15, julho/setembro, 2018.</li>
+                    <li>SÁ, J. D. S. et al. Online Monitoring of Buses Information Using KNN, ATR and DMC Algorithms.
+                        <em>IEEE Latin America Transactions</em>, v. 17, n. 04, p. 564-572, 2019.
+                    </li>
+                    <li>SEMOB. Disponível em: http://semob.belem.pa.gov.br/site/. Acesso em: 28 ago. 2018.</li>
+                    <li>VAZ, M. C. da R.; AMARAL, R. P. <strong>Trackbus: um aplicativo de apoio aos usuários de ônibus
+                            na cidade do Rio de Janeiro</strong>. Trabalho de Conclusão de Curso – Universidade Federal
+                        Fluminense – Instituto de Computação. 2017.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Dicas para organização do trabalho -->
+        <section>
+            <h2>💡 Dicas para organização do trabalho</h2>
+
+            <div class="dicas-box">
+                <h4><i class="material-icons">lightbulb</i> Orientações importantes</h4>
+                <ul>
+                    <li>Elaborar os modelos do protótipo da solução, e qual(is) técnica(s) sugerida(s) foram utilizadas
+                        ou se foi utilizada alguma outra (descrever).</li>
+                    <li>Apresentar, claramente, os temas estudados e pesquisados para a busca de
+                        metodologias/ferramentas para desenvolver soluções inovadoras, relacionando com as disciplinas
+                        do curso.</li>
+                    <li>Iniciar a escrita do relatório final do projeto.</li>
+                    <li>Esclarecer, quanto à solução proposta:</li>
+                    <ul>
+                        <li>(1) A que necessidade(s) atende?</li>
+                        <li>(2) É prática? Como?</li>
+                        <li>(3) É viável? Como?</li>
+                        <li>(4) Qual é a proposta de valor da solução?</li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências da Unidade</h2>
+
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020. ISBN 9788550814377. Disponível na Biblioteca Digital da UFMS.
+                    <strong>Trecho a ser lido: Capítulo 9 e 10</strong>.</cite></p>
+
+            <p><cite>LEE, Richard C. UML e C++: guia prático de desenvolvimento orientado a objeto. São Paulo: Pearson,
+                    2001. ISBN 8534613648. Disponível na Biblioteca Digital da UFMS. <strong>Trecho a ser lido: Capítulo
+                        4: Delimitando o domínio</strong>.</cite></p>
+
+            <h3>📗 Leitura complementar</h3>
+            <p><cite>PAGE-JONES, Meilir. Fundamentos do desenho orientado a objeto com UML. São Paulo: Pearson, 2001, p.
+                    62-76. ISBN 9788534612432. Disponível na Biblioteca Digital da UFMS. <strong>Trecho a ser lido:
+                        Capítulo 2: Breve História da Orientação a Objeto</strong>.</cite></p>
+        </section>
+
+        <!-- Licenciamento -->
+        <section>
+            <h2>📜 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 30 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Módulo 4 - Unidade 1: Modelagem de diagramas UML</p>
+    </footer>
+
+    <script>
+        // Script para controle do sticky no mobile
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var materiais = document.getElementById('materiais');
+                if (!materiais) return;
+
+                function isMobile() {
+                    return window.innerWidth <= 768;
+                }
+
+                function updateSticky() {
+                    if (!isMobile()) {
+                        materiais.classList.remove('sticky');
+                        return;
+                    }
+                    var rect = materiais.getBoundingClientRect();
+                    if (rect.top <= 0) {
+                        materiais.classList.add('sticky');
+                    } else {
+                        materiais.classList.remove('sticky');
+                    }
+                }
+
+                var ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateSticky();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                window.addEventListener('resize', updateSticky);
+                updateSticky();
+            });
+        })();
+    </script>
+</body>
+
+</html>
