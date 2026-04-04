@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Módulo 3</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o Módulo 3 */
+        .visao-geral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .modulo-card-pequeno {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .modulo-card-pequeno h4 {
+            color: #0066cc;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .solucao-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .solucao-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .solucao-card h4 {
+            color: #0066cc;
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requisitos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .requisitos-col {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .requisitos-col h5 {
+            color: #0066cc;
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        .requisitos-lista-software {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .software-item {
+            background-color: #e7f3f5;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .diagrama-container {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .diagrama-container pre {
+            text-align: left;
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 0.85em;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .template-box {
+            background-color: #f0f7ff;
+            border: 2px dashed #0066cc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .template-box h4 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+
+        .dicas-list {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dicas-list h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requisitos-funcionais {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .requisitos-funcionais h5 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+
+        .requisitos-funcionais ol {
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .requisitos-funcionais li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        @media (max-width: 768px) {
+            .visao-geral-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requisitos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requisitos-funcionais ol {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 3 - Desenvolvimento da solução</h2>
+        <h3>🔄 Unidade 2 - Repensar e ajustar a solução</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-modelagem-e-projeto-da-solucao-tema.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Mod 3 Und 1
+            </a>
+
+            <a href="mod3-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 3 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo da aula -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4O6yLjLSmaw" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 2">
+                [UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 2
+            </p>
+            <p>Prof° ministrante: Carlos Alberto da Silva</p>
+            <p>📅 30 de jul. de 2024 · 324 visualizações</p>
+        </section>
+
+        <!-- Visão Geral do Projeto Integrador -->
+        <section>
+            <h2>🔭 Visão Geral do Projeto Integrador</h2>
+            <div class="visao-geral-grid">
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">play_circle</i> MÓDULO 2 / Unidade 1</h4>
+                    <p>Executar o Plano de ação, a escolha do local, e fazer observação in loco (city-tour).</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">auto_awesome</i> MÓDULO 2 / Unidade 2</h4>
+                    <p>Estudo sobre o problema escolhido após visita a campo. Definição do tema (problema).</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">lightbulb</i> MÓDULO 3 / Unidade 1</h4>
+                    <p>Desenvolver ideias de soluções.</p>
+                </div>
+                <div class="modulo-card-pequeno" style="border-left-color: #28a745;">
+                    <h4><i class="material-icons">edit</i> MÓDULO 3 / Unidade 2</h4>
+                    <p><strong>Repensar e ajustar a solução para o relatório parcial.</strong> ← Você está aqui</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">account_tree</i> MÓDULO 4 / Unidade 1</h4>
+                    <p>Modelagem da solução proposta: mapa conceitual e DER.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">check_circle</i> MÓDULO 4 / Unidade 2</h4>
+                    <p>Validar a solução. Entrega da modelagem da solução final (relatório final).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO: Fundamentação da Solução -->
+        <section>
+            <h2>💡 Soluções (Proj. Integ. Professor)</h2>
+
+            <div class="info-card">
+                <p><strong>Com base em todas as informações coletadas, analisadas e registradas, esta solução a ser
+                        implementada deve atender a todos os requisitos de:</strong></p>
+                <ul>
+                    <li>Atender o público-alvo;</li>
+                    <li>Ter uma boa relação custo x benefício;</li>
+                    <li>Atender os requisitos, objetivos ...</li>
+                    <li>Um software onde o cliente escolhe a(s) linha(s) que disponibilizará em tempo real a(s)
+                        localização do ônibus.
+                        <ul>
+                            <li>Usuário escolhe 1 ou + linhas de sua cidade</li>
+                        </ul>
+                    </li>
+                    <li><strong>Acelerar a comunicação cliente x concessionária ⇒ CELULAR!!!</strong></li>
+                </ul>
+            </div>
+
+            <div class="solucao-card">
+                <h4><i class="material-icons">smartphone</i> A solução a ser implementada:</h4>
+                <p style="font-size: 1.2em; font-weight: 600; color: #28a745;">Software para qualquer celular (Android,
+                    iOS, ...)</p>
+                <p style="margin-top: 10px;"><small>Montagem: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+
+            <!-- Requisitos do Software -->
+            <div class="requisitos-funcionais">
+                <h5><i class="material-icons">code</i> Requisitos do Software:</h5>
+                <ol>
+                    <li>Autenticação do Cliente;</li>
+                    <li>Consulta de linhas de ônibus no servidor;</li>
+                    <li>Consulta perfil;</li>
+                    <li>Visualização de rotas das linhas;</li>
+                    <li>Desconexão do aplicativo;</li>
+                    <li>Consulta de linhas favoritas;</li>
+                    <li>Exclusão de linha favorita;</li>
+                    <li>Adição de linhas favoritas;</li>
+                    <li>Consulta de Históricos de consultas; e</li>
+                    <li>Monitoramento de linhas favoritas.</li>
+                </ol>
+            </div>
+
+            <!-- Pesquisa de softwares similares -->
+            <div class="info-card" style="border-left-color: #28a745;">
+                <h4><i class="material-icons">search</i> Pesquisa de softwares similares</h4>
+                <p>Nesta etapa de software similares, foram pesquisados <strong>14 softwares</strong> no mercado de
+                    aplicativos Android da loja Google Play que visam auxiliar usuários no processo de mobilidade
+                    urbana:</p>
+                <div class="requisitos-lista-software">
+                    <span class="software-item">Moovit</span>
+                    <span class="software-item">Citymapper</span>
+                    <span class="software-item">CittaMobi</span>
+                    <span class="software-item">Meu ônibus Fortaleza</span>
+                    <span class="software-item">Próximo Ônibus Curitiba</span>
+                    <span class="software-item">Trafi</span>
+                    <span class="software-item">Maps - Navegação e transporte público</span>
+                    <span class="software-item">Waze</span>
+                    <span class="software-item">+ 6 outros aplicativos</span>
+                </div>
+                <p style="margin-top: 10px;"><strong>O software Moovit</strong> é um dos aplicativos de mobilidade
+                    urbana mais utilizados mundialmente, oferecendo facilidade na utilização e com muitas opções de
+                    funcionalidades.</p>
+            </div>
+
+            <div class="requisitos-grid">
+                <div class="requisitos-col">
+                    <h5><i class="material-icons">people</i> Para os Clientes (requisitos):</h5>
+                    <ol>
+                        <li><strong>Tempo real da localização e rotas;</strong></li>
+                        <li><strong>Cliente se desloca com a confirmação da localização (ônibus):</strong>
+                            <ul>
+                                <li>a. minimiza tempo de espera;</li>
+                                <li>b. minimiza tempo de viagem;</li>
+                            </ul>
+                        </li>
+                        <li><strong>Melhorar a comunicação...</strong></li>
+                    </ol>
+                </div>
+                <div class="requisitos-col">
+                    <h5><i class="material-icons">business</i> Para a concessionária (requisitos):</h5>
+                    <ol>
+                        <li><strong>Custo de manutenção e configuração são menores;</strong></li>
+                        <li><strong>Maximiza a viagem com clientes;</strong></li>
+                        <li><strong>Visualização em tempo real das rotas e ônibus desta.</strong></li>
+                    </ol>
+                </div>
+            </div>
+            <p style="text-align: right; font-size: 0.8em;">Montagem: Carlos Alberto da Silva, 2024</p>
+        </section>
+
+        <!-- Modelagens da solução -->
+        <section>
+            <h2>📊 Soluções (Proj. Integ. Professor)</h2>
+
+            <div class="solucao-card">
+                <h4><i class="material-icons">account_tree</i> 3ª versão - MC</h4>
+                <div class="diagrama-container">
+                    <pre>
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           SISTEMA BOLU                                       │
+│                    (Bus On Line User - Transporte Coletivo)                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────┐              ┌──────────────────────────┐     │
+│  │        CLIENTE           │              │     CONCESSIONÁRIA       │     │
+│  ├──────────────────────────┤              ├──────────────────────────┤     │
+│  │ • Autenticação           │              │ • Monitorar frota em     │     │
+│  │ • Consultar linhas       │◄────────────►│   tempo real             │     │
+│  │ • Selecionar favoritas   │              │ • Gerenciar itinerários  │     │
+│  │ • Visualizar rotas       │              │ • Atualizar horários     │     │
+│  │ • Monitoramento em       │              │ • Comunicação com        │     │
+│  │   tempo real             │              │   clientes               │     │
+│  │ • Histórico de consultas │              │ • Receber feedback dos   │     │
+│  │ • Avaliar serviço        │              │   usuários               │     │
+│  └──────────────────────────┘              └──────────────────────────┘     │
+│           │                                           │                     │
+│           ▼                                           ▼                     │
+│  ┌──────────────────────────────────────────────────────────────────┐      │
+│  │                      BANCO DE DADOS                              │      │
+│  ├──────────────────────────────────────────────────────────────────┤      │
+│  │ • Linhas  • Itinerários  • Horários  • Ônibus                   │      │
+│  │ • Localização em tempo real  • Clientes  • Favoritas            │      │
+│  │ • Histórico de consultas  • Avaliações  • Alertas               │      │
+│  └──────────────────────────────────────────────────────────────────┘      │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                    </pre>
+                </div>
+                <p style="text-align: right; font-size: 0.8em;">Montagem: Carlos Alberto da Silva, 2024</p>
+            </div>
+
+            <div class="solucao-card">
+                <h4><i class="material-icons">storage</i> 1ª versão - DER</h4>
+                <div class="diagrama-container">
+                    <pre>
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│    CLIENTE      │     │     LINHA       │     │    ÔNIBUS       │
+├─────────────────┤     ├─────────────────┤     ├─────────────────┤
+│ id_cliente (PK) │     │ id_linha (PK)   │     │ id_onibus (PK)  │
+│ nome            │     │ numero          │     │ placa           │
+│ email           │     │ nome            │     │ capacidade      │
+│ telefone        │     │ descricao       │     │ status          │
+│ endereco        │     │ cor             │     │ id_linha (FK)   │
+│ data_cadastro   │     │                 │     │ fabricante      │
+└────────┬────────┘     └────────┬────────┘     └────────┬────────┘
+         │                       │                       │
+         │                       ▼                       │
+         │              ┌─────────────────┐              │
+         └─────────────►│   ITINERÁRIO    │◄─────────────┘
+                        ├─────────────────┤
+                        │ id_itinerario(PK)│
+                        │ id_linha (FK)    │
+                        │ id_onibus (FK)   │
+                        │ horario_partida  │
+                        │ horario_chegada  │
+                        │ origem           │
+                        │ destino          │
+                        │ dias_semana      │
+                        └─────────────────┘
+                               │
+                               ▼
+                        ┌─────────────────┐
+                        │  LOCALIZAÇÃO    │
+                        ├─────────────────┤
+                        │ id_localizacao  │
+                        │ id_onibus (FK)  │
+                        │ data_hora       │
+                        │ latitude        │
+                        │ longitude       │
+                        │ velocidade      │
+                        └─────────────────┘
+                    </pre>
+                </div>
+                <p style="text-align: right; font-size: 0.8em;">Montagem: Carlos Alberto da Silva, 2024</p>
+            </div>
+        </section>
+
+        <!-- Visão Geral do Projeto Integrador (professor) -->
+        <section>
+            <h2>📊 Visão Geral Projeto Integrador (professor)</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background-color: #245; color: white;">
+                        <th style="padding: 12px;">Módulo</th>
+                        <th style="padding: 12px;">Foco</th>
+                        <th style="padding: 12px;">Exemplo (Transporte Coletivo)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Módulo 1</strong></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Planejar</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Desafios do Transporte Coletivo (demanda
+                            social)</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Módulo 2</strong></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Problema do transporte público</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">
+                            <strong>Título: Ponto de ônibus cheio</strong><br>
+                            propor uma melhoria por meio de software para comunicação entre clientes e concessionária.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Módulo 3</strong></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Desenvolvimento da solução</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">
+                            <strong>Solução</strong> Software para mobile: <strong>BOLU (Bus On Line User)</strong><br>
+                            Mapa conceitual e diagrama DER
+                        </td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Módulo 4</strong></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Validação da solução</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Modelagem</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Dicas para organização do trabalho -->
+        <section>
+            <h2>📌 Dicas para organização do trabalho</h2>
+
+            <div class="dicas-list">
+                <h4><i class="material-icons">tips_and_updates</i> Neste módulo, o estudante deve descrever sobre a
+                    solução:</h4>
+                <ol>
+                    <li><strong>O mapa conceitual do tema.</strong></li>
+                    <li><strong>O diagrama de entidade e relacionamento da solução.</strong></li>
+                    <li><strong>Elaborar um relatório parcial da proposta de solução (Template):</strong>
+                        <ol type="a" style="margin-top: 10px; margin-left: 20px;">
+                            <li>Introdução</li>
+                            <li>Objetivos</li>
+                            <li>Justificativa e problema de pesquisa</li>
+                            <li>Fundamentação teórica</li>
+                            <li>Metodologia</li>
+                            <li>Resultados e impactos esperados</li>
+                            <li>Referências</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="template-box">
+                <h4><i class="material-icons">description</i> Template do Relatório Parcial</h4>
+                <p>O relatório parcial deve conter as seguintes seções:</p>
+                <ul>
+                    <li><strong>1. Introdução:</strong> Contextualização do problema e apresentação da solução proposta.
+                    </li>
+                    <li><strong>2. Objetivos:</strong> Geral e específicos da solução.</li>
+                    <li><strong>3. Justificativa e problema de pesquisa:</strong> Por que esta solução é necessária?
+                    </li>
+                    <li><strong>4. Fundamentação teórica:</strong> Referencial que embasa a solução.</li>
+                    <li><strong>5. Metodologia:</strong> Como a solução será desenvolvida e validada.</li>
+                    <li><strong>6. Resultados e impactos esperados:</strong> O que se espera alcançar.</li>
+                    <li><strong>7. Referências:</strong> Conforme ABNT NBR 6023/2018.</li>
+                </ul>
+                <p style="margin-top: 15px; text-align: center;">
+                    <a href="#" class="btn-resposta"
+                        style="background-color: #0066cc; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;"
+                        onclick="alert('Template disponível no AVA para download')">
+                        <i class="material-icons">download</i> Baixar Template (DOCX)
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020. ISBN 9788550814377. Disponível na Biblioteca Digital da UFMS.
+                    <strong>Trecho a ser lido: Capítulo 7 e 8</strong>.</cite></p>
+
+            <p><cite>ELMASRI, Ramez; NAVATHE, Shamkant B. Sistemas de Banco de Dados. 7. ed. São Paulo: Editora Pearson,
+                    2018. ISBN 9788543025001. Disponível na Biblioteca Digital da UFMS. <strong>Trecho a ser lido:
+                        Capítulo 3: Modelagem de dados usando o modelo Entidade-Relacionamento (ER)</strong>.</cite></p>
+
+            <h3>📗 Leitura complementar</h3>
+            <p><cite>HEUSER, Carlos Alberto. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman, 2011. ISBN
+                    9788577804528. Disponível na Biblioteca Digital da UFMS. <strong>Trecho a ser lido: Capítulos 4 e
+                        5</strong>.</cite></p>
+
+            <p><cite>MEDEIROS, Luciano Frontino de. Banco de dados: princípios e prática. 1. ed. Curitiba: Editora
+                    Intersaberes, 2013. ISBN 9788582122181. Disponível na Biblioteca Digital da UFMS. <strong>Trecho a
+                        ser lido: Capítulo 2: O modelo Entidade-Relacionamento (ER)</strong>.</cite></p>
+        </section>
+
+        <!-- Licenciamento -->
+        <section>
+            <h2>📜 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Módulo 3 - Unidade 2: Repensar e ajustar a solução</p>
+    </footer>
+
+    <script>
+        // Script para controle do sticky no mobile
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var materiais = document.getElementById('materiais');
+                if (!materiais) return;
+
+                function isMobile() {
+                    return window.innerWidth <= 768;
+                }
+
+                function updateSticky() {
+                    if (!isMobile()) {
+                        materiais.classList.remove('sticky');
+                        return;
+                    }
+                    var rect = materiais.getBoundingClientRect();
+                    if (rect.top <= 0) {
+                        materiais.classList.add('sticky');
+                    } else {
+                        materiais.classList.remove('sticky');
+                    }
+                }
+
+                var ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateSticky();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                window.addEventListener('resize', updateSticky);
+                updateSticky();
+            });
+        })();
+    </script>
+</body>
+
+</html>
