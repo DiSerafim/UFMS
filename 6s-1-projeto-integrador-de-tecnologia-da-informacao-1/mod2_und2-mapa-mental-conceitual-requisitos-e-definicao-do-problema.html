@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Módulo 2</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a Unidade 2 do Módulo 2 */
+        .visao-geral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .modulo-card-pequeno {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .modulo-card-pequeno h4 {
+            color: #0066cc;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .modulo-card-pequeno .modulo-numero {
+            font-weight: 600;
+            color: #245;
+            font-size: 0.9em;
+        }
+
+        .dica-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .tab-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-card h4 {
+            color: #245;
+            border-bottom: 1px solid #0066cc;
+            padding-bottom: 8px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pergunta-lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pergunta-lista li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pergunta-lista li::before {
+            content: "❓";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #e7f3f5, #d0e6f0);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #0066cc;
+        }
+
+        .problema-exemplo {
+            background-color: white;
+            border: 2px solid #dc3545;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .problema-exemplo h4 {
+            color: #dc3545;
+            margin-top: 0;
+        }
+
+        .requisitos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .requisitos-col {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .template-problema {
+            background-color: #f0f7ff;
+            border: 1px dashed #0066cc;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .template-problema h4 {
+            color: #0066cc;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .info-problema {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .info-problema .rotulo {
+            font-weight: 600;
+            color: #245;
+        }
+
+        @media (max-width: 768px) {
+            .requisitos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-problema {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 2 - Protótipos para resolução de problema</h2>
+        <h3>🧠 Unidade 2 - Mapa mental, requisitos e definição do problema (tema)</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-Identificacao-de-demandas-e-definicao-do-problema.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Mod 2 Und 1
+            </a>
+
+            <a href="mod2-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 2<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Seção do Vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/5ra1t6LimRU" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 2">
+                [UFMS Digital] Projeto Integrador I (TIN) - Módulo 2 - Unidade 2
+            </p>
+            <p>Prof° ministrante: Carlos Alberto da Silva</p>
+            <p>📅 30 de jul. de 2024</p>
+        </section>
+
+        <!-- Visão Geral do Módulo 2 -->
+        <section>
+            <h2>🔭 Visão Geral do Projeto Integrador</h2>
+            <div class="visao-geral-grid">
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">play_circle</i> MÓDULO 2 / Unidade 1</h4>
+                    <p>Executar o Plano de ação, a escolha do local, e fazer observação in loco (city-tour).</p>
+                </div>
+                <div class="modulo-card-pequeno" style="border-left-color: #28a745;">
+                    <h4><i class="material-icons">auto_awesome</i> MÓDULO 2 / Unidade 2</h4>
+                    <p><strong>Estudo sobre o problema escolhido após visita a campo. Definição do tema
+                            (problema).</strong> ← Você está aqui</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">lightbulb</i> MÓDULO 3 / Unidade 1</h4>
+                    <p>Desenvolver ideias de soluções.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">edit</i> MÓDULO 3 / Unidade 2</h4>
+                    <p>Repensar e ajustar a solução para o relatório parcial.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">account_tree</i> MÓDULO 4 / Unidade 1</h4>
+                    <p>Modelagem da solução proposta: mapa conceitual e DER.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">check_circle</i> MÓDULO 4 / Unidade 2</h4>
+                    <p>Validar a solução. Entrega da modelagem da solução final (relatório final).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O que fazer depois da visita? -->
+        <section>
+            <h2>📌 E depois da visita? Definir o problema</h2>
+            <div class="info-card">
+                <h3>📋 Procedimentos sugeridos após a visita:</h3>
+                <ul>
+                    <li><strong>Organização dos dados e informações obtidos.</strong>
+                        <ul>
+                            <li>Se em grupo, compartilhar um resumo das conversas e entrevistas obtidas.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Descrição das observações e constatações do(s) problema(s).</strong></li>
+                </ul>
+                <div class="dica-box" style="margin-top: 15px;">
+                    <h4><i class="material-icons">tip</i> Dica:</h4>
+                    <p>Organizar os dados e informações ajuda a identificar e compreender o problema.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dicas Importantes -->
+        <section>
+            <h2>💡 Dicas importantes após a visita</h2>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">table_chart</i> PARTE 1</h4>
+                    <ul class="pergunta-lista">
+                        <li>Apresente ou tabule os dados e informações de cada entrevistado para procurar por
+                            <strong>significados, padrões, conexões</strong> entre o público e em seguida entender as
+                            necessidades dos tipos de público.
+                        </li>
+                        <li>Nesta fase é importante perceber as <strong>similaridades de falas e observações</strong>.
+                        </li>
+                        <li><strong>Defina o público</strong> que irá se aprofundar, caracterizando-o.</li>
+                    </ul>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">insights</i> PARTE 2</h4>
+                    <ul class="pergunta-lista">
+                        <li>A atenção nas informações ou imagens ajuda a descobrir <strong>necessidades evidentes, não
+                                articuladas ou não evidentes</strong>.</li>
+                        <li>São a chave para produzir tipos de <strong>critérios inovadores</strong> que geram soluções
+                            diferenciadas.</li>
+                        <li><strong>Insights</strong> são expressões concisas do que você (ou o grupo) aprendeu da
+                            pesquisa e as inspirações.</li>
+                    </ul>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">repeat</i> PARTE 3</h4>
+                    <ul class="pergunta-lista">
+                        <li>Se houver necessidade de aprofundamento, elaborar um <strong>novo roteiro de questões
+                                norteadoras para a 2ª visita in loco</strong>, no qual irá aprofundar as perguntas.</li>
+                        <li>Compreender se os insights de problemas que foram elencados é (são) realmente um
+                            problema(s).</li>
+                        <li><strong>Identificar como eles resolvem tais problemas atualmente.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Descrição do Problema e Tabulação -->
+        <section>
+            <h2>📝 Descrição do problema: como fazer?</h2>
+            <div class="insight-card">
+                <ul>
+                    <li><strong>Se em grupo,</strong> defina um local para o trabalho: organizar reuniões online ou
+                        presenciais no polo, por exemplo.</li>
+                    <li><strong>Organizar os dados e informações</strong> coletadas na visita: Análise e síntese de
+                        dados das entrevistas para obter o desafio/problema.</li>
+                    <li><strong>Não esquecer</strong> que o problema será definido a partir das falas e observações in
+                        loco.</li>
+                </ul>
+            </div>
+
+            <h3>📊 Tabulação e organização dos dados</h3>
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">badge</i> PARTE 1</h4>
+                    <p><strong>Identificar o tipo de público:</strong></p>
+                    <ul>
+                        <li>Quem você conheceu?</li>
+                        <li>Qual a profissão/formação?</li>
+                        <li>Qual a idade?</li>
+                        <li>Qual o setor/local de trabalho? etc.</li>
+                    </ul>
+                    <p><strong>Na sua opinião, qual foi o ponto mais marcante/surpreendente de cada
+                            entrevistado?</strong></p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">psychology</i> PARTE 2</h4>
+                    <p><strong>Caracterização do público entrevistado:</strong></p>
+                    <ul>
+                        <li>O que era mais interessante, em sua opinião, sobre o que você conseguiu observar?</li>
+                        <li>Qual era a maior preocupação?</li>
+                        <li>O que mais os motiva?</li>
+                        <li>O que mais os frustra?</li>
+                    </ul>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">question_answer</i> PARTE 3</h4>
+                    <ul>
+                        <li>Que questões você gostaria de explorar em uma próxima conversa com seu público?</li>
+                        <li>O que você entende que aprendeu com essa experiência de entrevistar um público, no local
+                            escolhido, diante do que você vivenciou e diante do que os colegas da equipe apresentaram?
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Foco na definição do problema -->
+        <section>
+            <h2>🎯 Foco na definição do problema/desafio</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                <div style="flex: 2; min-width: 250px;">
+                    <div class="info-card">
+                        <p>Usar como base as <strong>entrevistas e observações realizadas</strong> para convergir o
+                            pensamento e chegar a um problema:</p>
+                        <p style="font-size: 1.5em; font-weight: 600; color: #0066cc; text-align: center;">Como
+                            podemos….?</p>
+                        <p>Escolher quais problemas serão estudados na busca por soluções inovadoras.</p>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 200px; text-align: center;">
+                    <div class="imagem-exemplo" style="background-color: #e9ecef; padding: 20px; border-radius: 8px;">
+                        <i class="material-icons" style="font-size: 60px; color: #6c757d;">group_work</i>
+                        <p><small>Fonte: Unsplash</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🗂️ Organizar os dados</h3>
+            <ul>
+                <li>Analisar a complexidade dos dados.</li>
+                <li>Sintetizar todos os dados coletados.</li>
+                <li>Organizar, em grupo, todas as informações (dar sentido a cada informação coletada).</li>
+                <li>Buscar insights e conexões entre as informações coletadas.</li>
+            </ul>
+            <p><em>A seguir, exemplos de estratégias e ferramentas que podem auxiliar o estudante (ou grupo) nessa
+                    etapa…</em></p>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">handyman</i> Estratégias e ferramentas</h4>
+                <p>Estas estratégias e ferramentas servem para ajudar a identificar o(s) problema(s) na sua demanda
+                    social. E obtendo respostas para os:</p>
+                <div
+                    style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; font-weight: 600; color: #0066cc;">
+                    <span>Como…</span> <span>Onde…</span> <span>Por que…</span> <span>Quem…</span> <span>Quais
+                        etapas…</span> <span>Quando…</span> <span>Quantos…</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definição do tema (problema) -->
+        <section>
+            <h2>📌 Definição do tema (problema)</h2>
+            <div class="info-card">
+                <h3>Etapas para encerrar este módulo:</h3>
+                <ol>
+                    <li><strong>Identificou muitos problemas</strong> da sua demanda social;</li>
+                    <li><strong>Escolha um problema</strong> … para o qual será implementada uma solução;</li>
+                    <li><strong>Descrever em detalhes</strong> este problema a ser tratado (template).</li>
+                </ol>
+            </div>
+
+            <div class="template-problema">
+                <h4>📋 Template: Descrever em detalhes este problema a ser tratado</h4>
+                <div class="info-problema"><span class="rotulo">Tema/Título da ação:</span>
+                    _ Cidade Virtual</div>
+                <div class="info-problema"><span class="rotulo">Público-alvo:</span> _ Moradores, comerciantes
+                </div>
+                <div class="info-problema"><span class="rotulo">Local de realização:</span>
+                    _ Cabanagem, Belém - PA</div>
+                <div class="info-problema"><span class="rotulo">Resumo:</span> _ Dar voz e visibilidade aos problemas
+                    das ruas e buscar resolução</div>
+                <div class="info-problema"><span class="rotulo">Palavras-chave:</span> _ Problemas, comércio, ajuda,
+                    eventos, notícias
+                </div>
+                <div class="info-problema"><span class="rotulo">Introdução:</span> _ Nem todos sabem o que ocorrer e ou
+                    acontece nas ruas e bairros, focando nesse problema nasceu a ideia do 'Cidade Virtual' um site onde
+                    as pessoas podem exibir os problemas reais que estão acontecendo em sua rua e bairro, podem export
+                    suas vendas, e comércios de modo geral.</div>
+                <div class="info-problema"><span class="rotulo">Objetivo geral:</span> _ Achar o vendedor mais próximo e
+                    disponível, expor problemas.
+                </div>
+                <div class="info-problema"><span class="rotulo">Objetivos específicos:</span>
+                    _ Chamar atenção para a situação real de nossa cidade</div>
+                <div class="info-problema"><span class="rotulo">Justificativa e delimitação do problema:</span>
+                    _ Ajudar a comunidade</div>
+                <div class="info-problema"><span class="rotulo">Fundamentação teórica:</span>
+                    _ Deixar tudo mais transparente</div>
+                <div class="info-problema"><span class="rotulo">Metodologia:</span> _ Visual, realidade</div>
+                <div class="info-problema"><span class="rotulo">Resultados preliminares: solução inicial:</span>
+                    _ Site desenvolvido https://cidadevirtual.vercel.app</div>
+                <div class="info-problema"><span class="rotulo">Referências:</span> _ ufms.br /
+                    https://www.youtube.com/watch?v=BlGBOa-Zcs4</div>
+            </div>
+        </section>
+
+        <!-- Exemplo Prático: Transporte Público -->
+        <section>
+            <h2>🚍 Exemplo Prático: Transporte Público</h2>
+            <p><strong>Problemas do transporte público identificados:</strong></p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0;">
+                <span class="tag" style="background-color: #dc3545; color: white;">Ponto de ônibus cheio</span>
+                <span class="tag" style="background-color: #dc3545; color: white;">Ônibus quebrado</span>
+                <span class="tag" style="background-color: #dc3545; color: white;">Ônibus atrasado</span>
+                <span class="tag" style="background-color: #dc3545; color: white;">Ônibus adiantado</span>
+                <span class="tag" style="background-color: #ffc107; color: #333;">Informações sobre rotas</span>
+                <span class="tag" style="background-color: #ffc107; color: #333;">Clientes nervosos</span>
+                <span class="tag" style="background-color: #17a2b8; color: white;">Motorista sem comunicação</span>
+                <span class="tag" style="background-color: #17a2b8; color: white;">Empresa monitora offline</span>
+            </div>
+
+            <div class="problema-exemplo">
+                <h4><i class="material-icons">flag</i> Professor escolheu o problema: <strong>Ponto de ônibus
+                        lotado</strong></h4>
+                <div style="text-align: center;">
+                    <div class="imagem-exemplo">
+                        <i class="material-icons" style="font-size: 60px;">directions_bus</i>
+                        <p><strong>Imagem do problema:</strong> Ponto de ônibus cheio</p>
+                        <p><small>Fonte: Unsplash</small></p>
+                    </div>
+                </div>
+                <p><strong>Requisitos funcionais:</strong></p>
+                <div class="requisitos-grid">
+                    <div class="requisitos-col">
+                        <h5 style="color: #0066cc;">Dos clientes:</h5>
+                        <ul>
+                            <li>Minimizar o tempo de espera no ponto pelo cliente;</li>
+                            <li>Minimizar o tempo de viagem do cliente;</li>
+                            <li>Monitorar os ônibus em tempo real de uma linha;</li>
+                            <li>Oferecer a opção de visualização dos pontos de ônibus num mapa;</li>
+                            <li>Tempo de resposta do software de, no máximo, 5 segundos.</li>
+                        </ul>
+                    </div>
+                    <div class="requisitos-col">
+                        <h5 style="color: #28a745;">Das concessionárias:</h5>
+                        <ul>
+                            <li>Maximizar a lotação do ônibus;</li>
+                            <li>Monitorar todos os ônibus em tempo real.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <p><strong>⇒ Todos os problemas desta demanda social estão relacionados à forma de se comunicar
+                            entre as partes (cliente e concessionária) ou como monitorar o serviço prestado.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <h3>📋 Informações do Problema Escolhido (Exemplo)</h3>
+            <div class="template-problema" style="border-color: #28a745;">
+                <div class="info-problema"><span class="rotulo">Tema/Título da ação:</span> <strong>Ponto de ônibus
+                        lotado</strong></div>
+                <div class="info-problema"><span class="rotulo">Público-alvo:</span> clientes do transporte coletivo e
+                    concessionárias.</div>
+                <div class="info-problema"><span class="rotulo">Local de realização:</span> qualquer ponto de ônibus.
+                </div>
+                <div class="info-problema"><span class="rotulo">Resumo:</span> propor uma melhoria no transporte
+                    coletivo por meio da tecnologia disponível no Brasil.</div>
+                <div class="info-problema"><span class="rotulo">Palavras-chave:</span> transporte coletivo.</div>
+                <div class="info-problema"><span class="rotulo">Introdução:</span> o transporte coletivo na minha cidade
+                    carece de uma aplicação que melhore a comunicação entre os Clientes e a concessionária de serviço.
+                </div>
+                <div class="info-problema"><span class="rotulo">Objetivo geral:</span> propor uma melhoria do transporte
+                    coletivo por meio de software para comunicação entre usuários e concessionária.</div>
+                <div class="info-problema"><span class="rotulo">Objetivos específicos:</span> atender a todos os
+                    requisitos identificados para o problema.</div>
+                <div class="info-problema"><span class="rotulo">Justificativa e delimitação do problema:</span> [texto]
+                </div>
+                <div class="info-problema"><span class="rotulo">Fundamentação teórica:</span> [texto]</div>
+                <div class="info-problema"><span class="rotulo">Metodologia:</span> [texto]</div>
+                <div class="info-problema"><span class="rotulo">Resultados preliminares: solução inicial:</span> [texto]
+                </div>
+                <div class="info-problema"><span class="rotulo">Referências:</span> [texto]</div>
+            </div>
+        </section>
+
+        <!-- Visão Geral Consolidada -->
+        <section>
+            <h2>📊 Visão Geral do Projeto Integrador (Exemplo)</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <tr>
+                        <th>Módulo</th>
+                        <th>Foco</th>
+                        <th>Exemplo (Transporte Coletivo)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 1</strong></td>
+                        <td>Planejar</td>
+                        <td>Desafios do Transporte Coletivo (demanda social)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 2</strong></td>
+                        <td>Problema</td>
+                        <td><strong>Título: Ponto de ônibus cheio</strong> – propor uma melhoria por meio de software
+                            para comunicação entre Clientes e concessionária.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 3</strong></td>
+                        <td>Solução</td>
+                        <td>[A ser desenvolvido]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulo 4</strong></td>
+                        <td>Modelagem</td>
+                        <td>[A ser desenvolvido]</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências da Unidade</h2>
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020. ISBN 9788550814377. Disponível na Biblioteca Digital da UFMS.
+                    <strong>Trecho a ser lido: Capítulo 4</strong>.</cite></p>
+            <p><cite>RICALDONI, Thaís Falabella; FONSECA, Luíza Antunes; REZENDE, Edson José Carpintero. Mapa Mental
+                    como ferramenta para designers (Mind Map as tool for designers). 13º Congresso Brasileiro de
+                    Pesquisa e Desenvolvimento em Design, Univille, Joinville (SC), 2018. Disponível em: <a
+                        href="https://link.ufms.br/jtt7r" target="_blank">https://link.ufms.br/jtt7r</a>. Acesso em: 5
+                    abr. 2024. Leitura do artigo completo.</cite></p>
+            <h3>📗 Leitura complementar</h3>
+            <p><cite>MARTINS, A. R. Q. et al. Uso de design thinking como experiência de prototipação de ideias no
+                    ensino superior. Future studies research journal: trends and strategies, 2016, v. 8, n. 1, p.
+                    208-224. Disponível em: <a href="https://link.ufms.br/wgKdr"
+                        target="_blank">https://link.ufms.br/wgKdr</a>. Acesso em: 5 abr. 2024. Leitura do artigo
+                    completo.</cite></p>
+        </section>
+
+        <!-- Licenciamento -->
+        <section>
+            <h2>📜 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Módulo 2 - Unidade 2: Mapa mental, requisitos e definição do
+            problema (tema)</p>
+    </footer>
+
+    <script>
+        // Script para controle do sticky no mobile
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var materiais = document.getElementById('materiais');
+                if (!materiais) return;
+
+                function isMobile() {
+                    return window.innerWidth <= 768;
+                }
+
+                function updateSticky() {
+                    if (!isMobile()) {
+                        materiais.classList.remove('sticky');
+                        return;
+                    }
+                    var rect = materiais.getBoundingClientRect();
+                    if (rect.top <= 0) {
+                        materiais.classList.add('sticky');
+                    } else {
+                        materiais.classList.remove('sticky');
+                    }
+                }
+
+                var ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateSticky();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                window.addEventListener('resize', updateSticky);
+                updateSticky();
+            });
+        })();
+    </script>
+</body>
+
+</html>
