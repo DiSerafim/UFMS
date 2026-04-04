@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I - Módulo 3</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o Módulo 3 */
+        .visao-geral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .modulo-card-pequeno {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .modulo-card-pequeno h4 {
+            color: #0066cc;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tecnica-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tecnica-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tecnica-card h4 {
+            color: #0066cc;
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .regras-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .regras-box h5 {
+            color: #0066cc;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .solucoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .solucao-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .solucao-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .solucao-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+
+        .solucao-card .solucao-titulo {
+            font-weight: 600;
+            color: #245;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .solucao-card .solucao-fonte {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .pergunta-norteadora {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .ferramentas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .ferramenta-item {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .ferramenta-item a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .ferramenta-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .visao-geral-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solucoes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO I</h1>
+        <h2>Módulo 3 - Desenvolvimento da solução</h2>
+        <h3>💡 Unidade 1 - Modelagem e projeto da solução (tema)</h3>
+        <p>Prof° Especialista: Carlos Alberto da Silva</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Checkout P. Mod 2
+            </a>
+
+            <a href="mod3_und2-repensar-e-ajustar-a-solucao-diagrama-der.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 3 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo da aula -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FRPYxwTNup8" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="[UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 1">
+                [UFMS Digital] Projeto Integrador I (TIN) - Módulo 3 - Unidade 1
+            </p>
+            <p>Prof° ministrante: Carlos Alberto da Silva</p>
+            <p>📅 30 de jul. de 2024 · 297 visualizações</p>
+        </section>
+
+        <!-- Visão Geral do Projeto Integrador -->
+        <section>
+            <h2>🔭 Visão Geral do Projeto Integrador</h2>
+            <div class="visao-geral-grid">
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">play_circle</i> MÓDULO 2 / Unidade 1</h4>
+                    <p>Executar o Plano de ação, a escolha do local, e fazer observação in loco (city-tour).</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">auto_awesome</i> MÓDULO 2 / Unidade 2</h4>
+                    <p>Estudo sobre o problema escolhido após visita a campo. Definição do tema (problema).</p>
+                </div>
+                <div class="modulo-card-pequeno" style="border-left-color: #28a745;">
+                    <h4><i class="material-icons">lightbulb</i> MÓDULO 3 / Unidade 1</h4>
+                    <p><strong>Desenvolver ideias de soluções.</strong> ← Você está aqui</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">edit</i> MÓDULO 3 / Unidade 2</h4>
+                    <p>Repensar e ajustar a solução para o relatório parcial.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">account_tree</i> MÓDULO 4 / Unidade 1</h4>
+                    <p>Modelagem da solução proposta: mapa conceitual e DER.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">check_circle</i> MÓDULO 4 / Unidade 2</h4>
+                    <p>Validar a solução. Entrega da modelagem da solução final (relatório final).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relembrando o problema -->
+        <section>
+            <h2>📌 Relembrando… o problema</h2>
+            <div class="info-card">
+                <p>Após a visita in loco para coleta de dados e informações, precisamos:</p>
+                <ul>
+                    <li>Analisar a complexidade dos dados.</li>
+                    <li>Sintetizar todos os dados coletados.</li>
+                    <li>Organizar todas as informações (dar sentido a cada informação coletada).</li>
+                    <li>Buscar insights e conexões entre as informações coletadas.</li>
+                    <li>Utilizar as estratégias e ferramentas nessa etapa…</li>
+                </ul>
+                <p><strong>⇒ O estudante definiu o tema do problema.</strong></p>
+            </div>
+        </section>
+
+        <!-- Solução inicial e processo de ideação -->
+        <section>
+            <h2>💡 Solução inicial e processo de ideação</h2>
+
+            <div class="pergunta-norteadora">
+                <h3 style="margin: 0 0 10px 0; color: #856404;"><i class="material-icons">help_outline</i>
+                    Interpretação: Ideação e Experimentação</h3>
+                <p><strong>O que fazer?</strong></p>
+                <ul>
+                    <li>Refinar o(s) problema(s);</li>
+                    <li>Descrever o(s) problema(s);</li>
+                    <li>Encontrar possíveis soluções;</li>
+                    <li>Escolher e implementar apenas uma solução.</li>
+                </ul>
+            </div>
+
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3>🔄 Fluxo de desenvolvimento da solução</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <i class="material-icons" style="font-size: 40px; color: #0066cc;">travel_explore</i>
+                        <p>Conhecer/<br>Investigar</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="material-icons" style="font-size: 40px; color: #0066cc;">arrow_forward</i>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="material-icons" style="font-size: 40px; color: #0066cc;">psychology</i>
+                        <p>Soluções<br>(ideação)</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="material-icons" style="font-size: 40px; color: #0066cc;">arrow_forward</i>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="material-icons" style="font-size: 40px; color: #0066cc;">check_circle</i>
+                        <p>Solução<br>escolhida</p>
+                    </div>
+                </div>
+                <p style="text-align: center;"><small>Fonte: Carlos Alberto da Silva, 2024</small></p>
+            </div>
+        </section>
+
+        <!-- Técnicas e Ferramentas -->
+        <section>
+            <h2>🛠️ Refinando a ideia: técnicas e ferramentas</h2>
+            <p>Nesta Unidade, serão apresentadas mais 3 técnicas. Escolha uma das que podem ser utilizadas:</p>
+
+            <!-- Brainstorming -->
+            <div class="tecnica-card">
+                <h4><i class="material-icons">group_work</i> Brainstorming</h4>
+                <p><strong>O que é:</strong> significa tempestade cerebral ou tempestade de ideias.</p>
+                <p><strong>Para que é utilizada:</strong> a prática de gerar ideias impossíveis, muitas vezes traz à
+                    tona questões relevantes e plausíveis.</p>
+                <p><strong>Como é utilizada:</strong> individualmente (ou em grupo) crie o maior número de soluções
+                    possíveis no tempo, buscando combinações de elementos inusitados.</p>
+
+                <div class="regras-box">
+                    <h5>📋 Regras do Brainstorming</h5>
+                    <ol style="margin-bottom: 0;">
+                        <li>Uma conversa por vez.</li>
+                        <li>Não critique, nem julgue.</li>
+                        <li>Encoraje as ideias "doidas".</li>
+                        <li>Construa sobre as ideias dos outros.</li>
+                        <li>Adote uma postura de consenso.</li>
+                        <li>Mantenha o foco e fique no assunto.</li>
+                        <li>Quantidade importa! Crie o máximo de ideias possíveis.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Brainwriting -->
+            <div class="tecnica-card">
+                <h4><i class="material-icons">edit_note</i> Brainwriting</h4>
+                <p><strong>O que é:</strong> é uma ferramenta ou um exercício individual. O objetivo é explorar suas
+                    ideias de solução em relação a um desafio.</p>
+                <p><strong>Para que é utilizada:</strong> evitar os riscos inerentes em sessões de brainstorming onde as
+                    pessoas não se escutam mutuamente. Aqui, muitos conversam ao mesmo tempo, não seguem as regras do
+                    brainstorming.</p>
+                <p><strong>Como é utilizada:</strong> prepare um papel, uma caneta e comece a listar todas as ideias que
+                    vêm à mente sobre um determinado tema ou desafio.</p>
+            </div>
+
+            <!-- Bodystorming -->
+            <div class="tecnica-card">
+                <h4><i class="material-icons">theater_comedy</i> Bodystorming</h4>
+                <p><strong>O que é:</strong> encenar como seria se o produto, serviço ou solução já existisse e agir a
+                    partir daí, de preferência no lugar em que a solução aconteceria na realidade. É a experiência
+                    física do brainstorming.</p>
+                <p><strong>Para que é utilizada:</strong> essa técnica nos ajuda a pensar com o corpo todo.</p>
+                <p><strong>Como é utilizada:</strong> cena(s) de teatro com os participantes interpretando os atores do
+                    ecossistema, buscando representar o contexto das interações desses atores com o ambiente.</p>
+            </div>
+        </section>
+
+        <!-- Técnicas complementares -->
+        <section>
+            <h2>📝 Técnicas/ferramentas sugeridas</h2>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Brainstorming;</strong></li>
+                    <li><strong>Mapas conceituais (mentais);</strong></li>
+                    <li><strong>DER (Diagrama Entidade-Relacionamento).</strong></li>
+                </ul>
+                <p><strong>Insumos:</strong> folhas em branco/quadriculadas, flipchart/cartolina, blocos adesivos
+                    (post-its), canetas ou canetinhas coloridas, etc.</p>
+            </div>
+
+            <div class="info-card" style="border-left-color: #28a745;">
+                <h3>🎯 Objetivo</h3>
+                <p>Descrever as soluções para o problema:</p>
+                <ul>
+                    <li>Basear-se na definição do problema;</li>
+                    <li>Listar os itens da visita a campo;</li>
+                    <li>Descrever as possíveis soluções para o problema;</li>
+                    <li>Registrar todas as soluções (pesquisadas, criadas, …).</li>
+                </ul>
+                <p><strong>⇒ Elabore no papel um Mapa conceitual (mental) …</strong></p>
+            </div>
+        </section>
+
+        <!-- Como fazer: análise e organização -->
+        <section>
+            <h2>📊 Como fazer: começando pela análise e organização de dados</h2>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Analisar:</strong> o que resultou das atividades do módulo anterior e as atividades que
+                        desenvolveu durante a semana.</li>
+                    <li><strong>Realizar estudos e Pesquisas</strong> sobre Técnicas, Ferramentas, Metodologias e
+                        Abordagens.</li>
+                </ul>
+                <p>O estudante (ou grupo) deve escolher as melhores ideias geradas.</p>
+                <p>Para realizar a análise e a organização dos dados… <strong>Mapa conceitual.</strong></p>
+            </div>
+        </section>
+
+        <!-- Pensando sobre a definição da solução -->
+        <section>
+            <h2>🤔 Pensando sobre a definição da solução</h2>
+            <div class="pergunta-norteadora">
+                <h3 style="margin: 0 0 10px 0;">Como podemos…?</h3>
+                <p>Conferir se as soluções elencadas são boas, usando as seguintes questões:</p>
+                <ul>
+                    <li>a solução é centrada no ser humano (extensão)?</li>
+                    <li>está claro como chegou à conclusão?</li>
+                    <li>quais os novos insights aprendidos?</li>
+                    <li>é relevante para o público-alvo?</li>
+                    <li>vale a pena trabalhar essa solução (atende aos requisitos)?</li>
+                    <li>é possível de ser implementada tal solução?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Modelagem da solução - Ferramentas -->
+        <section>
+            <h2>🖥️ Modelagem da solução (refinando)</h2>
+
+            <h4>📌 Ferramentas para Mapa Conceitual:</h4>
+            <div class="ferramentas-grid">
+                <div class="ferramenta-item">
+                    <i class="material-icons" style="font-size: 32px; color: #0066cc;">map</i>
+                    <p><a href="http://www.mindmeister.com/pt" target="_blank">MindMeister</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons" style="font-size: 32px; color: #0066cc;">share</i>
+                    <p><a href="https://coggle.it/" target="_blank">Coggle</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons" style="font-size: 32px; color: #0066cc;">account_tree</i>
+                    <p><a href="https://cmap.ihmc.us/cmaptools/" target="_blank">Cmap Tools</a></p>
+                </div>
+            </div>
+
+            <h4>📌 Ferramentas para Diagramas UML:</h4>
+            <div class="ferramentas-grid">
+                <div class="ferramenta-item">
+                    <i class="material-icons" style="font-size: 32px; color: #0066cc;">draw</i>
+                    <p><a href="https://lucid.app/" target="_blank">Lucid (Web)</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons" style="font-size: 32px; color: #0066cc;">computer</i>
+                    <p><a href="https://astah.net/" target="_blank">Astah (Desktop)</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultado desta Unidade -->
+        <section>
+            <h2>🏆 Resultado desta Unidade</h2>
+            <div class="info-card" style="background-color: #e8f0fe; text-align: center;">
+                <p><strong>Depois de vários:</strong></p>
+                <p style="font-size: 1.3em; font-weight: 600; color: #0066cc;">IDEÃO = (insights + todas soluções
+                    enumeradas)</p>
+                <p>O estudante (ou grupo) deve <strong>escolher uma solução final a ser implementada.</strong></p>
+            </div>
+        </section>
+
+        <!-- Exemplo Prático: Transporte Público -->
+        <section>
+            <h2>🚌 Exemplo Prático: Transporte Público</h2>
+
+            <div class="info-card">
+                <p><strong>Meu tema/problema (demanda social):</strong> Problema de comunicação entre clientes e
+                    empresas de ônibus (concessionárias)</p>
+                <p><strong>Análise das soluções existentes …</strong></p>
+            </div>
+
+            <h3>📱 Soluções de comunicação entre as partes:</h3>
+            <div class="solucoes-grid">
+                <div class="solucao-card">
+                    <i class="material-icons" style="font-size: 48px; color: #245;">description</i>
+                    <div class="solucao-titulo">(1) Panfleto/Adesivo</div>
+                    <div class="solucao-fonte">Fonte: https://link.ufms.br/s1ea7</div>
+                </div>
+                <div class="solucao-card">
+                    <i class="material-icons" style="font-size: 48px; color: #245;">signpost</i>
+                    <div class="solucao-titulo">(2) Placa Sinalização</div>
+                    <div class="solucao-fonte">Fonte: https://link.ufms.br/TomQX / https://link.ufms.br/I1If1</div>
+                </div>
+                <div class="solucao-card">
+                    <i class="material-icons" style="font-size: 48px; color: #245;">web</i>
+                    <div class="solucao-titulo">(3) Website da empresa</div>
+                    <div class="solucao-fonte">Fonte: https://link.ufms.br/oXuUX</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h4 style="color: #245; margin-top: 0;">💡 Meus insights …</h4>
+                <p>A empresa (concessionária) já possui um banco de dados das <strong>"Linhas + Itinerários +
+                        Horários"</strong>.</p>
+                <p>Forma de disponibilizar estas informações de forma visual …</p>
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências da Unidade</h2>
+
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020. ISBN 9788550814377. Disponível na Biblioteca Digital da UFMS.
+                    <strong>Trecho a ser lido: Capítulo 5 e 6</strong>.</cite></p>
+
+            <p><cite>BARBIERI, José Carlos; ÁLVARES, Antonio Carlos Teixeira; CAJAZEIRA, Jorge Emanuel Reis. Geração de
+                    ideias para inovações: estudos de casos e novas abordagens. Revista Gestão Industrial, 2009, v. 5,
+                    n. 3. Disponível em: <a href="https://link.ufms.br/RVE1g"
+                        target="_blank">https://link.ufms.br/RVE1g</a>. Acesso em: 5 abr. 2024. Leitura do artigo
+                    completo.</cite></p>
+        </section>
+
+        <!-- Licenciamento -->
+        <section>
+            <h2>📜 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 20 de março de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Módulo 3 - Unidade 1: Modelagem e projeto da solução (tema)</p>
+    </footer>
+
+    <script>
+        // Script para controle do sticky no mobile
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var materiais = document.getElementById('materiais');
+                if (!materiais) return;
+
+                function isMobile() {
+                    return window.innerWidth <= 768;
+                }
+
+                function updateSticky() {
+                    if (!isMobile()) {
+                        materiais.classList.remove('sticky');
+                        return;
+                    }
+                    var rect = materiais.getBoundingClientRect();
+                    if (rect.top <= 0) {
+                        materiais.classList.add('sticky');
+                    } else {
+                        materiais.classList.remove('sticky');
+                    }
+                }
+
+                var ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            updateSticky();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                window.addEventListener('resize', updateSticky);
+                updateSticky();
+            });
+        })();
+    </script>
+</body>
+
+</html>
