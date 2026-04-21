@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 1 - Resolução de Problemas e Análise de Requisitos</h2>
+        <h3>💡 Unidade 1 - Identificação e definição de problemas</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="forum-de-discussao-projeto-integrador-de-tecnologia-da-informacao-2.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Fórum de Discussão
+            </a>
+            <a href="mod1_und2-analise-de-requisitos-e-planejamento-de-solucoes.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 1 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .btn-nav:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            div[style*="justify-content: space-between"] {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            div[style*="justify-content: space-between"]>div {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .btn-nav {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hY4rZbmPmWI" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 1">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 1
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 13 de abril de 2026</p>
+        </section>
+
+        <section>
+            <h2>Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância da identificação correta de problemas</li>
+                <li>Explorar metodologias e técnicas para definir problemas</li>
+                <li>Relacionar a identificação de problemas à Engenharia de Software e Gestão Ágil</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Por que identificar problemas é essencial?</h2>
+
+            <b>🔍 A base para qualquer solução eficiente</b>
+            <p>Um problema bem definido é o ponto de partida para qualquer solução de software bem-sucedida. Sem clareza
+                sobre o que precisa ser resolvido, a solução será confusa e ineficaz.</p>
+
+            <b>💰 Evita desperdício de tempo e recursos</b>
+            <p>Equipes que identificam problemas corretamente gastam menos tempo refatorando e reconstruindo soluções
+                inadequadas.</p>
+
+            <b>🤝 Facilita o alinhamento entre stakeholders e equipe</b>
+            <p>Quando todos entendem o mesmo problema, as decisões se tornam mais assertivas e o projeto caminha na
+                mesma direção.</p>
+
+            <b>😊 Impacta a satisfação do usuário e o sucesso do produto</b>
+            <p>Resolver o problema certo gera valor real para o usuário e aumenta as chances de adoção genuína da
+                solução.</p>
+
+            <div class="note"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                💡 <strong>Reflexão:</strong> O que adianta construir um sistema perfeito, rápido e bonito se ele
+                resolve uma dor que ninguém tem? Identificar o problema é como acertar o alvo antes de atirar.
+            </div>
+        </section>
+
+        <section>
+            <h2>Metodologias e técnicas para definição de problemas</h2>
+
+            <b>🔍 Design Thinking</b>
+            <p>Abordagem centrada no ser humano que começa pela <strong>empatia</strong> e pela
+                <strong>definição</strong> do problema antes de qualquer ideação de solução. Ferramentas como mapa de
+                empatia, jornada do usuário e entrevistas são essenciais para compreender a real necessidade do usuário.
+            </p>
+
+            <b>📊 Lean Startup</b>
+            <p>Proposta por Eric Ries, incentiva a construir um <strong>MVP (Produto Mínimo Viável)</strong> a partir de
+                hipóteses claras sobre o problema, validando com usuários reais antes de escalar a solução.</p>
+
+            <b>🎯 5 Porquês</b>
+            <p>Técnica simples e poderosa: pergunte "por quê?" cinco vezes consecutivas para ir da superfície do
+                problema até sua causa raiz. Muito usada em resolução de problemas complexos e análise de falhas.</p>
+
+            <b>📝 Problem Statement</b>
+            <p>Declaração clara e objetiva do problema, geralmente seguindo o formato: <em>"[Usuário] precisa de
+                    [solução] porque [necessidade real]"</em>. Isso alinha expectativas e foca o time no que realmente
+                importa.</p>
+
+            <div class="info-box"
+                style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>📌 Dica prática:</strong>
+                <p>Antes de começar qualquer projeto integrador, responda por escrito: <em>"Qual a dor real do meu
+                        público-alvo? Como ele vive esse problema hoje? O que já tentaram fazer?"</em>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Relação com Engenharia de Software e Gestão Ágil</h2>
+            <p>Na engenharia de software, a identificação de problemas é o alicerce da <strong>análise de
+                    requisitos</strong>. Um requisito nada mais é do que uma necessidade documentada — e toda
+                necessidade nasce de um problema não resolvido.</p>
+
+            <b>📋 Backlog do Produto</b>
+            <p>Cada item da lista é, essencialmente, um problema a ser resolvido ou uma oportunidade a ser aproveitada.
+            </p>
+
+            <b>📖 Histórias de Usuário</b>
+            <p>Seguem o formato "Eu, como [papel], quero [ação] para [benefício/resolver problema]".</p>
+
+            <b>🔄 Refinamento e Revisão</b>
+            <p>Equipes ágeis revisitam constantemente a definição do problema para garantir que não perderam o foco.</p>
+
+            <b>🚀 MVP e feedback contínuo</b>
+            <p>A cada ciclo, o problema é reavaliado com base no retorno real dos usuários.</p>
+
+            <div class="note"
+                style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                📖 <strong>Conexão com a prática:</strong> No seu Projeto Integrador, a primeira entrega não deve ser
+                código. Deve ser <strong>um documento claro do problema</strong> — quem sofre, como sofre, por que isso
+                importa. Só depois vem a solução.
+            </div>
+        </section>
+
+        <section>
+            <h2>Exemplo prático: aplicando no Projeto Integrador</h2>
+
+            <b>🎓 Contexto real (Projeto Cidade Virtual - Cabanagem/PA)</b>
+            <p><strong>Problema inicial (mal definido):</strong> "Fazer um site para o bairro".</p>
+
+            <b>Aplicação das técnicas de identificação:</b>
+            <ul>
+                <li><strong>🔎 Empatia (Design Thinking):</strong> entrevistas com moradores e comerciantes revelaram
+                    que o problema real não era "falta de site", mas sim "falta de visibilidade dos pequenos negócios e
+                    desconexão comunitária".</li>
+                <li><strong>❓ 5 Porquês:</strong> Por que os moradores não consomem no bairro? → Porque não conhecem os
+                    comércios. → Por que não conhecem? → Porque não há um local centralizado com essa informação. → (e
+                    assim por diante até a causa raiz).</li>
+                <li><strong>📝 Problem Statement final:</strong> "Moradores e comerciantes do bairro Cabanagem precisam
+                    de uma plataforma digital de conexão local porque, atualmente, pequenos negócios ficam invisíveis e
+                    a comunidade perde oportunidades de fortalecimento econômico e social."</li>
+            </ul>
+
+            <p><strong>Resultado:</strong> A partir do problema bem definido, os requisitos da plataforma emergiram
+                naturalmente: cadastro de comércios, busca por categoria, mural de eventos, etc. Sem essa etapa, o
+                projeto poderia ter virado um "site genérico" sem utilidade real.</p>
+        </section>
+
+        <section>
+            <h2>Desafios na identificação de problemas</h2>
+
+            <b>⚠️ Viés de confirmação</b>
+            <p>Acreditar que já se sabe qual é o problema sem ouvir os usuários. Solução: valide hipóteses com pessoas
+                reais.</p>
+
+            <b>⚠️ Problema muito amplo</b>
+            <p>Tentar resolver "a fome no mundo" em um único projeto. Solução: delimitar escopo e focar em uma dor
+                específica.</p>
+
+            <b>⚠️ Confundir sintoma com causa</b>
+            <p>"Clientes reclamam do app lento" é sintoma; a causa pode ser banco de dados mal modelado ou servidor
+                fraco. Solução: usar técnicas como os 5 Porquês para ir à raiz.</p>
+
+            <b>⚠️ Falta de contato com o usuário real</b>
+            <p>Times que ficam apenas na teoria ou em requisitos de segunda mão quase sempre erram o alvo. Solução:
+                conversar diretamente com quem vive o problema.</p>
+
+            <div class="info-box"
+                style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>✅ Solução:</strong> Valide suas hipóteses com pessoas reais. Uma conversa de 15 minutos com um
+                morador ou comerciante vale mais que dias de especulação.
+            </div>
+        </section>
+
+        <section>
+            <h2>Síntese da unidade</h2>
+            <p>Identificar corretamente um problema é mais importante do que ter a solução mais sofisticada. Nesta
+                unidade, vimos que:</p>
+            <ul>
+                <li>Problemas mal definidos geram soluções irrelevantes e desperdício de recursos.</li>
+                <li>Metodologias como Design Thinking, 5 Porquês e Problem Statement trazem rigor à etapa de definição.
+                </li>
+                <li>A Engenharia de Software e os métodos ágeis dependem diretamente de uma boa definição de problemas
+                    para construir requisitos e histórias de usuário.</li>
+                <li>No Projeto Integrador, comece sempre pelo problema — o código vem depois.</li>
+            </ul>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta norteadora para o fórum:</strong>
+                <p>Qual problema do seu contexto você escolheria para desenvolver uma aplicação web como ação de
+                    extensão? Como você definiria os requisitos essenciais para resolver esse problema?</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+
+            <p><cite>BROWN, Tim. Design thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de
+                    Janeiro: Alta Books, 2020.</cite></p>
+
+            <p><cite>RIES, Eric. A startup enxuta: como os empreendedores atuais utilizam a inovação contínua para criar
+                    empresas extremamente bem-sucedidas. São Paulo: Lua de Papel, 2012.</cite></p>
+
+            <p><cite>UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL. RESOLUÇÃO Nº 304-COGRAD/UFMS, DE 17 DE JUNHO DE 2021:
+                    Estabelece as Normas para a curricularização da extensão nos Cursos de Graduação da Fundação
+                    Universidade Federal de Mato Grosso do Sul. Disponível em: <a href="https://link.ufms.br/SWwaB"
+                        target="_blank">https://link.ufms.br/SWwaB</a>. Acesso em: 5 abr. 2024.</cite></p>
+
+            <h2>Referências Complementares</h2>
+
+            <p><cite>NAÇÕES UNIDAS NO BRASIL. Objetivos de Desenvolvimento Sustentável. Disponível em: <a
+                        href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a>.
+                    Acesso em: 5 abr. 2024.</cite></p>
+
+            <p><cite>SINGER, Paul. Introdução à economia solidária. São Paulo: Editora Fundação Perseu Abramo,
+                    2002.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de abril de 2026</p>
+    </footer>
+</body>
+
+</html>

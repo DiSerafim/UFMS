@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 1 - Resolução de Problemas e Análise de Requisitos</h2>
+        <h3>💡 Unidade 2 - Análise de requisitos e planejamento de soluções</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-identificacao-e-definicao-de-problemas.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Unidade 1
+            </a>
+            <a href="mod1-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .btn-nav:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            div[style*="justify-content: space-between"] {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            div[style*="justify-content: space-between"]>div {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .btn-nav {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/_fvxe20dYZU" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 2">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 1 - Unidade 2
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 13 de abril de 2026</p>
+        </section>
+
+        <section>
+            <h2>Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância da análise de requisitos para desenvolvimento de software</li>
+                <li>Conhecer técnicas para levantar, documentar e priorizar requisitos</li>
+                <li>Aplicar metodologias ágeis na definição de MVP e no planejamento de soluções</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O que são requisitos?</h2>
+            
+            <p>Requisitos são descrições das funcionalidades e restrições de um software. Eles representam o que o sistema deve fazer e sob quais condições. A engenharia de requisitos é a área da engenharia de software responsável por levantar, documentar, analisar e gerenciar esses requisitos ao longo do projeto.</p>
+
+            <b>📌 Requisitos Funcionais</b>
+            <p>Definem o que o sistema <strong>deve fazer</strong>. São as funcionalidades, comportamentos e tarefas específicas que o software precisa executar. Exemplos: "O sistema deve permitir cadastro de usuários", "O sistema deve calcular o frete com base no CEP".</p>
+
+            <b>📌 Requisitos Não Funcionais</b>
+            <p>Definem <strong>restrições</strong> sobre como o sistema deve funcionar. Estabelecem critérios de qualidade, segurança, desempenho, usabilidade, confiabilidade, portabilidade, etc. Exemplos: "O sistema deve responder em menos de 2 segundos", "O sistema deve suportar 1000 usuários simultâneos".</p>
+
+            <div class="note" style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                💡 <strong>Importante:</strong> Requisitos mal levantados são a principal causa de falha em projetos de software. Um requisito ambíguo, incompleto ou contraditório pode gerar retrabalho e insatisfação do cliente.
+            </div>
+        </section>
+
+        <section>
+            <h2>Técnicas para levantamento de requisitos</h2>
+
+            <b>🎤 Entrevistas</b>
+            <p>Conversas individuais com stakeholders (usuários, clientes, gerentes) para entender suas necessidades, dores e expectativas. Podem ser estruturadas (com roteiro fixo) ou semiestruturadas (com perguntas abertas).</p>
+
+            <b>📋 Questionários</b>
+            <p>Aplicados a um grande número de pessoas para coletar dados quantitativos e qualitativos. São úteis para validar hipóteses com uma amostra representativa do público-alvo.</p>
+
+            <b>👀 Observação direta</b>
+            <p>O analista observa o usuário realizando suas tarefas no ambiente real de trabalho. Ajuda a identificar necessidades implícitas que o usuário nem sempre consegue descrever em palavras.</p>
+
+            <b>🧠 Brainstorming</b>
+            <p>Sessões criativas em grupo para gerar ideias, funcionalidades e soluções. Incentiva a participação de todos e pode revelar requisitos inovadores.</p>
+
+            <b>📄 Análise de documentos</b>
+            <p>Estudo de manuais, formulários, regulamentos, sistemas legados e outros artefatos que podem conter requisitos implícitos ou explícitos.</p>
+
+            <b>🔍 Prototipação</b>
+            <p>Construção de versões simplificadas do sistema (protótipos de baixa ou alta fidelidade) para validar requisitos com os usuários antes do desenvolvimento completo.</p>
+
+            <div class="info-box" style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>📌 Dica prática:</strong> No Projeto Integrador, combine pelo menos duas técnicas. Exemplo: entrevistas para entender a fundo a dor do usuário e questionários para validar com mais pessoas as funcionalidades propostas.
+            </div>
+        </section>
+
+        <section>
+            <h2>Documentação de requisitos</h2>
+
+            <b>📄 Documento de Visão</b>
+            <p>Apresenta uma visão geral do projeto, o problema que será resolvido, o público-alvo, os objetivos e as principais funcionalidades (alto nível). É o primeiro documento a ser elaborado.</p>
+
+            <b>📋 Especificação de Requisitos de Software (ERS)</b>
+            <p>Documento detalhado que lista todos os requisitos funcionais e não funcionais de forma estruturada, geralmente em tópicos numerados. Serve como contrato entre a equipe de desenvolvimento e o cliente.</p>
+
+            <b>📖 Histórias de Usuário (User Stories)</b>
+            <p>Formato ágil para descrever requisitos, geralmente seguindo o modelo: "Eu, como [papel do usuário], quero [ação] para [benefício]". Exemplo: "Eu, como morador, quero buscar comércios por categoria para encontrar serviços rapidamente".</p>
+
+            <b>🔀 Diagramas de Caso de Uso</b>
+            <p>Representação gráfica (UML) que mostra os atores (usuários) e os casos de uso (funcionalidades) do sistema. Ajuda a visualizar quem faz o quê no sistema.</p>
+
+            <div class="note" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                📖 <strong>Conexão com a prática:</strong> No seu Projeto Integrador, você pode começar com o Documento de Visão, depois listar os requisitos numerados (ERS) e complementar com histórias de usuário. Isso já é um excelente nível de detalhamento para o módulo 1.
+            </div>
+        </section>
+
+        <section>
+            <h2>Priorização de requisitos</h2>
+            <p>Nem todos os requisitos podem (ou devem) ser implementados na primeira versão. A priorização ajuda a equipe a focar no que realmente agrega valor ao usuário e ao negócio.</p>
+
+            <b>📊 Método MoSCoW</b>
+            <p>Uma das técnicas mais populares de priorização, que classifica os requisitos em quatro categorias:</p>
+            <ul>
+                <li><strong>M (Must have - Obrigatório):</strong> Essencial para o sistema funcionar. Sem ele, o projeto não faz sentido. Ex: cadastro de usuários.</li>
+                <li><strong>S (Should have - Deveria ter):</strong> Importante, mas não crítico. Pode ser contornado temporariamente. Ex: recuperação de senha.</li>
+                <li><strong>C (Could have - Poderia ter):</strong> Desejável, agrega valor, mas sua ausência não inviabiliza o sistema. Ex: tema escuro (dark mode).</li>
+                <li><strong>W (Won't have - Não terá agora):</strong> Fica para versões futuras. Reconhecidamente útil, mas fora do escopo atual.</li>
+            </ul>
+
+            <b>🎯 Matriz de Valor vs Esforço</b>
+            <p>Classifica os requisitos em uma matriz 2x2, cruzando o valor entregue ao usuário com o esforço de implementação. Prioriza-se o que dá mais valor com menos esforço.</p>
+
+            <b>📋 Backlog priorizado</b>
+            <p>No Scrum e outras metodologias ágeis, o Product Owner mantém uma lista ordenada (backlog) onde os itens mais importantes ficam no topo. A cada sprint, a equipe puxa os itens mais prioritários.</p>
+
+            <div class="info-box" style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>✅ Exercício prático:</strong> Liste 10 requisitos do seu projeto Cidade Virtual. Classifique cada um como M, S, C ou W (MoSCoW). Os primeiros 3-5 da lista M são seu MVP.
+            </div>
+        </section>
+
+        <section>
+            <h2>Metodologias ágeis e MVP</h2>
+
+            <b>🚀 O que é MVP (Produto Mínimo Viável)?</b>
+            <p>MVP é a versão mais simples de um produto que ainda pode ser entregue aos usuários para gerar aprendizado e feedback. Não é um produto "incompleto" ou "mal feito" – é a versão com apenas as funcionalidades essenciais (Must have) para resolver o problema central.</p>
+
+            <b>🔄 Ciclo Construir-Medir-Aprender (Lean Startup)</b>
+            <p>O MVP é construído rapidamente, entregue a um grupo piloto de usuários, que fornecem feedback. A equipe aprende com esse feedback, ajusta as hipóteses e constrói a próxima versão. Esse ciclo se repete até que o produto atenda bem às necessidades dos usuários.</p>
+
+            <b>📅 Scrum e Sprints</b>
+            <p>No Scrum, o desenvolvimento é dividido em iterações curtas (sprints), geralmente de 1 a 4 semanas. A cada sprint, a equipe entrega um incremento de produto potencialmente utilizável. O backlog é constantemente refinado e repriorizado.</p>
+
+            <b>💡 Kanban</b>
+            <p>Método visual de gestão de fluxo de trabalho, baseado em um quadro com colunas (Ex: "A fazer", "Fazendo", "Teste", "Pronto"). Limita a quantidade de trabalho em andamento (WIP) para evitar gargalos.</p>
+
+            <div class="note" style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                🚀 <strong>Para o seu Projeto Integrador II:</strong> Seu MVP pode ser a versão da Cidade Virtual com cadastro de comércios, busca por categoria e mural de eventos. Sem notificações push, sem chat, sem relatórios avançados – isso fica para versões futuras.
+            </div>
+        </section>
+
+        <section>
+            <h2>Planejamento de soluções: do problema ao código</h2>
+
+            <b>📌 Etapa 1: Definição do problema (Unidade 1)</b>
+            <p>Já vimos: identificar a dor real do usuário, o contexto, quem sofre e por que isso importa. Ex: "Moradores não encontram comércios locais; comerciantes não têm visibilidade".</p>
+
+            <b>📌 Etapa 2: Levantamento de requisitos</b>
+            <p>Aplicar técnicas (entrevistas, questionários, observação) para entender o que o sistema precisa fazer. Listar requisitos funcionais e não funcionais.</p>
+
+            <b>📌 Etapa 3: Priorização e definição do MVP</b>
+            <p>Usar MoSCoW ou outra técnica para separar o obrigatório (MVP) do desejável. Definir o escopo da primeira entrega.</p>
+
+            <b>📌 Etapa 4: Documentação</b>
+            <p>Registrar os requisitos em formato acessível (documento de visão, ERS, histórias de usuário). Compartilhar com stakeholders para validação.</p>
+
+            <b>📌 Etapa 5: Modelagem e prototipação</b>
+            <p>Construir diagramas (caso de uso, classes, DER) e protótipos de tela (baixa ou alta fidelidade) para visualizar a solução antes de codificar.</p>
+
+            <b>📌 Etapa 6: Planejamento de iterações</b>
+            <p>Dividir o desenvolvimento em sprints (se usar Scrum) ou em tarefas no quadro Kanban. Estimar esforço e definir prazos realistas.</p>
+
+            <b>📌 Etapa 7: Codificação, testes e entrega</b>
+            <p>Implementar as funcionalidades priorizadas, testar (unitário, integração, aceitação) e entregar aos usuários piloto para feedback.</p>
+
+            <div class="info-box" style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>📌 Resumo do fluxo:</strong> Problema → Requisitos → Priorização (MVP) → Documentação → Modelagem → Planejamento → Codificação/Testes → Entrega → Feedback → Iteração.
+            </div>
+        </section>
+
+        <section>
+            <h2>Exemplo prático: aplicando no Projeto Cidade Virtual</h2>
+            
+            <b>🎓 Contexto real (Cabanagem/PA)</b>
+            <p><strong>Problema já definido:</strong> Moradores e comerciantes desconhecem os negócios e serviços disponíveis no próprio bairro, fragilizando a economia local.</p>
+            
+            <b>📋 Requisitos funcionais (parciais):</b>
+            <ul>
+                <li>RF01 - O sistema deve permitir cadastro de usuários com perfis (morador, comerciante, autônomo).</li>
+                <li>RF02 - O sistema deve permitir que comerciantes criem e editem seu perfil público (nome, descrição, categoria, endereço, contato).</li>
+                <li>RF03 - O sistema deve permitir que moradores busquem comércios por categoria (alimentação, reparos, beleza, etc.).</li>
+                <li>RF04 - O sistema deve permitir que moradores busquem comércios por proximidade (CEP ou bairro).</li>
+                <li>RF05 - O sistema deve exibir um mural com eventos e campanhas comunitárias.</li>
+                <li>RF06 - O sistema deve permitir que moradores avaliem comércios (nota de 1 a 5).</li>
+            </ul>
+
+            <b>📋 Requisitos não funcionais (parciais):</b>
+            <ul>
+                <li>RNF01 - A interface deve ser responsiva (acessível em celulares).</li>
+                <li>RNF02 - O sistema deve ter tempo de resposta inferior a 2 segundos nas buscas.</li>
+                <li>RNF03 - O sistema deve seguir diretrizes de acessibilidade (contraste, HTML semântico).</li>
+            </ul>
+
+            <b>📊 Priorização (MoSCoW) para o MVP:</b>
+            <ul>
+                <li><strong>Must (MVP):</strong> RF01, RF02, RF03, RF05 (cadastro, perfil do comércio, busca por categoria, mural).</li>
+                <li><strong>Should:</strong> RF04 (busca por proximidade), RF06 (avaliações).</li>
+                <li><strong>Could:</strong> sistema de notificações, chat entre morador e comerciante.</li>
+                <li><strong>Won't (agora):</strong> relatórios avançados, integração com redes sociais.</li>
+            </ul>
+
+            <p><strong>MVP definido:</strong> Versão 1.0 da Cidade Virtual com cadastro de usuários, perfil de comércio, busca por categoria e mural de eventos. Isso já resolve o problema central (visibilidade e conexão) e pode ser entregue em 4-6 semanas.</p>
+        </section>
+
+        <section>
+            <h2>Desafios comuns na análise de requisitos</h2>
+
+            <b>⚠️ Escopo mal definido (scope creep)</b>
+            <p>Stakeholders pedem novas funcionalidades durante o desenvolvimento, expandindo o escopo original. Solução: priorização clara (MoSCoW), documentação assinada e processo formal de mudança.</p>
+
+            <b>⚠️ Requisitos ambíguos ou incompletos</b>
+            <p>Exemplo: "sistema rápido" – o que é rápido? 1 segundo? 5 segundos? Solução: requisitos devem ser específicos, mensuráveis, atingíveis, relevantes e testáveis (SMART).</p>
+
+            <b>⚠️ Conflitos entre stakeholders</b>
+            <p>Um grupo quer uma funcionalidade, outro grupo quer outra. Solução: workshops de alinhamento, priorização baseada em valor e, se necessário, decisão do sponsor ou Product Owner.</p>
+
+            <b>⚠️ Mudanças frequentes de requisitos</b>
+            <p>Especialmente em projetos longos. Solução: metodologias ágeis (Scrum, Kanban) abraçam mudanças, desde que priorizadas no backlog.</p>
+
+            <div class="info-box" style="background-color: #f0f7ff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                <strong>✅ Boa prática:</strong> Valide seus requisitos com os usuários antes de começar a programar. Mostre o documento, os protótipos, faça perguntas. É muito mais barato corrigir um requisito no papel do que no código já escrito.
+            </div>
+        </section>
+
+        <section>
+            <h2>Síntese da unidade</h2>
+            <p>A análise de requisitos é a ponte entre o problema identificado (Unidade 1) e a solução construída. Nesta unidade, vimos que:</p>
+            <ul>
+                <li>Requisitos são descrições do que o sistema deve fazer (funcionais) e como deve se comportar (não funcionais).</li>
+                <li>Técnicas como entrevistas, questionários, observação e prototipação ajudam a levantar requisitos de forma estruturada.</li>
+                <li>Documentar requisitos (Documento de Visão, ERS, histórias de usuário) é essencial para comunicação com a equipe e stakeholders.</li>
+                <li>Priorizar requisitos (MoSCoW, matriz valor vs esforço) evita desperdício e foca no que realmente importa para o MVP.</li>
+                <li>Metodologias ágeis (Scrum, Kanban, Lean Startup) ensinam a construir, medir e aprender com versões incrementais do produto.</li>
+                <li>O planejamento de soluções segue um fluxo: problema → requisitos → priorização → documentação → modelagem → codificação → testes → entrega → feedback → iteração.</li>
+            </ul>
+
+            <div class="pergunta-norteadora" style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta norteadora (reflita e depois leve para o fórum):</strong>
+                <p>Com base no problema que você identificou no seu contexto (ou no exemplo da Cidade Virtual), liste os 5 requisitos funcionais mais importantes. Qual deles é o verdadeiro coração do seu MVP? Por quê?</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Referências</h2>
+
+            <p><cite>SOMMERVILLE, Ian. Engenharia de software. 10. ed. São Paulo: Pearson Education do Brasil, 2018.</cite></p>
+
+            <p><cite>PRESSMAN, Roger S. Engenharia de software: uma abordagem profissional. 9. ed. Porto Alegre: AMGH, 2019.</cite></p>
+
+            <p><cite>RIES, Eric. A startup enxuta: como os empreendedores atuais utilizam a inovação contínua para criar empresas extremamente bem-sucedidas. São Paulo: Lua de Papel, 2012.</cite></p>
+
+            <p><cite>UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL. RESOLUÇÃO Nº 304-COGRAD/UFMS, DE 17 DE JUNHO DE 2021: Estabelece as Normas para a curricularização da extensão. Disponível em: <a href="https://link.ufms.br/SWwaB" target="_blank">https://link.ufms.br/SWwaB</a>. Acesso em: 5 abr. 2024.</cite></p>
+
+            <h2>Referências Complementares</h2>
+
+            <p><cite>COHN, Mike. User stories aplicadas: para o desenvolvimento ágil de software. Porto Alegre: Bookman, 2011.</cite></p>
+
+            <p><cite>NAÇÕES UNIDAS NO BRASIL. Objetivos de Desenvolvimento Sustentável. Disponível em: <a href="https://brasil.un.org/pt-br/sdgs" target="_blank">https://brasil.un.org/pt-br/sdgs</a>. Acesso em: 5 abr. 2024.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de abril de 2026</p>
+    </footer>
+</body>
+
+</html>
