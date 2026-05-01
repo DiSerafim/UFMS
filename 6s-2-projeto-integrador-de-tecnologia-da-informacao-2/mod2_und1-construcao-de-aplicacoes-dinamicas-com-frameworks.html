@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 2 - Desenvolvimento Web com Frameworks e HTML/CSS</h2>
+        <h3>💻 Unidade 1 - Construção de aplicações dinâmicas com frameworks</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Checkout P. Mod 1
+            </a>
+            <a href="mod2_und2-fundamentos-de-html-estilizacao-responsiva-com-css-e-estruturacao-de-pagina.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 2 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FvfC0PHvC9w" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 1">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 1
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 24 de abril de 2026</p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender os fundamentos do HTML5 e sua estrutura básica</li>
+                <li>Explorar a criação de listas, textos e imagens em páginas web</li>
+                <li>Introduzir o conceito de frameworks front-end, com foco no React (MERN)</li>
+                <li>Conhecer frameworks para estilização (Bootstrap, Tailwind CSS)</li>
+                <li>Entender frameworks para aplicações desktop (Electron) e mobile (React Native)</li>
+                <li>Aplicar os conceitos na construção do projeto Cidade Virtual (CRUD/MERN)</li>
+            </ul>
+        </section>
+
+        <!-- O QUE É UMA APLICAÇÃO DINÂMICA? -->
+        <section>
+            <h2>🔄 O que é uma aplicação dinâmica?</h2>
+
+            <p>Uma <strong>aplicação dinâmica</strong> é um software que interage com o usuário e altera seu conteúdo em
+                tempo real, sem necessidade de recarregar a página. Diferente de aplicações estáticas, as aplicações
+                dinâmicas processam informações no lado do cliente (frontend) e/ou no servidor (backend).</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📄 Aplicação Estática</h4>
+                    <ul>
+                        <li>Conteúdo fixo (HTML puro)</li>
+                        <li>Muda apenas com novo código</li>
+                        <li>Interação mínima</li>
+                        <li>Exemplo: página de currículo</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>⚡ Aplicação Dinâmica</h4>
+                    <ul>
+                        <li>Conteúdo gerado em tempo real</li>
+                        <li>Interage com o usuário</li>
+                        <li>Atualiza sem recarregar (AJAX/HTTP requests)</li>
+                        <li>Exemplo: Google Maps, Cidade Virtual</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE É UMA APLICAÇÃO WEB? -->
+        <section>
+            <h2>🌐 O que é uma aplicação web?</h2>
+
+            <p>Um <strong>site ou sistema acessado pelo navegador</strong>, que atualiza conteúdo sem recarregar a
+                página. Exemplos comuns incluem redes sociais (Facebook, X), e-commerces (Amazon, Mercado Livre) e
+                dashboards interativos (Google Analytics).</p>
+
+            <b>Tecnologias Comuns:</b>
+            <ul>
+                <li><strong>Frontend (interface visual):</strong> Vue.js, React, Angular, Svelte</li>
+                <li><strong>Backend (lógica e dados):</strong> Node.js, Django (Python), Ruby on Rails, Laravel (PHP)
+                </li>
+                <li><strong>Banco de Dados:</strong> MySQL (relacional), MongoDB (NoSQL), Firebase (real-time)</li>
+            </ul>
+
+            <b>Interação típica:</b>
+            <p>Usuário adiciona um produto ao carrinho → a página atualiza automaticamente o contador do carrinho e o
+                valor total, sem recarregar a página. Isso é uma aplicação web dinâmica.</p>
+
+            <div class="warning">
+                🔍 <strong>Curiosidade:</strong> Antes dos frameworks modernos (pré-2010), atualizar uma parte da página
+                exigia recarregar tudo ou usar jQuery com manipulação DOM complexa. Hoje, Vue.js, React e Angular
+                abstraem essa complexidade, tornando o desenvolvimento mais produtivo e menos propenso a erros.
+            </div>
+        </section>
+
+        <!-- FUNDAMENTOS DO HTML5 -->
+        <section>
+            <h2>📄 Fundamentos do HTML5 – A base de tudo</h2>
+
+            <p>HTML (HyperText Markup Language) é a linguagem de marcação que estrutura o conteúdo da web. Todo elemento
+                visual em uma página começa com HTML. O HTML5 é a versão mais recente e traz elementos semânticos que
+                melhoram a acessibilidade e o SEO.</p>
+
+            <b>Estrutura básica de um documento HTML5:</b>
+            <div class="code-block">
+                <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="pt-br"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Minha primeira página&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+            &lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+            </div>
+
+            <b>Elementos semânticos do HTML5 (importantes para acessibilidade):</b>
+            <ul>
+                <li><code>&lt;header&gt;</code> – cabeçalho da página ou seção</li>
+                <li><code>&lt;nav&gt;</code> – menu de navegação</li>
+                <li><code>&lt;main&gt;</code> – conteúdo principal</li>
+                <li><code>&lt;section&gt;</code> – agrupa conteúdo temático</li>
+                <li><code>&lt;article&gt;</code> – conteúdo independente (post, notícia)</li>
+                <li><code>&lt;aside&gt;</code> – conteúdo lateral (sidebar)</li>
+                <li><code>&lt;footer&gt;</code> – rodapé</li>
+            </ul>
+
+            <b>Listas, textos e imagens na prática:</b>
+            <div class="code-block">
+                <pre><code>&lt;!-- Lista não ordenada --&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Vue.js&lt;/li&gt;
+            &lt;li&gt;React&lt;/li&gt;
+            &lt;li&gt;Angular&lt;/li&gt;
+        &lt;/ul&gt;
+        
+        &lt;!-- Imagem --&gt;
+        &lt;img src="logo.png" alt="Logo da Cidade Virtual"&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- TIPOS DE FRAMEWORKS -->
+        <section>
+            <h2>📌 Frameworks: o que são e para que servem?</h2>
+            <p>Um <strong>framework</strong> é uma estrutura de código reutilizável que fornece soluções prontas para
+                problemas comuns no desenvolvimento de software. Ele define uma arquitetura, oferece bibliotecas e
+                ferramentas, e impõe (ou sugere) um determinado padrão de organização.</p>
+
+            <div class="info-box">
+                <strong>🔧 Principais categorias de frameworks em desenvolvimento web:</strong>
+                <ul>
+                    <li><strong>Back-end:</strong> Express.js (Node.js), Django (Python), Laravel (PHP), Ruby on Rails
+                    </li>
+                    <li><strong>Front-end (UI reativa):</strong> React, Vue.js, Angular, Svelte</li>
+                    <li><strong>Estilização / CSS:</strong> Bootstrap, Tailwind CSS, Bulma, Materialize, Chakra UI</li>
+                    <li><strong>Desktop (Electron):</strong> Transforma aplicações web em apps desktop (VS Code,
+                        Discord, WhatsApp Desktop)</li>
+                    <li><strong>Mobile:</strong> React Native, Flutter, Ionic (criam apps Android/iOS com
+                        JavaScript/Dart)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NOSSO PROJETO: O QUE É MERN? -->
+        <section>
+            <h2>🌐 Nosso projeto Cidade Virtual: Stack MERN</h2>
+            <p>O projeto <strong>Cidade Virtual</strong> está sendo desenvolvido com a stack <strong>MERN</strong> – um
+                dos conjuntos de tecnologias mais populares para aplicações web modernas. MERN significa:</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🗄️ MongoDB</h4>
+                    <p>Banco de dados NoSQL orientado a documentos. Armazena dados em formato JSON (comércios, usuários,
+                        eventos). Flexível e escalável.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>⚙️ Express.js</h4>
+                    <p>Framework back-end para Node.js. Gerencia rotas (API REST), middlewares, conexão com banco e
+                        lógica de servidor.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>⚛️ React</h4>
+                    <p>Framework front-end (biblioteca) para construir interfaces reativas baseadas em componentes.
+                        Desenvolvido pelo Facebook.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🟢 Node.js</h4>
+                    <p>Ambiente de execução JavaScript no servidor. Permite usar a mesma linguagem no front e back-end.
+                    </p>
+                </div>
+            </div>
+
+            <b>Fluxo de dados no MERN (arquitetura cliente-servidor):</b>
+            <ul>
+                <li><strong>Cliente (React):</strong> Usuário interage com a interface (busca, cadastro, avaliação).
+                    React faz requisições HTTP (fetch/axios) para o back-end.</li>
+                <li><strong>Servidor (Express + Node.js):</strong> Recebe as requisições, aplica regras de negócio,
+                    consulta/atualiza o banco e retorna JSON para o front.</li>
+                <li><strong>Banco (MongoDB):</strong> Armazena e recupera os dados das coleções (comercios, usuarios,
+                    eventos).</li>
+            </ul>
+
+            <div class="note">
+                💡 <strong>Por que MERN para a Cidade Virtual?</strong> Unificação da linguagem (JavaScript/TypeScript),
+                ecossistema imenso, comunidade ativa, facilidade de contratação, e componentes reutilizáveis que
+                agilizam o desenvolvimento.
+            </div>
+        </section>
+
+        <!-- FRAMEWORKS PARA ESTILIZAÇÃO -->
+        <section>
+            <h2>🎨 Frameworks para estilização: Bootstrap, Tailwind CSS e outros</h2>
+            <p>Escrever CSS do zero para cada projeto é trabalhoso e repetitivo. <strong>Frameworks CSS</strong>
+                fornecem componentes prontos (botões, cards, grids, modais) e utilitários para acelerar o
+                desenvolvimento responsivo.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📦 Bootstrap</h4>
+                    <p>Framework mais antigo e popular. Oferece componentes prontos (navbar, cards, carousel) e sistema
+                        de grid flexível. Ideal para quem quer produtividade imediata, mas pode gerar sites com "cara de
+                        Bootstrap".</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🎨 Tailwind CSS</h4>
+                    <p>Framework "utility-first". Você constrói o design aplicando classes utilitárias diretamente no
+                        HTML (<code>flex, p-4, text-center, bg-blue-500</code>). Permite designs totalmente customizados
+                        sem sair do HTML. Curva inicial mais íngreme, mas muito poderoso.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🧩 Material UI (MUI)</h4>
+                    <p>Implementação do Material Design (Google) para React. Componentes prontos e altamente
+                        customizáveis. Excelente para dashboards e aplicações empresariais.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>💨 Chakra UI</h4>
+                    <p>Framework moderno para React com foco em acessibilidade e simplicidade. Componentes como
+                        <code>&lt;Button&gt;, &lt;Modal&gt;, &lt;Tabs&gt;</code> com tema fácil de personalizar.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>✅ Para a Cidade Virtual (MERN):</strong> Poderíamos usar <strong>Tailwind CSS</strong> para um
+                design leve e customizado, ou <strong>Material UI</strong> para agilizar componentes. A escolha depende
+                do perfil do desenvolvedor e da necessidade de padronização visual.
+            </div>
+        </section>
+
+        <!-- FRAMEWORKS PARA APLICAÇÕES DESKTOP E MOBILE -->
+        <section>
+            <h2>📱 Frameworks para aplicações desktop e mobile</h2>
+            <p>Um dos maiores benefícios de desenvolver com tecnologias web (HTML, CSS, JS) é a possibilidade de
+                reutilizar o mesmo código para gerar aplicações nativas para Windows, macOS, Linux, iOS e Android,
+                usando frameworks específicos.</p>
+
+            <b>🖥️ Para Desktop (Electron):</b>
+            <ul>
+                <li><strong>Electron:</strong> Framework que combina Chromium (para renderização) e Node.js (para acesso
+                    ao sistema). Exemplos famosos: VS Code, Discord, Slack, WhatsApp Desktop, Notion.</li>
+                <li><strong>Tauri:</strong> Alternativa mais leve ao Electron, usando Rust no backend. Menor tamanho do
+                    app final.</li>
+                <li><strong>Como funciona:</strong> Você escreve uma aplicação web (React/Vue/Angular) e o Electron
+                    empacota ela como um executável desktop, com acesso a sistema de arquivos, notificações nativas,
+                    etc.</li>
+            </ul>
+
+            <b>📲 Para Mobile (React Native, Ionic, Flutter):</b>
+            <ul>
+                <li><strong>React Native (Meta):</strong> Permite criar apps Android/iOS usando React e componentes
+                    nativos (não WebViews). Muito usado por empresas (Instagram, Facebook, Uber Eats). Se você já sabe
+                    React, RN é o caminho natural.</li>
+                <li><strong>Ionic:</strong> Framework baseado em WebViews (capacitor/cordova). Escreve em
+                    Angular/React/Vue e gera apps híbridos. Menos performance que RN, mas mais rápido para protótipos.
+                </li>
+                <li><strong>Flutter (Google):</strong> Usa linguagem Dart, não JavaScript. Cria apps compilados
+                    nativamente. Design consistente e alta performance.</li>
+            </ul>
+
+            <div class="warning">
+                🚀 <strong>Para o futuro da Cidade Virtual:</strong> Depois da versão web consolidada, podemos criar um
+                app desktop com Electron (útil para comerciantes que trabalham em computador) e um app mobile com React
+                Native (para moradores acessarem do celular). O backend (API Node/Express) é o mesmo – só muda o front.
+            </div>
+        </section>
+
+        <!-- FUNDAMENTOS DO HTML5 -->
+        <section>
+            <h2>📄 Fundamentos do HTML5 – A base de tudo</h2>
+
+            <p>HTML (HyperText Markup Language) é a linguagem de marcação que estrutura o conteúdo da web. Todo
+                componente visual em React (JSX) é convertido para HTML.</p>
+
+            <b>Estrutura básica de um documento HTML5:</b>
+            <div class="code-block">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Cidade Virtual - Cabanagem&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="root"&gt;&lt;/div&gt; &lt;!-- React monta aqui --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <b>Elementos semânticos (importantes para acessibilidade):</b>
+            <ul>
+                <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                    <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code></li>
+                <li><strong>Listas:</strong> <code>&lt;ul&gt;</code> (não ordenada), <code>&lt;ol&gt;</code> (ordenada),
+                    <code>&lt;li&gt;</code> (item)</li>
+                <li><strong>Imagens:</strong> <code>&lt;img src="..." alt="..."&gt;</code> – o atributo <code>alt</code>
+                    é obrigatório para acessibilidade</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUÇÃO AO REACT (DENTRO DO MERN) -->
+        <section>
+            <h2>⚛️ React: o framework front-end do MERN</h2>
+
+            <p>React é uma biblioteca JavaScript para construção de interfaces de usuário baseadas em
+                <strong>componentes reutilizáveis</strong>. Criada pelo Facebook (Meta), é a tecnologia front-end mais
+                popular do mundo.</p>
+
+            <b>Principais conceitos (essenciais para a Cidade Virtual):</b>
+            <ul>
+                <li><strong>Componentes funcionais:</strong> Funções que retornam JSX (JavaScript + XML). Ex:
+                    <code>function CardComercio({ nome, categoria }) { return &lt;div&gt;{nome}&lt;/div&gt;; }</code>
+                </li>
+                <li><strong>Estado (useState):</strong> Dados que mudam ao longo do tempo. Ex:
+                    <code>const [busca, setBusca] = useState('');</code></li>
+                <li><strong>Efeitos (useEffect):</strong> Executa código quando o componente é montado ou quando
+                    dependências mudam. Ex: carregar lista de comércios da API.</li>
+                <li><strong>Propriedades (props):</strong> Dados passados de um componente pai para um filho.</li>
+                <li><strong>Comunicação HTTP (fetch/axios):</strong> Faz requisições para o backend Express.</li>
+            </ul>
+
+            <b>Exemplo mínimo de componente React (Cidade Virtual):</b>
+            <div class="code-block">
+                <pre><code>import { useState } from 'react';
+
+function ListaComercios() {
+  const [comercios, setComercios] = useState([]);
+  const [busca, setBusca] = useState('');
+
+  // useEffect para carregar dados da API (simulado)
+  // ...
+
+  const resultados = comercios.filter(c =&gt; c.categoria.includes(busca));
+
+  return (
+    &lt;div&gt;
+      &lt;input 
+        type="text" 
+        value={busca}
+        onChange={(e) =&gt; setBusca(e.target.value)}
+        placeholder="Buscar categoria..." 
+      /&gt;
+      {resultados.map(comercio =&gt; (
+        &lt;CardComercio key={comercio.id} nome={comercio.nome} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- CRUD NO MERN: CONCEITOS BÁSICOS -->
+        <section>
+            <h2>🗄️ CRUD no MERN: como nosso projeto irá funcionar</h2>
+            <p><strong>CRUD</strong> significa Create, Read, Update, Delete – as quatro operações básicas em qualquer
+                sistema com banco de dados. Na stack MERN, cada operação corresponde a uma requisição HTTP específica do
+                React para a API Express.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>➕ Create (Criar)</h4>
+                    <p><strong>Front (React):</strong> Formulário de cadastro de comércio → envia POST para
+                        <code>/api/comercios</code>.<br>
+                        <strong>Back (Express):</strong> Recebe dados, valida, insere no MongoDB.<br>
+                        <strong>Exemplo:</strong> Comerciante cadastra seu negócio na Cidade Virtual.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📖 Read (Ler)</h4>
+                    <p><strong>Front (React):</strong> GET para <code>/api/comercios?categoria=alimentacao</code>.<br>
+                        <strong>Back (Express):</strong> Consulta MongoDB e retorna lista em JSON.<br>
+                        <strong>Exemplo:</strong> Morador busca padarias no bairro.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✏️ Update (Atualizar)</h4>
+                    <p><strong>Front (React):</strong> PUT/PATCH para <code>/api/comercios/:id</code>.<br>
+                        <strong>Back (Express):</strong> Localiza documento pelo ID e atualiza campos.<br>
+                        <strong>Exemplo:</strong> Comerciante altera horário de funcionamento.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🗑️ Delete (Deletar)</h4>
+                    <p><strong>Front (React):</strong> DELETE para <code>/api/comercios/:id</code>.<br>
+                        <strong>Back (Express):</strong> Remove documento do MongoDB.<br>
+                        <strong>Exemplo:</strong> Comerciante remove um serviço que não oferece mais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="note">
+                📡 <strong>Comunicação front-back:</strong> No React usamos <code>fetch</code> ou <code>axios</code>
+                para fazer essas requisições. O Express processa e devolve JSON. O MongoDB armazena os dados em formato
+                similar a objetos JavaScript.
+            </div>
+        </section>
+
+        <!-- DESAFIOS E BOAS PRÁTICAS -->
+        <section>
+            <h2>⚠️ Desafios comuns ao usar frameworks e como superá-los</h2>
+            <ul>
+                <li><strong>Curva de aprendizado:</strong> React + Node + MongoDB pode parecer assustador no início.
+                    Comece pelo básico de cada tecnologia antes de integrar tudo.</li>
+                <li><strong>Gerenciamento de estado:</strong> Para aplicações complexas, React sozinho pode ficar
+                    confuso (prop drilling). Soluções: Context API (nativa do React) ou bibliotecas como Redux, Zustand.
+                </li>
+                <li><strong>Configuração inicial (tooling):</strong> Webpack, Babel, Vite. Use
+                    <code>create-react-app</code> ou <code>Vite</code> para começar rapidamente.</li>
+                <li><strong>Autenticação (login):</strong> JWT (JSON Web Tokens) é a solução padrão para MERN. O front
+                    envia token em cada requisição protegida.</li>
+                <li><strong>Roteamento no front:</strong> React Router DOM para múltiplas páginas (ex: /home,
+                    /comercio/123, /admin).</li>
+            </ul>
+        </section>
+
+        <!-- PRÓXIMOS PASSOS -->
+        <section>
+            <h2>📌 Resumo e próximos passos (Unidade 2)</h2>
+            <p><strong>O que aprendemos nesta unidade:</strong></p>
+            <ul>
+                <li>✅ Diferença entre aplicações estáticas e dinâmicas</li>
+                <li>✅ O ecossistema de frameworks: front-end, back-end, estilização, desktop e mobile</li>
+                <li>✅ A stack MERN (MongoDB, Express, React, Node.js) – a base do nosso projeto Cidade Virtual</li>
+                <li>✅ Frameworks para estilização (Bootstrap, Tailwind) e quando usar cada um</li>
+                <li>✅ Frameworks para desktop (Electron) e mobile (React Native) – estendendo a Cidade Virtual para
+                    outras plataformas</li>
+                <li>✅ Fundamentos de HTML5 e conceitos iniciais de React (componentes, estado, JSX)</li>
+                <li>✅ O padrão CRUD e como ele se materializa no MERN</li>
+            </ul>
+
+            <b>🚀 Na Unidade 2:</b>
+            <p>Vamos colocar a mão no código! Criaremos os primeiros componentes React da Cidade Virtual, estilizaremos
+                com CSS/Tailwind, configuraremos roteamento e começaremos a integração com o backend Express.</p>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão (e prática):</strong>
+                <p>Considerando o CRUD da Cidade Virtual, escolha uma entidade (ex: comércios). Descreva, em
+                    pseudocódigo ou português estruturado, como seria a requisição GET no React e a rota correspondente
+                    no Express para listar todos os comércios de uma determinada categoria.</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+            <p><cite>REACT DOCUMENTATION. Main Concepts. Disponível em: <a href="https://react.dev/learn"
+                        target="_blank">https://react.dev/learn</a>. Acesso em: 24 abr. 2026.</cite></p>
+            <p><cite>MONGODB DOCUMENTATION. The MERN Stack Tutorial. Disponível em: <a
+                        href="https://www.mongodb.com/languages/mern-stack-tutorial"
+                        target="_blank">https://www.mongodb.com/languages/mern-stack-tutorial</a>. Acesso em: 24 abr.
+                    2026.</cite></p>
+            <p><cite>EXPRESS.JS DOCUMENTATION. Routing Guide. Disponível em: <a
+                        href="https://expressjs.com/en/guide/routing.html"
+                        target="_blank">https://expressjs.com/en/guide/routing.html</a>. Acesso em: 24 abr. 2026.</cite>
+            </p>
+            <p><cite>TAILWIND CSS DOCS. Utility-First Fundamentals. Disponível em: <a
+                        href="https://tailwindcss.com/docs/utility-first"
+                        target="_blank">https://tailwindcss.com/docs/utility-first</a>. Acesso em: 24 abr. 2026.</cite>
+            </p>
+            <p><cite>ELECTRON DOCUMENTATION. Build cross-platform desktop apps. Disponível em: <a
+                        href="https://www.electronjs.org/docs/latest"
+                        target="_blank">https://www.electronjs.org/docs/latest</a>. Acesso em: 24 abr. 2026.</cite></p>
+            <p><cite>REACT NATIVE DOCUMENTATION. Learn the basics. Disponível em: <a
+                        href="https://reactnative.dev/docs/getting-started"
+                        target="_blank">https://reactnative.dev/docs/getting-started</a>. Acesso em: 24 abr.
+                    2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 24 de abril de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
