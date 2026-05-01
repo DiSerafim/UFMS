@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 2 - Desenvolvimento Web com Frameworks e HTML/CSS</h2>
+        <h3>🎨 Unidade 2 - Fundamentos de HTML, estilização responsiva com CSS e estruturação de páginas</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-construcao-de-aplicacoes-dinamicas-com-frameworks.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 2 Und 1
+            </a>
+            <a href="mod2-2_checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .btn-nav:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .note {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .comparativo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparativo-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .comparativo-card h4 {
+            color: #245;
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .comparativo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YGGdHr7ixkU" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 2">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 2 - Unidade 2
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 14 de abril de 2025</p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância do CSS para estilização de páginas web</li>
+                <li>Aprender conceitos essenciais sobre estilização responsiva</li>
+                <li>Explorar boas práticas na estruturação de páginas web</li>
+                <li>Aplicar os conceitos no projeto Cidade Virtual (MERN)</li>
+            </ul>
+        </section>
+
+        <!-- O QUE É ESTILIZAÇÃO DE UI? -->
+        <section>
+            <h2>🎨 O que é estilização de UI (User Interface)?</h2>
+
+            <p><strong>Estilização de UI</strong> é o processo de aplicar regras visuais a uma interface digital para
+                garantir sua estética, usabilidade e coerência. Isso inclui a definição de <strong>cores, tipografia,
+                    espaçamentos, tamanhos, animações e interações visuais</strong> para tornar a interface intuitiva e
+                agradável ao usuário.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>❌ Sem estilização</h4>
+                    <ul>
+                        <li>Apenas HTML puro (navegador padrão)</li>
+                        <li>Fonte Times New Roman, fundo branco, links azuis sublinhados</li>
+                        <li>Formulários desalinhados, sem hierarquia visual</li>
+                        <li>Experiência: amadora, pouco profissional</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✅ Com estilização (UI bem feita)</h4>
+                    <ul>
+                        <li>Cores que representam a marca (ex: verde para sustentabilidade)</li>
+                        <li>Tipografia legível e hierarquizada (títulos, subtítulos, corpo)</li>
+                        <li>Espaçamentos consistentes, botões com hover, cards com sombra</li>
+                        <li>Experiência: confiável, agradável, profissional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                💡 <strong>Por que isso importa para a Cidade Virtual?</strong> Um site com boa estilização passa
+                credibilidade para comerciantes e moradores. Cores amigáveis (verde + laranja), fonte legível, cards
+                organizados e botões com feedback visual aumentam a confiança e a taxa de adoção da plataforma.
+            </div>
+        </section>
+
+        <!-- INTRODUÇÃO AO CSS -->
+        <section>
+            <h2>📘 CSS: A linguagem da estilização</h2>
+
+            <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem que define a aparência de documentos HTML.
+                Enquanto o HTML estrutura o conteúdo, o CSS controla cores, fontes, posicionamento, tamanhos, animações
+                e responsividade.</p>
+
+            <b>Sintaxe básica do CSS:</b>
+            <div class="code-example">
+                <pre><code><span class="selector">seletor</span> {
+    <span class="property">propriedade</span>: <span class="value">valor</span>;
+}</code></pre>
+            </div>
+
+            <b>Exemplo prático:</b>
+            <div class="code-example">
+                <pre><code><span class="comment">/* Estiliza todos os botões do sistema */</span>
+<span class="selector">button</span> {
+    <span class="property">background-color</span>: <span class="value">#0066cc</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">10px 20px</span>;
+    <span class="property">border</span>: <span class="value">none</span>;
+    <span class="property">border-radius</span>: <span class="value">4px</span>;
+    <span class="property">cursor</span>: <span class="value">pointer</span>;
+}
+
+<span class="comment">/* Efeito ao passar o mouse */</span>
+<span class="selector">button:hover</span> {
+    <span class="property">background-color</span>: <span class="value">#245</span>;
+}</code></pre>
+            </div>
+
+            <div class="exemplo-css">
+                <h4>🎯 Demonstração visual (botão estilizado)</h4>
+                <div style="text-align: center;">
+                    <button
+                        style="background-color: #0066cc; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Botão
+                        estilizado</button>
+                    <button
+                        style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; margin-left: 10px;">Botão
+                        arredondado</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELETORES CSS -->
+        <section>
+            <h2>🔍 Seletores CSS: Como "mirar" nos elementos</h2>
+            <p>Seletores são padrões que dizem ao CSS quais elementos HTML estilizar. Dominá-los é essencial para um
+                código limpo e eficiente.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📌 Seletor de elemento</h4>
+                    <p><code>p { color: blue; }</code> → estiliza todos os parágrafos.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📌 Seletor de classe (.classe)</h4>
+                    <p><code>.card { border: 1px solid #ddd; }</code> → estiliza todos os elementos com class="card".
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📌 Seletor de ID (#id)</h4>
+                    <p><code>#cabecalho { background: #245; }</code> → estiliza o elemento com id="cabecalho".</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📌 Seletor descendente</h4>
+                    <p><code>.menu a { color: white; }</code> → estiliza links dentro de elementos com class="menu".</p>
+                </div>
+            </div>
+
+            <div class="note">
+                💡 <strong>Boas práticas:</strong> Prefira classes ao invés de IDs (maior reutilização). Evite seletores
+                muito específicos (ex: <code>body div section article p</code>). Use nomes semânticos em inglês:
+                <code>.card-comercio</code>, <code>.btn-primario</code>.
+            </div>
+        </section>
+
+        <!-- MODELO DE CAIXA (BOX MODEL) -->
+        <section>
+            <h2>📦 Box Model: A base do layout CSS</h2>
+            <p>TODO elemento HTML é uma caixa retangular. O Box Model define como essa caixa é composta:</p>
+
+            <div class="exemplo-css">
+                <div style="background-color: #f0f7ff; padding: 20px; border: 2px solid #0066cc; margin: 10px;">
+                    <div style="background-color: white; padding: 15px; border: 1px solid #ccc;">
+                        <strong>Conteúdo</strong> (texto, imagem, etc.)
+                    </div>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9em;">↑ padding (espaço interno)</p>
+                    <p style="margin: 0; font-size: 0.9em;">border (borda)</p>
+                    <p style="margin: 0; font-size: 0.9em;">margin (espaço externo)</p>
+                </div>
+            </div>
+
+            <b>Propriedades do Box Model:</b>
+            <ul>
+                <li><code>content</code>: área onde fica o texto/imagens (largura x altura)</li>
+                <li><code>padding</code>: espaço interno entre o conteúdo e a borda</li>
+                <li><code>border</code>: traço ao redor do padding</li>
+                <li><code>margin</code>: espaço externo entre a borda e outros elementos</li>
+            </ul>
+
+            <div class="code-example">
+                <pre><code><span class="comment">/* Exemplo de aplicação na Cidade Virtual */</span>
+<span class="selector">.card-comercio</span> {
+    <span class="property">width</span>: <span class="value">300px</span>;
+    <span class="property">padding</span>: <span class="value">15px</span>;      <span class="comment">/* Espaço interno */</span>
+    <span class="property">margin</span>: <span class="value">10px</span>;       <span class="comment">/* Espaço entre cards */</span>
+    <span class="property">border</span>: <span class="value">1px solid #ddd</span>;
+    <span class="property">border-radius</span>: <span class="value">8px</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- LAYOUTS RESPONSIVOS: FLEXBOX E GRID -->
+        <section>
+            <h2>📐 Layouts responsivos: Flexbox e CSS Grid</h2>
+            <p>Antigamente, layouts eram feitos com tabelas ou floats (muito frágil). Hoje, temos duas ferramentas
+                poderosas: <strong>Flexbox</strong> (para layouts 1D - linhas ou colunas) e <strong>Grid</strong> (para
+                layouts 2D - linhas e colunas simultaneamente).</p>
+
+            <b>Flexbox (ótimo para menus, barras laterais, cards em linha):</b>
+            <div class="flex-demo">
+                <div class="flex-item">Card 1</div>
+                <div class="flex-item">Card 2</div>
+                <div class="flex-item">Card 3</div>
+            </div>
+            <div class="code-example">
+                <pre><code><span class="selector">.container-flex</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">space-between</span>;
+    <span class="property">gap</span>: <span class="value">15px</span>;
+    <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+}</code></pre>
+            </div>
+
+            <b>CSS Grid (ideal para galerias, dashboards, páginas complexas):</b>
+            <div class="grid-demo">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+            <div class="code-example">
+                <pre><code><span class="selector">.container-grid</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(150px, 1fr))</span>;
+    <span class="property">gap</span>: <span class="value">15px</span>;
+}</code></pre>
+            </div>
+
+            <div class="info-box">
+                🚀 <strong>Aplicação na Cidade Virtual:</strong> A lista de comércios será exibida em <strong>grid
+                    responsivo</strong> (3 colunas no desktop, 2 no tablet, 1 no celular). O menu de navegação usará
+                <strong>flexbox</strong>. A barra lateral com eventos pode ser posicionada com Grid.
+            </div>
+        </section>
+
+        <!-- RESPONSIVIDADE COM MEDIA QUERIES -->
+        <section>
+            <h2>📱 Responsividade: Um site para todas as telas</h2>
+            <p><strong>Responsividade</strong> é a capacidade de um site se adaptar a diferentes tamanhos de tela
+                (desktop, tablet, celular). A principal ferramenta CSS para isso são as <strong>media queries</strong>.
+            </p>
+
+            <b>Sintaxe básica:</b>
+            <div class="code-example">
+                <pre><code><span class="comment">/* Layout para celulares (largura máxima 768px) */</span>
+<span class="selector">@media (max-width: 768px)</span> {
+    <span class="selector">.container</span> {
+        <span class="property">flex-direction</span>: <span class="value">column</span>;
+    }
+    <span class="selector">.card</span> {
+        <span class="property">width</span>: <span class="value">100%</span>;
+    }
+}
+
+<span class="comment">/* Layout para tablets (entre 769px e 1024px) */</span>
+<span class="selector">@media (min-width: 769px) and (max-width: 1024px)</span> {
+    <span class="selector">.card</span> {
+        <span class="property">width</span>: <span class="value">48%</span>;
+    }
+}</code></pre>
+            </div>
+
+            <div class="note">
+                📱 <strong>Mobile First vs Desktop First:</strong> A abordagem "mobile first" começa o CSS pelo celular
+                e usa media queries com <code>min-width</code> para telas maiores. É a recomendada atualmente, pois
+                prioriza a experiência em dispositivos móveis (mais de 60% do tráfego web).
+            </div>
+        </section>
+
+        <!-- ESTRUTURAÇÃO DE PÁGINAS E ARQUITETURA CSS -->
+        <section>
+            <h2>🏗️ Estruturação de páginas e arquitetura CSS</h2>
+            <p>À medida que o projeto cresce, o CSS pode virar uma "bagunça". Para evitar isso, usamos metodologias de
+                organização e boas práticas.</p>
+
+            <b>📌 Metodologia BEM (Block Element Modifier):</b>
+            <p>BEM é um padrão de nomenclatura que torna o CSS mais legível e de fácil manutenção.</p>
+            <ul>
+                <li><strong>Bloco:</strong> Componente independente (ex: <code>.card</code>)</li>
+                <li><strong>Elemento:</strong> Parte do bloco (ex: <code>.card__titulo</code>)</li>
+                <li><strong>Modificador:</strong> Variação do bloco/elemento (ex: <code>.card--destaque</code>)</li>
+            </ul>
+
+            <div class="code-example">
+                <pre><code><span class="comment">/* Exemplo BEM para um card de comércio */</span>
+<span class="selector">.card</span> { }
+<span class="selector">.card__titulo</span> { }
+<span class="selector">.card__endereco</span> { }
+<span class="selector">.card--destaque</span> { }</code></pre>
+            </div>
+
+            <b>📁 Organização de arquivos CSS (para projetos maiores):</b>
+            <ul>
+                <li><code>base.css</code> – reset, variáveis, estilos globais</li>
+                <li><code>components.css</code> – buttons, cards, forms, modal</li>
+                <li><code>layout.css</code> – header, footer, grid principal, sidebar</li>
+                <li><code>pages.css</code> – estilos específicos de cada página (home, perfil, admin)</li>
+                <li><code>responsive.css</code> – media queries</li>
+            </ul>
+
+            <div class="warning">
+                💡 <strong>No React (Cidade Virtual):</strong> Preferimos <strong>CSS Modules</strong> (arquivos
+                <code>.module.css</code>) ou <strong>Styled Components</strong> (CSS dentro do JS). Isso evita conflitos
+                de nomes e mantém o estilo próximo ao componente. Ou ainda, <strong>Tailwind CSS</strong> para
+                produtividade com classes utilitárias.
+            </div>
+        </section>
+
+        <!-- EXEMPLO PRÁTICO: PÁGINA DA CIDADE VIRTUAL -->
+        <section>
+            <h2>🏙️ Exemplo prático: Estrutura CSS da Cidade Virtual</h2>
+
+            <b>Paleta de cores (identidade visual):</b>
+            <div style="display: flex; gap: 10px; margin: 15px 0;">
+                <div style="background-color: #1a3c34; width: 60px; height: 60px; border-radius: 8px;"></div>
+                <div style="background-color: #2a6b5e; width: 60px; height: 60px; border-radius: 8px;"></div>
+                <div style="background-color: #ffa500; width: 60px; height: 60px; border-radius: 8px;"></div>
+                <div
+                    style="background-color: #f5f5f5; width: 60px; height: 60px; border-radius: 8px; border: 1px solid #ddd;">
+                </div>
+            </div>
+            <ul>
+                <li><strong>Verde escuro (#1a3c34):</strong> cabeçalho, rodapé, botões primários</li>
+                <li><strong>Verde médio (#2a6b5e):</strong> hovers, detalhes, links</li>
+                <li><strong>Laranja (#ffa500):</strong> destaques, botões de call-to-action, badges</li>
+                <li><strong>Cinza claro (#f5f5f5):</strong> fundo de cards, seções secundárias</li>
+            </ul>
+
+            <b>Tipografia:</b>
+            <ul>
+                <li><strong>Títulos:</strong> 'Poppins', sans-serif (peso 600)</li>
+                <li><strong>Corpo:</strong> 'Inter', sans-serif (peso 400, tamanho 16px)</li>
+                <li><strong>Espaçamento:</strong> line-height 1.5 para legibilidade</li>
+            </ul>
+
+            <b>Layout da página inicial (estrutura em componentes React + CSS):</b>
+            <div class="code-example">
+                <pre><code><span class="comment">/* Home.module.css - Mobile First */</span>
+<span class="selector">.container</span> {
+    <span class="property">max-width</span>: <span class="value">1200px</span>;
+    <span class="property">margin</span>: <span class="value">0 auto</span>;
+    <span class="property">padding</span>: <span class="value">0 1rem</span>;
+}
+
+<span class="selector">.hero</span> {
+    <span class="property">background</span>: <span class="value">linear-gradient(135deg, #1a3c34, #2a6b5e)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">3rem 1rem</span>;
+    <span class="property">border-radius</span>: <span class="value">12px</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+}
+
+<span class="selector">.grid-comercios</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">1fr</span>;
+    <span class="property">gap</span>: <span class="value">1.5rem</span>;
+}
+
+<span class="selector">@media (min-width: 768px)</span> {
+    <span class="selector">.grid-comercios</span> {
+        <span class="property">grid-template-columns</span>: <span class="value">repeat(2, 1fr)</span>;
+    }
+}
+
+<span class="selector">@media (min-width: 1024px)</span> {
+    <span class="selector">.grid-comercios</span> {
+        <span class="property">grid-template-columns</span>: <span class="value">repeat(3, 1fr)</span>;
+    }
+}</code></pre>
+            </div>
+
+            <div class="info-box">
+                🎯 <strong>Resultado:</strong> A página da Cidade Virtual será visualmente agradável, consistente,
+                responsiva (funciona em qualquer dispositivo) e de fácil manutenção graças à arquitetura CSS bem
+                estruturada.
+            </div>
+        </section>
+
+        <!-- DESAFIOS COMUNS E BOAS PRÁTICAS -->
+        <section>
+            <h2>⚠️ Desafios comuns e boas práticas em CSS</h2>
+
+            <b>Desafios:</b>
+            <ul>
+                <li><strong>Especificidade excessiva:</strong> Usar <code>!important</code> com frequência é um
+                    anti-padrão. Prefira aumentar a especificidade com seletores mais específicos ou reorganize o CSS.
+                </li>
+                <li><strong>Estilos que "vazam":</strong> Sem uma metodologia (BEM) ou CSS Modules, estilos de um
+                    componente afetam outros inesperadamente.</li>
+                <li><strong>Dificuldade com responsividade:</strong> Testar apenas no desktop, ignorar mobile. Solução:
+                    use as ferramentas do DevTools (modo dispositivo) e media queries.</li>
+                <li><strong>Código repetitivo (DRY):</strong> Repetir as mesmas cores, espaçamentos, sombras. Solução:
+                    use variáveis CSS (<code>--cor-primaria: #0066cc;</code>).</li>
+            </ul>
+
+            <b>Boas práticas:</b>
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🎨 Variáveis CSS</h4>
+                    <p>Defina no <code>:root</code> cores, fontes, espaçamentos. Ex: <code>--primary: #0066cc;</code> →
+                        use <code>color: var(--primary);</code>.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📱 Mobile First</h4>
+                    <p>Escreva CSS primeiro para celular, depois use <code>min-width</code> para telas maiores. Mais
+                        performático e alinhado ao uso atual.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🧩 Componentização</h4>
+                    <p>No React, cada componente tem seu próprio CSS (CSS Modules). Isso evita conflitos e facilita
+                        manutenção.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🛠️ Ferramentas</h4>
+                    <p>Use <strong>Prettier</strong> para formatação, <strong>Stylelint</strong> para linting, e
+                        <strong>Chrome DevTools</strong> para depuração.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSÃO E PRÓXIMOS PASSOS -->
+        <section>
+            <h2>📌 Resumo e próximos passos (Checkout)</h2>
+            <p><strong>O que aprendemos nesta unidade:</strong></p>
+            <ul>
+                <li>✅ A importância da estilização de UI para usabilidade e credibilidade</li>
+                <li>✅ Sintaxe CSS, seletores e Box Model</li>
+                <li>✅ Flexbox e Grid para layouts modernos e responsivos</li>
+                <li>✅ Media queries e abordagem Mobile First</li>
+                <li>✅ Estruturação de páginas com metodologias (BEM) e arquitetura de arquivos</li>
+                <li>✅ Exemplo prático completo da Cidade Virtual (cores, tipografia, grid responsivo)</li>
+                <li>✅ Desafios e boas práticas para código CSS limpo e sustentável</li>
+            </ul>
+
+            <b>🚀 Próxima etapa (Checkout do Módulo 2):</b>
+            <p>Você aplicará esses conceitos diretamente no código da Cidade Virtual: criará os componentes React
+                (cards, header, footer), estilizará com CSS Modules ou Tailwind, implementará responsividade e fará o
+                primeiro deploy de uma versão navegável da plataforma.</p>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão e prática:</strong>
+                <p>Pegue o layout da página inicial da Cidade Virtual (esboço de papel ou Figma). Identifique:</p>
+                <ul>
+                    <li>Quais elementos seriam estruturados com Flexbox?</li>
+                    <li>Quais com CSS Grid?</li>
+                    <li>Como você aplicaria o Mobile First em cada seção?</li>
+                </ul>
+                <p>Compartilhe suas respostas no fórum ou anote para o checkpoint prático!</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+            <p><cite>MOZILLA DEVELOPER NETWORK (MDN). Learn CSS. Disponível em: <a
+                        href="https://developer.mozilla.org/pt-BR/docs/Learn/CSS"
+                        target="_blank">https://developer.mozilla.org/pt-BR/docs/Learn/CSS</a>. Acesso em: 25 abr.
+                    2026.</cite></p>
+            <p><cite>CODERHOUSE. Guia de Flexbox e Grid. Disponível em: <a
+                        href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                        target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>. Acesso em: 25 abr.
+                    2026.</cite></p>
+            <p><cite>BEM – Block Element Modifier. Methodology. Disponível em: <a href="https://getbem.com/"
+                        target="_blank">https://getbem.com/</a>. Acesso em: 25 abr. 2026.</cite></p>
+            <p><cite>W3SCHOOLS. CSS Responsive Design. Disponível em: <a
+                        href="https://www.w3schools.com/css/css_rwd_intro.asp"
+                        target="_blank">https://www.w3schools.com/css/css_rwd_intro.asp</a>. Acesso em: 25 abr.
+                    2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de abril de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
