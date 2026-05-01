@@ -28,172 +28,22 @@
         <div style="display: flex; gap: 10px;">
             <a href="mod1_und2-analise-de-requisitos-e-planejamento-de-solucoes.html" class="btn-nav"
                 style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
-                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Unidade 2
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 1 Und 2
             </a>
-            <a href="#" class="btn-nav" id="btnVoltarTopo"
+
+            <a href="mod2_und1-construcao-de-aplicacoes-dinamicas-com-frameworks.html" class="btn-nav"
                 style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
-                <i class="material-icons" style="font-size: 18px;">check_circle</i> Checkout
+                Mod 2 Und 1 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
             </a>
         </div>
     </div>
 
-    <style>
-        .btn-nav:hover {
-            opacity: 0.8;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .deadline-box {
-            background-color: #dc3545;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-
-        .deadline-box .material-icons {
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-
-        .atencao-box {
-            background-color: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .atencao-box h3 {
-            color: #856404;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-importante {
-            background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
-            border-left: 4px solid #0066cc;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        .orientacoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .orientacao-card {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .orientacao-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .orientacao-card h4 {
-            color: #245;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .btn-link-projeto {
-            background-color: #0066cc;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            margin: 20px 0;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-link-projeto:hover {
-            background-color: #245;
-            text-decoration: none;
-            color: white;
-        }
-
-        .btn-envio {
-            background: linear-gradient(135deg, #28a745, #218838);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.3em;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            max-width: 500px;
-            margin: 30px auto;
-            display: block;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-envio:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-envio:active {
-            transform: translateY(0);
-        }
-
-        .requisitos-lista {
-            list-style: none;
-            padding: 0;
-        }
-
-        .requisitos-lista li {
-            margin-bottom: 12px;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .requisitos-lista li::before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-            color: #28a745;
-        }
-
-        @media (max-width: 768px) {
-            .btn-envio {
-                max-width: 100%;
-                font-size: 1.1em;
-                padding: 12px 20px;
-            }
-        }
-    </style>
 
     <main>
         <!-- Status e Vencimento -->
         <section>
             <div class="deadline-box">
-                <i class="material-icons" style="vertical-align: middle;">schedule</i> 
+                <i class="material-icons" style="vertical-align: middle;">schedule</i>
                 Vencimento: segunda-feira, 30 mar. 2026, 23:59
             </div>
 
@@ -201,42 +51,65 @@
                 <h3>
                     <i class="material-icons">warning</i> 🚨 Atenção!
                 </h3>
-                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você garante a carga horária de frequência do módulo.</p>
-                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte da avaliação da disciplina.</strong></p>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a carga horária de frequência do módulo.</p>
+                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte
+                        da avaliação da disciplina.</strong></p>
                 <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
-                <p>⚠️ <strong>Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à ausência no módulo.</p>
+                <p>⚠️ <strong>Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
             </div>
         </section>
 
         <!-- Introdução -->
         <section>
             <h2>📌 Sobre a Atividade de Extensão</h2>
-            <p>De acordo com a <strong>Resolução MEC/CNE/CES Nº 7/2018</strong> e <strong>Resolução COGRAD/UFMS Nº 304/2021</strong>, todo estudante deve cumprir, pelo menos, 10% do total da carga horária do seu curso de graduação em atividades de extensão. Neste módulo, você terá a oportunidade de desenvolver uma ação de extensão relacionada aos conteúdos aprendidos até aqui.</p>
-            
-            <p>O Projeto Integrador é uma atividade curricular obrigatória do curso em que o estudante pode optar por trabalhar individualmente ou coletivamente (organizando um grupo de até 5 colegas). Nesta disciplina, o estudante deve <strong>identificar, pesquisar e resolver situações-problema</strong> relacionadas à realidade e ao cotidiano do campo de conhecimento do curso, envolvendo temas relacionados com as disciplinas estudadas para um projeto de extensão.</p>
-            
+            <p>De acordo com a <strong>Resolução MEC/CNE/CES Nº 7/2018</strong> e <strong>Resolução COGRAD/UFMS Nº
+                    304/2021</strong>, todo estudante deve cumprir, pelo menos, 10% do total da carga horária do seu
+                curso de graduação em atividades de extensão. Neste módulo, você terá a oportunidade de desenvolver uma
+                ação de extensão relacionada aos conteúdos aprendidos até aqui.</p>
+
+            <p>O Projeto Integrador é uma atividade curricular obrigatória do curso em que o estudante pode optar por
+                trabalhar individualmente ou coletivamente (organizando um grupo de até 5 colegas). Nesta disciplina, o
+                estudante deve <strong>identificar, pesquisar e resolver situações-problema</strong> relacionadas à
+                realidade e ao cotidiano do campo de conhecimento do curso, envolvendo temas relacionados com as
+                disciplinas estudadas para um projeto de extensão.</p>
+
             <div class="info-importante">
                 <h4>📋 Neste módulo, o trabalho consiste em duas partes:</h4>
                 <p><strong>Parte 1: Identificação e definição de problemas</strong><br>
-                Pense em um problema ou necessidade que você tenha identificado em seu ambiente de trabalho ou na vida cotidiana. Como você aplicaria as técnicas de descoberta de produto para entender melhor essa necessidade e propor uma solução inovadora? Compartilhe o processo que você seguiria e os desafios que poderia enfrentar.</p>
-                
+                    Pense em um problema ou necessidade que você tenha identificado em seu ambiente de trabalho ou na
+                    vida cotidiana. Como você aplicaria as técnicas de descoberta de produto para entender melhor essa
+                    necessidade e propor uma solução inovadora? Compartilhe o processo que você seguiria e os desafios
+                    que poderia enfrentar.</p>
+
                 <p><strong>Parte 2: Análise de Requisitos e planejamento de soluções</strong><br>
-                A partir do problema escolhido na Parte 1: Quais critérios você considera essenciais para definir o escopo desse projeto a partir dos requisitos? Como garantir que o escopo esteja alinhado com os objetivos e expectativas dos stakeholders? Quais são os requisitos do seu projeto?</p>
+                    A partir do problema escolhido na Parte 1: Quais critérios você considera essenciais para definir o
+                    escopo desse projeto a partir dos requisitos? Como garantir que o escopo esteja alinhado com os
+                    objetivos e expectativas dos stakeholders? Quais são os requisitos do seu projeto?</p>
             </div>
         </section>
 
         <!-- Meu Projeto - Cidade Virtual -->
         <section>
             <h2>🌆 Meu Projeto: Cidade Virtual - Cabanagem/PA</h2>
-            <p>Para esta atividade de extensão, escolhi um problema real do meu contexto: o bairro <strong>Cabanagem, em Belém/PA</strong>. Moradores e comerciantes vivem uma desconexão: os pequenos negócios e autônomos (eletricistas, doceiras, mecânicos) não conseguem visibilidade, e os moradores não sabem o que existe no próprio bairro. Como resultado, a economia local se fragiliza e o senso de comunidade se perde.</p>
-            
-            <p>Desenvolvi a <strong>Cidade Virtual</strong> – uma plataforma web colaborativa para conectar moradores, comerciantes e autônomos, promovendo o fortalecimento da economia local e a integração comunitária por meio de uma tecnologia social participativa.</p>
-            
+            <p>Para esta atividade de extensão, escolhi um problema real do meu contexto: o bairro <strong>Cabanagem, em
+                    Belém/PA</strong>. Moradores e comerciantes vivem uma desconexão: os pequenos negócios e autônomos
+                (eletricistas, doceiras, mecânicos) não conseguem visibilidade, e os moradores não sabem o que existe no
+                próprio bairro. Como resultado, a economia local se fragiliza e o senso de comunidade se perde.</p>
+
+            <p>Desenvolvi a <strong>Cidade Virtual</strong> – uma plataforma web colaborativa para conectar moradores,
+                comerciantes e autônomos, promovendo o fortalecimento da economia local e a integração comunitária por
+                meio de uma tecnologia social participativa.</p>
+
             <div class="info-importante">
                 <h4>📄 Relatório completo disponível no Google Docs:</h4>
-                <p>Todo o planejamento, levantamento de requisitos, modelagem do banco de dados, estratégia de versionamento e testes foram documentados no relatório abaixo.</p>
+                <p>Todo o planejamento, levantamento de requisitos, modelagem do banco de dados, estratégia de
+                    versionamento e testes foram documentados no relatório abaixo.</p>
                 <div style="text-align: center;">
-                    <a href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0" target="_blank" class="btn-link-projeto">
+                    <a href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0"
+                        target="_blank" class="btn-link-projeto">
                         <i class="material-icons">description</i> Ver Relatório Completo (Google Docs)
                     </a>
                 </div>
@@ -246,25 +119,38 @@
         <!-- Resumo da Resolução -->
         <section>
             <h2>✅ Resumo da Resolução do Problema</h2>
-            
+
             <b>🔍 Parte 1 - Identificação e definição do problema</b>
-            <p><strong>Problema identificado:</strong> Moradores e comerciantes do bairro Cabanagem estão desconectados. Pequenos negócios não têm visibilidade digital, e moradores consomem fora do bairro por desconhecerem a oferta local.</p>
-            
+            <p><strong>Problema identificado:</strong> Moradores e comerciantes do bairro Cabanagem estão desconectados.
+                Pequenos negócios não têm visibilidade digital, e moradores consomem fora do bairro por desconhecerem a
+                oferta local.</p>
+
             <p><strong>Técnicas de descoberta aplicadas:</strong></p>
             <ul>
-                <li><strong>City-tour exploratório (18/03/2026):</strong> 8 horas percorrendo o bairro, identificando comércios, espaços comunitários e conversas informais.</li>
-                <li><strong>Design Thinking (empatia):</strong> entrevistas e observação direta para compreender a dor real dos usuários.</li>
-                <li><strong>5 Porquês:</strong> técnica para chegar à causa raiz do problema (falta de ferramenta digital gratuita e simples).</li>
-                <li><strong>Problem Statement:</strong> "Moradores e comerciantes do bairro Cabanagem precisam de uma plataforma digital de conexão local porque, atualmente, pequenos negócios ficam invisíveis e a comunidade perde oportunidades de fortalecimento econômico e social."</li>
+                <li><strong>City-tour exploratório (18/03/2026):</strong> 8 horas percorrendo o bairro, identificando
+                    comércios, espaços comunitários e conversas informais.</li>
+                <li><strong>Design Thinking (empatia):</strong> entrevistas e observação direta para compreender a dor
+                    real dos usuários.</li>
+                <li><strong>5 Porquês:</strong> técnica para chegar à causa raiz do problema (falta de ferramenta
+                    digital gratuita e simples).</li>
+                <li><strong>Problem Statement:</strong> "Moradores e comerciantes do bairro Cabanagem precisam de uma
+                    plataforma digital de conexão local porque, atualmente, pequenos negócios ficam invisíveis e a
+                    comunidade perde oportunidades de fortalecimento econômico e social."</li>
             </ul>
-            
-            <p><strong>Desafios enfrentados:</strong> Viés de confirmação, delimitação de escopo, confundir sintoma com causa, falta de contato inicial com usuários. Todos foram mitigados com visitas presenciais e aplicação sistemática das técnicas.</p>
-            
+
+            <p><strong>Desafios enfrentados:</strong> Viés de confirmação, delimitação de escopo, confundir sintoma com
+                causa, falta de contato inicial com usuários. Todos foram mitigados com visitas presenciais e aplicação
+                sistemática das técnicas.</p>
+
             <b>📋 Parte 2 - Análise de Requisitos e planejamento da solução</b>
-            <p><strong>Critérios para definição do escopo:</strong> Utilizei o método <strong>MoSCoW</strong> para priorizar requisitos em Must have (obrigatório para MVP), Should have (importante), Could have (desejável) e Won't have (não agora).</p>
-            
-            <p><strong>Garantia de alinhamento com stakeholders:</strong> Os requisitos serão validados com um grupo de 5 a 10 representantes da comunidade (comerciantes, autônomos, moradores e líderes comunitários) antes da implementação. Um protótipo de baixa fidelidade (Figma) será apresentado para coleta de feedback.</p>
-            
+            <p><strong>Critérios para definição do escopo:</strong> Utilizei o método <strong>MoSCoW</strong> para
+                priorizar requisitos em Must have (obrigatório para MVP), Should have (importante), Could have
+                (desejável) e Won't have (não agora).</p>
+
+            <p><strong>Garantia de alinhamento com stakeholders:</strong> Os requisitos serão validados com um grupo de
+                5 a 10 representantes da comunidade (comerciantes, autônomos, moradores e líderes comunitários) antes da
+                implementação. Um protótipo de baixa fidelidade (Figma) será apresentado para coleta de feedback.</p>
+
             <p><strong>Requisitos Funcionais (parciais - MVP):</strong></p>
             <ul>
                 <li>RF01 - Cadastro de usuários com perfis (morador, comerciante, autônomo, líder comunitário)</li>
@@ -274,12 +160,16 @@
                 <li>RF05 - Cadastro de eventos por líderes e comerciantes</li>
                 <li>RF06 - Login e autenticação segura</li>
             </ul>
-            
-            <p><strong>Requisitos Não Funcionais:</strong> Responsividade, desempenho (< 2 segundos), acessibilidade (WCAG 2.1), segurança (hash senhas, proteção SQL Injection), disponibilidade 99%, facilidade de uso.</p>
-            
-            <p><strong>Modelagem do banco de dados (DER):</strong> Entidades principais: usuarios, comercios, servicos_autonomos, eventos, avaliacoes. Relacionamentos 1:N e 1:1 conforme necessidade.</p>
-            
-            <p><strong>Estratégia de versionamento e testes:</strong> Git com branches main/develop/feature, commits semânticos. Testes manuais (checklist), Jest (backend), Playwright (E2E).</p>
+
+            <p><strong>Requisitos Não Funcionais:</strong> Responsividade, desempenho (< 2 segundos), acessibilidade
+                    (WCAG 2.1), segurança (hash senhas, proteção SQL Injection), disponibilidade 99%, facilidade de
+                    uso.</p>
+
+                    <p><strong>Modelagem do banco de dados (DER):</strong> Entidades principais: usuarios, comercios,
+                        servicos_autonomos, eventos, avaliacoes. Relacionamentos 1:N e 1:1 conforme necessidade.</p>
+
+                    <p><strong>Estratégia de versionamento e testes:</strong> Git com branches main/develop/feature,
+                        commits semânticos. Testes manuais (checklist), Jest (backend), Playwright (E2E).</p>
         </section>
 
         <!-- Orientações para Envio -->
@@ -288,25 +178,30 @@
             <div class="orientacoes-grid">
                 <div class="orientacao-card">
                     <h4><i class="material-icons">description</i> 1. Baixar o Template</h4>
-                    <p>Faça uma cópia do modelo de relatório disponível no AVA. O template contém a estrutura padrão exigida pela UFMS para atividades de extensão.</p>
+                    <p>Faça uma cópia do modelo de relatório disponível no AVA. O template contém a estrutura padrão
+                        exigida pela UFMS para atividades de extensão.</p>
                 </div>
                 <div class="orientacao-card">
                     <h4><i class="material-icons">edit</i> 2. Preencher com seu Projeto</h4>
-                    <p>Substitua os campos genéricos pelas informações do seu projeto: título, objetivos, público-alvo, local, metodologia, requisitos, etc.</p>
+                    <p>Substitua os campos genéricos pelas informações do seu projeto: título, objetivos, público-alvo,
+                        local, metodologia, requisitos, etc.</p>
                 </div>
                 <div class="orientacao-card">
                     <h4><i class="material-icons">picture_as_pdf</i> 3. Exportar para PDF</h4>
-                    <p>Após preencher todo o relatório, exporte o documento para o formato PDF (Arquivo > Download > PDF).</p>
+                    <p>Após preencher todo o relatório, exporte o documento para o formato PDF (Arquivo > Download >
+                        PDF).</p>
                 </div>
                 <div class="orientacao-card">
                     <h4><i class="material-icons">cloud_upload</i> 4. Enviar no AVA</h4>
-                    <p>Acesse a atividade "Checkout de Presença e Avaliação da Aprendizagem do Módulo 1", anexe o arquivo PDF e clique em "Salvar e enviar".</p>
+                    <p>Acesse a atividade "Checkout de Presença e Avaliação da Aprendizagem do Módulo 1", anexe o
+                        arquivo PDF e clique em "Salvar e enviar".</p>
                 </div>
             </div>
-            
+
             <div class="atencao-box" style="background-color: #d4edda; border-left: 4px solid #28a745;">
                 <h3 style="color: #155724;">✅ Meu relatório já está concluído!</h3>
-                <p>Todo o conteúdo das Partes 1 e 2 foi desenvolvido e documentado no Google Docs. O relatório segue o template da UFMS e contém:</p>
+                <p>Todo o conteúdo das Partes 1 e 2 foi desenvolvido e documentado no Google Docs. O relatório segue o
+                    template da UFMS e contém:</p>
                 <ul class="requisitos-lista">
                     <li>Resumo, introdução, objetivos e justificativa</li>
                     <li>Fundamentação teórica (Design Thinking, Tecnologia Social, Economia Solidária)</li>
@@ -317,7 +212,9 @@
                     <li>Estratégia de versionamento e testes</li>
                     <li>Conclusão e referências (ABNT NBR 6023)</li>
                 </ul>
-                <p><strong>Acesso ao relatório completo:</strong> <a href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0" target="_blank">Clique aqui para visualizar</a></p>
+                <p><strong>Acesso ao relatório completo:</strong> <a
+                        href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0"
+                        target="_blank">Clique aqui para visualizar</a></p>
             </div>
         </section>
 
@@ -327,9 +224,12 @@
             <p>Antes de enviar, verifique se seu relatório atende a todos os itens abaixo:</p>
             <ul class="requisitos-lista">
                 <li>O relatório segue o template da UFMS (cabeçalho, estrutura, formatação)</li>
-                <li>A Parte 1 (Identificação do problema) está completa: problema real, técnicas de descoberta (Design Thinking, 5 Porquês, Problem Statement), desafios identificados</li>
-                <li>A Parte 2 (Análise de requisitos) está completa: requisitos funcionais e não funcionais, critérios de escopo, alinhamento com stakeholders, priorização (MoSCoW)</li>
-                <li>O projeto está claramente vinculado a uma ação de extensão (interação com comunidade, impacto social)</li>
+                <li>A Parte 1 (Identificação do problema) está completa: problema real, técnicas de descoberta (Design
+                    Thinking, 5 Porquês, Problem Statement), desafios identificados</li>
+                <li>A Parte 2 (Análise de requisitos) está completa: requisitos funcionais e não funcionais, critérios
+                    de escopo, alinhamento com stakeholders, priorização (MoSCoW)</li>
+                <li>O projeto está claramente vinculado a uma ação de extensão (interação com comunidade, impacto
+                    social)</li>
                 <li>Foram incluídas referências bibliográficas conforme ABNT NBR 6023</li>
                 <li>O arquivo está em formato PDF (não Word, não ZIP)</li>
                 <li>O arquivo não está corrompido nem em branco</li>
@@ -340,10 +240,12 @@
         <!-- Botão de Envio (simulado) -->
         <section>
             <div style="text-align: center; padding: 20px;">
-                <button class="btn-envio" onclick="alert('✅ Relatório pronto para envio!\n\nAcesse o AVA da UFMS, vá até a atividade e anexe o arquivo PDF do seu relatório.\n\nLembre-se: o vencimento é 30/03/2026 às 23h59.')">
+                <button class="btn-envio"
+                    onclick="alert('✅ Relatório pronto para envio!\n\nAcesse o AVA da UFMS, vá até a atividade e anexe o arquivo PDF do seu relatório.\n\nLembre-se: o vencimento é 30/03/2026 às 23h59.')">
                     <i class="material-icons" style="vertical-align: middle;">send</i> Simular Envio no AVA
                 </button>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">* Este botão é apenas uma simulação. O envio real deve ser feito no Ambiente Virtual de Aprendizagem (AVA) da UFMS.</p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">* Este botão é apenas uma simulação. O envio
+                    real deve ser feito no Ambiente Virtual de Aprendizagem (AVA) da UFMS.</p>
             </div>
         </section>
 
@@ -351,8 +253,12 @@
         <section>
             <h2>🔗 Links Úteis</h2>
             <ul>
-                <li><strong>Relatório completo (Google Docs):</strong> <a href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0" target="_blank">https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/</a></li>
-                <li><strong>Resolução COGRAD/UFMS nº 304/2021:</strong> <a href="https://link.ufms.br/SWwaB" target="_blank">https://link.ufms.br/SWwaB</a></li>
+                <li><strong>Relatório completo (Google Docs):</strong> <a
+                        href="https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/edit?tab=t.0"
+                        target="_blank">https://docs.google.com/document/d/1xLiHGOpE1Fb6zoh5dZXY0-yT_03mDbIEh7FBCCLlrNI/</a>
+                </li>
+                <li><strong>Resolução COGRAD/UFMS nº 304/2021:</strong> <a href="https://link.ufms.br/SWwaB"
+                        target="_blank">https://link.ufms.br/SWwaB</a></li>
                 <li><strong>Template do Relatório (AVA UFMS):</strong> Disponível no ambiente virtual da disciplina</li>
                 <li><strong>Contato com a tutoria:</strong> Via AVA ou pelo email da disciplina</li>
             </ul>
@@ -360,9 +266,11 @@
 
         <section>
             <h2>📞 Dúvidas?</h2>
-            <p>Caso tenha qualquer dúvida sobre a atividade, o preenchimento do relatório ou o envio, entre em contato com a tutoria da disciplina pelo AVA. Bons estudos!</p>
+            <p>Caso tenha qualquer dúvida sobre a atividade, o preenchimento do relatório ou o envio, entre em contato
+                com a tutoria da disciplina pelo AVA. Bons estudos!</p>
             <div class="info-importante">
-                <p><strong>Status do meu projeto:</strong> ✅ Relatório concluído em 14/04/2026. Pronto para envio no AVA.</p>
+                <p><strong>Status do meu projeto:</strong> ✅ Relatório concluído em 14/04/2026. Pronto para envio no
+                    AVA.</p>
                 <p><strong>Diego Serafim de Sousa</strong> - Tecnologia da Informação - UFMS</p>
             </div>
         </section>
@@ -375,7 +283,7 @@
 
     <script>
         // Botão voltar ao topo
-        document.getElementById('btnVoltarTopo').addEventListener('click', function(e) {
+        document.getElementById('btnVoltarTopo').addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
