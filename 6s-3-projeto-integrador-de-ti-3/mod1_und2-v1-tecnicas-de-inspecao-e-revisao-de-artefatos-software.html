@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Técnicas de Inspeção e Revisão de Artefatos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 1 - Verificação, Validação e Teste de Software (VVT)</h2>
+        <h3>🔎 Unidade 2 - Técnicas de inspeção e revisão de artefatos de software</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-v2-conceitos-basicos-de-verificacao-validacao-e-teste-de-software.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 1 Und 1/2
+            </a>
+            <a href="mod1_und2-v2-tecnicas-de-inspecao-e-revisao-de-artefatos-software.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 1 Und 2/2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/_gRREl2PSEo" frameborder="0"
+                    title="Técnicas de Inspeção e Revisão de Artefatos de Software"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Técnicas de Inspeção e Revisão - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 1 - Unidade 2
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO: DEFEITOS NO DESENVOLVIMENTO -->
+        <section>
+            <h2>🐞 Defeitos no Desenvolvimento de Software</h2>
+            <p>Defeitos (ou bugs) são falhas presentes nos artefatos de software que podem causar comportamentos inesperados ou incorretos durante a execução do sistema. Compreender suas causas é o primeiro passo para evitá-los.</p>
+
+            <div class="warning" style="background-color: #f8d7da; border-left-color: #dc3545;">
+                <strong><i class="material-icons">error</i> Principais causas de defeitos:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Tradução incorreta de informações</strong> – ao extrair requisitos do cliente ou do ambiente, informações são interpretadas erroneamente.</li>
+                    <li><strong>Origem humana</strong> – a maioria dos defeitos decorre de falhas de comunicação, cansaço, falta de conhecimento ou suposições incorretas.</li>
+                    <li><strong>Complexidade acidental</strong> – soluções desnecessariamente complexas introduzem mais pontos de falha.</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">real_estate_agent</i> Exemplo real - Cidade Virtual</h4>
+                <p>Durante o levantamento de requisitos com comerciantes do bairro Cabanagem, a seguinte situação ocorreu:</p>
+                <p><strong>Fala do comerciante:</strong> "Eu quero que as pessoas vejam meus horários de funcionamento."</p>
+                <p><strong>Tradução incorreta (defeito):</strong> A equipe interpretou que deveria criar um campo "horario_funcionamento" no banco, mas não considerou que muitos comerciantes têm <strong>horários diferentes por dia da semana</strong> (ex: seg-sex 8h-18h, sábado 8h-12h).</p>
+                <p><strong>Consequência:</strong> O sistema inicial não permitia configurar horários variados, gerando insatisfação.</p>
+                <p><strong>Lição:</strong> A validação com o usuário durante a verificação dos requisitos teria evitado esse retrabalho.</p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">attach_money</i> Custo do defeito ao longo do tempo</strong>
+                <p>Quanto mais tarde um defeito é descoberto, maior o custo para corrigi-lo. Um defeito identificado na fase de <strong>requisitos</strong> pode custar 1x; na <strong>implementação</strong>, 10x; em <strong>produção</strong>, até 100x ou mais. Por isso, inspeções e revisões precoces são essenciais.</p>
+                <div style="background-color: #fff; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                    <pre style="margin: 0; font-size: 0.8em;">
+Custo relativo de correção:
+Requisitos:     █ 1x
+Design:         ███ 3x
+Codificação:    ██████ 6-10x
+Testes:         ████████████ 15-20x
+Produção:       ██████████████████████████ 60-100x</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPAIS TÉCNICAS: VISÃO GERAL -->
+        <section>
+            <h2>🛠️ Principais Técnicas de Garantia de Qualidade</h2>
+            <p>As técnicas de inspeção, revisão e teste formam a tríade da qualidade de software. Cada uma tem seu propósito, nível de formalismo e momento de aplicação.</p>
+
+            <div class="ciclo-diagrama">
+                <div class="ciclo-item">
+                    <i class="material-icons">rate_review</i>
+                    <div><strong>Revisão</strong></div>
+                    <small>Formal ou informal</small>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">search</i>
+                    <div><strong>Inspeção</strong></div>
+                    <small>Rigorosa, com papéis definidos</small>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">bug_report</i>
+                    <div><strong>Teste</strong></div>
+                    <small>Execução do software</small>
+                </div>
+            </div>
+
+            <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+                <tr style="background-color: #f2f2f2;">
+                    <th>Técnica</th>
+                    <th>Nível de Formalismo</th>
+                    <th>Artefatos alvo</th>
+                    <th>Quando aplicar</th>
+                </tr>
+                <tr>
+                    <td><strong>Revisão Informal</strong></td>
+                    <td>Baixo</td>
+                    <td>Código, documentos, diagramas</td>
+                    <td>Diariamente, entre pares</td>
+                </tr>
+                <tr>
+                    <td><strong>Revisão Técnica Formal (FTR)</strong></td>
+                    <td>Médio</td>
+                    <td>Requisitos, design, código crítico</td>
+                    <td>Após conclusão de um módulo</td>
+                </tr>
+                <tr>
+                    <td><strong>Inspeção (Fagan)</strong></td>
+                    <td>Alto</td>
+                    <td>Artefatos de alta complexidade/risco</td>
+                    <td>Antes da codificação ou testes</td>
+                </tr>
+                <tr>
+                    <td><strong>Walkthrough</strong></td>
+                    <td>Médio</td>
+                    <td>Protótipos, cenários de uso</td>
+                    <td>Durante a validação com stakeholders</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- REVISÃO DE ARTEFATOS -->
+        <section>
+            <h2>📋 Revisão de Artefatos (projeto e código)</h2>
+            <p>A <strong>revisão</strong> é um processo de verificação que pode ser conduzido de forma informal ou formal. Seu principal objetivo é <strong>identificar defeitos precocemente</strong>, antes que eles avancem para fases posteriores do desenvolvimento.</p>
+
+            <h3>Tipos de Revisão</h3>
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">chat</i> Revisão Informal</h4>
+                    <p><strong>Exemplo:</strong> Dois desenvolvedores sentam juntos para analisar um trecho de código antes do commit.</p>
+                    <p><strong>Vantagem:</strong> Rápida, baixo custo.</p>
+                    <p><strong>Desvantagem:</strong> Depende da habilidade do revisor.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">group</i> Revisão por Pares (Peer Review)</h4>
+                    <p><strong>Exemplo:</strong> Um pull request no GitHub é revisado por outro membro da equipe antes de ser mesclado.</p>
+                    <p><strong>Vantagem:</strong> Combina conhecimento da equipe.</p>
+                    <p><strong>Ferramenta:</strong> GitHub, GitLab, Bitbucket.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">assignment</i> Revisão Técnica Formal (FTR)</h4>
+                    <p><strong>Exemplo:</strong> Reunião agendada com papeis definidos (autor, revisor, moderador, secretário) para avaliar o DER do sistema.</p>
+                    <p><strong>Vantagem:</strong> Resultados documentados, rastreáveis.</p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">code</i> Exemplo de Revisão de Código - Cidade Virtual</h4>
+                <p><strong>Código original (com possível defeito):</strong></p>
+                <pre>
+function calcularAvaliacaoMedia(avaliacoes) {
+    let soma = 0;
+    for (let i = 0; i <= avaliacoes.length; i++) { // ERRO: <= causa undefined
+        soma += avaliacoes[i];
+    }
+    return soma / avaliacoes.length;
+}</pre>
+                <p><strong>Comentário do revisor (pull request):</strong> "A condição do loop está errada. Quando i == avaliacoes.length, avaliacoes[i] é undefined. Corrigir para i < avaliacoes.length."</p>
+                <p><strong>Código corrigido:</strong></p>
+                <pre>
+function calcularAvaliacaoMedia(avaliacoes) {
+    if (!avaliacoes || avaliacoes.length === 0) return 0;
+    let soma = 0;
+    for (let i = 0; i < avaliacoes.length; i++) {
+        soma += avaliacoes[i];
+    }
+    return soma / avaliacoes.length;
+}</pre>
+                <p><strong>Resultado:</strong> Defeito identificado antes de chegar à produção. Custo de correção: mínimo.</p>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">lightbulb</i> Checklist para Revisão de Código (Cidade Virtual)</h4>
+                <ul>
+                    <li>✅ As variáveis têm nomes significativos? (ex: "avaliacoes" ao invés de "arr")</li>
+                    <li>✅ Há tratamento para casos de borda (lista vazia, valores nulos)?</li>
+                    <li>✅ A lógica está correta para todos os cenários possíveis?</li>
+                    <li>✅ O código segue o estilo definido pela equipe (linter configurado)?</li>
+                    <li>✅ Não há código duplicado ou "dead code"?</li>
+                    <li>✅ As funções são pequenas e fazem apenas uma coisa?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- INSPEÇÃO DE ARTEFATOS -->
+        <section>
+            <h2>🔬 Inspeção de Artefatos (projeto e código)</h2>
+            <p>A <strong>inspeção</strong> é uma técnica de verificação <strong>mais rigorosa e estruturada</strong> que a revisão comum. Foi formalizada por Michael Fagan na IBM nos anos 1970 e provou ser extremamente eficaz na remoção precoce de defeitos.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">group_work</i> Papéis na Inspeção Fagan</strong>
+                <ul>
+                    <li><strong>Autor:</strong> Criador do artefato (não participa ativamente da inspeção, mas responde a perguntas).</li>
+                    <li><strong>Moderador:</strong> Lidera a reunião, garante que o processo seja seguido.</li>
+                    <li><strong>Leitor:</strong> Apresenta o artefato linha por linha durante a reunião.</li>
+                    <li><strong>Testador:</strong> Foca em cenários de teste e possíveis falhas.</li>
+                    <li><strong>Secretário:</strong> Registra os defeitos encontrados.</li>
+                </ul>
+            </div>
+
+            <h3>Etapas do Processo de Inspeção</h3>
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">1</span>
+                    <h3>Planejamento</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Moderador seleciona o artefato, convida os inspetores (3 a 5 pessoas) e distribui o material com antecedência.</p>
+                </div>
+            </div>
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">2</span>
+                    <h3>Preparação Individual</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Cada inspetor estuda o artefato de forma independente, anotando possíveis defeitos e dúvidas.</p>
+                    <div class="pergunta-exemplo">
+                        <strong>⏱️ Dica:</strong> A preparação individual é a etapa mais importante. Recomenda-se de 1 a 2 horas de estudo prévio.
+                    </div>
+                </div>
+            </div>
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">3</span>
+                    <h3>Reunião de Inspeção</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>O leitor apresenta o artefato. Os inspetores apontam defeitos, que são registrados pelo secretário. O autor esclarece dúvidas.</p>
+                </div>
+            </div>
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">4</span>
+                    <h3>Correção</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>O autor corrige os defeitos identificados.</p>
+                </div>
+            </div>
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5</span>
+                    <h3>Verificação (Follow-up)</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>O moderador verifica se todas as correções foram realizadas adequadamente.</p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">fact_check</i> Exemplo de Inspeção - DER do Cidade Virtual</h4>
+                <p><strong>Artefato inspecionado:</strong> Diagrama Entidade-Relacionamento (DER) – versão inicial.</p>
+                <p><strong>Defeitos encontrados durante a inspeção:</strong></p>
+                <ul>
+                    <li><strong>Defeito #1:</strong> A entidade COMERCIO estava diretamente ligada a USUARIO, mas não havia suporte para múltiplos telefones de contato. → <em>Solução:</em> Criar entidade TELEFONE (1:N).</li>
+                    <li><strong>Defeito #2:</strong> Campo "avaliacao_media" em COMERCIO seria atualizado manualmente, mas deveria ser calculado automaticamente a partir das avaliações. → <em>Solução:</em> Remover campo calculado, criar visão (view) no banco.</li>
+                    <li><strong>Defeito #3:</strong> Não havia relacionamento entre EVENTO e USUARIO (quem criou o evento). → <em>Solução:</em> Adicionar chave estrangeira "criado_por" em EVENTO.</li>
+                </ul>
+                <p><strong>Resultado:</strong> 3 defeitos críticos identificados antes da codificação. Economia estimada: 40 horas de retrabalho.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4><i class="material-icons">trending_up</i> Eficácia da Inspeção</h4>
+                <p>Estudos mostram que inspeções podem remover <strong>60% a 90% dos defeitos</strong> antes mesmo da execução do primeiro teste. A relação custo-benefício é altamente positiva, especialmente para sistemas críticos ou de longa duração.</p>
+                <p><strong>Métrica útil:</strong> Taxa de defeitos por página (documento) ou por KLOC (código). Para o Cidade Virtual, uma meta razoável é < 1 defeito por 100 linhas de código inspecionado.</p>
+            </div>
+        </section>
+
+        <!-- COMPARAÇÃO INSPEÇÃO vs TESTE -->
+        <section>
+            <h2>⚖️ Inspeção vs Teste: Complementares, não concorrentes</h2>
+            <p>Uma dúvida comum é se a inspeção substitui o teste. A resposta é <strong>não</strong>. Eles são complementares e encontram diferentes tipos de problemas.</p>
+
+            <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+                <tr style="background-color: #f2f2f2;">
+                    <th>Característica</th>
+                    <th>Inspeção (Revisão estruturada)</th>
+                    <th>Teste (Execução)</th>
+                </tr>
+                <tr>
+                    <td><strong>Natureza</strong></td>
+                    <td>Estática (não executa o código)</td>
+                    <td>Dinâmica (executa o código)</td>
+                </tr>
+                <tr>
+                    <td><strong>Encontra</strong></td>
+                    <td>Defeitos de lógica, omissões, inconsistências, violação de padrões</td>
+                    <td>Falhas de execução, erros de desempenho, problemas de integração</td>
+                </tr>
+                <tr>
+                    <td><strong>Requer</strong></td>
+                    <td>Apenas o artefato (documento, código, diagrama)</td>
+                    <td>Ambiente de execução, dados de teste, oráculo</td>
+                </tr>
+                <tr>
+                    <td><strong>Momento ideal</strong></td>
+                    <td>Antes da execução dos testes</td>
+                    <td>Após a codificação</td>
+                </tr>
+                <tr>
+                    <td><strong>Exemplo Cidade Virtual</strong></td>
+                    <td>Inspecionar a lógica de cálculo da avaliação média no código antes de rodar os testes</td>
+                    <td>Executar o teste unitário que valida o cálculo da avaliação média</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <strong><i class="material-icons">sync</i> Combinação poderosa:</strong>
+                <p>Use a <strong>inspeção</strong> para remover defeitos estruturais e de lógica precocemente. Use os <strong>testes</strong> para verificar comportamento dinâmico e detectar defeitos residuais. Juntas, essas técnicas aumentam drasticamente a confiabilidade do software.</p>
+            </div>
+        </section>
+
+        <!-- TÉCNICAS AVANÇADAS DE INSPEÇÃO -->
+        <section>
+            <h2>🚀 Técnicas Avançadas e Recomendações para Projetos de Extensão</h2>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">checklist</i> Inspeção Baseada em Checklist</h4>
+                <p>Crie checklists específicos para cada tipo de artefato. Exemplo para o DER do Cidade Virtual:</p>
+                <ul>
+                    <li>☐ Cada entidade tem um identificador único (chave primária)?</li>
+                    <li>☐ Todos os relacionamentos 1:N têm a chave estrangeira no lado correto?</li>
+                    <li>☐ Os tipos de dados são adequados (datas, valores monetários, textos longos)?</li>
+                    <li>☐ Há campos calculados que deveriam ser removidos?</li>
+                    <li>☐ As restrições de integridade referencial estão definidas?</li>
+                </ul>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">person_search</i> Inspeção por Cenários (Scenario-based)</h4>
+                <p>Em vez de inspecionar genericamente, use cenários de uso real. Exemplo: "Um comerciante tenta cadastrar seu negócio, mas esquece de preencher o telefone. O sistema deve impedir o cadastro e exibir uma mensagem amigável."</p>
+                <p>Esse tipo de inspeção é particularmente eficaz para encontrar defeitos de usabilidade e completude funcional.</p>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">analytics</i> Análise Estática Automatizada</h4>
+                <p>Ferramentas como <strong>ESLint (JavaScript), SonarQube, Pylint (Python)</strong> realizam inspeção automática do código, detectando violações de estilo, código morto, complexidade ciclomática elevada e potenciais bugs.</p>
+                <p><strong>Para o Cidade Virtual:</strong> Configure ESLint com regras recomendadas e integre ao GitHub Actions. Cada pull request será inspecionado automaticamente.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4><i class="material-icons">emoji_objects</i> Insight para Projetos de Extensão Universitária</h4>
+                <p>Em projetos comunitários, a <strong>inspeção participativa</strong> pode incluir usuários leigos? Sim, mas com adaptações. Realize <strong>walkthroughs</strong> com moradores e comerciantes: apresente o protótipo e peça que eles "percorram" cenários. Eles não precisam conhecer técnicas formais – sua visão de negócio é valiosa para validar requisitos e identificar omissões.</p>
+                <p><strong>Exemplo prático:</strong> Mostre a tela de cadastro de comércio para Dona Maria (doceira) e pergunte: "O que falta aqui para você conseguir divulgar seus produtos?" Ela pode sugerir campos como "possui entrega?" ou "aceita PIX?".</p>
+            </div>
+        </section>
+
+        <!-- CHECKLIST PRÁTICO PARA O CIDADÃO -->
+        <section>
+            <h2>📝 Checklist de Inspeção para o Projeto Cidade Virtual</h2>
+            <p>Utilize este checklist durante as inspeções dos artefatos do seu projeto de extensão:</p>
+
+            <div class="checklist-recursos">
+                <div class="recurso-item"><i class="material-icons">description</i> Documento de Requisitos</div>
+                <div class="recurso-item"><i class="material-icons">account_tree</i> Diagrama de Casos de Uso</div>
+                <div class="recurso-item"><i class="material-icons">data_usage</i> DER (Diagrama ER)</div>
+                <div class="recurso-item"><i class="material-icons">code</i> Código-fonte</div>
+                <div class="recurso-item"><i class="material-icons">api</i> Contratos de API</div>
+                <div class="recurso-item"><i class="material-icons">smartphone</i> Protótipo (Figma)</div>
+            </div>
+
+            <div class="template-container">
+                <div class="template-header">
+                    <h3>Checklist de Inspeção de Requisitos - Cidade Virtual</h3>
+                    <div class="projeto">Projeto: Cidade Virtual - Conexão Comunitária</div>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req1"> <label for="req1">Cada requisito é não ambíguo e testável?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req2"> <label for="req2">Todos os papéis de usuário (morador, comerciante, autônomo, admin) estão cobertos?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req3"> <label for="req3">Requisitos não-funcionais (segurança, desempenho, usabilidade) estão especificados?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req4"> <label for="req4">Há rastreabilidade entre requisitos e casos de uso?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req5"> <label for="req5">Os critérios de aceitação estão definidos para cada funcionalidade?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req6"> <label for="req6">Requisitos conflitantes foram resolvidos?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="req7"> <label for="req7">Termos do domínio (ex: "autônomo", "campanha solidária") estão definidos em glossário?</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELAÇÃO COM EXTENSÃO -->
+        <section>
+            <h2>🌍 Inspeção e Revisão na Extensão Universitária</h2>
+            <p>A extensão universitária exige não apenas entregar um software funcional, mas também <strong>formar cidadãos críticos</strong> e <strong>engajar a comunidade</strong>. As práticas de inspeção e revisão, quando adaptadas, podem envolver ativamente os usuários finais.</p>
+
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">diversity_3</i> Co-criação</strong>
+                    <p>Inspeções com comerciantes validam se os requisitos realmente atendem às necessidades do bairro.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">school</i> Aprendizado</strong>
+                    <p>Revisões técnicas ensinam boas práticas para a equipe e para a comunidade (alfabetização digital).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">gavel</i> Transparência</strong>
+                    <p>Artefatos revisados e inspecionados geram confiança e credibilidade no projeto de extensão.</p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">group</i> Como envolver a comunidade na inspeção?</h4>
+                <p><strong>Modelo adaptado para o Cidade Virtual:</strong></p>
+                <ul>
+                    <li><strong>Inspeção de requisitos:</strong> Reunião com 3 comerciantes e 3 moradores para validar as histórias de usuário.</li>
+                    <li><strong>Inspeção do protótipo (walkthrough):</strong> Sessão de 1 hora onde os usuários "navegam" pelo protótipo no Figma, apontando dificuldades e omissões.</li>
+                    <li><strong>Revisão de usabilidade:</strong> Após o desenvolvimento, convide os mesmos usuários para testar o sistema em produção (ambiente de homologação).</li>
+                </ul>
+                <p><strong>Resultado:</strong> Defeitos de interpretação (ex: "achei que o campo 'descrição' seria para o endereço") são corrigidos antes do lançamento oficial.</p>
+            </div>
+        </section>
+
+        <!-- EXERCÍCIO DE FIXAÇÃO -->
+        <section>
+            <h2>✍️ Exercício de Fixação - Inspeção e Revisão no Cidade Virtual</h2>
+            <div class="perguntas-avaliacao">
+                <h4><i class="material-icons">quiz</i> Cenário prático</h4>
+                <p>Você é o moderador de uma inspeção no projeto Cidade Virtual. Responda:</p>
+                <ol style="margin-top: 15px;">
+                    <li>Qual a diferença principal entre uma revisão informal por pares e uma inspeção formal Fagan?</li>
+                    <li>Durante a inspeção do DER, foi encontrado que a entidade "AVALIACAO" não possui relação com "USUARIO" (quem avaliou). Que tipo de defeito é esse? Como corrigir?</li>
+                    <li>Que técnica de inspeção você recomendaria para validar se os cenários de uso (ex: "buscar comércio por categoria") estão completos?</li>
+                    <li>Como você adaptaria o processo de inspeção para envolver um comerciante leigo em tecnologia?</li>
+                </ol>
+                <details style="margin-top: 15px;">
+                    <summary style="cursor: pointer; color: #0066cc; font-weight: 600;">🔎 Ver sugestão de respostas</summary>
+                    <div style="background-color: #f8f9fa; padding: 15px; margin-top: 10px; border-radius: 8px;">
+                        <p><strong>1.</strong> A revisão informal não segue um processo estruturado (pode ser apenas uma conversa entre dois desenvolvedores). A inspeção formal tem papéis definidos, preparação individual, reunião com registro de defeitos e follow-up.</p>
+                        <p><strong>2.</strong> Defeito de omissão (falta de relacionamento necessário). Corrigir adicionando chave estrangeira "usuario_id" na tabela AVALIACAO, referenciando USUARIO(id).</p>
+                        <p><strong>3.</strong> Inspeção por cenários (scenario-based inspection), onde cada cenário de uso é percorrido no artefato para verificar se todas as etapas estão cobertas.</p>
+                        <p><strong>4.</strong> Realizar um walkthrough (reunião guiada) em vez de uma inspeção formal. Apresente o protótipo ou documento de forma visual, faça perguntas abertas ("O que aconteceria se...") e evite jargões técnicos.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>FAGAN, Michael E. <strong>Design and Code Inspections to Reduce Errors in Program Development</strong>. IBM Systems Journal, v. 15, n. 3, p. 182-211, 1976.</cite></p>
+            <p><cite>PRESSMAN, Roger S. <strong>Engenharia de Software: uma abordagem profissional</strong>. 8. ed. Porto Alegre: AMGH, 2016. Capítulo 18 (Técnicas de Revisão).</cite></p>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de Software</strong>. 10. ed. São Paulo: Pearson, 2018. Capítulo 8 (Testes de Software).</cite></p>
+            <p><cite>WIEGERS, Karl E. <strong>Software Requirements</strong>. 3. ed. Microsoft Press, 2013. Capítulo 12 (Revisões de Requisitos).</cite></p>
+            <p><cite>GILB, Tom; GRAHAM, Dorothy. <strong>Software Inspection</strong>. Addison-Wesley, 1993.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de abril de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Técnicas de Inspeção e Revisão aplicadas ao Cidade Virtual 🔍</p>
+    </footer>
+</body>
+
+</html>
