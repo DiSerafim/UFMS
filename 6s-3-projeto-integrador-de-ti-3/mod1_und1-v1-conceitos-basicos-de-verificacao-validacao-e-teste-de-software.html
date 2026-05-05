@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Conceitos Básicos de VVT</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 1 - Verificação, Validação e Teste de Software (VVT)</h2>
+        <h3>📋 Unidade 1 - Conceitos básicos de verificação, validação e teste de software</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="forum-de-discussao-projeto-integrador-de-tecnologia-da-informacao-3.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Fórum
+            </a>
+            <a href="mod1_und1-v2-conceitos-basicos-de-verificacao-validacao-e-teste-de-software.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 1 Und 1/2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/75cChHjWa2s" frameborder="0"
+                    title="Verificação, Validação e Teste de Software - Conceitos Fundamentais"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Conceitos de Verificação, Validação e Teste - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 1 - Unidade 1
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO AO PI-III -->
+        <section>
+            <h2>🎯 Introdução ao Projeto Integrador III</h2>
+            <p>O Projeto Integrador de Tecnologia da Informação III representa a culminação do ciclo de desenvolvimento
+                iniciado nos semestres anteriores. Enquanto o PI-I focou na <strong>descoberta, modelagem e
+                    projeto</strong> da solução, e o PI-II concentrou-se no <strong>desenvolvimento da
+                    aplicação</strong> com frameworks, banco de dados e interface, o PI-III eleva o patamar ao abordar a
+                <strong>integração, testes e garantia de qualidade</strong> da solução completa.</p>
+
+            <div class="visao-geral-grid">
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">search</i> PI-I</h4>
+                    <p>Descoberta, modelagem e projeto da solução. Definição de requisitos, DER, UML e protótipos.</p>
+                </div>
+                <div class="modulo-card-pequeno">
+                    <h4><i class="material-icons">code</i> PI-II</h4>
+                    <p>Desenvolvimento da aplicação. Implementação front-end, back-end, banco de dados e versionamento.
+                    </p>
+                </div>
+                <div class="modulo-card-pequeno" style="border-left-color: #28a745;">
+                    <h4><i class="material-icons">verified</i> PI-III</h4>
+                    <p>Integração, testes e garantia de qualidade. VVT, CI/CD, documentação e segurança.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">flag</i> Objetivo do PI-III</strong>
+                <p>Conhecer e utilizar técnicas integradas de desenvolvimento de software para produção de sistemas
+                    <strong>resilientes, escaláveis</strong>, que atendam às suas especificações e estejam alinhados às
+                    necessidades dos clientes e da comunidade.</p>
+            </div>
+        </section>
+
+        <!-- O QUE É VVT -->
+        <section>
+            <h2>🔍 O que é VVT? Verificação, Validação e Teste</h2>
+            <p>VVT é um conjunto de atividades sistemáticas realizadas durante todo o ciclo de vida do software para
+                garantir que o produto final atenda aos requisitos especificados e às necessidades reais dos usuários.
+                Embora muitas vezes usados como sinônimos, <strong>verificação, validação e teste têm propósitos
+                    distintos e complementares</strong>.</p>
+
+            <div class="ciclo-diagrama">
+                <div class="ciclo-item">
+                    <i class="material-icons">fact_check</i>
+                    <div><strong>Verificação</strong></div>
+                    <small>"Estamos construindo o produto corretamente?"</small>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">verified_user</i>
+                    <div><strong>Validação</strong></div>
+                    <small>"Estamos construindo o produto certo?"</small>
+                </div>
+                <div class="ciclo-seta"><i class="material-icons">arrow_forward</i></div>
+                <div class="ciclo-item">
+                    <i class="material-icons">bug_report</i>
+                    <div><strong>Teste</strong></div>
+                    <small>"O sistema funciona conforme o esperado?"</small>
+                </div>
+            </div>
+
+            <h3>✅ Verificação (Verification)</h3>
+            <p>A verificação é uma atividade <strong>estática</strong> (não envolve execução de código) que avalia
+                artefatos do projeto para garantir que estejam corretos, completos e consistentes. Ela responde à
+                pergunta: <em>"Estamos construindo o produto corretamente?"</em></p>
+            <ul>
+                <li><strong>Técnicas comuns:</strong> Inspeções, revisões por pares, walkthroughs, análise estática de
+                    código.</li>
+                <li><strong>Artefatos verificados:</strong> Documento de requisitos, diagramas UML, DER, protótipos,
+                    código-fonte.</li>
+                <li><strong>Exemplo prático:</strong> Revisar se o diagrama de classes contempla todos os atributos
+                    identificados nos requisitos do sistema Cidade Virtual (usuário, comércio, serviço, evento,
+                    avaliação).</li>
+            </ul>
+
+            <div class="example-card">
+                <h4><i class="material-icons">visibility</i> Exemplo de Verificação - Cidade Virtual</h4>
+                <p>Antes de codificar, a equipe realiza uma <strong>revisão técnica formal</strong> do DER (Diagrama
+                    Entidade-Relacionamento) para verificar se:</p>
+                <ul>
+                    <li>Todas as entidades mapeadas no levantamento estão representadas (USUARIO, COMERCIO, SERVICO,
+                        EVENTO, AVALIACAO).</li>
+                    <li>Os relacionamentos estão corretos (1:N entre USUARIO e COMERCIO, USUARIO e SERVICO, etc.).</li>
+                    <li>Os tipos de dados são apropriados (telefone como string, avaliação_media como decimal).</li>
+                </ul>
+                <p><strong>Resultado da verificação:</strong> Identifica-se que faltou a entidade CATEGORIA, que deve
+                    ser criada para melhor organizar os comércios e serviços.</p>
+            </div>
+
+            <h3>✅ Validação (Validation)</h3>
+            <p>A validação é uma atividade que busca garantir que o produto atende às <strong>necessidades reais dos
+                    usuários</strong> e resolve o problema proposto. Ela responde à pergunta: <em>"Estamos construindo o
+                    produto certo?"</em></p>
+            <ul>
+                <li><strong>Técnicas comuns:</strong> Testes de aceitação com usuários, prototipação interativa,
+                    entrevistas de validação.</li>
+                <li><strong>Diferencial:</strong> Envolve diretamente o público-alvo (moradores, comerciantes,
+                    autônomos).</li>
+                <li><strong>Exemplo prático:</strong> Apresentar o protótipo funcional do Cidade Virtual para 3
+                    comerciantes e 3 moradores e coletar feedback sobre a usabilidade e utilidade das funcionalidades.
+                </li>
+            </ul>
+
+            <div class="example-card">
+                <h4><i class="material-icons">groups</i> Exemplo de Validação - Cidade Virtual</h4>
+                <p>Uma sessão de validação com a Dona Maria (doceira autônoma) e o Seu João (mecânico) revela que:</p>
+                <ul>
+                    <li>Ambos têm dificuldade em fazer upload de fotos dos produtos/serviços → necessidade de
+                        simplificar o processo.</li>
+                    <li>Moradores querem um campo de "distância aproximada" do comércio até sua localização → adicionar
+                        geolocalização.</li>
+                    <li>Comerciantes solicitam um mural de "destaque pago" para pequenos anúncios → nova funcionalidade
+                        priorizada.</li>
+                </ul>
+                <p><strong>Resultado da validação:</strong> O backlog do projeto é ajustado para refletir as reais
+                    necessidades da comunidade antes do desenvolvimento avançado.</p>
+            </div>
+
+            <h3>✅ Teste (Testing)</h3>
+            <p>O teste é uma atividade <strong>dinâmica</strong> que envolve a execução do software com o objetivo de
+                identificar defeitos, falhas e comportamentos inesperados. Ele responde à pergunta: <em>"O sistema
+                    funciona conforme o esperado em diferentes cenários?"</em></p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">straighten</i> Testes Unitários</h4>
+                    <p>Verificam a menor parte testável do software (funções, métodos, classes).
+                        <strong>Exemplo:</strong> Testar se a função <code>calcularAvaliacaoMedia([5,4,3])</code>
+                        retorna 4.0.</p>
+                    <p><strong>Ferramenta:</strong> Jest (JavaScript/TypeScript), JUnit (Java), PyTest (Python).</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">link</i> Testes de Integração</h4>
+                    <p>Validam a comunicação entre módulos, componentes ou serviços. <strong>Exemplo:</strong> Testar se
+                        o endpoint <code>POST /api/comercio</code> insere corretamente os dados no banco.</p>
+                    <p><strong>Ferramenta:</strong> Supertest, Postman, Jest com integração.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">dashboard</i> Testes de Sistema</h4>
+                    <p>Avaliam o sistema como um todo, incluindo interface, performance e segurança.
+                        <strong>Exemplo:</strong> Simular 100 usuários acessando a página de busca simultaneamente.</p>
+                    <p><strong>Ferramenta:</strong> K6, JMeter, Cypress.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">check_circle</i> Testes de Aceitação</h4>
+                    <p>Realizados pelo cliente/usuário para validar se o sistema atende aos critérios de negócio.
+                        <strong>Exemplo:</strong> Comerciante cadastra seu negócio e verifica se aparece no mural.</p>
+                    <p><strong>Ferramenta:</strong> Cucumber (Gherkin), cenários manuais com checklist.</p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">psychology</i> Insight Avançado - Pirâmide de Testes</h4>
+                <p>A <strong>Pirâmide de Testes</strong> (Mike Cohn) é um modelo que recomenda a proporção ideal de
+                    testes: <strong>muitos testes unitários</strong> (base), <strong>menos testes de integração</strong>
+                    (meio) e <strong>poucos testes end-to-end</strong> (topo). Para o Cidade Virtual, isso significa:
+                </p>
+                <ul>
+                    <li>✅ 70% testes unitários (regras de negócio, validações, cálculos)</li>
+                    <li>✅ 20% testes de integração (API + banco de dados)</li>
+                    <li>✅ 10% testes end-to-end (fluxos completos do usuário)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RELAÇÃO ENTRE VVT -->
+        <section>
+            <h2>🔄 Relação entre Verificação, Validação e Teste</h2>
+            <p>Na prática, essas atividades não são mutuamente exclusivas — elas se complementam ao longo do ciclo de
+                vida do software. A tabela abaixo resume as principais diferenças:</p>
+
+            <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+                <tr style="background-color: #f2f2f2;">
+                    <th>Característica</th>
+                    <th>Verificação</th>
+                    <th>Validação</th>
+                    <th>Teste</th>
+                </tr>
+                <tr>
+                    <td><strong>Momento</strong></td>
+                    <td>Antes da execução (estático)</td>
+                    <td>Após construção / com usuário</td>
+                    <td>Durante/ após execução</td>
+                </tr>
+                <tr>
+                    <td><strong>Envolve código?</strong></td>
+                    <td>Não (documentos, diagramas)</td>
+                    <td>Sim (protótipo ou sistema final)</td>
+                    <td>Sim (execução do sistema)</td>
+                </tr>
+                <tr>
+                    <td><strong>Pergunta chave</strong></td>
+                    <td>Construímos corretamente?</td>
+                    <td>Construímos o produto certo?</td>
+                    <td>Funciona como esperado?</td>
+                </tr>
+                <tr>
+                    <td><strong>Quem realiza?</strong></td>
+                    <td>Equipe técnica, revisores</td>
+                    <td>Cliente, usuário, PO</td>
+                    <td>QA, desenvolvedores, automação</td>
+                </tr>
+                <tr>
+                    <td><strong>Exemplo no Cidade Virtual</strong></td>
+                    <td>Revisar DER antes de codificar</td>
+                    <td>Morador testa busca por categoria</td>
+                    <td>Jest valida cálculo de avaliação</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- TÉCNICAS AVANÇADAS DE VVT -->
+        <section>
+            <h2>🚀 Técnicas Avançadas e Recomendações para Projetos de Extensão</h2>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">rule</i> Teste Baseado em Risco (Risk-Based Testing)</h4>
+                <p>Priorize os testes com base no impacto e na probabilidade de falha. No Cidade Virtual, as
+                    funcionalidades de <strong>cadastro de comércio e busca por proximidade</strong> têm alto impacto
+                    (se falharem, o valor central do sistema é perdido). Invista mais testes nessas áreas.</p>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">smart_toy</i> Teste de Mutação (Mutation Testing)</h4>
+                <p>Introduz pequenas alterações no código (mutantes) para verificar se os testes existentes são capazes
+                    de detectá-las. Ferramentas como <strong>Stryker (JS)</strong> ou <strong>PIT (Java)</strong> ajudam
+                    a medir a eficácia real dos testes unitários.</p>
+                <p><strong>Exemplo:</strong> Alterar <code>if (nota >= 0 && nota <= 5)</code> para
+                    <code>if (nota > 0 && nota <= 5)</code> e ver se o teste que valida nota=0 falha (indicando boa
+                    cobertura).</p>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">sync_alt</i> Teste Contínuo (Continuous Testing)</h4>
+                <p>Integrar os testes ao pipeline de CI/CD para que sejam executados automaticamente a cada commit ou
+                    pull request. Isso evita que código defeituoso chegue à produção. Para o Cidade Virtual, configurar
+                    GitHub Actions para rodar <code>npm test</code> antes de qualquer merge.</p>
+            </div>
+
+            <div class="insight-box">
+                <h4><i class="material-icons">insights</i> Insight para Projetos de Extensão</h4>
+                <p>Em projetos comunitários como o Cidade Virtual, <strong>a validação com usuários reais é
+                        frequentemente mais crítica do que testes automatizados complexos</strong>. Priorize um
+                    equilíbrio: comece com testes unitários para as regras de negócio centrais, faça validações
+                    iterativas com a comunidade e, conforme o sistema amadurece, adicione testes de integração e carga.
+                </p>
+                <p style="margin-top: 10px;"><strong>Recomendação prática:</strong> Mantenha um <strong>checklist de
+                        validação comunitária</strong> com perguntas simples (ex: "Você conseguiu encontrar um
+                    eletricista perto da sua casa?") e realize sessões curtas a cada 15 dias.</p>
+            </div>
+        </section>
+
+        <!-- RELAÇÃO COM EXTENSÃO E ODS -->
+        <section>
+            <h2>🌍 VVT e Extensão Universitária: Impacto Social</h2>
+            <p>A aplicação de práticas robustas de VVT em projetos de extensão não é apenas uma questão técnica — é um
+                <strong>compromisso ético com a comunidade</strong>. Um sistema que falha ou gera informações incorretas
+                pode prejudicar pequenos comerciantes e moradores que dependem dele.</p>
+
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">handshake</i> Confiança</strong>
+                    <p>Sistemas testados geram confiança na tecnologia como ferramenta de transformação social.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">attach_money</i> Economia Local</strong>
+                    <p>Falhas no Cidade Virtual podem fazer um comerciante perder vendas. Testes evitam esse risco.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">public</i> ODS 8 e 11</strong>
+                    <p>Qualidade de software impacta diretamente o trabalho decente (ODS 8) e comunidades sustentáveis
+                        (ODS 11).</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">warning</i> Atenção!</strong>
+                <p>A extensão universitária exige que a solução seja <strong>útil, acessível e confiável</strong>. Um
+                    software com bugs frequentes ou documentação ausente descredibiliza o projeto e afasta os usuários
+                    da comunidade. Invista em VVT como parte da responsabilidade social do projeto.</p>
+            </div>
+        </section>
+
+        <!-- EXERCÍCIO DE FIXAÇÃO -->
+        <section>
+            <h2>✍️ Exercício de Fixação - Aplicando VVT no Cidade Virtual</h2>
+            <div class="perguntas-avaliacao">
+                <h4><i class="material-icons">quiz</i> Cenário para reflexão</h4>
+                <p>Você é o responsável pela qualidade do projeto Cidade Virtual. Responda com base nos conceitos de
+                    VVT:</p>
+                <ol style="margin-top: 15px;">
+                    <li>Que técnica de <strong>verificação</strong> você aplicaria antes de começar a codificar a
+                        funcionalidade de "avaliação de comércios"?</li>
+                    <li>Como você <strong>validaria</strong> com os moradores se o sistema de busca por categoria atende
+                        às suas necessidades?</li>
+                    <li>Que <strong>tipos de teste</strong> você implementaria primeiro para garantir que o cadastro de
+                        usuários funcione corretamente?</li>
+                    <li>Como você adaptaria a pirâmide de testes para um projeto de extensão com recursos limitados?
+                    </li>
+                </ol>
+                <details style="margin-top: 15px;">
+                    <summary style="cursor: pointer; color: #0066cc; font-weight: 600;">🔎 Ver sugestão de respostas
+                    </summary>
+                    <div style="background-color: #f8f9fa; padding: 15px; margin-top: 10px; border-radius: 8px;">
+                        <p><strong>1.</strong> Revisão por pares do DER e do diagrama de sequência que modela o fluxo de
+                            avaliação, além de inspeção dos critérios de aceite no documento de requisitos.</p>
+                        <p><strong>2.</strong> Sessão de validação com 5 moradores utilizando o protótipo funcional,
+                            observando se eles conseguem encontrar comércios por categoria sem ajuda externa.</p>
+                        <p><strong>3.</strong> Testes unitários para validação de campos (email, telefone, CPF/CNPJ) e
+                            testes de integração para o endpoint de cadastro com o banco de dados.</p>
+                        <p><strong>4.</strong> Priorizar testes unitários (baixo custo) e validação comunitária (alto
+                            valor), deixando testes de carga e mutação para fases mais maduras do projeto.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>PRESSMAN, Roger S. <strong>Engenharia de Software: uma abordagem profissional</strong>. 8. ed.
+                    Porto Alegre: AMGH, 2016. Capítulos 17-19 (Testes de Software).</cite></p>
+            <p><cite>DELAMARO, Márcio E.; MALDONADO, José C.; JINO, Mario. <strong>Introdução ao Teste de
+                        Software</strong>. 2. ed. Rio de Janeiro: Elsevier, 2016.</cite></p>
+            <p><cite>MYERS, Glenford J.; SANDLER, Corey; BADGETT, Tom. <strong>The Art of Software Testing</strong>. 3.
+                    ed. Wiley, 2011.</cite></p>
+            <p><cite>BECK, Kent. <strong>Test-Driven Development: By Example</strong>. Addison-Wesley, 2002.</cite></p>
+            <p><cite>ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <strong>NBR ISO/IEC 25010:2011</strong> - Modelo de
+                    qualidade de produto de software.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de abril de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Conceitos de VVT aplicados ao Cidade
+            Virtual 🌆</p>
+    </footer>
+</body>
+
+</html>
