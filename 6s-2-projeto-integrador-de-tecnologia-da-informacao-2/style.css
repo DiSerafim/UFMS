@@ -2152,3 +2152,24 @@ a:hover {
     transform: scale(1);
   }
 }
+
+/* GitHub */
+
+.github-card {
+  background-color: #24292e;
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.github-card a {
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.github-card a:hover {
+  text-decoration: underline;
+}
