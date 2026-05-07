@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 3 - Controle de Versão, Testes e DevOps</h2>
+        <h3>📦 Unidade 2 - Uso de controle de versão para gerenciamento de projetos</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-modelagem-e-manipulacao-de-db.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 3 Und 1
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 3 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/bk11qIb1FKE" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 14 de março de 2025</p>
+        </section>
+
+        <!-- OBJETIVOS DA UNIDADE -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância do controle de versão no desenvolvimento de software</li>
+                <li>Aprender o conceito de branches e como utilizá-las para organizar o trabalho</li>
+                <li>Dominar a resolução de conflitos em projetos colaborativos</li>
+                <li>Entender a relação entre controle de versão, DevOps, Integração Contínua (CI) e Entrega Contínua
+                    (CD)</li>
+                <li>Conhecer os principais desafios e boas práticas no gerenciamento de versionamento</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUÇÃO AO CONTROLE DE VERSÃO -->
+        <section>
+            <h2>📌 O que é Controle de Versão e por que ele é essencial?</h2>
+
+            <p><strong>Controle de versão</strong> é um sistema que registra alterações em um arquivo ou conjunto de
+                arquivos ao longo do tempo, permitindo que você recupere versões específicas mais tarde. Em
+                desenvolvimento de software, é uma ferramenta indispensável para trabalho em equipe, rastreabilidade e
+                segurança do código.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>❌ Sem controle de versão</h4>
+                    <ul>
+                        <li>Arquivos com nomes como: <code>projeto_final_v2_versao_final_real_3.js</code></li>
+                        <li>Conflitos frequentes ao compartilhar código por email ou USB</li>
+                        <li>Perda de histórico: não se sabe quem alterou o quê e quando</li>
+                        <li>Dificuldade de reverter código quebrado sem perder dias de trabalho</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✅ Com Git (controle de versão moderno)</h4>
+                    <ul>
+                        <li>Histórico completo de todas as alterações</li>
+                        <li>Trabalho colaborativo simultâneo (branches)</li>
+                        <li>Rastreabilidade: quem, quando e por que cada linha foi alterada</li>
+                        <li>Possibilidade de reverter para qualquer estado anterior do projeto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                💡 <strong>No projeto Cidade Virtual:</strong> Utilizamos Git desde o início, com repositório no GitHub.
+                Cada nova funcionalidade (ex: busca por categoria, cadastro de eventos) foi desenvolvida em uma branch
+                separada, garantindo que a versão principal (<code>main</code>) sempre permanecesse estável.
+            </div>
+        </section>
+
+        <!-- BRANCHES NO GIT -->
+        <section>
+            <h2>🌿 Branches no Git: Desenvolvimento paralelo e organizado</h2>
+
+            <p><strong>Branches (ramos)</strong> são ramificações no código que permitem o desenvolvimento de novas
+                funcionalidades, correções de bugs ou experimentos sem impactar a versão principal. Facilitam o trabalho
+                em equipe e a integração de novas funcionalidades de forma isolada.</p>
+
+            <b>📊 Diagrama de branches (visualização típica):</b>
+            <div class="git-branch-diagram">
+                <pre>
+      main ──●─────────────●──────────●──────────●──────────▶
+               \          /          /          /
+      develop   ●────────●──────────●──────────●──────────▶
+                 \      /          /          /
+      feature/auth ●───●──────────●──────────●──────────▶
+                    \ /          
+      feature/crud   ●──────────●──────────▶
+                </pre>
+            </div>
+
+            <b>📌 Principais tipos de branches em um projeto Git:</b>
+            <ul>
+                <li><strong>main (ou master):</strong> Branch principal, sempre estável. Contém a versão de produção (ou
+                    pronta para deploy).</li>
+                <li><strong>develop:</strong> Branch de integração. Funcionalidades concluídas são mescladas aqui antes
+                    de irem para main.</li>
+                <li><strong>feature/* (ex: feature/busca, feature/login):</strong> Branches para desenvolvimento de
+                    novas funcionalidades. Cada feature tem sua própria branch.</li>
+                <li><strong>hotfix/*:</strong> Correções urgentes em produção. São criadas a partir da main e, após
+                    correção, mescladas de volta.</li>
+                <li><strong>release/*:</strong> Preparação para uma nova versão (últimos ajustes, testes, documentação).
+                </li>
+            </ul>
+
+            <b>Comandos básicos para trabalhar com branches:</b>
+            <div class="code-block">
+                <pre><code><span class="comment"># Criar uma nova branch (e mudar para ela)</span>
+<span class="command">git checkout -b feature/nova-funcionalidade</span>
+
+<span class="comment"># Listar todas as branches</span>
+<span class="command">git branch -a</span>
+
+<span class="comment"># Mudar para uma branch existente</span>
+<span class="command">git checkout develop</span>
+
+<span class="comment"># Mesclar (merge) uma branch na branch atual</span>
+<span class="command">git merge feature/nova-funcionalidade</span>
+
+<span class="comment"># Excluir uma branch que não é mais necessária</span>
+<span class="command">git branch -d feature/nova-funcionalidade</span></code></pre>
+            </div>
+
+            <div class="note">
+                🌿 <strong>No projeto Cidade Virtual (MERN):</strong> Adotamos o modelo <strong>Git Flow
+                    simplificado</strong>. Criamos branches <code>feature/cadastro-usuario</code>,
+                <code>feature/busca-comercios</code>, <code>feature/mural-eventos</code>. Cada branch foi desenvolvida
+                isoladamente e, após testes, mesclada na branch <code>develop</code>. Periodicamente, a
+                <code>develop</code> era mesclada na <code>main</code> para gerar uma nova versão estável.
+            </div>
+        </section>
+
+        <!-- RESOLUÇÃO DE CONFLITOS -->
+        <section>
+            <h2>⚠️ Resolução de conflitos: como o Git lida com mudanças simultâneas</h2>
+
+            <p>Quando dois ou mais desenvolvedores alteram o mesmo arquivo e as mesmas linhas de código, pode ocorrer um
+                <strong>conflito</strong> durante a mesclagem (merge). O Git não consegue decidir automaticamente qual
+                versão manter e pede intervenção manual.</p>
+
+            <b>📌 Cenário comum de conflito:</b>
+            <p>Desenvolvedor A modifica a linha 15 do <code>CardComercio.js</code> para adicionar um botão.
+                Desenvolvedor B modifica a mesma linha 15 para corrigir um texto. Ambos desenvolvem em branches
+                diferentes e tentam mesclar na <code>develop</code>. O Git sinaliza o conflito.</p>
+
+            <b>Exemplo de marcação de conflito no arquivo:</b>
+            <div class="code-block">
+                <pre><code><span class="comment">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="output">const mensagem = 'Clique para ver detalhes';</span>
+<span class="comment">=======</span>
+<span class="output">const mensagem = 'Ver mais informações do comércio';</span>
+<span class="comment">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/nova-funcionalidade</span></code></pre>
+            </div>
+
+            <b>Passos para resolver um conflito:</b>
+            <ol>
+                <li>Abra o arquivo conflitante em um editor.</li>
+                <li>Localize as marcações <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code> e
+                    <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/...</code>.</li>
+                <li>Decida qual versão manter ou faça uma versão híbrida (removendo as marcações).</li>
+                <li>Salve o arquivo.</li>
+                <li>Adicione o arquivo resolvido: <code>git add arquivo.js</code>.</li>
+                <li>Finalize o merge: <code>git commit</code>.</li>
+            </ol>
+
+            <div class="warning">
+                🔧 <strong>Ferramentas que ajudam na resolução:</strong> Editores como VS Code e IDEs como WebStorm
+                possuem interface visual para resolver conflitos. Ferramentas externas como <code>meld</code> e
+                <code>KDiff3</code> também são muito úteis.
+            </div>
+
+            <div class="info-box">
+                <strong>✅ Boa prática para evitar conflitos frequentes:</strong>
+                <ul>
+                    <li>Faça commits pequenos e frequentes.</li>
+                    <li>Sincronize com o repositório remoto diariamente (<code>git pull --rebase</code>).</li>
+                    <li>Comunique seu time sobre quais arquivos você está modificando em cada branch.</li>
+                    <li>Divida responsabilidades: evite que duas pessoas alterem o mesmo arquivo simultaneamente.</li>
+                    <li>Use rebase (<code>git rebase develop</code>) antes de mesclar uma branch de feature.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DEVOPS E CONTROLE DE VERSÃO -->
+        <section>
+            <h2>🚀 DevOps: Integração entre desenvolvimento e operações</h2>
+
+            <p><strong>DevOps</strong> (Development + Operations) é um conjunto de práticas que integra desenvolvimento
+                de software e operações de TI para entregar software de forma contínua, confiável e ágil. O controle de
+                versão é a espinha dorsal do DevOps, pois rastreia cada mudança e viabiliza a automação dos pipelines de
+                entrega.</p>
+
+            <b>Princípios fundamentais do DevOps:</b>
+            <ul>
+                <li><strong>Cultura de colaboração:</strong> Desenvolvedores e equipes de operações trabalham juntos
+                    durante todo o ciclo de vida do software.</li>
+                <li><strong>Automatização:</strong> Processos manuais são substituídos por scripts e pipelines
+                    automatizados.</li>
+                <li><strong>Monitoração e feedback contínuo:</strong> Sistemas são monitorados em produção, e problemas
+                    geram alertas e melhorias.</li>
+                <li><strong>Infraestrutura como código (IaC):</strong> Servidores, bancos de dados e redes são
+                    configurados via código versionado (ex: Terraform, Ansible).</li>
+            </ul>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🔴 Antes do DevOps</h4>
+                    <ul>
+                        <li>Entregas manuais e pouco frequentes (a cada meses)</li>
+                        <li>Equipes isoladas: dev "joga código por cima do muro" para ops</li>
+                        <li>Rollback lento e arriscado</li>
+                        <li>Ambientes de desenvolvimento e produção diferentes</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🟢 Com DevOps (CI/CD)</h4>
+                    <ul>
+                        <li>Entregas automáticas e frequentes (várias vezes ao dia)</li>
+                        <li>Colaboração e responsabilidade compartilhada</li>
+                        <li>Rollback rápido via Git (reverter commit)</li>
+                        <li>Ambientes replicáveis: dev = homologação = produção</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEGRAÇÃO CONTÍNUA (CI) -->
+        <section>
+            <h2>🔄 Integração Contínua (CI) – Testando automaticamente cada mudança</h2>
+
+            <p><strong>Integração contínua</strong> é uma prática de desenvolvimento onde os desenvolvedores mesclam
+                suas alterações no repositório principal várias vezes ao dia. Cada mesclagem dispara uma construção
+                (build) e uma suíte de testes automatizados, garantindo que o código continue funcionando.</p>
+
+            <b>Fluxo típico de CI:</b>
+            <ol>
+                <li>Desenvolvedor cria uma branch <code>feature/nova-funcionalidade</code>.</li>
+                <li>Desenvolve e faz commits na branch local.</li>
+                <li>Ao finalizar, abre um <strong>Pull Request (PR)</strong> no GitHub/GitLab.</li>
+                <li>Automaticamente, o servidor de CI (ex: GitHub Actions, GitLab CI, Jenkins) dispara:<br>
+                    - Build do projeto<br>
+                    - Execução de testes unitários e de integração<br>
+                    - Verificação de estilo de código (lint)</li>
+                <li>Se todos os testes passarem, o PR pode ser revisado e mesclado.</li>
+                <li>Se falharem, a equipe é notificada para corrigir.</li>
+            </ol>
+
+            <b>Exemplo de arquivo de configuração do GitHub Actions (CI para Cidade Virtual):</b>
+            <div class="code-block">
+                <pre><code><span class="comment"># .github/workflows/ci.yml</span>
+<span class="command">name: CI - Cidade Virtual</span>
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm test
+      - run: npm run build</code></pre>
+            </div>
+
+            <div class="note">
+                💡 <strong>Benefícios da CI:</strong> Reduz falhas de integração, detecta erros precocemente (minutos
+                após o commit), aumenta a confiança da equipe e melhora a qualidade do software.
+            </div>
+        </section>
+
+        <!-- ENTREGA CONTÍNUA (CD) -->
+        <section>
+            <h2>📦 Entrega Contínua (CD) – Software pronto para deploy a qualquer momento</h2>
+
+            <p><strong>Entrega contínua</strong> é a extensão natural da Integração Contínua. Ela garante que todo o
+                código aprovado nos testes esteja em um estado implantável a qualquer momento. O deploy em produção pode
+                ser manual (apertar um botão) ou totalmente automático (Continuous Deployment).</p>
+
+            <b>Diferenças entre entrega contínua e deploy contínuo:</b>
+            <ul>
+                <li><strong>Continuous Delivery (CD):</strong> O software é automaticamente construído, testado e
+                    preparado para produção, mas o deploy em produção é manual (acionado por um humano). Ideal para
+                    times que precisam de aprovação de negócio antes de lançar.</li>
+                <li><strong>Continuous Deployment (CD auto):</strong> Cada mudança que passa pelos testes vai
+                    automaticamente para produção. Usado por empresas como Netflix, Amazon, Etsy.</li>
+            </ul>
+
+            <b>Como o controle de versão habilita a CD:</b>
+            <ul>
+                <li>Cada commit na branch <code>main</code> (após CI bem-sucedida) gera um artefato (docker image,
+                    pacote npm, .exe).</li>
+                <li>O artefato é versionado (tag Git) e armazenado em registro (ex: Docker Hub, GitHub Packages).</li>
+                <li>O pipeline de CD faz o deploy automático desse artefato em ambiente de homologação e, após
+                    validação, em produção.</li>
+                <li>Rollback é simples: basta reverter o commit e reexecutar o pipeline.</li>
+            </ul>
+
+            <div class="info-box">
+                🚀 <strong>Para o futuro da Cidade Virtual (Módulo 4):</strong> Poderemos configurar CI/CD com GitHub
+                Actions para automatizar os testes a cada Pull Request e, após aprovação, fazer o deploy automático da
+                aplicação React no Vercel/Netlify e do backend Node.js no Render/Fly.io.
+            </div>
+        </section>
+
+        <!-- DESAFIOS DO CONTROLE DE VERSÃO -->
+        <section>
+            <h2>⚠️ Desafios comuns no uso de controle de versão e como superá-los</h2>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🌿 Gerenciamento eficiente de branches em projetos grandes</h4>
+                    <p><strong>Desafio:</strong> Em equipes grandes, dezenas de branches ativas podem causar confusão.
+                        <strong>Solução:</strong> Adote modelos como Git Flow ou GitHub Flow, mantenre nomeclatura
+                        padronizada (ex: feature/..., hotfix/...), e exclua branches já mescladas.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>⚠️ Resolução de conflitos frequentes</h4>
+                    <p><strong>Desafio:</strong> Em times com alta concorrência de código, conflitos são constantes.
+                        <strong>Solução:</strong> Faça commits pequenos, sincronize várias vezes ao dia, comunique-se
+                        com a equipe e use <code>git rebase</code> antes do merge.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📝 Manutenção de um histórico limpo e bem documentado</h4>
+                    <p><strong>Desafio:</strong> Mensagens de commit genéricas ("fix", "update", "código bugado")
+                        dificultam rastreabilidade. <strong>Solução:</strong> Adote Conventional Commits
+                        (<code>feat: add busca</code>, <code>fix: corrige login</code>) e use ferramentas de análise de
+                        histórico.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🔐 Segurança e autenticação</h4>
+                    <p><strong>Desafio:</strong> Tokens de acesso, senhas e chaves de API não devem ser versionadas no
+                        Git. <strong>Solução:</strong> Use arquivos <code>.env</code> adicionados ao
+                        <code>.gitignore</code> e utilize segredos do GitHub/Docker para configurações de deploy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOAS PRÁTICAS COM GIT -->
+        <section>
+            <h2>✅ Boas práticas de versionamento para o Projeto Cidade Virtual</h2>
+
+            <b>📌 Estrutura de branches adotada no projeto:</b>
+            <ul>
+                <li><strong>main:</strong> Versão estável sempre pronta para deploy.</li>
+                <li><strong>develop:</strong> Integração das features concluídas.</li>
+                <li><strong>feature/crud-comercios:</strong> Desenvolvimento isolado.</li>
+                <li><strong>feature/autenticacao-jwt:</strong> Desenvolvimento isolado.</li>
+                <li><strong>feature/mural-eventos:</strong> Desenvolvimento isolado.</li>
+                <li><strong>hotfix/cors-error:</strong> Correção urgente em produção.</li>
+            </ul>
+
+            <b>📝 Padrão de mensagens de commit (Conventional Commits):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">feat: adiciona busca por categoria de comércios</span>
+<span class="comment">fix: corrige erro de autenticação no login</span>
+<span class="comment">docs: atualiza README com instruções de instalação</span>
+<span class="comment">test: adiciona testes unitários para o componente CardComercio</span>
+<span class="comment">chore: atualiza dependências do backend</span>
+<span class="comment">refactor: simplifica lógica de filtro na home</span></code></pre>
+            </div>
+
+            <b>🔄 Fluxo completo adotado:</b>
+            <ol>
+                <li>Criar branch a partir de <code>develop</code>: <code>git checkout -b feature/nova-feature</code>
+                </li>
+                <li>Desenvolver com commits pequenos e mensagens semânticas.</li>
+                <li>Atualizar branch local com <code>develop</code> (rebase):
+                    <code>git fetch origin develop && git rebase develop</code></li>
+                <li>Enviar para o GitHub: <code>git push origin feature/nova-feature</code></li>
+                <li>Abrir Pull Request (PR) no GitHub solicitando revisão.</li>
+                <li>CI (GitHub Actions) executa testes automaticamente.</li>
+                <li>Após aprovação, fazer merge na <code>develop</code> (ou squash + merge).</li>
+                <li>Excluir branch da feature (local e remota).</li>
+            </ol>
+
+            <div class="note">
+                📦 <strong>Repositório da Cidade Virtual no GitHub:</strong> <a
+                    href="https://github.com/diegoserafim/cidade-virtual-mern"
+                    target="_blank">https://github.com/diegoserafim/cidade-virtual-mern</a> – confira os commits,
+                branches e PRs para ver essas práticas em ação.
+            </div>
+        </section>
+
+        <!-- CONCLUSÃO -->
+        <section>
+            <h2>📌 Conclusão da unidade</h2>
+            <p>O controle de versão é fundamental para equipes de desenvolvimento, desde projetos individuais até
+                grandes corporações com centenas de desenvolvedores. Ferramentas como Git permitem colaboração eficiente
+                e segura, rastreabilidade total e a capacidade de reverter alterações a qualquer momento.</p>
+
+            <p>Além disso, o DevOps utiliza o controle de versão como base para automatizar a entrega de software, por
+                meio de práticas como Integração Contínua e Entrega Contínua (CI/CD), que reduzem falhas e aceleram o
+                tempo de lançamento de novas funcionalidades.</p>
+
+            <p><strong>Principais aprendizados desta unidade:</strong></p>
+            <ul>
+                <li>✅ Conceito de controle de versão e por que ele é indispensável</li>
+                <li>✅ O que são branches e como organizar o desenvolvimento paralelo</li>
+                <li>✅ Como resolver conflitos de forma eficiente</li>
+                <li>✅ Relação entre Git, DevOps, CI e CD</li>
+                <li>✅ Desafios comuns e boas práticas para manter o repositório organizado</li>
+                <li>✅ Aplicação prática no projeto Cidade Virtual (MERN)</li>
+            </ul>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão (e discussão no fórum):</strong>
+                <p>No seu projeto de extensão (ou na Cidade Virtual), como você estruturaria as branches para
+                    desenvolver uma nova funcionalidade de "notificações push" enquanto mantém a estabilidade da versão
+                    principal? Descreva o fluxo: nomes de branches, pontos de merge, testes e critérios para aprovação.
+                </p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <p><cite>VALENTE, Marco Tulio. Engenharia de software moderna: princípios e práticas para desenvolvimento de
+                    software com produtividade. v. 1, n. 24, 2020. <strong>Apêndice A - Git</strong>. Disponível em: <a
+                        href="https://link.ufms.br/G5d6h" target="_blank">https://link.ufms.br/G5d6h</a>. Acesso em: 13
+                    jan. 2025.</cite></p>
+
+            <p><cite>VALENTE, Marco Tulio. Engenharia de software moderna: princípios e práticas para desenvolvimento de
+                    software com produtividade. v. 1, n. 24, 2020. <strong>Capítulo 10 - DevOps</strong>. Disponível em:
+                    <a href="https://link.ufms.br/ye4Sd" target="_blank">https://link.ufms.br/ye4Sd</a>. Acesso em: 13
+                    jan. 2025.</cite></p>
+
+            <p><cite>CHACON, Scott; STRAUB, Ben. Pro Git. 2. ed. Apress, 2014. Disponível em: <a
+                        href="https://git-scm.com/book/en/v2" target="_blank">https://git-scm.com/book/en/v2</a>. Acesso
+                    em: 6 mai. 2026.</cite></p>
+
+            <p><cite>GITHUB DOCS. About pull requests. Disponível em: <a href="https://docs.github.com/en/pull-requests"
+                        target="_blank">https://docs.github.com/en/pull-requests</a>. Acesso em: 6 mai. 2026.</cite></p>
+
+            <p><cite>GITLAB DOCS. Continuous Integration (CI) / Continuous Delivery (CD). Disponível em: <a
+                        href="https://docs.gitlab.com/ee/ci/" target="_blank">https://docs.gitlab.com/ee/ci/</a>. Acesso
+                    em: 6 mai. 2026.</cite></p>
+
+            <h3>Leitura complementar</h3>
+            <p><cite>CONVENTIONAL COMMITS. Conventional Commits 1.0.0. Disponível em: <a
+                        href="https://www.conventionalcommits.org/"
+                        target="_blank">https://www.conventionalcommits.org/</a>. Acesso em: 6 mai. 2026.</cite></p>
+
+            <p><cite>ATLASSIAN. Git Workflows. Disponível em: <a
+                        href="https://www.atlassian.com/git/tutorials/comparing-workflows"
+                        target="_blank">https://www.atlassian.com/git/tutorials/comparing-workflows</a>. Acesso em: 6
+                    mai. 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+            <p>🔗 <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank">https://creativecommons.org/licenses/by/4.0/</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 06 de maio de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
