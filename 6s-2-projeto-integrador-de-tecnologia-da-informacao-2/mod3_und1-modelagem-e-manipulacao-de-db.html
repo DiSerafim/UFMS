@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 3 - Banco de Dados e Controle de Versão</h2>
+        <h3>🗄️ Unidade 1 - Modelagem e manipulação de bancos de dados</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2-2_checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Módulo 2 - Checkout
+            </a>
+            <a href="mod3_und2-uso-de-controle-de-versao-para-gerenciamento-de-projetos.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 3 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .btn-nav:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-9Nu0GDS_oo" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 3 - Unidade 1
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 14 de março de 2025</p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender conceitos fundamentais sobre modelagem de banco de dados</li>
+                <li>Explorar a manipulação de dados de forma eficiente</li>
+                <li>Conhecer a integração entre banco de dados e aplicações (Node.js + MongoDB)</li>
+                <li>Aplicar os conceitos no projeto Cidade Virtual (MERN)</li>
+            </ul>
+        </section>
+
+        <!-- O QUE É UM BANCO DE DADOS? -->
+        <section>
+            <h2>🗄️ O que é um banco de dados?</h2>
+
+            <p>Um <strong>banco de dados</strong> é um sistema para <strong>armazenar, organizar e recuperar informações
+                    de maneira estruturada</strong>. Ele permite que sistemas armazenem e gerenciem grandes volumes de
+                dados com segurança, eficiência e consistência.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>❌ Sem banco de dados</h4>
+                    <ul>
+                        <li>Dados em arquivos de texto ou planilhas</li>
+                        <li>Sem concorrência (dois usuários corrompem o arquivo)</li>
+                        <li>Sem segurança de acesso granular</li>
+                        <li>Sem backup automático ou recuperação</li>
+                        <li>Exemplo: salvar lista de comércios em um arquivo .txt</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✅ Com banco de dados</h4>
+                    <ul>
+                        <li>Dados centralizados, consistentes e seguros</li>
+                        <li>Suporte a múltiplos acessos concorrentes</li>
+                        <li>Controle de usuários e permissões</li>
+                        <li>Backup, replicação e recuperação de falhas</li>
+                        <li>Exemplo: MongoDB com os comércios da Cidade Virtual</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                💡 <strong>Analogia:</strong> Um banco de dados é como uma <strong>biblioteca organizada</strong>. Os
+                livros (dados) têm catalogação, índices, áreas de leitura e regras de empréstimo. Sem a organização,
+                seria impossível encontrar um livro específico entre milhares.
+            </div>
+        </section>
+
+        <!-- TIPOS DE BANCO DE DADOS -->
+        <section>
+            <h2>📊 Tipos de banco de dados: Relacional vs NoSQL</h2>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📐 Relacional (SQL)</h4>
+                    <p><strong>Exemplos:</strong> MySQL, PostgreSQL, SQLite, Oracle, SQL Server</p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Dados organizados em tabelas (linhas e colunas)</li>
+                        <li>Relacionamentos via chaves estrangeiras (1:N, N:N)</li>
+                        <li>Esquema fixo (define-se colunas antes de inserir dados)</li>
+                        <li>Linguagem SQL (padrão)</li>
+                        <li>Garantia ACID (Atomicidade, Consistência, Isolamento, Durabilidade)</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🍃 NoSQL (Não Relacional)</h4>
+                    <p><strong>Exemplos:</strong> MongoDB, Firebase, Cassandra, Redis</p>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Dados em documentos (JSON/BSON), grafos, chave-valor ou colunas</li>
+                        <li>Esquema flexível (campos podem variar entre documentos)</li>
+                        <li>Escalabilidade horizontal fácil (sharding)</li>
+                        <li>Alta performance para grandes volumes</li>
+                        <li>Modelagem orientada ao que a aplicação precisa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="note">
+                🚀 <strong>Por que escolhemos MongoDB para a Cidade Virtual?</strong> O MongoDB (NoSQL) oferece
+                flexibilidade de esquema, ideal para um projeto em evolução. Um comércio pode ter telefone, outro pode
+                ter WhatsApp e site. Não precisamos de colunas fixas como no SQL. Além disso, a integração com
+                Node.js/React é natural (JSON em todas as camadas).
+            </div>
+        </section>
+
+        <!-- MODELAGEM DE DADOS: O PROCESSO -->
+        <section>
+            <h2>📐 Modelagem de dados: do mundo real ao banco</h2>
+
+            <p><strong>Modelagem de dados</strong> é o processo de criar uma representação conceitual dos dados que
+                serão armazenados, seus atributos e seus relacionamentos. É uma etapa crucial antes de qualquer
+                implementação.</p>
+
+            <b>Etapas da modelagem:</b>
+            <ul>
+                <li><strong>Modelagem conceitual (alto nível):</strong> Identificar entidades (ex: Comercio, Usuario,
+                    Evento) e seus relacionamentos (ex: Usuario <strong>cadastra</strong> Comercio). Ferramenta:
+                    Diagrama Entidade-Relacionamento (DER) conceitual.</li>
+                <li><strong>Modelagem lógica (independente de tecnologia):</strong> Definir atributos de cada entidade
+                    (ex: Comercio tem nome, descrição, categoria, endereço). Definir chaves primárias e estrangeiras.
+                </li>
+                <li><strong>Modelagem física (dependente do SGBD):</strong> Traduzir o modelo lógico para o banco
+                    específico (ex: coleções e documentos no MongoDB, ou tabelas e índices no MySQL).</li>
+            </ul>
+
+            <div class="diagrama-container">
+                <strong>🎯 Exemplo: Modelagem da Cidade Virtual (MongoDB - Mongoose)</strong>
+                <div class="code-block">
+                    <pre><code><span class="comment">// Modelo de Usuário (Mongoose Schema)</span>
+<span class="keyword">const</span> UsuarioSchema = <span class="keyword">new</span> mongoose.Schema({
+    nome: { type: String, required: <span class="keyword">true</span> },
+    email: { type: String, required: <span class="keyword">true</span>, unique: <span class="keyword">true</span> },
+    senhaHash: { type: String, required: <span class="keyword">true</span> },
+    tipoPerfil: { type: String, enum: [<span class="string">'morador'</span>, <span class="string">'comerciante'</span>, <span class="string">'autonomo'</span>, <span class="string">'lider'</span>] },
+    telefone: String,
+    dataCadastro: { type: Date, <span class="keyword">default</span>: Date.now }
+});
+
+<span class="comment">// Modelo de Comércio</span>
+<span class="keyword">const</span> ComercioSchema = <span class="keyword">new</span> mongoose.Schema({
+    nomeFantasia: { type: String, required: <span class="keyword">true</span> },
+    descricao: String,
+    categoria: String,
+    endereco: String,
+    whatsapp: String,
+    criadoPor: { type: mongoose.Schema.Types.ObjectId, ref: <span class="string">'Usuario'</span> } <span class="comment">// Relacionamento 1:N</span>
+});</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODELO RELACIONAL VS DOCUMENTOS: RELACIONAMENTOS -->
+        <section>
+            <h2>🔗 Relacionamentos entre dados (1:N, N:N)</h2>
+            <p>Os dados raramente existem isoladamente. Relacionamentos definem como entidades se conectam. Os
+                principais tipos são:</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>1:1 (um para um)</h4>
+                    <p>Exemplo: Um usuário tem um único perfil de endereço principal. No MongoDB, podemos incorporar o
+                        documento ou referenciar por ID.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>1:N (um para muitos)</h4>
+                    <p>Exemplo: Um comerciante (usuário) cadastra vários comércios. No MongoDB, usamos referência
+                        (ObjectId) na coleção Comercio apontando para Usuario.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>N:N (muitos para muitos)</h4>
+                    <p>Exemplo: Um evento pode ter muitos participantes (usuários), e um usuário pode participar de
+                        muitos eventos. Solução: array de ObjectIds (participantes: [id1, id2]).</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                💡 <strong>Decisão de modelagem:</strong> No MongoDB, você pode <strong>incorporar (embed)</strong>
+                documentos filhos dentro do pai (boa para leitura, ruim para atualizações) ou <strong>referenciar
+                    (reference)</strong> via ObjectId (mais flexível, mas exige joins manuais – duas consultas). Para a
+                Cidade Virtual, usamos referência (populate do Mongoose) na maioria dos casos.
+            </div>
+        </section>
+
+        <!-- INTEGRAÇÃO BANCO DE DADOS + APLICAÇÃO (MERN) -->
+        <section>
+            <h2>🔌 Integração banco de dados + aplicação (Node.js + MongoDB)</h2>
+
+            <p>No projeto Cidade Virtual (stack MERN), a integração entre o banco de dados (MongoDB) e a aplicação
+                (Node.js/Express) é feita através do <strong>ODM Mongoose</strong>. Mongoose fornece uma camada de
+                abstração para validar dados, converter tipos, criar queries e gerenciar relacionamentos.</p>
+
+            <b>Fluxo completo de uma operação de leitura (GET /api/comercios):</b>
+            <ol>
+                <li><strong>Front-end (React):</strong> fetch('http://localhost:5000/api/comercios')</li>
+                <li><strong>Back-end (Express):</strong> Roteador recebe a requisição, chama o controller.</li>
+                <li><strong>Controller:</strong> await Comercio.find() - Mongoose consulta o MongoDB.</li>
+                <li><strong>MongoDB:</strong> Retorna documentos da coleção "comercios".</li>
+                <li><strong>Controller:</strong> Envia a lista em JSON para o front-end.</li>
+                <li><strong>Front-end (React):</strong> Atualiza o estado com os dados, renderiza os cards.</li>
+            </ol>
+
+            <div class="code-block">
+                <pre><code><span class="comment">// Exemplo: Controller de listagem de comércios (Node.js + Mongoose)</span>
+<span class="keyword">async function</span> listarComercios(req, res) {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> comercios = <span class="keyword">await</span> Comercio.find()
+            .populate(<span class="string">'criadoPor'</span>, <span class="string">'nome email'</span>) <span class="comment">// JOIN com usuário</span>
+            .limit(20);
+        res.json(comercios);
+    } <span class="keyword">catch</span> (error) {
+        res.status(500).json({ mensagem: <span class="string">'Erro ao buscar comércios'</span>, error });
+    }
+}</code></pre>
+            </div>
+
+            <div class="note">
+                📡 <strong>Conexão com a aplicação:</strong> No arquivo `server.js`, usamos
+                <code>mongoose.connect(process.env.MONGO_URI)</code> para conectar ao MongoDB Atlas. O servidor Express
+                só inicia se a conexão for bem-sucedida.
+            </div>
+        </section>
+
+        <!-- OPERAÇÕES CRUD NO MONGODB COM MONGOOSE -->
+        <section>
+            <h2>✏️ Manipulação de dados: CRUD no MongoDB com Mongoose</h2>
+            <p>As quatro operações fundamentais (Create, Read, Update, Delete) são implementadas no back-end e expostas
+                via API REST para o front-end consumir.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>➕ Create (Inserir)</h4>
+                    <p><code>const novo = new Comercio(req.body); await novo.save();</code> → Insere um novo documento
+                        na coleção.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📖 Read (Consultar)</h4>
+                    <p><code>await Comercio.find({ categoria: 'alimentacao' });</code> → Busca documentos com filtro.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✏️ Update (Atualizar)</h4>
+                    <p><code>await Comercio.findByIdAndUpdate(id, req.body, { new: true });</code> → Atualiza e retorna
+                        o documento atualizado.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🗑️ Delete (Remover)</h4>
+                    <p><code>await Comercio.findByIdAndDelete(id);</code> → Remove o documento da coleção.</p>
+                </div>
+            </div>
+
+            <b>Exemplo de rota para criar um novo comércio (com validação de autenticação):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">// routes/comercios.js</span>
+router.post(<span class="string">'/'</span>, autenticarUsuario, async (req, res) => {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> { nomeFantasia, descricao, categoria, endereco, whatsapp } = req.body;
+        <span class="comment">// req.usuarioId vem do middleware de autenticação</span>
+        <span class="keyword">const</span> novoComercio = <span class="keyword">new</span> Comercio({
+            nomeFantasia, descricao, categoria, endereco, whatsapp,
+            criadoPor: req.usuarioId
+        });
+        <span class="keyword">await</span> novoComercio.save();
+        res.status(201).json(novoComercio);
+    } <span class="keyword">catch</span> (error) {
+        res.status(400).json({ mensagem: <span class="string">'Erro ao criar comércio'</span>, error });
+    }
+});</code></pre>
+            </div>
+        </section>
+
+        <!-- ÍNDICES E PERFORMANCE -->
+        <section>
+            <h2>⚡ Índices e performance: buscando dados de forma eficiente</h2>
+            <p>À medida que a quantidade de dados cresce, consultas sem índices ficam lentas. Um <strong>índice</strong>
+                é uma estrutura de dados que acelera as operações de busca (semelhante ao índice de um livro).</p>
+
+            <b>Exemplo de criação de índice no MongoDB (via Mongoose):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">// No schema do Comercio</span>
+<span class="keyword">const</span> ComercioSchema = <span class="keyword">new</span> mongoose.Schema({ ... });
+ComercioSchema.index({ categoria: <span class="string">'text'</span> }); <span class="comment">// Índice textual para busca</span>
+ComercioSchema.index({ criadoPor: <span class="string">1</span> });        <span class="comment">// Índice para relacionamento</span></code></pre>
+            </div>
+
+            <div class="info-box">
+                🚀 <strong>Na prática (Cidade Virtual):</strong> Criamos índices nos campos mais usados em filtros:
+                <code>categoria</code> (busca por categoria), <code>criadoPor</code> (listar comércios de um usuário),
+                <code>dataCadastro</code> (ordenar por recentes). Isso reduz o tempo de resposta de segundos para
+                milissegundos.
+            </div>
+        </section>
+
+        <!-- SEGURANÇA E BOAS PRÁTICAS -->
+        <section>
+            <h2>🔒 Segurança e boas práticas no acesso ao banco de dados</h2>
+
+            <ul>
+                <li><strong>Validação de entrada:</strong> Sempre valide dados no back-end (Mongoose já faz validação
+                    básica; podemos usar Joi ou express-validator).</li>
+                <li><strong>Injeção de SQL/NoSQL:</strong> No MongoDB, evite concatenar diretamente entradas do usuário
+                    em queries. Use os operadores do Mongoose (ex: <code>Comercio.find({ nome: req.query.nome })</code>
+                    é seguro).</li>
+                <li><strong>Princípio do menor privilégio:</strong> Crie um usuário do MongoDB específico para a
+                    aplicação, com permissões apenas de leitura/escrita no banco da Cidade Virtual (não com permissões
+                    administrativas).</li>
+                <li><strong>Variáveis de ambiente:</strong> A string de conexão (URI do MongoDB) deve estar no arquivo
+                    <code>.env</code>, nunca versionada no GitHub.</li>
+                <li><strong>Backup automático:</strong> O MongoDB Atlas oferece snapshots automáticos diários. Para
+                    desenvolvimento local, exporte periodicamente com <code>mongodump</code>.</li>
+            </ul>
+
+            <div class="warning">
+                ⚠️ <strong>Atenção:</strong> Nunca exponha a string de conexão do banco em código público. No
+                repositório da Cidade Virtual, usamos <code>.env.example</code> com variáveis fictícias, e o
+                <code>.gitignore</code> bloqueia o <code>.env</code> real.
+            </div>
+        </section>
+
+        <!-- EXEMPLO PRÁTICO: MODELAGEM DA CIDADE VIRTUAL -->
+        <section>
+            <h2>🏙️ Exemplo prático: Modelagem completa da Cidade Virtual (MERN)</h2>
+
+            <b>Diagrama de entidades (no MongoDB, "coleções") implementadas:</b>
+            <ul>
+                <li><strong>usuarios</strong> – _id, nome, email, senhaHash, tipoPerfil, telefone, dataCadastro</li>
+                <li><strong>comercios</strong> – _id, nomeFantasia, descricao, categoria, endereco, whatsapp, foto,
+                    criadoPor (ref: usuarios), dataCriacao</li>
+                <li><strong>eventos</strong> – _id, titulo, descricao, dataHora, local, tipo (mutirao/doacao/feira),
+                    criadoPor (ref: usuarios), participantes (array de ref: usuarios)</li>
+                <li><strong>avaliacoes</strong> – _id, comercioId (ref: comercios), usuarioId (ref: usuarios), nota
+                    (1-5), comentario, data</li>
+            </ul>
+
+            <b>Relacionamentos implementados:</b>
+            <ul>
+                <li><strong>1:N</strong> – Um usuário (comerciante) pode criar vários comércios (campo
+                    <code>criadoPor</code>).</li>
+                <li><strong>1:N</strong> – Um comércio pode receber várias avaliações (<code>avaliacoes</code> coleção
+                    com <code>comercioId</code>).</li>
+                <li><strong>N:N</strong> – Um evento pode ter vários participantes (<code>participantes</code> é um
+                    array de ObjectIds de usuários).</li>
+            </ul>
+
+            <div class="note">
+                📌 <strong>Consulta complexa no back-end (exemplo com Mongoose):</strong> Buscar comércios de uma
+                categoria, populando o criador e as 5 últimas avaliações.
+                <div class="code-block" style="margin-top: 10px;">
+                    <pre><code><span class="keyword">const</span> comercios = <span class="keyword">await</span> Comercio.find({ categoria: req.query.categoria })
+    .populate(<span class="string">'criadoPor'</span>, <span class="string">'nome email'</span>)
+    .populate({
+        path: <span class="string">'avaliacoes'</span>,
+        options: { limit: 5, sort: { data: -1 } }
+    });</code></pre>
+                </div>
+            </div>
+
+            <div class="info-box">
+                🎓 <strong>Aprendizado principal:</strong> A modelagem de dados não é um processo único. Começamos com
+                um DER conceitual, evoluímos para o modelo lógico (identificando atributos e relacionamentos) e, durante
+                a implementação, ajustamos devido a novas demandas (ex: adicionar campo "foto" em Comercios). Essa
+                iteração é natural e saudável!
+            </div>
+        </section>
+
+        <!-- CONCLUSÃO E PRÓXIMOS PASSOS -->
+        <section>
+            <h2>📌 Resumo e próximos passos (Unidade 2)</h2>
+            <p><strong>O que aprendemos nesta unidade:</strong></p>
+            <ul>
+                <li>✅ A definição e importância de um banco de dados para aplicações web</li>
+                <li>✅ Diferenças entre bancos relacionais (SQL) e NoSQL (MongoDB) – e por que escolhemos MongoDB para a
+                    Cidade Virtual</li>
+                <li>✅ Processo de modelagem de dados: conceitual → lógico → físico</li>
+                <li>✅ Tipos de relacionamentos (1:1, 1:N, N:N) e como implementá-los no MongoDB com referências</li>
+                <li>✅ Integração do MongoDB com Node.js/Express usando Mongoose (ODM)</li>
+                <li>✅ Operações CRUD no back-end e exposição via API REST</li>
+                <li>✅ Índices para performance e segurança no acesso</li>
+                <li>✅ Exemplo completo da modelagem da Cidade Virtual</li>
+            </ul>
+
+            <b>🚀 Na Unidade 2 (Controle de Versão com Git e GitHub):</b>
+            <p>Vamos aprender sobre versionamento de código, colaboração com branches, boas práticas de commits, e como
+                o Git potencializa o desenvolvimento em equipe e o deploy de projetos como a Cidade Virtual.</p>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão (e discussão no fórum):</strong>
+                <p>No projeto Cidade Virtual, temos três entidades principais: Usuários, Comércios e Eventos.
+                    Identifique:</p>
+                <ul>
+                    <li>Quais relacionamentos existem entre elas (1:N, N:N)?</li>
+                    <li>Se você fosse modelar a mesma aplicação no MySQL (relacional), como seriam as tabelas e chaves
+                        estrangeiras?</li>
+                    <li>Quais vantagens a flexibilidade do MongoDB (documentos) trouxe para o projeto?</li>
+                </ul>
+                <p>Compartilhe sua análise no fórum da disciplina!</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+            <p><cite>CHODOROW, Kristina. <strong>MongoDB: The Definitive Guide</strong>. 2. ed. O'Reilly Media,
+                    2013.</cite></p>
+            <p><cite>MONGODB DOCUMENTATION. <strong>Mongoose ODM v8.x</strong>. Disponível em: <a
+                        href="https://mongoosejs.com/docs/guide.html"
+                        target="_blank">https://mongoosejs.com/docs/guide.html</a>. Acesso em: 5 maio 2026.</cite></p>
+            <p><cite>RAMAKRISHNAN, Raghu; GEHRKE, Johannes. <strong>Sistemas de Gerenciamento de Banco de
+                        Dados</strong>. 3. ed. Porto Alegre: AMGH, 2011.</cite></p>
+            <p><cite>SILBERSCHATZ, Abraham; KORTH, Henry F.; SUDARSHAN, S. <strong>Sistema de Banco de Dados</strong>.
+                    6. ed. Rio de Janeiro: Campus, 2012.</cite></p>
+            <p><cite>UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL (UFMS). <strong>Resolução nº 304-COGRAD/UFMS, de 17 de
+                        junho de 2021</strong>. Estabelece as Normas para a curricularização da extensão. Disponível em:
+                    <a href="https://sei.ufms.br" target="_blank">https://sei.ufms.br</a>. Acesso em: 5 maio
+                    2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 05 de maio de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
