@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II - CHECKOUT MÓDULO 3</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 3 - Banco de Dados e Controle de Versão</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und2-uso-de-controle-de-versao-para-gerenciamento-de-projetos.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Mod 3 Und 2
+            </a>
+            <a href="#" class="btn-nav" id="btnVoltarTopo"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">check_circle</i> Checkout
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Status e Vencimento -->
+        <section>
+            <div class="deadline-box">
+                <i class="material-icons" style="vertical-align: middle;">schedule</i>
+                Vencimento: segunda-feira, 11 mai. 2026, 23:59
+            </div>
+
+            <div class="atencao-box">
+                <h3>
+                    <i class="material-icons">warning</i> 🚨 Atenção!
+                </h3>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a carga horária de frequência do módulo.</p>
+                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte
+                        da avaliação da disciplina.</strong></p>
+                <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
+                <p>⚠️ <strong>Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
+            </div>
+        </section>
+
+        <!-- Introdução -->
+        <section>
+            <h2>📌 Sobre a Atividade do Módulo 3</h2>
+            <p>Neste módulo, você deverá desenvolver um projeto que integre <strong>modelagem e manipulação de banco de
+                    dados</strong> com o uso de <strong>controle de versão</strong> para gerenciamento do código.</p>
+
+            <div class="info-importante">
+                <h4>🎯 Requisitos do projeto:</h4>
+                <ul>
+                    <li><strong>✅ Modelagem e manipulação de banco de dados</strong>
+                        <ul>
+                            <li>Criar um modelo de dados para um sistema, definindo entidades, relacionamentos e
+                                restrições</li>
+                            <li>Implementar o esquema do banco de dados utilizando SQL</li>
+                            <li>Executar operações de manipulação de dados (inserção, atualização, remoção e consultas)
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>✅ Uso de controle de versão</strong>
+                        <ul>
+                            <li>Utilizar um sistema de controle de versão (como Git) para gerenciar a evolução do
+                                projeto</li>
+                            <li>Criar e organizar um repositório no GitHub, utilizando boas práticas de versionamento
+                            </li>
+                            <li>Registrar commits frequentes, incluindo mensagens explicativas sobre as alterações
+                                realizadas</li>
+                        </ul>
+                    </li>
+                    <li>Após concluir a implementação, publique o código em um repositório no GitHub e forneça o link no
+                        relatório</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Meu Projeto -->
+        <section>
+            <h2>🌆 Meu Projeto: Cidade Virtual - Cabanagem/PA</h2>
+            <p>Para o Módulo 3, dei continuidade ao projeto <strong>Cidade Virtual</strong>, focando na
+                <strong>modelagem e implementação do banco de dados</strong> (MongoDB com Mongoose) e no
+                <strong>aprimoramento do controle de versão</strong> com Git e GitHub.</p>
+
+            <div class="github-card">
+                <i class="material-icons" style="font-size: 48px;">code</i>
+                <h3 style="color: white; margin: 10px 0;">Repositório GitHub</h3>
+                <p style="margin: 10px 0;">Todo o código fonte do Módulo 3 está disponível publicamente no GitHub:</p>
+                <p style="margin: 15px 0;">
+                    <a href="https://github.com/diserafim/cidade-virtual" target="_blank"
+                        style="font-size: 1.2em;">
+                        🔗 https://github.com/diserafim/cidade-virtual
+                    </a>
+                </p>
+                <p style="font-size: 0.9em; margin-top: 15px;">📁 Branch principal do módulo:
+                    <code>modulo3-banco-de-dados</code></p>
+            </div>
+        </section>
+
+        <!-- Modelagem do Banco de Dados -->
+        <section>
+            <h2>🗄️ Modelagem do Banco de Dados (MongoDB + Mongoose)</h2>
+
+            <b>📊 Modelo de dados desenvolvido para a Cidade Virtual:</b>
+
+            <div class="code-block">
+                <pre><code><span class="comment">// Modelo de Usuário (User.js)</span>
+const userSchema = new mongoose.Schema({
+  nome: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  senha: { type: String, required: true },
+  tipoPerfil: { 
+    type: String, 
+    enum: ['morador', 'comerciante', 'autonomo', 'lider'],
+    required: true 
+  },
+  telefone: String,
+  cep: String,
+  dataCadastro: { type: Date, default: Date.now }
+});
+
+<span class="comment">// Modelo de Comércio (Comercio.js)</span>
+const comercioSchema = new mongoose.Schema({
+  usuarioId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  nomeFantasia: { type: String, required: true },
+  descricao: String,
+  categoria: { 
+    type: String, 
+    enum: ['alimentacao', 'reparos', 'beleza', 'saude', 'educacao', 'outros'],
+    required: true 
+  },
+  endereco: { type: String, required: true },
+  lat: Number,
+  lng: Number,
+  whatsapp: String,
+  fotoPerfil: String,
+  dataCadastro: { type: Date, default: Date.now }
+});
+
+<span class="comment">// Modelo de Evento (Evento.js)</span>
+const eventoSchema = new mongoose.Schema({
+  titulo: { type: String, required: true },
+  descricao: String,
+  dataHora: { type: Date, required: true },
+  local: String,
+  tipo: { type: String, enum: ['mutirao', 'doacao', 'feira', 'oficina'] },
+  criadoPorUsuarioId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+});</code></pre>
+            </div>
+
+            <b>🔗 Relacionamentos (referências entre coleções):</b>
+            <ul>
+                <li><code>Comercio.usuarioId</code> → referência ao <code>User</code> que criou o comércio</li>
+                <li><code>Evento.criadoPorUsuarioId</code> → referência ao <code>User</code> que criou o evento</li>
+                <li><code>Avaliacao.comercioId</code> → referência ao <code>Comercio</code> avaliado</li>
+                <li><code>Avaliacao.usuarioId</code> → referência ao <code>User</code> que fez a avaliação</li>
+            </ul>
+
+            <div class="note">
+                💡 <strong>Decisão de modelagem:</strong> Optei por MongoDB (NoSQL) ao invés de SQL relacional devido à
+                flexibilidade de esquema e facilidade de integração com a stack MERN. As referências são feitas
+                manualmente via ObjectId (populate do Mongoose), simulando relacionamentos.
+            </div>
+        </section>
+
+        <!-- Scripts SQL (simulação de migração) -->
+        <section>
+            <h2>📜 Operações de manipulação de dados (CRUD)</h2>
+            <p>Foram implementadas as operações básicas de manipulação de dados conforme os requisitos do módulo:</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>➕ Create (Inserção)</h4>
+                    <p><strong>Exemplo:</strong> Cadastro de novo comércio via POST /api/comercios</p>
+                    <div class="code-block" style="margin-top: 5px;">
+                        <pre><code>db.comercios.insert({
+  nomeFantasia: "Padaria do João",
+  categoria: "alimentacao",
+  endereco: "Rua das Flores, 123"
+})</code></pre>
+                    </div>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📖 Read (Consulta)</h4>
+                    <p><strong>Exemplo:</strong> Buscar comércios por categoria</p>
+                    <div class="code-block" style="margin-top: 5px;">
+                        <pre><code>db.comercios.find({ 
+  categoria: "alimentacao" 
+})</code></pre>
+                    </div>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✏️ Update (Atualização)</h4>
+                    <p><strong>Exemplo:</strong> Alterar horário de funcionamento</p>
+                    <div class="code-block" style="margin-top: 5px;">
+                        <pre><code>db.comercios.update(
+  { _id: ObjectId("...") },
+  { $set: { whatsapp: "(91) 99999-8888" } }
+)</code></pre>
+                    </div>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🗑️ Delete (Remoção)</h4>
+                    <p><strong>Exemplo:</strong> Remover um evento cancelado</p>
+                    <div class="code-block" style="margin-top: 5px;">
+                        <pre><code>db.eventos.deleteOne({ 
+  _id: ObjectId("...") 
+})</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                📡 <strong>Consultas avançadas implementadas na API:</strong>
+                <ul>
+                    <li>Busca por categoria + nome (regex case-insensitive)</li>
+                    <li>Filtro por proximidade (calculado via coordenadas, com sort)</li>
+                    <li>Consulta com populate para retornar dados do usuário autor do evento</li>
+                    <li>Agregação: contagem de comércios por categoria para o dashboard</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Controle de Versão com Git -->
+        <section>
+            <h2>📦 Controle de Versão: Estrutura e boas práticas</h2>
+
+            <b>🌿 Estrutura de branches adotada no Módulo 3:</b>
+            <div class="code-block">
+                <pre><code>main (produção)
+  └── develop (integração)
+       ├── feature/modelagem-banco
+       ├── feature/controllers-crud
+       ├── feature/rotas-api
+       ├── feature/consultas-avancadas
+       └── feature/documentacao-swagger</code></pre>
+            </div>
+
+            <b>📝 Exemplos de commits semânticos (Conventional Commits):</b>
+            <div class="code-block">
+                <pre><code>feat: adiciona modelo Mongoose de Comercio
+feat: implementa CRUD completo de Eventos
+fix: corrige validação de email no cadastro de usuário
+docs: atualiza README com instruções do banco de dados
+test: adiciona testes unitários para o controller de comércios
+chore: configura variáveis de ambiente para MongoDB Atlas
+refactor: simplifica lógica de busca por categoria</code></pre>
+            </div>
+
+            <b>🔄 Fluxo de trabalho adotado:</b>
+            <ol>
+                <li>Criação de branch a partir de <code>develop</code>:
+                    <code>git checkout -b feature/nova-funcionalidade</code></li>
+                <li>Commits atômicos e frequentes com mensagens no padrão Conventional Commits</li>
+                <li>Sincronização diária: <code>git pull --rebase origin develop</code></li>
+                <li>Abertura de Pull Request no GitHub para revisão do código</li>
+                <li>Merge na <code>develop</code> após aprovação (geralmente com squash)</li>
+                <li>Periodicamente, merge da <code>develop</code> na <code>main</code> para gerar uma nova versão
+                    estável</li>
+            </ol>
+
+            <div class="warning">
+                🔍 <strong>Diferencial implementado:</strong> Adicionei um <strong>hook de pré-commit</strong> usando
+                Husky + lint-staged para rodar ESLint e Prettier automaticamente antes de cada commit, garantindo
+                padronização do código.
+            </div>
+        </section>
+
+        <!-- Resultados e Conquistas -->
+        <section>
+            <h2>✅ Resultados alcançados no Módulo 3</h2>
+            <ul class="requisitos-lista">
+                <li>✅ Modelagem completa do banco de dados (4 coleções principais + relacionamentos)</li>
+                <li>✅ Implementação do esquema com Mongoose (validações, tipos, enums, índices)</li>
+                <li>✅ Operações CRUD implementadas na API para todas as entidades</li>
+                <li>✅ Consultas avançadas (filtros, populate, aggregation pipeline)</li>
+                <li>✅ Controle de versão com Git: 30+ commits no módulo, mensagens semânticas</li>
+                <li>✅ Pull Requests revisados e mesclados com estratégia definida</li>
+                <li>✅ Documentação do banco de dados no README do repositório</li>
+                <li>✅ Configuração de ambiente de desenvolvimento com variáveis .env</li>
+                <li>✅ Deploy do banco no MongoDB Atlas (nuvem gratuita)</li>
+            </ul>
+        </section>
+
+        <!-- Template do Relatório -->
+        <section>
+            <h2>📄 Modelo do Relatório (Google Docs)</h2>
+            <p>Utilize o template oficial da UFMS para elaborar seu relatório do Módulo 3. O documento contém a
+                estrutura padrão exigida para a avaliação.</p>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://docs.google.com/document/d/1n7CXWF0HvqeBhUNj5Xay_paGD383vgJj9IiXZUnX_0Q/edit?usp=sharing"
+                    target="_blank" class="btn-link-projeto" style="background-color: #28a745;">
+                    <i class="material-icons">description</i> Abrir Template do Relatório
+                </a>
+            </div>
+
+            <div class="info-importante">
+                <strong>📌 Instruções para uso do template:</strong>
+                <ol>
+                    <li>Faça uma cópia do documento para seu Google Drive (Arquivo > Fazer uma cópia).</li>
+                    <li>Preencha todas as seções com os dados do seu projeto (título, objetivos, modelagem, operações
+                        SQL, versionamento).</li>
+                    <li>Inclua capturas de tela do banco de dados (MongoDB Compass ou Atlas) e do histórico de commits
+                        (Git log).</li>
+                    <li>Cole o link do seu repositório GitHub na seção apropriada.</li>
+                    <li>Exporte para PDF e envie no AVA da UFMS.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Minha Resolução -->
+        <section>
+            <h2>📎 Minha Resolução (Exemplo prático)</h2>
+            <p>Para que você tenha um exemplo concreto de como preencher o relatório, seguem os links com minha
+                resolução completa do Módulo 3:</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4><i class="material-icons">code</i> GitHub (código-fonte)</h4>
+                    <p>Repositório com toda a implementação do banco de dados, CRUD, consultas e histórico de commits.
+                    </p>
+                    <p><strong>Link:</strong> <a href="https://github.com/diserafim/cidade-virtual"
+                            target="_blank">github.com/diserafim/cidade-virtual</a></p>
+                    <p>🔍 Branch: <code>modulo3-banco-de-dados</code></p>
+                </div>
+                <div class="comparativo-card">
+                    <h4><i class="material-icons">description</i> Relatório em PDF</h4>
+                    <p>Arquivo PDF com o relatório completo seguindo o template da UFMS (disponível no repositório).</p>
+                    <p><strong>Link:</strong> <a
+                            href="https://github.com/diserafim/cidade-virtual/blob/main/relatorios/MOD3_Relatorio_DiegoSerafim.pdf"
+                            target="_blank">Ver PDF no GitHub</a></p>
+                </div>
+            </div>
+
+            <div class="github-card" style="background-color: #1a3c34;">
+                <i class="material-icons" style="font-size: 48px;">check_circle</i>
+                <h3 style="color: white;">Resolução concluída e entregue!</h3>
+                <p>✅ Modelagem do banco de dados (MongoDB + Mongoose)<br>
+                    ✅ Operações CRUD implementadas (inserção, consulta, atualização, remoção)<br>
+                    ✅ Controle de versão com Git (commits semânticos, branches, PRs)<br>
+                    ✅ Repositório público no GitHub com documentação completa<br>
+                    ✅ Relatório em PDF seguindo o template ABNT</p>
+                <p style="margin-top: 15px;">
+                    <a href="https://github.com/diserafim/cidade-virtual" target="_blank"
+                        style="color: #ffa500;">
+                        🔗 Acesse o repositório para comprovação
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Checklist de Verificação -->
+        <section>
+            <h2>📋 Checklist de Verificação - Módulo 3</h2>
+            <p>Antes de enviar, verifique se sua atividade atende a todos os itens abaixo:</p>
+            <ul class="requisitos-lista">
+                <li>✅ O banco de dados foi modelado com entidades, relacionamentos e restrições</li>
+                <li>✅ O esquema do banco foi implementado (SQL ou MongoDB com validações)</li>
+                <li>✅ Foram executadas operações de INSERT, SELECT, UPDATE e DELETE (comprovadas no código ou prints)
+                </li>
+                <li>✅ O código está versionado no Git (repositório público no GitHub)</li>
+                <li>✅ O repositório contém commits frequentes com mensagens explicativas (padrão semântico)</li>
+                <li>✅ O README do repositório está atualizado com instruções de instalação e uso</li>
+                <li>✅ Foi utilizado um sistema de controle de versão (Git) para gerenciar a evolução do projeto</li>
+                <li>✅ O relatório final foi preenchido seguindo o template da UFMS</li>
+                <li>✅ O link do GitHub está acessível e funcional</li>
+            </ul>
+        </section>
+
+        <!-- Entrega -->
+        <section>
+            <h2>📤 Como entregar esta atividade</h2>
+            <div class="orientacoes-grid">
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">description</i> 1. Preencher o relatório</h4>
+                    <p>Utilize o template do Google Docs, preencha todas as seções com seu projeto, incluindo modelagem,
+                        operações SQL e versionamento.</p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">picture_as_pdf</i> 2. Exportar para PDF</h4>
+                    <p>Após preencher, exporte o documento para PDF (Arquivo > Download > PDF).</p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">cloud_upload</i> 3. Enviar no AVA</h4>
+                    <p>Anexe o arquivo PDF e cole o link do repositório GitHub no campo indicado.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 20px;">
+                <button class="btn-envio"
+                    onclick="window.open('https://github.com/diserafim/cidade-virtual', '_blank')">
+                    <i class="material-icons" style="vertical-align: middle;">send</i> Ver Resolução no GitHub
+                </button>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">* Clique para acessar o repositório com a
+                    implementação completa do Módulo 3.</p>
+            </div>
+        </section>
+
+        <!-- Links Úteis -->
+        <section>
+            <h2>🔗 Links Úteis</h2>
+            <ul>
+                <li><strong>Template do Relatório (Google Docs):</strong> <a
+                        href="https://docs.google.com/document/d/1n7CXWF0HvqeBhUNj5Xay_paGD383vgJj9IiXZUnX_0Q/edit?usp=sharing"
+                        target="_blank">https://docs.google.com/document/d/1n7CXWF0HvqeBhUNj5Xay_paGD383vgJj9IiXZUnX_0Q/</a>
+                </li>
+                <li><strong>Repositório GitHub (Cidade Virtual):</strong> <a
+                        href="https://github.com/diserafim/cidade-virtual"
+                        target="_blank">https://github.com/diserafim/cidade-virtual</a></li>
+                <li><strong>Documentação do MongoDB:</strong> <a href="https://docs.mongodb.com/"
+                        target="_blank">https://docs.mongodb.com/</a></li>
+                <li><strong>Guia de Conventional Commits:</strong> <a href="https://www.conventionalcommits.org/"
+                        target="_blank">https://www.conventionalcommits.org/</a></li>
+                <li><strong>Git Flow (estratégia de branches):</strong> <a
+                        href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
+                        target="_blank">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📞 Dúvidas?</h2>
+            <p>Caso tenha qualquer dúvida sobre a atividade, o preenchimento do relatório ou o envio, entre em contato
+                com a tutoria da disciplina pelo AVA. Bons estudos!</p>
+            <div class="info-importante">
+                <p><strong>Status do meu projeto Módulo 3:</strong> ✅ Banco de dados modelado e implementado (MongoDB +
+                    Mongoose). CRUD completo. Repositório GitHub com commits semânticos e branches organizadas.
+                    Relatório em PDF preenchido conforme template.</p>
+                <p><strong>Diego Serafim de Sousa</strong> - Tecnologia da Informação - UFMS</p>
+                <p><strong>Data de conclusão:</strong> 06 de maio de 2026</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 06 de maio de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+
+    <script>
+        document.getElementById('btnVoltarTopo').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
