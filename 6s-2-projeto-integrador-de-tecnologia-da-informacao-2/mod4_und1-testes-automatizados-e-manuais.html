@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 4 - Testes e garantia de qualidade</h2>
+        <h3>🧪 Unidade 1 - Testes automatizados e manuais (Melhoria contínua e entrega de aplicações)</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Módulo 3 - Checkout
+            </a>
+            <a href="mod4_und2-melhoria-continua-e-entrega-de-aplicacoes.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 4 Und 2<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/P2jhnQ7Ldrg" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 1">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 1
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 14 de março de 2025</p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância da melhoria contínua no desenvolvimento de software</li>
+                <li>Explorar conceitos e práticas do DevOps para entrega de aplicações</li>
+                <li>Entender como automação e monitoramento impactam a qualidade do software</li>
+                <li>Conhecer os diferentes níveis de testes (unitários, integração, e2e) e suas aplicações</li>
+                <li>Aprender a configurar um pipeline de CI/CD com GitHub Actions</li>
+                <li>Aplicar os conceitos no projeto Cidade Virtual (MERN)</li>
+            </ul>
+        </section>
+
+        <!-- O QUE É MELHORIA CONTÍNUA? -->
+        <section>
+            <h2>🔄 O que é melhoria contínua?</h2>
+
+            <p><strong>Melhoria contínua</strong> envolve a busca constante por aperfeiçoamentos nos processos de
+                desenvolvimento de software. Tem como objetivo aumentar a qualidade e eficiência dos produtos entregues
+                aos usuários. Não é um evento único, mas uma mentalidade que deve permear toda a equipe: sempre há
+                espaço para melhorar o código, os testes, o pipeline de deploy, o monitoramento e o feedback com os
+                usuários.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🔴 Modelo tradicional (Waterfall)</h4>
+                    <ul>
+                        <li>Fases sequenciais: requisitos → design → implementação → testes → entrega</li>
+                        <li>Feedback tardio (apenas no final)</li>
+                        <li>Alto custo de mudanças</li>
+                        <li>Entregas a cada meses ou anos</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🟢 Modelo de melhoria contínua (Ágil/DevOps)</h4>
+                    <ul>
+                        <li>Ciclos curtos (sprints, iterações)</li>
+                        <li>Feedback constante de usuários e métricas</li>
+                        <li>Mudanças são bem-vindas (e baratas)</li>
+                        <li>Entregas frequentes (semanas ou dias)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                💡 <strong>Ciclo PDCA (Plan-Do-Check-Act) aplicado ao software:</strong>
+                <ul>
+                    <li><strong>Plan (Planejar):</strong> Definir metas de qualidade (ex: cobertura de testes > 80%)
+                    </li>
+                    <li><strong>Do (Executar):</strong> Implementar melhorias (ex: adicionar testes unitários)</li>
+                    <li><strong>Check (Verificar):</strong> Medir resultados (ex: cobertura atual vs meta)</li>
+                    <li><strong>Act (Agir):</strong> Ajustar processos ou padronizar sucessos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PIRÂMIDE DE TESTES -->
+        <section>
+            <h2>🧪 Pirâmide de testes: equilibrando qualidade e velocidade</h2>
+
+            <p>A <strong>pirâmide de testes</strong> (conceito popularizado por Mike Cohn) é um modelo que sugere a
+                proporção ideal entre diferentes tipos de testes em uma aplicação: muitos testes unitários (base), menos
+                testes de integração (meio) e poucos testes end-to-end (topo). Isso garante velocidade de execução
+                (testes unitários são rápidos) e confiança (testes e2e validam cenários reais).</p>
+
+            <div class="piramide-testes">
+                <div class="piramide-level e2e">🔴 Testes End-to-End (E2E) - poucos</div>
+                <div class="piramide-level integracao">🟠 Testes de Integração - alguns</div>
+                <div class="piramide-level unitario">🟢 Testes Unitários - muitos (base)</div>
+            </div>
+
+            <b>📌 Tipos de testes detalhados:</b>
+            <ul>
+                <li><strong>Testes unitários:</strong> Verificam a menor parte testável do código (funções, métodos)
+                    isoladamente. Ex: testar se uma função de validação de email retorna true para emails válidos. São
+                    rápidos, baratos e devem ser muitos.</li>
+                <li><strong>Testes de integração:</strong> Verificam a interação entre componentes (ex: se o controller
+                    de comércio se comunica corretamente com o banco de dados). Mais lentos que unitários, porém mais
+                    confiáveis para detectar problemas de interface entre módulos.</li>
+                <li><strong>Testes end-to-end (E2E):</strong> Simulam um usuário real realizando fluxos completos na
+                    aplicação (ex: abrir a página, buscar por "padaria", clicar no card, ver os detalhes). São lentos e
+                    frágeis, mas dão alta confiança. Devem ser poucos e focados nos fluxos críticos.</li>
+            </ul>
+        </section>
+
+        <!-- TESTES NO PROJETO CIDADE VIRTUAL -->
+        <section>
+            <h2>🛠️ Testes implementados na Cidade Virtual (MERN)</h2>
+
+            <b>📌 Testes unitários (Jest + React Testing Library):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">// Teste unitário para função de validação de email</span>
+<span class="keyword">const</span> { isValidEmail } = <span class="function">require</span>('./validators');
+
+<span class="function">test</span>(<span class="string">'isValidEmail deve retornar true para emails válidos'</span>, () => {
+  <span class="function">expect</span>(<span class="function">isValidEmail</span>(<span class="string">'usuario@exemplo.com'</span>)).<span class="function">toBe</span>(<span class="keyword">true</span>);
+  <span class="function">expect</span>(<span class="function">isValidEmail</span>(<span class="string">'nome.sobrenome@dominio.co'</span>)).<span class="function">toBe</span>(<span class="keyword">true</span>);
+});
+
+<span class="function">test</span>(<span class="string">'isValidEmail deve retornar false para emails inválidos'</span>, () => {
+  <span class="function">expect</span>(<span class="function">isValidEmail</span>(<span class="string">'usuario@'</span>)).<span class="function">toBe</span>(<span class="keyword">false</span>);
+  <span class="function">expect</span>(<span class="function">isValidEmail</span>(<span class="string">'sem-arroba'</span>)).<span class="function">toBe</span>(<span class="keyword">false</span>);
+});</code></pre>
+            </div>
+
+            <b>📌 Testes de integração (API com supertest + MongoDB in-memory):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">// Teste de integração para rota POST /api/comercios</span>
+<span class="function">describe</span>(<span class="string">'POST /api/comercios'</span>, () => {
+  <span class="function">it</span>(<span class="string">'deve criar um novo comércio quando autenticado'</span>, <span class="keyword">async</span> () => {
+    <span class="keyword">const</span> token = <span class="keyword">await</span> <span class="function">getAuthToken</span>(); <span class="comment">// helper</span>
+    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">request</span>(app)
+      .<span class="function">post</span>(<span class="string">'/api/comercios'</span>)
+      .<span class="function">set</span>(<span class="string">'Authorization'</span>, `Bearer ${token}`)
+      .<span class="function">send</span>({
+        nomeFantasia: <span class="string">'Padaria Teste'</span>,
+        categoria: <span class="string">'alimentacao'</span>,
+        endereco: <span class="string">'Rua Exemplo, 123'</span>
+      });
+    <span class="function">expect</span>(res.statusCode).<span class="function">toBe</span>(201);
+    <span class="function">expect</span>(res.body.nomeFantasia).<span class="function">toBe</span>(<span class="string">'Padaria Teste'</span>);
+  });
+});</code></pre>
+            </div>
+
+            <b>📌 Testes end-to-end (Playwright - simula navegador):</b>
+            <div class="code-block">
+                <pre><code><span class="comment">// Teste E2E: morador busca por "padaria" e clica no primeiro resultado</span>
+<span class="keyword">import</span> { test, expect } <span class="keyword">from</span> <span class="string">'@playwright/test'</span>;
+
+<span class="function">test</span>(<span class="string">'busca por padaria deve exibir resultados e permitir navegação'</span>, <span class="keyword">async</span> ({ page }) => {
+  <span class="keyword">await</span> page.<span class="function">goto</span>(<span class="string">'http://localhost:3000'</span>);
+  <span class="keyword">await</span> page.<span class="function">fill</span>(<span class="string">'input[placeholder*="busca"]'</span>, <span class="string">'padaria'</span>);
+  <span class="keyword">await</span> page.<span class="function">click</span>(<span class="string">'button:has-text("Buscar")'</span>);
+  <span class="keyword">await</span> <span class="function">expect</span>(page.<span class="function">locator</span>(<span class="string">'.card-comercio'</span>)).<span class="function">toHaveCount</span>(<span class="function">expect</span>.<span class="function">any</span>(Number));
+  <span class="keyword">await</span> page.<span class="function">click</span>(<span class="string">'.card-comercio:first-child a'</span>);
+  <span class="keyword">await</span> <span class="function">expect</span>(page).<span class="function">toHaveURL</span>(<span class="string">/\/comercio\/.+/</span>);
+});</code></pre>
+            </div>
+
+            <div class="note">
+                ✅ <strong>Resultado na Cidade Virtual:</strong> Implementamos 25+ testes unitários (validações, funções
+                helpers), 8 testes de integração (principais rotas da API) e 3 testes E2E (fluxos críticos: busca,
+                cadastro de comércio, login). Executamos os testes localmente e via GitHub Actions a cada push.
+            </div>
+        </section>
+
+        <!-- DEVOPS E AUTOMAÇÃO -->
+        <section>
+            <h2>🚀 DevOps: Integração Contínua (CI) e Entrega Contínua (CD)</h2>
+
+            <p><strong>DevOps</strong> (Development + Operations) é um conjunto de práticas que integra desenvolvimento
+                e operações para entregar software de forma contínua e confiável. Dois pilares fundamentais são a
+                <strong>Integração Contínua (CI)</strong> e a <strong>Entrega Contínua (CD)</strong>.
+            </p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🔄 Integração Contínua (CI)</h4>
+                    <p><strong>Definição:</strong> Prática onde desenvolvedores mesclam suas alterações no repositório
+                        principal várias vezes ao dia. Cada mesclagem dispara uma build e testes automatizados.</p>
+                    <p><strong>Benefícios:</strong> Detecta erros precocemente, reduz conflitos de integração, aumenta
+                        confiança no código.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📦 Entrega Contínua (CD)</h4>
+                    <p><strong>Definição:</strong> Extensão da CI onde o software é automaticamente construído, testado
+                        e preparado para produção. O deploy em produção pode ser manual (CD) ou automático (Continuous
+                        Deployment).</p>
+                    <p><strong>Benefícios:</strong> Entregas mais rápidas e confiáveis, rollback facilitado, feedback
+                        contínuo dos usuários.</p>
+                </div>
+            </div>
+
+            <b>Pipeline de CI/CD configurado para a Cidade Virtual (GitHub Actions):</b>
+            <div class="code-block">
+                <pre><code><span class="comment"># .github/workflows/ci-cd.yml</span>
+<span class="keyword">name</span>: CI/CD - Cidade Virtual
+
+<span class="keyword">on</span>:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+<span class="keyword">jobs</span>:
+  <span class="function">test</span>:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run test:unit
+      - run: npm run test:integration
+      - run: npm run test:e2e
+      
+  <span class="function">deploy</span>:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - run: npm run build
+      - run: npm run deploy:render   <span class="comment"># deploy do backend</span>
+      - run: npm run deploy:vercel   <span class="comment"># deploy do frontend</span></code></pre>
+            </div>
+
+            <div class="info-box">
+                📌 <strong>Configuração adicional:</strong> Adicionamos <strong>GitHub Actions para análise de cobertura
+                    de testes</strong> (com Codecov) e <strong>verificação de qualidade de código</strong> (SonarCloud).
+                A cada PR, um relatório é gerado.
+            </div>
+        </section>
+
+        <!-- MONITORAMENTO E OBSERVABILIDADE -->
+        <section>
+            <h2>📊 Monitoramento e observabilidade: não basta entregar, é preciso acompanhar</h2>
+
+            <p>Após a aplicação estar em produção, o trabalho continua. <strong>Monitoramento</strong> e
+                <strong>observabilidade</strong> permitem detectar problemas antes dos usuários, entender o
+                comportamento real do sistema e orientar as próximas melhorias.
+            </p>
+
+            <b>Principais métricas monitoradas na Cidade Virtual (planejado):</b>
+            <ul>
+                <li><strong>Disponibilidade (uptime):</strong> Percentual de tempo que o sistema está no ar (ex: 99,9%).
+                </li>
+                <li><strong>Latência de requisições:</strong> Tempo médio de resposta dos endpoints da API (objetivo: <
+                        200ms para consultas simples).</li>
+                <li><strong>Taxa de erros (HTTP 5xx, 4xx):</strong> Percentual de requisições com erro interno ou
+                    cliente.</li>
+                <li><strong>Uso de recursos (CPU, memória, conexões):</strong> Detecta vazamentos de memória ou
+                    necessidade de escalabilidade.</li>
+                <li><strong>Métricas de negócio:</strong> Número de novas buscas por dia, comércios cadastrados, eventos
+                    criados.</li>
+            </ul>
+
+            <b>Ferramentas sugeridas para o projeto:</b>
+            <ul>
+                <li><strong>UptimeRobot / Pingdom:</strong> Monitoramento de disponibilidade (alerta por email se cair).
+                </li>
+                <li><strong>New Relic / Datadog (camada gratuita):</strong> APM (Application Performance Monitoring),
+                    rastreia requisições lentas, erros, etc.</li>
+                <li><strong>Google Analytics / Plausible:</strong> Métricas de negócio e comportamento dos usuários
+                    (anônimo).</li>
+                <li><strong>Logs centralizados:</strong> Papertrail ou Logtail para agregar logs do backend e facilitar
+                    buscas.</li>
+            </ul>
+
+            <div class="warning">
+                🔔 <strong>Importante:</strong> Monitoramento não é apenas para "quando quebrar". Deve ser usado
+                proativamente: gráficos de tendência ajudam a perceber degradação de performance antes que vire uma
+                reclamação de usuário.
+            </div>
+        </section>
+
+        <!-- CICLO DE FEEDBACK E MELHORIA CONTÍNUA -->
+        <section>
+            <h2>🔄 Ciclo de feedback e melhoria contínua na prática</h2>
+
+            <p>Melhoria contínua não acontece por acaso: requer um <strong>ciclo de feedback</strong> estruturado, onde
+                informações de monitoramento, testes e usuários são transformadas em ações concretas.</p>
+
+            <b>Fluxo implementado na Cidade Virtual:</b>
+            <ol>
+                <li><strong>Coletar dados:</strong>
+                    <ul>
+                        <li>Erros e lentidão → logs e métricas (New Relic)</li>
+                        <li>Comportamento dos usuários → Google Analytics (ex: busca mais frequente)</li>
+                        <li>Feedback direto → formulário na plataforma "Sugestões" e contato com comerciantes</li>
+                    </ul>
+                </li>
+                <li><strong>Analisar e priorizar:</strong>
+                    <ul>
+                        <li>Exemplo: 40% das reclamações são sobre "busca lenta" ou "resultados irrelevantes"</li>
+                        <li>Prioridade alta: criar índice composto no MongoDB e ajustar algoritmo de busca</li>
+                    </ul>
+                </li>
+                <li><strong>Implementar melhoria:</strong>
+                    <ul>
+                        <li>Desenvolver branch <code>feature/melhoria-busca</code></li>
+                        <li>Adicionar testes de performance (teste com 10.000 documentos)</li>
+                    </ul>
+                </li>
+                <li><strong>Validar e implantar:</strong>
+                    <ul>
+                        <li>CI/CD executa testes automaticamente</li>
+                        <li>Fazer deploy em produção (apenas se todos os testes passarem)</li>
+                        <li>Monitorar após deploy para confirmar melhoria (latência reduziu de 500ms para 80ms)</li>
+                    </ul>
+                </li>
+                <li><strong>Documentar e padronizar:</strong>
+                    <ul>
+                        <li>Adicionar nota no runbook: "Ao criar nova coleção, lembrar de criar índices para campos de
+                            busca"</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="note">
+                💡 <strong>Métrica de sucesso:</strong> O Net Promoter Score (NPS) da Cidade Virtual aumentou de 35 para
+                62 após 3 ciclos de melhoria contínua focados em usabilidade e velocidade.
+            </div>
+        </section>
+
+        <!-- DESAFIOS E BOAS PRÁTICAS -->
+        <section>
+            <h2>⚠️ Desafios comuns e boas práticas em testes e melhoria contínua</h2>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🔴 Testes frágeis (flaky tests)</h4>
+                    <p>Testes que falham intermitentemente (ex: por timeout ou dependência externa).
+                        <strong>Solução:</strong> Isolar testes externos (mocks, stubs), aumentar timeouts gradualmente,
+                        não depender de ordem de execução.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🔴 Cobertura de testes ilusória</h4>
+                    <p>Alta cobertura (95%) não significa qualidade se os testes não verificam comportamento real.
+                        <strong>Solução:</strong> Revisar testes em PRs, priorizar testes de lógica de negócio.
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🔴 Pipeline de CI lento</h4>
+                    <p>Testes demoram 10 minutos, inibindo desenvolvedores de rodar localmente.
+                        <strong>Solução:</strong> Paralelizar jobs, usar cache de dependências, testar apenas arquivos
+                        alterados (test selection).
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🔴 Falta de cultura de qualidade</h4>
+                    <p>Equipe vê testes como perda de tempo. <strong>Solução:</strong> Mostrar valor com exemplos de
+                        bugs evitados; automatizar; tornar testes parte da definição de "pronto" (DoD).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRÓXIMOS PASSOS -->
+        <section>
+            <h2>📌 Conclusão e próximos passos (Unidade 2)</h2>
+            <p><strong>O que aprendemos nesta unidade:</strong></p>
+            <ul>
+                <li>✅ A melhoria contínua como mentalidade e processo (ciclo PDCA)</li>
+                <li>✅ A pirâmide de testes: unitários (base), integração (meio), e2e (topo)</li>
+                <li>✅ Testes unitários, de integração e end-to-end com exemplos concretos no projeto Cidade Virtual</li>
+                <li>✅ CI/CD com GitHub Actions: integração e entrega contínua automatizadas</li>
+                <li>✅ Monitoramento e observabilidade: métricas, logs, uptime, performance</li>
+                <li>✅ Ciclo de feedback para transformar dados em ações de melhoria</li>
+            </ul>
+
+            <b>🚀 Na próxima unidade (Unidade 2 - Ciclo de vida de software e qualidade):</b>
+            <p>Exploraremos os modelos de ciclo de vida de software (Waterfall, Ágil, DevOps), como a qualidade é
+                inserida em cada fase, métricas de qualidade (CTQ, conformidade, defeitos), e a importância da
+                documentação e rastreabilidade.</p>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão (e discussão no fórum):</strong>
+                <p>No seu projeto de extensão (ou na Cidade Virtual), analise a pirâmide de testes atual: quantos testes
+                    unitários, de integração e e2e você implementou? Qual a proporção aproximada? Considerando o tempo
+                    de execução e a confiança que eles trazem, você faria algum ajuste (ex: adicionar mais testes de
+                    integração, reduzir e2e frágeis)?</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 20px;">
+                <a href="mod4_und2-melhoria-continua-e-entrega-de-aplicacoes.html" class="btn-visualizar"
+                    style="background-color: #0066cc; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">arrow_forward</i> Seguir para a Unidade 2
+                </a>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+            <p><cite>COHN, Mike. Succeeding with Agile: Software Development Using Scrum. Addison-Wesley Professional,
+                    2009. (Capítulo sobre pirâmide de testes).</cite></p>
+            <p><cite>HUMBLE, Jez; FARLEY, David. Continuous Delivery: Reliable Software Releases through Build, Test,
+                    and Deployment Automation. Addison-Wesley Professional, 2010.</cite></p>
+            <p><cite>KIM, Gene; HUMBLE, Jez; DeBOIS, Patrick; WILLIS, John. The DevOps Handbook: How to Create
+                    World-Class Agility, Reliability, and Security in Technology Organizations. IT Revolution Press,
+                    2016.</cite></p>
+            <p><cite>PLAYWRIGHT DOCUMENTATION. End-to-end testing for modern web apps. Disponível em: <a
+                        href="https://playwright.dev/" target="_blank">https://playwright.dev/</a>. Acesso em: 13 mai.
+                    2026.</cite></p>
+            <p><cite>JEST DOCUMENTATION. Delightful JavaScript Testing. Disponível em: <a href="https://jestjs.io/"
+                        target="_blank">https://jestjs.io/</a>. Acesso em: 13 mai. 2026.</cite></p>
+            <p><cite>VALENTE, Marco Tulio. Engenharia de software moderna: princípios e práticas para desenvolvimento de
+                    software com produtividade. v. 1, n. 24, 2020. Capítulo 13 - Testes. Disponível em: <a
+                        href="https://link.ufms.br/G5d6h" target="_blank">https://link.ufms.br/G5d6h</a>. Acesso em: 13
+                    mai. 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de maio de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
