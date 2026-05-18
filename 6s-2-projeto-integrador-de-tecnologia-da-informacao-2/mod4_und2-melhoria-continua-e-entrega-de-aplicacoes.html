@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO II</h1>
+        <h2>Módulo 4 - Testes e garantia de qualidade</h2>
+        <h3>🚀 Unidade 2 - Melhoria contínua e entrega de aplicações</h3>
+        <p>Prof. Dr. Awdren de Lima Fontão</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod4_und1-testes-automatizados-e-manuais.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 4 Und 1
+            </a>
+            <a href="mod4-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 4 Checkout <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/9GWgYfGzK-c" frameborder="0"
+                    title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="title" title="[UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 2">
+                [UFMS Digital] Projeto Integrador II (TIN) - Módulo 4 - Unidade 2
+            </p>
+
+            <p>Prof. Dr. Awdren de Lima Fontão</p>
+            <p>📅 14 de março de 2025</p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section>
+            <h2>🎯 Objetivos da unidade</h2>
+            <ul>
+                <li>Compreender a importância da melhoria contínua no desenvolvimento de software</li>
+                <li>Explorar conceitos e práticas do DevOps para entrega de aplicações</li>
+                <li>Entender como automação e monitoramento impactam a qualidade do software</li>
+                <li>Conhecer o ciclo de vida da entrega contínua (CI/CD Pipeline)</li>
+                <li>Aprender sobre segurança na esteira de DevOps (DevSecOps)</li>
+                <li>Identificar desafios e boas práticas na implementação de melhoria contínua</li>
+            </ul>
+        </section>
+
+        <!-- O QUE É MELHORIA CONTÍNUA -->
+        <section>
+            <h2>🔄 O que é melhoria contínua?</h2>
+
+            <p><strong>Melhoria contínua</strong> envolve a busca constante por aperfeiçoamentos nos processos de
+                desenvolvimento de software. Tem como objetivo aumentar a qualidade e eficiência dos produtos entregues
+                aos usuários. Não é um evento único, mas uma mentalidade que deve permear toda a equipe: sempre há
+                espaço para melhorar o código, os testes, o pipeline de deploy, o monitoramento e o feedback com os
+                usuários.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🔴 Antes da melhoria contínua</h4>
+                    <ul>
+                        <li>Processos manuais e repetitivos</li>
+                        <li>Foco apenas em entregar funcionalidades</li>
+                        <li>Pouco feedback do usuário final</li>
+                        <li>Retrabalho frequente devido a bugs</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🟢 Com melhoria contínua</h4>
+                    <ul>
+                        <li>Automação de testes e deploy</li>
+                        <li>Monitoramento proativo em produção</li>
+                        <li>Feedbacks curtos e ação rápida</li>
+                        <li>Qualidade embutida desde o início</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                📊 <strong>Benefícios da melhoria contínua:</strong>
+                <ul>
+                    <li>✅ <strong>Redução de falhas e retrabalho:</strong> Bugs são detectados mais cedo.</li>
+                    <li>✅ <strong>Aprimoramento da experiência do usuário:</strong> Melhorias são entregues rapidamente.
+                    </li>
+                    <li>✅ <strong>Aumento da produtividade das equipes:</strong> Menos tempo gasto com problemas
+                        recorrentes.</li>
+                    <li>✅ <strong>Maior estabilidade e confiabilidade do software:</strong> Monitoramento e testes
+                        contínuos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DEVOPS E ENTREGA CONTÍNUA -->
+        <section>
+            <h2>🚀 DevOps e Entrega Contínua</h2>
+
+            <p><strong>DevOps</strong> integra desenvolvimento (Dev) e operações (Ops) para acelerar a entrega de
+                software, quebrando silos organizacionais. A <strong>entrega contínua (CD)</strong> garante que novas
+                versões do software possam ser disponibilizadas de forma segura e eficiente, a qualquer momento.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📌 Antes do DevOps</h4>
+                    <p>Desenvolvedores "jogavam código por cima do muro" para as operações. Deploys manuais, demorados e
+                        arriscados. Ambientes de desenvolvimento diferentes do de produção.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📌 Com DevOps</h4>
+                    <p>Desenvolvimento e operações colaboram em todo o ciclo. Automação de builds, testes e deploys.
+                        Ambientes replicáveis (Infraestrutura como Código).</p>
+                </div>
+            </div>
+
+            <div class="note">
+                💡 <strong>Ferramentas comuns no ecossistema DevOps:</strong>
+                <ul>
+                    <li><strong>Versionamento:</strong> Git, GitHub, GitLab</li>
+                    <li><strong>CI/CD:</strong> GitHub Actions, GitLab CI, Jenkins, CircleCI</li>
+                    <li><strong>Contêineres:</strong> Docker, Kubernetes</li>
+                    <li><strong>Infraestrutura como Código:</strong> Terraform, Ansible, Pulumi</li>
+                    <li><strong>Monitoramento:</strong> Prometheus, Grafana, New Relic, Datadog</li>
+                    <li><strong>Logs:</strong> ELK Stack (Elasticsearch, Logstash, Kibana), Loki</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CICLO DE VIDA DA ENTREGA CONTÍNUA -->
+        <section>
+            <h2>🔄 Ciclo de vida da entrega contínua</h2>
+
+            <p>A entrega contínua segue um fluxo estruturado que inclui desenvolvimento, testes, integração,
+                monitoramento e implantação. Cada etapa visa reduzir riscos e garantir que o software funcione
+                corretamente antes da liberação final.</p>
+
+            <div class="ciclo-card">
+                <h3 style="color: #0066cc;">Pipeline de CI/CD - Cidade Virtual</h3>
+                <div class="ciclo-steps">
+                    <div class="ciclo-step">1</div> <span style="font-size: 1.5rem;">→</span>
+                    <div class="ciclo-step">2</div> <span style="font-size: 1.5rem;">→</span>
+                    <div class="ciclo-step">3</div> <span style="font-size: 1.5rem;">→</span>
+                    <div class="ciclo-step">4</div> <span style="font-size: 1.5rem;">→</span>
+                    <div class="ciclo-step">5</div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 15px;">
+                    <span><strong>1. Código</strong><br>git push</span>
+                    <span><strong>2. Build</strong><br>npm ci & npm run build</span>
+                    <span><strong>3. Testes</strong><br>unitários + integração + e2e</span>
+                    <span><strong>4. Deploy</strong><br>homologação</span>
+                    <span><strong>5. Monitoramento</strong><br>produção</span>
+                </div>
+            </div>
+
+            <b>Detalhamento de cada etapa (com exemplos do projeto):</b>
+            <ul>
+                <li><strong>Desenvolvimento:</strong> Criamos uma branch <code>feature/nova-funcionalidade</code> e
+                    escrevemos código + testes.</li>
+                <li><strong>Integração Contínua (CI):</strong> Ao abrir um Pull Request, o GitHub Actions executa build
+                    e testes automaticamente.</li>
+                <li><strong>Deploy em homologação:</strong> Após aprovação do PR, fazemos deploy automático em ambiente
+                    de staging (ex: Render.com preview).</li>
+                <li><strong>Testes de aceitação:</strong> Testadores (ou o próprio PO) validam a funcionalidade no
+                    ambiente de staging.</li>
+                <li><strong>Deploy em produção:</strong> Com aprovação, o código é implantado no ambiente de produção
+                    (ex: Vercel + Render).</li>
+                <li><strong>Monitoramento contínuo:</strong> Após o deploy, dashboards e alertas acompanham métricas de
+                    saúde.</li>
+            </ul>
+        </section>
+
+        <!-- INTEGRAÇÃO CONTÍNUA -->
+        <section>
+            <h2>🔄 Integração contínua (CI)</h2>
+
+            <p><strong>Integração contínua</strong> é a prática de consolidar mudanças de código em um repositório
+                centralizado várias vezes ao dia. Automatiza testes e garante que cada modificação seja validada
+                rapidamente, detectando erros de integração precocemente.</p>
+
+            <b>Exemplo de workflow de CI no GitHub Actions (Cidade Virtual):</b>
+            <div class="code-block">
+                <pre><code>name: CI - Cidade Virtual
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test:unit
+      - run: npm run test:integration
+      - run: npm run build
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3</code></pre>
+            </div>
+
+            <div class="info-box">
+                📈 <strong>Métrica de sucesso:</strong> Com CI, o tempo entre um commit e a descoberta de um erro de
+                integração caiu de <strong>dias</strong> (quando era descoberto em testes manuais) para <strong>menos de
+                    10 minutos</strong>.
+            </div>
+        </section>
+
+        <!-- MONITORAMENTO CONTÍNUO -->
+        <section>
+            <h2>📊 Monitoramento contínuo</h2>
+
+            <p><strong>Monitoramento contínuo</strong> permite detectar falhas em tempo real, coletar métricas de
+                desempenho e entender o comportamento do sistema em produção. O feedback contínuo ajuda equipes a tomar
+                decisões com base no desempenho real do software.</p>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📉 Sem monitoramento</h4>
+                    <ul>
+                        <li>Usuários precisam reportar problemas (quando reportam!)</li>
+                        <li>Equipe descobre falhas por acaso</li>
+                        <li>Não há visibilidade de lentidão ou uso excessivo de recursos</li>
+                    </ul>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📈 Com monitoramento contínuo</h4>
+                    <ul>
+                        <li>Alertas automáticos (ex: erro 500 aumenta 10% em 5 min)</li>
+                        <li>Dashboards com latência, throughput, taxa de erro</li>
+                        <li>Logs centralizados para busca rápida</li>
+                    </ul>
+                </div>
+            </div>
+
+            <b>Principais métricas monitoradas (exemplo Cidade Virtual):</b>
+            <ul>
+                <li><strong>Disponibilidade (uptime):</strong> Percentual de tempo que o sistema está no ar (objetivo:
+                    99,9%).</li>
+                <li><strong>Latência (p95, p99):</strong> Tempo de resposta dos endpoints críticos (ex: busca de
+                    comércios).</li>
+                <li><strong>Taxa de erro (HTTP 5xx, 4xx):</strong> Percentual de requisições com falha.</li>
+                <li><strong>Uso de CPU, memória e conexões ativas:</strong> Para escalar horizontalmente quando
+                    necessário.</li>
+                <li><strong>Métricas de negócio:</strong> Número de comércios cadastrados por dia, buscas realizadas,
+                    eventos criados.</li>
+            </ul>
+
+            <div class="warning">
+                🔔 <strong>Alerta configurado na Cidade Virtual:</strong> Se a latência média ultrapassar 500ms por 5
+                minutos, um alerta é disparado no Slack (via webhook) e o time de plantão investiga.
+            </div>
+        </section>
+
+        <!-- AUTOMAÇÃO NO DEVOPS -->
+        <section>
+            <h2>⚙️ Automação no DevOps</h2>
+
+            <p>A automação reduz a necessidade de intervenção manual em processos repetitivos, aumentando a
+                confiabilidade e a velocidade. Ajuda na implantação de software e na execução de testes automatizados,
+                liberando a equipe para tarefas de maior valor.</p>
+
+            <b>Exemplos de automação aplicada na Cidade Virtual:</b>
+            <ul>
+                <li><strong>Build automatizado:</strong> A cada push, o GitHub Actions executa `npm run build` – se
+                    falhar, o PR não pode ser mesclado.</li>
+                <li><strong>Testes automatizados:</strong> Mais de 30 testes (unitários, integração, e2e) rodam a cada
+                    commit.</li>
+                <li><strong>Deploy automatizado (homologação):</strong> Toda vez que um PR é mesclado na branch
+                    `develop`, o GitHub Actions faz deploy automático no ambiente de staging.</li>
+                <li><strong>Deploy semi-automatizado (produção):</strong> O deploy em produção é manual (gatilho por
+                    botão no GitHub Actions), mas o processo de build e testes é automático.</li>
+                <li><strong>Formatação e linting automáticos:</strong> Husky + lint-staged rodam Prettier e ESLint antes
+                    de cada commit.</li>
+            </ul>
+
+            <div class="note">
+                📦 <strong>Resultado:</strong> Com automação, o tempo de deploy reduziu de <strong>30 minutos
+                    manuais</strong> (com risco de erro humano) para <strong>2 minutos automáticos</strong> (e 100%
+                reproduzível).
+            </div>
+        </section>
+
+        <!-- SEGURANÇA NA ENTREGA CONTÍNUA (DEVSECOPS) -->
+        <section>
+            <h2>🔒 Segurança na Entrega Contínua (DevSecOps)</h2>
+
+            <p>A segurança deve ser integrada ao ciclo de desenvolvimento, não tratada como etapa final.
+                <strong>DevSecOps</strong> é a prática de incorporar testes de segurança e monitoramento proativo no
+                pipeline de CI/CD, ajudando a evitar vulnerabilidades antes que cheguem à produção.
+            </p>
+
+            <b>Práticas de segurança implementadas (ou planejadas) na Cidade Virtual:</b>
+            <ul>
+                <li><strong>SCA (Software Composition Analysis):</strong> Uso de <code>npm audit</code> e GitHub
+                    Dependabot para detectar vulnerabilidades em dependências.</li>
+                <li><strong>SAST (Static Application Security Testing):</strong> Análise estática de código com CodeQL
+                    (GitHub) ou SonarCloud.</li>
+                <li><strong>DAST (Dynamic Application Security Testing):</strong> Teste de segurança na aplicação em
+                    execução (ex: OWASP ZAP no ambiente de staging).</li>
+                <li><strong>Gerenciamento de segredos:</strong> Variáveis de ambiente no GitHub Secrets; nunca versionar
+                    <code>.env</code>.
+                </li>
+                <li><strong>Autenticação JWT com refresh token rotativo:</strong> Tokens de curta duração e
+                    armazenamento seguro (httpOnly cookies).</li>
+                <li><strong>Validação de entrada e prevenção de injeção:</strong> Uso de mongoose schemas com validação
+                    e sanitização de dados.</li>
+            </ul>
+
+            <div class="warning">
+                🔐 <strong>Lembrete importante:</strong> Segurança não é um checkbox; é um processo contínuo. Configure
+                alertas para quando uma dependência com vulnerabilidade crítica for descoberta.
+            </div>
+        </section>
+
+        <!-- EXEMPLOS DE APLICAÇÃO NO MUNDO REAL -->
+        <section>
+            <h2>🌍 Exemplos de aplicação (casos reais)</h2>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>📺 Netflix</h4>
+                    <p>Realiza milhares de deploys por dia usando Spinnaker (plataforma de CD). Testes canário (canary
+                        releases) liberam novas funcionalidades para 1% dos usuários antes de liberar para todos.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🛒 Amazon</h4>
+                    <p>Deploy a cada 11,7 segundos (em média). Microsserviços independentes com pipelines de CI/CD
+                        isolados. Cultura "you build it, you run it".</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>✈️ Etsy</h4>
+                    <p>Site de comércio criativo. Realiza deploys 50+ vezes por dia. Utiliza feature flags (toggles)
+                        para liberar funcionalidades gradualmente.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🏦 NuBank</h4>
+                    <p>Instituição financeira que adotou DevOps e CD para reduzir tempo de entrega de features de meses
+                        para dias, mantendo alta segurança e conformidade.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                💡 <strong>Lição para a Cidade Virtual:</strong> Mesmo um projeto de extensão pode se beneficiar de
+                práticas de CD: deploys frequentes e seguros aumentam a confiança dos usuários (moradores e
+                comerciantes) e aceleram o ciclo de feedback.
+            </div>
+        </section>
+
+        <!-- DESAFIOS DA MELHORIA CONTÍNUA -->
+        <section>
+            <h2>⚠️ Desafios da melhoria contínua</h2>
+
+            <div class="comparativo-grid">
+                <div class="comparativo-card">
+                    <h4>🏛️ Mudança de cultura organizacional</h4>
+                    <p><strong>Desafio:</strong> Times acostumados com entregas manuais e raras podem resistir à
+                        automação e à transparência. <strong>Solução:</strong> Começar pequeno, mostrar resultados
+                        rápidos, envolver a equipe nas decisões.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>⚙️ Complexidade na automação de processos</h4>
+                    <p><strong>Desafio:</strong> Automatizar testes frágeis (flaky tests) e pipelines pode ser complexo.
+                        <strong>Solução:</strong> Investir tempo em testes confiáveis, usar ferramentas maduras (GitHub
+                        Actions, Docker).
+                    </p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>🛠️ Necessidade de ferramentas especializadas</h4>
+                    <p><strong>Desafio:</strong> DevOps exige conhecimento de múltiplas ferramentas (Git, CI,
+                        contêineres, monitoramento). <strong>Solução:</strong> Capacitação gradual, documentação
+                        interna, uso de SaaS para reduzir sobrecarga.</p>
+                </div>
+                <div class="comparativo-card">
+                    <h4>📊 Mensuração de resultados</h4>
+                    <p><strong>Desafio:</strong> Como saber se a melhoria contínua está funcionando?
+                        <strong>Solução:</strong> Definir métricas (DORA: lead time, deployment frequency, MTTR, change
+                        failure rate) e acompanhar tendências.
+                    </p>
+                </div>
+            </div>
+
+            <div class="note">
+                📈 <strong>Métricas DORA (State of DevOps Reports):</strong>
+                <ul>
+                    <li><strong>Lead time:</strong> Tempo entre commit e deploy em produção.</li>
+                    <li><strong>Deployment frequency:</strong> Frequência de deploys bem-sucedidos.</li>
+                    <li><strong>MTTR (Mean Time to Recovery):</strong> Tempo médio para restaurar serviço após falha.
+                    </li>
+                    <li><strong>Change failure rate:</strong> Percentual de deploys que causam falha.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONCLUSÃO -->
+        <section>
+            <h2>📌 Conclusão</h2>
+
+            <p>A melhoria contínua e a entrega contínua são fundamentais para garantir software de qualidade em um mundo
+                que demanda respostas rápidas e confiáveis. A automação e o monitoramento contribuem para a eficiência
+                dos processos, reduzindo falhas e acelerando o feedback com os usuários.</p>
+
+            <p>O <strong>DevOps</strong>, ao integrar desenvolvimento e operações, proporciona um fluxo de trabalho ágil
+                e seguro, desde a primeira linha de código até a operação em produção. Para o projeto Cidade Virtual, a
+                adoção de práticas de CI/CD com GitHub Actions, monitoramento com UptimeRobot e New Relic, e testes
+                automatizados (unitários, integração, e2e) já trouxe benefícios visíveis: deploys mais rápidos, menos
+                bugs em produção e maior confiança da equipe.</p>
+
+            <p><strong>Principais aprendizados desta unidade:</strong></p>
+            <ul>
+                <li>✅ O conceito de melhoria contínua e seus benefícios (menos falhas, mais produtividade)</li>
+                <li>✅ A integração entre DevOps e Entrega Contínua (CD)</li>
+                <li>✅ O pipeline de CI/CD: desenvolvimento → integração → testes → deploy → monitoramento</li>
+                <li>✅ A importância da automação e do monitoramento contínuo</li>
+                <li>✅ A segurança como parte do ciclo (DevSecOps)</li>
+                <li>✅ Exemplos reais de grandes empresas e desafios de implementação</li>
+            </ul>
+
+            <div class="pergunta-norteadora"
+                style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <strong>💬 Pergunta para reflexão (e discussão no fórum):</strong>
+                <p>No seu projeto de extensão, quais etapas do pipeline de CI/CD você já implementou ou planeja
+                    implementar (build, testes, deploy, monitoramento)? Quais métricas você usaria para medir o sucesso
+                    da melhoria contínua no seu projeto?</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 20px;">
+                <a href="mod4-checkout-de-presenca.html" class="btn-visualizar"
+                    style="background-color: #28a745; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">check_circle</i> Seguir para o Checkout do Módulo 4
+                </a>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <p><cite>COSTA, Adriana Bastos da; PEREIRA, Fernanda da Silva. Fundamentos de gestão de projetos: da teoria
+                    à prática - como gerenciar projetos de sucesso. 1. ed. Curitiba: Intersaberes, 2019. 1 recurso
+                    on-line. ISBN 9788522701230. Disponível na Biblioteca Digital da UFMS.</cite></p>
+
+            <p><cite>SCHOEFFEL, Pablo; WAZLAWICK, Raul Sidney. Mão na massa: dinâmica vivencial para apoio ao ensino de
+                    gerenciamento de projetos de software. In: Workshop sobre Educação em Computação, n. 24., 2016.
+                    Anais... Porto Alegre: SBC, 2016. p. 2215-2224. Disponível em: <a href="https://link.ufms.br/40GZS"
+                        target="_blank">https://link.ufms.br/40GZS</a>. Acesso em: 13 jan. 2025.</cite></p>
+
+            <p><cite>HUMBLE, Jez; FARLEY, David. Continuous Delivery: Reliable Software Releases through Build, Test,
+                    and Deployment Automation. Addison-Wesley Professional, 2010.</cite></p>
+
+            <p><cite>KIM, Gene; HUMBLE, Jez; DeBOIS, Patrick; WILLIS, John. The DevOps Handbook: How to Create
+                    World-Class Agility, Reliability, and Security in Technology Organizations. IT Revolution Press,
+                    2016.</cite></p>
+
+            <p><cite>FORSGREN, Nicole; HUMBLE, Jez; KIM, Gene. Accelerate: The Science of Lean Software and DevOps. IT
+                    Revolution Press, 2018. (Métricas DORA).</cite></p>
+
+            <p><cite>GITHUB DOCS. About GitHub Actions. Disponível em: <a href="https://docs.github.com/en/actions"
+                        target="_blank">https://docs.github.com/en/actions</a>. Acesso em: 13 mai. 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+            <p>🔗 <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank">https://creativecommons.org/licenses/by/4.0/</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 13 de maio de 2026</p>
+        <p>Projeto Integrador de Tecnologia da Informação II - UFMS | Prof. Dr. Awdren de Lima Fontão</p>
+    </footer>
+</body>
+
+</html>
