@@ -2076,15 +2076,6 @@ a:hover {
     align-items: flex-start;
   }
 
-  .orientacoes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .btn-envio {
-    max-width: 100%;
-    font-size: 1.1em;
-  }
-
   .passo-conteudo {
     padding-left: 20px;
   }
@@ -2172,4 +2163,116 @@ a:hover {
 
 .github-card a:hover {
   text-decoration: underline;
+}
+
+/* PI - 2 */
+
+.code-block .comment {
+  color: #274;
+}
+
+.code-block .keyword {
+  color: #569cd6;
+}
+
+.code-block .function {
+  color: #245;
+}
+
+.code-block .string {
+  color: #ce9178;
+}
+
+.comparativo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.comparativo-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.comparativo-card h4 {
+  color: #245;
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.piramide-testes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.piramide-level {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  margin: 3px 0;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.piramide-level.e2e {
+  background-color: #ff9999;
+  width: 60%;
+}
+
+.piramide-level.integracao {
+  background-color: #ffcc99;
+  width: 75%;
+}
+
+.piramide-level.unitario {
+  background-color: #99cc99;
+  width: 90%;
+}
+
+@media (max-width: 768px) {
+  .comparativo-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.ciclo-card {
+  background-color: #fff;
+  border: 2px solid #0066cc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.ciclo-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.ciclo-step {
+  background-color: #f0f7ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+}
+
+@media (max-width: 768px) {
+  .comparativo-grid {
+      grid-template-columns: 1fr;
+  }
 }
