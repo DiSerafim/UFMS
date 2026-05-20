@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 2 | Projeto e Desenvolvimento de Testes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .caso-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #0066cc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .arquivo-card {
+            background-color: #f0f7ff;
+            border: 1px solid #0066cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .coverage-bar {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 24px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .coverage-fill {
+            background-color: #28a745;
+            height: 100%;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            line-height: 24px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .mock-example {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px dashed #0066cc;
+        }
+        .badge-tech {
+            display: inline-block;
+            background-color: #245;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin: 5px;
+        }
+        .progresso-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .progresso-rotulo {
+            width: 100px;
+            font-weight: 600;
+            color: #245;
+        }
+        .progresso-barra {
+            flex: 1;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+        .progresso-valor {
+            background-color: #0066cc;
+            height: 100%;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-size: 0.7em;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 2 - Teste de Software Aplicado</h2>
+        <h3>🛠️ Unidade 2 - Projeto e desenvolvimento de testes</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-conceitos-basicos-e-tipos-de-testes.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 2 Und 1
+            </a>
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LreJqIn4bwI" frameborder="0"
+                    title="Projeto e desenvolvimento de testes de software"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Projeto e desenvolvimento de testes - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 2 - Unidade 2
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO - ESTUDO DE CASO -->
+        <section>
+            <h2>📖 Estudo de caso: FACOFFEE</h2>
+            <p>Para entender na prática como aplicar testes de software, vamos analisar o estudo de caso <strong>FACOFFEE</strong>, uma aplicação web desenvolvida para auxiliar na divisão dos custos do consumo de café e manutenção da máquina na copa da Faculdade de Computação da UFMS (FACOM/UFMS).</p>
+
+            <div class="caso-card">
+                <h3><i class="material-icons">coffee</i> FACOFFEE - Características</h3>
+                <p>A aplicação foi concebida como parte do processo de ensino de conceitos e técnicas avançadas de desenvolvimento, incluindo:</p>
+                <ul>
+                    <li><strong>Programação Funcional</strong> - paradigma declarativo para transformações de dados</li>
+                    <li><strong>Domain Driven Design (DDD)</strong> - modelagem focada no domínio do negócio</li>
+                    <li><strong>Arquiteturas Baseadas em Serviços</strong> - microsserviços e API-first</li>
+                </ul>
+                <p><strong>Principais funcionalidades:</strong></p>
+                <ul>
+                    <li>✅ Gestão de usuários (servidores docentes e técnicos)</li>
+                    <li>✅ Autenticação e autorização (login com e-mail institucional)</li>
+                    <li>✅ Gestão de planos de consumo (café, leite, adoçante, etc.)</li>
+                    <li>✅ Gestão de assinaturas (adesão e cancelamento)</li>
+                    <li>✅ Gestão de pagamentos (envio de comprovantes e conciliação)</li>
+                </ul>
+                <p><strong>Repositório:</strong> <a href="https://github.com/hsborges/facoffee-api" target="_blank">https://github.com/hsborges/facoffee-api</a></p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">lightbulb</i> Relação com o Cidade Virtual</strong>
+                <p>Assim como o FACOFFEE, o <strong>Cidade Virtual</strong> também possui funcionalidades similares: gestão de usuários (moradores/comerciantes/autônomos), autenticação, planos de destaque (análogo a planos de consumo) e interações comunitárias. Os aprendizados deste estudo de caso serão diretamente aplicáveis ao seu projeto.</p>
+            </div>
+        </section>
+
+        <!-- POR ONDE COMEÇAR? -->
+        <section>
+            <h2>🚀 Por onde começar? Analisando a arquitetura</h2>
+            <p>Antes de escrever qualquer teste, é fundamental entender a <strong>arquitetura e os componentes</strong> do sistema. No caso do FACOFFEE, a API foi estruturada da seguinte forma:</p>
+
+            <div class="arquivo-card">
+                <pre style="margin: 0;">
+📁 facoffee-api/
+├── 📁 controllers/   → Tratamento de requisições HTTP
+├── 📁 entities/      → Abstrações das entidades do domínio
+├── 📁 middlewares/   → Interceptações de requisições (autenticação, logs)
+├── 📁 services/      → Atividades do negócio (regras de negócio)
+├── 📁 tasks/         → Scripts com procedimentos auxiliares (jobs)
+└── 📁 utils/         → Funções utilitárias (formatação, validação)</pre>
+            </div>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">code</i>
+                    <h4>Alto impacto no negócio</h4>
+                    <p><strong>/services</strong> e <strong>/controllers</strong> contêm a lógica crítica que merece mais atenção nos testes.</p>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">build</i>
+                    <h4>Baixo impacto / utilitários</h4>
+                    <p><strong>/utils</strong> e <strong>/tasks</strong> podem ter testes mais simples ou até serem priorizados depois.</p>
+                </div>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">architecture</i> Adaptando para o Cidade Virtual</h4>
+                <p>Considerando a arquitetura MERN do Cidade Virtual, uma estrutura sugerida seria:</p>
+                <pre>
+📁 cidade-virtual-api/
+├── 📁 src/
+│   ├── 📁 models/        → Esquemas MongoDB (User, Comercio, Servico, Evento)
+│   ├── 📁 controllers/   → Lógica de requisições HTTP
+│   ├── 📁 routes/        → Definição de endpoints
+│   ├── 📁 middleware/    → Auth, validação, tratamento de erros
+│   ├── 📁 services/      → Regras de negócio (ex: cálculo de avaliação)
+│   └── 📁 utils/         → Funções auxiliares
+└── 📁 tests/
+    ├── 📁 unit/          → Testes unitários
+    ├── 📁 integration/   → Testes de integração (API + DB)
+    └── 📁 e2e/           → Testes end-to-end (Cypress)</pre>
+            </div>
+        </section>
+
+        <!-- SELEÇÃO DE FERRAMENTAS -->
+        <section>
+            <h2>🛠️ Seleção de ferramentas para testes</h2>
+            <p>A escolha das ferramentas depende da stack tecnológica do projeto. No FACOFFEE, foram utilizadas diferentes opções conforme o contexto:</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">javascript</i> JavaScript/Node.js</h4>
+                    <p><strong>Jest</strong> - Framework de testes all-in-one (unitário, integração, cobertura).</p>
+                    <p><strong>Supertest</strong> - Para testes de API HTTP.</p>
+                    <div class="badge-tech">Jest</div>
+                    <div class="badge-tech">Supertest</div>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">code</i> Java/Spring Boot</h4>
+                    <p><strong>JUnit 5</strong> + <strong>Mockito</strong> - Padrão para testes unitários e mocks.</p>
+                    <p><strong>Spring Boot Test</strong> - Para testes de integração.</p>
+                    <div class="badge-tech">JUnit</div>
+                    <div class="badge-tech">Mockito</div>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">data_usage</i> Python</h4>
+                    <p><strong>PyTest</strong> - Framework simples e poderoso.</p>
+                    <p><strong>unittest.mock</strong> - Biblioteca nativa para mocks.</p>
+                    <div class="badge-tech">PyTest</div>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">star</i> Para o Cidade Virtual (MERN)</h4>
+                <p><strong>Stack recomendada:</strong> Jest + Supertest (unitário/integração) + Cypress (E2E).</p>
+                <p>Instalação rápida: <code>npm install --save-dev jest supertest @types/jest</code></p>
+            </div>
+        </section>
+
+        <!-- CRIANDO TESTES E MOCKS -->
+        <section>
+            <h2>🎭 Isolando unidades: Stubs, Mocks e Spies</h2>
+            <p>Em testes unitários, muitas vezes uma unidade depende de outras (banco de dados, API externa, sistema de arquivos). Para isolar a unidade sob teste, usamos <strong>mocks</strong> que simulam o comportamento das dependências.</p>
+
+            <div class="mock-example">
+                <h4><i class="material-icons">block</i> Exemplo: OperacaoService depende de FileService</h4>
+                <p>No FACOFFEE, o serviço que processa comprovantes de pagamento depende de um serviço de arquivos. Podemos criar um <strong>mock</strong> para simular esse componente:</p>
+                <pre>
+// OperacaoService.js (código original)
+class OperacaoService {
+    constructor(fileService) {
+        this.fileService = fileService;
+    }
+    
+    async processarComprovante(comprovantePath) {
+        const existe = await this.fileService.existe(comprovantePath);
+        if (!existe) throw new Error('Arquivo não encontrado');
+        
+        const conteudo = await this.fileService.ler(comprovantePath);
+        // ... processamento do comprovante
+        return { status: 'processado', dados: conteudo };
+    }
+}
+
+// Teste com mock (Jest)
+describe('OperacaoService', () => {
+    let mockFileService;
+    let operacaoService;
+    
+    beforeEach(() => {
+        // Criando mock do FileService
+        mockFileService = {
+            existe: jest.fn(),
+            ler: jest.fn()
+        };
+        operacaoService = new OperacaoService(mockFileService);
+    });
+    
+    test('deve processar comprovante com sucesso', async () => {
+        // Configurando o mock
+        mockFileService.existe.mockResolvedValue(true);
+        mockFileService.ler.mockResolvedValue('conteudo_do_arquivo');
+        
+        const resultado = await operacaoService.processarComprovante('/tmp/comprovante.pdf');
+        
+        expect(resultado.status).toBe('processado');
+        expect(mockFileService.existe).toHaveBeenCalledWith('/tmp/comprovante.pdf');
+        expect(mockFileService.ler).toHaveBeenCalledTimes(1);
+    });
+    
+    test('deve lançar erro se arquivo não existe', async () => {
+        mockFileService.existe.mockResolvedValue(false);
+        
+        await expect(operacaoService.processarComprovante('/tmp/inexistente.pdf'))
+            .rejects.toThrow('Arquivo não encontrado');
+    });
+});</pre>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">cached</i> Aplicação no Cidade Virtual</h4>
+                <p><strong>Cenário:</strong> Serviço de cálculo de avaliação média que depende de um repositório de avaliações.</p>
+                <pre>
+// AvaliacaoService.js
+class AvaliacaoService {
+    constructor(avaliacaoRepository) {
+        this.avaliacaoRepository = avaliacaoRepository;
+    }
+    
+    async calcularMediaPorComercio(comercioId) {
+        const avaliacoes = await this.avaliacaoRepository.buscarPorComercio(comercioId);
+        if (!avaliacoes || avaliacoes.length === 0) return 0;
+        const soma = avaliacoes.reduce((acc, a) => acc + a.nota, 0);
+        return soma / avaliacoes.length;
+    }
+}
+
+// Teste com mock do repositório
+test('calcularMediaPorComercio deve retornar média correta', async () => {
+    const mockRepo = {
+        buscarPorComercio: jest.fn().mockResolvedValue([{ nota: 5 }, { nota: 4 }, { nota: 3 }])
+    };
+    const service = new AvaliacaoService(mockRepo);
+    
+    const media = await service.calcularMediaPorComercio('comercio123');
+    
+    expect(media).toBe(4.0);
+    expect(mockRepo.buscarPorComercio).toHaveBeenCalledWith('comercio123');
+});</pre>
+            </div>
+        </section>
+
+        <!-- EVOLUÇÃO DA COBERTURA -->
+        <section>
+            <h2>📈 Executando e medindo progresso</h2>
+            <p>Ao longo do desenvolvimento do FACOFFEE, a equipe acompanhou a evolução da cobertura de testes. Vamos analisar essa evolução e entender as lições aprendidas.</p>
+
+            <div class="progresso-item">
+                <span class="progresso-rotulo">Versão 0.0.3</span>
+                <div class="progresso-barra">
+                    <div class="progresso-valor" style="width: 15%; background-color: #dc3545;">15%</div>
+                </div>
+                <span>Primeiros testes unitários implementados</span>
+            </div>
+
+            <div class="progresso-item">
+                <span class="progresso-rotulo">Versão 0.0.4</span>
+                <div class="progresso-barra">
+                    <div class="progresso-valor" style="width: 28%; background-color: #ffc107;">28%</div>
+                </div>
+                <span>Expansão dos testes para mais serviços</span>
+            </div>
+
+            <div class="progresso-item">
+                <span class="progresso-rotulo">Versão 0.0.6</span>
+                <div class="progresso-barra">
+                    <div class="progresso-valor" style="width: 62%; background-color: #28a745;">62%</div>
+                </div>
+                <span>Mais que dobramos a cobertura com testes unitários bem planejados</span>
+            </div>
+
+            <div class="progresso-item">
+                <span class="progresso-rotulo">Versão 0.0.8</span>
+                <div class="progresso-barra">
+                    <div class="progresso-valor" style="width: 78%; background-color: #28a745;">78%</div>
+                </div>
+                <span>Adicionados testes de integração (endpoints)</span>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">insights</i> Lições aprendidas:</strong>
+                <ul>
+                    <li>✅ Testes unitários são a base - rápidos e fáceis de escrever</li>
+                    <li>✅ Cobertura de código é uma métrica útil, mas não obsessão</li>
+                    <li>✅ Foco nos componentes de maior impacto (services, controllers)</li>
+                    <li>✅ Testes de integração complementam os unitários, verificando a comunicação real entre componentes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TESTES DE INTEGRAÇÃO -->
+        <section>
+            <h2>🔗 Testes de integração - Estratégias</h2>
+            <p>Testes de integração verificam o comportamento dos componentes de forma integrada. Existem duas estratégias principais:</p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">arrow_downward</i>
+                    <h4>Bottom-up</h4>
+                    <p>Começa pelos componentes de nível mais baixo (ex: repositórios) e sobe para níveis mais altos (controllers).</p>
+                    <p><strong>Vantagem:</strong> Isolamento gradual.</p>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">arrow_upward</i>
+                    <h4>Top-down</h4>
+                    <p>Começa pelos componentes de nível mais alto (ex: endpoints de API) e usa mocks para os níveis inferiores.</p>
+                    <p><strong>Vantagem:</strong> Interface do sistema testada primeiro.</p>
+                </div>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">api</i> Teste de integração no FACOFFEE (top-down)</h4>
+                <pre>
+// Teste de integração do endpoint de criação de usuário
+const request = require('supertest');
+const app = require('../src/app');
+
+describe('POST /api/users', () => {
+    test('deve criar usuário com dados válidos', async () => {
+        const novoUsuario = {
+            nome: "João Silva",
+            email: "joao@facom.ufms.br",
+            tipo: "professor"
+        };
+        
+        const response = await request(app)
+            .post('/api/users')
+            .send(novoUsuario)
+            .expect(201);
+        
+        expect(response.body).toHaveProperty('id');
+        expect(response.body.email).toBe('joao@facom.ufms.br');
+        
+        // Verificar persistência real no banco de testes
+        const usuarioSalvo = await db.query('SELECT * FROM users WHERE id = $1', [response.body.id]);
+        expect(usuarioSalvo.rows[0].nome).toBe('João Silva');
+    });
+});</pre>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">warning</i> Cuidados com testes de integração</h4>
+                <ul>
+                    <li>Use um <strong>banco de dados de teste</strong> separado do de desenvolvimento</li>
+                    <li>Isole cada teste (limpe os dados entre execuções)</li>
+                    <li>Testes de integração são mais lentos que unitários - não abuse</li>
+                    <li>Priorize os fluxos principais (happy path) e os fluxos de erro mais críticos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- COMO AVANÇAR ESTRATEGICAMENTE -->
+        <section>
+            <h2>🎯 Como avançar estrategicamente?</h2>
+            <p>Em um projeto real, nem tudo precisa ser testado da mesma forma. A estratégia deve considerar o <strong>impacto no negócio</strong> e a <strong>probabilidade de falha</strong>.</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">priority_high</i> Alta prioridade (teste exaustivo)</h4>
+                    <ul>
+                        <li>Regras de negócio críticas (ex: cálculo de rateio no FACOFFEE)</li>
+                        <li>Fluxos de autenticação e autorização</li>
+                        <li>Funcionalidades relacionadas a pagamentos</li>
+                        <li>APIs públicas/documentadas</li>
+                    </ul>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">low_priority</i> Baixa prioridade (teste superficial)</h4>
+                    <ul>
+                        <li>Componentes de UI simples (botões, links)</li>
+                        <li>Funções utilitárias muito simples (ex: formatação de data)</li>
+                        <li>Scripts administrativos/jobs</li>
+                        <li>Funcionalidades pouco utilizadas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">edit_note</i> Matriz de priorização para o Cidade Virtual</h4>
+                <table style="width: 100%;">
+                    <tr style="background-color: #245; color: white;">
+                        <th>Funcionalidade</th>
+                        <th>Impacto</th>
+                        <th>Probabilidade de falha</th>
+                        <th>Prioridade de teste</th>
+                    </tr>
+                    <tr>
+                        <td>Cadastro de comerciante</td>
+                        <td>Alto</td>
+                        <td>Média</td>
+                        <td style="background-color: #dc3545; color: white;">Crítica</td>
+                    </tr>
+                    <tr>
+                        <td>Busca por categoria</td>
+                        <td>Alto</td>
+                        <td>Média</td>
+                        <td style="background-color: #dc3545; color: white;">Crítica</td>
+                    </tr>
+                    <tr>
+                        <td>Avaliação de comércios</td>
+                        <td>Médio</td>
+                        <td>Baixa</td>
+                        <td style="background-color: #ffc107;">Média</td>
+                    </tr>
+                    <tr>
+                        <td>Tema escuro</td>
+                        <td>Baixo</td>
+                        <td>Baixa</td>
+                        <td style="background-color: #28a745;">Baixa</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- TESTES DE SISTEMA (UI) -->
+        <section>
+            <h2>🖥️ Testes de sistema - Componente de UI</h2>
+            <p>O FACOFFEE também possui uma interface web. Como testar componentes de UI?</p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">straighten</i>
+                    <h4>Testes unitários de UI</h4>
+                    <p>Testar componentes React/Vue isoladamente, simulando props e eventos.</p>
+                    <p><strong>Ferramenta:</strong> React Testing Library, Vue Test Utils</p>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">cypress</i>
+                    <h4>Testes de integração/E2E</h4>
+                    <p>Testar fluxos completos no navegador, incluindo interações reais.</p>
+                    <p><strong>Ferramenta:</strong> Cypress, Selenium, Playwright</p>
+                </div>
+            </div>
+
+            <div class="mock-example">
+                <h4><i class="material-icons">react_app</i> Exemplo: teste de componente React (Cidade Virtual)</h4>
+                <pre>
+// Componente: BotaoBusca.jsx
+function BotaoBusca({ onClick, desabilitado }) {
+    return (
+        &lt;button onClick={onClick} disabled={desabilitado} className="btn-busca"&gt;
+            🔍 Buscar
+        &lt;/button&gt;
+    );
+}
+
+// Teste com React Testing Library
+import { render, screen, fireEvent } from '@testing-library/react';
+import BotaoBusca from './BotaoBusca';
+
+test('deve chamar onClick quando clicado', () => {
+    const mockOnClick = jest.fn();
+    render(&lt;BotaoBusca onClick={mockOnClick} /&gt;);
+    
+    const botao = screen.getByText('🔍 Buscar');
+    fireEvent.click(botao);
+    
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
+});
+
+test('deve estar desabilitado quando prop for true', () => {
+    render(&lt;BotaoBusca desabilitado={true} /&gt;);
+    const botao = screen.getByRole('button');
+    
+    expect(botao).toBeDisabled();
+});</pre>
+            </div>
+        </section>
+
+        <!-- CONCLUSÕES -->
+        <section>
+            <h2>✅ Conclusões e boas práticas</h2>
+            <div class="info-box">
+                <strong><i class="material-icons">checklist</i> Principais aprendizados do estudo de caso FACOFFEE:</strong>
+                <ol style="margin-top: 10px;">
+                    <li><strong>Frameworks de testes ajudam na execução e análise</strong> - Invista tempo em aprender Jest, PyTest ou JUnit.</li>
+                    <li><strong>Dependências devem ter seu comportamento simulado</strong> - Use mocks para isolar a unidade sob teste.</li>
+                    <li><strong>Nem todas as unidades "merecem" ser testadas</strong> - Priorize com base no impacto e risco.</li>
+                    <li><strong>Componentes de alto impacto devem ser priorizados</strong> - Services e controllers merecem mais atenção.</li>
+                    <li><strong>Testes de integração ajudam na verificação de comportamentos</strong> quando os componentes se comunicam entre si.</li>
+                    <li><strong>Acompanhe a evolução da cobertura</strong> - mas sem obsessão: 100% de cobertura não garante ausência de defeitos.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ATIVIDADE DE CHECKOUT -->
+        <section>
+            <h2>📋 Atividade de Checkout - Plano de Testes</h2>
+            <div class="warning">
+                <strong><i class="material-icons">assignment</i> O que você deve entregar:</strong>
+                <p>Você deverá criar um <strong>plano de testes para o Cidade Virtual</strong> (sistema projetado em PI-I e desenvolvido em PI-II).</p>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">tips_and_updates</i> Dicas para a atividade:</h4>
+                <ul>
+                    <li><strong>Comece analisando os artefatos e a arquitetura projetada</strong> - Revise o DER, os requisitos e o código existente.</li>
+                    <li><strong>Identifique os principais componentes</strong> - Models, Controllers, Services, Utils.</li>
+                    <li><strong>Defina objetivos de teste</strong> - Ex: "garantir que o cálculo da avaliação média esteja correto" ou "validar que o cadastro de comerciantes persiste no banco".</li>
+                    <li><strong>Descreva o escopo dos testes</strong> - O que será testado (unitário, integração, E2E) e o que NÃO será testado.</li>
+                    <li><strong>Proponha estratégias de testes</strong> - Caixa branca vs caixa preta, técnicas (classes de equivalência, valor limite).</li>
+                    <li><strong>Apresente casos de teste de exemplo</strong> - Pelo menos 3 casos completos (entrada, saída esperada, pré-condições).</li>
+                    <li><strong>Use diferentes técnicas</strong> - Combine classes de equivalência, valor limite, tabela de decisão, etc.</li>
+                </ul>
+            </div>
+
+            <div class="template-container">
+                <div class="template-header">
+                    <h3>Estrutura sugerida para o Plano de Testes</h3>
+                </div>
+                <ol>
+                    <li><strong>Introdução e objetivos</strong> - O que se pretende alcançar com os testes</li>
+                    <li><strong>Escopo</strong> - O que será testado e o que será excluído</li>
+                    <li><strong>Arquitetura e componentes alvo</strong> - Mapeamento dos componentes críticos</li>
+                    <li><strong>Estratégias de teste por nível</strong>
+                        <ul>
+                            <li>Testes unitários (com técnicas e exemplos)</li>
+                            <li>Testes de integração (com exemplos)</li>
+                            <li>Testes de sistema/E2E (com exemplos)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ferramentas selecionadas</strong> - Jest, Supertest, Cypress</li>
+                    <li><strong>Métricas e critérios de aceitação</strong> - Cobertura mínima, testes passando</li>
+                    <li><strong>Cronograma de implementação</strong> - Quando cada tipo de teste será implementado</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>DELAMARO, Márcio Eduardo; MALDONADO, José Carlos; JINO, Mario. <strong>Introdução ao teste de software</strong>. Rio de Janeiro: Gen Ltc, 2016. ISBN 9788595155732.</cite></p>
+            <p><cite>GONÇALVES, Priscila de Fátima et al. <strong>Testes de software e gerência de configuração</strong>. Porto Alegre: Sagah, 2019. ISBN 9788595029361.</cite></p>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 9. ed. São Paulo: Pearson, 2011. ISBN 9788579361081.</cite></p>
+            <p><cite>VALENTE, Marco Tulio. <strong>Engenharia de Software moderna: princípios e práticas para desenvolvimento de software com produtividade</strong>. v.1, n.24, 2020. Disponível em: https://link.ufms.br/bljNp. Acesso em 20 dez 2024.</cite></p>
+            <p><cite>BECK, Kent. <strong>Test-Driven Development: By Example</strong>. Addison-Wesley, 2002.</cite></p>
+            <p><cite>MARTIN, Robert C. <strong>Clean Code: A Handbook of Agile Software Craftsmanship</strong>. Prentice Hall, 2008.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 3 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 2: Projeto e Desenvolvimento de Testes aplicado ao Cidade Virtual 🧪</p>
+    </footer>
+</body>
+
+</html>
