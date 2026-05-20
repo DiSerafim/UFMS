@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 2 | Conceitos Básicos e Tipos de Testes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 2 - Teste de Software Aplicado</h2>
+        <h3>🧪 Unidade 1 - Conceitos básicos e tipos de testes</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">arrow_back</i> Checkout P. Mod 1 
+            </a>
+            <a href="mod2_und2-projeto-e-desenvolvimento-de-testes.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            Mod 2 Und 2<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dHGUDsglSW8" frameborder="0"
+                    title="Conceitos básicos e tipos de testes de software"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Teste de Software - Conceitos e Tipos - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 2 - Unidade 1
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO AO TESTE DE SOFTWARE -->
+        <section>
+            <h2>🧪 O que é Teste de Software?</h2>
+            <p>O <strong>teste de software</strong> é uma técnica de <strong>verificação dinâmica</strong>, ou seja,
+                envolve a <strong>execução do programa</strong> (ou de partes dele) para avaliar seu comportamento real
+                em comparação com o comportamento esperado especificado.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">help_outline</i> Três perguntas fundamentais</strong>
+                <ol style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>O que devemos testar?</strong> → Priorização com base em risco e criticidade.</li>
+                    <li><strong>Como podemos testar?</strong> → Estratégias: caixa branca, caixa preta, exploratório.
+                    </li>
+                    <li><strong>O que esperar dos nossos testes?</strong> → Não garantem ausência de defeitos, mas
+                        reduzem riscos.</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">warning</i> Atenção!</strong>
+                <p>Testar exaustivamente (cobrir 100% das situações possíveis) é <strong>inviável</strong> em sistemas
+                    modernos, que podem ter milhares de componentes e infinitas combinações de entradas. O segredo está
+                    no <strong>planejamento estratégico</strong> e na <strong>priorização</strong>.</p>
+            </div>
+        </section>
+
+        <!-- O QUE DEVEMOS TESTAR? -->
+        <section>
+            <h2>🎯 O que devemos testar? Priorização e Planejamento</h2>
+            <p>Em um sistema como o <strong>Cidade Virtual</strong>, não é possível testar todas as combinações
+                possíveis de entradas e cenários. Por isso, o planejamento é essencial.</p>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">real_estate_agent</i> Exemplo Cidade Virtual - Priorização de Testes</h4>
+                <p><strong>Funcionalidades críticas (prioridade máxima):</strong></p>
+                <ul>
+                    <li>✅ Cadastro e autenticação de usuários (moradores, comerciantes, autônomos)</li>
+                    <li>✅ Busca por comércios e serviços (core do negócio)</li>
+                    <li>✅ Sistema de avaliações (confiança da comunidade)</li>
+                </ul>
+                <p><strong>Funcionalidades secundárias (prioridade média):</strong></p>
+                <ul>
+                    <li>📌 Mural de eventos e campanhas</li>
+                    <li>📌 Perfil do comerciante com horários diferenciados</li>
+                </ul>
+                <p><strong>Funcionalidades de baixo risco (prioridade baixa):</strong></p>
+                <ul>
+                    <li>🎨 Temas e personalização de interface</li>
+                    <li>📊 Relatórios estatísticos para administradores</li>
+                </ul>
+                <p><strong>Critério adotado:</strong> Funcionalidades com maior impacto direto no usuário e no modelo de
+                    negócio recebem mais testes.</p>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">insights</i> Insight Avançado - Teste Baseado em Risco (Risk-Based
+                    Testing)</h4>
+                <p>Priorize os testes com base em duas dimensões: <strong>probabilidade de falha</strong> e
+                    <strong>impacto da falha</strong>. Uma matriz de risco ajuda a decidir onde investir mais esforço.
+                </p>
+                <table style="margin: 10px 0; width: 100%;">
+                    <tr style="background-color: #245; color: white;">
+                        <th>Impacto \ Probabilidade</th>
+                        <th>Baixa</th>
+                        <th>Média</th>
+                        <th>Alta</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Alto</strong></td>
+                        <td style="background-color: #fff3cd;">Teste médio</td>
+                        <td style="background-color: #ffc107;">Teste alto</td>
+                        <td style="background-color: #dc3545; color: white;">Prioridade crítica</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Médio</strong></td>
+                        <td style="background-color: #d4edda;">Teste baixo</td>
+                        <td style="background-color: #fff3cd;">Teste médio</td>
+                        <td style="background-color: #ffc107;">Teste alto</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Baixo</strong></td>
+                        <td style="background-color: #d4edda;">Teste mínimo</td>
+                        <td style="background-color: #d4edda;">Teste baixo</td>
+                        <td style="background-color: #fff3cd;">Teste médio</td>
+                    </tr>
+                </table>
+                <p><strong>No Cidade Virtual:</strong> A falha no cadastro de comerciantes tem impacto alto e
+                    probabilidade média → prioridade alta. A falha no tema escuro tem impacto baixo e probabilidade
+                    baixa → teste mínimo.</p>
+            </div>
+        </section>
+
+        <!-- COMO PODEMOS TESTAR? CAIXA BRANCA E CAIXA PRETA -->
+        <section>
+            <h2>🔍 Como podemos testar? Caixa Branca vs Caixa Preta</h2>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">code</i>
+                    <h3>Teste Caixa Branca</h3>
+                    <p><strong>Conhece o interior do artefato</strong> (código-fonte, estrutura interna).</p>
+                    <ul style="text-align: left; margin-top: 10px;">
+                        <li>Guiado pela estrutura lógica</li>
+                        <li>Encontra <strong>erros</strong> (implementação incorreta)</li>
+                        <li>Exige conhecimento técnico profundo</li>
+                        <li>Exemplo: Testar todos os caminhos de uma função</li>
+                    </ul>
+                    <div class="tech-badge">Fluxo de controle</div>
+                    <div class="tech-badge">Cobertura de código</div>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">inventory_2</i>
+                    <h3>Teste Caixa Preta</h3>
+                    <p><strong>Não conhece o interior do artefato</strong>, apenas as entradas e saídas esperadas.</p>
+                    <ul style="text-align: left; margin-top: 10px;">
+                        <li>Guiado por <strong>requisitos e contratos</strong></li>
+                        <li>Encontra <strong>falhas</strong> (comportamento não esperado)</li>
+                        <li>Pode ser feito por quem não desenvolveu o código</li>
+                        <li>Exemplo: Testar se a busca retorna resultados corretos</li>
+                    </ul>
+                    <div class="tech-badge">Documentação</div>
+                    <div class="tech-badge">Casos de uso</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">api</i> Exemplo prático no Cidade Virtual</h4>
+                <p><strong>Teste caixa branca (unidade):</strong> Verificar se a função
+                    <code>calcularAvaliacaoMedia([5,4,3])</code> realmente retorna 4.0, e se trata corretamente lista
+                    vazia e valores fora do intervalo.
+                </p>
+                <p><strong>Teste caixa preta (funcional):</strong> Verificar se o endpoint
+                    <code>GET /api/comercios?categoria=alimentacao</code> retorna apenas comércios da categoria
+                    "alimentação", conforme especificação do requisito RF23.
+                </p>
+            </div>
+        </section>
+
+        <!-- TIPOS DE TESTES: UNITÁRIOS -->
+        <section>
+            <h2>🧩 Testes Unitários</h2>
+            <p>Testes unitários avaliam a <strong>menor parte testável do software</strong> (funções, métodos, classes).
+                São a base da pirâmide de testes e devem ser <strong>rápidos, isolados e numerosos</strong>.</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">check_circle</i> Características</h4>
+                    <ul>
+                        <li>✅ Foco em caminhos lógicos (caixa branca)</li>
+                        <li>✅ Feitos pelo próprio desenvolvedor</li>
+                        <li>✅ Buscam alta cobertura de código (>70% é um bom alvo)</li>
+                        <li>✅ Capturam erros de lógica e regras de negócio</li>
+                        <li>✅ Executam em milissegundos</li>
+                    </ul>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">construction</i> Ferramentas comuns</h4>
+                    <ul>
+                        <li><strong>Jest</strong> (JavaScript/TypeScript) → Cidade Virtual</li>
+                        <li>JUnit (Java)</li>
+                        <li>PyTest (Python)</li>
+                        <li>Mocha/Chai (Node.js)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">code</i> Exemplo de Teste Unitário com Jest - Cidade Virtual</h4>
+                <pre>
+// Função a ser testada (em services/avaliacaoService.js)
+function calcularAvaliacaoMedia(avaliacoes) {
+    if (!avaliacoes || avaliacoes.length === 0) return 0;
+    const soma = avaliacoes.reduce((acc, nota) => acc + nota, 0);
+    return soma / avaliacoes.length;
+}
+
+// Teste unitário com Jest (em __tests__/avaliacaoService.test.js)
+describe('calcularAvaliacaoMedia', () => {
+    test('deve calcular média correta para [5,4,3]', () => {
+        expect(calcularAvaliacaoMedia([5,4,3])).toBe(4.0);
+    });
+    
+    test('deve retornar 0 para lista vazia', () => {
+        expect(calcularAvaliacaoMedia([])).toBe(0);
+    });
+    
+    test('deve retornar 0 para null ou undefined', () => {
+        expect(calcularAvaliacaoMedia(null)).toBe(0);
+    });
+    
+    test('deve tratar notas decimais', () => {
+        expect(calcularAvaliacaoMedia([4.5, 5.0, 3.5])).toBeCloseTo(4.333, 2);
+    });
+});</pre>
+                <p><strong>Resultado esperado:</strong> 4 testes passando, cobertura de 100% da função.</p>
+            </div>
+        </section>
+
+        <!-- TÉCNICAS PARA PROJETO DE TESTES UNITÁRIOS -->
+        <section>
+            <h2>📐 Técnicas para Projeto de Testes Unitários</h2>
+            <p>Para criar bons testes unitários, utilizamos técnicas sistemáticas que aumentam a eficácia na detecção de
+                defeitos.</p>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">category</i> 1. Partição por Classes de Equivalência</h4>
+                <p><strong>Objetivo:</strong> Dividir o domínio de entradas em classes/grupos com comportamento
+                    semelhante. Testa-se apenas um representante de cada classe.</p>
+                <p><strong>Exemplo (Cidade Virtual):</strong> Validação de idade mínima para cadastro (18 anos).</p>
+                <ul>
+                    <li>Classe válida: idade ≥ 18</li>
+                    <li>Classe inválida: idade < 18</li>
+                </ul>
+                <p><strong>Casos de teste:</strong> 25 anos (válido), 16 anos (inválido).</p>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">straighten</i> 2. Análise de Valor Limite (Boundary Value Analysis)</h4>
+                <p><strong>Objetivo:</strong> Testar os limites entre as classes de equivalência, onde erros são mais
+                    frequentes.</p>
+                <p><strong>Exemplo (validação de idade):</strong></p>
+                <ul>
+                    <li>Limite inferior: 17, 18, 19</li>
+                    <li>Limite superior (se houver, ex: 120): 119, 120, 121</li>
+                </ul>
+                <p><strong>No Cidade Virtual:</strong> Avaliação de comércios (notas de 0 a 5). Testar: -1, 0, 1, 4, 5,
+                    6.</p>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">table_chart</i> 3. Tabela de Decisão</h4>
+                <p><strong>Objetivo:</strong> Para cenários com múltiplas condições combinadas, a tabela de decisão
+                    ajuda a garantir cobertura de todas as combinações relevantes.</p>
+                <p><strong>Exemplo (Cidade Virtual):</strong> Regra para exibir "selo de confiança" a um comércio.</p>
+                <table style="margin: 10px 0;">
+                    <tr style="background-color: #245; color: white;">
+                        <th>Condições</th>
+                        <th>Caso 1</th>
+                        <th>Caso 2</th>
+                        <th>Caso 3</th>
+                        <th>Caso 4</th>
+                    </tr>
+                    <tr>
+                        <td>Avaliação média ≥ 4.5</td>
+                        <td>V</td>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>Mais de 10 avaliações</td>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>F</td>
+                    </tr>
+                    <tr style="background-color: #f0f7ff;">
+                        <td><strong>Selo de confiança</strong></td>
+                        <td><strong>Sim</strong></td>
+                        <td><strong>Não</strong></td>
+                        <td><strong>Não</strong></td>
+                        <td><strong>Não</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tecnica-card">
+                <h4><i class="material-icons">sync_alt</i> 4. Teste de Transição de Estados</h4>
+                <p><strong>Objetivo:</strong> Avaliar o comportamento de um sistema que pode estar em diferentes
+                    estados, com transições acionadas por eventos.</p>
+                <p><strong>Exemplo (Cidade Virtual):</strong> Estados de um pedido de contato/negociação.</p>
+                <pre>
+[Pendente] --(comerciante responde)--> [Em andamento] --(morador finaliza)--> [Concluído]
+     |
+     --(cancelamento)--> [Cancelado]</pre>
+                <p><strong>Testes:</strong> Verificar todas as transições possíveis, inclusive as inválidas (ex: tentar
+                    finalizar um pedido já cancelado).</p>
+            </div>
+        </section>
+
+        <!-- TESTES DE INTEGRAÇÃO -->
+        <section>
+            <h2>🔗 Testes de Integração</h2>
+            <p>Testes de integração verificam a <strong>interação entre componentes</strong> ou uma
+                <strong>funcionalidade completa</strong> de modo separado da interface de usuário.
+            </p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">storage</i>
+                    <h4>Integração com Banco de Dados</h4>
+                    <p>Verificar se o repositório de usuários realmente persiste e recupera dados corretamente.</p>
+                    <div class="tech-badge">PostgreSQL</div>
+                    <div class="tech-badge">MongoDB</div>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">api</i>
+                    <h4>Integração com API Externa</h4>
+                    <p>Simular chamadas a serviços de geolocalização ou pagamento.</p>
+                    <div class="tech-badge">Mock</div>
+                    <div class="tech-badge">Stub</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">integration_instructions</i> Exemplo no Cidade Virtual</h4>
+                <p><strong>Cenário:</strong> Testar se o endpoint <code>POST /api/comercios</code> insere corretamente
+                    os dados no banco e retorna o ID gerado.</p>
+                <pre>
+// Teste de integração com Supertest + Jest
+const request = require('supertest');
+const app = require('../server');
+
+describe('POST /api/comercios', () => {
+    test('deve criar um novo comércio e retornar 201', async () => {
+        const novoComercio = {
+            nome: "Padaria do João",
+            categoria: "alimentacao",
+            endereco: "Rua das Flores, 123"
+        };
+        
+        const response = await request(app)
+            .post('/api/comercios')
+            .send(novoComercio)
+            .expect(201);
+        
+        expect(response.body).toHaveProperty('id');
+        expect(response.body.nome).toBe("Padaria do João");
+        
+        // Verificar se realmente foi salvo no banco (consulta direta)
+        const comercioSalvo = await db.query('SELECT * FROM comercios WHERE id = $1', [response.body.id]);
+        expect(comercioSalvo.rows[0].nome).toBe("Padaria do João");
+    });
+});</pre>
+                <p><strong>Características:</strong> Mais lentos que testes unitários (acesso a banco/API), mais caros,
+                    menos frequentes.</p>
+            </div>
+        </section>
+
+        <!-- TESTES DE SISTEMA -->
+        <section>
+            <h2>🖥️ Testes de Sistema (End-to-End / E2E)</h2>
+            <p>Testes de sistema <strong>simulam o uso real do sistema por usuários</strong>, normalmente automatizando
+                a interface gráfica (UI) ou navegador.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">warning</i> Características importantes:</strong>
+                <ul>
+                    <li>🐌 Mais lentos (segundos a minutos por teste)</li>
+                    <li>💰 Mais caros de manter</li>
+                    <li>🔧 Mais frágeis (pequenas mudanças na UI quebram os testes)</li>
+                    <li>📊 Menos frequentes (executados em pipelines de CI/CD antes de releases)</li>
+                </ul>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">cypress</i> Exemplo com Cypress - Cidade Virtual</h4>
+                <pre>
+// cypress/integration/cadastro_comerciante.spec.js
+describe('Cadastro de Comerciante', () => {
+    beforeEach(() => {
+        cy.visit('/registrar');
+    });
+
+    it('deve permitir cadastro de novo comerciante', () => {
+        cy.get('input[name="nome"]').type('Mercearia do Zé');
+        cy.get('select[name="tipo"]').select('comerciante');
+        cy.get('input[name="email"]').type('ze@mercearia.com');
+        cy.get('input[name="senha"]').type('senha123');
+        cy.get('button[type="submit"]').click();
+        
+        // Verificar redirecionamento e mensagem de sucesso
+        cy.url().should('include', '/dashboard');
+        cy.contains('Bem-vindo, Mercearia do Zé').should('be.visible');
+    });
+    
+    it('deve exibir erro para email já cadastrado', () => {
+        // Cenário de email duplicado
+        cy.get('input[name="email"]').type('ze@mercearia.com');
+        cy.get('button[type="submit"]').click();
+        cy.contains('Email já cadastrado').should('be.visible');
+    });
+});</pre>
+                <p><strong>Ferramentas comuns:</strong> Cypress, Selenium, Playwright, Puppeteer.</p>
+            </div>
+        </section>
+
+        <!-- PIRÂMIDE DE TESTES -->
+        <section>
+            <h2>📊 Pirâmide de Testes (Mike Cohn)</h2>
+            <p>A pirâmide de testes é um modelo que recomenda a proporção ideal entre os tipos de testes para um projeto
+                equilibrado, rápido e confiável.</p>
+
+            <div class="piramide">
+                <div class="piramide-topo piramide-nivel">
+                    <strong>🔝 E2E / Sistema</strong> (poucos, lentos, caros)
+                </div>
+                <div class="piramide-meio piramide-nivel">
+                    <strong>🔄 Integração</strong> (médios, menos frequentes)
+                </div>
+                <div class="piramide-base piramide-nivel">
+                    <strong>🧩 Unitários</strong> (muitos, rápidos, baratos)
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: -10px;"><em>Fonte: Adaptado de Cohn (2009)</em></p>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">trending_up</i> Para o Cidade Virtual (projeto solo)</h4>
+                <ul>
+                    <li><span style="color: #28a745;">⬤</span> <strong>70-80% testes unitários</strong> (regras de
+                        negócio, validações, cálculos) → rápidos e fáceis de escrever</li>
+                    <li><span style="color: #ffc107;">⬤</span> <strong>15-20% testes de integração</strong> (API + banco
+                        de dados) → validam a parte mais crítica</li>
+                    <li><span style="color: #dc3545;">⬤</span> <strong>5-10% testes E2E</strong> (fluxos principais:
+                        cadastro, busca, avaliação) → garantem que o sistema funciona como um todo</li>
+                </ul>
+                <p><strong>Ferramentas sugeridas:</strong> Jest (unitário/integração), Supertest (integração de API),
+                    Cypress (E2E).</p>
+            </div>
+        </section>
+
+        <!-- OUTROS TIPOS DE TESTES -->
+        <section>
+            <h2>🚀 Outros tipos de testes (além da pirâmide)</h2>
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">security</i> Teste de Segurança</h4>
+                    <p>Verifica vulnerabilidades: injeção SQL, XSS, autenticação quebrada, etc. Ferramentas: OWASP ZAP,
+                        Snyk.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">speed</i> Teste de Carga e Stress</h4>
+                    <p>Avalia comportamento sob alta demanda. Ex: 1000 usuários simultâneos no Cidade Virtual.
+                        Ferramenta: K6, JMeter.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">checklist</i> Teste de Aceitação</h4>
+                    <p>Validado com os representantes da comunidade (Lucia Matos e Roseane Soares). Verifica se o
+                        sistema atende aos critérios de negócio.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">devices</i> Teste de Usabilidade</h4>
+                    <p>Avalia facilidade de uso, especialmente para público com baixa familiaridade digital. Observação
+                        direta do usuário.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISÃO INTEGRADORA -->
+        <section>
+            <h2>🔁 Visão Integradora - Testes no Contexto do Cidade Virtual</h2>
+            <div class="exemplo-box">
+                <h4><i class="material-icons">map</i> Roadmap de Implementação de Testes (projeto solo)</h4>
+                <ol>
+                    <li><strong>Semana 1:</strong> Configurar Jest e escrever testes unitários para as funções de
+                        validação (email, CPF, cálculo de média).</li>
+                    <li><strong>Semana 2:</strong> Adicionar testes de integração para os endpoints principais
+                        (cadastro, busca, avaliação) com banco de dados de teste.</li>
+                    <li><strong>Semana 3:</strong> Implementar testes E2E para os dois fluxos críticos (cadastro de
+                        comerciante e busca por categoria) com Cypress.</li>
+                    <li><strong>Semana 4:</strong> Convidar Lucia Matos e Roseane Soares para testes de aceitação e
+                        usabilidade, documentando feedbacks.</li>
+                </ol>
+                <p><strong>Dica para projeto solo:</strong> Comece pelos <strong>testes unitários</strong> (baixo custo,
+                    alto retorno) antes de investir em testes E2E complexos. A cobertura de código é uma métrica amiga,
+                    mas não obsessão – priorize as partes críticas.</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>DELAMARO, Márcio Eduardo; MALDONADO, José Carlos; JINO, Mario. <strong>Introdução ao teste de
+                        software</strong>. Rio de Janeiro: Gen Ltc, 2016. ISBN 9788595155732.</cite></p>
+            <p><cite>GONÇALVES, Priscila de Fátima et al. <strong>Testes de software e gerência de
+                        configuração</strong>. Porto Alegre: Sagah, 2019. ISBN 9788595029361.</cite></p>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 9. ed. São Paulo: Pearson, 2011. ISBN
+                    9788579361081.</cite></p>
+            <p><cite>VALENTE, Marco Tulio. <strong>Engenharia de software moderna: princípios e práticas para
+                        desenvolvimento de software com produtividade</strong>. v.1, n.24, 2020. Disponível em:
+                    https://link.ufms.br/bljNp. Acesso em 20 dez 2024.</cite></p>
+            <p><cite>COHN, Mike. <strong>Succeeding with Agile: Software Development Using Scrum</strong>.
+                    Addison-Wesley, 2009.</cite></p>
+            <p><cite>MYERS, Glenford J.; SANDLER, Corey; BADGETT, Tom. <strong>The Art of Software Testing</strong>. 3.
+                    ed. Wiley, 2011.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 3 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 2: Teste de Software Aplicado ao
+            Cidade Virtual 🧪</p>
+    </footer>
+</body>
+
+</html>
