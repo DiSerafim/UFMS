@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PI-III - Checkout de Presença Módulo 2 | Plano de Testes - Cidade Virtual</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 2 - Teste de Software Aplicado</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <h4 style="color: white; margin-top: 5px;">Elaboração do Plano de Testes</h4>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und2-projeto-e-desenvolvimento-de-testes.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 2 Und 2
+            </a>
+            <a href="#" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Módulo 3 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="checkout-avaliacao-container">
+            <!-- Aviso de vencimento -->
+            <div class="deadline-box">
+                <i class="material-icons">access_time</i>
+                ⏰ Vencimento: segunda-feira, 20 abr. 2026, 23:59
+            </div>
+
+            <!-- Aviso de atenção -->
+            <div class="atencao-box">
+                <h3>
+                    <i class="material-icons">warning</i>
+                    🚨 Atenção!
+                </h3>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a carga horária de frequência do módulo.</p>
+                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte
+                        da avaliação da disciplina.</strong></p>
+                <p><i class="material-icons" style="vertical-align: middle;">info</i> Leia atentamente as orientações e
+                    conte com o apoio da tutoria para a elaboração da atividade.</p>
+            </div>
+
+            <!-- Aviso de arquivos -->
+            <div class="info-importante">
+                <h4>⚠️ Atenção: arquivos enviados em branco ou corrompidos</h4>
+                <p>Arquivos enviados em branco ou corrompidos que não sejam corrigidos após o feedback da tutoria terão
+                    <strong>nota zero atribuída, sem cômputo de carga horária, correspondendo à ausência no
+                        módulo.</strong>
+                </p>
+            </div>
+
+            <!-- ORIENTAÇÕES DO MÓDULO 2 -->
+            <section>
+                <h2>📚 Sobre a Atividade - Plano de Testes</h2>
+
+                <div class="info-importante">
+                    <p>Neste módulo, você deverá avançar no processo de <strong>garantia da qualidade do
+                            produto</strong> que está sendo desenvolvido por meio da construção de um <strong>Plano de
+                            Testes</strong> para a aplicação em desenvolvimento na ação de extensão.</p>
+                </div>
+
+                <div style="background-color: #e7f3f5; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>🎯 Essencialmente, o seu plano deverá apresentar:</strong></p>
+                    <ul>
+                        <li>Uma proposta de desenvolvimento de testes que considere a <strong>aplicação de diferentes
+                                tipos de testes</strong> e seus respectivos benefícios previstos para a aplicação.</li>
+                        <li><strong>Além disso, você deve considerar a aplicação de outros tipos de teste</strong> além
+                            daqueles estudados nas videoaulas.</li>
+                        <li>Lembre-se de <strong>explicitar no documento todas as decisões e ações</strong> que sejam
+                            tomadas.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- O QUE DEVE SER ENTREGUE -->
+            <section>
+                <h2>📋 O que deve ser entregue</h2>
+
+                <div class="orientacoes-grid">
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">assignment</i> Plano de Testes</h4>
+                        <p>Este plano deve ser elaborado conforme modelo disponível. Faça uma cópia do modelo e siga as
+                            orientações para a elaboração do <strong>Plano de Testes</strong>.</p>
+                        <p>O documento deve conter:</p>
+                        <ul>
+                            <li>✅ Introdução e objetivos dos testes</li>
+                            <li>✅ Escopo (o que será testado e o que será excluído)</li>
+                            <li>✅ Arquitetura e componentes alvo</li>
+                            <li>✅ Estratégias de teste por nível (unitário, integração, sistema)</li>
+                            <li>✅ Técnicas de teste (classes de equivalência, valor limite, etc.)</li>
+                            <li>✅ Casos de teste de exemplo</li>
+                            <li>✅ Ferramentas selecionadas</li>
+                            <li>✅ Métricas e critérios de aceitação</li>
+                            <li>✅ Cronograma de implementação</li>
+                        </ul>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">description</i> Template</h4>
+                        <p>Faça uma cópia do modelo e siga as orientações para a elaboração do <strong>Plano de
+                                Testes</strong>.</p>
+                        <div class="template-preview"
+                            onclick="window.open('https://docs.google.com/document/d/1yQPW6r9h4DPvttpf0XoQtpIWDFmzTZc2-WcGMnUR6hE/edit?usp=sharing', '_blank')">
+                            <h4><i class="material-icons">open_in_new</i> Acessar Template</h4>
+                            <p>Clique aqui para abrir o template completo do Plano de Testes</p>
+                            <p style="font-size: 0.8em; color: #666;">📎 Link:
+                                docs.google.com/document/d/1yQPW6r9h4DPvttpf0XoQtpIWDFmzTZc2-WcGMnUR6hE</p>
+                        </div>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">rule</i> Pré-avaliação</h4>
+                        <p><strong>⇒ Esta atividade pode e deve ser pré-avaliada pelo tutor da disciplina nos encontros
+                                síncronos da Tutoria, ANTES de ser postada pelo estudante em arquivo no formato
+                                PDF.</strong></p>
+                        <p style="color: #28a745; font-weight: 600;">✅ Importante: A avaliação do módulo depende da
+                            elaboração do planejamento e execução da ação de testes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TIPOS DE TESTES SUGERIDOS -->
+            <section>
+                <h2>🧪 Tipos de Testes a serem considerados</h2>
+                <p>Além dos testes estudados nas videoaulas (unitários, integração, sistema), considere incluir no seu
+                    plano:</p>
+
+                <div class="tab-grid">
+                    <div class="tab-card">
+                        <h4><i class="material-icons">security</i> Teste de Segurança</h4>
+                        <p>Verifica vulnerabilidades: injeção SQL, XSS, autenticação quebrada, JWT exposto, etc.</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">OWASP ZAP</div>
+                        <div class="tech-badge" style="background-color: #0066cc;">Snyk</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">speed</i> Teste de Carga e Stress</h4>
+                        <p>Avalia comportamento sob alta demanda simultânea (ex: 100 usuários buscando comércios).</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">K6</div>
+                        <div class="tech-badge" style="background-color: #0066cc;">JMeter</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">devices</i> Teste de Usabilidade</h4>
+                        <p>Avalia facilidade de uso com representantes da comunidade (Lucia Matos e Roseane Soares).</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">Teste com usuários</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">checklist</i> Teste de Aceitação</h4>
+                        <p>Validado com os stakeholders se o sistema atende aos critérios de negócio acordados.</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">Gherkin/Cucumber</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEU PLANO DE TESTES - RESOLUÇÃO -->
+            <section>
+                <h2>📄 Minha Resolução - Plano de Testes do Cidade Virtual</h2>
+
+                <div class="pdf-preview">
+                    <h4><i class="material-icons">picture_as_pdf</i> Plano de Testes - Projeto Cidade Virtual</h4>
+                    <p>Este é o <strong>Plano de Testes</strong> completo, elaborado para o <strong>Projeto Cidade
+                            Virtual</strong> (arquitetura MERN), contendo todos os requisitos exigidos no módulo 2 do
+                        PI-III:</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Projeto: Cidade
+                            Virtual - Conexão Comunitária</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Arquitetura: MERN
+                            (MongoDB, Express, React, Node.js)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Testes unitários:
+                            Jest (services, utils, models)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Testes de
+                            integração: Supertest (endpoints API)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Testes E2E: Cypress
+                            (fluxos principais)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Testes adicionais:
+                            segurança (JWT), carga (K6), usabilidade</div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                        <a href="pdf/Plano_Testes_Cidade_Virtual_Diego_Serafim.pdf" target="_blank"
+                            class="btn-visualizar">
+                            <i class="material-icons">visibility</i> Visualizar PDF
+                        </a>
+                        <a href="pdf/Plano_Testes_Cidade_Virtual_Diego_Serafim.pdf"
+                            download="Plano_Testes_Cidade_Virtual.pdf" class="btn-pdf">
+                            <i class="material-icons">download</i> Baixar PDF
+                        </a>
+                        <a href="https://docs.google.com/document/d/1yQPW6r9h4DPvttpf0XoQtpIWDFmzTZc2-WcGMnUR6hE/edit?usp=sharing"
+                            target="_blank" class="btn-template" style="background-color: #0066cc;">
+                            <i class="material-icons">open_in_new</i> Ver Template no Google Docs
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 15px; color: #28a745; font-weight: 600;">
+                        <i class="material-icons" style="font-size: 16px;">check_circle</i> Arquivo pronto para envio -
+                        Segue todas as normas ABNT NBR 6023/2018
+                    </p>
+                </div>
+
+                <!-- Resumo do plano -->
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong><i class="material-icons">insights</i> Resumo do Plano de Testes</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Objetivo geral:</strong> Garantir a qualidade e confiabilidade da plataforma Cidade
+                            Virtual por meio de uma estratégia de testes abrangente.</li>
+                        <li><strong>Componentes críticos priorizados:</strong> Cadastro de usuários
+                            (moradores/comerciantes/autônomos), Busca por categoria e proximidade, Sistema de
+                            avaliações, Autenticação JWT.</li>
+                        <li><strong>Ferramentas selecionadas:</strong> Jest (unitário), Supertest (integração), Cypress
+                            (E2E), K6 (carga), OWASP ZAP (segurança).</li>
+                        <li><strong>Métrica de sucesso:</strong> Cobertura mínima de 70% das linhas de código nos
+                            serviços críticos, 100% dos testes passando no pipeline de CI.</li>
+                        <li><strong>Cronograma:</strong> 4 semanas para implementação progressiva (unitário → integração
+                            → E2E → carga/segurança).</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 3 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">📍 Checkout de Presença e Avaliação - Módulo 2 | Projeto Cidade
+            Virtual - Plano de Testes</p>
+    </footer>
+</body>
+
+</html>
