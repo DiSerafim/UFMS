@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 3 | Desenvolvimento Seguro em Serviços Web</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 3 - Boas práticas em serviços web</h2>
+        <h3>🔒 Unidade 1 - Desenvolvimento seguro</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-v1-desenvolvimento-seguro.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 3 Und 1/1
+            </a>
+            <a href="mod3_und2-documentacao-e-versionamento-de-servicos.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 3 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/rrFVjyevis0" frameborder="0"
+                    title="Desenvolvimento Seguro - Boas práticas em serviços web"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Desenvolvimento Seguro em Serviços Web - UFMS Digital">
+                Desenvolvimento seguro com OWASP top 10
+            </p>
+            <p>Palestrante: Geovana Silva</p>
+            <p>📅 6 de abril de 2023</p>
+        </section>
+
+        <!-- INTRODUÇÃO À SEGURANÇA DE SOFTWARE -->
+        <section>
+            <h2>🔐 O que é desenvolvimento seguro?</h2>
+            <p>Construir software seguro exige ter o conhecimento básico dos <strong>princípios de segurança</strong>. O
+                objetivo principal é manter a <strong>confidencialidade, integridade e disponibilidade</strong> (tríade
+                CID) dos recursos de informação, permitindo operações bem-sucedidas do negócio.</p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">visibility_off</i>
+                    <h3>Confidencialidade</h3>
+                    <p>Garantir que apenas pessoas autorizadas tenham acesso à informação.</p>
+                    <div class="tech-badge" style="background-color: #0066cc;">Criptografia</div>
+                    <div class="tech-badge" style="background-color: #0066cc;">Controle de acesso</div>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">verified</i>
+                    <h3>Integridade</h3>
+                    <p>Assegurar que a informação não seja alterada por pessoas não autorizadas.</p>
+                    <div class="tech-badge" style="background-color: #0066cc;">Hashes</div>
+                    <div class="tech-badge" style="background-color: #0066cc;">Assinatura digital</div>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">wifi</i>
+                    <h3>Disponibilidade</h3>
+                    <p>Garantir que o sistema esteja acessível quando necessário.</p>
+                    <div class="tech-badge" style="background-color: #0066cc;">Redundância</div>
+                    <div class="tech-badge" style="background-color: #0066cc;">Backup</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCÍPIOS GERAIS - RISCO E AMEAÇA -->
+        <section>
+            <h2>⚠️ Entendendo riscos de segurança</h2>
+            <p>Um <strong>risco</strong> de segurança ocorre quando um agente de ameaça interage com um sistema, no qual
+                pode haver uma vulnerabilidade latente que pode ser explorada e causar um impacto.</p>
+
+            <div class="threat-card">
+                <h3><i class="material-icons">local_car_wash</i> Exemplo prático - Analogia do ladrão de carros</h3>
+                <p>Um <strong>ladrão de carros</strong> (agente de ameaça) passa por um estacionamento verificando os
+                    carros presentes (o <strong>sistema</strong>), procurando por <strong>portas destrancadas</strong>
+                    (a vulnerabilidade). Quando a encontra, <strong>abre a porta</strong> (a exploração) e leva para si
+                    o que está dentro do carro (o <strong>impacto</strong>).</p>
+                <p><strong>No Cidade Virtual:</strong> Um invasor (agente de ameaça) pode tentar acessar a API (sistema)
+                    procurando por endpoints sem autenticação (vulnerabilidade). Ao encontrar um, explora para extrair
+                    dados de comerciantes (impacto).</p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">warning</i> Falhas de segurança podem ser introduzidas em qualquer
+                    fase do ciclo de desenvolvimento:</strong>
+                <ul>
+                    <li>🔴 Não identificação das necessidades de segurança no início do projeto</li>
+                    <li>🔴 Arquiteturas com problemas de design</li>
+                    <li>🔴 Práticas de codificação ruins (ex: concatenação de SQL)</li>
+                    <li>🔴 Implantação de modo inapropriado (ex: debug ativo em produção)</li>
+                    <li>🔴 Inserção de vulnerabilidades durante manutenções</li>
+                </ul>
+            </div>
+
+            <div class="security-tip">
+                <strong><i class="material-icons">lightbulb</i> Insight importante:</strong>
+                <p>Na web, <strong>controles no cliente oferecem pouco ou nenhum benefício de segurança</strong>.
+                    Validações no front-end são úteis para experiência do usuário, mas nunca devem ser a única linha de
+                    defesa. Toda validação deve ser repetida no back-end.</p>
+            </div>
+        </section>
+
+        <!-- CAMADAS DE SEGURANÇA -->
+        <section>
+            <h2>🏰 Camadas de segurança</h2>
+            <p>A segurança não é uma camada única, mas sim um conjunto de medidas aplicadas em diferentes níveis. A
+                abordagem de <strong>defesa em profundidade</strong> recomenda múltiplas camadas de proteção.</p>
+
+            <div class="camada-grid">
+                <div class="camada-item">
+                    <i class="material-icons">dns</i>
+                    <h4>Infraestrutura</h4>
+                    <small>Redes, servidores, firewalls</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">code</i>
+                    <h4>Aplicação</h4>
+                    <small>Código, frameworks, bibliotecas</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">receipt</i>
+                    <h4>Log e Auditing</h4>
+                    <small>Registros, monitoramento</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">build</i>
+                    <h4>Ferramentas</h4>
+                    <small>Testes de segurança, SCA</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">cloud</i>
+                    <h4>Ambientes</h4>
+                    <small>Dev, staging, produção</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">people</i>
+                    <h4>Equipe</h4>
+                    <small>Treinamento, conscientização</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">api</i>
+                    <h4>API</h4>
+                    <small>Autenticação, rate limiting</small>
+                </div>
+                <div class="camada-item">
+                    <i class="material-icons">bug_report</i>
+                    <h4>Erros e Exceções</h4>
+                    <small>Tratamento, não exposição</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- OWASP TOP 10 -->
+        <section>
+            <h2>📊 OWASP Top 10 - Os riscos mais críticos</h2>
+            <p>O <strong>OWASP (Open Web Application Security Project)</strong> é uma organização sem fins lucrativos
+                que mantém o <strong>Top 10</strong>, um documento que lista as vulnerabilidades mais críticas em
+                aplicações web. *Uma nova versão está prevista para 2025.*</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A1</span> Controle de Acesso Quebrado</h4>
+                    <p>Usuários acessam funcionalidades ou dados para os quais não têm permissão.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A2</span> Falhas Criptográficas</h4>
+                    <p>Dados sensíveis trafegados ou armazenados sem proteção adequada.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A3</span> Injeção (SQL, NoSQL, Command)</h4>
+                    <p>Dados não confiáveis enviados a um interpretador como parte de um comando.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A4</span> Design Inseguro</h4>
+                    <p>Falhas arquiteturais que comprometem a segurança do sistema.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A5</span> Configuração Incorreta de Segurança</h4>
+                    <p>Configurações padrão inseguras, mensagens de erro detalhadas em produção.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A6</span> Componentes Vulneráveis</h4>
+                    <p>Uso de bibliotecas ou frameworks com CVEs conhecidas.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A7</span> Falhas de Identificação e Autenticação</h4>
+                    <p>Senhas fracas, gerenciamento inadequado de sessão.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A8</span> Falhas de Integridade de Software e Dados</h4>
+                    <p>Atualizações ou dados sem verificação de origem/integridade.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A9</span> Falhas de Monitoramento e Log</h4>
+                    <p>Ausência de auditoria e detecção de incidentes.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><span class="owasp-badge">A10</span> Falsificação de Requisição do Lado do Servidor</h4>
+                    <p>Servidor faz requisições não intencionadas para recursos internos/externos.</p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">book</i> Referência essencial</h4>
+                <p>Consulte o <strong>OWASP Cheat Sheet Series</strong> (https://cheatsheetseries.owasp.org/) para guias
+                    práticos de como implementar cada controle de segurança.</p>
+            </div>
+        </section>
+
+        <!-- RECOMENDAÇÕES PRÁTICAS -->
+        <section>
+            <h2>🛡️ Recomendações práticas por camada</h2>
+
+            <div class="checklist-seguranca">
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">storage</i> Infraestrutura</h4>
+                    <ul>
+                        <li>✅ Usar criptografia nos dados em trânsito (TLS/HTTPS) e em repouso</li>
+                        <li>✅ Proteger ambientes internos (firewalls, redes privadas)</li>
+                        <li>✅ Não usar componentes com vulnerabilidades conhecidas (CVEs)</li>
+                        <li>✅ Isolar ambientes de desenvolvimento, homologação e produção</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">web</i> Aplicação</h4>
+                    <ul>
+                        <li>✅ Usar bibliotecas e dependências atualizadas (<code>npm audit</code>, <code>snyk</code>)
+                        </li>
+                        <li>✅ Considerar autenticação de múltiplos fatores (MFA) para administradores</li>
+                        <li>✅ Armazenar senhas com hashes seguros (bcrypt, Argon2)</li>
+                        <li>✅ Criar política de senhas (mínimo 8 caracteres, complexidade)</li>
+                        <li>✅ Proteger contra requisições exaustivas (rate limiting)</li>
+                        <li>✅ Fazer gestão efetiva da sessão de usuário (timeout, logout)</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">receipt_long</i> Log e Auditing</h4>
+                    <ul>
+                        <li>✅ Monitoramento e resposta a incidentes</li>
+                        <li>✅ Manter registros de acessos de usuários (quem, quando, o quê)</li>
+                        <li>✅ Rastreabilidade de ações/operações críticas (ex: exclusão de comércio)</li>
+                        <li>✅ Proteger logs contra alteração/exclusão</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">build</i> Ferramentas</h4>
+                    <ul>
+                        <li>✅ Usar ferramentas de testes de segurança (OWASP ZAP, Snyk)</li>
+                        <li>✅ Executar processos externos de auditoria</li>
+                        <li>✅ Realizar versionamento de projeto e código (Git)</li>
+                        <li>✅ Implementar SAST (análise estática) no pipeline CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">api</i> API</h4>
+                    <ul>
+                        <li>✅ Adotar verificações de autorização em cada endpoint</li>
+                        <li>✅ Evitar expor dados em excesso (não retornar campos internos)</li>
+                        <li>✅ Tratar adequadamente dados das requisições (validação, sanitização)</li>
+                        <li>✅ Proteger contra ataques força-bruta (rate limiting, captcha)</li>
+                        <li>✅ Configurar adequadamente CORS (não usar <code>*</code> em produção)</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">error</i> Erros e Exceções</h4>
+                    <ul>
+                        <li>✅ Não expor stack traces em produção</li>
+                        <li>✅ Usar mensagens de erro genéricas para o usuário</li>
+                        <li>✅ Registrar detalhes internamente (logs)</li>
+                        <li>✅ Tratar exceções de forma consistente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEGURANÇA NO CIDADE VIRTUAL -->
+        <section>
+            <h2>🏙️ Aplicando segurança no Cidade Virtual</h2>
+            <p>Com base nos princípios e recomendações apresentados, o projeto Cidade Virtual deve incorporar as
+                seguintes práticas de segurança:</p>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">check_circle</i> Controles já implementados ou planejados</h4>
+                <ul>
+                    <li><strong>Autenticação JWT</strong> com refresh token e tempo de expiração (1 hora para access
+                        token, 7 dias para refresh)</li>
+                    <li><strong>Bcrypt</strong> para hashing de senhas (fator de custo 10)</li>
+                    <li><strong>HTTPS</strong> obrigatório via Vercel (certificado automático)</li>
+                    <li><strong>Validação de entrada</strong> em todos os endpoints (express-validator)</li>
+                    <li><strong>Sanitização</strong> contra XSS e NoSQL Injection</li>
+                    <li><strong>Rate limiting</strong> no endpoint de login (5 tentativas em 15 minutos)</li>
+                    <li><strong>CORS restrito</strong> apenas para o domínio da aplicação front-end</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">code</i> Exemplo prático - Middleware de autenticação no Cidade Virtual
+                </h4>
+                <pre>
+// middleware/auth.js
+const jwt = require('jsonwebtoken');
+
+const authMiddleware = (req, res, next) => {
+    // 1. Obter token do header Authorization
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'Token não fornecido' });
+    }
+    
+    const token = authHeader.split(' ')[1];
+    
+    try {
+        // 2. Verificar e decodificar token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        
+        // 3. Anexar usuário à requisição
+        req.user = decoded;
+        
+        // 4. Verificar se o usuário tem permissão para acessar o recurso
+        if (req.params.id && req.user.id !== req.params.id && req.user.tipo !== 'admin') {
+            return res.status(403).json({ error: 'Acesso negado' });
+        }
+        
+        next();
+    } catch (error) {
+        return res.status(401).json({ error: 'Token inválido ou expirado' });
+    }
+};</pre>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">verified</i> Exemplo prático - Validação e sanitização de entrada</h4>
+                <pre>
+// Validação com express-validator
+const { body, validationResult } = require('express-validator');
+
+const validarCadastro = [
+    body('email').isEmail().normalizeEmail(),
+    body('senha').isLength({ min: 8 }).trim(),
+    body('nome').trim().escape(),
+    body('tipo').isIn(['morador', 'comerciante', 'autonomo']),
+    
+    (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        next();
+    }
+];</pre>
+            </div>
+        </section>
+
+        <!-- TESTES DE SEGURANÇA -->
+        <section>
+            <h2>🔬 Testes de segurança</h2>
+            <p>Para validar as práticas de segurança implementadas, devem ser realizados testes específicos:</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">speed</i> Teste de força-bruta</h4>
+                    <p>Verificar se o rate limiting está funcionando: tentar login 10 vezes com senha errada em
+                        sequência.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">bug_report</i> Teste de injeção</h4>
+                    <p>Tentar inserir <code>' OR '1'='1</code> em campos de busca para testar proteção contra SQL/NoSQL
+                        injection.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">code</i> Teste de XSS</h4>
+                    <p>Tentar inserir <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code> em campos que aceitam texto
+                        livre.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">api</i> Teste de autorização</h4>
+                    <p>Tentar acessar endpoint de outro usuário com token diferente (ex: morador tentando editar
+                        comércio de outro).</p>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <strong><i class="material-icons">auto_awesome</i> Ferramentas automatizadas recomendadas:</strong>
+                <ul>
+                    <li><strong>OWASP ZAP</strong> - Scanner de vulnerabilidades em aplicações web</li>
+                    <li><strong>Snyk</strong> - Verificação de vulnerabilidades em dependências (<code>snyk test</code>)
+                    </li>
+                    <li><strong>npm audit</strong> - Verificação nativa do Node.js para pacotes vulneráveis</li>
+                    <li><strong>ESLint com plugin de segurança</strong> - Análise estática para padrões inseguros</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- VISÃO INTEGRADORA -->
+        <section>
+            <h2>🔁 Visão integradora - Por onde começar?</h2>
+            <p>Para incorporar desenvolvimento seguro no Cidade Virtual, siga estas etapas práticas:</p>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">1</span>
+                    <h3>Incorpore práticas de desenvolvimento seguro desde a concepção</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Já nas fases iniciais, defina que a segurança é requisito não-funcional obrigatório, não um
+                        "plus".</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">2</span>
+                    <h3>Defina os requisitos de segurança no início</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Ex: autenticação obrigatória para endpoints de escrita, tempo de sessão de 1 hora, etc.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">3</span>
+                    <h3>Faça revisões e auditorias no projeto/código</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Utilize checklists de segurança (como o OWASP ASVS) durante as inspeções de código.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">4</span>
+                    <h3>Faça testes de segurança</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Execute OWASP ZAP periodicamente e após cada alteração significativa.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5</span>
+                    <h3>Use ferramentas automatizadas</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Integre <code>npm audit</code> e <code>snyk</code> ao pipeline de CI/CD (GitHub Actions).</p>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <strong><i class="material-icons">assignment</i> Checklist rápido para o Cidade Virtual:</strong>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                    <div>☐ HTTPS ativo</div>
+                    <div>☐ Senhas com bcrypt</div>
+                    <div>☐ JWT com expiração</div>
+                    <div>☐ Rate limiting no login</div>
+                    <div>☐ Validação de entrada</div>
+                    <div>☐ Sanitização de saída</div>
+                    <div>☐ CORS restrito</div>
+                    <div>☐ Logs de acesso</div>
+                    <div>☐ npm audit periódico</div>
+                    <div>☐ Variáveis de ambiente</div>
+                    <div>☐ .env no .gitignore</div>
+                    <div>☐ Mensagens de erro genéricas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>OWASP FOUNDATION. <strong>OWASP Top Ten 2021</strong>. Disponível em: https://link.ufms.br/x0AMA.
+                    Acesso em: 12 fev. 2025.</cite></p>
+            <p><cite>OWASP FOUNDATION. <strong>Security Fundamentals</strong>. Disponível em:
+                    https://link.ufms.br/nbl2h. Acesso em: 12 fev. 2025.</cite></p>
+            <p><cite>OWASP FOUNDATION. <strong>Cheat Sheet Series</strong>. Disponível em:
+                    https://cheatsheetseries.owasp.org/. Acesso em: 21 mai. 2026.</cite></p>
+            <p><cite>NETO, Tarcizio Vieira. <strong>Modelo de processo para desenvolvimento de aplicações
+                        seguras</strong>. Disponível em: https://link.ufms.br/nsb26. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>PRESSMAN, Roger S. <strong>Engenharia de Software: uma abordagem profissional</strong>. 8. ed.
+                    Porto Alegre: AMGH, 2016. Capítulo 14 (Segurança de Software).</cite></p>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 10. ed. São Paulo: Pearson, 2018.
+                    Capítulo 12 (Segurança e Engenharia de Software).</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 3: Desenvolvimento Seguro aplicado
+            ao Cidade Virtual 🔒</p>
+    </footer>
+</body>
+
+</html>
