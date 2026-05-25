@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 3 | Documentação e Versionamento de Serviços</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 3 - Boas práticas em serviços web</h2>
+        <h3>📚 Unidade 2 - Documentação e versionamento de serviços</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-v2-desenvolvimento-seguro.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 3 Und 1/2
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 3 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KqBH258z0Uo" frameborder="0"
+                    title="Documentação e versionamento de serviços web"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Documentação e versionamento de serviços - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 3 - Unidade 2
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 21 de maio de 2026</p>
+        </section>
+
+        <!-- INTRODUÇÃO - DOCUMENTAÇÃO DE APIs -->
+        <section>
+            <h2>📖 Documentação de APIs: O que é e por que é essencial?</h2>
+            <p>A economia global atual é <strong>multi-plataforma e conectada por APIs</strong>. Plataformas são
+                produtos que podem ser estendidos e usados por terceiros para benefício próprio. Desenvolvedores buscam
+                entender como usar APIs de forma efetiva, e nesse cenário, a <strong>documentação se torna um ponto
+                    crítico</strong>.</p>
+
+            <div class="api-card">
+                <h3><i class="material-icons">description</i> O que é documentação de API?</h3>
+                <p>São documentos técnicos criados e distribuídos pela equipe de desenvolvimento, contendo instruções de
+                    como usar efetivamente e integrar com outras APIs. Tratam-se de <strong>manuais concisos</strong>
+                    com toda informação necessária para trabalhar com a API.</p>
+                <p><strong>Uma boa documentação deve detalhar:</strong></p>
+                <ul>
+                    <li>✅ Funções/serviços disponíveis (endpoints)</li>
+                    <li>✅ Estrutura de dados usadas (schemas)</li>
+                    <li>✅ Argumentos necessários (parâmetros, headers, body)</li>
+                    <li>✅ Respostas esperadas (códigos HTTP, exemplos)</li>
+                    <li>✅ Autenticação e autorização (JWT, API keys)</li>
+                    <li>✅ Códigos de erro e seus significados</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">trending_up</i> Por que documentar APIs?</strong>
+                <ul>
+                    <li><strong>Melhoria da adoção por usuários</strong> - API bem documentada é mais fácil de ser
+                        integrada</li>
+                    <li><strong>Maior conscientização</strong> - Equipes entendem limites e capacidades</li>
+                    <li><strong>Redução do tempo de suporte e custos</strong> - Menos dúvidas repetitivas</li>
+                    <li><strong>Melhoria da manutenção</strong> - Documentação serve como especificação viva</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- OPENAPI E SWAGGER -->
+        <section>
+            <h2>🔧 OpenAPI e Swagger - Padrões para documentação</h2>
+            <p>A <strong>OpenAPI Specification (OAS)</strong> é um formato para especificação de APIs REST que pode ser
+                escrita em <strong>YAML ou JSON</strong>. O <strong>Swagger</strong> é um conjunto de ferramentas
+                open-source que implementa as especificações do OpenAPI.</p>
+
+            <div class="swagger-preview">
+                <pre style="margin: 0; color: #e8e8e8;">
+<span class="key">openapi</span>: <span class="string">"3.0.0"</span>
+<span class="key">info</span>:
+  <span class="key">title</span>: <span class="string">"API Cidade Virtual"</span>
+  <span class="key">description</span>: <span class="string">"Plataforma para conexão comunitária"</span>
+  <span class="key">version</span>: <span class="string">"1.0.0"</span>
+<span class="key">servers</span>:
+  - <span class="key">url</span>: <span class="string">"https://api.cidadevirtual.vercel.app/v1"</span>
+<span class="key">paths</span>:
+  <span class="key">/comercios</span>:
+    <span class="key">get</span>:
+      <span class="key">summary</span>: <span class="string">"Lista comércios"</span>
+      <span class="key">parameters</span>:
+        - <span class="key">name</span>: <span class="string">"categoria"</span>
+          <span class="key">in</span>: <span class="string">"query"</span>
+          <span class="key">schema</span>:
+            <span class="key">type</span>: <span class="string">"string"</span>
+      <span class="key">responses</span>:
+        <span class="string">'200'</span>:
+          <span class="key">description</span>: <span class="string">"Lista de comércios"</span></pre>
+            </div>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">edit_note</i>
+                    <h4>Swagger Editor</h4>
+                    <p>Editor online para criar e validar especificações OpenAPI</p>
+                    <a href="https://editor.swagger.io" target="_blank">editor.swagger.io</a>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">description</i>
+                    <h4>Swagger UI</h4>
+                    <p>Interface interativa que renderiza a documentação a partir da especificação</p>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">code</i>
+                    <h4>Swagger Codegen</h4>
+                    <p>Gera clientes SDK e stubs de servidor a partir da especificação</p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">link</i> Recursos úteis</h4>
+                <ul>
+                    <li><strong>Especificação OpenAPI:</strong> <a href="https://swagger.io/specification"
+                            target="_blank">https://swagger.io/specification</a></li>
+                    <li><strong>Swagger Editor Online:</strong> <a href="https://editor.swagger.io"
+                            target="_blank">https://editor.swagger.io</a></li>
+                    <li><strong>OpenAPI Guide:</strong> <a href="https://link.ufms.br/yiSJl"
+                            target="_blank">https://link.ufms.br/yiSJl</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ESTRUTURA BÁSICA DO OPENAPI -->
+        <section>
+            <h2>🏗️ Estrutura básica do OpenAPI</h2>
+            <p>Uma especificação OpenAPI bem estruturada contém as seguintes seções principais:</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">info</i> Metadados</h4>
+                    <p>Informações sobre a API: título, descrição, versão, contato, licença.</p>
+                    <div class="version-example" style="font-size: 0.8em;">
+                        <pre>info:
+  title: "API Cidade Virtual"
+  version: "1.0.0"
+  description: "..."]</pre>
+                    </div>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">dns</i> Servidores</h4>
+                    <p>Endereços base onde a API está disponível (produção, homologação, desenvolvimento).</p>
+                    <div class="version-example" style="font-size: 0.8em;">
+                        <pre>servers:
+  - url: "https://api.cidadevirtual.vercel.app/v1"
+  - url: "http://localhost:3000/api"</pre>
+                    </div>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">route</i> Caminhos (Paths)</h4>
+                    <p>Endpoints individuais e seus métodos HTTP (GET, POST, PUT, DELETE).</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">tune</i> Parâmetros</h4>
+                    <p>Query params, path params, headers, body com tipos e validações.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">code</i> Schemas</h4>
+                    <p>Definições das estruturas de dados (usuário, comércio, avaliação, etc.)</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">security</i> Segurança</h4>
+                    <p>Esquemas de autenticação (JWT, OAuth2, API Key).</p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">api</i> Exemplo: Documentação OpenAPI do endpoint de comércios (Cidade
+                    Virtual)</h4>
+                <pre>
+<span class="key">paths</span>:
+  <span class="key">/comercios</span>:
+    <span class="key">get</span>:
+      <span class="key">summary</span>: <span class="string">"Lista todos os comércios"</span>
+      <span class="key">parameters</span>:
+        - <span class="key">name</span>: <span class="string">"categoria"</span>
+          <span class="key">in</span>: <span class="string">"query"</span>
+          <span class="key">description</span>: <span class="string">"Filtrar por categoria"</span>
+          <span class="key">schema</span>:
+            <span class="key">type</span>: <span class="string">"string"</span>
+            <span class="key">enum</span>: [<span class="string">"alimentacao"</span>, <span class="string">"servicos"</span>, <span class="string">"comercio"</span>]
+        - <span class="key">name</span>: <span class="string">"page"</span>
+          <span class="key">in</span>: <span class="string">"query"</span>
+          <span class="key">schema</span>:
+            <span class="key">type</span>: <span class="string">"integer"</span>
+            <span class="key">default</span>: <span class="string">1</span>
+      <span class="key">responses</span>:
+        <span class="string">'200'</span>:
+          <span class="key">description</span>: <span class="string">"OK"</span>
+          <span class="key">content</span>:
+            <span class="key">application/json</span>:
+              <span class="key">schema</span>:
+                <span class="key">type</span>: <span class="string">"array"</span>
+                <span class="key">items</span>:
+                  <span class="err">$</span><span class="key">ref</span>: <span class="string">"#/components/schemas/Comercio"</span>
+    <span class="key">post</span>:
+      <span class="key">summary</span>: <span class="string">"Cria um novo comércio"</span>
+      <span class="key">security</span>:
+        - <span class="key">bearerAuth</span>: []
+      <span class="key">requestBody</span>:
+        <span class="key">required</span>: <span class="string">true</span>
+        <span class="key">content</span>:
+          <span class="key">application/json</span>:
+            <span class="key">schema</span>:
+              <span class="err">$</span><span class="key">ref</span>: <span class="string">"#/components/schemas/NovoComercio"</span>
+      <span class="key">responses</span>:
+        <span class="string">'201'</span>:
+          <span class="key">description</span>: <span class="string">"Criado com sucesso"</span>
+        <span class="string">'401'</span>:
+          <span class="key">description</span>: <span class="string">"Não autorizado"</span></pre>
+            </div>
+        </section>
+
+        <!-- DOCUMENTAÇÃO COMO CÓDIGO -->
+        <section>
+            <h2>📝 Documentação como código (Documentation as Code)</h2>
+            <p>Manter a documentação atualizada pode ser desafiador e, em muitos casos, desenvolvedores acabam sendo
+                negligentes. <strong>Processos integrados podem facilitar a atualização</strong>, como defendido pela
+                filosofia <strong>"documentation as code"</strong>.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">sync_alt</i> Benefícios da documentação como código:</strong>
+                <ul>
+                    <li>✅ Documentação versionada junto com o código (Git)</li>
+                    <li>✅ Geração automática a partir de anotações/comentários</li>
+                    <li>✅ Redução de inconsistências entre código e documentação</li>
+                    <li>✅ Possibilidade de revisão em pull requests</li>
+                    <li>✅ Ferramentas de CI podem validar a documentação</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">code</i> Exemplo: Documentação com anotações no Node.js/Express
+                    (swagger-jsdoc)</h4>
+                <pre>
+// routes/comercios.js
+/**
+ * @swagger
+ * /api/comercios:
+ *   get:
+ *     summary: Lista todos os comércios
+ *     tags: [Comércios]
+ *     parameters:
+ *       - in: query
+ *         name: categoria
+ *         schema:
+ *           type: string
+ *         description: Filtrar por categoria
+ *     responses:
+ *       200:
+ *         description: Lista de comércios
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Comercio'
+ */
+router.get('/comercios', async (req, res) => {
+    const { categoria } = req.query;
+    const filtro = categoria ? { categoria } : {};
+    const comercios = await Comercio.find(filtro);
+    res.json(comercios);
+});</pre>
+                <p><strong>Frameworks com suporte nativo ou bibliotecas:</strong> SpringDoc (Java), FastAPI (Python),
+                    NestJS (JavaScript), swagger-jsdoc (Node.js)</p>
+            </div>
+        </section>
+
+        <!-- VERSIONAMENTO DE SERVIÇOS -->
+        <section>
+            <h2>🔄 Versionamento de serviços - Criando APIs retrocompatíveis</h2>
+            <p>Serviços se modificam e novas demandas surgem. Serviços estabelecem <strong>contratos de uso</strong> com
+                seus clientes; mas e se precisamos alterá-los?</p>
+
+            <div class="api-card">
+                <h3><i class="material-icons">warning</i> O problema: múltiplos clientes, diferentes versões</h3>
+                <p>Imagine que sua API é consumida por:</p>
+                <ul>
+                    <li>📱 Aplicação mobile (versão antiga e nova)</li>
+                    <li>💻 Web app (sempre atualizado)</li>
+                    <li>🔌 Integrações com parceiros (terceiros)</li>
+                </ul>
+                <p>Se você modificar a API de forma quebrável (ex: renomear campo, remover endpoint), <strong>todos os
+                        clientes param de funcionar</strong>. O versionamento resolve esse problema.</p>
+            </div>
+
+            <h3>Estratégias de versionamento</h3>
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <h4><span class="badge-version">URL</span> Versionamento na URL</h4>
+                    <p>Deixa evidente a versão utilizada. Fácil de criar regras de roteamento.</p>
+                    <div class="version-example">
+                        <code>https://api.cidadevirtual.vercel.app/v1/comercios</code><br>
+                        <code>https://v1.api.cidadevirtual.vercel.app/comercios</code>
+                    </div>
+                    <p><strong>Vantagem:</strong> Visível, fácil cache, fácil roteamento<br>
+                        <strong>Desvantagem:</strong> "Polui" a URL
+                    </p>
+                </div>
+
+                <div class="comparacao-card">
+                    <h4><span class="badge-version">Query</span> Versionamento via parâmetro</h4>
+                    <p>Adiciona um parâmetro de query indicando a versão.</p>
+                    <div class="version-example">
+                        <code>https://api.cidadevirtual.vercel.app/comercios?version=1</code>
+                    </div>
+                    <p><strong>Vantagem:</strong> Simples<br>
+                        <strong>Desvantagem:</strong> Pouco escalável, difícil roteamento
+                    </p>
+                </div>
+
+                <div class="comparacao-card">
+                    <h4><span class="badge-version">Header</span> Versionamento via cabeçalho</h4>
+                    <p>Transferência por meio de metadados na requisição.</p>
+                    <div class="version-example">
+                        <code>Accept-Version: v1</code><br>
+                        <code>Accept: application/vnd.cidadevirtual+json;version=1.0</code>
+                    </div>
+                    <p><strong>Vantagem:</strong> Flexível, URI limpa<br>
+                        <strong>Desvantagem:</strong> Menos visível, requer documentação
+                    </p>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <h4><i class="material-icons">star</i> Recomendação para o Cidade Virtual</h4>
+                <p>Adotar <strong>versionamento na URL</strong> (ex: <code>/v1/comercios</code>) por ser mais simples,
+                    explícito e compatível com o ecossistema Vercel. Para mudanças que quebram compatibilidade, criar
+                    <code>/v2</code> e manter <code>/v1</code> funcionando por um período de transição (ex: 6 meses).
+                </p>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">code</i> Exemplo prático: Implementação de versionamento no Express</h4>
+                <pre>
+// server.js
+const express = require('express');
+const app = express();
+
+// Versão 1 da API
+const v1Router = express.Router();
+v1Router.get('/comercios', (req, res) => {
+    // Retorna comércios no formato original
+    res.json({ version: 'v1', data: comerciosV1 });
+});
+
+// Versão 2 da API (com novos campos)
+const v2Router = express.Router();
+v2Router.get('/comercios', (req, res) => {
+    // Retorna comércios com campos adicionais (ex: horario_expandido)
+    res.json({ version: 'v2', data: comerciosV2 });
+});
+
+// Registrar versões
+app.use('/v1', v1Router);
+app.use('/v2', v2Router);
+
+// Redirecionamento padrão para a versão mais recente
+app.use('/api', (req, res) => {
+    res.redirect(`/v1${req.url}`);
+});</pre>
+            </div>
+        </section>
+
+        <!-- BOAS PRÁTICAS DE VERSIONAMENTO -->
+        <section>
+            <h2>📏 Boas práticas de versionamento de APIs</h2>
+
+            <div class="checklist-seguranca">
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">looks_one</i> Versionamento Semântico</h4>
+                    <p>Adote <strong>SemVer (MAJOR.MINOR.PATCH)</strong> para suas APIs: v1.2.3</p>
+                    <ul>
+                        <li><strong>MAJOR:</strong> Mudança que quebra compatibilidade</li>
+                        <li><strong>MINOR:</strong> Nova funcionalidade, compatível</li>
+                        <li><strong>PATCH:</strong> Correção de bug, compatível</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">timeline</i> Depreciação gradual</h4>
+                    <p>Anuncie versões antigas como "deprecated" antes de removê-las.</p>
+                    <ul>
+                        <li>Adicionar header <code>Deprecation: true</code></li>
+                        <li>Informar data de remoção: <code>Sunset: "2026-12-31"</code></li>
+                        <li>Manter versão antiga por pelo menos 6 meses</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">api</i> Mudanças compatíveis (não quebram)</h4>
+                    <ul>
+                        <li>✅ Adicionar novo endpoint</li>
+                        <li>✅ Adicionar campo opcional na resposta</li>
+                        <li>✅ Adicionar novo parâmetro com valor padrão</li>
+                        <li>❌ Remover campo existente</li>
+                        <li>❌ Renomear campo</li>
+                        <li>❌ Alterar tipo de dado</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item-seg">
+                    <h4><i class="material-icons">menu_book</i> Documente o versionamento</h4>
+                    <p>Na documentação (Swagger/OpenAPI), deixe claro:</p>
+                    <ul>
+                        <li>Qual versão está sendo documentada</li>
+                        <li>Links para versões anteriores</li>
+                        <li>Changelog de mudanças entre versões</li>
+                        <li>Datas de depreciação planejadas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTAÇÃO DE JORNADAS DE USUÁRIO -->
+        <section>
+            <h2>👥 Documentação de jornadas de usuário</h2>
+            <p>Além da documentação técnica da API, é importante documentar as <strong>jornadas de usuário</strong> da
+                aplicação, especialmente para projetos de extensão que envolvem a comunidade.</p>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">map</i> Exemplo: Jornada do Comerciante no Cidade Virtual</h4>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">1</span>
+                        <span>Acessa o site e clica em "Registrar"</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">2</span>
+                        <span>Preenche dados (nome, e-mail, senha, tipo: comerciante)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">3</span>
+                        <span>Confirma e-mail (envio de link)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">4</span>
+                        <span>Faz login com e-mail e senha</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">5</span>
+                        <span>Acessa painel → "Cadastrar Comércio"</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">6</span>
+                        <span>Preenche informações (nome, categoria, endereço, telefone)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="badge-version" style="background-color: #0066cc;">7</span>
+                        <span>Publica → comércio visível na busca</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">receipt</i> Formatos recomendados para documentação de
+                    jornadas:</strong>
+                <ul>
+                    <li><strong>Histórias de usuário:</strong> "Como um comerciante, quero cadastrar meu negócio para
+                        que clientes me encontrem"</li>
+                    <li><strong>Diagramas de sequência UML</strong> para fluxos complexos</li>
+                    <li><strong>User journey maps</strong> com emoções e pontos de dor</li>
+                    <li><strong>Vídeos tutoriais</strong> para usuários com baixa familiaridade digital</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- VISÃO INTEGRADORA -->
+        <section>
+            <h2>🔁 Visão integradora - Proposta para o Cidade Virtual</h2>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">1</span>
+                    <h3>Documentação da API com Swagger/OpenAPI</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Criar arquivo <code>openapi.yaml</code> documentando todos os endpoints. Hospedar a documentação
+                        interativa via Swagger UI no endpoint <code>/api/docs</code>.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">2</span>
+                    <h3>Documentação como código</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Utilizar <code>swagger-jsdoc</code> para gerar documentação automaticamente a partir de
+                        comentários JSDoc nas rotas e controllers.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">3</span>
+                    <h3>Versionamento da API</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Adotar <strong>/v1/</strong> nas URLs. Para futuras mudanças que quebrem compatibilidade, criar
+                        <strong>/v2/</strong> e manter versão anterior por 6 meses.
+                    </p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">4</span>
+                    <h3>Documentação de jornadas de usuário</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Criar um manual do usuário em PDF com prints e passo a passo para comerciantes e moradores,
+                        disponível no site.</p>
+                </div>
+            </div>
+
+            <div class="template-container" style="margin-top: 20px;">
+                <div class="template-header">
+                    <h3>📋 Atividade de Checkout - Módulo 3</h3>
+                </div>
+                <p>Você deverá <strong>mapear, propor e disponibilizar uma estratégia de documentação</strong> para a
+                    aplicação projetada e desenvolvida no âmbito da disciplina Projeto Integrador.</p>
+                <p>Além de documentos técnicos para serviços internos, considere uma <strong>proposta de documentação de
+                        jornadas de usuário</strong> da aplicação.</p>
+                <p><strong>Entregáveis esperados:</strong></p>
+                <ul>
+                    <li>Especificação OpenAPI da API do Cidade Virtual</li>
+                    <li>Documentação interativa (Swagger UI) disponível em ambiente de homologação</li>
+                    <li>Estratégia de versionamento definida (URL com /v1/, /v2/)</li>
+                    <li>Manual do usuário (jornadas) para comerciantes e moradores</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>OPENAPI INITIATIVE. <strong>Getting started: OpenAPI documentation</strong>. Disponível em:
+                    https://link.ufms.br/yiSJl. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>SAUDATE, Alexandre. <strong>APIs REST: seus serviços prontos para o mundo real</strong>. São Paulo:
+                    Casa do Código, 2021.</cite></p>
+            <p><cite>NETO, Tarcizio Vieira. <strong>Modelo de processo para desenvolvimento de aplicações
+                        seguras</strong>. Disponível em: https://link.ufms.br/nsb26. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>SWAGGER.IO. <strong>OpenAPI Specification</strong>. Disponível em:
+                    https://swagger.io/specification/. Acesso em: 21 mai. 2026.</cite></p>
+            <p><cite>FIELDING, Roy Thomas. <strong>Architectural Styles and the Design of Network-based Software
+                        Architectures</strong>. Doctoral dissertation, UC Irvine, 2000.</cite></p>
+            <p><cite>RICHARDSON, Leonard; AMUNDSEN, Mike; RUBY, Sam. <strong>RESTful Web APIs</strong>. O'Reilly Media,
+                    2013.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 3: Documentação e Versionamento de
+            Serviços aplicado ao Cidade Virtual 📚</p>
+    </footer>
+</body>
+
+</html>
