@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PI-III - Checkout de Presença Módulo 3 | Plano de Desenvolvimento Seguro - Cidade Virtual</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 3 - Boas práticas em serviços web</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <h4 style="color: white; margin-top: 5px;">Plano para Desenvolvimento Seguro</h4>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und2-documentacao-e-versionamento-de-servicos.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 3 Und 2
+            </a>
+            <a href="#" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Módulo 4 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <div class="checkout-avaliacao-container">
+            <!-- Aviso de vencimento -->
+            <div class="deadline-box">
+                <i class="material-icons">access_time</i>
+                ⏰ Vencimento: segunda-feira, 11 mai. 2026, 23:59
+            </div>
+
+            <!-- Aviso de atenção -->
+            <div class="atencao-box">
+                <h3>
+                    <i class="material-icons">warning</i>
+                    🚨 Atenção!
+                </h3>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a carga horária de frequência do módulo.</p>
+                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte
+                        da avaliação da disciplina.</strong></p>
+                <p><i class="material-icons" style="vertical-align: middle;">info</i> Leia atentamente as orientações e
+                    conte com o apoio da tutoria para a elaboração da atividade.</p>
+            </div>
+
+            <!-- Aviso de arquivos -->
+            <div class="info-importante">
+                <h4>⚠️ Atenção: arquivos enviados em branco ou corrompidos</h4>
+                <p>Arquivos enviados em branco ou corrompidos que não sejam corrigidos após o feedback da tutoria terão
+                    <strong>nota zero atribuída, sem cômputo de carga horária, correspondendo à ausência no
+                        módulo.</strong>
+                </p>
+            </div>
+
+            <!-- ORIENTAÇÕES DO MÓDULO 3 -->
+            <section>
+                <h2>📚 Sobre a Atividade - Plano para Desenvolvimento Seguro</h2>
+
+                <div class="info-importante">
+                    <p>No Módulo 3, foi discutida a importância da adoção de <strong>medidas que tornem o processo de
+                            desenvolvimento mais seguro</strong> a partir de práticas e políticas em diversas camadas do
+                        processo.</p>
+                </div>
+
+                <div style="background-color: #e7f3f5; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>🎯 Nesta atividade, você deverá elaborar um <strong>Plano de Desenvolvimento
+                                Seguro</strong> com ações propositivas para a melhoria do processo e da aplicação em
+                            desenvolvimento na ação de extensão desta disciplina.</strong></p>
+                </div>
+            </section>
+
+            <!-- O QUE DEVE SER ENTREGUE -->
+            <section>
+                <h2>📋 O que deve ser entregue</h2>
+
+                <div class="orientacoes-grid">
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">assignment</i> Plano de Desenvolvimento Seguro</h4>
+                        <p>Este plano deve ser elaborado conforme modelo disponibilizado, contendo informações que
+                            descrevam:</p>
+                        <ul>
+                            <li>✅ Características da aplicação</li>
+                            <li>✅ Aspectos de segurança que podem potencialmente impactar seus usuários</li>
+                            <li>✅ Objetivos e resultados esperados</li>
+                            <li>✅ Lista de práticas para diferentes camadas de segurança</li>
+                            <li>✅ Proposta para implantação das práticas e políticas de governança</li>
+                            <li>✅ Cronograma de implantação</li>
+                        </ul>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">description</i> Template</h4>
+                        <p>Faça uma cópia do modelo e siga as orientações para a elaboração do <strong>Plano para
+                                Desenvolvimento Seguro</strong>.</p>
+                        <div class="template-preview"
+                            onclick="window.open('https://docs.google.com/document/d/1OBYynwWTIVTO6_xIl76FHnMJMNiSJeWNXtkFwkTaTwo/edit?usp=sharing', '_blank')">
+                            <h4><i class="material-icons">open_in_new</i> Acessar Template</h4>
+                            <p>Clique aqui para abrir o template completo do Plano para Desenvolvimento Seguro</p>
+                            <p style="font-size: 0.8em; color: #666;">📎 Link:
+                                docs.google.com/document/d/1OBYynwWTIVTO6_xIl76FHnMJMNiSJeWNXtkFwkTaTwo</p>
+                        </div>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">rule</i> Pré-avaliação</h4>
+                        <p><strong>⇒ Esta atividade pode e deve ser pré-avaliada pelo tutor da disciplina nos encontros
+                                síncronos da Tutoria, ANTES de ser postada pelo estudante em arquivo no formato
+                                PDF.</strong></p>
+                        <p style="color: #28a745; font-weight: 600;">✅ Importante: A avaliação do módulo depende da
+                            elaboração do planejamento da segurança.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CAMADAS DE SEGURANÇA A SEREM CONSIDERADAS -->
+            <section>
+                <h2>🛡️ Camadas de segurança a serem abordadas</h2>
+                <p>O plano deve considerar práticas para diferentes camadas, conforme estudado na unidade:</p>
+
+                <div class="camada-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">dns</i>
+                        <h4>Infraestrutura</h4>
+                    </div>
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">code</i>
+                        <h4>Aplicação</h4>
+                    </div>
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">receipt_long</i>
+                        <h4>Log e Auditing</h4>
+                    </div>
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">build</i>
+                        <h4>Ferramentas</h4>
+                    </div>
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">api</i>
+                        <h4>API</h4>
+                    </div>
+                    <div class="camada-item"
+                        style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;">
+                        <i class="material-icons" style="font-size: 32px; color: #0066cc;">warning</i>
+                        <h4>Erros e Exceções</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEU PLANO DE DESENVOLVIMENTO SEGURO - RESOLUÇÃO -->
+            <section>
+                <h2>📄 Minha Resolução - Plano de Desenvolvimento Seguro</h2>
+
+                <div class="pdf-preview">
+                    <h4><i class="material-icons">picture_as_pdf</i> Plano de Desenvolvimento Seguro - Cidade Virtual
+                    </h4>
+                    <p>Este é o <strong>Plano de Desenvolvimento Seguro</strong> completo, elaborado para o
+                        <strong>Projeto Cidade Virtual</strong> (arquitetura MERN), contendo todos os requisitos
+                        exigidos no módulo 3 do PI-III:
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Projeto: Cidade
+                            Virtual - Conexão Comunitária</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Análise de riscos
+                            (confidencialidade, integridade, disponibilidade)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Práticas por camada
+                            (infraestrutura, aplicação, API, logs)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Políticas de senha,
+                            autenticação JWT, rate limiting</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Governança e revisão
+                            contínua (checklists, OWASP ZAP)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Cronograma de
+                            implantação (5 semanas, 32 horas)</div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                        <a href="https://docs.google.com/document/d/1bhOeiqGAoV_3vru2BFNY9x7pACd2c-kZCKTQ33U-TFg/edit?usp=sharing" target="_blank"
+                            class="btn-visualizar">
+                            <i class="material-icons">visibility</i> Visualizar PDF
+                        </a>
+                        <a href="https://docs.google.com/document/d/1bhOeiqGAoV_3vru2BFNY9x7pACd2c-kZCKTQ33U-TFg/edit?usp=sharing"
+                            download="Plano_Desenvolvimento_Seguro_Cidade_Virtual.pdf" class="btn-pdf">
+                            <i class="material-icons">download</i> Baixar PDF
+                        </a>
+                        <a href="https://docs.google.com/document/d/1OBYynwWTIVTO6_xIl76FHnMJMNiSJeWNXtkFwkTaTwo/edit?usp=sharing"
+                            target="_blank" class="btn-template" style="background-color: #0066cc;">
+                            <i class="material-icons">open_in_new</i> Ver Template no Google Docs
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 15px; color: #28a745; font-weight: 600;">
+                        <i class="material-icons" style="font-size: 16px;">check_circle</i> Arquivo pronto para envio -
+                        Segue todas as normas ABNT NBR 6023/2018
+                    </p>
+                </div>
+
+                <!-- Resumo do plano -->
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong><i class="material-icons">insights</i> Resumo do Plano de Desenvolvimento Seguro</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Características da aplicação:</strong> Plataforma web MERN para conexão comunitária
+                            no bairro Cabanagem (Belém/PA). Armazena dados pessoais de moradores e comerciantes.</li>
+                        <li><strong>Aspectos de segurança críticos:</strong> Confidencialidade de dados, autenticação
+                            robusta, proteção contra ataques comuns (injeção, XSS, força-bruta).</li>
+                        <li><strong>Objetivos:</strong> Implementar controles de segurança alinhados ao OWASP Top 10;
+                            garantir a tríade CID; reduzir riscos para a comunidade.</li>
+                        <li><strong>Práticas por camada:</strong> HTTPS (infraestrutura), bcrypt + JWT (aplicação), logs
+                            estruturados (auditing), OWASP ZAP (ferramentas), validação de entrada (API).</li>
+                        <li><strong>Governança:</strong> Revisão de segurança quinzenal, checklist OWASP ASVS,
+                            dependências monitoradas com <code>npm audit</code>.</li>
+                        <li><strong>Cronograma:</strong> 5 semanas (32h) - implementação incremental começando por
+                            segurança de acesso.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 21 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">📍 Checkout de Presença e Avaliação - Módulo 3 | Projeto Cidade
+            Virtual - Plano de Desenvolvimento Seguro</p>
+    </footer>
+</body>
+
+</html>
