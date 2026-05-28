@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 4 | Conceitos Básicos de Integração e Entrega Contínua</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 4 - Integração e entrega contínua</h2>
+        <h3>🔄 Unidade 1 - Conceitos básicos de integração e entrega contínua</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Checkout P. Mod 3
+            </a>
+            <a href="mod4_und1-v2-conceitos-basicos-de-integracao-e-entrega-continua.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 4 Und 1/2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/kNq4MCmUO34" frameborder="0"
+                    title="Conceitos básicos de integração e entrega contínua"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Integração e Entrega Contínua - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 4 - Unidade 1
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO - CENÁRIO ATUAL -->
+        <section>
+            <h2>📈 Desenvolvimento atual: desafios e evolução</h2>
+            <p>Nos últimos anos, sistemas de software têm evoluído significativamente em <strong>tamanho, complexidade e
+                    importância estratégica</strong>. Os processos de desenvolvimento também se tornaram mais dinâmicos,
+                visando entregas <strong>rápidas e contínuas</strong>. Nesse cenário, é comum que existam diversos times
+                trabalhando em partes que precisam ser integradas e entregues de forma coordenada.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">history</i> Contexto histórico:</strong>
+                <p>Historicamente, organizações eram divididas em departamentos de <strong>Desenvolvimento
+                        (Dev)</strong> e <strong>Suporte/Operações (Ops)</strong>. Essa divisão gerava muitos desafios:
+                </p>
+                <ul>
+                    <li>🔴 Desenvolvedores entregavam código sem considerar o ambiente de produção</li>
+                    <li>🔴 Operações rejeitavam entregas por falta de documentação ou confiabilidade</li>
+                    <li>🔴 Ciclos de release longos (semanas ou meses)</li>
+                    <li>🔴 Retrabalho constante e baixa qualidade</li>
+                </ul>
+            </div>
+
+            <div class="devops-card">
+                <h3><i class="material-icons">group</i> DevOps: a união entre Dev e Ops</h3>
+                <p><strong>DevOps</strong> é um conceito que surgiu com o objetivo de agilizar a implantação de sistemas
+                    a partir da <strong>união do desenvolvimento (Dev) e operações (Ops)</strong>. A ideia é fazer com
+                    que profissionais de ambas as áreas trabalhem em conjunto desde o início do processo para realizar
+                    entregas mais rápidas e confiáveis.</p>
+
+                <div class="comparacao-devops">
+                    <div class="dev-box">
+                        <i class="material-icons" style="font-size: 48px;">code</i>
+                        <h4>Desenvolvimento (Dev)</h4>
+                        <p>✅ Criar funcionalidades<br>✅ Entregar valor<br>✅ Responder a mudanças</p>
+                    </div>
+                    <div class="ops-box">
+                        <i class="material-icons" style="font-size: 48px;">storage</i>
+                        <h4>Operações (Ops)</h4>
+                        <p>✅ Garantir estabilidade<br>✅ Monitorar performance<br>✅ Gerenciar infraestrutura</p>
+                    </div>
+                    <div class="devops-box">
+                        <i class="material-icons" style="font-size: 48px;">sync_alt</i>
+                        <h4>DevOps</h4>
+                        <p><strong>Cultura de colaboração, automação e responsabilidade compartilhada</strong><br>🏆
+                            Entregas mais rápidas, confiáveis e com maior qualidade</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <h4><i class="material-icons">target</i> Objetivos do DevOps</h4>
+                <ul>
+                    <li>🎯 Criar um <strong>processo repetível e confiável</strong> para entrega</li>
+                    <li>🎯 <strong>Automatizar tudo que for possível</strong> (build, testes, deploy)</li>
+                    <li>🎯 Manter <strong>tudo em um sistema de controle de versões</strong> (Git)</li>
+                    <li>🎯 Se um passo <strong>causa dor</strong>, executar com mais frequência e o quanto antes</li>
+                    <li>🎯 "<strong>Concluído</strong>" significa pronto para entrega</li>
+                    <li>🎯 <strong>Todos são responsáveis</strong> pela entrega do software</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CI/CD - CONCEITOS -->
+        <section>
+            <h2>🔄 CI/CD: Integração e Entrega Contínua</h2>
+            <p><strong>CI (Continuous Integration)</strong> e <strong>CD (Continuous Delivery / Continuous
+                    Deployment)</strong> são práticas que permitem <strong>automação e monitoramento contínuo</strong>
+                do ciclo de vida de aplicações. Ambas são usadas em times ágeis com práticas de DevOps, ajudando times
+                de desenvolvimento, segurança e operação a serem mais eficientes e efetivos.</p>
+
+            <div class="cicd-flow">
+                <div class="cicd-step">
+                    <i class="material-icons">code</i>
+                    <strong>Código</strong>
+                    <small>Commit</small>
+                </div>
+                <div class="cicd-arrow"><i class="material-icons">arrow_forward</i></div>
+                <div class="cicd-step">
+                    <i class="material-icons">build</i>
+                    <strong>Build</strong>
+                    <small>Compilação</small>
+                </div>
+                <div class="cicd-arrow"><i class="material-icons">arrow_forward</i></div>
+                <div class="cicd-step">
+                    <i class="material-icons">fact_check</i>
+                    <strong>Testes</strong>
+                    <small>Unitários/Integração</small>
+                </div>
+                <div class="cicd-arrow"><i class="material-icons">arrow_forward</i></div>
+                <div class="cicd-step">
+                    <i class="material-icons">cloud_upload</i>
+                    <strong>Deploy</strong>
+                    <small>Homologação</small>
+                </div>
+                <div class="cicd-arrow"><i class="material-icons">arrow_forward</i></div>
+                <div class="cicd-step">
+                    <i class="material-icons">check_circle</i>
+                    <strong>Produção</strong>
+                    <small>Disponível</small>
+                </div>
+            </div>
+
+            <!-- CI - Integração Contínua -->
+            <h3><span class="badge-cicd">CI</span> Integração Contínua (Continuous Integration)</h3>
+            <p>Integração Contínua é uma prática de <strong>integração de mudanças de código em uma branch principal (ou
+                    estável)</strong> que é compartilhada e frequentemente recebe alterações. Essa técnica permite a
+                <strong>identificação fácil e rápida de problemas</strong> para que desenvolvedores possam corrigi-los
+                antes de serem integrados.
+            </p>
+
+            <div class="pratica-card">
+                <h4><i class="material-icons">checklist</i> Principais atividades da CI:</h4>
+                <ul>
+                    <li>✅ <strong>Verificação se o build ocorre normalmente</strong> (sem erros de compilação/sintaxe)
+                    </li>
+                    <li>✅ <strong>Execução de testes automatizados</strong> (unitários, integração, cobertura)</li>
+                    <li>✅ <strong>Verificação de conformidade de padrões</strong> (linter, formatação)</li>
+                    <li>✅ <strong>Identificação de problemas ou ameaças conhecidas</strong> (vulnerabilidades)</li>
+                    <li>✅ Geração de artefatos (binários, pacotes) para os próximos estágios</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">github</i> Exemplo de CI com GitHub Actions (Cidade Virtual)</h4>
+                <div class="workflow-example">
+                    <pre style="margin: 0; color: #e8e8e8;">
+<span class="yaml-key">name</span>: <span class="yaml-string">CI - Testes e Validação</span>
+
+<span class="yaml-key">on</span>:
+  <span class="yaml-key">push</span>:
+    <span class="yaml-key">branches</span>: [ <span class="yaml-string">develop</span>, <span class="yaml-string">main</span> ]
+  <span class="yaml-key">pull_request</span>:
+    <span class="yaml-key">branches</span>: [ <span class="yaml-string">main</span> ]
+
+<span class="yaml-key">jobs</span>:
+  <span class="yaml-key">build-and-test</span>:
+    <span class="yaml-key">runs-on</span>: <span class="yaml-string">ubuntu-latest</span>
+    <span class="yaml-key">steps</span>:
+      - <span class="yaml-key">uses</span>: <span class="yaml-string">actions/checkout@v3</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Setup Node.js</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">actions/setup-node@v3</span>
+        <span class="yaml-key">with</span>:
+          <span class="yaml-key">node-version</span>: <span class="yaml-string">'18'</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Instalar dependências</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm ci</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Executar linter</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm run lint</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Executar testes unitários</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm test -- --coverage</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Verificar dependências vulneráveis</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm audit --production</span></pre>
+                </div>
+                <p><strong>Fluxo:</strong> A cada push ou pull request, o GitHub Actions automaticamente executa linter,
+                    testes e verificação de segurança. Se falhar, o PR é bloqueado.</p>
+            </div>
+
+            <!-- CD - Entrega Contínua -->
+            <h3><span class="badge-cicd">CD</span> Entrega Contínua (Continuous Delivery / Deployment)</h3>
+            <p>CD é uma prática que trabalha em conjunto com CI para <strong>automatização da provisão de infraestrutura
+                    e lançamento de versões</strong>. Com CD podemos automatizar o lançamento de versões assim que novas
+                versões são finalizadas.</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">package</i> Continuous Delivery</h4>
+                    <p>Cada alteração aprovada é automaticamente <strong>preparada para produção</strong>, mas o deploy
+                        exige aprovação manual (ex: clicar em um botão).</p>
+                    <p><strong>Ideal para:</strong> Projetos com requisitos regulatórios, compliance, ou que exigem
+                        validação final.</p>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">rocket_launch</i> Continuous Deployment</h4>
+                    <p>Cada alteração aprovada é automaticamente <strong>implantada em produção</strong> sem intervenção
+                        manual.</p>
+                    <p><strong>Ideal para:</strong> Projetos com alta confiança em testes automatizados, equipes maduras
+                        em DevOps.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">warning</i> Importante:</strong>
+                <p>Diferentemente de CI, a entrega é frequentemente aplicada somente a <strong>marcos
+                        específicos</strong>, por exemplo, major releases. Portanto, é necessário adotar uma
+                    <strong>política de lançamentos claras</strong>, assim como <strong>marcações (tags, flags)</strong>
+                    para automação do processo.
+                </p>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">cloud_upload</i> Exemplo de CD com GitHub Actions (Cidade Virtual)</h4>
+                <div class="workflow-example">
+                    <pre style="margin: 0; color: #e8e8e8;">
+<span class="yaml-key">name</span>: <span class="yaml-string">CD - Deploy para Vercel</span>
+
+<span class="yaml-key">on</span>:
+  <span class="yaml-key">push</span>:
+    <span class="yaml-key">branches</span>: [ <span class="yaml-string">main</span> ]
+
+<span class="yaml-key">jobs</span>:
+  <span class="yaml-key">deploy</span>:
+    <span class="yaml-key">runs-on</span>: <span class="yaml-string">ubuntu-latest</span>
+    <span class="yaml-key">needs</span>: <span class="yaml-string">[build-and-test]</span>  <span class="yaml-string"># depende do CI passar</span>
+    <span class="yaml-key">steps</span>:
+      - <span class="yaml-key">uses</span>: <span class="yaml-string">actions/checkout@v3</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Deploy para Vercel</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">amondnet/vercel-action@v20</span>
+        <span class="yaml-key">with</span>:
+          <span class="yaml-key">vercel-token</span>: $<span class="yaml-string">{{ secrets.VERCEL_TOKEN }}</span>
+          <span class="yaml-key">vercel-org-id</span>: $<span class="yaml-string">{{ secrets.ORG_ID }}</span>
+          <span class="yaml-key">vercel-project-id</span>: $<span class="yaml-string">{{ secrets.PROJECT_ID }}</span>
+          <span class="yaml-key">vercel-args</span>: <span class="yaml-string">'--prod'</span></pre>
+                </div>
+                <p><strong>Fluxo:</strong> Quando um PR é aprovado e mesclado na branch `main`, o CD automaticamente
+                    implanta a nova versão no ambiente de produção (Vercel).</p>
+            </div>
+        </section>
+
+        <!-- IMPORTÂNCIA DO CONTROLE DE VERSÕES -->
+        <section>
+            <h2>📦 Importância do controle de versões para CI/CD</h2>
+            <p>Sistemas e políticas de controle de versão constituem parte <strong>importante no processo de CI e
+                    CD</strong>. Atualmente, existem diversas ferramentas e plataformas que oferecem mecanismos críticos
+                para a prática de controle de versões, como <strong>GitHub, GitLab, Bitbucket</strong>, entre outras.
+            </p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <i class="material-icons">account_tree</i>
+                    <h4>Git Flow (tradicional)</h4>
+                    <p>Branches: main, develop, feature/*, release/*, hotfix/*</p>
+                    <p><strong>Vantagem:</strong> Muito estruturado, ideal para releases programadas.<br>
+                        <strong>Desvantagem:</strong> Pode ser complexo para times pequenos.
+                    </p>
+                </div>
+                <div class="comparacao-card">
+                    <i class="material-icons">linear_scale</i>
+                    <h4>GitHub Flow (simplificado)</h4>
+                    <p>Branches: main + feature/* (com PR)</p>
+                    <p><strong>Vantagem:</strong> Simples, ideal para CD.<br>
+                        <strong>Desvantagem:</strong> Menos adequado para múltiplas versões simultâneas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <h4><i class="material-icons">tips_and_updates</i> Recomendação para projetos individuais ou pequenos
+                </h4>
+                <p>Adote uma abordagem simplificada do <strong>GitHub Flow</strong>:</p>
+                <ul>
+                    <li><strong>main</strong> → produção (sempre estável)</li>
+                    <li><strong>develop</strong> → homologação (pode conter features em integração)</li>
+                    <li><strong>feature/nome</strong> → desenvolvimento de nova funcionalidade</li>
+                    <li><strong>hotfix/nome</strong> → correção crítica em produção</li>
+                </ul>
+                <p>Independente da política de trabalho (feature ou trunk-based branches), CI/CD podem trazer muitos
+                    benefícios para o processo.</p>
+            </div>
+        </section>
+
+        <!-- VISÃO INTEGRADORA -->
+        <section>
+            <h2>🔁 Visão Integradora Aplicada - Por onde começar no Cidade Virtual?</h2>
+
+            <div class="info-box">
+                <strong><i class="material-icons">lightbulb</i> Questões importantes sobre CI/CD:</strong>
+                <ul>
+                    <li>Integração contínua não é apenas uma questão técnica, mas uma <strong>mudança cultural e
+                            colaborativa</strong> em equipes.</li>
+                    <li>Inicialmente, pode aumentar a complexidade na configuração inicial e no monitoramento.</li>
+                    <li>Tem o potencial para <strong>melhoria contínua de processos, aprendizado e qualidade</strong>.
+                    </li>
+                    <li>Atualmente, soluções de IA têm surgido para complementação do processo, como revisão de código
+                        automatizada (ex: GitHub Copilot, CodeRabbit).</li>
+                </ul>
+            </div>
+
+            <div class="exemplo-box">
+                <h4><i class="material-icons">map</i> Como ser ágil? (projeto solo)</h4>
+                <ul>
+                    <li><strong>🎯 Foco na entrega de incrementos pequenos e relevantes</strong> → entregar uma
+                        funcionalidade por vez, não tudo de uma vez</li>
+                    <li><strong>🔄 Integrar mudanças e entregar valor assim que possível</strong> → CI/CD ajuda
+                        exatamente nisso</li>
+                    <li><strong>📢 Coletar feedbacks rapidamente</strong> para eventuais correções (comunidade, tutor)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">1</span>
+                    <h3>Entenda seu processo atual</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Quais práticas e processos você usa atualmente? (Commits manuais, testes locais, deploy manual na
+                        Vercel?)</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">2</span>
+                    <h3>Identifique o que pode ser automatizado</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Automatizar builds, testes unitários, linting e deploy (pelo menos para homologação).</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">3</span>
+                    <h3>Comece pequeno e evolua</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Não busque implantar o processo completo de uma vez. Comece com pequenas automações e evolua!</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">4</span>
+                    <h3>Automatize builds e testes simples primeiro</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Foque inicialmente na automação de construções (builds) e testes simples (unitários). Depois
+                        avance para testes de integração e E2E.</p>
+                </div>
+            </div>
+
+            <div class="passo-container">
+                <div class="passo-titulo">
+                    <span class="passo-numero">5</span>
+                    <h3>Defina padrões e processos simples</h3>
+                </div>
+                <div class="passo-conteudo">
+                    <p>Defina padrões e processos simples que possam ser facilmente absorvidos e apresentem alto valor.
+                        Ex: "toda PR precisa ter testes passando" ou "deploy automático apenas na branch main".</p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">rocket</i> Roadmap de implementação CI/CD para o Cidade Virtual (projeto
+                    solo)</h4>
+                <ul>
+                    <li><strong>Semana 1:</strong> Configurar GitHub Actions para rodar linter e testes unitários a cada
+                        push na `develop`</li>
+                    <li><strong>Semana 2:</strong> Adicionar verificação de cobertura de código (70% mínima) e `npm
+                        audit`</li>
+                    <li><strong>Semana 3:</strong> Configurar deploy automático para homologação (Vercel preview) ao
+                        criar PR</li>
+                    <li><strong>Semana 4:</strong> Configurar deploy automático para produção ao fazer merge na `main`
+                        (após aprovação manual dos testes de aceitação)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>GITHUB, Inc. <strong>Sobre a integração contínua com o GitHub Actions</strong> (GitHub Docs).
+                    Disponível em: https://link.ufms.br/rffv. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>GITHUB, Inc. <strong>Sobre a implantação contínua com o GitHub Actions</strong> (GitHub Docs).
+                    Disponível em: https://link.ufms.br/Yhjvw. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>MUNIZ, Antonio et al. <strong>Jornada DevOps: unindo cultura ágil, Lean e tecnologia para entregar
+                        software com qualidade</strong>. 2. ed. Rio de Janeiro: Brasport, 2020. ISBN
+                    9786599062117.</cite></p>
+            <p><cite>VALENTE, Marco Tulio. <strong>Engenharia de Software moderna: princípios e práticas para
+                        desenvolvimento de software com produtividade</strong>. v.1, n.24, 2020. Disponível em:
+                    https://link.ufms.br/bljNp. Acesso em 20 dez 2024.</cite></p>
+            <p><cite>KIM, Gene; HUMBLE, Jez; DeBOIS, Patrick; WILLIS, John. <strong>The DevOps Handbook</strong>. IT
+                    Revolution Press, 2016.</cite></p>
+            <p><cite>HUMBLE, Jez; FARLEY, David. <strong>Continuous Delivery: Reliable Software Releases through Build,
+                        Test, and Deployment Automation</strong>. Addison-Wesley, 2010.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 4: Conceitos de CI/CD aplicados ao
+            Cidade Virtual 🔄</p>
+    </footer>
+</body>
+
+</html>

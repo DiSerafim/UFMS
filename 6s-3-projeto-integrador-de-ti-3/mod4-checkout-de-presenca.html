@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PI-III - Checkout de Presença Módulo 4 | Plano de CI/CD - Cidade Virtual</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=rewarded_ads" />
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 4 - Integração e Entrega Contínua</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <h4 style="color: white; margin-top: 5px;">Elaboração do Plano de CI/CD</h4>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod4_und2-integracao-e-entrega-continua-na-pratica.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 4 Und 2
+            </a>
+            <span class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #ccc; color: #666; padding: 8px 15px; border-radius: 4px; cursor: not-allowed;">
+                Concluído
+                <span class="material-symbols-outlined" style="color: green;">
+                    rewarded_ads
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <main>
+        <div class="checkout-avaliacao-container">
+            <!-- Aviso de vencimento -->
+            <div class="deadline-box">
+                <i class="material-icons">access_time</i>
+                ⏰ Vencimento: segunda-feira, 1 jun. 2026, 23:59
+            </div>
+
+            <!-- Aviso de atenção -->
+            <div class="atencao-box">
+                <h3>
+                    <i class="material-icons">warning</i>
+                    🚨 Atenção!
+                </h3>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a carga horária de frequência do módulo.</p>
+                <p><strong>📝 A nota atribuída pela tutoria nesta atividade corresponderá à nota do módulo e fará parte
+                        da avaliação da disciplina.</strong></p>
+                <p><i class="material-icons" style="vertical-align: middle;">info</i> Leia atentamente as orientações e
+                    conte com o apoio da tutoria para a elaboração da atividade.</p>
+            </div>
+
+            <!-- Aviso de arquivos -->
+            <div class="info-importante">
+                <h4>⚠️ Atenção: arquivos enviados em branco ou corrompidos</h4>
+                <p>Arquivos enviados em branco ou corrompidos que não sejam corrigidos após o feedback da tutoria terão
+                    <strong>nota zero atribuída, sem cômputo de carga horária, correspondendo à ausência no
+                        módulo.</strong>
+                </p>
+            </div>
+
+            <!-- ORIENTAÇÕES DO MÓDULO 4 -->
+            <section>
+                <h2>📚 Sobre a Atividade - Plano de Integração e Entrega Contínua (CI/CD)</h2>
+
+                <div class="info-importante">
+                    <p>Na avaliação deste módulo, você deverá elaborar e entregar um <strong>Plano de Integração e
+                            Entrega Contínua</strong> para o projeto em desenvolvimento na ação de extensão (Cidade
+                        Virtual).</p>
+                </div>
+
+                <div style="background-color: #e7f3f5; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>🎯 Diferentemente da atividade de checkpoint, este plano deverá considerar:</strong></p>
+                    <ul>
+                        <li>Um <strong>plano amplo</strong> que vise a automação de <strong>diversas atividades</strong>
+                            passíveis de automação pela equipe de desenvolvimento.</li>
+                        <li>A melhoria da qualidade por meio de <strong>entregas mais consistentes e
+                                frequentes</strong>.</li>
+                        <li><strong>Para além da automação de atividades simples</strong> (build e teste de software),
+                            considerar a automação do <strong>processo de entrega ou implantação</strong>, analisando as
+                            características da aplicação proposta.</li>
+                        <li><strong>Refletir também sobre a integração de novas tecnologias e ferramentas</strong>,
+                            baseadas ou não em <strong>Inteligência Artificial</strong>, que possam agregar valor às
+                            atividades desenvolvidas.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- O QUE DEVE SER ENTREGUE -->
+            <section>
+                <h2>📋 O que deve ser entregue</h2>
+
+                <div class="orientacoes-grid">
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">assignment</i> Plano de CI/CD</h4>
+                        <p>O plano deve ser elaborado conforme modelo disponibilizado, contendo:</p>
+                        <ul>
+                            <li>✅ <strong>Processos que serão automatizados</strong> (build, testes, lint, deploy, etc.)
+                            </li>
+                            <li>✅ <strong>Objetivos e benefícios esperados</strong> com a automação</li>
+                            <li>✅ <strong>Ferramentas selecionadas</strong> (GitHub Actions, Husky, SonarCloud, Vercel,
+                                etc.)</li>
+                            <li>✅ <strong>Integração com IA</strong> (CodeRabbit, Copilot, revisão automatizada)</li>
+                            <li>✅ <strong>Cronograma de implementação</strong> (fases incremental)</li>
+                            <li>✅ <strong>Desafios e impactos esperados</strong> na aplicação do processo</li>
+                        </ul>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">description</i> Template</h4>
+                        <p>Faça uma cópia do modelo e siga as orientações para a elaboração do <strong>Plano de
+                                CI/CD</strong>.</p>
+                        <div class="template-preview"
+                            onclick="window.open('https://docs.google.com/document/d/1QROTqC5Am2y19Dj-w88HalN0aXnLBbC1K8bB2DZVUUk/edit?usp=sharing', '_blank')">
+                            <h4><i class="material-icons">open_in_new</i> Acessar Template</h4>
+                            <p>Clique aqui para abrir o template completo do Plano de CI/CD</p>
+                            <p style="font-size: 0.8em; color: #666;">📎 Link:
+                                docs.google.com/document/d/1QROTqC5Am2y19Dj-w88HalN0aXnLBbC1K8bB2DZVUUk</p>
+                        </div>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <h4><i class="material-icons">rule</i> Pré-avaliação</h4>
+                        <p><strong>⇒ Esta atividade pode e deve ser pré-avaliada pelo tutor da disciplina nos encontros
+                                síncronos da Tutoria, ANTES de ser postada pelo estudante em arquivo no formato
+                                PDF.</strong></p>
+                        <p style="color: #28a745; font-weight: 600;">✅ Importante: A avaliação do módulo depende da
+                            elaboração do planejamento de CI/CD.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROCESSOS QUE PODEM SER AUTOMATIZADOS -->
+            <section>
+                <h2>⚙️ Processos passíveis de automação (sugestões)</h2>
+                <p>Para auxiliar na elaboração do seu plano, considere automatizar os seguintes processos no Cidade
+                    Virtual:</p>
+
+                <div class="tab-grid">
+                    <div class="tab-card">
+                        <h4><i class="material-icons">brush</i> Conformidade de código</h4>
+                        <p>Linter (ESLint) + Formatador (Prettier) + Type Checking</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">Husky</div>
+                        <div class="tech-badge" style="background-color: #0066cc;">lint-staged</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">fact_check</i> Testes automatizados</h4>
+                        <p>Unitários (Jest) + Integração (Supertest) + E2E (Cypress)</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">GitHub Actions</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">security</i> Verificações de segurança</h4>
+                        <p>npm audit + OWASP ZAP + Snyk</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">GitHub Actions</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">analytics</i> Análise estática</h4>
+                        <p>SonarCloud (qualidade, cobertura, dívida técnica)</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">SonarCloud</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">cloud_upload</i> Deploy automático</h4>
+                        <p>Homologação (Vercel Preview) + Produção (Vercel)</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">Vercel</div>
+                    </div>
+                    <div class="tab-card">
+                        <h4><i class="material-icons">smart_toy</i> Revisão com IA</h4>
+                        <p>CodeRabbit, GitHub Copilot, revisão automatizada de PRs</p>
+                        <div class="tech-badge" style="background-color: #0066cc;">CodeRabbit</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEU PLANO DE CI/CD - RESOLUÇÃO -->
+            <section>
+                <h2>📄 Minha Resolução - Plano de CI/CD do Cidade Virtual</h2>
+
+                <div class="pdf-preview">
+                    <h4><i class="material-icons">picture_as_pdf</i> Plano de Integração e Entrega Contínua (CI/CD) -
+                        Cidade Virtual</h4>
+                    <p>Este é o <strong>Plano de CI/CD</strong> completo, elaborado para o <strong>Projeto Cidade
+                            Virtual</strong> (arquitetura MERN), contendo todos os requisitos exigidos no módulo 4 do
+                        PI-III:</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 15px 0;">
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Projeto: Cidade
+                            Virtual - Conexão Comunitária</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Git Flow
+                            simplificado (main/develop/feature)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ CI: Lint + Testes
+                            unitários + Testes integração + npm audit</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ CD: Deploy
+                            automático para Vercel (homologação e produção)</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ Análise estática:
+                            SonarCloud</div>
+                        <div style="background-color: #e8f0fe; padding: 8px; border-radius: 4px;">✅ IA: CodeRabbit para
+                            revisão automatizada de PRs</div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                        <a href="pdf/Plano_CICD_Cidade_Virtual_Diego_Serafim.pdf" target="_blank"
+                            class="btn-visualizar">
+                            <i class="material-icons">visibility</i> Visualizar PDF
+                        </a>
+                        <a href="pdf/Plano_CICD_Cidade_Virtual_Diego_Serafim.pdf"
+                            download="Plano_CICD_Cidade_Virtual.pdf" class="btn-pdf">
+                            <i class="material-icons">download</i> Baixar PDF
+                        </a>
+                        <a href="https://docs.google.com/document/d/1QROTqC5Am2y19Dj-w88HalN0aXnLBbC1K8bB2DZVUUk/edit?usp=sharing"
+                            target="_blank" class="btn-template" style="background-color: #0066cc;">
+                            <i class="material-icons">open_in_new</i> Ver Template no Google Docs
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 15px; color: #28a745; font-weight: 600;">
+                        <i class="material-icons" style="font-size: 16px;">check_circle</i> Arquivo pronto para envio -
+                        Segue todas as normas ABNT NBR 6023/2018
+                    </p>
+                </div>
+
+                <!-- Resumo do plano -->
+                <div class="info-box" style="margin-top: 20px;">
+                    <strong><i class="material-icons">insights</i> Resumo do Plano de CI/CD</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Objetivo geral:</strong> Automatizar o ciclo de desenvolvimento do Cidade Virtual,
+                            desde o commit até o deploy em produção, garantindo qualidade, segurança e agilidade nas
+                            entregas.</li>
+                        <li><strong>Processos automatizados:</strong> Lint/Format (Husky), Testes unitários e integração
+                            (Jest + Supertest), Verificação de segurança (npm audit), Análise estática (SonarCloud),
+                            Deploy (Vercel via GitHub Actions).</li>
+                        <li><strong>Integração com IA:</strong> CodeRabbit para revisão automatizada de pull requests e
+                            GitHub Copilot para sugestões em tempo real.</li>
+                        <li><strong>Ferramentas selecionadas:</strong> GitHub Actions (CI), Vercel (CD), SonarCloud
+                            (qualidade), Husky (hooks), CodeRabbit (IA).</li>
+                        <li><strong>Cronograma:</strong> 4 semanas (32h) - implementação incremental: (1) conformidade +
+                            testes unitários, (2) testes integração + segurança, (3) SonarCloud + CD homologação, (4) IA
+                            + CD produção.</li>
+                        <li><strong>Benefícios esperados:</strong> Redução de 70% do tempo de deploy manual, detecção
+                            precoce de defeitos, padronização do código, maior confiança para a comunidade.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">📍 Checkout de Presença e Avaliação - Módulo 4 | Projeto Cidade
+            Virtual - Plano de CI/CD 🔄</p>
+    </footer>
+</body>
+
+</html>

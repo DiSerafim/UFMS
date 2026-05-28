@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III - Módulo 4 | Integração e Entrega Contínua na Prática</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>PROJETO INTEGRADOR DE TECNOLOGIA DA INFORMAÇÃO III</h1>
+        <h2>Módulo 4 - Integração e entrega contínua</h2>
+        <h3>⚙️ Unidade 2 - Integração e entrega contínua na prática</h3>
+        <p>Prof. Dr. Hudson Silva Borges</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod4_und1-v2-conceitos-basicos-de-integracao-e-entrega-continua.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #245; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 4 Und 1/2 
+            </a>
+            <a href="mod4-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 4<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PJgFPrbaOZ4" frameborder="0"
+                    title="Integração e entrega contínua na prática"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Integração e Entrega Contínua na Prática - UFMS Digital">
+                [UFMS Digital] Projeto Integrador III (TIN) - Módulo 4 - Unidade 2
+            </p>
+            <p>Prof. Dr. Hudson Silva Borges</p>
+            <p>📅 17 de abril de 2025</p>
+        </section>
+
+        <!-- INTRODUÇÃO -->
+        <section>
+            <h2>🎯 Práticas de DevOps: do conceito à ação</h2>
+            <p>Na unidade 1, vimos que <strong>DevOps</strong> é um conceito que visa unir Desenvolvimento (Dev) e
+                Operação (Ops) com objetivo de agilizar a implantação de sistemas. <strong>CI (Continuous
+                    Integration)</strong> e <strong>CD (Continuous Delivery)</strong> são processos que permitem
+                automação e monitoramento contínuo do ciclo de vida de aplicações.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">warning</i> Desafio comum:</strong>
+                <p>Em times com desenvolvedores com pouca experiência, a implantação destas práticas pode ser mais
+                    desafiadora, mas <strong>traz muitos benefícios</strong> a médio e longo prazo. Nesta unidade, o
+                    objetivo principal é a apresentação e discussão de <strong>dicas e tecnologias</strong> que podem
+                    apoiar a implantação de CI/CD no projeto integrador desenvolvido.</p>
+            </div>
+        </section>
+
+        <!-- POR ONDE COMEÇAR? -->
+        <section>
+            <h2>🚀 Por onde começar? Pequenas automações</h2>
+            <p>A chave para uma implantação bem-sucedida de CI/CD é <strong>começar pequeno e evoluir
+                    gradualmente</strong>. Não tente automatizar tudo de uma vez.</p>
+
+            <div class="passo-automacao">
+                <div class="passo-numero-circular">1</div>
+                <div><strong>Identifique processos passíveis de automação</strong><br>Mapeie atividades repetitivas que
+                    você faz manualmente (ex: rodar testes, verificar estilo de código, fazer deploy).</div>
+            </div>
+            <div class="passo-automacao">
+                <div class="passo-numero-circular">2</div>
+                <div><strong>Verifique a viabilidade de automatizá-las</strong><br>Existe ferramenta? O custo de
+                    automação compensa o ganho de tempo?</div>
+            </div>
+            <div class="passo-automacao">
+                <div class="passo-numero-circular">3</div>
+                <div><strong>Busque ferramentas e alternativas</strong><br>Pesquise soluções maduras, com boa
+                    documentação e comunidade ativa.</div>
+            </div>
+            <div class="passo-automacao">
+                <div class="passo-numero-circular">4</div>
+                <div><strong>Automatize a atividade</strong><br>Implemente a automação, teste e refine.</div>
+            </div>
+
+            <div class="security-tip">
+                <h4><i class="material-icons">lightbulb</i> Recomendação para projeto solo (Cidade Virtual)</h4>
+                <p><strong>Primeira automação sugerida:</strong> Conformidade de código (linter + formatador) rodando
+                    automaticamente antes de cada commit ou push.</p>
+            </div>
+        </section>
+
+        <!-- CONFORMIDADE DE CÓDIGO -->
+        <section>
+            <h2>📏 Exemplo prático: Conformidade de código</h2>
+            <p><strong>Conformidade de código</strong> refere-se ao processo de definir e aplicar padrões predefinidos
+                de qualidade, estilo, boas práticas, etc., no desenvolvimento de artefatos de software. Esses padrões
+                permitem melhorar a manutenção e facilitam a colaboração, garantindo um código padronizado.</p>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">build</i> Ferramentas para conformidade de código</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                    <span class="badge-linguagem">☕ Java</span>
+                    <span class="badge-ferramenta">Checkstyle</span>
+                    <span class="badge-ferramenta">PMD</span>
+                    <span class="badge-ferramenta">SpotBugs</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                    <span class="badge-linguagem">🐍 Python</span>
+                    <span class="badge-ferramenta">Pylint</span>
+                    <span class="badge-ferramenta">Black</span>
+                    <span class="badge-ferramenta">Flake8</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                    <span class="badge-linguagem">📜 JavaScript/TypeScript</span>
+                    <span class="badge-ferramenta">ESLint</span>
+                    <span class="badge-ferramenta">Prettier</span>
+                    <span class="badge-ferramenta">Biome</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                    <span class="badge-linguagem">🌐 Multi-linguagem</span>
+                    <span class="badge-ferramenta">SonarQube</span>
+                    <span class="badge-ferramenta">SonarCloud</span>
+                    <span class="badge-ferramenta">Super-Linter</span>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">analytics</i> Relatório de verificação pelo SonarCloud</h4>
+                <p>SonarCloud (e SonarQube) fornecem relatórios detalhados sobre:</p>
+                <ul>
+                    <li>🔴 Bugs e vulnerabilidades de segurança</li>
+                    <li>🟡 Código duplicado</li>
+                    <li>🟢 Cobertura de testes</li>
+                    <li>🔵 Complexidade ciclomática</li>
+                    <li>📊 Dívida técnica estimada (em horas/dias)</li>
+                </ul>
+                <div class="resultado-box">
+                    <strong><i class="material-icons">check_circle</i> Exemplo de relatório do SonarCloud para Cidade
+                        Virtual:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>✅ Qualidade: A (96% de confiabilidade)</li>
+                        <li>✅ 0 Bugs críticos</li>
+                        <li>⚠️ 3 Vulnerabilidades (baixa severidade) identificadas</li>
+                        <li>📈 Cobertura de testes: 78%</li>
+                        <li>⏱️ Dívida técnica: 2 dias</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">auto_fix_high</i> Automação de conformidade:</strong>
+                <p>Podemos usar ferramentas para automação de atividades de verificação, e até mesmo <strong>aplicação
+                        automática</strong> de padrões de código, associando-as ao ciclo de desenvolvimento.</p>
+                <p><strong>Ferramentas locais (hooks):</strong> <code>pre-commit</code> (Python/multi),
+                    <code>husky</code> (Node.js) e <code>gradle</code> (Java).
+                </p>
+            </div>
+
+            <div class="workflow-yaml">
+                <pre style="margin: 0;">
+<span class="yaml-key"># .husky/pre-commit (Node.js)</span>
+<span class="yaml-string">#!/usr/bin/env sh</span>
+<span class="yaml-string">. "$(dirname -- "$0")/_/husky.sh"</span>
+
+<span class="yaml-string">npx lint-staged</span>
+
+<span class="yaml-key"># package.json</span>
+{
+  "<span class="yaml-key">lint-staged</span>": {
+    "<span class="yaml-string">*.{js,jsx,ts,tsx}</span>": [
+      "<span class="yaml-string">eslint --fix</span>",
+      "<span class="yaml-string">prettier --write</span>"
+    ]
+  }
+}</pre>
+            </div>
+        </section>
+
+        <!-- GITHUB WORKFLOWS -->
+        <section>
+            <h2>🤖 Serviços de integração contínua (GitHub Actions)</h2>
+            <p>Você também pode usar serviços de integração contínua que executam as tarefas
+                <strong>remotamente</strong> e notificam os resultados posteriormente, como <strong>GitHub Actions,
+                    GitLab CI, CircleCI</strong> ou <strong>Jenkins</strong>.
+            </p>
+
+            <div class="workflow-yaml">
+                <pre style="margin: 0;">
+<span class="yaml-key">name</span>: <span class="yaml-string">CI - Conformidade e Testes</span>
+
+<span class="yaml-key">on</span>:
+  <span class="yaml-key">push</span>:
+    <span class="yaml-key">branches</span>: [ <span class="yaml-string">develop</span>, <span class="yaml-string">main</span> ]
+  <span class="yaml-key">pull_request</span>:
+    <span class="yaml-key">branches</span>: [ <span class="yaml-string">main</span> ]
+
+<span class="yaml-key">jobs</span>:
+  <span class="yaml-key">quality</span>:
+    <span class="yaml-key">runs-on</span>: <span class="yaml-string">ubuntu-latest</span>
+    <span class="yaml-key">steps</span>:
+      - <span class="yaml-key">uses</span>: <span class="yaml-string">actions/checkout@v3</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Setup Node.js</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">actions/setup-node@v3</span>
+        <span class="yaml-key">with</span>:
+          <span class="yaml-key">node-version</span>: <span class="yaml-string">'18'</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Install dependencies</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm ci</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Lint</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm run lint</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Format check</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm run format:check</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Type check</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm run type-check</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Unit tests</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm test -- --coverage</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Security audit</span>
+        <span class="yaml-key">run</span>: <span class="yaml-string">npm audit --production</span></pre>
+            </div>
+
+            <div class="resultado-box">
+                <strong><i class="material-icons">check_circle</i> Resultado da execução do workflow:</strong>
+                <ul>
+                    <li>✅ Lint passed (0 errors, 0 warnings)</li>
+                    <li>✅ Format check passed</li>
+                    <li>✅ Type check passed</li>
+                    <li>✅ 42 tests passed, 0 failed</li>
+                    <li>⚠️ 2 vulnerabilities found (1 low, 1 moderate) - not blocking</li>
+                </ul>
+                <p><strong>Status do PR:</strong> 🟢 Aprovado automaticamente para merge (após revisão manual do
+                    código).</p>
+            </div>
+        </section>
+
+        <!-- EXPANDINDO O WORKFLOW -->
+        <section>
+            <h2>📈 Expandindo atividades do workflow incrementalmente</h2>
+            <p>Como dito anteriormente, busque identificar e automatizar processos de forma incremental a partir de
+                atividades simples:</p>
+
+            <div class="tab-grid">
+                <div class="tab-card">
+                    <h4><i class="material-icons">brush</i> Conformidade de código</h4>
+                    <p>Linter + formatador + type checking</p>
+                    <span class="badge-ferramenta">ESLint</span>
+                    <span class="badge-ferramenta">Prettier</span>
+                    <span class="badge-ferramenta">TypeScript</span>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">build</i> Construção de versões</h4>
+                    <p>Build do front-end e back-end</p>
+                    <span class="badge-ferramenta">Webpack</span>
+                    <span class="badge-ferramenta">Vite</span>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">fact_check</i> Execução de testes</h4>
+                    <p>Unitários, integração, E2E</p>
+                    <span class="badge-ferramenta">Jest</span>
+                    <span class="badge-ferramenta">Supertest</span>
+                    <span class="badge-ferramenta">Cypress</span>
+                </div>
+                <div class="tab-card">
+                    <h4><i class="material-icons">security</i> Verificações de segurança</h4>
+                    <p>npm audit, OWASP ZAP, Snyk</p>
+                    <span class="badge-ferramenta">npm audit</span>
+                    <span class="badge-ferramenta">Snyk</span>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <h4><i class="material-icons">sync_alt</i> Você se lembra dos testes projetados e construídos
+                    anteriormente?</h4>
+                <p>Você pode <strong>automatizar sua execução</strong> e obter <strong>feedback imediato</strong> sobre
+                    a qualidade de quaisquer mudanças em desenvolvimento! Cada push ou PR pode disparar automaticamente
+                    a suíte de testes, garantindo que nada quebre antes de chegar à produção.</p>
+            </div>
+        </section>
+
+        <!-- NOVAS OPORTUNIDADES COM IA -->
+        <section>
+            <h2>🤖 Novas oportunidades com IA na revisão de código</h2>
+            <div class="ia-card">
+                <h3><i class="material-icons">smart_toy</i> Ferramentas de IA para revisão de código</h3>
+                <p>Novas ferramentas de IA para revisão de código integrada a fluxos de CI podem oferecer novas
+                    oportunidades de melhorias contínuas.</p>
+                <p><strong>Exemplos:</strong> <strong>CodeRabbit.ai</strong>, <strong>GitHub Copilot</strong>,
+                    <strong>Amazon CodeWhisperer</strong>, <strong>CodeReview Bot</strong> (para pull requests).
+                </p>
+                <p><strong>Funcionalidades típicas:</strong></p>
+                <ul>
+                    <li>🔍 Identificação de problemas de estilo e boas práticas</li>
+                    <li>🐛 Sugestão de correções para bugs comuns</li>
+                    <li>📝 Geração automática de resumo do PR</li>
+                    <li>⚡ Sugestões de otimização de desempenho</li>
+                </ul>
+                <div class="resultado-box" style="margin-top: 10px;">
+                    <strong><i class="material-icons">chat</i> Exemplo de comentário do CodeRabbit em um PR:</strong>
+                    <p style="margin-top: 8px;">"⚠️ <strong>Possível problema:</strong> A função
+                        `calcularAvaliacaoMedia` não trata o caso de lista vazia. Considere adicionar uma validação
+                        inicial: `if (avaliacoes.length === 0) return 0;`"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CD - ENTREGA CONTÍNUA -->
+        <section>
+            <h2>🚀 Entregue rapidamente - Continuous Delivery</h2>
+            <p>Em geral, <strong>CD (Continuous Delivery/Deployment)</strong> segue princípios semelhantes e muitas
+                vezes é suportado pelas <strong>mesmas ferramentas</strong> de CI. A diferença está no destino final:
+                produção.</p>
+
+            <div class="example-card">
+                <h4><i class="material-icons">docker</i> Exemplo: Publicar uma imagem Docker do sistema</h4>
+                <div class="workflow-yaml">
+                    <pre style="margin: 0;">
+<span class="yaml-key">name</span>: <span class="yaml-string">CD - Build e Push Docker Image</span>
+
+<span class="yaml-key">on</span>:
+  <span class="yaml-key">push</span>:
+    <span class="yaml-key">tags</span>:
+      - <span class="yaml-string">'v*.*.*'</span>
+
+<span class="yaml-key">jobs</span>:
+  <span class="yaml-key">docker</span>:
+    <span class="yaml-key">runs-on</span>: <span class="yaml-string">ubuntu-latest</span>
+    <span class="yaml-key">steps</span>:
+      - <span class="yaml-key">uses</span>: <span class="yaml-string">actions/checkout@v3</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Set up Docker Buildx</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">docker/setup-buildx-action@v2</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Login to DockerHub</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">docker/login-action@v2</span>
+        <span class="yaml-key">with</span>:
+          <span class="yaml-key">username</span>: $<span class="yaml-string">{{ secrets.DOCKER_USERNAME }}</span>
+          <span class="yaml-key">password</span>: $<span class="yaml-string">{{ secrets.DOCKER_PASSWORD }}</span>
+      - <span class="yaml-key">name</span>: <span class="yaml-string">Build and push</span>
+        <span class="yaml-key">uses</span>: <span class="yaml-string">docker/build-push-action@v4</span>
+        <span class="yaml-key">with</span>:
+          <span class="yaml-key">push</span>: <span class="yaml-number">true</span>
+          <span class="yaml-key">tags</span>: <span class="yaml-string">diegosousa/cidade-virtual:${{ github.ref_name }}</span></pre>
+                </div>
+                <p><strong>Resultado:</strong> Ao criar uma tag <code>v1.2.0</code>, o GitHub Actions automaticamente
+                    constrói e publica a imagem Docker no Docker Hub, pronta para deploy.</p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">tips_and_updates</i> Para o Cidade Virtual (Vercel):</strong>
+                <p>Em vez de Docker, o CD pode ser configurado diretamente com <strong>Vercel</strong> através da action
+                    <code>amondnet/vercel-action</code>, ou utilizando o <strong>Vercel CLI</strong> integrado ao
+                    workflow.
+                </p>
+            </div>
+        </section>
+
+        <!-- CI/CD COMO PRÁTICA INTEGRADORA -->
+        <section>
+            <h2>🔁 CI/CD como prática integradora</h2>
+            <p>Atividades de CI/CD são práticas voltadas à <strong>automação de processos para melhoria da qualidade do
+                    processo e do produto de software</strong>.</p>
+
+            <div class="warning">
+                <strong><i class="material-icons">warning</i> Atenção:</strong>
+                <p>Não faz sentido aplicar práticas automatizadas simplesmente porque outros usam. Busque
+                    <strong>cultivar uma cultura integrada entre desenvolvimento e entrega de qualidade</strong>. A
+                    automação deve servir a um propósito claro: reduzir retrabalho, aumentar confiança e acelerar
+                    feedback.
+                </p>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">assignment</i> Checklist de maturidade CI/CD para o Cidade Virtual</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>☐ Linter automático no commit</div>
+                    <div>☐ Testes unitários no CI</div>
+                    <div>☐ npm audit no CI</div>
+                    <div>☐ Deploy automático em homologação</div>
+                    <div>☐ Testes de integração no CI</div>
+                    <div>☐ Deploy manual ou automático em produção</div>
+                    <div>☐ Relatório de cobertura de testes</div>
+                    <div>☐ Verificação de segurança (OWASP ZAP)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATIVIDADE DE CHECKOUT -->
+        <section>
+            <h2>📋 Atividade de Checkout - Módulo 4</h2>
+            <div class="template-container">
+                <div class="template-header">
+                    <h3>Plano de Integração de CI/CD</h3>
+                </div>
+                <p>Você deverá criar um <strong>plano de integração de CI/CD</strong> para o projeto em desenvolvimento
+                    na disciplina de Projeto Integrador (Cidade Virtual).</p>
+
+                <p><strong>O plano deve conter:</strong></p>
+                <ul>
+                    <li>📌 <strong>Processos que serão automatizados</strong> (ex: lint, testes, build, deploy)</li>
+                    <li>🎯 <strong>Objetivos e benefícios esperados</strong> com a automação</li>
+                    <li>⚠️ <strong>Desafios e impactos esperados</strong> na aplicação do processo</li>
+                    <li>🛠️ <strong>Ferramentas selecionadas</strong> (GitHub Actions, Husky, SonarCloud, etc.)</li>
+                    <li>📅 <strong>Cronograma de implementação</strong> (fases incremental)</li>
+                </ul>
+
+                <div class="security-tip" style="margin-top: 15px;">
+                    <h4><i class="material-icons">tips_and_updates</i> Dicas para a atividade:</h4>
+                    <ul>
+                        <li>Para além da automação das atividades, reflita sobre o <strong>impacto</strong> e como
+                            poderá contribuir para a <strong>melhoria da qualidade e agilidade</strong> no
+                            desenvolvimento.</li>
+                        <li>Busque usar <strong>ferramentas e plataformas conhecidas</strong>, com grande comunidade e
+                            com uma visão de longo prazo e escalável (ex: GitHub Actions, GitLab CI, Vercel).</li>
+                        <li>Comece com automações simples (linter, testes unitários) e evolua para integração e deploy.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>GITHUB, Inc. <strong>Sobre a integração contínua com o GitHub Actions</strong> (GitHub Docs).
+                    Disponível em: https://link.ufms.br/rffv. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>GITHUB, Inc. <strong>Sobre a implantação contínua com o GitHub Actions</strong> (GitHub Docs).
+                    Disponível em: https://link.ufms.br/Yhjvw. Acesso em: 22 nov. 2024.</cite></p>
+            <p><cite>MUNIZ, Antonio et al. <strong>Jornada DevOps: unindo cultura ágil, Lean e tecnologia para entregar
+                        software com qualidade</strong>. 2. ed. Rio de Janeiro: Brasport, 2020. ISBN
+                    9786599062117.</cite></p>
+            <p><cite>VALENTE, Marco Tulio. <strong>Engenharia de Software moderna: princípios e práticas para
+                        desenvolvimento de software com produtividade</strong>. v.1, n.24, 2020. Disponível em:
+                    https://link.ufms.br/bljNp. Acesso em 20 dez 2024.</cite></p>
+            <p><cite>HUMBLE, Jez; FARLEY, David. <strong>Continuous Delivery: Reliable Software Releases through Build,
+                        Test, and Deployment Automation</strong>. Addison-Wesley, 2010.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 25 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Projeto Integrador III - Módulo 4: CI/CD na prática aplicada ao
+            Cidade Virtual ⚙️</p>
+    </footer>
+</body>
+
+</html>
