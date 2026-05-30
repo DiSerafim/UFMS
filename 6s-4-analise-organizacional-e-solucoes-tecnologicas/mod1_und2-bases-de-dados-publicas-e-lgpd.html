@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 1 | Bases de Dados Públicas e LGPD</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 1 - Conceitos de Análise Organizacional e Aplicações</h2>
+        <h3>🗂️ Unidade 2 – Bases de Dados Públicas e LGPD</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-introducao-a-analise-organizacional.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 1 Und 1 
+            </a>
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 1 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/itN8z-TdSbM" frameborder="0"
+                    title="Bases de Dados Públicas e LGPD - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Bases de Dados Públicas e LGPD - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 1 - Unidade 2
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 28 de maio de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">database</i> Bases de dados públicas</strong>
+                    <p>Conheça as principais fontes de dados abertos disponíveis no Brasil e seu potencial analítico.
+                    </p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">gavel</i> Lei Geral de Proteção de Dados (LGPD)</strong>
+                    <p>Entenda os princípios, direitos e obrigações estabelecidos pela LGPD para o tratamento de dados
+                        pessoais.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">challenge</i> Desafio Prático</strong>
+                    <p>Aplique os conceitos na identificação de um problema local e na busca por dados públicos
+                        relevantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE SÃO BASES DE DADOS PÚBLICAS -->
+        <section>
+            <h2>🗃️ O que são bases de dados públicas?</h2>
+            <p>Imagine um vasto acervo de informações coletadas, organizadas e disponibilizadas por órgãos do governo
+                (federal, estadual, municipal) e outras entidades públicas. Isso são as <strong>bases de dados
+                    públicas</strong>. Elas abrangem áreas tão diversas como saúde, educação, economia, meio ambiente,
+                segurança, cultura e muito mais.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons">insights</i> Por que as bases de dados públicas são
+                    importantes?</strong>
+                <ul>
+                    <li>✅ São a <strong>matéria-prima para a transparência governamental</strong> e uma ferramenta
+                        poderosa para a análise social e organizacional.</li>
+                    <li>✅ Permitem <strong>fiscalizar, pesquisar, inovar e formular políticas públicas</strong> com base
+                        em evidências.</li>
+                    <li>✅ São essenciais para entender como as <strong>organizações públicas funcionam e impactam a
+                            sociedade</strong>.</li>
+                    <li>✅ Alimentam <strong>soluções tecnológicas</strong> (dashboards, aplicativos, sistemas de
+                        recomendação) que beneficiam a população.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ONDE ENCONTRAMOS BASES DE DADOS PÚBLICAS -->
+        <section>
+            <h2>🔍 Onde encontramos essas bases?</h2>
+            <p>As bases de dados públicas estão espalhadas, mas existem locais centralizados e confiáveis para
+                encontrá-las: portais nacionais, estaduais e municipais.</p>
+
+            <!-- Portais Nacionais -->
+            <div class="portal-card">
+                <h3><i class="material-icons">public</i> Portais Nacionais</h3>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">open_in_browser"></i> Dados Abertos Brasileiros</h4>
+                        <p><strong>Site:</strong> <a href="https://www.dados.gov.br" target="_blank">dados.gov.br</a>
+                        </p>
+                        <p>Catálogo de dados de diversos órgãos do governo federal. É o principal portal de dados
+                            abertos do Brasil.</p>
+                        <p><strong>Exemplos de dados:</strong> Cadastro Nacional de Pessoas Jurídicas (CNPJ), dados do
+                            Censo Escolar, informações sobre convênios, etc.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">bar_chart"></i> IBGE</h4>
+                        <p><strong>Site:</strong> <a href="https://www.ibge.gov.br" target="_blank">ibge.gov.br</a></p>
+                        <p>Estatísticas demográficas, sociais e econômicas do Brasil. Referência para pesquisas
+                            populacionais, econômicas e territoriais.</p>
+                        <p><strong>Exemplos de dados:</strong> Censo Demográfico, PNAD Contínua, PIB municipal, Índice
+                            de Desenvolvimento Humano (IDH) municipal.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">receipt_long"></i> Portal da Transparência</h4>
+                        <p><strong>Site:</strong> <a href="https://www.portaltransparencia.gov.br"
+                                target="_blank">portaltransparencia.gov.br</a></p>
+                        <p>Informações sobre gastos públicos, convênios, salários de servidores, licitações e muito
+                            mais.</p>
+                        <p><strong>Exemplos de dados:</strong> Despesas do governo federal, repasses a municípios,
+                            diárias de servidores.</p>
+                    </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">health_and_safety"></i> DATASUS</h4>
+                        <p><strong>Site:</strong> <a href="https://datasus.saude.gov.br"
+                                target="_blank">datasus.saude.gov.br</a></p>
+                        <p>Dados sobre saúde pública no Brasil, incluindo mortalidade, nascidos vivos, internações e
+                            muito mais.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">school"></i> INEP</h4>
+                        <p><strong>Site:</strong> <a href="https://www.gov.br/inep" target="_blank">gov.br/inep</a></p>
+                        <p>Dados educacionais: Censo Escolar, ENEM, SAEB, IDEB, entre outros.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <h4><i class="material-icons">work"></i> CAGED/MEI</h4>
+                        <p><strong>Site:</strong> <a href="https://www.gov.br/trabalho-e-emprego"
+                                target="_blank">gov.br/trabalho-e-emprego</a></p>
+                        <p>Dados sobre admissões e desligamentos formais no mercado de trabalho brasileiro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portais Estaduais e Municipais -->
+            <div class="portal-card">
+                <h3><i class="material-icons">location_city</i> Portais Estaduais e Municipais (Exemplo: Mato Grosso do
+                    Sul)</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <h4><i class="material-icons">verified</i> CGE-MS</h4>
+                        <p><strong>Site:</strong> <a href="https://www.transparencia.ms.gov.br"
+                                target="_blank">transparencia.ms.gov.br</a></p>
+                        <p>Controladoria-Geral do Estado de Mato Grosso do Sul, com dados de transparência estadual.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <h4><i class="material-icons">local_hospital"></i> Secretarias Estaduais</h4>
+                        <p>Muitas secretarias possuem seus próprios portais de dados (Saúde, Educação, Meio Ambiente,
+                            etc.).</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <h4><i class="material-icons">apartment"></i> Prefeituras Municipais</h4>
+                        <p>Portais da transparência municipais (ex: <a
+                                href="https://transparencia.campogrande.ms.gov.br" target="_blank">Campo Grande</a>),
+                            com dados locais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">tipologia</i> Aplicação prática: Análise Organizacional com dados públicos
+                </h4>
+                <p>Imagine analisar o desempenho das escolas municipais de Campo Grande. Dados do INEP (IDEB, notas do
+                    SAEB) combinados com dados do Censo Escolar (estrutura, tamanho das turmas) podem revelar padrões de
+                    qualidade. Com esses dados, é possível propor soluções tecnológicas como um <strong>dashboard de
+                        acompanhamento educacional</strong> para gestores públicos e pais.</p>
+            </div>
+        </section>
+
+        <!-- LEI GERAL DE PROTEÇÃO DE DADOS (LGPD) -->
+        <section>
+            <h2>⚖️ A Lei Geral de Proteção de Dados (LGPD)</h2>
+            <p>A <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong> é a nossa bússola para o
+                tratamento de dados pessoais no Brasil. Ela visa proteger os direitos de privacidade e liberdade dos
+                cidadãos, garantindo que seus dados sejam usados de forma <strong>justa, transparente e segura</strong>.
+            </p>
+
+            <div class="lgpd-card">
+                <h3><i class="material-icons">info</i> Principais Conceitos da LGPD</h3>
+                <div class="principio-item">
+                    <div class="principio-numero">1</div>
+                    <div><strong>Dado Pessoal:</strong> Informação que identifica ou pode identificar uma pessoa (nome,
+                        CPF, endereço, e-mail, IP, dados de localização, etc.).</div>
+                </div>
+                <div class="principio-item">
+                    <div class="principio-numero">2</div>
+                    <div><strong>Dado Pessoal Sensível:</strong> Informação sobre origem racial, convicção religiosa,
+                        opinião política, saúde, vida sexual, dado genético ou biométrico. Estes têm proteção ainda mais
+                        rigorosa.</div>
+                </div>
+                <div class="principio-item">
+                    <div class="principio-numero">3</div>
+                    <div><strong>Tratamento:</strong> Toda operação realizada com dados pessoais (coleta, armazenamento,
+                        uso, compartilhamento, eliminação).</div>
+                </div>
+                <div class="principio-item">
+                    <div class="principio-numero">4</div>
+                    <div><strong>Controlador:</strong> Quem decide quais dados coletar e para que finalidade (ex: a
+                        organização que coleta dados).</div>
+                </div>
+                <div class="principio-item">
+                    <div class="principio-numero">5</div>
+                    <div><strong>Operador:</strong> Quem trata os dados em nome do controlador (ex: uma empresa de cloud
+                        computing).</div>
+                </div>
+            </div>
+
+            <div class="lgpd-card">
+                <h3><i class="material-icons">shield</i> 10 Princípios da LGPD (Art. 6º)</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+                    <div><strong>1. Finalidade</strong> – Propósito legítimo e específico</div>
+                    <div><strong>2. Adequação</strong> – Compatibilidade com a finalidade</div>
+                    <div><strong>3. Necessidade</strong> – Limitação ao mínimo necessário</div>
+                    <div><strong>4. Livre acesso</strong> – Garantia de consulta facilitada</div>
+                    <div><strong>5. Qualidade dos dados</strong> – Exatidão e atualização</div>
+                    <div><strong>6. Transparência</strong> – Informação clara sobre o tratamento</div>
+                    <div><strong>7. Segurança</strong> – Medidas técnicas e administrativas</div>
+                    <div><strong>8. Prevenção</strong> – Medidas para evitar danos</div>
+                    <div><strong>9. Não discriminação</strong> – Proibição de fins discriminatórios</div>
+                    <div><strong>10. Prestação de contas</strong> – Demonstrar conformidade</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">gavel</i> LGPD e Dados Públicos:</strong>
+                <p>Dados públicos <strong>não são proibidos</strong> pela LGPD, mas <strong>se uma base de dados pública
+                        contiver dados pessoais, seu tratamento deve seguir os princípios da LGPD</strong>. Isso
+                    significa que não podemos usar dados pessoais de forma indiscriminada, nem para fins que não sejam
+                    legítimos ou que violem a privacidade.</p>
+                <p><strong>Exemplo prático:</strong> A base de CNPJ contém dados de contato dos sócios (nome e CPF).
+                    Esses são dados pessoais. Ao utilizar essa base em uma análise, deve-se respeitar a finalidade (ex:
+                    verificar regularidade fiscal) e evitar usos não autorizados (ex: marketing direto não solicitado).
+                </p>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">warning</i> Direitos dos titulares (Art. 18 da LGPD):</strong>
+                <p>Os cidadãos têm direito a solicitar ao controlador o acesso, correção, exclusão, portabilidade e
+                    oposição ao tratamento dos seus dados pessoais. Qualquer sistema ou solução tecnológica que trate
+                    dados pessoais deve permitir o exercício desses direitos.</p>
+            </div>
+        </section>
+
+        <!-- BASES DE DADOS PÚBLICAS, LGPD E ANÁLISE ORGANIZACIONAL -->
+        <section>
+            <h2>🔗 Bases de Dados Públicas, LGPD e Análise Organizacional</h2>
+            <p>Quando falamos de <strong>Análise Organizacional</strong>, estamos investigando estruturas, processos e o
+                impacto de uma organização. Bases de dados públicas são fontes ricas para essa análise, pois fornecem
+                informações sobre o desempenho, a gestão e os resultados de órgãos públicos e privados.</p>
+
+            <div class="exemplo-aplicacao">
+                <h4><i class="material-icons">business_center</i> Exemplos de usos da análise de dados públicos na
+                    análise organizacional:</h4>
+                <ul>
+                    <li><strong>Análise de desempenho de escolas públicas:</strong> Cruzamento de dados do INEP (IDEB,
+                        notas) com dados do Censo Escolar para entender fatores associados à qualidade do ensino.</li>
+                    <li><strong>Estudo da eficiência de hospitais públicos:</strong> Uso de dados do DATASUS e do CNES
+                        para analisar tempo de espera, taxa de ocupação, mortalidade, etc.</li>
+                    <li><strong>Transparência e fiscalização de gastos:</strong> Utilização do Portal da Transparência
+                        para identificar desperdícios, sobrepreços ou irregularidades.</li>
+                    <li><strong>Mapeamento de vulnerabilidades sociais:</strong> Combinação de dados do IBGE (renda,
+                        escolaridade) com dados de saúde e segurança para planejar políticas públicas.</li>
+                </ul>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">balance</i> A LGPD como balizador ético e legal</h4>
+                <p>A LGPD orienta sobre como podemos (e devemos) acessar e utilizar esses dados, especialmente quando
+                    contêm informações pessoais. <strong>Nosso desafio é: usar dados públicos para entender e propor
+                        soluções para problemas reais, sempre com a LGPD em mente.</strong></p>
+            </div>
+        </section>
+
+        <!-- DESAFIO PRÁTICO -->
+        <section>
+            <h2>🏆 Desafio Prático: Escolha do Nosso Tema!</h2>
+            <p>Agora, vamos identificar um <strong>problema prático na nossa localidade</strong>. Pense em algo que você
+                observa no seu dia a dia, no seu bairro, escola, comunidade ou cidade. Esse problema deve ter
+                características culturais ou sociais que o tornem relevante para a comunidade.</p>
+
+            <div class="desafio-box">
+                <h3><i class="material-icons">lightbulb</i> Exemplos de temas para o desafio</h3>
+                <ul>
+                    <li>🚌 <strong>Transporte público:</strong> Problemas de rotas, horários insuficientes,
+                        acessibilidade para pessoas com deficiência.</li>
+                    <li>🏞️ <strong>Infraestrutura urbana:</strong> Falta de manutenção em praças, áreas de lazer
+                        degradadas, iluminação pública deficiente.</li>
+                    <li>🚔 <strong>Segurança pública:</strong> Bairros com altos índices de ocorrências, tipos de crimes
+                        mais comuns, horários críticos.</li>
+                    <li>🗑️ <strong>Gestão de resíduos:</strong> Coleta de lixo irregular, reciclagem inexistente ou
+                        pouco divulgada, descarte irregular.</li>
+                    <li>🏥 <strong>Acesso à saúde:</strong> Demora no atendimento em UPAs, falta de vagas em
+                        especialidades, longas filas.</li>
+                    <li>📚 <strong>Educação:</strong> Evasão escolar, baixo desempenho em avaliações, falta de
+                        infraestrutura em escolas.</li>
+                </ul>
+            </div>
+
+            <div class="exemplo-tema">
+                <h4><i class="material-icons">psychology</i> A sacada: Escolha algo que te motive!</h4>
+                <p>Escolha um tema que você tenha <strong>interesse genuíno</strong> e que você acredite que
+                    <strong>dados públicos possam ajudar a entender</strong>. A motivação pessoal é fundamental para uma
+                    análise aprofundada e uma solução relevante.</p>
+            </div>
+
+            <h3>📋 Etapas do desafio prático</h3>
+            <div class="etapa-desafio">
+                <div class="etapa-numero">1</div>
+                <div><strong>Identificação do problema:</strong> Descreva claramente o problema que você observa na sua
+                    localidade, contextualizando-o social e culturalmente.</div>
+            </div>
+            <div class="etapa-desafio">
+                <div class="etapa-numero">2</div>
+                <div><strong>Definição da questão de pesquisa:</strong> Transforme o problema em uma pergunta que possa
+                    ser investigada com dados. Exemplo: "Quais os bairros de Campo Grande com maior tempo de espera em
+                    UPAs?"</div>
+            </div>
+            <div class="etapa-desafio">
+                <div class="etapa-numero">3</div>
+                <div><strong>Busca por bases de dados públicas:</strong> Identifique fontes de dados que podem responder
+                    à questão (dados.gov.br, IBGE, DATASUS, portais estaduais/municipais).</div>
+            </div>
+            <div class="etapa-desafio">
+                <div class="etapa-numero">4</div>
+                <div><strong>Análise preliminar dos dados:</strong> Verifique se os dados estão disponíveis, se são
+                    confiáveis e se permitem responder à questão.</div>
+            </div>
+            <div class="etapa-desafio">
+                <div class="etapa-numero">5</div>
+                <div><strong>Proposição de uma solução tecnológica:</strong> Com base na análise, proponha uma solução
+                    tecnológica (dashboard, aplicativo, sistema de alerta, etc.) que ajude a mitigar o problema
+                    identificado.</div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <strong><i class="material-icons">checklist</i> Checklist para escolha do tema:</strong>
+                <ul>
+                    <li>🔹 O problema é relevante para a comunidade?</li>
+                    <li>🔹 O problema pode ser investigado com dados públicos?</li>
+                    <li>🔹 A solução proposta é viável tecnicamente?</li>
+                    <li>🔹 A solução respeita os princípios da LGPD?</li>
+                    <li>🔹 Há potencial de impacto positivo real?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RELAÇÃO COM O PROJETO CIDADE VIRTUAL -->
+        <section>
+            <h2>🏙️ Aplicação no projeto Cidade Virtual</h2>
+            <p>Os conceitos de bases de dados públicas e LGPD podem ser diretamente aplicados ao projeto Cidade Virtual,
+                que visa conectar moradores, comércios e autônomos do bairro Cabanagem.</p>
+
+            <div class="example-card">
+                <h4><i class="material-icons">sync_alt</i> Como integrar ao Cidade Virtual:</h4>
+                <ul>
+                    <li><strong>Utilização de dados públicos para enriquecer a plataforma:</strong> Incorporar dados do
+                        IBGE (demografia, renda) para contextualizar a realidade do bairro. Dados do Portal da
+                        Transparência sobre programas sociais podem ser usados para direcionar campanhas.</li>
+                    <li><strong>Garantia de conformidade com a LGPD:</strong> A plataforma coleta dados pessoais (nome,
+                        e-mail, endereço). Deve ter política de privacidade clara, consentimento explícito no cadastro e
+                        permitir que usuários exerçam seus direitos (acesso, correção, exclusão).</li>
+                    <li><strong>Transparência na origem dos dados:</strong> Se a plataforma utilizar dados de fontes
+                        governamentais (ex: verificação de CNPJ), deve informar ao usuário a fonte e a finalidade.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>JUNIOR, J. S. S.; QUINTELLA, R. H. <strong>Descoberta de conhecimento em bases de dados públicas:
+                        uma proposta de estruturação metodológica</strong>. Revista de Administração Pública, Rio de
+                    Janeiro, v. 39, n. 5, p. 1077 a 1107, 2005. Disponível em:
+                    https://periodicos.fgv.br/rap/article/view/6580. Acesso em: 6 maio. 2025.</cite></p>
+            <p><cite>MACEDO, D. F.; LEMOS, D. L. da S. <strong>Dados abertos governamentais: iniciativas e desafios na
+                        abertura de dados no Brasil e outras esferas internacionais</strong>. AtoZ: Novas práticas em
+                    informação e conhecimento, v. 10, n. 2, p. 14–26, 2021. Disponível em:
+                    https://revistas.ufpr.br/atoz/article/view/77737. Acesso em: 6 maio. 2025.</cite></p>
+            <p><cite>TAMER, Maurício. <strong>LGPD Comentada: artigo por artigo</strong>. 3. ed. São Paulo: Rideel,
+                    2024. E-book. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>BRASIL. <strong>Lei nº 13.709, de 14 de agosto de 2018</strong>. Lei Geral de Proteção de Dados
+                    Pessoais (LGPD). Disponível em:
+                    http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm. Acesso em: 28 mai.
+                    2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 28 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 1: Bases
+            de Dados Públicas e LGPD 🗂️</p>
+    </footer>
+</body>
+
+</html>
