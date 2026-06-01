@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 2 | Coleta, Tratamento e Preparação dos Dados</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 2 - Definição do Problema, Coleta e Tratamento de Dados</h2>
+        <h3>📥 Unidade 2 – Coleta, Tratamento e Preparação dos Dados</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-definicao-e-delimitacao-do-problema.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 2 Und 1 
+            </a>
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout P. Mod 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/pe3WQlWLUuU" frameborder="0"
+                    title="Coleta, Tratamento e Preparação dos Dados - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Coleta, Tratamento e Preparação dos Dados - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 2 - Unidade 2
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 29 de maio de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">database</i> A importância dos dados</strong>
+                    <p>Entenda por que dados de qualidade são fundamentais para análises confiáveis.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">compare</i> Software versus Biblioteca</strong>
+                    <p>Conheça as vantagens e desvantagens de cada abordagem para tratamento de dados.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">analytics</i> Análise exploratória inicial</strong>
+                    <p>Aprenda a identificar características e métricas dos seus dados.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">cleaning_services</i> Pré-processamento dos dados</strong>
+                    <p>Domine técnicas de limpeza, imputação e preparação para análise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. A IMPORTÂNCIA DOS DADOS -->
+        <section>
+            <h2>📊 1. A Importância dos Dados</h2>
+
+            <div class="info-box">
+                <strong><i class="material-icons">whatshot</i> Dados são o novo petróleo</strong>
+                <p>Assim como o petróleo impulsionou a era industrial, os dados são o recurso estratégico da era
+                    digital. No entanto, dados brutos precisam ser refinados, tratados e preparados para gerar valor
+                    real.</p>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">error_outline</i> O princípio fundamental: "Garbage In, Garbage Out"
+                    (Entra lixo, sai lixo)</strong>
+                <p>Dados mal coletados ou mal tratados geram análises ruins, decisões equivocadas e soluções
+                    tecnológicas ineficazes. A qualidade da sua análise é diretamente proporcional à qualidade dos seus
+                    dados.</p>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">bug_report</i> Exemplos de problemas comuns em dados brutos:</h4>
+                <ul>
+                    <li><strong>📝 Erros de classificação:</strong> Um cliente pode ser classificado como "inativo"
+                        quando ainda está ativo, distorcendo métricas de churn.</li>
+                    <li><strong>🔄 Dados duplicados:</strong> O mesmo registro aparece múltiplas vezes, inflando
+                        contagens e enviesando médias.</li>
+                    <li><strong>❓ Valores ausentes (missing values):</strong> Campos vazios que impossibilitam cálculos
+                        ou exigem tratamento especial.</li>
+                    <li><strong>📏 Formatos inconsistentes:</strong> Datas em diferentes padrões (DD/MM/AAAA vs
+                        MM/DD/AAAA) ou números com separadores diferentes.</li>
+                    <li><strong>🎯 Outliers não tratados:</strong> Valores extremos que podem distorcer completamente a
+                        análise.</li>
+                </ul>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">psychology</i> Mineração de dados (Data Mining)</h4>
+                <p>A mineração de dados é o processo de descobrir padrões, correlações e insights úteis a partir de
+                    grandes volumes de dados. Mas atenção: <strong>mineração de dados sem pré-processamento adequado é
+                        como garimpar no lixo</strong> - você pode até encontrar algo, mas a maioria será descarte.</p>
+            </div>
+        </section>
+
+        <!-- 2. SOFTWARES VERSUS BIBLIOTECAS -->
+        <section>
+            <h2>🛠️ 2. Softwares versus Bibliotecas</h2>
+            <p>Para realizar análise e tratamento de dados, você tem duas abordagens principais: usar softwares com
+                interface gráfica ou bibliotecas de programação. Cada uma tem seus pontos fortes e fracos.</p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <h4><i class="material-icons">dashboard</i> Softwares Especializados</h4>
+                    <p><strong>Exemplos:</strong> Orange Lab, Weka, Pentaho, RapidMiner, KNIME</p>
+                    <p><span class="pros">✅ Vantagens:</span></p>
+                    <ul>
+                        <li>Fácil operação com interface visual (drag-and-drop)</li>
+                        <li>Sem necessidade de codificação</li>
+                        <li>Ambiente amigável para iniciantes</li>
+                        <li>Visualização rápida de resultados</li>
+                        <li>Curva de aprendizado mais suave</li>
+                    </ul>
+                    <p><span class="contras">❌ Desvantagens:</span></p>
+                    <ul>
+                        <li>Limitação de escopo e funcionalidades</li>
+                        <li>Possível licença de uso (versões pagas)</li>
+                        <li>Menos flexibilidade para análises customizadas</li>
+                        <li>Dificuldade para replicar pipelines complexos</li>
+                        <li>Processamento limitado para big data</li>
+                    </ul>
+                </div>
+                <div class="comparacao-card">
+                    <h4><i class="material-icons">code</i> Bibliotecas de Programação</h4>
+                    <p><strong>Exemplos:</strong> Pandas (Python), NumPy (Python), dplyr (R), tidyverse (R)</p>
+                    <p><span class="pros">✅ Vantagens:</span></p>
+                    <ul>
+                        <li>Máxima flexibilidade e controle sobre a análise</li>
+                        <li>Código escalável e reproduzível</li>
+                        <li>Robusto para grandes volumes de dados</li>
+                        <li>Integração com outras ferramentas (APIs, bancos de dados)</li>
+                        <li>Comunidade ativa e vasta documentação</li>
+                        <li>Gratuito e open-source</li>
+                    </ul>
+                    <p><span class="contras">❌ Desvantagens:</span></p>
+                    <ul>
+                        <li>Requer conhecimento de linguagem de programação</li>
+                        <li>Curva de aprendizado mais íngreme</li>
+                        <li>Debugging e erros inerentes ao programador</li>
+                        <li>Configuração inicial de ambiente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dica-ferramenta">
+                <h4><i class="material-icons">insights</i> Qual escolher?</h4>
+                <p><strong>Para iniciantes ou análises rápidas:</strong> Comece com Orange Lab - é gratuito, visual e
+                    muito intuitivo. Ótimo para aprender os conceitos sem se preocupar com sintaxe.</p>
+                <p><strong>Para projetos profissionais ou em escala:</strong> Invista em aprender Python com Pandas. É o
+                    padrão da indústria para ciência de dados e será um diferencial no seu currículo.</p>
+                <p><strong>Melhor abordagem:</strong> Use os dois! Prototipe no Orange para validar ideias rapidamente e
+                    depois implemente em Python para produção.</p>
+            </div>
+        </section>
+
+        <!-- 3. FONTES DE DADOS -->
+        <section>
+            <h2>🗂️ 3. Fontes e Coleta de Dados</h2>
+
+            <div class="etapa-card">
+                <h3><i class="material-icons">source</i> Como coletar dados?</h3>
+                <ul>
+                    <li><strong>📋 Manual:</strong> Inserção direta por pessoas (planilhas, formulários). <span
+                            class="badge-linguagem">Propenso a erros</span></li>
+                    <li><strong>🤖 Automático:</strong> APIs, web scraping, sensores, logs de sistemas. <span
+                            class="badge-linguagem">Escalável</span></li>
+                    <li><strong>📁 Arquivos:</strong> CSV, Excel, JSON, XML, Parquet, bancos de dados (SQL).</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">public</i> Principais fontes de dados públicos no Brasil:</strong>
+                <ul>
+                    <li><strong>dados.gov.br</strong> - Portal Brasileiro de Dados Abertos</li>
+                    <li><strong>IBGE</strong> - Estatísticas demográficas, econômicas e sociais</li>
+                    <li><strong>SNIS/SINISA</strong> - Saneamento básico (água, esgoto, resíduos, drenagem)</li>
+                    <li><strong>Portal da Transparência</strong> - Gastos públicos</li>
+                    <li><strong>DATASUS</strong> - Dados de saúde</li>
+                    <li><strong>INEP</strong> - Dados educacionais (ENEM, Censo Escolar, IDEB)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. ABRINDO DATASET (Orange e Python) -->
+        <section>
+            <h2>📂 4. Abrindo Dataset - Exemplos Práticos</h2>
+
+            <h3>Orange Lab</h3>
+            <div class="ferramenta-logo">
+                <i class="material-icons" style="font-size: 32px; color: #f60;">🍊</i>
+                <span><strong>Orange Data Mining</strong> - Interface visual</span>
+            </div>
+            <div class="codigo-box" style="background-color: #f8f9fa; color: #333;">
+                <pre style="color: #333; background: #f8f9fa;">
+<strong>Passos no Orange:</strong>
+
+1. Widget "File" → Carregar dataset
+   - From File: .csv, .xlsx, .tab
+   - From URL: link direto para arquivo
+   - From SQL: conexão com banco de dados
+
+2. Widget "Data Table" → Visualizar dados
+
+3. Widget "Feature Statistics" → Análise estatística
+
+4. Widget "Select Rows" ou "Select Columns" → Filtrar dados</pre>
+            </div>
+
+            <h3>Python com Pandas</h3>
+            <div class="ferramenta-logo">
+                <i class="material-icons" style="font-size: 32px; color: #3776AB;">🐍</i>
+                <span><strong>Python + Pandas</strong> - Código reproduzível</span>
+            </div>
+            <div class="codigo-box">
+                <pre><code><span class="comment"># Importando bibliotecas</span>
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+
+<span class="comment"># Carregando dataset de um arquivo CSV</span>
+df = pd.read_csv(<span class="string">'dados_vias_cabanagem.csv'</span>)
+
+<span class="comment"># Carregando de uma URL</span>
+url = <span class="string">'https://raw.githubusercontent.com/exemplo/dados.csv'</span>
+df = pd.read_csv(url)
+
+<span class="comment"># Conectando a um banco SQL (exemplo)</span>
+<span class="keyword">import</span> sqlite3
+conn = sqlite3.connect(<span class="string">'database.db'</span>)
+df = pd.read_sql_query(<span class="string">"SELECT * FROM tabela"</span>, conn)
+
+<span class="comment"># Visualizando as primeiras linhas</span>
+print(df.head())
+
+<span class="comment"># Verificando informações do dataset</span>
+print(df.info())</code></pre>
+            </div>
+        </section>
+
+        <!-- 5. IDENTIFICANDO OS DADOS -->
+        <section>
+            <h2>🔍 5. Identificando os Dados - Tipos e Estrutura</h2>
+
+            <div class="etapa-card">
+                <h3><i class="material-icons">table_chart</i> Tipos de dados (Data Types)</h3>
+                <ul>
+                    <li><strong>🏷️ Categórico (Nominal):</strong> Categorias sem ordem intrínseca. Ex: "Bairro", "Tipo
+                        de via", "Situação da pavimentação" (Boa/Regular/Ruim). <span
+                            class="badge-linguagem">object/category</span></li>
+                    <li><strong>📊 Numérico Discreto:</strong> Números inteiros contáveis. Ex: "Número de buracos na
+                        via", "Quantidade de moradores". <span class="badge-linguagem">int64</span></li>
+                    <li><strong>📈 Numérico Contínuo:</strong> Números reais mensuráveis. Ex: "Extensão da via (km)",
+                        "Tempo de alagamento (horas)". <span class="badge-linguagem">float64</span></li>
+                    <li><strong>🔘 Booleano:</strong> Verdadeiro/Falso. Ex: "Tem drenagem? (Sim/Não)". <span
+                            class="badge-linguagem">bool</span></li>
+                    <li><strong>📅 Data/Hora:</strong> Datas e timestamps. Ex: "Data da última manutenção". <span
+                            class="badge-linguagem">datetime64</span></li>
+                </ul>
+            </div>
+
+            <h3>Visualização no Orange Lab - Data Table</h3>
+            <div class="codigo-box" style="background-color: #f8f9fa; color: #333;">
+                <pre style="color: #333;">
+┌──────────┬─────────────┬─────────────┬──────────────┬─────────────┐
+│ Bairro   │ Extensão_km │ Pavimentaçao│ Tem_drenagem │ Ocorrencias │
+├──────────┼─────────────┼─────────────┼──────────────┼─────────────┤
+│ Cabanagem│ 2.5         │ Não         │ Não          │ 12          │
+│ Cabanagem│ 1.8         │ Parcial     │ Não          │ 8           │
+│ Cabanagem│ 3.2         │ Sim         │ Sim          │ 2           │
+│ ...      │ ...         │ ...         │ ...          │ ...         │
+└──────────┴─────────────┴─────────────┴──────────────┴─────────────┘</pre>
+            </div>
+
+            <h3>Visualização no Python</h3>
+            <div class="codigo-box">
+                <pre><code><span class="comment"># Verificando tipos de dados</span>
+print(df.dtypes)
+
+<span class="comment"># Estatísticas descritivas para colunas numéricas</span>
+print(df.describe())
+
+<span class="comment"># Frequência para colunas categóricas</span>
+print(df['Pavimentacao'].value_counts())
+
+<span class="comment"># Verificando valores ausentes</span>
+print(df.isnull().sum())</code></pre>
+            </div>
+        </section>
+
+        <!-- 6. ANÁLISE EXPLORATÓRIA INICIAL - MÉTRICAS -->
+        <section>
+            <h2>📈 6. Análise Exploratória Inicial - Métricas dos Dados</h2>
+
+            <div class="info-box">
+                <strong><i class="material-icons">calculate</i> Feature Statistics - Principais métricas:</strong>
+                <ul>
+                    <li><strong>📊 Média (Mean):</strong> Soma dos valores dividida pelo número de observações. Sensível
+                        a outliers.</li>
+                    <li><strong>📐 Mediana (Median):</strong> Valor central quando os dados estão ordenados. Robusta a
+                        outliers.</li>
+                    <li><strong>📏 Desvio-padrão (Std):</strong> Medida de dispersão média dos dados em relação à média.
+                    </li>
+                    <li><strong>📉 Variância (Variance):</strong> Quadrado do desvio-padrão.</li>
+                    <li><strong>📊 Mínimo e Máximo (Min/Max):</strong> Limites inferior e superior dos dados.</li>
+                    <li><strong>📋 Quartis (Q1, Q2, Q3):</strong> Dividem os dados em 4 partes iguais. Q2 = mediana.
+                    </li>
+                    <li><strong>🎯 Intervalo Interquartil (IQR):</strong> Q3 - Q1. Útil para detectar outliers.</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">analytics</i> Exemplo de saída de estatísticas (Python)</h4>
+                <div class="codigo-box" style="background-color: #f8f9fa; color: #333;">
+                    <pre style="color: #333;">
+        Extensão_km  Ocorrencias_alagamento  Nota_manutencao
+count    150.000000              150.000000       145.000000
+mean       1.850000                7.230000         5.600000
+std        0.920000                4.120000         2.100000
+min        0.300000                0.000000         1.000000
+25%        1.200000                4.000000         4.000000
+50%        1.700000                7.000000         6.000000
+75%        2.400000               10.000000         7.000000
+max        4.500000               22.000000        10.000000</pre>
+                </div>
+                <p><strong>Insights desta análise:</strong> A coluna "Nota_manutencao" tem 5 valores ausentes (count =
+                    145 vs 150). A mediana de ocorrências de alagamento é 7, mas há vias com até 22 ocorrências
+                    (possíveis outliers).</p>
+            </div>
+
+            <div class="box-plot-simulado" style="background-color: #f0f7ff; padding: 15px;">
+                <i class="material-icons" style="font-size: 32px;">insert_chart</i>
+                <strong>Interpretação de Box Plot (Diagrama de caixa):</strong>
+                <pre style="background: transparent; border: none; text-align: center; font-size: 0.8em;">
+      Outliers   │       │
+            (valores │   ┌───┼───┐
+        atípicos)│   │   │
+                ●    │   │   │   │
+            ●    └───┼───┘
+                     │   │
+                                                            └───┴───┘→ Q1 (25%)  Mediana (50%)  Q3 (75%)
+                </pre>
+                <p>Valores acima de Q3 + 1,5×IQR ou abaixo de Q1 - 1,5×IQR são considerados outliers.</p>
+            </div>
+        </section>
+
+        <!-- 7. PRÉ-PROCESSAMENTO - IMPUTAÇÃO -->
+        <section>
+            <h2>🧹 7. Pré-processamento: Imputação e Tratamento de Dados</h2>
+
+            <div class="etapa-card">
+                <h3><i class="material-icons">cleaning_services</i> O que é imputação?</h3>
+                <p>Imputação é o processo de substituir valores ausentes (missing values) por valores estimados,
+                    permitindo que a análise seja realizada sem perda de observações.</p>
+            </div>
+
+            <h3>Métodos de Imputação no Orange Lab (Widget "Impute")</h3>
+            <ul>
+                <li><strong>📊 Média (Mean):</strong> Substitui valores ausentes pela média da coluna. Bom para dados
+                    simétricos sem outliers.</li>
+                <li><strong>📐 Mediana (Median):</strong> Substitui pela mediana. Mais robusto para dados com outliers.
+                </li>
+                <li><strong>🎲 Aleatório (Random):</strong> Amostra aleatória dos valores existentes. Preserva
+                    distribuição.</li>
+                <li><strong>📈 Regressão (Model-based):</strong> Usa um modelo para prever valores ausentes. Mais
+                    sofisticado.</li>
+                <li><strong>📋 Moda (Most frequent):</strong> Para dados categóricos, usa o valor mais comum.</li>
+                <li><strong>❌ Remover (Remove):</strong> Exclui linhas com valores ausentes. Útil quando poucos
+                    registros são afetados.</li>
+            </ul>
+
+            <h3>Imputação em Python com Pandas</h3>
+            <div class="codigo-box">
+                <pre><code><span class="comment"># Identificando valores ausentes</span>
+print(df.isnull().sum())
+
+<span class="comment"># Imputação por média (coluna numérica)</span>
+df['nota_manutencao'].fillna(df['nota_manutencao'].mean(), inplace=True)
+
+<span class="comment"># Imputação por mediana (mais robusto para outliers)</span>
+df['extensão_km'].fillna(df['extensão_km'].median(), inplace=True)
+
+<span class="comment"># Imputação por moda (para dados categóricos)</span>
+df['bairro'].fillna(df['bairro'].mode()[0], inplace=True)
+
+<span class="comment"># Imputação com valor específico</span>
+df['tem_drenagem'].fillna(<span class="string">'Não informado'</span>, inplace=True)
+
+<span class="comment"># Método avançado: forward fill (propaga o último valor válido)</span>
+df.fillna(method=<span class="string">'ffill'</span>, inplace=True)
+
+<span class="comment"># Removendo linhas com qualquer valor ausente (último recurso)</span>
+df.dropna(inplace=True)</code></pre>
+            </div>
+
+            <div class="imputacao-exemplo">
+                <div class="imputacao-col">
+                    <h4><i class="material-icons">dangerous</i> Antes da Imputação</h4>
+                    <div class="data-sample">
+                        <table style="width:100%; font-size:0.8em;">
+                            <tr>
+                                <th>Via</th>
+                                <th>Extensão_km</th>
+                                <th>Nota_Manut</th>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>2.5</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>1.8</td>
+                                <td style="background:#ffcccc;">NaN</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td style="background:#ffcccc;">NaN</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>3.2</td>
+                                <td>8</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="imputacao-col">
+                    <h4><i class="material-icons">check_circle</i> Depois da Imputação (média)</h4>
+                    <div class="data-sample">
+                        <table style="width:100%; font-size:0.8em;">
+                            <tr>
+                                <th>Via</th>
+                                <th>Extensão_km</th>
+                                <th>Nota_Manut</th>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>2.5</td>
+                                <td>7.0</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>1.8</td>
+                                <td style="background:#ccffcc;">6.33</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td style="background:#ccffcc;">2.5</td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>3.2</td>
+                                <td>8.0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p style="font-size:0.75em; margin-top:5px;">Média Extensão = (2.5+1.8+3.2)/3 = 2.5 | Média Nota =
+                        (7+4+8)/3 = 6.33</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PRÉ-PROCESSAMENTO AVANÇADO -->
+        <section>
+            <h2>⚙️ 8. Pré-processamento Avançado</h2>
+
+            <div class="etapa-card">
+                <h3><i class="material-icons">transform</i> Outras técnicas importantes de pré-processamento:</h3>
+                <ul>
+                    <li><strong>🔧 Normalização/Padronização:</strong> Ajustar escalas de variáveis numéricas para que
+                        tenham média 0 e desvio 1 (StandardScaler) ou estejam no intervalo [0,1] (MinMaxScaler).
+                        Essencial para algoritmos sensíveis à escala (SVM, redes neurais, KNN).</li>
+                    <li><strong>🏷️ Codificação de variáveis categóricas:</strong> Converter categorias em números
+                        (One-Hot Encoding, Label Encoding) para algoritmos de machine learning.</li>
+                    <li><strong>🔄 Remoção de duplicatas:</strong> Identificar e eliminar registros duplicados que podem
+                        enviesar a análise.</li>
+                    <li><strong>📊 Detecção e tratamento de outliers:</strong> Usar IQR ou Z-score para identificar
+                        valores extremos e decidir se removê-los, transformá-los ou tratá-los separadamente.</li>
+                    <li><strong>📅 Extração de características (Feature Engineering):</strong> Criar novas variáveis a
+                        partir das existentes (ex: dia_da_semana a partir de uma data, ou faixa_etária a partir da
+                        idade).</li>
+                    <li><strong>📉 Redução de dimensionalidade:</strong> PCA (Principal Component Analysis) para reduzir
+                        número de variáveis preservando informação.</li>
+                </ul>
+            </div>
+
+            <div class="codigo-box">
+                <pre><code><span class="comment"># Normalização (StandardScaler - scikit-learn)</span>
+<span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler
+scaler = StandardScaler()
+df_normalizado = scaler.fit_transform(df[['extensao_km', 'ocorrencias']])
+
+<span class="comment"># One-Hot Encoding para variáveis categóricas</span>
+df = pd.get_dummies(df, columns=['tipo_via', 'situacao_pav'])
+
+<span class="comment"># Removendo duplicatas</span>
+df.drop_duplicates(inplace=True)
+
+<span class="comment"># Detectando outliers com IQR</span>
+Q1 = df['ocorrencias'].quantile(0.25)
+Q3 = df['ocorrencias'].quantile(0.75)
+IQR = Q3 - Q1
+limite_superior = Q3 + 1.5 * IQR
+outliers = df[df['ocorrencias'] > limite_superior]
+print(f"Outliers encontrados: {len(outliers)}")</code></pre>
+            </div>
+        </section>
+
+        <!-- COMPARAÇÃO FINAL -->
+        <section>
+            <h2>📊 9. Comparação Final: Antes e Depois do Pré-processamento</h2>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-card">
+                    <h4><i class="material-icons">report_problem</i> Dataset Bruto</h4>
+                    <ul>
+                        <li>❌ 15% de valores ausentes</li>
+                        <li>❌ 8% de registros duplicados</li>
+                        <li>❌ Escalas inconsistentes (km e metros misturados)</li>
+                        <li>❌ Outliers distorcendo médias</li>
+                        <li>❌ Categorias com textos inconsistentes ("Sim"/"S"/"TRUE")</li>
+                        <li>❌ Datas em formatos diferentes</li>
+                    </ul>
+                </div>
+                <div class="comparacao-card">
+                    <h4><i class="material-icons">check_circle</i> Dataset Preparado</h4>
+                    <ul>
+                        <li>✅ 0% valores ausentes (imputação adequada)</li>
+                        <li>✅ Registros únicos e consistentes</li>
+                        <li>✅ Dados padronizados (mesma unidade de medida)</li>
+                        <li>✅ Outliers tratados ou sinalizados</li>
+                        <li>✅ Categorias normalizadas (padronização de texto)</li>
+                        <li>✅ Datas no formato datetime</li>
+                        <li>✅ Pronto para modelagem e análise</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Checklist de qualidade de dados (Data Quality)</h4>
+                <ul>
+                    <li><strong>✔️ Precisão:</strong> Os dados representam corretamente a realidade?</li>
+                    <li><strong>✔️ Completude:</strong> Todos os valores necessários estão presentes?</li>
+                    <li><strong>✔️ Consistência:</strong> Os dados seguem o mesmo padrão em toda a base?</li>
+                    <li><strong>✔️ Validade:</strong> Os dados estão no formato esperado e dentro dos limites definidos?
+                    </li>
+                    <li><strong>✔️ Unicidade:</strong> Não há registros duplicados?</li>
+                    <li><strong>✔️ Atualidade:</strong> Os dados são recentes e relevantes para o problema?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- APLICAÇÃO PRÁTICA - Vias da Cabanagem -->
+        <section>
+            <h2>🏘️ Aplicação Prática: Preparação dos Dados "Vias da Cabanagem"</h2>
+
+            <div class="example-card">
+                <h4><i class="material-icons">apartment</i> Dataset do problema de infraestrutura em Belém/PA</h4>
+                <p><strong>Cenário:</strong> Coletamos dados sobre 50 vias do bairro da Cabanagem, mas o dataset
+                    apresenta problemas:</p>
+                <ul>
+                    <li>10 registros sem informação sobre "pavimentação"</li>
+                    <li>3 registros com extensão da via em metros ao invés de km</li>
+                    <li>5 registros duplicados</li>
+                    <li>Valores inconsistentes em "tipo_drenagem" ("Sim", "S", "1", "True")</li>
+                </ul>
+                <p><strong>Pipeline de pré-processamento aplicado:</strong></p>
+                <ol>
+                    <li>Padronização de extensão: converter tudo para km (metros/1000)</li>
+                    <li>Imputação de "pavimentação" pela moda (valor mais frequente)</li>
+                    <li>Remoção de duplicatas</li>
+                    <li>Normalização da coluna "tipo_drenagem" (mapeamento "Sim"/"S"/"1"/"True" → "Sim",
+                        "Não"/"N"/"0"/"False" → "Não")</li>
+                    <li>Exportação do dataset limpo para análise exploratória</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>FERREIRA, Rafael Gastão Coimbra. et al. <strong>Preparação e Análise Exploratória de
+                        Dados</strong>. Porto Alegre: Sagah, 2021. 1 Recurso Online. ISBN 9786556902890. Disponível na
+                    Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>GRUS, Joel. <strong>Data Science do Zero</strong>. Rio de Janeiro: Editora Alta Books, 2021.
+                    E-book. p.127-147. ISBN 9788550816463. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>MCKINNEY, Wes. <strong>Python for Data Analysis</strong>. 3rd ed. O'Reilly Media, 2022. ISBN
+                    9781098104030.</cite></p>
+            <p><cite>DEMŠAR, Janez; CURK, Tomaz; ERJAVEC, Ales. <strong>Orange: Data Mining Toolbox in Python</strong>.
+                    Journal of Machine Learning Research, 2013.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 29 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 2: Coleta,
+            Tratamento e Preparação dos Dados 📥</p>
+    </footer>
+</body>
+
+</html>
