@@ -2817,3 +2817,226 @@ a:hover {
   left: 0;
   color: #28a745;
 }
+
+/* Mod 2 Und 1 */
+
+.exemplo-conceito {
+  background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
+  border-left: 4px solid #0066cc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.hipotese-card {
+  background-color: #fff9e6;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.teste-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: monospace;
+}
+
+.box-plot-simulado {
+  background-color: #f0f7ff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: monospace;
+  margin: 20px 0;
+}
+
+.pergunta-especifica {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.ferramenta-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ferramenta-item i {
+  font-size: 32px;
+  color: #0066cc;
+}
+
+.dica-avancada {
+  background: linear-gradient(135deg, #1a2b3c, #245);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+}
+
+.dica-avancada h4 {
+  color: #ffc107;
+  margin-top: 0;
+}
+
+.dica-avancada a {
+  color: #7ee787;
+}
+
+/* Mod 2 und 2 */
+
+.comparacao-card h4 {
+  color: #245;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pros {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.contras {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.codigo-box {
+  background-color: #1a2b3c;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.codigo-box pre {
+  background-color: transparent;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.codigo-box .keyword {
+  color: #7ee787;
+}
+
+.codigo-box .comment {
+  color: #8b949e;
+}
+
+.etapa-card {
+  background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 5px solid #0066cc;
+}
+
+.ferramenta-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.badge-linguagem {
+  display: inline-block;
+  background-color: #0066cc;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7em;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.imputacao-exemplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.imputacao-col {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.data-sample {
+  font-family: monospace;
+  font-size: 0.85em;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.dica-ferramenta {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+/* Checkout mod2 */
+
+.extensao-box {
+  background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+  border-left: 4px solid #0066cc;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+}
+
+.extensao-box h3 {
+  color: #0066cc;
+  margin-top: 0;
+}
+
+.template-info h4 {
+  color: #0066cc;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orientacao-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 15px 0;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #28a745;
+}
+
+.orientacao-numero {
+  background-color: #28a745;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
