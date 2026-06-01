@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 2 | Definição e Delimitação do Problema</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 2 - Definição do Problema, Coleta e Tratamento de Dados</h2>
+        <h3>🎯 Unidade 1 – Definição e Delimitação do Problema</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Checkout P. Mod 1 
+            </a>
+            <a href="mod2_und2-coleta-tratamento-e-preparacao-dos-dados.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 2 Und 2  <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/heIClSybCk4" frameborder="0"
+                    title="Definição e Delimitação do Problema - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Definição e Delimitação do Problema - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 2 - Unidade 1
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 29 de maio de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">help_outline</i> Problema e sua definição</strong>
+                    <p>Entenda o que é um problema bem definido e por que ele é a base de qualquer projeto de dados.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">lightbulb</i> Transformando Observação em Hipótese</strong>
+                    <p>Aprenda a converter percepções em afirmações testáveis estatisticamente.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">analytics</i> Análise Exploratória de Dados (AED)</strong>
+                    <p>Domine as técnicas para conhecer, resumir e visualizar seus dados antes da modelagem.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">track_changes</i> Da Ideia Ampla à Pergunta Específica</strong>
+                    <p>Aprenda a delimitar seu problema com critérios SMART e viabilidade prática.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. O PROBLEMA BEM DEFINIDO -->
+        <section>
+            <h2>📌 1. O Problema Bem Definido</h2>
+            <p>Um projeto de dados, seja ele uma pesquisa, um estudo de caso ou uma intervenção organizacional,
+                <strong>começa com uma pergunta clara</strong>. Sem ela, você está navegando sem bússola.
+            </p>
+
+            <div class="exemplo-conceito">
+                <h4><i class="material-icons">psychology</i> As três perguntas fundamentais:</h4>
+                <ul>
+                    <li><strong>🤕 Qual a dor?</strong> O que está causando dificuldade, ineficiência ou prejuízo?</li>
+                    <li><strong>🔍 Qual a curiosidade?</strong> O que você observa e gostaria de entender melhor?</li>
+                    <li><strong>📚 Qual a lacuna de conhecimento?</strong> O que ainda não se sabe e que os dados podem
+                        revelar?</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">warning</i> Riscos de um problema mal definido:</strong>
+                <ul>
+                    <li>❌ <strong>Perder o foco:</strong> Analisar dados irrelevantes que não respondem à questão real.
+                    </li>
+                    <li>❌ <strong>Gerar resultados sem valor:</strong> Encontrar respostas para perguntas que ninguém
+                        fez.</li>
+                    <li>❌ <strong>Desperdiçar recursos:</strong> Tempo, esforço e dados mal utilizados.</li>
+                    <li>❌ <strong>Tomar decisões erradas:</strong> Soluções baseadas em problemas mal compreendidos.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">example</i> Exemplo prático - Comparando definições</h4>
+                <p><strong>Definição ruim:</strong> "Queremos melhorar o desempenho da empresa." (Muito vago, não
+                    orienta ação)</p>
+                <p><strong>Definição boa:</strong> "Por que o índice de satisfação do cliente caiu 15% no último
+                    trimestre na região Sul?" (Específica, mensurável, direcionada)</p>
+            </div>
+        </section>
+
+        <!-- 2. TRANSFORMANDO OBSERVAÇÃO EM HIPÓTESE -->
+        <section>
+            <h2>🧪 2. Transformando Observação em Hipótese</h2>
+            <p>Uma <strong>hipótese</strong> é uma suposição ou explicação provisória sobre um fenômeno que pode ser
+                testada por meio de evidências. Ela transforma seu problema em uma <strong>afirmação
+                    verificável</strong>.</p>
+
+            <div class="hipotese-card">
+                <h4><i class="material-icons">transform</i> Exemplo de transformação:</h4>
+                <p><strong>Problema (observação):</strong> "Por que a taxa de evasão escolar é alta na escola X?"</p>
+                <p><strong>Hipótese:</strong> "A falta de programas de apoio estudantil (monitoria, bolsas, orientação
+                    psicológica) está diretamente relacionada ao aumento da taxa de evasão na escola X."</p>
+                <p><strong>Por que é uma boa hipótese?</strong> Ela é testável (podemos comparar evasão com e sem
+                    programas), específica (identifica o tipo de apoio) e estabelece uma relação de causa-efeito.</p>
+            </div>
+
+            <h3>📊 Testes de Hipóteses: Confirmando ou Refutando Suposições</h3>
+            <p>Como podemos saber se nossa hipótese é plausível ou se o que observamos nos dados não é apenas
+                coincidência? Os <strong>testes estatísticos de hipóteses</strong> são ferramentas que nos ajudam a
+                tomar decisões sobre uma população com base em dados de uma amostra.</p>
+
+            <div class="teste-box">
+                <h4><i class="material-icons">timeline</i> Processo básico do teste de hipótese:</h4>
+                <ol>
+                    <li><strong>Formular Hipótese Nula (H₀):</strong> O que assumimos como verdadeiro até que a
+                        evidência indique o contrário (geralmente, "não há efeito", "não há diferença").<br>
+                        <code>H₀: Os programas implementados não têm efeito significativo sobre a taxa de evasão escolar.</code>
+                    </li>
+                    <li><strong>Formular Hipótese Alternativa (H₁):</strong> O que queremos provar (geralmente, "há um
+                        efeito", "há uma diferença").<br>
+                        <code>H₁: Os programas implementados têm efeito significativo na redução da evasão escolar.</code>
+                    </li>
+                    <li><strong>Coletar Dados:</strong> Obter as informações necessárias.<br>
+                        <code>Taxa de evasão antes: 25% (2022) | Depois: 18% (2024) | Amostra: 300 estudantes</code>
+                    </li>
+                    <li><strong>Realizar o Teste:</strong> Aplicar uma técnica estatística adequada (ex: teste t,
+                        qui-quadrado).<br>
+                        <code>p-valor = 0,03</code>
+                    </li>
+                    <li><strong>Conclusão:</strong> Como p-valor (0,03) &lt; α (0,05), <strong>rejeitamos
+                            H₀</strong>.<br>
+                        ✅ Há evidências estatísticas de que o programa contribuiu para reduzir a evasão escolar.</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">science</i> Entendendo o p-valor:</strong>
+                <p>O p-valor é a probabilidade de observar os dados (ou algo mais extremo) assumindo que a hipótese nula
+                    é verdadeira. Um p-valor baixo (&lt; 0,05) indica que é improvável que o efeito observado tenha
+                    ocorrido por acaso. <strong>Não prova causalidade</strong>, mas dá suporte estatístico para rejeitar
+                    a hipótese nula.</p>
+            </div>
+        </section>
+
+        <!-- 3. ANÁLISE EXPLORATÓRIA DE DADOS (AED) -->
+        <section>
+            <h2>📈 3. Análise Exploratória de Dados (AED)</h2>
+            <p>Antes de aplicar qualquer teste estatístico complexo, precisamos <strong>conhecer nossos dados</strong>.
+                A AED é o passo fundamental para entender padrões, identificar anomalias e gerar hipóteses.</p>
+
+            <h3>📊 Sumarizar - Estatísticas Descritivas</h3>
+            <div class="tabela-estatistica">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estatística</th>
+                            <th>Valor</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Média</td>
+                            <td>6,0</td>
+                            <td>(5 + 7,5 + 6 + 9 + 2,5) ÷ 5</td>
+                        </tr>
+                        <tr>
+                            <td>Mediana</td>
+                            <td>6,0</td>
+                            <td>Valor central da série ordenada [2,5; 5; 6; 7,5; 9]</td>
+                        </tr>
+                        <tr>
+                            <td>Desvio-padrão</td>
+                            <td>2,22</td>
+                            <td>Mede a dispersão das notas em relação à média</td>
+                        </tr>
+                        <tr>
+                            <td>Mínimo</td>
+                            <td>2,5</td>
+                            <td>Nota mais baixa</td>
+                        </tr>
+                        <tr>
+                            <td>Máximo</td>
+                            <td>9,0</td>
+                            <td>Nota mais alta</td>
+                        </tr>
+                        <tr>
+                            <td>Amplitude</td>
+                            <td>6,5</td>
+                            <td>Diferença entre valor máximo e mínimo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>📊 Visualizar - Gráficos e Identificação de Padrões</h3>
+            <div class="box-plot-simulado">
+                <i class="material-icons" style="font-size: 48px; color: #0066cc;">show_chart</i>
+                <pre style="background: transparent; border: none; text-align: center;">
+        Box Plot das Notas (Antes x Depois)
+
+        Antes:    |-----|     •     |-----|
+                 2,5   4,0   6,0   7,5   9,0
+
+        Depois:   |-----|     |-----|
+                        4,5   5,5   7,0   8,5   9,5
+
+▶ Mediana aumentou de 6,0 para 7,0
+      ▶ Dispersão reduziu (maior consistência)
+              ▶ Outlier (2,5) presente apenas no grupo "antes"
+                </pre>
+                <p style="font-size: 0.8em;">Elaborado pelo autor. Simulação de box plot comparativo.</p>
+            </div>
+
+            <h3>📊 Investigar - Comparações Intuitivas</h3>
+            <div class="tabela-estatistica">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Grupo</th>
+                            <th>Média</th>
+                            <th>Mediana</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Antes do programa</td>
+                            <td>6,0</td>
+                            <td>6,2</td>
+                        </tr>
+                        <tr>
+                            <td>Depois do programa</td>
+                            <td>7,0</td>
+                            <td>7,2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Insight:</strong> Ambos média e mediana aumentaram aproximadamente 1 ponto após o programa,
+                    sugerindo melhoria consistente.</p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Dica Avançada - Além do básico na AED</h4>
+                <p>Em projetos reais, explore também:</p>
+                <ul>
+                    <li><strong>Análise de correlação:</strong> Matriz de correlação para identificar relações entre
+                        variáveis (ex: horas de estudo vs. nota).</li>
+                    <li><strong>Detecção de outliers:</strong> Use IQR (Intervalo Interquartil) ou Z-score para
+                        identificar valores atípicos que podem distorcer análises.</li>
+                    <li><strong>Análise de missing values:</strong> Entenda padrões de dados faltantes antes de decidir
+                        como tratá-los.</li>
+                    <li><strong>Visualizações avançadas:</strong> Pair plots, heatmaps, violin plots para distribuições
+                        complexas.</li>
+                </ul>
+                <p><strong>Ferramentas gratuitas:</strong> <a href="https://orange.biolab.si/"
+                        target="_blank">Orange</a> (interface visual), <a href="https://www.python.org/"
+                        target="_blank">Python com pandas/seaborn</a>, <a href="https://www.r-project.org/"
+                        target="_blank">R com ggplot2</a>.</p>
+            </div>
+        </section>
+
+        <!-- 4. DA IDEIA AMPLA À PERGUNTA ESPECÍFICA (DELIMITAÇÃO) -->
+        <section>
+            <h2>🎯 4. Da Ideia Ampla à Pergunta Específica (Delimitação)</h2>
+            <p>Uma vez que você definiu um problema geral e fez uma exploração inicial dos dados (com AED), é hora de
+                <strong>delimitar</strong>. Este é o momento de aplicar os critérios <strong>SMART</strong> à sua
+                questão de pesquisa.
+            </p>
+
+            <div class="pergunta-especifica">
+                <h4><i class="material-icons">expand_less</i> Como delimitar (afunilar) seu problema:</h4>
+                <ul>
+                    <li><strong>📍 Tornar específico:</strong> Onde? Quando? Para quem? Em que condições?<br>
+                        <em>→ "A evasão escolar em escolas públicas de ensino médio na periferia de Campo Grande-MS,
+                            entre 2022 e 2024."</em>
+                    </li>
+                    <li><strong>📏 Tornar mensurável:</strong> Quais dados serão usados para responder?<br>
+                        <em>→ "Usaremos dados da Secretaria de Educação sobre matrículas, frequências mensais e
+                            registros de abandono escolar."</em>
+                    </li>
+                    <li><strong>⏱️ Tornar alcançável:</strong> É possível resolver com recursos e tempo disponíveis?<br>
+                        <em>→ "Dados disponíveis publicamente e entrevistas com gestores escolares locais. Análise em 3
+                            meses, com software livre (Orange, Python/pandas)."</em>
+                    </li>
+                    <li><strong>🔗 Tornar relevante:</strong> Por que isso importa para a organização ou sociedade?<br>
+                        <em>→ "Reduzir evasão impacta diretamente indicadores educacionais, inclusão social e
+                            empregabilidade futura dos jovens."</em>
+                    </li>
+                    <li><strong>⏳ Tornar temporal:</strong> Qual o horizonte de análise e intervenção?<br>
+                        <em>→ "Análise histórica 2020-2024. Proposta de solução implementável em 12 meses."</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exemplo-conceito">
+                <h4><i class="material-icons">compare_arrows</i> Comparando: Problema geral x Problema delimitado</h4>
+                <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Problema Geral</th>
+                            <th>Problema Delimitado (SMART)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"O transporte público é ineficiente."</td>
+                            <td>"Qual o impacto do novo corredor de ônibus no tempo médio de deslocamento dos moradores
+                                da Zona Sul entre 6h e 9h em dias úteis?"</td>
+                        </tr>
+                        <tr>
+                            <td>"Os custos hospitalares estão altos."</td>
+                            <td>"Os custos com internações por doenças respiratórias no Hospital Municipal X aumentaram
+                                mais que a inflação no inverno de 2025 em relação a 2024?"</td>
+                        </tr>
+                        <tr>
+                            <td>"A evasão escolar é preocupante."</td>
+                            <td>"Qual a relação entre a participação em programas de monitoria e a taxa de abandono no
+                                1º ano do Ensino Médio na rede pública de Campo Grande (2024)?"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- APLICAÇÃO PRÁTICA INTEGRADA -->
+        <section>
+            <h2>🏢 Aplicação Prática Integrada: Caso "Vias da Cabanagem"</h2>
+            <div class="example-card">
+                <h4><i class="material-icons">apartment</i> Do problema amplo à pergunta específica - Bairro Cabanagem
+                    (Belém/PA)</h4>
+                <p><strong>Problema amplo:</strong> "A infraestrutura das vias no bairro da Cabanagem é precária."</p>
+                <p><strong>Aplicação dos conceitos do Módulo 2:</strong></p>
+                <ul>
+                    <li><strong>Observação transformada em hipótese:</strong> "A falta de sistema de drenagem pluvial
+                        está diretamente relacionada aos alagamentos recorrentes nas vias do bairro Cabanagem durante o
+                        período chuvoso."</li>
+                    <li><strong>Teste de hipótese (proposto):</strong> Comparar número de ocorrências de alagamento em
+                        vias COM drenagem vs. SEM drenagem, controlando por intensidade de chuva (dados do INMET).</li>
+                    <li><strong>Análise exploratória (dados reais do SNIS 2022):</strong>
+                        <ul>
+                            <li>68,8% das vias brasileiras têm pavimentação → 31,2% não têm.</li>
+                            <li>24,8% têm redes/canais subterrâneos de drenagem.</li>
+                            <li>69,8% dos municípios não mapeiam áreas de risco de inundação.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pergunta específica (delimitada):</strong> "Qual a correlação entre a presença de
+                        pavimentação e sistema de drenagem e a frequência de alagamentos nas vias do bairro Cabanagem,
+                        em Belém/PA, durante o período chuvoso de 2025?"</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FERRAMENTAS RECOMENDADAS -->
+        <section>
+            <h2>🛠️ Ferramentas Recomendadas para Este Módulo</h2>
+            <div class="ferramentas-grid">
+                <div class="ferramenta-item">
+                    <i class="material-icons">assessment</i>
+                    <h4>Orange</h4>
+                    <p>Interface visual para AED e testes de hipótese. Ótimo para iniciantes.</p>
+                    <a href="https://orange.biolab.si/" target="_blank">orange.biolab.si</a>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons">code</i>
+                    <h4>Python (pandas/seaborn)</h4>
+                    <p>Flexível e poderoso para análises avançadas e automação.</p>
+                    <a href="https://pandas.pydata.org/" target="_blank">pandas.pydata.org</a>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons">calculate</i>
+                    <h4>JASP / Jamovi</h4>
+                    <p>Software estatístico gratuito com interface amigável (alternativa ao SPSS).</p>
+                    <a href="https://jasp-stats.org/" target="_blank">jasp-stats.org</a>
+                </div>
+                <div class="ferramenta-item">
+                    <i class="material-icons">table_chart</i>
+                    <h4>Google Looker Studio</h4>
+                    <p>Dashboards interativos para visualização de dados públicos.</p>
+                    <a href="https://lookerstudio.google.com/" target="_blank">lookerstudio.google.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXERCÍCIO PROPOSTO -->
+        <section>
+            <h2>✍️ Exercício Proposto</h2>
+            <div class="desafio-box" style="background-color: #f0f7ff; border-left-color: #0066cc;">
+                <h4><i class="material-icons">edit_note</i> Pratique com o problema do seu TCC/Projeto</h4>
+                <p>Com base no conteúdo desta unidade, elabore:</p>
+                <ol>
+                    <li><strong>Um problema amplo</strong> relacionado a uma organização ou localidade que você conhece.
+                    </li>
+                    <li><strong>Uma hipótese testável</strong> derivada desse problema.</li>
+                    <li><strong>Uma pergunta específica e delimitada</strong> seguindo os critérios SMART.</li>
+                    <li><strong>Uma proposta de análise exploratória:</strong> que estatísticas descritivas e que
+                        visualizações você faria primeiro?</li>
+                </ol>
+                <p><strong>Desafio extra:</strong> Encontre uma base de dados pública (ex: dados.gov.br, SNIS, IBGE) que
+                    possa começar a responder sua pergunta.</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>FERREIRA, Rafael Gastão Coimbra. et al. <strong>Preparação e Análise Exploratória de
+                        Dados</strong>. Porto Alegre: Sagah, 2021. 1 Recurso Online. ISBN 9786556902890. Disponível na
+                    Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>GRUS, Joel. <strong>Data Science do Zero</strong>. Rio de Janeiro: Editora Alta Books, 2021.
+                    E-book. p.127-147. ISBN 9788550816463. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>MENDONÇA, Helenides; FERREIRA, Maria Cristina; NEIVA, Elaine Rabelo (org.). <strong>Análise e
+                        diagnóstico organizacional: teoria e prática</strong>. 1. ed. São Paulo: Vetor, 2016. E-book.
+                    Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>SNIS - Sistema Nacional de Informações sobre Saneamento. <strong>Drenagem e Manejo das Águas
+                        Pluviais Urbanas - 2022</strong>. Disponível em:
+                    https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/snis/painel/ap.
+                    Acesso em: 29 maio 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 29 de maio de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 2:
+            Definição e Delimitação do Problema 🎯</p>
+    </footer>
+</body>
+
+</html>
