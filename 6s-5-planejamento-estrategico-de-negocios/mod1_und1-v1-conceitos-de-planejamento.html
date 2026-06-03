@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 1: Conceitos de Planejamento | Planejamento Estratégico de Negócios</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a2a3a;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8eef4 100%);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0a3a5c, #062a44);
+            color: white;
+            padding: 2rem 2rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .professor {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: right;
+        }
+
+        .badge-modulo {
+            display: inline-block;
+            background-color: #ff8c00;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Navegação */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1a4d8c;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #e8f0fe;
+        }
+
+        .nav-link.active {
+            background-color: #1a4d8c;
+            color: white;
+        }
+
+        /* Main content */
+        main {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e8f0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #1a4d8c;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            border-left: 4px solid #ff8c00;
+        }
+
+        h3 {
+            color: #0a5a7a;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        h4 {
+            color: #2c6e9e;
+            font-size: 1.1rem;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        /* Video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin: 1.5rem 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Cards e grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        .principio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 12px;
+        }
+
+        .principio-numero {
+            background: #1a4d8c;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .comparacao-tabela {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background: #1a4d8c;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e8f0;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .filosofia-card {
+            background: linear-gradient(135deg, #fff8e8, #fff0d8);
+            border-left: 4px solid #ff8c00;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+
+        .dica-avancada {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .dica-avancada h4 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c8eae;
+            font-size: 0.85rem;
+            border-top: 1px solid #d0dce8;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1.2rem;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                gap: 1rem;
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🎯 Planejamento Estratégico de Negócios</h1>
+        <h2>Módulo 1 - Introdução ao Planejamento Estratégico de Negócios</h2>
+        <h3>📊 Unidade 1 – Conceitos de Planejamento</h3>
+        <p>Prof. Especialista Wilson Ravelli Elizeu Maciel</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="forum-de-discussao-planejamento-estrategico-de-negocios.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+                <i class="material-icons" style="font-size: 18px;">forum</i> Fórum
+            </a>
+            <a href="mod1_und1-v2-conceitos-de-planejamento.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+                Mod 1 Und 1/2<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/GURUCNvmUHc" frameborder="0"
+                    title="Conceitos de Planejamento - UFMS Digital"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 1">
+                [UFMS Digital] Planejamento Estratégico de Negócios - Módulo 1 - Unidade 1
+            </p>
+            <p>Prof. Especialista Wilson Ravelli Elizeu Maciel</p>
+            <p>📅 Disponível desde 2023</p>
+        </section>
+
+        <!-- Contextualização -->
+        <section>
+            <h2>🏢 Contextualização do Planejamento</h2>
+            <p>As organizações operam em um ambiente dinâmico e altamente competitivo, onde disputam constantemente por
+                <strong>recursos escassos, mercados em transformação, clientes cada vez mais exigentes, imagem
+                    institucional e vantagens competitivas sustentáveis</strong>.
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h4>Ambiente de Incertezas</h4>
+                    <p>Rápidas mudanças na sociedade, nos mercados, nas tecnologias, no mundo dos negócios e no meio
+                        ambiente exigem adaptação constante.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Competição Multidimensional</h4>
+                    <p>Não basta competir em preço. É necessário competir por inovação, experiência do cliente,
+                        agilidade e propósito.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conceitos de Planejamento -->
+        <section>
+            <h2>📖 Conceitos Fundamentais de Planejamento</h2>
+            <p>O planejamento é um processo sistemático que <strong>possibilita perceber a realidade, avaliar os
+                    caminhos disponíveis, construir um referencial futuro desejado, definir o trâmite adequado e
+                    reavaliar continuamente todo o processo</strong>.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🔄 Evolução do Pensamento</h4>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+                        <li>Da <strong>evitação da incerteza</strong> → para melhor convivência com ela</li>
+                        <li>De <strong>prever o futuro</strong> → para se ajustar rapidamente a ele</li>
+                        <li>De <strong>plano definitivo</strong> → para uma jornada permanente de aprendizado</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚠️ O que NÃO é Planejamento</h4>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+                        <li><strong>Previsão:</strong> mera antecipação de eventos</li>
+                        <li><strong>Projeção:</strong> extrapolação de tendências passadas</li>
+                        <li><strong>Predição:</strong> adivinhação do futuro</li>
+                        <li><strong>Resolução de problemas:</strong> foco no curto prazo</li>
+                        <li><strong>Plano:</strong> documento estático vs. processo dinâmico</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Princípios Gerais -->
+        <section>
+            <h2>📐 Princípios Gerais do Planejamento</h2>
+            <div class="principio-item">
+                <div class="principio-numero">1</div>
+                <div><strong>Contribuição aos objetivos</strong> – Todo planejamento deve contribuir diretamente para o
+                    alcance dos objetivos organizacionais.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">2</div>
+                <div><strong>Precedência do planejamento</strong> – O planejamento antecede e orienta as funções de
+                    organização, direção e controle.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">3</div>
+                <div><strong>Maior influência e abrangência</strong> – O planejamento afeta todas as áreas e níveis da
+                    organização.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">4</div>
+                <div><strong>Maior eficiência, eficácia e efetividade</strong> – Busca otimizar recursos (eficiência),
+                    alcançar objetivos (eficácia) e gerar impacto positivo no ambiente (efetividade).</div>
+            </div>
+        </section>
+
+        <!-- Princípios Específicos -->
+        <section>
+            <h2>🔧 Princípios Específicos do Planejamento</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>👥 Participativo</h4>
+                    <p>Envolve todos os níveis da organização no processo, gerando comprometimento e aproveitando
+                        conhecimentos distribuídos.</p>
+                </div>
+                <div class="card">
+                    <h4>🔄 Coordenado</h4>
+                    <p>As ações planejadas devem ser harmonizadas entre si, evitando conflitos e sinergias negativas.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>🔗 Integrado</h4>
+                    <p>O planejamento deve conectar estratégia, tática e operação em um sistema coerente.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Permanente</h4>
+                    <p>Não é um evento pontual, mas um processo contínuo de adaptação e aprendizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filosofias do Planejamento -->
+        <section>
+            <h2>🎭 Filosofias do Planejamento</h2>
+
+            <div class="filosofia-card">
+                <h4>📊 Filosofia da Satisfação</h4>
+                <p><strong>Foco:</strong> Alcançar um mínimo de satisfação. Objetivos aceitáveis, não ótimos. Estruturas
+                    organizacionais permanecem inalteradas. Preocupação básica com o aspecto financeiro. Sobrevivência
+                    prevalece sobre crescimento. Pouco ganho de aprendizado organizacional. Planejamento rápido e
+                    reativo.</p>
+                <p style="margin-top: 0.5rem;"><strong>Exemplo:</strong> Empresa familiar que mantém operações sem
+                    buscar inovação, apenas "pagando as contas".</p>
+            </div>
+
+            <div class="filosofia-card">
+                <h4>📈 Filosofia da Otimização</h4>
+                <p><strong>Foco:</strong> Alcançar o melhor resultado possível. Utilização intensiva de técnicas
+                    quantitativas (pesquisa operacional, programação linear, simulações). Objetivos formulados em termos
+                    quantitativos. Tornou-se amplamente divulgada com o desenvolvimento da administração científica.
+                    Aplicável a partes específicas da empresa (produção, logística, finanças).</p>
+                <p style="margin-top: 0.5rem;"><strong>Exemplo:</strong> Indústria que usa algoritmos para otimizar rota
+                    de entregas e níveis de estoque.</p>
+            </div>
+
+            <div class="filosofia-card">
+                <h4>🔄 Filosofia da Adaptação</h4>
+                <p><strong>Foco:</strong> Busca equilíbrio entre fatores internos e externos. Respostas aos estímulos
+                    externos podem ser: (a) <strong>passiva</strong> (reage após o evento), (b)
+                    <strong>antecipatória</strong> (prevê e se prepara), ou (c) <strong>autoestimulada</strong> (cria
+                    mudanças proativamente). Responder às mudanças externas é essencial, pois fatores externos são os
+                    principais responsáveis pelos problemas internos.
+                </p>
+                <p style="margin-top: 0.5rem;"><strong>Exemplo:</strong> Startup que antecipa tendências de mercado e
+                    ajusta seu produto antes da concorrência.</p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4>💡 Filosofia a ser adotada na prática</h4>
+                <p>A escolha da filosofia deve considerar a <strong>adequação entre a situação atual da organização e o
+                        processo de planejamento</strong>. Na prática, a maioria das organizações adota uma
+                    <strong>estratégia mista de obtenção de resultados satisfatórios</strong>, combinando objetivos
+                    múltiplos (quantificáveis ou não) com flexibilidade para adaptação.
+                </p>
+                <p style="margin-top: 0.8rem;"><strong>Abordagem recomendada para profissionais de TI:</strong> Combine
+                    a otimização (para métricas de performance de sistemas) com a adaptação (para responder rapidamente
+                    a mudanças tecnológicas e de mercado).</p>
+            </div>
+        </section>
+
+        <!-- Tipos de Planejamento -->
+        <section>
+            <h2>📊 Tipos de Planejamento</h2>
+            <p>Os três níveis de planejamento – <strong>Estratégico, Tático e Operacional</strong> – devem estar
+                alinhados e integrados para garantir a efetividade organizacional.</p>
+
+            <div class="comparacao-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimensão</th>
+                            <th>Planejamento Estratégico</th>
+                            <th>Planejamento Tático</th>
+                            <th>Planejamento Operacional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nível hierárquico</strong></td>
+                            <td>Cúpula estratégica (diretores, presidentes)</td>
+                            <td>Nível intermediário (gerentes, coordenadores)</td>
+                            <td>Nível operacional (supervisores, líderes de equipe)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Horizonte temporal</strong></td>
+                            <td>Longo prazo (3-10 anos)</td>
+                            <td>Médio prazo (1-2 anos)</td>
+                            <td>Curto prazo (dias, semanas, meses)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Abrangência</strong></td>
+                            <td>Organização como um todo</td>
+                            <td>Departamento ou unidade de negócio</td>
+                            <td>Atividades e tarefas específicas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Incerteza</strong></td>
+                            <td>Alta (ambiente externo imprevisível)</td>
+                            <td>Média (ambiente setorial)</td>
+                            <td>Baixa (rotinas controláveis)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flexibilidade</strong></td>
+                            <td>Baixa (direciona a organização)</td>
+                            <td>Média (ajustes departamentais)</td>
+                            <td>Alta (ajustes diários)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Principal pergunta</strong></td>
+                            <td>"Onde queremos chegar?"</td>
+                            <td>"Como vamos alocar recursos?"</td>
+                            <td>"O que vamos fazer agora?"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🎯 Planejamento Estratégico</h3>
+            <p>Responsabilidade dos níveis mais altos da empresa. Muitas empresas <strong>afirmam ter planejamento
+                    estratégico, mas na realidade não o têm</strong> – e nem sabem avaliar essa situação.</p>
+
+            <div class="card" style="background: #e8f0fe;">
+                <h4>❓ Perguntas para diagnosticar a existência de planejamento estratégico:</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Você conhece seu negócio? Sua amplitude? As interações com o ambiente?</li>
+                    <li>Há integração entre os fatores externos e internos na análise?</li>
+                    <li>Você conhece a real capacitação de sua empresa (Fatores Críticos de Sucesso)?</li>
+                    <li>Você conhece sua vantagem competitiva? E as dos concorrentes?</li>
+                    <li>Todos têm comprometimento com os resultados esperados?</li>
+                    <li>Há acompanhamento e avaliação dos resultados em tempo real?</li>
+                </ul>
+            </div>
+
+            <p><strong>Utilizações do planejamento estratégico:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li>Contrabalançar as incertezas do ambiente</li>
+                <li>Concentrar a atenção nos resultados esperados (foco estratégico)</li>
+                <li>Otimizar o modelo de gestão da empresa</li>
+                <li>Facilitar o controle, a avaliação e o aprimoramento dos resultados</li>
+                <li>Otimizar a identificação de oportunidades no mercado</li>
+                <li>Consolidar a vantagem competitiva da empresa</li>
+            </ul>
+
+            <h3>📋 Planejamento Tático</h3>
+            <p>Desenvolvido pelos níveis organizacionais intermediários, tem como finalidade <strong>otimizar
+                    determinada área de resultado</strong> (departamento, projeto, unidade de negócio). Envolve a
+                utilização eficiente dos recursos disponíveis e a consolidação de objetivos previamente fixados pelo
+                nível estratégico.</p>
+            <p><strong>Exemplos de planejamento tático:</strong> plano de marketing anual, plano financeiro semestral,
+                plano de recursos humanos, plano de produção trimestral.</p>
+
+            <h3>⚙️ Planejamento Operacional</h3>
+            <p>Formalização e implementação de resultados específicos a serem alcançados pelas áreas funcionais.
+                Corresponde aos <strong>planos de ação ou planos operacionais</strong> – um conjunto de partes
+                homogêneas do planejamento tático.</p>
+            <p><strong>Todo plano operacional deve conter, com detalhes:</strong></p>
+            <ul style="margin-left: 2rem;">
+                <li>Recursos para desenvolvimento e implantação</li>
+                <li>Procedimentos a serem adotados</li>
+                <li>Resultados finais esperados (metas SMART)</li>
+                <li>Prazos estabelecidos</li>
+                <li>Responsáveis por sua execução e implantação</li>
+            </ul>
+        </section>
+
+        <!-- A Era da Descontinuidade -->
+        <section>
+            <h2>⚡ A Era da Descontinuidade e seus Impactos</h2>
+            <p>Vivemos em uma <strong>"era da descontinuidade"</strong> (Peter Drucker), onde o futuro não é uma simples
+                extensão do passado. Isso exige repensar as práticas tradicionais de planejamento.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📉 Consequências</h4>
+                    <ul>
+                        <li>Ciclos de planejamento mais <strong>curtos e frequentes</strong></li>
+                        <li>Planejamentos mais <strong>flexíveis e adaptativos</strong></li>
+                        <li>Planejamentos <strong>interligados</strong> (não mais estanques)</li>
+                        <li>Tomada de decisões <strong>aceleradas</strong></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🌪️ Causas</h4>
+                    <ul>
+                        <li>Mudanças rápidas no ambiente e nas empresas</li>
+                        <li>Complexidade crescente dos fatores de análise</li>
+                        <li>Imprevisibilidade dos eventos externos</li>
+                        <li>Disrupção tecnológica e digitalização</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4>🚀 Para profissionais de tecnologia: aplicação prática</h4>
+                <p>Em ambientes ágeis (como startups de software ou times DevOps), o planejamento estratégico se
+                    manifesta no <strong>Product Roadmap</strong> (visão de longo prazo), o tático nos <strong>Sprints
+                        Goals</strong> (objetivos de cada sprint) e o operacional nas <strong>Daily Tasks</strong>
+                    (tarefas diárias). A chave é manter o alinhamento entre os três níveis, mesmo com ciclos curtos e
+                    adaptação contínua.</p>
+            </div>
+        </section>
+
+        <!-- Para Refletir -->
+        <section>
+            <h2>🧠 Para Refletir e Aplicar</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>💼 Aplicação no seu negócio/projeto</h4>
+                    <p>Se você tem um projeto como o <strong>Cidade Virtual</strong>, reflita: qual é seu planejamento
+                        estratégico (visão de longo prazo), tático (metas trimestrais) e operacional (tarefas diárias)?
+                        Eles estão alinhados?</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Exemplo prático</h4>
+                    <p><strong>Estratégico:</strong> "Ser a principal plataforma de conexão local da região Norte em 3
+                        anos"<br>
+                        <strong>Tático:</strong> "Atingir 100 lojistas ativos e 5.000 usuários no próximo semestre"<br>
+                        <strong>Operacional:</strong> "Cadastrar 5 lojistas por semana e implementar feature X até
+                        sexta"
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Material Complementar Avançado -->
+        <section>
+            <h2>📚 Material Complementar para Aprofundamento</h2>
+            <div class="referencia">
+                <strong>📖 CHIAVENATO, I.; SAPIRO, A.</strong> Planejamento estratégico: da intenção aos resultados. 5.
+                ed. Rio de Janeiro: Atlas, 2023. Capítulo 1, p. 5-33.
+            </div>
+            <div class="referencia">
+                <strong>📖 OLIVEIRA, D. P. R.</strong> Planejamento estratégico: conceitos, metodologia e práticas. 35.
+                ed. São Paulo: Atlas, 2023. Capítulo 1, p. 1-25.
+            </div>
+            <div class="referencia">
+                <strong>📖 MINTZBERG, H.; AHLSTRAND, B.; LAMPEL, J.</strong> Safari de Estratégia: um roteiro pela selva
+                do planejamento estratégico. 2. ed. Porto Alegre: Bookman, 2010.
+            </div>
+            <div class="dica-avancada" style="background: linear-gradient(135deg, #1a4d8c, #0a3a5c);">
+                <h4>🎓 Dica de estudo para certificação e carreira</h4>
+                <p>Os conceitos desta unidade são fundamentais para certificações como <strong>CBOK</strong> (Governança
+                    de TI), <strong>PMP</strong> (Gerenciamento de Projetos) e <strong>TOGAF</strong> (Arquitetura
+                    Empresarial). Dominar a diferença entre níveis estratégico, tático e operacional é essencial para
+                    qualquer profissional de TI que aspire a posições de liderança ou consultoria.</p>
+            </div>
+        </section>
+
+        <!-- Resumo -->
+        <section>
+            <h2>✅ Resumo da Unidade 1</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Conceitos-chave</h4>
+                    <p>Planejamento como processo contínuo, não evento pontual. Diferença entre previsão, projeção,
+                        predição e plano. Princípios gerais e específicos.</p>
+                </div>
+                <div class="card">
+                    <h4>🎭 Filosofias</h4>
+                    <p>Satisfação (aceitável), otimização (melhor possível), adaptação (resposta ao ambiente). Na
+                        prática: abordagem mista.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Três níveis</h4>
+                    <p>Estratégico (longo, toda empresa), Tático (médio, departamentos), Operacional (curto, tarefas
+                        diárias). Devem estar alinhados.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Era da descontinuidade</h4>
+                    <p>Planejamento mais curto, flexível, interligado e acelerado devido a mudanças rápidas e
+                        incertezas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), todo
+            material desta apresentação está licenciado sob uma Licença Creative Commons - Atribuição 4.0 Internacional.
+        </p>
+        <p style="margin-top: 1rem;">📅 Material desenvolvido para UFMS Digital - Tecnologia da Informação</p>
+        <p>Prof. Dr. Wilson Ravelli Elizeu Maciel | Planejamento Estratégico de Negócios - Módulo 1 - Unidade 1</p>
+    </footer>
+</body>
+
+</html>
