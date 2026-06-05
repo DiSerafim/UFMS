@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 3 | Identificação de Arquitetura, Tecnologias e Ferramentas</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 3 - Desenvolvimento da Solução</h2>
+        <h3>🏗️ Unidade 1 – Identificação de Arquitetura, Tecnologias e Ferramentas</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            <i class="material-icons" style="font-size: 18px;">arrow_back</i> Checkout P. Mod 2 
+            </a>
+            <a href="mod3_und2-prototipacao-e-integracao-da-solucao.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+            Mod 3 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/vsxgSsye-c4" frameborder="0"
+                    title="Identificação de Arquitetura, Tecnologias e Ferramentas - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Arquitetura de Software - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 3 - Unidade 1
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 03 de junho de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">architecture</i> Projeto de Arquitetura de Software</strong>
+                    <p>Compreenda o que é arquitetura de software e sua importância para soluções tecnológicas.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">category</i> Estilos Arquiteturais</strong>
+                    <p>Conheça os principais estilos: Camadas, Repositório, Cliente-Servidor e Duto e Filtro.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">build</i> Frameworks e Tecnologias</strong>
+                    <p>Explore ferramentas modernas para cada estilo arquitetural.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">engineering</i> Como escolher a arquitetura ideal</strong>
+                    <p>Aprenda critérios de decisão para seu projeto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. PROJETO DE ARQUITETURA DE SOFTWARE -->
+        <section>
+            <h2>🏛️ 1. Projeto de Arquitetura de Software</h2>
+            <div class="info-box">
+                <strong><i class="material-icons">book</i> Conceito segundo Sommerville (2018, p.148)</strong>
+                <p>"Projeto de arquitetura visa compreender como um sistema de software deve ser organizado e projetar a
+                    estrutura geral desse sistema"</p>
+            </div>
+            <p>A arquitetura de software é a <strong>espinha dorsal</strong> de qualquer sistema. Ela define:</p>
+            <ul>
+                <li><strong>📐 Estrutura:</strong> Como os componentes do sistema se organizam</li>
+                <li><strong>🔄 Interações:</strong> Como os componentes se comunicam</li>
+                <li><strong>📏 Restrições:</strong> Regras e padrões que guiam o projeto</li>
+                <li><strong>🎯 Decisões estratégicas:</strong> Escolhas que impactam desempenho, segurança e
+                    manutenibilidade</li>
+            </ul>
+            <div class="note">
+                <strong><i class="material-icons">insights</i> Por que a arquitetura é tão importante?</strong>
+                <p>Uma boa arquitetura reduz custos de manutenção, facilita a evolução do sistema, permite reuso de
+                    componentes e garante atributos de qualidade como desempenho, segurança e escalabilidade. Uma má
+                    arquitetura pode inviabilizar um projeto promissor.</p>
+            </div>
+        </section>
+
+        <!-- 2. ESTILOS ARQUITETURAIS -->
+        <section>
+            <h2>📐 2. Estilos Arquiteturais</h2>
+            <p>Estilos arquiteturais são <strong>modelos de referência</strong> que orientam a organização do sistema.
+                Conheça os quatro principais:</p>
+
+            <!-- Arquitetura em Camadas -->
+            <div class="arquitetura-card">
+                <div class="arquitetura-header">
+                    <i class="material-icons" style="font-size: 28px;">layers</i>
+                    <h3>Arquitetura em Camadas (Layered Architecture)</h3>
+                </div>
+                <div class="arquitetura-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 2; min-width: 200px;">
+                            <p><strong>📝 Descrição:</strong> Sistema organizado em camadas hierárquicas, cada uma com
+                                funcionalidades específicas. Cada camada fornece serviços para a camada superior e
+                                utiliza serviços da camada inferior.</p>
+                            <div class="exemplo-visual"
+                                style="background-color: #f0f7ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <pre style="margin: 0; background: transparent; border: none; text-align: center;">
+┌──────────────────────────────┐                    
+│     Camada de Apresentação   │  (UI/React/Angular)
+├──────────────────────────────┤                    
+ │    Camada de Negócio (API)   │(Node.js/Spring Boot) 
+├──────────────────────────────┤                     
+ │  Camada de Persistência (DB) │  (PostgreSQL/MongoDB)
+└──────────────────────────────┘                     </pre>
+                            </div>
+                            <p><strong>✅ Quando utilizar:</strong></p>
+                            <ul>
+                                <li>Adicionar novos recursos sobre sistemas existentes</li>
+                                <li>Desenvolvimento dividido entre diferentes equipes (cada uma foca em uma camada)</li>
+                                <li>Necessidade de segurança em múltiplos níveis</li>
+                                <li>Sistemas corporativos e aplicações web tradicionais</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <div class="info-box">
+                                <strong>✅ Vantagens:</strong>
+                                <ul>
+                                    <li>Camadas podem ser substituídas desde que mantenham a mesma interface</li>
+                                    <li>Separação de responsabilidades</li>
+                                    <li>Favorece manutenção e evolução incremental</li>
+                                    <li>Reutilização de funcionalidades comuns</li>
+                                </ul>
+                            </div>
+                            <div class="warning">
+                                <strong>⚠️ Desvantagens:</strong>
+                                <ul>
+                                    <li>Separação nem sempre clara entre camadas</li>
+                                    <li>Interações diretas entre camadas distantes podem ser necessárias</li>
+                                    <li>Desempenho prejudicado por múltiplos níveis de interpretação</li>
+                                    <li>Risco de "camada de panaceia" (tudo misturado)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitetura em Repositório -->
+            <div class="arquitetura-card">
+                <div class="arquitetura-header">
+                    <i class="material-icons" style="font-size: 28px;">storage</i>
+                    <h3>Arquitetura em Repositório (Repository Architecture)</h3>
+                </div>
+                <div class="arquitetura-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 2; min-width: 200px;">
+                            <p><strong>📝 Descrição:</strong> Os dados do sistema ficam em um repositório central.
+                                Componentes não interagem diretamente, apenas por meio do repositório central.</p>
+                            <div class="exemplo-visual"
+                                style="background-color: #f0f7ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <pre style="margin: 0; background: transparent; border: none; text-align: center;">
+        ┌──────────┐     ┌──────────┐
+        │Componente│     │Componente│
+        │    A     │     │    B     │
+        └────┬─────┘     └────┬─────┘
+             │                │      
+             ▼                ▼      
+        ┌─────────────────────────┐
+          │  REPOSITÓRIO CENTRAL    │  
+          │  (Banco de Dados / DB)  │  
+        └─────────────────────────┘
+             ▲                ▲      
+             │                │      
+        ┌────┴─────┐     ┌────┴─────┐
+        │Componente│     │Componente│
+        │    C     │     │    D     │
+        └──────────┘     └──────────┘</pre>
+                            </div>
+                            <p><strong>✅ Quando utilizar:</strong></p>
+                            <ul>
+                                <li>Volume de dados a serem armazenados por longos períodos</li>
+                                <li>Sistemas dirigidos por dados, onde atualizações disparam ações</li>
+                                <li>Ferramentas CASE e ambientes de desenvolvimento integrado</li>
+                                <li>Sistemas de informação corporativos (ERP, CRM)</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <div class="info-box">
+                                <strong>✅ Vantagens:</strong>
+                                <ul>
+                                    <li>Dados centralizados e consistentes</li>
+                                    <li>Componentes podem ser independentes</li>
+                                    <li>Facilidade para adicionar novos componentes que acessam os mesmos dados</li>
+                                    <li>Backup e segurança centralizados</li>
+                                </ul>
+                            </div>
+                            <div class="warning">
+                                <strong>⚠️ Desvantagens:</strong>
+                                <ul>
+                                    <li>Repositório se torna ponto único de falha e gargalo de desempenho</li>
+                                    <li>Acoplamento de componentes ao esquema do repositório</li>
+                                    <li>Dificuldade de evolução do esquema de dados</li>
+                                    <li>Concorrência e locking podem ser complexos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitetura em Cliente-Servidor -->
+            <div class="arquitetura-card">
+                <div class="arquitetura-header">
+                    <i class="material-icons" style="font-size: 28px;">devices</i>
+                    <h3>Arquitetura em Cliente-Servidor (Client-Server Architecture)</h3>
+                </div>
+                <div class="arquitetura-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 2; min-width: 200px;">
+                            <p><strong>📝 Descrição:</strong> Sistema dividido entre <strong>clientes</strong> (que
+                                fazem requisições) e <strong>servidores</strong> (que fornecem serviços). Cada serviço
+                                pode ser executado em um servidor separado.</p>
+                            <div class="exemplo-visual"
+                                style="background-color: #f0f7ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <pre style="margin: 0; background: transparent; border: none; text-align: center;">
+        ┌─────────┐         ┌─────────┐
+        │ Cliente │◄───────►│ Servidor│
+        │  (Web)  │   HTTP  │  (API)  │
+        └─────────┘         └────┬────┘
+                                 │     
+        ┌─────────┐              ▼     
+        │ Cliente │         ┌─────────┐
+        │ (Mobile)│◄───────►│  Banco  │
+        └─────────┘   SQL   │  Dados  │
+                            └─────────┘</pre>
+                            </div>
+                            <p><strong>✅ Quando utilizar:</strong></p>
+                            <ul>
+                                <li>Acesso a dados compartilhados de diferentes locais</li>
+                                <li>Variação de carga (servidores podem ser replicados)</li>
+                                <li>Sistemas web, aplicações móveis, microsserviços</li>
+                                <li>Aplicações com lógica de negócio centralizada</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <div class="info-box">
+                                <strong>✅ Vantagens:</strong>
+                                <ul>
+                                    <li>Servidores podem ser distribuídos em rede</li>
+                                    <li>Funcionalidade centralizada acessível a todos os clientes</li>
+                                    <li>Clientes mais leves (thin clients)</li>
+                                    <li>Escalabilidade horizontal por replicação de servidores</li>
+                                </ul>
+                            </div>
+                            <div class="warning">
+                                <strong>⚠️ Desvantagens:</strong>
+                                <ul>
+                                    <li>Cada serviço é um ponto único de falha</li>
+                                    <li>Desempenho depende da rede e do servidor</li>
+                                    <li>Sobrecarga de comunicação (latência, banda)</li>
+                                    <li>Gerenciamento de estado pode ser complexo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitetura em Duto e Filtro -->
+            <div class="arquitetura-card">
+                <div class="arquitetura-header">
+                    <i class="material-icons" style="font-size: 28px;">filter_alt</i>
+                    <h3>Arquitetura em Duto e Filtro (Pipe and Filter)</h3>
+                </div>
+                <div class="arquitetura-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 2; min-width: 200px;">
+                            <p><strong>📝 Descrição:</strong> Os dados fluem (como em um duto/pipeline) de um componente
+                                (filtro) para outro, sendo processados sequencialmente. Cada filtro transforma os dados
+                                e passa adiante.</p>
+                            <div class="exemplo-visual"
+                                style="background-color: #f0f7ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <pre style="margin: 0; background: transparent; border: none; text-align: center;">
+        Dados ──►│ Filtro A │──►│ Filtro B │──►│ Filtro C │──► Resultado
+        Brutos   (limpeza)     (análise)      (formatação)</pre>
+                            </div>
+                            <p><strong>✅ Quando utilizar:</strong></p>
+                            <ul>
+                                <li>Processamento de dados em etapas (ETL - Extract, Transform, Load)</li>
+                                <li>Sistemas de processamento de fluxo contínuo (streaming)</li>
+                                <li>Compiladores e processamento de linguagens</li>
+                                <li>Análise de logs e pipelines de dados</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <div class="info-box">
+                                <strong>✅ Vantagens:</strong>
+                                <ul>
+                                    <li>Fácil de entender e permite o reuso de transformações</li>
+                                    <li>Evolução por meio da adição de novos filtros é direta</li>
+                                    <li>Pode ser sequencial ou concorrente (paralelismo de dados)</li>
+                                    <li>Isolamento de responsabilidades</li>
+                                </ul>
+                            </div>
+                            <div class="warning">
+                                <strong>⚠️ Desvantagens:</strong>
+                                <ul>
+                                    <li>Formato dos dados deve ser acordado entre todos os filtros</li>
+                                    <li>Processamento paralelo pode gerar sobrecarga de comunicação</li>
+                                    <li>Difícil reusar componentes com estruturas de dados incompatíveis</li>
+                                    <li>Pode haver latência acumulativa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TABELA COMPARATIVA DOS ESTILOS -->
+        <section>
+            <h2>📊 3. Comparação entre Estilos Arquiteturais</h2>
+            <div class="comparacao-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critério</th>
+                            <th>Camadas</th>
+                            <th>Repositório</th>
+                            <th>Cliente-Servidor</th>
+                            <th>Duto e Filtro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Acoplamento</td>
+                            <td>Baixo (entre camadas)</td>
+                            <td>Médio (todos ao repositório)</td>
+                            <td>Médio (clientes ao servidor)</td>
+                            <td>Baixo (filtros independentes)</td>
+                        </tr>
+                        <tr>
+                            <td>Escalabilidade</td>
+                            <td>Vertical</td>
+                            <td>Limitada</td>
+                            <td>Horizontal (servidores)</td>
+                            <td>Horizontal (paralelização)</td>
+                        </tr>
+                        <tr>
+                            <td>Desempenho</td>
+                            <td>Pode ser prejudicado</td>
+                            <td>Gargalo no repositório</td>
+                            <td>Depende da rede</td>
+                            <td>Latência acumulativa</td>
+                        </tr>
+                        <tr>
+                            <td>Manutenibilidade</td>
+                            <td>Alta</td>
+                            <td>Média</td>
+                            <td>Média</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Segurança</td>
+                            <td>Multi-nível</td>
+                            <td>Centralizada</td>
+                            <td>No servidor</td>
+                            <td>Por filtro</td>
+                        </tr>
+                        <tr>
+                            <td>Exemplo típico</td>
+                            <td>Aplicações Web</td>
+                            <td>Sistemas ERP</td>
+                            <td>APIs REST</td>
+                            <td>ETL / Data Pipeline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. FRAMEWORKS E TECNOLOGIAS -->
+        <section>
+            <h2>🛠️ 4. Frameworks e Tecnologias Relevantes</h2>
+            <p>Para cada estilo arquitetural, existem frameworks e ferramentas que facilitam a implementação:</p>
+
+            <h3><i class="material-icons">layers</i> Arquitetura em Camadas + Cliente-Servidor</h3>
+            <div class="ferramenta-grid">
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">code</i> Node.js + Express</h4>
+                    <p>JavaScript/TypeScript no backend. Ideal para APIs rápidas e escaláveis.</p><a
+                        href="https://nodejs.org" target="_blank">nodejs.org</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">code</i> Django (Python)</h4>
+                    <p>Framework full-stack com ORM, admin automático e segurança integrada.</p><a
+                        href="https://djangoproject.com" target="_blank">djangoproject.com</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">code</i> Spring Boot (Java)</h4>
+                    <p>Framework enterprise para microsserviços e aplicações robustas.</p><a href="https://spring.io"
+                        target="_blank">spring.io</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">code</i> React</h4>
+                    <p>Biblioteca para interfaces ricas no frontend (camada de apresentação).</p><a
+                        href="https://react.dev" target="_blank">react.dev</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">code</i> Angular</h4>
+                    <p>Framework completo para SPAs (Single Page Applications).</p><a href="https://angular.dev"
+                        target="_blank">angular.dev</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">storage</i> PostgreSQL</h4>
+                    <p>SGBD relacional robusto e gratuito (camada de persistência).</p><a href="https://postgresql.org"
+                        target="_blank">postgresql.org</a>
+                </div>
+            </div>
+
+            <h3><i class="material-icons">storage</i> Arquitetura em Repositório</h3>
+            <div class="ferramenta-grid">
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">sync_alt</i> Apache NiFi</h4>
+                    <p>ETL visual com automação de fluxo de dados.</p><a href="https://nifi.apache.org"
+                        target="_blank">nifi.apache.org</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">cloud</i> AWS S3</h4>
+                    <p>Repositório escalável para data lakes.</p><a href="https://aws.amazon.com/s3"
+                        target="_blank">aws.amazon.com/s3</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">storage</i> MongoDB</h4>
+                    <p>Banco NoSQL orientado a documentos (repositório flexível).</p><a href="https://mongodb.com"
+                        target="_blank">mongodb.com</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">memory</i> Redis</h4>
+                    <p>Repositório em memória para dados temporários e cache.</p><a href="https://redis.io"
+                        target="_blank">redis.io</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">queue</i> RabbitMQ</h4>
+                    <p>Broker de mensagens para comunicação assíncrona.</p><a href="https://rabbitmq.com"
+                        target="_blank">rabbitmq.com</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">storage</i> Oracle</h4>
+                    <p>SGBD enterprise robusto para grandes volumes.</p><a href="https://oracle.com/database"
+                        target="_blank">oracle.com/database</a>
+                </div>
+            </div>
+
+            <h3><i class="material-icons">filter_alt</i> Arquitetura em Duto e Filtro</h3>
+            <div class="ferramenta-grid">
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">stream</i> Apache Kafka</h4>
+                    <p>Plataforma distribuída de streaming com Kafka Streams.</p><a href="https://kafka.apache.org"
+                        target="_blank">kafka.apache.org</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">terminal</i> Unix Pipes + Bash</h4>
+                    <p>Paradigma clássico de duto: <code>grep | sort | uniq</code></p><a href="#"
+                        target="_blank">Exemplo: cat log \| grep ERROR \| wc -l</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">build</i> Logstash (ELK)</h4>
+                    <p>Pipeline de processamento de logs da stack Elastic.</p><a href="https://elastic.co/logstash"
+                        target="_blank">elastic.co/logstash</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">water_drop</i> Node.js Streams</h4>
+                    <p>API nativa para leitura/escrita em fluxo (pipe em Node).</p><a
+                        href="https://nodejs.org/api/stream.html" target="_blank">nodejs.org/api/stream.html</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">analytics</i> Apache Spark</h4>
+                    <p>Processamento distribuído com pipelines de transformação.</p><a href="https://spark.apache.org"
+                        target="_blank">spark.apache.org</a>
+                </div>
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">data_usage</i> dbt (Data Build Tool)</h4>
+                    <p>Transformação de dados em warehousing com SQL.</p><a href="https://getdbt.com"
+                        target="_blank">getdbt.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. COMO ESCOLHER A ARQUITETURA IDEAL -->
+        <section>
+            <h2>⚖️ 5. Como Escolher a Arquitetura Ideal?</h2>
+            <div class="insight-card">
+                <h4><i class="material-icons">insights</i> Critérios de decisão</h4>
+                <ul>
+                    <li><strong>🔹 Natureza do problema:</strong> Processamento de dados (duto)? Interação com usuário
+                        (camadas)? Dados compartilhados (repositório)?</li>
+                    <li><strong>🔹 Escalabilidade esperada:</strong> Quantos usuários? Volume de dados? Carga variável?
+                    </li>
+                    <li><strong>🔹 Restrições de desempenho:</strong> Latência aceitável? Throughput necessário?</li>
+                    <li><strong>🔹 Equipe e expertise:</strong> Quais tecnologias o time domina?</li>
+                    <li><strong>🔹 Orçamento e prazo:</strong> Arquiteturas mais complexas exigem mais tempo e recursos.
+                    </li>
+                    <li><strong>🔹 Segurança e conformidade:</strong> LGPD, dados sensíveis, níveis de acesso.</li>
+                </ul>
+            </div>
+            <div class="example-card">
+                <h4><i class="material-icons">apartment</i> Aplicação prática - Projeto "Vias da Cabanagem" (Belém/PA)
+                </h4>
+                <p>Para o dashboard de monitoramento participativo de infraestrutura urbana, uma arquitetura
+                    <strong>Cliente-Servidor + Repositório</strong> é ideal:</p>
+                <ul>
+                    <li><strong>Frontend (Camada Apresentação):</strong> React com Leaflet para mapas interativos</li>
+                    <li><strong>Backend (Camada Negócio):</strong> Node.js + Express para API REST</li>
+                    <li><strong>Repositório:</strong> PostgreSQL (dados estruturados) + MongoDB (reportes colaborativos)
+                    </li>
+                    <li><strong>Pipeline de dados:</strong> Python + pandas para ETL dos dados públicos (SINISA)</li>
+                    <li><strong>Hospedagem:</strong> Servidor cloud (AWS ou Vercel) para garantir disponibilidade</li>
+                </ul>
+                <p>Essa combinação atende aos requisitos de escalabilidade (crescimento do bairro), segurança (dados
+                    geolocalizados) e manutenibilidade (evolução contínua).</p>
+            </div>
+        </section>
+
+        <!-- 6. MÃO NA MASSA - EXERCÍCIO -->
+        <section>
+            <h2>✍️ 6. Mão na Massa - Exercício Prático</h2>
+            <div class="desafio-box" style="background-color: #f0f7ff; border-left-color: #0066cc;">
+                <h4><i class="material-icons">edit_note</i> Desafio: Escolha a arquitetura para seu projeto</h4>
+                <p>Com base nos estilos arquiteturais estudados, responda para o seu projeto (ou um hipotético):</p>
+                <ol>
+                    <li>Qual estilo arquitetural (ou combinação) você utilizaria? Justifique.</li>
+                    <li>Liste as tecnologias que escolheria para cada camada/componente.</li>
+                    <li>Desenhe um diagrama simples da arquitetura (pode ser à mão ou texto).</li>
+                    <li>Quais atributos de qualidade (desempenho, segurança, escalabilidade) são mais críticos?</li>
+                </ol>
+                <p><strong>Desafio extra:</strong> Pesquise sobre <strong>microsserviços</strong> e
+                    <strong>serverless</strong> – como eles se relacionam com os estilos arquiteturais clássicos?</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 10. ed. São Paulo, SP: Pearson, 2018.
+                    E-book. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>BASS, Len; CLEMENTS, Paul; KAZMAN, Rick. <strong>Software Architecture in Practice</strong>. 3rd
+                    ed. Addison-Wesley, 2013.</cite></p>
+            <p><cite>MARTIN, Robert C. <strong>Clean Architecture: A Craftsman's Guide to Software Structure and
+                        Design</strong>. Pearson, 2017.</cite></p>
+            <p><cite>NEWMAN, Sam. <strong>Building Microservices</strong>. 2nd ed. O'Reilly Media, 2021.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de junho de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 3:
+            Identificação de Arquitetura, Tecnologias e Ferramentas 🏗️</p>
+    </footer>
+</body>
+
+</html>
