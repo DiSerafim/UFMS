@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 3 | Prototipação e Integração da Solução</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 3 - Desenvolvimento da Solução</h2>
+        <h3>🔄 Unidade 2 – Prototipação e Integração da Solução</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-identificacao-de-arquitetura-tecnologias-e-ferramentas.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i> Mod 3 Und 1
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Checkout Módulo 3 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/_2TFmpsVq68" frameborder="0"
+                    title="Prototipação e Integração da Solução - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Prototipação e Integração - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 3 - Unidade 2
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 03 de junho de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">design_services</i> Prototipação</strong>
+                    <p>Compreenda o papel da prototipação na engenharia de software e seus tipos.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">integration_instructions</i> Integração da Solução</strong>
+                    <p>Entenda como conectar front-end, back-end, banco de dados e APIs.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">api</i> APIs (Application Programming Interfaces)</strong>
+                    <p>Aprenda o que são APIs e como elas viabilizam a integração entre sistemas.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">palette</i> Ferramentas de Prototipação e Modelagem</strong>
+                    <p>Conheça Figma, Balsamiq, StarUML, Lucidchart e suas aplicações.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. PROTOTIPAÇÃO -->
+        <section>
+            <h2>🎨 1. Prototipação</h2>
+            <p>A prototipação é uma <strong>versão preliminar da aplicação</strong> que permite validar ideias, testar
+                fluxos e coletar feedback antes do desenvolvimento completo.</p>
+
+            <div class="prototipo-card">
+                <div class="prototipo-header">
+                    <i class="material-icons" style="font-size: 28px;">style</i>
+                    <h3>Tipos de Protótipos</h3>
+                </div>
+                <div class="prototipo-body">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div
+                            style="flex: 1; background-color: #fff9e6; border-radius: 8px; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4><i class="material-icons">delete_forever</i> Protótipos Descartáveis (Throwaway)</h4>
+                            <p><strong>Finalidade:</strong> Validar ideias e requisitos rapidamente.</p>
+                            <p><strong>Processo:</strong> Cria-se um protótipo rápido, testa-se com usuários, coleta-se
+                                feedback e <strong>descarta-se</strong> o protótipo. O aprendizado é aplicado no
+                                desenvolvimento final.</p>
+                            <p><strong>✅ Ideal para:</strong> Projetos com requisitos incertos, validação de interface,
+                                testes de usabilidade rápidos.</p>
+                            <div class="note" style="margin-top: 10px; padding: 10px;"><strong>Exemplo:</strong> Esboços
+                                em papel (paper prototyping) ou wireframes no Balsamiq que serão descartados após
+                                validação.</div>
+                        </div>
+                        <div
+                            style="flex: 1; background-color: #e8f0fe; border-radius: 8px; padding: 15px; border-left: 4px solid #0066cc;">
+                            <h4><i class="material-icons">evolution</i> Protótipos Evolutivos (Evolutionary)</h4>
+                            <p><strong>Finalidade:</strong> Servir como base para o produto final.</p>
+                            <p><strong>Processo:</strong> O protótipo inicial é refinado iterativamente até se tornar o
+                                produto final.</p>
+                            <p><strong>✅ Ideal para:</strong> Projetos ágeis, sistemas complexos onde o aprendizado é
+                                contínuo, entregas incrementais.</p>
+                            <div class="note" style="margin-top: 10px; padding: 10px;"><strong>Exemplo:</strong> MVP
+                                (Minimum Viable Product) que evolui para versões mais completas, como um dashboard que
+                                começa com poucos gráficos e ganha funcionalidades a cada sprint.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">thumb_up</i> Benefícios da Prototipação</strong>
+                <ul>
+                    <li>✅ <strong>Feedback rápido:</strong> Usuários interagem com algo concreto desde cedo</li>
+                    <li>✅ <strong>Redução de riscos:</strong> Erros são identificados antes do desenvolvimento</li>
+                    <li>✅ <strong>Validação com o usuário:</strong> Garante que a solução atende às reais necessidades
+                    </li>
+                    <li>✅ <strong>Comunicação efetiva:</strong> Protótipos visuais facilitam o alinhamento entre equipe
+                        e cliente</li>
+                    <li>✅ <strong>Economia de tempo e custo:</strong> Corrigir um protótipo é muito mais barato que
+                        refatorar código</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. FERRAMENTAS DE PROTOTIPAÇÃO -->
+        <section>
+            <h2>🛠️ 2. Ferramentas de Prototipação</h2>
+
+            <div class="ferramenta-detalhe">
+                <div class="ferramenta-detalhe-item">
+                    <i class="material-icons" style="font-size: 48px; color: #0066cc;">design_services</i>
+                    <h4>Figma</h4>
+                    <p><strong>Fidelidade:</strong> Alta (pixel-perfect)</p>
+                    <p>Ferramenta baseada em nuvem para criação de layouts, protótipos interativos e design de produto
+                        final. Permite colaboração em tempo real, componentes reutilizáveis e integração com ferramentas
+                        de desenvolvimento.</p>
+                    <p><strong>✅ Ideal para:</strong> Design de interfaces completas, protótipos funcionais, handoff
+                        para desenvolvedores.</p>
+                    <a href="https://figma.com" target="_blank">figma.com →</a>
+                </div>
+                <div class="ferramenta-detalhe-item">
+                    <i class="material-icons" style="font-size: 48px; color: #0066cc;">draw</i>
+                    <h4>BalsamiQ</h4>
+                    <p><strong>Fidelidade:</strong> Baixa (wireframes)</p>
+                    <p>Ferramenta focada em rascunhos rápidos e wireframes de baixa fidelidade. Prioriza funcionalidade
+                        e estrutura sobre estética. Ideal para validação inicial de fluxos e arquitetura da informação.
+                    </p>
+                    <p><strong>✅ Ideal para:</strong> Esboços iniciais, validação de layout, brainstorming de
+                        interfaces.</p>
+                    <a href="https://balsamiq.com" target="_blank">balsamiq.com →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FERRAMENTAS DE MODELAGEM -->
+        <section>
+            <h2>📐 3. Ferramentas de Modelagem</h2>
+            <p>Além da prototipação de interface, é fundamental modelar a estrutura do sistema usando diagramas UML.</p>
+
+            <div class="ferramenta-detalhe">
+                <div class="ferramenta-detalhe-item">
+                    <i class="material-icons" style="font-size: 48px; color: #0066cc;">diagram</i>
+                    <h4>StarUML</h4>
+                    <p>Ferramenta especializada em modelagem UML (Unified Modeling Language). Permite criar diagramas de
+                        classes, sequência, casos de uso, atividades e até gerar código automaticamente a partir dos
+                        modelos.</p>
+                    <p><strong>✅ Ideal para:</strong> Projetos acadêmicos, documentação arquitetural, geração de
+                        esqueletos de código.</p>
+                    <a href="https://staruml.io" target="_blank">staruml.io →</a>
+                </div>
+                <div class="ferramenta-detalhe-item">
+                    <i class="material-icons" style="font-size: 48px; color: #0066cc;">lan</i>
+                    <h4>Lucidchart</h4>
+                    <p>Plataforma colaborativa baseada em nuvem para criação de diagramas de rede, arquitetura de
+                        software, fluxogramas, mapas mentais e também UML. Oferece integração com Google Drive, Slack,
+                        Confluence e Jira.</p>
+                    <p><strong>✅ Ideal para:</strong> Diagramas de arquitetura, fluxos de integração, documentação
+                        visual de sistemas.</p>
+                    <a href="https://lucidchart.com" target="_blank">lucidchart.com →</a>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4><i class="material-icons">insights</i> Dica avançada - Prototipação de APIs</h4>
+                <p>Além de prototipar interfaces com Figma, você pode prototipar APIs usando ferramentas como
+                    <strong>Postman</strong> (para testar requisições), <strong>Swagger Editor</strong> (para documentar
+                    endpoints) e <strong>Insomnia</strong>. Isso permite validar contratos de integração antes mesmo do
+                    back-end estar pronto.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. API (APPLICATION PROGRAMMING INTERFACE) -->
+        <section>
+            <h2>🔌 4. API - Application Programming Interface</h2>
+            <div class="info-box">
+                <strong><i class="material-icons">api</i> O que é uma API?</strong>
+                <p>API é um <strong>conjunto de regras e protocolos</strong> que permite a comunicação entre diferentes
+                    sistemas de software. É como um "garçom" que leva o pedido do cliente (aplicação) até a cozinha
+                    (servidor) e traz a resposta de volta.</p>
+            </div>
+
+            <div class="api-exemplo">
+                <h4 style="color: white;">🌤️ Exemplo prático - API de Clima</h4>
+                <p><span class="badge-api">Requisição GET</span> <code
+                        style="color: #ff7b72;">https://api.climatempo.com.br/v1/weather?city=Belem</code></p>
+                <p><strong>Resposta da API (formato JSON):</strong></p>
+                <pre style="margin: 0; background: transparent; color: #e0e0e0;">
+{
+  <span class="key">"cidade"</span>: <span class="string">"Belém"</span>,
+  <span class="key">"temperatura"</span>: <span class="string">"30°C"</span>,
+  <span class="key">"chuva"</span>: <span class="string">"0%"</span>,
+  <span class="key">"umidade"</span>: <span class="string">"78%"</span>,
+  <span class="key">"proxima_atualizacao"</span>: <span class="string">"2026-06-03T15:00:00Z"</span>
+}</pre>
+                <p style="margin-top: 10px; font-size: 0.85em;">O aplicativo de clima solicita dados a essa API, que
+                    responde com informações atualizadas. O app então exibe para o usuário.</p>
+            </div>
+
+            <h3>Tipos de API mais comuns</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+                <div
+                    style="flex: 1; background-color: #f8f9fa; border-radius: 8px; padding: 15px; border-left: 3px solid #0066cc;">
+                    <h4>🔓 API REST (Representational State Transfer)</h4>
+                    <p>Baseada em HTTP, utiliza métodos como GET, POST, PUT, DELETE. É a mais utilizada na web moderna.
+                    </p>
+                    <p><strong>Exemplo:</strong> APIs do Twitter, GitHub, Google Maps.</p>
+                </div>
+                <div
+                    style="flex: 1; background-color: #f8f9fa; border-radius: 8px; padding: 15px; border-left: 3px solid #0066cc;">
+                    <h4>📦 API GraphQL</h4>
+                    <p>Permite que o cliente solicite exatamente os campos que precisa, reduzindo over-fetching e
+                        under-fetching.</p>
+                    <p><strong>Exemplo:</strong> APIs do Facebook, Shopify, GitHub GraphQL.</p>
+                </div>
+                <div
+                    style="flex: 1; background-color: #f8f9fa; border-radius: 8px; padding: 15px; border-left: 3px solid #0066cc;">
+                    <h4>⚡ API WebSocket</h4>
+                    <p>Conexão bidirecional em tempo real (baixa latência). Útil para chats, notificações, jogos.</p>
+                    <p><strong>Exemplo:</strong> WhatsApp Web, sistemas de trading financeiro.</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong><i class="material-icons">security</i> Boas práticas para APIs (RESTful):</strong>
+                <ul>
+                    <li>Utilizar HTTP methods adequados (GET para leitura, POST para criação, PUT para atualização,
+                        DELETE para remoção)</li>
+                    <li>Retornar códigos de status HTTP significativos (200 OK, 201 Created, 400 Bad Request, 401
+                        Unauthorized, 404 Not Found, 500 Internal Server Error)</li>
+                    <li>Documentar a API com Swagger/OpenAPI</li>
+                    <li>Versionar a API (ex: /v1/, /v2/)</li>
+                    <li>Autenticar e autorizar requisições (API Keys, JWT, OAuth2)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. INTEGRAÇÃO DA SOLUÇÃO -->
+        <section>
+            <h2>🔗 5. Integração da Solução</h2>
+            <p>Integração refere-se à <strong>conexão entre diferentes partes de um sistema</strong>: front-end,
+                back-end, banco de dados, APIs externas. Uma boa integração garante uma experiência fluida e eficiente.
+            </p>
+
+            <h3>Os três pilares da integração</h3>
+            <div class="integracao-passos">
+                <div class="integracao-passo">
+                    <div class="numero">1</div><strong>Front-end</strong><br>Interface visual (HTML/CSS/JS)<br>Interação
+                    com usuário
+                </div>
+                <div class="integracao-passo">
+                    <div class="numero">2</div><strong>Back-end</strong><br>Lógica de negócio
+                    (Node.js/Java/Python)<br>Processamento e regras
+                </div>
+                <div class="integracao-passo">
+                    <div class="numero">3</div><strong>Banco de Dados</strong><br>Armazenamento persistente<br>Consultas
+                    e transações
+                </div>
+            </div>
+
+            <div class="prototipo-card">
+                <div class="prototipo-header" style="background: linear-gradient(135deg, #28a745, #1e7e34);">
+                    <i class="material-icons" style="font-size: 28px;">timeline</i>
+                    <h3>Diagrama de Integração da Solução</h3>
+                </div>
+                <div class="prototipo-body">
+                    <div class="diagrama-integracao">
+                        <pre style="margin: 0; background: transparent; border: none; text-align: center;">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                             USUÁRIO (CLIENTE)                               │
+│                          Navegador / Aplicativo Mobile                      │
+└─────────────────────────────────┬───────────────────────────────────────────┘
+                                  │                                            
+                                  ▼                                            
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          FRONT-END (Camada de Apresentação)                 │
+│                   React / Angular / Vue.js / HTML/CSS/JS                    │
+│                                                                             │
+│  • Interface visual (botões, mapas, gráficos)                               │
+│  • Envia requisições HTTP/HTTPS para o Back-end                             │
+│  • Exibe dados recebidos                                                    │
+└─────────────────────────────────┬───────────────────────────────────────────┘
+                                  │ API Request (JSON)                         
+                                  ▼                                            
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          BACK-END (Camada de Negócio)                       │
+│                      Node.js + Express / Django / Spring Boot               │
+│                                                                             │
+│  • Recebe requisições do Front-end                                          │
+│  • Aplica regras de negócio                                                 │
+│  • Acessa o Banco de Dados                                                  │
+│  • Consome APIs externas (quando necessário)                                │
+│  • Retorna resposta (JSON) para o Front-end                                 │
+└─────────────────────────────────┬───────────────────────────────────────────┘
+                                  │ SQL / ORM Query                            
+                                  ▼                                            
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        BANCO DE DADOS (Persistência)                        │
+│                    PostgreSQL / MongoDB / MySQL / Redis                     │
+│                                                                             │
+│  • Armazena dados de usuários, reportes, vias                               │
+│  • Mantém consistência e integridade                                        │
+│  • Executa consultas otimizadas                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  │                                            
+                                  ▼                                            
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         APIS EXTERNAS (Opcional)                            │
+│                    API de Mapas (Leaflet/Google), Dados Abertos (SINISA)    │
+└─────────────────────────────────────────────────────────────────────────────┘
+</pre>
+                        <p style="margin-top: 15px; font-size: 0.85em;"><strong>Fonte:</strong> Elaborado pelo autor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Front-end (parte visual)</h3>
+            <div class="info-box">
+                <strong><i class="material-icons">web</i> Tecnologias e responsabilidades:</strong>
+                <ul>
+                    <li><strong>Tecnologias:</strong> HTML, CSS, JavaScript, TypeScript, React, Vue.js, Angular</li>
+                    <li><strong>Função:</strong> Interface com o usuário (botões, menus, telas, formulários, mapas)</li>
+                    <li><strong>O que faz:</strong> Envia dados para o back-end via API, recebe respostas e atualiza a
+                        interface dinamicamente</li>
+                    <li><strong>Foco:</strong> Experiência do usuário (UX/UI), acessibilidade, responsividade</li>
+                </ul>
+            </div>
+
+            <h3>Back-end (lógica por trás)</h3>
+            <div class="info-box">
+                <strong><i class="material-icons">storage</i> Tecnologias e responsabilidades:</strong>
+                <ul>
+                    <li><strong>Tecnologias:</strong> Node.js, Python (Django/Flask), Java (Spring Boot), PHP (Laravel),
+                        C# (.NET), Go, Ruby on Rails</li>
+                    <li><strong>Função:</strong> Processar requisições, aplicar regras de negócio, autenticar usuários,
+                        gerenciar sessões</li>
+                    <li><strong>O que faz:</strong> Conecta front-end ao banco de dados, integra APIs externas, garante
+                        segurança e performance</li>
+                    <li><strong>Foco:</strong> Lógica de negócio, integridade dos dados, eficiência</li>
+                </ul>
+            </div>
+
+            <h3>Banco de Dados</h3>
+            <div class="info-box">
+                <strong><i class="material-icons">database</i> Tipos e responsabilidades:</strong>
+                <ul>
+                    <li><strong>Relacional (SQL):</strong> PostgreSQL, MySQL, Oracle, SQL Server → dados estruturados,
+                        consistência ACID, relacionamentos</li>
+                    <li><strong>Não Relacional (NoSQL):</strong> MongoDB (documentos), Redis (cache/chave-valor),
+                        Cassandra (colunas) → flexibilidade, escalabilidade horizontal</li>
+                    <li><strong>Função:</strong> Armazenar dados permanentemente, permitir consultas eficientes,
+                        garantir integridade referencial</li>
+                    <li><strong>O que faz:</strong> CRUD (Create, Read, Update, Delete), transações, backups, otimização
+                        de consultas</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. APLICAÇÃO PRÁTICA - VIAS DA CABANAGEM -->
+        <section>
+            <h2>🏘️ Aplicação Prática: Integração no Projeto "Vias da Cabanagem"</h2>
+            <div class="example-card">
+                <h4><i class="material-icons">apartment</i> Como integrar o dashboard de monitoramento de vias</h4>
+                <div class="codigo-box">
+                    <pre><code><span class="comment">// Exemplo de integração Front-end (React) com Back-end (Node.js)</span>
+
+<span class="comment">// Front-end (React) - Buscando dados de uma via específica</span>
+<span class="keyword">async function</span> buscarVia(id) {
+  <span class="keyword">const</span> resposta = <span class="keyword">await</span> fetch(`<span class="string">https://api.viasdacabanagem.com.br/v1/vias/</span>${id}`, {
+    <span class="key">headers</span>: { <span class="string">'Authorization'</span>: <span class="string">`Bearer ${token}`</span> }
+  });
+  <span class="keyword">const</span> dados = <span class="keyword">await</span> resposta.json();
+  console.log(dados); <span class="comment">// { nome: "Av. Siqueira Mendes", pavimentacao: "Parcial", ... }</span>
+}
+
+<span class="comment">// Back-end (Node.js + Express) - Endpoint que retorna dados do banco</span>
+app.get(<span class="string">'/api/v1/vias/:id'</span>, autenticar, <span class="keyword">async</span> (req, res) => {
+  <span class="keyword">const</span> via = <span class="keyword">await</span> ViaModel.findById(req.params.id);
+  res.json(via);
+});</code></pre>
+                </div>
+                <p><strong>Resumo da integração proposta para o projeto:</strong></p>
+                <ul>
+                    <li>📱 <strong>Front-end:</strong> React + Leaflet (mapas interativos) + Axios (requisições HTTP)
+                    </li>
+                    <li>⚙️ <strong>Back-end:</strong> Node.js + Express + JWT (autenticação) + bcrypt (senhas)</li>
+                    <li>🗄️ <strong>Banco de Dados:</strong> PostgreSQL (dados estruturados de vias) + MongoDB (reportes
+                        colaborativos não estruturados)</li>
+                    <li>🔌 <strong>APIs externas:</strong> Leaflet/OpenStreetMap (mapas), API do SINISA (dados públicos
+                        de saneamento)</li>
+                    <li>🔐 <strong>Segurança:</strong> HTTPS, validação de entrada, rate limiting, sanitização de dados
+                    </li>
+                </ul>
+                <p>Essa arquitetura garante escalabilidade (podemos adicionar novas vias e novos bairros facilmente),
+                    segurança (dados de localização são sensíveis) e experiência fluida para o usuário.</p>
+            </div>
+        </section>
+
+        <!-- 7. EXERCÍCIO PRÁTICO -->
+        <section>
+            <h2>✍️ 7. Mão na Massa - Exercício Prático</h2>
+            <div class="desafio-box" style="background-color: #f0f7ff; border-left-color: #0066cc;">
+                <h4><i class="material-icons">edit_note</i> Desafio: Prototipe e integre sua solução</h4>
+                <p>Com base no seu projeto (ou em um projeto hipotético), realize as seguintes atividades:</p>
+                <ol>
+                    <li><strong>Prototipação:</strong> Crie um wireframe de baixa fidelidade (pode ser papel ou
+                        Balsamiq) para a tela principal do seu sistema. Identifique os principais elementos de
+                        interface.</li>
+                    <li><strong>Modelagem:</strong> Desenhe um diagrama de classes UML simplificado mostrando as
+                        principais entidades (ex: Usuário, Via, Reporte).</li>
+                    <li><strong>API:</strong> Escreva um exemplo de requisição GET para buscar dados de uma entidade.
+                        Qual seria a URL? Qual o formato da resposta?</li>
+                    <li><strong>Integração:</strong> Liste as tecnologias que usaria para Front-end, Back-end e Banco de
+                        Dados. Justifique cada escolha.</li>
+                </ol>
+                <p><strong>Desafio extra:</strong> Pesquise sobre <strong>CI/CD (Integração Contínua/Entrega
+                        Contínua)</strong> – como isso se relaciona com a integração de soluções?</p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 10. ed. São Paulo, SP: Pearson, 2018.
+                    E-book. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>PRESSMAN, Roger S. <strong>Engenharia de Software: Uma Abordagem Profissional</strong>. 9. ed.
+                    Porto Alegre: AMGH, 2021.</cite></p>
+            <p><cite>FIELDING, Roy Thomas. <strong>Architectural Styles and the Design of Network-based Software
+                        Architectures</strong>. Doctoral dissertation, UC Irvine, 2000. (REST)</cite></p>
+            <p><cite>LUCIDCHART. <strong>Diagrama de Arquitetura de Software</strong>. Disponível em:
+                    https://www.lucidchart.com/pages/pt/diagrama-de-arquitetura-de-software. Acesso em: 03 jun.
+                    2026.</cite></p>
+            <p><cite>STARUML. <strong>Documentação UML</strong>. Disponível em: https://staruml.io/documentation. Acesso
+                    em: 03 jun. 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 03 de junho de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 3:
+            Prototipação e Integração da Solução 🔄</p>
+    </footer>
+</body>
+
+</html>
