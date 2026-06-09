@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Organizacional - Módulo 4 | Monitoramento e Validação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Análise Organizacional e Soluções Tecnológicas</h1>
+        <h2>Módulo 4 - Avaliação e Entrega da Solução</h2>
+        <h3>📊 Unidade 1 – Monitoramento e Validação</h3>
+        <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 8px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav"
+            style="display: inline-flex; align-items: center; gap: 5px; background-color: #0066cc; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                <i class="material-icons" style="font-size: 18px;">arrow_back</i>Checkout Módulo 3 
+            </a>
+            <a href="mod4_und2-analise-de-resultados-e-relatorio-final.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 4 Und 2<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/liGiby7hLCQ" frameborder="0"
+                    title="Monitoramento e Validação - Análise Organizacional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Monitoramento e Validação - UFMS Digital">
+                [UFMS Digital] Análise Organizacional e Soluções Tecnológicas - Módulo 4 - Unidade 1
+            </p>
+            <p>Prof. Me. Rafael Gonçalves de Oliveira Viana</p>
+            <p>📅 07 de junho de 2026</p>
+        </section>
+
+        <!-- O QUE SERÁ ABORDADO -->
+        <section>
+            <h2>🎯 O que será abordado</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">monitoring</i> Monitoramento de Software</strong>
+                    <p>Compreenda o conceito de monitoramento contínuo de desempenho, progresso e qualidade.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">verified</i> Validação de Software</strong>
+                    <p>Entenda o processo de verificar se o software atende aos requisitos e necessidades do usuário.
+                    </p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">metrics</i> Métricas e Ferramentas</strong>
+                    <p>Conheça as principais ferramentas de monitoramento (Grafana, Prometheus, SonarQube, HacknPlan,
+                        Redmine, Selenium).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">engineering</i> Exemplos Práticos</strong>
+                    <p>Aplique os conceitos em cenários reais de desenvolvimento de software.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. MONITORAMENTO DE SOFTWARE -->
+        <section>
+            <h2>📈 1. Monitoramento de Software</h2>
+            <div class="info-box">
+                <strong><i class="material-icons">timeline</i> Conceito:</strong>
+                <p>Monitoramento de software é a <strong>atividade contínua de acompanhar o desempenho, progresso e
+                        qualidade do projeto</strong>. Envolve a coleta de métricas, auditorias, relatórios e
+                    indicadores, baseando-se em dados reais para a tomada de decisão.</p>
+            </div>
+
+            <h3>Técnicas de Monitoramento</h3>
+            <div class="grid-2col">
+                <div>
+                    <h4><i class="material-icons">speed</i> Métricas de desempenho</h4>
+                    <p>Avaliam a eficiência operacional do sistema.</p>
+                    <ul>
+                        <li>Tempo de resposta (latência)</li>
+                        <li>Uso de CPU, memória e disco</li>
+                        <li>Taxa de transferência (throughput)</li>
+                        <li>Disponibilidade (uptime)</li>
+                        <li>Taxa de erros (error rate)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="material-icons">analytics</i> Métricas de processo</h4>
+                    <p>Analisam a eficiência do desenvolvimento.</p>
+                    <ul>
+                        <li>Produtividade da equipe</li>
+                        <li>Taxa de defeitos por módulo</li>
+                        <li>Cobertura de testes</li>
+                        <li>Dívida técnica (technical debt)</li>
+                        <li>Tempo médio de resolução de bugs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="material-icons">event</i> Acompanhamento de cronograma</h4>
+                    <p>Verificam o andamento do projeto.</p>
+                    <ul>
+                        <li>Marcos (milestones) alcançados</li>
+                        <li>Entregas parciais realizadas</li>
+                        <li>Cumprimento de prazos</li>
+                        <li>Velocidade da equipe (sprints)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="material-icons">verified_user</i> Auditorias e revisões técnicas</h4>
+                    <p>Garantem conformidade e qualidade.</p>
+                    <ul>
+                        <li>Revisões de código (code review)</li>
+                        <li>Auditorias de segurança</li>
+                        <li>Checklists de conformidade (ISO, LGPD)</li>
+                        <li>Documentação técnica</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FERRAMENTAS DE MONITORAMENTO - DESEMPENHO -->
+        <section>
+            <h2>🛠️ 2. Ferramentas de Monitoramento - Desempenho</h2>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">dashboard</i> Grafana + Prometheus <span class="badge-ferramenta">Open
+                        Source</span></h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1;">
+                        <p><strong>Prometheus</strong>: Sistema de monitoramento que coleta métricas em tempo real de
+                            aplicações, servidores e bancos de dados. Utiliza um modelo pull (busca ativa) e armazena
+                            séries temporais.</p>
+                        <p><strong>Grafana</strong>: Plataforma de visualização que consome dados do Prometheus e gera
+                            dashboards interativos com gráficos, alertas e mapas de calor.</p>
+                        <p><strong>Principais métricas monitoradas:</strong></p>
+                        <ul>
+                            <li>Tempo de resposta das APIs (percentis 50, 95, 99)</li>
+                            <li>Uso de CPU e memória por serviço</li>
+                            <li>Taxa de requisições por segundo (RPS)</li>
+                            <li>Latência de conexão com banco de dados</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="metricas-box">
+                            <strong>Exemplo de query Prometheus (PromQL):</strong>
+                            <pre style="background: transparent; margin: 10px 0; font-size: 0.8em;">
+# Taxa de requisições HTTP por segundo
+rate(http_requests_total[5m])
+
+# Latência média (p95) de requisições
+histogram_quantile(0.95, 
+  http_request_duration_seconds_bucket)</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FERRAMENTAS DE MONITORAMENTO - PROCESSO -->
+        <section>
+            <h2>🔍 3. Ferramentas de Monitoramento - Qualidade de Código</h2>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">code</i> SonarQube <span class="badge-ferramenta">Open Source</span></h3>
+                <p>Plataforma de análise estática de código que avalia qualidade, segurança e manutenibilidade. Suporta
+                    mais de 25 linguagens (Java, Python, JavaScript, C#, Go, etc.).</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <strong>Métricas analisadas:</strong>
+                        <ul>
+                            <li>🐛 Bugs: erros de lógica e comportamento</li>
+                            <li>🔒 Vulnerabilidades: falhas de segurança</li>
+                            <li>💣 Code Smells: más práticas que prejudicam manutenção</li>
+                            <li>📊 Cobertura de testes: percentual de código testado</li>
+                            <li>🧮 Duplicação: código repetido</li>
+                            <li>📈 Dívida técnica: tempo estimado para correção</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="metricas-box">
+                            <strong>Exemplo de configuração (sonar-project.properties):</strong>
+                            <pre style="background: transparent; margin: 10px 0; font-size: 0.8em;">
+sonar.projectKey=projeto_vias
+sonar.sources=src/
+sonar.language=python
+sonar.python.coverage.reportPaths=coverage.xml
+sonar.coverage.exclusions=**/tests/**</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ACOMPANHAMENTO DE CRONOGRAMA -->
+        <section>
+            <h2>📅 4. Acompanhamento de Cronograma</h2>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">board</i> HacknPlan <span class="badge-ferramenta">Freemium</span></h3>
+                <p>Ferramenta de gestão de projetos com foco em desenvolvimento de software, usando sistema de boards
+                    estilo Kanban. Especialmente útil para projetos multidisciplinares.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <strong>Funcionalidades principais:</strong>
+                        <ul>
+                            <li>📋 Kanban com colunas personalizáveis (To Do, In Progress, Review, Done)</li>
+                            <li>🏷️ Categorização por áreas (front-end, back-end, design, testes)</li>
+                            <li>📊 Métricas de progresso (burndown chart, velocity)</li>
+                            <li>🔗 Integração com repositórios Git</li>
+                            <li>📎 Anexos e comentários por tarefa</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="metricas-box">
+                            <strong>Métricas geradas:</strong>
+                            <ul>
+                                <li>📈 Velocidade da equipe (pontos por sprint)</li>
+                                <li>⏱️ Lead time (tempo entre criação e conclusão)</li>
+                                <li>🔄 Cycle time (tempo efetivo de trabalho)</li>
+                                <li>📉 Burndown (tarefas restantes vs tempo)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. AUDITORIAS E REVISÕES TÉCNICAS -->
+        <section>
+            <h2>📋 5. Auditorias e Revisões Técnicas</h2>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">assignment</i> Redmine <span class="badge-ferramenta">Open Source</span>
+                </h3>
+                <p>Sistema flexível de gestão de projetos com plugins específicos para auditoria, conformidade com ISO
+                    19011 e ABNT NBR ISO/IEC 27001.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                    <div style="flex: 1;">
+                        <strong>Funcionalidades para auditoria:</strong>
+                        <ul>
+                            <li>✅ Checklists formais por auditoria</li>
+                            <li>📝 Registro de não conformidades com níveis de severidade</li>
+                            <li>📎 Versionamento de documentos anexados</li>
+                            <li>📊 Relatórios PDF customizáveis</li>
+                            <li>🔒 Trilha de auditoria (log de ações)</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1;">
+                        <strong>Integração com normas:</strong>
+                        <ul>
+                            <li>ISO 19011 (Diretrizes para auditoria)</li>
+                            <li>NBR ISO/IEC 27001 (Segurança da informação)</li>
+                            <li>ISO 9001 (Gestão de qualidade)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. VALIDAÇÃO DE SOFTWARE -->
+        <section>
+            <h2>✅ 6. Validação de Software</h2>
+            <div class="info-box">
+                <strong><i class="material-icons">verified</i> Conceito:</strong>
+                <p>Validação é o processo de verificar se o software <strong>atende aos requisitos especificados e às
+                        necessidades do usuário</strong>. Enquanto a verificação responde "construímos o produto
+                    certo?", a validação responde "construímos o produto certo para o usuário?".</p>
+            </div>
+
+            <h3>Técnicas de Validação</h3>
+            <div class="grid-2col">
+                <div>
+                    <h4><i class="material-icons">check_circle</i> Testes de Aceitação</h4>
+                    <p>Verificam se o sistema atende aos critérios de aceitação definidos com o cliente/usuário. Simulam
+                        o uso real do sistema.</p>
+                    <p><strong>Exemplo:</strong> "Ao preencher todos os campos obrigatórios e clicar em 'Enviar', o
+                        usuário deve ver uma mensagem de confirmação."</p>
+                </div>
+                <div>
+                    <h4><i class="material-icons">build</i> Testes de Sistema</h4>
+                    <p>Verificam se todos os módulos funcionam juntos corretamente (teste end-to-end). Inclui testes de
+                        integração, desempenho e segurança.</p>
+                    <p><strong>Exemplo:</strong> "Ao fazer login, o sistema carrega corretamente o painel com dados do
+                        usuário recuperados do banco."</p>
+                </div>
+                <div>
+                    <h4><i class="material-icons">groups</i> Inspeções e Revisões</h4>
+                    <p>Análises manuais ou semiautomáticas feitas por revisores humanos (pares, especialistas).
+                        Identificam defeitos precocemente, reduzindo custos de retrabalho.</p>
+                    <p><strong>Tipos:</strong> Revisão de código, inspeção de requisitos, revisão de design,
+                        walkthroughs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FERRAMENTAS DE VALIDAÇÃO - SELENIUM -->
+        <section>
+            <h2>🧪 7. Ferramentas de Validação - Selenium</h2>
+
+            <div class="ferramenta-card">
+                <h3><i class="material-icons">web</i> Selenium <span class="badge-ferramenta">Open Source</span></h3>
+                <p>Framework para automação de testes de aplicações web. Suporta múltiplos navegadores (Chrome, Firefox,
+                    Edge, Safari) e linguagens (Python, Java, C#, JavaScript, Ruby).</p>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0;">
+                    <div style="flex: 1;">
+                        <strong>Selenium WebDriver:</strong> API para controle programático do navegador. Ideal para
+                        testes automatizados complexos.
+                    </div>
+                    <div style="flex: 1;">
+                        <strong>Selenium IDE:</strong> Extensão de navegador para gravação e playback de testes. Boa
+                        para prototipação rápida.
+                    </div>
+                </div>
+
+                <div class="codigo-box">
+                    <pre><code><span class="comment"># Exemplo de teste com Selenium WebDriver (Python)</span>
+<span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver
+<span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By
+
+<span class="comment"># Inicializa o driver do Chrome</span>
+driver = webdriver.Chrome()
+
+<span class="comment"># Teste de Aceitação: cadastro de reporte no dashboard</span>
+driver.get(<span class="string">"https://viasdacabanagem.com.br/reportar"</span>)
+
+<span class="comment"># Preenche o formulário</span>
+driver.find_element(By.ID, <span class="string">"via"</span>).send_keys(<span class="string">"Av. Brasil"</span>)
+driver.find_element(By.ID, <span class="string">"problema"</span>).send_keys(<span class="string">"Buraco"</span>)
+driver.find_element(By.ID, <span class="string">"submit"</span>).click()
+
+<span class="comment"># Verifica a mensagem de confirmação</span>
+mensagem = driver.find_element(By.CLASS_NAME, <span class="string">"sucesso"</span>).text
+<span class="keyword">assert</span> mensagem == <span class="string">"Reporte enviado com sucesso!"</span>
+
+driver.quit()</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. APLICAÇÃO PRÁTICA - VIAS DA CABANAGEM -->
+        <section>
+            <h2>🏘️ Aplicação Prática: Monitoramento e Validação no Projeto "Vias da Cabanagem"</h2>
+
+            <div class="example-card">
+                <h4><i class="material-icons">apartment</i> Estratégia de Monitoramento e Validação</h4>
+
+                <p><strong>🔍 Monitoramento:</strong></p>
+                <ul>
+                    <li><strong>Tempo de resposta do dashboard:</strong> Monitorado via Prometheus + Grafana, com alerta
+                        se ultrapassar 3 segundos</li>
+                    <li><strong>Taxa de falhas no recebimento de reportes:</strong> Monitorada via logs do back-end
+                        (Node.js)</li>
+                    <li><strong>Disponibilidade da API:</strong> Verificada a cada minuto via heartbeat endpoint</li>
+                    <li><strong>Qualidade do código:</strong> Analisada com SonarQube a cada push no repositório GitHub
+                    </li>
+                    <li><strong>Progresso do projeto:</strong> Acompanhado via HacknPlan (board Kanban com sprints
+                        semanais)</li>
+                </ul>
+
+                <p><strong>✅ Validação:</strong></p>
+                <ul>
+                    <li><strong>Testes de Sistema:</strong> Automatizados com Selenium WebDriver (Python) para verificar
+                        integração front-end/back-end</li>
+                    <li><strong>Testes de Aceitação:</strong> Realizados com 10 moradores do bairro, simulando reporte
+                        de problemas no dashboard</li>
+                    <li><strong>Inspeções de código:</strong> Revisão por pares de cada Pull Request antes do merge</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 9. COMPARAÇÃO DE FERRAMENTAS -->
+        <section>
+            <h2>📊 Comparativo de Ferramentas</h2>
+            <div class="comparacao-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Categoria</th>
+                            <th>Licença</th>
+                            <th>Principais Funcionalidades</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grafana + Prometheus</td>
+                            <td>Monitoramento de desempenho</td>
+                            <td>Apache 2.0</td>
+                            <td>Dashboards, métricas em tempo real, alertas, séries temporais</td>
+                        </tr>
+                        <tr>
+                            <td>SonarQube</td>
+                            <td>Qualidade de código</td>
+                            <td>LGPL v3</td>
+                            <td>Análise estática, bugs, vulnerabilidades, cobertura de testes</td>
+                        </tr>
+                        <tr>
+                            <td>HacknPlan</td>
+                            <td>Gestão de projetos</td>
+                            <td>Freemium</td>
+                            <td>Kanban, categorização por áreas, métricas de progresso</td>
+                        </tr>
+                        <tr>
+                            <td>Redmine</td>
+                            <td>Gestão + Auditoria</td>
+                            <td>GPL v2</td>
+                            <td>Checklists, conformidade ISO, trilha de auditoria</td>
+                        </tr>
+                        <tr>
+                            <td>Selenium</td>
+                            <td>Testes automatizados</td>
+                            <td>Apache 2.0</td>
+                            <td>Automação web, testes de aceitação e sistema</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 10. CHECKLIST DE MONITORAMENTO E VALIDAÇÃO -->
+        <section>
+            <h2>✅ Checklist para Monitoramento e Validação</h2>
+            <div class="metricas-box">
+                <div class="checklist-item"><input type="checkbox"> Definição de métricas de desempenho (tempo de
+                    resposta, CPU, memória)</div>
+                <div class="checklist-item"><input type="checkbox"> Configuração de ferramenta de monitoramento
+                    (Prometheus + Grafana)</div>
+                <div class="checklist-item"><input type="checkbox"> Análise de qualidade de código (SonarQube)</div>
+                <div class="checklist-item"><input type="checkbox"> Acompanhamento de cronograma (HacknPlan ou similar)
+                </div>
+                <div class="checklist-item"><input type="checkbox"> Definição de critérios de aceitação com
+                    cliente/usuário</div>
+                <div class="checklist-item"><input type="checkbox"> Elaboração de casos de teste automatizados
+                    (Selenium)</div>
+                <div class="checklist-item"><input type="checkbox"> Execução de testes de sistema e aceitação</div>
+                <div class="checklist-item"><input type="checkbox"> Realização de inspeções e revisões técnicas</div>
+                <div class="checklist-item"><input type="checkbox"> Documentação dos resultados (relatórios de teste,
+                    logs de auditoria)</div>
+            </div>
+        </section>
+
+        <!-- 11. EXERCÍCIO PRÁTICO -->
+        <section>
+            <h2>✍️ Mão na Massa - Exercício Prático</h2>
+            <div class="desafio-box" style="background-color: #f0f7ff; border-left-color: #0066cc;">
+                <h4><i class="material-icons">edit_note</i> Desafio: Plano de Monitoramento e Validação</h4>
+                <p>Com base no seu projeto (ou no projeto "Vias da Cabanagem"), desenvolva um plano de monitoramento e
+                    validação respondendo:</p>
+                <ol>
+                    <li>Quais métricas de desempenho você monitoraria? Por quê?</li>
+                    <li>Como garantiria a qualidade do código (métricas de processo)?</li>
+                    <li>Qual ferramenta usaria para acompanhar o cronograma?</li>
+                    <li>Quais seriam os critérios de aceitação do sistema?</li>
+                    <li>Elabore um caso de teste para a funcionalidade principal do seu sistema.</li>
+                </ol>
+                <p><strong>Desafio extra:</strong> Pesquise sobre <strong>Teste de Carga (Load Testing)</strong> e
+                    <strong>Teste de Estresse (Stress Testing)</strong> – qual a diferença e quando aplicar cada um?
+                </p>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <p><cite>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>. 10. ed. São Paulo, SP: Pearson, 2018.
+                    E-book. Disponível na Biblioteca Digital da UFMS.</cite></p>
+            <p><cite>PRESSMAN, Roger S. <strong>Engenharia de Software: Uma Abordagem Profissional</strong>. 9. ed.
+                    Porto Alegre: AMGH, 2021.</cite></p>
+            <p><cite>MYERS, Glenford J.; SANDLER, Corey; BADGETT, Tom. <strong>The Art of Software Testing</strong>. 3rd
+                    ed. Wiley, 2011.</cite></p>
+            <p><cite>GRAFANA LABS. <strong>Grafana Documentation</strong>. Disponível em: https://grafana.com/docs/.
+                    Acesso em: 07 jun. 2026.</cite></p>
+            <p><cite>SONARSOURCE. <strong>SonarQube Documentation</strong>. Disponível em: https://docs.sonarqube.org/.
+                    Acesso em: 07 jun. 2026.</cite></p>
+            <p><cite>SELENIUM PROJECT. <strong>Selenium Documentation</strong>. Disponível em:
+                    https://www.selenium.dev/documentation/. Acesso em: 07 jun. 2026.</cite></p>
+        </section>
+
+        <section>
+            <h2>📄 Licenciamento</h2>
+            <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a não
+                ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma Licença
+                Creative Commons - Atribuição 4.0 Internacional.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 07 de junho de 2026</p>
+        <p style="font-size: 0.8em; margin-top: 5px;">Análise Organizacional e Soluções Tecnológicas - Módulo 4:
+            Monitoramento e Validação 📊</p>
+    </footer>
+</body>
+
+</html>
