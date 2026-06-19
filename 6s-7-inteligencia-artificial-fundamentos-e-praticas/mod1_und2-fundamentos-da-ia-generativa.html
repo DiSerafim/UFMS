@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 2: Fundamentos da IA Generativa | Inteligência Artificial - UFMS Digital
+    </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares para melhorar a experiência avançada */
+        .detalhe-conceito {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cddfe7;
+        }
+
+        .topicos-avancados {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topicos-avancados h3,
+        .topicos-avancados h4 {
+            color: #ffd966;
+        }
+
+        .badge-cert {
+            background-color: #1e466e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .grid-competencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .competencia-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .exemplo-mercado {
+            background: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 110px;
+        }
+
+        .aplicacao-destaque-ia {
+            background: #fff8e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+
+        .desafio-etico-ia {
+            background: #fff5f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .trend-box-ia {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .trend-box-ia h4 {
+            color: #ffc107;
+        }
+
+        .arquitetura-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .arquitetura-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s;
+        }
+
+        .arquitetura-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .prompt-exemplo {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px dashed #0066cc;
+        }
+
+        .prompt-exemplo strong {
+            color: #1a4d8c;
+        }
+
+        .btn-politica {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1a4d8c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-politica:hover {
+            background: #0066cc;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-politica.verde {
+            background: #28a745;
+        }
+
+        .btn-politica.verde:hover {
+            background: #1e7e34;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 1 - Fundamentos da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 2 – Fundamentos da IA Generativa</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-conceitos-basicos-historico-e-evolucao-artificial.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 1
+            </a>
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/o2ZABWy63wA" frameborder="0"
+                    title="Inteligência Artificial - Módulo 1 - Unidade 2 - Fundamentos da IA Generativa"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 2">
+                [UFMS Digital] Inteligência Artificial - Módulo 1 - Unidade 2 (Fundamentos da IA Generativa)
+            </p>
+            <p>Profa. Esp. Karine Toazza</p>
+            <p>📅 Disponível desde 2026 • Duração: 20min</p>
+        </section>
+
+        <!-- Introdução expandida -->
+        <section>
+            <h2>🧠 O que é Inteligência Artificial Generativa?</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🤖 Definição</h4>
+                    <p>A <strong>Inteligência Artificial Generativa</strong> representa uma das áreas mais recentes e
+                        dinâmicas da pesquisa em IA. Diferentemente de sistemas tradicionais voltados exclusivamente
+                        para análise ou classificação de dados, modelos generativos são capazes de <strong>produzir
+                            novos conteúdos</strong> a partir de padrões aprendidos durante o treinamento.</p>
+                    <p>Esses conteúdos podem assumir diversas formas, incluindo textos, imagens, códigos de programação,
+                        áudio e vídeos <cite>(Carraro, 2023)</cite>.</p>
+                </div>
+                <div class="card">
+                    <h4>📈 Exemplos Práticos</h4>
+                    <p>Você provavelmente já teve contato com a IA generativa, ainda que talvez não a reconheça por esse
+                        nome. Ela está presente em ferramentas amplamente utilizadas, como:</p>
+                    <ul>
+                        <li><strong>ChatGPT</strong> – geração de textos e respostas</li>
+                        <li><strong>Gemini</strong> – assistente multimodal do Google</li>
+                        <li><strong>DALL-E / Midjourney</strong> – geração de imagens</li>
+                        <li><strong>GitHub Copilot</strong> – geração de código</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detalhe-conceito">
+                <h3>⚙️ Como Funcionam os Modelos Generativos?</h3>
+                <p>O funcionamento desses sistemas baseia-se em <strong>arquiteturas matemáticas</strong> capazes de
+                    modelar distribuições complexas de dados. Durante o processo de treinamento, os modelos analisam
+                    grandes conjuntos de informações e aprendem representações estatísticas que permitem gerar novas
+                    amostras semelhantes às observadas anteriormente.</p>
+                <p>Essa capacidade permite a criação automatizada de conteúdos com alto grau de coerência e
+                    complexidade.</p>
+                <div class="info-box">
+                    <strong><i class="material-icons">insights</i> Conceito-chave:</strong> A IA generativa não apenas
+                    analisa ou classifica dados, mas <strong>cria</strong> novos dados que seguem os padrões aprendidos.
+                </div>
+            </div>
+        </section>
+
+        <!-- Arquitetura Transformer -->
+        <section>
+            <h2>🏗️ Arquitetura Transformer e Mecanismo de Atenção</h2>
+            <p>Entre as arquiteturas mais relevantes da IA generativa destacam-se os <strong>modelos baseados em
+                    transformadores (transformers)</strong>. Essa arquitetura introduziu mecanismos de atenção que
+                permitem aos sistemas analisar relações contextuais entre diferentes elementos de uma sequência de
+                dados, como palavras em uma frase.</p>
+
+            <div class="arquitetura-grid">
+                <div class="arquitetura-card">
+                    <i class="material-icons" style="font-size: 2rem; color: #0066cc;">visibility</i>
+                    <h3>Mecanismo de Atenção</h3>
+                    <p>Imagine que você está lendo um texto e, para entender o significado de uma palavra específica,
+                        precisa olhar para as palavras que vieram antes e as que virão depois. A arquitetura Transformer
+                        opera de modo semelhante.</p>
+                    <p><strong>Funcionamento:</strong> Utiliza um mecanismo chamado "atenção" para atribuir diferentes
+                        pesos às partes do texto de entrada que são mais relevantes para compreender o contexto e gerar
+                        a resposta.</p>
+                </div>
+
+                <div class="arquitetura-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons" style="font-size: 2rem; color: #ff8c00;">layers</i>
+                    <h3>Modelos de Linguagem de Grande Escala (LLMs)</h3>
+                    <p>Os <strong>Large Language Models (LLMs)</strong> representam uma aplicação importante dessa
+                        tecnologia. Treinados em enormes volumes de textos provenientes de diferentes fontes, esses
+                        sistemas são capazes de compreender contextos linguísticos complexos e produzir respostas
+                        coerentes em linguagem natural <cite>(Russell; Norvig, 2021)</cite>.</p>
+                    <p><strong>Exemplos:</strong> GPT-4, Claude, Gemini, Llama.</p>
+                </div>
+
+                <div class="arquitetura-card" style="border-top-color: #28a745;">
+                    <i class="material-icons" style="font-size: 2rem; color: #28a745;">auto_awesome</i>
+                    <h3>IA Generativa Multimodal</h3>
+                    <p>Modelos mais avançados são capazes de processar e gerar múltiplos tipos de conteúdo (texto,
+                        imagem, áudio, vídeo) de forma integrada.</p>
+                    <p><strong>Exemplos:</strong> Gemini (Google), GPT-4 com visão, DALL-E 3.</p>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">lightbulb</i> “A arquitetura Transformer
+                revolucionou a IA ao permitir que modelos processem sequências inteiras de dados simultaneamente, em vez
+                de passo a passo, tornando o treinamento mais eficiente e os resultados mais precisos.”
+            </div>
+        </section>
+
+        <!-- Engenharia de Prompts -->
+        <section>
+            <h2>✍️ Engenharia de Prompts: A Arte de Perguntar</h2>
+            <p>Um elemento importante para a utilização eficiente desses modelos refere-se à <strong>engenharia de
+                    prompts</strong>. Essa prática consiste na elaboração estratégica de instruções textuais que
+                orientam o comportamento do modelo generativo. A forma como uma solicitação é estruturada pode
+                influenciar diretamente a qualidade, precisão e relevância das respostas geradas <cite>(Carraro,
+                    2023)</cite>.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📋 Elementos de um Bom Prompt</h4>
+                    <ul>
+                        <li><strong>Objetivo:</strong> Definição clara do que se espera obter.</li>
+                        <li><strong>Contexto:</strong> Delimitação da situação, do público ou da tarefa.</li>
+                        <li><strong>Formatos:</strong> Indicação da estrutura desejada para a resposta.</li>
+                        <li><strong>Papel:</strong> Especificação da perspectiva a partir de qual o modelo deve
+                            responder.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎯 Por que é Importante?</h4>
+                    <p>A qualidade dos resultados produzidos por esses sistemas depende significativamente da clareza,
+                        do contexto e da organização das solicitações formuladas.</p>
+                    <p>Esse processo demonstra que a interação com sistemas generativos não se limita a perguntas
+                        simples, mas exige <strong>planejamento e compreensão</strong> das capacidades e limitações dos
+                        modelos.</p>
+                </div>
+            </div>
+
+            <div class="prompt-exemplo">
+                <h4><i class="material-icons">code</i> Exemplo Prático: Teste do Relógio</h4>
+                <p><strong>Prompt simples:</strong> "Crie uma imagem de um relógio de ponteiros marcando oito e
+                    quarenta."</p>
+                <p><strong>Resultado esperado:</strong> Muitas ferramentas de IA generativa não conseguem criar um
+                    relógio com a hora correta.</p>
+                <p><strong>Por que isso acontece?</strong> Os modelos são treinados com grandes conjuntos de imagens
+                    disponíveis em bases digitais. A maioria das imagens publicitárias de relógios de pulso costuma
+                    apresentar os ponteiros marcando <strong>10h10</strong>, posição que evita cobrir a marca,
+                    geralmente localizada na parte superior central do mostrador.</p>
+                <div class="info-box" style="margin-top: 10px;">
+                    <strong><i class="material-icons">warning</i> Lição aprendida:</strong> Compreender o funcionamento
+                    dos modelos generativos é essencial para avaliar criticamente os resultados produzidos.
+                </div>
+            </div>
+        </section>
+
+        <!-- Ajuste Fino e Personalização -->
+        <section>
+            <h2>🔧 Ajuste Fino (Fine Tuning) e Sistemas Especializados</h2>
+            <p>Além do uso geral, os modelos generativos podem ser adaptados para desempenhar funções especializadas em
+                determinados domínios de conhecimento. Esse processo pode envolver técnicas de <strong>ajuste fino (fine
+                    tuning)</strong>, nas quais um modelo previamente treinado é adaptado utilizando conjuntos de dados
+                específicos relacionados a um determinado campo de aplicação.</p>
+
+            <div class="exemplo-mercado">
+                <h4><i class="material-icons">school</i> Exemplo: Chatbot da UFMS</h4>
+                <p>Na UFMS, foi criado um <strong>chatbot especializado</strong> em responder dúvidas de estudantes
+                    ingressantes no aplicativo de Recepção Institucional, com base em informações do Guia do Calouro.
+                </p>
+                <p>Essa personalização permite desenvolver sistemas capazes de auxiliar em tarefas especializadas, como:
+                </p>
+                <ul>
+                    <li>Análise jurídica</li>
+                    <li>Apoio à pesquisa científica</li>
+                    <li>Geração de relatórios técnicos</li>
+                </ul>
+                <p><strong>Impacto:</strong> Esses sistemas funcionam como ferramentas de apoio cognitivo, ampliando a
+                    capacidade humana de processar grandes volumes de informação.</p>
+            </div>
+
+            <div class="info-box" style="background: #e8f5e9;">
+                <h4><i class="material-icons">gavel</i> Política de IA da UFMS</h4>
+                <p>A UFMS possui uma <strong>Política e um Plano de Inteligência Artificial</strong> (2026-2027) que
+                    orientam o uso ético da IA em atividades acadêmicas e institucionais.</p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                    <a href="#" class="btn-politica" onclick="alert('Acessando Política de IA da UFMS')">
+                        <i class="material-icons">description</i> Acessar a Política
+                    </a>
+                    <a href="#" class="btn-politica verde" onclick="alert('Acessando Plano de IA da UFMS 2026-2027')">
+                        <i class="material-icons">event_note</i> Acessar o Plano
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplicações Práticas -->
+        <section>
+            <h2>🚀 Aplicações Práticas da IA Generativa</h2>
+            <p>Aplicações práticas da IA generativa já podem ser observadas em diversos setores, respondendo a variadas
+                necessidades.</p>
+
+            <div class="aplicacao-destaque-ia">
+                <h3><i class="material-icons">code</i> Desenvolvimento de Software</h3>
+                <p>Na área de software, sistemas são utilizados para <strong>gerar códigos</strong> e auxiliar no
+                    desenvolvimento de programas.</p>
+                <ul>
+                    <li><strong>GitHub Copilot:</strong> Sugere trechos de código e funções completas</li>
+                    <li><strong>Tabnine:</strong> Autocompletar inteligente para programadores</li>
+                    <li><strong>Amazon CodeWhisperer:</strong> Geração de código para AWS</li>
+                </ul>
+            </div>
+
+            <div class="aplicacao-destaque-ia" style="border-left-color: #28a745;">
+                <h3><i class="material-icons">brush</i> Atividades Criativas</h3>
+                <p>No setor criativo, ferramentas generativas permitem produzir imagens, músicas e conteúdos multimídia
+                    de forma automatizada.</p>
+                <ul>
+                    <li><strong>DALL-E / Midjourney:</strong> Criação de imagens a partir de descrições textuais</li>
+                    <li><strong>RunwayML:</strong> Geração e edição de vídeos</li>
+                    <li><strong>Soundraw:</strong> Composição musical automatizada</li>
+                </ul>
+            </div>
+
+            <div class="aplicacao-destaque-ia" style="border-left-color: #0066cc;">
+                <h3><i class="material-icons">school</i> Educação</h3>
+                <p>Na educação, sistemas baseados em modelos generativos podem apoiar a elaboração de materiais
+                    didáticos, simulações interativas e ambientes personalizados de aprendizagem.</p>
+                <ul>
+                    <li><strong>Khanmigo (Khan Academy):</strong> Tutor virtual com IA generativa</li>
+                    <li><strong>Duolingo Max:</strong> Prática de conversação com IA</li>
+                    <li><strong>Fermentação de ideias:</strong> Geração de resumos, questões e exemplos personalizados
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Desafios e Considerações Éticas -->
+        <section>
+            <h2>⚠️ Desafios e Considerações Éticas da IA Generativa</h2>
+
+            <div class="desafio-etico-ia">
+                <h4><i class="material-icons">error</i> Imprecisão e Alucinações</h4>
+                <p>Sistemas generativos podem apresentar limitações relacionadas à <strong>precisão factual</strong>, à
+                    transparência e à autoria, o que torna indispensável a verificação das informações produzidas.</p>
+                <p><strong>Exemplo:</strong> Modelos podem gerar informações plausíveis, mas incorretas (alucinações).
+                </p>
+                <p><strong>Mitigação:</strong> Verificação crítica, fact-checking e supervisão humana.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ff8c00;">
+                <h4><i class="material-icons">copyright</i> Autoria e Propriedade Intelectual</h4>
+                <p>Quem é o autor de um conteúdo gerado por IA? Como lidar com direitos autorais?</p>
+                <p><strong>Mitigação:</strong> Transparência no uso de IA, citação adequada e diretrizes institucionais.
+                </p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ffc107;">
+                <h4><i class="material-icons">verified</i> Transparência e Confiabilidade</h4>
+                <p>Como saber se um conteúdo foi gerado por IA? Como garantir a confiabilidade?</p>
+                <p><strong>Mitigação:</strong> Marcas d'água digitais, auditoria de modelos e políticas de
+                    transparência.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #28a745;">
+                <h4><i class="material-icons">balance</i> Impacto no Trabalho e na Sociedade</h4>
+                <p>A automação de tarefas criativas e técnicas pode afetar o mercado de trabalho em diversas áreas.</p>
+                <p><strong>Mitigação:</strong> Formação contínua, requalificação profissional e políticas públicas.</p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">gavel</i> Diretrizes para Uso Ético</h4>
+                <p>Instituições educacionais têm desenvolvido diretrizes para orientar o uso ético da inteligência
+                    artificial em ambientes de ensino e pesquisa. Essas diretrizes buscam equilibrar o potencial
+                    inovador da tecnologia com princípios de <strong>integridade acadêmica, transparência e
+                        responsabilidade</strong> no uso de sistemas automatizados.</p>
+            </div>
+        </section>
+
+        <!-- Considerações Finais -->
+        <section>
+            <h2>🎯 Considerações Finais</h2>
+            <div class="detalhe-conceito">
+                <p>A análise dos fundamentos da Inteligência Artificial evidencia que a área resulta da
+                    <strong>integração entre diferentes campos científicos</strong>, como ciência da computação,
+                    estatística, matemática aplicada e engenharia de sistemas. Desde suas origens na década de 1950, a
+                    IA tem evoluído continuamente, passando de abordagens baseadas em regras simbólicas para modelos
+                    orientados por dados e aprendizado estatístico.</p>
+                <p>Entre os fatores que impulsionaram essa evolução, destacam-se:</p>
+                <ul>
+                    <li>A disponibilidade massiva de dados</li>
+                    <li>O aumento da capacidade computacional</li>
+                    <li>O desenvolvimento de algoritmos sofisticados de aprendizado profundo</li>
+                </ul>
+                <p>Esses elementos criaram condições para o surgimento de aplicações cada vez mais complexas, incluindo
+                    modelos generativos capazes de produzir textos, imagens, códigos e outros conteúdos digitais.</p>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <h4><i class="material-icons">question_answer</i> Mensagem Final</h4>
+                <p>Ao mesmo tempo, o uso dessas tecnologias exige <strong>análise crítica e responsabilidade</strong>.
+                    As diretrizes da Universidade Federal de Mato Grosso do Sul para o uso de inteligência artificial em
+                    atividades acadêmicas reforçam a importância da supervisão humana, da integridade acadêmica e do uso
+                    ético das ferramentas digitais.</p>
+                <p><strong>Compreender os fundamentos técnicos e conceituais da IA é etapa essencial para explorar suas
+                        possibilidades de forma crítica, responsável e socialmente comprometida.</strong></p>
+            </div>
+        </section>
+
+        <!-- Glossário e Referências -->
+        <section>
+            <h2>📌 Glossário da Unidade 2</h2>
+            <div class="glossario-item"><span class="glossario-termo">IA Generativa</span> <span>Sistemas capazes de
+                    criar conteúdo original a partir de padrões aprendidos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Transformer</span> <span>Arquitetura de rede
+                    neural com mecanismo de atenção para processamento de sequências.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">LLM (Large Language Model)</span> <span>Modelos de
+                    linguagem treinados em grandes volumes de texto.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Engenharia de Prompts</span> <span>Prática de
+                    elaborar instruções estratégicas para orientar modelos generativos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Fine Tuning</span> <span>Adaptação de um modelo
+                    pré-treinado para uma tarefa específica.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Alucinação</span> <span>Geração de informações
+                    plausíveis, mas incorretas, por modelos de IA.</span></div>
+        </section>
+
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 CARRARO, Fabrício.</strong> Inteligência artificial e ChatGPT: da revolução dos modelos de IA
+                generativa à engenharia de prompts. São Paulo: Casa do Código, 2023. ISBN 9788555193583.
+            </div>
+            <div class="referencia">
+                <strong>📗 RUSSELL, Stuart J.; NORVIG, Peter.</strong> Artificial intelligence: a modern approach. 4.
+                ed. New York: Pearson, 2021. ISBN 9780134610993.
+            </div>
+            <div class="referencia">
+                <strong>📙 GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron.</strong> Deep learning. Cambridge: MIT
+                Press, 2016. ISBN 9780262035613.
+            </div>
+            <div class="referencia">
+                <strong>📕 KAUFMAN, Dora.</strong> Desmistificando a inteligência artificial. Belo Horizonte: Autêntica,
+                2022. ISBN 9786559281596.
+            </div>
+            <div class="referencia">
+                <strong>🌐 UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL.</strong> Política de uso de Inteligência
+                Artificial da UFMS. Boletim Oficial UFMS.
+            </div>
+
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Desafio Prático</h4>
+                <p>Escolha uma ferramenta de IA generativa (ChatGPT, Gemini, Claude, etc.) e <strong>teste a engenharia
+                        de prompts</strong>:</p>
+                <ol>
+                    <li>Crie um prompt simples e observe o resultado</li>
+                    <li>Refine seu prompt adicionando contexto, papel e formato</li>
+                    <li>Compare os resultados e documente suas observações</li>
+                </ol>
+                <p><strong>Compartilhe suas descobertas no fórum da disciplina!</strong></p>
+            </div>
+        </section>
+
+        <!-- Síntese e chamada para ação -->
+        <section>
+            <h2>✅ Síntese da Unidade 2</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">auto_awesome</i>
+                    <h4>IA Generativa Cria Conteúdo</h4>
+                    <p>Diferente da IA tradicional que apenas analisa, a IA generativa produz textos, imagens, códigos e
+                        muito mais.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">psychology</i>
+                    <h4>Engenharia de Prompts é Essencial</h4>
+                    <p>A qualidade das respostas depende de como formulamos as perguntas e instruções.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">gavel</i>
+                    <h4>Uso Responsável é Fundamental</h4>
+                    <p>Verificação crítica, transparência e ética são indispensáveis no uso da IA generativa.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> Na Unidade 3 vamos aprofundar em
+                <strong>Ética, Vieses e Responsabilidade Algorítmica</strong>. Continue seus estudos e participe do
+                fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 1 - Unidade 2: Fundamentos da IA Generativa</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

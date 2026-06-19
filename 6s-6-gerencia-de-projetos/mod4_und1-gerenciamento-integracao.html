@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Unidade 1: Gerenciamento de Integração | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .integracao-card {
+            background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 6px solid #1a4d8c;
+        }
+
+        .processo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            border-top: 4px solid #ff8c00;
+        }
+
+        .processo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .termo-card {
+            background: #fef9e6;
+            border-left: 5px solid #ff8c00;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+
+        .conhecimento-card {
+            background: #e6f7e6;
+            border-left: 5px solid #28a745;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+
+        .grid-processos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .badge-processo {
+            display: inline-block;
+            background-color: #1a4d8c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .flow-diagram {
+            background: #f0f4fa;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            font-family: monospace;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 4 - Considerações Finais sobre Gerência de Projetos</h2>
+        <h3>🔗 Unidade 1 – Gerenciamento de Integração em Projetos de Software</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 3
+            </a>
+            <a href="mod4_und2-modelos-maturidade.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 4 Und 2 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Tc-5Y9NbQR8" frameborder="0"
+                    title="Gerência de Projetos - Módulo 4 - Unidade 1 - Gerenciamento de Integração"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 4 - Unidade 1 (Integração)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 26min</p>
+        </section>
+
+        <!-- INTRODUÇÃO EXPANDIDA -->
+        <section>
+            <h2>🔗 Introdução ao Gerenciamento de Integração</h2>
+            <p>O Gerenciamento da Integração do Projeto é a <strong>área de conhecimento que coordena e unifica todos os
+                    outros processos</strong> do gerenciamento de projetos. Enquanto as demais áreas focam em aspectos
+                específicos (escopo, tempo, custo, qualidade, etc.), a integração é responsável por garantir que todas
+                as partes funcionem como um todo coeso. É o gerente de projetos quem assume o papel central nesse
+                processo, combinando os resultados das outras áreas e mantendo a visão holística do projeto.</p>
+
+            <div class="integracao-card">
+                <h4><i class="material-icons">insights</i> O que o Gerenciamento de Integração envolve?</h4>
+                <div class="grid-2">
+                    <div>
+                        <ul>
+                            <li>Identificar, definir e coordenar processos e atividades</li>
+                            <li>Fazer escolhas sobre alocação de recursos (trade-offs)</li>
+                            <li>Gerenciar concessões entre objetivos conflitantes</li>
+                            <li>Coordenar dependências mútuas entre áreas de conhecimento</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Garantir alinhamento das entregas com o ciclo de vida</li>
+                            <li>Fornecer um plano de gerenciamento integrado</li>
+                            <li>Assegurar criação e uso do conhecimento organizacional</li>
+                            <li>Medir e monitorar progresso, tomando ações corretivas</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><strong>💡 Analogia:</strong> Se o projeto fosse uma orquestra, cada área de conhecimento seria um
+                    instrumento (cordas, metais, percussão). O Gerenciamento de Integração é o maestro, que garante que
+                    todos toquem juntos, na mesma harmonia e no ritmo correto.</p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">psychology</i> Habilidades essenciais do gerente para a
+                    integração:</strong>
+                Liderança, comunicação, negociação, resolução de conflitos, pensamento sistêmico e capacidade de tomar
+                decisões integradas considerando múltiplas perspectivas.
+            </div>
+        </section>
+
+        <!-- PROCESSOS DO GERENCIAMENTO DE INTEGRAÇÃO -->
+        <section>
+            <h2>🔄 Processos do Gerenciamento de Integração (PMBOK 6ª ed.)</h2>
+            <p>O PMBOK define <strong>7 processos</strong> para a área de integração, distribuídos ao longo dos grupos
+                de processos:</p>
+
+            <div class="grid-processos">
+                <div class="processo-card">
+                    <span class="badge-processo">Iniciação</span>
+                    <h4>📄 1. Desenvolver o Termo de Abertura</h4>
+                    <p>Autoriza formalmente o projeto e dá ao gerente autoridade para aplicar recursos.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Planejamento</span>
+                    <h4>📋 2. Desenvolver o Plano de Gerenciamento</h4>
+                    <p>Define como o projeto será executado, monitorado, controlado e encerrado.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Execução</span>
+                    <h4>⚙️ 3. Orientar e Gerenciar o Trabalho</h4>
+                    <p>Lidera e realiza o trabalho definido no plano, implementando mudanças aprovadas.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Execução</span>
+                    <h4>📚 4. Gerenciar o Conhecimento</h4>
+                    <p>Utiliza conhecimentos existentes e cria novos, promovendo aprendizagem organizacional.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Monitoramento</span>
+                    <h4>📊 5. Monitorar e Controlar o Trabalho</h4>
+                    <p>Acompanha o progresso e gerencia mudanças no plano.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Controle</span>
+                    <h4>🔄 6. Realizar o Controle Integrado de Mudanças</h4>
+                    <p>Analisa e aprova mudanças, gerenciando sua implementação.</p>
+                </div>
+                <div class="processo-card">
+                    <span class="badge-processo">Encerramento</span>
+                    <h4>✅ 7. Encerrar o Projeto ou Fase</h4>
+                    <p>Finaliza todas as atividades, documenta lições aprendidas e libera recursos.</p>
+                </div>
+            </div>
+
+            <div class="flow-diagram">
+                <strong>📈 Fluxo integrado dos processos:</strong><br>
+                Termo de Abertura → Plano de Gerenciamento → Execução do Trabalho → Monitoramento e Controle →
+                Encerramento<br>
+                <span style="font-size:0.8rem;">(com feedback contínuo e gestão de mudanças em todas as fases)</span>
+            </div>
+        </section>
+
+        <!-- PROCESSO 1: TERMO DE ABERTURA -->
+        <section>
+            <h3>📄 Processo 1: Desenvolver o Termo de Abertura do Projeto (Project Charter)</h3>
+            <p>O Termo de Abertura é o documento que <strong>autoriza formalmente a existência do projeto</strong> e
+                fornece ao gerente a autoridade para aplicar recursos organizacionais. É emitido pelo patrocinador ou
+                pela alta administração.</p>
+
+            <div class="termo-card">
+                <h4><i class="material-icons">assignment</i> Componentes do Termo de Abertura (exemplo Cidade Virtual)
+                </h4>
+                <ul>
+                    <li><strong>Finalidade do projeto:</strong> Desenvolver uma plataforma digital que conecte
+                        comunidades locais, permitindo descoberta de comércios, reporte de problemas urbanos e gestão de
+                        portfólio educacional.</li>
+                    <li><strong>Objetivos mensuráveis:</strong> Lançar MVP em 6 meses com 500 usuários ativos e 50
+                        lojistas cadastrados.</li>
+                    <li><strong>Requisitos de alto nível:</strong> Autenticação segura (JWT), mapa interativo,
+                        notificações em tempo real (WebSockets).</li>
+                    <li><strong>Descrição de alto nível:</strong> Plataforma web responsiva com módulos: e-commerce
+                        social, issues urbanas, dashboard administrativo.</li>
+                    <li><strong>Riscos gerais:</strong> Integração com APIs de mapas, aceitação do público, custos de
+                        hospedagem.</li>
+                    <li><strong>Cronograma de marcos:</strong> Kick-off (Mês 0), Protótipo (Mês 1), MVP (Mês 3), Release
+                        1.0 (Mês 6).</li>
+                    <li><strong>Recursos pré-aprovados:</strong> R$ 65.000,00 (reserva de contingência de 20% incluída).
+                    </li>
+                    <li><strong>Partes interessadas chave:</strong> Patrocinador (investidor anjo), Product Owner
+                        (Diego), equipe técnica (2 devs, 1 QA).</li>
+                </ul>
+            </div>
+
+            <div class="dica-box">
+                <strong><i class="material-icons">tip</i> Dica prática:</strong> O Termo de Abertura deve ser assinado
+                pelo patrocinador antes de qualquer atividade do projeto. Sem ele, o gerente não tem autoridade formal
+                para alocar recursos ou tomar decisões.
+            </div>
+        </section>
+
+        <!-- PROCESSO 2: PLANO DE GERENCIAMENTO -->
+        <section>
+            <h3>📋 Processo 2: Desenvolver o Plano de Gerenciamento do Projeto</h3>
+            <p>O Plano de Gerenciamento do Projeto é o documento que <strong>consolida todos os planos
+                    auxiliares</strong> (escopo, cronograma, custos, qualidade, recursos, comunicação, riscos,
+                aquisições, partes interessadas) e as linhas de base (escopo, cronograma, custos).</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Componentes do plano (planos auxiliares)</h4>
+                    <ul>
+                        <li>Plano de gerenciamento do escopo</li>
+                        <li>Plano de gerenciamento dos requisitos</li>
+                        <li>Plano de gerenciamento do cronograma</li>
+                        <li>Plano de gerenciamento dos custos</li>
+                        <li>Plano de gerenciamento da qualidade</li>
+                        <li>Plano de gerenciamento dos recursos</li>
+                        <li>Plano de gerenciamento da comunicação</li>
+                        <li>Plano de gerenciamento dos riscos</li>
+                        <li>Plano de gerenciamento das aquisições</li>
+                        <li>Plano de engajamento das partes interessadas</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🛠️ Ferramentas e técnicas</h4>
+                    <ul>
+                        <li><strong>Brainstorming:</strong> reunir ideias sobre abordagem do projeto</li>
+                        <li><strong>Listas de verificação:</strong> baseadas em experiências anteriores</li>
+                        <li><strong>Grupos de discussão:</strong> alinhar partes interessadas</li>
+                        <li><strong>Gerenciamento de conflitos:</strong> alinhar diferentes perspectivas</li>
+                        <li><strong>Facilitação:</strong> garantir consenso nas decisões</li>
+                        <li><strong>Gerenciamento de reuniões:</strong> executar reuniões produtivas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO 3: ORIENTAR E GERENCIAR -->
+        <section>
+            <h3>⚙️ Processo 3: Orientar e Gerenciar o Trabalho do Projeto</h3>
+            <p>Este processo executa o trabalho definido no plano e implementa mudanças aprovadas. Envolve ações
+                corretivas, preventivas e reparo de defeitos.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📥 Principais entradas</h4>
+                    <ul>
+                        <li>Plano de gerenciamento do projeto</li>
+                        <li>Documentos: registro de mudanças, lições aprendidas, cronograma, riscos</li>
+                        <li>Fatores ambientais da empresa</li>
+                        <li>Ativos de processos organizacionais</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📤 Principais saídas</h4>
+                    <ul>
+                        <li>Entregas (produtos/serviços do projeto)</li>
+                        <li>Dados de desempenho do trabalho</li>
+                        <li>Registro de mudanças atualizado</li>
+                        <li>Atualizações do plano e documentos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO 4: GERENCIAR CONHECIMENTO -->
+        <section>
+            <h3>📚 Processo 4: Gerenciar o Conhecimento do Projeto</h3>
+            <p>Utiliza conhecimentos existentes e cria novos conhecimentos para alcançar os objetivos do projeto e
+                contribuir para a aprendizagem organizacional. O conhecimento é dividido em <strong>explícito</strong>
+                (codificável em palavras/números) e <strong>tácito</strong> (pessoal, baseado em experiência e
+                "know-how").</p>
+
+            <div class="conhecimento-card">
+                <h4><i class="material-icons">lightbulb</i> Técnicas para gerenciar conhecimento</h4>
+                <div class="grid-2">
+                    <div>
+                        <strong>Compartilhamento de conhecimento tácito:</strong>
+                        <ul>
+                            <li>Networking e interação social informal</li>
+                            <li>Reuniões e comunidades de prática</li>
+                            <li>Aprendizagem por observação</li>
+                            <li>Pair programming e mentoria</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Documentação de conhecimento explícito:</strong>
+                        <ul>
+                            <li>Fóruns de discussão e wikis</li>
+                            <li>Seminários e conferências</li>
+                            <li>Feiras e cafés de conhecimento</li>
+                            <li>Registro de lições aprendidas (vídeos, fotos, áudios)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><strong>⭐ Fator crítico de sucesso:</strong> Criar uma <strong>atmosfera de confiança</strong> onde
+                    as pessoas se sintam seguras para compartilhar seus conhecimentos, inclusive erros, sem medo de
+                    punição.</p>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">school</i> Exemplo prático – Cidade Virtual:</strong> Após cada
+                sprint, a equipe realiza uma retrospectiva onde são documentadas lições aprendidas (ex: "a integração
+                com a API de mapas demorou mais que o previsto devido à falta de documentação"). Essas lições são
+                registradas no Confluence e utilizadas para ajustar as próximas sprints, reduzindo o risco de repetição
+                do problema.
+            </div>
+        </section>
+
+        <!-- PROCESSOS 5, 6, 7 (RESUMO) -->
+        <section>
+            <h3>📊 Processos Complementares de Integração</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>📈 Monitorar e Controlar o Trabalho</h4>
+                    <p>Acompanha o progresso comparando o planejado com o realizado. Utiliza técnicas como EVM (Valor
+                        Agregado) e análise de variância.</p>
+                </div>
+                <div class="card">
+                    <h4>🔄 Realizar Controle Integrado de Mudanças</h4>
+                    <p>Processo formal para analisar, aprovar ou rejeitar mudanças. Envolve o Comitê de Controle de
+                        Mudanças (CCB).</p>
+                </div>
+                <div class="card">
+                    <h4>✅ Encerrar Projeto ou Fase</h4>
+                    <p>Finaliza todas as atividades, formaliza aceitação das entregas, documenta lições aprendidas e
+                        libera recursos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIÇÕES APRENDIDAS E ATIVOS ORGANIZACIONAIS -->
+        <section>
+            <h2>📚 Lições Aprendidas e Ativos de Processos Organizacionais</h2>
+            <p>Um dos resultados mais valiosos do gerenciamento de integração é o <strong>registro de lições
+                    aprendidas</strong>. Ele documenta dificuldades, problemas, riscos, oportunidades e recomendações.
+                Ao final do projeto, essas lições são transferidas para o <strong>repositório de lições
+                    aprendidas</strong> da organização, tornando-se ativos de processos organizacionais para projetos
+                futuros.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📝 Exemplo de lição aprendida (Cidade Virtual)</h4>
+                    <p><strong>Situação:</strong> A integração com a API de mapas Google levou 40% mais tempo que o
+                        estimado.</p>
+                    <p><strong>Causa raiz:</strong> Documentação incompleta e necessidade de autenticação por API Key
+                        com limites de requisição.</p>
+                    <p><strong>Recomendação:</strong> Para projetos futuros, incluir uma sprint de pesquisa tecnológica
+                        (spike) para validar APIs críticas antes da estimativa definitiva.</p>
+                    <p><strong>Ação proposta:</strong> Criar um checklist de avaliação de APIs parceiras.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Benefícios das lições aprendidas</h4>
+                    <ul>
+                        <li>Evita repetição de erros em projetos futuros</li>
+                        <li>Difunde boas práticas pela organização</li>
+                        <li>Acelera a curva de aprendizado de novos gerentes</li>
+                        <li>Contribui para modelos de maturidade (CMMI, MPS.BR)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEGRAÇÃO COM OUTRAS ÁREAS E CONSIDERAÇÕES FINAIS -->
+        <section>
+            <h2>🔗 Integração com as Demais Áreas de Conhecimento</h2>
+            <p>O Gerenciamento de Integração é o "centro nervoso" do projeto. Todas as áreas de conhecimento se conectam
+                por meio dele. Exemplo:</p>
+
+            <div class="flow-diagram" style="text-align: left;">
+                <strong>📌 Cenário prático:</strong> Mudança de escopo solicitada pelo cliente.<br>
+                <strong>1. Escopo:</strong> Analisa o impacto da mudança na EAP.<br>
+                <strong>2. Cronograma:</strong> Reestima a duração das novas atividades.<br>
+                <strong>3. Custos:</strong> Calcula o custo adicional.<br>
+                <strong>4. Riscos:</strong> Avalia novos riscos introduzidos.<br>
+                <strong>5. Qualidade:</strong> Verifica se os critérios de aceitação são mantidos.<br>
+                <strong>6. Integração:</strong> Consolida todas as análises, submete ao CCB e, se aprovada, atualiza o
+                plano, linha de base e comunica as partes interessadas.
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Dica para certificação PMP/CAPM</h4>
+                <p>O Gerenciamento de Integração é frequentemente considerado o mais importante do PMBOK, pois conecta
+                    todos os outros. Memorize os 7 processos, suas entradas principais (ex: Termo de Abertura, Plano de
+                    Gerenciamento, Lições Aprendidas) e saídas-chave. Questões sobre controle integrado de mudanças e
+                    encerramento do projeto são muito comuns na prova.</p>
+                <p><strong>Fórmula importante:</strong> Linha de base do projeto = Linha de base de escopo + Linha de
+                    base de cronograma + Linha de base de custos.</p>
+            </div>
+        </section>
+
+        <!-- CONSIDERAÇÕES FINAIS -->
+        <section>
+            <h2>✅ Síntese do Gerenciamento de Integração</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">assignment</i>
+                    <h4>Termo de Abertura</h4>
+                    <p>Autoriza o projeto e dá poder ao gerente. É o primeiro passo da integração.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">plan</i>
+                    <h4>Plano Integrado</h4>
+                    <p>Consolida todos os planos auxiliares e linhas de base. É o "mapa do projeto".</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">change_circle</i>
+                    <h4>Controle de Mudanças</h4>
+                    <p>Garante que mudanças sejam avaliadas, aprovadas e comunicadas formalmente.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">school</i>
+                    <h4>Lições Aprendidas</h4>
+                    <p>Registra conhecimento para benefício da organização como um todo.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">flag</i>
+                    <h4>Encerramento</h4>
+                    <p>Finaliza formalmente o projeto, libera recursos e transfere entregas.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">visibility</i>
+                    <h4>Visão Holística</h4>
+                    <p>O gerente integra pessoas, processos e tecnologias para atingir os objetivos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6. ed. Newtown Square: PMI, 2017. Capítulo 4 – Gerenciamento da Integração do
+                Projeto.
+            </div>
+            <div class="referencia">
+                <strong>CAMARGO, Marta Rocha.</strong> Gerenciamento de Projetos: Fundamentos e Prática Integrada. 2.
+                ed. São Paulo: GEN Atlas, 2018. Capítulo 4 – Integração.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. Capítulo 22
+                – Gerenciamento de projetos.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, Roger S.; MAXIM, Bruce R.</strong> Engenharia de Software: Uma Abordagem Profissional.
+                9. ed. Porto Alegre: AMGH, 2021. Capítulo 24 – Conceitos de gerenciamento de projetos.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 4 - Unidade 1: Gerenciamento de Integração</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

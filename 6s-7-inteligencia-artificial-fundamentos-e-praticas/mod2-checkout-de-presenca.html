@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 2 | Inteligência Artificial - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section {
+            margin: 40px 0;
+            padding: 0 20px 20px 20px;
+            border: 1px solid #ddd;
+            box-shadow: rgba(0, 0, 0, 0.03) 5px 5px;
+        }
+        
+        .question {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 4vmax;
+        }
+
+        .question .answer {
+            border: 1px solid #f0ad4e;
+            padding: 1vmax;
+            border-radius: 4px;
+            display: inline-block;
+            background-color: #fff8e1;
+        }
+
+        .question .answer.correta {
+            border-color: #28a745;
+            background-color: #e8f5e9;
+        }
+
+        .answer strong {
+            color: #28a745;
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        .status.concluida {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .status.em-andamento {
+            background-color: #f0ad4e;
+            color: #fff;
+        }
+
+        .status.nota {
+            background-color: #ffc107;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .resumo-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .resumo-box .nota-destaque {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .mascote-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+        }
+
+        .mascote-box .material-icons {
+            font-size: 3.5rem;
+            color: #ffc107;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e8f0;
+        }
+
+        .info-item .label {
+            font-size: 0.75rem;
+            color: #666;
+            display: block;
+        }
+
+        .info-item .valor {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-continuar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+
+        .explicacao {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-left: 4px solid #0066cc;
+            font-size: 0.95rem;
+        }
+
+        .explicacao strong {
+            color: #0066cc;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .no-print {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .list-resposta {
+            background: #f8fafc;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+            margin: 8px 0;
+        }
+
+        .list-resposta strong {
+            color: #2e7d32;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            h3 {
+                width: 40%;
+                font-size: 0.9rem;
+            }
+
+            .mascote-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resumo-box .nota-destaque {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 0 10px 10px 10px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media print {
+
+            .btn-nav,
+            .btn-continuar,
+            .no-print {
+                display: none;
+            }
+
+            header {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resumo-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .mascote-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 2 - Aplicações Interdisciplinares da Inteligência Artificial</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Concluído</div>
+    </header>
+
+    <!-- Navegação -->
+    <div class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="mod2_und2-ia-na-saude-no-meio-ambiente-e-nos-direitos-humanos.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 2
+            </a>
+            <a href="mod3_und1-etica-cidadania-digital-e-inovacao-responsavel.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Mod 3 Und 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Resumo -->
+        <section id="resumo">
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-box">
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <span class="material-icons" style="font-size: 3.5rem; color: #ffc107;">emoji_events</span>
+                    <span class="nota-destaque">10,00</span>
+                    <span style="font-size: 1.2rem;">de 10,00 (100%)</span>
+                    <span class="status nota" style="margin-left: auto;">✅ Aprovado</span>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Situação</span>
+                    <span class="valor" style="color: #28a745;">Finalizada</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Iniciado</span>
+                    <span class="valor">17 jun 2026, 08:34</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Concluído</span>
+                    <span class="valor">17 jun 2026, 08:51</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duração</span>
+                    <span class="valor">16 min 59 seg</span>
+                </div>
+            </div>
+
+            <!-- Mascote -->
+            <div class="mascote-box">
+                <span class="material-icons">sentiment_very_satisfied</span>
+                <div>
+                    <strong style="font-size: 1.1rem; color: #1a4d8c;">🎉 Parabéns!</strong>
+                    <p style="margin: 5px 0 0 0;">Mascote da UFMS sorrindo, usando camiseta da universidade e segurando
+                        uma placa azul com a mensagem <strong>"Nota 10!"</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questões -->
+        <section id="questoes">
+            <h2>📝 Questões e Respostas</h2>
+
+            <!-- Questão 1 -->
+            <div class="question">
+                <h3>Questão 1</h3>
+                <p><strong>Na agricultura de precisão, a IA pode utilizar dados de drones para:</strong></p>
+                <ul>
+                    <li>a. Tirar fotos artísticas das plantações para as redes sociais.</li>
+                    <li>b. Espantar pássaros por meio de sinais sonoros.</li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>Identificar pragas e deficiências nutricionais
+                            em áreas específicas do plantio, reduzindo o uso de agrotóxicos.</strong></li>
+                    <li>d. Impedir que os trabalhadores rurais permaneçam parados durante o tempo de descanso.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. Identificar pragas e deficiências
+                        nutricionais em áreas específicas do plantio, reduzindo o uso de agrotóxicos. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Na agricultura de precisão, a IA utiliza dados de drones, satélites e
+                    sensores para analisar a saúde das plantações, identificando pragas, doenças e deficiências
+                    nutricionais em áreas específicas, permitindo a aplicação localizada de insumos e reduzindo o
+                    impacto ambiental.
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="question">
+                <h3>Questão 2</h3>
+                <p><strong>Relacione a aplicação da IA com seu impacto na sustentabilidade:</strong></p>
+
+                <p><strong>Robôs que separam tipos de plástico e de metal em centros de triagem.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Reciclagem Eficiente ✅</span></p>
+
+                <p><strong>Reconhecimento de animais silvestres para monitorar populações em risco.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Proteção da fauna ✅</span></p>
+
+                <p><strong>IA otimizando o ângulo dos painéis solares e a rotação das turbinas eólicas.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Energia Limpa ✅</span></p>
+
+                <p><strong>IA prevendo a demanda nos supermercados para evitar que os alimentos estraguem.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Redução de Desperdício ✅</span></p>
+
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Cada aplicação da IA contribui para um aspecto diferente da
+                    sustentabilidade: reciclagem eficiente (gestão de resíduos), proteção da fauna (conservação da
+                    biodiversidade), energia limpa (eficiência energética) e redução de desperdício (otimização de
+                    recursos).
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="question">
+                <h3>Questão 3</h3>
+                <p><strong>No âmbito da saúde, algoritmos de aprendizagem profunda (deep learning) têm demonstrado
+                        eficácia na deteção de patologias, como a retinopatia diabética, por meio da análise de
+                        fotografias de fundo de olho. No entanto, o uso dessas tecnologias deve ser compreendido como um
+                        suporte ao diagnóstico clínico, e não como uma substituição da responsabilidade ética do
+                        profissional de saúde.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Verdadeiro ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A IA auxilia na análise de dados médicos, mas a decisão final e o
+                    diagnóstico são de responsabilidade do profissional de saúde, que considera fatores subjetivos,
+                    contexto do paciente e aspectos éticos que a IA não pode avaliar.
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="question">
+                <h3>Questão 4</h3>
+                <p><strong>Marque, a partir das opções a seguir, a que indica um exemplo prático de IA no nosso
+                        cotidiano:</strong></p>
+                <ul>
+                    <li><span style="color: #28a745;">✓</span> a. <strong>Algoritmos de ordenação e recomendação em
+                            redes sociais e plataformas de streaming, que personalizam o conteúdo com base no histórico
+                            de navegação.</strong></li>
+                    <li>b. Editores de texto que utilizam fontes tipográficas variadas e permitem a impressão direta de
+                        documentos físicos.</li>
+                    <li>c. Sistemas de armazenamento de dados e a organização manual de pastas e arquivos de texto.</li>
+                    <li>d. Calculadoras científicas que executam funções matemáticas complexas com base em fórmulas
+                        pré-definidas pelo usuário.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> a. Algoritmos de ordenação e recomendação em
+                        redes sociais e plataformas de streaming ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Sistemas de recomendação (Netflix, Spotify, YouTube) utilizam
+                    aprendizado de máquina para analisar o histórico do usuário e oferecer conteúdos personalizados,
+                    sendo um exemplo clássico de IA no cotidiano.
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="question">
+                <h3>Questão 5</h3>
+                <p><strong>A abordagem human-in-the-loop (humano no ciclo), aplicada ao contexto educacional, estabelece
+                        uma relação de complementaridade entre a capacidade analítica da Inteligência Artificial e a
+                        expertise pedagógica do docente. Embora a IA seja eficaz na identificação de padrões de
+                        desempenho, a interpretação final dos dados exige uma análise crítica que apenas o professor
+                        pode realizar. Considerando as premissas dessa abordagem apresentadas no texto, assinale a
+                        alternativa INCORRETA:</strong></p>
+                <ul>
+                    <li>a. As características individuais dos estudantes e as nuances do ambiente de ensino são
+                        elementos fundamentais que os sistemas de IA, isoladamente, não conseguem processar com a
+                        profundidade interpretativa necessária.</li>
+                    <li>b. O profissional da educação detém o conhecimento contextual e sociocultural necessário para
+                        validar e dar sentido aos dados brutos gerados pelos sistemas digitais de aprendizagem.</li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>A abordagem human-in-the-loop defende que a
+                            Inteligência Artificial deve operar de forma plenamente autônoma na tomada de decisões
+                            pedagógicas, visto que sua análise de padrões é imune às subjetividades humanas.</strong>
+                    </li>
+                    <li>d. A eficácia da interpretação dos dados educacionais depende da integração entre os indicadores
+                        tecnológicos e os objetivos pedagógicos específicos definidos para a disciplina.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. A abordagem human-in-the-loop defende que
+                        a Inteligência Artificial deve operar de forma plenamente autônoma na tomada de decisões
+                        pedagógicas ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A alternativa (c) está INCORRETA porque a abordagem human-in-the-loop
+                    defende exatamente o oposto: que o ser humano deve permanecer como responsável final pelas decisões,
+                    especialmente em contextos educacionais, onde o julgamento pedagógico envolve aspectos
+                    interpretativos, contextuais e éticos.
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="question">
+                <h3>Questão 6</h3>
+                <p><strong>No cenário da ciência contemporânea, a Inteligência Artificial tem sido apontada como o motor
+                        de um novo paradigma de descoberta acelerada. Considerando a capacidade dos modelos de
+                        aprendizado de máquina de processar volumes massivos de dados (Big Data) que extrapolam a
+                        cognição humana isolada, de que maneira a integração dessas tecnologias altera o fluxo de
+                        trabalho experimental e a formulação de novas hipóteses científicas?</strong></p>
+                <ul>
+                    <li><span style="color: #28a745;">✓</span> a. <strong>Automatizando a leitura de milhões de artigos
+                            científicos e sugerindo novas hipóteses com base em correlações de dados.</strong></li>
+                    <li>b. Inibindo cientistas de usar laboratórios físicos para economizar recursos.</li>
+                    <li>c. Substituindo o método científico por sorteios computadorizados.</li>
+                    <li>d. Gerando resultados extraordinários, não confirmados, para que as descobertas pareçam ainda
+                        mais impressionantes.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> a. Automatizando a leitura de milhões de
+                        artigos científicos e sugerindo novas hipóteses com base em correlações de dados. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A IA na ciência automatiza a análise de grandes volumes de dados e
+                    literatura científica, permitindo identificar padrões e correlações que podem gerar novas hipóteses
+                    de pesquisa, acelerando o ciclo de descoberta científica.
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="question">
+                <h3>Questão 7</h3>
+                <p><strong>De que forma a IA contribui para as "Cidades Inteligentes" (Smart Cities)?</strong></p>
+                <ul>
+                    <li>a. Substituindo a polícia humana por robôs.</li>
+                    <li>b. Removendo todos os semáforos e deixando os motoristas decidirem sozinhos.</li>
+                    <li>c. Proibindo o uso da internet em locais públicos para economizar recursos.</li>
+                    <li><span style="color: #28a745;">✓</span> d. <strong>Por meio da gestão otimizada do tráfego urbano
+                            e do consumo de energia pública.</strong></li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> d. Por meio da gestão otimizada do tráfego
+                        urbano e do consumo de energia pública. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A IA contribui para Cidades Inteligentes otimizando o tráfego urbano
+                    (semáforos inteligentes, rotas alternativas) e o consumo de energia pública (iluminação eficiente,
+                    gestão de recursos), melhorando a qualidade de vida dos cidadãos.
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="question">
+                <h3>Questão 8</h3>
+                <p><strong>Na educação superior, o uso de IA para detectar plágio evoluiu para identificar "textos
+                        gerados por IA". Por que essa tarefa é tecnicamente desafiadora?</strong></p>
+                <ul>
+                    <li>a. Porque os textos gerados por IA são criptografados e não podem ser extraídos automaticamente.
+                    </li>
+                    <li><span style="color: #28a745;">✓</span> b. <strong>Porque a IA gera textos originais (nunca
+                            escritos antes), sem uma base de dados para comparação direta.</strong></li>
+                    <li>c. Porque existe uma lei que proíbe o uso de detectores de IA em instituições de ensino.</li>
+                    <li>d. Porque as IAs escrevem propositalmente com erros para ludibriar os professores.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> b. Porque a IA gera textos originais (nunca
+                        escritos antes), sem uma base de dados para comparação direta. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Diferentemente do plágio tradicional (que compara com textos
+                    existentes), a detecção de textos gerados por IA é desafiadora porque cada resposta é original e
+                    inédita, não havendo uma base de dados para comparação direta.
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="question">
+                <h3>Questão 9</h3>
+                <p><strong>No contexto de Direitos Humanos, visando ao uso ético, a IA pode ser usada para:</strong></p>
+                <ul>
+                    <li>a. Criar perfis falsos para espalhar informações em massa.</li>
+                    <li>b. Impedir que as pessoas tenham acesso a diferentes fontes de informação.</li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>Auxiliar o acesso digital a pessoas com
+                            deficiência motora ou sensorial.</strong></li>
+                    <li>d. Aumentar a vigilância ilegal sobre cidadãos comuns.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. Auxiliar o acesso digital a pessoas com
+                        deficiência motora ou sensorial. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No contexto de Direitos Humanos, a IA deve promover inclusão e
+                    acessibilidade, como ferramentas de reconhecimento de voz, leitores de tela e legendas automáticas
+                    para pessoas com deficiência.
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="question">
+                <h3>Questão 10</h3>
+                <p><strong>Assinale a alternativa que define como os sistemas de recomendação em plataformas digitais
+                        podem utilizar o aprendizado de máquina.</strong></p>
+                <ul>
+                    <li>a. Gerando perfis falsos para aumentar o tráfego de dados e confundir os algoritmos de busca.
+                    </li>
+                    <li>b. Bloqueando o acesso de utilizadores com opiniões divergentes das regras de mercado.</li>
+                    <li>c. Substituindo a necessidade de interação humana nas redes sociais por bots com respostas
+                        fixas.</li>
+                    <li><span style="color: #28a745;">✓</span> d. <strong>Analisando os comportamentos e as preferências
+                            dos utilizadores para oferecer respostas e conteúdos personalizados.</strong></li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> d. Analisando os comportamentos e as
+                        preferências dos utilizadores para oferecer respostas e conteúdos personalizados. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Sistemas de recomendação (Netflix, Spotify, Amazon) utilizam
+                    aprendizado de máquina para analisar o comportamento do usuário e oferecer conteúdos personalizados,
+                    melhorando a experiência e o engajamento.
+                </div>
+            </div>
+        </section>
+
+        <!-- Botão continuar -->
+        <div style="text-align: center;">
+            <a href="mod3_und1-etica-cidadania-digital-e-inovacao-responsavel.html" class="btn-continuar">
+                <i class="material-icons">arrow_forward</i> Seguir para o Módulo 3
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 2 - Checkout de Presença</p>
+        <p style="font-size: 0.7em;">Nota: 10,00/10,00 (100%) | 01000000011-T01-2026-1</p>
+    </footer>
+</body>
+
+</html>

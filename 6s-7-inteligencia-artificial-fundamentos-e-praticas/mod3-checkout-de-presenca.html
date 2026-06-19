@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 3 | Inteligência Artificial - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section {
+            margin: 40px 0;
+            padding: 0 20px 20px 20px;
+            border: 1px solid #ddd;
+            box-shadow: rgba(0, 0, 0, 0.03) 5px 5px;
+        }
+
+        .question {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 4vmax;
+        }
+
+        .question .answer {
+            border: 1px solid #f0ad4e;
+            padding: 1vmax;
+            border-radius: 4px;
+            display: inline-block;
+            background-color: #fff8e1;
+        }
+
+        .question .answer.correta {
+            border-color: #28a745;
+            background-color: #e8f5e9;
+        }
+
+        .answer strong {
+            color: #28a745;
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        .status.concluida {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .status.em-andamento {
+            background-color: #f0ad4e;
+            color: #fff;
+        }
+
+        .status.nota {
+            background-color: #ffc107;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .resumo-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .resumo-box .nota-destaque {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .mascote-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+        }
+
+        .mascote-box .material-icons {
+            font-size: 3.5rem;
+            color: #ffc107;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e8f0;
+        }
+
+        .info-item .label {
+            font-size: 0.75rem;
+            color: #666;
+            display: block;
+        }
+
+        .info-item .valor {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-continuar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+
+        .explicacao {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-left: 4px solid #0066cc;
+            font-size: 0.95rem;
+        }
+
+        .explicacao strong {
+            color: #0066cc;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .no-print {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .list-resposta {
+            background: #f8fafc;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+            margin: 8px 0;
+        }
+
+        .list-resposta strong {
+            color: #2e7d32;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            h3 {
+                width: 40%;
+                font-size: 0.9rem;
+            }
+
+            .mascote-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resumo-box .nota-destaque {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 0 10px 10px 10px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media print {
+
+            .btn-nav,
+            .btn-continuar,
+            .no-print {
+                display: none;
+            }
+
+            header {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resumo-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .mascote-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 3 - Ética, Cidadania Digital e Impactos da Inteligência Artificial</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Concluído</div>
+    </header>
+
+    <!-- Navegação -->
+    <div class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="mod3_und2-ompactos-da-ia-na-sociedade-sustentabilidade-e-futuro-do-trabalho.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 2
+            </a>
+            <a href="#" class="btn-nav" style="background-color: #28a745;">
+                Concluir Curso <i class="material-icons">flag</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Resumo -->
+        <section id="resumo">
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-box">
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <span class="material-icons" style="font-size: 3.5rem; color: #ffc107;">emoji_events</span>
+                    <span class="nota-destaque">10,00</span>
+                    <span style="font-size: 1.2rem;">de 10,00 (100%)</span>
+                    <span class="status nota" style="margin-left: auto;">✅ Aprovado</span>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Situação</span>
+                    <span class="valor" style="color: #28a745;">Finalizada</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Iniciado</span>
+                    <span class="valor">17 jun 2026, 09:14</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Concluído</span>
+                    <span class="valor">17 jun 2026, 09:35</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duração</span>
+                    <span class="valor">20 min 45 seg</span>
+                </div>
+            </div>
+
+            <!-- Mascote -->
+            <div class="mascote-box">
+                <span class="material-icons">sentiment_very_satisfied</span>
+                <div>
+                    <strong style="font-size: 1.1rem; color: #1a4d8c;">🎉 Parabéns!</strong>
+                    <p style="margin: 5px 0 0 0;">Mascote da UFMS sorrindo, usando camiseta da universidade e segurando
+                        uma placa azul com a mensagem <strong>"Nota 10!"</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questões -->
+        <section id="questoes">
+            <h2>📝 Questões e Respostas</h2>
+
+            <!-- Questão 1 -->
+            <div class="question">
+                <h3>Questão 1</h3>
+                <p><strong>No tópico "sustentabilidade", qual das seguintes opções melhor representa a magnitude do
+                        consumo de energia associado ao treinamento inicial de um modelo de linguagem de grande porte
+                        (LLM) de última geração, como o GPT-4?</strong></p>
+                <ul>
+                    <li><span style="color: #28a745;">✓</span> a. <strong>A pegada de carbono resultante do processo de
+                            treinamento equivale à emissão de centenas de carros ao longo de toda a sua vida útil,
+                            exigindo uma infraestrutura física massiva de energia e recursos.</strong></li>
+                    <li>b. O impacto ambiental se limita ao descarte de componentes eletrônicos (lixo tecnológico),
+                        visto que o funcionamento do software em si não consome recursos naturais finitos.</li>
+                    <li>c. A demanda de recursos limita-se ao consumo elétrico doméstico de um laboratório de
+                        informática universitário padrão durante um período de 24 horas de processamento.</li>
+                    <li>d. O gasto energético dos recursos naturais é integralmente compensado pela capacidade da IA de
+                        redigir textos sobre preservação ambiental, o que torna o saldo ecológico nulo.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> a. A pegada de carbono resultante do processo
+                        de treinamento equivale à emissão de centenas de carros ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O treinamento de LLMs como GPT-4 consome quantidades massivas de
+                    energia, com pegada de carbono equivalente a centenas de carros ao longo de sua vida útil, exigindo
+                    infraestrutura pesada de data centers.
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="question">
+                <h3>Questão 2</h3>
+                <p><strong>Sobre o "Futuro do Trabalho", a tendência apontada por especialistas não é a substituição
+                        total do humano, mas sim a:</strong></p>
+                <ul>
+                    <li>a. A transferência completa do comando e da gestão para sistemas autônomos.</li>
+                    <li>b. A restrição total ao uso de novas tecnologias no ambiente corporativo.</li>
+                    <li>c. O foco exclusivo no trabalho analógico e manual.</li>
+                    <li><span style="color: #28a745;">✓</span> d. <strong>A sinergia entre o potencial humano e as
+                            ferramentas de Inteligência Artificial.</strong></li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> d. A sinergia entre o potencial humano e as
+                        ferramentas de Inteligência Artificial. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Especialistas apontam que o futuro do trabalho é marcado pela sinergia
+                    e colaboração entre capacidades humanas e ferramentas de IA, onde a IA amplia as capacidades humanas
+                    em vez de substituí-las completamente.
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="question">
+                <h3>Questão 3</h3>
+                <p><strong>O uso de ferramentas e IA de código aberto (Open Source), ao disponibilizar o código dos
+                        modelos a todos, é visto por alguns como uma forma de democratizar a tecnologia e por outros
+                        como um risco à segurança, pois ita o mau uso por atores maliciosos.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Verdadeiro ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O código aberto democratiza o acesso à IA (transparência, inovação
+                    colaborativa), mas também apresenta riscos de segurança, pois pode ser adaptado para fins maliciosos
+                    por atores maliciosos.
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="question">
+                <h3>Questão 4</h3>
+                <p><strong>"Explicabilidade" (Explainability), ou XAI, é a área da IA que busca criar modelos que não
+                        apenas fornecem resultados, mas também explicam os motivos de cada decisão de forma
+                        compreensível para humanos.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Verdadeiro ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A XAI (Explainable AI) busca tornar modelos mais transparentes e
+                    compreensíveis, permitindo que humanos entendam como e por que decisões foram tomadas, especialmente
+                    em contextos críticos como saúde e justiça.
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="question">
+                <h3>Questão 5</h3>
+                <p><strong>O conceito de 'Transparência Algorítmica' refere-se à capacidade de compreender como um
+                        sistema de IA processa dados e alcança determinados resultados. Com base nisso, é correto
+                        afirmar que a transparência é um requisito ético opcional, uma vez que a complexidade matemática
+                        de modelos como o Deep Learning torna a explicação de decisões impossível para usuários não
+                        técnicos.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Falso ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A transparência algorítmica NÃO é opcional. Embora modelos complexos
+                    apresentem desafios, a transparência é um princípio ético fundamental para garantir confiança,
+                    responsabilidade e equidade nos sistemas de IA.
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="question">
+                <h3>Questão 6</h3>
+                <p><strong>O fenômeno do "viés algorítmico" é um desafio ético central na IA contemporânea. Sobre isso,
+                        é correto afirmar que:</strong></p>
+                <ul>
+                    <li>a. Algoritmos complexos são imunes a erros de interpretação social por se basearem na matemática
+                        pura.</li>
+                    <li>b. O viés só ocorre quando o programador insere intencionalmente regras discriminatórias no
+                        código.</li>
+                    <li>c. A IA é inerentemente neutra e nunca pode tomar decisões injustas ou tendenciosas.</li>
+                    <li><span style="color: #28a745;">✓</span> d. <strong>Os sistemas podem reproduzir ou amplificar
+                            preconceitos presentes nos dados históricos utilizados no treinamento.</strong></li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> d. Os sistemas podem reproduzir ou amplificar
+                        preconceitos presentes nos dados históricos utilizados no treinamento. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O viés algorítmico ocorre quando sistemas de IA reproduzem ou
+                    amplificam preconceitos existentes nos dados de treinamento, mesmo sem intenção discriminatória do
+                    programador.
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="question">
+                <h3>Questão 7</h3>
+                <p><strong>Um dos principais receios sobre o impacto da IA no mundo do trabalho é:</strong></p>
+                <ul>
+                    <li>a. A criação de robôs que exigem um longo período de descanso.</li>
+                    <li><span style="color: #28a745;">✓</span> b. <strong>A automação de tarefas repetitivas pode levar
+                            à extinção de certas profissões.</strong></li>
+                    <li>c. A redução obrigatória da carga horária de trabalho.</li>
+                    <li>d. A substituição de ferramentas digitais por processos manuais nas organizações.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> b. A automação de tarefas repetitivas pode
+                        levar à extinção de certas profissões. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Um dos principais receios é que a automação de tarefas repetitivas por
+                    IA pode levar à extinção ou redução significativa de certas profissões, embora especialistas
+                    destaquem que a IA tende a transformar atividades em vez de substituí-las completamente.
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="question">
+                <h3>Questão 8</h3>
+                <p><strong>Marque a opção que explica por que as redes neurais profundas podem ser consideradas
+                        "Caixa-Preta" (black box) na IA.</strong></p>
+                <ul>
+                    <li><span style="color: #28a745;">✓</span> a. <strong>Devido à dificuldade de entender ou explicar
+                            como modelos complexos, como redes neurais profundas, chegaram a uma conclusão
+                            específica.</strong></li>
+                    <li>b. Porque elas são um componente físico de hardware escuro, específico para executar códigos de
+                        IA.</li>
+                    <li>c. Devido ao modo noturno de interfaces das ferramentas de IA Generativa.</li>
+                    <li>d. Porque, nessas redes, os dados excluídos são armazenados permanentemente.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> a. Devido à dificuldade de entender ou
+                        explicar como modelos complexos chegaram a uma conclusão específica. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Redes neurais profundas são chamadas de "caixa-preta" devido à
+                    dificuldade de interpretar seus processos internos, com milhões ou bilhões de parâmetros
+                    interconectados que tornam o raciocínio difícil de rastrear.
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="question">
+                <h3>Questão 9</h3>
+                <p><strong>Para ser um usuário crítico de IA, ao receber uma informação gerada por um chatbot, o
+                        estudante deve:</strong></p>
+                <ul>
+                    <li>a. Apagar a informação imediatamente para evitar contaminação do computador por vírus ou outras
+                        ameaças.</li>
+                    <li>b. Aceitar como verdade absoluta, pois as inteligências artificiais atuais não erram.</li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>Verificar a informação em fontes confiáveis e
+                            avaliar se há alucinações.</strong></li>
+                    <li>d. Compartilhar em todas as redes sociais imediatamente.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. Verificar a informação em fontes
+                        confiáveis e avaliar se há alucinações. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Ser um usuário crítico de IA exige verificar informações em fontes
+                    confiáveis e avaliar possíveis alucinações, pois modelos de IA podem gerar conteúdos plausíveis, mas
+                    incorretos.
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="question">
+                <h3>Questão 10</h3>
+                <p><strong>De acordo com os princípios da cidadania digital e da inovação responsável, a integração
+                        entre humanos e IA deve ser orientada para a substituição total da mão de obra humana, visando
+                        apenas à eficiência econômica sem considerar impactos sociais.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Falso ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A cidadania digital e a inovação responsável defendem a
+                    complementaridade entre humanos e IA, mantendo o ser humano como responsável final pelas decisões e
+                    considerando impactos sociais, éticos e ambientais, não apenas a eficiência econômica.
+                </div>
+            </div>
+        </section>
+
+        <!-- Botão continuar - Curso Finalizado -->
+        <div style="text-align: center;">
+            <div
+                style="display: inline-block; background: linear-gradient(135deg, #fff8e1, #fff3cd); border: 2px solid #ffc107; border-radius: 16px; padding: 25px 40px; margin: 20px 0;">
+                <span class="material-icons"
+                    style="font-size: 3rem; color: #ffc107; display: block; margin-bottom: 10px;">celebration</span>
+                <h3 style="background: none; color: #1a4d8c; width: auto; font-size: 1.3rem; margin: 0;">🎓 Curso
+                    Finalizado com Sucesso!</h3>
+                <p style="margin: 10px 0 0 0; color: #555;">Você concluiu todos os módulos da disciplina Inteligência
+                    Artificial.</p>
+                <p style="margin: 5px 0 0 0; color: #2e7d32; font-weight: 600;">Nota final: 10,00/10,00 (100%)</p>
+                <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <a href="../index.html" class="btn-continuar"
+                        style="background: linear-gradient(135deg, #0066cc, #004d99);">
+                        <i class="material-icons">home</i> Voltar ao Início
+                    </a>
+                    <a href="mod3_und2-impactos-da-ia-na-sociedade-sustentabilidade-e-futuro-do-trabalho.html"
+                        class="btn-continuar" style="background: linear-gradient(135deg, #ff8c00, #e67e00);">
+                        <i class="material-icons">refresh</i> Revisar Conteúdo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 17 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 3 - Checkout de Presença</p>
+        <p style="font-size: 0.7em;">Nota: 10,00/10,00 (100%) | 01000000011-T01-2026-1</p>
+        <p style="font-size: 0.7em; color: #2e7d32; font-weight: 600;">🎓 Curso Finalizado com Sucesso!</p>
+    </footer>
+</body>
+
+</html>

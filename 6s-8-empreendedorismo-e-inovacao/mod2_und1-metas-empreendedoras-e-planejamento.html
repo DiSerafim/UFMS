@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 1: Metas Empreendedoras e Planejamento | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== TABELAS ===== */
+        .tabela-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+            overflow-x: auto;
+        }
+
+        .tabela-container table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .tabela-container th {
+            background: #245;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabela-container td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .tabela-container tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabela-container .destaque-linha {
+            background-color: #e8f5e9 !important;
+        }
+
+        /* ===== EXEMPLO SMART ===== */
+        .smart-container {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .smart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .smart-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #28a745;
+        }
+
+        .smart-item .letra {
+            font-weight: 700;
+            color: #28a745;
+            font-size: 1.3rem;
+        }
+
+        .smart-item .significado {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .smart-item .exemplo {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+            background: #f8fafc;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        /* ===== GLOSSÁRIO ===== */
+        .glossario-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 0.8rem 0;
+            padding: 0.8rem 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid #28a745;
+        }
+
+        .glossario-item .termo {
+            font-weight: 700;
+            color: #1a4d8c;
+            min-width: 120px;
+        }
+
+        /* ===== CICLO CONSTRUIR-MEDIR-APRENDER ===== */
+        .ciclo-container {
+            background: #f0f7ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .ciclo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .ciclo-item {
+            background: white;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #28a745;
+            font-weight: 600;
+            color: #1a4d8c;
+            transition: transform 0.3s;
+        }
+
+        .ciclo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .ciclo-item .icone {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .ciclo-item .label {
+            font-size: 0.9rem;
+        }
+
+        .ciclo-seta {
+            font-size: 2rem;
+            color: #999;
+        }
+
+        #video-aula {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 15px 10px 15px;
+            margin: 0 -25px 20px -25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #0066cc;
+            transition: all 0.3s ease;
+        }
+
+
+        @media (max-width: 768px) {
+            .ciclo-item {
+                width: 90px;
+                height: 90px;
+            }
+
+            .ciclo-item .icone {
+                font-size: 1.8rem;
+            }
+
+            .ciclo-seta {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .smart-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .glossario-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .glossario-item .termo {
+                min-width: auto;
+            }
+
+            .ciclo-grid {
+                gap: 0.8rem;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 2 - Metas, Ideias, Oportunidades e Inovação</h2>
+        <h3>📊 Unidade 1 – Metas Empreendedoras e Planejamento</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 1
+            </a>
+            <a href="mod2_und2-criatividade-ideias-oportunidades-e-inovacao.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Mod 2 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4-WN4ZL7RG8?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 2 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 2 - Unidade 1">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 2 - Unidade 1
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: APRESENTAÇÃO ===== -->
+        <section>
+            <h2>🎯 Apresentação da Unidade</h2>
+            <p>Você já percebeu que, nas histórias da Turma da Mônica, o <strong>Cebolinha</strong> sempre tem um plano?
+                Ele pensa antes de agir. Tenta antecipar cenários. Cria estratégias para alcançar seus objetivos. Mesmo
+                assim, seus famosos "planos infalíveis" quase nunca dão certo.</p>
+            <p><strong>Por quê?</strong> Porque estratégia sem planejamento estruturado vira improviso sofisticado. O
+                problema não é falta de intenção. O problema é o <strong>método</strong>.</p>
+
+            <p>No módulo anterior, refletimos sobre protagonismo, atitude e identidade empreendedora. Agora, avançamos
+                na jornada: <strong>não basta querer transformar a realidade; é preciso organizar o caminho para
+                    isso</strong>.</p>
+
+            <div class="dica-box">
+                <h4>📌 O que você vai aprender nesta unidade</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Diferenciar <strong>desejo, objetivo e meta</strong></li>
+                    <li>Utilizar ferramentas para transformar intenção em <strong>ação com direção</strong></li>
+                    <li>Aplicar técnicas como <strong>SMART</strong> e <strong>GTD</strong> no planejamento</li>
+                    <li>Compreender a <strong>mentalidade experimental</strong> e a <strong>aprendizagem
+                            contínua</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DESEJO, OBJETIVO E META ===== -->
+        <section>
+            <h2>🎯 Desejo, Objetivo e Meta: Qual a Diferença?</h2>
+            <p>Antes de falarmos sobre ideias inovadoras ou modelos de negócio, precisamos fazer uma pergunta simples e,
+                ao mesmo tempo, profunda: <strong>você sabe para onde está indo?</strong></p>
+
+            <p>Muitas pessoas desejam empreender. Alguns sonham em abrir um negócio. Outras querem fazer algo inovador.
+                No entanto, <strong>desejar não é o mesmo que definir um roteiro de ação flexível, estruturado e
+                    focado</strong>. Como afirma Dornelas (2025, p. 61), <em>"um sonho sem um plano é apenas um
+                    desejo"</em>.</p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Pare por um momento e reflita</h4>
+                <p>Pense em algo importante que você deseja conquistar nos próximos anos. <strong>Isso é um desejo, um
+                        objetivo ou uma meta claramente definida?</strong></p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="border-top: 4px solid #ffc107;">
+                    <div class="card-icon">💭</div>
+                    <h4>Desejo</h4>
+                    <p>Subjetivo e amplo. Exemplo: <em>"Quero ser bem-sucedido."</em></p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Não é mensurável nem temporal.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">🎯</div>
+                    <h4>Objetivo</h4>
+                    <p>Já apresenta maior direcionamento. Exemplo: <em>"Quero trabalhar na empresa Megafamosa."</em></p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Delimita um alvo, mas ainda falta
+                        clareza de como alcançá-lo.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">📋</div>
+                    <h4>Meta Estruturada</h4>
+                    <p>Mensurável e temporal. Exemplo: <em>"Concluir a graduação com 80% de desempenho até dezembro do
+                            próximo ano."</em></p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Clara, acompanhável e com prazo
+                        definido.</p>
+                </div>
+            </div>
+
+            <div class="atencao-box">
+                <h3>📌 A Diferença está na Clareza</h3>
+                <p>Assim como dizer <em>"vou delotar a Mônica"</em> é apenas um desejo, transformar isso em meta
+                    exigiria algo como: <strong>executar três ações específicas até sexta-feira, testar uma abordagem
+                        alternativa e revisar os resultados</strong>.</p>
+                <p style="margin-top: 10px;"><strong>Meta obriga clareza.</strong> Metas são, portanto, etapas
+                    necessárias para alcançar objetivos (Dornelas, 2023); elas reduzem incertezas, organizam esforços e
+                    permitem avaliação.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: NÍVEIS DE META ===== -->
+        <section>
+            <h2>📊 Níveis de Metas: Pessoais, Profissionais e de Projeto</h2>
+            <p>Como já discutimos no Módulo 1, o empreendedorismo começa antes da empresa. <strong>Ele começa na
+                    pessoa.</strong> Metas pessoais envolvem quem você deseja se tornar.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h4>Metas Pessoais</h4>
+                    <p>Relacionadas ao <strong>autoconhecimento</strong> e ao desenvolvimento de competências. Retome
+                        sua autoavaliação do Módulo 1 para identificar quais competências precisam ser desenvolvidas.
+                    </p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> "Desenvolver
+                        minha capacidade de comunicação em público até o final do semestre."</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h4>Metas Profissionais</h4>
+                    <p>Relacionadas à <strong>carreira</strong> e ao desenvolvimento profissional. Estruturar metas de
+                        formação complementar, busca por experiências práticas e construção de rede de contatos.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> "Conquistar
+                        uma vaga de estágio em uma startup de impacto social até julho."</p>
+                </div>
+                <div class="card" style="grid-column: span 2;">
+                    <div class="card-icon">🚀</div>
+                    <h4>Metas de Projeto ou Negócio</h4>
+                    <p>A complexidade aumenta. Surgem metas de <strong>validação</strong> (testar hipóteses com
+                        clientes), <strong>financeiras</strong> (receita, custos, margem), <strong>operacionais</strong>
+                        (entregas e prazos) e <strong>estratégicas</strong> (posicionamento de mercado).</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                        <strong>Exemplo:</strong> "Faturar R$100 mil por ano" (meta de resultado) vs. "Conquistar 30
+                        novos clientes por mês" (meta de processo).
+                    </p>
+                    <div class="dica-box" style="margin-top: 10px;">
+                        <h4>💡 Entendendo a Diferença</h4>
+                        <p><strong>Metas de processo</strong> orientam as ações que geram aprendizado e validação,
+                            aumentando significativamente a probabilidade de alcançar os resultados desejados.</p>
+                        <p><em>Faturar R$100 mil é como dizer: quero vencer. Entrevistar 30 clientes por mês é como
+                                treinar diariamente antes do confronto.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: NÍVEIS DE PLANEJAMENTO ===== -->
+        <section>
+            <h2>📐 Níveis de Planejamento: Estratégico, Tático e Operacional</h2>
+            <p>Definir metas é apenas o início; todo planejamento precisa ser acompanhado em diferentes níveis. Segundo
+                Chiavenato (2021), há uma lógica entre esses níveis que permite organizar esforços de forma coerente e
+                progressiva.</p>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nível</th>
+                            <th>Pergunta</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🎯 Estratégico</strong></td>
+                            <td><em>Onde quero chegar?</em></td>
+                            <td>"Quero ingressar no HUB PIME com uma proposta estruturada."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>📋 Tático</strong></td>
+                            <td><em>Como vou chegar?</em></td>
+                            <td>"Vou estruturar a proposta, validar o problema e organizar a equipe."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>⚙️ Operacional</strong></td>
+                            <td><em>O que farei esta semana?</em></td>
+                            <td>"Esta semana, farei duas entrevistas com potenciais usuários."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Essa estrutura permite que você organize seus esforços de forma coerente, considerando diferentes
+                horizontes de tempo e níveis de abstração.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: MÉTODO GTD ===== -->
+        <section>
+            <h2>📋 Método GTD (Getting Things Done)</h2>
+            <p>O método <strong>Getting Things Done (GTD)</strong>, proposto por Allen (2015), é um sistema de
+                produtividade pessoal focado na redução do estresse por meio da organização de tarefas em um sistema
+                externo, liberando a mente para a execução estratégica.</p>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etapa do GTD</th>
+                            <th>Contexto Pessoal</th>
+                            <th>Contexto Profissional</th>
+                            <th>Contexto de Projeto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Capturar</strong><br><span style="font-size:0.8rem;color:#666;">Registrar tudo
+                                    que demanda ação</span></td>
+                            <td>Anotar: "preciso melhorar meu condicionamento físico."</td>
+                            <td>Registrar: "preciso me preparar para a seleção de trainee."</td>
+                            <td>Anotar: "clientes não estão convertendo após demonstração."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Esclarecer</strong><br><span style="font-size:0.8rem;color:#666;">Definir
+                                    próxima ação</span></td>
+                            <td>Decidir: pesquisar academias próximas.</td>
+                            <td>Definir: atualizar currículo e LinkedIn.</td>
+                            <td>Definir: entrevistar 10 clientes para entender objeções.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organizar</strong><br><span style="font-size:0.8rem;color:#666;">Categorizar e
+                                    priorizar</span></td>
+                            <td>Inserir na agenda: visitar academia na sexta.</td>
+                            <td>Criar lista: cursos, certificações e prazos de inscrição.</td>
+                            <td>Criar quadro Kanban com tarefas de validação.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Refletir</strong><br><span style="font-size:0.8rem;color:#666;">Revisar
+                                    periodicamente</span></td>
+                            <td>Revisar semanalmente evolução física.</td>
+                            <td>Avaliar mensalmente progresso nas candidaturas.</td>
+                            <td>Revisar indicadores de conversão semanalmente.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Engajar</strong><br><span style="font-size:0.8rem;color:#666;">Executar com
+                                    foco</span></td>
+                            <td>Realizar visita e iniciar plano de treino.</td>
+                            <td>Enviar candidaturas dentro do prazo.</td>
+                            <td>Realizar entrevistas e ajustar proposta de valor.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dica-box">
+                <h4>💡 Aplicação do GTD</h4>
+                <p>Embora frequentemente aplicado à rotina pessoal, o GTD também pode ser utilizado em contextos
+                    acadêmicos, profissionais e empreendedores, pois ajuda a <strong>transformar intenções em ações
+                        organizadas</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: METODOLOGIA SMART ===== -->
+        <section>
+            <h2>🎯 Metodologia SMART</h2>
+            <p>No contexto de projetos e negócios, a definição de metas precisa seguir critérios claros para orientar a
+                execução e permitir acompanhamento consistente. A metodologia <strong>SMART</strong> é uma das
+                ferramentas mais eficazes para isso.</p>
+
+            <div class="smart-container">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">📌 Exemplo de Meta SMART</h4>
+                <p style="text-align: center; font-weight: 500; color: #245; margin-bottom: 1.5rem;">
+                    <em>"Estruturar e validar a proposta inicial de um aplicativo que conecte estudantes a pequenas
+                        empresas locais, em até dois meses, para submissão ao edital de seleção da ação Ideação do HUB
+                        PIME."</em>
+                </p>
+                <div class="smart-grid">
+                    <div class="smart-item">
+                        <div class="letra">S</div>
+                        <div class="significado"><strong>Específica</strong></div>
+                        <div class="exemplo">Estruturar e validar a proposta de um aplicativo que conecta estudantes a
+                            pequenas empresas locais.</div>
+                    </div>
+                    <div class="smart-item">
+                        <div class="letra">M</div>
+                        <div class="significado"><strong>Mensurável</strong></div>
+                        <div class="exemplo">Apresentar a proposta estruturada e validada para submissão ao edital.
+                        </div>
+                    </div>
+                    <div class="smart-item">
+                        <div class="letra">A</div>
+                        <div class="significado"><strong>Atingível</strong></div>
+                        <div class="exemplo">Desenvolver a proposta com a equipe e recursos disponíveis na universidade.
+                        </div>
+                    </div>
+                    <div class="smart-item">
+                        <div class="letra">R</div>
+                        <div class="significado"><strong>Relevante</strong></div>
+                        <div class="exemplo">Contribuir para aproximar universidade e mercado local.</div>
+                    </div>
+                    <div class="smart-item" style="grid-column: span 2; max-width: 400px; margin: 0 auto;">
+                        <div class="letra">T</div>
+                        <div class="significado"><strong>Temporal</strong></div>
+                        <div class="exemplo">Concluir em até dois meses.</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>A metodologia SMART reforça que metas eficazes precisam ser <strong>claras, mensuráveis, possíveis de
+                    alcançar, relevantes para o propósito e temporalmente definidas</strong>. Essa sistematização
+                demonstra que inovação e empreendedorismo são práticas estruturadas e intencionais.</p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Exercício Prático</h4>
+                <p>Retome agora a atividade reflexiva do primeiro módulo, quando discutimos motivação, propósito e
+                    protagonismo.</p>
+                <p><strong>Transforme o desejo que você identificou em metas SMART</strong>, utilizando a lógica do GTD
+                    para organizar as ações necessárias.</p>
+                <p><em>Observe como a clareza reduz a ansiedade e aumenta a capacidade de ação.</em></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: KPIS E DASHBOARDS ===== -->
+        <section>
+            <h2>📊 KPIs e Dashboards: Acompanhamento de Desempenho</h2>
+            <p>Para acompanhar o desempenho, utilizam-se <strong>indicadores-chave</strong>, os chamados
+                <strong>KPIs</strong>, que permitem monitorar resultados de maneira objetiva (Wysocki; Marques, 2020).
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h4>KPI - Key Performance Indicator</h4>
+                    <p>É um indicador-chave de desempenho utilizado para <strong>medir e acompanhar o progresso</strong>
+                        de objetivos, projetos ou processos organizacionais.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Taxa de
+                        conversão de clientes, número de usuários ativos, receita mensal recorrente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>Dashboards</h4>
+                    <p>São <strong>painéis visuais</strong> que organizam dados e indicadores em diferentes tecnologias
+                        ou sistemas, permitindo acompanhar resultados e apoiar a tomada de decisão.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Painel com
+                        métricas de crescimento de usuários, engajamento e receita.</p>
+                </div>
+            </div>
+
+            <p>Em ambientes empresariais contemporâneos, conforme destaca Maurya (2018), painéis de indicadores e
+                dashboards possibilitam <strong>visualizar o desempenho quase em tempo real</strong>, reduzindo a espera
+                por relatórios ou reuniões mensais e tornando a tomada de decisão mais consciente e ágil.</p>
+
+            <div class="atencao-box">
+                <h3>💡 Aprendizado com Indicadores</h3>
+                <p><strong>Se Cebolinha medisse seus resultados, perceberia que repetir a mesma estratégia leva ao mesmo
+                        resultado.</strong> Indicadores evitam autoengano e permitem ajustes baseados em dados.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: MENTALIDADE EXPERIMENTAL ===== -->
+        <section>
+            <h2>🧪 Mentalidade Experimental e Aprendizagem Contínua</h2>
+            <p>Aqui começa a transição entre <strong>teimosia e aprendizagem validada</strong>. Você já percebeu que,
+                quando o plano falha, o Cebolinha tenta repetir a mesma estratégia, esperando um resultado diferente? Já
+                quando um experimento do Franjinha falha, ele ajusta a hipótese e aprende com o erro.</p>
+
+            <div class="ciclo-container">
+                <h4 style="color: #1a4d8c; margin-bottom: 1.5rem;">🔄 Ciclo Construir-Medir-Aprender (Ries, 2019)</h4>
+                <div class="ciclo-grid">
+                    <div class="ciclo-item">
+                        <span class="icone">🔨</span>
+                        <span class="label">Construir</span>
+                    </div>
+                    <span class="ciclo-seta">➜</span>
+                    <div class="ciclo-item">
+                        <span class="icone">📊</span>
+                        <span class="label">Medir</span>
+                    </div>
+                    <span class="ciclo-seta">➜</span>
+                    <div class="ciclo-item">
+                        <span class="icone">📚</span>
+                        <span class="label">Aprender</span>
+                    </div>
+                    <span class="ciclo-seta" style="font-size: 1.5rem;">↺</span>
+                </div>
+                <p style="font-size: 0.9rem; color: #555; margin-top: 1rem;">Fonte: Ries, E. (2019). A startup enxuta.
+                </p>
+            </div>
+
+            <p>Ries (2019) propõe a lógica da <strong>aprendizagem validada</strong>, sintetizada no ciclo construir,
+                medir e aprender. Essa abordagem enfatiza a importância de:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li><strong>Testar hipóteses</strong> – transformar suposições em experimentos</li>
+                <li><strong>Coletar feedback</strong> – obter dados reais do mercado e dos usuários</li>
+                <li><strong>Ajustar rotas</strong> – pivotar ou perseverar com base no aprendizado</li>
+                <li><strong>Evoluir continuamente</strong> – aprender com os erros e acertos</li>
+            </ul>
+
+            <div class="dica-box">
+                <h4>💡 Metas Empreendedoras e Experimentação</h4>
+                <p><strong>Metas empreendedoras precisam prever experimentação.</strong> Persistência não é teimosia;
+                    aprender e ajustar fazem parte do processo.</p>
+                <p style="margin-top: 10px;">O empreendedor contemporâneo <strong>aprende constantemente</strong>. Ele
+                    busca feedbacks, mentorias, ambientes de inovação, como o HUB PIME e o Laboratório de Soluções da
+                    Aginova/UFMS, e participa de comunidades empreendedoras que estimulam o crescimento coletivo.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SÍNTESE ===== -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Planejamento dá Direção</h4>
+                    <p>Sem planejamento, a intenção se perde. Estruturar o caminho é essencial para transformar desejo
+                        em realidade.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h4>Metas Oferecem Roteiro</h4>
+                    <p>Metas claras, mensuráveis e temporais organizam esforços e permitem acompanhamento consistente.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>Indicadores Permitem Acompanhamento</h4>
+                    <p>KPIs e dashboards tornam visível o desempenho e orientam decisões estratégicas baseadas em dados.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧪</div>
+                    <h4>Mentalidade Experimental Garante Flexibilidade</h4>
+                    <p>Aprender com erros, ajustar rotas e testar hipóteses são essenciais para inovar em ambientes de
+                        incerteza.</p>
+                </div>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p>Antes de avançarmos para ideias e oportunidades, é fundamental responder com honestidade:</p>
+                <p><strong>Você tem metas claras para transformar uma ideia em ação?</strong></p>
+            </div>
+
+            <p style="margin-top: 1.5rem;">Agora que você aprendeu a estruturar direção, vamos dar o próximo passo:
+                <strong>gerar ideias que realmente façam sentido</strong>.
+            </p>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>ALLEN, David.</strong> A arte de fazer acontecer: Getting Things Done. Rio de Janeiro: Alta
+                Books, 2015.
+            </div>
+            <div class="referencia">
+                <strong>CHIAVENATO, Idalberto.</strong> Empreendedorismo: dando asas ao espírito empreendedor. 5. ed.
+                São Paulo: Atlas, 2021.
+            </div>
+            <div class="referencia">
+                <strong>DORNELAS, José.</strong> Sonhe, crie e impacte: empreendedorismo essencial para mudar o mundo.
+                São Paulo: Empreende, 2025.
+            </div>
+            <div class="referencia">
+                <strong>KAHNEMAN, Daniel.</strong> Rápido e devagar: duas formas de pensar. Rio de Janeiro: Objetiva,
+                2021.
+            </div>
+            <div class="referencia">
+                <strong>MAURYA, Ash.</strong> A startup enxuta: como empreendedores usam a inovação contínua para criar
+                negócios radicalmente bem-sucedidos. Rio de Janeiro: Sextante, 2018.
+            </div>
+            <div class="referencia">
+                <strong>RIES, Eric.</strong> A startup enxuta. Rio de Janeiro: Sextante, 2019.
+            </div>
+            <div class="referencia">
+                <strong>WYSOCKI, Robert K.; MARQUES, José Carlos.</strong> Gerenciamento de projetos: uma abordagem
+                prática. São Paulo: Atlas, 2020.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 2 - Unidade 1</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

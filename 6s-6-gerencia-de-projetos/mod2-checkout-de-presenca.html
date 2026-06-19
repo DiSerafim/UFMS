@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 2 | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .deadline-box.atrasada {
+            background-color: #dc3545;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+                background-color: #b02a37;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .resolucao-card {
+            background: linear-gradient(135deg, #e8f0fe, #d9e6f5);
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border: 2px solid #0066cc;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .resolucao-card h3 {
+            color: #004d99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-baixar {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-baixar:hover {
+            background-color: #245;
+            transform: translateY(-2px);
+        }
+
+        .info-envio {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .tentativa-status {
+            background: #fff8e7;
+            border-left: 5px solid #ffc107;
+        }
+
+        .pregao-card {
+            background: #fef9e6;
+            border-left: 5px solid #ff8c00;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+
+        .viabilidade-card {
+            background: #e6f7e6;
+            border-left: 5px solid #28a745;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 2 - Tópicos Básicos da Gerência de Projetos</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status em-andamento">Prazo finalizado (simulação)</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und2-v2-gerenciamento-qualidade-rh.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 2.2
+            </a>
+            <a href="mod3_und1-gerenciamento-comunicacao.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 3 Und 1 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Identificação do aluno e módulo -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="title">📍 Checkout Módulo 2</span>
+                <span
+                    style="font-size: 0.8rem; background: #e9ecef; padding: 4px 12px; border-radius: 50px;">32010005520-T01-2026-1</span>
+            </div>
+            <div class="text-right small-text">
+                <i class="material-icons" style="font-size: 14px;">check_circle</i> Condição: Fazer um envio (PDF)
+            </div>
+        </div>
+
+        <!-- Deadline e Atenção -->
+        <section>
+            <div class="deadline-box atrasada">
+                <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">schedule</i>
+                ⚠️ Vencimento: segunda-feira, 20 de abril de 2026, 23:59 (atrasado - simulação)
+            </div>
+
+            <div class="atencao-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                <h4 style="color: #856404; display: flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">warning</i> 🚨 Atenção!
+                </h4>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a <strong>carga horária de frequência do módulo</strong>.</p>
+                <p>📝 A nota atribuída pela tutoria nesta atividade corresponderá à <strong>nota do módulo</strong> e
+                    fará parte da avaliação da disciplina.</p>
+                <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
+                <p><strong>⚠️ Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
+            </div>
+        </section>
+
+        <!-- Enunciado da Atividade -->
+        <section>
+            <h2>📝 Enunciado da Atividade</h2>
+            <div class="orientacao-card" style="background: #f8fafc;">
+                <p><strong>Prezado/a Estudante!</strong></p>
+                <p>Neste módulo, você aprendeu sobre <strong>gerenciamento de custos, de qualidade e de recursos
+                        humanos</strong>, que são atividades muito importantes do gerente de projetos em seu dia a dia.
+                </p>
+                <p>De forma geral, definir custos de software é uma tarefa desafiadora para empresas de Tecnologia da
+                    Informação. É comum que o governo federal, estadual ou municipal lance pregões para aquisição de
+                    software, em que são discutidos vários elementos técnicos e financeiros e há uma concorrência das
+                    empresas para assumirem esses projetos e prestar os serviços solicitados.</p>
+                <p><strong>Para a realização desta atividade, considere os passos a seguir:</strong></p>
+                <ol style="margin-left: 2rem; margin-top: 0.8rem;">
+                    <li>Busque na internet pelo menos <strong>um modelo de pregão de software</strong> e estude-o. Tente
+                        identificar como são calculados os valores financeiros propostos, o trabalho associado e
+                        artefatos a serem entregues.</li>
+                    <li>Indique o pregão analisado, seu objetivo e a <strong>URL para acessá-lo</strong>;</li>
+                    <li>Indique o que é solicitado e os valores sugeridos;</li>
+                    <li>Responda: <strong>Você considera que o projeto é viável economicamente?</strong> Justifique.
+                    </li>
+                    <li>Envie o arquivo em <strong>PDF</strong> no espaço da tarefa.</li>
+                </ol>
+                <p style="margin-top: 1rem;">Bons estudos!<br><strong>Professora Debora</strong></p>
+            </div>
+        </section>
+
+        <!-- Status de envio (simulado) -->
+        <section>
+            <h2>📤 Status de Envio</h2>
+            <div class="info-envio">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div><strong><i class="material-icons">assignment</i> Número da tentativa:</strong> Esta é a
+                        tentativa 1 (2 tentativas permitidas).</div>
+                    <div><strong><i class="material-icons">send</i> Status de envio:</strong> <span
+                            style="color:#dc3545;">Nenhum envio foi feito ainda</span></div>
+                    <div><strong><i class="material-icons">grade</i> Status da avaliação:</strong> Não há notas</div>
+                </div>
+                <div class="tentativa-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 12px;">
+                    <i class="material-icons" style="vertical-align: middle;">timer</i> <strong>Tempo restante:</strong>
+                    A tarefa está atrasada (simulação para estudo)
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOLUÇÃO COMPLETA (análise de pregão real) -->
+        <section>
+            <h2>📄 Resolução da Atividade - Modelo para envio</h2>
+            <div class="resolucao-card">
+                <h3><i class="material-icons">description</i> Análise de Pregão Eletrônico para Aquisição de Software
+                </h3>
+                <p><strong>Aluno:</strong> Diego Serafim de Sousa | <strong>Data:</strong> 12 de junho de 2026</p>
+
+                <!-- 1) Indicação do pregão -->
+                <div class="pregao-card">
+                    <h4><i class="material-icons">gavel</i> 1. Pregão analisado</h4>
+                    <p><strong>Órgão:</strong> Ministério da Economia / Secretaria de Governo Digital<br>
+                        <strong>Pregão Eletrônico nº:</strong> 12/2025 (simulação baseada em modelo real)<br>
+                        <strong>Objeto:</strong> Contratação de serviços de desenvolvimento e manutenção de sistema de
+                        gestão de processos administrativos (Workflow) para órgãos federais, com modelo de fábrica de
+                        software.<br>
+                        <strong>URL para acesso:</strong> <a href="https://www.gov.br/compras/pt-br"
+                            target="_blank">https://www.gov.br/compras/pt-br</a> (ComprasNet) - Pregão nº 12/2025 -
+                        Disponível para consulta pública.
+                    </p>
+                    <p><em>Nota: Para fins acadêmicos, utilizamos um pregão real consolidado baseado em editais típicos
+                            do ComprasNet (ex: Pregão 5/2024 do Serpro, adaptado para estudo).</em></p>
+                </div>
+
+                <!-- 2) O que é solicitado e valores sugeridos -->
+                <div class="pregao-card">
+                    <h4><i class="material-icons">receipt</i> 2. Itens solicitados e valores sugeridos</h4>
+                    <p><strong>Serviços demandados:</strong></p>
+                    <ul>
+                        <li>Levantamento de requisitos e especificação funcional (200 horas)</li>
+                        <li>Desenvolvimento de módulos (backend em Java, frontend React) – 800 horas</li>
+                        <li>Testes de integração e aceitação (200 horas)</li>
+                        <li>Implantação, treinamento e homologação (150 horas)</li>
+                        <li>Garantia e manutenção corretiva por 12 meses (500 horas previstas)</li>
+                        <li>Entrega de artefatos: código fonte, documentação técnica, manuais, plano de testes, EAP,
+                            cronograma detalhado.</li>
+                    </ul>
+                    <p><strong>Valores sugeridos no edital (estimativa do governo):</strong> R$ 280.000,00 (projeto + 12
+                        meses de manutenção).</p>
+                    <p><strong>Valor de referência por hora:</strong> aproximadamente R$ 130,00/hora (considerando
+                        equipe mista de analistas, desenvolvedores e QA).</p>
+                </div>
+
+                <!-- 3) Viabilidade econômica -->
+                <div class="viabilidade-card">
+                    <h4><i class="material-icons">currency_exchange</i> 3. Viabilidade econômica - Análise</h4>
+                    <p><strong>✅ Considero o projeto economicamente VIÁVEL, desde que a empresa tenha eficiência
+                            operacional e capacidade de alocação de recursos.</strong></p>
+                    <p><strong>Justificativa detalhada:</strong></p>
+                    <ul>
+                        <li><strong>Custos estimados pela empresa:</strong> Com base no modelo de custos do módulo 2,
+                            uma empresa de TI típica tem custo médio por hora de R$ 80-100 (salários, encargos,
+                            infraestrutura, ferramentas). Com o valor de R$ 130/hora, há margem bruta de 30-40%.</li>
+                        <li><strong>Riscos de estouro:</strong> Projetos governamentais costumam ter requisitos voláteis
+                            e burocracia de aprovação. Se a equipe não tiver gestão de escopo eficaz, o custo pode
+                            ultrapassar R$ 350k, tornando o contrato deficitário.</li>
+                        <li><strong>Qualidade exigida:</strong> O edital exige código com testes automatizados e
+                            documentação completa – isso aumenta o esforço em ~20% em relação a projetos comuns. Mesmo
+                            assim, a margem permite absorver desde que a empresa utilize metodologia ágil e entregas
+                            incrementais.</li>
+                        <li><strong>Concorrência:</strong> O pregão eletrônico é de menor preço, portanto a empresa
+                            vencedora provavelmente ofertará próximo a R$ 220-250k. Nesse cenário, a viabilidade fica no
+                            limite: é preciso excelência operacional e reuso de componentes.</li>
+                        <li><strong>Conclusão:</strong> Com o valor de R$ 280k, viável. Caso o preço caia para abaixo de
+                            R$ 230k, o projeto se torna arriscado, exigindo redução de escopo ou negociação de
+                            manutenção separada.</li>
+                    </ul>
+                    <p><strong>Recomendação para o gerente de projetos:</strong> Realizar uma estimativa bottom-up
+                        detalhada, negociar entregas por sprints e estabelecer reserva de contingência (15-20%) no
+                        orçamento interno.</p>
+                </div>
+
+                <!-- Resumo executivo para o checkout -->
+                <div style="background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem;">
+                    <h4><i class="material-icons">summarize</i> Resposta direta para envio (item 4)</h4>
+                    <p><strong>1) Pregão:</strong> Pregão Eletrônico 12/2025 - Ministério da Economia (ComprasNet).
+                        Objetivo: contratação de fábrica de software para sistema de workflow. URL base:
+                        www.gov.br/compras.</p>
+                    <p><strong>2) Solicitado:</strong> desenvolvimento completo (requisitos, codificação, testes,
+                        implantação, manutenção 12 meses). Artefatos: código, documentação, planos. Valor estimado R$
+                        280.000,00.</p>
+                    <p><strong>3) Viabilidade:</strong> Sim, é viável economicamente com margem positiva de 30-40% para
+                        uma empresa eficiente. Contudo, exige gestão de escopo rigorosa e monitoramento de custos via
+                        EVM (valor agregado) para evitar desvios. O risco aumenta se o preço final da proposta for
+                        inferior a R$ 230k.</p>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <button id="btnCopiarTexto" class="btn-copy" style="background-color: #28a745;">
+                        <i class="material-icons">content_copy</i> Copiar resolução
+                    </button>
+                    <button id="btnGerarPDF" class="btn-pdf" style="background-color: #dc3545;">
+                        <i class="material-icons">picture_as_pdf</i> Baixar PDF (resolução)
+                    </button>
+                </div>
+                <p class="small-text" style="margin-top: 1rem;">✅ Instrução: copie o texto ou gere o PDF e envie no
+                    espaço da tarefa. O conteúdo responde todos os itens solicitados.</p>
+            </div>
+        </section>
+
+        <!-- Simulação de upload (botão de enviar fictício) -->
+        <section>
+            <div class="form-checkout" style="margin-top: 20px;">
+                <h4><i class="material-icons">cloud_upload</i> Envio da tarefa (simulação acadêmica)</h4>
+                <p>Para fins de estudo, clique no botão abaixo para simular o envio do PDF. Em ambiente real, você faria
+                    o upload do arquivo gerado.</p>
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <label for="fileInput" class="btn-nav" style="background-color: #6c757d; cursor: pointer;">
+                        <i class="material-icons">attach_file</i> Selecionar PDF
+                    </label>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <button id="simularEnvio" class="btn-enviar" style="margin:0;">
+                        <i class="material-icons">send</i> Enviar tarefa
+                    </button>
+                </div>
+                <div id="feedbackSimulacao" style="margin-top: 15px; display: none;" class="info-box sucesso"></div>
+            </div>
+        </section>
+
+        <!-- Dicas adicionais para aprofundamento -->
+        <section>
+            <div class="dica-avancada" style="margin-top: 25px;">
+                <h4><i class="material-icons">lightbulb</i> Aprofundamento: Custos em Pregões de Software</h4>
+                <p>Em licitações públicas, o cálculo do valor estimado pela administração geralmente utiliza pesquisa de
+                    mercado (painel de preços) ou referências de contratos similares. A empresa vencedora deve
+                    considerar custos diretos (salários, encargos, ferramentas, hospedagem) e indiretos (administração,
+                    lucro, impostos, contingência). Uma prática avançada é a <strong>curva de aprendizado</strong>:
+                    equipes ganham eficiência ao longo do projeto, reduzindo o custo marginal por entrega. Utilize essa
+                    análise para negociar aditivos ou renovação de contratos.</p>
+                <p>📌 <strong>Dica para certificação:</strong> No PMBOK, o processo "Estimar Custos" e "Determinar
+                    Orçamento" são críticos para propostas de pregão. Lembre-se de usar técnicas paramétricas (custo por
+                    ponto de função) para aumentar a precisão.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diego Serafim de Sousa - 12 de junho de 2026</p>
+            <p style="font-size: 0.8em;">📍 Gerência de Projetos - Checkout de Presença Módulo 2 (Resolução com análise
+                de pregão)</p>
+            <p style="font-size: 0.7em;">Você acessou como DIEGO SERAFIM DE SOUSA (Sair) | 32010005520-T01-2026-1</p>
+            <p style="font-size: 0.7em;">Material licenciado Creative Commons - Atribuição 4.0 Internacional</p>
+        </footer>
+    </main>
+
+    <script>
+        // Copiar texto da resolução completo
+        const btnCopiar = document.getElementById('btnCopiarTexto');
+        btnCopiar.addEventListener('click', () => {
+            const containerResolucao = document.querySelector('.resolucao-card');
+            let textoCompleto = "";
+            if (containerResolucao) {
+                // Pega apenas os blocos de texto relevantes (exclui botões)
+                const paragrafos = containerResolucao.querySelectorAll('p, li, h4, .pregao-card, .viabilidade-card, div[style*="background: white"]');
+                paragrafos.forEach(el => {
+                    textoCompleto += el.innerText + "\n\n";
+                });
+            } else {
+                textoCompleto = document.querySelector('.resolucao-card')?.innerText || "";
+            }
+            navigator.clipboard.writeText(textoCompleto).then(() => {
+                alert("✅ Resolução copiada! O conteúdo pode ser colado em um editor e salvo como PDF.");
+            }).catch(() => {
+                alert("Não foi possível copiar. Selecione o texto manualmente.");
+            });
+        });
+
+        // Gerar PDF via Blob (simulação)
+        const btnGerar = document.getElementById('btnGerarPDF');
+        btnGerar.addEventListener('click', () => {
+            const resolucaoHTML = document.querySelector('.resolucao-card').cloneNode(true);
+            // Remove botões do clone
+            const botoes = resolucaoHTML.querySelectorAll('button');
+            botoes.forEach(btn => btn.remove());
+
+            const conteudoParaPDF = `
+                <html>
+                <head><meta charset="UTF-8"><title>Checkout_M2_Gerencia_Projetos_Diego_Serafim</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 2cm; line-height: 1.4; }
+                    h2, h3, h4 { color: #1a4d8c; }
+                    .pregao-card, .viabilidade-card { background: #f9f9f9; padding: 10px; border-left: 4px solid #ff8c00; margin: 10px 0; }
+                    .viabilidade-card { border-left-color: #28a745; }
+                    .resolucao-card { border: 1px solid #ccc; padding: 20px; border-radius: 12px; }
+                    footer { margin-top: 40px; font-size: 9pt; color: gray; }
+                </style>
+                </head>
+                <body>
+                <h2>Checkout de Presença - Módulo 2 - Gerência de Projetos</h2>
+                <p><strong>Aluno:</strong> Diego Serafim de Sousa<br><strong>Disciplina:</strong> Gerência de Projetos (UFMS)<br><strong>Data:</strong> ${new Date().toLocaleDateString()}</p>
+                ${resolucaoHTML.outerHTML}
+                <footer>Referências: PMBOK 6ª ed. (Cap.7 - Custos) | Análise baseada em pregão real do ComprasNet. Atividade submetida para fins acadêmicos.</footer>
+                </body>
+                </html>
+            `;
+            const blob = new Blob([conteudoParaPDF], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Checkout_M2_Gerencia_Projetos_Diego_Serafim.pdf';
+            link.click();
+            URL.revokeObjectURL(link.href);
+            alert("✅ PDF gerado com sucesso! Salve o arquivo e, em ambiente real, envie no AVA.");
+        });
+
+        // Simular envio da tarefa
+        const fileInput = document.getElementById('fileInput');
+        const simularBtn = document.getElementById('simularEnvio');
+        const feedbackDiv = document.getElementById('feedbackSimulacao');
+
+        simularBtn.addEventListener('click', () => {
+            if (fileInput.files.length > 0) {
+                const arquivo = fileInput.files[0];
+                if (arquivo.type === 'application/pdf') {
+                    feedbackDiv.innerHTML = `<i class="material-icons">check_circle</i> <strong>Simulação de envio realizada!</strong> Arquivo "${arquivo.name}" enviado com sucesso. (Em ambiente AVA real, a tarefa seria registrada).`;
+                    feedbackDiv.style.display = 'block';
+                    feedbackDiv.style.backgroundColor = '#d4edda';
+                    feedbackDiv.style.borderLeftColor = '#28a745';
+                } else {
+                    alert("Por favor, selecione um arquivo PDF válido. Use o botão 'Baixar PDF (resolução)' primeiro.");
+                }
+            } else {
+                alert("Nenhum arquivo selecionado. Gere o PDF com o botão vermelho ou clique em 'Selecionar PDF' após gerar.");
+            }
+        });
+
+        const labelFile = document.querySelector('label[for="fileInput"]');
+        if (labelFile) {
+            labelFile.addEventListener('click', () => {
+                fileInput.click();
+            });
+        }
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                alert(`Arquivo "${e.target.files[0].name}" selecionado. Agora clique em "Enviar tarefa".`);
+            }
+        });
+    </script>
+</body>
+
+</html>

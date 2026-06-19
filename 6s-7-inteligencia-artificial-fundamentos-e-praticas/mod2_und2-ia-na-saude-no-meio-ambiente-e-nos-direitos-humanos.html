@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 2: IA na Saúde, Meio Ambiente e Direitos Humanos | Inteligência Artificial - UFMS Digital
+    </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares para melhorar a experiência avançada */
+        .detalhe-conceito {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cddfe7;
+        }
+
+        .topicos-avancados {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topicos-avancados h3,
+        .topicos-avancados h4 {
+            color: #ffd966;
+        }
+
+        .badge-cert {
+            background-color: #1e466e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .grid-competencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .competencia-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .exemplo-pesquisa {
+            background: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 110px;
+        }
+
+        .aplicacao-destaque-ia {
+            background: #fff8e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+
+        .desafio-etico-ia {
+            background: #fff5f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .trend-box-ia {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .trend-box-ia h4 {
+            color: #ffc107;
+        }
+
+        .caso-destaque {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .caso-destaque h3 {
+            color: #1a4d8c;
+        }
+
+        .aplicacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .aplicacao-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s;
+        }
+
+        .aplicacao-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .aplicacao-card .material-icons {
+            font-size: 2rem;
+            color: #1a4d8c;
+        }
+
+        .atencao-box-ia {
+            background: #fff3cd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .principio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 12px;
+        }
+
+        .principio-numero {
+            background: #1a4d8c;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 2 - Aplicações Interdisciplinares da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 2 – IA na Saúde, no Meio Ambiente e nos Direitos Humanos</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-ia-na-educacao-na-vida-cotidiana-e-na-tomada-de-decisao.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 1
+            </a>
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Checkout P. Mod 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Stcws0ACC8c" frameborder="0"
+                    title="Inteligência Artificial - Módulo 2 - Unidade 2 - IA na Saúde, Meio Ambiente e Direitos Humanos"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 2 - Unidade 2">
+                [UFMS Digital] Inteligência Artificial - Módulo 2 - Unidade 2 (IA na Saúde, Meio Ambiente e Direitos
+                Humanos)
+            </p>
+            <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+            <p>📅 Disponível desde 2026 • Duração: 21min</p>
+        </section>
+
+        <!-- Apresentação expandida -->
+        <section>
+            <h2>🧠 IA como Ferramenta Transformadora</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🏥 Saúde</h4>
+                    <p>A aplicação da IA na saúde tem produzido <strong>avanços significativos</strong> na análise de
+                        dados clínicos e na identificação de padrões associados a diferentes condições médicas. Sistemas
+                        baseados em aprendizado de máquina são capazes de analisar imagens médicas, resultados
+                        laboratoriais e históricos clínicos, contribuindo para a <strong>detecção precoce de
+                            doenças</strong> e para o apoio a diagnósticos médicos <cite>(Russell; Norvig, 2021)</cite>.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>🌿 Meio Ambiente</h4>
+                    <p>No campo ambiental, a IA tem sido utilizada para <strong>monitorar ecossistemas</strong>,
+                        analisar mudanças climáticas e apoiar estratégias de conservação da biodiversidade. Sistemas de
+                        análise de dados ambientais podem identificar padrões relacionados ao desmatamento, à degradação
+                        ambiental e às mudanças nos ecossistemas naturais <cite>(Ventura et al., 2020)</cite>.</p>
+                </div>
+            </div>
+
+            <div class="detalhe-conceito">
+                <h3>🤝 Direitos Humanos</h3>
+                <p>Além das aplicações ambientais, a Inteligência Artificial também tem sido utilizada em iniciativas
+                    relacionadas à <strong>promoção dos direitos humanos</strong>. Sistemas de análise de dados podem
+                    auxiliar na identificação de padrões associados a violações de direitos, permitindo monitorar
+                    situações de risco em diferentes contextos sociais <cite>(Garcia, 2020)</cite>.</p>
+                <p>Em organizações internacionais e instituições de pesquisa, ferramentas de análise automatizada têm
+                    sido utilizadas para examinar grandes volumes de documentos, relatórios e dados públicos,
+                    contribuindo para identificar tendências e apoiar a formulação de estratégias de proteção de
+                    direitos fundamentais.</p>
+            </div>
+        </section>
+
+        <!-- IA na Saúde -->
+        <section>
+            <h2>🏥 IA na Saúde: Diagnóstico, Monitoramento e Pesquisa</h2>
+
+            <div class="aplicacao-grid">
+                <div class="aplicacao-card">
+                    <i class="material-icons">image</i>
+                    <h3>Diagnóstico por Imagem</h3>
+                    <p>Em especialidades como radiologia e patologia, algoritmos de <strong>visão computacional</strong>
+                        têm sido utilizados para identificar padrões em exames de imagem que podem indicar a presença de
+                        anomalias ou doenças específicas.</p>
+                    <p><strong>Exemplo:</strong> Detecção de câncer em mamografias e tomografias.</p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">devices</i>
+                    <h3>Monitoramento de Pacientes</h3>
+                    <p>Dispositivos conectados coletam dados fisiológicos em tempo real, permitindo acompanhar
+                        indicadores de saúde e identificar alterações que podem exigir intervenção médica.</p>
+                    <p><strong>Exemplo:</strong> Smartwatches que detectam arritmias cardíacas.</p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #28a745;">
+                    <i class="material-icons">science</i>
+                    <h3>Pesquisa Biomédica</h3>
+                    <p>Técnicas de IA analisam grandes bases de dados genéticos e identificam padrões associados a
+                        diferentes doenças, contribuindo para o avanço da <strong>medicina personalizada</strong>.</p>
+                    <p><strong>Exemplo:</strong> Identificação de biomarcadores para tratamentos direcionados.</p>
+                </div>
+            </div>
+
+            <!-- Caso de destaque: Retinopatia Diabética -->
+            <div class="caso-destaque">
+                <h3><i class="material-icons">visibility</i> Caso de Destaque: Retinopatia Diabética</h3>
+                <p>Um exemplo da aplicação da IA na medicina diagnóstica é o uso de <strong>redes neurais
+                        profundas</strong> para a análise e classificação de imagens de retinopatia diabética, uma das
+                    principais causas de cegueira no mundo.</p>
+                <p>Em países com escassez de oftalmologistas especializados em áreas remotas, o rastreamento em massa da
+                    retinopatia diabética é um desafio. Sistemas de IA, treinados em milhões de imagens de retina de
+                    alta resolução rotuladas por especialistas, conseguem analisar novas imagens com uma
+                    <strong>acurácia comparável ou, em alguns casos, superior</strong> à de médicos humanos
+                    <cite>(Gulshan et al., 2016)</cite>.
+                </p>
+                <div class="info-box" style="margin-top: 15px; background: white;">
+                    <strong><i class="material-icons">trending_up</i> Impacto:</strong> Ampliação do acesso a
+                    diagnósticos precisos em regiões com escassez de especialistas, redução de custos e agilidade no
+                    tratamento.
+                </div>
+            </div>
+        </section>
+
+        <!-- IA no Meio Ambiente -->
+        <section>
+            <h2>🌿 IA no Meio Ambiente: Monitoramento e Conservação</h2>
+
+            <div class="aplicacao-grid">
+                <div class="aplicacao-card" style="border-top-color: #28a745;">
+                    <i class="material-icons">satellite</i>
+                    <h3>Monitoramento por Satélite</h3>
+                    <p>O uso combinado de <strong>sensores remotos, imagens de satélite e algoritmos de aprendizado de
+                            máquina</strong> permite monitorar grandes áreas geográficas de forma contínua.</p>
+                    <p><strong>Exemplo:</strong> Detecção de desmatamento na Amazônia em tempo real.</p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">pets</i>
+                    <h3>Biodiversidade e Conservação</h3>
+                    <p>Modelos computacionais analisam dados ecológicos e identificam padrões relacionados à
+                        distribuição de espécies, contribuindo para o desenvolvimento de políticas de conservação mais
+                        eficazes.</p>
+                    <p><strong>Exemplo:</strong> Monitoramento acústico de aves no Pantanal.</p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #0066cc;">
+                    <i class="material-icons">forest</i>
+                    <h3>Identificação de Árvores</h3>
+                    <p>Pesquisas combinam diferentes técnicas computacionais para ampliar a precisão na identificação de
+                        árvores em imagens aéreas de baixa resolução <cite>(Ferreira et al., 2025)</cite>.</p>
+                    <p><strong>Exemplo:</strong> Mapeamento de espécies arbóreas em áreas de preservação.</p>
+                </div>
+            </div>
+
+            <!-- Caso de destaque: Monitoramento Acústico no Pantanal -->
+            <div class="exemplo-pesquisa">
+                <h4><i class="material-icons">mic</i> Pesquisa UFMS: Monitoramento Acústico da Biodiversidade do
+                    Pantanal</h4>
+                <p>Pesquisadores da UFMS e parceiros têm utilizado <strong>Inteligência Artificial para monitorar a
+                        biodiversidade do Pantanal</strong> por meio de gravações acústicas. O projeto utiliza técnicas
+                    de rede neural artificial (incluindo deep learning), Random Forest e Support Vector Machine para
+                    identificar espécies de aves e outros animais a partir de seus cantos <cite>(Ventura et al.,
+                        2020)</cite>.</p>
+                <p><strong>Impacto:</strong> O monitoramento acústico automatizado permite coletar dados em larga
+                    escala, identificar padrões de comportamento e distribuição de espécies, e apoiar políticas públicas
+                    de conservação.</p>
+                <div class="info-box" style="margin-top: 10px; background: white;">
+                    <strong><i class="material-icons">data_usage</i> Dados do Projeto:</strong> O INAU Pantanal Biodata
+                    Center é o primeiro banco de dados audiovisual para áreas úmidas do Brasil, reunindo milhares de
+                    gravações e imagens da fauna pantaneira.
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">nature</i> “O uso combinado de sensores
+                remotos, imagens de satélite e algoritmos de aprendizado de máquina permite monitorar grandes áreas
+                geográficas de forma contínua, contribuindo para a identificação de impactos ambientais e para o
+                planejamento de estratégias de preservação.”
+            </div>
+        </section>
+
+        <!-- IA nos Direitos Humanos -->
+        <section>
+            <h2>🤝 IA nos Direitos Humanos: Análise e Proteção</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🔍 Monitoramento de Violações</h4>
+                    <p>Sistemas de análise de dados podem auxiliar na <strong>identificação de padrões</strong>
+                        associados a violações de direitos, permitindo monitorar situações de risco em diferentes
+                        contextos sociais.</p>
+                    <ul>
+                        <li><strong>Exemplo 1:</strong> Análise de relatórios de organizações de direitos humanos</li>
+                        <li><strong>Exemplo 2:</strong> Monitoramento de discursos de ódio em redes sociais</li>
+                        <li><strong>Exemplo 3:</strong> Identificação de padrões de discriminação em processos judiciais
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📊 Análise de Dados e Políticas Públicas</h4>
+                    <p>Ferramentas de análise automatizada examinam grandes volumes de documentos, relatórios e dados
+                        públicos para identificar tendências e apoiar a formulação de estratégias de proteção de
+                        direitos fundamentais.</p>
+                    <ul>
+                        <li><strong>Exemplo:</strong> Análise de dados sobre desigualdade social</li>
+                        <li><strong>Exemplo:</strong> Identificação de padrões de exclusão em políticas públicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="atencao-box-ia">
+                <h4><i class="material-icons">warning</i> Atenção: Riscos e Desafios</h4>
+                <p>A utilização da IA nesses contextos exige atenção especial a <strong>questões éticas e de
+                        privacidade</strong>. A análise de dados sensíveis relacionados à saúde ou a direitos humanos
+                    deve ser conduzida com rigorosos critérios de proteção de informações e respeito à dignidade humana.
+                </p>
+                <p>Além disso, é fundamental evitar que sistemas automatizados reproduzam ou amplifiquem
+                    <strong>desigualdades existentes</strong> na sociedade. Algoritmos treinados com dados enviesados
+                    podem gerar resultados que reforçam padrões de exclusão ou discriminação.
+                </p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">gavel</i> Princípios para Uso Responsável</h4>
+                <ul>
+                    <li><strong>Transparência:</strong> Clareza sobre como os dados são coletados e utilizados</li>
+                    <li><strong>Equidade:</strong> Garantia de que os sistemas não perpetuem discriminação</li>
+                    <li><strong>Privacidade:</strong> Proteção rigorosa de dados sensíveis</li>
+                    <li><strong>Responsabilidade:</strong> Supervisão humana e prestação de contas</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Considerações Finais -->
+        <section>
+            <h2>🎯 Considerações Finais</h2>
+            <div class="detalhe-conceito">
+                <p>A análise das aplicações interdisciplinares da Inteligência Artificial evidencia seu papel na
+                    <strong>transformação de diferentes setores</strong> da sociedade contemporânea. Em áreas como
+                    educação, saúde, meio ambiente, vida cotidiana e direitos humanos, sistemas inteligentes podem
+                    apoiar a análise de dados, a identificação de padrões e a construção de soluções inovadoras.
+                </p>
+                <p>Essas aplicações demonstram o potencial da IA para <strong>ampliar capacidades humanas</strong> de
+                    interpretação, planejamento e resolução de problemas. No entanto, sua utilização exige atenção aos
+                    limites dos sistemas automatizados, à qualidade dos dados e aos princípios de ética, transparência e
+                    responsabilidade social.</p>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <h4><i class="material-icons">question_answer</i> Mensagem Final</h4>
+                <p>Nesse sentido, a <strong>colaboração entre diferentes áreas do conhecimento</strong> é fundamental
+                    para desenvolver soluções mais justas, eficazes e adequadas às complexidades dos problemas
+                    contemporâneos.</p>
+                <p><strong>Compreender as aplicações interdisciplinares da IA significa reconhecer tanto suas
+                        possibilidades quanto seus riscos.</strong></p>
+            </div>
+
+            <div class="principio-item">
+                <div class="principio-numero">1</div>
+                <div><strong>Potencial Transformador:</strong> A IA pode revolucionar a saúde, o meio ambiente e os
+                    direitos humanos com soluções inovadoras.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">2</div>
+                <div><strong>Responsabilidade:</strong> O uso da IA exige rigor ético, transparência e proteção de dados
+                    sensíveis.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">3</div>
+                <div><strong>Colaboração Interdisciplinar:</strong> A integração entre áreas do conhecimento é essencial
+                    para soluções mais justas e eficazes.</div>
+            </div>
+        </section>
+
+        <!-- Glossário e Referências -->
+        <section>
+            <h2>📌 Glossário da Unidade 2</h2>
+            <div class="glossario-item"><span class="glossario-termo">Visão Computacional</span> <span>Área da IA que
+                    permite a máquinas interpretar e analisar imagens e vídeos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Medicina Personalizada</span> <span>Abordagem que
+                    utiliza informações genéticas e clínicas para tratamentos individualizados.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Monitoramento Ambiental</span> <span>Uso de
+                    sensores e algoritmos para acompanhar ecossistemas e mudanças climáticas.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Redes Neurais Profundas</span> <span>Arquitetura
+                    de IA com múltiplas camadas para análise de padrões complexos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Viés Algorítmico</span> <span>Distorções em
+                    sistemas de IA que podem resultar em discriminação ou injustiça.</span></div>
+        </section>
+
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 FERREIRA, Alessandro dos Santos et al.</strong> Data augmentation and resolution enhancement
+                using GANs and diffusion models for tree segmentation. CoRR, vol. abs/2505.15077, 2025.
+            </div>
+            <div class="referencia">
+                <strong>📗 GARCIA, Ana Cristina Bicharra.</strong> Ética e inteligência artificial. Computação Brasil,
+                n. 43, p. 14–22, 2020.
+            </div>
+            <div class="referencia">
+                <strong>📙 GULSHAN, Varun et al.</strong> Development and validation of a deep learning algorithm for
+                detection of diabetic retinopathy in retinal fundus photographs. JAMA, v. 316, n. 22, p. 2402–2410,
+                2016.
+            </div>
+            <div class="referencia">
+                <strong>📕 RUSSELL, Stuart J.; NORVIG, Peter.</strong> Artificial intelligence: a modern approach. 4.
+                ed. New York: Pearson, 2021.
+            </div>
+            <div class="referencia">
+                <strong>📘 VENTURA, Thiago M. et al.</strong> Inteligência artificial a serviço da biodiversidade do
+                Pantanal. Computação Brasil, n. 43, p. 23–26, 2020.
+            </div>
+
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Desafio Prático</h4>
+                <p><strong>Reflexão guiada:</strong> Escolha uma das áreas abordadas (saúde, meio ambiente ou direitos
+                    humanos) e pesquise uma aplicação real de IA:</p>
+                <ol>
+                    <li><strong>Descreva:</strong> Qual é o problema que a IA ajuda a resolver?</li>
+                    <li><strong>Analise:</strong> Quais são os benefícios e os riscos identificados?</li>
+                    <li><strong>Proponha:</strong> Como garantir o uso ético e responsável dessa aplicação?</li>
+                </ol>
+                <p><strong>Compartilhe suas descobertas no fórum da disciplina!</strong></p>
+            </div>
+        </section>
+
+        <!-- Síntese e chamada para ação -->
+        <section>
+            <h2>✅ Síntese da Unidade 2</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">healing</i>
+                    <h4>IA na Saúde</h4>
+                    <p>Diagnóstico por imagem, monitoramento de pacientes e pesquisa biomédica impulsionam avanços na
+                        medicina.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">nature</i>
+                    <h4>IA no Meio Ambiente</h4>
+                    <p>Monitoramento de ecossistemas, conservação da biodiversidade e análise de mudanças climáticas.
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">gavel</i>
+                    <h4>IA nos Direitos Humanos</h4>
+                    <p>Análise de padrões de violações e apoio à formulação de políticas de proteção.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> No Módulo 3 vamos aprofundar em
+                <strong>Ética, Vieses e Responsabilidade Algorítmica</strong>. Continue seus estudos e participe do
+                fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 2 - Unidade 2: IA na Saúde, Meio Ambiente e
+            Direitos Humanos</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

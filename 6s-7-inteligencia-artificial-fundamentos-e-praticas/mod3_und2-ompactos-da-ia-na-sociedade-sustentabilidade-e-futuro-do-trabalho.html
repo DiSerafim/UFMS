@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 2: Impactos da IA na Sociedade, Sustentabilidade e Futuro do Trabalho | Inteligência
+        Artificial - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares */
+        .conceito-card {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .impacto-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .impacto-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .impacto-card .material-icons {
+            font-size: 2rem;
+            color: #1a4d8c;
+        }
+
+        .comparacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparacao-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #e0e8f0;
+        }
+
+        .comparacao-item.automatizavel {
+            border-color: #ff8c00;
+            background: #fff8e8;
+        }
+
+        .comparacao-item.humana {
+            border-color: #0066cc;
+            background: #e8f0fe;
+        }
+
+        .comparacao-item .icone {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .comparacao-item h4 {
+            margin: 10px 0;
+        }
+
+        .competencia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .competencia-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s;
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .competencia-card .material-icons {
+            font-size: 2rem;
+            color: #1a4d8c;
+        }
+
+        .desigualdade-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .desigualdade-item {
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .desigualdade-item.menor {
+            background: #fff5f0;
+            border: 2px solid #dc3545;
+        }
+
+        .desigualdade-item.maior {
+            background: #e8f5e9;
+            border: 2px solid #28a745;
+        }
+
+        .desigualdade-item .icone {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin: 15px 0;
+        }
+
+        .pergunta-reflexao {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+        }
+
+        .sustentabilidade-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .sustentabilidade-box h3 {
+            color: #1a4d8c;
+            margin-top: 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 130px;
+        }
+
+        .btn-saiba-mais {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 5px 5px 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn-saiba-mais:hover {
+            background: #004d99;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-saiba-mais.verde {
+            background: #28a745;
+        }
+
+        .btn-saiba-mais.verde:hover {
+            background: #1e7e34;
+        }
+
+        @media (max-width: 768px) {
+            .comparacao-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .desigualdade-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .competencia-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .glossario-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .glossario-termo {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 3 - Ética, Cidadania Digital e Impactos da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 2 – Impactos da IA na Sociedade, Sustentabilidade e Futuro do Trabalho</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+
+            <a href="mod3_und1-etica-cidadania-digital-e-inovacao-responsavel.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 1
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hTN2yseAgU0" frameborder="0"
+                    title="Inteligência Artificial - Módulo 3 - Unidade 2 - Impactos da IA na Sociedade, Sustentabilidade e Futuro do Trabalho"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 3 - Unidade 2">
+                [UFMS Digital] Inteligência Artificial - Módulo 3 - Unidade 2 (Impactos da IA na Sociedade,
+                Sustentabilidade e Futuro do Trabalho)
+            </p>
+            <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+            <p>📅 Disponível desde 2026 • Duração: 22min</p>
+        </section>
+
+        <!-- Apresentação -->
+        <section>
+            <h2>🧠 IA e a Transformação da Sociedade</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🏭 Automação e Eficiência</h4>
+                    <p>A expansão da Inteligência Artificial tem provocado <strong>mudanças significativas</strong> na
+                        organização das atividades econômicas e produtivas. Sistemas automatizados são utilizados para
+                        executar tarefas de análise de dados, processamento de informações e tomada de decisões em
+                        diferentes setores da economia.</p>
+                    <p>A automação de processos baseada em IA pode aumentar significativamente a <strong>eficiência
+                            operacional</strong> de organizações públicas e privadas, analisando grandes volumes de
+                        dados em tempo reduzido e identificando padrões e tendências <cite>(Russell; Norvig,
+                            2021)</cite>.</p>
+                </div>
+                <div class="card">
+                    <h4>💼 Impactos no Trabalho</h4>
+                    <p>A adoção dessas tecnologias tem provocado debates sobre suas implicações no <strong>mercado de
+                            trabalho</strong>. A automação de determinadas tarefas pode reduzir a demanda por algumas
+                        funções tradicionais, ao mesmo tempo em que cria novas oportunidades em áreas relacionadas ao
+                        desenvolvimento e à gestão de tecnologias digitais.</p>
+                    <div class="info-box" style="margin-top: 10px;">
+                        <strong><i class="material-icons">question_answer</i> Para refletir:</strong> A quantidade de
+                        postos de trabalho tem a tendência de reduzir ou aumentar com o uso das ferramentas de IA? Por
+                        quê?
+                    </div>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">trending_up</i> “Diversos estudos indicam que
+                a Inteligência Artificial tende a transformar atividades profissionais em vez de substituí-las
+                completamente. Muitas ocupações passam por processos de reconfiguração, nos quais tarefas rotineiras são
+                automatizadas enquanto atividades que exigem criatividade, análise crítica e interação social tornam-se
+                mais valorizadas.” <cite>(Kaufman, 2022)</cite>
+            </div>
+        </section>
+
+        <!-- Automação vs Tarefas Humanas -->
+        <section>
+            <h2>⚖️ Automação de Tarefas vs. Substituição de Profissões</h2>
+
+            <p>É importante diferenciar a <strong>automação de tarefas</strong> da <strong>substituição integral de
+                    profissões</strong>. Em muitos casos, a Inteligência Artificial não elimina uma ocupação inteira,
+                mas modifica a forma como determinadas atividades são realizadas.</p>
+
+            <div class="comparacao-grid">
+                <div class="comparacao-item automatizavel">
+                    <span class="icone">🤖</span>
+                    <h4>Tarefas Automatizáveis</h4>
+                    <p>Tarefas <strong>repetitivas, padronizadas</strong> ou baseadas em grande volume de dados tendem a
+                        ser mais facilmente automatizadas e realizadas por sistemas.</p>
+                    <ul style="text-align: left;">
+                        <li>Análise de dados estruturados</li>
+                        <li>Processamento de transações</li>
+                        <li>Classificação de documentos</li>
+                        <li>Tarefas de entrada de dados</li>
+                        <li>Reconhecimento de padrões simples</li>
+                    </ul>
+                </div>
+                <div class="comparacao-item humana">
+                    <span class="icone">🧑‍💻</span>
+                    <h4>Tarefas Humanas</h4>
+                    <p>Atividades que envolvem <strong>julgamento ético, criatividade, negociação, cuidado, escuta,
+                            empatia</strong> e interpretação contextual dependem fortemente da atuação humana.</p>
+                    <ul style="text-align: left;">
+                        <li>Tomada de decisão complexa</li>
+                        <li>Diagnóstico com empatia</li>
+                        <li>Criação artística e inovação</li>
+                        <li>Mediação de conflitos</li>
+                        <li>Liderança e gestão de pessoas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conceito-card">
+                <h3>🔄 Novo Arranjo Sociotécnico</h3>
+                <p>Essa transformação exige que trabalhadores e instituições compreendam a IA como parte de um
+                    <strong>novo arranjo sociotécnico</strong>. Nesse arranjo, pessoas e sistemas inteligentes atuam de
+                    forma combinada, redistribuindo funções, responsabilidades e competências.
+                </p>
+                <p>Assim, o debate sobre o futuro do trabalho não deve se limitar à pergunta sobre quais profissões
+                    serão substituídas, mas deve considerar como <strong>diferentes áreas profissionais serão
+                        reconfiguradas</strong> pela presença dessas tecnologias.</p>
+            </div>
+        </section>
+
+        <!-- Competências do Futuro -->
+        <section>
+            <h2>🧠 Competências para o Futuro</h2>
+
+            <p>No contexto da formação universitária, as competências para o futuro envolvem mais do que saber utilizar
+                ferramentas digitais. Elas abrangem três dimensões principais:</p>
+
+            <div class="competencia-grid">
+                <div class="competencia-card" style="border-top-color: #0066cc;">
+                    <i class="material-icons">search</i>
+                    <h3>Competências de Investigação</h3>
+                    <ul>
+                        <li>Formular bons problemas</li>
+                        <li>Interpretar dados</li>
+                        <li>Avaliar respostas geradas por sistemas automatizados</li>
+                        <li>Reconhecer limites técnicos e éticos das soluções propostas</li>
+                    </ul>
+                </div>
+
+                <div class="competencia-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">psychology</i>
+                    <h3>Competências Críticas</h3>
+                    <ul>
+                        <li>Questionar fontes</li>
+                        <li>Comparar informações</li>
+                        <li>Reconhecer vieses em sistemas</li>
+                        <li>Avaliar os interesses envolvidos na circulação de conteúdos digitais</li>
+                    </ul>
+                </div>
+
+                <div class="competencia-card" style="border-top-color: #28a745;">
+                    <i class="material-icons">people</i>
+                    <h3>Competências Socioemocionais</h3>
+                    <ul>
+                        <li>Dialogar com equipes multidisciplinares</li>
+                        <li>Explicar resultados</li>
+                        <li>Justificar escolhas</li>
+                        <li>Avaliar impactos sobre diferentes grupos sociais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <strong><i class="material-icons">lightbulb</i> Mensagem-chave:</strong> A cidadania digital também se
+                expressa na forma como cada pessoa consome, produz e compartilha informações em ambientes mediados por
+                algoritmos. O profissional do futuro tende a ser aquele capaz de integrar conhecimento técnico,
+                sensibilidade ética e compreensão crítica dos contextos em que atua.
+            </div>
+        </section>
+
+        <!-- Impactos Culturais -->
+        <section>
+            <h2>📱 Impactos Culturais da IA</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎨 Produção de Conhecimento</h4>
+                    <p>Além dos impactos econômicos, a IA também influencia <strong>práticas culturais</strong> e formas
+                        de produção de conhecimento. Sistemas generativos, mecanismos de recomendação e plataformas
+                        digitais afetam a maneira como as pessoas:</p>
+                    <ul>
+                        <li>Acessam informações</li>
+                        <li>Produzem conteúdos</li>
+                        <li>Consomem notícias</li>
+                        <li>Estudam e escrevem</li>
+                        <li>Interagem socialmente</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📊 Mediação Algorítmica</h4>
+                    <p>A mediação algorítmica pode influenciar <strong>quais conteúdos ganham visibilidade</strong> e
+                        quais permanecem pouco acessíveis. Recomendações automatizadas, filtros personalizados e
+                        sistemas de ranqueamento organizam parte significativa da experiência digital contemporânea.</p>
+                    <p><strong>Reflexão necessária:</strong> Diversidade informacional, pluralidade de perspectivas e
+                        autonomia dos sujeitos diante das plataformas digitais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desigualdades Sociais -->
+        <section>
+            <h2>⚖️ IA e Desigualdades Sociais</h2>
+
+            <p>Os impactos da IA também precisam ser analisados do ponto de vista das <strong>desigualdades sociais e
+                    econômicas</strong>. O acesso a sistemas avançados de IA, infraestrutura tecnológica, conectividade
+                e formação adequada não estão distribuídos de maneira igualitária.</p>
+
+            <div class="desigualdade-grid">
+                <div class="desigualdade-item menor">
+                    <span class="icone">⬇️</span>
+                    <h4>Menor Acesso</h4>
+                    <p>Grupos com menor acesso à internet, menor letramento digital ou menor disponibilidade de formação
+                        continuada podem enfrentar <strong>novas barreiras de participação social e
+                            profissional</strong>.</p>
+                    <ul style="text-align: left;">
+                        <li>Comunidades rurais e periféricas</li>
+                        <li>Populações de baixa renda</li>
+                        <li>Idosos com baixo letramento digital</li>
+                        <li>Pessoas com deficiência</li>
+                    </ul>
+                </div>
+                <div class="desigualdade-item maior">
+                    <span class="icone">⬆️</span>
+                    <h4>Maior Acesso</h4>
+                    <p>Pessoas com maior acesso a ferramentas digitais, formação tecnológica e ambientes de inovação
+                        tendem a se <strong>beneficiar mais rapidamente</strong> das possibilidades oferecidas pela IA.
+                    </p>
+                    <ul style="text-align: left;">
+                        <li>Centros urbanos com boa infraestrutura</li>
+                        <li>Profissionais com formação tecnológica</li>
+                        <li>Ambientes de inovação e pesquisa</li>
+                        <li>Instituições com recursos digitais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial" style="border-left-color: #0066cc;">
+                <i class="material-icons" style="vertical-align: middle;">gavel</i> “A inovação tecnológica não é
+                neutra. Para que a IA contribua para o desenvolvimento social, é necessário que sua implementação seja
+                acompanhada por <strong>políticas de inclusão digital, formação crítica e ampliação do acesso</strong>
+                às tecnologias.”
+            </div>
+        </section>
+
+        <!-- Sustentabilidade Ambiental -->
+        <section>
+            <h2>🌿 IA e Sustentabilidade Ambiental</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🌱 Potencial Sustentável da IA</h4>
+                    <p>Tecnologias baseadas em análise de dados podem contribuir para:</p>
+                    <ul>
+                        <li>Otimizar o uso de recursos naturais</li>
+                        <li>Melhorar sistemas de monitoramento ambiental</li>
+                        <li>Apoiar estratégias de mitigação das mudanças climáticas</li>
+                        <li>Prever desastres naturais</li>
+                        <li>Otimizar distribuição de energia</li>
+                        <li>Desenvolver fontes renováveis de energia</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚡ Impactos Ambientais da IA</h4>
+                    <p>A própria infraestrutura tecnológica associada à IA apresenta <strong>impactos
+                            ambientais</strong>:</p>
+                    <ul>
+                        <li>Consumo significativo de energia elétrica</li>
+                        <li>Uso de água para resfriamento de data centers</li>
+                        <li>Demanda por equipamentos especializados</li>
+                        <li>Geração de resíduos eletrônicos</li>
+                        <li>Pegada de carbono do treinamento de modelos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sustentabilidade-box">
+                <h3><i class="material-icons">nature</i> Sustentabilidade Digital</h3>
+                <p>A <strong>sustentabilidade digital</strong> envolve a análise dos impactos ambientais associados ao
+                    desenvolvimento, treinamento, manutenção e uso de tecnologias digitais.</p>
+                <p>Isso não significa que a IA deva ser rejeitada, mas que seu uso precisa ser <strong>planejado de
+                        forma proporcional e responsável</strong>. Nem toda tarefa exige modelos de grande porte ou alto
+                    custo computacional. Soluções mais simples, eficientes e adequadas ao problema podem produzir bons
+                    resultados com menor impacto ambiental.</p>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                    <a href="#" class="btn-saiba-mais"
+                        onclick="alert('Abrindo reportagem da BBC Brasil sobre consumo de água por Data Centers')">
+                        <i class="material-icons">article</i> Quanta água uma IA "bebe"?
+                    </a>
+                    <a href="#" class="btn-saiba-mais verde"
+                        onclick="alert('Abrindo matéria da IBM sobre Data Centers verdes')">
+                        <i class="material-icons">eco</i> O que é um Data Center verde?
+                    </a>
+                </div>
+            </div>
+
+            <div class="conceito-card">
+                <h3>⚖️ Equilibrando Inovação e Sustentabilidade</h3>
+                <p>Pensar a sustentabilidade digital significa avaliar a <strong>relação entre benefício social, custo
+                        ambiental e finalidade do uso da tecnologia</strong>. Uma aplicação de IA voltada ao
+                    monitoramento ambiental, à saúde pública ou à prevenção de desastres pode apresentar alto valor
+                    social, mas deve ser desenvolvida com atenção à eficiência energética, à transparência e à
+                    responsabilidade na gestão dos recursos utilizados.</p>
+                <p><strong>Estratégias para reduzir o impacto ambiental:</strong></p>
+                <ul>
+                    <li>Otimização de algoritmos</li>
+                    <li>Desenvolvimento de hardware mais eficiente</li>
+                    <li>Uso de fontes renováveis de energia</li>
+                    <li>Modelos mais leves e específicos</li>
+                    <li>Reutilização de infraestrutura</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Perguntas para Reflexão -->
+        <section>
+            <h2>🤔 Perguntas para Reflexão</h2>
+
+            <p>O debate sobre IA, sociedade, sustentabilidade e futuro do trabalho exige uma <strong>postura crítica e
+                    responsável</strong>. É necessário perguntar:</p>
+
+            <div class="pergunta-reflexao">
+                <h4><i class="material-icons">help</i> Quem se beneficia com determinada tecnologia?</h4>
+                <p>Analisar os interesses envolvidos e identificar quais grupos sociais são priorizados no
+                    desenvolvimento e implementação de sistemas de IA.</p>
+            </div>
+
+            <div class="pergunta-reflexao" style="border-left-color: #dc3545;">
+                <h4><i class="material-icons">warning</i> Quem pode ser prejudicado?</h4>
+                <p>Identificar potenciais impactos negativos, exclusões ou discriminações que podem ser geradas ou
+                    amplificadas pela tecnologia.</p>
+            </div>
+
+            <div class="pergunta-reflexao" style="border-left-color: #28a745;">
+                <h4><i class="material-icons">nature</i> Quais impactos ambientais estão envolvidos?</h4>
+                <p>Avaliar o custo ambiental da tecnologia e buscar soluções mais sustentáveis e eficientes.</p>
+            </div>
+
+            <div class="pergunta-reflexao" style="border-left-color: #ff8c00;">
+                <h4><i class="material-icons">gavel</i> Quais mecanismos de supervisão humana serão adotados?</h4>
+                <p>Garantir que decisões críticas mantenham supervisão humana e que existam mecanismos de prestação de
+                    contas.</p>
+            </div>
+
+            <div class="citacao-diferencial" style="border-left-color: #0066cc;">
+                <i class="material-icons" style="vertical-align: middle;">build</i> “Essas perguntas ajudam a
+                transformar a inovação tecnológica em uma prática alinhada ao <strong>interesse público, à justiça
+                    social e ao desenvolvimento sustentável</strong>.”
+            </div>
+        </section>
+
+        <!-- Glossário -->
+        <section>
+            <h2>📌 Glossário da Unidade 2</h2>
+            <div class="glossario-item"><span class="glossario-termo">Automação</span> <span>Uso de sistemas
+                    automatizados para executar tarefas anteriormente realizadas por humanos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Arranjo Sociotécnico</span> <span>Integração entre
+                    sistemas técnicos e atores sociais em um contexto organizacional.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Sustentabilidade Digital</span> <span>Análise e
+                    mitigação dos impactos ambientais de tecnologias digitais.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Mediação Algorítmica</span> <span>Influência de
+                    algoritmos na organização e apresentação de informações digitais.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Inclusão Digital</span> <span>Garantia de acesso e
+                    capacitação para uso de tecnologias digitais por todos os grupos sociais.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Pegada de Carbono Digital</span> <span>Emissões de
+                    gases de efeito estufa associadas à infraestrutura digital.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Data Center Verde</span> <span>Centro de
+                    processamento de dados que utiliza práticas sustentáveis para reduzir impacto ambiental.</span>
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 KAUFMAN, Dora.</strong> Desmistificando a inteligência artificial. Belo Horizonte: Autêntica,
+                2022. ISBN 9786559281596.
+            </div>
+            <div class="referencia">
+                <strong>📗 RUSSELL, Stuart J.; NORVIG, Peter.</strong> Artificial intelligence: a modern approach. 4.
+                ed. New York: Pearson, 2021. ISBN 9780134610993.
+            </div>
+            <div class="referencia">
+                <strong>📙 VENTURA, Thiago M. et al.</strong> Inteligência artificial a serviço da biodiversidade do
+                Pantanal. Computação Brasil, n. 43, p. 23–26, 2020.
+            </div>
+            <div class="referencia">
+                <strong>📕 GARCIA, Ana Cristina Bicharra.</strong> Ética e inteligência artificial. Computação Brasil,
+                n. 43, p. 14–22, 2020.
+            </div>
+            <div class="referencia">
+                <strong>🌐 OECD.</strong> AI Principles. 2019 (atualizado 2024).
+            </div>
+            <div class="referencia">
+                <strong>🌐 UNESCO.</strong> Recomendação sobre a Ética da Inteligência Artificial. 2021.
+            </div>
+
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Desafio Prático</h4>
+                <p><strong>Reflexão guiada sobre o futuro do trabalho:</strong></p>
+                <ol>
+                    <li><strong>Identifique:</strong> Em sua área de atuação, quais tarefas podem ser automatizadas e
+                        quais exigem habilidades humanas?</li>
+                    <li><strong>Analise:</strong> Como você pode desenvolver as competências necessárias para trabalhar
+                        com sistemas de IA?</li>
+                    <li><strong>Proponha:</strong> Que medidas poderiam ser adotadas para garantir que a IA promova
+                        inclusão e não amplie desigualdades?</li>
+                </ol>
+                <p><strong>Compartilhe suas reflexões no fórum da disciplina!</strong></p>
+            </div>
+        </section>
+
+        <!-- Considerações Finais -->
+        <section>
+            <h2>✅ Considerações Finais do Módulo 3</h2>
+
+            <div class="conceito-card">
+                <p>A expansão da Inteligência Artificial tem provocado <strong>transformações profundas</strong> na
+                    forma como as sociedades produzem conhecimento, organizam atividades econômicas, estruturam
+                    interações sociais e projetam o futuro do trabalho. Essas transformações não são apenas técnicas,
+                    mas também <strong>éticas, sociais, culturais, econômicas e ambientais</strong>.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">gavel</i>
+                    <h4>Ética como Fundamento</h4>
+                    <p>Transparência, explicabilidade, mitigação de vieses e responsabilidade são essenciais para o
+                        desenvolvimento de tecnologias mais justas.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">smartphone</i>
+                    <h4>Cidadania Digital</h4>
+                    <p>Avaliar criticamente informações, reconhecer vieses e interpretar resultados gerados por
+                        algoritmos são competências necessárias.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">nature</i>
+                    <h4>Sustentabilidade e Inovação</h4>
+                    <p>A IA pode ampliar capacidades humanas, mas seus benefícios dependem de escolhas responsáveis que
+                        considerem impactos sociais e ambientais.</p>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <strong><i class="material-icons">question_answer</i> Mensagem Final:</strong>
+                <p>A reflexão sobre ética, cidadania digital e impactos sociais da Inteligência Artificial constitui
+                    etapa essencial para orientar o uso consciente dessas tecnologias. Mais do que acompanhar a
+                    inovação, trata-se de compreender como ela pode ser conduzida de forma <strong>crítica, inclusiva e
+                        comprometida com o desenvolvimento social</strong>.</p>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="mod3_checkout-presenca.html" class="btn-visualizar"
+                    style="background: linear-gradient(135deg, #28a745, #1e7e34);">
+                    <i class="material-icons">assignment_turned_in</i> Ir para o Checkout de Presença
+                </a>
+            </div>
+        </section>
+
+        <!-- Reflexão Final do Curso -->
+        <section>
+            <h2>🎯 Reflexão Final do Curso</h2>
+
+            <div class="conceito-card" style="background: linear-gradient(135deg, #f8fafc, #eef2f8);">
+                <p>A Inteligência Artificial consolidou-se como uma das <strong>tecnologias centrais da transformação
+                        digital contemporânea</strong>. Ela influencia profundamente a forma como informações são
+                    produzidas, analisadas e utilizadas em diferentes contextos sociais.</p>
+                <p>Ao longo do percurso desenvolvido, tornou-se possível compreender que essa área <strong>não se
+                        restringe a um conjunto de técnicas computacionais</strong>. Trata-se de um campo
+                    interdisciplinar, que articula conhecimentos de diversas áreas para resolver problemas complexos e
+                    apoiar processos decisórios.</p>
+                <p>Concluímos este material reforçando que utilizar Inteligência Artificial envolve não apenas o domínio
+                    de conceitos técnicos, mas também a capacidade de refletir sobre suas implicações e aplicações de
+                    maneira <strong>crítica e responsável</strong>. A tecnologia deve ser compreendida como uma
+                    ferramenta que amplia possibilidades, mas cujo uso exige consciência, ética e compromisso com a
+                    produção de conhecimento de qualidade e com o desenvolvimento social.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 3 - Unidade 2: Impactos da IA na Sociedade,
+            Sustentabilidade e Futuro do Trabalho</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

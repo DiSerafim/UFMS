@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 1: IA na Educação, Vida Cotidiana e Tomada de Decisão | Inteligência Artificial - UFMS
+        Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares para melhorar a experiência avançada */
+        .detalhe-conceito {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cddfe7;
+        }
+
+        .topicos-avancados {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topicos-avancados h3,
+        .topicos-avancados h4 {
+            color: #ffd966;
+        }
+
+        .badge-cert {
+            background-color: #1e466e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .grid-competencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .competencia-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .exemplo-mercado {
+            background: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 110px;
+        }
+
+        .aplicacao-destaque-ia {
+            background: #fff8e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+
+        .desafio-etico-ia {
+            background: #fff5f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .trend-box-ia {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .trend-box-ia h4 {
+            color: #ffc107;
+        }
+
+        .hitl-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .hitl-box h3 {
+            color: #1a4d8c;
+        }
+
+        .aplicacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .aplicacao-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s;
+        }
+
+        .aplicacao-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .aplicacao-card .material-icons {
+            font-size: 2rem;
+            color: #1a4d8c;
+        }
+
+        .atencao-box-ia {
+            background: #fff3cd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 2 - Aplicações Interdisciplinares da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 1 – IA na Educação, Vida Cotidiana e Tomada de Decisão</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 1
+            </a>
+            <a href="mod2_und2-ia-na-saude-no-meio-ambiente-e-nos-direitos-humanos.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 2 Und 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Ut5P1oqDCTk" frameborder="0"
+                    title="Inteligência Artificial - Módulo 2 - Unidade 1 - IA na Educação, Vida Cotidiana e Tomada de Decisão"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 2 - Unidade 1">
+                [UFMS Digital] Inteligência Artificial - Módulo 2 - Unidade 1 (IA na Educação, Vida Cotidiana e Tomada
+                de Decisão)
+            </p>
+            <p>Profa. Esp. Karine Toazza</p>
+            <p>📅 Disponível desde 2026 • Duração: 22min</p>
+        </section>
+
+        <!-- Apresentação expandida -->
+        <section>
+            <h2>🧠 A IA como Tecnologia Transversal</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🤖 Características da IA Transversal</h4>
+                    <p>A inteligência artificial tem se consolidado como uma <strong>tecnologia transversal</strong>
+                        capaz de transformar diferentes setores da sociedade contemporânea. Sua aplicação ultrapassa os
+                        limites da ciência da computação, influenciando áreas como educação, saúde, economia, meio
+                        ambiente e gestão pública.</p>
+                    <p>Essa característica interdisciplinar decorre da capacidade dos sistemas inteligentes de:</p>
+                    <ul>
+                        <li>Analisar grandes volumes de dados</li>
+                        <li>Identificar padrões complexos</li>
+                        <li>Apoiar processos de tomada de decisão em contextos variados</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📈 Impacto em Diferentes Setores</h4>
+                    <p>A IA está presente em múltiplos contextos:</p>
+                    <ul>
+                        <li><strong>Vida Cotidiana:</strong> Assistentes virtuais, recomendações, navegação</li>
+                        <li><strong>Gestão de Organizações:</strong> Análise preditiva, tomada de decisão</li>
+                        <li><strong>Pesquisa Científica:</strong> Análise de dados complexos</li>
+                        <li><strong>Planejamento Estratégico:</strong> Políticas públicas, gestão urbana</li>
+                        <li><strong>Educação:</strong> Sistemas adaptativos, tutoria inteligente</li>
+                        <li><strong>Saúde e Meio Ambiente:</strong> Diagnósticos, monitoramento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detalhe-conceito">
+                <h3>🔬 IA na Pesquisa Científica</h3>
+                <p>No campo científico, a aplicação de métodos computacionais avançados possibilita explorar conjuntos
+                    de dados complexos provenientes de diversas áreas de pesquisa. Técnicas de análise automatizada têm
+                    sido utilizadas para investigar padrões em fenômenos ambientais, processos biológicos, sistemas
+                    econômicos e dinâmicas sociais <cite>(Russell; Norvig, 2021)</cite>.</p>
+                <p>Essa integração entre tecnologia e pesquisa científica contribui para <strong>acelerar
+                        descobertas</strong> e ampliar a compreensão de fenômenos complexos.</p>
+
+                <div class="exemplo-mercado" style="margin-top: 15px;">
+                    <h4><i class="material-icons">science</i> Exemplo UFMS: Visão Computacional na Aquicultura</h4>
+                    <p>Pesquisadores da UFMS desenvolveram uma abordagem baseada em <strong>visão computacional e
+                            rastreamento</strong> para automatizar a contagem de alevinos na aquicultura. A proposta
+                        busca substituir métodos manuais imprecisos e pouco eficientes <cite>(Souza et al.,
+                            2026)</cite>.</p>
+                    <p><strong>Impacto:</strong> Maior precisão, redução de custos e otimização do manejo na produção
+                        aquícola.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IA na Educação -->
+        <section>
+            <h2>🎓 IA na Educação: Ambientes Adaptativos e Personalização</h2>
+            <p>A aplicação da inteligência artificial na educação tem ampliado as possibilidades de desenvolvimento de
+                ambientes de aprendizagem mais <strong>dinâmicos e adaptativos</strong>. Sistemas inteligentes podem
+                analisar dados relacionados ao desempenho acadêmico, identificar padrões de aprendizagem e oferecer
+                informações que auxiliam na compreensão do progresso educacional.</p>
+
+            <div class="aplicacao-grid">
+                <div class="aplicacao-card">
+                    <i class="material-icons">recommend</i>
+                    <h3>Recomendação de Conteúdos</h3>
+                    <p>Sistemas sugerem materiais e atividades complementares com base no desempenho e interesses do
+                        aluno.</p>
+                    <p><strong>Exemplo:</strong> Plataformas que indicam vídeos, artigos ou exercícios personalizados.
+                    </p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">trending_up</i>
+                    <h3>Acompanhamento do Progresso</h3>
+                    <p>Análise contínua do desempenho acadêmico para identificar tendências e padrões de participação.
+                    </p>
+                    <p><strong>Exemplo:</strong> Dashboards que mostram evolução do aluno em tempo real.</p>
+                </div>
+
+                <div class="aplicacao-card" style="border-top-color: #28a745;">
+                    <i class="material-icons">warning</i>
+                    <h3>Identificação de Dificuldades</h3>
+                    <p>Sistemas detectam lacunas de aprendizagem e sugerem intervenções pedagógicas específicas.</p>
+                    <p><strong>Exemplo:</strong> Alertas para professores sobre alunos com risco de evasão.</p>
+                </div>
+            </div>
+
+            <div class="hitl-box">
+                <h3><i class="material-icons">people</i> IA Centrada no Humano (Human-in-the-Loop)</h3>
+                <p>No contexto educacional, destaca-se o conceito de <strong>Inteligência Artificial Centrada no
+                        Humano</strong>, frequentemente associado à abordagem conhecida como
+                    <strong>human-in-the-loop</strong>.
+                </p>
+                <p>Essa perspectiva considera que sistemas inteligentes devem atuar como <strong>ferramentas de apoio à
+                        análise de informações</strong>, mantendo o ser humano como responsável final pelas decisões. No
+                    campo educacional, essa abordagem reconhece que o julgamento pedagógico envolve aspectos
+                    interpretativos, contextuais e éticos que não podem ser totalmente automatizados <cite>(Shneiderman,
+                        2020)</cite>.</p>
+                <div class="info-box" style="margin-top: 15px; background: white;">
+                    <strong><i class="material-icons">lightbulb</i> Papel do Professor:</strong> A IA pode auxiliar na
+                    identificação de padrões de desempenho ou dificuldades de aprendizagem, mas a <strong>interpretação
+                        desses dados depende da análise crítica realizada pelo professor</strong>. O profissional da
+                    educação possui conhecimento contextual sobre o ambiente de aprendizagem, sobre as características
+                    socioculturais dos estudantes e sobre os objetivos pedagógicos da disciplina.
+                </div>
+            </div>
+
+            <div class="atencao-box-ia">
+                <h4><i class="material-icons">warning</i> Atenção: IA não substitui o professor</h4>
+                <p>A presença de sistemas inteligentes em ambientes educacionais <strong>não implica substituição do
+                        professor</strong>, mas sim a incorporação de novas ferramentas de apoio à prática pedagógica. O
+                    processo educativo envolve dimensões cognitivas, sociais e emocionais que exigem sensibilidade e
+                    interpretação humana.</p>
+            </div>
+        </section>
+
+        <!-- IA na Vida Cotidiana -->
+        <section>
+            <h2>📱 IA na Vida Cotidiana</h2>
+            <p>O avanço das tecnologias digitais permitiu que ferramentas baseadas em inteligência artificial fossem
+                incorporadas progressivamente às atividades cotidianas. Sistemas de recomendação utilizados em
+                plataformas digitais, assistentes virtuais, tradutores automáticos e mecanismos de busca são exemplos de
+                aplicações amplamente disseminadas <cite>(Kaufman, 2022)</cite>.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🗺️ Navegação e Mobilidade</h4>
+                    <p>Aplicativos de navegação utilizam algoritmos para analisar padrões de tráfego e sugerir rotas
+                        mais eficientes.</p>
+                    <ul>
+                        <li><strong>Google Maps:</strong> Previsão de tráfego em tempo real</li>
+                        <li><strong>Waze:</strong> Informações colaborativas sobre acidentes e radares</li>
+                        <li><strong>Uber/99:</strong> Otimização de rotas e preços dinâmicos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎬 Streaming e Recomendação</h4>
+                    <p>Plataformas de streaming utilizam sistemas de recomendação capazes de sugerir conteúdos com base
+                        em padrões de consumo previamente observados.</p>
+                    <ul>
+                        <li><strong>Netflix:</strong> Recomendações personalizadas de filmes e séries</li>
+                        <li><strong>Spotify:</strong> Playlists geradas automaticamente (Discover Weekly)</li>
+                        <li><strong>YouTube:</strong> Sugestão de vídeos baseada no histórico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exemplo-mercado">
+                <h4><i class="material-icons">shopping_cart</i> Comércio Eletrônico</h4>
+                <p>Algoritmos de Inteligência Artificial são utilizados para:</p>
+                <ul>
+                    <li><strong>Prever demandas de mercado</strong> – Análise de dados históricos de vendas</li>
+                    <li><strong>Recomendar produtos</strong> – Com base no comportamento do consumidor</li>
+                    <li><strong>Otimizar processos logísticos</strong> – Rotas de entrega e gestão de estoque</li>
+                </ul>
+                <p><strong>Exemplo:</strong> Amazon utiliza IA para recomendar produtos e prever necessidades de compra.
+                </p>
+            </div>
+        </section>
+
+        <!-- IA na Tomada de Decisão -->
+        <section>
+            <h2>📊 IA no Apoio à Tomada de Decisão</h2>
+            <p>Outro campo relevante de aplicação da Inteligência Artificial refere-se ao apoio à tomada de decisão em
+                contextos organizacionais. Sistemas de análise preditiva permitem examinar dados históricos e
+                identificar padrões que podem orientar estratégias institucionais em diferentes setores <cite>(Russell;
+                    Norvig, 2021)</cite>.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🏢 Contextos Organizacionais</h4>
+                    <ul>
+                        <li><strong>Análise preditiva:</strong> Previsão de tendências de mercado</li>
+                        <li><strong>Otimização de recursos:</strong> Alocação eficiente de orçamento</li>
+                        <li><strong>Gestão de riscos:</strong> Identificação de ameaças e oportunidades</li>
+                        <li><strong>Estratégias institucionais:</strong> Planejamento de longo prazo</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🏛️ Políticas Públicas</h4>
+                    <ul>
+                        <li><strong>Planejamento urbano:</strong> Otimização de transporte e serviços</li>
+                        <li><strong>Gestão ambiental:</strong> Monitoramento de recursos naturais</li>
+                        <li><strong>Saúde pública:</strong> Previsão de surtos e alocação de recursos</li>
+                        <li><strong>Educação:</strong> Políticas baseadas em evidências</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">gavel</i> “Decisões complexas envolvendo
+                fatores sociais, éticos e institucionais continuam exigindo avaliação humana. A IA atua como suporte
+                informacional, não como substituta do julgamento humano.”
+            </div>
+        </section>
+
+        <!-- Desafios e Reflexões -->
+        <section>
+            <h2>⚠️ Desafios e Reflexões sobre o Uso da IA</h2>
+
+            <div class="desafio-etico-ia">
+                <h4><i class="material-icons">psychology</i> Delegação Cognitiva e Desenvolvimento de Habilidades</h4>
+                <p>O uso de IA para gerar conteúdo automaticamente, <strong>sem leitura crítica, verificação das
+                        informações e reflexão</strong>, pode se tornar um problema. Ao delegar o esforço cognitivo à
+                    máquina, deixamos de desenvolver habilidades cruciais, como argumentação e discernimento
+                    <cite>(Kaufman, 2022)</cite>.
+                </p>
+                <p><strong>Impacto:</strong> A IA é um apoio, mas sua utilização como substituto integral compromete o
+                    aprendizado.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ff8c00;">
+                <h4><i class="material-icons">verified</i> Apropriação Crítica do Conhecimento</h4>
+                <p>É imprescindível que nos <strong>apropriemos, compreendamos e avaliemos</strong> o conteúdo gerado,
+                    garantindo que sua utilização reflita conhecimento, autoria, senso crítico e responsabilidade
+                    acadêmica.</p>
+                <p><strong>Prática recomendada:</strong> Sempre verificar, contextualizar e criticar as informações
+                    geradas por IA.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ffc107;">
+                <h4><i class="material-icons">data_usage</i> Qualidade dos Dados</h4>
+                <p>A qualidade, representatividade e confiabilidade das informações influenciam diretamente o desempenho
+                    dos algoritmos. A aplicação responsável da IA exige atenção constante à <strong>qualidade dos
+                        dados</strong> e aos critérios metodológicos utilizados em sua análise.</p>
+                <p><strong>Mitigação:</strong> Curadoria de dados, transparência e validação contínua.</p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">school</i> Competências para o Futuro</h4>
+                <p>O uso adequado das ferramentas de IA depende da compreensão de seus limites, de seus pressupostos
+                    técnicos e das possíveis implicações sociais de sua aplicação. A crescente integração entre IA e
+                    diferentes áreas do conhecimento reforça a importância da <strong>colaboração
+                        interdisciplinar</strong>.</p>
+                <p><strong>Habilidades essenciais:</strong> Pensamento crítico, alfabetização digital, interpretação de
+                    dados e ética aplicada.</p>
+            </div>
+        </section>
+
+        <!-- Síntese e Considerações Finais -->
+        <section>
+            <h2>🎯 Considerações Finais</h2>
+            <div class="detalhe-conceito">
+                <p>A utilização da Inteligência Artificial na educação, no cotidiano e na tomada de decisão evidencia a
+                    importância de compreender a tecnologia como <strong>ferramenta de apoio à análise e interpretação
+                        de informações</strong>.</p>
+                <p>A perspectiva de Inteligência Artificial centrada no humano reforça que a tecnologia deve
+                    <strong>ampliar capacidades humanas</strong>, e não substituir processos de julgamento que dependem
+                    de experiência, reflexão crítica e responsabilidade profissional.
+                </p>
+                <p>A crescente integração entre IA e diferentes áreas do conhecimento reforça a importância da
+                    <strong>colaboração interdisciplinar</strong>. Pesquisadores de diferentes campos têm trabalhado
+                    conjuntamente para desenvolver soluções que combinam conhecimento técnico, científico e social na
+                    construção de sistemas inteligentes mais eficazes.
+                </p>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <h4><i class="material-icons">question_answer</i> Mensagem Final</h4>
+                <p>Compreender as aplicações interdisciplinares da Inteligência Artificial permite analisar de forma
+                    mais ampla o impacto dessa tecnologia na sociedade contemporânea. A investigação dessas aplicações
+                    contribui para <strong>identificar oportunidades de inovação</strong>, bem como desafios
+                    relacionados à utilização responsável dessas ferramentas.</p>
+            </div>
+        </section>
+
+        <!-- Glossário e Referências -->
+        <section>
+            <h2>📌 Glossário da Unidade 1</h2>
+            <div class="glossario-item"><span class="glossario-termo">IA Transversal</span> <span>Tecnologia que
+                    atravessa diferentes setores e áreas do conhecimento.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Human-in-the-Loop</span> <span>Abordagem que
+                    mantém o ser humano como parte ativa e responsável no processo de decisão com IA.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Sistema Adaptativo</span> <span>Sistema que ajusta
+                    seu comportamento com base em dados e interações com o usuário.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Análise Preditiva</span> <span>Uso de dados
+                    históricos para prever tendências e comportamentos futuros.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Tutoria Inteligente</span> <span>Sistema que
+                    oferece orientação automatizada durante o processo de aprendizagem.</span></div>
+        </section>
+
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 DU BOULAY, Benedict.</strong> Inteligência artificial na educação e ética. RE@D – Revista de
+                Educação a Distância e Elearning, v. 6, n. 1, p. 1-17, 2023.
+            </div>
+            <div class="referencia">
+                <strong>📗 KAUFMAN, Dora.</strong> Desmistificando a inteligência artificial. Belo Horizonte: Autêntica,
+                2022. ISBN 9786559281596.
+            </div>
+            <div class="referencia">
+                <strong>📙 RUSSELL, Stuart J.; NORVIG, Peter.</strong> Artificial intelligence: a modern approach. 4.
+                ed. New York: Pearson, 2021. ISBN 9780134610993.
+            </div>
+            <div class="referencia">
+                <strong>📕 SHNEIDERMAN, Ben.</strong> Human-centered AI. Oxford: Oxford University Press, 2020.
+            </div>
+            <div class="referencia">
+                <strong>🔬 SOUZA, A. et al.</strong> Visão computacional para contagem automatizada de alevinos na
+                aquicultura. Pesquisa em andamento, UFMS, 2026.
+            </div>
+
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Desafio Prático</h4>
+                <p><strong>Reflexão guiada:</strong> Escolha uma aplicação de IA que você utiliza no dia a dia (ex:
+                    Netflix, Spotify, Google Maps, assistente virtual) e analise:</p>
+                <ol>
+                    <li><strong>Benefício:</strong> Como a IA melhora sua experiência?</li>
+                    <li><strong>Desafio:</strong> Que riscos ou limitações você identifica?</li>
+                    <li><strong>Ética:</strong> Como você avalia o uso de seus dados por essa ferramenta?</li>
+                </ol>
+                <p><strong>Compartilhe suas reflexões no fórum da disciplina!</strong></p>
+            </div>
+        </section>
+
+        <!-- Síntese e chamada para ação -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">school</i>
+                    <h4>IA na Educação</h4>
+                    <p>Amplia possibilidades de personalização, análise de desempenho e tutoria inteligente, mas mantém
+                        o professor como protagonista.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">smartphone</i>
+                    <h4>IA no Cotidiano</h4>
+                    <p>Presente em recomendações, navegação, comércio e assistentes, tornando atividades diárias mais
+                        eficientes.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">analytics</i>
+                    <h4>IA na Tomada de Decisão</h4>
+                    <p>Apoia organizações e políticas públicas com análises preditivas, mas decisões complexas exigem
+                        julgamento humano.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> Na Unidade 2 vamos explorar
+                <strong>IA na Saúde, Meio Ambiente e Direitos Humanos</strong>. Continue seus estudos e participe do
+                fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 2 - Unidade 1: IA na Educação, Vida Cotidiana e
+            Tomada de Decisão</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

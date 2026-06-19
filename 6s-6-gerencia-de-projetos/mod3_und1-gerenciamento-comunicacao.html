@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 1: Gerenciamento de Comunicação | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .comunicacao-card {
+            background: linear-gradient(135deg, #e8f0fe, #d9e8f5);
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .cs-box {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 20px;
+            padding: 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .c-item {
+            background: #2d3e50;
+            border-radius: 12px;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .c-item span {
+            color: #ffd966;
+            font-size: 1.2rem;
+        }
+
+        .ferramenta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .dimensao-card {
+            background: #fef9e6;
+            border-left: 5px solid #ff8c00;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 12px;
+        }
+
+        .modelo-comunicacao {
+            background: #f0f7ff;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .barreiras-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .barreiras-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-dica {
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 3 - Tópicos Avançados da Gerência de Projetos</h2>
+        <h3>💬 Unidade 1 – Gerenciamento de Comunicação em Projetos de Software</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 2
+            </a>
+            <a href="mod3_und2-v1-gerenciamento-riscos-aquisicoes.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 3 Und 2.1 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/bZszNubY4Ok" frameborder="0"
+                    title="Gerência de Projetos - Módulo 3 - Unidade 1 - Gerenciamento de Comunicação"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 3 - Unidade 1 (Comunicação)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 28min</p>
+        </section>
+
+        <!-- INTRODUÇÃO EXPANDIDA -->
+        <section>
+            <h2>📢 Introdução ao Gerenciamento de Comunicação</h2>
+            <p>A comunicação é uma das habilidades mais requisitadas no mercado e, em projetos de software, é um fator
+                crítico de sucesso. Estudos do PMI indicam que <strong>56% dos projetos que falham têm problemas de
+                    comunicação como causa raiz</strong>. O gerenciamento da comunicação envolve planejar, executar e
+                monitorar estratégias para garantir que a informação certa chegue à pessoa certa, no momento certo, da
+                maneira certa.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Por que a comunicação é tão importante?</h4>
+                    <ul>
+                        <li>Promove alinhamento entre partes interessadas (stakeholders)</li>
+                        <li>Evita ruídos e interpretações equivocadas</li>
+                        <li>Garante que requisitos sejam compreendidos corretamente</li>
+                        <li>Reduz retrabalho e conflitos</li>
+                        <li>Aumenta a transparência e a confiança</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Fatores que influenciam as necessidades de comunicação</h4>
+                    <ul>
+                        <li>Complexidade do projeto</li>
+                        <li>Quantidade de pessoas envolvidas</li>
+                        <li>Cultura organizacional</li>
+                        <li>Momento político da organização</li>
+                        <li>Tipo de projeto (ágil, tradicional, híbrido)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comunicacao-card">
+                <h4><i class="material-icons">psychology</i> Dimensões da Comunicação (TRT, 2024)</h4>
+                <div class="grid-2">
+                    <div class="dimensao-card"><strong>📌 Interna x Externa</strong><br>Dentro do projeto / Clientes,
+                        mídia, fornecedores</div>
+                    <div class="dimensao-card"><strong>📌 Formal x Informal</strong><br>Relatórios, memorandos /
+                        E-mails, conversas ad hoc</div>
+                    <div class="dimensao-card"><strong>📌 Vertical x Horizontal</strong><br>Níveis hierárquicos /
+                        Colegas de mesmo nível</div>
+                    <div class="dimensao-card"><strong>📌 Oficial x Não oficial</strong><br>Boletins, atas /
+                        Comunicações confidenciais</div>
+                    <div class="dimensao-card"><strong>📌 Escrita x Oral</strong><br>Documentos, chats / Reuniões, calls
+                    </div>
+                    <div class="dimensao-card"><strong>📌 Verbal x Não-verbal</strong><br>Palavras / Tom de voz,
+                        linguagem corporal</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OS 5Cs DA COMUNICAÇÃO -->
+        <section>
+            <h2>📝 Os 5Cs da Comunicação Eficaz</h2>
+            <p>Para garantir clareza e evitar ruídos, toda comunicação escrita ou falada deve seguir os 5Cs:</p>
+            <div class="cs-box">
+                <div class="c-item"><span>✅ Correta</span><br>Gramática e ortografia impecáveis</div>
+                <div class="c-item"><span>✅ Concisa</span><br>Expressão direta, sem excesso de palavras</div>
+                <div class="c-item"><span>✅ Clara</span><br>Propósito evidente, adaptada ao leitor</div>
+                <div class="c-item"><span>✅ Coerente</span><br>Fluxo lógico de ideias</div>
+                <div class="c-item"><span>✅ Controlada</span><br>Fluxo de palavras e ideias bem estruturado</div>
+            </div>
+            <div class="dica-box">
+                <strong><i class="material-icons">tip</i> Dica avançada:</strong> Antes de enviar uma mensagem crítica,
+                aplique o "teste dos 5Cs". Peça a um colega para revisar e validar se a mensagem está clara e sem
+                ambiguidades. Isso evita retrabalho e mal-entendidos.
+            </div>
+        </section>
+
+        <!-- PROCESSOS DO GERENCIAMENTO DE COMUNICAÇÃO (PMBOK) -->
+        <section>
+            <h2>🔄 Processos de Gerenciamento de Comunicação (PMBOK 6ª ed.)</h2>
+            <p>O PMBOK define três processos principais para a área de comunicação:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">plan</i>
+                    <h4>Planejar a Comunicação</h4>
+                    <p>Desenvolver abordagem e plano com base nas necessidades das partes interessadas.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">send</i>
+                    <h4>Gerenciar a Comunicação</h4>
+                    <p>Assegurar coleta, criação, distribuição e armazenamento das informações do projeto.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">monitor</i>
+                    <h4>Monitorar a Comunicação</h4>
+                    <p>Garantir que o fluxo de informações atenda às necessidades definidas no plano.</p>
+                </div>
+            </div>
+
+            <h3>📋 Planejar o Gerenciamento das Comunicações</h3>
+            <p>Este processo ocorre no início do projeto e gera o <strong>Plano de Gerenciamento das
+                    Comunicações</strong>, que define:</p>
+            <ul>
+                <li>Requisitos de comunicação das partes interessadas</li>
+                <li>Informações a serem comunicadas (formato, conteúdo, nível de detalhe)</li>
+                <li>Responsáveis por comunicar e autorizar informações confidenciais</li>
+                <li>Recursos alocados (tempo e orçamento)</li>
+                <li>Glossário de terminologia comum</li>
+                <li>Diagramas de fluxo de informações</li>
+                <li>Restrições legais, tecnológicas e políticas</li>
+            </ul>
+
+            <div class="modelo-comunicacao">
+                <h4>📊 Modelo de Comunicação (Emissor → Mensagem → Meio → Receptor → Feedback)</h4>
+                <pre style="background: transparent; color: #1a4d8c;">
+    Emissor → Codifica → Mensagem → Meio (Canal) → Receptor → Decodifica → Feedback
+                </pre>
+                <p><strong>Ruídos:</strong> barreiras como linguagem técnica inadequada, distrações, diferenças
+                    culturais, canais inadequados.</p>
+            </div>
+
+            <h3>📨 Gerenciar as Comunicações</h3>
+            <p>Processo de execução que coloca o plano em prática. Envolve a escolha de tecnologias e métodos de
+                comunicação adequados ao contexto do projeto.</p>
+
+            <div class="ferramenta-grid">
+                <div class="card">
+                    <h4><i class="material-icons">devices</i> Tecnologias de Comunicação</h4>
+                    <p>E-mail, videoconferência, chats (Slack/Teams), portais colaborativos, sistemas de gerenciamento
+                        de projetos (Jira, Trello, Asana).</p>
+                    <p><em>Fatores de escolha:</em> equipe distribuída, confidencialidade, cultura organizacional,
+                        recursos disponíveis.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="material-icons">forum</i> Métodos de Comunicação</h4>
+                    <p><strong>Interativa:</strong> reuniões, calls (feedback imediato).<br>
+                        <strong>Ativa:</strong> envio de relatórios, e-mails (sem resposta garantida).<br>
+                        <strong>Passiva:</strong> portais de conhecimento, wikis (consulta sob demanda).
+                    </p>
+                </div>
+            </div>
+
+            <h3>📊 Monitorar as Comunicações</h3>
+            <p>Garante que o fluxo de informações está eficiente. Utiliza técnicas como:</p>
+            <ul>
+                <li>Pesquisas de satisfação sobre eficácia da comunicação</li>
+                <li>Análise de desvios entre o comunicado e o planejado</li>
+                <li>Observação e conversas para identificar conflitos ou gargalos</li>
+                <li>Reuniões de revisão com stakeholders</li>
+            </ul>
+            <div class="info-box">
+                <strong><i class="material-icons">insights</i> Indicador de desempenho de comunicação:</strong>
+                Percentual de stakeholders que relatam receber informações relevantes no tempo adequado. Meta
+                recomendada: >85%.
+            </div>
+        </section>
+
+        <!-- HABILIDADES DE COMUNICAÇÃO DO GERENTE -->
+        <section>
+            <h2>🧠 Habilidades de Comunicação Essenciais para o Gerente de Projetos</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎧 Ouvir ativamente</h4>
+                    <p>Demonstrar empatia, parafrasear, fazer perguntas abertas. Mais importante do que falar é garantir
+                        que a mensagem foi compreendida.</p>
+                </div>
+                <div class="card">
+                    <h4>🔍 Investigar e perguntar</h4>
+                    <p>Identificar fatos ocultos, confirmar informações e garantir alinhamento de expectativas.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Educar</h4>
+                    <p>Aumentar o conhecimento da equipe e stakeholders, reduzindo ruídos e aumentando autonomia.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Persuadir e negociar</h4>
+                    <p>Convencer partes interessadas sobre decisões, alocar recursos, resolver conflitos.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Solucionar conflitos</h4>
+                    <p>Mediar desentendimentos antes que impactem o projeto. Técnicas: colaborar, ceder, evitar
+                        (conforme já estudado).</p>
+                </div>
+                <div class="card">
+                    <h4>📝 Resumir e sintetizar</h4>
+                    <p>Ao final de cada reunião, recapitule decisões, ações e responsáveis. Envie ata em até 24h.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BARREIRAS DE COMUNICAÇÃO E SOLUÇÕES -->
+        <section>
+            <h2>⚠️ Barreiras de Comunicação e Como Superá-las</h2>
+            <ul class="barreiras-list">
+                <li><i class="material-icons" style="color:#dc3545;">block</i> <strong>Ruído ambiental /
+                        distrações:</strong> Escolha ambientes adequados, use fones com cancelamento de ruído em calls.
+                </li>
+                <li><i class="material-icons" style="color:#dc3545;">language</i> <strong>Diferenças culturais e de
+                        idioma:</strong> Adote glossário comum, evite jargões técnicos excessivos, repita instruções
+                    complexas.</li>
+                <li><i class="material-icons" style="color:#dc3545;">hub</i> <strong>Excesso de canais de
+                        comunicação:</strong> Centralize informações em uma ferramenta única (ex: Teams + Jira), defina
+                    regras claras.</li>
+                <li><i class="material-icons" style="color:#dc3545;">schedule</i> <strong>Fusos horários (equipes
+                        distribuídas):</strong> Estabeleça janelas de sobreposição, documente decisões assíncronamente.
+                </li>
+                <li><i class="material-icons" style="color:#dc3545;">sentiment_dissatisfied</strong> Filtros
+                        emocionais:</i> Evite comunicações agressivas. Use feedback construtivo e reforço positivo.</li>
+            </ul>
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Comunicação em equipes ágeis – Daily e Retrospectiva</h4>
+                <p>No Scrum, a Daily Meeting (15 min) segue o formato: "O que fiz ontem? O que farei hoje? Há
+                    impedimentos?" A retrospectiva é o momento de ajustar a comunicação da equipe. Utilize o
+                    <strong>radar de comunicação</strong> para mapear quem precisa falar com quem.
+                </p>
+                <p><strong>Exemplo Cidade Virtual:</strong> A equipe usa Slack para comunicação diária, Jira para
+                    acompanhamento e uma reunião semanal com o cliente para demonstrar incrementos e alinhar
+                    prioridades. O plano de comunicação é revisado a cada sprint.</p>
+            </div>
+        </section>
+
+        <!-- COMUNICAÇÃO EM PROJETOS DISTRIBUÍDOS -->
+        <section>
+            <h2>🌐 Comunicação em Projetos com Equipes Distribuídas (Home Office / Offshore)</h2>
+            <p>Com o aumento do trabalho remoto, a comunicação tornou-se ainda mais desafiadora. Boas práticas:</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Documentação assíncrona</h4>
+                    <p>Use wikis (Confluence, Notion) e gravações de reuniões para que membros em fusos diferentes
+                        possam acessar.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Regras de etiqueta</h4>
+                    <p>Defina horários de não perturbação, tempo máximo para resposta de mensagens, uso de @aqui e
+                        @canal.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Check-ins regulares</h4>
+                    <p>Reuniões curtas diárias (mesmo que virtuais) e alinhamentos semanais com câmera ligada para
+                        fortalecer vínculos.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Ferramentas de colaboração visual</h4>
+                    <p>Miro, Mural, Lucidchart para diagramas colaborativos em tempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXEMPLO PRÁTICO - PLANO DE COMUNICAÇÃO -->
+        <section>
+            <h2>📄 Modelo de Plano de Comunicação (Exemplo Cidade Virtual)</h2>
+            <div class="tabela-cronograma" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Informação</th>
+                            <th>Frequência</th>
+                            <th>Formato</th>
+                            <th>Responsável</th>
+                            <th>Público-alvo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Status do projeto (entregas, riscos)</td>
+                            <td>Semanal</td>
+                            <td>Relatório PDF + Dashboard Jira</td>
+                            <td>Gerente de Projetos</td>
+                            <td>Cliente, Patrocinador, Equipe</td>
+                        </tr>
+                        <tr>
+                            <td>Reunião de planejamento da sprint</td>
+                            <td>A cada 2 semanas</td>
+                            <td>Videoconferência + Ata</td>
+                            <td>Scrum Master</td>
+                            <td>Equipe + Product Owner</td>
+                        </tr>
+                        <tr>
+                            <td>Daily Meeting</td>
+                            <td>Diária (15 min)</td>
+                            <td>Videoconferência (câmera opcional)</td>
+                            <td>Scrum Master</td>
+                            <td>Time de desenvolvimento</td>
+                        </tr>
+                        <tr>
+                            <td>Relatório de defeitos</td>
+                            <td>Diário (automático)</td>
+                            <td>Jira / Dashboard</td>
+                            <td>QA</td>
+                            <td>Equipe, Gerente</td>
+                        </tr>
+                        <tr>
+                            <td>Feedback do cliente</td>
+                            <td>A cada release (mensal)</td>
+                            <td>Pesquisa NPS + Reunião</td>
+                            <td>Product Owner</td>
+                            <td>Cliente, Gerente</td>
+                        </tr>
+                        <tr>
+                            <td>Lições aprendidas</td>
+                            <td>Ao final de cada sprint</td>
+                            <td>Documento colaborativo (Confluence)</td>
+                            <td>Equipe</td>
+                            <td>Todos os stakeholders</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="small-text">Fonte: Adaptado de PMBOK (PROJECT MANAGEMENT INSTITUTE, 2017) e adaptado para o
+                contexto do projeto Cidade Virtual.</p>
+        </section>
+
+        <!-- CONSIDERAÇÕES FINAIS -->
+        <section>
+            <h2>✅ Síntese e Boas Práticas para o Gerente de Projetos</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">checklist</i>
+                    <h4>Planeje antes de comunicar</h4>
+                    <p>O plano de comunicação é tão importante quanto o cronograma. Invista tempo na análise de
+                        stakeholders.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">feedback</i>
+                    <h4>Busque feedback contínuo</h4>
+                    <p>Após cada comunicação importante, pergunte: "A mensagem ficou clara? O que posso melhorar?"</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">settings</i>
+                    <h4>Adapte-se ao contexto</h4>
+                    <p>O que funciona em um projeto pode não funcionar em outro. Esteja aberto a ajustar métodos e
+                        canais.</p>
+                </div>
+            </div>
+            <div class="dica-box text-center">
+                <i class="material-icons">school</i> <strong>Dica para certificação PMP/CAPM:</strong> Decore os 3
+                processos de comunicação (Planejar, Gerenciar, Monitorar), os 5Cs e as dimensões (interna/externa,
+                formal/informal, etc.). Questões sobre canais de comunicação (n(n-1)/2) também são frequentes!
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6. ed. Newtown Square: PMI, 2017. Capítulo 10 – Gerenciamento das Comunicações do
+                Projeto.
+            </div>
+            <div class="referencia">
+                <strong>EUAX CONSULTING.</strong> Gerenciamento da comunicação: o que é, qual a importância e como fazer
+                em 3 passos. Disponível em: &lt;https://www.euax.com.br/2019/05/gerenciamento-da-comunicacao/&gt;.
+                Acesso em: 2 maio 2024.
+            </div>
+            <div class="referencia">
+                <strong>TRT.</strong> Gerenciamento das Comunicações do Projeto. Disponível em:
+                &lt;https://link.ufms.br/hl6pb&gt;. Acesso em: 6 maio 2024.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, Roger S.; MAXIM, Bruce R.</strong> Engenharia de Software: Uma Abordagem Profissional.
+                9. ed. Porto Alegre: AMGH, 2021. Capítulo 24 – Conceitos de gerenciamento de projetos.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. Seção 22.2
+                – Gerenciamento de pessoas e comunicação.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 3 - Unidade 1: Gerenciamento de Comunicação</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

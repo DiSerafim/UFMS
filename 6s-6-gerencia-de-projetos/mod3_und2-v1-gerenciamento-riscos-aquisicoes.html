@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 2: Riscos e Aquisições | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .risco-card {
+            background: linear-gradient(135deg, #fff4e6, #ffe8d4);
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 5px solid #ff8c00;
+        }
+
+        .matriz-risco {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .matriz-risco table {
+            font-size: 0.85rem;
+        }
+
+        .matriz-risco th {
+            background-color: #245;
+            text-align: center;
+        }
+
+        .matriz-risco td {
+            text-align: center;
+        }
+
+        .estrategia-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .prevencao {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .minimizacao {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .contingencia {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .aquisicao-card {
+            background: #e8f0fe;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .tipo-contrato {
+            background: white;
+            border-radius: 16px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .tendencia-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0.8rem 0;
+        }
+
+        .ferramenta-link {
+            background: #1e2a3a;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .ferramenta-link:hover {
+            background: #ff8c00;
+            color: #1e2a3a;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 3 - Tópicos Avançados da Gerência de Projetos</h2>
+        <h3>⚠️ Unidade 2 – Gerenciamento de Riscos e Aquisições em Projetos de Software - V1</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und1-gerenciamento-comunicacao.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 1
+            </a>
+            <a href="mod3_und2-v2-gerenciamento-riscos-aquisicoes.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 3 Und 2.2 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/gx2foOsrRc8" frameborder="0"
+                    title="Gerência de Projetos - Módulo 3 - Unidade 2 - Riscos e Aquisições"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 3 - Unidade 2 (Riscos e Aquisições)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 32min</p>
+        </section>
+
+        <!-- ================= PARTE 1: GERENCIAMENTO DE RISCOS ================= -->
+        <section>
+            <h2>⚠️ Parte 1 – Gerenciamento de Riscos em Projetos de Software</h2>
+            <p>A gestão de riscos é uma série de passos que ajudam a equipe de software a entender e administrar a
+                incerteza. Um risco é um <strong>problema em potencial</strong> – pode ou não ocorrer. O objetivo não é
+                eliminar todos os riscos (impossível), mas sim <strong>identificá-los, avaliá-los e planejar
+                    respostas</strong> para minimizar impactos negativos.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Por que gerenciar riscos?</h4>
+                    <ul>
+                        <li>Evita surpresas e reações impulsivas</li>
+                        <li>Reduz a probabilidade de falhas catastróficas</li>
+                        <li>Permite alocar reservas de contingência</li>
+                        <li>Aumenta a confiança dos stakeholders</li>
+                        <li>É um diferencial competitivo em licitações</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚠️ Exemplos de riscos comuns em software</h4>
+                    <ul>
+                        <li>Estimativa de tamanho subdimensionada</li>
+                        <li>Usuários finais resistirem ao sistema</li>
+                        <li>Financiamento cancelado</li>
+                        <li>Equipe não treinada adequadamente</li>
+                        <li>Banco de dados com desempenho insuficiente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="risco-card">
+                <h4><i class="material-icons">category</i> Categorias de Riscos (Sommerville, 2018)</h4>
+                <div class="grid-2">
+                    <div><strong>📌 Riscos de estimativas</strong><br>Tamanho, prazo, custo subestimados</div>
+                    <div><strong>📌 Riscos organizacionais</strong><br>Problemas financeiros, mudanças de prioridade
+                    </div>
+                    <div><strong>📌 Riscos de pessoas</strong><br>Rotatividade, falta de treinamento, conflitos</div>
+                    <div><strong>📌 Riscos de requisitos</strong><br>Mudanças, ambiguidade, volatilidade</div>
+                    <div><strong>📌 Riscos de tecnologia</strong><br>Banco de dados lento, ferramentas inadequadas</div>
+                    <div><strong>📌 Riscos de ferramentas</strong><br>Código ineficiente, integração difícil</div>
+                </div>
+            </div>
+
+            <h3>🔄 Processo de Análise e Gestão de Riscos (Sommerville)</h3>
+            <div class="grid-3">
+                <div class="card"><strong>1. Identificação</strong><br>Listar riscos potenciais (brainstorming,
+                    checklist, análise de lições aprendidas)</div>
+                <div class="card"><strong>2. Análise</strong><br>Avaliar probabilidade e impacto (qualitativa e
+                    quantitativa)</div>
+                <div class="card"><strong>3. Planejamento</strong><br>Definir estratégias: prevenção, minimização,
+                    contingência</div>
+                <div class="card"><strong>4. Monitoramento</strong><br>Acompanhar indicadores e gatilhos, revisar
+                    periodicamente</div>
+            </div>
+
+            <!-- Tabela de identificação e análise de riscos -->
+            <h3>📋 Exemplo: Identificação e Análise de Riscos (Projeto Cidade Virtual)</h3>
+            <div class="matriz-risco">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Risco</th>
+                            <th>Categoria</th>
+                            <th>Probabilidade</th>
+                            <th>Impacto</th>
+                            <th>Prioridade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>R01</td>
+                            <td>Tamanho do software subestimado</td>
+                            <td>Estimativas</td>
+                            <td>Média (40%)</td>
+                            <td>Catastrófico</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>R02</td>
+                            <td>Problemas financeiros da organização</td>
+                            <td>Organizacional</td>
+                            <td>Baixa (15%)</td>
+                            <td>Catastrófico</td>
+                            <td>Média</td>
+                        </tr>
+                        <tr>
+                            <td>R03</td>
+                            <td>Treinamento da equipe não realizado</td>
+                            <td>Pessoas</td>
+                            <td>Alta (60%)</td>
+                            <td>Sério</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>R04</td>
+                            <td>Mudanças excessivas nos requisitos</td>
+                            <td>Requisitos</td>
+                            <td>Alta (70%)</td>
+                            <td>Sério</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>R05</td>
+                            <td>Banco de dados com baixo desempenho</td>
+                            <td>Tecnologia</td>
+                            <td>Média (30%)</td>
+                            <td>Sério</td>
+                            <td>Média</td>
+                        </tr>
+                        <tr>
+                            <td>R06</td>
+                            <td>Ferramentas geram código ineficiente</td>
+                            <td>Ferramentas</td>
+                            <td>Baixa (10%)</td>
+                            <td>Tolerável</td>
+                            <td>Baixa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="small-text">Fonte: Adaptado de Sommerville (2018) para o contexto do projeto Cidade Virtual.</p>
+
+            <!-- Matriz Probabilidade x Impacto -->
+            <h3>📊 Matriz de Probabilidade e Impacto (Qualitativa)</h3>
+            <div class="matriz-risco">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Probabilidade \ Impacto</th>
+                            <th>Insignificante</th>
+                            <th>Tolerável</th>
+                            <th>Sério</th>
+                            <th>Catastrófico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Muito Baixa (&lt;10%)</td>
+                            <td>Baixo</td>
+                            <td>Baixo</td>
+                            <td>Médio</td>
+                            <td>Médio</td>
+                        </tr>
+                        <tr>
+                            <td>Baixa (10-25%)</td>
+                            <td>Baixo</td>
+                            <td>Baixo</td>
+                            <td>Médio</td>
+                            <td>Alto</td>
+                        </tr>
+                        <tr>
+                            <td>Média (25-50%)</td>
+                            <td>Baixo</td>
+                            <td>Médio</td>
+                            <td>Alto</td>
+                            <td>Alto</td>
+                        </tr>
+                        <tr>
+                            <td>Alta (50-75%)</td>
+                            <td>Médio</td>
+                            <td>Alto</td>
+                            <td>Alto</td>
+                            <td>Crítico</td>
+                        </tr>
+                        <tr>
+                            <td>Muito Alta (>75%)</td>
+                            <td>Alto</td>
+                            <td>Alto</td>
+                            <td>Crítico</td>
+                            <td>Crítico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>📝 Estratégias de Resposta a Riscos</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <h4><span class="estrategia-badge prevencao">Prevenção</span></h4>
+                    <p>Reduz a probabilidade do risco ocorrer.<br><strong>Exemplo:</strong> Contratar especialista em
+                        estimativas para evitar subdimensionamento.</p>
+                </div>
+                <div class="card">
+                    <h4><span class="estrategia-badge minimizacao">Minimização</span></h4>
+                    <p>Reduz o impacto caso o risco ocorra.<br><strong>Exemplo:</strong> Avaliar impacto de mudanças
+                        antes de aceitá-las.</p>
+                </div>
+                <div class="card">
+                    <h4><span class="estrategia-badge contingencia">Contingência</span></h4>
+                    <p>Preparar-se para o pior cenário.<br><strong>Exemplo:</strong> Plano B com banco de dados
+                        alternativo.</p>
+                </div>
+            </div>
+
+            <h3>📈 Monitoramento de Riscos – Indicadores (Gatilhos)</h3>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🔔 Gatilhos para R01 (estimativa subestimada)</h4>
+                    <p>Falhas constantes no cumprimento do cronograma. Quando atraso > 15%, acionar contingência.</p>
+                </div>
+                <div class="card">
+                    <h4>🔔 Gatilhos para R04 (mudanças excessivas)</h4>
+                    <p>Mais de 3 solicitações de mudança por sprint. Acionar revisão de escopo com cliente.</p>
+                </div>
+                <div class="card">
+                    <h4>🔔 Gatilhos para R03 (treinamento)</h4>
+                    <p>Empresa relutante em alocar recursos. Escalar para gerência sênior em até 15 dias.</p>
+                </div>
+                <div class="card">
+                    <h4>🔔 Gatilhos para R05 (banco de dados)</h4>
+                    <p>Erros constantes de banco de dados em produção. Acionar equipe de DBA e plano de migração.</p>
+                </div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Técnica Avançada: Análise Quantitativa de Riscos (Valor
+                    Monetário Esperado - EMV)</h4>
+                <p>EMV = Probabilidade × Impacto Financeiro. Exemplo: Risco de banco de dados lento com 30% de
+                    probabilidade e impacto de R$ 20.000 → EMV = R$ 6.000. Some os EMVs de todos os riscos para definir
+                    a reserva de contingência.</p>
+                <p><strong>Para o Cidade Virtual:</strong> Reserva total de contingência (baseada em 5 riscos
+                    principais) = R$ 26.600,00 (≈41% do orçamento base, adequado para projeto de alta incerteza).</p>
+            </div>
+        </section>
+
+        <!-- ================= PARTE 2: GERENCIAMENTO DE AQUISIÇÕES ================= -->
+        <section>
+            <h2>📄 Parte 2 – Gerenciamento de Aquisições em Projetos de Software</h2>
+            <p>O gerenciamento de aquisições envolve os processos necessários para <strong>comprar ou adquirir produtos,
+                    serviços ou resultados externos</strong> à equipe do projeto. Inclui gestão de contratos, controle
+                de mudanças e relação com fornecedores.</p>
+
+            <div class="aquisicao-card">
+                <h4><i class="material-icons">gavel</i> Conceitos Fundamentais (PMBOK, 2017)</h4>
+                <ul>
+                    <li><strong>Contrato:</strong> Acordo vinculante entre comprador e vendedor. Pode ser chamado de
+                        acordo, subcontrato ou ordem de compra.</li>
+                    <li><strong>Jurisdição legal:</strong> Em contratos internacionais, definir claramente as leis
+                        aplicáveis.</li>
+                    <li><strong>Políticas organizacionais:</strong> A maioria das organizações tem regras documentadas
+                        sobre aquisições e quem tem autoridade para assinar.</li>
+                    <li><strong>Responsabilidade:</strong> O gerente de projetos assegura que aquisições atendam às
+                        necessidades, trabalhando com escritório de aquisições.</li>
+                </ul>
+            </div>
+
+            <h3>📋 Processos de Gerenciamento de Aquisições (PMBOK)</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">plan</i>
+                    <h4>Planejar Aquisições</h4>
+                    <p>Decidir o que comprar, quando e como. Elaborar termo de referência, critérios de seleção.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">receipt</i>
+                    <h4>Conduzir Aquisições</h4>
+                    <p>Publicar edital, receber propostas, negociar e assinar contrato com fornecedor.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">monitor</i>
+                    <h4>Controlar Aquisições</h4>
+                    <p>Gerenciar relacionamento com fornecedor, aprovar pagamentos, resolver disputas.</p>
+                </div>
+            </div>
+
+            <h3>🏷️ Tipos de Contrato (Estratégia de Alocação de Riscos)</h3>
+            <div class="grid-2">
+                <div class="tipo-contrato">
+                    <h4><i class="material-icons">attach_money</i> Preço Fixo (Fixed Price)</h4>
+                    <p><strong>Risco:</strong> Fornecedor assume a maior parte. <strong>Ideal para:</strong> Escopo bem
+                        definido, poucas mudanças esperadas.</p>
+                    <p><strong>Exemplo:</strong> Desenvolvimento de site institucional por R$ 30.000,00.</p>
+                </div>
+                <div class="tipo-contrato">
+                    <h4><i class="material-icons">schedule</i> Tempo e Materiais (T&M)</h4>
+                    <p><strong>Risco:</strong> Compartilhado. <strong>Ideal para:</strong> Projetos com escopo incerto,
+                        suporte contínuo.</p>
+                    <p><strong>Exemplo:</strong> R$ 120,00/hora para manutenção de software.</p>
+                </div>
+                <div class="tipo-contrato">
+                    <h4><i class="material-icons">trending_up</i> Custos Reembolsáveis (Cost-Plus)</h4>
+                    <p><strong>Risco:</strong> Comprador assume a maior parte. <strong>Ideal para:</strong> P&D,
+                        projetos inovadores.</p>
+                    <p><strong>Exemplo:</strong> Custos reais + taxa de administração de 10%.</p>
+                </div>
+                <div class="tipo-contrato">
+                    <h4><i class="material-icons">incentive</i> Com Incentivos</h4>
+                    <p><strong>Risco:</strong> Compartilhado com bônus por desempenho. <strong>Ideal para:</strong>
+                        Projetos críticos onde eficiência é prioridade.</p>
+                    <p><strong>Exemplo:</strong> Bônus de R$ 50.000 se entregar 30 dias antes.</p>
+                </div>
+            </div>
+
+            <h3>🌐 Tendências em Gerenciamento de Aquisições</h3>
+            <div class="tendencia-item"><i class="material-icons" style="color:#0066cc;">cloud</i> <strong>Ferramentas
+                    online:</strong> Portais como ComprasNet, BEC, que centralizam divulgação e propostas.</div>
+            <div class="tendencia-item"><i class="material-icons" style="color:#0066cc;">analytics</i> <strong>Gestão de
+                    riscos avançada:</strong> Contratos que alocam riscos específicos de forma precisa (ex: risco
+                cambial, risco tecnológico).</div>
+            <div class="tendencia-item"><i class="material-icons" style="color:#0066cc;">groups</i> <strong>Contratos
+                    colaborativos (ágil):</strong> Em Scrum, fornecedores podem estender a equipe, com riscos e
+                recompensas compartilhados.</div>
+            <div class="tendencia-item"><i class="material-icons" style="color:#0066cc;">local_shipping</i>
+                <strong>Cadeia de suprimentos:</strong> Gerenciamento de fluxo de materiais (hardware, licenças) é
+                essencial para sucesso.</div>
+            <div class="tendencia-item"><i class="material-icons" style="color:#0066cc;">public</i>
+                <strong>Transparência e fiscalização:</strong> Projetos públicos são cada vez mais monitorados por
+                tribunais de contas e sociedade civil.</div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">warning</i> Atenção legal:</strong> Tudo o que não estiver no contrato
+                não pode ser legalmente exigido. Ao trabalhar com fornecedores internacionais, considere diferenças
+                culturais e leis locais. O gerente de projetos não precisa ser especialista jurídico, mas deve conhecer
+                os princípios básicos para tomar decisões inteligentes.
+            </div>
+        </section>
+
+        <!-- INTEGRAÇÃO RISCOS E AQUISIÇÕES -->
+        <section>
+            <h2>🔗 Integração entre Riscos e Aquisições</h2>
+            <p>Riscos e aquisições andam de mãos dadas. Um contrato mal elaborado pode gerar riscos jurídicos,
+                financeiros e de reputação. Por outro lado, uma boa estratégia de aquisições pode
+                <strong>transferir</strong> riscos para o fornecedor (ex: contrato de preço fixo) ou
+                <strong>compartilhar</strong> riscos (ex: contrato com incentivos).</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Exemplo de integração</h4>
+                    <p>Risco identificado: API de mapas pode ficar indisponível. Estratégia de aquisição: contratar dois
+                        fornecedores (Google Maps e OpenStreetMap) com cláusulas de failover. Contrato prevê multa por
+                        indisponibilidade acima de 99,5%.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Boas práticas</h4>
+                    <ul>
+                        <li>Incluir requisitos de segurança e qualidade no contrato</li>
+                        <li>Definir níveis mínimos de serviço (SLA) e penalidades</li>
+                        <li>Prever plano de transição de conhecimento</li>
+                        <li>Auditar fornecedores periodicamente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSIDERAÇÕES FINAIS AVANÇADAS -->
+        <section>
+            <h2>✅ Síntese e Boas Práticas</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">checklist</i>
+                    <h4>Riscos</h4>
+                    <p>Identifique cedo, analise com dados históricos, planeje respostas e monitore gatilhos. Use
+                        reserva de contingência baseada em EMV.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">receipt</i>
+                    <h4>Aquisições</h4>
+                    <p>Escolha o tipo de contrato adequado ao nível de incerteza. Formalize tudo por escrito. Envolva
+                        jurídico em contratos complexos.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">link</i>
+                    <h4>Integração</h4>
+                    <p>Use contratos para transferir riscos quando possível. Monitore fornecedores como parte da gestão
+                        de riscos do projeto.</p>
+                </div>
+            </div>
+            <div class="dica-box text-center">
+                <i class="material-icons">school</i> <strong>Dica para certificação PMP/CAPM:</strong> Estude os 7
+                processos de gerenciamento de riscos (Planejar, Identificar, Análise Qualitativa, Análise Quantitativa,
+                Planejar Respostas, Implementar, Monitorar) e os 4 processos de aquisições (Planejar, Conduzir,
+                Controlar, Encerrar). Memorize os tipos de contrato e suas características de risco.
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6. ed. Newtown Square: PMI, 2017. Capítulo 11 – Gerenciamento dos Riscos do
+                Projeto; Capítulo 12 – Gerenciamento das Aquisições do Projeto.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10. ed. São Paulo: Pearson Education do
+                Brasil, 2018. Capítulo 22 – Gerenciamento de projetos (Seção 22.1 – Gerenciamento de riscos).
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, Roger S.; MAXIM, Bruce R.</strong> Engenharia de Software: Uma Abordagem Profissional.
+                9. ed. Porto Alegre: AMGH, 2021. Capítulo 24 – Conceitos de gerenciamento de projetos (Seção de riscos).
+            </div>
+            <div class="referencia">
+                <strong>CAMARGO, Marta Rocha.</strong> Gerenciamento de Projetos: Fundamentos e Prática Integrada. 2.
+                ed. São Paulo: GEN Atlas, 2018. Capítulo 11 – Riscos; Capítulo 12 – Aquisições.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 14 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 3 - Unidade 2: Gerenciamento de Riscos e
+            Aquisições</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 2 | Metas, Ideias, Oportunidades e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        /* ===== RESUMO DA TENTATIVA ===== */
+        .resumo-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .resumo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .resumo-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .resumo-item .rotulo {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resumo-item .valor {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a4d8c;
+            margin-top: 5px;
+        }
+
+        .resumo-item .valor.nota {
+            color: #28a745;
+            font-size: 2rem;
+        }
+
+        .resumo-item .valor.nota span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* ===== QUESTÕES ===== */
+        .questao-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .questao-item:hover {
+            transform: translateX(4px);
+        }
+
+        .questao-item .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .cabecalho .numero {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .questao-item .cabecalho .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .questao-item .cabecalho .status.correto {
+            background: #e8f5e9;
+            color: #28a745;
+        }
+
+        .questao-item .cabecalho .status.incorreto {
+            background: #ffebee;
+            color: #dc3545;
+        }
+
+        .questao-item .texto {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .resposta {
+            font-size: 0.9rem;
+            color: #555;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+        }
+
+        .questao-item .resposta .label {
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .questao-item .resposta .valor {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .questao-item .resposta .valor.incorreto {
+            color: #dc3545;
+        }
+
+        .questao-item .explicacao {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-left: 4px solid #0066cc;
+            font-size: 0.9rem;
+        }
+
+        .questao-item .explicacao strong {
+            color: #0066cc;
+        }
+
+        .questao-item .alternativas {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .questao-item .alternativas li {
+            list-style: none;
+            padding: 4px 0;
+        }
+
+        .questao-item .alternativas .correta {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        /* ===== BOTÃO NOTA 10 ===== */
+        .nota10-container {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            border: 3px solid #28a745;
+        }
+
+        .nota10-container .emoji {
+            font-size: 4rem;
+        }
+
+        .nota10-container .titulo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin: 10px 0;
+        }
+
+        .nota10-container .subtitulo {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .nota10-container .mascote {
+            font-size: 5rem;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* ===== BOTÃO CONTINUAR ===== */
+        .btn-continuar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 8px;
+                font-size: 0.5em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .resumo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nota10-container .titulo {
+                font-size: 1.8rem;
+            }
+
+            .nota10-container .emoji {
+                font-size: 3rem;
+            }
+
+            .questao-item .alternativas {
+                padding-left: 10px;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .resumo-container {
+                break-inside: avoid;
+            }
+
+            .questao-item {
+                break-inside: avoid;
+            }
+
+            header {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .nota10-container {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resumo-container {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 2 – Metas, Ideias, Oportunidades e Inovação</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod2_und2-criatividade-ideias-oportunidades-e-inovacao.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 2
+            </a>
+            <a href="mod3_und1-validacao-de-ideias-e-proposta-de-valor.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Mod 3 Und 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: NOTA 10 ===== -->
+        <section>
+            <div class="nota10-container">
+                <span class="mascote">🧑‍🎓</span>
+                <div class="emoji">🎉</div>
+                <div class="titulo">Nota 10!</div>
+                <div class="subtitulo">
+                    Parabéns! Você concluiu a avaliação do Módulo 2 com <strong>100% de aproveitamento</strong>.
+                </div>
+                <div style="margin-top: 15px; font-size: 0.95rem; color: #555;">
+                    <span style="background: white; padding: 5px 15px; border-radius: 20px; display: inline-block;">
+                        ⭐ 10,00 de 10,00 pontos
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO DA TENTATIVA ===== -->
+        <section>
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-container">
+                <div class="resumo-grid">
+                    <div class="resumo-item">
+                        <div class="rotulo">📌 Situação</div>
+                        <div class="valor" style="color: #28a745;">Finalizada</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">📅 Iniciado</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 19:51</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏱️ Concluído</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 20:04</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏳ Duração</div>
+                        <div class="valor">12 minutos 34 segundos</div>
+                    </div>
+                    <div class="resumo-item" style="grid-column: span 2; max-width: 300px; margin: 0 auto;">
+                        <div class="rotulo">⭐ Nota</div>
+                        <div class="valor nota">10,00 <span>/ 10,00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>💬 Comentário</h4>
+                <p style="margin: 0;">
+                    🧑‍🎓 Mascote da UFMS sorrindo, usando camiseta da universidade e segurando uma placa azul com a
+                    mensagem <strong>"Nota 10!"</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: QUESTÕES ===== -->
+        <section>
+            <h2>📝 Questões da Avaliação</h2>
+
+            <!-- Questão 1 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 1</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No processo de definição de metas, a ausência de critérios claros pode comprometer o
+                        acompanhamento e a execução. Uma meta sem prazo definido é:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li class="correta">✓ a. <strong>Incompleta</strong></li>
+                    <li>b. Mensurável</li>
+                    <li>c. Estratégica</li>
+                    <li>d. Inovadora</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">a. Incompleta</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Uma meta sem prazo definido é incompleta, pois o prazo é um elemento
+                    fundamental (critério Temporal - T da metodologia SMART) para que a meta possa ser adequadamente
+                    acompanhada e executada.
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 2</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No processo criativo, é importante evitar o julgamento durante a geração de ideias.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Verdadeiro</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No processo criativo, o julgamento durante a geração de ideias deve ser
+                    evitado para estimular a fluência, liberar a criatividade e evitar bloqueios. O julgamento ocorre na
+                    fase de avaliação e seleção, após a geração.
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 3</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Relacione corretamente os tipos de inovação:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Busca resolver problemas sociais gerando impacto na sociedade.</span>
+                    <span class="valor"> → Inovação social</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Introduz mudanças significativas que transformam mercados ou tecnologias.</span>
+                    <span class="valor"> → Inovação radical</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Promove melhorias em produtos, serviços ou processos existentes.</span>
+                    <span class="valor"> → Inovação incremental</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A inovação social gera impacto na sociedade; a inovação radical
+                    transforma mercados ou tecnologias com mudanças significativas; a inovação incremental promove
+                    melhorias contínuas em produtos ou processos já existentes.
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 4</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Metas bem estruturadas ajudam a transformar intenção em ação.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Verdadeiro</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Metas bem estruturadas (específicas, mensuráveis, atingíveis,
+                    relevantes e com prazo) são fundamentais para transformar intenção em ação, fornecendo direção, foco
+                    e um caminho claro para alcançar resultados.
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 5</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No Design Thinking, a compreensão do usuário é fundamental para o desenvolvimento de
+                        soluções relevantes. Neste contexto, a empatia significa:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Concordar com o usuário em todas as situações.</li>
+                    <li>b. Perguntar diretamente o que ele quer e seguir a resposta.</li>
+                    <li>c. Observar superficialmente o comportamento.</li>
+                    <li class="correta">✓ d. <strong>Compreender profundamente o contexto, necessidades e experiências
+                            do usuário.</strong></li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">d. Compreender profundamente o contexto, necessidades e experiências do
+                        usuário.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No Design Thinking, empatia significa compreender profundamente o
+                    usuário, seu contexto, necessidades, dores, desejos e experiências, para desenvolver soluções
+                    verdadeiramente relevantes e centradas no ser humano.
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 6</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Durante o planejamento empreendedor, diferentes ferramentas podem ser utilizadas para
+                        estruturar objetivos e metas de forma clara. A metodologia SMART é utilizada para:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Criar ideias inovadoras.</li>
+                    <li>b. Validar produtos no mercado.</li>
+                    <li>c. Definir o público-alvo.</li>
+                    <li class="correta">✓ d. <strong>Estruturar metas claras e acompanháveis.</strong></li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">d. Estruturar metas claras e acompanháveis.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A metodologia SMART (Específica, Mensurável, Atingível, Relevante e
+                    Temporal) é utilizada para estruturar metas claras, objetivas e acompanháveis, garantindo que sejam
+                    bem definidas e possam ser monitoradas.
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 7</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Relacione os elementos do processo de inovação às suas funções:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Resultado estruturado após testes e validações.</span>
+                    <span class="valor"> → Solução</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Situação inicial que precisa ser compreendida.</span>
+                    <span class="valor"> → Problema</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Proposta inicial para resolver o problema.</span>
+                    <span class="valor"> → Ideia</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No processo de inovação, o problema é a situação inicial a ser
+                    compreendida; a ideia é a proposta inicial para resolvê-lo; e a solução é o resultado estruturado
+                    após testes e validações.
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 8</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Metas bem definidas no empreendedorismo são importantes porque:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li class="correta">✓ a. <strong>Orientam a execução e permitem acompanhamento dos
+                            resultados.</strong></li>
+                    <li>b. Eliminam riscos do projeto.</li>
+                    <li>c. Substituem a necessidade de planejamento.</li>
+                    <li>d. Garantem resultados imediatos independentemente do contexto.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">a. Orientam a execução e permitem acompanhamento dos resultados.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Metas bem definidas orientam a execução das atividades, direcionam
+                    esforços e permitem o acompanhamento dos resultados, facilitando ajustes e correções de rota ao
+                    longo do processo.
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 9</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No contexto do empreendedorismo, investigar um problema antes de propor soluções é
+                        importante porque:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Permite reduzir a necessidade de planejamento.</li>
+                    <li>b. Substitui a necessidade de criatividade.</li>
+                    <li class="correta">✓ c. <strong>Aumenta a chance de desenvolver soluções relevantes.</strong></li>
+                    <li>d. Garante que a primeira ideia seja a melhor.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">c. Aumenta a chance de desenvolver soluções relevantes.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Investigar o problema antes de propor soluções permite compreender
+                    profundamente as necessidades e dores dos usuários, aumentando significativamente a chance de
+                    desenvolver soluções relevantes e eficazes.
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 10</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Relacione as etapas do Design Thinking com suas características:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Testar e materializar soluções.</span>
+                    <span class="valor"> → Prototipagem</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Gerar ideias.</span>
+                    <span class="valor"> → Ideação</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Compreender o usuário.</span>
+                    <span class="valor"> → Empatia</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> As etapas do Design Thinking incluem: Empatia (compreender o usuário),
+                    Ideação (gerar ideias) e Prototipagem (testar e materializar soluções), além de Definição e Teste.
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===== SEÇÃO: BOTÃO CONTINUAR ===== -->
+        <section>
+            <div style="text-align: center;">
+                <a href="mod3_und1-validacao-de-ideias-e-proposta-de-valor.html" class="btn-continuar">
+                    <i class="material-icons">arrow_forward</i> Seguir para o Módulo 3
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="../6s-8-empreendedorismo-e-inovacao/index.html" class="btn-nav"
+                    style="background-color: #6c757d; padding: 10px 25px; border-radius: 50px; font-weight: 500;">
+                    <i class="material-icons" style="font-size: 18px;">arrow_back</i> Voltar para a disciplina
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">01000000030-T01-2026-1 · Módulo 2 – Checkout de Presença</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

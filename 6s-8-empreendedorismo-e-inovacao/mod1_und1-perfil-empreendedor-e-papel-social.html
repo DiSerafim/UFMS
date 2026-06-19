@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 1: Perfil Empreendedor e Papel Social | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        .principio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 12px;
+        }
+
+        .principio-numero {
+            background: #1a4d8c;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* ===== AUTOAVALIAÇÃO ===== */
+        .autoavaliacao-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #0066cc;
+            overflow-x: auto;
+        }
+
+        .autoavaliacao-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .autoavaliacao-container th {
+            background: #245;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .autoavaliacao-container td {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        .autoavaliacao-container tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .autoavaliacao-container .dimensao-titulo {
+            background: #e7f3f5;
+            font-weight: 600;
+            color: #245;
+        }
+
+        .escala-label {
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn-download:hover {
+            background: #218838;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .autoavaliacao-container {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        #video-aula {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 15px 10px 15px;
+            margin: 0 -25px 20px -25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #0066cc;
+            transition: all 0.3s ease;
+        }
+
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 1 - Perfil Empreendedor, Sociedade e Motivação</h2>
+        <h3>📊 Unidade 1 – Perfil Empreendedor e Papel Social</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="forum-de-discussao-empreendedorismo-e-inovacao.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Fórum de Discussão
+            </a>
+            <a href="mod1_und2-universidade-empreendedora-e-ecossistema-de-inovacao.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 1 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/M5xF0JhAslk?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 1 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 1">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 1 - Unidade 1
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: APRESENTAÇÃO ===== -->
+        <section>
+            <h2>🎯 Apresentação da Unidade</h2>
+            <p>Você já assistiu a <strong>"Mauricio de Sousa – O Filme" (2025)</strong>? O longa-metragem mostra não
+                apenas o criador da Turma da Mônica como empresário de sucesso, mas como um jovem que enfrentou
+                rejeições e dificuldades antes de transformar seus desenhos em um universo conhecido em todo o Brasil.
+            </p>
+
+            <p><strong>Agora pense comigo:</strong> Mauricio de Sousa nasceu empreendedor? Ou se tornou empreendedor ao
+                persistir, testar, errar, ajustar e continuar?</p>
+
+            <p>Neste módulo, discutiremos como o <strong>perfil empreendedor se desenvolve ao longo da trajetória de
+                    vida</strong>, por meio de atitudes como curiosidade, iniciativa e disposição para aprender com os
+                desafios.</p>
+
+            <div class="dica-box">
+                <h4>💡 Você sabia?</h4>
+                <p><strong>Startup</strong> é uma organização criada para desenvolver novos produtos ou serviços em
+                    condições de extrema incerteza, buscando descobrir um modelo de negócio sustentável e escalável por
+                    meio de experimentação e aprendizado contínuo (Ries, 2019).</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PERFIL EMPREENDEDOR ===== -->
+        <section>
+            <h2>🧠 Perfil Empreendedor: Atitudes, Comportamentos e Mentalidade</h2>
+
+            <p>Podemos organizar o perfil empreendedor em <strong>quatro dimensões interdependentes</strong>, as
+                <strong>Dimensões das Competências Empreendedoras</strong>:
+            </p>
+
+            <!-- DIMENSÃO 1 -->
+            <h3>🎯 DIMENSÃO 1: Competências Comportamentais e de Realização (AÇÃO)</h3>
+            <p>Diz respeito à <strong>energia para agir, executar e buscar resultados</strong>. Espera-se que o
+                empreendedor tenha:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h4>Iniciativa e Proatividade</h4>
+                    <p>Agir antes de ser solicitado, antecipar-se aos problemas e criar oportunidades.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏆</div>
+                    <h4>Necessidade de Realização</h4>
+                    <p>Desejo interno de fazer melhor, de alcançar algo significativo (McClelland, 1972).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💪</div>
+                    <h4>Persistência e Resiliência</h4>
+                    <p>Enfrentar obstáculos, superar fracassos e continuar em direção aos objetivos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Comprometimento com Resultados</h4>
+                    <p>Assumir responsabilidade pela entrega de resultados, mesmo em condições adversas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h4>Assumir Riscos Calculados</h4>
+                    <p>Avaliar riscos e agir mesmo sem garantias, calculando possíveis perdas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h4>Independência e Autoconfiança</h4>
+                    <p>Acreditar na própria capacidade para resolver problemas e alcançar metas.</p>
+                </div>
+            </div>
+
+            <!-- DIMENSÃO 2 -->
+            <h3>🧩 DIMENSÃO 2: Competências Cognitivas e Estratégicas (ESTRATÉGIA)</h3>
+            <p>Diz respeito a <strong>como o empreendedor interpreta, decide e constrói estratégias</strong>. Espera-se
+                que ele saiba:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h4>Identificar Oportunidades</h4>
+                    <p>Perceber necessidades não atendidas e transformá-las em soluções viáveis.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>Planejar e Estabelecer Metas</h4>
+                    <p>Definir objetivos claros e estruturar planos para alcançá-los.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h4>Tomar Decisão sob Incerteza</h4>
+                    <p>Decidir com informações incompletas, equilibrando intuição e análise.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h4>Visão Sistêmica</h4>
+                    <p>Enxergar conexões entre diferentes partes do negócio e do ambiente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h4>Estruturar Modelo de Negócio</h4>
+                    <p>Organizar a lógica de criação, entrega e captura de valor.</p>
+                </div>
+            </div>
+
+            <!-- DIMENSÃO 3 -->
+            <h3>🤝 DIMENSÃO 3: Competências Relacionais e Institucionais (CONEXÃO)</h3>
+            <p>Diz respeito à <strong>interação com pessoas, organizações e ecossistemas</strong>. Espera-se que o
+                empreendedor seja capaz de:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h4>Construir Redes</h4>
+                    <p>Estabelecer e manter relacionamentos que gerem valor mútuo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🗣️</div>
+                    <h4>Persuadir e Influenciar</h4>
+                    <p>Comunicar ideias de forma convincente e mobilizar pessoas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤲</div>
+                    <h4>Colaborar e Liderar</h4>
+                    <p>Trabalhar em equipe, compartilhar conhecimento e liderar com empatia.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h4>Responsabilidade Social e Ética</h4>
+                    <p>Agir com integridade e considerar o impacto das ações na sociedade.</p>
+                </div>
+            </div>
+
+            <!-- DIMENSÃO 4 -->
+            <h3>💡 DIMENSÃO 4: Competências de Inovação e Aprendizagem Contínua (INOVAÇÃO)</h3>
+            <p>Diz respeito ao <strong>criar, experimentar, adaptar e evoluir continuamente</strong>. É esperado que o
+                empreendedor possa:</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🧪</div>
+                    <h4>Testar Hipóteses</h4>
+                    <p>Validar suposições por meio de experimentos práticos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h4>Pivotagem e Ajuste Estratégico</h4>
+                    <p>Mudar de direção com base em aprendizados obtidos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h4>Criatividade Aplicada</h4>
+                    <p>Gerar soluções originais para problemas complexos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h4>Aprendizagem Contínua</h4>
+                    <p>Buscar conhecimento constantemente, mesmo fora da área de formação.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h4>Mentalidade Digital</h4>
+                    <p>Utilizar tecnologias digitais para criar e escalar soluções.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CASOS PRÁTICOS ===== -->
+        <section>
+            <h2>🌟 Empreendedorismo Universitário na Prática</h2>
+
+            <h3>🔗 Caso Dual Link</h3>
+            <p>O pesquisador <strong>Cauê Alves Martins</strong>, durante sua trajetória acadêmica, percebeu um desafio
+                recorrente: a distância entre a produção científica da universidade e as necessidades concretas das
+                empresas. A experiência de realizar um estágio de pós-doutorado em uma empresa no Canadá ampliou essa
+                percepção.</p>
+            <p>Em 2024, fundou a <strong>Dual Link</strong>, com o objetivo de aproximar a universidade das empresas por
+                meio de soluções tecnológicas baseadas em pesquisa científica. Em 2025, a iniciativa havia prospectado
+                cerca de <strong>R$ 300 mil em subvenção econômica</strong>, gerado receita inicial e aberto
+                oportunidades para estudantes e egressos da UFMS.</p>
+
+            <h3>🧶 Caso República das Arteiras</h3>
+            <p><strong>Ivani Marques</strong>, fundadora da <strong>República das Arteiras</strong>, criou a iniciativa
+                na UFMS em 2017, transformando habilidades artesanais em oportunidade de geração de renda e impacto
+                social. O projeto conecta artesãs, promove capacitação e amplia oportunidades de geração de renda.</p>
+
+            <h3>⚛️ Caso DemoFísica</h3>
+            <p>O professor <strong>Além-Mar Bernardes Gonçalves</strong> (INFI/UFMS) desenvolveu o
+                <strong>DemoFísica</strong>, projeto que leva experimentos lúdicos a escolas e ao público, explicando
+                conceitos por meio de situações do cotidiano. Também criou o <strong>Laboratório Ciência Maker</strong>,
+                voltado à prototipagem e desenvolvimento de materiais didáticos, e implantou o <strong>primeiro
+                    planetário fixo de Mato Grosso do Sul</strong>.
+            </p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p>Que problema ainda não foi bem resolvido na sua área de formação? Que processo poderia ser melhorado?
+                    Que "dor" das pessoas poderia ser reduzida?</p>
+                <p><strong>Anote sua resposta.</strong> Essa reflexão pode se transformar em projeto ao longo da
+                    disciplina.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS E FRAMEWORKS ===== -->
+        <section>
+            <h2>📚 Referências e Frameworks Internacionais</h2>
+
+            <h3>🌍 EntreComp - Quadro Europeu de Competências Empreendedoras</h3>
+            <p>O framework europeu <strong>EntreComp</strong> (European Commission, 2016) define empreendedorismo como
+                uma competência aplicável a qualquer área da vida, estruturada em três grandes dimensões:</p>
+            <div class="grid-3">
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <h4>💡 Ideias e Oportunidades</h4>
+                    <p>Identificar oportunidades, criar valor e transformar ideias em ação.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <h4>📦 Recursos</h4>
+                    <p>Mobilizar recursos, financeiros e humanos, para viabilizar projetos.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <h4>⚡ Ação</h4>
+                    <p>Iniciativa, planejamento, gestão e aprendizado com a experiência.</p>
+                </div>
+            </div>
+
+            <h3>📊 World Economic Forum - Competências para o Século XXI</h3>
+            <p>O <strong>World Economic Forum (2023)</strong> aponta <strong>criatividade, pensamento crítico, resolução
+                    de problemas complexos e resiliência</strong> como competências essenciais para o futuro do
+                trabalho.</p>
+
+            <div class="referencia">
+                <strong>📖 Referências Bibliográficas Citadas:</strong><br>
+                • McClelland, D. (1972). A sociedade competitiva: realização e progresso social.<br>
+                • Drucker, P. (2014). Inovação e espírito empreendedor.<br>
+                • Ries, E. (2019). A startup enxuta.<br>
+                • Etzkowitz, H.; Zhou, C. (2018). A tríplice hélice: universidade-empresa-governo.<br>
+                • Goleman, D. (2021). Inteligência emocional.<br>
+                • European Commission (2016). EntreComp: Quadro Europeu de Competências para o Empreendedorismo.<br>
+                • World Economic Forum (2023). Relatório sobre o Futuro do Trabalho.
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: AUTOAVALIAÇÃO ===== -->
+        <section>
+            <h2>📋 Autoavaliação de Competências Empreendedoras</h2>
+            <p><strong>Diagnóstico inicial</strong> - Leia cada afirmação e marque o quanto ela representa seu
+                comportamento atual. Considere a escala: <strong>1) Nunca 2) Raramente 3) Às vezes 4) Frequentemente 5)
+                    Sempre</strong></p>
+
+            <div class="autoavaliacao-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width: 250px;">Situação</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="dimensao-titulo">🎯 DIMENSÃO 1 – AÇÃO</td>
+                        </tr>
+                        <tr>
+                            <td>Eu participo ou já participei de grupos, projetos ou eventos na universidade.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu construo networking com colegas e professores.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo apresentar minhas ideias com clareza.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu sei trabalhar bem em equipe.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu colaboro ativamente nos trabalhos em grupo.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo influenciar positivamente as pessoas ao meu redor.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu considero o impacto social das minhas ações dentro e fora da universidade.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu ajo com ética mesmo quando ninguém está olhando.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu conheço programas da universidade que incentivam inovação ou empreendedorismo.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu procuro me integrar ao ecossistema acadêmico além da sala de aula.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" class="dimensao-titulo">🧩 DIMENSÃO 2 – ESTRATÉGIA</td>
+                        </tr>
+                        <tr>
+                            <td>Eu identifico problemas no meu curso que poderiam virar soluções ou projetos.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Antes de tomar uma decisão importante, eu busco informações.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>No início do semestre, estabeleço metas claras e organizo prazos para alcançá-las.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ao longo do semestre, eu verifico se estou cumprindo minhas metas e ajusto meu
+                                planejamento.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo decidir mesmo quando não tenho 100% de certeza.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu organizo meu tempo e meus recursos de forma eficiente.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo enxergar como diferentes disciplinas se conectam.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu penso no meu crescimento a longo prazo e escolho atividades alinhadas à minha
+                                carreira.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo estruturar uma ideia em modelo mais organizado.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu observo tendências e demandas do mercado na minha área.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" class="dimensao-titulo">🤝 DIMENSÃO 3 – CONEXÃO</td>
+                        </tr>
+                        <tr>
+                            <td>Eu participo ou já participei de grupos, projetos ou eventos na universidade.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu construo networking com colegas e professores.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo apresentar minhas ideias com clareza.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu sei trabalhar bem em equipe.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu colaboro ativamente nos trabalhos em grupo.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu consigo influenciar positivamente as pessoas ao meu redor.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu considero o impacto social das minhas ações dentro e fora da universidade.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu ajo com ética mesmo quando ninguém está olhando.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu conheço programas da universidade que incentivam inovação ou empreendedorismo.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu procuro me integrar ao ecossistema acadêmico além da sala de aula.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" class="dimensao-titulo">💡 DIMENSÃO 4 – INOVAÇÃO</td>
+                        </tr>
+                        <tr>
+                            <td>Diante de um problema, eu busco propor soluções criativas.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu gosto de testar ideias novas.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu aceito que errar faz parte do processo de aprender.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu ajusto minha estratégia quando algo não funciona.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu já mudei de ideia ao perceber que havia alternativa melhor.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu estou aberto(a) a aprender coisas que não fazem parte da minha área de formação.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu uso ferramentas digitais para aprender ou criar soluções.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu busco feedback para melhorar.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu gosto de construir soluções junto com outras pessoas.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eu busco aprender continuamente, mesmo que não sejam exigências acadêmicas.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 20px;">
+                    <h4>📊 Como Interpretar Seus Resultados</h4>
+                    <p><strong>Some os pontos de cada dimensão:</strong> (10 a 50 pontos por dimensão)</p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li><strong>10-24 pontos:</strong> Competência em desenvolvimento inicial. Escolha 2
+                            comportamentos para trabalhar nas próximas 4 semanas.</li>
+                        <li><strong>25-37 pontos:</strong> Competência em consolidação. Foque em transformar intenção em
+                            hábito.</li>
+                        <li><strong>38-50 pontos:</strong> Competência forte. Desafio: como usar essa competência para
+                            liderar projetos ou ajudar colegas?</li>
+                    </ul>
+                    <p><strong>Perfil Geral:</strong> Some os pontos das quatro dimensões (40 a 200 pontos).</p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>40-90 pontos:</strong> Perfil em construção. O empreendedorismo ainda não é um
+                            comportamento estruturado.</li>
+                        <li><strong>91-150 pontos:</strong> Perfil em desenvolvimento. Você possui bases sólidas, mas
+                            precisa de consistência estratégica.</li>
+                        <li><strong>151-200 pontos:</strong> Perfil de empreendedor protagonista. Você demonstra
+                            maturidade comportamental, estratégica, relacional e inovadora.</li>
+                    </ul>
+                </div>
+
+                <button class="btn-download" onclick="window.print()">
+                    <i class="material-icons">print</i> Imprimir / Salvar como PDF
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PARA REFLETIR ===== -->
+        <section>
+            <h2>💭 Motivação, Propósito e Protagonismo</h2>
+            <p>Mauricio de Sousa não desenhava apenas personagens. Ele desenhava <strong>propósito</strong>. Em sua
+                primeira tentativa profissional, recebeu um conselho que poderia ter encerrado sua trajetória: foi
+                alertado de que não conseguiria viver daquilo.</p>
+            <p>Em vez de interpretar essas falas como um limite definitivo, ele assumiu a responsabilidade pela própria
+                trajetória, buscou novos caminhos e continuou acreditando que era possível transformar talento em
+                profissão.</p>
+
+            <div class="atencao-box">
+                <h3>💡 Reflexão</h3>
+                <p><strong>"Quem não controla a própria narrativa, tem a narrativa controlada por outros"</strong>
+                    (Maximiliano, 2025, p. 320).</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>❓ Por que algumas pessoas transformam ideias em ação e outras não?</h4>
+                    <ul style="margin-left: 1.2rem;">
+                        <li><strong>McClelland (1972):</strong> Necessidade de realização – o desejo interno de fazer
+                            melhor.</li>
+                        <li><strong>Biagio (2012):</strong> Empreendedorismo como construção de um projeto de vida.</li>
+                        <li><strong>Dolabela (2025):</strong> "Sonho estruturado" – transformar propósito em projeto.
+                        </li>
+                        <li><strong>Varol (2022):</strong> Mentalidade experimental – testar, ajustar e continuar.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎯 O Papel do Empreendedor no Desenvolvimento Social</h4>
+                    <ul style="margin-left: 1.2rem;">
+                        <li><strong>Drucker (2014):</strong> Inovação como instrumento central do empreendedor.</li>
+                        <li><strong>Arantes (2014):</strong> Geração de valor social, além do econômico.</li>
+                        <li><strong>Etzkowitz e Zhou (2018):</strong> Universidades empreendedoras contribuem para o
+                            desenvolvimento regional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>Você já iniciou algo novo na sua vida?</strong> Um projeto acadêmico? Um grupo de estudos?
+                    Uma ação social?</p>
+                <p>O que motivou você? Houve risco? Houve inovação? Essa reflexão ajuda a compreender que o
+                    comportamento empreendedor pode estar presente em diferentes contextos.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Resumo da Unidade 1</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🧠 Perfil Empreendedor</h4>
+                    <p>Organizado em quatro dimensões: <strong>Ação, Estratégia, Conexão e Inovação</strong>.
+                        Competências que podem ser desenvolvidas ao longo da vida.</p>
+                </div>
+                <div class="card">
+                    <h4>🌟 Casos Práticos</h4>
+                    <p><strong>Dual Link, República das Arteiras e DemoFísica</strong> – exemplos de como a universidade
+                        pode ser ambiente fértil para ideias inovadoras.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Frameworks</h4>
+                    <p><strong>EntreComp</strong> (Comissão Europeia) e <strong>WEF</strong> (World Economic Forum) –
+                        competências empreendedoras como essenciais para o século XXI.</p>
+                </div>
+                <div class="card">
+                    <h4>💭 Motivação e Propósito</h4>
+                    <p>Empreender envolve <strong>assumir responsabilidade pela própria trajetória</strong>, mesmo
+                        quando o ambiente ainda não valida a ideia.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 1 - Unidade 1</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

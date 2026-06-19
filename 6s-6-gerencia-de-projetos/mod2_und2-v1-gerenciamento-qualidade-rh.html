@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 2: Qualidade e Recursos Humanos | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .qualidade-card {
+            background: linear-gradient(135deg, #e8f5e9, #d0e8d0);
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .rh-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdef5);
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .metrica-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .conflito-item {
+            border-left: 4px solid #ff8c00;
+            background: #fff8e7;
+            padding: 0.8rem;
+            margin: 0.6rem 0;
+            border-radius: 12px;
+        }
+
+        .etica-card {
+            background: #1e2a3a;
+            color: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+        }
+
+        .etica-card a {
+            color: #ffd966;
+        }
+
+        .btn-download {
+            background-color: #0066cc;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-download:hover {
+            background-color: #004d99;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 2 - Tópicos Básicos da Gerência de Projetos</h2>
+        <h3>✅ Unidade 2 – Gerenciamento de Qualidade e Recursos Humanos em Projetos de Software - V1</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod2_und1-v2-gerenciamento-custos.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 1.2
+            </a>
+            <a href="mod2_und2-v2-gerenciamento-qualidade-rh.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 2 Und 2.2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FCWGizyxNuw" frameborder="0"
+                    title="Gerência de Projetos - Módulo 2 - Unidade 2 - Qualidade e Recursos Humanos"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 2 - Unidade 2 (Qualidade e RH)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 32min</p>
+        </section>
+
+        <!-- ================= PARTE 1: GERENCIAMENTO DE QUALIDADE ================= -->
+        <section>
+            <h2>📌 Parte 1 – Gerenciamento de Qualidade em Projetos de Software</h2>
+            <p>A qualidade em projetos de software vai além de "ausência de defeitos". Envolve satisfação do cliente,
+                conformidade com requisitos e melhoria contínua dos processos. O PMBOK define três processos principais:
+                <strong>Planejar a Qualidade, Gerenciar a Qualidade e Controlar a Qualidade</strong>.
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Conceitos-chave</h4>
+                    <ul>
+                        <li><strong>Satisfação do cliente:</strong> atender ou superar expectativas.</li>
+                        <li><strong>Prevenção vs Inspeção:</strong> evitar defeitos é mais barato que corrigi-los.</li>
+                        <li><strong>Melhoria contínua (PDCA, Six Sigma, Kaizen):</strong> processo evolutivo.</li>
+                        <li><strong>Responsabilidade da gerência:</strong> qualidade começa no planejamento.</li>
+                        <li><strong>Custo da qualidade (CDQ):</strong> custos de prevenção, avaliação, falhas internas e
+                            externas.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>💰 Custo da Qualidade (CoQ)</h4>
+                    <p><strong>Custos de conformidade:</strong> prevenção (treinamento, planejamento) + avaliação
+                        (testes, revisões).</p>
+                    <p><strong>Custos de não conformidade:</strong> falhas internas (retrabalho) + falhas externas
+                        (garantia, perda de reputação).</p>
+                    <p><em>Exemplo: Um bug crítico encontrado em produção custa 10x mais que corrigi-lo na fase de
+                            requisitos.</em></p>
+                </div>
+            </div>
+
+            <h3>🔄 Processos de Gerenciamento da Qualidade (PMBOK)</h3>
+            <div class="grid-3">
+                <div class="card metodo-card">
+                    <i class="material-icons">planner</i>
+                    <h4>Planejar a Qualidade</h4>
+                    <p>Identificar padrões e requisitos de qualidade, definir métricas e como serão atendidos.</p>
+                </div>
+                <div class="card metodo-card">
+                    <i class="material-icons">manage_accounts</i>
+                    <h4>Gerenciar a Qualidade</h4>
+                    <p>Converter plano de qualidade em atividades operacionais, auditorias, análises de processo.</p>
+                </div>
+                <div class="card metodo-card">
+                    <i class="material-icons">monitor</i>
+                    <h4>Controlar a Qualidade</h4>
+                    <p>Monitorar e registrar resultados, inspeções, testes, recomendar mudanças.</p>
+                </div>
+            </div>
+
+            <!-- Métricas de Qualidade -->
+            <div class="qualidade-card">
+                <h4><i class="material-icons">bar_chart</i> Métricas de Qualidade para Software (Exemplos práticos)</h4>
+                <div class="metrica-grid">
+                    <div><strong>⚡ Métricas de Velocidade</strong><br>Transações/segundo, tempo de resposta (ms), tempo
+                        de atualização de tela.</div>
+                    <div><strong>📱 Métricas de Facilidade de uso</strong><br>Tempo de treinamento, número de chamados
+                        de ajuda, satisfação do usuário (CSAT).</div>
+                    <div><strong>🔒 Métricas de Confiabilidade</strong><br>MTBF (tempo médio entre falhas),
+                        disponibilidade (%), taxa de falhas.</div>
+                    <div><strong>🐞 Métricas de Defeitos</strong><br>Densidade de defeitos (bugs/KLOC), eficácia de
+                        remoção, tempo médio para reparo (MTTR).</div>
+                </div>
+                <p><strong>Exemplo Cidade Virtual:</strong> tempo de carregamento da página < 2s, 99,5% de
+                        disponibilidade, menos de 0,5 bugs/1000 req. Essas métricas são acordadas com o cliente no plano
+                        de qualidade.</p>
+            </div>
+
+            <!-- Ferramentas: Diagrama de Pareto, Ishikawa, etc -->
+            <h3>🔧 Ferramentas da Qualidade (Análise de Dados)</h3>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📊 Diagrama de Pareto (80/20)</h4>
+                    <p>Identifica as poucas causas vitais responsáveis pela maioria dos defeitos. Exemplo: 80% dos bugs
+                        vêm de 20% dos módulos.</p>
+                </div>
+                <div class="card">
+                    <h4>🐟 Diagrama de Ishikawa (Causa-efeito)</h4>
+                    <p>Estrutura causas potenciais de um problema (pessoas, processos, tecnologia, ambiente).</p>
+                </div>
+                <div class="card">
+                    <h4>📈 Gráficos de Controle</h4>
+                    <p>Monitora estabilidade do processo (limites superior e inferior). Variações especiais indicam ação
+                        corretiva.</p>
+                </div>
+                <div class="card">
+                    <h4>✅ Checklist de Verificação</h4>
+                    <p>Lista de itens para inspeção (ex: code review checklist baseado em boas práticas).</p>
+                </div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Qualidade ágil: Definição de Pronto (DoD)</h4>
+                <p>Em equipes Scrum, a <strong>Definition of Done</strong> estabelece critérios objetivos para que uma
+                    história seja considerada completa (ex: código revisado, teste automatizado, documentação
+                    atualizada, sem bugs críticos). Isso evita entregas com débito técnico.</p>
+                <p><strong>Exemplo DoD para Cidade Virtual:</strong> “Feature só é aceita se coberta por testes
+                    unitários >80%, aprovada em revisão por pares e sem defeitos bloqueantes.”</p>
+            </div>
+        </section>
+
+        <!-- ================= PARTE 2: GERENCIAMENTO DE RECURSOS HUMANOS ================= -->
+        <section>
+            <h2>👥 Parte 2 – Gerenciamento de Recursos Humanos em Projetos de Software</h2>
+            <p>O gerenciamento de recursos humanos envolve organizar, liderar, motivar e desenvolver a equipe do
+                projeto. Pessoas são o ativo mais valioso – e também o mais complexo de gerenciar.</p>
+
+            <!-- Desenvolver a equipe -->
+            <div class="rh-card">
+                <h4><i class="material-icons">group_add</i> Desenvolver a Equipe (PMBOK)</h4>
+                <p>Objetivos: aprimorar competências, melhorar confiança, reduzir conflitos, criar ambiente colaborativo
+                    e aumentar produtividade.</p>
+                <div class="grid-2">
+                    <div><strong>🎯 Comportamentos de alto desempenho:</strong>
+                        <ul>
+                            <li>Comunicação aberta e eficaz</li>
+                            <li>Desenvolvimento de confiança</li>
+                            <li>Gestão construtiva de conflitos</li>
+                            <li>Resolução colaborativa de problemas</li>
+                        </ul>
+                    </div>
+                    <div><strong>🛠️ Ferramentas:</strong>
+                        <ul>
+                            <li>Equipes virtuais (benefícios: custo reduzido, talentos globais)</li>
+                            <li>Tecnologias de comunicação (Teams, Slack, Zoom)</li>
+                            <li>Treinamento e mentoria</li>
+                            <li>Reconhecimento e recompensas</li>
+                            <li>Avaliações de desempenho (360º)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Código de ética -->
+            <div class="etica-card">
+                <h4><i class="material-icons">gavel</i> Código de Ética e Conduta Profissional (ACM / PMI)</h4>
+                <p>Valores essenciais: <strong>Responsabilidade, Respeito, Honestidade, Equidade</strong>. Profissionais
+                    de TI e gerentes devem agir no interesse público, evitar conflitos de interesse e manter
+                    confidencialidade.</p>
+                <p>🔗 <a href="https://link.ufms.br/T5U6y" target="_blank">Código de Ética da ACM (acesso UFMS)</a> | <a
+                        href="https://www.pmi.org/about/ethics/code" target="_blank">PMI Code of Ethics</a></p>
+            </div>
+
+            <!-- Gerenciar a equipe e conflitos -->
+            <h3>⚔️ Gerenciar Conflitos – Técnicas Essenciais</h3>
+            <p>Conflitos são inevitáveis (recursos escassos, prioridades, diferenças pessoais). O gerente deve agir
+                rapidamente, usando a técnica mais adequada:</p>
+            <div class="grid-2">
+                <div class="conflito-item"><strong>🟢 Colaborar/Resolver problema:</strong> Melhor abordagem, integra
+                    perspectivas, busca consenso e comprometimento. Ideal para situações complexas.</div>
+                <div class="conflito-item"><strong>🟡 Ceder/Conciliar:</strong> Cada parte cede um pouco, solução
+                    temporária. Útil quando há pressão de tempo.</div>
+                <div class="conflito-item"><strong>🟠 Suavizar/Acomodar:</strong> Enfatiza acordo, abre mão da posição
+                    para manter harmonia. Cuidado para não acumular frustrações.</div>
+                <div class="conflito-item"><strong>🔴 Forçar/Direcionar:</strong> Solução ganha-perde, usado em
+                    emergências ou quando decisão impositiva é necessária. Pode gerar ressentimento.</div>
+                <div class="conflito-item"><strong>⚪ Retirar/Evitar:</strong> Adiar o conflito. Útil quando o assunto
+                    não é crítico ou o momento não é adequado. Não resolve a causa raiz.</div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">psychology</i> Inteligência Emocional no Gerenciamento de
+                    Equipes</strong><br>
+                Autoconsciência, autorregulação, empatia e habilidades sociais são diferenciais do líder. Estudos
+                mostram que equipes com alta IE têm 30% menos rotatividade e maior satisfação.
+            </div>
+
+            <h3>📊 Motivação – Teorias Aplicadas a Projetos de Software</h3>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Pirâmide de Maslow</h4>
+                    <p>Necessidades: fisiológicas → segurança → sociais → estima → autorrealização. Gerentes devem
+                        prover ambiente seguro, reconhecimento e desafios.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Teoria de Herzberg (Dois Fatores)</h4>
+                    <p><strong>Higiênicos:</strong> salário, condições de trabalho (evitam insatisfação).
+                        <strong>Motivacionais:</strong> reconhecimento, crescimento, desafio (geram satisfação).
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>📌 Teoria de McClelland</h4>
+                    <p>Necessidades: realização, poder, afiliação. Conheça o perfil de cada membro para alocar tarefas
+                        adequadas.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Aplicação prática</h4>
+                    <p>Em software, a autonomia (intrínseca) muitas vezes motiva mais que bônus financeiro. Permita que
+                        desenvolvedores escolham tecnologias ou participem do design.</p>
+                </div>
+            </div>
+
+            <!-- Liderança situacional -->
+            <div class="dica-avancada">
+                <h4><i class="material-icons">diversity_3</i> Liderança Situacional – Adapte seu estilo</h4>
+                <p>Segundo Hersey-Blanchard, o líder deve ajustar o estilo conforme a maturidade da equipe:</p>
+                <ul>
+                    <li><strong>Contar (Direção alta, Apoio baixo):</strong> para membros inexperientes.</li>
+                    <li><strong>Persuadir (Direção alta, Apoio alto):</strong> para equipe que precisa de orientação e
+                        incentivo.</li>
+                    <li><strong>Participar (Direção baixa, Apoio alto):</strong> para equipe competente que precisa de
+                        suporte emocional.</li>
+                    <li><strong>Delegar (Direção baixa, Apoio baixo):</strong> para equipe madura e autônoma.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Integração Qualidade + RH + boas práticas -->
+        <section>
+            <h2>🔗 Integração entre Qualidade e Recursos Humanos</h2>
+            <p>Qualidade e RH estão profundamente conectados. Uma equipe motivada e bem treinada produz software com
+                menos defeitos. Por outro lado, processos de qualidade bem definidos (revisões de código, testes
+                automatizados) geram aprendizado e melhoram a competência da equipe.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📈 Exemplo prático (Cidade Virtual)</h4>
+                    <p>A equipe (2 devs, 1 QA) adota pair programming para transferir conhecimento (RH) e code reviews
+                        com checklist de qualidade (Qualidade). O resultado: redução de 40% nos bugs em produção.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Cultura de melhoria contínua</h4>
+                    <p>Retrospectivas ágeis identificam problemas de processo (qualidade) e de relacionamento (RH).
+                        Ações corretivas são definidas e monitoradas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ferramentas práticas para gestão de RH e Qualidade -->
+        <section>
+            <h2>🛠️ Ferramentas Práticas para o Dia a Dia</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4><i class="material-icons">task</i> Para Gestão de Qualidade</h4>
+                    <ul>
+                        <li>Jira/Zephyr – gestão de casos de teste e defeitos</li>
+                        <li>SonarQube – análise estática de código</li>
+                        <li>Selenium/ Cypress – testes automatizados</li>
+                        <li>Checklists de revisão (ex: baseados em boas práticas de segurança)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><i class="material-icons">people</i> Para Gestão de RH</h4>
+                    <ul>
+                        <li>15Five – feedback contínuo e OKRs</li>
+                        <li>Slack/Teams – comunicação síncrona e assíncrona</li>
+                        <li>Miro/Mural – retrospectivas colaborativas</li>
+                        <li>Monday.com/Asana – alocação de tarefas e acompanhamento de carga</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Considerações finais avançadas -->
+        <section>
+            <h2>✅ Síntese e Dicas para Certificação (PMP / CAPM)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>📌 Qualidade</h4>
+                    <p>PMBOK: processos 8.1, 8.2, 8.3. Conceitos: CoQ, prevenção vs inspeção, 7 ferramentas da qualidade
+                        (Pareto, Ishikawa, fluxograma, etc).</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Recursos Humanos</h4>
+                    <p>PMBOK: processos 9.1 a 9.4. Destaque para desenvolver equipe, gerenciar conflitos, matriz RACI e
+                        teoria motivacional.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Leitura recomendada</h4>
+                    <p>“The Mythical Man-Month” (Fred Brooks) – sobre equipes de software. “Drive” (Daniel Pink) –
+                        motivação autônoma.</p>
+                </div>
+            </div>
+            <div class="dica-box">
+                <i class="material-icons">check_circle</i> <strong>Dica de estudo:</strong> Assista à videoaula
+                novamente e crie um mapa mental dos processos de qualidade e RH. Pratique com questões de simulado PMP
+                sobre técnicas de resolução de conflitos e métricas de qualidade.
+            </div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6ª Edição. Capítulos 8 (Qualidade) e 9 (Recursos Humanos). 2017.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, Roger S; MAXIM, Bruce R.</strong> Engenharia de Software: Uma Abordagem Profissional.
+                9ª ed. McGraw Hill, 2021. Capítulo 26 – Qualidade de Software.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10ª ed. Pearson, 2018. Capítulo 24 –
+                Gerenciamento da Qualidade e Capítulo 22.2 – Gerenciamento de pessoas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 2 - Unidade 2: Qualidade e Recursos Humanos</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

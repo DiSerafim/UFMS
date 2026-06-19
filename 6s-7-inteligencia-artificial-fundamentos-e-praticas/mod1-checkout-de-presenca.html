@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 1 | Inteligência Artificial - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        section {
+            margin: 40px 0;
+            padding: 0 20px 20px 20px;
+            border: 1px solid #ddd;
+            box-shadow: rgba(0, 0, 0, 0.03) 5px 5px;
+        }
+
+        .question {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 4vmax;
+        }
+
+        .question .answer {
+            border: 1px solid #f0ad4e;
+            padding: 1vmax;
+            border-radius: 4px;
+            display: inline-block;
+            background-color: #fff8e1;
+        }
+
+        .question .answer.correta {
+            border-color: #28a745;
+            background-color: #e8f5e9;
+        }
+
+        .answer strong {
+            color: #28a745;
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        .status.concluida {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .status.em-andamento {
+            background-color: #f0ad4e;
+            color: #fff;
+        }
+
+        .status.nota {
+            background-color: #ffc107;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .resumo-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .resumo-box .nota-destaque {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .mascote-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+        }
+
+        .mascote-box .material-icons {
+            font-size: 3.5rem;
+            color: #ffc107;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e8f0;
+        }
+
+        .info-item .label {
+            font-size: 0.75rem;
+            color: #666;
+            display: block;
+        }
+
+        .info-item .valor {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-continuar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+
+        .explicacao {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-left: 4px solid #0066cc;
+            font-size: 0.95rem;
+        }
+
+        .explicacao strong {
+            color: #0066cc;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .no-print {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            h3 {
+                width: 40%;
+                font-size: 0.9rem;
+            }
+
+            .mascote-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resumo-box .nota-destaque {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 0 10px 10px 10px;
+            }
+        }
+
+        @media print {
+
+            .btn-nav,
+            .btn-continuar,
+            .no-print {
+                display: none;
+            }
+
+            header {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resumo-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .mascote-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 1 - Fundamentos da Inteligência Artificial</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Concluído</div>
+    </header>
+
+    <!-- Navegação -->
+    <div class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="mod1_und2-fundamentos-da-ia-generativa.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 2
+            </a>
+            <a href="mod2_und1-ia-na-educacao-na-vida-cotidiana-e-na-tomada-de-decisao.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Mod 2 Und 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+
+    </div>
+
+    <main>
+        <!-- Resumo -->
+        <section id="resumo">
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-box">
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <span class="material-icons" style="font-size: 3.5rem; color: #ffc107;">emoji_events</span>
+                    <span class="nota-destaque">10,00</span>
+                    <span style="font-size: 1.2rem;">de 10,00 (100%)</span>
+                    <span class="status nota" style="margin-left: auto;">✅ Aprovado</span>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Situação</span>
+                    <span class="valor" style="color: #28a745;">Finalizada</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Iniciado</span>
+                    <span class="valor">16 jun 2026, 20:53</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Concluído</span>
+                    <span class="valor">16 jun 2026, 21:04</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duração</span>
+                    <span class="valor">11 min 26 seg</span>
+                </div>
+            </div>
+
+            <!-- Mascote -->
+            <div class="mascote-box">
+                <span class="material-icons">sentiment_very_satisfied</span>
+                <div>
+                    <strong style="font-size: 1.1rem; color: #1a4d8c;">🎉 Parabéns!</strong>
+                    <p style="margin: 5px 0 0 0;">Mascote da UFMS sorrindo, usando camiseta da universidade e segurando
+                        uma placa azul com a mensagem <strong>"Nota 10!"</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questões -->
+        <section id="questoes">
+            <h2>📝 Questões e Respostas</h2>
+
+            <!-- Questão 1 -->
+            <div class="question">
+                <h3>Questão 1</h3>
+                <p><strong>Relacione os programas marcados na história da IA capazes de simular processos de raciocínio
+                        humano com as suas funcionalidades:</strong></p>
+
+                <p><strong>Conseguia demonstrar teoremas da lógica matemática por meio de regras simbólicas.</strong>
+                </p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Logic Theorist ✅</span></p>
+
+                <p><strong>Buscava resolver diferentes tipos de problemas por meio de estratégias gerais de
+                        busca.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> General Problem Solver ✅</span></p>
+
+                <p><strong>Conhecido software moderno de IA generativa.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> ChatGPT ✅</span></p>
+
+                <p><strong>Simulava conversas simples com usuários a partir de padrões de texto previamente
+                        definidos.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> ELIZA ✅</span></p>
+
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O <b>Logic Theorist</b> (1956) demonstrava teoremas matemáticos; o
+                    <b>General Problem Solver</b> (1959) resolvia problemas com estratégias de busca; o <b>ChatGPT</b> é
+                    um modelo moderno de IA generativa; e a <b>ELIZA</b> (1966) simulava conversas simples com padrões
+                    de texto.
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="question">
+                <h3>Questão 2</h3>
+                <p><strong>A arquitetura baseada em transformadores (Transformer) revolucionou o processamento de
+                        linguagem natural, servindo de base para modelos como o ChatGPT. Qual é a função principal do
+                        mecanismo de "atenção" nessa arquitetura?</strong></p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Substituir por completo a necessidade de grandes volumes de dados no treinamento do modelo.
+                    </li>
+                    <li>b. Aumentar a velocidade de processamento apenas reduzindo o número de camadas da rede neural.
+                    </li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>Focar seletivamente em diferentes partes do
+                            texto de entrada para compreender as relações contextuais entre as palavras.</strong></li>
+                    <li>d. Impedir que o modelo gere conteúdos criativos, limitando-o apenas à tradução literal de
+                        frases.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. Focar seletivamente em diferentes partes
+                        do texto de entrada para compreender as relações contextuais entre as palavras. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O mecanismo de "atenção" permite que o modelo analise e atribua
+                    diferentes pesos às partes do texto de entrada que são mais relevantes para compreender o contexto,
+                    funcionando como a leitura humana que considera palavras antes e depois para entender o significado.
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="question">
+                <h3>Questão 3</h3>
+                <p><strong>As Redes Neurais Artificiais (RNAs) são modelos computacionais inspirados na estrutura do
+                        sistema nervoso central de animais, capazes de aprender e reconhecer padrões. Elas são compostas
+                        por unidades de processamento interconectadas, chamadas de neurônios artificiais, organizadas em
+                        camadas (entrada, camadas ocultas e saída). Com base nesse conceito, é correto afirmar que o
+                        "aprendizado" em uma rede neural ocorre por meio do ajuste dos pesos das conexões entre os
+                        neurônios, permitindo que a rede minimize erros e melhore a precisão de suas respostas à medida
+                        que é exposta a novos dados.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Verdadeiro ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O aprendizado em redes neurais ocorre, de fato, pelo ajuste dos pesos
+                    das conexões durante o treinamento (backpropagation), minimizando o erro entre a saída prevista e a
+                    desejada.
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="question">
+                <h3>Questão 4</h3>
+                <p><strong>Associe os termos básicos da IA às suas descrições correspondentes:</strong></p>
+
+                <p><strong>Tipo de IA capaz de criar novos conteúdos (texto, imagem, áudio).</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> IA Generativa ✅</span></p>
+
+                <p><strong>Sequência de instruções lógicas para resolver um problema.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Algoritmo ✅</span></p>
+
+                <p><strong>O resultado do treinamento de um algoritmo em um conjunto de dados.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Modelo ✅</span></p>
+
+                <p><strong>Matéria-prima utilizada para treinar modelos de IA.</strong></p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Dados ✅</span></p>
+
+                <div class="explicacao">
+                    <strong>Explicação:</strong> <b>IA Generativa</b> cria novos conteúdos; <b>Algoritmo</b> é uma
+                    sequência lógica de instruções; <b>Modelo</b> é o resultado do treinamento; <b>Dados</b> são a
+                    matéria-prima fundamental para o treinamento.
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="question">
+                <h3>Questão 5</h3>
+                <p><strong>A arquitetura de redes neurais, conhecida como Transformer, introduziu o mecanismo de
+                        "atenção". Qual a principal vantagem desse mecanismo em comparação com arquiteturas anteriores,
+                        como as redes neurais?</strong></p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Ele elimina a necessidade de usar números para representar palavras.</li>
+                    <li>b. Ele permite que o modelo processe apenas uma palavra por vez, economizando memória.</li>
+                    <li><span style="color: #28a745;">✓</span> c. <strong>Ele permite que o modelo considere, de forma
+                            simultânea e paralela, a relação entre palavras distantes em uma frase.</strong></li>
+                    <li>d. Ele faz com que o modelo armazene um dicionário completo em vez de aprender padrões.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> c. Ele permite que o modelo considere, de
+                        forma simultânea e paralela, a relação entre palavras distantes em uma frase. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Diferentemente de arquiteturas sequenciais (RNNs), o Transformer
+                    processa todas as palavras simultaneamente, capturando relações contextuais entre palavras distantes
+                    de forma mais eficiente.
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="question">
+                <h3>Questão 6</h3>
+                <p><strong>A Inteligência Artificial é uma área recente da ciência da computação, tendo seus primeiros
+                        conceitos e discussões teóricas surgido apenas a partir da década de 2010 com o advento das
+                        redes sociais.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Falso ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A IA existe como campo científico desde a década de 1950, com marcos
+                    como o Teste de Turing (1950) e a Conferência de Dartmouth (1956). A década de 2010 trouxe avanços
+                    significativos, mas não foi o início da área.
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="question">
+                <h3>Questão 7</h3>
+                <p><strong>O que caracteriza o "Aprendizado Não Supervisionado"?</strong></p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li><span style="color: #28a745;">✓</span> a. <strong>O sistema tenta identificar padrões ou
+                            agrupamentos em dados sem rótulos.</strong></li>
+                    <li>b. O sistema é ensinado, passo a passo, por um instrutor humano em tempo real.</li>
+                    <li>c. O sistema não utiliza dados, apenas regras lógicas pré-definidas.</li>
+                    <li>d. O sistema recebe recompensas por acertos e punições por erros.</li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> a. O sistema tenta identificar padrões ou
+                        agrupamentos em dados sem rótulos. ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No aprendizado não supervisionado, o sistema recebe dados não rotulados
+                    e deve encontrar padrões, agrupamentos ou estruturas por conta própria, como na segmentação de
+                    clientes por padrões de compra.
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="question">
+                <h3>Questão 8</h3>
+                <p><strong>Um 'Large Language Model' (LLM) funciona, essencialmente, ao prever o próximo token (pedaço
+                        de palavra) mais provável em uma sequência, com base em distribuições de probabilidade
+                        aprendidas durante a fase de treinamento do modelo. Com base na definição anterior, é correto
+                        afirmar que, quando um LLM gera um texto, ele realiza um processo de recuperação de frases
+                        prontas armazenadas em um banco de dados estático, em vez de gerar novas sequências com base em
+                        cálculos estatísticos.</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Falso ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> LLMs não armazenam frases prontas em um banco de dados. Eles geram
+                    novas sequências token por token com base em cálculos probabilísticos aprendidos durante o
+                    treinamento. Cada resposta é original e contextualizada.
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="question">
+                <h3>Questão 9</h3>
+                <p><strong>O conceito de Aprendizado Profundo (Deep Learning) é uma subárea de qual campo?</strong></p>
+                <p>Escolha uma opção:</p>
+                <ul>
+                    <li>a. Hardware e Robótica Pesada.</li>
+                    <li>b. Aprendizado por Reforço.</li>
+                    <li>c. Realidade virtual e aumentada.</li>
+                    <li><span style="color: #28a745;">✓</span> d. <strong>Aprendizado de Máquina (Machine
+                            Learning).</strong></li>
+                </ul>
+                <p><span class="answer correta"><strong>Resposta:</strong> d. Aprendizado de Máquina (Machine Learning).
+                        ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A hierarquia é: IA → Aprendizado de Máquina → Aprendizado Profundo. O
+                    Deep Learning utiliza redes neurais com múltiplas camadas para aprender representações complexas de
+                    dados.
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="question">
+                <h3>Questão 10</h3>
+                <p><strong>A técnica de 'Few-shot prompting' consiste em fornecer ao modelo de Inteligência Artificial
+                        alguns exemplos de pares de entrada e saída (demonstrações) no próprio prompt, antes de
+                        apresentar a tarefa final a ser realizada. Considerando a definição apresentada no texto
+                        anterior, é possível afirmar que: A técnica de 'Few-shot prompting' visa 'ensinar' novos
+                        conhecimentos de forma permanente aos pesos do modelo, eliminando a necessidade de processos
+                        como o ajuste fino (Fine-tuning).</strong></p>
+                <p>Escolha uma opção: Verdadeiro ou Falso.</p>
+                <p><span class="answer correta"><strong>Resposta:</strong> Falso ✅</span></p>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Few-shot prompting fornece exemplos temporários no prompt sem modificar
+                    os pesos do modelo. Já o Fine-tuning envolve treinar o modelo com novos dados, alterando
+                    permanentemente seus pesos. São processos diferentes com propósitos distintos.
+                </div>
+            </div>
+        </section>
+
+        <!-- Botão continuar -->
+        <div style="text-align: center;">
+            <a href="mod2_und1-ia-na-educacao-na-vida-cotidiana-e-na-tomada-de-decisao.html" class="btn-continuar">
+                <i class="material-icons">arrow_forward</i> Seguir para o Módulo 2
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 1 - Checkout de Presença</p>
+        <p style="font-size: 0.7em;">Nota: 10,00/10,00 (100%) | 01000000011-T01-2026-1</p>
+    </footer>
+</body>
+
+</html>

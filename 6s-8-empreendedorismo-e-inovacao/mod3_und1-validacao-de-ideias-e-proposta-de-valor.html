@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 1: Validação de Ideias e Propostas de Valor | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #ff8c00;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 4px solid #ff8c00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== TABELAS ===== */
+        .tabela-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #ff8c00;
+            overflow-x: auto;
+        }
+
+        .tabela-container table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .tabela-container th {
+            background: #245;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabela-container td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .tabela-container tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabela-container .destaque-linha {
+            background-color: #fff3e0 !important;
+        }
+
+        /* ===== FLUXO DE VALIDAÇÃO ===== */
+        .fluxo-container {
+            background: linear-gradient(135deg, #f0f7ff, #fff3e0);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #ff8c00;
+        }
+
+        .fluxo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .fluxo-item {
+            background: white;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 2px solid #ff8c00;
+            min-width: 120px;
+            transition: transform 0.3s;
+        }
+
+        .fluxo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .fluxo-item .numero {
+            font-weight: 700;
+            color: #ff8c00;
+            font-size: 1.1rem;
+        }
+
+        .fluxo-item .titulo {
+            font-weight: 600;
+            color: #1a4d8c;
+            font-size: 0.9rem;
+        }
+
+        .fluxo-item .descricao {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .fluxo-seta {
+            font-size: 1.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .fluxo-seta {
+                display: none;
+            }
+
+            .fluxo-item {
+                min-width: 100px;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* ===== EXEMPLOS DE VALIDAÇÃO ===== */
+        .exemplos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .exemplo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            border-left: 4px solid #ff8c00;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .exemplo-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .exemplo-card .nome {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.05rem;
+        }
+
+        .exemplo-card .validacao {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== FORMULÁRIO DE VALIDAÇÃO ===== */
+        .form-validacao {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .form-validacao .campo {
+            margin: 1rem 0;
+        }
+
+        .form-validacao .campo label {
+            font-weight: 600;
+            color: #1a4d8c;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-validacao .campo .resposta {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            min-height: 40px;
+            color: #333;
+        }
+
+        .form-validacao .campo .resposta.placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* ===== GLOSSÁRIO ===== */
+        .glossario-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 0.8rem 0;
+            padding: 0.8rem 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid #ff8c00;
+        }
+
+        .glossario-item .termo {
+            font-weight: 700;
+            color: #1a4d8c;
+            min-width: 120px;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .exemplos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .glossario-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .glossario-item .termo {
+                min-width: auto;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 3 - Planejamento, Validação, Modelagem e Startups</h2>
+        <h3>📊 Unidade 1 – Validação de Ideias e Propostas de Valor</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 2
+            </a>
+            <a href="mod3_und2-modelagem-de-negocios-projetos-e-startup.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 3 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CCu5szuj9ak?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 3 - Unidade 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 3 - Unidade 1">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 3 - Unidade 1
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: APRESENTAÇÃO ===== -->
+        <section>
+            <h2>🧪 Apresentação da Unidade</h2>
+            <p>Se no módulo anterior exploramos como ideias podem surgir a partir da observação de problemas reais,
+                agora avançamos para o próximo passo da jornada empreendedora: <strong>testar, validar e estruturar
+                    ideias</strong> para transformá-las em soluções viáveis.</p>
+
+            <p>Ideias são importantes, mas para se tornarem empreendimentos bem-sucedidos, <strong>precisam ser
+                    investigadas</strong>. Utilizando o exemplo da Turma da Mônica, é preciso aliar a
+                <strong>curiosidade da Denise</strong> ao <strong>método do Franjinha</strong>.
+            </p>
+
+            <div class="dica-box">
+                <h4>💡 A Combinação que Orienta o Módulo 3</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Denise</strong> – representa quem <strong>observa e questiona</strong> a realidade</li>
+                    <li><strong>Franjinha</strong> – simboliza o passo seguinte: <strong>transformar perguntas em
+                            experimentos</strong>, testar hipóteses e aprender com evidências</li>
+                </ul>
+            </div>
+
+            <p><strong>Ter uma ideia é apenas o começo.</strong> Muitas iniciativas falham não por falta de
+                criatividade, mas por <strong>avançarem diretamente para a execução sem verificar se o problema é
+                    relevante ou se a solução gera valor</strong>.</p>
+
+            <p>Você aprenderá a <strong>testar hipóteses, validar propostas e utilizar ferramentas de modelagem</strong>
+                para estruturar projetos, negócios ou soluções inovadoras. Em outras palavras, <strong>se antes você
+                    aprendeu a propor novas ideias, agora aprenderá a investigá-las, validá-las e organizá-las
+                    estrategicamente</strong>.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: VALIDAÇÃO ===== -->
+        <section>
+            <h2>🔬 Validação de Ideias: Da Hipótese à Evidência</h2>
+            <p>Quando uma ideia surge, é comum que o empreendedor se apaixone por ela. No entanto, <strong>ideias
+                    raramente nascem prontas</strong>; elas se modificam com o tempo por meio de experimentação, de
+                aprendizado e de ajustes sucessivos.</p>
+
+            <p><strong>Ries (2019)</strong>, ao desenvolver o conceito de "startup enxuta", propõe que empreendedores
+                <strong>tratem suas ideias como hipóteses a serem testadas no mundo real</strong>. Em vez de construir
+                soluções completas imediatamente, o empreendedor inicia com experimentos simples para verificar se o
+                problema realmente existe e se a solução faz sentido para os usuários.
+            </p>
+
+            <!-- FLUXO DE VALIDAÇÃO -->
+            <div class="fluxo-container">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">🔄 Ciclo de Aprendizado Validado
+                </h4>
+                <div class="fluxo-grid">
+                    <div class="fluxo-item">
+                        <div class="numero">1</div>
+                        <div class="titulo">🔨 Construir</div>
+                        <div class="descricao">Versão inicial da solução (MVP)</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item">
+                        <div class="numero">2</div>
+                        <div class="titulo">📊 Medir</div>
+                        <div class="descricao">Reação de usuários/mercado</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item">
+                        <div class="numero">3</div>
+                        <div class="titulo">📚 Aprender</div>
+                        <div class="descricao">Analisar e decidir: ajustar, aprofundar ou pivotar</div>
+                    </div>
+                    <span class="fluxo-seta" style="font-size: 1.5rem;">↺</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #555; text-align: center; margin-top: 0.5rem;">
+                    Fonte: Adaptado de Ries (2019) – Startup Enxuta
+                </p>
+            </div>
+
+            <!-- GLOSSÁRIO -->
+            <h3>📖 Glossário</h3>
+            <div class="glossario-item">
+                <span class="termo">🔄 Pivotar</span>
+                <span>Ajustar ou mudar a direção de um projeto ou modelo de negócio com base no aprendizado obtido
+                    durante testes e experimentações (Ries, 2019).</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">🧪 MVP</span>
+                <span>Produto Mínimo Viável – versão inicial de uma solução com funcionalidades essenciais para testar
+                    hipóteses e aprender com os usuários.</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">📈 Lean Startup</span>
+                <span>Abordagem que propõe reduzir desperdícios aprendendo diretamente com o mercado antes de
+                    desenvolver soluções completas.</span>
+            </div>
+
+            <p>Essa lógica aproxima o empreendedor do <strong>trabalho científico</strong>: em vez de defender
+                convicções rígidas, trabalha-se com <strong>hipóteses, testes e evidências</strong>.</p>
+
+            <!-- COMPARAÇÃO IDEIA IDEALIZADA VS TESTADA -->
+            <h3>📊 Comparação: Ideia Idealizada vs. Ideia Testada</h3>
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ideia Romântica do Empreendedor</th>
+                            <th>Ideia Testada na Realidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Vou criar um aplicativo que conecta estudantes a estágios"</td>
+                            <td><strong>Hipótese:</strong> "Estudantes têm dificuldade para encontrar estágios"</td>
+                        </tr>
+                        <tr>
+                            <td>"Desenvolver o aplicativo completo (design, programação, lançamento)"</td>
+                            <td><strong>Criar um teste simples</strong> (formulário ou página piloto)</td>
+                        </tr>
+                        <tr>
+                            <td>"Muitos estudantes irão usar automaticamente"</td>
+                            <td><strong>Verificar</strong> se estudantes realmente procuram esse tipo de solução</td>
+                        </tr>
+                        <tr>
+                            <td>"Empresas vão anunciar vagas na plataforma"</td>
+                            <td><strong>Conversar com empresas</strong> e medir interesse em divulgar vagas</td>
+                        </tr>
+                        <tr class="destaque-linha">
+                            <td>"O aplicativo será um sucesso imediato"</td>
+                            <td><strong>Aprender com os resultados:</strong> ajustar a ideia ou pivotar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>O que exatamente precisa ser validado em uma ideia empreendedora?</strong></p>
+                <p>No processo de inovação, não testamos apenas produtos, mas também <strong>hipóteses sobre problemas,
+                        soluções e propostas de valor</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DIMENSÕES DE VALIDAÇÃO ===== -->
+        <section>
+            <h2>📋 Dimensões de Validação: Problema, Solução e Proposta de Valor</h2>
+            <p>Muitas ideias surgem porque alguém acredita ter encontrado uma solução interessante. Porém, <strong>se o
+                    problema não for relevante para as pessoas ou para as organizações, dificilmente haverá interesse na
+                    solução</strong>.</p>
+
+            <p>Quando falamos de ideias no contexto do empreendedorismo, normalmente estamos falando de
+                <strong>hipóteses que precisam ser investigadas e testadas</strong>.
+            </p>
+
+            <!-- FLUXO IDEIA → SOLUÇÃO INOVADORA -->
+            <div class="fluxo-container"
+                style="border-color: #0066cc; background: linear-gradient(135deg, #f0f7ff, #e8f5e9);">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">🧩 Da Ideia à Solução Inovadora
+                </h4>
+                <div class="fluxo-grid">
+                    <div class="fluxo-item" style="border-color: #0066cc;">
+                        <div class="numero">1</div>
+                        <div class="titulo">💡 Ideia</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item" style="border-color: #28a745;">
+                        <div class="numero">2</div>
+                        <div class="titulo">📝 Hipóteses</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item" style="border-color: #ff8c00;">
+                        <div class="numero">3</div>
+                        <div class="titulo">🔍 Problema</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item" style="border-color: #28a745;">
+                        <div class="numero">4</div>
+                        <div class="titulo">📊 Evidências</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item" style="border-color: #ff8c00;">
+                        <div class="numero">5</div>
+                        <div class="titulo">💎 Proposta de Valor</div>
+                    </div>
+                    <span class="fluxo-seta">➜</span>
+                    <div class="fluxo-item" style="border-color: #0066cc;">
+                        <div class="numero">6</div>
+                        <div class="titulo">🚀 Solução Inovadora</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: #555; text-align: center; margin-top: 0.5rem;">
+                    Essa sequência mostra que a ideia inicial é apenas o ponto de partida.
+                </p>
+            </div>
+
+            <!-- QUADRO DE DIMENSÕES -->
+            <div class="tabela-container" style="border-color: #0066cc;">
+                <h4 style="color: #1a4d8c; margin-bottom: 1rem;">📊 Dimensões de Validação no Empreendedorismo</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimensão de Validação</th>
+                            <th>Perguntas Orientadoras</th>
+                            <th>Ferramentas e Abordagens</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🔍 Validação do Problema</strong></td>
+                            <td>O problema realmente existe? Quem sofre com ele? Com que frequência ocorre? Como as
+                                pessoas lidam com isso hoje?</td>
+                            <td>Entrevistas com usuários, observação de campo, análise de processos, mapeamento de
+                                jornada do usuário, técnicas de empatia do Design Thinking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🧪 Validação da Solução</strong></td>
+                            <td>A solução resolve o problema? Usuários conseguem utilizá-la? O que funciona e o que
+                                precisa melhorar?</td>
+                            <td>Protótipos de baixa fidelidade, MVP, testes piloto, experimentos rápidos, testes de
+                                usabilidade</td>
+                        </tr>
+                        <tr>
+                            <td><strong>💎 Validação da Proposta de Valor</strong></td>
+                            <td>Qual valor a solução gera? Para quem ela é relevante? Por que essa solução é melhor que
+                                as alternativas existentes?</td>
+                            <td>Proposta de valor, testes de mercado, entrevistas com clientes, experimentos com
+                                usuários e feedback estruturado</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">
+                    Fonte: Elaboração própria com base em Ries (2019), Brown (2020), Cavalcanti e Filatro (2025) e
+                    Dornelas (2023)
+                </p>
+            </div>
+
+            <p>Ao compreender essas dimensões, o empreendedor passa a <strong>tratar ideias não como certezas, mas como
+                    hipóteses investigadas</strong>, reduzindo riscos e aumentando a probabilidade de gerar valor.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: EXEMPLOS DE VALIDAÇÃO ===== -->
+        <section>
+            <h2>📚 Exemplos de Validação em Diferentes Contextos</h2>
+            <p>A validação não ocorre apenas em startups ou empresas de tecnologia. Ela pode acontecer em
+                <strong>projetos educacionais, iniciativas sociais, pesquisas científicas, programas institucionais ou
+                    empreendimentos criativos</strong>.
+            </p>
+
+            <div class="exemplos-grid">
+                <div class="exemplo-card">
+                    <div class="nome">🔬 SHD Graphene</div>
+                    <div class="validacao">Resultados de pesquisas sobre grafeno foram transformados em aplicações
+                        tecnológicas. Os primeiros lotes vendidos foram acompanhados com pesquisas de feedback enviadas
+                        aos clientes.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">🔗 Dual Link</div>
+                    <div class="validacao">A empresa surgiu da identificação de uma lacuna entre produção científica e
+                        aplicação empresarial. As soluções foram validadas em ambiente acadêmico e posteriormente
+                        testadas junto a empresas.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">⚡ ENG Tecnologias</div>
+                    <div class="validacao">A solução de corte e religamento remoto foi validada em projeto de P&D com
+                        empresa parceira, por meio de prototipagem, testes laboratoriais e avaliação em ambiente real.
+                    </div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">🤖 Damine</div>
+                    <div class="validacao">A tecnologia baseada em inteligência artificial foi validada com coleta de
+                        dados em ambiente produtivo, desenvolvimento de protótipo e testes comparativos com métodos
+                        tradicionais.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">📚 Mauricio de Sousa</div>
+                    <div class="validacao">Os personagens da Turma da Mônica foram inicialmente publicados em tirinhas
+                        de jornal. A reação do público permitiu ajustes narrativos e visuais antes da expansão para
+                        revistas, animações e outros produtos culturais.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">📊 RetenMax</div>
+                    <div class="validacao">A solução foi ajustada a partir da investigação do problema, entrevistas com
+                        organizações e testes progressivos da ferramenta.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">🧶 República das Arteiras</div>
+                    <div class="validacao">As atividades e modelos de atuação foram sendo ajustados ao longo do tempo a
+                        partir da interação com participantes e das necessidades da comunidade.</div>
+                </div>
+                <div class="exemplo-card">
+                    <div class="nome">⚛️ Além-Mar Bernardes Gonçalves (INFI/UFMS)</div>
+                    <div class="validacao">Demonstrações experimentais, oficinas e recursos didáticos foram testados com
+                        estudantes, ajustados a partir do engajamento e do feedback em sala e posteriormente ampliados
+                        para projetos estruturados de ensino e divulgação científica.</div>
+                </div>
+            </div>
+
+            <div class="atencao-box">
+                <h3>💡 Padrão Comum em Todos os Casos</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Identificação de um problema</strong></li>
+                    <li><strong>Formulação de hipóteses</strong></li>
+                    <li><strong>Realização de testes</strong></li>
+                    <li><strong>Incorporacão de aprendizados</strong> ao longo do processo</li>
+                </ul>
+                <p style="margin-top: 10px;">Esse movimento permite <strong>reduzir riscos, aprimorar soluções e
+                        aumentar as chances de gerar impacto positivo</strong> para as pessoas e organizações
+                    envolvidas.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CONVITE ESPECIAL ===== -->
+        <section>
+            <h2>✍️ Convite Especial: Valide Sua Ideia</h2>
+            <p>Ao longo desta unidade, vimos que ideias empreendedoras não devem ser tratadas como certezas, mas como
+                <strong>hipóteses que precisam ser investigadas e testadas</strong>.
+            </p>
+
+            <p>Retome agora a reflexão iniciada nos módulos anteriores, quando você identificou um problema ou
+                oportunidade relacionado à sua área de formação, ao seu contexto profissional ou à sua comunidade.</p>
+
+            <div class="form-validacao">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">📋 Esquema de Validação da Sua
+                    Ideia</h4>
+
+                <div class="campo">
+                    <label>🔍 Problema identificado</label>
+                    <div class="resposta placeholder">Descreva aqui o problema que você observou...</div>
+                </div>
+
+                <div class="campo">
+                    <label>👥 Quem sofre com esse problema</label>
+                    <div class="resposta placeholder">Identifique as pessoas ou organizações afetadas...</div>
+                </div>
+
+                <div class="campo">
+                    <label>💡 Solução proposta</label>
+                    <div class="resposta placeholder">Qual é a sua ideia inicial de solução?</div>
+                </div>
+
+                <div class="campo">
+                    <label>💎 Valor gerado pela solução</label>
+                    <div class="resposta placeholder">Que benefícios sua solução traz? Qual é a proposta de valor?</div>
+                </div>
+
+                <div class="campo">
+                    <label>🧪 Formas de validação</label>
+                    <div class="resposta placeholder">Como você pode testar sua hipótese? Que experimentos simples pode
+                        fazer?</div>
+                </div>
+
+                <div class="campo">
+                    <label>📊 Primeiros usuários/clientes</label>
+                    <div class="resposta placeholder">Quem seriam os primeiros usuários para testar sua solução?</div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: #666; margin-top: 1rem; text-align: center;">
+                    Esse esquema será fundamental para o próximo tópico, quando começaremos a estruturar essas
+                    informações no <strong>Business Model Canvas</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SÍNTESE ===== -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">🧪</div>
+                    <h4>Validação como Método</h4>
+                    <p>Ideias devem ser tratadas como <strong>hipóteses</strong> testadas no mundo real. O ciclo
+                        <strong>construir-medir-aprender</strong> é a base da validação.
+                    </p>
+                </div>
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">📋</div>
+                    <h4>Três Dimensões de Validação</h4>
+                    <p><strong>Problema</strong> (existe?), <strong>Solução</strong> (resolve?), <strong>Proposta de
+                            Valor</strong> (geral valor?). Cada uma com ferramentas específicas.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">📚</div>
+                    <h4>Validação em Diferentes Contextos</h4>
+                    <p>Não se limita a startups. Aplica-se a <strong>educação, gestão pública, pesquisa científica,
+                            iniciativas sociais e empreendimentos criativos</strong>.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">💡</div>
+                    <h4>Da Curiosidade ao Método</h4>
+                    <p>Combine a <strong>curiosidade da Denise</strong> (observar e questionar) com o <strong>método do
+                            Franjinha</strong> (experimentar e aprender).</p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>🚀 Próximo Passo</h4>
+                <p>A validação realizada nesta unidade fornece justamente os elementos que alimentarão o
+                    <strong>Business Model Canvas</strong>.
+                </p>
+                <p style="margin-top: 10px;">Quando o empreendedor compreende <strong>quem é o cliente, qual problema
+                        deseja resolver e qual valor pretende gerar</strong>, torna-se possível estruturar os demais
+                    componentes do modelo de negócio.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>BROWN, Tim.</strong> Design Thinking – Edição Comemorativa 10 anos. Rio de Janeiro: Alta Books,
+                2020.
+            </div>
+            <div class="referencia">
+                <strong>CAVALCANTI, Carolina; FILATRO, Andrea.</strong> Design Thinking: inovação com propósito. 2. ed.
+                Rio de Janeiro: Atlas, 2025.
+            </div>
+            <div class="referencia">
+                <strong>DORNELAS, José.</strong> Empreendedorismo - transformando ideias em negócios. 9. ed. Rio de
+                Janeiro: GEN Atlas, 2023.
+            </div>
+            <div class="referencia">
+                <strong>OSTERWALDER, Alexander; PIGNEUR, Yves.</strong> Business Model Generation. Rio de Janeiro: Alta
+                Books, 2011.
+            </div>
+            <div class="referencia">
+                <strong>RIES, Eric.</strong> A startup enxuta. Rio de Janeiro: Sextante, 2019.
+            </div>
+            <div class="referencia">
+                <strong>VAROL, Ozan.</strong> Pense como um cientista de foguetes. Rio de Janeiro: Alta Books, 2022.
+            </div>
+            <div class="referencia">
+                <strong>EUROPEAN COMMISSION.</strong> EntreComp: the entrepreneurship competence framework. Luxembourg,
+                2016.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 3 - Unidade 1</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

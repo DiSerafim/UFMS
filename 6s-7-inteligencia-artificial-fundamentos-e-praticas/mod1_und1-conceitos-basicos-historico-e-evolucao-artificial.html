@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 1: Conceitos Básicos, Histórico e Evolução da Inteligência Artificial | Inteligência
+        Artificial - UFMS
+        Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares para melhorar a experiência avançada */
+        .detalhe-conceito {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cddfe7;
+        }
+
+        .topicos-avancados {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topicos-avancados h3,
+        .topicos-avancados h4 {
+            color: #ffd966;
+        }
+
+        .badge-cert {
+            background-color: #1e466e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .grid-competencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .competencia-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .exemplo-mercado {
+            background: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 110px;
+        }
+
+        .linha-tempo-ia {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .marco-ia-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-top: 4px solid #0066cc;
+            text-align: center;
+        }
+
+        .marco-ia-item .ano {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a4d8c;
+            display: block;
+        }
+
+        .paradigma-grid-ia {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .paradigma-card-ia {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .paradigma-card-ia:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .desafio-etico-ia {
+            background: #fff5f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .aplicacao-destaque-ia {
+            background: #fff8e8;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+
+        .trend-box-ia {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .trend-box-ia h4 {
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 1 - Fundamentos da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 1 – Conceitos Básicos, Histórico e Evolução da Inteligência Artificial</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="forum-de-discussao-inteligencia-artificial.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">forum</i> Fórum de Discussão
+            </a>
+            <a href="mod1_und2-fundamentos-da-ia-generativa.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 1 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/y1bhreyrdg0" frameborder="0"
+                    title="Inteligência Artificial - Módulo 1 - Unidade 1 - Conceitos Básicos, Histórico e Evolução da Inteligência Artificial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 1">
+                [UFMS Digital] Inteligência Artificial - Módulo 1 - Unidade 1 (IA na Educação, Vida Cotidiana e Tomada
+                de Decisão)
+            </p>
+            <p>Profa. Esp. Karine Toazza</p>
+            <p>📅 Disponível desde 2026 • Duração: 18min</p>
+        </section>
+
+        <!-- Apresentação expandida -->
+        <section>
+            <h2>🧠 Contextualização: O que é Inteligência Artificial?</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🤖 Definição Fundamental</h4>
+                    <p>A <strong>Inteligência Artificial</strong> pode ser definida como o campo da ciência da
+                        computação dedicado ao desenvolvimento de sistemas capazes de executar tarefas associadas à
+                        inteligência humana <cite>(Russell; Norvig, 2021)</cite>.</p>
+                    <p><strong>Capacidades-chave:</strong> aprendizagem, raciocínio lógico, reconhecimento de padrões,
+                        compreensão da linguagem natural e tomada de decisões em ambientes complexos.</p>
+                </div>
+                <div class="card">
+                    <h4>📈 Fatores Impulsionadores</h4>
+                    <p>O desenvolvimento da IA está diretamente relacionado a dois fatores:</p>
+                    <ul>
+                        <li><strong>Capacidade crescente de processamento computacional</strong> – Lei de Moore e
+                            arquiteturas especializadas (GPUs, TPUs)</li>
+                        <li><strong>Disponibilidade massiva de dados digitais</strong> – Internet, redes sociais e
+                            dispositivos conectados (IoT)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detalhe-conceito">
+                <h3>🏛️ A Formalização da IA: Conferência de Dartmouth (1956)</h3>
+                <p>A formalização da área ocorreu durante a <strong>Conferência de Dartmouth em 1956</strong>,
+                    considerada o marco fundador da pesquisa em Inteligência Artificial. Nesse encontro, pesquisadores
+                    propuseram investigar como as máquinas poderiam simular aspectos da inteligência humana
+                    <cite>(Russell; Norvig, 2021)</cite>.
+                </p>
+                <p>Os primeiros usos da IA surgiram nas décadas de 1950 e 1960, quando pesquisadores começaram a
+                    desenvolver programas capazes de simular processos de raciocínio humano, como o <strong>Logic
+                        Theorist</strong> (Newell & Simon, 1956) e o <strong>General Problem Solver</strong> (Newell,
+                    Shaw & Simon, 1959).</p>
+                <div class="info-box">
+                    <strong><i class="material-icons">insights</i> Curiosidade histórica:</strong> O programa ELIZA,
+                    criado por Joseph Weizenbaum em 1966, simulava conversas simples com usuários a partir de padrões de
+                    texto previamente definidos, sendo um dos primeiros experimentos em processamento de linguagem
+                    natural.
+                </div>
+            </div>
+        </section>
+
+        <!-- Evolução Histórica -->
+        <section>
+            <h2>⏳ Evolução Histórica da Inteligência Artificial</h2>
+            <p>A trajetória da área foi marcada por ciclos de entusiasmo e períodos de estagnação, conhecidos como
+                <strong>"invernos da IA"</strong>. Esses momentos ocorreram quando as expectativas tecnológicas
+                superaram as capacidades reais das ferramentas disponíveis. Entretanto, avanços metodológicos e
+                tecnológicos progressivamente permitiram superar limitações anteriores.
+            </p>
+
+            <div class="linha-tempo-ia">
+                <div class="marco-ia-item">
+                    <span class="ano">1950</span>
+                    <strong>Teste de Turing</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Alan Turing propõe o teste para avaliar a
+                        inteligência de máquinas</p>
+                </div>
+                <div class="marco-ia-item" style="border-top-color: #ff8c00;">
+                    <span class="ano">1956</span>
+                    <strong>Conferência de Dartmouth</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Marco fundador da IA como campo científico formal
+                    </p>
+                </div>
+                <div class="marco-ia-item" style="border-top-color: #28a745;">
+                    <span class="ano">1966</span>
+                    <strong>ELIZA</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Primeiro programa de processamento de linguagem
+                        natural</p>
+                </div>
+                <div class="marco-ia-item" style="border-top-color: #dc3545;">
+                    <span class="ano">1970-80</span>
+                    <strong>Invernos da IA</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Períodos de estagnação e expectativas não atendidas
+                    </p>
+                </div>
+                <div class="marco-ia-item" style="border-top-color: #0066cc;">
+                    <span class="ano">2010+</span>
+                    <strong>Deep Learning</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Avanços com redes neurais profundas e big data</p>
+                </div>
+                <div class="marco-ia-item" style="border-top-color: #ffc107;">
+                    <span class="ano">2020+</span>
+                    <strong>IA Generativa</strong>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">Modelos de linguagem de grande escala e
+                        multimodalidade</p>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">quote</i> “A IA não é um fenômeno isolado, mas
+                o ápice de décadas de pesquisa em matemática, estatística e computação. Esse percurso indica que a área
+                ainda passará por transformações significativas.”
+            </div>
+        </section>
+
+        <!-- Paradigmas de Aprendizado -->
+        <section>
+            <h2>🧩 Paradigmas de Aprendizado de Máquina</h2>
+            <p>Com o avanço da estatística computacional, surgiram métodos baseados em <strong>aprendizagem
+                    automática</strong>, capazes de extrair padrões diretamente de conjuntos de dados. Em vez de
+                depender exclusivamente de regras previamente definidas, esses modelos utilizam algoritmos de otimização
+                para identificar regularidades estatísticas.</p>
+
+            <div class="paradigma-grid-ia">
+                <div class="paradigma-card-ia">
+                    <i class="material-icons" style="font-size: 2rem; color: #1a4d8c;">label</i>
+                    <h3>Aprendizado Supervisionado</h3>
+                    <p>O sistema aprende a partir de exemplos rotulados (entrada-saída) para fazer previsões em novos
+                        dados.</p>
+                    <p><strong>Exemplo prático:</strong> Filtro de spam que classifica e-mails como "lixo" ou "não lixo"
+                        com base em exemplos anteriores.</p>
+                    <div style="background: #e8f5e9; padding: 10px; border-radius: 8px; margin-top: 10px;">
+                        <strong>📊 Algoritmos comuns:</strong> Regressão Linear, SVM, Árvores de Decisão, Redes Neurais
+                    </div>
+                </div>
+
+                <div class="paradigma-card-ia" style="border-top-color: #ff8c00;">
+                    <i class="material-icons" style="font-size: 2rem; color: #ff8c00;">scatter_plot</i>
+                    <h3>Aprendizado Não Supervisionado</h3>
+                    <p>O sistema identifica padrões e estruturas em dados não rotulados, agrupando elementos similares.
+                    </p>
+                    <p><strong>Exemplo prático:</strong> Segmentação de clientes em um e-commerce, agrupando usuários
+                        por padrões de compra sem rótulos prévios.</p>
+                    <div style="background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 10px;">
+                        <strong>📊 Algoritmos comuns:</strong> K-means, PCA, DBSCAN, Autoencoders
+                    </div>
+                </div>
+
+                <div class="paradigma-card-ia" style="border-top-color: #dc3545;">
+                    <i class="material-icons" style="font-size: 2rem; color: #dc3545;">gamepad</i>
+                    <h3>Aprendizado por Reforço</h3>
+                    <p>O agente aprende por tentativa e erro, recebendo recompensas ou penalidades por suas ações no
+                        ambiente.</p>
+                    <p><strong>Exemplo prático:</strong> Agente em um jogo de xadrez ou em um sistema de robótica que
+                        otimiza seu comportamento ao longo do tempo.</p>
+                    <div style="background: #fce4ec; padding: 10px; border-radius: 8px; margin-top: 10px;">
+                        <strong>📊 Algoritmos comuns:</strong> Q-Learning, Deep Q-Networks (DQN), Policy Gradients
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplicações Práticas -->
+        <section>
+            <h2>🚀 Aplicações da Conceitos Básicos, Histórico e Evolução da Inteligência Artificial</h2>
+
+            <div class="aplicacao-destaque-ia">
+                <h3><i class="material-icons">school</i> Educação</h3>
+                <ul>
+                    <li><strong>Sistemas Tutores Inteligentes:</strong> Plataformas como o Knewton e o Carnegie Learning
+                        adaptam o conteúdo ao ritmo e estilo de aprendizagem de cada estudante.</li>
+                    <li><strong>Correção Automática de Redações:</strong> Ferramentas como o Grammarly e o LanguageTool
+                        auxiliam na correção gramatical e estilística.</li>
+                    <li><strong>Recomendação de Conteúdo:</strong> Algoritmos sugerem materiais complementares com base
+                        no desempenho e interesses do aluno.</li>
+                    <li><strong>Análise de Engajamento:</strong> Sistemas detectam evasão escolar e desengajamento por
+                        meio de padrões de interação.</li>
+                </ul>
+                <div class="info-box" style="margin-top: 15px;">
+                    <h4>🤔 Reflexão sobre Ética na Educação</h4>
+                    <p>Como garantir que algoritmos educacionais não reproduzam vieses socioeconômicos? Como equilibrar
+                        personalização com privacidade dos dados dos estudantes?</p>
+                </div>
+            </div>
+
+            <div class="aplicacao-destaque-ia" style="border-left-color: #28a745;">
+                <h3><i class="material-icons">smartphone</i> Vida Cotidiana</h3>
+                <ul>
+                    <li><strong>Assistentes Virtuais:</strong> Siri, Alexa e Google Assistant utilizam processamento de
+                        linguagem natural para interações cotidianas.</li>
+                    <li><strong>Recomendação de Conteúdo:</strong> Netflix, YouTube e Spotify utilizam sistemas de
+                        recomendação baseados em preferências do usuário.</li>
+                    <li><strong>Navegação e Mapas:</strong> Google Maps e Waze utilizam IA para otimizar rotas em tempo
+                        real.</li>
+                    <li><strong>Filtros e Efeitos:</strong> Instagram e Snapchat usam visão computacional para aplicar
+                        efeitos em tempo real.</li>
+                </ul>
+                <div class="info-box" style="margin-top: 15px;">
+                    <h4>🤔 Reflexão sobre Ética no Cotidiano</h4>
+                    <p>Até que ponto a personalização algorítmica cria bolhas de informação? Como a IA influencia nossas
+                        escolhas e percepções diárias sem que percebamos?</p>
+                </div>
+            </div>
+
+            <div class="aplicacao-destaque-ia" style="border-left-color: #0066cc;">
+                <h3><i class="material-icons">analytics</i> Tomada de Decisão</h3>
+                <ul>
+                    <li><strong>Análise Financeira:</strong> Sistemas de trading algorítmico e detecção de fraudes em
+                        transações bancárias.</li>
+                    <li><strong>Diagnóstico Médico:</strong> Algoritmos auxiliam na interpretação de exames de imagem e
+                        análise de prontuários.</li>
+                    <li><strong>Gestão de Recursos:</strong> Otimização de cadeias de suprimentos e logística com
+                        previsão de demanda.</li>
+                    <li><strong>Políticas Públicas:</strong> Modelos preditivos para alocação de recursos em saúde
+                        pública e educação.</li>
+                </ul>
+                <div class="info-box" style="margin-top: 15px;">
+                    <h4>🤔 Reflexão sobre Ética na Decisão</h4>
+                    <p>Como garantir transparência e responsabilidade em decisões automatizadas que afetam vidas
+                        humanas? Quem é responsável quando um sistema comete um erro?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafios Éticos -->
+        <section>
+            <h2>⚖️ Desafios Éticos e Responsabilidade Algorítmica</h2>
+
+            <div class="desafio-etico-ia">
+                <h4><i class="material-icons">warning</i> Viés Algorítmico</h4>
+                <p>Sistemas de IA podem perpetuar e amplificar preconceitos existentes nos dados de treinamento.
+                    Exemplo: sistemas de reconhecimento facial com desempenho inferior para pessoas negras.</p>
+                <p><strong>Mitigação:</strong> Diversificação de dados de treinamento, auditoria contínua e
+                    transparência nos processos.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ff8c00;">
+                <h4><i class="material-icons">visibility_off</i> Privacidade e Vigilância</h4>
+                <p>A coleta massiva de dados para treinamento de modelos levanta questões sobre consentimento,
+                    propriedade de dados e vigilância digital.</p>
+                <p><strong>Mitigação:</strong> Regulamentação de dados (LGPD, GDPR), técnicas de privacidade diferencial
+                    e aprendizado federado.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #ffc107;">
+                <h4><i class="material-icons">build</i> Transparência e Explicabilidade</h4>
+                <p>Modelos complexos, especialmente redes neurais profundas, operam como "caixas-pretas", dificultando a
+                    compreensão de suas decisões.</p>
+                <p><strong>Mitigação:</strong> Desenvolvimento de técnicas de IA explicável (XAI), modelos
+                    interpretáveis e documentação clara.</p>
+            </div>
+
+            <div class="desafio-etico-ia" style="border-left-color: #28a745;">
+                <h4><i class="material-icons">nature</i> Impacto Ambiental</h4>
+                <p>O treinamento de modelos de grande escala consome quantidades significativas de energia, contribuindo
+                    para a pegada de carbono da tecnologia.</p>
+                <p><strong>Mitigação:</strong> Algoritmos mais eficientes, uso de energia renovável em datacenters, e
+                    otimização de arquiteturas.</p>
+            </div>
+
+            <div class="info-box" style="background: #f0f7ff;">
+                <h4><i class="material-icons">question_answer</i> Para Refletir</h4>
+                <p>O crescimento acelerado da área exige reflexões sobre transparência, equidade, vieses e uso
+                    responsável da tecnologia, especialmente quando decisões automatizadas podem afetar diretamente
+                    indivíduos e comunidades.</p>
+                <p><strong>Como podemos garantir que a IA sirva ao bem comum sem deixar ninguém para trás?</strong></p>
+            </div>
+        </section>
+
+        <!-- Tendências e Futuro -->
+        <section>
+            <h2>🔮 Tendências e Futuro da IA</h2>
+
+            <div class="trend-box-ia">
+                <h4><i class="material-icons">trending_up</i> Modelos de Linguagem de Grande Escala</h4>
+                <p>Modelos como GPT-4, Claude e Gemini representam a fronteira da IA generativa, capazes de interpretar
+                    e gerar linguagem natural com qualidade sem precedentes.</p>
+                <p><strong>Implicações:</strong> Transformação na educação, criação de conteúdo, atendimento ao cliente
+                    e pesquisa científica.</p>
+            </div>
+
+            <div class="trend-box-ia" style="background: linear-gradient(135deg, #0a2a3a, #1a3a4a);">
+                <h4><i class="material-icons">devices</i> Convergência Tecnológica</h4>
+                <p>Observa-se uma tendência de <strong>convergência entre a IA e outras tecnologias emergentes</strong>,
+                    como a internet das coisas (IoT) e o blockchain. Essa articulação amplia significativamente as
+                    possibilidades de aplicação, criando cidades inteligentes e sistemas de saúde mais eficientes.</p>
+            </div>
+
+            <div class="trend-box-ia" style="background: linear-gradient(135deg, #1a2b3c, #0a2a3a);">
+                <h4><i class="material-icons">people</i> IA Centrada no Humano</h4>
+                <p>Em vez de substituir completamente atividades humanas, muitos sistemas são projetados para atuar como
+                    <strong>ferramentas de apoio à decisão</strong>. Essa colaboração entre humanos e máquinas amplia a
+                    capacidade de análise de informações complexas, contribuindo para processos decisórios mais
+                    informados e eficientes.
+                </p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">school</i> Competências para o Futuro</h4>
+                <p>A crescente adoção dessas ferramentas também exige novas competências relacionadas à interação
+                    estratégica com sistemas inteligentes. A formulação adequada de instruções e a interpretação crítica
+                    das respostas geradas tornam-se habilidades relevantes para a utilização eficiente dessas
+                    tecnologias em diferentes contextos de trabalho e pesquisa.</p>
+            </div>
+        </section>
+
+        <!-- Glossário e Referências -->
+        <section>
+            <h2>📌 Glossário Essencial de IA</h2>
+            <div class="glossario-item"><span class="glossario-termo">Algoritmo</span> <span>Conjunto de regras e
+                    instruções para resolver um problema ou executar uma tarefa.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Redes Neurais</span> <span>Sistemas computacionais
+                    inspirados no cérebro humano, compostos por neurônios artificiais interconectados.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Deep Learning</span> <span>Subárea do aprendizado
+                    de máquina que utiliza redes neurais com múltiplas camadas (profundas).</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Viés Algorítmico</span> <span>Distorções
+                    sistemáticas em sistemas de IA que podem resultar em discriminação ou injustiça.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">IA Generativa</span> <span>Sistemas capazes de
+                    criar conteúdo original (texto, imagem, áudio, vídeo) a partir de padrões aprendidos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">PLN</span> <span>Processamento de Linguagem
+                    Natural – área da IA que lida com a interação entre computadores e linguagem humana.</span></div>
+        </section>
+
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 RUSSELL, S.; NORVIG, P.</strong> Inteligência Artificial. 4. ed. Rio de Janeiro: Elsevier,
+                2021. Capítulos 1 e 2 – Fundamentos e Agentes Inteligentes.
+                <em>Disponível na Biblioteca Digital da UFMS.</em>
+            </div>
+            <div class="referencia">
+                <strong>📗 GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A.</strong> Deep Learning. Cambridge: MIT Press, 2016.
+                Capítulos 1 e 5 – Introdução e Aprendizado de Máquina.
+            </div>
+            <div class="referencia">
+                <strong>🎓 KAUFMAN, D.</strong> Inteligência Artificial: Fundamentos e Aplicações. São Paulo: Saraiva,
+                2022. Capítulo 1 – Conceitos Básicos.
+            </div>
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Ferramentas práticas para aplicar os conceitos</h4>
+                <p>Experimente ferramentas de IA como <strong>ChatGPT, Google Colab, TensorFlow Playground</strong> ou o
+                    <strong>Hugging Face</strong> para explorar modelos de linguagem e visão computacional. No projeto
+                    Cidade Virtual, você pode simular um sistema de recomendação de serviços urbanos ou um chatbot para
+                    atendimento ao cidadão.
+                </p>
+                <p><strong>Desafio:</strong> Crie um prompt para um modelo de IA generativa que proponha soluções para
+                    problemas urbanos e compartilhe os resultados no fórum da disciplina!</p>
+            </div>
+        </section>
+
+        <!-- Síntese e chamada para ação -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">history</i>
+                    <h4>IA tem história e evolução</h4>
+                    <p>Compreender os marcos históricos ajuda a entender o estado atual e as tendências futuras.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">psychology</i>
+                    <h4>IA é mais que tecnologia</h4>
+                    <p>Envolve ética, responsabilidade e impacto social. O pensamento crítico é essencial.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">trending_up</i>
+                    <h4>IA está em toda parte</h4>
+                    <p>Da educação à saúde, da tomada de decisão ao cotidiano, a IA transforma a sociedade.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> Na Unidade 2 vamos aprofundar em
+                <strong>aprendizado de máquina e redes neurais</strong> – os pilares técnicos da IA moderna. Continue
+                seus estudos e participe do fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 1 - Unidade 1: IA na Educação, Vida Cotidiana e
+            Tomada de Decisão</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

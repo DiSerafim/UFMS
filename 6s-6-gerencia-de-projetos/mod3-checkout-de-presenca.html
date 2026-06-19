@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 3 | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .deadline-box.atrasada {
+            background-color: #dc3545;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+                background-color: #b02a37;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .resolucao-card {
+            background: linear-gradient(135deg, #e8f0fe, #d9e6f5);
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border: 2px solid #0066cc;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .resolucao-card h3 {
+            color: #004d99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ferramenta-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .ferramenta-card h4 {
+            color: #1a4d8c;
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-baixar {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-baixar:hover {
+            background-color: #245;
+            transform: translateY(-2px);
+        }
+
+        .info-envio {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .tentativa-status {
+            background: #fff8e7;
+            border-left: 5px solid #ffc107;
+        }
+
+        .artigo-card {
+            background: #fef9e6;
+            border-left: 5px solid #ff8c00;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+
+        .visao-critica {
+            background: #e6f7e6;
+            border-left: 5px solid #28a745;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 3 - Tópicos Avançados da Gerência de Projetos</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status em-andamento">Prazo finalizado (simulação)</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod3_und2-v2-gerenciamento-riscos-aquisicoes.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 2.2
+            </a>
+            <a href="mod4_und1-gerenciamento-integracao.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 4 Und 1 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Identificação do aluno e módulo -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="title">📍 Checkout Módulo 3</span>
+                <span
+                    style="font-size: 0.8rem; background: #e9ecef; padding: 4px 12px; border-radius: 50px;">32010005520-T01-2026-1</span>
+            </div>
+            <div class="text-right small-text">
+                <i class="material-icons" style="font-size: 14px;">check_circle</i> Condição: Fazer um envio (PDF)
+            </div>
+        </div>
+
+        <!-- Deadline e Atenção -->
+        <section>
+            <div class="deadline-box atrasada">
+                <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">schedule</i>
+                ⚠️ Vencimento: segunda-feira, 11 de maio de 2026, 23:59 (atrasado - simulação)
+            </div>
+
+            <div class="atencao-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                <h4 style="color: #856404; display: flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">warning</i> 🚨 Atenção!
+                </h4>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a <strong>carga horária de frequência do módulo</strong>.</p>
+                <p>📝 A nota atribuída pela tutoria nesta atividade corresponderá à <strong>nota do módulo</strong> e
+                    fará parte da avaliação da disciplina.</p>
+                <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
+                <p><strong>⚠️ Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
+            </div>
+        </section>
+
+        <!-- Enunciado da Atividade -->
+        <section>
+            <h2>📝 Enunciado da Atividade</h2>
+            <div class="orientacao-card" style="background: #f8fafc;">
+                <p><strong>Prezado/a Estudante!</strong></p>
+                <p>Neste módulo, você aprendeu sobre a <strong>importância da comunicação efetiva</strong> (e
+                    gerenciamento) entre membros da equipe e a importância do <strong>gerenciamento de riscos e das
+                        aquisições</strong> da empresa.</p>
+                <p>A comunicação efetiva é um dos principais mecanismos utilizados pelas empresas para garantir o
+                    sucesso dos seus projetos. A comunicação é especialmente importante quando a empresa trabalha com a
+                    equipe geograficamente distribuída e precisa registrar as principais discussões e decisões. É
+                    importante destacar que ferramentas simples podem auxiliar muito na comunicação diária e nem sempre
+                    é necessário investir grandes recursos financeiros para conseguir uma comunicação efetiva.</p>
+                <p>A <strong>Agência Vocali</strong> é especializada em comunicação corporativa interna. Em sua postagem
+                    <strong>"Ferramentas para comunicação interna: veja as mais indicadas para engajar sua
+                        equipe"</strong> (<a
+                        href="https://vocali.com.br/comunicacao-interna/ferramentas-para-comunicacao-interna/"
+                        target="_blank">https://vocali.com.br/comunicacao-interna/ferramentas-para-comunicacao-interna/</a>)
+                    há uma pequena discussão sobre esse assunto.</p>
+                <p><strong>Para a realização desta atividade, considere os passos a seguir:</strong></p>
+                <ol style="margin-left: 2rem; margin-top: 0.8rem;">
+                    <li>Leia o texto da Vocali e apresente sua <strong>visão crítica em um parágrafo</strong>: indique
+                        se concorda ou não com as sugestões do autor e justifique.</li>
+                    <li>Inclua no mínimo <strong>três ferramentas</strong> que você considera importantes para a
+                        comunicação e que podem ser úteis para as empresas e justifique. Considere sua vivência
+                        profissional ou estudos realizados.</li>
+                    <li>Envie o arquivo em <strong>PDF</strong> no espaço da tarefa.</li>
+                </ol>
+                <p style="margin-top: 1rem;">Bons estudos!<br><strong>Professora Debora</strong></p>
+            </div>
+        </section>
+
+        <!-- Status de envio (simulado) -->
+        <section>
+            <h2>📤 Status de Envio</h2>
+            <div class="info-envio">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div><strong><i class="material-icons">assignment</i> Número da tentativa:</strong> Esta é a
+                        tentativa 1 (2 tentativas permitidas).</div>
+                    <div><strong><i class="material-icons">send</i> Status de envio:</strong> <span
+                            style="color:#dc3545;">Nenhum envio foi feito ainda</span></div>
+                    <div><strong><i class="material-icons">grade</i> Status da avaliação:</strong> Não há notas</div>
+                </div>
+                <div class="tentativa-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 12px;">
+                    <i class="material-icons" style="vertical-align: middle;">timer</i> <strong>Tempo restante:</strong>
+                    A tarefa está atrasada (simulação para estudo)
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOLUÇÃO COMPLETA DA ATIVIDADE -->
+        <section>
+            <h2>📄 Resolução da Atividade - Modelo para envio</h2>
+            <div class="resolucao-card">
+                <h3><i class="material-icons">description</i> Análise Crítica e Recomendações de Ferramentas de
+                    Comunicação</h3>
+                <p><strong>Aluno:</strong> Diego Serafim de Sousa | <strong>Data:</strong> 14 de junho de 2026</p>
+
+                <!-- Questão 1: Visão crítica do artigo -->
+                <div class="artigo-card">
+                    <h4><i class="material-icons">menu_book</i> 1. Visão crítica do artigo da Agência Vocali</h4>
+                    <p><strong>Parágrafo de análise crítica:</strong></p>
+                    <p style="background: white; padding: 1rem; border-radius: 12px; margin-top: 0.5rem;">
+                        Concordo parcialmente com as sugestões da Agência Vocali. O artigo acerta ao destacar que a
+                        comunicação interna é um pilar estratégico para o engajamento e produtividade das equipes,
+                        especialmente em tempos de trabalho híbrido e remoto. A ênfase em ferramentas como Slack,
+                        Microsoft Teams e Zoom é pertinente, pois são amplamente adotadas no mercado. No entanto,
+                        discordo da ausência de discussão sobre ferramentas de gestão de projetos integradas à
+                        comunicação, como Jira, Trello ou Asana, que permitem rastrear decisões e tarefas diretamente no
+                        fluxo de trabalho. Além disso, o artigo subestima a importância da comunicação assíncrona para
+                        equipes distribuídas em fusos horários diferentes. Ferramentas como Loom (gravação de vídeos
+                        assíncronos) e Confluence (documentação colaborativa) poderiam ter sido citadas para
+                        complementar a comunicação síncrona. Por fim, o artigo não aborda os custos de implementação e a
+                        curva de aprendizado, fatores críticos para pequenas empresas. Em resumo, as sugestões são
+                        válidas como ponto de partida, mas uma abordagem mais abrangente deveria incluir ferramentas de
+                        gestão de projetos e comunicação assíncrona, além de considerar o contexto organizacional e
+                        orçamentário.
+                    </p>
+                </div>
+
+                <!-- Questão 2: Três ferramentas importantes -->
+                <h4><i class="material-icons">build</i> 2. Ferramentas recomendadas para comunicação em projetos</h4>
+
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">settings_ethernet</i> 1. Slack</h4>
+                    <p><strong>Justificativa:</strong> O Slack é uma plataforma de comunicação por canais que organiza
+                        conversas por tópicos, projetos ou equipes. Diferencia-se do e-mail por ser mais ágil e permitir
+                        integrações com Jira, GitHub, Google Drive e outras ferramentas. Em projetos de software
+                        distribuídos, o Slack reduz a sobrecarga de e-mails, permite buscas rápidas e oferece mensagens
+                        diretas e em grupo. Sua versão gratuita já atende pequenas equipes, e o plano pago inclui
+                        chamadas de voz e vídeo, além de histórico ilimitado. No projeto Cidade Virtual, o Slack foi
+                        utilizado para comunicação diária com a equipe (devs, QA, PO), com canais específicos para
+                        backend, frontend e issues urgentes. A ferramenta também registra automaticamente as decisões
+                        tomadas em conversas assíncronas, facilitando o cumprimento do 5C "Controlada".</p>
+                </div>
+
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">checklist</i> 2. Trello (ou Jira)</h4>
+                    <p><strong>Justificativa:</strong> Embora seja uma ferramenta de gestão de tarefas, o Trello (e sua
+                        versão mais robusta, Jira) tem forte componente de comunicação. Cada cartão permite comentários,
+                        anexos, checklists, etiquetas e menções a membros da equipe. Isso centraliza a comunicação sobre
+                        uma tarefa específica, evitando que informações se percam em e-mails ou chats. É particularmente
+                        útil para metodologias ágeis, pois o quadro Kanban visualiza o fluxo de trabalho (a fazer,
+                        fazendo, feito). No Cidade Virtual, o Trello foi usado para priorizar o backlog do produto e
+                        registrar dúvidas sobre requisitos diretamente nos cartões, reduzindo ruídos de comunicação. A
+                        ferramenta é gratuita para até 10 membros e integra-se com Slack e Google Drive, sendo uma
+                        solução econômica e eficaz para pequenas e médias empresas.</p>
+                </div>
+
+                <div class="ferramenta-card">
+                    <h4><i class="material-icons">video_call</i> 3. Zoom (ou Google Meet)</h4>
+                    <p><strong>Justificativa:</strong> Para comunicação síncrona e reuniões remotas, o Zoom/Google Meet
+                        são indispensáveis. Permitem compartilhamento de tela, gravação de reuniões, legendas
+                        automáticas e salas de breakout para discussões em grupo. Em equipes geograficamente
+                        distribuídas, a comunicação não-verbal (tom de voz, expressões) só é captada por
+                        videoconferência, reduzindo mal-entendidos. A gravação das reuniões atende ao requisito de
+                        "armazenamento e recuperação" das informações do projeto, previsto no gerenciamento de
+                        comunicação do PMBOK. No Cidade Virtual, as reuniões de planejamento de sprint e retrospectivas
+                        foram realizadas via Zoom, com gravação disponibilizada no Confluence para membros ausentes. A
+                        versão gratuita permite até 40 minutos por reunião para até 100 participantes, suficiente para
+                        daily meetings ou alinhamentos rápidos.</p>
+                </div>
+
+                <!-- Ferramenta bônus mencionada no texto -->
+                <div class="ferramenta-card" style="border-left-color: #ff8c00;">
+                    <h4><i class="material-icons">note</i> + Confluence (ferramenta complementar)</h4>
+                    <p><strong>Justificativa adicional:</strong> Embora não obrigatória, incluo o Confluence como uma
+                        quarta ferramenta essencial para comunicação assíncrona e documentação. Trata-se de uma wiki
+                        corporativa que armazena atas de reunião, decisões, lições aprendidas, glossário e planos de
+                        comunicação. No gerenciamento de projetos, atende ao requisito de "registro das lições
+                        aprendidas" e "documentos do projeto". O Confluence integra-se com Jira e Slack, formando um
+                        ecossistema completo de comunicação e gestão. Para o Cidade Virtual, toda a documentação técnica
+                        e decisões de arquitetura foram registradas no Confluence, garantindo que nenhuma informação se
+                        perdesse com a rotatividade da equipe.</p>
+                </div>
+
+                <!-- Tabela resumo das ferramentas -->
+                <h4>📊 Resumo comparativo das ferramentas recomendadas</h4>
+                <div class="tabela-cronograma" style="overflow-x: auto;">
+                    <table style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Ferramenta</th>
+                                <th>Tipo</th>
+                                <th>Melhor para</th>
+                                <th>Custo inicial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Slack</td>
+                                <td>Chat por canais</td>
+                                <td>Comunicação diária assíncrona, integrações</td>
+                                <td>Gratuito (limitado)</td>
+                            </tr>
+                            <tr>
+                                <td>Trello / Jira</td>
+                                <td>Gestão de tarefas/Kanban</td>
+                                <td>Centralizar comunicação sobre tarefas específicas</td>
+                                <td>Gratuito (básico)</td>
+                            </tr>
+                            <tr>
+                                <td>Zoom / Google Meet</td>
+                                <td>Videoconferência</td>
+                                <td>Reuniões síncronas, gravação, compartilhamento</td>
+                                <td>Gratuito (40min)</td>
+                            </tr>
+                            <tr>
+                                <td>Confluence</td>
+                                <td>Wiki/Documentação</td>
+                                <td>Registro de decisões, atas, lições aprendidas</td>
+                                <td>Pago (versão gratuita limitada)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="small-text" style="margin-top: 1rem;">✅ As ferramentas sugeridas atendem aos requisitos do
+                    plano de comunicação do projeto: cobertura síncrona (Zoom), assíncrona (Slack, Confluence) e
+                    rastreabilidade de tarefas/decisões (Trello/Jira). Todas possuem versões gratuitas ou de baixo
+                    custo, alinhadas à observação do enunciado de que "não é necessário investir grandes recursos
+                    financeiros".</p>
+            </div>
+
+            <!-- Botões de ação -->
+            <div style="display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; margin-top: 1rem;">
+                <button id="btnCopiarTexto" class="btn-copy" style="background-color: #28a745;">
+                    <i class="material-icons">content_copy</i> Copiar resolução
+                </button>
+                <button id="btnGerarPDF" class="btn-pdf" style="background-color: #dc3545;">
+                    <i class="material-icons">picture_as_pdf</i> Baixar PDF (resolução)
+                </button>
+            </div>
+        </section>
+
+        <!-- Simulação de upload -->
+        <section>
+            <div class="form-checkout" style="margin-top: 20px;">
+                <h4><i class="material-icons">cloud_upload</i> Envio da tarefa (simulação acadêmica)</h4>
+                <p>Para fins de estudo, clique no botão abaixo para simular o envio do PDF. Em ambiente real, você faria
+                    o upload do arquivo gerado.</p>
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <label for="fileInput" class="btn-nav" style="background-color: #6c757d; cursor: pointer;">
+                        <i class="material-icons">attach_file</i> Selecionar PDF
+                    </label>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <button id="simularEnvio" class="btn-enviar" style="margin:0;">
+                        <i class="material-icons">send</i> Enviar tarefa
+                    </button>
+                </div>
+                <div id="feedbackSimulacao" style="margin-top: 15px; display: none;" class="info-box sucesso"></div>
+            </div>
+        </section>
+
+        <!-- Dicas adicionais -->
+        <section>
+            <div class="dica-avancada" style="margin-top: 25px;">
+                <h4><i class="material-icons">lightbulb</i> Aprofundamento: Escolhendo as ferramentas certas</h4>
+                <p>A seleção de ferramentas de comunicação deve considerar:</p>
+                <ul>
+                    <li><strong>Tamanho da equipe e distribuição geográfica:</strong> Equipes pequenas podem usar apenas
+                        Slack + Trello; equipes grandes exigem Jira + Confluence + Zoom.</li>
+                    <li><strong>Custo x benefício:</strong> Ferramentas gratuitas atendem a maioria das startups; planos
+                        pagos trazem governança e segurança adicionais.</li>
+                    <li><strong>Integrações:</strong> Escolha ferramentas que conversem entre si (ex: Slack + Jira +
+                        Confluence da mesma suite Atlassian).</li>
+                    <li><strong>Curva de aprendizado:</strong> Ferramentas muito complexas podem ser rejeitadas pela
+                        equipe. Invista em treinamento rápido.</li>
+                </ul>
+                <p>📌 <strong>Dica para certificação:</strong> No PMBOK, o plano de gerenciamento das comunicações deve
+                    especificar as tecnologias e métodos. Saber justificar a escolha de ferramentas é um diferencial
+                    competitivo.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diego Serafim de Sousa - 14 de junho de 2026</p>
+            <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Checkout de Presença Módulo 3 (Resolução com análise
+                crítica)</p>
+            <p style="font-size: 0.7rem;">Você acessou como DIEGO SERAFIM DE SOUSA (Sair) | 32010005520-T01-2026-1</p>
+            <p style="font-size: 0.7rem;">Material licenciado Creative Commons - Atribuição 4.0 Internacional</p>
+        </footer>
+    </main>
+</body>
+
+</html>

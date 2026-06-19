@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum de Discussão | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos adicionais específicos para o fórum, complementando o style.css fornecido */
+        .forum-thread {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin: 25px 0;
+        }
+
+        .postagem-principal {
+            padding: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .postagem-autor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .minha-resposta-card {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            margin-top: 20px;
+            border: 2px solid #2e7d32;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .minha-resposta-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 20px;
+            background: #2e7d32;
+            border-radius: 14px 14px 0 0;
+            color: white;
+        }
+
+        .avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #245, #1a4d8c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.4rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-professor {
+            background: linear-gradient(135deg, #0066cc, #004080);
+        }
+
+        .autor-info h4 {
+            margin: 0;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .cargo {
+            font-size: 0.75rem;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        .data {
+            font-size: 0.7rem;
+            color: #6c757d;
+            margin-top: 3px;
+        }
+
+        .conteudo-post {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid #0066cc;
+            line-height: 1.6;
+        }
+
+        .pergunta-norteadora {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .resposta-item {
+            background-color: #fef9f0;
+            border-radius: 12px;
+            margin: 20px;
+            overflow: hidden;
+            border: 1px solid #ffe0b3;
+        }
+
+        .resposta-destaque {
+            border-left: 5px solid #ff8c00;
+            background-color: #fff7e6;
+        }
+
+        .resposta-header {
+            background-color: #f1f3f5;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e6ea;
+        }
+
+        .badge-resposta {
+            margin-left: auto;
+            font-size: 0.7rem;
+            background-color: #28a745;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .badge-destaque {
+            background-color: #ff8c00;
+        }
+
+        .resposta-conteudo {
+            padding: 20px;
+        }
+
+        .form-resposta {
+            margin: 30px 0 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #245;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 12px;
+            font-family: inherit;
+            resize: vertical;
+            transition: 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .btn-postar {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-postar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: #1e7e34;
+        }
+
+        .resposta-enviada {
+            background-color: #e8f5e9;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #2e7d32;
+            display: none;
+        }
+
+        .comentarios-area {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .micro-interacao {
+            font-size: 0.8rem;
+            color: #0066cc;
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-like,
+        .btn-responder {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #495057;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .btn-like:hover,
+        .btn-responder:hover {
+            color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>💬 Fórum de Discussão – Prioridades no Gerenciamento de Projetos de Software</h2>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status em-andamento">Em andamento</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-visao-geral-gerencia-de-projetos.html" class="btn-nav"
+                style="display: inline-flex; align-items: center; gap: 5px; background-color: #28a745; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">
+                Mod 1 Und 1<i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Indicador de trilha e status -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="title">💬 Fórum ativo</span>
+                <span
+                    style="font-size: 0.8rem; background: #e9ecef; padding: 4px 12px; border-radius: 50px;">32010005520-T01-2026-1</span>
+            </div>
+            <div class="text-right small-text">
+                <i class="material-icons" style="font-size: 14px;">check_circle</i> Condição: Fazer postagens no fórum:
+                1
+            </div>
+        </div>
+
+        <!-- Objetivos do Fórum (cards) -->
+        <section>
+            <h2>🎯 Propósitos da Discussão</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">insights</i> Pensamento crítico</strong>
+                    <p>Estimular o raciocínio sobre qual área de conhecimento do gerenciamento de projetos é mais
+                        crítica no início de um projeto de software.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">fact_check</i> Tomada de decisão</strong>
+                    <p>Relacionar teoria à prática, definindo ações concretas que evitam falhas comuns como escopo
+                        aberto ou prazos irreais.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong><i class="material-icons">groups</i> Colaboração</strong>
+                    <p>Trocar experiências e ampliar perspectivas sobre os desafios iniciais em projetos de software.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREAD PRINCIPAL DO FÓRUM -->
+        <section>
+            <h2>💬 Discussão: Qual área de gerenciamento priorizar ao iniciar um projeto de software?</h2>
+            <div class="forum-thread">
+                <div class="thread-header" style="background: linear-gradient(135deg, #1a4d8c, #0e3a6b);">
+                    <h3 style="color:white; margin:0;"><i class="material-icons">forum</i> 💬 Tópico oficial da
+                        disciplina</h3>
+                    <span class="thread-badge" style="background:#28a745;">Discussão ativa · 290 comentários</span>
+                </div>
+
+                <!-- Postagem inicial da Professora -->
+                <div class="postagem-principal">
+                    <div class="postagem-autor">
+                        <div class="avatar avatar-professor">👩‍🏫</div>
+                        <div class="autor-info">
+                            <h4>Profa. Esp. Debora Maria Barroso Paiva</h4>
+                            <div class="cargo">Gerência de Projetos · UFMS Digital</div>
+                            <div class="data">📅 9 de março de 2026</div>
+                        </div>
+                    </div>
+                    <div class="conteudo-post">
+                        <p>Olá, futuros gestores de projetos! 👋</p>
+                        <p>Nesta disciplina, vamos tratar sobre <strong>gerência de projetos de software</strong>,
+                            entendendo conceitos, terminologia e processos que ajudam a planejar, executar e controlar
+                            um projeto com mais previsibilidade e qualidade. Você vai percorrer temas como escopo 📌,
+                            tempo ⏱️, custos 💰, qualidade ✅, pessoas 🤝, comunicação 💬, riscos ⚠️, aquisições 🧾 e
+                            integração 🔗, além de reconhecer como modelos de maturidade apoiam a melhoria contínua e
+                            como ferramentas ajudam no dia a dia.</p>
+                        <p>Para começar, imagine um projeto de software real, como desenvolver um aplicativo simples, um
+                            site institucional ou uma funcionalidade nova em um sistema existente. Mesmo projetos
+                            pequenos podem falhar quando requisitos mudam, prazos apertam ou a comunicação se perde. Por
+                            isso, a ideia aqui é pensar em boas práticas que evitem retrabalho e aumentem a chance de
+                            entrega com valor 🎯.</p>
+
+                        <div class="pergunta-norteadora">
+                            <h4 style="margin:0 0 8px 0;"><i class="material-icons">quiz</i> ❓ Pergunta norteadora</h4>
+                            <p><strong>Se você fosse iniciar hoje um projeto de software, qual área de gerenciamento
+                                    você priorizaria primeiro (escopo, tempo, custos, qualidade, pessoas, comunicação,
+                                    riscos, aquisições ou integração) e por quê?</strong></p>
+                            <p style="margin-top: 12px; font-size:0.95rem;">📝 Para participar: escreva uma postagem
+                                curta (80 a 120 palavras), justificando sua escolha e descrevendo um exemplo prático de
+                                decisão ou ação que você tomaria logo no início do projeto. Interagir e trocar ideias no
+                                fórum amplia perspectivas!</p>
+                        </div>
+
+                        <p><strong>Que seu planejamento seja claro, sua comunicação seja constante e suas entregas sejam
+                                consistentes 🚀. Bons estudos!</strong></p>
+                    </div>
+                    <div class="micro-interacao">
+                        <button class="btn-like"
+                            onclick="alert('Funcionalidade de curtida simulada. Integre com backend.')"><i
+                                class="material-icons" style="font-size: 16px;">thumb_up</i> Curtir (32)</button>
+                        <button class="btn-responder"
+                            onclick="document.getElementById('form-resposta-aluno').scrollIntoView({behavior:'smooth'});"><i
+                                class="material-icons" style="font-size: 16px;">reply</i> Responder</button>
+                    </div>
+                </div>
+
+                <!-- RESPOSTA: Diego Serafim de Sousa -->
+                <div class="minha-resposta-card">
+                    <div class="minha-resposta-header">
+                        <div
+                            style="width: 45px; height: 45px; background: #ff8c00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                            DS</div>
+                        <div>
+                            <h4 style="margin:0; color:white;">DIEGO SERAFIM DE SOUSA</h4>
+                            <div style="font-size:0.7rem; opacity:0.9;">📅 6 de junho de 2026 · 16:45</div>
+                        </div>
+                        <span
+                            style="margin-left: auto; background: #ffc107; color: #333; padding: 4px 12px; border-radius: 30px; font-size:0.7rem; font-weight:bold;">✅
+                            Minha resposta - Resolução</span>
+                    </div>
+                    <div style="padding: 20px;">
+                        <p><strong>🔗 Priorizaria o Gerenciamento de Integração</strong></p>
+                        <p>Eu priorizaria o <strong>Gerenciamento de Integração</strong> porque ele é a "cola" que
+                            conecta todas as outras áreas – escopo, tempo, custos, qualidade, riscos, comunicação,
+                            pessoas e aquisições. Sem um plano de integração bem estruturado, cada área pode seguir em
+                            direções diferentes, gerando retrabalho e conflitos.</p>
+
+                        <p><strong>📋 Exemplo prático com o projeto Cidade Virtual:</strong></p>
+                        <p>No início do desenvolvimento da plataforma Cidade Virtual (ecossistema de conexão local com
+                            e-commerce e issues urbanas), minha primeira ação seria elaborar o <strong>Project
+                                Charter</strong> (termo de abertura) e um <strong>Plano de Gerenciamento do Projeto
+                                integrado</strong>, definindo claramente como as mudanças de escopo seriam controladas,
+                            como os cronogramas seriam monitorados e como a comunicação entre equipe técnica e
+                            stakeholders seria estruturada.</p>
+
+                        <p><strong>⚡ Decisão concreta:</strong> Criar imediatamente um <strong>Comitê de Controle de
+                                Mudanças (CCB)</strong> mesmo que simples, com regras claras: qualquer nova solicitação
+                            de funcionalidade deve passar por análise de impacto em prazo, custo e recursos antes de ser
+                            aprovada. Isso evita o temido "escopo crescente" que tanto afeta projetos de software.</p>
+
+                        <p><strong>🎯 Resultado esperado:</strong> Todas as áreas trabalham sincronizadas, o time evita
+                            retrabalho e o cliente tem visibilidade do progresso. Integração não é apenas conectar
+                            partes técnicas, mas garantir que todas as decisões – de negócio, escopo e equipe – estejam
+                            alinhadas ao mesmo propósito.</p>
+
+                        <div class="micro-interacao">
+                            <button class="btn-like" onclick="alert('Curtida registrada! 👍')"><i
+                                    class="material-icons">thumb_up</i> Curtir (15)</button>
+                            <button class="btn-responder"
+                                onclick="alert('Responder comentário - funcionalidade disponível.')"><i
+                                    class="material-icons">chat_bubble</i> Responder (3)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+            <p style="font-size: 0.8em;">📍 Gerência de Projetos - Fórum de Discussão: prioridades na gestão de software
+            </p>
+            <p style="font-size: 0.7em;">Você acessou como DIEGO SERAFIM DE SOUSA (Sair) | 32010005520-T01-2026-1</p>
+            <p style="font-size: 0.7em;">Siga nossas redes sociais | AVA UFMS | Biblioteca Digital</p>
+        </footer>
+    </main>
+</body>
+
+</html>

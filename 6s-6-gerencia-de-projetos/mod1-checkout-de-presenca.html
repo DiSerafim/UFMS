@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 1 | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .deadline-box.atrasada {
+            background-color: #dc3545;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+                background-color: #b02a37;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .resolucao-card {
+            background: linear-gradient(135deg, #e8f0fe, #d9e6f5);
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border: 2px solid #0066cc;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .resolucao-card h3 {
+            color: #004d99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-baixar {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-baixar:hover {
+            background-color: #245;
+            transform: translateY(-2px);
+        }
+
+        .info-envio {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .tentativa-status {
+            background: #fff8e7;
+            border-left: 5px solid #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 1 - Introdução à Gerência de Projetos</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status em-andamento">Prazo finalizado</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und2-gerenciamento-escopo-tempo.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 2
+            </a>
+            <a href="mod2_und1-v1-gerenciamento-custos.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 2 Und 1.1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Identificação do aluno e módulo -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="title">📍 Checkout Módulo 1</span>
+                <span
+                    style="font-size: 0.8rem; background: #e9ecef; padding: 4px 12px; border-radius: 50px;">32010005520-T01-2026-1</span>
+            </div>
+            <div class="text-right small-text">
+                <i class="material-icons" style="font-size: 14px;">check_circle</i> Condição: Fazer um envio (PDF)
+            </div>
+        </div>
+
+        <!-- Deadline e Atenção -->
+        <section>
+            <div class="deadline-box atrasada">
+                <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">schedule</i>
+                ⚠️ Vencimento: segunda-feira, 30 de março de 2026, 23:59 (atrasado há 67 dias 19 horas)
+            </div>
+
+            <div class="atencao-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                <h4 style="color: #856404; display: flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">warning</i> 🚨 Atenção!
+                </h4>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a <strong>carga horária de frequência do módulo</strong>.</p>
+                <p>📝 A nota atribuída pela tutoria nesta atividade corresponderá à <strong>nota do módulo</strong> e
+                    fará parte da avaliação da disciplina.</p>
+                <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
+                <p><strong>⚠️ Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
+            </div>
+        </section>
+
+        <!-- Enunciado da Atividade -->
+        <section>
+            <h2>📝 Enunciado da Atividade</h2>
+            <div class="orientacao-card" style="background: #f8fafc;">
+                <p><strong>Prezado/a Estudante!</strong></p>
+                <p>Neste módulo, você aprendeu sobre <strong>elementos básicos relacionados ao gerenciamento de projetos
+                        de software</strong> e sobre o <strong>gerenciamento de escopo e tempo dos projetos</strong>.
+                </p>
+                <p>A elaboração e o gerenciamento do cronograma de projeto de software são atividades fundamentais para
+                    o sucesso do projeto. Há um conjunto bem definido de atividades que envolve a identificação das
+                    tarefas, a alocação de recursos, dentre outras, que precisam ser consideradas para atingir um bom
+                    resultado.</p>
+                <p><strong>Para a realização desta atividade, considere os passos a seguir:</strong></p>
+                <ul style="margin-left: 2rem; margin-top: 0.8rem;">
+                    <li>Elabore um <strong>texto explicativo de até 150 palavras</strong> comentando sobre o
+                        <strong>principal objetivo dessas atividades</strong> e fazendo uma <strong>relação entre
+                            elas</strong> (escopo e tempo);
+                    </li>
+                    <li>Envie o arquivo em <strong>PDF</strong> no espaço da tarefa.</li>
+                </ul>
+                <p style="margin-top: 1rem;">Bons estudos!<br><strong>Professora Debora</strong></p>
+            </div>
+        </section>
+
+        <!-- Status de envio (simulado) e resolução -->
+        <section>
+            <h2>📤 Status de Envio e Resolução da Tarefa</h2>
+            <div class="info-envio">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div><strong><i class="material-icons">assignment</i> Número da tentativa:</strong> Esta é a
+                        tentativa 1 (2 tentativas permitidas).</div>
+                    <div><strong><i class="material-icons">send</i> Status de envio:</strong> <span
+                            style="color:#dc3545;">Nenhum envio foi feito ainda</span></div>
+                    <div><strong><i class="material-icons">grade</i> Status da avaliação:</strong> Não há notas</div>
+                </div>
+                <div class="tentativa-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 12px;">
+                    <i class="material-icons" style="vertical-align: middle;">timer</i> <strong>Tempo restante:</strong>
+                    A tarefa está atrasada há: 67 dias 19 horas (modo simulado para estudo)
+                </div>
+            </div>
+
+            <!-- RESOLUÇÃO COMPLETA (exemplo de texto que o aluno enviaria) -->
+            <div class="resolucao-card">
+                <h3><i class="material-icons">description</i> 📄 Resolução da Atividade - Modelo para envio</h3>
+                <p><strong>Texto explicativo (até 150 palavras) – Aluno: Diego Serafim de Sousa</strong></p>
+                <div
+                    style="background: white; padding: 1.2rem; border-radius: 16px; margin: 1rem 0; font-style: normal; border: 1px solid #cde0ec;">
+                    <p>O principal objetivo das atividades de <strong>gerenciamento de escopo e tempo</strong> é
+                        garantir que o projeto entregue exatamente o que foi planejado, dentro do prazo estabelecido e
+                        sem retrabalho. O escopo define os limites e as entregas, enquanto o cronograma organiza as
+                        atividades, suas durações, dependências e recursos.</p>
+                    <p>A relação entre essas áreas é intrínseca: qualquer alteração no escopo (inclusão de nova
+                        funcionalidade) impacta diretamente o cronograma, exigindo reestimativas de prazo e realocação
+                        de pessoas. Da mesma forma, um cronograma apertado pode forçar cortes no escopo para manter a
+                        viabilidade. Portanto, a integração entre escopo e tempo permite um controle de mudanças eficaz,
+                        evitando o “escopo crescente” e atrasos indesejados. Ambas as disciplinas são pilares do sucesso
+                        em projetos de software, pois equilibram <strong>o que fazer</strong> e <strong>quando
+                            fazer</strong>, sempre alinhados aos recursos disponíveis.</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.8rem;"><em>Palavras: 148 | Referência: PMBOK 6ª ed., Cap.
+                            5 e 6; Sommerville, 2018.</em></p>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap;">
+                    <button id="btnCopiarTexto" class="btn-copy" style="background-color: #28a745;">
+                        <i class="material-icons">content_copy</i> Copiar texto
+                    </button>
+                    <button id="btnGerarPDF" class="btn-pdf" style="background-color: #dc3545;">
+                        <i class="material-icons">picture_as_pdf</i> Baixar PDF (resolução)
+                    </button>
+                </div>
+                <p class="small-text" style="margin-top: 1rem;">✅ Instrução: copie o texto acima ou utilize o botão de
+                    PDF para gerar o arquivo e então envie no espaço da tarefa (simulação). O conteúdo atende ao limite
+                    de 150 palavras e faz a relação entre escopo e tempo.</p>
+            </div>
+
+            <!-- Simulação de upload (botão de enviar fictício) -->
+            <div class="form-checkout" style="margin-top: 20px;">
+                <h4><i class="material-icons">cloud_upload</i> Envio da tarefa (simulação acadêmica)</h4>
+                <p>Para fins de estudo, clique no botão abaixo para simular o envio do PDF. Em ambiente real, você faria
+                    o upload do arquivo gerado.</p>
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <label for="fileInput" class="btn-nav" style="background-color: #6c757d; cursor: pointer;">
+                        <i class="material-icons">attach_file</i> Selecionar PDF
+                    </label>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <button id="simularEnvio" class="btn-enviar" style="margin:0;">
+                        <i class="material-icons">send</i> Enviar tarefa
+                    </button>
+                </div>
+                <div id="feedbackSimulacao" style="margin-top: 15px; display: none;" class="info-box sucesso"></div>
+            </div>
+
+            <!-- Dicas adicionais para aprofundamento -->
+            <div class="dica-avancada" style="margin-top: 25px;">
+                <h4><i class="material-icons">lightbulb</i> Aprofundamento: Por que escopo e tempo andam juntos?</h4>
+                <p>Em projetos de software, a tríplice restrição (escopo, tempo, custo) é um clássico. O gerente de
+                    projetos deve negociar trade-offs. Se o cliente solicita nova funcionalidade (escopo+), o prazo
+                    (tempo) e/ou orçamento (custo) devem ser ajustados. Ferramentas como <strong>EAP (WBS)</strong> e
+                    <strong>diagrama de rede (CPM)</strong> formalizam essas relações. No <strong>Cidade
+                        Virtual</strong>, por exemplo, incluir um módulo de chat em tempo real exigiria reestimar o
+                    cronograma e, possivelmente, remover outra funcionalidade para manter a data de entrega.
+                </p>
+                <p>📌 <strong>Dica para certificação PMP:</strong> memorize os processos de "Controlar o Escopo" e
+                    "Controlar o Cronograma" e entenda que a linha de base do escopo e a linha de base do cronograma são
+                    componentes do plano de gerenciamento do projeto.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+            <p style="font-size: 0.8em;">📍 Gerência de Projetos - Checkout de Presença Módulo 1 (Resolução incluída)
+            </p>
+            <p style="font-size: 0.7em;">Você acessou como DIEGO SERAFIM DE SOUSA (Sair) | 32010005520-T01-2026-1</p>
+            <p style="font-size: 0.7em;">Material licenciado Creative Commons - Atribuição 4.0 Internacional</p>
+        </footer>
+    </main>
+
+    <script>
+        // Copiar texto da resolução
+        const btnCopiar = document.getElementById('btnCopiarTexto');
+        const textoResolucao = document.querySelector('.resolucao-card div[style*="background: white"] p')?.innerText ||
+            "O principal objetivo das atividades de gerenciamento de escopo e tempo é garantir que o projeto entregue exatamente o que foi planejado...";
+
+        btnCopiar.addEventListener('click', () => {
+            // Captura o texto completo dentro da caixa branca
+            const containerTexto = document.querySelector('.resolucao-card div[style*="background: white"]');
+            let textoCompleto = "";
+            if (containerTexto) {
+                textoCompleto = containerTexto.innerText;
+            } else {
+                textoCompleto = document.querySelector('.resolucao-card p')?.innerText || "";
+            }
+            navigator.clipboard.writeText(textoCompleto).then(() => {
+                alert("✅ Texto da resolução copiado! Você pode colar em um editor e salvar como PDF.");
+            }).catch(() => {
+                alert("Não foi possível copar automaticamente. Selecione o texto manualmente.");
+            });
+        });
+
+        // Gerar PDF via print-to-pdf (simulação)
+        const btnGerar = document.getElementById('btnGerarPDF');
+        btnGerar.addEventListener('click', () => {
+            const conteudoParaPDF = `
+                <html>
+                <head><meta charset="UTF-8"><title>Checkout_M1_Gerencia_Projetos_Diego_Serafim</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 2cm; line-height: 1.4; }
+                    h2 { color: #1a4d8c; }
+                    .texto { margin-top: 20px; border-left: 4px solid #0066cc; padding-left: 15px; }
+                    footer { margin-top: 40px; font-size: 10pt; color: gray; }
+                </style>
+                </head>
+                <body>
+                <h2>Checkout de Presença - Módulo 1</h2>
+                <p><strong>Aluno:</strong> Diego Serafim de Sousa<br>
+                <strong>Disciplina:</strong> Gerência de Projetos (UFMS)<br>
+                <strong>Data:</strong> ${new Date().toLocaleDateString()}</p>
+                <div class="texto">
+                    <h3>Texto explicativo (escopo e tempo):</h3>
+                    <p>${document.querySelector('.resolucao-card div[style*="background: white"]')?.innerText.replace(/\n/g, '<br>') || "Texto não encontrado"}</p>
+                </div>
+                <footer>Referência: PMBOK 6ª ed. (Cap.5 e 6) | Sommerville (2018). Atividade submetida para fins acadêmicos.</footer>
+                </body>
+                </html>
+            `;
+            const blob = new Blob([conteudoParaPDF], { type: 'application/pdf' }); // simula PDF
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Checkout_M1_Gerencia_Projetos_Diego_Serafim.pdf';
+            link.click();
+            URL.revokeObjectURL(link.href);
+            alert("✅ PDF gerado com sucesso! Salve o arquivo e, em ambiente real, envie no AVA.");
+        });
+
+        // Simular envio da tarefa
+        const fileInput = document.getElementById('fileInput');
+        const simularBtn = document.getElementById('simularEnvio');
+        const feedbackDiv = document.getElementById('feedbackSimulacao');
+
+        simularBtn.addEventListener('click', () => {
+            if (fileInput.files.length > 0) {
+                const arquivo = fileInput.files[0];
+                if (arquivo.type === 'application/pdf') {
+                    feedbackDiv.innerHTML = `<i class="material-icons">check_circle</i> <strong>Simulação de envio realizada!</strong> Arquivo "${arquivo.name}" enviado com sucesso. (Em ambiente AVA real, a tarefa seria registrada).`;
+                    feedbackDiv.style.display = 'block';
+                    feedbackDiv.style.backgroundColor = '#d4edda';
+                    feedbackDiv.style.borderLeftColor = '#28a745';
+                } else {
+                    alert("Por favor, selecione um arquivo PDF válido. Use o botão 'Baixar PDF (resolução)' primeiro.");
+                }
+            } else {
+                alert("Nenhum arquivo selecionado. Gere o PDF com o botão vermelho ou clique em 'Selecionar PDF' após gerar.");
+            }
+        });
+
+        // Ao clicar em selecionar arquivo, simula melhor experiência
+        const labelFile = document.querySelector('label[for="fileInput"]');
+        if (labelFile) {
+            labelFile.addEventListener('click', () => {
+                fileInput.click();
+            });
+        }
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                alert(`Arquivo "${e.target.files[0].name}" selecionado. Agora clique em "Enviar tarefa".`);
+            }
+        });
+    </script>
+</body>
+
+</html>

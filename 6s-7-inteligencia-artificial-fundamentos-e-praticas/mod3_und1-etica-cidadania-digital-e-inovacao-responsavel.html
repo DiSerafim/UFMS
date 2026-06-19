@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 1: Ética, Cidadania Digital e Inovação Responsável | Inteligência Artificial - UFMS
+        Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares */
+        .conceito-card {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .desafio-etico {
+            background: #fff5f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .principio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .principio-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .principio-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .principio-card .material-icons {
+            font-size: 2rem;
+            color: #1a4d8c;
+        }
+
+        .diretriz-box {
+            background: #e8f5e9;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #2e7d32;
+        }
+
+        .diretriz-box h3 {
+            color: #1a4d8c;
+            margin-top: 0;
+        }
+
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .org-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e8f0;
+            transition: transform 0.3s;
+        }
+
+        .org-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .org-card .material-icons {
+            font-size: 2rem;
+            color: #0066cc;
+        }
+
+        .org-card .ano {
+            font-size: 0.8rem;
+            color: #666;
+            display: block;
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin: 15px 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 130px;
+        }
+
+        @media (max-width: 768px) {
+            .principio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .org-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .glossario-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .glossario-termo {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🧠 Inteligência Artificial</h1>
+        <h2>Módulo 3 - Ética, Cidadania Digital e Impactos da Inteligência Artificial</h2>
+        <h3>🎯 Unidade 1 – Ética, Cidadania Digital e Inovação Responsável em IA</h3>
+        <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i>Checkout P. Mod 2
+            </a>
+            <a href="mod3_und2-ompactos-da-ia-na-sociedade-sustentabilidade-e-futuro-do-trabalho.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 3 Und 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/MLF3I9K-Ibs" frameborder="0"
+                    title="Inteligência Artificial - Módulo 3 - Unidade 1 - Ética, Cidadania Digital e Inovação Responsável"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 3 - Unidade 1">
+                [UFMS Digital] Inteligência Artificial - Módulo 3 - Unidade 1 (Ética, Cidadania Digital e Inovação
+                Responsável)
+            </p>
+            <p>Profa. Esp. Debora Maria Barroso Paiva</p>
+            <p>📅 Disponível desde 2026 • Duração: 24min</p>
+        </section>
+
+        <!-- Apresentação -->
+        <section>
+            <h2>🧠 Ética, Cidadania Digital e Inovação Responsável em IA</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🤖 Por que a Ética em IA é Fundamental?</h4>
+                    <p>A expansão da inteligência artificial nas últimas décadas tem provocado <strong>profundas
+                            transformações</strong> nas dinâmicas sociais, econômicas e culturais da sociedade
+                        contemporânea. Sistemas baseados em algoritmos inteligentes passaram a influenciar processos
+                        decisórios, serviços digitais, relações de trabalho e formas de interação em ambientes virtuais.
+                    </p>
+                    <p>Esse cenário evidencia a necessidade de compreender não apenas os aspectos técnicos da
+                        tecnologia, mas também <strong>suas implicações éticas, sociais e ambientais</strong>.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Questões Centrais</h4>
+                    <ul>
+                        <li>Transparência algorítmica</li>
+                        <li>Explicabilidade (XAI)</li>
+                        <li>Proteção de dados e privacidade</li>
+                        <li>Viés algorítmico e discriminação</li>
+                        <li>Responsabilidade no uso de sistemas automatizados</li>
+                        <li>Impactos sociais e ambientais</li>
+                    </ul>
+                    <p style="margin-top: 10px;">A ética aplicada à IA envolve a análise de princípios que orientam o
+                        <strong>desenvolvimento e o uso responsável</strong> de sistemas automatizados.</p>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">gavel</i> “Questões como transparência
+                algorítmica, explicabilidade, proteção de dados, viés algorítmico e responsabilidade no uso de sistemas
+                automatizados tornam-se centrais para o debate público.”
+            </div>
+        </section>
+
+        <!-- Ética e IA - Desafios -->
+        <section>
+            <h2>⚖️ Desafios Éticos no Ciclo da IA</h2>
+            <p>O fluxo de processamento com inteligência artificial percorre um caminho complexo, desde a análise
+                inicial dos dados até a recepção da resposta final pelo usuário. Ao longo dessas diferentes fases,
+                emergem <strong>desafios éticos</strong> que permeiam o ciclo de execução.</p>
+
+            <!-- Viés Algorítmico -->
+            <div class="desafio-etico">
+                <h4><i class="material-icons">warning</i> Viés Algorítmico</h4>
+                <p>Algoritmos treinados com dados históricos podem <strong>reproduzir padrões de discriminação</strong>
+                    presentes nesses dados. Esse problema pode ocorrer quando bases de dados refletem desigualdades
+                    sociais ou quando determinadas populações estão sub-representadas nos dados utilizados no
+                    treinamento dos modelos <cite>(Garcia, 2020)</cite>.</p>
+                <p><strong>Exemplos práticos:</strong></p>
+                <ul>
+                    <li>Sistemas de reconhecimento facial com desempenho inferior para pessoas negras</li>
+                    <li>Algoritmos de recrutamento que discriminam candidatas mulheres</li>
+                    <li>Sistemas de crédito que negam empréstimos para minorias</li>
+                </ul>
+                <p><strong>Estratégias de mitigação:</strong></p>
+                <ul>
+                    <li>Auditorias de algoritmos</li>
+                    <li>Diversificação de conjuntos de dados</li>
+                    <li>Avaliação contínua de sistemas</li>
+                    <li>Equipes de desenvolvimento diversas</li>
+                </ul>
+            </div>
+
+            <!-- Transparência Algorítmica -->
+            <div class="desafio-etico" style="border-left-color: #ff8c00;">
+                <h4><i class="material-icons">visibility</i> Transparência Algorítmica</h4>
+                <p>Muitos sistemas de IA utilizam modelos matemáticos <strong>altamente complexos</strong>, cujo
+                    funcionamento interno pode ser difícil de interpretar. Essa característica levanta questionamentos
+                    sobre a capacidade de compreender e explicar decisões produzidas por sistemas automatizados
+                    <cite>(Garcia, 2020)</cite>.</p>
+                <p><strong>Desafios:</strong></p>
+                <ul>
+                    <li>Como saber por que um sistema tomou uma decisão?</li>
+                    <li>Como garantir que não há discriminação oculta?</li>
+                    <li>Como responsabilizar sistemas opacos?</li>
+                </ul>
+                <p><strong>Abordagens:</strong></p>
+                <ul>
+                    <li>Documentação clara dos modelos</li>
+                    <li>Auditoria externa independente</li>
+                    <li>Desenvolvimento de ferramentas de visualização</li>
+                </ul>
+            </div>
+
+            <!-- Explicabilidade -->
+            <div class="desafio-etico" style="border-left-color: #ffc107;">
+                <h4><i class="material-icons">psychology</i> Explicabilidade (Explainable AI - XAI)</h4>
+                <p>A <strong>explicabilidade</strong> refere-se à capacidade de um sistema de IA explicar seus
+                    resultados ou decisões de forma compreensível para seres humanos <cite>(Russell; Norvig,
+                        2021)</cite>.</p>
+                <p>Com o advento de modelos avançados de aprendizado de máquina, como as redes neurais profundas, que
+                    frequentemente operam como <strong>"caixas pretas"</strong>, a necessidade de transparência e
+                    interpretabilidade tornou-se ainda mais evidente.</p>
+                <p><strong>Importância em contextos críticos:</strong></p>
+                <ul>
+                    <li><strong>Saúde:</strong> Por que o sistema diagnosticou esta doença?</li>
+                    <li><strong>Justiça:</strong> Quais critérios foram usados na decisão judicial?</li>
+                    <li><strong>Administração pública:</strong> Como os recursos foram alocados?</li>
+                </ul>
+                <p><strong>Técnicas de XAI:</strong></p>
+                <ul>
+                    <li>LIME (Local Interpretable Model-agnostic Explanations)</li>
+                    <li>SHAP (SHapley Additive exPlanations)</li>
+                    <li>Mapas de atenção em redes neurais</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cidadania Digital -->
+        <section>
+            <h2>📱 Cidadania Digital</h2>
+
+            <div class="conceito-card">
+                <h3>O que é Cidadania Digital?</h3>
+                <p>O conceito refere-se à <strong>capacidade de indivíduos compreenderem, utilizarem e avaliarem
+                        criticamente</strong> tecnologias digitais em diferentes contextos sociais <cite>(Du Boulay,
+                        2023)</cite>.</p>
+                <p>Em ambientes digitais, práticas responsáveis incluem:</p>
+                <ul>
+                    <li><strong>Respeito à privacidade:</strong> Compreender como os dados são coletados e utilizados
+                    </li>
+                    <li><strong>Proteção de dados pessoais:</strong> Conhecer direitos (LGPD, GDPR)</li>
+                    <li><strong>Uso ético de informações:</strong> Não compartilhar desinformação ou dados sensíveis
+                    </li>
+                    <li><strong>Pensamento crítico:</strong> Avaliar a veracidade e confiabilidade das informações</li>
+                    <li><strong>Empatia digital:</strong> Respeitar o próximo nos ambientes virtuais</li>
+                </ul>
+            </div>
+
+            <div class="principio-grid">
+                <div class="principio-card">
+                    <i class="material-icons">verified</i>
+                    <h3>Autenticidade</h3>
+                    <p>Verificar fontes e identificar desinformação. Não compartilhar conteúdo não verificado.</p>
+                </div>
+                <div class="principio-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">security</i>
+                    <h3>Privacidade</h3>
+                    <p>Proteger dados pessoais e compreender como as plataformas utilizam suas informações.</p>
+                </div>
+                <div class="principio-card" style="border-top-color: #0066cc;">
+                    <i class="material-icons">gavel</i>
+                    <h3>Responsabilidade</h3>
+                    <p>Reconhecer o impacto de ações e publicações no ambiente digital.</p>
+                </div>
+                <div class="principio-card" style="border-top-color: #dc3545;">
+                    <i class="material-icons">psychology</i>
+                    <h3>Pensamento Crítico</h3>
+                    <p>Avaliar informações, identificar vieses e questionar conteúdos recebidos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governança e Diretrizes -->
+        <section>
+            <h2>🏛️ Governança da IA e Diretrizes Institucionais</h2>
+
+            <p>A governança da Inteligência Artificial tem se tornado um tema central em debates internacionais sobre
+                tecnologia. Organizações governamentais, instituições acadêmicas e empresas de tecnologia têm
+                desenvolvido princípios e diretrizes voltados à criação de sistemas mais <strong>transparentes, justos e
+                    responsáveis</strong>.</p>
+
+            <div class="org-grid">
+                <div class="org-card">
+                    <i class="material-icons">public</i>
+                    <h4>OECD</h4>
+                    <p class="ano">2019 (atualizado 2024)</p>
+                    <p style="font-size: 0.9rem;">"AI Principles" - Princípios intergovernamentais para IA responsável
+                    </p>
+                </div>
+                <div class="org-card" style="border-top-color: #ff8c00;">
+                    <i class="material-icons">school</i>
+                    <h4>UNESCO</h4>
+                    <p class="ano">2021</p>
+                    <p style="font-size: 0.9rem;">"Recomendação sobre a Ética da Inteligência Artificial"</p>
+                </div>
+                <div class="org-card" style="border-top-color: #28a745;">
+                    <i class="material-icons">gavel</i>
+                    <h4>Senado Federal</h4>
+                    <p class="ano">2023</p>
+                    <p style="font-size: 0.9rem;">PL 2338/2023 - Marco Legal da IA no Brasil</p>
+                </div>
+                <div class="org-card" style="border-top-color: #0066cc;">
+                    <i class="material-icons">science</i>
+                    <h4>CNPq</h4>
+                    <p class="ano">2026</p>
+                    <p style="font-size: 0.9rem;">Política de Integridade na Atividade Científica (Portaria 2664/2026)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diretrizes UFMS -->
+            <div class="diretriz-box">
+                <h3><i class="material-icons">flag</i> Diretrizes da UFMS para Uso Ético de IA</h3>
+                <p>A Universidade Federal de Mato Grosso do Sul estabeleceu <strong>diretrizes institucionais</strong>
+                    que orientam o uso ético de ferramentas de Inteligência Artificial em atividades acadêmicas. Essas
+                    diretrizes reconhecem o potencial da tecnologia para apoiar processos educacionais e científicos, ao
+                    mesmo tempo em que enfatizam a importância da <strong>responsabilidade no uso dessas
+                        ferramentas</strong> <cite>(Universidade Federal de Mato Grosso do Sul, 2026)</cite>.</p>
+                <p><strong>Princípios destacados:</strong></p>
+                <ul>
+                    <li><strong>Transparência:</strong> Declarar o uso de ferramentas de IA na produção acadêmica</li>
+                    <li><strong>Integridade acadêmica:</strong> Não utilizar IA para substituir o esforço cognitivo
+                        pessoal</li>
+                    <li><strong>Responsabilidade:</strong> O aluno é responsável final pelo conteúdo produzido</li>
+                    <li><strong>Verificação crítica:</strong> Todos os conteúdos gerados por IA devem ser verificados
+                    </li>
+                </ul>
+                <div class="info-box" style="margin-top: 15px; background: white;">
+                    <strong><i class="material-icons">lightbulb</i> Lembre-se:</strong> A IA é uma ferramenta de apoio,
+                    não um substituto do aprendizado. O uso consciente da IA depende da integração entre conhecimento
+                    técnico, reflexão crítica e compromisso social.
+                </div>
+            </div>
+        </section>
+
+        <!-- Inovação Responsável -->
+        <section>
+            <h2>🚀 Inovação Responsável</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>O que é Inovação Responsável?</h4>
+                    <p>Inovação responsável significa desenvolver e aplicar tecnologias de IA de forma que:</p>
+                    <ul>
+                        <li><strong>Beneficie a sociedade</strong> como um todo</li>
+                        <li><strong>Não cause danos</strong> a grupos vulneráveis</li>
+                        <li><strong>Seja transparente</strong> e explicável</li>
+                        <li><strong>Respeite direitos fundamentais</strong></li>
+                        <li><strong>Promova equidade</strong> e justiça social</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Princípios para Inovação Responsável</h4>
+                    <ul>
+                        <li><strong>Human-centered:</strong> Colocar as pessoas no centro do desenvolvimento</li>
+                        <li><strong>Participativo:</strong> Envolver diferentes stakeholders no processo</li>
+                        <li><strong>Iterativo:</strong> Avaliar e ajustar continuamente</li>
+                        <li><strong>Precaução:</strong> Antecipar e mitigar riscos</li>
+                        <li><strong>Responsabilidade:</strong> Assumir consequências das decisões</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="citacao-diferencial" style="border-left-color: #0066cc;">
+                <i class="material-icons" style="vertical-align: middle;">build</i> “A inovação responsável exige que o
+                desenvolvimento tecnológico seja acompanhado de reflexão ética, diálogo social e compromisso com o bem
+                comum.”
+            </div>
+        </section>
+
+        <!-- Glossário -->
+        <section>
+            <h2>📌 Glossário da Unidade 1</h2>
+            <div class="glossario-item"><span class="glossario-termo">Viés Algorítmico</span> <span>Distorções
+                    sistemáticas em sistemas de IA que podem resultar em discriminação ou injustiça.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Transparência Algorítmica</span> <span>Capacidade
+                    de compreender como um sistema de IA chega a suas decisões.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">XAI (Explainable AI)</span> <span>Área da IA
+                    focada em tornar modelos mais interpretáveis e explicáveis.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Cidadania Digital</span> <span>Capacidade de
+                    compreender, utilizar e avaliar criticamente tecnologias digitais.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Governança da IA</span> <span>Conjunto de
+                    princípios, políticas e práticas para orientar o desenvolvimento ético da IA.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Inovação Responsável</span> <span>Desenvolvimento
+                    tecnológico alinhado com valores éticos e sociais.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Human-in-the-Loop</span> <span>Abordagem que
+                    mantém o ser humano como parte ativa e responsável no processo decisório.</span></div>
+        </section>
+
+        <!-- Referências -->
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 DU BOULAY, Benedict.</strong> Inteligência artificial na educação e ética. RE@D – Revista de
+                Educação a Distância e Elearning, v. 6, n. 1, 2023.
+            </div>
+            <div class="referencia">
+                <strong>📗 GARCIA, Ana Cristina Bicharra.</strong> Ética e inteligência artificial. Computação Brasil,
+                n. 43, p. 14–22, 2020.
+            </div>
+            <div class="referencia">
+                <strong>📙 RUSSELL, Stuart J.; NORVIG, Peter.</strong> Artificial intelligence: a modern approach. 4.
+                ed. New York: Pearson, 2021.
+            </div>
+            <div class="referencia">
+                <strong>📕 KAUFMAN, Dora.</strong> Desmistificando a inteligência artificial. Belo Horizonte: Autêntica,
+                2022.
+            </div>
+            <div class="referencia">
+                <strong>🌐 UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL.</strong> Diretrizes para uso ético de IA em
+                atividades acadêmicas. 2026.
+            </div>
+            <div class="referencia">
+                <strong>🌐 OCDE.</strong> AI Principles. 2019 (atualizado 2024).
+            </div>
+            <div class="referencia">
+                <strong>🌐 UNESCO.</strong> Recomendação sobre a Ética da Inteligência Artificial. 2021.
+            </div>
+
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Desafio Prático</h4>
+                <p><strong>Reflexão guiada:</strong> Escolha um sistema de IA que você utiliza (ex: ChatGPT, assistente
+                    virtual, sistema de recomendação):</p>
+                <ol>
+                    <li><strong>Identifique:</strong> Que vieses ou riscos éticos podem estar presentes?</li>
+                    <li><strong>Analise:</strong> O sistema é transparente sobre como funciona?</li>
+                    <li><strong>Proponha:</strong> Que medidas poderiam torná-lo mais ético e responsável?</li>
+                </ol>
+                <p><strong>Compartilhe suas reflexões no fórum da disciplina!</strong></p>
+            </div>
+        </section>
+
+        <!-- Síntese -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">gavel</i>
+                    <h4>Ética é Fundamental</h4>
+                    <p>Viés algorítmico, transparência e explicabilidade são desafios centrais para o uso responsável da
+                        IA.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">smartphone</i>
+                    <h4>Cidadania Digital</h4>
+                    <p>Compreender, utilizar e avaliar criticamente tecnologias digitais é essencial para a participação
+                        na sociedade contemporânea.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">trending_up</i>
+                    <h4>Inovação Responsável</h4>
+                    <p>O desenvolvimento tecnológico deve estar alinhado com valores éticos, sociais e ambientais.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> Na Unidade 2 vamos aprofundar em
+                <strong>Impactos da IA na Sociedade, Sustentabilidade e Futuro do Trabalho</strong>. Continue seus
+                estudos e participe do fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 16 de junho de 2026</p>
+        <p style="font-size: 0.8em;">🧠 Inteligência Artificial - Módulo 3 - Unidade 1: Ética, Cidadania Digital e
+            Inovação Responsável</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

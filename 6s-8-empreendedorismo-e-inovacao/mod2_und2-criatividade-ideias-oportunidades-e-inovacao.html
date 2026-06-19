@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 2: Criatividade, Ideias, Oportunidades e Inovação | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        #video-aula {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 15px 10px 15px;
+            margin: 0 -25px 20px -25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #0066cc;
+            transition: all 0.3s ease;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== TRIPÉ DA INOVAÇÃO ===== */
+        .tripe-container {
+            background: linear-gradient(135deg, #f0f7ff, #e8f5e9);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #0066cc;
+        }
+
+        .tripe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .tripe-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s;
+        }
+
+        .tripe-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .tripe-item .icone {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tripe-item .titulo {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .tripe-item .pergunta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .tripe-item .exemplo {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.8rem;
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .tripe-item.desejabilidade {
+            border-top-color: #28a745;
+        }
+
+        .tripe-item.viabilidade {
+            border-top-color: #0066cc;
+        }
+
+        .tripe-item.sustentabilidade {
+            border-top-color: #ff8c00;
+        }
+
+        /* ===== CICLO OBSERVAR-TESTAR ===== */
+        .ciclo-observar {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .ciclo-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .ciclo-flow .passo {
+            background: white;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            color: #1a4d8c;
+            border: 2px solid #28a745;
+            min-width: 120px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .ciclo-flow .passo:hover {
+            transform: scale(1.05);
+        }
+
+        .ciclo-flow .passo .sub {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: #666;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .ciclo-flow .seta {
+            font-size: 1.5rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .ciclo-flow .seta {
+                display: none;
+            }
+
+            .ciclo-flow .passo {
+                min-width: 100px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ===== TIPOS DE INOVAÇÃO ===== */
+        .inovacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .inovacao-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.2rem;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .inovacao-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .inovacao-card .icone {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .inovacao-card .titulo {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .inovacao-card .descricao {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .inovacao-card .exemplo {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.8rem;
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .inovacao-card.incremental {
+            border-left-color: #0066cc;
+        }
+
+        .inovacao-card.radical {
+            border-left-color: #ff8c00;
+        }
+
+        .inovacao-card.social {
+            border-left-color: #28a745;
+        }
+
+        /* ===== DESIGN THINKING ===== */
+        .dt-container {
+            background: linear-gradient(135deg, #f0f7ff, #e8f5e9);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #0066cc;
+        }
+
+        .dt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .dt-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .dt-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .dt-item .numero {
+            font-weight: 700;
+            color: #28a745;
+            font-size: 1.5rem;
+        }
+
+        .dt-item .titulo {
+            font-weight: 600;
+            color: #1a4d8c;
+            font-size: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .dt-item .descricao {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .tripe-grid,
+            .dt-grid,
+            .inovacao-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 2 - Metas, Ideias, Oportunidades e Inovação</h2>
+        <h3>📊 Unidade 2 – Criatividade, Ideias, Oportunidades e Inovação</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod2_und1-metas-empreendedoras-e-planejamento.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 1 
+            </a>
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LpeFaDlwhzE?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 2 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 2 - Unidade 2">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 2 - Unidade 2
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: APRESENTAÇÃO ===== -->
+        <section>
+            <h2>🧪 Apresentação da Unidade</h2>
+            <p>Nesta unidade, avançamos da etapa de planejamento para a <strong>fase experimental</strong> da jornada
+                empreendedora. Até aqui, você estruturou metas e refletiu sobre suas competências. Agora começa o
+                momento de <strong>observar, investigar e testar ideias</strong>.</p>
+
+            <p>É como se você deixasse de ser apenas um estrategista e passasse a agir como <strong>cientista aplicado à
+                    realidade</strong>, um pouco mais como o <strong>Franjinha</strong> em seu laboratório.</p>
+
+            <div class="dica-box">
+                <h4>📌 O que você vai aprender nesta unidade</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li>A <strong>criatividade</strong> como competência desenvolvível</li>
+                    <li>Métodos de <strong>geração e seleção de ideias</strong></li>
+                    <li><strong>Identificação de problemas e oportunidades</strong></li>
+                    <li>Tipos de <strong>inovação</strong> (incremental, radical e social)</li>
+                    <li>Introdução prática ao <strong>Design Thinking</strong></li>
+                </ul>
+            </div>
+
+            <p>A capacidade de transformar problemas em soluções relevantes é um dos pilares do empreendedorismo
+                contemporâneo. Para isso, <strong>não basta "ter uma boa ideia"</strong>: é preciso compreender como
+                ideias surgem, como são avaliadas e como podem se converter em oportunidades reais de inovação.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: CRIATIVIDADE ===== -->
+        <section>
+            <h2>💡 Criatividade, Geração e Seleção de Ideias</h2>
+            <p>A <strong>criatividade</strong> pode ser entendida como a capacidade de produzir combinações novas e
+                úteis a partir de repertório, observação e experimentação.</p>
+
+            <p>No empreendedorismo, ela é tratada como uma <strong>competência aplicada</strong>: gerar alternativas e
+                escolher caminhos viáveis para criar valor. Por isso, ideias só fazem sentido quando se conectam a um
+                <strong>problema relevante</strong>, a um <strong>público específico</strong> e a uma <strong>proposta
+                    de valor clara</strong> (Dornelas, 2023).
+            </p>
+
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">🌟</div>
+                    <h4>Divergir</h4>
+                    <p>Produzir várias possibilidades <strong>sem julgamento inicial</strong>. É o momento de explorar o
+                        máximo de alternativas possível.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong>
+                        Brainstorming, mapa mental, listagem livre de ideias.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">🎯</div>
+                    <h4>Convergir</h4>
+                    <p>Selecionar alternativas com <strong>critérios objetivos</strong>. É o momento de filtrar e
+                        escolher as melhores opções.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Análise de
+                        viabilidade, matriz de priorização, votação.</p>
+                </div>
+            </div>
+
+            <p>Esse ciclo é central no <strong>Design Thinking</strong>, que propõe explorar possibilidades e depois
+                refiná-las com base em evidências e propósito (Brown, 2020; Cavalcanti; Filatro, 2025).</p>
+
+            <div class="atencao-box">
+                <h3>⚠️ O Equilíbrio entre Divergir e Convergir</h3>
+                <p><strong>Divergir</strong> é como testar diferentes fórmulas no laboratório, e
+                    <strong>convergir</strong> é escolher qual experimento merece continuar.
+                </p>
+                <ul style="margin-left: 1.5rem; margin-top: 10px;">
+                    <li>Se <strong>convergir cedo demais</strong>, você estará limitando a inovação</li>
+                    <li>Se <strong>divergir sem critérios</strong>, gerará dispersão</li>
+                </ul>
+            </div>
+
+            <!-- TRIPÉ DA INOVAÇÃO -->
+            <h3>📊 Tripé da Inovação: Critérios de Seleção</h3>
+            <p>Para apoiar sua escolha, recomenda-se avaliar três critérios principais:</p>
+
+            <div class="tripe-container">
+                <div class="tripe-grid">
+                    <div class="tripe-item desejabilidade">
+                        <div class="icone">❤️</div>
+                        <div class="titulo">Desejabilidade</div>
+                        <div class="pergunta">"Faz sentido para pessoas/usuários?"</div>
+                        <div class="exemplo">Exemplo: O cliente realmente precisa disso?</div>
+                    </div>
+                    <div class="tripe-item viabilidade">
+                        <div class="icone">🔧</div>
+                        <div class="titulo">Viabilidade</div>
+                        <div class="pergunta">"É possível executar nas condições atuais?"</div>
+                        <div class="exemplo">Exemplo: Temos tecnologia e equipe para fazer?</div>
+                    </div>
+                    <div class="tripe-item sustentabilidade">
+                        <div class="icone">💰</div>
+                        <div class="titulo">Sustentabilidade Econômica</div>
+                        <div class="pergunta">"Há lógica de custos/receitas ou sustentação institucional?"</div>
+                        <div class="exemplo">Exemplo: O modelo financeiro é viável?</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: #555; text-align: center; margin-top: 0.5rem;">
+                    Esse tripé ajuda a <strong>transformar a criatividade em decisão estratégica</strong>, evitando
+                    ideias interessantes, mas impraticáveis.
+                </p>
+            </div>
+
+            <p><strong>Inovação ocorre quando uma solução é desejada pelas pessoas, possível de realizar e sustentável
+                    de manter</strong> (Brown, 2020; Dornelas, 2023).</p>
+        </section>
+
+        <!-- ===== SEÇÃO: IDENTIFICAÇÃO DE PROBLEMAS ===== -->
+        <section>
+            <h2>🔍 Identificação de Problemas e Oportunidades</h2>
+            <p>O ponto de partida mais consistente para a inovação é a <strong>identificação de problemas
+                    reais</strong>, com contexto e impacto claros. O empreendedor observa fricções, desperdícios, dores
+                e necessidades não atendidas e, a partir disso, formula possibilidades de solução.</p>
+
+            <p><strong>Em vez de começar com um produto, o empreendedorismo começa com a compreensão do problema, do
+                    contexto e das restrições</strong> (Brown, 2020; Dornelas, 2023).</p>
+
+            <div class="ciclo-observar">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">🔄 Processo de Investigação
+                    Empreendedora</h4>
+                <div class="ciclo-flow">
+                    <div class="passo">
+                        👁️ Observar
+                        <span class="sub">Contexto e dores</span>
+                    </div>
+                    <span class="seta">➜</span>
+                    <div class="passo">
+                        📝 Formular Hipóteses
+                        <span class="sub">Suposições testáveis</span>
+                    </div>
+                    <span class="seta">➜</span>
+                    <div class="passo">
+                        🧪 Testar Suposições
+                        <span class="sub">Experimentar na prática</span>
+                    </div>
+                    <span class="seta">➜</span>
+                    <div class="passo">
+                        📚 Aprender Rapidamente
+                        <span class="sub">Ajustar e evoluir</span>
+                    </div>
+                    <span class="seta" style="font-size: 1.5rem;">↺</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #555; text-align: center; margin-top: 0.5rem;">
+                    Fonte: Adaptado de Varol (2022) e Ries (2019)
+                </p>
+            </div>
+
+            <p>Partindo desse processo, <strong>Varol (2022)</strong> propõe aplicar princípios do pensamento científico
+                à inovação: <strong>questionar premissas, buscar evidências e realizar experimentos simples</strong>
+                para reduzir incertezas. Em termos práticos, significa <strong>transformar opiniões em hipóteses e
+                    hipóteses em testes</strong>.</p>
+
+            <p>Uma <strong>oportunidade</strong> surge quando o problema observado é relevante, frequente ou custoso, e
+                quando existe espaço para uma solução com diferencial claro. Por isso, <strong>oportunidades raramente
+                    aparecem por acaso</strong>; elas emergem da leitura do ambiente, da escuta ativa e da capacidade de
+                formular boas perguntas (Varol, 2022; Dornelas, 2023).</p>
+
+            <!-- CASOS PRÁTICOS -->
+            <h3>📚 Casos Práticos: Da Observação à Oportunidade</h3>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🔬</div>
+                    <h4>Dual Link</h4>
+                    <p>O professor <strong>Cauê Martins</strong> identificou um desencontro entre empresas com desafios
+                        técnicos e pesquisas acadêmicas com potencial de aplicação que não chegavam ao mercado.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Oportunidade:</strong>
+                        Transformar conhecimento científico em soluções para o mercado.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>RetenMax</h4>
+                    <p><strong>Arthur Maximilliano</strong> observou que muitas empresas cresciam em faturamento, mas
+                        operavam sem indicadores claros, integração entre áreas ou processos estruturados.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Oportunidade:</strong>
+                        Organizar, medir e digitalizar processos existentes.</p>
+                </div>
+                <div class="card" style="grid-column: span 2;">
+                    <div class="card-icon">⚛️</div>
+                    <h4>DemoFísica (Licenciatura)</h4>
+                    <p>O professor <strong>Além-Mar Bernardes Gonçalves</strong> percebeu limitações no ensino
+                        experimental de Física e passou a desenvolver demonstrações próprias e testar abordagens mais
+                        interativas e acessíveis.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Oportunidade:</strong>
+                        Transformar um problema educacional em uma iniciativa pedagógica com potencial de impacto
+                        social.</p>
+                </div>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>Você já percebeu algum "desencontro" entre universidade e mercado/sociedade na sua
+                        área?</strong></p>
+                <p>Existe conhecimento produzido no seu curso que poderia resolver um problema real fora da
+                    universidade?</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TIPOS DE INOVAÇÃO ===== -->
+        <section>
+            <h2>📊 Tipos de Inovação: Incremental, Radical e Social</h2>
+            <p>Nem toda inovação é disruptiva. Em termos didáticos, podemos diferenciar:</p>
+
+            <div class="inovacao-grid">
+                <div class="inovacao-card incremental">
+                    <div class="icone">📈</div>
+                    <div class="titulo">Inovação Incremental</div>
+                    <div class="descricao">Aprimora o que já existe, por meio de melhorias em processos, qualidade,
+                        experiência do usuário ou eficiência operacional.</div>
+                    <div class="exemplo"><strong>Exemplo:</strong> RetenMax – organizar, medir e digitalizar processos
+                        existentes.</div>
+                </div>
+                <div class="inovacao-card radical">
+                    <div class="icone">🚀</div>
+                    <div class="titulo">Inovação Radical</div>
+                    <div class="descricao">Altera significativamente produtos, serviços ou modelos de negócio, podendo
+                        criar novos mercados, mas com maior risco e investimento.</div>
+                    <div class="exemplo"><strong>Exemplo:</strong> Smartphones, inteligência artificial generativa,
+                        veículos autônomos.</div>
+                </div>
+                <div class="inovacao-card social">
+                    <div class="icone">🌍</div>
+                    <div class="titulo">Inovação Social</div>
+                    <div class="descricao">Busca gerar valor público e impacto socioambiental em áreas como educação,
+                        saúde, inclusão e sustentabilidade.</div>
+                    <div class="exemplo"><strong>Exemplo:</strong> República das Arteiras, DemoFísica, iniciativas de
+                        inclusão digital.</div>
+                </div>
+            </div>
+
+            <p>A inovação, portanto, <strong>não se limita à tecnologia</strong>. Ela pode ocorrer em processos,
+                serviços, formas de entrega ou na maneira de organizar recursos para gerar valor, desde que exista
+                <strong>novidade percebida e benefício relevante para um público</strong> (Brown, 2020; Dornelas, 2023).
+            </p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>Você associa inovação apenas a algo totalmente novo?</strong></p>
+                <p>Na sua área, o que poderia ser melhorado, estruturado ou digitalizado?</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DESIGN THINKING ===== -->
+        <section>
+            <h2>🎨 Introdução ao Design Thinking</h2>
+            <p>Se o Franjinha tivesse um quadro branco com post-its, provavelmente estaria praticando <strong>Design
+                    Thinking</strong> sem saber. Trata-se de uma abordagem de inovação <strong>centrada nas
+                    pessoas</strong> que combina empatia, experimentação e colaboração para resolver problemas
+                complexos.</p>
+
+            <p>Em vez de começar pela solução, busca <strong>compreender o contexto e os usuários</strong>, avançando
+                por ciclos de ideação, prototipação e testes. A lógica é aprender rapidamente com versões iniciais
+                (protótipos), reduzindo riscos antes de grandes investimentos (Brown, 2020).</p>
+
+            <div class="dt-container">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1.5rem;">🔧 Etapas do Design Thinking</h4>
+                <div class="dt-grid">
+                    <div class="dt-item">
+                        <div class="numero">1</div>
+                        <div class="titulo">🤝 Empatia</div>
+                        <div class="descricao">Compreender pessoas e contextos por meio de observação e escuta.
+                            Identificar necessidades, dores e expectativas.</div>
+                    </div>
+                    <div class="dt-item">
+                        <div class="numero">2</div>
+                        <div class="titulo">🎯 Definição</div>
+                        <div class="descricao">Sintetizar observações e dados em um <strong>desafio claro</strong>.
+                            Problemas bem delimitados permitem testar alternativas.</div>
+                    </div>
+                    <div class="dt-item">
+                        <div class="numero">3</div>
+                        <div class="titulo">💡 Ideação</div>
+                        <div class="descricao">Elaborar diferentes alternativas e selecionar aquelas com mais potencial.
+                            Divergir e convergir com critérios.</div>
+                    </div>
+                    <div class="dt-item">
+                        <div class="numero">4</div>
+                        <div class="titulo">🧪 Prototipação</div>
+                        <div class="descricao">Criar versões iniciais simples para testar rapidamente se a solução faz
+                            sentido para quem irá utilizá-la.</div>
+                    </div>
+                    <div class="dt-item" style="grid-column: span 2; max-width: 400px; margin: 0 auto;">
+                        <div class="numero">5</div>
+                        <div class="titulo">📊 Teste</div>
+                        <div class="descricao">Validar com usuários reais, coletar feedback e iterar continuamente.
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: #555; text-align: center; margin-top: 0.5rem;">
+                    Fonte: Brown (2020); Cavalcanti e Filatro (2025)
+                </p>
+            </div>
+
+            <p><strong>Cavalcanti e Filatro (2025)</strong> destacam o Design Thinking como uma prática orientada a
+                propósito: inovar não apenas para criar algo novo, mas para <strong>gerar valor significativo a partir
+                    de necessidades reais</strong>.</p>
+
+            <div class="atencao-box">
+                <h3>💡 Problemas Bem Definidos</h3>
+                <p>Assim como as metas, <strong>problemas também precisam ser bem definidos</strong>.</p>
+                <ul style="margin-left: 1.5rem; margin-top: 10px;">
+                    <li><strong>"Melhorar a educação"</strong> é uma intenção</li>
+                    <li><strong>"Reduzir a evasão no 1º semestre do curso X em 10% até o próximo ano"</strong> é um
+                        problema estruturado</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Planejamento e inovação, portanto, são complementares.</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SÍNTESE ===== -->
+        <section>
+            <h2>✅ Síntese do Módulo 2</h2>
+            <p>Neste módulo, avançamos em <strong>dois movimentos essenciais</strong> da jornada empreendedora:
+                estruturar direção e investigar a realidade.</p>
+
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">📋</div>
+                    <h4>Unidade 1: Metas e Planejamento</h4>
+                    <p>Compreendemos que a <strong>intenção sem método gera frustração</strong>. Metas claras,
+                        planejamento e indicadores transformam propósito em execução.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>Se o Cebolinha tivesse aplicado
+                            metas SMART e acompanhado seus resultados, talvez seus planos infalíveis fossem estratégias
+                            ajustadas a partir do aprendizado.</em></p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">🧪</div>
+                    <h4>Unidade 2: Criatividade e Inovação</h4>
+                    <p>Entramos no <strong>modo Franjinha</strong>: observar, formular hipóteses, testar e ajustar. A
+                        inovação surge da identificação de problemas reais e da experimentação contínua.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>Os casos da Dual Link, RetenMax e
+                            DemoFísica mostram como a observação pode se transformar em oportunidade estruturada.</em>
+                    </p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>💡 A Convergência</h4>
+                <p><strong>Planejamento sem testes torna as propostas rígidas</strong>, e <strong>testes sem direção
+                        geram dispersão</strong>.</p>
+                <p style="margin-top: 10px;">Quando <strong>direção e investigação se encontram</strong>, surge uma
+                    oportunidade estruturada.</p>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 E você?</h4>
+                <p>No Módulo 3, avançaremos para <strong>planejamento, validação, modelagem e startups</strong>.</p>
+                <p><strong>Você dará o próximo passo e levará sua solução do laboratório ao mercado e à
+                        sociedade?</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>BROWN, Tim.</strong> Design Thinking – Edição Comemorativa 10 anos. Rio de Janeiro: Alta Books,
+                2020.
+            </div>
+            <div class="referencia">
+                <strong>CAVALCANTI, Carolina; FILATRO, Andrea.</strong> Design Thinking: inovação com propósito. 2. ed.
+                Rio de Janeiro: Atlas, 2025.
+            </div>
+            <div class="referencia">
+                <strong>DORNELAS, José.</strong> Empreendedorismo - transformando ideias em negócios. 9. ed. Rio de
+                Janeiro: GEN Atlas, 2023.
+            </div>
+            <div class="referencia">
+                <strong>RIES, Eric.</strong> A startup enxuta. Rio de Janeiro: Sextante, 2019.
+            </div>
+            <div class="referencia">
+                <strong>VAROL, Ozan.</strong> Pense como um cientista de foguetes. Rio de Janeiro: Alta Books, 2022.
+            </div>
+            <div class="referencia">
+                <strong>ATHIENDE, Joseph O.; JOHNSTON, Sonja L.</strong> A systematic review of the factors of
+                entrepreneurial education in pre-service teacher education. Entrepreneurship Education and Pedagogy,
+                2026.
+            </div>
+            <div class="referencia">
+                <strong>MENDES, Valdelaine et al.</strong> A produção científica sobre educação e empreendedorismo.
+                Educação, v. 49, 2024.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 2 - Unidade 2</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

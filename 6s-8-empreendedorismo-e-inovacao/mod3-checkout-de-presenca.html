@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 3 | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #ff8c00;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== RESUMO DA TENTATIVA ===== */
+        .resumo-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .resumo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .resumo-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .resumo-item .rotulo {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resumo-item .valor {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a4d8c;
+            margin-top: 5px;
+        }
+
+        .resumo-item .valor.nota {
+            color: #28a745;
+            font-size: 2rem;
+        }
+
+        .resumo-item .valor.nota span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* ===== QUESTÕES ===== */
+        .questao-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .questao-item:hover {
+            transform: translateX(4px);
+        }
+
+        .questao-item .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .cabecalho .numero {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .questao-item .cabecalho .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .questao-item .cabecalho .status.correto {
+            background: #e8f5e9;
+            color: #28a745;
+        }
+
+        .questao-item .cabecalho .status.incorreto {
+            background: #ffebee;
+            color: #dc3545;
+        }
+
+        .questao-item .texto {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .resposta {
+            font-size: 0.9rem;
+            color: #555;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+        }
+
+        .questao-item .resposta .label {
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .questao-item .resposta .valor {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .questao-item .resposta .valor.incorreto {
+            color: #dc3545;
+        }
+
+        /* ===== BOTÃO NOTA 10 ===== */
+        .nota10-container {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            border: 3px solid #28a745;
+        }
+
+        .nota10-container .emoji {
+            font-size: 4rem;
+        }
+
+        .nota10-container .titulo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin: 10px 0;
+        }
+
+        .nota10-container .subtitulo {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .nota10-container .mascote {
+            font-size: 5rem;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 8px;
+                font-size: 0.5em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .resumo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nota10-container .titulo {
+                font-size: 1.8rem;
+            }
+
+            .nota10-container .emoji {
+                font-size: 3rem;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .resumo-container {
+                break-inside: avoid;
+            }
+
+            .questao-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 3 – Planejamento, Validação, Modelagem e Startups</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod3_und2-modelagem-de-negocios-projetos-e-startup.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 2
+            </a>
+            <a href="#" class="btn-nav" style="background-color: #28a745;">
+                Concluir Curso <i class="material-icons">flag</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: NOTA 10 ===== -->
+        <section>
+            <div class="nota10-container">
+                <span class="mascote">🧑‍🎓</span>
+                <div class="emoji">🎉</div>
+                <div class="titulo">Nota 10!</div>
+                <div class="subtitulo">
+                    Parabéns! Você concluiu a avaliação do Módulo 3 com <strong>100% de aproveitamento</strong>.
+                </div>
+                <div style="margin-top: 15px; font-size: 0.95rem; color: #555;">
+                    <span style="background: white; padding: 5px 15px; border-radius: 20px; display: inline-block;">
+                        ⭐ 10,00 de 10,00 pontos
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO DA TENTATIVA ===== -->
+        <section>
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-container">
+                <div class="resumo-grid">
+                    <div class="resumo-item">
+                        <div class="rotulo">📌 Situação</div>
+                        <div class="valor" style="color: #28a745;">Finalizada</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">📅 Iniciado</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 20:14</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏱️ Concluído</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 20:25</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏳ Duração</div>
+                        <div class="valor">11 minutos 12 segundos</div>
+                    </div>
+                    <div class="resumo-item" style="grid-column: span 2; max-width: 300px; margin: 0 auto;">
+                        <div class="rotulo">⭐ Nota</div>
+                        <div class="valor nota">10,00 <span>/ 10,00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>💬 Comentário</h4>
+                <p style="margin: 0;">
+                    🧑‍🎓 Mascote da UFMS sorrindo, usando camiseta da universidade e segurando uma placa azul com a
+                    mensagem <strong>"Nota 10!"</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: QUESTÕES ===== -->
+        <section>
+            <h2>📝 Questões da Avaliação</h2>
+
+            <!-- Questão 1 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 1</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Uma equipe universitária desenvolveu uma solução para reduzir desperdício de alimentos e,
+                        antes de lançar o produto, realizou entrevistas com usuários, testes de protótipos e ajustes na
+                        proposta. Esse processo demonstra principalmente:</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">d. Validação por meio de experimentação e interação com usuários.</span>
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 2</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Assim como em outras universidades que atuam como agentes de inovação ao conectar ensino,
+                        pesquisa e setor produtivo, na UFMS, muitas startups surgem:</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">b. A partir de pesquisas científicas e projetos acadêmicos.</span>
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 3</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No contexto da modelagem de negócios por meio do Business Model Canvas, relacione os
+                        elementos do modelo de negócio às suas respectivas definições:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Benefício ou solução que gera valor para o cliente.</span>
+                    <span class="valor"> → Proposta de valor</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Formas pelas quais a solução é entregue ao cliente.</span>
+                    <span class="valor"> → Canais</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Público ou grupo de pessoas atendido pela solução.</span>
+                    <span class="valor"> → Segmento de clientes</span>
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 4</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Considerando as ferramentas aplicadas à modelagem e à estruturação de negócios ao longo da
+                        jornada empreendedora, associe corretamente os conceitos às suas respectivas
+                        definições:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Documento estruturado que detalha a operação, o mercado e as projeções e
+                        estrutura formal do negócio.</span>
+                    <span class="valor"> → Plano de negócio</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Definição de direção, objetivos e estratégias de longo prazo.</span>
+                    <span class="valor"> → Planejamento estratégico</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Representação de como o negócio cria, entrega e captura valor.</span>
+                    <span class="valor"> → Modelo de negócio</span>
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 5</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No desenvolvimento de soluções inovadoras, validar significa apenas testar a
+                        tecnologia.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Falso</span>
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 6</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Uma startup originada de pesquisa universitária desenvolveu, inicialmente, uma solução com
+                        foco técnico, mas ao longo do tempo, seus integrantes perceberam a necessidade de compreender
+                        melhor o mercado e seus clientes. Nesse contexto, essa mudança indica:</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">d. Adequação do modelo de negócio com base em validação de mercado.</span>
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 7</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No contexto do desenvolvimento de soluções inovadoras no empreendedorismo, considerando a
+                        lógica de tratar ideias como hipóteses que precisam ser testadas e estruturadas, relacione os
+                        conceitos às suas definições:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Ponto de partida que representa uma hipótese inicial a ser investigada.</span>
+                    <span class="valor"> → Ideia</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Estrutura que organiza como a solução cria, entrega e captura valor.</span>
+                    <span class="valor"> → Modelo de negócio</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Processo de testar hipóteses por meio de experimentos, feedbacks e
+                        evidências.</span>
+                    <span class="valor"> → Validação</span>
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 8</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No contexto da modelagem de negócios por meio do Business Model Canvas, utilizado para
+                        estruturar e visualizar os principais elementos de um empreendimento, relacione os componentes
+                        do modelo às suas definições:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Fontes de renda obtidas a partir da venda de produtos ou serviços.</span>
+                    <span class="valor"> → Receitas</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Despesas necessárias para operar o negócio, como custo de matérias-primas e
+                        aluguéis.</span>
+                    <span class="valor"> → Custos</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Atores e organizações que contribuem estrategicamente para o funcionamento do
+                        modelo de negócio.</span>
+                    <span class="valor"> → Parcerias-chave</span>
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 9</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Na UFMS, o HUB PIME atua como um ambiente de apoio ao desenvolvimento de ideias, oferecendo
+                        trilhas, mentorias e conexões para empreendimentos.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Verdadeiro</span>
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 10</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Startups costumam operar em ambientes de incerteza, com foco em inovação e
+                        crescimento.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Verdadeiro</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===== SEÇÃO: BOTÃO VOLTAR ===== -->
+        <section>
+            <div style="text-align: center; padding: 1rem 0;">
+                <a href="../6s-8-empreendedorismo-e-inovacao/index.html" class="btn-nav"
+                    style="background-color: #6c757d; padding: 12px 30px; border-radius: 50px; font-weight: 500; font-size: 1rem;">
+                    <i class="material-icons" style="font-size: 20px;">arrow_back</i> Voltar para a disciplina
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">01000000030-T01-2026-1 · Módulo 3 – Checkout de Presença</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

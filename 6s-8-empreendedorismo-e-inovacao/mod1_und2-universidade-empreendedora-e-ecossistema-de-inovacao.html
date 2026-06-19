@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 2: Universidade Empreendedora e Ecossistema de Inovação | Empreendedorismo e Inovação
+    </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        .principio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 12px;
+        }
+
+        .principio-numero {
+            background: #1a4d8c;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* ===== TRILHA DE MATURAÇÃO ===== */
+        .trilha-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #0066cc;
+            overflow-x: auto;
+        }
+
+        .trilha-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .trilha-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            border-top: 4px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .trilha-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .trilha-item .etapa {
+            font-weight: 700;
+            color: #0066cc;
+            font-size: 1.1rem;
+        }
+
+        .trilha-item .descricao {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .trilha-item .prazo {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 8px;
+            background: #e7f3f5;
+            padding: 3px 10px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .trilha-item .icone-etapa {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        /* ===== GLOSSÁRIO ===== */
+        .glossario-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 0.8rem 0;
+            padding: 0.8rem 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid #28a745;
+        }
+
+        .glossario-item .termo {
+            font-weight: 700;
+            color: #1a4d8c;
+            min-width: 120px;
+        }
+
+        /* ===== DIAGRAMA TRÍPLICE HÉLICE ===== */
+        .diagrama-container {
+            background: #f0f7ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .diagrama-triplice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .diagrama-triplice .helice-item {
+            background: white;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #0066cc;
+            font-weight: 600;
+            color: #1a4d8c;
+            transition: transform 0.3s;
+        }
+
+        .diagrama-triplice .helice-item:hover {
+            transform: scale(1.05);
+        }
+
+        .diagrama-triplice .helice-item .icone {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .diagrama-triplice .helice-item .label {
+            font-size: 0.9rem;
+        }
+
+        .diagrama-triplice .helice-item.gov {
+            border-color: #ff8c00;
+        }
+
+        .diagrama-triplice .helice-item.uni {
+            border-color: #0066cc;
+        }
+
+        .diagrama-triplice .helice-item.emp {
+            border-color: #28a745;
+        }
+
+        .diagrama-triplice .helice-seta {
+            font-size: 2rem;
+            color: #999;
+        }
+
+        .diagrama-triplice .helice-centro {
+            background: #e7f3f5;
+            border-radius: 16px;
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            color: #245;
+            border: 2px dashed #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .diagrama-triplice .helice-item {
+                width: 90px;
+                height: 90px;
+            }
+
+            .diagrama-triplice .helice-item .icone {
+                font-size: 1.8rem;
+            }
+
+            .diagrama-triplice .helice-seta {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .trilha-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .glossario-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .glossario-item .termo {
+                min-width: auto;
+            }
+
+            .diagrama-triplice {
+                gap: 0.8rem;
+            }
+        }
+
+        #video-aula {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 15px 10px 15px;
+            margin: 0 -25px 20px -25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #0066cc;
+            transition: all 0.3s ease;
+        }
+
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 1 - Perfil Empreendedor, Sociedade e Motivação</h2>
+        <h3>📊 Unidade 2 – Universidade Empreendedora e Ecossistema de Inovação</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod1_und1-perfil-empreendedor-e-papel-social.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 1
+            </a>
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/QiBoHOiFHqE?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 1 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 2">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 1 - Unidade 2
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: INTRODUÇÃO ===== -->
+        <section>
+            <h2>🏛️ A Universidade como Agente de Desenvolvimento e Inovação</h2>
+            <p>Na Unidade 1, analisamos o perfil empreendedor a partir da trajetória de Mauricio de Sousa. Vimos que
+                empreender envolve criatividade, persistência, visão e capacidade de transformar ideias em valor.</p>
+            <p><strong>Mas onde essas ideias se desenvolvem?</strong> Empreendedores não atuam isoladamente. Segundo
+                <strong>Etzkowitz e Zhou (2017)</strong>, a inovação emerge da interação entre universidade, empresas e
+                governo, arranjo conhecido como <strong>modelo da tríplice hélice</strong>.
+            </p>
+
+            <div class="dica-box">
+                <h4>💡 O Papel da Universidade</h4>
+                <p>Nesse contexto, a universidade deve ir além da formação profissional: deve atuar como
+                    <strong>ambiente de geração de conhecimento aplicado, articulação com o setor produtivo e promoção
+                        da inovação</strong> (Silva; Rohenkohl, 2020).
+                </p>
+            </div>
+
+            <p>A inovação ocorre em <strong>ambientes estruturados</strong>, como laboratórios, incubadoras, hubs de
+                inovação e parques tecnológicos, que organizam as interações entre os diferentes atores do ecossistema
+                (Etzkowitz; Zhou, 2017). Assim, a universidade empreendedora cria condições para que ideias se
+                transformem em soluções e oportunidades.</p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>Você consegue perceber esse sistema trabalhando a favor da sua ideia? Ou ainda enxerga sua
+                        trajetória como algo exclusivamente individual?</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: GLOSSÁRIO ===== -->
+        <section>
+            <h2>📖 Glossário de Conceitos</h2>
+            <div class="glossario-item">
+                <span class="termo">🏢 Incubadoras</span>
+                <span>Ambientes que apoiam a criação e o desenvolvimento inicial de empreendimentos inovadores,
+                    oferecendo infraestrutura, capacitação e mentoria.</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">🌐 Hubs de Inovação</span>
+                <span>Espaços de conexão que reúnem startups, empresas, pesquisadores, empresas juniores e investidores
+                    para estimular colaboração, experimentação e desenvolvimento de soluções inovadoras.</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">🔬 Parque Tecnológico</span>
+                <span>Complexo institucional planejado, geralmente vinculado a universidades e políticas públicas, que
+                    abriga empresas de base tecnológica, centros de pesquisa e laboratórios, com foco em desenvolvimento
+                    científico, transferência de tecnologia e crescimento econômico regional.</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">📜 Propriedade Intelectual</span>
+                <span>Conjunto de direitos que protegem criações da mente, como invenções, marcas, desenhos industriais
+                    e obras intelectuais, garantindo reconhecimento e proteção legal aos seus autores no
+                    <strong>Instituto Nacional da Propriedade Industrial (INPI)</strong>.</span>
+            </div>
+            <div class="glossario-item">
+                <span class="termo">🔑 Patente</span>
+                <span>Título de propriedade temporário concedido pelo Estado que garante ao inventor o direito exclusivo
+                    de explorar comercialmente uma invenção por determinado período, mediante registro no INPI.</span>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TRÍPLICE HÉLICE ===== -->
+        <section>
+            <h2>🔄 Interação entre Universidade, Empresas e Governo</h2>
+            <p>Conforme discutido anteriormente, a inovação emerge da interação entre universidade, empresas e governo,
+                como apresentado no <strong>modelo da tríplice hélice</strong> (Etzkowitz; Zhou, 2017). Na prática, isso
+                significa que o conhecimento construído na universidade não permanece restrito à pesquisa acadêmica.</p>
+
+            <div class="diagrama-container">
+                <h4 style="color: #1a4d8c; margin-bottom: 1.5rem;">📊 Modelo da Tríplice Hélice</h4>
+                <div class="diagrama-triplice">
+                    <div class="helice-item gov">
+                        <span class="icone">🏛️</span>
+                        <span class="label">Governo</span>
+                    </div>
+                    <span class="helice-seta">⟷</span>
+                    <div class="helice-item uni">
+                        <span class="icone">🎓</span>
+                        <span class="label">Universidade</span>
+                    </div>
+                    <span class="helice-seta">⟷</span>
+                    <div class="helice-item emp">
+                        <span class="icone">🏢</span>
+                        <span class="label">Empresas</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <span class="helice-centro">🔗 Organizações Híbridas</span>
+                    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">Estrutura social da Tríplice Hélice –
+                        Etzkowitz e Zhou (2017)</p>
+                </div>
+            </div>
+
+            <p><strong>Professores</strong> desenvolvem projetos em parceria com empresas, <strong>estudantes</strong>
+                transformam trabalhos em startups e <strong>governos</strong> lançam editais que estimulam soluções para
+                desafios locais. Ambientes como incubadoras, hubs e parques tecnológicos surgem justamente para
+                facilitar essas interações.</p>
+
+            <p>Esse processo pode resultar em produtos, serviços, tecnologias, aplicativos ou projetos de impacto social
+                desenvolvidos a partir do conhecimento acadêmico. Iniciativas como a <strong>Dual Link</strong>, que
+                conecta pesquisa universitária a demandas empresariais, e a <strong>República das Arteiras</strong>, que
+                articula saberes e empreendedorismo social, ilustram como essas interações podem transformar
+                conhecimento em soluções para a sociedade.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: ECOSSISTEMAS ===== -->
+        <section>
+            <h2>🌿 Ecossistemas de Empreendedorismo e Inovação</h2>
+            <p>Quando as interações da tríplice hélice ganham escala, continuidade e governança estruturada, formam o
+                que chamamos de <strong>ecossistema de empreendedorismo e inovação</strong>.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🌏</div>
+                    <h4>Ecossistema de Singapura</h4>
+                    <p>Um dos principais hubs de startups da Ásia, marcado pela articulação entre políticas públicas,
+                        universidades de excelência, financiamento estruturado e empresas privadas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🇧🇷</div>
+                    <h4>Ecossistemas no Brasil</h4>
+                    <p>Cidades como <strong>São Paulo, Recife, Florianópolis, Curitiba e Porto Alegre</strong> se
+                        destacam pela densidade de conexões e pelo número de startups ativas.</p>
+                </div>
+            </div>
+
+            <p><strong>O que essas cidades têm em comum?</strong> Mais do que talento individual, elas possuem forte
+                conexão entre universidades, empresas, investidores e governo, além de políticas consistentes de
+                incentivo à inovação e ambientes estruturados de apoio.</p>
+
+            <div class="atencao-box">
+                <h3>📊 Desafios em Regiões em Desenvolvimento</h3>
+                <p>Silva e Rohenkohl (2020) demonstram que regiões em desenvolvimento frequentemente enfrentam desafios
+                    como <strong>baixa articulação entre pesquisa e mercado</strong> e <strong>reduzido dinamismo
+                        tecnológico</strong>. Ecossistemas mais robustos tendem a apresentar governança clara, programas
+                    estruturados e ambientes de experimentação e integração efetiva entre atores.</p>
+            </div>
+
+            <p>Nesse contexto, <strong>Mato Grosso do Sul</strong> tem avançado na organização de seu ecossistema de
+                inovação, com articulação entre Instituições de Ciência e Tecnologia (ICTs), empresas, mecanismos
+                institucionais de inovação, como a <strong>Agência de Inovação da UFMS (Aginova)</strong>, e
+                instituições da sociedade organizada, como o Sistema S.</p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>E você: está preparado para ocupar um espaço dentro do ecossistema de inovação
+                        local?</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PROGRAMAIS INSTITUCIONAIS ===== -->
+        <section>
+            <h2>📋 Programas Institucionais de Empreendedorismo e Inovação da UFMS</h2>
+            <p>Se o modelo da Tríplice Hélice explica como universidade, empresas e governo interagem para produzir
+                inovação, os <strong>programas institucionais</strong> são os mecanismos que permitem a estudantes e
+                pesquisadores participar desse sistema.</p>
+
+            <div class="info-box">
+                <strong>🏢 Agência de Inovação (Aginova)</strong>
+                <p>A Aginova é a unidade da UFMS responsável por promover ações de inovação e empreendedorismo,
+                    articulando parcerias entre universidade, empresas, governo e sociedade.</p>
+                <p>Em 2025, a UFMS foi reconhecida como a <strong>11ª universidade mais empreendedora do
+                        Brasil</strong>, resultado de um ecossistema de inovação coordenado pela Aginova.</p>
+            </div>
+
+            <h3>🚀 Trilha de Maturação do HUB PIME</h3>
+            <p>O <strong>HUB Pantanal Inovação e Modelagem Empreendedora (HUB PIME)</strong> organiza o apoio
+                institucional em etapas progressivas, da descoberta à expansão do empreendimento.</p>
+
+            <div class="trilha-container">
+                <div class="trilha-grid">
+                    <div class="trilha-item">
+                        <div class="icone-etapa">🔍</div>
+                        <div class="etapa">Descoberta</div>
+                        <div class="descricao">Disciplinas, empresas juniores, Times Enactus</div>
+                        <div class="prazo">Acesso via programas institucionais</div>
+                    </div>
+                    <div class="trilha-item">
+                        <div class="icone-etapa">💡</div>
+                        <div class="etapa">Ideação</div>
+                        <div class="descricao">Estruturar ideias, validar e formalizar</div>
+                        <div class="prazo">Prazo: 12 meses</div>
+                    </div>
+                    <div class="trilha-item">
+                        <div class="icone-etapa">🧪</div>
+                        <div class="etapa">Prototipação</div>
+                        <div class="descricao">Validar MVPs e conquistar primeiros clientes</div>
+                        <div class="prazo">Prazo: 24 meses</div>
+                    </div>
+                    <div class="trilha-item">
+                        <div class="icone-etapa">📈</div>
+                        <div class="etapa">Consolidação</div>
+                        <div class="descricao">Estabilizar operações e previsibilidade de receita</div>
+                        <div class="prazo">Prazo: 12 meses</div>
+                    </div>
+                    <div class="trilha-item">
+                        <div class="icone-etapa">🚀</div>
+                        <div class="etapa">Aceleração</div>
+                        <div class="descricao">Promover crescimento consistente e otimizar a gestão</div>
+                        <div class="prazo">Prazo: 12 meses</div>
+                    </div>
+                    <div class="trilha-item">
+                        <div class="icone-etapa">🌎</div>
+                        <div class="etapa">Expansão</div>
+                        <div class="descricao">Diversificar mercados e consolidar crescimento</div>
+                        <div class="prazo">Prazo: 18 meses</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.5rem;">Fonte: elaborado por
+                    HUB PIME/AGINOVA (2026)</p>
+            </div>
+
+            <h3>🌟 Da Universidade à Criação de Uma Startup Tecnológica: O Caso da Shd Graphene</h3>
+            <p><strong>Murilo Magalhães Dias</strong>, estudante do curso de Graduação em Engenharia de Produção da
+                UFMS, iniciou sua jornada na iniciação científica, pesquisando aplicações do grafeno. Paralelamente,
+                participou da Empresa Júnior, onde desenvolveu competências de gestão, liderança e trabalho em equipe.
+            </p>
+            <p>Em 2024, fundou a <strong>SHD Graphene</strong> com seu sócio Samuel Ojeda Silveira (Engenharia Física),
+                startup dedicada ao desenvolvimento de soluções baseadas em grafeno e materiais avançados em diferentes
+                setores industriais.</p>
+            <p>Em 2025, a startup já havia iniciado o faturamento, estabelecido parcerias e formado sua equipe,
+                oferecendo, inclusive, oportunidades de estágio para estudantes da UFMS.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: CONSIDERAÇÕES FINAIS ===== -->
+        <section>
+            <h2>🎯 Considerações Finais do Módulo 1</h2>
+            <p>Empreender não é sobre genialidade instantânea, mas sobre <strong>persistência, aprendizado, colaboração
+                    e propósito</strong>. Mauricio de Sousa não construiu a Turma da Mônica em um único traço: foram
+                tentativas, ajustes e persistência até transformar talento em profissão.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h4>Unidade 1</h4>
+                    <p>Você voltou seu olhar para si, refletindo sobre <strong>competências comportamentais,
+                            estratégicas, relacionais e inovadoras</strong>. A autoavaliação funcionou como um ponto de
+                        partida para o desenvolvimento.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏛️</div>
+                    <h4>Unidade 2</h4>
+                    <p>Avançamos para a compreensão da <strong>universidade como ambiente empreendedor</strong>.
+                        Exploramos o Modelo da Tríplice Hélice, os ecossistemas de inovação e como esses conceitos se
+                        materializam na UFMS.</p>
+                </div>
+            </div>
+
+            <p>Neste módulo, você percebeu que <strong>empreender significa desenvolver competências, aprender com erros
+                    e assumir protagonismo</strong>. Também compreendeu que o empreendedorismo é uma competência
+                transversal, aplicável à pesquisa, à gestão pública, à inovação social, à arte, à tecnologia e ao seu
+                projeto de vida.</p>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 E você?</h4>
+                <p>No Módulo 2, avançaremos para <strong>transformar propósito em metas estruturadas</strong>. Se aqui
+                    você refletiu sobre quem é e onde está, agora começará a se organizar para onde quer ir.</p>
+                <p><strong>Qual história você começará a desenhar agora?</strong></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>ARANTES, Elaine Cristina.</strong> Empreendedorismo e responsabilidade social. Curitiba:
+                Intersaberes, 2014.
+            </div>
+            <div class="referencia">
+                <strong>BACIGALUPO, Margherita et al.</strong> EntreComp: the entrepreneurship competence framework.
+                Luxembourg: Publication Office of the European Union, 2016.
+            </div>
+            <div class="referencia">
+                <strong>DRUCKER, Peter Ferdinand.</strong> Inovação e espírito empreendedor. São Paulo: Cengage
+                Learning, 2014.
+            </div>
+            <div class="referencia">
+                <strong>ETZKOWITZ, Henry; ZHOU, Chunyan.</strong> Hélice tríplice: inovação e empreendedorismo.
+                Inovação, Estudos Avançados, São Paulo, 2017.
+            </div>
+            <div class="referencia">
+                <strong>EUROPEAN COMMISSION.</strong> EntreComp: the entrepreneurship competence framework. Luxembourg,
+                2016.
+            </div>
+            <div class="referencia">
+                <strong>SILVA, Igor Castellano da; ROHENKOHL, Julio Eduardo (orgs.).</strong> Polos de defesa e
+                segurança: estado, instituições e inovação. Santa Maria: Ed. UFSM, 2020.
+            </div>
+            <div class="referencia">
+                <strong>WORLD ECONOMIC FORUM.</strong> Future of Jobs Report 2023. Geneva: World Economic Forum, 2023.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 1 - Unidade 2</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

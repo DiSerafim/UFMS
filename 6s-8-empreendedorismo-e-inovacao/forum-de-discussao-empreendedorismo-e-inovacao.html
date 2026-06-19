@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 Fórum de Discussão | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== ESTILOS EXCLUSIVOS PARA O FÓRUM ===== */
+        .forum-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .forum-header {
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .forum-header h2 {
+            color: white;
+            margin: 0 0 10px 0;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .thread-header {
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .thread-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .thread-badge {
+            background-color: #28a745;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .postagem-principal {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .postagem-autor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #28a745, #218838);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .avatar-professor {
+            background: linear-gradient(135deg, #0066cc, #245);
+        }
+
+        .autor-info h4 {
+            margin: 0;
+            color: #245;
+            font-size: 1.1em;
+        }
+
+        .autor-info .data {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .autor-info .cargo {
+            font-size: 0.75em;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        .conteudo-post {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            line-height: 1.6;
+        }
+
+        .conteudo-post p {
+            margin-bottom: 15px;
+        }
+
+        .conteudo-post p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pergunta-norteadora {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-norteadora h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resposta-item {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .resposta-destaque {
+            border-left: 4px solid #ff8c00;
+            background-color: #fff8f0;
+        }
+
+        .resposta-header {
+            background-color: #e7f3f5;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .resposta-header-destaque {
+            background-color: #ffecce;
+        }
+
+        .resposta-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6da7e2, #245);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .resposta-info h5 {
+            margin: 0;
+            color: #245;
+            font-size: 0.95em;
+        }
+
+        .resposta-info .data-resposta {
+            font-size: 0.7em;
+            color: #666;
+        }
+
+        .resposta-conteudo {
+            padding: 15px 20px;
+            line-height: 1.5;
+        }
+
+        .badge-resposta {
+            margin-left: auto;
+            font-size: 0.7em;
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .comentario-item {
+            background-color: white;
+            border-left: 3px solid #28a745;
+            margin: 15px 0 15px 40px;
+            padding: 12px 15px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .comentario-autor {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .comentario-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #ffc107;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: 600;
+            font-size: 0.7em;
+        }
+
+        .comentario-nome {
+            font-weight: 600;
+            color: #245;
+            font-size: 0.85em;
+        }
+
+        .comentario-data {
+            font-size: 0.65em;
+            color: #666;
+        }
+
+        .comentario-texto {
+            font-size: 0.9em;
+            color: #333;
+            margin-left: 38px;
+        }
+
+        .btn-resposta {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-resposta:hover {
+            background-color: #218838;
+        }
+
+        .btn-resposta .material-icons {
+            font-size: 18px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .status-concluido {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .forum-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .comentario-item {
+                margin-left: 15px;
+            }
+
+            .resposta-item {
+                margin: 10px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-right {
+                justify-content: center;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>EMPREENDEDORISMO E INOVAÇÃO</h1>
+        <h2>💬 Fórum de Discussão da Disciplina</h2>
+        <p>Profa. Esp. Camila da Silva Serra Comineti</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO (como no modelo) ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod1_und1-perfil-empreendedor-e-papel-social.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">play_circle</i>Mod 1 Und 1
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: FÓRUM ===== -->
+        <section>
+            <div class="forum-container">
+                <div class="forum-header">
+                    <h2>💬 Fórum de Discussão da Disciplina</h2>
+                    <div class="forum-actions">
+                        <span class="status-concluido">✅ Feito: Ver Tarefas: Fazer postagens no fórum: 1</span>
+                    </div>
+                </div>
+
+                <!-- THREAD PRINCIPAL -->
+                <div class="thread-header">
+                    <h3>🧵 Tópico: Empreendedorismo e Inovação – reflexão inicial</h3>
+                    <span class="thread-badge">💬 3 respostas</span>
+                </div>
+
+                <!-- POSTAGEM DO PROFESSOR (norteadora) -->
+                <div class="postagem-principal">
+                    <div class="postagem-autor">
+                        <div class="avatar avatar-professor">P</div>
+                        <div class="autor-info">
+                            <h4>Prof.ª Dra. Ana Carla Mendes</h4>
+                            <div class="cargo">🎓 Tutora da disciplina</div>
+                            <div class="data">📅 17 de junho de 2026 • 09:30</div>
+                        </div>
+                    </div>
+
+                    <div class="conteudo-post">
+                        <p>Olá, estudante! 👋</p>
+
+                        <p>Nesta disciplina, vamos tratar sobre <strong>Empreendedorismo e Inovação</strong>,
+                            compreendendo o perfil empreendedor, o papel do empreendedor na sociedade e como transformar
+                            ideias em oportunidades com planejamento, validação e modelagem. 💡🚀</p>
+
+                        <p>Ao longo do percurso, você vai refletir sobre motivação, propósito e protagonismo, aprender a
+                            estabelecer metas e desenvolver uma mentalidade de experimentação e aprendizagem contínua.
+                            🎯🧠</p>
+
+                        <p>Você também vai conhecer como a universidade pode atuar como agente de desenvolvimento e
+                            inovação, entendendo ecossistemas empreendedores e a interação entre universidade, empresas
+                            e governo, além de reconhecer caminhos e iniciativas institucionais que apoiam projetos e
+                            soluções de impacto. 🏫🤝</p>
+
+                        <p>Na prática, inovar não é só ter uma boa ideia. É conseguir testar, ajustar e construir uma
+                            proposta de valor consistente, usando ferramentas como Canvas e abordagens como Design
+                            Thinking e pensamento Lean, especialmente quando o objetivo é transformar um problema real
+                            em uma solução viável. 🧩🧪</p>
+
+                        <!-- Pergunta norteadora -->
+                        <div class="pergunta-norteadora">
+                            <h4>❓ Pergunta norteadora</h4>
+                            <p style="font-size: 1.05rem; font-weight: 500; color: #333;">
+                                <em>Na sua visão, o que mais impulsiona uma ideia a virar um projeto inovador de
+                                    verdade: a motivação e o propósito, a capacidade de identificar oportunidades e
+                                    definir metas ou o uso de ferramentas de validação e modelagem, e por quê?</em> ✅
+                            </p>
+                        </div>
+
+                        <p style="margin-top: 10px; font-size: 0.95rem;">
+                            <strong>📌 Para participar:</strong> escreva uma postagem breve (de 60 a 100 palavras) e, se
+                            desejar, comente a contribuição de um(a) colega para ampliar a troca de ideias. 🤝
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ===== RESPOSTAS DOS ALUNOS ===== -->
+
+                <!-- Resposta 1 (destaque) -->
+                <div class="resposta-item resposta-destaque">
+                    <div class="resposta-header resposta-header-destaque">
+                        <div class="resposta-avatar" style="background: linear-gradient(135deg, #ff8c00, #e65c00);">L
+                        </div>
+                        <div class="resposta-info">
+                            <h5>Lucas Ferreira</h5>
+                            <div class="data-resposta">📅 17 de junho de 2026 • 10:15</div>
+                        </div>
+                        <span class="badge-resposta">⭐ Destaque</span>
+                    </div>
+                    <div class="resposta-conteudo">
+                        <p>Na minha visão, o que mais impulsiona uma ideia a se tornar um projeto inovador é a
+                            <strong>capacidade de identificar oportunidades e definir metas</strong>. Sem um
+                            direcionamento claro, a motivação se perde e as ferramentas ficam sem propósito. Quando
+                            enxergamos um problema real e traçamos metas objetivas, conseguimos alinhar propósito,
+                            validação e execução de forma consistente. É o equilíbrio entre sonhar e planejar que
+                            transforma ideias em impacto.
+                        </p>
+                    </div>
+
+                    <!-- Comentário de outro aluno -->
+                    <div class="comentario-item">
+                        <div class="comentario-autor">
+                            <div class="comentario-avatar">M</div>
+                            <span class="comentario-nome">Mariana Souza</span>
+                            <span class="comentario-data">📅 17 de junho de 2026 • 10:45</span>
+                        </div>
+                        <div class="comentario-texto">
+                            Concordo, Lucas! A definição de metas realmente dá norte ao processo. Mas acredito que a
+                            motivação e o propósito são o combustível que mantém a equipe firme quando os desafios
+                            aparecem. O que você acha?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resposta 2 -->
+                <div class="resposta-item">
+                    <div class="resposta-header">
+                        <div class="resposta-avatar" style="background: linear-gradient(135deg, #9b59b6, #6c3483);">C
+                        </div>
+                        <div class="resposta-info">
+                            <h5>Camila Rocha</h5>
+                            <div class="data-resposta">📅 17 de junho de 2026 • 11:02</div>
+                        </div>
+                    </div>
+                    <div class="resposta-conteudo">
+                        <p>Acredito que o <strong>uso de ferramentas de validação e modelagem</strong> é o fator mais
+                            determinante. Ter uma ideia brilhante é importante, mas sem testá-la, sem prototipar e sem
+                            ouvir o cliente, ela permanece apenas uma intenção. O Canvas e o Design Thinking nos ajudam
+                            a sair do campo das suposições e construir algo que realmente resolve um problema. É a
+                            prática que transforma teoria em inovação de verdade.</p>
+                    </div>
+                </div>
+
+                <!-- Resposta 3 -->
+                <div class="resposta-item">
+                    <div class="resposta-header">
+                        <div class="resposta-avatar" style="background: linear-gradient(135deg, #2ecc71, #1e8449);">R
+                        </div>
+                        <div class="resposta-info">
+                            <h5>Rafael Lima</h5>
+                            <div class="data-resposta">📅 17 de junho de 2026 • 11:30</div>
+                        </div>
+                    </div>
+                    <div class="resposta-conteudo">
+                        <p>Para mim, o <strong>propósito e a motivação</strong> são o ponto de partida essencial. Sem
+                            uma razão genuína para resolver um problema, nenhuma ferramenta ou meta sustentará o projeto
+                            a longo prazo. Quando o propósito é forte, a criatividade flui, as oportunidades aparecem e
+                            as metas se tornam naturais. A motivação é o motor; as ferramentas são a direção e o
+                            combustível para chegar lá.</p>
+                    </div>
+
+                    <!-- Comentário de outro aluno -->
+                    <div class="comentario-item">
+                        <div class="comentario-autor">
+                            <div class="comentario-avatar">J</div>
+                            <span class="comentario-nome">João Pedro</span>
+                            <span class="comentario-data">📅 17 de junho de 2026 • 11:50</span>
+                        </div>
+                        <div class="comentario-texto">
+                            Perfeito, Rafael! O propósito dá sentido ao esforço. Mas acho que a capacidade de
+                            identificar oportunidades e definir metas é o que transforma esse propósito em ação
+                            concreta. Sem metas, o propósito pode ficar vago.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== ÁREA PARA NOVA RESPOSTA (simulação) ===== -->
+                <div
+                    style="padding: 20px; background-color: #f0f7ff; border-radius: 8px; margin-top: 25px; border: 2px dashed #0066cc;">
+                    <h4 style="color: #245; margin-bottom: 10px;">✏️ Sua resposta</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Escreva sua postagem breve (60 a 100 palavras) sobre a
+                        pergunta norteadora.</p>
+                    <div
+                        style="background-color: white; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #ddd;">
+                        <p style="color: #999; font-style: italic;">📝 Digite sua contribuição aqui... (simulação)</p>
+                    </div>
+                    <button class="btn-resposta"
+                        style="background-color: #0066cc; padding: 10px 25px; font-weight: 600;">
+                        <i class="material-icons" style="font-size: 18px;">send</i> Publicar resposta
+                    </button>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+                        <i class="material-icons" style="font-size: 14px; vertical-align: middle;">info</i> Lembre-se:
+                        comente a contribuição de um(a) colega para ampliar a troca de ideias. 🤝
+                    </p>
+                </div>
+
+                <!-- ===== BOTÃO VOLTAR (navegação) ===== -->
+                <div class="text-center mt-20">
+                    <a href="../6s-8-empreendedorismo-e-inovacao/index.html" class="btn-nav"
+                        style="background-color: #6c757d; padding: 10px 25px; border-radius: 50px; font-weight: 500;">
+                        <i class="material-icons" style="font-size: 18px;">arrow_back</i> Voltar para a disciplina
+                    </a>
+                </div>
+
+            </div> <!-- fim forum-container -->
+        </section>
+
+        <!-- ===== SEÇÃO: CONDIÇÕES DE CONCLUSÃO ===== -->
+        <section>
+            <h2>📋 Condições de conclusão</h2>
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745;">
+                <p style="font-size: 1.1rem; font-weight: 500; color: #245;">
+                    <span
+                        style="background-color: #28a745; color: white; padding: 2px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 10px;">✅</span>
+                    Feito: Ver Tarefas: Fazer postagens no fórum: <strong>1</strong>
+                </p>
+                <p style="margin-top: 10px; color: #555;">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">check_circle</i>
+                    Para concluir esta atividade, você deve realizar <strong>uma postagem</strong> no fórum respondendo
+                    à pergunta norteadora.
+                </p>
+                <p style="color: #555;">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">chat</i>
+                    Você também pode comentar a contribuição de um(a) colega para enriquecer a discussão.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Empreendedorismo e Inovação · 01000000030-T01-2026-1</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Fórum de Discussão</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4 - Unidade 2: Modelos de Maturidade | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .maturidade-card {
+            background: linear-gradient(135deg, #1e2a3a, #0f2c3b);
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .nivel-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border-left: 5px solid;
+            transition: transform 0.2s;
+        }
+
+        .nivel-card:hover {
+            transform: translateX(5px);
+        }
+
+        .nivel-g {
+            border-left-color: #6c757d;
+        }
+
+        .nivel-f {
+            border-left-color: #17a2b8;
+        }
+
+        .nivel-e {
+            border-left-color: #28a745;
+        }
+
+        .nivel-d {
+            border-left-color: #ffc107;
+        }
+
+        .nivel-c {
+            border-left-color: #fd7e14;
+        }
+
+        .nivel-b {
+            border-left-color: #dc3545;
+        }
+
+        .nivel-a {
+            border-left-color: #9b59b6;
+        }
+
+        .ferramenta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .ferramenta-item {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            transition: all 0.2s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .ferramenta-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparacao-tabela th {
+            background-color: #245;
+        }
+
+        .processo-mps {
+            background: #f0f7ff;
+            border-radius: 16px;
+            padding: 1rem;
+            margin: 0.8rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 4 - Considerações Finais sobre Gerência de Projetos</h2>
+        <h3>📈 Unidade 2 – Modelos de Gerenciamento de Projetos, Melhoria Contínua e Modelos de Maturidade</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod4_und1-gerenciamento-integracao.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 4 Und 1
+            </a>
+            <a href="mod4-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 4 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/lTfHMEyXIJQ" frameborder="0"
+                    title="Gerência de Projetos - Módulo 4 - Unidade 2 - Modelos de Maturidade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 4 - Unidade 2 (Modelos de Maturidade)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 30min</p>
+        </section>
+
+        <!-- INTRODUÇÃO: QUALIDADE DE PROCESSO E PRODUTO -->
+        <section>
+            <h2>📌 Introdução: Qualidade de Software e Melhoria de Processos</h2>
+            <p>A qualidade de software é uma área fundamental da Engenharia de Software que busca garantir produtos de
+                alta qualidade a partir de <strong>processos bem definidos e continuamente melhorados</strong>. Existe
+                uma relação direta entre <strong>qualidade de produto</strong> (software entregue) e <strong>qualidade
+                    de processo</strong> (como o software é desenvolvido). Organizações que investem em melhoria de
+                processos colhem benefícios como redução de defeitos, aumento de produtividade e maior satisfação do
+                cliente.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Por que melhorar processos?</h4>
+                    <ul>
+                        <li>Reduz retrabalho e custos</li>
+                        <li>Aumenta previsibilidade de prazos</li>
+                        <li>Melhora a satisfação do cliente</li>
+                        <li>Facilita a gestão de projetos</li>
+                        <li>Reduz rotatividade de equipe</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Relação com Gerência de Projetos</h4>
+                    <ul>
+                        <li>Estimativas mais precisas</li>
+                        <li>Planejamento estruturado</li>
+                        <li>Monitoramento e controle eficazes</li>
+                        <li>Gestão de riscos madura</li>
+                        <li>Maior conformidade com padrões</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maturidade-card">
+                <h4><i class="material-icons">trending_up</i> Principais Modelos de Melhoria de Processos</h4>
+                <div class="grid-3">
+                    <div><strong>🏆 CMMI</strong><br>Capability Maturity Model Integration (ISACA)</div>
+                    <div><strong>🌐 ISO/IEC 15504</strong><br>SPICE - Software Process Improvement</div>
+                    <div><strong>🇧🇷 MPS.BR</strong><br>Melhoria de Processo de Software Brasileiro</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CMMI 2.0 -->
+        <section>
+            <h2>🏆 CMMI 2.0 – Capability Maturity Model Integration</h2>
+            <p>O CMMI é um modelo de maturidade internacionalmente reconhecido, desenvolvido pelo SEI (Software
+                Engineering Institute) e atualmente mantido pela ISACA. Ele fornece um conjunto de <strong>melhores
+                    práticas</strong> que ajudam organizações a melhorar seu desempenho, reduzir riscos e aumentar a
+                qualidade de produtos e serviços.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Características do CMMI 2.0</h4>
+                    <ul>
+                        <li>Compatível com qualquer abordagem de desenvolvimento (ágil, tradicional, híbrida)</li>
+                        <li>Assim como o PMBOK, indica <strong>"o que fazer"</strong>, não "como fazer"</li>
+                        <li>Gerência de projetos tem forte inserção no modelo</li>
+                        <li>Adotado por grandes empresas: IBM, HP, Boeing, Lockheed Martin</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎯 Benefícios do CMMI</h4>
+                    <ul>
+                        <li>Retorno positivo do investimento (ROI) em melhoria de performance</li>
+                        <li>Maior qualidade de produtos e cumprimento de prazos</li>
+                        <li>Menor retrabalho e defeitos</li>
+                        <li>Maior satisfação e menos reclamações de clientes</li>
+                        <li>Menor rotatividade de profissionais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>📊 Níveis de Maturidade CMMI</h3>
+            <div class="grid-2">
+                <div class="nivel-card nivel-g"><strong>Nível 1 – Inicial (G)</strong><br>Processos imprevisíveis, pouco
+                    controlados, reativos. Sucesso baseado em esforço individual.</div>
+                <div class="nivel-card nivel-f"><strong>Nível 2 – Gerenciado (F)</strong><br>Processos planejados e
+                    executados de acordo com política. Requisitos, processos e produtos de trabalho são gerenciados.
+                </div>
+                <div class="nivel-card nivel-e"><strong>Nível 3 – Definido (E)</strong><br>Processos bem caracterizados
+                    e compreendidos, descritos em padrões, procedimentos e ferramentas.</div>
+                <div class="nivel-card nivel-d"><strong>Nível 4 – Gerenciado Quantitativamente (D)</strong><br>Processos
+                    controlados por técnicas estatísticas e outras quantitativas. Métricas e análise de desempenho.
+                </div>
+                <div class="nivel-card nivel-c"><strong>Nível 5 – Em Otimização (C)</strong><br>Foco em melhoria
+                    contínua e incremental de processos, usando feedback quantitativo e inovações.</div>
+            </div>
+            <p class="small-text">Fonte: Adaptado de CMMI Institute (ISACA, 2024). Os níveis de capacidade (0 a 3)
+                também podem ser aplicados a áreas de processo individuais.</p>
+
+            <div class="dica-box">
+                <strong><i class="material-icons">tip</i> CMMI e Gerência de Projetos:</strong> As áreas de processo
+                diretamente relacionadas à gerência de projetos incluem: Planejamento de Projeto, Monitoramento e
+                Controle de Projeto, Gerenciamento de Riscos, Gerenciamento de Requisitos, Gerenciamento de Fornecedores
+                e Gerenciamento de Configuração.
+            </div>
+        </section>
+
+        <!-- MPS.BR -->
+        <section>
+            <h2>🇧🇷 MPS.BR – Melhoria de Processo de Software Brasileiro</h2>
+            <p>O MPS.BR (Melhoria de Processo do Software Brasileiro) é um modelo de maturidade e capacidade
+                desenvolvido pela <strong>Softex</strong> sob demanda do governo brasileiro, adaptado à realidade das
+                empresas nacionais, especialmente de médio e pequeno porte. É alinhado à ISO/IEC 12207 e ISO/IEC 15504,
+                e reconhecido internacionalmente.</p>
+
+            <div class="processo-mps">
+                <h4><i class="material-icons">folder</i> Processos do MPS.BR (organizados em três conjuntos)</h4>
+                <div class="grid-3">
+                    <div><strong>📁 Processos de Projetos</strong><br>Gerência de Projetos (GPR)<br>Desenvolvimento de
+                        Requisitos (REQ)<br>Verificação (VER)<br>Validação (VAL)<br>Gerência de Configuração
+                        (GCO)<br>Gerência de Riscos (GRI)</div>
+                    <div><strong>🛠️ Processos de Serviços</strong><br>Gerência de Serviços (GSV)<br>Entrega e
+                        Instalação (EIS)<br>Suporte e Operação (SUP)</div>
+                    <div><strong>🏢 Processos Organizacionais</strong><br>Gerência de Processos (GPR)<br>Gerência de
+                        Recursos Humanos (GRH)<br>Gerência de Decisões (GDE)<br>Gerência de Reúso (GRE)</div>
+                </div>
+            </div>
+
+            <h3>📊 Níveis de Maturidade MPS.BR (G a A)</h3>
+            <div class="grid-2">
+                <div class="nivel-card nivel-g"><strong>Nível G – Parcialmente Gerenciado</strong><br>Atributos de
+                    processos atingem nível 1. Processos executam o trabalho e produzem saídas.</div>
+                <div class="nivel-card nivel-f"><strong>Nível F – Gerenciado</strong><br>Atributos nível 2. Processos
+                    planejados, monitorados, ajustados e com produtos de trabalho controlados.</div>
+                <div class="nivel-card nivel-e"><strong>Nível E – Definido</strong><br>Atributos nível 3. Processos
+                    definidos a partir de padrões organizacionais, com ativos de processo.</div>
+                <div class="nivel-card nivel-d"><strong>Nível D – Gerenciado Quantitativamente</strong><br>Atributos
+                    nível 4. Processos controlados usando técnicas estatísticas e métricas quantitativas.</div>
+                <div class="nivel-card nivel-c"><strong>Nível C – Em Otimização</strong><br>Atributos nível 5. Processos
+                    melhorados continuamente com base em análise de causas comuns.</div>
+                <div class="nivel-card nivel-b"><strong>Nível B – Em Otimização (Gerenciado
+                        Quantitativamente)</strong><br>Nível intermediário entre D e A (versões anteriores do modelo).
+                </div>
+                <div class="nivel-card nivel-a"><strong>Nível A – Em Otimização (Contínuo)</strong><br>Máximo nível de
+                    maturidade, com melhoria contínua e inovação institucionalizada.</div>
+            </div>
+
+            <div class="info-box">
+                <strong><i class="material-icons">school</i> Comparação CMMI x MPS.BR:</strong> O MPS.BR foi
+                desenvolvido para ser mais acessível e de menor custo de implementação que o CMMI, especialmente para
+                empresas brasileiras. Ambos são reconhecidos internacionalmente e possuem correspondência de níveis (ex:
+                MPS.BR nível A corresponde ao CMMI nível 5).
+            </div>
+        </section>
+
+        <!-- COMPARAÇÃO ENTRE MODELOS -->
+        <section>
+            <h2>📊 Comparação entre Modelos de Maturidade</h2>
+            <div class="comparacao-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>CMMI 2.0</th>
+                            <th>MPS.BR</th>
+                            <th>ISO/IEC 15504 (SPICE)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Origem</strong></td>
+                            <td>EUA (SEI/ISACA)</td>
+                            <td>Brasil (Softex)</td>
+                            <td>Internacional (ISO)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foco principal</strong></td>
+                            <td>Grandes empresas, indústria aeroespacial/defesa</td>
+                            <td>Médias e pequenas empresas brasileiras</td>
+                            <td>Avaliação de processos genérica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estrutura</strong></td>
+                            <td>Níveis de maturidade (1-5) + níveis de capacidade</td>
+                            <td>Níveis G a A (7 níveis)</td>
+                            <td>Níveis de capacidade (0-5)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Áreas de processo</strong></td>
+                            <td>25+ áreas (ex: PMC, PP, RSKM)</td>
+                            <td>19 processos (GPR, REQ, VER, VAL...)</td>
+                            <td>Definidas pelo usuário/domínio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custo de implementação</strong></td>
+                            <td>Alto</td>
+                            <td>Moderado a baixo</td>
+                            <td>Variável</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adoção no Brasil</strong></td>
+                            <td>Médias e grandes empresas</td>
+                            <td>Alta (mais de 400 empresas avaliadas)</td>
+                            <td>Moderada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FERRAMENTAS DE GERÊNCIA DE PROJETOS -->
+        <section>
+            <h2>🛠️ Ferramentas de Apoio à Gerência de Projetos</h2>
+            <p>A escolha da ferramenta adequada depende de critérios como custo, número de usuários, funcionalidades,
+                integrações e facilidade de uso. Apresentamos as principais opções disponíveis no mercado:</p>
+
+            <div class="ferramenta-grid">
+                <div class="ferramenta-item">
+                    <h4><i class="material-icons">gantt_chart</i> dotProject+</h4>
+                    <p><strong>Tipo:</strong> Open Source (gratuito)</p>
+                    <p><strong>Funcionalidades:</strong> Diagrama de Gantt, alocação de colaboradores por tarefa,
+                        lembretes popup para prazos, lista de contatos, relatórios de progresso.</p>
+                    <p><strong>Público-alvo:</strong> Pequenas e médias empresas com orçamento limitado.</p>
+                    <p><strong>Link:</strong> <a href="https://dotproject.net/" target="_blank">dotproject.net</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <h4><i class="material-icons">grid_on</i> Microsoft Project</h4>
+                    <p><strong>Tipo:</strong> Comercial (assinatura Microsoft 365)</p>
+                    <p><strong>Funcionalidades:</strong> Planejamento de portfólio, compartilhamento de arquivos,
+                        bate-papo, reuniões, gerenciamento de tempo, custo, esforço e pessoas. Integração com Teams e
+                        SharePoint.</p>
+                    <p><strong>Público-alvo:</strong> Grandes empresas, projetos complexos.</p>
+                    <p><strong>Link:</strong> <a
+                            href="https://www.microsoft.com/pt-br/microsoft-365/project/project-management-software"
+                            target="_blank">Microsoft Project</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <h4><i class="material-icons">track_changes</i> Jira (Atlassian)</h4>
+                    <p><strong>Tipo:</strong> Comercial (SaaS / self-hosted)</p>
+                    <p><strong>Funcionalidades:</strong> Monitoramento de tarefas, acompanhamento de projetos ágeis
+                        (Scrum/Kanban), backlogs, sprints, gráficos de burndown, integração com Confluence, Bitbucket,
+                        Slack.</p>
+                    <p><strong>Público-alvo:</strong> Equipes de desenvolvimento de software (muito popular em TI).</p>
+                    <p><strong>Link:</strong> <a href="https://www.atlassian.com/software/jira"
+                            target="_blank">atlassian.com/jira</a></p>
+                </div>
+                <div class="ferramenta-item">
+                    <h4><i class="material-icons">dashboard</i> Monday.com</h4>
+                    <p><strong>Tipo:</strong> Comercial (SaaS)</p>
+                    <p><strong>Funcionalidades:</strong> Gestão de projetos, tarefas, recursos, portfólio. Interface
+                        visual altamente customizável, automações, integrações com diversas ferramentas. Gratuito para
+                        até 2 usuários.</p>
+                    <p><strong>Público-alvo:</strong> Empresas de todos os portes (clientes: Coca-Cola, Hulu, Uber).</p>
+                    <p><strong>Link:</strong> <a href="https://monday.com/" target="_blank">monday.com</a></p>
+                </div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">tip</i> Critérios para escolha da ferramenta</h4>
+                <ul>
+                    <li><strong>Custo:</strong> Orçamento disponível (gratuito/open source vs. assinaturas mensais)</li>
+                    <li><strong>Número de colaboradores:</strong> Algumas ferramentas têm limites na versão gratuita
+                    </li>
+                    <li><strong>Funcionalidades:</strong> Suporte a metodologia ágil? Diagrama de Gantt? Relatórios
+                        customizáveis?</li>
+                    <li><strong>Interface e usabilidade:</strong> Curva de aprendizado e aceitação pela equipe</li>
+                    <li><strong>Integrações:</strong> Compatibilidade com ferramentas já utilizadas (Slack, GitHub,
+                        Google Drive)</li>
+                    <li><strong>Suporte a modelos de maturidade:</strong> Se a empresa busca certificação CMMI ou
+                        MPS.BR, a ferramenta deve permitir rastreabilidade e auditoria</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EXEMPLO PRÁTICO: APLICAÇÃO NO CIDADE VIRTUAL -->
+        <section>
+            <h2>🏙️ Exemplo Prático: Aplicação no Projeto Cidade Virtual</h2>
+            <div class="processo-mps">
+                <h4><i class="material-icons">lightbulb</i> Como o Cidade Virtual se beneficia dos modelos de maturidade
+                    e ferramentas</h4>
+                <p>O projeto Cidade Virtual, embora iniciado como portfólio pessoal, pode evoluir adotando práticas do
+                    MPS.BR nível G (parcialmente gerenciado) ou nível F (gerenciado):</p>
+                <ul>
+                    <li><strong>Processo GPR (Gerência de Projetos):</strong> Utilização do Trello/Jira para planejar
+                        sprints, acompanhar tarefas e controlar entregas.</li>
+                    <li><strong>Processo REQ (Desenvolvimento de Requisitos):</strong> Documentação de histórias de
+                        usuário e critérios de aceitação no Confluence.</li>
+                    <li><strong>Processo VER (Verificação):</strong> Revisões de código e testes automatizados.</li>
+                    <li><strong>Processo VAL (Validação):</strong> Demonstrações semanais ao cliente (usuários piloto).
+                    </li>
+                    <li><strong>Ferramentas:</strong> Jira para gestão + Confluence para documentação + Slack para
+                        comunicação.</li>
+                </ul>
+                <p>Ao adotar essas práticas, o projeto aumenta sua previsibilidade, reduz riscos e se torna mais
+                    atrativo para futuros investidores.</p>
+            </div>
+        </section>
+
+        <!-- CONSIDERAÇÕES FINAIS -->
+        <section>
+            <h2>✅ Síntese e Boas Práticas</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons">build</i>
+                    <h4>Qualidade de Processo</h4>
+                    <p>Processos bem definidos e continuamente melhorados geram produtos de maior qualidade, com menos
+                        defeitos e mais previsibilidade.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">emoji_events</i>
+                    <h4>Modelos de Maturidade</h4>
+                    <p>CMMI, MPS.BR e ISO 15504 fornecem roteiros estruturados para evolução da capacidade
+                        organizacional em gerência de projetos.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons">computer</i>
+                    <h4>Ferramentas</h4>
+                    <p>A escolha da ferramenta certa (dotProject, MS Project, Jira, Monday) é crítica para o sucesso da
+                        gestão, mas a ferramenta não substitui o bom gerente.</p>
+                </div>
+            </div>
+            <div class="dica-box text-center">
+                <i class="material-icons">school</i> <strong>Dica para certificação:</strong> Conheça as diferenças
+                entre CMMI e MPS.BR, os níveis de maturidade e as áreas de processo relacionadas à gerência de projetos.
+                Para o mercado brasileiro, o MPS.BR é especialmente relevante.
+            </div>
+        </section>
+
+        <!-- REFERÊNCIAS -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>ISACA.</strong> CMMI Performance Solutions. Disponível em:
+                &lt;https://cmmiinstitute.com/cmmi&gt;. Acesso em: 13 maio 2024.
+            </div>
+            <div class="referencia">
+                <strong>SOFTEX.</strong> MPS: Melhoria do Processo de Software e Serviços – Guia Geral 2024. Disponível
+                em: &lt;https://softex.br/mpsbr/guias/#guia-2020&gt;. Acesso em: 14 maio 2024.
+            </div>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6. ed. Newtown Square: PMI, 2017.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, Roger S.; MAXIM, Bruce R.</strong> Engenharia de Software: Uma Abordagem Profissional.
+                9. ed. Porto Alegre: AMGH, 2021. Capítulo 26 – Qualidade de Software.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10. ed. São Paulo: Pearson, 2018. Capítulo 24
+                – Gerenciamento da qualidade.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 15 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 4 - Unidade 2: Modelos de Maturidade e
+            Ferramentas</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

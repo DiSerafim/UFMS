@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 2: Gerenciamento de Escopo e Tempo | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para diagramas e tabelas de escopo */
+        .eap-example {
+            background: #f4f9ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            font-family: monospace;
+            border-left: 6px solid #1a4d8c;
+            overflow-x: auto;
+        }
+
+        .eap-tree {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .tabela-cronograma {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .gantt-simulacao {
+            background: #fef9e6;
+            border-radius: 20px;
+            padding: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .dica-pratica {
+            background: #e8f0fe;
+            border-left: 5px solid #ff8c00;
+            padding: 1.2rem;
+            border-radius: 20px;
+        }
+
+        .conceito-destaque {
+            background: linear-gradient(120deg, #f0f5ff, #ffffff);
+            padding: 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 1 - Introdução à Gerência de Projetos</h2>
+        <h3>📌 Unidade 2 – Gerenciamento de Escopo e Tempo em Projetos de Software</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1_und1-visao-geral-gerencia-de-projetos.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 1
+            </a>
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/x4YFRwC7cqI" frameborder="0"
+                    title="Gerência de Projetos - Módulo 1 - Unidade 2 - Escopo e Tempo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 2">
+                [UFMS Digital] Gerência de Projetos - Módulo 1 - Unidade 2 (Escopo e Tempo)
+            </p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+            <p>📅 Duração: 28min • Fundamentos de escopo e construção de cronogramas</p>
+        </section>
+
+        <!-- ================= PARTE 1: GERENCIAMENTO DE ESCOPO ================= -->
+        <section>
+            <h2>📐 Parte 1 – Gerenciamento de Escopo em Projetos de Software</h2>
+            <p>O escopo de um projeto de software define os limites e as entregas que serão realizadas. É a base para
+                estimativas de prazo, custo e alocação de recursos. Sem um escopo bem definido, o projeto fica
+                vulnerável a <strong>“scope creep” (crescimento descontrolado)</strong> e retrabalho.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Definição de Escopo (PMBOK)</h4>
+                    <p>“A determinação do escopo é a primeira atividade de gestão. Inclui a descrição narrativa ou casos
+                        de uso, e deve ser não-ambígua, inteligível aos níveis gerenciais e técnicos.”</p>
+                    <p>Projetos críticos exigem documentação formal; rotineiros requerem menos burocracia, mas sempre
+                        com clareza.</p>
+                </div>
+                <div class="card">
+                    <h4>📝 Técnicas para definir escopo</h4>
+                    <ul>
+                        <li><strong>Descrição narrativa:</strong> texto colaborativo com stakeholders.</li>
+                        <li><strong>Casos de uso (UML):</strong> descrevem interações ator-sistema.</li>
+                        <li><strong>User stories (ágil):</strong> “Como [papel], quero [funcionalidade] para
+                            [benefício]”.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Processos do Gerenciamento de Escopo conforme PMBOK -->
+            <h3>🔄 Processos do Gerenciamento de Escopo (PMBOK 6ª ed.)</h3>
+            <div class="grid-3">
+                <div class="card"><strong>1. Planejar o gerenciamento do escopo</strong><br>Cria o plano de como o
+                    escopo será definido, validado e controlado.</div>
+                <div class="card"><strong>2. Coletar os requisitos</strong><br>Documentar necessidades e expectativas
+                    das partes interessadas.</div>
+                <div class="card"><strong>3. Definir o escopo</strong><br>Elaborar descrição detalhada do projeto e
+                    produto (escopo final).</div>
+                <div class="card"><strong>4. Criar a EAP (WBS)</strong><br>Subdividir entregas em partes menores
+                    (pacotes de trabalho).</div>
+                <div class="card"><strong>5. Validar o escopo</strong><br>Formalizar aceitação das entregas concluídas.
+                </div>
+                <div class="card"><strong>6. Controlar o escopo</strong><br>Monitorar e gerenciar mudanças na linha de
+                    base do escopo.</div>
+            </div>
+
+            <!-- Definir o Escopo: perguntas essenciais -->
+            <div class="conceito-destaque">
+                <h4><i class="material-icons">help_outline</i> 8 Perguntas Essenciais para Definir o Escopo (Richard,
+                    2010)</h4>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Qual é o objetivo geral do projeto? (declaração simples)</li>
+                    <li>Quais são as entregas? Como a qualidade será medida?</li>
+                    <li>Estamos implementando uma solução específica ou resolvendo um problema?</li>
+                    <li>Como o cliente medirá o sucesso ao final do projeto?</li>
+                    <li>O que pode mudar sob a ótica do cliente (tempo, custo, qualidade)?</li>
+                    <li>Existem outras restrições (orçamento máximo, prazo inflexível)?</li>
+                    <li>Como o cliente deseja trabalhar conosco? (relatórios, reuniões)</li>
+                    <li>Quais requisitos, suposições ou necessidades implícitas não estão documentados?</li>
+                </ol>
+                <p><strong>💡 Dica prática:</strong> Se alguma pergunta não puder ser respondida, o risco do projeto
+                    aumenta. Invista tempo no alinhamento com o cliente.</p>
+            </div>
+
+            <!-- EAP (WBS) - Exemplos avançados -->
+            <h3>📂 Criando a Estrutura Analítica do Projeto (EAP / WBS)</h3>
+            <p>A EAP é uma decomposição hierárquica orientada a entregas. Cada nível descendente representa uma
+                definição mais detalhada do trabalho.</p>
+            <div class="eap-example">
+                <div class="eap-tree">
+                    <strong>1.0 Desenvolvimento da plataforma Cidade Virtual (exemplo)</strong><br>
+                    &nbsp;&nbsp;├─ 1.1 Gerenciamento do projeto<br>
+                    &nbsp;&nbsp;├─ 1.2 Concepção e requisitos<br>
+                    &nbsp;&nbsp;│ &nbsp;&nbsp;├─ 1.2.1 Definição de personas<br>
+                    &nbsp;&nbsp;│ &nbsp;&nbsp;└─ 1.2.2 Levantamento funcional (e-commerce, issues urbanas,
+                    portfólio)<br>
+                    &nbsp;&nbsp;├─ 1.3 Desenvolvimento backend (Node.js, MongoDB)<br>
+                    &nbsp;&nbsp;│ &nbsp;&nbsp;├─ 1.3.1 API de autenticação JWT<br>
+                    &nbsp;&nbsp;│ &nbsp;&nbsp;├─ 1.3.2 Módulo de notificações WebSocket<br>
+                    &nbsp;&nbsp;│ &nbsp;&nbsp;└─ 1.3.3 Integração com mapa interativo<br>
+                    &nbsp;&nbsp;├─ 1.4 Frontend React + dashboard administrativo<br>
+                    &nbsp;&nbsp;├─ 1.5 Testes (unitários, integração, aceitação)<br>
+                    &nbsp;&nbsp;└─ 1.6 Implantação e encerramento<br>
+                </div>
+                <p class="small-text" style="margin-top: 12px;">✅ <strong>Pacote de trabalho:</strong> menor unidade da
+                    EAP, com estimativa de custo/duração e responsável definido.</p>
+            </div>
+            <div class="info-box">
+                <strong><i class="material-icons">insights</i> Regra 100%:</strong> A soma do trabalho dos pacotes de
+                trabalho deve representar 100% do escopo do projeto. Evite omissões ou sobreposições.
+            </div>
+
+            <!-- Controle de Mudanças (Scope Creep) -->
+            <div class="dica-pratica">
+                <h4><i class="material-icons">warning</i> Controle de Mudanças – Combatendo o “Scope Creep”</h4>
+                <p>Mudanças são inevitáveis, mas devem ser gerenciadas. Estabeleça um processo claro: solicitação de
+                    mudança → análise de impacto (escopo, prazo, custo) → aprovação do Comitê de Controle de Mudanças
+                    (CCB) → atualização da linha de base. Ferramentas como Jira, Azure DevOps ou planilhas de log de
+                    mudanças ajudam a rastrear.</p>
+                <p><strong>Exemplo:</strong> Cliente pede um novo relatório de analytics. Análise: +3 dias, +R$2.500.
+                    Aprovado? Atualiza-se EAP e cronograma. Nada é feito sem rastreabilidade.</p>
+            </div>
+        </section>
+
+        <!-- ================= PARTE 2: GERENCIAMENTO DE TEMPO ================= -->
+        <section>
+            <h2>⏱️ Parte 2 – Gerenciamento de Tempo em Projetos de Software</h2>
+            <p>O gerenciamento do tempo garante que o projeto seja concluído dentro do prazo. Envolve definir
+                atividades, sequenciar, estimar recursos e durações, e desenvolver o cronograma.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>⚙️ Processos de Gerenciamento de Tempo (PMBOK)</h4>
+                    <ul>
+                        <li>Planejar o gerenciamento do cronograma</li>
+                        <li>Definir as atividades (decomposição da EAP em tarefas)</li>
+                        <li>Sequenciar as atividades (dependências – FS, SS, FF, SF)</li>
+                        <li>Estimar recursos (pessoas, ferramentas, infraestrutura)</li>
+                        <li>Estimar durações (pontos de função, afinidade, PERT)</li>
+                        <li>Desenvolver o cronograma (Gráfico de Gantt, Caminho Crítico)</li>
+                        <li>Controlar o cronograma (monitoramento, EVM)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📊 Técnicas de Estimativa</h4>
+                    <ul>
+                        <li><strong>Análoga:</strong> baseada em projetos anteriores semelhantes.</li>
+                        <li><strong>Paramétrica:</strong> modelos matemáticos (ex: COCOMO).</li>
+                        <li><strong>Três pontos (PERT):</strong> (O + 4M + P)/6 – otimista, mais provável, pessimista.
+                        </li>
+                        <li><strong>Planejamento ágil:</strong> planning poker, story points, velocidade do time.</li>
+                    </ul>
+                    <div class="small-text">💡 Inclua sempre contingência (30-50% segundo Sommerville) para riscos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exemplo tabela cronograma + dependências -->
+            <div class="tabela-cronograma">
+                <h3>📅 Exemplo de Cronograma (Atividades, Esforço, Duração, Dependências)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tarefa</th>
+                            <th>Esforço (pessoa-dia)</th>
+                            <th>Duração (dias)</th>
+                            <th>Dependências</th>
+                            <th>Recursos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T1 – Definição de escopo e requisitos</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>-</td>
+                            <td>Analista + PO</td>
+                        </tr>
+                        <tr>
+                            <td>T2 – Design de arquitetura</td>
+                            <td>8</td>
+                            <td>4</td>
+                            <td>T1</td>
+                            <td>Arquiteto</td>
+                        </tr>
+                        <tr>
+                            <td>T3 – Desenvolvimento backend (API)</td>
+                            <td>20</td>
+                            <td>10</td>
+                            <td>T2</td>
+                            <td>2 devs backend</td>
+                        </tr>
+                        <tr>
+                            <td>T4 – Desenvolvimento frontend</td>
+                            <td>15</td>
+                            <td>8</td>
+                            <td>T2</td>
+                            <td>2 devs front</td>
+                        </tr>
+                        <tr>
+                            <td>T5 – Testes integração e aceitação</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>T3,T4</td>
+                            <td>QA</td>
+                        </tr>
+                        <tr>
+                            <td>T6 – Implantação e homologação</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>T5</td>
+                            <td>DevOps</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Representação de Gráfico de Gantt avançado (simulação com barras) -->
+            <div class="gantt-simulacao">
+                <h4><i class="material-icons">bar_chart</i> Gráfico de Gantt (exemplo interativo - conceitual)</h4>
+                <pre style="background:#1e2a3a; color:#eef; padding: 12px; border-radius: 16px; font-size: 0.75rem;">
+       Semana 1       Semana 2       Semana 3       Semana 4
+T1     [=====]
+T2          [====]
+T3               [==========]
+T4               [========]
+T5                         [===]
+T6                              [==]
+                </pre>
+                <p><strong>Caminho crítico:</strong> T1 → T2 → T3 → T5 → T6 (duração total = 5+4+10+5+2 = 26 dias).
+                    Qualquer atraso nessas tarefas impacta o prazo final.</p>
+                <p>🎯 Marcos: Término da definição de requisitos (milestone), release candidata, homologação aprovada.
+                </p>
+            </div>
+
+            <!-- Alocação de pessoas e linha de base -->
+            <h3>👥 Alocação de Pessoas e Acompanhamento</h3>
+            <p>O diagrama de Gantt também pode mostrar alocação de recursos (meio período x período integral). Utilize
+                barras com hachura para indicar alocação parcial. Ferramentas como MS Project, Jira Roadmaps, Smartsheet
+                facilitam essa visualização.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📈 Métricas de Controle de Prazo</h4>
+                    <ul>
+                        <li>Índice de desempenho de prazo (IDP/SPI) = EV / PV (Valor agregado)</li>
+                        <li>Variação de prazo (VPR) = EV – PV</li>
+                        <li>Estimativa de término (EACt) = Cronograma planejado / SPI</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>✅ Revisão do Cronograma</h4>
+                    <p>Atualize semanalmente com dados reais. Use técnicas de compressão: <strong>crashing</strong>
+                        (adicionar recursos) ou <strong>fast tracking</strong> (executar atividades em paralelo) para
+                        recuperar atrasos, mas cuidado com riscos.</p>
+                </div>
+            </div>
+
+            <!-- Problemas comuns e contingência -->
+            <div class="dica-avancada">
+                <h4><i class="material-icons">error_outline</i> Problemas Clássicos em Cronogramas de Software</h4>
+                <ul>
+                    <li><strong>Síndrome de Student:</strong> as pessoas só começam a trabalhar a sério perto do prazo.
+                    </li>
+                    <li><strong>Lei de Parkinson:</strong> o trabalho se expande para preencher o tempo disponível.</li>
+                    <li><strong>Dependências externas não gerenciadas:</strong> fornecedores de API, infraestrutura.
+                    </li>
+                </ul>
+                <p><strong>Solução:</strong> revisões periódicas (daily meeting), cultura de transparência, pequenos
+                    marcos e buffer de contingência explícito no cronograma.</p>
+            </div>
+        </section>
+
+        <!-- Integração Escopo + Tempo e práticas avançadas -->
+        <section>
+            <h2>🔗 Integração entre Escopo e Tempo: Matriz de Rastreabilidade</h2>
+            <p>A matriz de rastreabilidade de requisitos conecta cada requisito à EAP e ao cronograma. Permite
+                responder: “Este requisito está sendo entregue em qual pacote de trabalho? Qual o impacto no prazo se
+                removermos essa funcionalidade?”</p>
+            <div class="exemplo-mercado" style="background:#ecfdf5;">
+                <strong><i class="material-icons">table_view</i> Exemplo (Cidade Virtual):</strong>
+                <ul>
+                    <li>REQ-01 (Mapa interativo) → Pacote 1.4.2 → Duração: 5 dias → Marco: release 1.0</li>
+                    <li>REQ-02 (Notificações em tempo real) → Pacote 1.3.2 → Duração: 8 dias → dependência com WebSocket
+                    </li>
+                </ul>
+                <p>Alterar ou remover um requisito exige reestimar o cronograma imediatamente. Essa integração é
+                    essencial para o controle integrado de mudanças.</p>
+            </div>
+        </section>
+
+        <!-- Dicas para certificação (PMP / CAPM) -->
+        <section>
+            <h2>🎓 Tópico Avançado – Preparação para Certificação PMP/CAPM</h2>
+            <p>Os conceitos de escopo e tempo são pilares do exame de certificação. No PMBOK, estude atentamente:</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Entradas e saídas dos processos</h4>
+                    <p>Ex: Para “Criar EAP” a entrada principal é o plano de gerenciamento do escopo e a saída é a linha
+                        de base do escopo (EAP + dicionário da EAP).</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Técnicas de sequenciamento</h4>
+                    <p>Diagrama de rede (PDM), dependências obrigatórias X discricionárias, antecessor imediato,
+                        lead/lag.</p>
+                </div>
+                <div class="card">
+                    <h4>📈 Método do Caminho Crítico (CPM)</h4>
+                    <p>Identifica a maior sequência de atividades dependentes e determina a duração mínima do projeto.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>📊 Técnica de nivelamento de recursos</h4>
+                    <p>Evita picos de alocação e pode aumentar o cronograma original.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <strong>Simulado rápido:</strong> Se o SPI = 0,8 e o CPI = 1,2, o projeto está atrasado, mas dentro do
+                orçamento. O que fazer? Analisar atividades críticas e aplicar fast tracking ou crashing, sempre
+                reavaliando riscos.
+            </div>
+        </section>
+
+        <!-- Material complementar e referências -->
+        <section>
+            <h2>📚 Referências e Aprofundamento</h2>
+            <div class="referencia">
+                <strong>CAMARGO, Marta Rocha.</strong> Gerenciamento de projetos: fundamentos e prática integrada. 2 Ed.
+                GEN Atlas, 2018. Capítulos 7 e 8.
+            </div>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE.</strong> Guia PMBOK® 6ª edição. Capítulos 5 (Gerenciamento de
+                Escopo) e 6 (Gerenciamento de Cronograma).
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10ª ed. Pearson, 2018. Capítulo 23 –
+                Planejamento e gestão de projetos.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, R.; MAXIM, B.</strong> Engenharia de Software. 9ª ed. McGraw Hill, 2021. Capítulo 25 –
+                Criando um plano de software viável.
+            </div>
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">auto_awesome</i> Ferramentas práticas para aplicar escopo e tempo</h4>
+                <p>Experimente criar uma EAP para um projeto real (ou o Cidade Virtual) no <strong>ClickUp, Trello com
+                        estrutura de listas, ou no próprio Excel</strong>. Para cronograma, utilize o
+                    <strong>GanttProject</strong> (gratuito) ou a visualização de linha do tempo do Jira. A prática leva
+                    à maestria.
+                </p>
+                <p><strong>Desafio de aprendizagem:</strong> Baseado na EAP apresentada, estime a duração total do
+                    projeto Cidade Virtual (versão MVP) usando a técnica de três pontos para três pacotes de trabalho e
+                    identifique o caminho crítico.</p>
+            </div>
+        </section>
+
+        <!-- Síntese final -->
+        <section>
+            <h2>✅ Síntese da Unidade 2</h2>
+            <div class="grid-3">
+                <div class="card"><i class="material-icons">rule_settings</i><br><strong>Escopo bem
+                        definido</strong><br>Evita retrabalho e surpresas. Use EAP e declaração de escopo.</div>
+                <div class="card"><i class="material-icons">schedule</i><br><strong>Cronograma
+                        factível</strong><br>Baseado em estimativas confiáveis, dependências reais e contingência.</div>
+                <div class="card"><i class="material-icons">change_circle</i><br><strong>Controle
+                        integrado</strong><br>Mudanças devem afetar escopo e tempo simultaneamente – gestão de mudanças.
+                </div>
+            </div>
+            <div class="dica-box text-center">
+                <i class="material-icons">school</i> <strong>Continue praticando!</strong> Na próxima etapa, faremos o
+                Checkout de Presença do Módulo 1 – não deixe de aplicar os conceitos de escopo e tempo em um pequeno
+                plano de projeto.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+        <p style="font-size: 0.8em;">📍 Gerência de Projetos - Módulo 1 - Unidade 2: Gerenciamento de Escopo e Tempo</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

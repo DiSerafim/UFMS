@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 1 | Perfil Empreendedor, Sociedade e Motivação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        /* ===== RESUMO DA TENTATIVA ===== */
+        .resumo-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #28a745;
+        }
+
+        .resumo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .resumo-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .resumo-item .rotulo {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resumo-item .valor {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a4d8c;
+            margin-top: 5px;
+        }
+
+        .resumo-item .valor.nota {
+            color: #28a745;
+            font-size: 2rem;
+        }
+
+        .resumo-item .valor.nota span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* ===== QUESTÕES ===== */
+        .questao-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+            transition: transform 0.3s;
+        }
+
+        .questao-item:hover {
+            transform: translateX(4px);
+        }
+
+        .questao-item .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .cabecalho .numero {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1.1rem;
+        }
+
+        .questao-item .cabecalho .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .questao-item .cabecalho .status.correto {
+            background: #e8f5e9;
+            color: #28a745;
+        }
+
+        .questao-item .cabecalho .status.incorreto {
+            background: #ffebee;
+            color: #dc3545;
+        }
+
+        .questao-item .texto {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .questao-item .resposta {
+            font-size: 0.9rem;
+            color: #555;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+        }
+
+        .questao-item .resposta .label {
+            font-weight: 600;
+            color: #1a4d8c;
+        }
+
+        .questao-item .resposta .valor {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .questao-item .resposta .valor.incorreto {
+            color: #dc3545;
+        }
+
+        .questao-item .explicacao {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 10px;
+            border-left: 4px solid #0066cc;
+            font-size: 0.9rem;
+        }
+
+        .questao-item .explicacao strong {
+            color: #0066cc;
+        }
+
+        .questao-item .alternativas {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .questao-item .alternativas li {
+            list-style: none;
+            padding: 4px 0;
+        }
+
+        .questao-item .alternativas .correta {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        /* ===== BOTÃO NOTA 10 ===== */
+        .nota10-container {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            border: 3px solid #28a745;
+        }
+
+        .nota10-container .emoji {
+            font-size: 4rem;
+        }
+
+        .nota10-container .titulo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin: 10px 0;
+        }
+
+        .nota10-container .subtitulo {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .nota10-container .mascote {
+            font-size: 5rem;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* ===== BOTÃO CONTINUAR ===== */
+        .btn-continuar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 8px;
+                font-size: 0.5em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .resumo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nota10-container .titulo {
+                font-size: 1.8rem;
+            }
+
+            .nota10-container .emoji {
+                font-size: 3rem;
+            }
+
+            .questao-item .alternativas {
+                padding-left: 10px;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .resumo-container {
+                break-inside: avoid;
+            }
+
+            .questao-item {
+                break-inside: avoid;
+            }
+
+            header {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .nota10-container {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resumo-container {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>📍 Checkout de Presença e Avaliação da Aprendizagem</h2>
+        <h3>📚 Módulo 1 – Perfil Empreendedor, Sociedade e Motivação</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod1_und2-universidade-empreendedora-e-ecossistema-de-inovacao.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 2
+            </a>
+            <a href="mod2_und1-metas-empreendedoras-e-planejamento.html" class="btn-nav"
+                style="background-color: #28a745;">
+                Mod 2 Und 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: NOTA 10 ===== -->
+        <section>
+            <div class="nota10-container">
+                <span class="mascote">🧑‍🎓</span>
+                <div class="emoji">🎉</div>
+                <div class="titulo">Nota 10!</div>
+                <div class="subtitulo">
+                    Parabéns! Você concluiu a avaliação do Módulo 1 com <strong>100% de aproveitamento</strong>.
+                </div>
+                <div style="margin-top: 15px; font-size: 0.95rem; color: #555;">
+                    <span style="background: white; padding: 5px 15px; border-radius: 20px; display: inline-block;">
+                        ⭐ 10,00 de 10,00 pontos
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO DA TENTATIVA ===== -->
+        <section>
+            <h2>📊 Resumo da Tentativa</h2>
+
+            <div class="resumo-container">
+                <div class="resumo-grid">
+                    <div class="resumo-item">
+                        <div class="rotulo">📌 Situação</div>
+                        <div class="valor" style="color: #28a745;">Finalizada</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">📅 Iniciado</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 19:27</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏱️ Concluído</div>
+                        <div class="valor">quarta-feira, 17 jun. 2026, 19:47</div>
+                    </div>
+                    <div class="resumo-item">
+                        <div class="rotulo">⏳ Duração</div>
+                        <div class="valor">20 minutos</div>
+                    </div>
+                    <div class="resumo-item" style="grid-column: span 2; max-width: 300px; margin: 0 auto;">
+                        <div class="rotulo">⭐ Nota</div>
+                        <div class="valor nota">10,00 <span>/ 10,00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>💬 Comentário</h4>
+                <p style="margin: 0;">
+                    🧑‍🎓 Mascote da UFMS sorrindo, usando camiseta da universidade e segurando uma placa azul com a
+                    mensagem <strong>"Nota 10!"</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: QUESTÕES ===== -->
+        <section>
+            <h2>📝 Questões da Avaliação</h2>
+
+            <!-- Questão 1 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 1</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Os programas institucionais da UFMS são destinados apenas a estudantes que já possuem
+                        empresas formalizadas.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Falso</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Os programas institucionais da UFMS (como o HUB PIME) são destinados a
+                    toda a comunidade acadêmica, incluindo estudantes que ainda não possuem empresas formalizadas, com
+                    ideias em estágio inicial ou que desejam desenvolver habilidades empreendedoras.
+                </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 2</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>De acordo com as discussões da disciplina, quando analisamos a relação do empreendedorismo
+                        com o desenvolvimento do indivíduo, podemos dizer que ele é:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Exclusivo para empresários.</li>
+                    <li>b. Dependente de recursos financeiros.</li>
+                    <li class="correta">✓ c. <strong>Desenvolvido ao longo da trajetória.</strong></li>
+                    <li>d. Um dom natural.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">c. Desenvolvido ao longo da trajetória.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O empreendedorismo é desenvolvido ao longo da trajetória de vida e
+                    carreira, por meio de experiências, estudos, práticas e aprendizado contínuo, e não é um dom inato
+                    ou restrito a um grupo específico.
+                </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 3</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>A dimensão de Inovação está relacionada apenas à criação de tecnologias avançadas.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Falso</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A inovação não se limita à criação de tecnologias avançadas. Ela pode
+                    ser incremental (melhorias em produtos/processos), em modelos de negócio, social, em processos ou em
+                    marketing.
+                </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 4</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Considere as situações abaixo, relacionadas ao ecossistema de inovação universitário, e
+                        relacione cada uma delas ao tipo de atuação empreendedora correspondente:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">A universidade cria programas, editais e estruturas para apoiar o
+                        desenvolvimento de projetos inovadores.</span>
+                    <span class="valor"> → Empreendedorismo institucional</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Um estudante decide desenvolver uma ideia própria a partir de uma necessidade
+                        identificada em seu curso.</span>
+                    <span class="valor"> → Empreendedorismo individual</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Um grupo de alunos cria uma startup com apoio de colegas de diferentes
+                        áreas.</span>
+                    <span class="valor"> → Empreendedorismo coletivo</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> O empreendedorismo institucional refere-se à ação da universidade
+                    (programas, editais); o individual é a iniciativa pessoal do estudante; e o coletivo envolve a
+                    colaboração de um grupo com diferentes áreas de conhecimento.
+                </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 5</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>No contexto universitário, o empreendedorismo pode manifestar-se de diferentes formas, como
+                        pesquisa aplicada, projetos de inovação e iniciativas de impacto social. Qual das alternativas
+                        abaixo também representa uma forma empreendedora?</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Fazer estágio obrigatório.</li>
+                    <li class="correta">✓ b. <strong>Aplicar conhecimento em soluções para problemas reais.</strong>
+                    </li>
+                    <li>c. Participar de provas e de eventos acadêmicos.</li>
+                    <li>d. Abrir empresas durante a graduação.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">b. Aplicar conhecimento em soluções para problemas reais.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Aplicar conhecimento acadêmico na criação de soluções para problemas
+                    reais é uma forma autêntica de empreendedorismo no contexto universitário, pois transforma teoria em
+                    ação e gera valor para a sociedade.
+                </div>
+            </div>
+
+            <!-- Questão 6 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 6</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Relacione corretamente as etapas da Trilha de Maturação do HUB PIME com suas
+                        características:</strong>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Contato com disciplinas, eventos e desafios que aproximam teoria e
+                        prática.</span>
+                    <span class="valor"> → Descoberta</span>
+                </div>
+                <div class="resposta" style="margin-bottom: 5px;">
+                    <span class="label">Teste e validação de soluções com foco em primeiros resultados.</span>
+                    <span class="valor"> → Prototipação</span>
+                </div>
+                <div class="resposta">
+                    <span class="label">Desenvolvimento inicial de ideias e estruturação de propostas de solução.</span>
+                    <span class="valor"> → Ideação</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A Trilha HUB PIME organiza o desenvolvimento em etapas: Descoberta
+                    (contato com o ecossistema), Ideação (estruturação de ideias) e Prototipação (teste e validação de
+                    soluções), além de Consolidação, Aceleração e Expansão.
+                </div>
+            </div>
+
+            <!-- Questão 7 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 7</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Neste módulo, discutimos que o protagonismo está relacionado à forma como o indivíduo conduz
+                        sua própria trajetória. Nesse contexto, o protagonismo significa:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li class="correta">✓ a. <strong>Assumir responsabilidade pela própria trajetória.</strong></li>
+                    <li>b. Esperar que outras pessoas ofereçam oportunidades.</li>
+                    <li>c. Evitar situações de risco ou de incerteza.</li>
+                    <li>d. Seguir caminhos previamente definidos sem questionamento.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">a. Assumir responsabilidade pela própria trajetória.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Protagonismo significa assumir o controle e a responsabilidade pela
+                    própria trajetória, tomando decisões conscientes, agindo com iniciativa e enfrentando desafios de
+                    forma proativa.
+                </div>
+            </div>
+
+            <!-- Questão 8 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 8</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Ao longo do módulo, discutimos que o processo empreendedor envolve experimentação, testes e
+                        aprendizado contínuo. Nesse contexto, o erro no empreendedorismo é:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li class="correta">✓ a. <strong>Parte do processo de aprendizagem e do ajuste de soluções.</strong>
+                    </li>
+                    <li>b. Algo a ser evitado sempre.</li>
+                    <li>c. Um fracasso definitivo.</li>
+                    <li>d. Um fator sem impacto no desenvolvimento de projetos.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">a. Parte do processo de aprendizagem e do ajuste de soluções.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> No empreendedorismo, o erro é visto como parte natural do processo de
+                    aprendizado. Ele fornece feedback valioso, permite ajustes e melhorias, e é fundamental para o
+                    desenvolvimento de soluções inovadoras.
+                </div>
+            </div>
+
+            <!-- Questão 9 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 9</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>A Trilha de Maturação do HUB PIME organiza o desenvolvimento de projetos em etapas
+                        como:</strong>
+                </div>
+                <ul class="alternativas">
+                    <li>a. Pesquisa, relatório e publicação.</li>
+                    <li>b. Planejamento, execução e encerramento.</li>
+                    <li class="correta">✓ c. <strong>Descoberta, ideação, prototipação, consolidação, aceleração e
+                            expansão.</strong></li>
+                    <li>d. Diagnóstico, marketing e vendas.</li>
+                </ul>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">c. Descoberta, ideação, prototipação, consolidação, aceleração e
+                        expansão.</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> A Trilha do HUB PIME acompanha o amadurecimento da ideia desde a
+                    Descoberta (identificação de oportunidades) até a Expansão (crescimento sustentável), passando por
+                    Ideação, Prototipação, Consolidação e Aceleração.
+                </div>
+            </div>
+
+            <!-- Questão 10 -->
+            <div class="questao-item">
+                <div class="cabecalho">
+                    <span class="numero">Questão 10</span>
+                    <span class="status correto">✅ Correto</span>
+                    <span style="font-size: 0.8rem; color: #28a745; font-weight: 600;">1,00 de 1,00</span>
+                </div>
+                <div class="texto">
+                    <strong>Empreendedores utilizam tanto o pensamento intuitivo quanto a análise racional para tomar
+                        decisões.</strong>
+                </div>
+                <div class="resposta">
+                    <span class="label">Resposta:</span>
+                    <span class="valor">Verdadeiro</span>
+                </div>
+                <div class="explicacao">
+                    <strong>Explicação:</strong> Empreendedores combinam pensamento intuitivo (baseado em experiências e
+                    "feeling") com análise racional (baseada em dados e evidências) para tomar decisões em ambientes de
+                    incerteza e complexidade.
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===== SEÇÃO: BOTÃO CONTINUAR ===== -->
+        <section>
+            <div style="text-align: center;">
+                <a href="mod2_und1-metas-empreendedoras-e-planejamento.html" class="btn-continuar">
+                    <i class="material-icons">arrow_forward</i> Seguir para o Módulo 2
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="../6s-8-empreendedorismo-e-inovacao/index.html" class="btn-nav"
+                    style="background-color: #6c757d; padding: 10px 25px; border-radius: 50px; font-weight: 500;">
+                    <i class="material-icons" style="font-size: 18px;">arrow_back</i> Voltar para a disciplina
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">01000000030-T01-2026-1 · Módulo 1 – Checkout de Presença</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

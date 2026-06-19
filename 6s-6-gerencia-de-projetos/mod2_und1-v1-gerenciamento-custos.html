@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Unidade 1: Gerenciamento de Custos | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .custo-destaque {
+            background: linear-gradient(135deg, #1a2b3c, #0f2c3b);
+            color: #f0f8ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .exemplo-calculo {
+            background: #eef2fa;
+            border-left: 5px solid #ff8c00;
+            padding: 1rem;
+            border-radius: 16px;
+            font-family: monospace;
+        }
+
+        .metodo-card {
+            transition: transform 0.2s;
+            background: white;
+        }
+
+        .metodo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabela-comparativa th {
+            background-color: #245;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 2 - Tópicos Básicos da Gerência de Projetos</h2>
+        <h3>💰 Unidade 1 – Gerenciamento de Custos em Projetos de Software - v1</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 1
+            </a>
+            <a href="mod2_und1-v2-gerenciamento-custos.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 2 Und 1.2 <i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vídeo obrigatório -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/EcbsiYjxzPU" frameborder="0"
+                    title="Gerência de Projetos - Módulo 2 - Unidade 1 - Gerenciamento de Custos"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title">[UFMS Digital] Gerência de Projetos - Módulo 2 - Unidade 1 (Custos)</p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva | Duração: 26min</p>
+        </section>
+
+        <!-- Introdução Expandida -->
+        <section>
+            <h2>📌 Introdução ao Gerenciamento de Custos</h2>
+            <p>O gerenciamento de custos é uma área crítica que <strong>garante que o projeto seja concluído dentro do
+                    orçamento aprovado</strong>. Em software, a estimativa de custos é complexa devido à natureza
+                intangível, à rápida evolução tecnológica e à volatilidade dos requisitos.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Por que estimar custos?</h4>
+                    <ul>
+                        <li>Definir orçamento e viabilidade financeira</li>
+                        <li>Apoiar negociações com clientes e patrocinadores</li>
+                        <li>Base para alocação de recursos e tomada de decisão</li>
+                        <li>Comparar propostas e fazer trade-offs escopo × prazo × custo</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>⚠️ Fatores que afetam a precificação</h4>
+                    <ul>
+                        <li><strong>Termos contratuais:</strong> propriedade do código, reuso futuro.</li>
+                        <li><strong>Incerteza da estimativa:</strong> contingência (30-50%).</li>
+                        <li><strong>Volatilidade dos requisitos:</strong> mudanças ao longo do projeto.</li>
+                        <li><strong>Estratégia de mercado:</strong> preço para ganhar, entrada em novo segmento.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="custo-destaque">
+                <h4><i class="material-icons">info</i> Visão prática (Sommerville, 2018)</h4>
+                <p>“O custo do projeto é acordado com base em uma proposta inicial, depois ocorrem negociações ao
+                    estabelecer a especificação detalhada. É comum utilizar <strong>preço para ganhar</strong>, em que a
+                    empresa tem ideia do preço que o cliente está disposto a pagar.”</p>
+                <p><strong>Exemplo real:</strong> Uma consultoria de software pode propor R$ 180/hora para um projeto
+                    ágil, mas reduzir para R$ 150/hora em troca da reutilização de componentes em outros clientes.</p>
+            </div>
+        </section>
+
+        <!-- Planejamento de custos conforme PMBOK -->
+        <section>
+            <h2>📐 Planejar o Gerenciamento dos Custos (PMBOK)</h2>
+            <p>O primeiro processo define como os custos serão estimados, orçados, financiados e controlados. Gera o
+                <strong>Plano de Gerenciamento dos Custos</strong>, que estabelece:
+            </p>
+            <div class="grid-3">
+                <div class="card metodo-card"><strong>📏 Unidades de medida</strong><br>Horas, pontos de função, R$,
+                    US$.</div>
+                <div class="card metodo-card"><strong>🎯 Nível de precisão</strong><br>Arredondamento: R$ 1.000,00 ou R$
+                    1.234,56.</div>
+                <div class="card metodo-card"><strong>📊 Regras para medição</strong><br>Valor agregado (EVM), limites
+                    de controle (±10%).</div>
+                <div class="card metodo-card"><strong>📑 Formatos de relatórios</strong><br>Dashboards, S-Curve, fluxo
+                    de caixa.</div>
+                <div class="card metodo-card"><strong>🔧 Ferramentas</strong><br>Opinião especializada, técnicas
+                    analíticas, reuniões.</div>
+            </div>
+            <div class="info-box">
+                <strong><i class="material-icons">build</i> Boa prática:</strong> Envolva a equipe técnica nas reuniões
+                de estimativa. O comprometimento aumenta a exatidão e a aceitação dos valores orçados.
+            </div>
+        </section>
+
+        <!-- Estimar Custos (processo e técnicas) -->
+        <section>
+            <h2>📊 Estimar os Custos – Processo e Técnicas Avançadas</h2>
+            <p>Estimar custos envolve desenvolver uma aproximação dos recursos monetários necessários para completar as
+                atividades do projeto. Principais entradas: <strong>linha de base do escopo, cronograma, registro de
+                    riscos</strong>.</p>
+
+            <h3>Técnicas de Estimativa</h3>
+            <div class="grid-2">
+                <div class="card metodo-card">
+                    <h4>📌 Análoga (top-down)</h4>
+                    <p>Baseada em projetos anteriores semelhantes. Rápida, mas menos precisa. Útil em fases iniciais.
+                    </p>
+                </div>
+                <div class="card metodo-card">
+                    <h4>📐 Paramétrica</h4>
+                    <p>Modelos estatísticos: custo = parâmetro (ex: R$/PF) × quantidade. Exemplo: R$ 1.200 por ponto de
+                        função.</p>
+                </div>
+                <div class="card metodo-card">
+                    <h4>🧩 Bottom-up</h4>
+                    <p>Estima componentes individuais (pacotes de trabalho) e agrega. Muito precisa, porém consome
+                        tempo.</p>
+                </div>
+                <div class="card metodo-card">
+                    <h4>🎲 Três pontos (PERT)</h4>
+                    <p>Média ponderada: (O + 4M + P)/6. Incorpora incerteza (otimista, mais provável, pessimista).</p>
+                </div>
+                <div class="card metodo-card">
+                    <h4>📈 Análise de reservas</h4>
+                    <p>Reservas de contingência (para riscos conhecidos) e reservas gerenciais (para riscos
+                        desconhecidos).</p>
+                </div>
+                <div class="card metodo-card">
+                    <h4>🧠 Opinião especializada + Brainstorming</h4>
+                    <p>Tomada de decisão em grupo aumenta comprometimento e acurácia.</p>
+                </div>
+            </div>
+
+            <div class="exemplo-calculo">
+                <strong><i class="material-icons">calculate</i> Exemplo prático – Estimativa de três pontos</strong><br>
+                Tarefa “Implementar API de autenticação”:<br>
+                Otimista (O) = 5 dias, Mais provável (M) = 8 dias, Pessimista (P) = 14 dias.<br>
+                <strong>PERT = (5 + 4×8 + 14) / 6 = (5+32+14)/6 = 51/6 = 8,5 dias</strong>.<br>
+                Se o custo da equipe é R$ 1.200/dia → Custo esperado = 8,5 × 1200 = R$ 10.200.
+            </div>
+        </section>
+
+        <!-- Determinar o Orçamento + linha de base -->
+        <section>
+            <h2>💰 Determinar o Orçamento – Agregação e Linha de Base</h2>
+            <p>Agrega os custos estimados, adiciona reservas e estabelece a <strong>linha de base dos custos</strong>
+                (orçamento ao longo do tempo). A linha de base dos custos não inclui reservas gerenciais; estas são
+                adicionadas no orçamento total do projeto.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Entradas chave</h4>
+                    <ul>
+                        <li>Estimativas de custos das atividades</li>
+                        <li>Cronograma do projeto (distribuição temporal)</li>
+                        <li>Calendário dos recursos (disponibilidade)</li>
+                        <li>Acordos contratuais e custos de aquisição</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📈 Saída: Curva S (S-Curve)</h4>
+                    <p>Gráfico que mostra o gasto acumulado ao longo do tempo. Útil para comparar planejado × real e
+                        prever fluxo de caixa.</p>
+                    <div class="small-text">Exemplo: Projeto de R$ 200k tem desembolso maior nos meses centrais
+                        (execução).</div>
+                </div>
+            </div>
+            <div class="dica-avancada">
+                <h4><i class="material-icons">timeline</i> Curva S do Cidade Virtual (ilustrativo)</h4>
+                <p>Mês 1 (planejamento): R$ 5k | Mês 2-4 (desenvolvimento): R$ 45k | Mês 5 (testes): R$ 8k | Mês 6
+                    (implantação): R$ 7k. Total = R$ 65k. Linha de base aprovada e controlada por mudanças.</p>
+            </div>
+        </section>
+
+        <!-- Controlar Custos (EVM) -->
+        <section>
+            <h2>📉 Controlar os Custos – Gerenciamento do Valor Agregado (EVM)</h2>
+            <p>Monitorar o desempenho financeiro e gerenciar mudanças na linha de base. A técnica mais poderosa é o
+                <strong>Earned Value Management</strong> (Valor Agregado).
+            </p>
+            <div class="grid-3">
+                <div class="card"><strong>PV (Planejado)</strong><br>Custo orçado para o trabalho planejado até a data.
+                </div>
+                <div class="card"><strong>EV (Valor Agregado)</strong><br>Custo orçado para o trabalho realmente
+                    concluído.</div>
+                <div class="card"><strong>AC (Custo Real)</strong><br>Valor efetivamente gasto.</div>
+                <div class="card"><strong>CV = EV – AC</strong><br>Variação de custo (negativo = estouro).</div>
+                <div class="card"><strong>CPI = EV / AC</strong><br>Índice de desempenho de custos (>1 = eficiente).
+                </div>
+                <div class="card"><strong>EAC = BAC / CPI</strong><br>Estimativa no término (projeção final).</div>
+            </div>
+            <div class="exemplo-calculo">
+                <strong>Exemplo EVM:</strong> Planejado (PV) = R$ 40k, EV = R$ 35k (trabalho concluído), AC = R$
+                38k.<br>
+                CV = -R$ 3k (estouro), CPI = 35/38 = 0,92 → ineficiência de custos. Projeção: EAC = 100k / 0,92 ≈ R$
+                108,7k (acima do orçado). Ação corretiva necessária.
+            </div>
+        </section>
+
+        <!-- Métodos Ágeis e Pontos de Função -->
+        <section>
+            <h2>⚡ Abordagens Ágeis e Alternativas Práticas</h2>
+            <p>O PMBOK tradicional pode ser burocrático para pequenas equipes. Métodos ágeis trazem simplicidade e
+                adaptabilidade:</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🎯 Planning Poker</h4>
+                    <p>Estimativa colaborativa baseada em story points. Cada sprint gera um custo fixo (time × duração).
+                        Se errar, ajusta na sprint seguinte.</p>
+                    <a href="https://planningpokeronline.com/" target="_blank" class="small-text">🔗
+                        planningpokeronline.com</a>
+                </div>
+                <div class="card">
+                    <h4>📏 Pontos de Função (FP)</h4>
+                    <p>Mede tamanho funcional do software independente da tecnologia. Custo do projeto = FP × custo por
+                        FP histórico.</p>
+                </div>
+            </div>
+            <div class="exemplo-calculo">
+                <strong>💡 Exemplo – Pontos de função:</strong><br>
+                Sistema estimado em 150 PF. A empresa tem métrica de R$ 950 por PF (baseado em projetos anteriores).<br>
+                <strong>Custo total = 150 × 950 = R$ 142.500</strong>. Inclui análise, desenvolvimento, testes e
+                gerência.<br>
+                <em>Vantagem: negociar com cliente usando métrica objetiva, fácil de reestimar após mudanças.</em>
+            </div>
+        </section>
+
+        <!-- Fatores de precificação / contrato e mercado -->
+        <section>
+            <h2>🏷️ Precificação Estratégica e Tipos de Contrato</h2>
+            <p>O preço final pode divergir do custo estimado devido a fatores de mercado e negociação. Principais
+                modelos:</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📄 Preço fixo (Fixed Price)</h4>
+                    <p>Risco para o fornecedor, mas previsível para o cliente. Ideal para escopo bem definido.</p>
+                </div>
+                <div class="card">
+                    <h4>⏱️ Tempo e materiais (T&M)</h4>
+                    <p>Paga-se por horas trabalhadas. Flexível, mas risco de estouro para o cliente.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 Preço para ganhar (Market-entry)
+                </div>
+                <p>Preço abaixo do custo para entrar em novo mercado, compensado no longo prazo.</p>
+            </div>
+            <div class="card">
+                <h4>🔁 Contrato com incentivos</h4>
+                <p>Bônus por entregar antes ou abaixo do orçamento.</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Considerações Finais e boas práticas -->
+        <section>
+            <h2>✅ Síntese e Boas Práticas para Gerentes de Projetos</h2>
+            <ul>
+                <li><strong>Use dados históricos:</strong> mantenha um repositório de estimativas anteriores (esforço
+                    real, PF, custo).</li>
+                <li><strong>Combine técnicas:</strong> bottom-up para precisão + análoga para validação rápida.</li>
+                <li><strong>Inclua contingência realista:</strong> 20-50% de reserva dependendo da incerteza.</li>
+                <li><strong>Comunique a linha de base:</strong> todos devem saber que mudanças de escopo impactam custo.
+                </li>
+                <li><strong>Monitore com EVM mensalmente:</strong> CPI e SPI fornecem visão antecipada de desvios.</li>
+            </ul>
+            <div class="dica-avancada">
+                <h4><i class="material-icons">auto_awesome</i> Dica prática – Planilha de custos para Cidade Virtual
+                </h4>
+                <p>Crie uma planilha com: atividade (ex: "Backend API"), recurso (dev sênior), horas estimadas,
+                    custo/hora, contingência (15%). Some todos os pacotes, adicione reserva gerencial (5-10%) e obtenha
+                    o orçamento total. Compare com o valor de mercado e ajuste.</p>
+            </div>
+        </section>
+
+        <!-- Material complementar e referências -->
+        <section>
+            <h2>📚 Referências e Aprofundamento</h2>
+            <div class="referencia">
+                <strong>PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Guia PMBOK® 6ª edição. Capítulo 7 – Gerenciamento
+                de Custos do Projeto. 2017.
+            </div>
+            <div class="referencia">
+                <strong>SOMMERVILLE, Ian.</strong> Engenharia de Software. 10ª ed. Pearson, 2018. Capítulo 23 –
+                Estimativa de custos e gestão financeira.
+            </div>
+            <div class="referencia">
+                <strong>PRESSMAN, R. S.; MAXIM, B. R.</strong> Engenharia de Software. 9ª ed. McGraw Hill, 2021.
+                Capítulo 25 – Estimativas de projeto.
+            </div>
+            <div class="info-box">
+                📖 <strong>Leitura complementar:</strong> “Software Engineering Economics” (Barry Boehm) – modelo COCOMO
+                II para estimativas paramétricas de software.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+        <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Módulo 2 - Unidade 1: Gerenciamento de Custos</p>
+        <p>Conteúdo licenciado sob Creative Commons - Atribuição 4.0 Internacional | Referências conforme ABNT NBR 6023.
+        </p>
+    </footer>
+</body>
+
+</html>

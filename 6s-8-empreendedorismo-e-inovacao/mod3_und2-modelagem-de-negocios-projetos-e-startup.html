@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 - Unidade 2: Modelagem de Negócios, Projetos e Startups | Empreendedorismo e Inovação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+            padding: 0 0 25px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0;
+        }
+
+        #video-aula {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 15px 10px 15px;
+            margin: 0 -25px 20px -25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 3px solid #0066cc;
+            transition: all 0.3s ease;
+        }
+
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+
+        /* ===== ESTILOS DO MENU DE NAVEGAÇÃO ===== */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover {
+            background-color: #5a6268 !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-nav .material-icons {
+            font-size: 18px;
+        }
+
+        .btn-nav.active {
+            background-color: #ff8c00;
+        }
+
+        .btn-nav.mod1 {
+            background-color: #0066cc;
+        }
+
+        .btn-nav.mod2 {
+            background-color: #28a745;
+        }
+
+        .btn-nav.mod3 {
+            background-color: #ff8c00;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-divider {
+            color: #ccc;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ESTILOS DO VÍDEO ===== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            padding: 0.5rem 0.7rem;
+            cursor: help;
+            display: inline-block;
+            text-align: center;
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            width: auto;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            background-color: rgb(38, 166, 154);
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .title:hover {
+            background-color: #2cbbad;
+            text-decoration: none;
+        }
+
+        /* ===== CARDS E GRID ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #1a4d8c;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE ===== */
+        .dica-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 4px solid #ff8c00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dica-box h4 {
+            color: #1a4d8c;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atencao-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .atencao-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pergunta-reflexao {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .pergunta-reflexao h4 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .referencia {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #1a4d8c;
+        }
+
+        .modulo-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .modulo-tag.m1 {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .modulo-tag.m2 {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .modulo-tag.m3 {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* ===== BUSINESS MODEL CANVAS ===== */
+        .canvas-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #ff8c00;
+            overflow-x: auto;
+        }
+
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            gap: 0.5rem;
+            min-width: 700px;
+            font-size: 0.85rem;
+        }
+
+        .canvas-block {
+            background: white;
+            border-radius: 8px;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            min-height: 80px;
+        }
+
+        .canvas-block .titulo {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+
+        .canvas-block .conteudo {
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .canvas-block .conteudo .placeholder {
+            color: #bbb;
+            font-style: italic;
+        }
+
+        .canvas-block.p1 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .canvas-block.p2 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .canvas-block.p3 {
+            grid-column: 1;
+            grid-row: 3 / span 2;
+        }
+
+        .canvas-block.p4 {
+            grid-column: 2;
+            grid-row: 1 / span 3;
+        }
+
+        .canvas-block.p5 {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .canvas-block.p6 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .canvas-block.p7 {
+            grid-column: 3;
+            grid-row: 3 / span 2;
+        }
+
+        .canvas-block.p8 {
+            grid-column: 1 / span 2;
+            grid-row: 4;
+        }
+
+        .canvas-block.p9 {
+            grid-column: 3;
+            grid-row: 4;
+        }
+
+        .canvas-block.destaque {
+            border-color: #ff8c00;
+            background: #fff8f0;
+        }
+
+        .canvas-legenda {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .canvas-legenda .item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .canvas-legenda .cor {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .canvas-legenda .cor.azul {
+            background: #e3f2fd;
+        }
+
+        .canvas-legenda .cor.laranja {
+            background: #fff3e0;
+        }
+
+        .canvas-legenda .cor.verde {
+            background: #e8f5e9;
+        }
+
+        @media (max-width: 768px) {
+            .canvas-grid {
+                grid-template-columns: 1fr 1fr;
+                min-width: auto;
+                font-size: 0.75rem;
+            }
+
+            .canvas-block.p3 {
+                grid-row: 3;
+            }
+
+            .canvas-block.p4 {
+                grid-column: 1 / span 2;
+                grid-row: 4;
+            }
+
+            .canvas-block.p7 {
+                grid-column: 1 / span 2;
+                grid-row: 5;
+            }
+
+            .canvas-block.p5 {
+                grid-column: 1;
+                grid-row: 6;
+            }
+
+            .canvas-block.p6 {
+                grid-column: 2;
+                grid-row: 6;
+            }
+
+            .canvas-block.p8 {
+                grid-column: 1 / span 2;
+                grid-row: 7;
+            }
+
+            .canvas-block.p9 {
+                grid-column: 1 / span 2;
+                grid-row: 8;
+            }
+        }
+
+        /* ===== CARACTERÍSTICAS STARTUP ===== */
+        .startup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .startup-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #ff8c00;
+            transition: transform 0.3s;
+        }
+
+        .startup-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .startup-item .icone {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .startup-item .titulo {
+            font-weight: 700;
+            color: #1a4d8c;
+            font-size: 1rem;
+        }
+
+        .startup-item .descricao {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+                padding-right: 70px;
+            }
+
+            header h2 {
+                font-size: 1.1em;
+            }
+
+            header h3 {
+                font-size: 0.9em;
+            }
+
+            header p {
+                font-size: 0.6em;
+            }
+
+            header .status {
+                top: 5px;
+                right: 5px;
+                padding: 2px 4px;
+                font-size: 0.4em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-left,
+            .nav-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-nav {
+                justify-content: center;
+                flex: 1;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .startup-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .video-container {
+                page-break-inside: avoid;
+            }
+
+            .canvas-container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>🎯 Empreendedorismo e Inovação</h1>
+        <h2>Módulo 3 - Planejamento, Validação, Modelagem e Startups</h2>
+        <h3>📊 Unidade 2 – Modelagem de Negócios, Projetos e Startups</h3>
+        <p>Prof.ª Camila da Silva Serra Comineti · UFMS</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <div class="nav-left">
+            <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+                <i class="material-icons" style="font-size: 18px;">home</i> Início
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="mod3_und1-validacao-de-ideias-e-proposta-de-valor.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 1 
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 3<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="video-aula">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/HITUm3OBQsE?list=PLTJld458FsdDcZSZQBD8IOIXMPy0hozkJ"
+                    frameborder="0" title="[UFMS Digital] Empreendedorismo e Inovação - Módulo 3 - Unidade 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 3 - Unidade 2">
+                [UFMS Digital] Empreendedorismo e Inovação - Módulo 3 - Unidade 2
+            </p>
+            <p>Prof.ª Camila da Silva Serra Comineti · Núcleo de Formação Cidadã · UFMS</p>
+            <p>📅 Disponível desde 2025</p>
+        </section>
+
+        <!-- ===== SEÇÃO: APRESENTAÇÃO ===== -->
+        <section>
+            <h2>📐 Apresentação da Unidade</h2>
+            <p>Na unidade anterior, discutimos como ideias empreendedoras devem ser tratadas como <strong>hipóteses que
+                    precisam ser investigadas</strong>. Ao validar problemas, testar soluções e compreender a proposta
+                de valor, o empreendedor começa a reunir informações essenciais sobre sua iniciativa.</p>
+
+            <p>Surge então um novo desafio: <strong>organizar essas informações de forma estruturada</strong>,
+                compreendendo como a solução funcionará na prática. É nesse momento que entra a etapa de
+                <strong>modelagem</strong>.
+            </p>
+
+            <div class="dica-box">
+                <h4>💡 O que é Modelagem?</h4>
+                <p><strong>Modelar</strong> significa representar de forma visual e estratégica como um projeto, negócio
+                    ou solução <strong>cria valor, entrega valor e sustenta sua operação</strong> ao longo do tempo.</p>
+                <p style="margin-top: 10px;">Essa etapa ajuda o empreendedor a <strong>organizar ideias, identificar
+                        recursos necessários, compreender parceiros estratégicos</strong> e refletir sobre como a
+                    solução chegará ao público.</p>
+            </div>
+
+            <p><strong>Dornelas (2023)</strong> destaca que a modelagem é um passo fundamental para transformar ideias
+                em iniciativas viáveis, pois permite <strong>conectar estratégia, mercado, operação e recursos de forma
+                    integrada</strong>.</p>
+        </section>
+
+        <!-- ===== SEÇÃO: CONCEITOS ===== -->
+        <section>
+            <h2>📊 Modelo de Negócio, Planejamento Estratégico e Plano de Negócio</h2>
+            <p>É importante distinguir "modelo de negócio" de "planejamento estratégico" e de "plano de negócio":</p>
+
+            <div class="grid-3">
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">📋</div>
+                    <h4>Modelo de Negócio</h4>
+                    <p>Descreve a <strong>lógica de criação, entrega e captura de valor</strong> de uma iniciativa.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Business
+                        Model Canvas, Lean Canvas</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">🎯</div>
+                    <h4>Planejamento Estratégico</h4>
+                    <p>Define <strong>direção e objetivos de longo prazo</strong> da organização.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Missão,
+                        visão, valores, objetivos estratégicos</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">📄</div>
+                    <h4>Plano de Negócio</h4>
+                    <p>Organiza de forma <strong>detalhada as informações necessárias</strong> para estruturar ou
+                        apresentar um empreendimento.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><strong>Exemplo:</strong> Documento
+                        completo com análise de mercado, financeiro, operacional</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Ferramentas Complementares</strong>
+                <p>Essas ferramentas são <strong>complementares</strong> e podem ser utilizadas em diferentes momentos
+                    da jornada empreendedora (Dornelas, 2023).</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: BUSINESS MODEL CANVAS ===== -->
+        <section>
+            <h2>📋 Business Model Canvas</h2>
+            <p>Uma das ferramentas mais utilizadas para estruturar modelos de negócio é o <strong>Business Model
+                    Canvas</strong>, desenvolvido por <strong>Osterwalder e Pigneur (2011)</strong>. O Canvas organiza o
+                modelo de negócio em <strong>nove blocos inter-relacionados</strong>, permitindo visualizar de forma
+                integrada como diferentes partes do projeto se conectam.</p>
+
+            <div class="canvas-container">
+                <h4 style="color: #1a4d8c; text-align: center; margin-bottom: 1rem;">📊 Business Model Canvas</h4>
+
+                <div class="canvas-grid">
+                    <!-- Bloco 1: Parceiros-chave -->
+                    <div class="canvas-block p1">
+                        <div class="titulo">🤝 Parceiros-chave</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Quem são seus parceiros estratégicos?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 2: Atividades-chave -->
+                    <div class="canvas-block p2">
+                        <div class="titulo">⚙️ Atividades-chave</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Quais atividades são essenciais para seu negócio?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 3: Recursos-chave -->
+                    <div class="canvas-block p3">
+                        <div class="titulo">📦 Recursos-chave</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Quais recursos são necessários?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 4: Proposta de Valor (CENTRAL) -->
+                    <div class="canvas-block p4 destaque">
+                        <div class="titulo">💎 Proposta de Valor</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Qual valor você entrega ao cliente? Que problema resolve?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 5: Relacionamento com Clientes -->
+                    <div class="canvas-block p5">
+                        <div class="titulo">💬 Relacionamento com Clientes</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Como você se relaciona com seus clientes?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 6: Canais -->
+                    <div class="canvas-block p6">
+                        <div class="titulo">📢 Canais</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Como sua solução chega aos clientes?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 7: Segmentos de Clientes -->
+                    <div class="canvas-block p7">
+                        <div class="titulo">👥 Segmentos de Clientes</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Quem são seus clientes? Quais segmentos você atende?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 8: Estrutura de Custos -->
+                    <div class="canvas-block p8">
+                        <div class="titulo">💰 Estrutura de Custos</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Quais são os principais custos do negócio?</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 9: Fontes de Receita -->
+                    <div class="canvas-block p9">
+                        <div class="titulo">📈 Fontes de Receita</div>
+                        <div class="conteudo">
+                            <span class="placeholder">Como o negócio gera receita?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-legenda">
+                    <span class="item"><span class="cor laranja"></span> Proposta de Valor</span>
+                    <span class="item"><span class="cor azul"></span> Clientes</span>
+                    <span class="item"><span class="cor verde"></span> Infraestrutura</span>
+                    <span class="item"><span class="cor" style="background:#fce4ec;"></span> Finanças</span>
+                </div>
+
+                <p style="font-size: 0.8rem; color: #666; text-align: center; margin-top: 0.5rem;">
+                    Fonte: Osterwalder e Pigneur (2011)
+                </p>
+            </div>
+
+            <p>Por meio dessa representação visual, empreendedores conseguem compreender com mais clareza <strong>como a
+                    solução gera valor, quem são os clientes, quais atividades precisam ser realizadas e quais recursos
+                    são necessários</strong> para viabilizar a iniciativa.</p>
+
+            <div class="atencao-box">
+                <h3>💡 Lean Canvas</h3>
+                <p>No contexto do empreendedorismo contemporâneo, surgiram variações e adaptações do Business Model
+                    Canvas. Uma delas é o <strong>Lean Canvas</strong>, voltado especialmente para startups e processos
+                    de validação rápida de hipóteses de negócio (Ries, 2019; Maurya, 2018).</p>
+                <p style="margin-top: 10px;">Diferentemente do plano de negócio tradicional, o Canvas permite
+                    <strong>visualizar rapidamente os principais elementos</strong> de um empreendimento e identificar
+                    pontos que ainda precisam ser testados ou aprofundados.
+                </p>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>✍️ Convite Especial</h4>
+                <p>Retome o esquema elaborado ao final da unidade anterior, no qual você identificou o problema, a
+                    solução proposta e o valor gerado.</p>
+                <p><strong>Com base nessas informações, elabore um primeiro esboço do seu Business Model
+                        Canvas</strong>, preenchendo os principais blocos do modelo de negócio relacionados à sua ideia.
+                </p>
+                <p style="font-size: 0.9rem; color: #666;"><em>Neste momento, o objetivo não é construir um modelo
+                        definitivo, mas organizar suas hipóteses iniciais sobre como a solução cria e entrega
+                        valor.</em></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: STARTUPS ===== -->
+        <section>
+            <h2>🚀 Startups: Inovação, Escalabilidade e Incerteza</h2>
+            <p>Quando falamos em inovação e empreendedorismo tecnológico, um termo aparece com frequência:
+                <strong>startup</strong>. Mas afinal, o que diferencia uma startup de uma empresa tradicional?
+            </p>
+
+            <p>De forma geral, uma startup pode ser entendida como uma <strong>organização criada para desenvolver um
+                    modelo de negócio inovador em condições de alta incerteza</strong>, buscando encontrar soluções
+                escaláveis para problemas relevantes do mercado (Ries, 2019).</p>
+
+            <div class="startup-grid">
+                <div class="startup-item">
+                    <div class="icone">💡</div>
+                    <div class="titulo">Inovação</div>
+                    <div class="descricao">Desenvolvimento de soluções novas ou significativamente melhores.</div>
+                </div>
+                <div class="startup-item">
+                    <div class="icone">📈</div>
+                    <div class="titulo">Escalabilidade</div>
+                    <div class="descricao">Crescimento rápido sem aumento proporcional de custos.</div>
+                </div>
+                <div class="startup-item">
+                    <div class="icone">💻</div>
+                    <div class="titulo">Tecnologia</div>
+                    <div class="descricao">Uso intensivo de tecnologia ou conhecimento especializado.</div>
+                </div>
+                <div class="startup-item">
+                    <div class="icone">🔄</div>
+                    <div class="titulo">Mudanças</div>
+                    <div class="descricao">Modelo de negócio ainda está sendo descoberto; alta incerteza.</div>
+                </div>
+                <div class="startup-item" style="grid-column: span 2; max-width: 400px; margin: 0 auto;">
+                    <div class="icone">🧪</div>
+                    <div class="titulo">Experimentação Constante</div>
+                    <div class="descricao">Testes e ajustes frequentes baseados em aprendizado validado.</div>
+                </div>
+            </div>
+
+            <p><strong>Startups não nascem prontas.</strong> Elas se modificam conforme os ciclos de aprendizado,
+                ajustando tecnologia, modelo de negócio e estratégias de mercado ao longo do tempo (Ries, 2019).</p>
+
+            <h3>🔬 Startups de Base Científica</h3>
+            <p>Uma parte significativa das startups surge a partir de <strong>pesquisas científicas realizadas em
+                    universidades e centros de pesquisa</strong>. Elas são chamadas de <strong>startups de base
+                    científica ou tecnológica</strong>, pois sua origem está no desenvolvimento de conhecimento
+                científico aplicado a problemas reais (Etzkowitz; Zhou, 2017).</p>
+
+            <div class="dica-box">
+                <h4>💡 Empreendedorismo Científico</h4>
+                <p>O conhecimento produzido na universidade passa por diferentes etapas: <strong>pesquisa,
+                        desenvolvimento tecnológico, validação e estruturação de um modelo de negócio</strong> capaz de
+                    levar a solução ao mercado (Etzkowitz; Zhou, 2017).</p>
+            </div>
+
+            <div class="pergunta-reflexao">
+                <h4>💭 Para Refletir</h4>
+                <p><strong>Você já imaginou que uma ideia desenvolvida em um laboratório, em um projeto de pesquisa ou
+                        até mesmo em um Trabalho de Conclusão de Curso poderia se transformar em um
+                        empreendimento?</strong></p>
+                <p>Em muitos casos, é exatamente assim que surgem as chamadas startups de base científica.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TRAJETÓRIAS ===== -->
+        <section>
+            <h2>🏛️ Trajetórias Empreendedoras no Ambiente Universitário</h2>
+            <p>Como discutido no Módulo 1, a universidade pode atuar como <strong>agente de inovação</strong> ao
+                conectar ensino, pesquisa e setor produtivo. Nesse contexto, ambientes institucionais como o <strong>Hub
+                    PIME/Aginova</strong> contribuem para transformar conhecimento científico em soluções aplicadas.</p>
+
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">🤖</div>
+                    <h4>Damine</h4>
+                    <p>Desenvolve soluções baseadas em <strong>inteligência artificial</strong> aplicada a processos
+                        industriais e análise de dados.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Originada a partir de pesquisas na
+                        UFMS no grupo do professor Edson Batista.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">⚡</div>
+                    <h4>ENG Tecnologias</h4>
+                    <p>Atua no desenvolvimento de <strong>soluções tecnológicas para o setor energético</strong>,
+                        aplicando conhecimento científico para enfrentar desafios técnicos do segmento.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Também originada a partir de pesquisas
+                        na UFMS.</p>
+                </div>
+            </div>
+
+            <p>Essas iniciativas ilustram um caminho comum no empreendedorismo de base científica: <strong>identificação
+                    de um problema real, investigação acadêmica, desenvolvimento tecnológico e estruturação de um modelo
+                    de negócio</strong> para levar a solução ao mercado.</p>
+
+            <div class="info-box">
+                <strong>💡 Aprendizado Recorrente</strong>
+                <p>Os empreendedores relatam um tipo de aprendizado recorrente: <strong>muitas vezes, o foco inicial
+                        está na tecnologia e, depois, surge a necessidade de aprofundar o modelo de negócio e a
+                        estratégia de mercado</strong>.</p>
+                <p style="margin-top: 10px;">Por isso, recomenda-se que <strong>desenvolvimento tecnológico e modelagem
+                        de negócios evoluam juntos</strong>, permitindo que a solução encontrada considere,
+                    antecipadamente, as necessidades reais dos clientes.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SÍNTESE DO MÓDULO 3 ===== -->
+        <section>
+            <h2>✅ Síntese do Módulo 3</h2>
+            <p>Neste módulo, concluímos nossa jornada empreendedora ao compreender que <strong>ideias, por si só, não
+                    são suficientes</strong> para criar soluções inovadoras ou empreendimentos sustentáveis.</p>
+
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">🧪</div>
+                    <h4>Unidade 1: Validação</h4>
+                    <p>Ideias devem ser tratadas como <strong>hipóteses</strong> a serem investigadas. Validar
+                        problemas, soluções e propostas de valor permite <strong>reduzir incertezas</strong> e aumentar
+                        as chances de desenvolver iniciativas que respondam a necessidades reais.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">📋</div>
+                    <h4>Unidade 2: Modelagem</h4>
+                    <p>As informações obtidas na validação são organizadas de forma estruturada. Ferramentas como o
+                        <strong>Business Model Canvas</strong> ajudam a visualizar como uma iniciativa <strong>cria,
+                            entrega e captura valor</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dica-box">
+                <h4>💡 A Mensagem Central</h4>
+                <p><strong>Inovar não é apenas ter boas ideias, mas testar, aprender e estruturar soluções que gerem
+                        valor real.</strong></p>
+                <p style="margin-top: 10px;">Esse processo também depende de competências discutidas no Módulo 1, como
+                    <strong>curiosidade, iniciativa e capacidade de identificar problemas e oportunidades</strong>,
+                    muitas vezes presentes em ambientes próximos, como a própria universidade.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFLEXÃO FINAL ===== -->
+        <section>
+            <h2>💭 Reflexão Final da Disciplina</h2>
+            <p>Ao longo desta disciplina, você refletiu bastante sobre uma pergunta provocadora: <strong>Mauricio de
+                    Sousa nasceu empreendedor ou se tornou empreendedor ao longo de sua trajetória?</strong></p>
+
+            <p>A partir dessa reflexão, percorremos uma jornada para compreender como <strong>ideias, atitudes e
+                    oportunidades</strong> podem se transformar em projetos e iniciativas capazes de gerar impacto.</p>
+
+            <div class="grid-3">
+                <div class="card" style="border-top: 4px solid #0066cc;">
+                    <div class="card-icon">🧠</div>
+                    <h4>Módulo 1</h4>
+                    <p>Empreender começa com <strong>atitude</strong>, curiosidade para observar problemas, iniciativa
+                        para agir, persistência diante das dificuldades e responsabilidade para transformar ideias em
+                        ação.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #28a745;">
+                    <div class="card-icon">📋</div>
+                    <h4>Módulo 2</h4>
+                    <p>Estratégia sem método vira improviso. Exploramos <strong>metas, planejamento e acompanhamento de
+                            resultados</strong>, aprendendo que ideias precisam de direção e critérios de avaliação.</p>
+                </div>
+                <div class="card" style="border-top: 4px solid #ff8c00;">
+                    <div class="card-icon">🧪</div>
+                    <h4>Módulo 3</h4>
+                    <p>Entramos no <strong>modo Franjinha</strong>: observar, investigar, testar e aprender. Ideias
+                        passaram a ser tratadas como <strong>hipóteses</strong>, discutindo validação, proposta de
+                        valor, modelagem de negócios e startups.</p>
+                </div>
+            </div>
+
+            <div class="atencao-box">
+                <h3>🎯 O Convite Final</h3>
+                <p><strong>Empreender, portanto, vai além de criar empresas.</strong> Significa desenvolver a capacidade
+                    de <strong>observar a realidade, aprender com experiências e estruturar soluções que gerem valor
+                        para a sociedade</strong>.</p>
+                <p style="margin-top: 10px;"><strong>Agora a pergunta não é mais apenas sobre Mauricio de Sousa. A
+                        pergunta é: qual problema você decidiu começar a investigar a partir de agora?</strong></p>
+            </div>
+
+            <div class="dica-box"
+                style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left-color: #28a745;">
+                <h4>🌱 Próximos Passos</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Converse com colegas</strong> de outras áreas – compartilhe sua ideia</li>
+                    <li><strong>Busque conexões</strong> dentro da universidade</li>
+                    <li><strong>Participe de projetos</strong>, grupos de pesquisa e eventos</li>
+                    <li><strong>Explore o ecossistema de inovação</strong> da UFMS</li>
+                </ul>
+                <p style="margin-top: 10px;">A universidade está aberta para <strong>receber, desenvolver e apoiar
+                        ideias</strong> que possam gerar impacto na sociedade.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências Bibliográficas</h2>
+            <div class="referencia">
+                <strong>BROWN, Tim.</strong> Design thinking: uma metodologia poderosa para decretar o fim das velhas
+                ideias. Rio de Janeiro: Alta Books, 2020.
+            </div>
+            <div class="referencia">
+                <strong>CAVALCANTI, Carolina; FILATRO, Andrea.</strong> Design thinking na educação: criando soluções
+                inovadoras para o ensino. São Paulo: Saraiva, 2025.
+            </div>
+            <div class="referencia">
+                <strong>DORNELAS, José Carlos Assis.</strong> Empreendedorismo: transformando ideias em negócios. 8. ed.
+                São Paulo: Empreende/Atlas, 2023.
+            </div>
+            <div class="referencia">
+                <strong>ETZKOWITZ, Henry; ZHOU, Chunyan.</strong> The Triple Helix: university–industry–government
+                innovation and entrepreneurship. 2. ed. London: Routledge, 2017.
+            </div>
+            <div class="referencia">
+                <strong>MAURYA, Ash.</strong> Comece sua startup enxuta. Rio de Janeiro: Saraiva Uni, 2018.
+            </div>
+            <div class="referencia">
+                <strong>OSTERWALDER, Alexander; PIGNEUR, Yves.</strong> Business model generation: inovação em modelos
+                de negócios. Rio de Janeiro: Alta Books, 2011.
+            </div>
+            <div class="referencia">
+                <strong>RIES, Eric.</strong> A startup enxuta: como empreendedores atuais utilizam a inovação contínua
+                para criar empresas extremamente bem-sucedidas. Rio de Janeiro: Sextante, 2019.
+            </div>
+            <div class="referencia">
+                <strong>VAROL, Ozan.</strong> Pense como um cientista: o poder das ideias radicais e do pensamento
+                experimental. Rio de Janeiro: Alta Books, 2022.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>UFMS · Núcleo de Formação Cidadã · Disciplina: Empreendedorismo e Inovação</p>
+        <p style="font-size: 0.8rem; color: #999;">Prof.ª Camila da Silva Serra Comineti · Módulo 3 - Unidade 2</p>
+        <p style="font-size: 0.7rem; color: #aaa; margin-top: 5px;">
+            Licença Creative Commons - Atribuição 4.0 Internacional
+        </p>
+    </footer>
+
+</body>
+
+</html>

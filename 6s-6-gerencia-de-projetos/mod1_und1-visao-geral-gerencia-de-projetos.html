@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Unidade 1: Visão geral sobre gerência de projetos | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* estilos complementares para melhorar a experiência avançada */
+        .detalhe-conceito {
+            background: linear-gradient(135deg, #f0f4ff, #e9f0fa);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cddfe7;
+        }
+
+        .topicos-avancados {
+            background: #1e2a3a;
+            color: #eef4ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .topicos-avancados h3,
+        .topicos-avancados h4 {
+            color: #ffd966;
+        }
+
+        .badge-cert {
+            background-color: #1e466e;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .grid-competencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .competencia-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .citacao-diferencial {
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-left: 5px solid #ff8c00;
+            background: #fff7e8;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+        }
+
+        .exemplo-mercado {
+            background: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .glossario-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .glossario-termo {
+            font-weight: 700;
+            color: #0066cc;
+            min-width: 110px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 1 - Introdução à Gerência de Projetos</h2>
+        <h3>🎯 Unidade 1 – Visão geral sobre gerência de projetos</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status concluida">Disponível</div>
+    </header>
+
+    <!-- Navegação entre páginas -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="forum-de-discussao-gerencia-de-projetos.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">forum</i>  Fórum de Discussão
+            </a>
+            <a href="mod1_und2-gerenciamento-escopo-tempo.html" class="btn-nav" style="background-color: #28a745;">
+                Mod 1 Und 2 <i class="material-icons" style="font-size: 18px;">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Material didático em vídeo (sticky) -->
+        <section id="materiais">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4kzWMPlits8" frameborder="0"
+                    title="Gerência de Projetos - Módulo 1 - Unidade 1 - Visão geral"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="title" title="Videoaula Obrigatória - Módulo 1 - Unidade 1">
+                [UFMS Digital] Gerência de Projetos - Módulo 1 - Unidade 1 (Visão geral)
+            </p>
+            <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+            <p>📅 Disponível desde 2025 • Duração: 22min</p>
+        </section>
+
+        <!-- Introdução expandida -->
+        <section>
+            <h2>🧭 Contextualização: Engenharia de Software e Gerência de Projetos</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>⚙️ Engenharia de Software</h4>
+                    <p>Disciplina que abrange processos, métodos e ferramentas para construção de software de qualidade.
+                        Envolve desde o entendimento de requisitos até a manutenção.</p>
+                    <p><strong>Modelos de processo:</strong> Cascata, Incremental, Espiral, Unified Process (UP) e
+                        métodos ágeis como <strong>Scrum, XP e Kanban</strong>.</p>
+                </div>
+                <div class="card">
+                    <h4>📌 Gerência de Projetos de Software</h4>
+                    <p>Coordenação de atividades técnicas e gerenciais para entregar software dentro de prazos, custos e
+                        qualidade esperados. Sem uma boa gerência, até o melhor time pode falhar.</p>
+                    <p><strong>Base:</strong> PMBOK, MPS.BR, CMMI e práticas ágeis.</p>
+                </div>
+            </div>
+
+            <div class="detalhe-conceito">
+                <h3>📉 A Crise do Software e a Necessidade da Gerência</h3>
+                <p>Nas décadas de 1960-80, houve uma <strong>"crise do software"</strong>: projetos estouravam prazos,
+                    custos cresciam sem controle, sistemas entregues eram difíceis de manter e cheios de erros. O
+                    relatório do <strong>GAO (Government Accountability Office)</strong> mostrou que mais de 50% dos
+                    grandes projetos de software governamentais atrasavam mais de 50% e custavam acima do previsto.</p>
+                <p>A origem disso? <strong>Falta de boas práticas de gerenciamento</strong> – ausência de planejamento,
+                    monitoramento de riscos, comunicação ineficaz e escopo mal definido. A partir disso, disciplinas
+                    como Engenharia de Software e Gerência de Projetos se consolidaram para combater essas falhas.</p>
+                <div class="info-box">
+                    <strong><i class="material-icons">insights</i> Estatística relevante:</strong> Segundo o CHAOS
+                    Report (Standish Group), apenas 29% dos projetos de software são entregues com sucesso (escopo,
+                    prazo e custo). Os outros 71% sofrem com desafios ou são cancelados. O gerenciamento efetivo eleva
+                    essa taxa drasticamente.
+                </div>
+            </div>
+        </section>
+
+        <!-- Definições PMBOK + Pressman -->
+        <section>
+            <h2>📖 Definições Fundamentais (PMBOK 6ª ed. & Pressman)</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>✅ Projeto</h4>
+                    <p><strong>“Um esforço temporário empreendido para criar um produto, serviço ou resultado
+                            único.”</strong> (PMI, 2017)</p>
+                    <ul>
+                        <li><strong>Temporário:</strong> início e fim definidos</li>
+                        <li><strong>Único:</strong> não se trata de operação repetitiva</li>
+                        <li><strong>Progressivo:</strong> elaborado gradualmente</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🎯 Gerenciamento de Projetos (GP)</h4>
+                    <p><strong>“Aplicação de conhecimentos, habilidades, ferramentas e técnicas às atividades do projeto
+                            para cumprir seus requisitos.”</strong> (PMI, 2017)</p>
+                    <p>Pressman & Maxim (2021): <em>"Envolve planejamento, monitoramento e controle do pessoal, processo
+                            e eventos enquanto o software evolui."</em></p>
+                </div>
+            </div>
+            <div class="diagrama-container" style="text-align:center;">
+                <img src="https://image.slidesharecdn.com/ricardovargassimplifiedpmbokflow6edcolorpt-a3-171015113633/75/Fluxo-de-Processos-do-Guia-PMBOK-6-Edicao-Versao-simplificada-1-2048.jpg"
+                    alt="Diagrama conceitual de gerenciamento de projetos" style="max-width:40%; border-radius:12px;">
+                <p class="small-text">Fonte: Project Management Institute, 2017 (adaptado). Cada área de conhecimento
+                    interage por meio de processos.</p>
+            </div>
+        </section>
+
+        <!-- Por que os projetos falham? + análise avançada -->
+        <section>
+            <h2>⚠️ Por que os projetos de software falham? (Análise aprofundada)</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🧠 Fatores Humanos e Gerenciais</h4>
+                    <ul>
+                        <li>Falta de patrocínio executivo</li>
+                        <li>Comunicação ineficaz (emissor/receptor desalinhados)</li>
+                        <li>Expectativas irreais (cronograma otimista demais)</li>
+                        <li>Mudanças de escopo sem controle (efeito "escopo crescente")</li>
+                        <li>Equipe sem motivação ou com conflitos não resolvidos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>📉 Fatores Técnicos e de Processo</h4>
+                    <ul>
+                        <li>Estimativas imprecisas de tempo/custo</li>
+                        <li>Falta de metodologia adaptada ao projeto</li>
+                        <li>Riscos desconhecidos não gerenciados</li>
+                        <li>Não utilização de métricas (ex: valor agregado)</li>
+                        <li>Controle de versão e configuração deficiente</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="citacao-diferencial">
+                <i class="material-icons" style="vertical-align: middle;">warning</i> “Os projetos não falham por causa
+                da tecnologia, mas por causa das pessoas e dos processos. Gerência eficaz é o antídoto.”
+            </div>
+        </section>
+
+        <!-- Papel do Gerente + habilidades / liderança + comunicação + negociação -->
+        <section>
+            <h2>👩‍💼 O Gerente de Projetos: Habilidades e Responsabilidades</h2>
+            <p>Segundo o PMBOK, o gerente de projetos é o responsável por atingir os objetivos, liderando a equipe e
+                aplicando as áreas de conhecimento. As principais competências incluem:</p>
+            <div class="grid-competencias">
+                <div class="competencia-card"><i class="material-icons"
+                        style="color:#0066cc;">visibility</i><br><strong>Liderança</strong><br>Estabelecer visão,
+                    inspirar e motivar a equipe rumo aos resultados.</div>
+                <div class="competencia-card"><i class="material-icons"
+                        style="color:#0066cc;">record_voice_over</i><br><strong>Comunicação</strong><br>Garantir
+                    clareza, escuta ativa e transparência com todos os stakeholders.</div>
+                <div class="competencia-card"><i class="material-icons"
+                        style="color:#0066cc;">handshake</i><br><strong>Negociação</strong><br>Mediar conflitos, alocar
+                    recursos e acordar prazos viáveis.</div>
+                <div class="competencia-card"><i class="material-icons"
+                        style="color:#0066cc;">psychology</i><br><strong>Solução de problemas</strong><br>Identificar
+                    causas raiz e tomar decisões sob pressão.</div>
+                <div class="competencia-card"><i class="material-icons"
+                        style="color:#0066cc;">group_add</i><br><strong>Influência organizacional</strong><br>Articular
+                    poder positivo e superar resistências políticas.</div>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">school</i> Além da técnica: Liderança Ágil e Adaptativa</h4>
+                <p>Em projetos de software, métodos ágeis (Scrum, Kanban) demandam um gerente que atue como
+                    <strong>servant leader</strong>, removendo impedimentos e promovendo auto-organização. Mas o
+                    tradicional ainda é essencial para grandes contratos, equipes distribuídas e compliance regulatório.
+                    O profissional moderno domina abordagens híbridas.
+                </p>
+                <p><strong>Exemplo prático:</strong> Um gerente que combina planejamento de marcos (tradicional) com
+                    retrospectivas semanais (ágil) aumenta a previsibilidade e a adaptabilidade.</p>
+            </div>
+        </section>
+
+        <!-- Tarefas / Desafios e ativos de processos -->
+        <section>
+            <h2>📋 Tarefas do Gerente e Ativos Organizacionais</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>📌 Principais Tarefas</h4>
+                    <ul>
+                        <li><strong>Planejamento:</strong> cronograma, orçamento, WBS</li>
+                        <li><strong>Organização:</strong> estrutura de autoridade e comunicação</li>
+                        <li><strong>Staffing:</strong> recrutamento, treinamento, retenção</li>
+                        <li><strong>Execução:</strong> coordenação das atividades técnicas</li>
+                        <li><strong>Monitoramento e Controle:</strong> gestão de mudanças, valor agregado, KPIs</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🏢 Ativos de Processos Organizacionais (OPAs)</h4>
+                    <p>Políticas, procedimentos, lições aprendidas, base histórica de estimativas. Todo gerente deve
+                        usar esses ativos para evitar erros do passado e replicar boas práticas. Exemplos: templates de
+                        plano de projeto, checklists de riscos e repositórios de métricas.</p>
+                    <div class="small-text" style="margin-top: 8px;"><strong>🧠 Dica:</strong> crie um banco de métricas
+                        de projetos anteriores – isso melhora drasticamente a precisão das estimativas.</div>
+                </div>
+            </div>
+            <div class="exemplo-mercado">
+                <strong><i class="material-icons">storefront</i> Caso Cidade Virtual & Portfólio:</strong> O projeto
+                Cidade Virtual (Diego Serafim) pode ser gerenciado com técnicas de integração e escopo: definir
+                releases, controlar mudanças e armazenar lições aprendidas no repositório do GitHub. Isso gera ativos
+                valiosos para futuros projetos.
+            </div>
+        </section>
+
+        <!-- PMBOK e mercado + certificações -->
+        <section>
+            <h2>📚 PMBOK, Certificações e Mercado para Gerentes de Projetos</h2>
+            <p>O <strong>PMBOK (Project Management Body of Knowledge)</strong> é a referência global, organizando a
+                gerência em <strong>10 áreas do conhecimento</strong> (escopo, tempo, custo, qualidade, recursos,
+                comunicações, riscos, aquisições, stakeholders e integração) e <strong>49 processos</strong>. As
+                certificações mais valorizadas:</p>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🏅 PMP (Project Management Professional)</h4>
+                    <p>Reconhecido mundialmente, exige experiência prática e prova rigorosa. Profissionais PMP ganham
+                        até 25% a mais em média.</p>
+                </div>
+                <div class="card">
+                    <h4>🎯 CAPM / Certified Associate</h4>
+                    <p>Para profissionais em início de carreira. Demonstra conhecimento do PMBOK.</p>
+                </div>
+                <div class="card">
+                    <h4>📈 CSM / PSM (Scrum)</h4>
+                    <p>Certificações ágeis complementam o perfil. Muitas empresas híbridas pedem Scrum + PMP.</p>
+                </div>
+                <div class="card">
+                    <h4>🇧🇷 MPS.BR / CMMI</h4>
+                    <p>Modelos de maturidade que exigem processos de gerenciamento de projetos robustos. Gerentes
+                        certificados são essenciais nessas empresas.</p>
+                </div>
+            </div>
+            <div class="topicos-avancados">
+                <h4><i class="material-icons">trending_up</i> Tópico Avançado: Mercado em expansão</h4>
+                <p>De acordo com o PMI Talent Gap Report, até 2030 serão criadas mais de 25 milhões de novas vagas na
+                    área de gerenciamento de projetos globalmente. No Brasil, setores como tecnologia, agronegócio,
+                    fintechs e transformação digital têm demanda crescente. Salários de um PMP Sênior podem superar R$
+                    20k/mês.</p>
+                <p>Além disso, empresas que implementam modelos de governança de TI (COBIT, ITIL) e frameworks
+                    regulatórios (LGPD, Sarbanes-Oxley) necessitam de gerentes com conhecimento em controle e
+                    conformidade.</p>
+            </div>
+        </section>
+
+        <!-- Mercado / Recursos adicionais / Filosofia de liderança -->
+        <section>
+            <h2>🌟 Princípios de Gerenciamento e Ética</h2>
+            <div class="principio-item">
+                <div class="principio-numero">1</div>
+                <div><strong>Foco no Valor:</strong> todo projeto deve entregar valor ao negócio, não apenas saídas
+                    técnicas.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">2</div>
+                <div><strong>Adaptabilidade e Resiliência:</strong> aceitar mudanças e ajustar planos sem perder o rumo.
+                </div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">3</div>
+                <div><strong>Ambiente Colaborativo:</strong> promover confiança e transparência na equipe.</div>
+            </div>
+            <div class="principio-item">
+                <div class="principio-numero">4</div>
+                <div><strong>Responsabilidade e Ética:</strong> código de conduta do PMI: honestidade, equidade,
+                    respeito e responsabilidade.</div>
+            </div>
+            <div class="info-box">
+                <strong><i class="material-icons">gavel</i> Desafio ético comum:</strong> Um gerente descobre que um
+                stakeholder pressiona para ocultar um atraso crítico. O que fazer? Transparência com dados reais e plano
+                de recuperação é a conduta ética e profissional.
+            </div>
+        </section>
+
+        <!-- Glossário rápido e referências + material complementar avançado -->
+        <section>
+            <h2>📌 Glossário Rápido (Essencial para Certificação)</h2>
+            <div class="glossario-item"><span class="glossario-termo">EAP / WBS</span> <span>Estrutura Analítica do
+                    Projeto – decomposição hierárquica do escopo.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Stakeholder</span> <span>Parte interessada,
+                    qualquer pessoa ou organização que afeta ou é afetada pelo projeto.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Cronograma</span> <span>Modelo que relaciona
+                    atividades, durações, dependências e recursos.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Linha de Base (Baseline)</span> <span>Plano
+                    aprovado contra o qual o progresso é medido.</span></div>
+            <div class="glossario-item"><span class="glossario-termo">Risco</span> <span>Evento incerto que pode afetar
+                    positiva ou negativamente o projeto.</span></div>
+        </section>
+
+        <section>
+            <h2>📚 Referências e Materiais Complementares</h2>
+            <div class="referencia">
+                <strong>📘 PRESSMAN, R. S.; MAXIM, B. R.</strong> Engenharia de Software: Uma Abordagem Profissional. 9.
+                ed. Porto Alegre: McGraw Hill, 2021. Capítulo 24 - Conceitos de gerenciamento de projetos.
+                <em>Disponível na Biblioteca Digital da UFMS.</em>
+            </div>
+            <div class="referencia">
+                <strong>📗 PROJECT MANAGEMENT INSTITUTE (PMI).</strong> Um Guia do Conhecimento em Gerenciamento de
+                Projetos (Guia PMBOK). 6ª ed. 2017. Capítulos 1 a 3.
+            </div>
+            <div class="referencia">
+                <strong>🎓 SOMMERVILLE, I.</strong> Engenharia de Software. 10. ed. Pearson, 2018. Capítulo 22 –
+                Gerenciamento de Projetos.
+            </div>
+            <div class="dica-avancada" style="margin-top: 1rem;">
+                <h4><i class="material-icons">extension</i> Ferramentas práticas para aplicar os conceitos</h4>
+                <p>Experimente ferramentas de gerenciamento como <strong>Jira, Trello, MS Project, Asana</strong> ou o
+                    <strong>GitHub Projects</strong>. No projeto Cidade Virtual, você pode simular um backlog, criar um
+                    roadmap de entregas e acompanhar o progresso usando gráficos de burndown. Essa vivência prática
+                    solidifica os fundamentos apresentados aqui.
+                </p>
+                <p><strong>Desafio:</strong> Crie uma EAP (WBS) para uma funcionalidade do Cidade Virtual (ex: "Módulo
+                    de issues urbanas") e compartilhe no fórum da disciplina!</p>
+            </div>
+        </section>
+
+        <!-- Síntese e chamada para ação -->
+        <section>
+            <h2>✅ Síntese da Unidade 1</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">rule</i>
+                    <h4>Projetos são únicos e temporários</h4>
+                    <p>Compreender essa natureza ajuda a evitar tratá-los como rotina operacional.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">people_alt</i>
+                    <h4>Gerente de Projetos: líder, negociador, comunicador</h4>
+                    <p>Suas habilidades interpessoais são tão críticas quanto as técnicas.</p>
+                </div>
+                <div class="card">
+                    <i class="material-icons" style="color:#0066cc;">approval</i>
+                    <h4>Falhas = Falta de gerenciamento</h4>
+                    <p>Planejar, monitorar e controlar são as bases do sucesso.</p>
+                </div>
+            </div>
+            <div class="dica-box" style="text-align: center;">
+                <i class="material-icons">school</i> <strong>Próximos passos:</strong> Na Unidade 2 vamos aprofundar em
+                <strong>gerenciamento de escopo e tempo</strong> – os pilares do "triplo restrição". Continue seus
+                estudos e participe do fórum para debater com os colegas.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Diego Serafim de Sousa - 6 de junho de 2026</p>
+        <p style="font-size: 0.8em;">📘 Gerência de Projetos - Módulo 1 - Unidade 1: Visão geral e fundamentos</p>
+        <p>Respeitadas as normas da ABNT NBR 6023, este material está licenciado sob Creative Commons - Atribuição 4.0
+            Internacional.</p>
+    </footer>
+</body>
+
+</html>

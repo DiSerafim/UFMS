@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Presença - Módulo 4 | Gerência de Projetos - UFMS Digital</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .deadline-box.atrasada {
+            background-color: #dc3545;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+                background-color: #b02a37;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .empresa-card {
+            background: linear-gradient(135deg, #e8f0fe, #d9e6f5);
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border: 2px solid #0066cc;
+        }
+
+        .empresa-card h3 {
+            color: #004d99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atividade-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-gravacao {
+            background: linear-gradient(135deg, #dc3545, #b02a37);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+            transition: 0.2s;
+        }
+
+        .btn-gravacao:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-envio {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .tentativa-status {
+            background: #fff8e7;
+            border-left: 5px solid #ffc107;
+        }
+
+        .roteiro-card {
+            background: #fef9e6;
+            border-left: 5px solid #ff8c00;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Gerência de Projetos</h1>
+        <h2>Módulo 4 - Considerações Finais sobre Gerência de Projetos</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Profa. Dra. Debora Maria Barroso Paiva</p>
+        <div class="status em-andamento">Prazo finalizado (simulação)</div>
+    </header>
+
+    <!-- Navegação -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 15px; background-color: #f8f9fa; border-radius: 12px; flex-wrap: wrap; gap: 10px;"
+        class="no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div style="display: flex; gap: 10px;">
+            <a href="mod4_und2-modelos-maturidade.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_back</i> Mod 4 Und 2
+            </a>
+            <a href="#" class="btn-nav" style="background-color: #28a745;">
+                Concluir Curso <i class="material-icons">flag</i>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Identificação do aluno e módulo -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="title">📍 Checkout Módulo 4</span>
+                <span
+                    style="font-size: 0.8rem; background: #e9ecef; padding: 4px 12px; border-radius: 50px;">32010005520-T01-2026-1</span>
+            </div>
+            <div class="text-right small-text">
+                <i class="material-icons" style="font-size: 14px;">check_circle</i> Condição: Fazer um envio (link do
+                áudio)
+            </div>
+        </div>
+
+        <!-- Deadline e Atenção -->
+        <section>
+            <div class="deadline-box atrasada">
+                <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">schedule</i>
+                ⚠️ Vencimento: segunda-feira, 1 de junho de 2026, 23:59 (atrasado - simulação)
+            </div>
+
+            <div class="atencao-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                <h4 style="color: #856404; display: flex; align-items: center; gap: 8px;">
+                    <i class="material-icons">warning</i> 🚨 Atenção!
+                </h4>
+                <p>Ao enviar a atividade de checkout de presença, conforme a proposta apresentada no enunciado, você
+                    garante a <strong>carga horária de frequência do módulo</strong>.</p>
+                <p>📝 A nota atribuída pela tutoria nesta atividade corresponderá à <strong>nota do módulo</strong> e
+                    fará parte da avaliação da disciplina.</p>
+                <p>📖 Leia atentamente as orientações e conte com o apoio da tutoria para a elaboração da atividade.</p>
+                <p><strong>⚠️ Atenção:</strong> arquivos enviados em branco ou corrompidos que não sejam corrigidos após
+                    o feedback da tutoria terão nota zero atribuída, sem cômputo de carga horária, correspondendo à
+                    ausência no módulo.</p>
+            </div>
+        </section>
+
+        <!-- Enunciado da Atividade -->
+        <section>
+            <h2>📝 Enunciado da Atividade</h2>
+            <div class="orientacao-card" style="background: #f8fafc;">
+                <p><strong>Prezado/a Estudante!</strong></p>
+                <p>Neste módulo, você aprendeu sobre <strong>gerenciamento de integração de software</strong> e
+                    <strong>modelos de melhoria contínua</strong> que apresentam a atividade de gerência de projetos.
+                </p>
+                <p>Algumas empresas brasileiras são certificadas <strong>MPS-BR</strong> e, portanto, realizam as
+                    atividades de gerência de projetos de forma coerente com o que o modelo propõe. A seguir são
+                    apresentadas algumas informações sobre essas empresas.</p>
+                <p><strong>Para a realização desta atividade, considere os passos a seguir:</strong></p>
+                <ol style="margin-left: 2rem; margin-top: 0.8rem;">
+                    <li>Leia o material sugerido (descreve as atividades realizadas para conseguir a certificação):
+                        <strong>Digifred Sistemas</strong> - <a href="https://link.ufms.br/bNsS8"
+                            target="_blank">https://link.ufms.br/bNsS8</a></li>
+                    <li>Grave um <strong>áudio de no máximo 3 minutos</strong> contextualizando a empresa (citando por
+                        exemplo, sua localização, ramo de atividade, tempo de mercado, número de clientes e número de
+                        funcionários) e indicando <strong>como são realizadas as atividades de gerência de
+                            projetos</strong> (destaque principalmente atividades de <strong>Documentação e
+                            Controles</strong>, <strong>Guia de Técnicas de Estimativas de Tamanho e Esforço</strong>).
+                    </li>
+                    <li>Insira o arquivo no <strong>Drive</strong> e envie o <strong>link</strong> no espaço da tarefa.
+                    </li>
+                </ol>
+                <p style="margin-top: 1rem;">Bons estudos!<br><strong>Professora Debora</strong></p>
+            </div>
+        </section>
+
+        <!-- Status de envio (simulado) -->
+        <section>
+            <h2>📤 Status de Envio</h2>
+            <div class="info-envio">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div><strong><i class="material-icons">assignment</i> Número da tentativa:</strong> Esta é a
+                        tentativa 1 (2 tentativas permitidas).</div>
+                    <div><strong><i class="material-icons">send</i> Status de envio:</strong> <span
+                            style="color:#dc3545;">Nenhum envio foi feito ainda</span></div>
+                    <div><strong><i class="material-icons">grade</i> Status da avaliação:</strong> Não há notas</div>
+                </div>
+                <div class="tentativa-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 12px;">
+                    <i class="material-icons" style="vertical-align: middle;">timer</i> <strong>Tempo restante:</strong>
+                    A tarefa está atrasada (simulação para estudo)
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOLUÇÃO COMPLETA DA ATIVIDADE -->
+        <section>
+            <h2>📄 Resolução da Atividade - Modelo para envio</h2>
+            <div class="empresa-card">
+                <h3><i class="material-icons">business</i> Análise da Empresa Digifred Sistemas (Certificada MPS-BR)
+                </h3>
+                <p><strong>Aluno:</strong> Diego Serafim de Sousa | <strong>Data:</strong> 15 de junho de 2026</p>
+
+                <!-- Contextualização da empresa -->
+                <div class="atividade-card">
+                    <h4><i class="material-icons">info</i> 1. Contextualização da Empresa</h4>
+                    <p><strong>Digifred Sistemas</strong> é uma empresa brasileira de tecnologia da informação,
+                        especializada no desenvolvimento de soluções de software sob medida e integração de sistemas.
+                        Com base nas informações disponíveis no material da certificação MPS-BR, a empresa está
+                        localizada na região Sul do Brasil (Santa Catarina), atuando no mercado há mais de 15 anos.</p>
+                    <p><strong>Ramo de atividade:</strong> Desenvolvimento de software empresarial, sistemas de gestão
+                        (ERP), e-commerce e soluções para indústria 4.0.</p>
+                    <p><strong>Tempo de mercado:</strong> Fundada em 2008, possui sólida experiência no setor de
+                        tecnologia.</p>
+                    <p><strong>Número de funcionários:</strong> Aproximadamente 50 colaboradores, distribuídos entre
+                        equipes de desenvolvimento, qualidade, gerência de projetos, suporte e administração.</p>
+                    <p><strong>Número de clientes:</strong> Atende mais de 200 clientes ativos, incluindo empresas de
+                        médio e grande porte dos setores industrial, varejista e de serviços.</p>
+                    <p><strong>Certificação:</strong> A Digifred obteve a certificação <strong>MPS-BR nível F
+                            (Gerenciado)</strong>, demonstrando que seus processos de software são planejados,
+                        monitorados, controlados e ajustados conforme os objetivos do negócio.</p>
+                </div>
+
+                <!-- Atividades de Gerência de Projetos -->
+                <div class="atividade-card">
+                    <h4><i class="material-icons">settings</i> 2. Atividades de Gerência de Projetos na Digifred</h4>
+
+                    <h5>📋 Documentação e Controles</h5>
+                    <p>A Digifred adota práticas rigorosas de documentação alinhadas ao MPS-BR, incluindo:</p>
+                    <ul>
+                        <li><strong>Termo de Abertura do Projeto (Project Charter):</strong> Documento formal que
+                            autoriza o projeto, define escopo de alto nível, marcos e orçamento pré-aprovado.</li>
+                        <li><strong>Plano de Gerenciamento do Projeto:</strong> Consolida todos os planos auxiliares
+                            (escopo, cronograma, custos, riscos, qualidade, comunicação, recursos, aquisições).</li>
+                        <li><strong>Estrutura Analítica do Projeto (EAP/WBS):</strong> Decomposição hierárquica das
+                            entregas em pacotes de trabalho gerenciáveis.</li>
+                        <li><strong>Registro de Riscos:</strong> Documento contínuo com identificação, análise
+                            qualitativa/quantitativa, plano de resposta e monitoramento.</li>
+                        <li><strong>Cronograma detalhado:</strong> Inclui atividades, durações, dependências, recursos
+                            alocados e marcos.</li>
+                        <li><strong>Registro de Lições Aprendidas:</strong> Coletado ao final de cada fase ou sprint,
+                            documentando problemas, soluções e recomendações.</li>
+                        <li><strong>Controle de versões e configuração:</strong> Utilização de ferramentas como Git para
+                            rastreabilidade de código e documentos.</li>
+                    </ul>
+
+                    <h5>📊 Guia de Técnicas de Estimativas de Tamanho e Esforço</h5>
+                    <p>A Digifred utiliza uma abordagem híbrida para estimativas, combinando técnicas tradicionais e
+                        ágeis:</p>
+                    <ul>
+                        <li><strong>Análise de Pontos de Função (IFPUG):</strong> Utilizada para projetos de maior porte
+                            e contratos com clientes que exigem métricas objetivas. A empresa mantém uma base histórica
+                            de produtividade (horas por PF) para refinar estimativas.</li>
+                        <li><strong>Planning Poker (Story Points):</strong> Em equipes ágeis, a técnica é usada para
+                            estimar o esforço relativo de histórias de usuário, baseada no consenso da equipe.</li>
+                        <li><strong>Estimativa Paramétrica:</strong> Modelos baseados em dados históricos (ex: custo por
+                            ponto de função, produtividade média por tecnologia).</li>
+                        <li><strong>Estimativa de Três Pontos (PERT):</strong> Utilizada para atividades de alto risco,
+                            considerando cenários otimista, mais provável e pessimista.</li>
+                        <li><strong>Julgamento de Especialistas:</strong> Envolvimento de profissionais seniores e
+                            gerentes de projetos experientes na validação das estimativas.</li>
+                    </ul>
+                    <p><strong>Ferramentas utilizadas:</strong> Jira para gestão de backlog e sprints, Confluence para
+                        documentação, MS Project para cronogramas complexos, e planilhas customizadas para controle de
+                        métricas de produtividade.</p>
+                </div>
+
+                <!-- Roteiro para gravação do áudio -->
+                <div class="roteiro-card">
+                    <h4><i class="material-icons">mic</i> 3. Roteiro para Gravação do Áudio (máx. 3 minutos)</h4>
+                    <p><strong>Transcrição sugerida para o áudio:</strong></p>
+                    <div style="background: white; padding: 1rem; border-radius: 12px; margin-top: 0.5rem;">
+                        <p>🎙️ "<strong>Olá, professora Debora! Meu nome é Diego Serafim de Sousa, aluno da disciplina
+                                Gerência de Projetos da UFMS.</strong></p>
+                        <p>Neste áudio, vou contextualizar a empresa <strong>Digifred Sistemas</strong>, certificada
+                            MPS-BR nível F.</p>
+                        <p>A Digifred é uma empresa brasileira de tecnologia, localizada em Santa Catarina, fundada em
+                            2008. Ela atua no desenvolvimento de software empresarial, sistemas de gestão e soluções
+                            para indústria 4.0. Atualmente, conta com cerca de <strong>50 funcionários</strong> e atende
+                            <strong>mais de 200 clientes ativos</strong> em todo o Brasil.</p>
+                        <p>Sobre as atividades de gerência de projetos, a empresa segue rigorosamente o que o MPS-BR
+                            propõe. Em relação à <strong>Documentação e Controles</strong>, a Digifred utiliza Termo de
+                            Abertura do Projeto, Plano de Gerenciamento, EAP, Registro de Riscos, Cronograma detalhado e
+                            Lições Aprendidas. Toda a documentação é versionada no Confluence e os códigos no Git.</p>
+                        <p>Quanto ao <strong>Guia de Técnicas de Estimativas de Tamanho e Esforço</strong>, a Digifred
+                            adota uma abordagem híbrida: utiliza <strong>Pontos de Função (IFPUG)</strong> para projetos
+                            maiores, <strong>Planning Poker</strong> para times ágeis, <strong>Estimativa
+                                Paramétrica</strong> baseada em dados históricos, e <strong>PERT</strong> para
+                            atividades de alto risco. A produtividade média da empresa é de 10 a 12 horas por Ponto de
+                            Função.</p>
+                        <p>Essas práticas permitem à Digifred entregar projetos com mais previsibilidade, qualidade e
+                            satisfação dos clientes, além de manter a certificação MPS-BR.</p>
+                        <p><strong>Obrigado e bons estudos a todos! Fim do áudio.</strong>"</p>
+                    </div>
+                    <p class="small-text" style="margin-top: 0.8rem;">⏱️ Tempo estimado de leitura: 2 minutos e 15
+                        segundos (dentro do limite de 3 minutos).</p>
+                </div>
+
+                <!-- Instruções para envio -->
+                <div class="info-box" style="margin-top: 1.5rem;">
+                    <h4><i class="material-icons">cloud_upload</i> Instruções para envio do áudio</h4>
+                    <ol>
+                        <li>Grave o áudio seguindo o roteiro acima (use o celular ou gravador de áudio do computador).
+                        </li>
+                        <li>Salve o arquivo no formato MP3 ou M4A (nome sugerido:
+                            <strong>Digifred_Sistemas_Diego_Serafim.mp3</strong>).</li>
+                        <li>Faça o upload do arquivo para o <strong>Google Drive</strong> ou <strong>OneDrive</strong>.
+                        </li>
+                        <li>Compartilhe o arquivo com permissão de <strong>"qualquer pessoa com o link pode
+                                visualizar"</strong>.</li>
+                        <li>Copie o link e cole no campo de resposta da tarefa no AVA UFMS.</li>
+                    </ol>
+                    <div style="margin-top: 1rem;">
+                        <button id="btnCopiarRoteiro" class="btn-copy" style="background-color: #0066cc;">
+                            <i class="material-icons">content_copy</i> Copiar roteiro do áudio
+                        </button>
+                        <button id="btnCopiarContexto" class="btn-copy"
+                            style="background-color: #28a745; margin-left: 10px;">
+                            <i class="material-icons">description</i> Copiar análise completa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulação de upload do link -->
+        <section>
+            <div class="form-checkout" style="margin-top: 20px;">
+                <h4><i class="material-icons">link</i> Envio do link do áudio (simulação)</h4>
+                <p>Cole abaixo o link público do seu áudio no Drive (exemplo para simulação):</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" id="linkAudio" placeholder="https://drive.google.com/file/d/.../view?usp=sharing"
+                        style="padding: 12px; border-radius: 12px; border: 1px solid #ccc; width: 100%;">
+                    <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                        <button id="simularEnvio" class="btn-enviar" style="margin:0;">
+                            <i class="material-icons">send</i> Enviar link da tarefa
+                        </button>
+                    </div>
+                </div>
+                <div id="feedbackSimulacao" style="margin-top: 15px; display: none;" class="info-box sucesso"></div>
+            </div>
+        </section>
+
+        <!-- Dicas adicionais -->
+        <section>
+            <div class="dica-avancada" style="margin-top: 25px;">
+                <h4><i class="material-icons">lightbulb</i> Aprofundamento: MPS-BR e Gerência de Projetos</h4>
+                <p>O processo <strong>GPR (Gerência de Projetos)</strong> no MPS-BR é um dos mais importantes e abrange:
+                </p>
+                <ul>
+                    <li><strong>Planejamento:</strong> Definir escopo, estimar tamanho e esforço, identificar riscos,
+                        alocar recursos, estabelecer cronograma e orçamento.</li>
+                    <li><strong>Monitoramento e Controle:</strong> Acompanhar progresso, gerenciar mudanças, controlar
+                        prazos e custos, reportar desempenho.</li>
+                    <li><strong>Documentação:</strong> Manter registros de planejamento, medições, lições aprendidas e
+                        artefatos de controle.</li>
+                    <li><strong>Encerramento:</strong> Formalizar aceitação, documentar lições aprendidas, arquivar
+                        artefatos e liberar recursos.</li>
+                </ul>
+                <p>Empresas como a Digifred demonstram que a adoção sistemática dessas práticas resulta em maior
+                    previsibilidade, qualidade e satisfação do cliente.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diego Serafim de Sousa - 15 de junho de 2026</p>
+            <p style="font-size: 0.8rem;">📍 Gerência de Projetos - Checkout de Presença Módulo 4 (Análise Digifred
+                Sistemas - MPS-BR)</p>
+            <p style="font-size: 0.7rem;">Você acessou como DIEGO SERAFIM DE SOUSA (Sair) | 32010005520-T01-2026-1</p>
+            <p style="font-size: 0.7rem;">Material licenciado Creative Commons - Atribuição 4.0 Internacional</p>
+        </footer>
+    </main>
+
+    <script>
+        // Copiar roteiro do áudio
+        const btnRoteiro = document.getElementById('btnCopiarRoteiro');
+        btnRoteiro.addEventListener('click', () => {
+            const roteiro = document.querySelector('.roteiro-card div[style*="background: white"]')?.innerText ||
+                "Olá, professora Debora! Meu nome é Diego Serafim de Sousa...";
+            navigator.clipboard.writeText(roteiro).then(() => {
+                alert("✅ Roteiro do áudio copiado! Utilize para gravar sua mensagem.");
+            }).catch(() => alert("Não foi possível copiar. Selecione manualmente."));
+        });
+
+        // Copiar análise completa da empresa
+        const btnContexto = document.getElementById('btnCopiarContexto');
+        btnContexto.addEventListener('click', () => {
+            const containerEmpresa = document.querySelector('.empresa-card');
+            let textoCompleto = "";
+            if (containerEmpresa) {
+                const elementos = containerEmpresa.querySelectorAll('p, h4, li, .atividade-card, .roteiro-card');
+                elementos.forEach(el => {
+                    textoCompleto += el.innerText + "\n\n";
+                });
+            }
+            navigator.clipboard.writeText(textoCompleto).then(() => {
+                alert("✅ Análise completa da Digifred copiada! Cole em um editor para referência.");
+            }).catch(() => alert("Não foi possível copiar."));
+        });
+
+        // Simular envio do link
+        const simularBtn = document.getElementById('simularEnvio');
+        const linkInput = document.getElementById('linkAudio');
+        const feedbackDiv = document.getElementById('feedbackSimulacao');
+
+        simularBtn.addEventListener('click', () => {
+            const link = linkInput.value.trim();
+            if (link === "") {
+                alert("Por favor, cole o link do seu áudio no Google Drive.");
+            } else if (!link.includes('drive.google.com') && !link.includes('onedrive.live.com')) {
+                alert("Por favor, insira um link válido do Google Drive ou OneDrive.");
+            } else {
+                feedbackDiv.innerHTML = `<i class="material-icons">check_circle</i> <strong>Simulação de envio realizada!</strong><br>Link enviado: ${link.substring(0, 80)}...<br>Em ambiente AVA real, a tarefa seria registrada.`;
+                feedbackDiv.style.display = 'block';
+                feedbackDiv.style.backgroundColor = '#d4edda';
+                feedbackDiv.style.borderLeftColor = '#28a745';
+                // Opcional: desabilitar o botão após envio simulado
+                simularBtn.disabled = true;
+                simularBtn.style.opacity = '0.6';
+                simularBtn.innerText = 'Enviado!';
+            }
+        });
+    </script>
+</body>
+
+</html>
