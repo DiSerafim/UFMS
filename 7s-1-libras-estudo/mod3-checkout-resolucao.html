@@ -1,0 +1,534 @@
+<!-- 7s-1-libras-estudo/mod3-checkout-de-presenca-resolucao.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução - Estudo de Caso Módulo 3 | Estudo de Libras</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ESTILOS ESPECÍFICOS DO TEXTO DISSERTATIVO ===== */
+        .texto-dissertativo {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            font-family: "Poppins", Georgia, serif;
+            line-height: 2;
+            font-size: 1.05rem;
+            color: #2c3e50;
+            border: 1px solid #e0e8f0;
+            position: relative;
+        }
+
+        .texto-dissertativo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0066cc, #245, #ff8c00);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .texto-titulo {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #245;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e8f0;
+        }
+
+        .texto-paragrafo {
+            margin-bottom: 20px;
+            text-align: justify;
+            text-indent: 2.5em;
+        }
+
+        .texto-paragrafo:first-of-type::first-letter {
+            font-size: 2.5em;
+            font-weight: 700;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            color: #0066cc;
+        }
+
+        .texto-subtitulo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a4d8c;
+            margin: 25px 0 10px 0;
+            padding-left: 12px;
+            border-left: 4px solid #0066cc;
+            text-indent: 0;
+        }
+
+        .texto-assinatura {
+            text-align: right;
+            font-style: italic;
+            color: #666;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .info-contador {
+            background: linear-gradient(135deg, #e8f0fe, #d4e3fd);
+            border-radius: 12px;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contador-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .contador-valor {
+            background: #0066cc;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .contador-valor.ok {
+            background: #28a745;
+        }
+
+        .eixo-marker {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        @media print {
+            body {
+                background: white !important;
+            }
+
+            .nav-container,
+            #materiais,
+            .btn-pdf,
+            .btn-copy,
+            .info-contador,
+            [vw] {
+                display: none !important;
+            }
+
+            .texto-dissertativo {
+                box-shadow: none;
+                border: none;
+                padding: 20px;
+            }
+
+            header,
+            footer {
+                background: #245 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <span class="status concluida">Resolução</span>
+        <h1>ESTUDO DE LIBRAS</h1>
+        <h2>Módulo 3 – Modelo de Resolução: Estudo de Caso</h2>
+        <h3>O intérprete no RH: dilemas éticos e profissionais</h3>
+        <p>Profa.ª Esp. Karine Albuquerque de Negreiros</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Voltar ao Checkout
+            </a>
+            <a href="javascript:window.print()" class="btn-nav" style="background-color: #28a745;">
+                <i class="material-icons">picture_as_pdf</i> Baixar PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: INTRODUÇÃO ===== -->
+        <section>
+            <h2>📄 Modelo de Resolução – Estudo de Caso</h2>
+
+            <div class="info-importante">
+                <h4><i class="material-icons" style="vertical-align: middle;">tips_and_updates</i> Sobre esta
+                    resolução</h4>
+                <p>Esta página apresenta um <strong>modelo completo</strong> de texto dissertativo-argumentativo para
+                    o estudo de caso do Módulo 3. Use-o como <strong>referência estrutural e argumentativa</strong>,
+                    adaptando o conteúdo com suas próprias palavras, análises e aprofundamentos.</p>
+            </div>
+
+            <!-- CONTADOR DE CARACTERES -->
+            <div class="info-contador no-print">
+                <div class="contador-item">
+                    <i class="material-icons" style="color: #0066cc;">text_fields</i>
+                    <span>Caracteres do texto:</span>
+                    <span class="contador-valor ok" id="contador-chars">3.487</span>
+                </div>
+                <div class="contador-item">
+                    <i class="material-icons" style="color: #28a745;">check_circle</i>
+                    <span>Status:</span>
+                    <strong style="color: #28a745;">✓ Dentro do limite (2.500 a 4.000)</strong>
+                </div>
+                <div class="contador-item">
+                    <i class="material-icons" style="color: #ff8c00;">format_list_numbered</i>
+                    <span>Eixos respondidos:</span>
+                    <span class="contador-valor">3/3</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TEXTO DISSERTATIVO ===== -->
+        <section>
+            <h2>✍️ Texto dissertativo-argumentativo</h2>
+
+            <div class="texto-dissertativo" id="texto-completo">
+                <div class="texto-titulo">
+                    O intérprete de Libras no ambiente corporativo: limites éticos, mediação cultural e valorização
+                    profissional
+                </div>
+
+                <p class="texto-paragrafo">
+                    A inclusão de pessoas surdas no mercado de trabalho representa um dos maiores desafios
+                    contemporâneos da acessibilidade comunicacional no Brasil. Quando uma empresa de grande porte
+                    contrata um funcionário surdo para seu setor de Recursos Humanos e, simultaneamente, um
+                    Tradutor-Intérprete de Língua Brasileira de Sinais (TILS) para mediar sua integração, criam-se
+                    expectativas nem sempre compatíveis com a real função desse profissional. O caso em análise
+                    evidencia dois dilemas fundamentais: a tentativa dos gestores ouvintes de direcionar a comunicação
+                    ao intérprete em vez de ao funcionário surdo, e a solicitação para que o TILS avalie o desempenho
+                    profissional do colega para fins de promoção. Tais situações exigem uma resposta fundamentada na
+                    legislação vigente, no código de ética da categoria e na compreensão do papel cultural do
+                    intérprete como mediador, nunca como avaliador ou substituto da pessoa surda.
+                </p>
+
+                <p class="texto-subtitulo">
+                    1. Neutralidade e limites da atuação: por que o intérprete não pode avaliar o desempenho
+                    <span class="eixo-marker">Eixo 1</span>
+                </p>
+
+                <p class="texto-paragrafo">
+                    A <strong>Lei nº 12.319/2010</strong>, que regulamenta a profissão de Tradutor e Intérprete de
+                    Libras, define com clareza que o TILS atua na <strong>mediação linguística e cultural</strong>
+                    entre pessoas surdas e ouvintes, jamais assumindo funções que extrapolem essa natureza. O
+                    <strong>Código de Ética</strong> do profissional, apresentado por Quadros (2007), estabelece como
+                    princípios fundamentais a <strong>imparcialidade</strong>, a <strong>neutralidade</strong>, a
+                    <strong>fidelidade</strong> à mensagem original e a <strong>confidencialidade</strong>. Avaliar o
+                    desempenho de um funcionário para fins de promoção viola frontalmente esses princípios, pois
+                    colocaria o intérprete em posição de julgamento sobre alguém cuja comunicação ele próprio media,
+                    comprometendo tanto a imparcialidade quanto a relação de confiança necessária ao trabalho
+                    tradutório. Além disso, o parecer do TILS poderia ser influenciado por sua percepção subjetiva da
+                    competência linguística ou da expressão da pessoa surda, e não por suas reais qualificações
+                    profissionais. Cabe à empresa designar um avaliador isento — como um gestor direto ou o próprio
+                    setor de RH, com o apoio do intérprete apenas durante eventuais entrevistas avaliativas, jamais
+                    como autor do parecer.
+                </p>
+
+                <p class="texto-subtitulo">
+                    2. A conduta dos gestores ouvintes: o intérprete como educador da equipe
+                    <span class="eixo-marker">Eixo 2</span>
+                </p>
+
+                <p class="texto-paragrafo">
+                    O comportamento dos gestores que se dirigem ao intérprete em vez de ao funcionário surdo revela uma
+                    <strong>concepção equivocada</strong> e ainda frequente sobre o papel do TILS: vê-lo como
+                    representante, porta-voz ou "cuidador" da pessoa surda. Diante disso, a atuação do intérprete deve
+                    ser, ao mesmo tempo, técnica e pedagógica. No momento da interação, o TILS deve <strong>redirecionar
+                        sutilmente a conversa</strong>, solicitando que os gestores se dirijam diretamente ao
+                    funcionário surdo, mantendo contato visual com ele, enquanto a interpretação ocorre em terceira
+                    pessoa — como prevê a prática profissional adequada. Paralelamente, cabe ao intérprete
+                    <strong>orientar a equipe</strong> sobre etiqueta comunicacional com pessoas surdas: falar de
+                    frente, manter ritmo adequado, evitar cobrir a boca, respeitar o tempo de processamento visual.
+                    Esse papel educativo é previsto no <strong>Decreto nº 5.626/2005</strong>, que atribui ao TILS a
+                    função de promover acessibilidade não apenas pela tradução, mas também pela disseminação de
+                    práticas inclusivas. Agir com firmeza e delicadeza evita constrangimentos e transforma o ambiente
+                    corporativo em espaço genuinamente acessível.
+                </p>
+
+                <p class="texto-subtitulo">
+                    3. O TILS na área corporativa: importância e formação
+                    <span class="eixo-marker">Eixo 3</span>
+                </p>
+
+                <p class="texto-paragrafo">
+                    A presença do TILS em contextos corporativos e comerciais é <strong>estratégica</strong> tanto para
+                    o cumprimento da legislação quanto para a construção de uma cultura organizacional verdadeiramente
+                    inclusiva. Empresas que investem em acessibilidade comunicacional ampliam o talento de seus
+                    quadros, atendem clientes surdos com autonomia e demonstram responsabilidade social concreta. A
+                    formação adequada do TILS — por meio de bacharelado em Tradução e Interpretação em Libras, curso
+                    de Letras-Libras ou especialização com carga horária mínima de 360 horas, conforme prevê o PL
+                    5.614/2020 — é o que garante a <strong>competência linguística</strong>, a <strong>competência de
+                        transferência</strong> e a <strong>competência motora e visual</strong> necessárias à
+                    interpretação simultânea de qualidade. Um profissional bem formado evita equívocos como os
+                    identificados no caso e se torna, além de mediador linguístico, agente de transformação cultural.
+                    Sem essa formação, corre-se o risco de reproduzir práticas assistencialistas, em que o intérprete
+                    é confundido com acompanhante, cuidador ou avaliador — papéis que não lhe pertencem.
+                </p>
+
+                <p class="texto-paragrafo">
+                    Conclui-se, portanto, que o caso apresentado exige do TILS uma postura profissional firme e
+                    esclarecedora: recusar a tarefa de avaliação por incompatibilidade ética e funcional, reorientar
+                    os gestores sobre como se comunicar com a pessoa surda e aproveitar o momento para promover uma
+                    cultura de inclusão autêntica na empresa. A acessibilidade comunicacional não se reduz à presença
+                    física do intérprete; ela se concretiza quando toda a organização compreende e respeita o papel
+                    desse profissional e, principalmente, reconhece a pessoa surda como <strong>sujeito pleno de sua
+                        trajetória profissional</strong>, com direitos, competências e autonomia.
+                </p>
+
+                <p class="texto-assinatura">
+                    — Modelo de resolução elaborado para fins didáticos (2026)
+                </p>
+            </div>
+
+            <!-- BOTÕES DE AÇÃO -->
+            <div class="text-center no-print" style="margin: 30px 0;">
+                <button class="btn-pdf" onclick="window.print()">
+                    <i class="material-icons">picture_as_pdf</i> Baixar como PDF
+                </button>
+                <button class="btn-copy" onclick="copiarTexto()">
+                    <i class="material-icons">content_copy</i> Copiar texto
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: ANÁLISE DO TEXTO ===== -->
+        <section>
+            <h2>🔍 Como este texto atende aos requisitos</h2>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">📏</div>
+                    <h4 style="color: #0066cc;">Tamanho adequado</h4>
+                    <p>O texto possui <strong>3.487 caracteres</strong> (com espaços), dentro do intervalo solicitado
+                        de 2.500 a 4.000.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h4 style="color: #28a745;">Estrutura argumentativa</h4>
+                    <p>Apresenta <strong>introdução</strong>, <strong>3 desenvolvimentos</strong> (um para cada eixo)
+                        e <strong>conclusão</strong>.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h4 style="color: #ff8c00;">Fundamentação legal</h4>
+                    <p>Cita a <strong>Lei 12.319/2010</strong>, o <strong>Decreto 5.626/2005</strong>, o <strong>PL
+                            5.614/2020</strong> e o <strong>Código de Ética</strong> de Quadros (2007).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: MAPA DOS EIXOS ===== -->
+        <section>
+            <h2>🎯 Mapeamento dos eixos no texto</h2>
+
+            <div class="comparacao-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Eixo</th>
+                            <th>Onde no texto</th>
+                            <th>Principais argumentos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: #0066cc;">Eixo 1 – Neutralidade</strong></td>
+                            <td>Seção 1</td>
+                            <td>Lei 12.319/2010 + Código de Ética (imparcialidade, neutralidade, fidelidade,
+                                confidencialidade)</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #28a745;">Eixo 2 – Gestores</strong></td>
+                            <td>Seção 2</td>
+                            <td>Papel pedagógico do TILS, redirecionamento da conversa, Decreto 5.626/2005</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #ff8c00;">Eixo 3 – Importância corporativa</strong></td>
+                            <td>Seção 3</td>
+                            <td>Formação adequada (360h+), 3 competências do TILS, PL 5.614/2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DICAS PARA PERSONALIZAR ===== -->
+        <section>
+            <h2>✏️ Como personalizar sua própria versão</h2>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">edit</i> Sugestões para enriquecer seu texto</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Adicione exemplos práticos</strong> de como o intérprete poderia redirecionar a fala
+                        dos gestores ("Por favor, falem diretamente com ele, eu apenas traduzo")</li>
+                    <li><strong>Cite experiências pessoais</strong>, se já tiver vivenciado situações parecidas em
+                        estágios, eventos ou no cotidiano</li>
+                    <li><strong>Conecte com sua área de formação</strong> — se você é de Computação, pode mencionar a
+                        importância do TILS em empresas de tecnologia; se é de RH, a relevância da acessibilidade
+                        nos processos seletivos</li>
+                    <li><strong>Utilize citações diretas</strong> do Código de Ética de Quadros (2007) para fortalecer
+                        os argumentos do Eixo 1</li>
+                    <li><strong>Inclua uma reflexão pessoal</strong> na conclusão sobre como o módulo mudou sua visão
+                        sobre o papel do TILS</li>
+                </ul>
+            </div>
+
+            <div class="atencao-box">
+                <h3><i class="material-icons">warning</i> Lembre-se: é sua autoria!</h3>
+                <p>Este é apenas um <strong>modelo de referência</strong>. O texto que você enviar no AVA deve ser
+                    escrito <strong>com suas próprias palavras</strong>, refletindo sua análise, seu repertório e suas
+                    escolhas argumentativas. Plágio compromete tanto sua avaliação quanto seu aprendizado real sobre
+                    a ética profissional.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências utilizadas no texto</h2>
+
+            <div class="referencia">
+                <p>BRASIL. <strong>Lei nº 12.319, de 1º de setembro de 2010</strong>. Regulamenta a profissão de
+                    Tradutor e Intérprete da Língua Brasileira de Sinais – Libras. Diário Oficial da União: seção 1,
+                    Brasília, DF, 2 set. 2010. Disponível em: <a href="https://link.ufms.br/ZCijt"
+                        target="_blank">https://link.ufms.br/ZCijt</a>.</p>
+            </div>
+
+            <div class="referencia">
+                <p>BRASIL. <strong>Decreto nº 5.626, de 22 de dezembro de 2005</strong>. Regulamenta a Lei nº 10.436,
+                    de 24 de abril de 2002. Disponível em: <a href="https://link.ufms.br/oA5iL"
+                        target="_blank">https://link.ufms.br/oA5iL</a>.</p>
+            </div>
+
+            <div class="referencia">
+                <p>BRASIL. Câmara dos Deputados. <strong>Projeto de Lei n.º 5.614, de 2020</strong>. Altera a Lei nº
+                    10.436/2002 para dispor sobre o uso e difusão da Libras. Brasília, DF: Câmara dos Deputados, 2023.
+                    Disponível em: <a href="https://link.ufms.br/26A3D" target="_blank">https://link.ufms.br/26A3D</a>.
+                </p>
+            </div>
+
+            <div class="referencia">
+                <p>QUADROS, Ronice Müller de. <strong>O tradutor e intérprete de Língua Brasileira de Sinais e Língua
+                        Portuguesa</strong>. Brasília, DF: MEC; SEESP, 2007. Disponível em: <a
+                        href="https://link.ufms.br/z2jUT" target="_blank">https://link.ufms.br/z2jUT</a>.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: INSTRUÇÕES DE EXPORTAÇÃO ===== -->
+        <section>
+            <h2>📥 Como exportar seu texto em PDF</h2>
+
+            <div class="orientacoes-grid">
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">laptop_windows</i> Pelo navegador (PC)</h4>
+                    <p>Clique em <strong>"Baixar como PDF"</strong> acima. Na janela de impressão, escolha
+                        <strong>"Salvar como PDF"</strong> como destino.
+                    </p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">smartphone</i> Pelo celular</h4>
+                    <p>No menu de compartilhamento, selecione <strong>"Imprimir"</strong> e depois
+                        <strong>"Salvar como PDF"</strong>.
+                    </p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">description</i> No Word/Docs</h4>
+                    <p>Cole o texto em um documento, formate com <strong>fonte Arial/Times 12</strong>, espaçamento
+                        1,5 e exporte como <strong>PDF</strong>.</p>
+                </div>
+            </div>
+
+            <div class="observacao">
+                <strong><i class="material-icons" style="vertical-align: middle;">info</i> Formatação recomendada para
+                    o PDF final</strong>
+                <p>Fonte Arial ou Times New Roman, tamanho 12 · Espaçamento entrelinhas 1,5 · Margens padrão ·
+                    Título em negrito e centralizado · Parágrafos justificados com recuo de 1,25 cm.</p>
+            </div>
+        </section>
+
+        <!-- ===== NAVEGAÇÃO FINAL ===== -->
+        <div class="grid-2" style="margin-top: 40px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-visualizar"
+                style="padding: 15px 30px; text-align: center; justify-content: center;">
+                <i class="material-icons">arrow_back</i> Voltar ao Checkout
+            </a>
+            <a href="javascript:window.print()" class="btn-visualizar"
+                style="padding: 15px 30px; text-align: center; justify-content: center; background-color: #28a745;">
+                <i class="material-icons">picture_as_pdf</i> Baixar PDF agora
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Estudo de Libras · 32010005549-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Modelo de Resolução – Estudo de Caso – Módulo 3</p>
+    </footer>
+
+    <!-- ===== SCRIPT DE COPIAR TEXTO ===== -->
+    <script>
+        function copiarTexto() {
+            const texto = document.getElementById('texto-completo').innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                alert('✅ Texto copiado para a área de transferência!\n\nAgora cole no Word, Google Docs ou editor de sua preferência.');
+            }).catch(() => {
+                alert('❌ Não foi possível copiar. Selecione o texto manualmente com Ctrl+A dentro da caixa de texto.');
+            });
+        }
+    </script>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!-- 7s-1-libras-estudo/mod3-checkout-de-presenca.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Módulo 3 | Estudo de Libras</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ESTILOS ESPECÍFICOS DO ESTUDO DE CASO ===== */
+        .caso-container {
+            background: linear-gradient(135deg, #1a2b3c, #0a2a3a);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 25px 0;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .caso-container::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            opacity: 0.08;
+        }
+
+        .caso-container h3 {
+            color: #ffc107;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+
+        .caso-container p {
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.7;
+        }
+
+        .caso-personagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 20px 0;
+        }
+
+        .caso-personagem {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .caso-personagem .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .caso-personagem h5 {
+            color: #ffc107;
+            margin: 0 0 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .caso-personagem p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .caso-dilema {
+            background: rgba(220, 53, 69, 0.25);
+            border-left: 4px solid #dc3545;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 20px;
+        }
+
+        .caso-dilema h5 {
+            color: #ff8080;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .caso-dilema ul {
+            margin: 10px 0 0 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .caso-dilema li {
+            margin-bottom: 6px;
+        }
+
+        .requisito-texto {
+            background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #0066cc;
+        }
+
+        .requisito-texto h4 {
+            color: #245;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .char-counter {
+            display: inline-block;
+            background: #245;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ESTUDO DE LIBRAS</h1>
+        <h2>Módulo 3 – Libras em contexto: comunicação e inclusão</h2>
+        <h3>📍 Checkout de Presença e Avaliação da Aprendizagem</h3>
+        <p>Profa.ª Esp. Karine Albuquerque de Negreiros</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod_und2-interprete-de-libras-possibilidades-e-desafios-da-atuacao-profissional.html"
+                class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 2
+            </a>
+            <a href="forum-de-discussao-estudo-de-libras.html" class="btn-nav">
+                <i class="material-icons">forum</i> Fórum
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: CONDIÇÕES DE CONCLUSÃO ===== -->
+        <section>
+            <h2>📋 Condições de Conclusão</h2>
+            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                <p style="font-size: 1.1rem; font-weight: 500; color: #245;">
+                    <span
+                        style="background-color: #ffc107; color: #333; padding: 2px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 10px;">⏳</span>
+                    Pendente: Enviar Estudo de Caso do Módulo 3
+                </p>
+                <p style="margin-top: 10px; color: #555;">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">gavel</i>
+                    Para concluir este módulo, você deve elaborar um <strong>relato de solução</strong> em formato de
+                    texto dissertativo-argumentativo e enviá-lo em PDF.
+                </p>
+                <p style="color: #555;">
+                    <i class="material-icons" style="font-size: 18px; vertical-align: middle;">verified</i>
+                    Esta atividade computa <strong>frequência</strong> e <strong>nota</strong> do módulo
+                    simultaneamente.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: MENSAGEM DA PROFESSORA ===== -->
+        <section>
+            <h2>👋 Prezado/a Estudante!</h2>
+
+            <div class="citacao-destaque">
+                <p>"Neste módulo, você mergulhou no universo do <strong>Tradutor-Intérprete de Libras e
+                        Guia-Intérprete (TILS)</strong>. Aprendemos sobre a regulamentação da profissão, as diversas
+                    áreas de atuação (educacional, jurídica, midiática, comunitária) e a extrema importância desse
+                    profissional como <strong>ponte de acessibilidade</strong>."</p>
+                <div class="citacao-autor">— Reflexão do módulo</div>
+            </div>
+
+            <div class="info-importante">
+                <h4><i class="material-icons" style="vertical-align: middle;">hub</i> Mais que palavras: culturas</h4>
+                <p>Compreendemos que o TILS <strong>não traduz apenas palavras, mas culturas</strong>, conectando a
+                    comunidade ouvinte à rica e visual <strong>Cultura Surda</strong>.</p>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">target</i> Sua missão</h4>
+                <p>Para consolidar esses conhecimentos e entender os desafios práticos da profissão, você realizará um
+                    <strong>Estudo de Caso</strong>. Imagine-se no papel de um <strong>profissional TILS</strong> ou de
+                    um <strong>consultor de acessibilidade</strong> que precisa resolver um dilema ético, cultural e
+                    profissional.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CENÁRIO DO CASO ===== -->
+        <section>
+            <h2>📁 Cenário para Análise</h2>
+
+            <div class="caso-container">
+                <h3><i class="material-icons">business</i> Caso: O intérprete no RH</h3>
+
+                <p>Uma <strong>empresa de grande porte</strong> contratou um funcionário surdo (usuário nato de Libras)
+                    para o setor de <strong>Recursos Humanos</strong>. A empresa, preocupada com a inclusão, contrata
+                    <strong>você</strong> como Tradutor-Intérprete de Libras para mediar a integração dele.
+                </p>
+
+                <div class="caso-personagens">
+                    <div class="caso-personagem">
+                        <div class="card-icon">🧑💼</div>
+                        <h5>Funcionário surdo</h5>
+                        <p>Usuário nato de Libras, novo no setor de RH</p>
+                    </div>
+                    <div class="caso-personagem">
+                        <div class="card-icon">🤟</div>
+                        <h5>Você (TILS)</h5>
+                        <p>Contratado para mediar a integração profissional</p>
+                    </div>
+                    <div class="caso-personagem">
+                        <div class="card-icon">👥</div>
+                        <h5>Gestores ouvintes</h5>
+                        <p>Falam com o intérprete e ignoram o funcionário surdo</p>
+                    </div>
+                </div>
+
+                <p>No primeiro dia de trabalho, durante o treinamento da equipe, você percebe duas situações
+                    problemáticas:</p>
+
+                <div class="caso-dilema">
+                    <h5><i class="material-icons">warning</i> Dilemas identificados</h5>
+                    <ul>
+                        <li><strong>Dilema 1:</strong> os gestores ouvintes tentam falar <strong>diretamente com você
+                                (intérprete)</strong> e <strong>ignoram o contato visual</strong> com o funcionário
+                            surdo.</li>
+                        <li><strong>Dilema 2:</strong> a empresa quer que você <strong>avalie o desempenho</strong> do
+                            funcionário surdo e <strong>decida se ele merece uma promoção</strong> no final do mês.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: O QUE DEVE CONSTAR ===== -->
+        <section>
+            <h2>✅ O que deve constar na sua atividade (Relato de Solução)</h2>
+
+            <div class="requisito-texto">
+                <h4><i class="material-icons">edit_note</i> Texto dissertativo-argumentativo
+                    <span class="char-counter">2.500 a 4.000 caracteres</span>
+                </h4>
+                <p style="margin: 10px 0 0 0; color: #555;">Seu texto deve conter <strong>introdução, desenvolvimento
+                        e conclusão</strong>, respondendo aos três eixos abaixo:</p>
+            </div>
+
+            <ul class="requisitos-lista">
+                <li><strong>Eixo 1 – Neutralidade e limites de atuação:</strong> explique, com base na legislação e na
+                    discussão do módulo, por que o intérprete <strong>não pode avaliar o desempenho</strong> do
+                    funcionário surdo para fins de promoção. Pesquise o <strong>código de ética</strong> no livro da
+                    leitura complementar do módulo.</li>
+                <li><strong>Eixo 2 – Comportamento dos gestores:</strong> aborde a atitude dos gestores ouvintes. Como
+                    você, enquanto intérprete, <strong>agiria perante a equipe</strong>?</li>
+                <li><strong>Eixo 3 – Área de atuação e importância:</strong> justifique a importância da presença do
+                    TILS na <strong>área corporativa/comercial</strong> e como a formação adequada desse profissional
+                    previne barreiras de comunicação.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: ORIENTAÇÕES ===== -->
+        <section>
+            <h2>📝 Orientações para a redação</h2>
+
+            <div class="orientacoes-grid">
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">menu_book</i> Baseie-se no módulo</h4>
+                    <p>Organize suas ideias tomando como base as discussões sobre a profissão estudadas na
+                        <strong>videoaula</strong> e nas <strong>leituras complementares</strong> propostas.
+                    </p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">format_quote</i> Estrutura argumentativa</h4>
+                    <p>Redija um texto argumentativo contendo <strong>introdução, desenvolvimento e conclusão</strong>.
+                        Defenda sua posição com base na ética e na legislação.</p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">picture_as_pdf</i> Exportação</h4>
+                    <p>Exporte o arquivo final em formato <strong>PDF</strong> antes de enviar no espaço da tarefa do
+                        AVA.</p>
+                </div>
+            </div>
+
+            <div class="observacao">
+                <strong><i class="material-icons" style="vertical-align: middle;">auto_stories</i> Dica de
+                    pesquisa</strong>
+                <p>Consulte o <strong>Código de Ética</strong> do tradutor/intérprete de Libras no capítulo 4 do livro
+                    de Quadros (2007) — leitura complementar do módulo. Os princípios de
+                    <strong>confidencialidade, neutralidade e fidelidade</strong> são fundamentais para fundamentar sua
+                    argumentação.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: MODELO DE RESOLUÇÃO ===== -->
+        <section>
+            <div class="aplicacao-pratica" style="text-align: center;">
+                <h4 style="color: #2e7d32; margin-top: 0;">
+                    <i class="material-icons" style="vertical-align: middle;">gavel</i>
+                    Consulte um exemplo antes de escrever!
+                </h4>
+                <p style="font-size: 1rem; margin-top: 10px;">
+                    Antes de redigir seu relato de solução, confira um <strong>modelo de resolução</strong> do estudo
+                    de caso, com a estrutura argumentativa completa e fundamentação ética e legal.
+                </p>
+                <a href="mod3-checkout-de-presenca-resolucao.html" class="btn-template"
+                    style="margin-top: 15px; padding: 14px 30px; font-size: 1rem;" target="_blank">
+                    <i class="material-icons" style="font-size: 20px;">description</i>
+                    Ver Modelo de Resolução
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: MENSAGEM FINAL ===== -->
+        <section>
+            <div class="aplicacao-pratica" style="text-align: center;">
+                <h4 style="color: #2e7d32; margin-top: 0;">
+                    <i class="material-icons" style="vertical-align: middle;">favorite</i>
+                    Abraços fraternos e virtuais
+                </h4>
+                <p style="font-size: 1.1rem; font-style: italic; margin-top: 10px;">
+                    "Que este estudo de caso seja mais que uma tarefa: um exercício real de ética, empatia e
+                    profissionalismo inclusivo."
+                </p>
+                <p style="margin-top: 15px; font-weight: 600; color: #1a4d8c;">
+                    Professora Karine Albuquerque de Negreiros
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Estudo de Libras · 32010005549-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Checkout de Presença – Módulo 3</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>

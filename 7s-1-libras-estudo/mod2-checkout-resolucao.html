@@ -1,0 +1,790 @@
+<!-- 7s-1-libras-estudo/mod2-checkout-de-presenca-resolucao.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução - Vídeo Módulo 2 | Estudo de Libras</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ESTILOS ESPECÍFICOS DO ROTEIRO DE VÍDEO ===== */
+        .roteiro-card {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e7f3f5 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px dashed #0066cc;
+        }
+
+        .roteiro-etapa {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border-left: 5px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .roteiro-etapa .etapa-numero {
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .roteiro-etapa .etapa-conteudo {
+            flex: 1;
+        }
+
+        .roteiro-etapa h4 {
+            color: #245;
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+        }
+
+        .roteiro-etapa .etapa-tempo {
+            display: inline-block;
+            background: #ffc107;
+            color: #333;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .roteiro-etapa .etapa-fala {
+            background: #fff9e6;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* ===== TABELA DE SINAIS ===== */
+        .sinal-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #0066cc;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .sinal-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .sinal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sinal-numero {
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .sinal-nome {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #245;
+        }
+
+        .sinal-categoria {
+            background: #e8f0fe;
+            color: #1a4d8c;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .parametros-mini {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .param-mini-item {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid;
+            font-size: 0.85rem;
+        }
+
+        .param-mini-item strong {
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 3px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .param-mini-item.cm { border-color: #0066cc; }
+        .param-mini-item.cm strong { color: #0066cc; }
+        .param-mini-item.pa { border-color: #28a745; }
+        .param-mini-item.pa strong { color: #28a745; }
+        .param-mini-item.mv { border-color: #ff8c00; }
+        .param-mini-item.mv strong { color: #ff8c00; }
+        .param-mini-item.or { border-color: #9b59b6; }
+        .param-mini-item.or strong { color: #9b59b6; }
+        .param-mini-item.enm { border-color: #dc3545; }
+        .param-mini-item.enm strong { color: #dc3545; }
+
+        /* ===== DICAS DE GRAVAÇÃO ===== */
+        .gravacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .gravacao-card {
+            background: linear-gradient(135deg, #fff8e8, #fff0d8);
+            border-radius: 12px;
+            padding: 1.2rem;
+            border-top: 4px solid #ff8c00;
+            text-align: center;
+        }
+
+        .gravacao-card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .gravacao-card h4 {
+            color: #245;
+            margin: 0 0 10px 0;
+        }
+
+        .gravacao-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* ===== LEGENDA MODELO ===== */
+        .legenda-exemplo {
+            background: #1a2b3c;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-family: "Courier New", monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .legenda-exemplo .tempo {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        .legenda-exemplo .texto {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .roteiro-etapa {
+                flex-direction: column;
+                text-align: center;
+            }
+            .parametros-mini {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <span class="status concluida">Resolução</span>
+        <h1>ESTUDO DE LIBRAS</h1>
+        <h2>Módulo 2 – Modelo de Resolução: Vídeo com 10 Sinais</h2>
+        <h3>Área: Tecnologia da Informação / Desenvolvimento Web</h3>
+        <p>Profa.ª Esp. Karine Albuquerque de Negreiros</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Voltar ao Checkout
+            </a>
+            <a href="mod3_und1-comunicacao-inclusiva-conversacao-em-libras.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_forward</i> Mod 3 Und 1
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: INTRODUÇÃO ===== -->
+        <section>
+            <h2>🎬 Modelo de Resolução – Roteiro de Vídeo</h2>
+
+            <div class="info-importante">
+                <h4><i class="material-icons" style="vertical-align: middle;">tips_and_updates</i> Sobre esta
+                    resolução</h4>
+                <p>Esta página apresenta um <strong>roteiro completo</strong> para a gravação do vídeo do Módulo 2,
+                    com <strong>10 sinais da área de Tecnologia da Informação / Desenvolvimento Web</strong>. Use como
+                    <strong>referência</strong> e adapte para a sua área de formação.</p>
+            </div>
+
+            <div class="dica-avancada">
+                <h4><i class="material-icons">rocket_launch</i> Por que escolhi estes sinais?</h4>
+                <p>Como futuro <strong>desenvolvedor web</strong>, selecionei termos que uso diariamente na minha área
+                    e que <strong>não foram ensinados</strong> nas videoaulas do módulo. Assim atendo ao requisito de
+                    "sinais inéditos" e já começo a construir meu vocabulário profissional em Libras — exatamente o
+                    que propus no <strong>fórum de discussão</strong> da disciplina!</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: ROTEIRO PASSO A PASSO ===== -->
+        <section>
+            <h2>📝 Roteiro de gravação (passo a passo)</h2>
+
+            <p>Use este roteiro como guia durante a gravação. O tempo total estimado é de <strong>3 a 4 minutos</strong>.
+            </p>
+
+            <div class="roteiro-card">
+                <!-- ETAPA 1 -->
+                <div class="roteiro-etapa">
+                    <div class="etapa-numero">1</div>
+                    <div class="etapa-conteudo">
+                        <h4>Abertura e apresentação <span class="etapa-tempo">⏱️ 20 segundos</span></h4>
+                        <p>Sinalize seu nome, curso e o objetivo do vídeo.</p>
+                        <div class="etapa-fala">
+                            "Olá! Meu nome é <strong>Diego Serafim</strong>, sou estudante de <strong>Tecnologia da Informação</strong> na UFMS. Neste vídeo, vou apresentar <strong>10 sinais em
+                                Libras</strong> da minha área de formação: <strong>Desenvolvimento Web e
+                                Tecnologia</strong>."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 2 -->
+                <div class="roteiro-etapa">
+                    <div class="etapa-numero">2</div>
+                    <div class="etapa-conteudo">
+                        <h4>Apresentação dos 10 sinais <span class="etapa-tempo">⏱️ 2 a 3 minutos</span></h4>
+                        <p>Para cada sinal: <strong>aponte para a legenda em português</strong>, <strong>sinalize
+                                claramente</strong> e, se possível, <strong>repita em uma frase curta</strong>.</p>
+                        <div class="etapa-fala">
+                            "O primeiro sinal é <strong>COMPUTADOR</strong>... [sinaliza]. Esse é o sinal de
+                            <strong>INTERNET</strong>... [sinaliza]."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 3 -->
+                <div class="roteiro-etapa">
+                    <div class="etapa-numero">3</div>
+                    <div class="etapa-conteudo">
+                        <h4>Fechamento <span class="etapa-tempo">⏱️ 15 segundos</span></h4>
+                        <p>Agradeça e finalize o vídeo com sinal de despedida.</p>
+                        <div class="etapa-fala">
+                            "Esses foram os 10 sinais da minha área. <strong>Obrigado</strong> por assistir!
+                            <strong>Tchau!</strong>"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: OS 10 SINAIS ===== -->
+        <section>
+            <h2>🤟 Os 10 sinais da área de Tecnologia</h2>
+
+            <p>Abaixo, cada sinal com sua descrição nos <strong>5 parâmetros formacionais</strong>. Use essa referência
+                para garantir precisão na sinalização.</p>
+
+            <!-- SINAL 1 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">1</div>
+                    <div class="sinal-nome">COMPUTADOR</div>
+                    <span class="sinal-categoria">Hardware</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa a tela do monitor e o teclado.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mãos em "C" (como segurando uma
+                        caixa)</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente do corpo
+                    </div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Separação lateral das mãos (abrindo o
+                        retângulo)</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palmas voltadas uma para a outra</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 2 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">2</div>
+                    <div class="sinal-nome">INTERNET</div>
+                    <span class="sinal-categoria">Rede</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa a rede global conectada, com o movimento de "i" e ondas de
+                    conexão.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mão em "I" (mindinho estendido)
+                    </div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Circular no ar, representando ondas de
+                        conexão</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palma para a esquerda</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 3 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">3</div>
+                    <div class="sinal-nome">PROGRAMAR</div>
+                    <span class="sinal-categoria">Ação</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa o ato de digitar código em um teclado.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mãos abertas, dedos curvados
+                        como digitando</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro (altura do
+                        teclado)</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Alternado dos dedos, como digitando</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palmas para baixo</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Concentração (olhar atento)
+                    </div>
+                </div>
+            </div>
+
+            <!-- SINAL 4 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">4</div>
+                    <div class="sinal-nome">DADOS</div>
+                    <span class="sinal-categoria">Conceito</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa informações agrupadas, como em um banco de dados.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mãos em "D" (configuração
+                        específica)</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Leve rotação dos punhos</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palmas para frente</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 5 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">5</div>
+                    <div class="sinal-nome">SOFTWARE</div>
+                    <span class="sinal-categoria">Conceito</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa programas, sistemas, aplicações.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mão dominante com indicador e
+                        polegar</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Toque na palma da mão não dominante</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palma para baixo</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 6 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">6</div>
+                    <div class="sinal-nome">HARDWARE</div>
+                    <span class="sinal-categoria">Conceito</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa a parte física, sólida, dos equipamentos.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mão em "H" (indicador e médio
+                        estendidos)</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Batida leve no antebraço oposto</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palma para baixo</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Firmeza (expressão neutra)
+                    </div>
+                </div>
+            </div>
+
+            <!-- SINAL 7 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">7</div>
+                    <div class="sinal-nome">REDE</div>
+                    <span class="sinal-categoria">Infraestrutura</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa interconexão entre computadores.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mãos abertas com dedos
+                        afastados</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Cruzar e descruzar os dedos das mãos
+                    </div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palmas voltadas uma para a outra</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 8 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">8</div>
+                    <div class="sinal-nome">ALGORITMO</div>
+                    <span class="sinal-categoria">Conceito</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa sequência lógica de instruções.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Indicador estendido</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro (à frente da
+                        cabeça)</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Desenho de um fluxograma no ar (linhas
+                        conectando pontos)</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palma para o lado</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Concentração e raciocínio
+                    </div>
+                </div>
+            </div>
+
+            <!-- SINAL 9 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">9</div>
+                    <div class="sinal-nome">BANCO DE DADOS</div>
+                    <span class="sinal-categoria">Sistema</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa um repositório organizado de informações.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mãos em forma cilíndrica
+                        (empilhadas)</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro à frente</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Uma mão sobre a outra, como empilhando
+                        discos</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palmas para baixo</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Neutra</div>
+                </div>
+            </div>
+
+            <!-- SINAL 10 -->
+            <div class="sinal-card">
+                <div class="sinal-header">
+                    <div class="sinal-numero">10</div>
+                    <div class="sinal-nome">SERVIDOR</div>
+                    <span class="sinal-categoria">Infraestrutura</span>
+                </div>
+                <p><strong>Descrição:</strong> Representa o computador central que atende requisições.</p>
+                <div class="parametros-mini">
+                    <div class="param-mini-item cm"><strong>Configuração de Mão</strong>Mão em "S" (fechada)</div>
+                    <div class="param-mini-item pa"><strong>Ponto de Articulação</strong>Espaço neutro (altura do
+                        peito)</div>
+                    <div class="param-mini-item mv"><strong>Movimento</strong>Batida vertical, representando racks de
+                        servidores</div>
+                    <div class="param-mini-item or"><strong>Orientação</strong>Palma para baixo</div>
+                    <div class="param-mini-item enm"><strong>Expressão Não-Manual</strong>Firmeza e autoridade</div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 15px;">
+                <em>⚠️ Atenção: As descrições são modelos de referência. Sempre confirme os sinais em fontes oficiais
+                    como o Dicionário CAS/SED ou INES antes de gravar.</em>
+            </p>
+        </section>
+
+        <!-- ===== SEÇÃO: EXEMPLO DE LEGENDA ===== -->
+        <section>
+            <h2>🎞️ Modelo de legenda para o vídeo</h2>
+
+            <p>Inclua legendas claras ao longo do vídeo para que qualquer pessoa (surda ou ouvinte) consiga acompanhar.
+                Aqui está um exemplo de estrutura:</p>
+
+            <div class="legenda-exemplo">
+                <div><span class="tempo">[00:00]</span> <span class="texto">Olá! Meu nome é Diego Serafim</span></div>
+                <div><span class="tempo">[00:05]</span> <span class="texto">Sou estudante de Tecnologia da Informação na
+                        UFMS</span></div>
+                <div><span class="tempo">[00:12]</span> <span class="texto">Vou apresentar 10 sinais da minha área em
+                        Libras</span></div>
+                <div><span class="tempo">[00:20]</span> <span class="texto">1. COMPUTADOR</span></div>
+                <div><span class="tempo">[00:28]</span> <span class="texto">2. INTERNET</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">3. PROGRAMAR</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">4. DADOS</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">5. SOFTWARE</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">6. HARDWARE</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">7. REDE</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">8. ALGORITMO</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">9. BANCO DE DADOS</span></div>
+                <div><span class="tempo">[00:36]</span> <span class="texto">10. SERVIDOR</span></div>
+                <div><span class="tempo">...</span> <span class="texto">[continua com os demais sinais]</span></div>
+                <div><span class="tempo">[03:30]</span> <span class="texto">Obrigado por assistir! Tchau!</span></div>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">movie_filter</i> Ferramentas gratuitas para legendar</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>CapCut:</strong> legenda automática com IA, fácil de editar</li>
+                    <li><strong>YouTube Studio:</strong> se hospedar no YouTube, tem legenda automática</li>
+                    <li><strong>DaVinci Resolve:</strong> editor profissional gratuito</li>
+                    <li><strong>Canva:</strong> permite adicionar legendas estilizadas</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DICAS DE GRAVAÇÃO ===== -->
+        <section>
+            <h2>🎥 Dicas de gravação</h2>
+
+            <div class="gravacao-grid">
+                <div class="gravacao-card">
+                    <div class="card-icon">💡</div>
+                    <h4>Iluminação</h4>
+                    <p>Use luz <strong>natural de frente</strong> para o rosto (janela à sua frente). Evite luz de
+                        trás que cria sombra.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">👕</div>
+                    <h4>Roupa</h4>
+                    <p>Vista uma <strong>camisa de cor sólida</strong>, em contraste com sua pele. Evite estampas
+                        que distraiam dos sinais.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">📐</div>
+                    <h4>Enquadramento</h4>
+                    <p>Filmagem da <strong>cintura para cima</strong>, deixando espaço para sinais feitos acima da
+                        cabeça.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">🎨</div>
+                    <h4>Fundo</h4>
+                    <p><strong>Fundo neutro e liso</strong> (parede clara). Nada de bagunça, quadros ou objetos que
+                        concorram com os sinais.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">🔇</div>
+                    <h4>Áudio</h4>
+                    <p>Ambiente <strong>silencioso</strong>. Se for falar em português, use microfone próximo ou
+                        fone com mic.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">📱</div>
+                    <h4>Câmera</h4>
+                    <p><strong>Celular na horizontal</strong> (landscape) apoiado em tripé ou livros. Nunca selfie
+                        vertical!</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">👀</div>
+                    <h4>Olhar</h4>
+                    <p>Olhe <strong>diretamente para a lente</strong> da câmera, não para a tela. Isso simula contato
+                        visual com o espectador.</p>
+                </div>
+                <div class="gravacao-card">
+                    <div class="card-icon">💪</div>
+                    <h4>Firmeza</h4>
+                    <p>Sinalize com <strong>movimentos firmes e claros</strong>. Perca a timidez! Expressões faciais
+                        são fundamentais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CHECKLIST FINAL ===== -->
+        <section>
+            <h2>✅ Checklist antes de enviar</h2>
+
+            <div class="form-checkout">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1">
+                    <label for="check1">Gravei o vídeo com boa iluminação e fundo neutro</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Apresentei meu nome e curso no início</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check3">
+                    <label for="check3">Incluí <strong>10 sinais inéditos</strong> da minha área</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4">
+                    <label for="check4">Os sinais respeitam os <strong>5 parâmetros formacionais</strong></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check5">
+                    <label for="check5">Usei <strong>expressões faciais e corporais</strong> adequadas</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check6">
+                    <label for="check6">Incluí <strong>legendas em português</strong> em todo o vídeo</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check7">
+                    <label for="check7">Consultei <strong>fontes confiáveis</strong> (CAS/SED, INES) antes de gravar</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check8">
+                    <label for="check8">Fiz upload no <strong>Google Drive</strong></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check9">
+                    <label for="check9">Liberei a permissão: <strong>"Qualquer pessoa com o link pode
+                            visualizar"</strong></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check10">
+                    <label for="check10">Testei o link em uma aba anônima e <strong>o vídeo abre
+                            corretamente</strong></label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: EXEMPLO DE LINK ===== -->
+        <section>
+            <h2>🔗 Exemplo de link para enviar</h2>
+
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">link</i> Formato esperado no
+                    AVA</strong>
+                <p>Cole <strong>apenas o link público</strong> do Google Drive. Não envie o arquivo de vídeo
+                    diretamente.</p>
+                <div class="legenda-exemplo" style="margin-top: 15px;">
+                    <span class="texto">https://drive.google.com/file/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ/view?usp=sharing</span>
+                </div>
+            </div>
+
+            <div class="atencao-box">
+                <h3><i class="material-icons">warning</i> Erro comum a evitar!</h3>
+                <p>Muitos alunos enviam links com <strong>permissão restrita</strong>. Antes de enviar, abra o link em
+                    uma <strong>jaba anônima do navegador</strong> e confirme que o vídeo abre sem pedir login. Se
+                    pedir, volte no Drive e ajuste as permissões.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CONSIDERAÇÕES FINAIS ===== -->
+        <section>
+            <h2>💭 Considerações finais</h2>
+
+            <div class="citacao-destaque">
+                <p>"Gravar este vídeo foi mais que uma atividade avaliativa — foi o primeiro passo para tornar meus
+                    futuros projetos em desenvolvimento web verdadeiramente acessíveis à comunidade surda."</p>
+                <div class="citacao-autor">— Reflexão do estudante (2026)</div>
+            </div>
+
+            <div class="aplicacao-pratica">
+                <h4 style="color: #2e7d32; margin-top: 0;">
+                    <i class="material-icons" style="vertical-align: middle;">lightbulb</i>
+                    Aprendizado central
+                </h4>
+                <p>Ao pesquisar sinais técnicos da minha área, percebi que <strong>Libras é uma língua viva</strong>,
+                    que se adapta a qualquer campo do conhecimento — da medicina à computação. Como futuro
+                    desenvolvedor, já estou pensando em como aplicar isso: vídeos tutoriais sinalizados, interfaces
+                    acessíveis, conteúdo inclusivo desde o início.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências utilizadas</h2>
+
+            <div class="referencia">
+                <p>CENTRO DE CAPACITAÇÃO DE PROFISSIONAIS DA EDUCAÇÃO E DE ATENDIMENTO ÀS PESSOAS COM SURDEZ (CAS/MS).
+                    <strong>Curso de Libras</strong>. Organização institucional: Secretaria de Estado de Educação de
+                    Mato Grosso do Sul. Campo Grande, MS: CAS/MS, [s.d.]. Disponível em: <a
+                        href="https://link.ufms.br/jUIgE" target="_blank">https://link.ufms.br/jUIgE</a>.</p>
+            </div>
+
+            <div class="referencia">
+                <p>CAS/SED. <strong>Dicionário de Libras</strong>. Disponível no Calaméo. Acesso em: 2026.</p>
+            </div>
+
+            <div class="referencia">
+                <p>INES. <strong>Dicionário de Libras</strong>. Instituto Nacional de Educação de Surdos. Disponível
+                    em: <a href="https://www.ines.gov.br" target="_blank">https://www.ines.gov.br</a>.</p>
+            </div>
+
+            <div class="referencia">
+                <p>QUADROS, R. M. <strong>Libras</strong>. 1. ed. São Paulo: Parábola Editorial, 2019.</p>
+            </div>
+        </section>
+
+        <!-- ===== NAVEGAÇÃO FINAL ===== -->
+        <div class="grid-2" style="margin-top: 40px;">
+            <a href="mod2-checkout-de-presenca.html" class="btn-visualizar"
+                style="padding: 15px 30px; text-align: center; justify-content: center;">
+                <i class="material-icons">arrow_back</i> Voltar ao Checkout
+            </a>
+            <a href="mod3_und1-comunicacao-inclusiva-conversacao-em-libras.html" class="btn-visualizar"
+                style="padding: 15px 30px; text-align: center; justify-content: center;">
+                <i class="material-icons">arrow_forward</i> Ir para Módulo 3
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Estudo de Libras · 32010005549-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Modelo de Resolução – Vídeo com 10 Sinais – Módulo 2</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>

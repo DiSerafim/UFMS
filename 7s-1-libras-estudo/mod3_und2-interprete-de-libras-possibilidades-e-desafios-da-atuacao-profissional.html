@@ -1,0 +1,681 @@
+<!-- 7s-1-libras-estudo/mod_und2-interprete-de-libras-possibilidades-e-desafios-da-atuacao-profissional.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 Unidade 2 | Estudo de Libras</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== ESTILOS ESPECÍFICOS: LINHA DO TEMPO ===== */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 35px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.8rem;
+            background: white;
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0066cc;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 18px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #0066cc;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #0066cc;
+        }
+
+        .timeline-ano {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066cc, #245);
+            color: white;
+            padding: 3px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h4 {
+            color: #245;
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: #555;
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        /* ===== ÁREAS DE ATUAÇÃO ===== */
+        .atuacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .atuacao-item {
+            background: linear-gradient(135deg, #f0f7ff, #e7f3f5);
+            border-radius: 12px;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            border-top: 4px solid #1a4d8c;
+            transition: transform 0.3s;
+        }
+
+        .atuacao-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .atuacao-item .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .atuacao-item h4 {
+            color: #1a4d8c;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* ===== COMPETÊNCIAS ===== */
+        .competencia-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: transform 0.3s;
+        }
+
+        .competencia-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .competencia-card .comp-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .competencia-card .comp-icon .material-icons {
+            font-size: 28px;
+        }
+
+        .comp-linguistica {
+            border-color: #0066cc;
+        }
+
+        .comp-linguistica .comp-icon {
+            background: linear-gradient(135deg, #0066cc, #245);
+        }
+
+        .comp-linguistica h4 {
+            color: #0066cc;
+        }
+
+        .comp-transferencia {
+            border-color: #ff8c00;
+        }
+
+        .comp-transferencia .comp-icon {
+            background: linear-gradient(135deg, #ff8c00, #e65c00);
+        }
+
+        .comp-transferencia h4 {
+            color: #ff8c00;
+        }
+
+        .comp-motora {
+            border-color: #28a745;
+        }
+
+        .comp-motora .comp-icon {
+            background: linear-gradient(135deg, #28a745, #1e8449);
+        }
+
+        .comp-motora h4 {
+            color: #28a745;
+        }
+
+        .competencia-card h4 {
+            margin: 0 0 8px 0;
+            font-size: 1.15rem;
+        }
+
+        .competencia-card p {
+            color: #555;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ===== ESPAÇOS DE IMAGEM ===== */
+        .img-container {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 8px;
+            margin: 0 !important;
+        }
+
+        .img-legenda {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                padding-left: 25px;
+            }
+
+            .timeline-item::before {
+                left: -36px;
+            }
+
+            .competencia-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ESTUDO DE LIBRAS</h1>
+        <h2>Módulo 3 – Libras em contexto: comunicação e inclusão</h2>
+        <h3>Unidade 2 – Intérprete de Libras: possibilidades e desafios da atuação profissional</h3>
+        <p>Profa.ª Dra. Karine Albuquerque de Negreiros</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod3_und1-comunicacao-inclusiva-conversacao-em-libras.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 1
+            </a>
+            
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">assignment</i> Checkout Mod 3
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Jnj2jFSsXQs" frameborder="0"
+                        title="[UFMS Digital] Estudo de Libras - Módulo 3 - Unidade 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="title">[UFMS Digital] Estudo de Libras - Módulo 3 - Unidade 2</p>
+                <p>Profa.ª Dra. Karine Albuquerque de Negreiros · 4 de jul. de 2026</p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>🤟 A profissão de TILS</strong>
+                    <p>Tradutor/intérprete de Libras</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>📜 Histórico e regulamentação</strong>
+                    <p>Leis e marcos da profissão</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>💼 Atuação e possibilidades</strong>
+                    <p>Campos de trabalho do intérprete</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🎓 Formação</strong>
+                    <p>Caminhos para se tornar TILS</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🗣️ Vocabulário: profissões</strong>
+                    <p>Sinais relacionados ao mundo do trabalho</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: QUEM É O TILS ===== -->
+        <section>
+            <h2>🤟 Tradutor e Intérprete de Libras</h2>
+
+            <div class="info-importante">
+                <h4><i class="material-icons" style="vertical-align: middle;">interpreter_mode</i> Definição da
+                    profissão</h4>
+                <p>O <strong>tradutor/intérprete de Libras</strong> é um profissional especializado que atua na
+                    <strong>mediação da comunicação</strong> entre pessoas surdas e ouvintes. Esse profissional utiliza
+                    a Língua Brasileira de Sinais (Libras), uma língua <strong>visual-espacial</strong>, para traduzir
+                    e interpretar informações em diferentes contextos, garantindo a <strong>acessibilidade</strong> e a
+                    <strong>inclusão social</strong> (Brasil, 2010).
+                </p>
+            </div>
+
+            <div class="dica-box">
+                <h4><i class="material-icons">difference</i> Tradução × Interpretação</h4>
+                <p><strong>Tradução:</strong> envolve línguas em modalidades diferentes com suporte (escrito ou
+                    gravado), como um texto em português vertido para um vídeo em Libras.</p>
+                <p style="margin-top: 8px;"><strong>Interpretação:</strong> acontece <strong>em tempo real</strong>,
+                    simultaneamente, como em palestras, aulas e consultas médicas.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PERCURSO HISTÓRICO ===== -->
+        <section>
+            <h2>📜 Percurso histórico e regulamentação</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-ano">2004</span>
+                    <h4>📘 MEC/SEESP publica documento norteador</h4>
+                    <p>"O tradutor e intérprete de Língua Brasileira de Sinais e Língua Portuguesa" estabelece
+                        diretrizes éticas e técnicas para a atuação profissional.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-ano">2005</span>
+                    <h4>⚖️ Decreto nº 5.626</h4>
+                    <p>Regulamenta a Lei de Libras e prevê a formação e a presença do tradutor/intérprete em espaços
+                        educacionais e públicos.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-ano">2010</span>
+                    <h4>🏛️ Lei nº 12.319 – Regulamentação da profissão</h4>
+                    <p>Regulamenta oficialmente a profissão de <strong>Tradutor e Intérprete da Língua Brasileira de
+                            Sinais – Libras</strong> no Brasil.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-ano">2023</span>
+                    <h4>📝 PL 5.614/2020 – Atualização da lei</h4>
+                    <p>O projeto atualiza a lei da regulamentação da profissão de <strong>Tradutor, Intérprete e
+                            Guia-Intérprete de Libras</strong>, incluindo novas garantias e condições de trabalho.</p>
+                </div>
+            </div>
+
+            <div class="img-container">
+                <!-- 🔗 SUBSTITUA o src abaixo pelo link da imagem do percurso histórico -->
+                <img src="https://instagram.fbel9-1.fna.fbcdn.net/v/t51.75761-15/483490855_18051229586219119_1304839398840369490_n.webp?_nc_cat=111&_nc_map=urlgen_bucketless&ig_cache_key=MzU4NTE4MTA2MTY0MDA0NDc3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=49o8NtXVo5kQ7kNvwGW4le4&_nc_oc=Adrqja9gPo1_Fubm2kcn2-W8yfHOwx8QwVKknq2FjkZT8oTU5KCE4xKhxY4j5DiOz7o&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbel9-1.fna&_nc_gid=tL640zb9NhVH74dxdFCdSA&_nc_ss=7a22e&oh=00_AQFMIR3DTZGrvMXSM7E-_EryKo-hb_iDygJfkiwxUGhUkQ&oe=6A840C2A"
+                    alt="Linha do tempo do percurso histórico da profissão de intérprete de Libras">
+                <span class="img-legenda">Figura 1 – Percurso histórico da profissão (https://www.instagram.com/p/DHBHzGMAzIr/?img_index=2)</span>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: FORMAÇÃO ===== -->
+        <section>
+            <h2>🎓 Formação do tradutor/intérprete</h2>
+
+            <p>Quais são os caminhos para atuar profissionalmente como TILS? A legislação e o PL 5.614/2020 preveem
+                diferentes rotas de formação:</p>
+
+            <div class="orientacoes-grid" style="margin-top: 20px;">
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">school</i> Bacharelado</h4>
+                    <p><strong>Bacharelado em Tradução e Interpretação em Libras – Língua Portuguesa</strong>, curso
+                        superior específico para a profissão.</p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">menu_book</i> Letras</h4>
+                    <p><strong>Letras com habilitação em Tradução e Interpretação em Libras</strong> ou o curso de
+                        <strong>Letras-Libras</strong>.
+                    </p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">engineering</i> Cursos técnicos / especialização</h4>
+                    <p>Profissionais com <strong>cursos técnicos ou especialização com carga horária mínima de 360
+                            horas</strong> também poderão atuar.</p>
+                </div>
+            </div>
+
+            <div class="observacao">
+                <strong><i class="material-icons" style="vertical-align: middle;">schedule</i> Jornada de
+                    trabalho</strong>
+                <p>A proposta estabelece uma jornada de <strong>6 horas diárias ou 30 semanais</strong>, e o trabalho
+                    que exceder deverá ser feito por <strong>dois profissionais em esquema de revezamento</strong> —
+                    medida essencial, pois a interpretação simultânea exige alto esforço cognitivo e físico.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: ÁREAS DE ATUAÇÃO ===== -->
+        <section>
+            <h2>💼 Atuação e possibilidades</h2>
+
+            <p>O intérprete de Libras pode atuar em uma enorme variedade de espaços sociais, garantindo acessibilidade
+                comunicacional em todos os setores da sociedade:</p>
+
+            <div class="atuacao-grid">
+                <div class="atuacao-item">
+                    <div class="card-icon">🏫</div>
+                    <h4>Educação</h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">🎭</div>
+                    <h4>Artísticas<br><small>(shows, teatros, artes)</small></h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">🎤</div>
+                    <h4>Palestras e conferências</h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">📺</div>
+                    <h4>Televisão<br><small>(programas, jornais, política)</small></h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">🏛️</div>
+                    <h4>Serviço público<br><small>(repartições e bancos)</small></h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">🏥</div>
+                    <h4>Saúde</h4>
+                </div>
+                <div class="atuacao-item">
+                    <div class="card-icon">🙏</div>
+                    <h4>Religiosa</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: COMPETÊNCIAS ===== -->
+        <section>
+            <h2>🧠 Competências do intérprete</h2>
+
+            <p>Para atuar com excelência, o tradutor/intérprete de Libras precisa desenvolver três competências
+                fundamentais:</p>
+
+            <div class="competencia-card comp-linguistica">
+                <div class="comp-icon"><i class="material-icons">translate</i></div>
+                <div>
+                    <h4>Competências linguísticas</h4>
+                    <p>Desenvolve interpretação entre línguas de <strong>modalidades auditivas e visuais</strong>, por
+                        envolver dois modos diferentes de língua: <strong>sinais/oral ou oral/sinais</strong>.</p>
+                </div>
+            </div>
+
+            <div class="competencia-card comp-transferencia">
+                <div class="comp-icon"><i class="material-icons">swap_horiz</i></div>
+                <div>
+                    <h4>Competência de transferência</h4>
+                    <p>Conseguir, <strong>em tempo hábil</strong>, passar de uma língua para outra, mantendo o sentido,
+                        o registro e a intenção da mensagem original.</p>
+                </div>
+            </div>
+
+            <div class="competencia-card comp-motora">
+                <div class="comp-icon"><i class="material-icons">visibility</i></div>
+                <div>
+                    <h4>Competência motora e visual</h4>
+                    <p>Características <strong>inerentes à Libras</strong>: domínio do corpo, das expressões faciais,
+                        do espaço e da percepção visual durante a sinalização.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TEORIA DO SENTIDO ===== -->
+        <section>
+            <h2>💭 Processos tradutórios – Teoria do sentido</h2>
+
+            <p>A <strong>Teoria do Sentido</strong> propõe que traduzir não é trocar palavras, mas
+                <strong>transferir sentidos</strong>. O intérprete compreende a mensagem, desverbaliza (captura o
+                sentido) e reexpressa na língua de chegada:
+            </p>
+
+            <div class="sistema-flow" style="margin-top: 20px;">
+                <div class="flow-item">Língua de partida</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item">Compreensão</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item" style="border-color: #ff8c00; color: #ff8c00;">Deverbalização<br><small>(captura
+                        do sentido)</small></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item">Reexpressão</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-item">Língua de chegada</div>
+            </div>
+
+            <div class="img-container">
+                <!-- 🔗 SUBSTITUA o src abaixo pelo link da imagem da teoria do sentido -->
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwHkdIAK2YB6_ADzFf9oWfJR1K7smUMDplAeXRANoiKWGVYBud8yTI9Oj8yr2AfIhyKaTGftUImQZjfzZugrJclevfT-DOWzuiJwuV56AkF57pkv0WG8r1IZsqazOS7KrFPGc8gvbzNe4/s1600/CINCO+SENTIDOS+LIBRAS.jpg"
+                    alt="Diagrama dos processos tradutórios segundo a teoria do sentido">
+                <span class="img-legenda">Figura 2 – Processos tradutórios: Teoria do sentido (https://anacarolinafrank.blogspot.com/2020/09/cinco-sentidos-em-libras.html)</span>
+            </div>
+
+            <div class="aplicacao-pratica">
+                <h4 style="color: #2e7d32; margin-top: 0;">
+                    <i class="material-icons" style="vertical-align: middle;">lightbulb</i> Por que isso importa?
+                </h4>
+                <p>Interpretar <strong>não é sinalizar palavra por palavra</strong>. O intérprete capta o
+                    <strong>sentido completo</strong> da mensagem e o reconstrói na outra língua, respeitando a
+                    gramática, a cultura e o contexto de cada comunidade linguística.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: EVOLUÇÃO DA PROFISSÃO ===== -->
+        <section>
+            <h2>🌱 A evolução da profissão</h2>
+
+            <div class="citacao-destaque">
+                <p>"A evolução da profissão de tradutor/intérprete de Libras (TILSP) reflete não apenas mudanças
+                    legislativas, mas também um avanço na <strong>compreensão e valorização da cultura surda</strong>
+                    na sociedade brasileira."</p>
+                <div class="citacao-autor">— Reflexão da aula (2026)</div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PRÁTICA DE SINAIS ===== -->
+        <section>
+            <h2>🤟 Prática de Sinais – Profissões</h2>
+
+            <div class="orientacoes-grid">
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">work</i> Sinais de profissões</h4>
+                    <p>Aprenda os sinais das principais profissões: <strong>professor, médico, enfermeiro, engenheiro,
+                            advogado, intérprete, programador</strong>, entre outras.</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem; color: #0066cc;">📖 Consulte as
+                        <strong>páginas 03 a 33</strong> do material didático.
+                    </p>
+                </div>
+                <div class="orientacao-card">
+                    <h4><i class="material-icons">record_voice_over</i> Exercício sugerido</h4>
+                    <p>Sinalize: <strong>"EU SER PROGRAMADOR"</strong>, <strong>"MEU PAI SER MÉDICO"</strong>,
+                        <strong>"EU QUERER SER INTÉRPRETE"</strong>. Combine com os verbos estudados na Unidade 1!
+                    </p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #666; margin-top: 15px;"><em>Fonte: Cas/Sed/MS, 2026.</em></p>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+
+            <ul class="requisitos-lista">
+                <li>A profissão de tradutor/intérprete de Libras</li>
+                <li>O histórico e a regulamentação</li>
+                <li>A atuação e outras possibilidades</li>
+                <li>A formação</li>
+                <li>O vocabulário de sinais: profissões</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>BRASIL. <strong>Lei nº 12.319, de 1º de setembro de 2010</strong>. Regulamenta a profissão de
+                    Tradutor e Intérprete da Língua Brasileira de Sinais – Libras. Diário Oficial da União: seção 1,
+                    Brasília, DF, 2 set. 2010. Disponível em: <a href="https://link.ufms.br/ZCijt"
+                        target="_blank">https://link.ufms.br/ZCijt</a>. Acesso em: 4 maio 2026.</p>
+            </div>
+
+            <div class="referencia">
+                <p>BRASIL. Câmara dos Deputados. <strong>Projeto de Lei n.º 5.614, de 2020</strong>. Altera a Lei nº
+                    10.436, de 24 de abril de 2002, para dispor sobre o uso e difusão da Língua Brasileira de Sinais
+                    (Libras). Brasília, DF: Câmara dos Deputados, 2023. Disponível em: <a
+                        href="https://link.ufms.br/26A3D" target="_blank">https://link.ufms.br/26A3D</a>. Acesso em:
+                    4 maio 2026.</p>
+            </div>
+
+            <div class="referencia">
+                <p>BRASIL. Ministério da Educação. Secretaria de Educação Especial. <strong>O tradutor e intérprete de
+                        Língua Brasileira de Sinais e Língua Portuguesa</strong>. Brasília, DF: MEC; SEESP, 2004. 94
+                    p. Disponível em: <a href="https://link.ufms.br/z2jUT"
+                        target="_blank">https://link.ufms.br/z2jUT</a>. Acesso em: 11 maio 2026.</p>
+            </div>
+
+            <div class="referencia">
+                <p>CENTRO DE CAPACITAÇÃO DE PROFISSIONAIS DA EDUCAÇÃO E DE ATENDIMENTO ÀS PESSOAS COM SURDEZ (CAS/MS).
+                    <strong>Curso de Libras</strong>. Organização institucional: Secretaria de Estado de Educação de
+                    Mato Grosso do Sul. Campo Grande, MS: CAS/MS, [s.d.]. Disponível em: <a
+                        href="https://link.ufms.br/jUIgE" target="_blank">https://link.ufms.br/jUIgE</a>. Acesso em:
+                    27 maio 2026.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018),
+                    a não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob
+                    uma <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.</p>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>Fonte: elaboração própria, 2026</em>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA ETAPA ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod3-checkout-de-presenca.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">assignment</i> Ir para o Checkout do Módulo 3
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Estudo de Libras · 32010005549-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 3 – Unidade 2</p>
+    </footer>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>
