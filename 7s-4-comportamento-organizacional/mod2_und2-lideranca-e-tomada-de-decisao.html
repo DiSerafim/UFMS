@@ -1,0 +1,354 @@
+<!-- mod2_und2-lideranca-e-tomada-de-decisao.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 Unidade 2 | Comportamento Organizacional</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>COMPORTAMENTO ORGANIZACIONAL</h1>
+        <h2>Módulo 2 – O Indivíduo</h2>
+        <h3>Unidade 2 – Liderança e Tomada de Decisão</h3>
+        <p>Profa. Dra. Adriane Angélica Farias Santos Lopes de Queiroz</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod2_und1-motivacao-e-satisfacao-no-trabalho.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 1
+            </a>
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav" style="background-color: #0066cc;">
+                <i class="material-icons">arrow_forward</i> Checkout Módulo 2
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SH23iVzG1_4" frameborder="0"
+                        title="[UFMS Digital] Comportamento Organizacional - Módulo 2 - Unidade 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="title">[UFMS Digital] Comportamento Organizacional - Módulo 2 - Unidade 2</p>
+                <p>Profa. Dra. Adriane Angélica Farias Santos Lopes de Queiroz</p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>🧭 Conceitos de Liderança</strong>
+                    <p>A evolução do pensamento: de traços inatos à influência interpessoal e comunicação.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>📊 Teorias Clássicas</strong>
+                    <p>Traços, Comportamento (autocrático vs. democrático) e a Abordagem Situacional.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🧠 Tomada de Decisão</strong>
+                    <p>Modelos racionais, racionalidade limitada (Simon) e vieses cognitivos.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🚀 Liderança Moderna</strong>
+                    <p>Liderança transformacional, ágil e em comunidades open-source.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: O QUE É LIDERANÇA ===== -->
+        <section>
+            <h2>🧭 O que é Liderança?</h2>
+            <div class="info-box">
+                <p>A liderança é o processo de conduzir um grupo de pessoas. É a habilidade de <strong>motivar e
+                        influenciar</strong> os liderados para que contribuam da melhor forma com os objetivos do grupo
+                    ou da organização.</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <h4>Visão de Friedman (2002)</h4>
+                    <p>Liderar é o processo de <strong>dirigir o comportamento</strong> das pessoas rumo ao alcance de
+                        objetivos. Dirigir significa levar as pessoas a agir de certa maneira ou seguir um curso
+                        particular de ação.</p>
+                </div>
+                <div class="card">
+                    <h4>Visão de Belcher e Atchison</h4>
+                    <p>Liderar é uma <strong>influência interpessoal</strong> exercida em uma dada situação e dirigida
+                        por meio do processo de comunicação para a consecução de objetivos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: EVOLUÇÃO DAS TEORIAS ===== -->
+        <section>
+            <h2>📈 Evolução das Teorias de Liderança</h2>
+
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">genetics</div>
+                    <h4>1. Teoria dos Traços</h4>
+                    <p>As primeiras tentativas vinculavam a liderança a <strong>disposições inatas</strong> (líderes já
+                        nascem feitos). Traços comuns: confiante, vontade de ferro, determinada, decidida.
+                        <em>Falha:</em> não conseguiu construir uma teoria geral universal.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">school</div>
+                    <h4>2. Teoria do Comportamento</h4>
+                    <p>Ênfase no <strong>treinamento</strong>: traços de liderança podem ser aprendidos. Reconhece dois
+                        estilos: <em>orientado para a tarefa</em> (líder autocrático - escola clássica) e <em>orientado
+                            para relações</em> (líder democrático - relações humanas).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">tune</div>
+                    <h4>3. Teoria Situacional</h4>
+                    <p>Não existe traço universal. A liderança eficaz varia de acordo com a situação. <strong>Robert
+                            House (1971):</strong> líder diretivo, apoiador, participativo e orientado para conquista.
+                        <strong>Hersey e Blanchard (1988):</strong> centrada na maturidade dos liderados.</p>
+                </div>
+            </div>
+
+            <div class="atencao-box" style="margin-top: 25px;">
+                <h3><i class="material-icons">help_outline</i> Para Refletir</h3>
+                <p>Qual tipo de liderança é mais fácil de exercer: a democrática ou a autocrática? Os traços preveem
+                    melhor o comportamento em situações "fracas" (ambíguas) do que em situações "fortes" (com regras
+                    rígidas). Seriam os líderes mais autoconfiantes ou é o sucesso na liderança que leva à
+                    autoconfiança?</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TOMADA DE DECISÃO (APROFUNDAMENTO) ===== -->
+        <section>
+            <h2>🧠 Aprofundamento: Tomada de Decisão</h2>
+            <p>Liderança e tomada de decisão são indissociáveis. Como os líderes escolhem o melhor caminho?</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="info-box">
+                    <strong><i class="material-icons" style="vertical-align: middle;">calculate</i> Modelo Racional
+                        Clássico</strong>
+                    <p style="margin-top: 10px;">Assume que o decisor tem informações completas, é imparcial e busca a
+                        <strong>maximização</strong> do resultado (Homo Economicus). É um modelo idealizado, raramente
+                        aplicável na prática devido à complexidade do mundo real.</p>
+                </div>
+                <div class="info-box">
+                    <strong><i class="material-icons" style="vertical-align: middle;">psychology</i> Racionalidade
+                        Limitada (Herbert Simon)</strong>
+                    <p style="margin-top: 10px;">Prêmio Nobel que revolucionou o campo. Simon mostrou que os humanos têm
+                        capacidade cognitiva limitada. Logo, os líderes não "maximizam", mas
+                        <strong>"satisfazem"</strong>: escolhem a primeira alternativa que atinge um critério mínimo
+                        aceitável (satisficing).</p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px; border-left-color: #dc3545;">
+                <h4><i class="material-icons">warning</i> Vieses Cognitivos na Liderança</h4>
+                <p>Líderes estão sujeitos a armadilhas mentais que distorcem a realidade. Conhecer esses vieses é
+                    essencial para decisões melhores:</p>
+                <ul class="requisitos-lista" style="margin-top: 10px;">
+                    <li><strong>Viés de Confirmação:</strong> Buscar apenas informações que confirmam crenças prévias
+                        (perigoso em code reviews ou contratações).</li>
+                    <li><strong>Ancoragem:</strong> Dar peso excessivo à primeira informação recebida (ex: a primeira
+                        estimativa de prazo de um projeto).</li>
+                    <li><strong>Excesso de Confiança:</strong> Superestimar a própria capacidade ou conhecimento (causa
+                        comum de falhas em startups e projetos de TI).</li>
+                    <li><strong>Falácia do Custo Irrecuperável:</strong> Continuar um projeto ruim só porque já se
+                        investiu muito tempo/dinheiro nele.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TENDÊNCIAS E LIDERANÇA MODERNA ===== -->
+        <section>
+            <h2>🚀 Tendências da Liderança Organizacional</h2>
+            <div class="citacao-destaque">
+                <p>"A liderança do futuro tem que ser uma liderança consciente, que olhe para o que está acontecendo a
+                    sua volta e na sociedade... A liderança do futuro tem que ser diversa, inclusiva, que pensa em
+                    justiça social e que seja, de verdade, comprometida com o que acontece no nosso país."</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 25px;">
+                <div class="card">
+                    <div class="card-icon">transform</div>
+                    <h4>Liderança Transformacional (Bass)</h4>
+                    <p>Vai além da troca (transacional). O líder transformacional <strong>inspira</strong> os liderados
+                        com uma visão, <strong>estimula intelectualmente</strong> (incentiva a criatividade) e oferece
+                        <strong>consideração individual</strong>, elevando o nível de maturidade e motivação da equipe.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">hub</div>
+                    <h4>Liderança Ágil e Open-Source</h4>
+                    <p>Em ambientes de tecnologia (Scrum, projetos open-source), a liderança é <strong>servidora e
+                            facilitadora</strong>. O Tech Lead ou Scrum Master não dá ordens, mas remove impedimentos,
+                        protege a equipe e descentraliza a tomada de decisão, confiando na expertise técnica dos
+                        membros.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: APLICAÇÃO PRÁTICA ===== -->
+        <section>
+            <div class="dica-box" style="margin-top: 25px; border-left-color: #28a745;">
+                <h4><i class="material-icons">code</i> Aplicação Prática no seu Projeto "Cidade Virtual"</h4>
+                <p>Como líder/mantenedor do <em>Cidade Virtual</em>, você pode aplicar esses conceitos de forma
+                    poderosa:</p>
+                <ul class="requisitos-lista" style="margin-top: 10px;">
+                    <li><strong>Liderança Situacional:</strong> Com contribuidores novos, use um estilo mais
+                        <em>diretivo</em> (documentação clara, code review rigoroso). Com desenvolvedores experientes,
+                        use o estilo <em>delegativo</em> (dê autonomia total sobre um módulo).</li>
+                    <li><strong>Tomada de Decisão Técnica:</strong> Ao escolher uma nova tecnologia (ex: mudar de
+                        MongoDB para PostgreSQL), evite o <em>viés de confirmação</em>. Force-se a listar os prós e
+                        contras reais, não apenas os que confirmam sua preferência inicial.</li>
+                    <li><strong>Liderança Consciente e Inclusiva:</strong> Como mencionado na citação da aula, garanta
+                        que o *Cidade Virtual* seja acessível (integração com VLibras, design responsivo). Isso é
+                        liderança com propósito e justiça social aplicada ao código.</li>
+                    <li><strong>Decisões Descentralizadas:</strong> Em vez de centralizar todas as decisões de
+                        arquitetura, crie <em>RFCs (Request for Comments)</em> internas, permitindo que a comunidade
+                        discuta e vote em mudanças estruturais (modelo usado por grandes projetos open-source como React
+                        e Kubernetes).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>A evolução do conceito de liderança: dos traços inatos à influência interpessoal e situacional.</li>
+                <li>As teorias clássicas: Traços, Comportamento (autocrático vs. democrático) e Situacional (House,
+                    Hersey e Blanchard).</li>
+                <li>Os modelos de tomada de decisão: do Racional Clássico à Racionalidade Limitada de Herbert Simon.
+                </li>
+                <li>A importância de reconhecer e mitigar vieses cognitivos na liderança.</li>
+                <li>As tendências modernas: Liderança Transformacional, Servidora e as particularidades da liderança em
+                    ambientes Ágeis e Open-Source.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>CHIAVENATO, Idalberto. <strong>Comportamento organizacional: a dinâmica do sucesso das
+                        organizações</strong>. 4. ed. São Paulo: Atlas, 2021. ISBN 9788597027778. Capítulo 10, p.
+                    213-226.</p>
+            </div>
+
+            <div class="referencia">
+                <p>ROBBINS, Stephen P.; JUDGE, Tim. <strong>Comportamento organizacional</strong>. 18. ed. São Paulo:
+                    Pearson, 2020. ISBN 9786550111021. Capítulo 12. Liderança. p. 435-479.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA ETAPA ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod2-checkout-de-presenca.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">assignment_turned_in</i> Ir para o Checkout do Módulo 2
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Comportamento Organizacional · 3201.000.543-1 · 60h</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 2 – Unidade 2</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!-- mod3_und2-poder-e-conflito-nas-organizacoes.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3 Unidade 2 | Comportamento Organizacional</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>COMPORTAMENTO ORGANIZACIONAL</h1>
+        <h2>Módulo 3 – O Grupo</h2>
+        <h3>Unidade 2 – Poder e conflito nas organizações</h3>
+        <p>Profa. Dra. Adriane Angélica Farias Santos Lopes de Queiroz</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod3_und1-comunicacao-nas-organizacoes.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 3 Und 1
+            </a>
+            <a href="mod3-checkout-de-presenca.html" class="btn-nav">
+                <i class="material-icons">arrow_forward</i> Checkout Módulo 3
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9eA1g73R3VU" frameborder="0"
+                        title="[UFMS Digital] Comportamento Organizacional - Módulo 3 - Unidade 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="title">[UFMS Digital] Comportamento Organizacional - Módulo 3 - Unidade 2</p>
+                <p>Profa. Dra. Adriane Angélica Farias Santos Lopes de Queiroz</p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>⚡ Conceito de Poder</strong>
+                    <p>A definição de poder, influência e a tipologia da obediência nas organizações (Etzioni).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>👑 Fontes de Poder</strong>
+                    <p>As 5 bases do poder (Coercitivo, Recompensa, Legítimo, Referência e Competência).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>⚔️ Dinâmica do Conflito</strong>
+                    <p>Níveis de gravidade do conflito e a distinção entre conflito funcional e disfuncional.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🤝 Gestão de Conflitos</strong>
+                    <p>As 5 estratégias de administração de interesses divergentes e aplicação prática em TI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PODER E INFLUÊNCIA ===== -->
+        <section>
+            <h2>⚡ Poder e Influência nas Organizações</h2>
+            <div class="info-box">
+                <p><strong>"PODER</strong> significa o potencial de influência de uma pessoa sobre outra ou outras, que
+                    pode ou não ser exercido. O poder em uma organização é a capacidade de afetar e controlar as
+                    decisões e ações das outras pessoas, mesmo quando elas possam resistir" <strong>(Chiavenato, 2022,
+                        p. 252)</strong>.</p>
+                <p style="margin-top: 10px;">A <strong>influência</strong> é a transação interpessoal pela qual uma
+                    pessoa age intencionalmente para modificar o comportamento de outra. O poder assegura a obediência,
+                    mas o <em>envolvimento</em> demonstra o comportamento da pessoa em relação ao exercício desse poder.
+                </p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">account_tree</div>
+                    <h4>Tipologia da Obediência (Etzioni, 1989)</h4>
+                    <p>A análise considera o <strong>aspecto estrutural</strong> (distribuição do poder no organograma)
+                        e o <strong>aspecto motivacional</strong> (compromisso dos participantes). O poder e o
+                        envolvimento variam conforme os objetivos, a cultura e as pessoas da organização.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">scale</div>
+                    <h4>A Lei da Dependência</h4>
+                    <p>O poder de uma pessoa ocorre em função da dependência de outra. A dependência é
+                        <strong>inversamente proporcional</strong> às fontes alternativas de suprimento: quanto mais
+                        importante, escasso e insubstituível for o recurso, maior é o poder.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: FONTES DE PODER ===== -->
+        <section>
+            <h2>👑 As 5 Fontes de Poder do Gestor</h2>
+            <p>De onde vem a capacidade de influenciar? Segundo Wagner & Hollenbeck (2019), o poder se divide em duas
+                grandes categorias:</p>
+
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">gavel</div>
+                    <h4>1. Poder Coercitivo</h4>
+                    <p>Baseado no medo. Provém do controle sobre punições (advertências, demissões) por comportamentos
+                        indesejáveis.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">card_giftcard</div>
+                    <h4>2. Poder de Recompensa</h4>
+                    <p>Baseado na concessão de prêmios materiais (bônus, promoções) ou sociais (elogios) que influenciam
+                        positivamente o comportamento.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">badge</div>
+                    <h4>3. Poder Legítimo</h4>
+                    <p>Provém do cargo formal na estrutura da empresa (autoridade socialmente aceita) ou do prestígio
+                        informal dentro de um grupo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">favorite</div>
+                    <h4>4. Poder de Referência</h4>
+                    <p>Provém de características pessoais (carisma, integridade) que despertam admiração, respeito e
+                        desejo de identificação nos outros.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">school</div>
+                    <h4>5. Poder de Competência (Especialista)</h4>
+                    <p>Baseia-se em conhecimentos, habilidades e atitudes valorizados pelo grupo, tornando a pessoa um
+                        modelo a ser seguido.</p>
+                </div>
+            </div>
+
+            <div class="atencao-box" style="margin-top: 25px;">
+                <h3><i class="material-icons">psychology</i> Como os Trabalhadores Reagem?</h3>
+                <p>O uso de poder coercitivo ou de recompensa tende a gerar apenas <strong>conformidade</strong> (dura
+                    enquanto a recompensa/punição estiver presente). Já o uso de poder de referência e de competência
+                    gera <strong>comprometimento</strong> (engajamento genuíno e duradouro), que é a base da verdadeira
+                    liderança.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: CONFLITO ORGANIZACIONAL ===== -->
+        <section>
+            <h2>⚔️ Conflito: Níveis e Natureza</h2>
+            <p>O conflito é um processo de oposição e confronto que ocorre quando as partes exercem poder na busca de
+                metas valorizadas e obstruem o progresso de outras partes.</p>
+
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="info-box">
+                    <strong>1. Conflito Percebido (Latente)</strong>
+                    <p style="margin-top: 10px;">As partes percebem a existência do conflito porque sentem que os
+                        objetivos ou interesses diferem, mas ainda não há reação emocional forte.</p>
+                </div>
+                <div class="info-box">
+                    <strong>2. Conflito Experienciado (Velado)</strong>
+                    <p style="margin-top: 10px;">O conflito provoca sentimentos ruins internos: hostilidade, raiva,
+                        medo, ansiedade ou descrédito, mesmo que não seja externado.</p>
+                </div>
+                <div class="info-box">
+                    <strong>3. Conflito Manifestado (Aberto)</strong>
+                    <p style="margin-top: 10px;">O conflito é expresso e manifestado pelo comportamento de pelo menos
+                        uma das partes (discussões, sabotagem, greves, pedidos de demissão).</p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px; border-left-color: #28a745;">
+                <h4><i class="material-icons">help_outline</i> O Conflito é Necessariamente Ruim?</h4>
+                <p><strong>Não.</strong> A visão moderna do Comportamento Organizacional distingue dois tipos de
+                    conflito:</p>
+                <ul class="requisitos-lista" style="margin-top: 10px;">
+                    <li><strong>Conflito de Tarefa (Funcional):</strong> Discordância sobre <em>como</em> fazer o
+                        trabalho ou qual é a melhor solução técnica. Em níveis moderados, <strong>estimula a
+                            criatividade, a inovação e a tomada de decisão de maior qualidade</strong>.</li>
+                    <li><strong>Conflito de Relacionamento (Disfuncional):</strong> Tensões interpessoais baseadas em
+                        antipatia, choques de personalidade ou ataques pessoais. Este é <strong>sempre
+                            prejudicial</strong>, pois consome energia cognitiva e destrói a coesão da equipe.</li>
+                </ul>
+                <p style="margin-top: 10px;">O objetivo da gestão não é eliminar todo conflito, mas <strong>administrar
+                        as divergências</strong> para maximizar os efeitos construtivos (conflito de tarefa) e minimizar
+                    os destrutivos (conflito de relação).</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: APROFUNDAMENTO AVANÇADO ===== -->
+        <section>
+            <h2>🚀 Aprofundamento: Poder e Conflito na Prática da Tecnologia</h2>
+            <p>Como esses conceitos se aplicam ao seu dia a dia como desenvolvedor e líder no projeto <em>Cidade
+                    Virtual</em> ou em equipes de TI?</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">code</div>
+                    <h4>Poder em Comunidades Open-Source</h4>
+                    <p>Em projetos como o seu, o <strong>Poder Legítimo</strong> (cargo) é quase inexistente. A
+                        liderança é sustentada quase exclusivamente pelo <strong>Poder de Competência</strong>
+                        (qualidade do código, conhecimento da arquitetura) e pelo <strong>Poder de Referência</strong>
+                        (justiça, transparência e apoio à comunidade). Tentar usar poder coercitivo em voluntários
+                        resulta em abandono imediato do projeto.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">psychology_alt</div>
+                    <h4>Segurança Psicológica e Conflito</h4>
+                    <p>Para que o <em>Conflito de Tarefa</em> seja saudável (ex: debater se usa MongoDB ou PostgreSQL),
+                        a equipe precisa de <strong>Segurança Psicológica</strong> (Amy Edmondson). Os membros devem
+                        sentir que podem discordar da arquitetura proposta sem sofrer retaliação pessoal ou ser
+                        rotulados como "difíceis".</p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px; border-left-color: #0066cc;">
+                <h4><i class="material-icons">build</i> Ferramenta Prática: Blameless Post-Mortem</h4>
+                <p>Quando um conflito ou falha ocorre (ex: um bug crítico em produção), utilize a técnica de
+                    <em>Post-Mortem Sem Culpa</em>. O foco da discussão deve ser <strong>o processo e o sistema</strong>
+                    (Conflito de Tarefa construtivo), e nunca <strong>a pessoa</strong> (Conflito de Relação). Pergunte
+                    "O que no nosso processo permitiu que esse erro aconteça?" em vez de "Quem foi o idiota que quebrou
+                    o código?". Isso transforma o conflito em aprendizado organizacional.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: ESTILOS DE GESTÃO DE CONFLITOS ===== -->
+        <section>
+            <h2>🤝 Administrando Interesses Divergentes</h2>
+            <p>De acordo com Chiavenato (2022), a gestão de conflitos depende de duas dimensões: o <strong>desejo de
+                    satisfazer os próprios interesses</strong> (assertividade) e o <strong>desejo de satisfazer os
+                    interesses da parte contrária</strong> (cooperação). Isso gera 5 estilos:</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="info-box">
+                    <strong>1. Competição (Assertivo, Não Cooperativo)</strong>
+                    <p style="margin-top: 10px;">Sobrepujar a outra parte às custas dos interesses dela. Útil em
+                        emergências ou quando uma decisão impopular mas vital precisa ser tomada rapidamente.</p>
+                </div>
+                <div class="info-box">
+                    <strong>2. Acomodação (Não Assertivo, Cooperativo)</strong>
+                    <p style="margin-top: 10px;">Permitir que a outra parte satisfaça seus interesses às custas dos
+                        próprios. Útil para preservar a harmonia em questões triviais ou quando você percebe que está
+                        errado.</p>
+                </div>
+                <div class="info-box">
+                    <strong>3. Abstenção/Evitação (Não Assertivo, Não Cooperativo)</strong>
+                    <p style="margin-top: 10px;">Recusa em assumir um papel ativo. Útil quando o conflito é trivial,
+                        quando as emoções estão muito altas e é preciso um "tempo fora", ou quando o custo do confronto
+                        supera os benefícios.</p>
+                </div>
+                <div class="info-box">
+                    <strong>4. Colaboração (Assertivo, Cooperativo)</strong>
+                    <p style="margin-top: 10px;">Tenta satisfazer a todos mediante a consideração das diferenças,
+                        buscando soluções <em>ganha-ganha</em>. É o estilo mais eficaz para conflitos complexos que
+                        requerem integração de perspectivas diferentes, mas consome mais tempo.</p>
+                </div>
+                <div class="info-box" style="grid-column: 1 / -1;">
+                    <strong>5. Transigência/Compromisso (Meio-termo)</strong>
+                    <p style="margin-top: 10px;">Procura a satisfação parcial de todos mediante troca e sacrifício
+                        mútuo. É uma solução "boa o suficiente" quando a colaboração total é impossível ou quando há
+                        prazo apertado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>A definição de poder como potencial de influência e a tipologia da obediência de Etzioni.</li>
+                <li>As 5 fontes de poder (Coercitivo, Recompensa, Legítimo, Referência e Competência) e como elas geram
+                    conformidade ou comprometimento.</li>
+                <li>Os 3 níveis de gravidade do conflito: Percebido, Experienciado e Manifestado.</li>
+                <li>A distinção crucial entre Conflito de Tarefa (construtivo) e Conflito de Relacionamento
+                    (destrutivo).</li>
+                <li>As 5 estratégias de gestão de conflitos (Competição, Acomodação, Abstenção, Colaboração e
+                    Transigência) e sua aplicação prática em ambientes de tecnologia.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>CHIAVENATO, Idalberto. <strong>Comportamento organizacional: a dinâmica do sucesso das
+                        organizações</strong>. 4. ed. São Paulo: Atlas, 2021. ISBN 9788597027778. Capítulos 12 e 13, p.
+                    251-302.</p>
+            </div>
+
+            <div class="referencia">
+                <p>ETZIONI, Amitai. <strong>Organizações modernas</strong>. 2. ed. São Paulo: Pioneira, 1989.</p>
+            </div>
+
+            <div class="referencia">
+                <p>WAGNER, John A.; HOLLENBECK, John R. <strong>Comportamento organizacional: criando vantagem
+                        competitiva</strong>. 4. ed. São Paulo: Saraiva, 2019. ISBN 9788571440760. Capítulo 11, p.
+                    300-329.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA UNIDADE ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod4_und1-cultura-organizacional.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">arrow_forward</i> Avançar para Módulo 4: A Organização
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Comportamento Organizacional · 3201.000.543-1 · 60h</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 3 – Unidade 2</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            // Estado salvo no localStorage (persiste entre páginas)
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
