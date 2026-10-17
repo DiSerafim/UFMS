@@ -1,0 +1,381 @@
+<!-- mod1_und1-sistemas-de-informacao-definicao-componentes-tipos-e-caracteristicas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 Unidade 1 | Administração de Sistemas de Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ADMINISTRAÇÃO DE SISTEMAS DE INFORMAÇÃO</h1>
+        <h2>Módulo 1 – Sistemas de Informações Gerenciais e seus modelos de aplicações</h2>
+        <h3>Unidade 1 – Sistemas de Informação: definição, componentes, tipos e características</h3>
+        <p>Prof. Dr. Robson Soares Silva</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="forum-de-discussao-administracao-de-sistema-de-informacao.html" class="btn-nav">
+                <i class="material-icons">forum</i> Fórum
+            </a>
+            <a href="mod1_und2-sistemas-de-gestao-de-banco-de-dados.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_forward</i> Mod 1 Und 2
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="video-container">
+
+                            <iframe src="https://www.youtube.com/embed/1rXRYm0rM78" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 1 - Unidade 1"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">[UFMS Digital] Administração de Sistemas de Informação - Módulo 1 - Unidade 1
+                        </p>
+                        <p>Prof. Dr. Robson Soares Silva</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Pmkb8jwTccs" frameborder="0"
+                                title="Sistemas de Informação e Colaboração"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <p class="title" style="font-size: 0.9rem; margin-top: 10px;">Vídeo 2: Sistemas de Informação -
+                            Introdução aos Sistema de Informação</p>
+                        <p>Prof. responsável: Kleber Rocha de Oliveira</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+
+
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>📖 Definição de SI</strong>
+                    <p>Conceito técnico e a importância dos sistemas na gestão empresarial.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🔄 Dados vs. Informação</strong>
+                    <p>A diferença entre fatos brutos e dados processados com significado.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>⚙️ Tipos de Sistemas</strong>
+                    <p>SPT, SIG, SAD e Sistemas de Controle de Processos (PCS).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🧩 Componentes</strong>
+                    <p>As 5 dimensões: pessoas, hardware, software, dados e redes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DEFINIÇÃO ===== -->
+        <section>
+            <h2>💡 O que é um Sistema de Informação?</h2>
+            <div class="info-box">
+                <p>Um sistema de informação (SI) pode ser definido tecnicamente como um conjunto de componentes
+                    inter-relacionados que coletam (ou recuperam), processam, armazenam e distribuem informações
+                    destinadas a apoiar a tomada de decisões, a coordenação e o controle em uma organização
+                    <strong>(LAUDON e LAUDON, 2014)</strong>.
+                </p>
+                <p style="margin-top: 10px;">Além disso, os sistemas de informação também auxiliam os gerentes e
+                    trabalhadores a analisar problemas, visualizar assuntos complexos e criar novos produtos.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DADOS VS INFORMAÇÃO ===== -->
+        <section>
+            <h2>📊 Informação x Dados</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h4>Dados</h4>
+                    <p>São sequências de fatos ainda não analisados, representativos de eventos que ocorrem nas
+                        organizações ou no ambiente físico, antes de terem sido organizados e dispostos de forma que as
+                        pessoas possam entendê-los e usá-los.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h4>Informação</h4>
+                    <p>Quer dizer dados que foram modelados em um formato significativo e útil para os seres humanos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px;">
+                <h4><i class="material-icons">shopping_cart</i> Exemplo Prático: Supermercado</h4>
+                <p>Os caixas de supermercado registram milhões de <strong>dados</strong> brutos (códigos de barras).
+                    Esses dados podem ser somados e analisados, a fim de fornecer <strong>informações</strong>
+                    significativas, como o número total de detergentes vendidos em determinada loja, as marcas que são
+                    vendidas mais rapidamente ou o total gasto nessa marca na região.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: ATIVIDADES BÁSICAS ===== -->
+        <section>
+            <h2>⚙️ Entrada, Processamento e Saída</h2>
+            <p>Três atividades básicas em um sistema de informação geram as informações de que as organizações
+                necessitam:</p>
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">input</div>
+                    <h4>1. Entrada</h4>
+                    <p>Captura ou coleta dados brutos de dentro da organização ou de seu ambiente externo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">settings</div>
+                    <h4>2. Processamento</h4>
+                    <p>Converte esses dados brutos em uma forma mais significativa e útil.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">output</div>
+                    <h4>3. Saída</h4>
+                    <p>Transfere as informações processadas às pessoas que as utilizarão ou às atividades nas quais
+                        serão empregadas.</p>
+                </div>
+            </div>
+            <div class="atencao-box" style="margin-top: 20px;">
+                <h3><i class="material-icons">feedback</i> O papel do Feedback</h3>
+                <p>Os sistemas de informações também requerem um <strong>feedback</strong>, que é uma resposta à ação
+                    adotada, retornada a determinados membros da organização para ajudá-los a avaliar ou corrigir o
+                    estágio de entrada.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TIPOS DE SISTEMAS ===== -->
+        <section>
+            <h2>🏢 Tipos de Sistemas de Informação</h2>
+            <p>É impossível imaginar as empresas do século XXI sem os processos informatizados que coordenam suas
+                atividades. Veja os principais tipos:</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">receipt_long</div>
+                    <h4>Sistema de Processamento de Transações (SPT)</h4>
+                    <p>Usado em nível operacional para atender às necessidades diárias. Registra transações rotineiras
+                        como valores recebidos, despesas, folhas de pagamento e controle de estoque. É a base
+                        operacional da organização.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">monitoring</div>
+                    <h4>Sistema de Informação Gerencial (SIG)</h4>
+                    <p>Auxilia as tomadas de decisão administrativas (nível gerencial). Dependem dos SPT para obtenção
+                        de dados, fornecendo relatórios para monitorar a empresa, comparar desempenho e realizar
+                        previsões.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">psychology</div>
+                    <h4>Sistema de Apoio à Decisão (SAD)</h4>
+                    <p>De maior capacidade analítica. Reúne dados de SPT, SIG e fontes externas (concorrência, câmbio).
+                        Não resolve problemas pré-definidos, mas analisa opções e riscos, sendo adaptável a novas
+                        situações.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">factory</div>
+                    <h4>Sistema de Controle de Processos (PCS)</h4>
+                    <p>Também chamado de sistema <em>workflow</em>. Conjunto de ferramentas para gerir atividades
+                        empresariais, otimizar o fluxo de produção, com foco na melhoria contínua e aumento de
+                        produtividade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: COMPONENTES ===== -->
+        <section>
+            <h2>🧩 Componentes e Recursos de um Sistema de Informação</h2>
+            <p>Para usar os sistemas de informação com eficiência, é preciso entender as dimensões que os formam.
+                Segundo O'Brien (2004), existem cinco recursos básicos:</p>
+
+            <ul class="requisitos-lista">
+                <li><strong>👥 Recursos Humanos:</strong> Usuários finais e especialistas em sistemas de informação.
+                </li>
+                <li><strong>💻 Recursos de Hardware:</strong> Máquinas e mídias físicas.</li>
+                <li><strong>⚙️ Recursos de Software:</strong> Programas e procedimentos.</li>
+                <li><strong>🗄️ Recursos de Dados:</strong> Bancos de dados e bases de conhecimento.</li>
+                <li><strong>🌐 Recursos de Rede:</strong> Meios de comunicação e suporte de rede.</li>
+            </ul>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <p>Os recursos de dados são transformados por atividades de processamento de informação (entrada,
+                    processamento, saída, armazenamento e controle) em uma diversidade de produtos de informação para os
+                    usuários finais.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>A definição técnica e a importância dos Sistemas de Informação nas organizações.</li>
+                <li>A distinção fundamental entre dados brutos e informação processada.</li>
+                <li>As três atividades básicas: entrada, processamento e saída, e o papel do feedback.</li>
+                <li>As características e aplicações dos principais tipos de SI: SPT, SIG, SAD e PCS.</li>
+                <li>Os cinco componentes essenciais: pessoas, hardware, software, dados e redes.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>JANNUZZI, Celeste Aída Sirotheau Corrêa; FALSARELLA, Orandi Mina; SUGAHARA, Cibele Roberta. Sistema
+                    de informação: um entendimento conceitual para a sua aplicação nas organizações empresariais.
+                    <em>Perspectivas em Ciência da Informação</em>, Minas Gerais, v. 19, n. 4, p. 94–117, 2014.
+                    Disponível em: <a href="https://link.ufms.br/4tZ4F" target="_blank">https://link.ufms.br/4tZ4F</a>.
+                    Acesso em: 01 dez. 2023.
+                </p>
+            </div>
+
+            <div class="referencia">
+                <p>KALATEC. <strong>Sistema de Controle de Processos</strong>. Disponível em: <a
+                        href="https://blog.kalatec.com.br/sistema-de-controle-de-processos/"
+                        target="_blank">https://blog.kalatec.com.br/sistema-de-controle-de-processos/</a>. Acesso em: 28
+                    dez. 2023.</p>
+            </div>
+
+            <div class="referencia">
+                <p>LAUDON, Kenneth C.; LAUDON, Jane Price. <strong>Sistemas de informação gerenciais</strong>. 11. ed.
+                    São Paulo: Pearson, 2014.</p>
+            </div>
+
+            <div class="referencia">
+                <p>MANTOVANI, Dennis. <strong>Tipos de sistemas de informação: tudo o que você precisa saber!</strong>
+                    Disponível em: <a
+                        href="https://www.undb.edu.br/blog/tipos-de-sistemas-de-informacao-tudo-o-que-voce-precisa-saber"
+                        target="_blank">https://www.undb.edu.br/blog/...</a>. Acesso em: 16 dez. 2023.</p>
+            </div>
+
+            <div class="referencia">
+                <p>O'BRIEN, James A. <strong>Sistemas de informação e as decisões gerenciais na era da
+                        Internet</strong>. 2. ed. São Paulo: Saraiva, 2009.</p>
+            </div>
+
+            <div class="referencia">
+                <p>WAKULICZ, Gilmar Jorge. <strong>Sistemas de informações gerenciais</strong>. Santa Maria:
+                    Universidade Federal de Santa Maria, Colégio Politécnico, Rede e-Tec Brasil, 2016.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA UNIDADE ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod1_und2-sistemas-de-gestao-de-banco-de-dados.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">arrow_forward</i> Avançar para Unidade 2
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Administração de Sistemas de Informação · 32010005422-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 1 – Unidade 1</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            // Estado salvo no localStorage (persiste entre páginas)
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

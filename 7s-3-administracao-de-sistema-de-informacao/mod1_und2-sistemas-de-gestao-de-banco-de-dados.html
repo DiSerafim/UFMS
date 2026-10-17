@@ -1,0 +1,367 @@
+<!-- mod1_und2-sistemas-de-gestao-de-banco-de-dados.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 Unidade 2 | Administração de Sistemas de Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ADMINISTRAÇÃO DE SISTEMAS DE INFORMAÇÃO</h1>
+        <h2>Módulo 1 – Sistemas de Informações Gerenciais e seus modelos de aplicações</h2>
+        <h3>Unidade 2 – Sistemas de gestão de banco de dados</h3>
+        <p>Prof. Dr. Robson Soares Silva</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+
+            <a href="mod1_und1-sistemas-de-informacao-definicao-componentes-tipos-e-caracteristicas.html"
+                class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 1 Und 1
+            </a>
+
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 1<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/vkOiDjfstv8" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 1 - Unidade 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">[UFMS Digital] Administração de Sistemas de Informação - Módulo 1 - Unidade 2
+                        </p>
+                        <p>Prof. Dr. Robson Soares Silva</p>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/N4wGhiuEaxo" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 1 - Unidade 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">Sistemas de Informação - Aula 5 - Estrutura organizacional e tipos de sistemas de informação</p>
+                        <p>Prof. responsável: Marcelo Fantinato</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>🗄️ Conceito de SGBD</strong>
+                    <p>Definição e função dos Sistemas de Gestão de Banco de Dados.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🔗 SGBDs Relacionais</strong>
+                    <p>Características e exemplos como MySQL, Oracle e PostgreSQL.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🚀 Bancos de Dados NoSQL</strong>
+                    <p>Motivações, escalabilidade e tipos (Colunar, Documentos, Grafos, Chave-Valor).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>📊 Rankings de Mercado</strong>
+                    <p>Como avaliar a popularidade de SGBDs e linguagens (DB-Engines e TIOBE).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: DEFINIÇÃO ===== -->
+        <section>
+            <h2>💡 O que é um Sistema de Gestão de Banco de Dados?</h2>
+            <div class="info-box">
+                <p>Um sistema de gestão de banco de dados (<em>Database Management System</em> — <strong>DBMS</strong>
+                    ou <strong>SGBD</strong>) é um software específico usado para criar, armazenar, organizar e acessar
+                    dados a partir de um banco de dados <strong>(LAUDON e LAUDON, 2014)</strong>.</p>
+                <p style="margin-top: 10px;">Os bancos de dados são as ferramentas mais utilizadas para o armazenamento
+                    das informações e dos dados, seja em um servidor físico ou na nuvem. Surge assim a necessidade de
+                    ferramentas específicas que facilitem o trabalho na hora de estruturá-los para receber essas
+                    informações <strong>(OLIVEIRA, 2023)</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SGBDs RELACIONAIS ===== -->
+        <section>
+            <h2>🔗 SGBDs Relacionais</h2>
+            <p>Chamamos popularmente de "banco de dados", mas na realidade são os SGBDs que gerenciam os bancos. Por
+                padrão, utilizam a linguagem <strong>SQL</strong> para realizar consultas, o que traz vantagens como
+                aprendizado, portabilidade, longevidade e liberdade de escolha.</p>
+
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">dolphin</div>
+                    <h4>MySQL</h4>
+                    <p>Popular, open source, multiplataforma e compatível com diversas linguagens. Possui comunidade
+                        ativa e o <em>MySQL Workbench</em> para facilitar a administração. Ideal de aplicações simples a
+                        robustas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">cloud</div>
+                    <h4>Oracle</h4>
+                    <p>Surgiu nos anos 70. Possui várias edições focadas em empresas de médio e grande porte. Suporta
+                        múltiplos bancos de dados e oferece o <em>SQL Developer</em> como ferramenta gratuita de
+                        administração.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">elephant</div>
+                    <h4>PostgreSQL</h4>
+                    <p>Open source, estável, escalável e com flexibilidade no uso de <em>stored procedures</em>.
+                        Multiplataforma, utiliza o <em>pgAdmin</em> (acessível via navegador) para facilitar a
+                        administração.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: NOSQL ===== -->
+        <section>
+            <h2>🚀 Bancos de Dados NoSQL</h2>
+            <div class="atencao-box">
+                <h3><i class="material-icons">trending_up</i> Por que o NoSQL surgiu?</h3>
+                <p>Com a popularização da internet, redes sociais e dispositivos móveis, o volume de dados não
+                    estruturados cresceu exponencialmente. Bancos relacionais escalam, mas tornam-se custosos (máquinas
+                    e especialistas). O NoSQL surgiu para resolver questões de <strong>escalabilidade
+                        horizontal</strong> e custos de manutenção de Big Data <strong>(DEVMEDIA, 2023)</strong>.</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 25px;">
+                <div class="card">
+                    <div class="card-icon">view_column</div>
+                    <h4>Cassandra (Colunar)</h4>
+                    <p>Armazenamento orientado a colunas, otimizando a leitura de grandes volumes de dados (OLAP).
+                        Desenvolvido pelo Facebook, é altamente escalável, de baixa latência e descentralizado.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">description</div>
+                    <h4>MongoDB (Documentos)</h4>
+                    <p>Líder NoSQL. Armazena dados em formato JSON (BSON), sem necessidade de colunas pré-montadas.
+                        Possui baixa curva de aprendizagem, fácil escalabilidade horizontal e suporte a transações ACID.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">hub</div>
+                    <h4>Neo4j (Grafos)</h4>
+                    <p>Otimizado para relacionamentos complexos entre dados. Utiliza a linguagem de consulta própria
+                        <em>Cypher</em>. Muito usado por empresas como Walmart e LinkedIn para análise de redes.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">key</div>
+                    <h4>Redis (Chave-Valor)</h4>
+                    <p>Extremamente rápido, armazena dados na memória (RAM). Ideal para sistemas de cache, sessões e
+                        aplicações que exigem alta performance de leitura e escrita.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RANKINGS ===== -->
+        <section>
+            <h2>📊 Rankings de Mercado</h2>
+            <div class="grid-2">
+                <div class="dica-box">
+                    <h4><i class="material-icons">leaderboard</i> DB-Engines Ranking</h4>
+                    <p>Classifica os sistemas de gerenciamento de banco de dados de acordo com sua popularidade. O
+                        ranking é atualizado mensalmente e é uma excelente referência para escolher tecnologias de
+                        mercado.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>Fonte: <a
+                                href="https://db-engines.com/en/ranking" target="_blank">db-engines.com</a></em></p>
+                </div>
+                <div class="dica-box">
+                    <h4><i class="material-icons">code</i> TIOBE Index</h4>
+                    <p>Indicador da popularidade das linguagens de programação. Embora focado em linguagens, reflete
+                        indiretamente o ecossistema e a demanda por profissionais que dominam as tecnologias de banco de
+                        dados associadas.</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>Fonte: <a
+                                href="https://www.tiobe.com/tiobe-index/" target="_blank">tiobe.com</a></em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: COMPONENTES ===== -->
+        <section>
+            <h2>🧩 Componentes e Recursos de um Sistema de Informação</h2>
+            <p>Relembrando O'Brien (2004), a construção de um modelo de informação requer habilidades que vão além da
+                programação. Um SGBD é parte fundamental do recurso de <strong>Dados</strong>, que interage com os
+                outros quatro recursos básicos:</p>
+
+            <ul class="requisitos-lista">
+                <li><strong>👥 Recursos Humanos:</strong> Usuários finais e especialistas em sistemas de informação
+                    (DBAs, desenvolvedores).</li>
+                <li><strong>💻 Recursos de Hardware:</strong> Servidores, máquinas e mídias de armazenamento.</li>
+                <li><strong>⚙️ Recursos de Software:</strong> O próprio SGBD, programas e procedimentos de acesso.</li>
+                <li><strong>🗄️ Recursos de Dados:</strong> Bancos de dados e bases de conhecimento estruturados ou não.
+                </li>
+                <li><strong>🌐 Recursos de Rede:</strong> Meios de comunicação que permitem o acesso distribuído aos
+                    dados.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>A definição e a importância dos Sistemas de Gestão de Banco de Dados (SGBD/DBMS).</li>
+                <li>As características e aplicações dos principais SGBDs Relacionais (MySQL, Oracle, PostgreSQL).</li>
+                <li>O surgimento e a necessidade dos bancos de dados NoSQL para lidar com escalabilidade e dados não
+                    estruturados.</li>
+                <li>Os quatro principais tipos de NoSQL: Colunar (Cassandra), Documentos (MongoDB), Grafos (Neo4j) e
+                    Chave-Valor (Redis).</li>
+                <li>A importância de consultar rankings como DB-Engines e TIOBE para decisões tecnológicas.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>ANDRADE, Ana Paula. <strong>Tipos de banco de dados NoSQL</strong>. TREINAWEB. Disponível em: <a
+                        href="https://www.treinaweb.com.br/blog/tipos-de-banco-de-dados-nosql"
+                        target="_blank">https://www.treinaweb.com.br/blog/...</a>. Acesso em: 1 dez. 2023.</p>
+            </div>
+
+            <div class="referencia">
+                <p>DEVMEDIA. <strong>Introdução aos bancos de dados NoSQL</strong>. Disponível em: <a
+                        href="https://www.devmedia.com.br/introducao-aos-bancos-de-dados-nosql/26044"
+                        target="_blank">https://www.devmedia.com.br/...</a>. Acesso em: 1 dez. 2023.</p>
+            </div>
+
+            <div class="referencia">
+                <p>LAUDON, Kenneth C.; LAUDON, Jane Price. <strong>Sistemas de informação gerenciais</strong>. 11. ed.
+                    São Paulo: Pearson, 2014.</p>
+            </div>
+
+            <div class="referencia">
+                <p>O'BRIEN, James A. <strong>Sistemas de informação e as decisões gerenciais na era da
+                        Internet</strong>. 2. ed. São Paulo: Saraiva, 2009.</p>
+            </div>
+
+            <div class="referencia">
+                <p>WAKULICZ, Gilmar Jorge. <strong>Sistemas de informações gerenciais</strong>. Santa Maria:
+                    Universidade Federal de Santa Maria, Colégio Politécnico, Rede e-Tec Brasil, 2016.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA UNIDADE ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod2_und1-infraestrutura-de-ti-hardware-e-software-do-computador.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">arrow_forward</i> Avançar para Módulo 2
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Administração de Sistemas de Informação · 32010005422-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 1 – Unidade 2</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            // Estado salvo no localStorage (persiste entre páginas)
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

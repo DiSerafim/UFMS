@@ -1,0 +1,411 @@
+<!-- mod2_und2-seguranca-em-sistemas-de-informacao.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 Unidade 2 | Administração de Sistemas de Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ADMINISTRAÇÃO DE SISTEMAS DE INFORMAÇÃO</h1>
+        <h2>Módulo 2 – Tecnologia da Informação e sua infraestrutura nas organizações</h2>
+        <h3>Unidade 2 – Segurança em sistemas de informação</h3>
+        <p>Prof. Dr. Robson Soares Silva</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod2_und1-infraestrutura-de-ti-hardware-e-software-do-computador.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Mod 2 Und 1
+            </a>
+
+            <a href="mod2-checkout-de-presenca.html" class="btn-nav" style="background-color: #28a745;">
+                Checkout P. Mod 2<i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/PWqVJu6Xfy8" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 2
+                        </p>
+                        <p>Prof. Dr. Robson Soares Silva</p>
+                    </div>
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/HvQDBp68gOc" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">Sistemas de Informação - Aula 28 - Segurança de tecnologia da informação</p>
+                        <p>Prof. responsável: Marcelo Fantinato</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>🛡️ Vulnerabilidades</strong>
+                    <p>Por que sistemas eletrônicos e redes interconectadas são alvos constantes.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🌐 Riscos da Internet</strong>
+                    <p>Ameaças via VoIP, E-mail, Mensageiros e Redes P2P.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>📡 Segurança Sem Fio</strong>
+                    <p>Desafios do Wi-Fi, Bluetooth, Sniffers e War Driving.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>💥 Tipos de Ataques</strong>
+                    <p>Phishing, Ransomware, DDoS e estratégias avançadas de prevenção.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: VULNERABILIDADE ===== -->
+        <section>
+            <h2>⚠️ Por que os Sistemas são Vulneráveis?</h2>
+            <div class="info-box">
+                <p>Quando grandes quantidades de dados são armazenadas no formato eletrônico, ficam vulneráveis a muito
+                    mais tipos de ameaças do que quando estão em formato manual. Sistemas de informação em diferentes
+                    localidades podem ser interconectados por meio de redes de telecomunicação <strong>(LAUDON e LAUDON,
+                        2014)</strong>.</p>
+                <p style="margin-top: 10px;">Logo, o potencial para acesso não autorizado, uso indevido ou fraude não
+                    fica limitado a um único lugar, mas pode ocorrer em qualquer ponto de acesso à rede. Enchentes,
+                    incêndios, quedas de energia e outros problemas técnicos também podem causar interrupções em
+                    qualquer ponto.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: VULNERABILIDADES DA INTERNET ===== -->
+        <section>
+            <h2>🌐 Vulnerabilidades da Internet e Redes</h2>
+            <p>Grandes redes públicas, incluindo a Internet, são mais vulneráveis do que as redes internas, porque estão
+                virtualmente abertas a qualquer um.</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">call</div>
+                    <h4>VoIP (Voz sobre IP)</h4>
+                    <p>Serviços de telefonia baseados em IP podem ser mais vulneráveis que redes comutadas. A maior
+                        parte do tráfego VoIP na Internet pública não está criptografada, permitindo que hackers
+                        interceptem diálogos ou entupam servidores com tráfego falso.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">mail</div>
+                    <h4>E-mail e Mensageiros</h4>
+                    <p>E-mails podem conter anexos maliciosos (trampolins para malware) ou ser usados por funcionários
+                        para vazar segredos de negócio. Mensageiros instantâneos sem camada segura podem ser
+                        interceptados na transmissão.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">share</div>
+                    <h4>Redes P2P</h4>
+                    <p>O compartilhamento de arquivos peer-to-peer (P2P) pode transmitir software malicioso ou expor
+                        discos rígidos inteiros de computadores corporativos a estranhos na rede.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">wifi</div>
+                    <h4>Redes Sem Fio (Wi-Fi)</h4>
+                    <p>Bluetooth e Wi-Fi (802.11) são suscetíveis a escutas. Os identificadores (SSID) são transmitidos
+                        várias vezes e captados por <em>sniffers</em>. O <em>War Driving</em> (espionagem via carro)
+                        intercepta tráfego de redes desprotegidas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: SNIFFERS ===== -->
+        <section>
+            <div class="atencao-box">
+                <h3><i class="material-icons">bug_report</i> O que é um Sniffer?</h3>
+                <p>Um <strong>sniffer</strong> (farejador) é um software ou hardware que monitora o tráfego de internet
+                    em tempo real, capturando e inspecionando pacotes de dados que entram e saem de uma rede. É como
+                    "parar carros em uma rodovia" para ver quem está dentro (os dados). Cibercriminosos usam sniffers em
+                    redes públicas para roubar senhas e dados não criptografados <strong>(AVAST, 2024)</strong>.</p>
+                <p style="margin-top: 10px;"><strong>Como se proteger?</strong> O uso de <strong>VPNs (Virtual Private
+                        Networks)</strong> e protocolos <strong>HTTPS/TLS</strong> cria um túnel criptografado que torna
+                    os dados "ilegíveis" para o sniffer, mesmo que o pacote seja capturado.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TIPOS DE ATAQUES ===== -->
+        <section>
+            <h2>💥 7 Principais Tipos de Ataques Cibernéticos</h2>
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">phishing</div>
+                    <h4>1. Phishing</h4>
+                    <p>Engenharia social via e-mails ou sites falsos que imitam instituições confiáveis para roubar
+                        credenciais.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">lock</div>
+                    <h4>2. Ransomware</h4>
+                    <p>Malware que criptografa os dados da vítima e exige resgate (geralmente em criptomoedas) para
+                        liberar a chave.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">traffic</div>
+                    <h4>3. DDoS Attack</h4>
+                    <p>Negação de Serviço Distribuída. Satura o servidor com tráfego falso de múltiplas origens, tirando
+                        o site do ar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">network_check</div>
+                    <h4>4. Port Scanning</h4>
+                    <p>Varredura em portas de rede para descobrir serviços ativos e vulnerabilidades abertas no
+                        servidor.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">horse</div>
+                    <h4>5. Cavalo de Troia</h4>
+                    <p>Software que parece legítimo, mas abre "portas dos fundos" (backdoors) para acesso remoto não
+                        autorizado.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">password</div>
+                    <h4>6. Força Bruta</h4>
+                    <p>Tentativa e erro automatizada para descobrir senhas. Combate-se com políticas de senhas fortes e
+                        MFA.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">currency_bitcoin</div>
+                    <h4>7. Cryptojacking</h4>
+                    <p>Uso clandestino do poder de processamento do servidor/PC da vítima para minerar criptomoedas para
+                        o atacante.</p>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 15px;"><em>Fonte: Adaptado de PROLINX, 2024.</em></p>
+        </section>
+
+        <!-- ===== SEÇÃO: APROFUNDAMENTO AVANÇADO ===== -->
+        <section>
+            <h2>🚀 Aprofundamento: Segurança Moderna e OWASP</h2>
+            <p>Além dos conceitos clássicos, o mercado de TI atual exige o domínio de frameworks e arquiteturas
+                avançadas de segurança:</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="info-box">
+                    <strong><i class="material-icons" style="vertical-align: middle;">verified_user</i> Arquitetura Zero
+                        Trust</strong>
+                    <p style="margin-top: 10px;">O modelo tradicional de "castelo e fosso" (confiar em quem está dentro
+                        da rede) morreu. O <strong>Zero Trust</strong> opera sob o lema <em>"Nunca confie, sempre
+                            verifique"</em>. Cada requisição, mesmo vinda da rede interna, deve ser autenticada,
+                        autorizada e criptografada antes de acessar recursos.</p>
+                </div>
+                <div class="info-box">
+                    <strong><i class="material-icons" style="vertical-align: middle;">bug_report</i> OWASP Top
+                        10</strong>
+                    <p style="margin-top: 10px;">Padrão global de conscientização sobre riscos em aplicações web. Inclui
+                        vulnerabilidades críticas como <strong>Injeção</strong> (SQL/NoSQL), <strong>Quebra de
+                            Autenticação</strong>, <strong>Cross-Site Scripting (XSS)</strong> e <strong>Configurações
+                            Incorretas de Segurança</strong>.</p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px; border-left-color: #28a745;">
+                <h4><i class="material-icons">code</i> Aplicação Prática no seu Projeto "Cidade Virtual"</h4>
+                <p>Como você desenvolve em <strong>Node.js/Express</strong>, a segurança da sua API é crítica. Boas
+                    práticas de mercado incluem:</p>
+                <ul class="requisitos-lista" style="margin-top: 10px;">
+                    <li><strong>Helmet.js:</strong> Middleware que configura cabeçalhos HTTP para proteger contra
+                        sniffers e XSS.</li>
+                    <li><strong>Rate Limiting:</strong> Bloqueia IPs que fazem muitas requisições por segundo (mitiga
+                        Ataques de Força Bruta e DDoS).</li>
+                    <li><strong>JWT (JSON Web Tokens):</strong> Para autenticação stateless segura entre o frontend
+                        React e a API.</li>
+                    <li><strong>Sanitização de Inputs:</strong> Essencial para evitar <em>NoSQL Injection</em> no seu
+                        banco MongoDB.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: PREVENÇÃO ===== -->
+        <section>
+            <h2>🛡️ Como se Prevenir: O Ecossistema de Defesa</h2>
+            <div class="form-checkout">
+                <div class="checklist-item">
+                    <input type="checkbox" id="prev1">
+                    <label for="prev1"><strong>Firewall e WAF:</strong> Filtragem de tráfego malicioso na borda da rede
+                        e na camada de aplicação.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="prev2">
+                    <label for="prev2"><strong>CDN (ex: Cloudflare):</strong> Absorve e mitiga ataques de DDoS antes que
+                        cheguem ao servidor de origem.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="prev3">
+                    <label for="prev3"><strong>Pentest (Teste de Intrusão):</strong> Simulação de ataques éticos para
+                        descobrir falhas antes dos hackers.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="prev4">
+                    <label for="prev4"><strong>Gestão de Vulnerabilidades:</strong> Varredura contínua e aplicação
+                        rápida de patches de segurança.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="prev5">
+                    <label for="prev5"><strong>Backup Imutável (Regra 3-2-1):</strong> A única defesa 100% eficaz contra
+                        Ransomware. 3 cópias, 2 mídias diferentes, 1 off-line/imutável.</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>As razões pelas quais sistemas interconectados e baseados na Web são inerentemente vulneráveis.</li>
+                <li>Os riscos específicos de tecnologias como VoIP, E-mail, P2P e redes Wi-Fi (Sniffers e War Driving).
+                </li>
+                <li>Os 7 principais tipos de ataques cibernéticos modernos (Phishing, Ransomware, DDoS, etc.).</li>
+                <li>Conceitos avançados de mercado como Arquitetura Zero Trust e o OWASP Top 10.</li>
+                <li>Estratégias de prevenção em profundidade, incluindo WAF, CDN, Pentest e Backups Imutáveis.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>AVAST. <strong>O que é um sniffer e como se proteger contra ele?</strong> Disponível em: <a
+                        href="https://www.avast.com/pt-br/c-sniffer"
+                        target="_blank">https://www.avast.com/pt-br/c-sniffer</a>. Acesso em: 20 jan. 2024.</p>
+            </div>
+
+            <div class="referencia">
+                <p>LAUDON, Kenneth C.; LAUDON, Jane Price. <strong>Sistemas de informação gerenciais</strong>. 11. ed.
+                    São Paulo: Pearson, 2014.</p>
+            </div>
+
+            <div class="referencia">
+                <p>MAIS SECURITY. <strong>Tipos de ataques</strong>. Disponível em: <a
+                        href="https://www.youtube.com/watch?v=Td5G2RQ9krU"
+                        target="_blank">https://www.youtube.com/watch?v=Td5G2RQ9krU</a>. Acesso em: 30 jan. 2024.</p>
+            </div>
+
+            <div class="referencia">
+                <p>PROLINX. <strong>7 Principais Tipos De Ataques Cibernéticos A Empresas E Como Prevenir</strong>.
+                    Disponível em: <a href="https://prolinx.com.br/tipos-de-ataques-ciberneticos/"
+                        target="_blank">https://prolinx.com.br/tipos-de-ataques-ciberneticos/</a>. Acesso em: 24 fev.
+                    2024.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Administração de Sistemas de Informação · 32010005422-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 2 – Unidade 2</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            // Estado salvo no localStorage (persiste entre páginas)
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

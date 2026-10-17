@@ -1,0 +1,409 @@
+<!-- mod2_und1-infraestrutura-de-ti-hardware-e-software-do-computador.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 Unidade 1 | Administração de Sistemas de Informação</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== VLIBRAS ===== -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>ADMINISTRAÇÃO DE SISTEMAS DE INFORMAÇÃO</h1>
+        <h2>Módulo 2 – Tecnologia da Informação e sua infraestrutura nas organizações</h2>
+        <h3>Unidade 1 – Infraestrutura de TI: hardware e software do computador</h3>
+        <p>Prof. Dr. Robson Soares Silva</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <div class="nav-container no-print">
+        <a href="../6s-1-projeto-integrador-de-tecnologia-da-informacao-1/index.html" class="btn-nav">
+            <i class="material-icons" style="font-size: 18px;">home</i> Início
+        </a>
+        <div class="nav-right">
+            <a href="mod1-checkout-de-presenca.html" class="btn-nav">
+                <i class="material-icons">arrow_back</i> Checkout P. Mod 1
+            </a>
+            <a href="mod2_und2-seguranca-em-sistemas-de-informacao.html" class="btn-nav"
+                style="background-color: #0066cc;">
+                <i class="material-icons">arrow_forward</i> Mod 2 Und 2
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO: VÍDEO DA AULA ===== -->
+        <section id="materiais">
+            <div id="video-wrapper">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/U2RWgUHHG6E" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 1"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 1
+                        </p>
+                        <p>Prof. Dr. Robson Soares Silva</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/aB-JRipW4wY" frameborder="0"
+                                title="[UFMS Digital] Administração de Sistemas de Informação - Módulo 2 - Unidade 1"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="title">Sistemas de Informação - Aula 26 - Infraestrutura de tecnologia</p>
+                        <p>Prof. responsável: Marcelo Fantinato</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO FLUTUANTE PARA TOGGLE DO VÍDEO ===== -->
+        <button id="btn-toggle-video" class="btn-toggle-video no-print" title="Mostrar/ocultar vídeo da aula"
+            aria-label="Alternar visibilidade do vídeo">
+            <i class="material-icons" id="icon-toggle-video">videocam_off</i>
+            <span id="text-toggle-video">Ocultar vídeo</span>
+        </button>
+
+        <!-- ===== SEÇÃO: OBJETIVOS ===== -->
+        <section>
+            <h2>📚 Nesta aula, você vai estudar</h2>
+            <div class="objetivos-grid">
+                <div class="objetivo-card">
+                    <strong>🏗️ Componentes da Infraestrutura</strong>
+                    <p>Os 5 pilares: Hardware, Software, Gestão de Dados, Redes/Telecom e Serviços de TI.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>💻 Tipologia de Hardware</strong>
+                    <p>De dispositivos móveis a Mainframes, Supercomputadores e Computação em Grade (Grid).</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🔄 Arquitetura Cliente/Servidor</strong>
+                    <p>Processamento distribuído, servidores Web e de Aplicação.</p>
+                </div>
+                <div class="objetivo-card">
+                    <strong>🗄️ Tecnologias de Armazenamento</strong>
+                    <p>Discos magnéticos, SSDs, Ópticos e Redes de Armazenamento (SAN).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: COMPONENTES DA INFRAESTRUTURA ===== -->
+        <section>
+            <h2>🧩 Os 5 Componentes da Infraestrutura de TI</h2>
+            <p>Para que uma organização funcione de maneira integrada, cinco elementos devem ser coordenados
+                <strong>(LAUDON e LAUDON, 2014)</strong>:
+            </p>
+            <div class="grid-3" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">memory</div>
+                    <h4>1. Hardware</h4>
+                    <p>Tecnologia de processamento, armazenamento, entrada e saída (Mainframes, servidores, PCs,
+                        dispositivos móveis e periféricos).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">code</div>
+                    <h4>2. Software</h4>
+                    <p><strong>Sistema:</strong> Administra recursos (ex: Windows, Linux). <strong>Aplicativo:</strong>
+                        Tarefas específicas do usuário (ex: ERP, Navegador).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">database</div>
+                    <h4>3. Gestão de Dados</h4>
+                    <p>Software especializado (SGBDs) para organizar, gerenciar e processar dados de estoques, clientes
+                        e fornecedores.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">wifi</div>
+                    <h4>4. Redes e Telecom</h4>
+                    <p>Conectividade de dados, voz e vídeo. Inclui redes internas (intranet), serviços de
+                        telecomunicações e Internet.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">support_agent</div>
+                    <h4>5. Serviços de Tecnologia</h4>
+                    <p>Pessoas e processos para operar, gerenciar e ensinar o uso da TI. Inclui departamentos internos e
+                        consultoria externa.</p>
+                </div>
+            </div>
+
+            <div class="dica-box" style="margin-top: 25px;">
+                <h4><i class="material-icons">trending_up</i> Aprofundamento Tecnológico: A Evolução para a Nuvem</h4>
+                <p>Embora o modelo clássico fale em aquisição de software e hardware físico, o mercado atual opera
+                    fortemente sob o modelo de <strong>Computação em Nuvem (Cloud Computing)</strong>. O software de
+                    sistema e aplicativo é cada vez mais consumido como serviço (SaaS, PaaS, IaaS), reduzindo a
+                    necessidade de manutenção de hardware <em>on-premise</em> e escalando a infraestrutura sob demanda.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: TIPOS DE COMPUTADOR ===== -->
+        <section>
+            <h2>🖥️ Tipos de Computador e Capacidade de Processamento</h2>
+            <p>As empresas devem escolher o hardware adequado à natureza do desafio, evitando gastos excessivos ou
+                insuficientes <strong>(LAUDON e LAUDON, 2014)</strong>.</p>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <div class="card-icon">laptop_mac</div>
+                    <h4>Dispositivos Pessoais e Móveis</h4>
+                    <p>PCs de mesa, laptops, smartphones e tablets. Usados por indivíduos ou pequenas equipes para
+                        acesso a dados corporativos e Internet.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">dns</div>
+                    <h4>Servidores</h4>
+                    <p>Otimizados para suportar redes. Permitem compartilhamento de arquivos, software e periféricos.
+                        São a plataforma de hardware para e-commerce e sites.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">account_tree</div>
+                    <h4>Mainframes</h4>
+                    <p>Computadores de alto desempenho e grande capacidade. Processam milhões de transações financeiras
+                        ou registros por segundo (ex: grandes bancos, companhias aéreas). A IBM, por exemplo, permite
+                        rodar milhares de instâncias de Linux/Windows em um único mainframe.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">science</div>
+                    <h4>Supercomputadores</h4>
+                    <p>Projetados para cálculos complexos e extremamente rápidos (milhares de variáveis/equações).
+                        Usados em simulações de engenharia (testes de colisão de carros), pesquisa militar e previsão do
+                        tempo (NOAA).</p>
+                </div>
+            </div>
+
+            <div class="atencao-box" style="margin-top: 25px;">
+                <h3><i class="material-icons">hub</i> Computação em Grade (Grid Computing)</h3>
+                <p>Conecta computadores geograficamente distantes em uma única rede, criando um <strong>"supercomputador
+                        virtual"</strong>. Aproveita a capacidade ociosa (ex: 75% do tempo de CPUs de PCs) para resolver
+                    problemas complexos a um custo muito menor que um supercomputador dedicado. <em>Exemplo: Royal
+                        Dutch/Shell usa grades com milhares de servidores Linux para modelagem de reservatórios de
+                        petróleo.</em></p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: REDES E CLIENTE/SERVIDOR ===== -->
+        <section>
+            <h2>🌐 Redes de Computadores e Computação Cliente/Servidor</h2>
+            <p>O <strong>processamento distribuído</strong> (múltiplos computadores conectados) substituiu o
+                processamento centralizado em mainframes isolados na maioria das organizações.</p>
+
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">lan</i> O Modelo
+                    Cliente/Servidor</strong>
+                <p style="margin-top: 10px;">Divide o processamento entre máquinas com funções específicas:</p>
+                <ul class="requisitos-lista" style="margin-top: 10px;">
+                    <li><strong>Cliente:</strong> Ponto de entrada do usuário (PC, laptop, smartphone). Interage com a
+                        interface da aplicação.</li>
+                    <li><strong>Servidor:</strong> Fornece serviços, armazena/processa dados compartilhados, gerencia
+                        impressoras, backups, segurança e autenticação.</li>
+                </ul>
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="card">
+                    <h4>🌍 Servidor Web</h4>
+                    <p>Primeiro nível. Apresenta páginas Web ao cliente em resposta a uma solicitação. Localiza e
+                        gerencia os arquivos HTML/estáticos armazenados.</p>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Servidor de Aplicação</h4>
+                    <p>Segundo nível. Executa as operações de lógica de negócio entre o usuário e os sistemas de apoio
+                        (ex: processar um carrinho de compras). Pode residir no mesmo computador do servidor Web ou em
+                        máquina dedicada.</p>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;"><em>💡 Conexão Prática: No seu projeto "Cidade
+                    Virtual", o frontend em React atua como o "Cliente", enquanto a API em Node.js/Express roda no
+                    "Servidor de Aplicação", consultando o "Servidor de Banco de Dados" (MongoDB).</em></p>
+        </section>
+
+        <!-- ===== SEÇÃO: ARMAZENAMENTO ===== -->
+        <section>
+            <h2>💾 Tecnologia de Armazenamento, Entrada e Saída</h2>
+            <p>Dispositivos periféricos são essenciais para reter dados além do processamento volátil (RAM).</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">save</div>
+                    <h4>Discos Magnéticos (HDD)</h4>
+                    <p>Ainda amplamente usados em mainframes e servidores de médio/grande porte devido ao
+                        custo-benefício para capacidades na faixa de terabytes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">sd_storage</div>
+                    <h4>Unidades de Estado Sólido (SSD)</h4>
+                    <p>Substituíram HDDs em PCs leves, smartphones e tablets. Usam semicondutores (flash).
+                        <strong>Evolução avançada:</strong> Os SSDs NVMe (conectados via PCIe) oferecem velocidades de
+                        leitura/escrita muito superiores aos SATA tradicionais.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">album</div>
+                    <h4>Discos Ópticos</h4>
+                    <p>Usam tecnologia laser (CD-ROM, CD-RW, DVD). Capacidade de 660 MB (CD) a 4,7 GB+ (DVD). Hoje em
+                        desuso para armazenamento primário, restritos a mídias físicas específicas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">storage</div>
+                    <h4>Redes de Armazenamento (SAN)</h4>
+                    <p><em>Storage Area Network</em>. Rede de alta velocidade e dedicada que conecta inúmeros
+                        dispositivos de armazenamento, criando um grande grupo central acessado rapidamente por
+                        múltiplos servidores. Foca estritamente em armazenamento, separando o tráfego de dados do
+                        tráfego da rede local (LAN).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: INTEGRAÇÃO E SERVIÇOS ===== -->
+        <section>
+            <h2>🛠️ Serviços de Tecnologia e Integração de Sistemas</h2>
+            <div class="info-box">
+                <p>Empresas precisam de pessoas para operar esses componentes. Quando mudanças profundas são
+                    necessárias, recorrem a <strong>consultoria externa</strong> para integração de sistemas.</p>
+                <p style="margin-top: 10px;"><strong>Integração de Sistemas:</strong> O objetivo é garantir que a nova
+                    infraestrutura seja compatível com os <strong>sistemas legados</strong> (antigos sistemas de
+                    processamento de transações, muitas vezes em mainframes, que continuam em uso devido ao alto custo
+                    de substituição) e que os novos elementos conversem entre si.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: RESUMO ===== -->
+        <section>
+            <h2>✅ Nesta aula, você estudou</h2>
+            <ul class="requisitos-lista">
+                <li>Os 5 componentes fundamentais da infraestrutura de TI e a necessidade de coordenação entre eles.
+                </li>
+                <li>A distinção entre hardware de processamento, dispositivos móveis, servidores, mainframes e
+                    supercomputadores.</li>
+                <li>O conceito de Computação em Grade (Grid Computing) como alternativa econômica ao supercomputador.
+                </li>
+                <li>A arquitetura Cliente/Servidor e os papéis distintos do Servidor Web e do Servidor de Aplicação.
+                </li>
+                <li>As tecnologias de armazenamento secundário, com destaque para a evolução dos SSDs e a arquitetura de
+                    redes SAN.</li>
+                <li>O desafio da integração de sistemas modernos com sistemas legados.</li>
+            </ul>
+        </section>
+
+        <!-- ===== SEÇÃO: REFERÊNCIAS ===== -->
+        <section>
+            <h2>📚 Referências</h2>
+
+            <div class="referencia">
+                <p>LAUDON, Kenneth C.; LAUDON, Jane Price. <strong>Sistemas de informação gerenciais</strong>. 11. ed.
+                    São Paulo: Pearson, 2014.</p>
+            </div>
+
+            <div class="referencia">
+                <p>MANTOVANI, Dennis. <strong>Tipos de sistemas de informação: tudo o que você precisa saber!</strong>
+                    Disponível em: <a
+                        href="https://www.undb.edu.br/blog/tipos-de-sistemas-de-informacao-tudo-o-que-voce-precisa-saber"
+                        target="_blank">https://www.undb.edu.br/blog/...</a>. Acesso em: 16 dez. 2023.</p>
+            </div>
+
+            <div class="referencia">
+                <p>O'BRIEN, James A. <strong>Sistemas de informação e as decisões gerenciais na era da
+                        Internet</strong>. 2. ed. São Paulo: Saraiva, 2009.</p>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO: LICENCIAMENTO ===== -->
+        <section>
+            <div class="info-box">
+                <strong><i class="material-icons" style="vertical-align: middle;">copyright</i> Licenciamento</strong>
+                <p>Respeitadas as formas de citação formal de autores de acordo com as normas da ABNT NBR 6023 (2018), a
+                    não ser que esteja indicado de outra forma, todo material desta apresentação está licenciado sob uma
+                    <strong>Licença Creative Commons - Atribuição 4.0 Internacional</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== BOTÃO PRÓXIMA UNIDADE ===== -->
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="mod2_und2-seguranca-em-sistemas-de-informacao.html" class="btn-visualizar"
+                style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="material-icons">arrow_forward</i> Avançar para Unidade 2: Segurança em SI
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>AVA UFMS · Disciplina: Administração de Sistemas de Informação · 32010005422-T01-2026-2</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 · Módulo 2 – Unidade 1</p>
+    </footer>
+
+    <!-- ===== VLIBRAS SCRIPT ===== -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- ===== SCRIPT DE TOGGLE DO VÍDEO ===== -->
+    <script>
+        (function () {
+            const btn = document.getElementById('btn-toggle-video');
+            const videoWrapper = document.getElementById('video-wrapper');
+            const icon = document.getElementById('icon-toggle-video');
+            const text = document.getElementById('text-toggle-video');
+            let isVisible = true;
+
+            // Estado salvo no localStorage (persiste entre páginas)
+            const stored = localStorage.getItem('videoVisible');
+            if (stored !== null) {
+                isVisible = stored === 'true';
+            }
+            updateState();
+
+            btn.addEventListener('click', function () {
+                isVisible = !isVisible;
+                localStorage.setItem('videoVisible', isVisible);
+                updateState();
+            });
+
+            function updateState() {
+                if (isVisible) {
+                    videoWrapper.classList.remove('hidden');
+                    icon.textContent = 'videocam_off';
+                    text.textContent = 'Ocultar vídeo';
+                    btn.classList.remove('collapsed');
+                } else {
+                    videoWrapper.classList.add('hidden');
+                    icon.textContent = 'videocam';
+                    text.textContent = 'Mostrar vídeo';
+                    btn.classList.add('collapsed');
+                }
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
